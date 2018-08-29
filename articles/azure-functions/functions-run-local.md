@@ -4,7 +4,7 @@ description: Узнайте, как программировать и тести
 services: functions
 documentationcenter: na
 author: ggailey777
-manager: cfowler
+manager: jeconnoc
 editor: ''
 ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.service: functions
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 06/26/2018
+ms.date: 08/14/2018
 ms.author: glenga
-ms.openlocfilehash: 57011e1f7633688e00a4639ba36fd4442073161d
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: cb336d6742aab10e1fd8305fd52f1376bb4f2598
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39618620"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42144613"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -131,13 +131,13 @@ npm install -g azure-functions-core-tools
 func init MyFunctionProj
 ```
 
+Когда вы указываете имя проекта, то создается и инициализируется новая папка с этим именем. В противном случае инициализируется текущая папка.  
 При запуске команды в версии 2.x необходимо выбрать среду выполнения для проекта. Для разработки функций JavaScript выберите следующий **узел**.
 
 ```output
 Select a worker runtime:
 dotnet
 node
-java
 ```
 
 Для выбора языка используйте СТРЕЛКИ ВВЕРХ и ВНИЗ и клавишу ВВОД. Результат для проекта JavaScript выглядит примерно следующим образом.
@@ -298,19 +298,24 @@ func new --template "Queue Trigger" --name QueueTriggerJS
 ```bash
 func host start
 ```
+Команда `host` требуется только в версии 1.x.
 
 `func host start` имеет указанные ниже параметры.
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
-|**`--port -p`** | Локальный порт для прослушивания. Значение по умолчанию: 7071. |
-| **`--debug <type>`** | Запускается узел с открытым портом отладки, чтобы была возможность подключиться к процессу **func.exe** из [Visual Studio Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started) или [Visual Studio 2017](functions-dotnet-class-library.md). Параметр *\<тип\>* имеет значения `VSCode` и `VS`.  |
 | **`--cors`** | Список разрешенных источников CORS, разделенный запятыми без пробелов. |
-| **`--nodeDebugPort -n`** | Порт отладчика узла. Значение по умолчанию — значение из launch.json или 5858. |
-| **`--debugLevel -d`** | Уровень трассировки консоли (off, verbose, info, warning или error). Значение по умолчанию — info.|
+| **`--debug <type>`** | Запускается узел с открытым портом отладки, чтобы была возможность подключиться к процессу **func.exe** из [Visual Studio Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started) или [Visual Studio 2017](functions-dotnet-class-library.md). Параметр *\<тип\>* имеет значения `VSCode` и `VS`.  |
+| **`--port -p`** | Локальный порт для прослушивания. Значение по умолчанию: 7071. |
 | **`--timeout -t`** | Время ожидания для запуска узла службы "Функции" в секундах. Значение по умолчанию — 20 секунд.|
 | **`--useHttps`** | Привязка к `https://localhost:{port}`, а не к `http://localhost:{port}`. По умолчанию этот параметр создает доверенный сертификат на компьютере.|
-| **`--pause-on-error`** | Приостановка для получения дополнительных входных данных перед выходом из процесса. Используется при запуске основных инструментов из Visual Studio или VS Code.|
+| **`--build`** | Выполнить сборку текущего проекта перед запуском. Только версия 2.x и только для проектов C#. |
+| **`--cert`** | Путь к PFX-файлу, который содержит закрытый ключ. Используется только с `--useHttps`. Только версия 2.x. | 
+| **`--password`** | Пароль или файл, содержащий пароль для PFX-файла. Используется только с `--cert`. Только версия 2.x. |
+| **`--language-worker`** | Аргументы для настройки обработчика языка. Только версия 2.x. |
+| **`--nodeDebugPort -n`** | Порт отладчика узла. Значение по умолчанию — значение из launch.json или 5858. Только версия 1.x. |
+
+Для проекта библиотеки классов C# (CSPROJ) необходимо указать параметр `--build` для создания DLL-файла библиотеки.
 
 При запуске узла службы "Функции" выводится URL-адрес функций, активируемых по HTTP:
 

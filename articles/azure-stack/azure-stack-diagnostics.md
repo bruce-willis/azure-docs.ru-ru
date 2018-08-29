@@ -7,15 +7,15 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 06/27/2018
+ms.date: 08/22/2018
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: 50fef25a3b7b71821e64638729eb8d93f65b9e31
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: a36609ae63351070bb28469d9ccf1f3deb7bc6ff
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064175"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616955"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Средства диагностики Azure Stack
 
@@ -110,38 +110,40 @@ if($s)
 ### <a name="parameter-considerations-for-both-asdk-and-integrated-systems"></a>Рекомендации по настройке параметров для ASDK и интегрированных систем
 
 - Если параметры **FromDate** и **ToDate** не указаны, по умолчанию журналы собираются за последние четыре часа.
+- Чтобы фильтровать журналы по имени компьютера, используйте параметр **FilterByNode**. Например: ```Get-AzureStackLog -OutputPath <path> -FilterByNode azs-xrp01```
+- Чтобы фильтровать журналы по типу, используйте параметр **FilterByLogType**. Доступна фильтрация по файлу, общему ресурсу или по событию Windows. Например: ```Get-AzureStackLog -OutputPath <path> -FilterByLogType File```
 - Задать время ожидания для сбора журналов можно с помощью параметра **TimeOutInMinutes**. По умолчанию для него задано значение 150 (2,5 часа).
 - В версии 1805 и более поздней сбор журналов файлов дампа отключен по умолчанию. Чтобы включить его, используйте параметр-переключатель **IncludeDumpFile**. 
 - Сейчас можно использовать параметр **FilterByRole**, чтобы отфильтровать сбор журналов по следующим ролям.
 
-   |   |   |   |
-   | - | - | - |
-   | ACS                    | DeploymentMachine                | NC                         |
-   | ACSBlob                | DiskRP                           | Сеть                    |
-   | ACSFabric              | Домен                           | NonPrivilegedAppGateway    |
-   | ACSFrontEnd            | ECE                              | NRP                        |
-   | ACSMetrics             | ExternalDNS                      | OEM                        |
-   | ACSMigrationService    | Fabric                           | PXE                        |
-   | ACSMonitoringService   | FabricRing                       | SeedRing                   | 
-   | ACSSettingsService     | FabricRingServices               | SeedRingServices           |
-   | ACSTableMaster         | FRP                              | SLB                        |   
-   | ACSTableServer         | Коллекция                          | SlbVips                    |
-   | ACSWac                 | Шлюз                          | SQL                        |   
-   | ADFS                   | HealthMonitoring                 | SRP                        |
-   | ASAppGateway           | HRP                              | Служба хранилища                    |   
-   | NCAzureBridge          | IBC                              | Учетные записи хранения            |    
-   | AzurePackConnector     | IdentityProvider                 | StorageController          |  
-   | AzureStackBitlocker    | iDns                             | Клиент                     |
-   | BareMetal              | InfraServiceController           | TraceCollector             |
-   | BRP                    | Инфраструктура                   | URP                        |
-   | CA                     | KeyVaultAdminResourceProvider    | UsageBridge                |
-   | Облако                  | KeyVaultControlPlane             | VirtualMachines            |
-   | HDInsight                | KeyVaultDataPlane                | WAS                        |
-   | Службы вычислений                | KeyVaultInternalControlPlane     | WASBootstrap               |
-   | CPI                    | KeyVaultInternalDataPlane        | WASPUBLIC                  |
-   | CRP                    | KeyVaultNamingService            |                            |
-   | DatacenterIntegration  | MonitoringAgent                  |                            |
-   |                        |                                  |                            |
+ |   |   |   |    |
+ | - | - | - | -  |   
+ |ACS|Службы вычислений|InfraServiceController|QueryServiceCoordinator|
+ |ACSBlob|CPI|Инфраструктура|QueryServiceWorker|
+ |ACSDownloadService|CRP|KeyVaultAdminResourceProvider|SeedRing|
+ |ACSFabric|DatacenterIntegration|KeyVaultControlPlane|SeedRingServices|
+ |ACSFrontEnd|DeploymentMachine|KeyVaultDataPlane|SLB|
+ |ACSMetrics|DiskRP|KeyVaultInternalControlPlane|SlbVips|
+ |ACSMigrationService|Домен|KeyVaultInternalDataPlane|SQL|
+ |ACSMonitoringService|ECE|KeyVaultNamingService|SRP|
+ |ACSSettingsService|EventAdminRP|MDM|служба хранилища.|
+ |ACSTableMaster|EventRP|MetricsAdminRP|Учетные записи хранения|
+ |ACSTableServer|ExternalDNS|MetricsRP|StorageController|
+ |ACSWac|Fabric|MetricsServer|Клиент|
+ |ADFS|FabricRing|MetricsStoreService|TraceCollector|
+ |ApplicationController|FabricRingServices|MonAdminRP|URP|
+ |ASAppGateway|FirstTierAggregationService|MonitoringAgent|Использование|
+ |AzureBridge|FRP|MonRP|UsageBridge|
+ |AzureMonitor|Коллекция|NC|VirtualMachines|
+ |AzureStackBitlocker|Шлюз|Сеть|WAS|
+ |BareMetal|HealthMonitoring|NonPrivilegedAppGateway|WASBootstrap|
+ |BRP|HintingServiceV2|NRP|WASPUBLIC|
+ |CA|HRP|OboService|WindowsDefender|
+ |CacheService|IBC|OEM|     |
+ |Облако|IdentityProvider|OnboardRP|     |   
+ |HDInsight|iDns|PXE|     |
+ |   |   |   |    |
+
 
 ### <a name="bkmk_gui"></a>Сбор журналов с помощью графического пользовательского интерфейса
 Вместо того, чтобы указывать обязательные параметры командлета Get-AzureStackLog для получения журналов Azure Stack, можно также использовать доступные инструменты Azure Stack с открытым кодом, размещенные в главном репозитории GitHub инструментов для Azure Stack по адресу http://aka.ms/AzureStackTools.

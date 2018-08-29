@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/15/2018
 ms.author: LADocs; estfan
-ms.openlocfilehash: a86c4c4227795a712dd51ace1fbefe9d2b96518a
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 9eef382ea264bcf9e59dcc408d14a59355b0369b
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39116118"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42445683"
 ---
 # <a name="reference-architecture-enterprise-integration-with-queues-and-events"></a>Эталонная архитектура: корпоративная интеграция с использованием очередей и событий
 
@@ -42,7 +42,7 @@ ms.locfileid: "39116118"
 - **Соединители**. [Соединители](https://docs.microsoft.com/azure/connectors/apis-list) используются в Logic Apps для подключения к часто используемым службам. В Logic Apps уже имеются сотни различных соединителей, также можно создать пользовательский соединитель.
 - **Служебная шина Azure**. [Служебная шина](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) обеспечивает безопасный и надежный обмен сообщениями. Сообщения могут использоваться для отделения приложений друг от друга и интеграции с другими системами на основе сообщений.
 - **Сетка событий Azure**. Служба [Сетка событий](https://docs.microsoft.com/azure/event-grid/overview) — это бессерверная платформа для публикации и доставки событий приложения.
-- **IP-адрес.** Служба управления API Azure имеет фиксированный общедоступный [IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm) и доменное имя. Имя домена представляет собой поддомен azure-api.net, например contoso.azure-api.net. У Logic Apps и служебной шины также есть общедоступный IP-адрес. Однако в этой архитектуре мы ограничиваем доступ к конечным точкам Logic Apps только IP-адресом управления API (для обеспечения безопасности). Вызовы к служебной шине защищены с помощью подписанного URL-адреса (SAS).
+- **IP-адрес.** Служба управления API Azure имеет фиксированный общедоступный [IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm) и доменное имя. Доменное имя по умолчанию является поддоменом azure-api.net, например contoso.azure api.net, но также можно настроить [личные домены](https://docs.microsoft.com/azure/api-management/configure-custom-domain). У Logic Apps и служебной шины также есть общедоступный IP-адрес. Однако в этой архитектуре мы ограничиваем доступ к конечным точкам Logic Apps только IP-адресом управления API (для обеспечения безопасности). Вызовы к служебной шине защищены с помощью подписанного URL-адреса (SAS).
 - **Azure DNS**. [Azure DNS](https://docs.microsoft.com/azure/dns/) — это служба размещения для доменов DNS. Azure DNS осуществляет разрешение имен на базе инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, интерфейсов API и инструментов и оплачивать использование, как и другие службы Azure. Чтобы использовать пользовательское доменное имя (например, contoso.com), создайте записи DNS, которые позволяют сопоставить это доменное имя с IP-адресом. Дополнительные сведения см. в разделе [Настройка пользовательского имени домена](https://docs.microsoft.com/en-us/azure/api-management/configure-custom-domain).
 - **Azure Active Directory (Azure AD).** Выполняйте аутентификацию при помощи [Azure AD](https://docs.microsoft.com/azure/active-directory/) или другого поставщика удостоверений. Azure AD обеспечивает аутентификацию доступа к конечным точкам API, передавая [JSON Web Token в службу управления API](https://docs.microsoft.com/azure/api-management/policies/authorize-request-based-on-jwt-claims) для проверки. Azure AD может защитить доступ к порталу разработчика для службы управления API (только для уровней "Стандартный" и "Премиум").
 

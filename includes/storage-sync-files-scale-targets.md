@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/18/2018
 ms.author: wgries
 ms.custom: include file
-ms.openlocfilehash: a9aa4680d91a4ab95933ae636c4467217fd162b2
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: e2e8da3d2dec2c74bbd1c0ca0f52b7eaba5c024e
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39277951"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42358297"
 ---
 | Ресурс | Цель | Строгое ограничение |
 |----------|--------------|------------|
@@ -27,5 +27,6 @@ ms.locfileid: "39277951"
 | Число объектов файловой системы (папок и файлов) на группу синхронизации | 25 млн объектов | Нет  |
 | Максимальное число объектов файловой системы (папок и файлов) в каталоге | 200 000 объектов | Yes |
 | Максимальная длина имени объекта максимальное (папок и файлов) | 255 символов | Yes |
+| Максимальная длина дескриптора защиты объекта (папок и файлов) | 4 Киб | Yes |
 | Размер файла | 100 ГиБ | Нет  |
 | Минимальный размер для файла, который будет связан | 64 КиБ | Yes |

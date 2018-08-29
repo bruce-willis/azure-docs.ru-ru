@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: jasonh
-ms.openlocfilehash: 7c9a4a0fdbc362a1c2856e35f112deaabddeb229
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: ef0001d5693d96abc128acf6c052dbedc0983b51
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39594385"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42144574"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-hadoop-in-hdinsight"></a>Использование языка C# для потоковой передачи MapReduce в Hadoop в HDInsight
 
@@ -41,7 +41,7 @@ ms.locfileid: "39594385"
 4. Модуль редукции считывает пары "ключ-значение", разделенные знаками табуляции, обрабатывает данные и передает результат в виде пар "ключ-значение", разделенные знаками табуляции, в канал STDOUT.
 5. Выходные данные считываются Hadoop и записываются в выходной каталог.
 
-Дополнительные сведения см. в документации по [потоковой передаче Hadoop (https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html)](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
+Дополнительные сведения см. в разделе [Потоковая передача Hadoop](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

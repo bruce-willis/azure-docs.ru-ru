@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/09/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 22751d7ab38717fefdebe107e7a7d6fc10dda4c4
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 39ae4573b4c447253c4c90a3845a087434dcd77a
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39326196"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142623"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -33,7 +33,7 @@ ms.locfileid: "39326196"
   * Кроме того, можно использовать [портал Azure](https://portal.azure.com). Для этого не нужна лицензия Azure AD.
 * [Добавьте и подтвердите домен](../active-directory-domains-add-azure-portal.md) , который вы планируете использовать в Azure AD. Например, если вы планируете использовать для своих пользователей домен contoso.com, убедитесь, что он был подтвержден и вы используете не просто домен по умолчанию contoso.onmicrosoft.com.
 * Клиент Azure AD по умолчанию может вмещать 50 тыс. объектов. После подтверждения домена этот предел увеличивается до 300 тыс. объектов. Если вам нужно еще больше объектов в Azure AD, необходимо отправить обращение в службу технической поддержки, чтобы дополнительно увеличить данный предел. Если вам необходимо более 500 тыс. объектов, то потребуется лицензия, например на Office 365, Azure AD Basic, Azure AD Premium или Enterprise Mobility + Security.
-* ADSyncPrep представляет собой модуль сценария PowerShell, предоставляющий функции, которые используются для подготовки вашей среды Active Directory для Azure AD Connect.  Для работы ADSyncPrep нужен [модуль PowerShell Azure AD Microsoft Online версии 1.1](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).  Версия 2 не будет работать.  Для установки модуля можно использовать командлет `Install-Module`.  Чтобы получить дополнительную информацию, щелкните приведенную ниже ссылку.
+* ADSyncPrep представляет собой модуль сценария PowerShell, предоставляющий функции, которые используются для подготовки вашей среды Active Directory для Azure AD Connect.  Для работы ADSyncPrep нужен [модуль PowerShell Azure AD Microsoft Online версии 1.1](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).  Версия 2 не будет работать. Для установки модуля можно использовать командлет `Install-Module`.  Чтобы получить дополнительную информацию, щелкните приведенную ниже ссылку.
 
 ### <a name="prepare-your-on-premises-data"></a>Подготовка локальных данных
 * Прежде чем выполнять синхронизацию с Azure AD и Office 365, воспользуйтесь инструментом [IdFix](https://support.office.com/article/Install-and-run-the-Office-365-IdFix-tool-f4bd2439-3e41-4169-99f6-3fabdfa326ac) для выявления в каталоге ошибок, таких как повторяющиеся записи или проблемы с форматированием.

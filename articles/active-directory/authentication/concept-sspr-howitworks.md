@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 8c0810c4a1b92f14e510d005eaf1b6945a058dd7
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 54e6b4f5804e7390b7574aa60b4d3a76df15da11
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413109"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42144534"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Как это работает: самостоятельный сброс пароля в Azure AD
 
@@ -94,6 +94,9 @@ ms.locfileid: "39413109"
 | Доступные функции мобильного приложения | Код | Код или уведомление |
 
 Пользователи не смогут зарегистрировать свое мобильное приложение при регистрации для самостоятельного сброса пароля по адресу [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup). Вместо этого они смогут зарегистрировать мобильное приложение в службе по адресу [https://aka.ms/mfasetup](https://aka.ms/mfasetup) или в предварительной версии службы регистрации сведений о безопасности по адресу [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
+
+> [!WARNING]
+> Вы должны включить [конвергентную регистрацию для самостоятельного сброса пароля и многофакторную идентификацию Azure (общедоступную предварительную версию)](concept-registration-mfa-sspr-converged.md), прежде чем пользователи смогут получить новые возможности в [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
 
 ### <a name="change-authentication-methods"></a>Изменение методов проверки подлинности
 

@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
-ms.openlocfilehash: d3b2f8860f5b8ddd2cc53d8805b7eace788e73a7
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ff22ad4f8abae019591150dd9a8ea2cd4ca4e5d9
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230545"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146558"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
 
 Цель этого руководства — показать, как в GitHub и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в GitHub. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -80,7 +80,7 @@ ms.locfileid: "36230545"
 
     ![Диалоговое окно авторизации](./media/github-provisioning-tutorial/GitHub2.png)
 
-7. На портале Azure введите **URL-адрес клиента** и щелкните **Проверить подключение**, чтобы убедиться в том, что Azure AD может подключиться к вашему приложению GitHub. Если установить подключение не удалось, убедитесь, что у вашей учетной записи GitHub имеются разрешения администратора и **URL-адрес клиента** введен правильно, а затем повторите авторизацию. **URL-адрес клиента** можно указать в формате "https://api.github.com/scim/v2/organizations/ + <название_организации>", а свои организации можно найти в учетной записи GitHub, выбрав **Параметры** > **Организации**.
+7. На портале Azure введите **URL-адрес клиента** и щелкните **Проверить подключение**, чтобы убедиться в том, что Azure AD может подключиться к вашему приложению GitHub. Если установить подключение не удалось, убедитесь, что у вашей учетной записи GitHub имеются разрешения администратора и **URL-адрес клиента** введен правильно, а затем повторите авторизацию (**URL-адрес клиента** можно указать в формате `https://api.github.com/scim/v2/<Organizations_name>`, а свои организации можно найти в учетной записи GitHub, выбрав **Параметры** > **Организации**).
 
     ![Диалоговое окно авторизации](./media/github-provisioning-tutorial/GitHub3.png)
 

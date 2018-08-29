@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: dobett
-ms.openlocfilehash: 718bf82a921ec3b70939b7a70205a4c650702dd0
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: ad1ce768ea5be2356f141d10a53ea0166546a2b7
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823356"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42143847"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Понимание и использование пакетов SDK для Центра Интернета вещей Azure
 
@@ -66,6 +66,7 @@ ms.locfileid: "34823356"
 
 ### <a name="os-platform-and-hardware-compatibility"></a>Платформа ОС и совместимость оборудования
 
+Поддерживаемые платформы для пакетов SDK можно найти в этом [документе](iot-hub-device-sdk-platform-support.md).
 Дополнительные сведения о совместимости пакета SDK с определенными устройствами см. в [каталоге устройств, сертифицированных по программе Microsoft Azure Certified for IoT][lnk-certified] или в описании для конкретного репозитория.
 
 ## <a name="azure-iot-service-sdks"></a>Пакеты SDK для служб Azure IoT
@@ -103,7 +104,12 @@ ms.locfileid: "34823356"
 > Сведения об установке двоичных файлов и зависимостей на компьютере для разработки с помощью диспетчера пакетов, зависящего от языка или платформы, см. в файле сведений в репозиториях GitHub.
 
 
+
 ## <a name="next-steps"></a>Дополнительная информация
+
+Пакеты SDK для Azure IoT также предоставляют набор инструментов для разработки:
+* [iothub-diagnostics](https://github.com/Azure/iothub-diagnostics) — средство кроссплатформенной командной строки для диагностирования проблем, связанных с подключением к Центру Интернета вещей;
+* [device-explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) — классическое приложение Windows для подключения к Центру Интернета вещей.
 
 Другие справочные статьи в руководстве разработчика для Центра Интернета вещей:
 
@@ -112,6 +118,7 @@ ms.locfileid: "34823356"
 * [Quotas and throttling][lnk-devguide-quotas] (Квоты и регулирование)
 * [Поддержка MQTT в Центре Интернета вещей][lnk-devguide-mqtt]
 * [Справочник по REST API Центра Интернета вещей][lnk-rest-ref]
+* [Поддержка платформ пакетов SDK для устройств Azure IoT](iot-hub-device-sdk-platform-support.md)
 
 <!-- Links and images -->
 

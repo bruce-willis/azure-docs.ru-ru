@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/02/2018
 ms.author: borisb
-ms.openlocfilehash: 570b820e21df6db70b9cadf33d5a120132be62ed
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 4a8bc45b253def1130e5a02dfcd6d359f0e74506
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426757"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42143207"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -29,7 +29,7 @@ ms.locfileid: "39426757"
 ## <a name="important-information-about-azure-rhui"></a>Важные сведения об Azure RHUI
 * Сейчас Azure RHUI поддерживает только последний вспомогательный выпуск в каждом семействе RHEL (RHEL6 или RHEL7). Чтобы обновить экземпляр виртуальной машины RHEL, подключенный к RHUI, до версии с последним дополнительным номером, выполните команду `sudo yum update`.
 
-    Например, если вы подготовили виртуальную машину на основе образа RHEL 7.2 (PAYG) и выполнили команду `sudo yum update`, то виртуальная машина обновится до версии RHEL 7.4 (последний дополнительный номер версии в семействе RHEL7).
+    Например, если вы подготовили виртуальную машину на основе образа RHEL 7.2 (PAYG) и выполнили команду `sudo yum update`, то виртуальная машина обновится до версии RHEL 7.5 (последний дополнительный номер версии в семействе RHEL7).
 
     Чтобы избежать этого, необходимо создать собственный образ, как описано в статье [Подготовка виртуальной машины на основе Red Hat для Azure](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Затем нужно подключить его к другой инфраструктуре обновления ([непосредственно к серверам доставки содержимого Red Hat](https://access.redhat.com/solutions/253273) или [серверу Red Hat Satellite](https://access.redhat.com/products/red-hat-satellite)).
 

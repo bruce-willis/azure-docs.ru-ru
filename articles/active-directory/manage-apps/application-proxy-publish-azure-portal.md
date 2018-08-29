@@ -2,25 +2,22 @@
 title: Публикация приложений с помощью прокси приложения Azure AD | Microsoft Azure
 description: Публикация локальных приложений в облако с помощью прокси приложения Azure AD на портале Azure.
 services: active-directory
-documentationcenter: ''
 author: barbkess
 manager: mtillman
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/24/2018
+ms.date: 08/20/2018
 ms.author: barbkess
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: 1224642bb7e6fc0c51b3f839a78449132db5b4bb
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 973a6201a227e6c2e295e6e5ea2f40c302572504
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39364263"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42144466"
 ---
 # <a name="publish-applications-using-azure-ad-application-proxy"></a>Публикация приложений с помощью прокси приложения Azure AD
 
@@ -72,6 +69,7 @@ ms.locfileid: "39364263"
    ![Настройка приложения](./media/application-proxy-publish-azure-portal/configure-app.png)
 5. При необходимости настройте дополнительные параметры. Для большинства приложений следует сохранить значения этих параметров по умолчанию. 
    - **Время ожидания серверного приложения**. Задайте для этого параметра значение **Длинный** только в том случае, если приложение медленно выполняет аутентификацию и подключение. 
+   - **Использовать файлы cookie HTTP-Only**. Задайте для этого параметра значение **Да**, чтобы файлы cookie прокси приложения содержали флаг HTTPOnly в заголовке ответа HTTP.
    - **Translate URLs in Headers** (Преобразование URL-адресов в заголовках). Оставьте значением этого параметра **Да**, если только приложению не требуется исходный заголовок узла в запросе на аутентификацию.
    - **Translate URLs in Application Body** (Преобразование URL-адресов в коде приложения). Только в случае, если вы используете жестко закодированные ссылки HTML на другие локальные приложения и не используете личные домены, следует изменить значение этого параметра по умолчанию **Нет**. Дополнительные сведения см. в статье [Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD](application-proxy-configure-hard-coded-link-translation.md).
    

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: apimpm
-ms.openlocfilehash: b2cdb88ba71b4a3d3005ec9d64b6e94cdb1d1c55
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 8c4ae9c7b8be8cf390ad4ad6d99cd1ec41cd3d08
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857537"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42142933"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -221,7 +221,7 @@ git push
 
 * `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/en-us/rest/api/apimanagement/api/get) с `export=true` в формате `application/json`.
 * `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description` [сущности API](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.table._entity_property).
-* `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая соответствует свойству `description`[сущности operation](https://docs.microsoft.com/en-us/rest/api/visualstudio/operations/list#operationproperties) в REST API.
+* `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая сопоставляется со свойством `description` [сущности operation](https://docs.microsoft.com/en-us/rest/api/visualstudio/operations/list#operationproperties) в REST API.
 
 ### <a name="groups-folder"></a>Папка groups
 Папка `groups` содержит папку для каждой группы, определенной в экземпляре службы.
@@ -259,8 +259,8 @@ git push
 Сведения о других способах управления экземпляром службы см. в приведенных ниже статьях. 
 
 * Управление экземпляром службы с помощью следующих командлетов PowerShell
-  * [Справочник по командлетам PowerShell для развертывания службы](https://msdn.microsoft.com/library/azure/mt619282.aspx)
-  * [Справочник по командлетам PowerShell для управления службами](https://msdn.microsoft.com/library/azure/mt613507.aspx)
+  * [Справочник по командлетам PowerShell для развертывания службы](https://docs.microsoft.com/powershell/module/wds)
+  * [Справочник по командлетам PowerShell для управления службами](https://docs.microsoft.com/powershell/azure/servicemanagement/overview)
 * Управление экземпляром службы с помощью REST API
   * [Справочник по REST API для управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx)
 

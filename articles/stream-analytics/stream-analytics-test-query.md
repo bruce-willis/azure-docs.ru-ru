@@ -10,12 +10,12 @@ manager: kfile
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/27/2018
-ms.openlocfilehash: 3dc9091934f3db8ededc13f74d2f302eccace4d6
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.openlocfilehash: d699d69362b2d28c205aab14a4bfb26570a68a4e
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32312996"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143862"
 ---
 # <a name="test-a-stream-analytics-query-with-sample-data"></a>Проверка запроса Stream Analytics с демонстрационными данными
 
@@ -29,9 +29,7 @@ ms.locfileid: "32312996"
 
 3. На странице задания Stream Analytics в разделе **Топологии задания** установите флажок **Запрос**, чтобы открыть окно редактора запросов. 
 
-4. Чтобы проверить запрос с использованием примера входных данных, щелкните любые входные данные правой кнопкой мыши.  Затем выберите **Отправить образец данных из файла**.
-
-   Нужно использовать только данные в формате JSON. Если данные представлены в другом формате, например CSV, перед отправкой преобразуйте их в формат JSON. Для этого можно использовать любой конвертер с отрытым кодом, например [конвертер CSV в JSON](http://www.convertcsv.com/csv-to-json.htm).
+4. Чтобы проверить запрос с использованием примера входных данных, щелкните любые входные данные правой кнопкой мыши.  Затем выберите **Отправить образец данных из файла**. Данные должны быть сериализованы в JSON, CSV или AVRO.
 
     ![Проверка запроса редактора запросов Stream Analytics](media/stream-analytics-test-query/stream-analytics-test-query-editor-upload.png)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: v-wingf
-ms.openlocfilehash: fdaf77e3d8a1858372298fb0d67ca05c2717adf6
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 76a83ef4f647dcf7d79218cb281f1f976b292870
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36324169"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42144402"
 ---
 # <a name="tutorial-configure-cisco-webex-for-automatic-user-provisioning"></a>Руководство по настройке Cisco Webex для автоматической подготовки пользователей
 
@@ -30,7 +30,7 @@ ms.locfileid: "36324169"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -115,8 +115,8 @@ ms.locfileid: "36324169"
     * Перейдите на страницу [Приступая к работе](https://developer.webex.com/getting-started.html)
     * Прокрутите содержимое страницы вниз до раздела [Проверка подлинности](https://developer.webex.com/getting-started.html#authentication)
     ![Маркер проверки подлинности Cisco Webex](./media/cisco-webex-provisioning-tutorial/SecretToken.png)
-    * Буквенно-цифровая строка в этом поле и представляет собой **Маркер секрета**. Скопируйте этот маркер в буфер обмена
-    * Перейдите на страницу [Получить сведения о моей учетной записи](https://developer.webex.com/endpoint-people-me-get.html)
+    * Буквенно-цифровая строка в этом поле и представляет собой **Маркер секрета**. Скопируйте ее в буфер обмена
+    * Перейдите на страницу [Get My Own Details](https://developer.webex.com/endpoint-people-me-get.html) (Получить сведения о своей учетной записи)
         * Убедитесь, что включен режим тестирования
         * Напечатайте слово "Bearer", пробел и затем вставьте маркер секрета в поле "Проверка подлинности" ![маркера проверки подлинности Cisco Webex](./media/cisco-webex-provisioning-tutorial/GetMyDetails.png)
         * Нажмите кнопку "Выполнить"
@@ -171,6 +171,10 @@ ms.locfileid: "36324169"
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения синхронизации и перейти по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Cisco Webex.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../active-directory-saas-provisioning-reporting.md).
+
+## <a name="connector-limitations"></a>Ограничения соединителя
+
+* Приложение Cisco Webex компании Cisco сейчас находится на стадии раннего тестирования (EFT). Для получения дополнительной информации обратитесь в [группу поддержки Cisco](https://www.webex.co.in/support/support-overview.html). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

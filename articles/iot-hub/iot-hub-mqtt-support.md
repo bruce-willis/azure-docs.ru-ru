@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: elioda
-ms.openlocfilehash: 19a129ec4646f13f1bd095dffd423f3b90bb32a7
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 2e45422ca6a861894193600eff17f192bc20b357
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39345466"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42146805"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -21,6 +21,8 @@ ms.locfileid: "39345466"
 
 * протокола [MQTT версии 3.1.1][lnk-mqtt-org] на порту 8883;
 * протокола MQTT версии 3.1.1 через WebSocket на порту 443.
+
+Центр Интернета вещей не является полнофункциональным брокером MQTT и не поддерживает все функциональные возможности, указанные в стандарте MQTT версии 3.1.1. В этой статье описывается, как устройства могут использовать поддерживаемые MQTT поведения для связи с Центром Интернета вещей.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
@@ -292,7 +294,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 * [Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT][lnk-devices]
 * [Поддержка дополнительных протоколов для центра IoT][lnk-protocols]
-* [Сравнение центра IoT и концентраторов событий][lnk-compare]
+* [Сравнение центра IoT и Центров событий][lnk-compare]
 * [Масштабирование центра IoT][lnk-scaling]
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:

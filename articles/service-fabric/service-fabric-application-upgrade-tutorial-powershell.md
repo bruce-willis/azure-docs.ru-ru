@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 44f4dc3a9c876e383a6e4df8ef5f467f2b93eaa9
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 0238dce3f8cbf838e7fce3afefb866e3aaa791bc
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205490"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42143057"
 ---
 # <a name="service-fabric-application-upgrade-using-powershell"></a>Обновление приложения Service Fabric с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ ms.locfileid: "34205490"
 
 Наиболее часто используемый и рекомендуемый подход к выполнению обновлений состоит в отслеживаемом последовательном обновлении.  Платформа Azure Service Fabric осуществляет мониторинг работоспособности обновляемого приложения на основе набора политик работоспособности. После обновления домена обновления Service Fabric оценивает работоспособность приложения, после чего переходит к следующему домену обновления или регистрирует сбой в соответствии с политиками работоспособности.
 
-Отслеживаемое обновление приложения может выполняться с использованием управляемых или собственных API, PowerShell или REST. Инструкции по обновлению с помощью Visual Studio см. в статье [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md).
+Отслеживаемое обновление приложения может выполняться с использованием управляемых или собственных API, PowerShell, Azure CLI, Java или REST. Инструкции по обновлению с помощью Visual Studio см. в статье [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md).
 
 Service Fabric выполняет отслеживаемое последовательное обновление, позволяя администратору приложений настраивать политики оценки работоспособности, которые Service Fabric будет использовать для определения работоспособности приложения. Кроме того, администратор может настраивать действия, выполняемые при сбое оценки работоспособности (например, автоматический откат приложения). В этом разделе представлено пошаговое руководство по отслеживаемому обновлению одного из образцов пакета SDK с использованием PowerShell. В следующем видео от Академии Microsoft Virtual Academy также представлено пошаговое обновление приложения: <center><a target="_blank" href="https://mva.microsoft.com/en-US/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=OrHJH66yC_6406218965">
 <img src="./media/service-fabric-application-upgrade-tutorial-powershell/AppLifecycleVid.png" WIDTH="360" HEIGHT="244">

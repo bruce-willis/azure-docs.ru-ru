@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 08/13/2018
 ms.author: raynew
-ms.openlocfilehash: 0cfb583f9d16039249aaffe18f71039e91dc3705
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: cd7a5832faf0fbb15349edee8ed504c1f94d1aa9
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39359212"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42143694"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso — повторное размещение локального приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn
 
@@ -76,8 +76,8 @@ ms.locfileid: "39359212"
 
 **Служба** | **Описание** | **Стоимость**
 --- | --- | ---
-[Служба управления базами данных](https://docs.microsoft.com/azure/dms/dms-overview) | Contoso перенесет уровень данных приложения, используя DMS. DMS будет подключаться к локальному компьютеру SQLVM через VPN типа "сеть — сеть", а перенос DMS позволяет осуществлять бесшовные миграции из нескольких источников базы данных на платформы данных Azure с минимальным временем простоя. | Дополнительные сведения о [поддерживаемых областях](https://docs.microsoft.com/azure/dms/dms-overview#regional-availability) DMS и [сведения о ценах](https://azure.microsoft.com/pricing/details/database-migration/).
-[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/) | Компания Contoso использует Site Recovery для переноса по методу lift-and-shift виртуальной машины внешнего интерфейса приложения. Site Recovery организует и контролирует миграцию и аварийное восстановление виртуальных машин Azure, а также локальных виртуальных машин и физических серверов.  | Во время репликации в Azure взимается плата за службу хранилища Azure.  При отработке отказа создаются виртуальные машины Azure, за которые взимается плата. Дополнительные сведения о ценах см. на [этой странице](https://azure.microsoft.com/pricing/details/site-recovery/).
+[Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview) | DMS обеспечивает прозрачную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. | Дополнительные сведения о [поддерживаемых областях](https://docs.microsoft.com/azure/dms/dms-overview#regional-availability) DMS и [сведения о ценах](https://azure.microsoft.com/pricing/details/database-migration/).
+[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/) | Site Recovery организует и контролирует миграцию и аварийное восстановление виртуальных машин Azure, а также локальных виртуальных машин и физических серверов.  | Во время репликации в Azure взимается плата за службу хранилища Azure.  При отработке отказа создаются виртуальные машины Azure, за которые взимается плата. Дополнительные сведения о ценах см. на [этой странице](https://azure.microsoft.com/pricing/details/site-recovery/).
 
  
 
@@ -114,7 +114,7 @@ ms.locfileid: "39359212"
 > [!div class="checklist"]
 > * **Шаг 1. Создание виртуальных машин SQL Server в Azure**. Для обеспечения высокой доступности, Contoso необходимо развернуть базу данных кластера в Azure. Они развертывают две виртуальные машины SQL Server и внутренний распределитель нагрузки Azure.
 > * **Шаг 2. Развертывание кластера**. После развертывания виртуальных машин SQL Server, они подготавливают кластер сервера SQL Azure.  Они перенесут базы данных в этот предварительно созданный кластер.
-> * **Шаг 3. Подготовка DMS**. Для подготовки DMS они зарегистрируют поставщик службы миграции базы данных, создадут экземпляр DMS, а затем проект. Они настроят URI для подписанного URL-адреса. DMS использует SA URI, для доступа к контейнеру учетной записи хранения, в который служба отправляет файлы архивации SQL Server.
+> * **Шаг 3. Подготовка DMS**. Для подготовки DMS они зарегистрируют поставщик службы миграции базы данных, создадут экземпляр DMS, а затем проект. Они настроят URI для подписанного URL-адреса. DMS использует SAS URI для доступа к контейнеру учетной записи хранения, в который служба отправляет файлы архивации SQL Server.
 > * **Шаг 4. Подготовка Azure для Site Recovery**. В компании Contoso создают учетную запись хранения Azure для хранения реплицируемых данных и хранилище служб восстановления.
 > * **Шаг 5. Подготовка локальных ресурсов VMware для Site Recovery**. В компании Contoso подготавливают учетные записи для обнаружения виртуальных машин и установки агента, а также подготавливают локальные виртуальные машины к подключению к виртуальным машинам Azure после отработки отказа.
 > * **Шаг 6. Репликация виртуальных машин**. Они настраивают параметры репликации и включают репликацию виртуальных машин.

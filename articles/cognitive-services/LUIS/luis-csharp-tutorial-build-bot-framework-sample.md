@@ -1,24 +1,24 @@
 ---
-title: Интеграция LUIS с ботом с помощью пакета SDK для построителя ботов для C# в Azure | Документы Майкрософт
-description: Создайте бот, интегрированный с приложением LUIS, на основе платформы Bot Framework.
+title: Использование C# для интеграции LUIS с ботом с помощью пакета SDK для Bot Builder в Azure Cognitive Services | Документация Майкрософт
+description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation.
 services: cognitive-services
 author: diberry
 manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/06/2018
+ms.date: 08/13/2018
 ms.author: diberry
-ms.openlocfilehash: ca893dadfed04c90a4d89087299bf1cc2bf55eb9
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: d0010ccf51fc688fa66e1be82c735ae38455509b
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39225964"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41931339"
 ---
 # <a name="web-app-bot-using-the-luis-template-for-c"></a>Создание бота веб-приложения с помощью шаблона LUIS для C#
 
-Создайте чат-бот с интегрированным распознаванием речи.
+Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. 
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "39225964"
 | HomeAutomation.TurnOn | Turn on the lights (Включить свет). | При обнаружении намерения LUIS `HomeAutomation.TurnOn` бот вызывает обработчик диалога `OnIntent`. В этом диалоге вы вызываете службу IoT для включения устройства и сообщаете пользователю, что устройство включено. |
 | HomeAutomation.TurnOff | Turn off the bedroom lights (Выключить свет в спальне). | При обнаружении намерения LUIS `HomeAutomation.TurnOff` бот вызывает обработчик диалога `OffIntent`. В этом диалоге вы вызываете службу IoT для выключения устройства и сообщаете пользователю, что устройство выключено. |
 
-## <a name="create-a-language-understanding-bot-with-bot-service"></a>Создание бота с распознаванием речи с помощью службы Bot Service
+## <a name="create-a-language-understanding-bot-with-bot-service"></a>Создание бота для распознавания речи с помощью службы Azure Bot
 
 1. На [портале Azure](https://portal.azure.com) в верхнем левом меню выберите пункт **Создать ресурс**.
 
@@ -46,7 +46,7 @@ ms.locfileid: "39225964"
 4. В окне **Служба Bot Service** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](luis-resources-faq.md#what-luis-regions-support-bot-framework-speech-priming). 
     * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
     * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
-    * В поле **Bot template** (Шаблон бота) выберите шаблон **Language understanding (C#)** (Распознавание речи (C#)).
+    * В поле **Шаблон бота** выберите шаблон **Распознавание речи (C#)**.
     * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
     * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
@@ -148,7 +148,7 @@ ms.locfileid: "39225964"
 > Вы можете повторно обучить приложение LUIS, не изменяя код бота. См. разделы [Добавление примеров высказываний](https://docs.microsoft.com/azure/cognitive-services/LUIS/add-example-utterances) и [Обучение и тестирование приложений LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-interactive-test). 
 
 ## <a name="download-the-bot-to-debug"></a>Скачивание бота для отладки
-Если бот не работает, скачайте проект на локальный компьютер и продолжите [отладку](https://docs.microsoft.com/bot-framework/bot-service-debug-bot#debug-an-azure-app-service-web-app-c-bot). 
+Если бот не работает, скачайте проект на локальный компьютер и продолжите [отладку](https://docs.microsoft.com/bot-framework/bot-service-debug-bot#debug-a-c-bot). 
 
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 Ознакомьтесь с дополнительными сведениями о платформе [Bot Framework](https://dev.botframework.com/) и пакетах SDK версии [3.x](https://github.com/Microsoft/BotBuilder) и [4.x](https://github.com/Microsoft/botbuilder-dotnet).

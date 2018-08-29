@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/21/2017
+ms.date: 08/16/2018
 ms.author: sethm
-ms.openlocfilehash: 28b8d7a71f01d8633d020b99fbe6bc5c16f272b4
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 0013301a33dabc9739eed45a1b801c33b791abb9
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32188503"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42143171"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Использование служебной шины на платформе .NET с протоколом AMQP 1.0
 
@@ -29,7 +29,7 @@ ms.locfileid: "32188503"
 
 По умолчанию клиентская библиотеке служебной шины .NET взаимодействует со службой служебной шины, используя специализированный протокол на базе SOAP. Чтобы использовать протокол AMQP 1.0 вместо протокола по умолчанию, необходимо явно настроить строку подключения служебной шины, как описано в следующем разделе. Помимо этих изменений, код приложения остается без изменений при использовании AMQP 1.0.
 
-Текущий выпуск содержит некоторые функции интерфейса API, не поддерживаемые при использовании AMQP. Эти неподдерживаемые функции перечислены ниже в разделе [Неподдерживаемые функции, ограничения и различия в поведении](#unsupported-features-restrictions-and-behavioral-differences). Кроме того, при использовании AMQP отличается значение некоторых дополнительных параметров конфигурации.
+Текущий выпуск содержит некоторые функции интерфейса API, не поддерживаемые при использовании AMQP. Эти неподдерживаемые функции перечислены в разделе [Различия в поведении](#behavioral-differences). Кроме того, при использовании AMQP отличается значение некоторых дополнительных параметров конфигурации.
 
 ### <a name="configuration-using-appconfig"></a>Настройка с помощью файла App.config
 
@@ -89,7 +89,7 @@ ms.locfileid: "32188503"
 | Поток |binary; |Данные AMQP (может быть несколько). Разделы данных содержат необработанные байты из объекта Stream. |
 | Другой объект |binary; |Данные AMQP (может быть несколько). Содержит сериализованные двоичные данные объекта, который использует DataContractSerializer или предоставленный приложением сериализатор. |
 
-| Тип .NET | Сопоставленный описанный тип AMQP | Заметки |
+| Тип .NET | Сопоставленный описанный тип AMQP | Примечания |
 | --- | --- | --- |
 | URI |`<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type>` |Uri.AbsoluteUri |
 | DateTimeOffset |`<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type>` |DateTimeOffset.UtcTicks |

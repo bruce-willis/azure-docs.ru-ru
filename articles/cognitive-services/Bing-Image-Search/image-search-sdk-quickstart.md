@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по пакету SDK для API "Поиск изображений" для C# | Документация Майкрософт
-description: Установка пакета SDK для API "Поиск изображений" в консольном приложении C#.
+title: Краткое руководство. Запрос и фильтрация изображений с помощью пакета SDK и C#
+description: Из этого краткого руководства можно узнать, как с помощью C# запрашивать и фильтровать изображения, возвращаемые Поиском изображений Bing.
 titleSuffix: Azure cognitive services setup Image search SDK C# console application
 services: cognitive-services
 author: mikedodaro
@@ -10,14 +10,14 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 01/29/2018
 ms.author: v-gedod
-ms.openlocfilehash: f58556f13bb25c3ea2ed9378c0669d649554a8c0
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 81375019e53b49b531fde1f81fbcb9a061cc5562
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382596"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41929887"
 ---
-# <a name="image-search-sdk-c-quickstart"></a>Краткое руководство по пакету SDK для API "Поиск изображений" для C#
+# <a name="quickstart-request-and-filter-images-using-the-sdk-and-c"></a>Краткое руководство. Запрос и фильтрация изображений с помощью пакета SDK и C#
 
 Пакет SDK для API "Поиск изображений Bing" содержит функции REST API для обработки запросов изображений и анализа результатов. 
 

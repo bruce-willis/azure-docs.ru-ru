@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 01/05/2017
 ms.author: hascipio; v-divte
-ms.openlocfilehash: 9199c9fc9a46e6b09eb066be5125c74420ad6cd6
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: bf2ba6d31c170715a52b84439276c45665293c35
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715341"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246810"
 ---
 # <a name="guide-to-create-a-virtual-machine-image-for-the-azure-marketplace"></a>Руководство по созданию образа виртуальной машины для Azure Marketplace
 Эта статья ( **шаг 2**) содержит инструкции по подготовке виртуальных жестких дисков (VHD), развертываемых в Azure Marketplace. Виртуальные жесткие диски являются основой номера SKU. Процесс подготовки будет отличаться в зависимости от типа номера SKU (на основе Linux или Windows). В этой статье рассматриваются оба сценария. Описываемую процедуру можно выполнять параллельно с [созданием учетной записи разработчика Майкрософт][link-acct-creation].
@@ -69,9 +69,9 @@ ms.locfileid: "39715341"
 
 Для начала создайте виртуальную машину из одного из следующих образов, расположенных на [портале Microsoft Azure][link-azure-portal]:
 
-* Windows Server ([2012 R2 Datacenter][link-datactr-2012-r2], [2012 Datacenter][link-datactr-2012], [2008 R2 SP1][link-datactr-2008-r2]);
-* SQL Server 2014 ([Enterprise][link-sql-2014-ent], [Standard][link-sql-2014-std], [Web][link-sql-2014-web]);
-* SQL Server 2012 SP2 ([Enterprise][link-sql-2012-ent], [Standard][link-sql-2012-std], [Web][link-sql-2012-web]).
+* Windows Server ([2012 R2 Datacenter][link-datactr-2012-r2], [2012 Datacenter][link-datactr-2012], [2008 R2 с пакетом обновления 1 (SP1)][link-datactr-2008-r2]);
+* SQL Server 2014 
+* SQL Server 2012 SP2 
 
 Эти ссылки можно найти также на портале для публикаций на странице номера SKU.
 
@@ -515,11 +515,11 @@ VHD с операционной системой Windows в образе вир�
 
 |Проблема|Сообщение об ошибке|Исправление|Ссылка на документацию|
 |---|---|---|---|
-|Сбой при копировании образов: символ "?" не найден в URL-адресе SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес SAS с помощью рекомендуемых средств.|[https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Сбой при копировании образов: параметры st и se отсутствуют в URL-адресе SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес SAS, указав правильные даты начала и окончания срока действия.|[https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Сбой при копировании образов: параметр sp=rl отсутствует в URL-адресе SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес SAS, указав разрешения на чтение и создание списка.|[https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Сбой при копировании образов: URL-адрес SAS в имени VHD-файла содержит пробелы.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес, удалив пробелы.|[https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Сбой при копировании образов: ошибка авторизации URL-адреса SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект из-за ошибки авторизации.|Создайте URL-адрес SAS повторно.|[https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|Сбой при копировании образов: символ "?" не найден в URL-адресе SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес SAS с помощью рекомендуемых средств.|[https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|Сбой при копировании образов: параметры st и se отсутствуют в URL-адресе SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес SAS, указав правильные даты начала и окончания срока действия.|[https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|Сбой при копировании образов: параметр sp=rl отсутствует в URL-адресе SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес SAS, указав разрешения на чтение и создание списка.|[https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|Сбой при копировании образов: URL-адрес SAS в имени VHD-файла содержит пробелы.|Ошибка: копирование образов. Не удалось скачать BLOB-объект с помощью указанного URI SAS.|Обновите URL-адрес, удалив пробелы.|[https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|Сбой при копировании образов: ошибка авторизации URL-адреса SAS.|Ошибка: копирование образов. Не удалось скачать BLOB-объект из-за ошибки авторизации.|Создайте URL-адрес SAS повторно.|[https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
 |Сбой при копировании изображений означает, что параметры URL-адреса SAS "st" и "se" не имеют полной спецификации даты и времени|Ошибка: копирование образов. Не удалось загрузить большой двоичный объект из-за неправильного URL-адреса SAS |Параметры URL-адреса SAS даты начала и окончания ("st", "se") должны иметь полную спецификацию даты и времени, например 11-02-2017T00:00:00Z, а не только дату или сокращенную версию для времени. Этот сценарий можно встретить, используя Azure CLI версии 2.0 (команда az). Обязательно укажите полную спецификацию даты и времени и повторно создайте URL-адрес SAS.|[https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
 
 ## <a name="next-step"></a>Дальнейшие действия
@@ -557,15 +557,6 @@ VHD с операционной системой Windows в образе вир�
 [link-technet-2]:https://msdn.microsoft.com/library/dn495261.aspx
 [link-azure-portal]:https://portal.azure.com
 [link-pubportal]:https://publish.windowsazure.com
-[link-sql-2014-ent]:http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2014enterprisewindowsserver2012r2/
-[link-sql-2014-std]:http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2014standardwindowsserver2012r2/
-[link-sql-2014-web]:http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2014webwindowsserver2012r2/
-[link-sql-2012-ent]:http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2012sp2enterprisewindowsserver2012/
-[link-sql-2012-std]:http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2012sp2standardwindowsserver2012/
-[link-sql-2012-web]:http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2012sp2webwindowsserver2012/
-[link-datactr-2012-r2]:http://azure.microsoft.com/marketplace/partners/microsoft/windowsserver2012r2datacenter/
-[link-datactr-2012]:http://azure.microsoft.com/marketplace/partners/microsoft/windowsserver2012datacenter/
-[link-datactr-2008-r2]:http://azure.microsoft.com/marketplace/partners/microsoft/windowsserver2008r2sp1/
 [link-acct-creation]:marketplace-publishing-accounts-creation-registration.md
 [link-technet-1]:https://technet.microsoft.com/library/hh848454.aspx
 [link-azure-vm-2]:./virtual-machines-linux-agent-user-guide/

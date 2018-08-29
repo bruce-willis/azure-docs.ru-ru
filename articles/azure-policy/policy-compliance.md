@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: f2283125aff705aae87b6260b48deee01aa12f0d
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: bd3eeb5ebb9b30ac315fee1597348f3bd34f3bb6
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39343558"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143600"
 ---
 # <a name="getting-compliance-data"></a>Получение данных о соответствии
 
@@ -26,6 +26,9 @@ ms.locfileid: "39343558"
 - с помощью скриптов [командной строки](#command_line).
 
 Прежде чем переходить к способам создания отчетов о соответствии, давайте рассмотрим, когда обновляются данные о соответствии, а также с какой частотой и какие события запускают цикл оценки.
+
+> [!WARNING]
+> Если статус соответствия сообщается как **"Недоступен"**, убедитесь, что поставщик ресурсов **Microsoft.PolicyInsights** зарегистрирован и что у пользователя есть соответствующие разрешения на управление доступом на основе ролей (RBAC), описанные [здесь](azure-policy-introduction.md#rbac-permissions-in-azure-policy).
 
 ## <a name="evaluation-triggers"></a>Триггеры оценки
 

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/08/2016
 ms.author: mlearned
-ms.openlocfilehash: 11e238fa901a164df1dfd896e38df828601e650b
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 7c78f27fa948c15202e83df4ed42a805a414a72e
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30190404"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142936"
 ---
 # <a name="configure-a-docker-host-with-virtualbox"></a>Настройка узла Docker с помощью VirtualBox
 ## <a name="overview"></a>Обзор
-В этой статье приводятся инструкции по настройке экземпляра Docker по умолчанию с помощью машины Docker и VirtualBox. При использовании [бета-версии Docker для Windows](http://beta.docker.com/)эта настройка не требуется.
+В этой статье приводятся инструкции по настройке экземпляра Docker по умолчанию с помощью машины Docker и VirtualBox. При использовании [Docker для Windows](https://www.docker.com/products/docker-desktop) эта настройка не требуется.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Должны быть установлены следующие средства.
 
 * [Docker Toolbox](https://github.com/docker/toolbox/releases)

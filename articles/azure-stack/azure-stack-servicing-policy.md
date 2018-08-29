@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/24/2018
+ms.date: 08/07/2018
 ms.author: brenduns
 ms.reviewer: harik
-ms.openlocfilehash: b1e162b9ae151ee947559d40f02909aea4010e5b
-ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
+ms.openlocfilehash: a76cf1394dc2c4900b370b52f3479dc03d1d8afe
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242926"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41947458"
 ---
 # <a name="azure-stack-servicing-policy"></a>Политика обслуживания Azure Stack
 В этой статье описаны политика обслуживания для интегрированных систем Azure Stack и действия, необходимые для сохранения поддерживаемого состояния системы. 
@@ -38,6 +38,7 @@ ms.locfileid: "39242926"
 Корпорация Майкрософт планирует выпускать обновления программного обеспечения ежемесячно. Но в некоторые месяцы будет выпускаться несколько обновлений (или ни одного). Поставщики оборудования OEM выпускают обновления по мере необходимости. 
 
 Документацию по планированию обновлений и управлению ими, а также по определению текущей версии можно найти в разделе [Общие сведения об управлении обновлениями в Azure Stack](azure-stack-updates.md). Дополнительные сведения об определенном обновлении и инструкции по его скачиванию можно получить из заметок о выпуске этого обновления: 
+- [Обновление 1807 для Azure Stack](azure-stack-update-1807.md)
 - [Обновление 1805 для Azure Stack](azure-stack-update-1805.md)
 - [Обновление 1804 для Azure Stack](azure-stack-update-1804.md)
 

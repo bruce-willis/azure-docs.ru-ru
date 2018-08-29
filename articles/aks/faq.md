@@ -1,19 +1,19 @@
 ---
-title: Вопросы и ответы о Службе Azure Kubernetes
-description: Ответы на распространенные вопросы о Службе Azure Kubernetes.
+title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
+description: Ответы на распространенные вопросы о Службе Azure Kubernetes (AKS).
 services: container-service
 author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 07/27/2018
+ms.date: 08/17/2018
 ms.author: iainfou
-ms.openlocfilehash: b64c770bca84fba8cbed98e420abf649897f7a17
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: b910b6cdf55ae7c2a220543bdb555d8e9bff59a0
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39345860"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42145946"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -21,73 +21,87 @@ ms.locfileid: "39345860"
 
 ## <a name="which-azure-regions-provide-the-azure-kubernetes-service-aks-today"></a>В каких регионах Azure сейчас доступна Служба Azure Kubernetes (AKS)?
 
-[Список регионов и уровни доступности][aks-regions] для Службы Azure Kubernetes см. в документации.
-
-## <a name="are-security-updates-applied-to-aks-agent-nodes"></a>Применяются ли обновления для системы безопасности к узлам агентов AKS?
-
-Azure автоматически применяет исправления системы безопасности для узлов в кластере в соответствии с графиком резервного копирования ночью. Тем не менее, вы несете ответственность за обеспечение перезагрузки узлов при необходимости. У вас есть несколько вариантов выполнения перезагрузки узла.
-
-- Вручную на портале Azure или Azure CLI.
-- Обновив кластер AKS. Кластер автоматически обновляет [узлы cordon и drain](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/), а затем создает их резервную копию с помощью последнего образа Ubuntu. Обновите образ операционной системы в узлах, не изменяя версии Kubernetes. Укажите текущую версию кластера в `az aks upgrade`.
-- С помощью [Kured](https://github.com/weaveworks/kured) (управляющая программа перезагрузки с открытым исходным кодом для Kubernetes). Kured работает в виде [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) и проверяет каждый узел на наличие файла, указывающего на необходимость перезагрузки. Затем программа выполняет оркестрацию перезагрузок в кластере, применив процессы cordon и drain, описанные ранее.
+Полный список регионов, в которых доступна AKS, см. в разделе [Регионы доступности][aks-regions].
 
 ## <a name="does-aks-support-node-autoscaling"></a>Поддерживает ли AKS автомасштабирование узла?
 
-Да, автоматическое масштабирование доступно через [Kubernetes autoscaler][auto-scaler] для Kubernetes 1.10.
+Да, автоматическое масштабирование доступно через [Kubernetes autoscaler][auto-scaler] для Kubernetes 1.10. Дополнительные сведения о том, как настроить и использовать автомасштабирование кластера, см. в статье [Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS) — предварительная версия][aks-cluster-autoscale].
 
 ## <a name="does-aks-support-kubernetes-role-based-access-control-rbac"></a>Поддерживает ли AKS для Kubernetes управление доступом на основе ролей (RBAC)?
 
-Да, RBAC можно включить при [развертывании кластера AKS из Azure CLI или шаблона Azure Resource Manager](https://docs.microsoft.com/en-us/azure/aks/aad-integration). Скоро аналогичная функция появится и на портале Azure.
+Да, Kubernetes RBAC включается по умолчанию при создании кластеров с помощью Azure CLI. RBAC можно включить для кластеров, созданных с помощью портала Azure или шаблонов.
+
+## <a name="can-i-deploy-aks-into-my-existing-virtual-network"></a>Можно ли развернуть AKS в имеющейся виртуальной сети?
+
+Да, вы можете развернуть кластер AKS в существующей виртуальной сети с помощью [расширенного сетевого взаимодействия][aks-advanced-networking].
+
+## <a name="can-i-restrict-the-kubernetes-api-server-to-only-be-accessible-within-my-virtual-network"></a>Можно ли ограничить доступ к серверу API Kubernetes только моей виртуальной сетью?
+
+На данный момент нет. Сервер API Kubernetes представляется с виде общедоступного полного доменного имени (FQDN). Вы можете управлять доступом к своему кластеру с помощью [управления доступом на основе ролей Kubernetes (RBAC) и Azure Active Directory (AAD)][aks-rbac-aad].
+
+## <a name="are-security-updates-applied-to-aks-agent-nodes"></a>Применяются ли обновления для системы безопасности к узлам агентов AKS?
+
+Да, Azure автоматически применяет исправления системы безопасности для узлов в кластере в соответствии с графиком резервного копирования ночью. Тем не менее, вы несете ответственность за обеспечение перезагрузки узлов при необходимости. У вас есть несколько вариантов выполнения перезагрузки узла.
+
+- Вручную на портале Azure или Azure CLI.
+- Обновив кластер AKS. Кластер автоматически обновляет [узлы cordon и drain][cordon-drain], после чего создает их резервную копию с помощью последнего образа Ubuntu и новой версии исправлений или дополнительной версии Kubernetes. Дополнительные сведения см. в статье [Обновление кластера службы Azure Kubernetes (AKS)][aks-upgrade].
+- С помощью [Kured](https://github.com/weaveworks/kured) (управляющая программа перезагрузки с открытым исходным кодом для Kubernetes). Kured работает в виде [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) и проверяет каждый узел на наличие файла, указывающего на необходимость перезагрузки. Перезагрузки операционной системы управляются в кластере с использованием [процесса cordon и drain][cordon-drain] для обновления кластера.
+
+## <a name="why-are-two-resource-groups-created-with-aks"></a>Почему с AKS создаются две группы ресурсов?
+
+Каждое развертывание AKS охватывает две группы ресурсов:
+
+- Первая группа ресурсов создается пользователем и содержит только ресурс службы Kubernetes. Во время развертывания поставщик ресурсов AKS автоматически создает вторую группу, такую как *MC_myResourceGroup_myAKSCluster_eastus*.
+- Эта вторая группа ресурсов, такая как *MC_myResourceGroup_myAKSCluster_eastus*, содержит все ресурсы инфраструктуры, связанные с кластером. Эти ресурсы включают виртуальные машины узла Kubernetes, виртуальную сеть и хранилище. Эта отдельная группа ресурсов создается, чтобы упростить процесс очистки ресурсов.
+
+Если вы создаете ресурсы для использования с кластером AKS (например, учетные записи хранения или зарезервированные общедоступные IP-адреса), поместите их в автоматически созданную группу ресурсов.
+
+## <a name="can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-mc-resource-group"></a>Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов MC_*?
+
+Изменение и удаление тегов и других свойств ресурсов в группе *MC_** может привести к непредвиденным результатам, таким как ошибки масштабирования и обновления. Изменение ресурсов в группе *MC_** в кластере AKS прерывает единый выход.
 
 ## <a name="what-kubernetes-admission-controllers-does-aks-support-can-admission-controllers-be-added-or-removed"></a>Какие контроллеры допуска Kubernetes поддерживает AKS? Можно ли добавлять и удалять контроллеры допуска?
 
 AKS поддерживает следующие [контроллеры допуска][admission-controllers]:
 
-* NamespaceLifecycle
-* LimitRanger
-* ServiceAccount
-* DefaultStorageClass
-* DefaultTolerationSeconds
-* MutatingAdmissionWebhook
-* ValidatingAdmissionWebhook
-* ResourceQuota
-* DenyEscalatingExec
-* AlwaysPullImages
+- *NamespaceLifecycle*
+- *LimitRanger*
+- *ServiceAccount*
+- *DefaultStorageClass*
+- *DefaultTolerationSeconds*
+- *MutatingAdmissionWebhook*
+- *ValidatingAdmissionWebhook*
+- *ResourceQuota*
+- *DenyEscalatingExec*
+- *AlwaysPullImages*
 
 Сейчас изменить список контроллеров допуска в AKS невозможно.
 
-## <a name="can-i-deploy-aks-into-my-existing-virtual-network"></a>Можно ли развернуть AKS в имеющейся виртуальной сети?
-
-Да, вы можете развернуть кластер AKS в существующей виртуальной сети с помощью [расширенного сетевого компонента](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/aks/networking-overview.md).
-
-## <a name="can-i-restrict-the-kubernetes-api-server-to-only-be-accessible-within-my-virtual-network"></a>Можно ли ограничить доступ к серверу API Kubernetes только моей виртуальной сетью?
-
-На данный момент нет. Сервер API Kubernetes представляется с виде общедоступного полного доменного имени (FQDN). Вы должны управлять доступом к своему кластеру с помощью [управления доступом на основе ролей Kubernetes (RBAC) и Azure Active Directory (AAD)](https://docs.microsoft.com/en-us/azure/aks/aad-integration).
-
 ## <a name="is-azure-key-vault-integrated-with-aks"></a>Интегрируется ли Azure Key Vault с AKS?
 
-AKS пока не имеет собственной интеграции с Azure Key Vault. При этом [KeyVault Flex Volume](https://github.com/Azure/kubernetes-keyvault-flexvol) допускает прямую интеграцию из групп Kubernetes (pod) для секретов KeyVault.
+В данный момент AKS не имеет собственной интеграции с Azure Key Vault. Кроме того, [Azure Key Vault FlexVolume для проекта Kubernetes][keyvault-flexvolume] допускает прямую интеграцию из модулей (pod) Kubernetes в секреты KeyVault.
 
 ## <a name="can-i-run-windows-server-containers-on-aks"></a>Можно ли запускать контейнеры Windows Server в AKS?
 
 Для запуска контейнеров Windows Server необходимо запустить узлы под управлением Windows Server. Сейчас узлы на основе Windows Server в AKS недоступны. Тем не менее вы можете использовать Virtual Kubelet для создания расписания контейнеров Windows в Экземплярах контейнеров Azure, чтобы управлять ими как частью кластера AKS. См. дополнительные сведения об [использовании Virtual Kubelet с AKS][virtual-kubelet].
 
-## <a name="why-are-two-resource-groups-created-with-aks"></a>Почему с AKS создаются две группы ресурсов?
-
-Каждое развертывание AKS охватывает две группы ресурсов. Первая создается пользователем и содержит только ресурс службы Kubernetes. Во время развертывания поставщик ресурсов AKS автоматически создает вторую группу ресурсов с именем, например *MC_myResourceGroup_myAKSCluster_eastus*. Вторая группа ресурсов содержит все ресурсы инфраструктуры, связанные с кластером (например, виртуальные машины, сеть и хранилище). Она создается для упрощения процесса очистки ресурсов.
-
-Если вы создаете ресурсы, которые будут использоваться с кластером AKS (например, учетные записи хранения или зарезервированные общедоступные IP-адреса), их следует помещать в автоматически созданную группу ресурсов.
-
 ## <a name="does-aks-offer-a-service-level-agreement"></a>AKS предлагает соглашение об уровне обслуживания?
 
-В соглашении об уровне обслуживания (SLA) поставщик соглашается возместить клиенту стоимость использования службы, если уровень обслуживания не будет достигнут. Так как сама служба AKS является бесплатной, нет суммы для возмещения и, следовательно, никакого официального SLA. Тем не менее мы стремимся поддерживать доступность AKS не менее 99,5 % для сервера API Kubernetes.
+В соглашении об уровне обслуживания (SLA) поставщик соглашается возместить клиенту стоимость использования службы, если уровень обслуживания не достигнут. Так как сама служба AKS является бесплатной, нет суммы для возмещения и, следовательно, никакого официального SLA. Тем не менее мы стремимся поддерживать доступность AKS не менее 99,5 % для сервера API Kubernetes.
 
 <!-- LINKS - internal -->
 
-[aks-regions]: ./container-service-quotas.md
+[aks-regions]: ./container-service-quotas.md#region-availability
+[aks-upgrade]: ./upgrade-cluster.md
+[aks-cluster-autoscale]: ./autoscaler.md
 [virtual-kubelet]: virtual-kubelet.md
+[aks-advanced-networking]: ./networking-overview.md#advanced-networking
+[aks-rbac-aad]: ./aad-integration.md
 
 <!-- LINKS - external -->
+
 [auto-scaler]: https://github.com/kubernetes/autoscaler
+[cordon-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/
 [hexadite]: https://github.com/Hexadite/acs-keyvault-agent
 [admission-controllers]: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/
+[keyvault-flexvolume]: https://github.com/Azure/kubernetes-keyvault-flexvol

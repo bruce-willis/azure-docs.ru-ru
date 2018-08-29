@@ -2,19 +2,19 @@
 title: Руководство разработчика хранилища ключей Azure
 description: Разработчики могут использовать хранилище ключей Azure для управления криптографическими ключами в среде Microsoft Azure.
 services: key-vault
-author: lleonard-msft
+author: bryanla
 manager: mbaldwin
 ms.service: key-vault
 ms.topic: article
 ms.workload: identity
 ms.date: 10/12/2017
-ms.author: alleonar
-ms.openlocfilehash: 3a2ab6bbe2470fa12113ca4367316cf7a21190b8
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.author: bryanla
+ms.openlocfilehash: d8554d235fdfeb5b192ddf1268e60b7bc32aabe7
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626734"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42142928"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "39626734"
 - Ключи и секреты защищены без необходимости написания кода. Вы сможете легко использовать их в своих приложениях.
 - Ваши клиенты смогут управлять собственными ключами, поэтому вы можете сосредоточиться на предоставлении базовых функций программного обеспечения. В этом случае ваши приложения не будут отвечать за ключи и секреты клиентов.
 - Ваше приложение может использовать ключи для подписывания и шифрования, но осуществляет управление ключами во внешней среде, чтобы ваше решение могло работать в качестве географически распределенного приложения.
-- Начиная с выпуска Key Vault от сентября 2016 г. в приложениях можно использовать [сертификаты](https://docs.microsoft.com/rest/api/keyvault/certificate-operations) Key Vault. См. дополнительные сведения о [ключах, секретах и сертификатах](https://docs.microsoft.com/rest/api/keyvault/about-keys--secrets-and-certificates).
+- Начиная с выпуска Key Vault от сентября 2016 г., в приложениях можно использовать сертификаты Key Vault. См. дополнительные сведения о [ключах, секретах и сертификатах](https://docs.microsoft.com/rest/api/keyvault/about-keys--secrets-and-certificates).
 
 Дополнительные сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](key-vault-whatis.md).
 

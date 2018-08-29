@@ -1,38 +1,40 @@
 ---
-title: Настройка отправки файлов в Центр Интернета вещей с помощью Azure CLI (az.py) | Документация Майкрософт
-description: Настройка отправки файлов в Центр Интернета вещей Azure, используя кроссплатформенный интерфейс командной строки Azure 2.0 (az.py).
+title: Настройка отправки файлов в Центр Интернета вещей с помощью Azure CLI | Документация Майкрософт
+description: Настройка отправки файлов в Центр Интернета вещей Azure, используя кроссплатформенный Azure CLI.
 author: dominicbetts
-manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: dobett
-ms.openlocfilehash: 0eac620d44967827f7703da9cf409703a123ab07
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6cd0b657c8d0352c41e0da538396b166d633306a
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39450604"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42143414"
 ---
 # <a name="configure-iot-hub-file-uploads-using-azure-cli"></a>Настройка отправки файлов в Центре Интернета вещей с помощью Azure CLI
 
 [!INCLUDE [iot-hub-file-upload-selector](../../includes/iot-hub-file-upload-selector.md)]
 
-Чтобы использовать [функцию передачи файлов в Центре Интернета вещей][lnk-upload], сначала необходимо связать учетную запись хранения Azure с Центром Интернета вещей. Можно использовать существующую учетную запись хранения или создать новую.
+Чтобы [передать файлы с устройства](iot-hub-devguide-file-upload.md), сначала необходимо связать учетную запись хранения Azure с Центром Интернета вещей. Можно использовать существующую учетную запись хранения или создать новую.
 
 Для работы с этим учебником требуется:
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
-* [Azure CLI 2.0][lnk-CLI-install].
-* Центр интернета вещей Azure. Выполните [команду][lnk-cli-create-iothub] `az iot hub create` или воспользуйтесь порталом Azure, чтобы создать Центр Интернета вещей (если у вас его еще нет) [lnk-portal-hub].
-* Учетная запись хранения Azure. Ознакомьтесь со сведениями раздела [Управление учетными записями хранения][lnk-manage-storage] или воспользуйтесь порталом, чтобы [создать учетную запись хранения Azure][lnk-portal-storage] (если у вас ее еще нет).
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+* Центр интернета вещей Azure. Чтобы создать Центр Интернета вещей, выполните [команду `az iot hub create`](https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create) или [Создайте Центр Интернета вещей с помощью портала Azure](iot-hub-create-through-portal.md).
+
+* Учетная запись хранения Azure. Если у вас еще нет учетной записи хранения Azure, вы можете использовать [Управление учетными записями хранения в Azure CLI](../storage/common/storage-azure-cli.md#manage-storage-accounts) или [Создайте учетную запись хранения](../storage/common/storage-create-storage-account.md) с помощью портала Azure.
 
 ## <a name="sign-in-and-set-your-azure-account"></a>Выполнение входа и установка учетной записи Azure
 
 Войдите в учетную запись Azure и выберите подписку.
 
-1. В командной строке запустите [команду для входа][lnk-login-command]:
+1. В командной строке запустите [команду login](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest):
 
     ```azurecli
     az login
@@ -40,7 +42,7 @@ ms.locfileid: "39450604"
 
     Следуйте инструкциям, чтобы выполнить аутентификацию с использованием кода и войти в учетную запись Azure через веб-браузер.
 
-1. Если у вас есть несколько подписок Azure, то при выполнении входа в Azure вы получаете доступ ко всем учетным записям Azure, связанным с вашими учетными данными. Используйте следующую [команду для вывода учетных записей Azure][lnk-az-account-command], доступных для использования:
+2. Если у вас есть несколько подписок Azure, то при выполнении входа в Azure вы получаете доступ ко всем учетным записям Azure, связанным с вашими учетными данными. Используйте следующую [команду для вывода учетных записей Azure](https://docs.microsoft.com/cli/azure/account), доступных для использования:
 
     ```azurecli
     az account list
@@ -59,12 +61,13 @@ ms.locfileid: "39450604"
 Для настройки отправки файлов с ваших устройств необходима строка подключения учетной записи хранения Azure. Эта учетная запись хранения должна относиться к той же подписке, что и Центр Интернета вещей. Кроме того, вам понадобится имя контейнера BLOB-объектов в учетной записи хранения. Для получения ключей учетной записи хранения используйте следующую команду:
 
 ```azurecli
-az storage account show-connection-string --name {your storage account name} --resource-group {your storage account resource group}
+az storage account show-connection-string --name {your storage account name} \
+  --resource-group {your storage account resource group}
 ```
 
 Запишите значение **connectionString**. Оно понадобится вам на следующих этапах.
 
-Для отправки файлов можно использовать существующий контейнер BLOB-объектов или создать новый.
+Для отправки файлов можно использовать существующий контейнер BLOB-объектов или создать новый:
 
 * Чтобы получить список имеющихся контейнеров больших двоичных объектов в вашей учетной записи хранения, выполните следующую команду:
 
@@ -75,49 +78,50 @@ az storage account show-connection-string --name {your storage account name} --r
 * Для создания контейнера больших двоичных объектов в учетной записи хранения выполните следующую команду:
 
     ```azurecli
-    az storage container create --name {container name} --connection-string "{your storage account connection string}"
+    az storage container create --name {container name} \
+      --connection-string "{your storage account connection string}"
     ```
 
 ## <a name="file-upload"></a>Передача файла
 
-Теперь с помощью данных учетной записи хранения можно настроить Центр Интернета вещей для включения [функции отправки файлов][lnk-upload].
+Теперь с помощью данных учетной записи хранения можно настроить Центр Интернета вещей для включения функции [отправки файлов в Центр Интернета вещей](iot-hub-devguide-file-upload.md).
 
 Для настройки потребуются следующие значения:
 
-**Контейнер хранилища**. Контейнер BLOB-объектов в учетной записи хранения Azure в текущей подписке Azure, который нужно связать с Центром Интернета вещей. Необходимые сведения об учетной записи хранения вы получили в предыдущем разделе. Центр Интернета вещей автоматически генерирует универсальные коды ресурсов (URI) подписанных URL-адресов с разрешениями на запись в этом контейнере больших двоичных объектов, чтобы устройства могли их использовать во время передач файлов.
+* **Контейнер хранилища**. Контейнер BLOB-объектов в учетной записи хранения Azure в текущей подписке Azure, который нужно связать с Центром Интернета вещей. Необходимые сведения об учетной записи хранения вы получили в предыдущем разделе. Центр Интернета вещей автоматически генерирует универсальные коды ресурсов (URI) подписанных URL-адресов с разрешениями на запись в этом контейнере больших двоичных объектов, чтобы устройства могли их использовать во время передач файлов.
 
-**Receive notifications for uploaded files** (Получать уведомления об отправленных файлах). Включите или отключите уведомления об отправке файлов.
+* **Receive notifications for uploaded files** (Получать уведомления об отправленных файлах). Включите или отключите уведомления об отправке файлов.
 
-**SAS TTL** (Срок жизни SAS). Этот параметр определяет срок жизни универсальных кодов ресурса (URI) SAS, возвращаемых Центром Интернета вещей на устройство. Значение по умолчанию — один час.
+* **SAS TTL** (Срок жизни SAS). Этот параметр определяет срок жизни универсальных кодов ресурса (URI) SAS, возвращаемых Центром Интернета вещей на устройство. Значение по умолчанию — один час.
 
-**File notification settings default TTL** (Стандартный срок жизни уведомления о файле). Срок жизни уведомления об отправке файла. Значение по умолчанию — один день.
+* **File notification settings default TTL** (Стандартный срок жизни уведомления о файле). Срок жизни уведомления об отправке файла. Значение по умолчанию — один день.
 
-**File notification maximum delivery count**(Максимальное число доставок уведомления о файле): число попыток доставки уведомления о передаче файла, предпринимаемых Центром Интернета вещей. Значение по умолчанию — 10.
+* **File notification maximum delivery count**(Максимальное число доставок уведомления о файле): число попыток доставки уведомления о передаче файла, предпринимаемых Центром Интернета вещей. Значение по умолчанию — 10.
 
 Чтобы настроить параметры отправки файлов в Центре Интернета вещей, выполните следующие команды Azure CLI:
+
+<!--Robinsh this is out of date, add cloud powershell -->
 
 Выполните следующие команды в оболочке Bash:
 
 ```azurecli
-az iot hub update --name {your iot hub name} --set properties.storageEndpoints.'$default'.connectionString="{your storage account connection string}"
-az iot hub update --name {your iot hub name} --set properties.storageEndpoints.'$default'.containerName="{your storage container name}"
-az iot hub update --name {your iot hub name} --set properties.storageEndpoints.'$default'.sasTtlAsIso8601=PT1H0M0S
+az iot hub update --name {your iot hub name} \
+  --set properties.storageEndpoints.'$default'.connectionString="{your storage account connection string}"
 
-az iot hub update --name {your iot hub name} --set properties.enableFileUploadNotifications=true
-az iot hub update --name {your iot hub name} --set properties.messagingEndpoints.fileNotifications.maxDeliveryCount=10
-az iot hub update --name {your iot hub name} --set properties.messagingEndpoints.fileNotifications.ttlAsIso8601=PT1H0M0S
-```
+az iot hub update --name {your iot hub name} \
+  --set properties.storageEndpoints.'$default'.containerName="{your storage container name}"
 
-В командной строке Windows выполните следующие команды:
+az iot hub update --name {your iot hub name} \
+  --set properties.storageEndpoints.'$default'.sasTtlAsIso8601=PT1H0M0S
 
-```azurecli
-az iot hub update --name {your iot hub name} --set "properties.storageEndpoints.$default.connectionString="{your storage account connection string}""
-az iot hub update --name {your iot hub name} --set "properties.storageEndpoints.$default.containerName="{your storage container name}""
-az iot hub update --name {your iot hub name} --set "properties.storageEndpoints.$default.sasTtlAsIso8601=PT1H0M0S"
+az iot hub update --name {your iot hub name} \
+  --set properties.enableFileUploadNotifications=true
 
-az iot hub update --name {your iot hub name} --set properties.enableFileUploadNotifications=true
-az iot hub update --name {your iot hub name} --set properties.messagingEndpoints.fileNotifications.maxDeliveryCount=10
-az iot hub update --name {your iot hub name} --set properties.messagingEndpoints.fileNotifications.ttlAsIso8601=PT1H0M0S
+az iot hub update --name {your iot hub name} \
+  --set properties.messagingEndpoints.fileNotifications.maxDeliveryCount=10
+
+az iot hub update --name {your iot hub name} \
+  --set properties.messagingEndpoints.fileNotifications.ttlAsIso8601=PT1H0M0S
 ```
 
 Вы можете просмотреть конфигурацию отправки файла в Центре Интернета вещей, выполнив следующую команду:
@@ -128,44 +132,16 @@ az iot hub show --name {your iot hub name}
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о возможностях Центра Интернета вещей, касающихся отправки файлов, см. в разделе об [отправке файлов с устройства][lnk-upload].
+Дополнительные сведения о возможностях Центра Интернета вещей, связанных с отправкой файлов, см. в разделе [Отправка файлов с помощью Центра Интернета вещей](iot-hub-devguide-file-upload.md).
 
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
-* [Массовое управление удостоверениями устройств Центра Интернета вещей][lnk-bulk]
-* [Метрики Центра Интернета вещей][lnk-metrics]
-* [Мониторинг операций][lnk-monitor]
+* [Массовое управление удостоверениями устройств Центра Интернета вещей](iot-hub-bulk-identity-mgmt.md)
+* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
+* [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Руководство разработчика для Центра Интернета вещей][lnk-devguide]
-* [Развертывание ИИ на пограничных устройствах с использованием Azure IoT Edge][lnk-iotedge]
-* [Все аспекты безопасности решения Центра Интернета вещей][lnk-securing]
-
-[13]: ./media/iot-hub-configure-file-upload/file-upload-settings.png
-[14]: ./media/iot-hub-configure-file-upload/file-upload-container-selection.png
-[15]: ./media/iot-hub-configure-file-upload/file-upload-selected-container.png
-
-[lnk-upload]: iot-hub-devguide-file-upload.md
-
-[lnk-bulk]: iot-hub-bulk-identity-mgmt.md
-[lnk-metrics]: iot-hub-metrics.md
-[lnk-monitor]: iot-hub-operations-monitoring.md
-
-[lnk-devguide]: iot-hub-devguide.md
-[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md
-[lnk-securing]: /azure/iot-fundamentals/iot-security-ground-up
-
-
-[lnk-free-trial]: https://azure.microsoft.com/pricing/free-trial/
-[lnk-CLI-install]: https://docs.microsoft.com/cli/azure/install-az-cli2
-[lnk-login-command]: https://docs.microsoft.com/cli/azure/get-started-with-az-cli2
-[lnk-az-account-command]: https://docs.microsoft.com/cli/azure/account
-[lnk-az-register-command]: https://docs.microsoft.com/cli/azure/provider
-[lnk-az-addcomponent-command]: https://docs.microsoft.com/cli/azure/component
-[lnk-az-resource-command]: https://docs.microsoft.com/cli/azure/resource
-[lnk-az-iot-command]: https://docs.microsoft.com/cli/azure/iot
-[lnk-iot-pricing]: https://azure.microsoft.com/pricing/details/iot-hub/
-[lnk-manage-storage]:../storage/common/storage-azure-cli.md#manage-storage-accounts
-[lnk-portal-storage]:../storage/common/storage-create-storage-account.md
-[lnk-cli-create-iothub]: https://docs.microsoft.com/cli/azure/iot/hub#az-iot-hub-create
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Комплексная защита в Интернете вещей](../iot-fundamentals/iot-security-ground-up.md)

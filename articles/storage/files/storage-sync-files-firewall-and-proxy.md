@@ -5,15 +5,15 @@ services: storage
 author: fauhse
 ms.service: storage
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 08/08/2018
 ms.author: fauhse
 ms.component: files
-ms.openlocfilehash: 44bfdd192f846b710e378b1f00799eda304cec1e
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: f5fa68488fa8130ad49da37c91b7f4c04376edb3
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522770"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42440685"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Параметры брандмауэра и прокси-сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" подключает локальные серверы к службе файлов Azure, обеспечивая синхронизацию нескольких сайтов и распределение данных по уровням облака. Таким образом локальный сервер должен быть подключен к Интернету. Администратор отдела ИТ должен выбрать наилучший путь подключения сервера к облачным службам Azure.
@@ -46,15 +46,47 @@ ms.locfileid: "39522770"
 ## <a name="proxy"></a>Прокси-сервер
 Служба "Синхронизация файлов Azure" поддерживает параметры прокси-сервера для конкретных приложений и для всего компьютера.
 
-Параметры прокси-сервера для компьютера являются прозрачными для агента службы "Синхронизация файлов Azure", так как весь трафик сервера направляется через этот прокси-сервер.
-
-Параметры прокси-сервера для конкретных приложений позволяют настроить прокси-сервер специально для трафика службы "Синхронизация файлов Azure". Параметры прокси-сервера для конкретных приложений поддерживаются в версии агента 3.0.12.0 и более поздних версиях. Их можно настроить во время установки агента или с помощью командлета PowerShell Set-StorageSyncProxyConfiguration.
+**Параметры прокси-сервера для конкретных приложений** позволяют настроить прокси-сервер специально для трафика службы "Синхронизация файлов Azure". Параметры прокси-сервера для конкретных приложений поддерживаются в версии агента 3.0.12.0 и более поздних версиях. Их можно настроить во время установки агента или с помощью командлета PowerShell Set-StorageSyncProxyConfiguration.
 
 Команды PowerShell для настройки параметров прокси-сервера для конкретных приложений:
 ```PowerShell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
 Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCredential <credentials>
 ```
+**Параметры прокси-сервера для компьютера** являются прозрачными для агента службы "Синхронизация файлов Azure", так как весь трафик сервера направляется через этот прокси-сервер.
+
+Чтобы настроить параметры прокси-сервера для компьютера, выполните следующие действия: 
+
+1. Настройте параметры прокси-сервера для приложений .NET 
+
+  - Измените следующие два файла:  
+    C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config  
+    C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config
+
+  - Добавьте раздел <system.net> в файлы machine.config (в раздел <system.serviceModel>).  Измените 127.0.01:8888 на IP-адрес и порт для прокси-сервера. 
+  ```
+      <system.net>
+        <defaultProxy enabled="true" useDefaultCredentials="true">
+          <proxy autoDetect="false" bypassonlocal="false" proxyaddress="http://127.0.0.1:8888" usesystemdefault="false" />
+        </defaultProxy>
+      </system.net>
+  ```
+
+2. Задайте параметры прокси-сервера WinHTTP 
+
+  - Выполните следующую команду в командной строке с повышенными привилегиями или PowerShell, чтобы увидеть существующие параметры прокси-сервера:   
+
+    netsh winhttp show proxy
+
+  - Выполните следующую команду в командной строке с повышенными привилегиями или PowerShell, чтобы задать параметры прокси-сервера (измените 127.0.01:8888 на IP-адрес и порт для прокси-сервера):  
+
+    netsh winhttp set proxy 127.0.0.1:8888
+
+3. Перезапустите службу агента синхронизации хранилища, выполнив следующую команду в командной строке с повышенными привилегиями или PowerShell: 
+
+      net stop filesyncsvc
+
+      Примечание. Служба агента синхронизации хранилища (filesyncsvc) автоматически запустится после остановки.
 
 ## <a name="firewall"></a>Брандмауэр
 Как упоминалось в предыдущем разделе, порт 443 необходимо открыть для исходящего трафика. В зависимости от политик в центре обработки данных, филиале или регионе, возможно необязательное или обязательное наложение дополнительных ограничений трафика, проходящего через этот порт в определенные домены.
@@ -76,7 +108,22 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 В целях обеспечения непрерывности бизнес-процессов и аварийного восстановления (BCDR) вы могли разместить файловые ресурсы Azure в учетной записи глобально избыточного хранилища (GRS). Если это так, тогда в случае продолжительного регионального сбоя будет выполнена отработка отказа файловых ресурсов Azure в связанный регион. Служба "Синхронизация файлов Azure" использует те же региональные связи, что и хранилище. Поэтому при использовании учетных записей хранения GRS необходимо включить дополнительные URL-адреса, чтобы разрешить серверу обращаться к связанному региону службы "Синхронизация файлов Azure". В таблице ниже такой регион называется парным. Кроме того, есть URL-адрес профиля диспетчера трафика, который также должен быть включен. Это позволяет гарантировать простое перенаправление трафика в парный регион в случае отработки отказа. Этот адрес называется "URL-адрес обнаружения" в таблице ниже.
 
-| Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения | |--------|---------------------------------------||--------||---------------------------------------| | Восточная Австралия | https://kailani-aue.one.microsoft.com | Юго-Восточная Австралия | https://kailani-aue.one.microsoft.com | | Юго-Восточная Австралия | https://kailani-aus.one.microsoft.com | Восточная Австралия | https://tm-kailani-aus.one.microsoft.com | | Центральная Канада | https://kailani-cac.one.microsoft.com | Восточная Канада | https://tm-kailani-cac.one.microsoft.com | | Восточная Канада | https://kailani-cae.one.microsoft.com | Центральная Канада | https://tm-kailani.cae.one.microsoft.com | | Центральная часть США | https://kailani-cus.one.microsoft.com | Восточная часть США 2 | https://tm-kailani-cus.one.microsoft.com | | Восточная Азия | https://kailani11.one.microsoft.com | Юго-Восточная Азия | https://tm-kailani11.one.microsoft.com | | Восточная часть США | https://kailani1.one.microsoft.com | Западная часть США | https://tm-kailani1.one.microsoft.com | | Восточная часть США 2 | https://kailani-ess.one.microsoft.com | Центральная часть США | https://tm-kailani-ess.one.microsoft.com | | Северная Европа | https://kailani7.one.microsoft.com | Западная Европа | https://tm-kailani7.one.microsoft.com | | Юго-Восточная Азия | https://kailani10.one.microsoft.com | Восточная Азия | https://tm-kailani10.one.microsoft.com | | Южная часть Соединенного Королевства | https://kailani-uks.one.microsoft.com | Западная часть Соединенного Королевства | https://tm-kailani-uks.one.microsoft.com | | Западная часть Соединенного Королевства | https://kailani-ukw.one.microsoft.com | Южная часть Соединенного Королевства | https://tm-kailani-ukw.one.microsoft.com | | Западная Европа | https://kailani6.one.microsoft.com | Северная Европа | https://tm-kailani6.one.microsoft.com | | Западная часть США | https://kailani.one.microsoft.com | Восточная часть США | https://tm-kailani.one.microsoft.com |
+| Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
+|--------|---------------------------------------|--------|---------------------------------------|
+| Восточная часть Австралии | https://kailani-aue.one.microsoft.com | Юго-Восточная часть Австралии | https://kailani-aue.one.microsoft.com |
+| Юго-Восточная часть Австралии | https://kailani-aus.one.microsoft.com | Восточная часть Австралии | https://tm-kailani-aus.one.microsoft.com |
+| Центральная Канада | https://kailani-cac.one.microsoft.com | Восточная Канада | https://tm-kailani-cac.one.microsoft.com |
+| Восточная Канада | https://kailani-cae.one.microsoft.com | Центральная Канада | https://tm-kailani.cae.one.microsoft.com |
+| Центральный регион США | https://kailani-cus.one.microsoft.com | Восток США 2 | https://tm-kailani-cus.one.microsoft.com |
+| Восточная Азия | https://kailani11.one.microsoft.com | Юго-Восточная Азия | https://tm-kailani11.one.microsoft.com |
+| Восточная часть США | https://kailani1.one.microsoft.com | Запад США | https://tm-kailani1.one.microsoft.com |
+| Восток США 2 | https://kailani-ess.one.microsoft.com | Центральный регион США | https://tm-kailani-ess.one.microsoft.com |
+| Северная Европа | https://kailani7.one.microsoft.com | Западная Европа | https://tm-kailani7.one.microsoft.com |
+| Юго-Восточная Азия | https://kailani10.one.microsoft.com | Восточная Азия | https://tm-kailani10.one.microsoft.com |
+| Южная часть Великобритании | https://kailani-uks.one.microsoft.com | Западная часть Великобритании | https://tm-kailani-uks.one.microsoft.com |
+| Западная часть Великобритании | https://kailani-ukw.one.microsoft.com | Южная часть Великобритании | https://tm-kailani-ukw.one.microsoft.com |
+| Западная Европа | https://kailani6.one.microsoft.com | Северная Европа | https://tm-kailani6.one.microsoft.com |
+| Запад США | https://kailani.one.microsoft.com | Восточная часть США | https://tm-kailani.one.microsoft.com |
 
 - Если вы используете учетные записи хранения локально избыточного хранилища (LRS) или хранилища, избыточного в пределах зоны (ZRS), необходимо включить только URL-адрес, указанный в разделе "URL-адрес основной конечной точки".
 

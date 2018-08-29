@@ -8,14 +8,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 03/26/2018
+ms.date: 08/17/2018
 ms.author: rnagpal
-ms.openlocfilehash: 2fba67b247ad0b53e11ca012969163a68013e82f
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: d0bd7dba5d50445cb681c16d9575b1bd69167e2f
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126717"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142737"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблицы .NET для базы данных Azure Cosmos DB. Скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -39,7 +39,7 @@ ms.locfileid: "39126717"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="a-name113113"></a><a name="1.1.3"/>1.1.3
-* Исправлены зависимости пакетов Nuget от Microsoft.Azure.Storage.Common и Microsoft.Azure.DocumentDB.
+* Исправлены зависимости пакетов NuGet от Microsoft.Azure.Storage.Common и Microsoft.Azure.DocumentDB.
 * Исправление ошибок в сериализации таблиц при настройке JsonConvert.DefaultSettings.
 
 ### <a name="a-name111111"></a><a name="1.1.1"/>1.1.1
@@ -48,7 +48,7 @@ ms.locfileid: "39126717"
 * Синхронные API теперь запускаются в пуле потоков с помощью SynchronizationContext.
 
 ### <a name="a-name110110"></a><a name="1.1.0"/>1.1.0
-* Добавлены TableRequestOptions TableQueryMaxItemCount, TableQueryEnableScan, TableQueryMaxDegreeOfParallelism и TableQueryContinuationTokenLimitInKb.
+* Добавлены TableRequestOptions TableQueryMaxItemCount, TableQueryEnableScan, TableQueryMaxDegreeOfParallelism и TableQueryContinuationTokenLimitInKb
 * Исправления ошибок
 
 ### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
@@ -60,7 +60,7 @@ ms.locfileid: "39126717"
 ## <a name="release-and-retirement-dates"></a>Даты выпуска и вывода из эксплуатации
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
 
-Предварительная версия пакета [WindowsAzure.Storage PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) отмечена как нерекомендуемая и заменена на пакет [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. В это время запросы к устаревшему SDK будут запрещены.
+Предварительная версия пакета [WindowsAzure.Storage PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) отмечена как нерекомендуемая и заменена на пакет [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены. На данный момент библиотека `Microsoft.Azure.CosmosDB.Table` доступна только для .NET Standard и недоступна для .NET Core.
 
 Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии. 
 
@@ -91,7 +91,7 @@ Unable to resolve dependency 'Microsoft.Azure.Storage.Common'. Source(s) used: '
     Install-Package Microsoft.Azure.CosmosDB.Table -IncludePrerelease
     ```
     
-* Используя предпочитаемый инструмент управления пакетами Nuget, сначала установите пакет Microsoft.Azure.Storage.Common, а потом — Microsoft.Azure.CosmosDB.Table.
+* Используя предпочитаемый инструмент управления пакетами NuGet, сначала установите пакет Microsoft.Azure.Storage.Common, а потом — Microsoft.Azure.CosmosDB.Table.
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 

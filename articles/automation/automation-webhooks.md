@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 06/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f8ee8a2a4aae61e2edc275527d80a162c9bb4dc0
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 241fd1f9168ce6bfb8a4dfe97bbb1ef45ddf3f74
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345718"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42146017"
 ---
 # <a name="starting-an-azure-automation-runbook-with-a-webhook"></a>Запуск Runbook службы автоматизации Azure с помощью объекта webhook
 
@@ -114,13 +114,13 @@ http://<Webhook Server>/token?=<Token Value>
 | 404 |Не найдено |Запрос не был принят по одной из следующих причин: <ul> <li>Объект webhook не найден.</li> <li>Модуль Runbook не найден.</li> <li>Учетная запись не найдена.</li>  </ul> |
 | 500 |Внутренняя ошибка сервера |URL-адрес допустимый, но произошла ошибка. Отправьте запрос повторно. |
 
-Если предположить, что запрос выполнен успешно, ответ Webhook будет содержать идентификатор задания в формате JSON, как показано далее. Он будет содержать идентификатор одного задания, но формат JSON предоставляет возможность потенциальных будущих улучшений.
+Если запрос выполнен успешно, то ответ веб-перехватчика будет содержать идентификатор задания в формате JSON, как показано далее. Он будет содержать идентификатор одного задания, но формат JSON предоставляет возможность для потенциальных будущих улучшений.
 
 ```json
 {"JobIds":["<JobId>"]}
 ```
 
-Клиент не может определить момент завершения задания Runbook и состояние его завершения из объекта Webhook. Он может определить эти сведения с помощью идентификатора задания, используя другой метод, например [Windows PowerShell](http://msdn.microsoft.com/library/azure/dn690263.aspx) или [API службы автоматизации Azure](/rest/api/automation/job).
+Клиент не может определить момент завершения задания Runbook и состояние его завершения из объекта Webhook. Он может определить эти сведения с помощью идентификатора задания, используя другой метод, например [Windows PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationjob) или [API службы автоматизации Azure](/rest/api/automation/job).
 
 ## <a name="sample-runbook"></a>Пример Runbook
 

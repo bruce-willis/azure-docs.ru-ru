@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 08/07/2018
+ms.date: 08/19/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 5a373c397df09653395eea7996b19262aee75c7a
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 537777d2e379959d427c025036652a87ecc4a1fe
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39619055"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617164"
 ---
 # <a name="built-in-roles-in-azure"></a>Встроенные роли в Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
@@ -47,6 +47,8 @@ ms.locfileid: "39619055"
 | [Оператор задания автоматизации](#automation-job-operator) | Создание заданий и управление ими с помощью модулей Runbook службы автоматизации. |
 | [Оператор службы автоматизации](#automation-operator) | Операторы автоматизации могут запускать, останавливать, приостанавливать и возобновлять задания. |
 | [Оператор Runbook автоматизации](#automation-runbook-operator) | Чтение свойств Runbook, позволяющее создавать задания Runbook. |
+| [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. |
+| [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. |
 | [Владелец регистрации Azure Stack](#azure-stack-registration-owner) | Позволяет управлять регистрациями Azure Stack. |
 | [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой архивации, но не разрешает создавать хранилища и предоставлять доступ другим пользователям |
 | [Оператор резервного копирования](#backup-operator) | Позволяет управлять службами архивации, но не удалять архивные копии, создавать хранилища или предоставлять доступ другим пользователям |
@@ -60,8 +62,7 @@ ms.locfileid: "39619055"
 | [Участник классической сети](#classic-network-contributor) | Позволяет управлять классическими сетями, но не доступом к ним. |
 | [Участник классической учетной записи хранения](#classic-storage-account-contributor) | Позволяет управлять классическими учетными записями хранения, но не предоставлять доступ к ним. |
 | [Роль службы оператора ключей классических учетных записей хранения](#classic-storage-account-key-operator-service-role) | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения. |
-| [Участник классической виртуальной машины](#classic-virtual-machine-contributor) | Позволяет управлять классическими виртуальными машинами, но не доступом к ним и не учетной записью виртуальной сети или хранения, к которой они подключены. |
-| [Участник базы данных ClearDB MySQL](#cleardb-mysql-db-contributor) | Позволяет управлять базами данных ClearDB MySQL, но не доступом к ним. |
+| [Участник классической виртуальной машины](#classic-virtual-machine-contributor) | Позволяет управлять классическими виртуальными машинами, но не доступом к ним и не учетной записью виртуальной сети или хранения, к которой они подключены.|
 | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). |
 | [Участник Data Box](#data-box-contributor) | Позволяет управлять всеми данными службы Data Box, кроме предоставления доступа другим пользователям. |
 | [Оператор Data Box](#data-box-operator) | Позволяет управлять службой Data Box, но не позволяет создавать заказы и менять их порядок, а также предоставлять доступ другим пользователям. |
@@ -84,6 +85,7 @@ ms.locfileid: "39619055"
 | [Участник группы управления](#management-group-contributor) | Роль участника группы управления |
 | [Читатель группы управления](#management-group-reader) | Роль читателя группы управления |
 | [Monitoring Contributor](#monitoring-contributor) (Участник мониторинга) | Может читать все данные мониторинга и изменять параметры мониторинга. Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md#built-in-monitoring-roles). |
+| [Издатель метрик мониторинга](#monitoring-metrics-publisher) | Включает публикацию метрик ресурсов Azure |
 | [Monitoring Reader](#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга (метрики, журналы и т. д.). Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md#built-in-monitoring-roles). |
 | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. |
 | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. |
@@ -275,13 +277,14 @@ ms.locfileid: "39619055"
 > | **Id** | 4fe576fe-1146-4730-92eb-48519fa6bf9f |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/read | Считывает ресурсы гибридной рабочей роли Runbook. |
 > | Microsoft.Automation/automationAccounts/jobs/read | Возвращает задание службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/jobs/resume/action | Возобновляет выполнение задания службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/jobs/stop/action | Останавливает задание службы автоматизации Azure. |
-> | Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/read | Считывает ресурсы гибридной рабочей роли Runbook. |
 > | Microsoft.Automation/automationAccounts/jobs/streams/read | Возвращает поток задания службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/jobs/suspend/action | Приостанавливает задание службы автоматизации Azure. |
 > | Microsoft.Automation/automationAccounts/jobs/write | Создает задание службы автоматизации Azure. |
+> | Microsoft.Automation/automationAccounts/jobs/output/read | Возвращает выходные данные задания. |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
@@ -329,6 +332,24 @@ ms.locfileid: "39619055"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="azure-kubernetes-service-cluster-admin-role"></a>Роль администратора кластера в Службе Azure Kubernetes
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Список действий, выполненных с помощью учетных данных администратора кластера. |
+> | **Id** | 0ab0b1a8-8aac-4efd-b8c2-3ee1fb270be8 |
+> | **Действия** |  |
+> | Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action | Перечисляет учетные данные clusterAdmin управляемого кластера. |
+
+## <a name="azure-kubernetes-service-cluster-user-role"></a>Роль пользователя кластера в Службе Azure Kubernetes
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Список действий, выполненных с помощью учетных данных пользователя кластера. |
+> | **Id** | 4abbcc35-e782-43d8-92c5-2d3f1bd2253f |
+> | **Действия** |  |
+> | Microsoft.ContainerService/managedClusters/listClusterUserCredential/action | Перечисляет учетные данные clusterUser управляемого кластера. |
 
 ## <a name="azure-stack-registration-owner"></a>Владелец регистрации Azure Stack
 > [!div class="mx-tableFixed"]
@@ -631,21 +652,6 @@ ms.locfileid: "39619055"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
-
-## <a name="cleardb-mysql-db-contributor"></a>Участник ClearDB MySQL DB
-> [!div class="mx-tableFixed"]
-> | | |
-> | --- | --- |
-> | **Описание** | Позволяет управлять базами данных ClearDB MySQL, но не доступом к ним. |
-> | **Id** | 9106cda0-8a86-4e81-b686-29a22c54effe |
-> | **Действия** |  |
-> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
-> | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
-> | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
-> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
-> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
-> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
-> | successbricks.cleardb/databases/* | Создание баз данных ClearDB MySQL и управление ими |
 
 ## <a name="cosmos-db-account-reader-role"></a>Роль читателя учетных записей Cosmos DB
 > [!div class="mx-tableFixed"]
@@ -1041,6 +1047,19 @@ ms.locfileid: "39619055"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.WorkloadMonitor/workloads/* |  |
 > | Microsoft.WorkloadMonitor/workloadInsights/* |  |
+
+## <a name="monitoring-metrics-publisher"></a>Издатель метрик мониторинга
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Включает публикацию метрик ресурсов Azure |
+> | **Id** | 3913510d-42f4-4e42-8a64-420c390055eb |
+> | **Действия** |  |
+> | Microsoft.Insights/Register/Action | Регистрирует поставщик Microsoft Insights. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | **Действия с данными** |  |
+> | Microsoft.Insights/Metrics/Write | Запись метрик. |
 
 ## <a name="monitoring-reader"></a>Роль Monitoring Reader
 > [!div class="mx-tableFixed"]

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/01/2017
 ms.author: glenga
-ms.openlocfilehash: eee60718bf848154b0097294b3c7eb325e96214b
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 20dd9349b9ca5ffb6042156e340019c4483b93e5
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39346265"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42144589"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -53,6 +53,7 @@ ms.locfileid: "39346265"
 * [Скрипт C# (CSX)](#trigger---c-script-example)
 * [F#](#trigger---f-example)
 * [JavaScript](#trigger---javascript-example)
+* [Java](#trigger---java-example)
 
 ### <a name="trigger---c-example"></a>Пример C# в триггере
 
@@ -177,6 +178,41 @@ module.exports = function(context, myQueueItem) {
     context.done();
 };
 ```
+
+### <a name="trigger---java-example"></a>Пример Java в триггере
+
+В следующем примере показаны привязка триггера служебной шины в файле *function.json* и [функция Java](functions-reference-java.md), которая использует эту привязку. Эта функция активируется с помощью сообщения в очереди служебной шины, а функция регистрирует очередь сообщений.
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+"bindings": [
+    {
+    "queueName": "myqueuename",
+    "connection": "MyServiceBusConnection",
+    "name": "msg",
+    "type": "ServiceBusQueueTrigger",
+    "direction": "in"
+    }
+],
+"disabled": false
+}
+```
+
+Ниже приведен код Java.
+
+```java
+@FunctionName("sbprocessor")
+ public void serviceBusProcess(
+    @ServiceBusQueueTrigger(name = "msg",
+                             queueName = "myqueuename",
+                             connection = "myconnvarname") String message,
+   final ExecutionContext context
+ ) {
+     context.getLogger().info(message);
+ }
+ ```
 
 ## <a name="trigger---attributes"></a>Атрибуты триггера
 
@@ -316,6 +352,7 @@ module.exports = function(context, myQueueItem) {
 * [Скрипт C# (CSX)](#output---c-script-example)
 * [F#](#output---f-example)
 * [JavaScript](#output---javascript-example)
+* [Java](#output--java-example)
 
 ### <a name="output---c-example"></a>Пример выходных данных C#
 
@@ -470,6 +507,25 @@ module.exports = function (context, myTimer) {
     context.done();
 };
 ```
+
+
+### <a name="output---java-example"></a>Пример выходных данных Java
+
+В следующем примере показана функция Java, которая активируется HTTP-запросом и отправляет сообщение в очередь служебной шины `myqueue`.
+
+```java
+@FunctionName("httpToServiceBusQueue")
+@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
+public String pushToQueue(
+  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+  final String message,
+  @HttpOutput(name = "response") final OutputBinding<T>; result ) {
+      result.setValue(message + " has been sent.");
+      return message;
+ }
+ ```
+
+ В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров функции, значение которых будут записываться в очередь Служебной шины Microsoft Azure.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
 
 ## <a name="output---attributes"></a>Выходные атрибуты
 

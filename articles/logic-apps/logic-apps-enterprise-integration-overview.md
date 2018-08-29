@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/08/2016
 ms.author: LADocs; padmavc
-ms.openlocfilehash: 25349d48d88b64568fef0f5a6bac5950da15196b
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: c4f83d2bf082b5f1358b4eee6468d470b5cb8088
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298643"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146021"
 ---
 # <a name="overview-b2b-scenarios-and-communication-with-the-enterprise-integration-pack"></a>Обзор: сценарии B2B и обмен данными с использованием пакета интеграции Enterprise
 
@@ -37,7 +37,7 @@ ms.locfileid: "35298643"
 
 ## <a name="how-to-get-started-with-enterprise-integration"></a>Как приступить к работе с интеграцией Enterprise?
 
-Создавать приложения B2B и управлять ими с помощью пакета интеграции Enterprise можно в конструкторе приложений логики на **портале Azure**. Вы также можете управлять приложениями логики с помощью [PowerShell](https://msdn.microsoft.com/library/azure/mt652195.aspx "Разделы о PowerShell, посвященные приложениям логики").
+Создавать приложения B2B и управлять ими с помощью пакета интеграции Enterprise можно в конструкторе приложений логики на **портале Azure**. Вы также можете управлять приложениями логики с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp "Разделы о PowerShell, посвященные приложениям логики").
 
 Ниже описаны действия, которые необходимо выполнить перед созданием приложений на портале Azure.
 

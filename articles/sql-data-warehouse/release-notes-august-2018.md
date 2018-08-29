@@ -7,17 +7,17 @@ manager: craigg-msft
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 08/06/2018
+ms.date: 08/13/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 1f3b17f3163c29f9b9e1e47e14ccdbc1e37e1010
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 27030256b88f429d080c7a7ce69ed3c83eca337c
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39633928"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42144401"
 ---
-# <a name="whats-new-in-azure-sql-data-warehouse-august-2018"></a>Что нового в Хранилище данных SQL Azure? Август 2018 г.
+# <a name="whats-new-in-azure-sql-data-warehouse-august-2018"></a>Что нового в Хранилище данных SQL Azure? Август 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с августа 2018 года.
 
 ## <a name="automatic-intelligent-insights"></a>Автоматический Intelligent Insights
@@ -26,6 +26,15 @@ ms.locfileid: "39633928"
 Рекомендации можно просмотреть на портале Помощника по Azure: ![рекомендации на портале Помощника по Azure для Хранилища данных SQL Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/4e205b6d-df04-48db-8eec-d591f2592cf4.png)
 
 Вы также можете детальнее рассмотреть каждую категорию, чтобы просмотреть рекомендации по определенному оповещению: ![сведения о рекомендации на портале Помощника по Azure для Хранилища данных SQL Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/3c42426e-6969-46e3-9025-c34c0755a302.png)
+
+
+## <a name="bug-fixes"></a>Исправления ошибок
+
+| Название | ОПИСАНИЕ |
+|:---|:---|
+| **Потенциальные сбои запросов, когда счетчик разделителей превышает максимальный предел** |В случае превышения ограничения верхнего предела в 1 миллион файловых разделений необработанное исключение вызывает отказ SQL-сервера и все запросы дают сбой. Это исправление устраняет проблему, правильно обрабатывая исключение и возвращая ошибку, не вызывая сбоев запросов. |
+| **Увеличение значения по умолчанию ExternalMoveReadersPerNode для повышения производительности загрузки** |Эта проблема была вызвана тем, что параметр свойства ExternalMoveReadersPerNode не синхронизирован с параметром Service Fabric. Эта регрессия стала причиной низкой производительности загрузки 2-го поколения. Исправление возвращает производительность загрузки 2-го поколения с оптимизированными параметрами конструктора.|
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  

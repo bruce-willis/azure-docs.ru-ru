@@ -3,7 +3,7 @@ title: Способы создания сертификатов
 description: Способы создания сертификата в Key Vault.
 services: key-vault
 documentationcenter: ''
-author: lleonard-msft
+author: bryanla
 manager: mbaldwin
 tags: azure-resource-manager
 ms.assetid: e17b4c9b-4ff3-472f-8c9d-d130eb443968
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
-ms.author: alleonar
-ms.openlocfilehash: 7b71c6a8daa97300ecf3b37ec6ab47207fece98e
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.author: bryanla
+ms.openlocfilehash: a2314eaac26688881dcf60f264f039081439db6a
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34058405"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42146934"
 ---
 # <a name="certificate-creation-methods"></a>Способы создания сертификатов
 
@@ -89,7 +89,7 @@ ms.locfileid: "34058405"
 |DigiCert;|Key Vault предоставляет OV или EV SSL-сертификаты в DigiCert|
 |GlobalCert|Key Vault предоставляет OV или EV SSL-сертификаты в GlobalSign|
 
- Дополнительные сведения, включая географическую доступность данных поставщиков издателей, см. в статье [Certificate issuers](/rest/api/keyvault/certificate-issuers.md) (Издатели сертификатов).
+ Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
 
 Обратите внимание, что при размещении заказа поставщику издателя он может учесть или переопределить расширения сертификата x509 и срок действия сертификата на основе типа.  
 

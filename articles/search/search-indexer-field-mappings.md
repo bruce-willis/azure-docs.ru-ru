@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 08/30/2017
 ms.author: eugenesh
-ms.openlocfilehash: 041866cd1c290bc576577771abcae31db747095e
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 51fa689030c4a8ce4e900ecd600cdd0524aa13d9
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31796858"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143699"
 ---
 # <a name="field-mappings-in-azure-search-indexers"></a>Сопоставление полей в индексаторах Поиска Azure
 При использовании индексаторов поиска Azure может возникнуть ситуация, когда входные данные не вписываются в схему целевого индекса. В таком случае можно преобразовать данные в желаемый формат, используя **сопоставления полей** .
@@ -106,7 +106,7 @@ api-key: [admin key]
     "targetFieldName" : "IndexKey",
     "mappingFunction" : { "name" : "base64Encode", "parameters" : { "useHttpServerUtilityUrlTokenEncode" : false } }
   }]
-```
+ ```
 
 Если не нужно искать документы по ключам, а также не требуется декодировать содержимое, можно просто оставить `parameters` для функции сопоставления, которая сбрасывает `useHttpServerUtilityUrlTokenEncode` к значению по умолчанию (`true`). В противном случае, чтобы решить, какие параметры следует использовать, см. раздел [о кодировании и декодировании Base64](#base64details).
 
@@ -136,9 +136,9 @@ api-key: [admin key]
 ### <a name="details-of-base64-encoding-and-decoding"></a>Сведения о кодировании и декодировании Base64
 Служба "Поиск Azure" поддерживает две кодировки Base64: токен URL-адреса HttpServerUtility и безопасное кодирование строки вводных данных в Base64 без заполнения. Нужно использовать ту же кодировку, что и в функциях сопоставления, если необходимо кодировать ключ документа для поиска, кодировать значение, которое должно быть декодировано индексом, или декодировать поле, закодированное индексом.
 
-При использовании платформы .NET для `useHttpServerUtilityUrlTokenEncode` и `useHttpServerUtilityUrlTokenDecode` можно задать значение `true` для кодирования и декодирования соответственно. Затем `base64Encode` ведет себя как [HttpServerUtility.UrlTokenEncode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx), а `base64Decode` — как [HttpServerUtility.UrlTokenDecode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokendecode.aspx).
+Если параметрам `useHttpServerUtilityUrlTokenEncode` или `useHttpServerUtilityUrlTokenDecode` для кодирования и декодирования соответственно присвоено `true`, то `base64Encode` ведет себя как [HttpServerUtility.UrlTokenEncode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokenencode.aspx), а `base64Decode` — как [HttpServerUtility.UrlTokenDecode](https://msdn.microsoft.com/library/system.web.httpserverutility.urltokendecode.aspx).
 
-Если платформа .NET не используется, тогда для `useHttpServerUtilityUrlTokenEncode` и `useHttpServerUtilityUrlTokenDecode` нужно задать значение `false`. В зависимости от используемой библиотеки функции служебной программы кодирования и декодирования Base64 могут отличаться от функций службы "Поиска Azure".
+Если вы не используете полную версию .NET Framework (т. е. используется .NET Core или другие среды программирования) для получения значений ключей, чтобы эмулировать поведение поиска Azure, то следует задать параметрам `useHttpServerUtilityUrlTokenEncode` и `useHttpServerUtilityUrlTokenDecode` значение `false`. В зависимости от используемой библиотеки функции служебной программы кодирования и декодирования Base64 могут отличаться от функций службы "Поиска Azure".
 
 В следующей таблице сравниваются различные кодировки Base64 строки `00>00?00`. Чтобы определить требуемую дополнительную обработку (при наличии) для функций Base64, примените функцию кодировки библиотеки в строке `00>00?00` и сравните выходные данные с ожидаемыми выходными данными `MDA-MDA_MDA`.
 
@@ -147,7 +147,7 @@ api-key: [admin key]
 | Base64 с заполнением | `MDA+MDA/MDA=` | Использовать безопасные знаки URL-адреса и удалить заполнение | Использовать стандартные знаки Base64 и добавить заполнение |
 | Base64 без заполнения | `MDA+MDA/MDA` | Использовать безопасные знаки URL-адреса | Использовать стандартные знаки Base64 |
 | Безопасное кодирование строки вводных данных в Base64 с заполнением | `MDA-MDA_MDA=` | Удаление заполнения | Добавление заполнения |
-| Безопасное кодирование строки вводных данных в Base64 без заполнения | `MDA-MDA_MDA` | Нет | None |
+| Безопасное кодирование строки вводных данных в Base64 без заполнения | `MDA-MDA_MDA` | None | None |
 
 <a name="extractTokenAtPositionFunction"></a>
 

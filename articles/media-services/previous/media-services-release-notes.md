@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: juliako
-ms.openlocfilehash: 220ff194ab5f8fa49ba7603ecd91122459d4dc1e
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: cdfd19f2dfd599eacaa0759b63c94767e760a874
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39249229"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146993"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
@@ -35,7 +35,7 @@ ms.locfileid: "39249229"
 | Проблема | ОПИСАНИЕ |
 | --- | --- |
 | В API-интерфейсе REST отсутствует ряд стандартных заголовков HTTP. |При разработке приложений служб мультимедиа с использованием API-интерфейса REST замечено, что ряд стандартных полей заголовков HTTP (включая CLIENT-REQUEST-ID, REQUEST-ID и RETURN-CLIENT-REQUEST-ID) не поддерживается. Эти заголовки будут добавлены в следующем обновлении. |
-| URL-кодирование содержимого не допускается. |Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, http://{учетная запись AMS}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters). По этой причине кодирование с помощью знака процента не допускается. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла. |
+| URL-кодирование содержимого не допускается. |Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, `http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters`). По этой причине кодирование с помощью знака процента не допускается. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла. |
 | Метод ListBlobs, входящий в состав пакета SDK хранилища Azure версии 3.x, приводит к сбою. |Службы мультимедиа создают URL-адреса SAS на основе версии [2012-02-12](https://docs.microsoft.com/rest/api/storageservices/Version-2012-02-12) . Если вы хотите использовать пакет SDK хранилища для создания списка больших двоичных объектов в контейнере больших двоичных объектов, используйте метод [CloudBlobContainer.ListBlobs](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx), входящий в пакет SDK хранилища версии 2.x. |
 | Механизм регулирования служб мультимедиа ограничивает использование ресурсов для приложений, создающих избыточный запрос к службе. Службой может быть возвращен код состояния HTTP 503 (служба недоступна). |Дополнительные сведения см. в описании кода состояния HTTP 503 в статье [Коды ошибок кодирования](media-services-encoding-error-codes.md). |
 | При запросе сущностей за один раз возвращается не больше 1000 сущностей, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. |Используйте Skip и Take (.NET) или top (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. |

@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по пакету SDK для службы "Поиск изображений Bing" для Java | Документация Майкрософт
-description: Узнайте, как настроить консольное приложение пакета SDK Bing для поиска изображений.
+title: Краткое руководство. Запрос и фильтрация изображений с помощью пакета SDK в Java
+description: Из этого краткого руководства вы узнаете, как запрашивать и фильтровать изображения, возвращаемые Поиском изображений Bing с помощью Java.
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
 author: mikedodaro
@@ -10,14 +10,14 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 02/16/2018
 ms.author: v-gedod
-ms.openlocfilehash: 0c44bb313328081167a419f3b7d5ce17e49d2c99
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 280a4b67d81b0734ea983c1d7fe1389e59651ccd
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382597"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41929901"
 ---
-# <a name="bing-image-search-sdk-java-quickstart"></a>Краткое руководство по пакету SDK Bing для поиска изображений для Java
+# <a name="quickstart-request-and-filter-images-using-the-sdk-and-java"></a>Краткое руководство. Запрос и фильтрация изображений с помощью пакета SDK и Java
 
 Пакет SDK Bing для поиска изображений предоставляет функциональные возможности интерфейса REST API для поиска изображений и анализа результатов. 
 
@@ -416,4 +416,4 @@ public class ImageSrchSDK {
 ```
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Примеры для пакета SDK для Java в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
+[Примеры пакета SDK для Java в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)

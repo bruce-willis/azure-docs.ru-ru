@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
 ms.author: dekapur
-ms.openlocfilehash: 8c8ee30a603d439c0fadd0c1569813762bdf4351
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 7aa7fc2620fa02af4a720a97eece3c0734252245
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205303"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42142833"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Управление приложениями и службами как ресурсами Azure Resource Manager
 
@@ -263,6 +263,8 @@ ms.locfileid: "34205303"
 
 Если кластер уже запущен и в нем развернуто несколько приложений, которыми требуется управлять как ресурсами Resource Manager, то вместо удаления этих приложений и их повторного развертывания можно использовать вызов PUT с использованием тех же интерфейсов API, чтобы эти приложения были подтверждены как ресурсы Resource Manager. 
 
+> [!NOTE]
+> Чтобы позволить обновлению кластера игнорировать неработоспособные приложения, клиент может указать "maxPercentUnhealthyApplications: 100" в разделе "upgradeDescription/healthPolicy". Подробные описания всех параметров приведены в [документации по политике обновления REST API для кластера Service Fabrics](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfrp-model-clusterupgradepolicy).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

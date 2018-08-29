@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
 ms.author: daveba
-ms.openlocfilehash: bee75bcefb370382825c6867ea504e14102aa107
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 68304b3e5eea50aba28f46344abcbd7ad060c5c8
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39628289"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146969"
 ---
 # <a name="configure-managed-service-identity-on-virtual-machine-scale-using-a-template"></a>Настройка управляемого удостоверения службы в масштабируемом наборе виртуальных машин с помощью шаблона
 
@@ -55,18 +55,16 @@ ms.locfileid: "39628289"
 
 В этом разделе вы узнаете, как включить и отключить назначенное системой удостоверение с помощью шаблона Azure Resource Manager.
 
-### <a name="enable-system-assigned-identity-during-creation-the-creation-of-or-an-existing-azure-virtual-machine-scale-set"></a>Включение назначаемого системой удостоверения для нового или существующего масштабируемого набора виртуальных машин Azure
+### <a name="enable-system-assigned-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-a-existing-virtual-machine-scale-set"></a>Включение назначаемого системой удостоверения для нового или существующего масштабируемого набора виртуальных машин
 
-1. Загрузив шаблон в редактор, найдите нужный ресурс `Microsoft.Compute/virtualMachineScaleSets` в разделе `resources`. Имя вашего ресурса может немного отличаться от указанного на этом снимке экрана, в зависимости от используемого редактора и от того, изменяете ли вы шаблон для нового или имеющегося развертывания.
+1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин.
    
-   ![Снимок экрана шаблона: поиск виртуальной машины](../managed-service-identity/media/msi-qs-configure-template-windows-vmss/msi-arm-template-file-before-vmss.png) 
-
-2. Чтобы включить назначенное системой удостоверение, добавьте свойство `"identity"` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachineScaleSets"`. Используйте следующий синтаксис:
+2. Чтобы включить назначаемое системой удостоверение, загрузите шаблон в редактор, найдите интересующий ресурс `Microsoft.Compute/virtualMachinesScaleSets` в разделе ресурсов и добавьте свойство `identity` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachines"`. Используйте следующий синтаксис:
 
    ```JSON
    "identity": { 
-       "type": "systemAssigned"
-   },
+       "type": "SystemAssigned"
+   }
    ```
 
 3. (Необязательно.) Добавьте расширение масштабируемого набора виртуальных машин MSI как элемент `extensionsProfile`. Этот шаг необязателен, так как для получения токенов можно также использовать удостоверение Службы метаданных экземпляров Azure (IMDS).  Используйте следующий синтаксис:
@@ -75,7 +73,7 @@ ms.locfileid: "39628289"
    > В следующем примере предполагается, что развертывается расширение масштабируемого набора виртуальных машин Windows (`ManagedIdentityExtensionForWindows`). Можно также выполнить настройку для Linux, используя расширение `ManagedIdentityExtensionForLinux` для элементов `"name"` и `"type"`.
    >
 
-   ```JSON
+   ```json
    "extensionProfile": {
         "extensions": [
             {
@@ -93,9 +91,44 @@ ms.locfileid: "39628289"
             }
    ```
 
-4. По завершении шаблон должен выглядеть следующим образом.
+4. Когда все будет готово, необходимо добавить следующие разделы в раздел ресурсов шаблона, который должен выглядеть следующим образом.
 
-   ![Снимок экрана шаблона после изменения](../managed-service-identity/media/msi-qs-configure-template-windows-vmss/msi-arm-template-file-after-vmss.png) 
+   ```json
+    "resources": [
+        {
+            //other resource provider properties...
+            "apiVersion": "2018-06-01",
+            "type": "Microsoft.Compute/virtualMachineScaleSets",
+            "name": "[variables('vmssName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "SystemAssigned",
+            },
+           "properties": {
+                //other resource provider properties...
+                "virtualMachineProfile": {
+                    //other virtual machine profile properties...
+                    "extensionProfile": {
+                        "extensions": [
+                            {
+                                "name": "ManagedIdentityWindowsExtension",
+                                "properties": {
+                                  "publisher": "Microsoft.ManagedIdentity",
+                                  "type": "ManagedIdentityExtensionForWindows",
+                                  "typeHandlerVersion": "1.0",
+                                  "autoUpgradeMinorVersion": true,
+                                  "settings": {
+                                      "port": 50342
+                                  }
+                                }
+                            } 
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+   ``` 
 
 ### <a name="disable-a-system-assigned-identity-from-an-azure-virtual-machine-scale-set"></a>Отключение назначенного системой удостоверения в масштабируемом наборе виртуальных машин Azure
 
@@ -103,12 +136,24 @@ ms.locfileid: "39628289"
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин.
 
-2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachineScaleSets` в разделе `resources`. Если у масштабируемого набора виртуальных машин есть только назначаемое системой удостоверение, его можно отключить, изменив тип удостоверения на `None`.  Если у масштабируемого набора виртуальных машин есть назначаемые пользователем удостоверения, удалите `SystemAssigned` из типа удостоверения и сохраните `UserAssigned` вместе с массивом назначаемых пользователем удостоверений `identityIds`.  В следующем примере показано, как удалить назначаемое системой удостоверение из масштабируемого набора виртуальных машин без назначаемых пользователем удостоверений.
+2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachineScaleSets` в разделе `resources`. Если у вашей виртуальной машины есть только назначаемое системой удостоверение, его можно отключить, изменив тип удостоверения на `None`.
+
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01**
+
+   Если apiVersion соответствует `2018-06-01` и в виртуальной машине есть удостоверения, назначаемые как системой, так и пользователем, удалите `SystemAssigned` из типов удостоверения и оставьте `UserAssigned` вместе со значениями словаря userAssignedIdentities.
+
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01 и более ранних версий**
+
+   Если apiVersion соответствует `2017-12-01` и у масштабируемого набора виртуальных машин есть удостоверения, назначаемые как системой, так и пользователем, удалите `SystemAssigned` из типов удостоверения и оставьте `UserAssigned` вместе с массивом назначаемых пользователем удостоверений `identityIds`. 
+   
+    
+
+   В следующем примере показано, как удалить назначаемое системой удостоверение из масштабируемого набора виртуальных машин без назначаемых пользователем удостоверений.
    
    ```json
    {
        "name": "[variables('vmssName')]",
-       "apiVersion": "2017-03-30",
+       "apiVersion": "2018-06-01",
        "location": "[parameters(Location')]",
        "identity": {
            "type": "None"
@@ -119,32 +164,52 @@ ms.locfileid: "39628289"
 
 ## <a name="user-assigned-identity"></a>Удостоверение, назначенное пользователем
 
-В этом разделе вы присвоите назначенное пользователем удостоверение масштабируемому набору виртуальных машин Azure с помощью шаблона Azure Resource Manager.
+В этом разделе вы присвоите удостоверение, назначаемое пользователем масштабируемому набору виртуальных машин с помощью шаблона Azure Resource Manager.
 
 > [!Note]
-> Сведения о создании назначенного пользователем удостоверения с помощью шаблона Azure Resource Manager см. в разделе [Создание назначенного пользователем удостоверения](how-to-manage-ua-identity-arm.md#create-a-user-assigned-identity).
+> Сведения о создании пользовательского удостоверения с помощью шаблона Azure Resource Manager приведены в разделе [Создание пользовательского удостоверения](how-to-manage-ua-identity-arm.md#create-a-user-assigned-identity).
 
 ### <a name="assign-a-user-assigned-identity-to-an-azure-vmss"></a>Присвоение назначенного пользователем удостоверения масштабируемому набору виртуальных машин Azure
 
-1. Чтобы присвоить назначенное пользователем удостоверение масштабируемому набору виртуальных машин, в элементе `resources` добавьте приведенную ниже запись.  Не забудьте заменить `<USERASSIGNEDIDENTITY>` именем созданного пользовательского удостоверения.
+1. Чтобы назначить удостоверение, назначаемое пользователем масштабируемому набору виртуальных машин, в элементе `resources` добавьте приведенную ниже запись.  Не забудьте заменить `<USERASSIGNEDIDENTITY>` именем созданного пользовательского удостоверения.
+   
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01**
 
-   > [!Important]
-   > Значение `<USERASSIGNEDIDENTITYNAME>`, показанное в следующем примере, должно храниться в переменной.  Кроме того, для поддерживаемой в настоящее время реализации назначения виртуальной машине назначенных пользователем удостоверений в шаблоне Resource Manager версия api должна соответствовать версии в следующем примере. 
+   Если apiVersion соответствует `2018-06-01`, удостоверения, назначаемые пользователем, хранятся в формате словаря `userAssignedIdentities`, а значение `<USERASSIGNEDIDENTITYNAME>` должно храниться в переменной, определенной в разделе шаблона `variables`.
 
-    ```json
-    {
-        "name": "[variables('vmssName')]",
-        "apiVersion": "2017-03-30",
-        "location": "[parameters(Location')]",
-        "identity": {
-            "type": "userAssigned",
-            "identityIds": [
-                "[resourceID('Micrososft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITY>'))]"
-            ]
-        }
+   ```json
+   {
+       "name": "[variables('vmssName')]",
+       "apiVersion": "2018-06-01",
+       "location": "[parameters(Location')]",
+       "identity": {
+           "type": "userAssigned",
+           "userAssignedIdentities": {
+               "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]": {}
+           }
+       }
+    
+   }
+   ```   
 
-    }
-    ```
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2017-12-01**
+    
+   Если `apiVersion` соответствует `2017-12-01` или более ранней версии, удостоверения, назначаемые пользователем, хранятся в массиве `identityIds`, а значение `<USERASSIGNEDIDENTITYNAME>` должно храниться в переменных, определенных в разделе шаблона.
+
+   ```json
+   {
+       "name": "[variables('vmssName')]",
+       "apiVersion": "2017-03-30",
+       "location": "[parameters(Location')]",
+       "identity": {
+           "type": "userAssigned",
+           "identityIds": [
+               "[resourceID('Micrososft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITY>'))]"
+           ]
+       }
+
+   }
+   ``` 
 
 2. Чтобы назначить расширение управляемого удостоверения масштабируемому набору виртуальных машин, добавьте в элемент приведенную ниже запись `extensionProfile` (необязательно). Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS). Используйте следующий синтаксис:
    
@@ -166,34 +231,124 @@ ms.locfileid: "39628289"
                 }
     ```
 
-3.  По завершении шаблон должен выглядеть следующим образом.
+3. По завершении шаблон должен выглядеть следующим образом.
    
-      ![Снимок экрана с пользовательским удостоверением](./media/qs-configure-template-windows-vmss/qs-configure-template-windows-final.PNG)
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01**   
 
+   ```json
+   "resources": [
+        {
+            //other resource provider properties...
+            "apiVersion": "2018-06-01",
+            "type": "Microsoft.Compute/virtualMachineScaleSets",
+            "name": "[variables('vmssName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "UserAssigned",
+                "userAssignedIdentities": {
+                    "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]": {}
+                }
+            },
+           "properties": {
+                //other virtual machine properties...
+                "virtualMachineProfile": {
+                    //other virtual machine profile properties...
+                    "extensionProfile": {
+                        "extensions": [
+                            {
+                                "name": "ManagedIdentityWindowsExtension",
+                                "properties": {
+                                  "publisher": "Microsoft.ManagedIdentity",
+                                  "type": "ManagedIdentityExtensionForWindows",
+                                  "typeHandlerVersion": "1.0",
+                                  "autoUpgradeMinorVersion": true,
+                                  "settings": {
+                                      "port": 50342
+                                  }
+                                }
+                            } 
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+   ```
+
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01 и более ранних версий**
+
+   ```json
+   "resources": [
+        {
+            //other resource provider properties...
+            "apiVersion": "2017-12-01",
+            "type": "Microsoft.Compute/virtualMachineScaleSets",
+            "name": "[variables('vmssName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "UserAssigned",
+                "identityIds": [
+                    "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]"
+                ]
+            },
+           "properties": {
+                //other virtual machine properties...
+                "virtualMachineProfile": {
+                    //other virtual machine profile properties...
+                    "extensionProfile": {
+                        "extensions": [
+                            {
+                                "name": "ManagedIdentityWindowsExtension",
+                                "properties": {
+                                  "publisher": "Microsoft.ManagedIdentity",
+                                  "type": "ManagedIdentityExtensionForWindows",
+                                  "typeHandlerVersion": "1.0",
+                                  "autoUpgradeMinorVersion": true,
+                                  "settings": {
+                                      "port": 50342
+                                  }
+                                }
+                            } 
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+   ```
 ### <a name="remove-user-assigned-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление назначаемого пользователем удостоверения из масштабируемого набора виртуальных машин Azure
 
 Если для масштабируемого набора виртуальных машин управляемое удостоверение службы больше не требуется, сделайте следующее.
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин.
 
-2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachineScaleSets` в разделе `resources`. Если у масштабируемого набора виртуальных машин есть только назначаемое пользователем удостоверение, его можно отключить, изменив тип удостоверения на `None`.  Если у масштабируемого набора виртуальных машин есть назначаемое системой удостоверение и назначаемые пользователем удостоверения и вам нужно сохранить назначаемое системой удостоверение, удалите `UserAssigned` из типа удостоверения вместе с массивом назначаемых пользователем удостоверений `identityIds`.
-    
-   Чтобы удалить отдельное назначаемое пользователем удостоверение из масштабируемого набора виртуальных машин, удалите его из массива `identityIds`.
-   
-   В следующем примере показано, как удалить все назначаемые пользователем удостоверения из масштабируемого набора виртуальных машин без назначаемых системой удостоверений.
-   
+2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachineScaleSets` в разделе `resources`. Если у масштабируемого набора виртуальных машин есть только назначаемое пользователем удостоверение, его можно отключить, изменив тип удостоверения на `None`.
+
+   В следующем примере показано, как удалить все назначаемые пользователем удостоверения из виртуальной машины без назначаемых системой удостоверений.
+
    ```json
    {
        "name": "[variables('vmssName')]",
-       "apiVersion": "2017-03-30",
+       "apiVersion": "2018-06-01",
        "location": "[parameters(Location')]",
        "identity": {
            "type": "None"
         }
-
    }
    ```
+   
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01**
+    
+   Чтобы удалить отдельное назначаемое пользователем удостоверение из масштабируемого набора виртуальных машин, удалите его из словаря `userAssignedIdentities`.
 
+   Если у вас есть удостоверение, назначенное системой, сохраните его в значении `type` в рамках значения `identity`.
+
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2017-12-01**
+
+   Чтобы удалить отдельное назначаемое пользователем удостоверение из масштабируемого набора виртуальных машин, удалите его из массива `identityIds`.
+
+   Если у вас есть удостоверение, назначенное системой, сохраните его в значении `type` в рамках значения `identity`.
+   
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Чтобы получить более обширное представление о компоненте "Управляемое удостоверение службы", прочитайте [обзор компонента "Управляемое удостоверение службы"](overview.md).

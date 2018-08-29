@@ -7,18 +7,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 05/09/2018
+ms.date: 08/21/2018
 ms.author: jingwang
-ms.openlocfilehash: 534df0dfef1f69297c5728ed892a5457944e4468
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 844440d22bc0a524e9e61bde457ee9f43fd367b2
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052296"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42444618"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
-*Эта статья относится к соединителям для следующих компонентов: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Store](connector-azure-data-lake-store.md), [хранилище файлов Azure](connector-azure-file-storage.md), [файловая система](connector-file-system.md), [FTP](connector-ftp.md), [HDFS](connector-hdfs.md), [HTTP](connector-http.md) и [SFTP](connector-sftp.md).*
+*Эта статья применима к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [BLOB-объекты Azure](connector-azure-blob-storage.md), [Azure Data Lake Store 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Store 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [файловая система](connector-file-system.md), [FTP](connector-ftp.md), [HDFS](connector-hdfs.md), [HTTP](connector-http.md) и [SFTP](connector-sftp.md).*
 
 Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. Вам может понадобиться **анализировать или создавать файлы, имеющие определенный формат**. Фабрика данных Azure поддерживает следующие форматы файлов:
 

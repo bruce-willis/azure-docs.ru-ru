@@ -4,7 +4,7 @@ description: Узнайте, как обрабатывать события сл
 services: functions
 documentationcenter: na
 author: ggailey777
-manager: cfowler
+manager: jeconnoc
 editor: ''
 tags: ''
 keywords: ''
@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 06/08/2018
+ms.date: 08/20/2018
 ms.author: glenga
-ms.openlocfilehash: 6afc54bfcbef4d0714e9a09d0aa27ea4829d4dd5
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: f0cb698bad42bcfd035451361b9a20d0f0b5bddf
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715392"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42145024"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -53,6 +53,7 @@ ms.locfileid: "39715392"
 * [C#](#c-example)
 * [Скрипт C# (CSX)](#c-script-example)
 * [JavaScript](#javascript-example)
+* [Java](#trigger---java-example)
 
 Пример триггера HTTP см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) в этой статье.
 
@@ -180,6 +181,36 @@ module.exports = function (context, eventGridEvent) {
     context.done();
 };
 ```
+
+### <a name="trigger---java-example"></a>Пример Java в триггере
+
+В следующем примере показана привязка триггера в файле *function.json* и [функция Java](functions-reference-java.md), которая использует привязку и распечатывает события.
+
+```json
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    }
+  ]
+}
+```
+
+Ниже приведен код Java.
+
+```java
+@FunctionName("eventGridMonitor")
+  public void logEvent(
+     @EventGridTrigger(name = "event") String content,
+      final ExecutionContext context
+  ) { 
+      context.getLogger().info(content);
+    }
+```
+
+В [библиотеке выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `EventGridTrigger` для параметров, значение которых должно быть получено от EventGrid. Параметры с этими заметками запускают функцию, когда происходит событие.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`. 
      
 ## <a name="attributes"></a>Атрибуты
 
@@ -310,7 +341,7 @@ az eventgrid resource event-subscription create -g myResourceGroup \
 http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextensionconfig_extension?code={adminkey}
 ```
 
-Это API администратора, поэтому для него нужен [ключ администратора](functions-bindings-http-webhook.md#authorization-keys). Не путайте системный ключ (для вызова функции триггера службы "Сетка событий") с ключом администратора (для выполнения административных задач в приложении-функции). Во время оформления подписки на раздел службы "Сетка событий" необходимо использовать системный ключ.
+Это API администратора, поэтому для него нужен [главный ключ](functions-bindings-http-webhook.md#authorization-keys) приложения-функции. Не путайте системный ключ (для вызова функции триггера службы "Сетка событий") с главным ключом (для выполнения административных задач в приложении-функции). Во время оформления подписки на раздел службы "Сетка событий" необходимо использовать системный ключ. 
 
 Ниже приведен пример ответа, который предоставляет системный ключ:
 

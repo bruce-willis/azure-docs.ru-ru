@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/15/2018
+ms.date: 08/17/2018
 ms.author: jingwang
-ms.openlocfilehash: ba965b0610525f66c24dd6d5bad3fd113a6b6758
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: ffe7337282d06dd9a7e22d6750ac98b3a56964bd
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37050871"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42144442"
 ---
 # <a name="azure-data-factory-service-identity"></a>Удостоверение службы фабрики данных Azure
 
@@ -27,10 +27,10 @@ ms.locfileid: "37050871"
 
 При создании фабрики данных создается удостоверение службы. Это управляемое приложение, зарегистрированное в Azure Activity Directory и представляющее эту определенную фабрику данных.
 
-Удостоверение службы фабрики данных использует преимущества следующих двух возможностей:
+Удостоверение службы фабрики данных использует преимущества следующих возможностей:
 
 - [Хранение учетных данных в хранилище ключей Azure](store-credentials-in-key-vault.md). В этом случае удостоверение службы фабрики данных используется для проверки подлинности в Azure Key Vault;
-- [Копирование данных из хранилища Azure Data Lake Store и в него](connector-azure-data-lake-store.md). В этом случае удостоверение службы фабрики данных можно использовать в качестве одного из поддерживаемых типов проверки подлинности для Data Lake Store.
+- Соединители, включая [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Базу данных SQL Azure](connector-azure-sql-database.md) и [Хранилище данных SQL Azure](connector-azure-sql-data-warehouse.md).
 
 ## <a name="generate-service-identity"></a>Создание удостоверения службы
 

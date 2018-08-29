@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2017
 ms.author: daveba
-ms.openlocfilehash: e12cc37c579c10d3b59197d126589d36e80a8451
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ffe15fc42aad2945ba622f1e38566100f2625340
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444527"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146555"
 ---
 # <a name="configure-managed-service-identity-on-an-azure-vm-using-azure-cli"></a>Настройка управляемого удостоверения службы на виртуальной машине Azure с помощью Azure CLI
 
@@ -42,7 +42,11 @@ ms.locfileid: "39444527"
 - Выполнить примеры сценариев для интерфейса командной строки можно тремя способами:
     - использовать [Azure Cloud Shell](../../cloud-shell/overview.md) с портала Azure (см. следующий раздел).
     - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробуйте!", расположенной в правом верхнем углу каждого блока кода.
-    - [установить последнюю версию интерфейса командной строки 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.13 или более позднюю версию), если вы предпочитаете использовать локальную консоль интерфейса командной строки. 
+    - Если вы предпочитаете использовать локальную консоль CLI, [установите последнюю версию интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli).
+      
+      > [!NOTE]
+      > Команды были обновлены в соответствии с последней версией [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).     
+        
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -88,7 +92,7 @@ ms.locfileid: "39444527"
    az vm identity assign -g myResourceGroup -n myVm
    ```
 
-### <a name="disable-the-system-assigned-identity-from-an-azure-vm"></a>Отключение назначенного системой удостоверения в виртуальной машине Azure
+### <a name="disable-system-assigned-identity-from-an-azure-vm"></a>Отключение системного удостоверения в виртуальной машине Azure
 
 Если на виртуальной машине больше не требуется назначаемое системой удостоверение, но по-прежнему требуются назначаемые пользователем удостоверения, используйте следующую команду.
 
@@ -140,7 +144,7 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<MSI NAME>/credentials?tid=5678&oid=9012&aid=73444643-8088-4d70-9532-c3a0fdc190fz",
        "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<MSI NAME>",
        "location": "westcentralus",
-       "name": "<MSI NAME>",
+       "name": "<USER ASSIGNED IDENTITY NAME>",
        "principalId": "e5fdfdc1-ed84-4d48-8551-fe9fb9dedfll",
        "resourceGroup": "<RESOURCE GROUP>",
        "tags": {},
@@ -149,10 +153,10 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
    }
    ```
 
-3. Создайте виртуальную машину, выполнив команду [az vm create](/cli/azure/vm/#az-vm-create). В приведенном ниже примере создается виртуальная машина, связанная с новым назначенным пользователем удостоверением, в соответствии с параметром `--assign-identity`. Не забудьте заменить значения параметров `<RESOURCE GROUP>`, `<VM NAME>`, `<USER NAME>`, `<PASSWORD>` и `<MSI ID>` своими значениями. В качестве `<MSI ID>` используйте свойство ресурса `id` назначенного пользователем удостоверения, созданное в предыдущем шаге: 
+3. Создайте виртуальную машину, выполнив команду [az vm create](/cli/azure/vm/#az-vm-create). В приведенном ниже примере создается виртуальная машина, связанная с новым назначенным пользователем удостоверением, в соответствии с параметром `--assign-identity`. Не забудьте заменить значения параметров `<RESOURCE GROUP>`, `<VM NAME>`, `<USER NAME>`, `<PASSWORD>` и `<USER ASSIGNED IDENTITY NAME>` своими значениями. 
 
    ```azurecli-interactive 
-   az vm create --resource-group <RESOURCE GROUP> --name <VM NAME> --image UbuntuLTS --admin-username <USER NAME> --admin-password <PASSWORD> --assign-identity <MSI ID>
+   az vm create --resource-group <RESOURCE GROUP> --name <VM NAME> --image UbuntuLTS --admin-username <USER NAME> --admin-password <PASSWORD> --assign-identity <USER ASSIGNED IDENTITY NAME>
    ```
 
 ### <a name="assign-a-user-assigned-identity-to-an-existing-azure-vm"></a>Присвоение назначенного пользователем удостоверения имеющейся виртуальной машине Azure
@@ -165,7 +169,7 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
     ```azurecli-interactive
     az identity create -g <RESOURCE GROUP> -n <MSI NAME>
     ```
-Ответ содержит подробные сведения о созданном назначаемом пользователем управляемом удостоверении, подобные приведенным ниже. Значение `id` ресурса, присвоенное назначенному пользователем удостоверению, используется в следующем шаге.
+   Ответ содержит подробные сведения о созданном назначаемом пользователем управляемом удостоверении, подобные приведенным ниже. 
 
    ```json
    {
@@ -182,18 +186,18 @@ az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentit
    }
    ```
 
-2. Присвойте назначенное пользователем удостоверение виртуальной машине с помощью команды [az vm identity assign](/cli/azure/vm#az-vm-identity-assign). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<MSI ID>` будет свойством ресурса `id` назначенного пользователем удостоверения, созданным в предыдущем шаге:
+2. Присвойте назначенное пользователем удостоверение виртуальной машине с помощью команды [az vm identity assign](/cli/azure/vm#az-vm-identity-assign). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<USER ASSIGNED IDENTITY>` — свойство ресурса `name` назначенного пользователем удостоверения, созданное на предыдущем шаге.
 
     ```azurecli-interactive
-    az vm identity assign -g <RESOURCE GROUP> -n <VM NAME> --identities <MSI ID>
+    az vm identity assign -g <RESOURCE GROUP> -n <VM NAME> --identities <USER ASSIGNED IDENTITY>
     ```
 
 ### <a name="remove-a-user-assigned-identity-from-an-azure-vm"></a>Удаление назначенного пользователем удостоверения из виртуальной машины Azure
 
-Чтобы удалить назначаемое пользователем удостоверение из виртуальной машины, используйте команду [az vm identity remove](/cli/azure/vm#az-vm-identity-remove). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<MSI NAME>` будет свойством `name` назначенного пользователем удостоверения, которое можно найти в разделе удостоверений виртуальной машины с помощью команды `az vm identity show`:
+Чтобы удалить назначаемое пользователем удостоверение из виртуальной машины, используйте команду [az vm identity remove](/cli/azure/vm#az-vm-identity-remove). Если это единственное удостоверение пользователя, присвоенное виртуальной машине, то `UserAssigned` будет удалено из значения типа удостоверения.  Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. `<USER ASSIGNED IDENTITY>` будет свойством `name` назначенного пользователем удостоверения, которое можно найти в разделе удостоверений виртуальной машины, используя `az vm identity show`.
 
 ```azurecli-interactive
-az vm identity remove -g <RESOURCE GROUP> -n <VM NAME> --identities <MSI NAME>
+az vm identity remove -g <RESOURCE GROUP> -n <VM NAME> --identities <USER ASSIGNED IDENTITY>
 ```
 
 Если на виртуальной машине нет назначаемого системой удостоверения и вы хотите удалить из нее все назначаемые пользователем удостоверения, используйте следующую команду.
@@ -202,13 +206,13 @@ az vm identity remove -g <RESOURCE GROUP> -n <VM NAME> --identities <MSI NAME>
 > В значении `none` учитывается регистр. Оно должно содержать строчные буквы.
 
 ```azurecli-interactive
-az vm update -n myVM -g myResourceGroup --set identity.type="none" identity.identityIds=null
+az vm update -n myVM -g myResourceGroup --set identity.type="none" identity.userAssignedIdentities=null
 ```
 
 Если у виртуальной машины есть как назначенное системой, так и назначенные пользователем удостоверения, вы можете удалить все назначенные пользователем удостоверения, переключившись на использование только назначенного системой. Используйте следующую команду:
 
 ```azurecli-interactive
-az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' identity.identityIds=null 
+az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' identity.userAssignedIdentities=null 
 ```
 
 ## <a name="related-content"></a>Связанная информация

@@ -3,7 +3,7 @@ title: Начало работы с сертификатами Key Vault
 description: Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
 services: key-vault
 documentationcenter: ''
-author: lleonard-msft
+author: bryanla
 manager: mbaldwin
 tags: azure-resource-manager
 ms.assetid: a788b958-3acb-4bb6-9c94-4776852aeea1
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
-ms.author: alleonar
-ms.openlocfilehash: f1a1a2fa083dd1bf02132e08981d736a17a2c58f
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.author: bryanla
+ms.openlocfilehash: f2becc5d746c3079e8f686748f33f10cd4a8d8c8
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37109490"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42145188"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -51,14 +51,14 @@ ms.locfileid: "37109490"
 
 **Шаг 3** — администратор Contoso вместе с сотрудником Contoso (пользователь Key Vault), владеющим сертификатами, в зависимости от центра сертификации, может получить сертификат от администратора или непосредственно из учетной записи ЦС.  
 
--   Начните операцию добавления учетных данных в хранилище ключей с создания ресурса [издателя сертификата](https://docs.microsoft.com/rest/api/keyvault/certificate-issuers). 
+-   Начните операцию добавления учетных данных в хранилище ключей с [настройки ресурса издателя сертификата](/rest/api/keyvault/setcertificateissuer). Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
     -   Например, MyDigiCertIssuer  
         -   Поставщик  
         -   Учетные данные — учетные данные учетной записи ЦС. Каждый ЦС имеет собственные данные.  
 
      Дополнительные сведения о создании учетных записей с помощью поставщиков ЦС см. в соответствующей записи [блога Key Vault](http://aka.ms/kvcertsblog).  
 
-**Шаг 3.1** — настройте [контакты сертификатов](https://docs.microsoft.com/rest/api/keyvault/certificate-contacts) для уведомлений. Это контакт для пользователя Key Vault. Key Vault не требует этот шаг.  
+**Шаг 3.1** — настройте [контакты сертификатов](/rest/api/keyvault/setcertificatecontacts) для уведомлений. Это контакт для пользователя Key Vault. Key Vault не требует этот шаг.  
 
 Примечание. Этот процесс, шаг 3.1, — это разовая операция.  
 
@@ -121,5 +121,5 @@ ms.locfileid: "37109490"
   (5) — Приложение завершает создание сертификата путем слияния сертификата X509 из ЦС.
 
 ## <a name="see-also"></a>См. также
-- [Операции с сертификатами](/rest/api/keyvault/certificate-operations)
+
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)

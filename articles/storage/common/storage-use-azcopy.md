@@ -5,15 +5,15 @@ services: storage
 author: seguler
 ms.service: storage
 ms.topic: article
-ms.date: 05/17/2018
+ms.date: 08/13/2018
 ms.author: seguler
 ms.component: common
-ms.openlocfilehash: aaae191baaa7b712c77d93303ded777afe97c249
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: a0e2400163433ba5290525d0fe807ede624a31ed
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39530596"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143162"
 ---
 # <a name="transfer-data-with-the-azcopy-on-windows"></a>Перенос данных с помощью AzCopy для Windows
 AzCopy — это служебная программа командной строки. Она предназначена для копирования данных из хранилища BLOB-объектов, хранилища файлов и хранилища таблиц Microsoft Azure (и обратно) с помощью простых команд, обеспечивающих оптимальную производительность. Вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения.  
@@ -22,16 +22,16 @@ AzCopy — это служебная программа командной ст
 
 ## <a name="download-and-install-azcopy-on-windows"></a>Скачивание и установка AzCopy для Windows
 
-### <a name="latest-preview-version-v800"></a>Последняя предварительная версия (8.0.0)
-Скачайте [последнюю предварительную версию AzCopy для Windows](https://aka.ms/downloadazcopypr). Эта предварительная версия обеспечивает значительное повышение производительности и установку пакетов .NET Core.
+### <a name="latest-version-v81"></a>Последняя версия (8.1)
+Скачайте [последнюю версию AzCopy для Windows](https://aka.ms/downloadazcopy).
 
-#### <a name="azcopy-on-windows-80-preview-release-notes"></a>Заметки о выпуске предварительной версии AzCopy для Windows 8.0
-- В последней версии служба таблиц уже не поддерживается. Если вы используете функцию экспорта таблиц, скачайте стабильную версию.
+#### <a name="azcopy-on-windows-81-release-notes"></a>Заметки о выпуске версии AzCopy для Windows 8.1
+- В последней версии служба таблиц уже не поддерживается. Если вы используете функцию экспорта таблиц, загрузите AzCopy версии 7.3.
 - Сборка основана на .NET Core 2.1, и все зависимости .NET Core собраны в установочном пакете.
-- Значительное повышение производительности операций передачи и скачивания.
+- Добавлена поддержка проверки подлинности OAuth. Чтобы выполнить вход с помощью Azure Active Directory, используйте ```azcopy login```.
 
-### <a name="latest-stable-version-v710"></a>Последняя стабильная версия (7.1.0)
-Скачайте [последнюю стабильную версию AzCopy для Windows](https://aka.ms/downloadazcopy).
+### <a name="azcopy-with-table-support-v73"></a>AzCopy с поддержкой таблиц (версия 7.3)
+Скачайте [AzCopy версии 7.3 с поддержкой таблиц](https://aka.ms/downloadazcopynet).
 
 ### <a name="post-installation-step"></a>Действия после установки
 

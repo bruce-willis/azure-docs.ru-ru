@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 03/19/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 6ed8265a0b1a014ad15a6bb42fabb6003fb6a775
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: 12b5c013a0704eb2d3f7df58011571b902955c75
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37343267"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42146013"
 ---
 # <a name="install-the-durable-functions-extension-and-samples-azure-functions"></a>Установка расширения устойчивых функций и примеров (Функции Azure)
 
@@ -33,7 +33,7 @@ ms.locfileid: "37343267"
 
 Сейчас Visual Studio обеспечивает максимальное удобство разработки приложений с использованием устойчивых функций.  Функции можно выполнять локально, а также публиковать в Azure. Можно начать с пустого проекта или набора примеров функций.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 * Установите [последнюю версию Visual Studio](https://www.visualstudio.com/downloads/) (15.3 или выше). Включите рабочую нагрузку **разработки Azure** в параметрах установки.
 
@@ -55,7 +55,7 @@ ms.locfileid: "37343267"
 
 Visual Studio Code поддерживает процесс локальной разработки на всех основных платформах: Windows, macOS и Linux.  Функции можно выполнять локально, а также публиковать в Azure. Можно начать с пустого проекта или набора примеров функций.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 * Установите [последнюю версию Visual Studio Code](https://code.visualstudio.com/Download). 
 
@@ -146,14 +146,14 @@ Visual Studio Code поддерживает процесс локальной р
 
 ## <a name="azure-portal"></a>Портал Azure
 
-При желании для разработки с использованием устойчивых функций можно использовать портал Azure.
+При желании для разработки с использованием устойчивых функций можно использовать [портал Azure](https://portal.azure.com).
 
    > [!NOTE]
    > Устойчивые функции в JavaScript пока недоступны на портале.
 
 ### <a name="create-an-orchestrator-function"></a>Создание функции оркестратора
 
-1. Создайте приложение-функцию на сайте [functions.azure.com](https://functions.azure.com/signin).
+1. Создайте новое приложение-функцию на портале, как показано в руководстве [Создание первой функции на портале Azure](functions-create-first-azure-function.md#create-a-function-app).
 
 2. Настройте в приложении-функции [использование среды выполнения версии 2.0](set-runtime-version.md).
 

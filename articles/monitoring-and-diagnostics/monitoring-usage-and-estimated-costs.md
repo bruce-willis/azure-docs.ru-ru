@@ -5,18 +5,24 @@ author: dalekoetke
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 05/31/2018
+ms.date: 08/11/2018
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.component: ''
-ms.openlocfilehash: edfcc244105403ae33251777c560d4cc21dfe5cb
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 35e7d36043defd236252f86facf4b9e2ed945d67
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264288"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42143720"
 ---
 # <a name="monitoring-usage-and-estimated-costs"></a>Мониторинг использования и ожидаемых затрат
+
+> [!NOTE]
+> В этой статье описывается просмотр использования и ожидаемых затрат в различных функциях мониторинга Azure для разных моделей ценообразования.  Дополнительные сведения приведены в статьях ниже.
+> - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](../log-analytics/log-analytics-manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
+> - В статье [Анализ использования данных в службе Log Analytics](../log-analytics/log-analytics-usage.md) описано, как анализировать и оповещать об использовании данных.
+> - В статье [Управление ценами и объемом данных в Application Insights](../application-insights/app-insights-pricing.md) описано, как анализировать использование данных в Application Insights.
 
 На странице **Usage and estimated costs** (Использование и ожидаемые затраты) в центре мониторинга на портале Azure объясняется, как использовать такие основные функции мониторинга, как [оповещения, метрики и уведомления](https://azure.microsoft.com/pricing/details/monitor/), [Служба анализа журналов Azure](https://azure.microsoft.com/pricing/details/log-analytics/) и [Azure Log Analytics](https://azure.microsoft.com/pricing/details/application-insights/). Для клиентов с тарифными планами, доступными до апреля 2018 года, это также включает использование службы Log Analytics, приобретенной в соответствии с предложением "Анализ и аналитика".
 

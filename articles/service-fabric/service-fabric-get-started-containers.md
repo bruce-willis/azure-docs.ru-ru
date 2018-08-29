@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: e76ffa3256da5acecf55ad37ea3d927510565ffe
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 41246e434f8adade65f39b3471417888f62d7528
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39577294"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142628"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 > [!div class="op_single_selector"]
@@ -204,6 +204,8 @@ docker push myregistry.azurecr.io/samples/helloworldapp
   </Endpoints>
 </Resources>
 ```
+> [!NOTE]
+> Дополнительные конечные точки для службы могут быть добавлены путем объявления дополнительных элементов EndPoint с соответствующими значениями свойств. Для каждого отдельного порта может быть объявлено только одно значение протокола.
 
 При определении конечной точки Service Fabric публикует ее в службе именования. Другие службы, работающие в кластере, могут разрешать этот контейнер. Кроме того, возможен обмен данными между контейнерами с помощью [обратного прокси-сервера](service-fabric-reverseproxy.md). Для этого нужно указать в переменных среды HTTP-порт прослушивания обратного прокси-сервера и имена служб, с которыми будет выполняться обмен данными.
 
@@ -247,6 +249,8 @@ docker push myregistry.azurecr.io/samples/helloworldapp
     ...
 </ServiceManifestImport>
 ```
+> [!NOTE]
+> Дополнительные PortBindings для службы могут быть добавлены путем объявления дополнительных элементов PortBinding с соответствующими значениями свойств.
 
 ## <a name="configure-container-registry-authentication"></a>Настройка проверки подлинности в реестре контейнеров
 Чтобы настроить проверку подлинности для реестра контейнеров, в файле ApplicationManifest.xml добавьте `RepositoryCredentials` в элемент `ContainerHostPolicies`. Добавьте учетную запись и пароль для реестра контейнеров myregistry.azurecr.io. Это позволит службе скачать образ контейнера из репозитория.
@@ -598,13 +602,13 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 
 ```json
 {
-"name": "Hosting",
+        "name": "Hosting",
         "parameters": [
           {
               "name": "ContainerImageDownloadTimeout",
               "value": "1200"
           }
-]
+        ]
 }
 ```
 
@@ -626,7 +630,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 
 ```json
 { 
-   "name": "Hosting", 
+        "name": "Hosting", 
         "parameters": [ 
           { 
             "name": "ContainerServiceArguments", 

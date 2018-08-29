@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/03/2017
 ms.author: dobett
-ms.openlocfilehash: 63e7fd5807f0cf6d05d81af138d649b75024d9bb
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: aedf2d0012f5af8ea2eb8e944f06b20c7f1a6bb8
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34634028"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42143856"
 ---
 # <a name="manage-your-iot-hub-device-identities-in-bulk"></a>Управление удостоверениями устройств Центра Интернета вещей в пакетном режиме
 
@@ -25,7 +25,7 @@ ms.locfileid: "34634028"
 
 Класс **RegistryManager** содержит методы **ExportDevicesAsync** и **ImportDevicesAsync**, которые используют платформу **заданий**. С помощью этих методов можно экспортировать, импортировать и синхронизировать весь реестр удостоверений Центра Интернета вещей.
 
-В этой статье описано использование класса **RegistryManager** и системы **заданий** для выполнения массового импорта устройств в реестр удостоверений центра Интернета вещей и экспорта устройств из него. Вы можете использовать службу подготовки устройств для Центра Интернета вещей, чтобы настроить автоматическую подготовку JIT для одного или нескольких центров Интернета вещей без вмешательства оператора. Дополнительные сведения см. в [документации по подготовке службы][lnk-dps].
+В этой статье описано использование класса **RegistryManager** и системы **заданий** для выполнения массового импорта устройств в реестр удостоверений центра Интернета вещей и экспорта устройств из него. Вы можете использовать службу подготовки устройств для Центра Интернета вещей, чтобы настроить автоматическую подготовку JIT для одного или нескольких центров Интернета вещей без вмешательства оператора. Дополнительные сведения см. в [документации по подготовке службы](/azure/iot-dps).
 
 
 ## <a name="what-are-jobs"></a>Что такое задания?
@@ -33,6 +33,7 @@ ms.locfileid: "34634028"
 Операции реестра удостоверений используют систему **задания**, когда операция
 
 * характеризуется длительным временем выполнения по сравнению со стандартными операциями среды выполнения или же
+
 * возвращает пользователю большой объем данных.
 
 Вместо одного вызова API, ожидающего или блокирующего результат операции, операция асинхронно создает **задание** для этого Центра Интернета вещей. и сразу же возвращает объект **JobProperties**.
@@ -41,7 +42,8 @@ ms.locfileid: "34634028"
 
 ```csharp
 // Call an export job on the IoT Hub to retrieve all devices
-JobProperties exportJob = await registryManager.ExportDevicesAsync(containerSasUri, false);
+JobProperties exportJob = await 
+  registryManager.ExportDevicesAsync(containerSasUri, false);
 ```
 
 > [!NOTE]
@@ -50,14 +52,18 @@ JobProperties exportJob = await registryManager.ExportDevicesAsync(containerSasU
 Вы можете использовать класс **RegistryManager** для запросов состояния **задания** с помощью возвращенных метаданных **JobProperties**. Чтобы создать экземпляр класса **RegistryManager**, используйте метод **CreateFromConnectionString**.
 
 ```csharp
-RegistryManager registryManager = RegistryManager.CreateFromConnectionString("{your IoT Hub connection string}");
+RegistryManager registryManager =
+  RegistryManager.CreateFromConnectionString("{your IoT Hub connection string}");
 ```
 
 Чтобы найти строку подключения для Центра Интернета вещей, сделайте следующее на портале Azure:
 
 - Перейдите в Центр Интернета вещей.
+
 - Выберите **Политики общего доступа**.
+
 - Выберите политику, учитывая необходимые разрешения.
+
 - На панели в правой части экрана скопируйте строку подключения.
 
 В следующем фрагменте кода C# показано, как каждые пять секунд выполнять опрос, чтобы увидеть, завершено ли выполнение задания.
@@ -90,7 +96,8 @@ while(true)
 * *Строковый*, содержащий URI контейнера больших двоичных объектов. Этот URI должен содержать маркер SAS, который предоставляет доступ на запись в контейнер. Задание создает в этом контейнере блочный BLOB-объект для хранения сериализованных данных экспорта устройств. Маркер SAS должен включать следующие разрешения.
 
    ```csharp
-   SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
+   SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read 
+     | SharedAccessBlobPermissions.Delete
    ```
 
 * *Логический*, указывающий, следует ли исключить из данных экспорта ключи проверки подлинности. Если задано значение **false**, ключи аутентификации включены в выходные данные экспорта. В противном случае экспортируются ключи со значением **null**.
@@ -99,7 +106,8 @@ while(true)
 
 ```csharp
 // Call an export job on the IoT Hub to retrieve all devices
-JobProperties exportJob = await registryManager.ExportDevicesAsync(containerSasUri, false);
+JobProperties exportJob = 
+  await registryManager.ExportDevicesAsync(containerSasUri, false);
 
 // Wait until job is finished
 while(true)
@@ -129,7 +137,7 @@ while(true)
 {"id":"Device5","eTag":"MA==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"abc=","secondaryKey":"def="}}}
 ```
 
-При наличии данных двойника устройства они также будут экспортированы вместе с данными устройства. Этот формат приведен в примере ниже. Все данные, начиная со строки twinETag и до конца, являются данными двойника устройства.
+При наличии данных двойника устройства они также будут экспортированы вместе с данными устройства. Этот формат приведен в примере ниже. Все данные, начиная со строки "twinETag" и до конца, — это данные двойника устройства.
 
 ```json
 {
@@ -208,10 +216,12 @@ using (var streamReader = new StreamReader(await blob.OpenReadAsync(AccessCondit
    ```csharp
    SharedAccessBlobPermissions.Read
    ```
+
 * *Строка*, содержащая URI контейнера больших двоичных объектов [службы хранилища Azure](https://azure.microsoft.com/documentation/services/storage/), в качестве *выходных данных* задания. Задание создает в этом контейнере блочный BLOB-объект для хранения сведений об ошибках из завершенного **задания**импорта. Маркер SAS должен включать следующие разрешения.
 
    ```csharp
-   SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
+   SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read 
+     | SharedAccessBlobPermissions.Delete
    ```
 
 > [!NOTE]
@@ -220,7 +230,8 @@ using (var streamReader = new StreamReader(await blob.OpenReadAsync(AccessCondit
 В следующем фрагменте кода C# показано, как инициировать задание импорта.
 
 ```csharp
-JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
+JobProperties importJob = 
+   await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
 ```
 
 Вы можете использовать этот метод, чтобы импортировать данные для двойника устройства. Для входных данных используется тот же формат, который был показан в разделе **ExportDevicesAsync**. Таким образом, экспортированные данные можно импортировать повторно. Параметр **$metadata** является необязательным.
@@ -308,7 +319,8 @@ using (CloudBlobStream stream = await blob.OpenWriteAsync())
 // Call import using the blob to add new devices
 // Log information related to the job is written to the same container
 // This normally takes 1 minute per 100 devices
-JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
+JobProperties importJob =
+   await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
 
 // Wait until job is finished
 while(true)
@@ -407,22 +419,14 @@ static string GetContainerSasUri(CloudBlobContainer container)
 
 В этой статье вы узнали, как выполнять массовые операции с реестром удостоверений в Центре Интернета вещей. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
-* [Метрики Центра Интернета вещей][lnk-metrics]
-* [Мониторинг операций][lnk-monitor]
+* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
+* [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Руководство разработчика для Центра Интернета вещей][lnk-devguide]
-* [Развертывание ИИ на пограничных устройствах с использованием Azure IoT Edge][lnk-iotedge]
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
 
 Узнайте, как использовать службу подготовки устройств для Центра Интернета вещей, чтобы включить автоматическую подготовку JIT, из следующей статьи: 
 
-* [Служба подготовки устройств для Центра Интернета вещей Azure][lnk-dps]
-
-
-[lnk-metrics]: iot-hub-metrics.md
-[lnk-monitor]: iot-hub-operations-monitoring.md
-
-[lnk-devguide]: iot-hub-devguide.md
-[lnk-iotedge]: ../iot-edge/tutorial-simulate-device-linux.md
-[lnk-dps]: https://azure.microsoft.com/documentation/services/iot-dps
+* [Служба подготовки устройств для Центра Интернета вещей Azure](/azure/iot-dps)

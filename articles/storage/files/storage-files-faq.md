@@ -7,12 +7,12 @@ ms.service: storage
 ms.date: 07/19/2018
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: 51b54de39e24cfd69b7823c17dc5f7c9d7e885a9
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 31f5b2792aa83d15a1478cf201ca674995816430
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524079"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42144713"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -191,6 +191,10 @@ ms.locfileid: "39524079"
 * <a id="afs-do-not-delete-server-endpoint"></a>
 **У меня возникла проблема со службой "Синхронизация файлов Azure" на сервере (синхронизация, распределение по уровням облака и т. д). Следует ли удалить и создать заново конечную точку сервера?**  
     [!INCLUDE [storage-sync-files-remove-server-endpoint](../../../includes/storage-sync-files-remove-server-endpoint.md)]
+    
+* <a id="afs-resource-move"></a>
+**Можно ли переместить службу синхронизации хранилища и/или учетную запись хранения в другую группу ресурсов или подписку?**  
+   Да, служба синхронизации хранилища и/или учетную запись хранения можно переместить в другую группу ресурсов или подписку. Если учетная запись хранения перемещена, необходимо предоставить службе Hybrid File Sync доступ к учетной записи хранилища (см. в разделе [Убедитесь, что служба "Синхронизация файлов Azure" имеет доступ к учетной записи хранения](https://docs.microsoft.com/en-us/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cportal#troubleshoot-rbac)).
 
 ## <a name="security-authentication-and-access-control"></a>Безопасность, проверка подлинности и управление доступом
 * <a id="ad-support"></a>
@@ -221,7 +225,7 @@ ms.locfileid: "39524079"
 
 * <a id="data-compliance-policies"></a>
 **Какие политики соответствия данных поддерживаются службой файлов Azure?**  
-   В основе работы службы файлов Azure лежит та же архитектура хранилища, которая используется и для других служб хранилища в службе хранилища Azure. К этой службе применяются те же политики соответствия данных. Дополнительные сведения о соответствии данных в службе хранилища Azure см. в [документе о защите данных в Microsoft Azure](http://go.microsoft.com/fwlink/?LinkID=398382&clcid=0x409) и [центре управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx).
+   В основе работы службы файлов Azure лежит та же архитектура хранилища, которая используется и для других служб хранилища в службе хранилища Azure. К этой службе применяются те же политики соответствия данных. Дополнительные сведения о соответствии данных в службе хранилища Azure см. в разделах [Предложения для соответствия требованиям в службе хранилища Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-compliance-offerings) и [Центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx).
 
 ## <a name="on-premises-access"></a>Локальный доступ
 * <a id="expressroute-not-required"></a>

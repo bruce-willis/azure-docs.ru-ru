@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: sashan
 ms.reviewer: carlrab
-ms.openlocfilehash: ad4725ff6871ef489c6a10656af9a76e588edfa1
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: 75805cad43f015f1741193ec5a1ead1fa7603f41
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308427"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42146058"
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий
 База данных SQL предоставляет такие варианты восстановления базы данных с помощью [создаваемых автоматически резервных копий баз данных](sql-database-automated-backups.md) и [резервных копий в хранилище с включенной функцией долгосрочного хранения](sql-database-long-term-retention.md) Вы можете восстановить из резервной копии базы данных следующее:
@@ -61,7 +61,7 @@ ms.locfileid: "36308427"
 Возможность массового восстановления встроенными средствами не предусмотрена. Сценарий [База данных SQL Azure: полное восстановление сервера](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666) является примером одного из способов выполнения этой задачи.
 
 > [!IMPORTANT]
-> Чтобы использовать восстановление с помощью автоматически создаваемых резервных копий, нужно быть участником роли "Участник SQL Server" в подписке или владельцем подписки. Выполнить восстановление можно с помощью портала Azure, PowerShell или REST API. Использовать для этого Transact-SQL невозможно. 
+> Чтобы использовать восстановление с помощью автоматически создаваемых резервных копий, нужно быть участником подписки с ролью "Участник SQL Server" или владельцем подписки (см. статью [Встроенные роли в Azure](../role-based-access-control/built-in-roles.md)). Выполнить восстановление можно с помощью портала Azure, PowerShell или REST API. Использовать для этого Transact-SQL невозможно. 
 > 
 
 ## <a name="point-in-time-restore"></a>Восстановление до точки во времени
@@ -138,7 +138,7 @@ ms.locfileid: "36308427"
 | [Restore-AzureRmSqlDatabase](/powershell/module/azurerm.sql/restore-azurermsqldatabase) |Восстанавливает базу данных SQL. |
 |  | |
 
-### <a name="rest-api"></a>ИНТЕРФЕЙС REST API
+### <a name="rest-api"></a>REST API
 | API | ОПИСАНИЕ |
 | --- | --- |
 | [REST (createMode=Recovery)](https://msdn.microsoft.com/library/azure/mt163685.aspx) |Восстанавливает базу данных. |

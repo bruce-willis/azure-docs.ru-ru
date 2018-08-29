@@ -9,12 +9,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.author: isacabe
-ms.openlocfilehash: e900b952ab9bb2054b9e4174670894027cdd2618
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 88ce34125009665d346cf034f5d02ba7e21f48fc
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969458"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42144454"
 ---
 # <a name="connect-mxchip-iot-devkit-az3166-to-the-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit AZ3166 к акселератору решений для удаленного мониторинга Интернета вещей
 
@@ -139,12 +139,6 @@ ms.locfileid: "38969458"
 
 ![Индикатор микросхемы MX](./media/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringV2/azure-iot-suite-devkit-led.png)
 
-
-## <a name="change-device-id"></a>Изменение идентификатора устройства
-
-Идентификатор устройства в Центре Интернета вещей можно изменить, выполнив шаги в [этом руководстве](https://microsoft.github.io/azure-iot-developer-kit/docs/customize-device-id/).
-
-
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 
 Если вы столкнулись с проблемами, то можете ознакомиться с [часто задаваемыми вопросами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или обратиться к нам по одному из таких каналов:
@@ -158,3 +152,4 @@ ms.locfileid: "38969458"
 
 * [Общие сведения об акселераторах решений Интернета вещей](https://docs.microsoft.com/azure/iot-suite/)
 * [Connect an MXChip IoT DevKit device to your Microsoft IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Microsoft IoT Central)
+* [Пакет средств разработки Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/)

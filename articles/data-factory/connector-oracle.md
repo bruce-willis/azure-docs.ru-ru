@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/14/2018
 ms.author: jingwang
-ms.openlocfilehash: 5039399ac875add02319e1a745d99344956c7bee
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: ec0fc11ac2caf421f331a8fe72f1dacdf6b8a702
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37860220"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42312169"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -42,7 +42,7 @@ ms.locfileid: "37860220"
 > [!Note]
 > Прокси-сервер Oracle не поддерживается.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы копировать данные из базы данных Oracle предварительной версии и в нее, необходимо настроить локальную среду выполнения интеграции. См. дополнительные сведения о среде выполнения интеграции см. в статье [Локальная среда выполнения интеграции](create-self-hosted-integration-runtime.md). Среда выполнения интеграции содержит встроенный драйвер Oracle. Поэтому вам не нужно вручную устанавливать драйвер при копировании данных из базы данных Oracle и в нее.
 
@@ -64,6 +64,12 @@ ms.locfileid: "37860220"
 
 >[!TIP]
 >Если при использовании версии Oracle 8i возникает ошибка "ORA-01025: значение параметра UPI вне допустимого диапазона", добавьте `WireProtocolMode=1` в строку подключения и повторите попытку.
+
+Существует два варианта, чтобы включить шифрование для подключения Oracle:
+
+1.  На стороне сервера Oracle перейдите к Oracle Advanced Security (OAS) и задайте настройки шифрования, которые поддерживают шифрование Triple-DES (3DES) и Advanced Encryption Standard (AES). Подробности см. в [Документации Oracle Advanced Security](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asointro.htm#i1008759). Соединитель ADF Oracle автоматически согласовывает метод шифрования таким образом, чтобы при установлении соединения с Oracle использовался тот метод шифрования, который вы настроили в OAS.
+
+2.  Со стороны клиента в строку подключения можно добавить `EncryptionMethod=1`. В таком случае в качестве метода шифрования будут использоваться протоколы SSL/TLS. Чтобы использовать эту функцию, необходимо отключить параметры шифрования без SSL в OAS на стороне сервера Oracle, чтобы избежать конфликтов шифрования.
 
 **Пример.**
 

@@ -7,21 +7,21 @@ manager: shreeshd
 keywords: azure backup для резервного копирования виртуальных машин, восстановление виртуальных машин azure, политика резервного копирования
 ms.service: backup
 ms.topic: conceptual
-ms.date: 7/18/2017
+ms.date: 8/16/2018
 ms.author: trinadhk
-ms.openlocfilehash: d637a98029b33be890b31f32c3080650b251f7a8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 58b0622da2ef617e652c8bb9dacbf7daa2d79966
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606381"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42145922"
 ---
 # <a name="questions-about-the-azure-vm-backup-service"></a>Вопросы об использовании службы Azure Backup для резервного копирования виртуальных машин
 В этой статье содержатся ответы на часто задаваемые вопросы о компонентах службы Azure Backup для резервного копирования виртуальных машин. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
 
 ## <a name="configure-backup"></a>Настройка резервного копирования
 ### <a name="do-recovery-services-vaults-support-classic-vms-or-resource-manager-based-vms-br"></a>Какие виртуальные машины поддерживают хранилища служб восстановления: классические ВМ или ВМ на основе Resource Manager? <br/>
-Хранилища служб восстановления поддерживают обе модели.  В хранилище служб восстановления можно создать резервную копию классической виртуальной машины (созданной на классическом портале) или виртуальной машины Resource Manager (созданной на портале Azure).
+Хранилища служб восстановления поддерживают обе модели.  Можно создать резервную копию классической виртуальной машины или виртуальной машины диспетчера ресурсов в хранилище Служб восстановления.
 
 ### <a name="what-configurations-are-not-supported-by-azure-vm-backup"></a>Какие конфигурации не поддерживаются службой Azure Backup для резервного копирования виртуальных машин?
 Узнайте о [поддерживаемых версиях операционных систем](backup-azure-arm-vms-prepare.md#supported-operating-systems-for-backup) и [ограничениях при резервном копировании виртуальных машин](backup-azure-arm-vms-prepare.md#limitations-when-backing-up-and-restoring-a-vm).
@@ -73,6 +73,9 @@ ms.locfileid: "34606381"
 2. [Преобразуйте восстановленные диски в управляемые](tutorial-restore-disk.md#convert-the-restored-disk-to-a-managed-disk).
 3. [Создайте виртуальную машину с управляемыми дисками](tutorial-restore-disk.md#create-a-vm-from-the-restored-disk). <br>
 Командлеты Powershell см. [здесь](backup-azure-vms-automation.md#restore-an-azure-vm).
+
+### <a name="can-i-restore-the-vm-if-my-vm-is-deleted"></a>Можно ли восстановить виртуальную машину, если моя виртуальная машина удалена?
+Да. Жизненный цикл виртуальной машины и ее соответствующий элемент резервного копирования отличаются. Поэтому, даже если вы удалите виртуальную машину, можно перейти к соответствующему элементу резервного копирования в хранилище Служб восстановления и активировать восстановление с помощью одной из точек восстановления. 
 
 ## <a name="manage-vm-backups"></a>Управление резервным копированием виртуальных машин
 ### <a name="what-happens-when-i-change-a-backup-policy-on-vms"></a>Что происходит при изменении политики резервного копирования для виртуальных машин?

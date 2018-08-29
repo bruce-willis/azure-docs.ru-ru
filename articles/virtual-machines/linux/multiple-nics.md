@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: iainfou
-ms.openlocfilehash: aae71dafd3685e44975049c4287c083abc2330bc
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: 77feb52a4ba2013bd6ec0afcd30a20f05227031e
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39144862"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146992"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 Можно создать виртуальную машину (ВМ) в Azure, к которой подключено несколько виртуальных сетевых интерфейсов (сетевых карт). Распространен сценарий, когда разные подсети используются для интерфейсных и внутренних подключений или когда для решения мониторинга либо архивации используется выделенная сеть. В этой статье описаны способы создания виртуальной машины с несколькими сетевыми картами, присоединенными к ней, и добавления или удаления сетевых адаптеров на существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины.
@@ -213,7 +213,7 @@ az network nic ip-config update \
     --public-ip-addres myPublicIP
 ```
 
-Чтобы просмотреть представление общедоступного IP-адреса виртуальной машины, используйте команду [az vm show](/cli/azure/vm#az-vm-show) следующим образом.
+Чтобы просмотреть общедоступный IP-адрес виртуальной машины, используйте команду [az vm show](/cli/azure/vm#az-vm-show) следующим образом.
 
 ```azurecli
 az vm show --resource-group myResourceGroup --name myVM -d --query publicIps -o tsv

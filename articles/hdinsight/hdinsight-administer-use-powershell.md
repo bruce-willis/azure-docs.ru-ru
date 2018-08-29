@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: jasonh
-ms.openlocfilehash: 60868ceb58a9ed4935ea540ad15abd0e5d35f559
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: b23662ccda090b4d8a4cbb5eae3029affd075c33
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39595534"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146549"
 ---
 # <a name="manage-hadoop-clusters-in-hdinsight-by-using-azure-powershell"></a>Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. В этой статье вы узнаете, как управлять кластерами Hadoop в Azure HDInsight с помощью Azure PowerShell. Список командлетов HDInsight PowerShell см. в [справочнике по командлетам HDInsight][hdinsight-powershell-reference].
+Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. В этой статье вы узнаете, как управлять кластерами Hadoop в Azure HDInsight с помощью Azure PowerShell. Список командлетов HDInsight PowerShell см. в [справочнике по командлетам HDInsight](https://msdn.microsoft.com/library/azure/dn479228.aspx).
 
 **Предварительные требования**
 
@@ -231,7 +231,7 @@ $resourceGroupName = $cluster.ResourceGroup
 Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].
 
 ## <a name="see-also"></a>См. также
-* [Справочная документация по командлетам HDInsight][hdinsight-powershell-reference]
+* [Справочная документация по командлетам HDInsight](https://msdn.microsoft.com/library/azure/dn479228.aspx)
 * [Администрирование HDInsight с помощью портала Azure][hdinsight-admin-portal]
 * [Администрирование HDInsight с помощью интерфейса командной строки][hdinsight-admin-cli]
 * [Создание кластеров Hadoop в HDInsight][hdinsight-provision]

@@ -8,16 +8,16 @@ manager: kfile
 editor: jasonwhowell
 ms.service: postgresql-database
 ms.topic: article
-ms.date: 06/01/2018
-ms.openlocfilehash: 8199bd98b9ae091ff2b27efa8334e8e763879359
-ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
+ms.date: 08/15/2018
+ms.openlocfilehash: af5df507bd7a825ddfaaa7518691cb5fbec34d47
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34757371"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146822"
 ---
 # <a name="create-and-manage-azure-database-for-postgresql-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Создание правил и конечных точек службы виртуальной сети базы данных Azure для PostgreSQL и управление ими с помощью портала Azure
-Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны в общедоступной предварительной версии во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
+Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
 
 > [!NOTE]
 > Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.

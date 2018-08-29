@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 17ff6ebed615971b4157831431d9e2395ca68b48
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: dcfcfb24d2b47a8272c576856fc3accc547f354a
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441681"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42146037"
 ---
 # <a name="create-a-model-in-azure-portal"></a>Создание модели на портале Azure
 
@@ -23,11 +23,12 @@ ms.locfileid: "37441681"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-- Сервер Azure Analysis Services уровня Standard или Developer. Новые модели, созданные с помощью конструктора веб-приложений, используют DirectQuery, что поддерживается только этими уровнями.
+- Ваш сервер Azure Analysis Services должен находиться на уровне Standard или Developer. Новые модели, созданные с помощью конструктора веб-приложений, используют DirectQuery, что поддерживается только этими уровнями.
 - База данных SQL Azure, хранилище данных SQL Azure или PBIX-файл Power BI Desktop в качестве источника данных. Новые модели, созданные из файлов Power BI Desktop, поддерживают Базу данных SQL Azure и хранилище данных SQL Azure.
 - Учетная запись SQL Server и пароль для подключения к источникам данных в Базе данных SQL Azure или хранилище данных SQL Azure.
+- Для создания новой модели у вас должны быть права администратора сервера. Права администратора базы данных необходимы для редактирования и запроса модели с помощью конструктора.
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 

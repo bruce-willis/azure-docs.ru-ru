@@ -1,25 +1,25 @@
 ---
 title: Примеры запросов Lucene для службы поиска Azure | Документация Майкрософт
 description: Синтаксис запросов Lucene для поиска нечетких соответствий, поиска с учетом расположения, повышения приоритета терминов, поиска по регулярным выражениям и поиска с использованием подстановочных знаков в службе "Поиск Azure".
-author: LiamCa
-manager: pablocas
+author: HeidiSteen
+manager: cgronlun
 tags: Lucene query analyzer syntax
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 07/16/2018
-ms.author: liamca
-ms.openlocfilehash: d90a7b2d12a147b8020abbd51ef055f0e70471fb
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.date: 08/09/2018
+ms.author: heidist
+ms.openlocfilehash: b5a3e2eac218ba2aa6958ffc56bd59f5b513cf48
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39365434"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42143271"
 ---
 # <a name="lucene-syntax-query-examples-for-building-advanced-queries-in-azure-search"></a>Примеры синтаксиса запросов Lucene для создания расширенных запросов в Поиске Azure
-При создании запросов для Поиска Azure вы можете заменить используемое по умолчанию [средство синтаксического анализа](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) альтернативным [средством синтаксического анализа запросов Lucene в Поиске Azure](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы формировать специализированные и расширенные определения запросов. 
+При создании запросов для Поиска Azure можно заменить [стандартный синтаксический анализатор](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) по умолчанию на более экспансивное [Средство синтаксического анализа запросов Lucene в Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы сформулировать специализированные и расширенные определения запросов. 
 
-Средство синтаксического анализа запросов Lucene поддерживает более сложные конструкции запросов, а именно: запросы, относящиеся к полям, поиск нечетких соответствий, поиск с использованием подстановочных знаков, поиск с учетом расположения, повышение приоритета терминов и поиск по регулярным выражениям. Дополнительные возможности накладывают дополнительные требования. В этой статье можно пошагово выполнить примеры полного синтаксиса операций запросов.
+Средство синтаксического анализа запросов Lucene поддерживает более сложные конструкции запросов, а именно: запросы, относящиеся к полям, поиск нечетких соответствий, поиск с использованием подстановочных знаков, поиск с учетом расположения, повышение приоритета терминов и поиск по регулярным выражениям. Дополнительные возможности поставляются с дополнительными требованиями к обработке, поэтому следует предусмотреть немного больше времени для выполнения. В этой статье можно пошагово выполнить примеры полного синтаксиса операций запросов.
 
 > [!Note]
 > Многие специализированные конструкции запросов, обеспечиваемые благодаря полному синтаксису запросов Lucene, не поддерживают [анализ текста](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis), что может оказаться неожиданным, если вы хотите использовать выделение корней слов или лемматизацию. Лексический анализ выполняется только для полными терминами (запрос термина или запрос фразы). Типы запросов с неполными терминами (запрос с префиксом, запрос с подстановочными знаками, запрос с регулярными выражениями, нечеткий запрос) добавляются непосредственно к дереву запроса в обход этапа анализа. Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр. 
@@ -27,15 +27,15 @@ ms.locfileid: "39365434"
 
 ## <a name="formulate-requests-in-postman"></a>Формирование запросов в Postman
 
-В следующих примерах используется индекс поиска вакансий в Нью-Йорке, состоящий из вакансий, доступных на основе набора данных, полученных в рамках инициативы [City of New York OpenData](https://nycopendata.socrata.com/). Эти данные не являются текущими или завершенными. Индекс размещен в службе песочницы корпорации Майкрософт. Это означает, что для использования этих запросов подписка Azure или служба поиска Azure не требуется.
+В следующих примерах используется индекс поиска вакансий в Нью-Йорке, состоящий из вакансий, доступных на основе набора данных, полученных в рамках инициативы [City of New York OpenData](https://opendata.cityofnewyork.us/). Эти данные не являются текущими или завершенными. Индекс размещен в службе песочницы корпорации Майкрософт. Это означает, что для использования этих запросов подписка Azure или служба поиска Azure не требуется.
 
-Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в разделе [Тестирование с помощью клиентов REST](search-fiddler.md).
+Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в статье [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-fiddler.md).
 
 ### <a name="set-the-request-header"></a>Настройка заголовка запроса
 
 1. В заголовке запроса задайте значение **Content-Type** для `application/json`.
 
-2. Добавьте элемент **api-key** и задайте для него следующую строку: `252044BE3886FE4A8E3BAA4F595114BB`. Это ключ запроса для службы поиска в песочнице, в которой размещен индекс поиска вакансий в Нью-Йорке.
+2. Добавьте элемент **api-key** и задайте для него следующую строку: `252044BE3886FE4A8E3BAA4F595114BB`. Это ключ запроса для службы поиска в песочнице, в которой размещен индекс поиска вакансий Нью-Йорка.
 
 Настроенный заголовок запроса можно многократно использовать для всех запросов в этой статье, только заменяя строку **search=**. 
 
@@ -60,12 +60,12 @@ URL-адрес содержит следующие элементы.
 В качестве шага проверки вставьте приведенный ниже запрос в раздел GET и щелкните **Отправить**. Будут возвращены результаты в виде подробных документов JSON. Вы можете скопировать и вставить этот URL-адрес в первый пример, приведенный ниже.
 
   ```http
-  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&search=*
+  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&search=*
   ```
 
 Строка запроса **`search=*`** эквивалентна неточному поиску значения NULL или пустого значения. Этот запрос не очень полезен, но это самый простой поиск, который можно выполнить.
 
-При необходимости можно добавить **`$count=true`** в URL-адрес, чтобы вернуть количество документов, соответствующих условиям поиска. При пустой строке поиска это будут все документы в индексе (2802 в случае вакансий в Нью-Йорке).
+При необходимости можно добавить **`$count=true`** в URL-адрес, чтобы вернуть количество документов, соответствующих условиям поиска. При пустой строке поиска это будут все документы в индексе (примерно 2800 в случае вакансий в Нью-Йорке).
 
 ## <a name="how-to-invoke-full-lucene-parsing"></a>Способы вызова полного синтаксического анализа Lucene
 
@@ -79,27 +79,29 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 
 ## <a name="example-1-field-scoped-query"></a>Пример 1. Запрос по полю
 
-В первом запросе не демонстрируется полный синтаксис Lucene (он подходит для простого и полного синтаксиса), но мы привели этот пример, чтобы представить базовые принципы работы запроса, который возвращает удобочитаемый ответ JSON. Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. 
+Первый пример не связан с синтаксическим анализатором, но мы начали с него, чтобы представить первое фундаментальное понятие запроса: автономность. В этом примере задается область выполнения запроса и для ответа определяется всего несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
 
-```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=*
+Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. Синтаксис **searchFields** ограничивает выполнение запроса только полем business_title и **выбирает**, какие поля должны быть включены в ответ.
+
+```http
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&search=*
 ```
-
-Параметр **searchFields** ограничивает поиск полем должности. Параметр **select** определяет, какие поля должны быть включены в результирующий набор.
 
 Результат запроса должен выглядеть, как на снимке экрана ниже.
 
   ![Пример ответа Postman](media/search-query-lucene-examples/postman-sample-results.png)
 
-Вы могли заметить, что для каждого документа также возвращается оценка поиска, хотя она не указана. Это обусловлено тем, что оценка поиска — это метаданные со значением, указывающим порядок ранжирования результатов. Универсальная оценка 1 отображается, если ранг не указан, выполнен не полнотекстовый поиск или не указано условие. Для поиска значения Null условие не указывается и строки возвращается в произвольном порядке. По мере усложнения определения условия поиска вы увидите, как оценки поиска превратятся в понятные значения.
+Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
 
-## <a name="example-2-in-field-filtering"></a>Пример 2. Фильтрация в поле
+## <a name="example-2-intra-field-filtering"></a>Пример 2. Фильтрация внутри поля
 
 Полный синтаксис Lucene поддерживает выражения в поле. Этот запрос осуществляет поиск должностей, содержащих слово "senior", а не "junior":
 
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:senior+NOT+junior
 ```
+
+  ![Пример ответа Postman](media/search-query-lucene-examples/intrafieldfilter.png)
 
 Задав конструкцию **fieldname:searchterm**, можно определить операции запроса, относящегося к полю, где поле представляет собой одно слово, а условие поиска — одно слово или фразу, иногда с логическими операторами. Некоторые примеры:
 
@@ -119,6 +121,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:asosiate~
 ```
+  ![Ответ на поиск нечетких соответствий](media/search-query-lucene-examples/fuzzysearch.png)
 
 В [документации Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) поиск нечетких соответствий основан на [расстоянии Дамерау — Левенштейна](https://en.wikipedia.org/wiki/Damerau%e2%80%93Levenshtein_distance).
 
@@ -134,6 +137,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:%22senior%20analyst%22~1
 ```
+  ![Запрос с учетом расположения](media/search-query-lucene-examples/proximity-before.png)
 
 Выполните эту операцию поиска снова, при этом не допуская разделения словосочетания "senior analyst" другими словами. Обратите внимание на то, что для этого запроса возвращены 8 документов, в отличие от 10 документов для предыдущего запроса.
 
@@ -149,6 +153,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:computer%20analyst
 ```
+  ![Повышение приоритета термина before](media/search-query-lucene-examples/termboostingbefore.png)
 
 В запросе after выполните этот поиск снова, при этом повышая приоритет результатов, содержащих термин *analyst*, относительно результатов, содержащих слово *computer*, если оба слова не встречаются одновременно. 
 
@@ -156,6 +161,8 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:computer%20analyst%5e2
 ```
 Более понятная для человека версия приведенного выше запроса: `search=business_title:computer analyst^2`. Для работоспособности запроса `^2` кодируется как `%5E2`, что сложнее для чтения.
+
+  ![Повышение приоритета термина after](media/search-query-lucene-examples/termboostingafter.png)
 
 Повышение приоритета терминов отличается от профилей повышения, так как они повышают приоритет определенных полей, а не определенных терминов. В следующем примере показаны эти различия.
 
@@ -173,6 +180,9 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:/(Sen|Jun)ior/
 ```
+
+  ![Запрос регулярных выражений](media/search-query-lucene-examples/regex.png)
+
 > [!Note]
 > Запросы с регулярными выражениями не [анализируются](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.
 >
@@ -180,12 +190,12 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 ## <a name="example-7-wildcard-search"></a>Пример 7. Поиск с использованием подстановочных знаков
 Вы можете использовать распознаваемый синтаксис для поиска с использованием одного (?) или нескольких (\*) подстановочных знаков. Обратите внимание, что средство синтаксического анализа запросов Lucene поддерживает использование этих символов для поиска одного слова, а не фразы.
 
-Этот запрос выполняет поиск вакансий, содержащих в начале"prog". В результате будут найдены вакансии со словами "programming" и "programmer".
+Этот запрос выполняет поиск вакансий, содержащих в начале"prog". В результате будут найдены вакансии со словами "programming" и "programmer". Символ "*" или "?" не может находиться в начале поискового запроса.
 
 ```GET
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-11-11&$count=true&searchFields=business_title&$select=business_title&queryType=full&search=business_title:prog*
 ```
-Символ "*" или "?" не может находиться в начале поискового запроса.
+  ![Запрос с подстановочным знаком](media/search-query-lucene-examples/wildcard.png)
 
 > [!Note]
 > Запросы с подстановочными знаками не [анализируются](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis). Единственное преобразование для неполных терминов запроса — преобразование в нижний регистр.

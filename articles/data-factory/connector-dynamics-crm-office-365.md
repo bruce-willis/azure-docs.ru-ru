@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jingwang
-ms.openlocfilehash: 3f45f9337a5522f490c268bbdae3ef1a41205175
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: e4ebddc35b402d7a8997d899ce97577e93a27b84
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37859380"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42444866"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -333,7 +333,7 @@ ms.locfileid: "37859380"
 | AttributeType.Double | Double | ✓ | ✓ |
 | AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
-| AttributeType.Lookup | Guid | ✓ | ✓ (связанный с одним типом) |
+| AttributeType.Lookup | Guid | ✓ | ✓ (связанный с одним объектом) |
 | AttributeType.ManagedProperty | Логическое | ✓ | |
 | AttributeType.Memo | Строка | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |

@@ -6,15 +6,15 @@ author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 07/17/2018
+ms.date: 08/17/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: c65cfec41c2002fd4d4ff27ea74daf0bb4246b5f
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: b5adf161c99ebe6d7b8b2d7b0c7b5b73c67bec02
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145603"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143583"
 ---
 # <a name="deploy-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Развертывание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -51,6 +51,40 @@ eager-crab-nginx-ingress-default-backend   ClusterIP      10.0.255.77    <none> 
 Правила доступа еще не созданы. Если вы перейдете на общедоступный IP-адрес, для контроллера входящего трафика NGINX по умолчанию отобразится страница 404, как показано в следующем примере:
 
 ![Сервер NGINX по умолчанию](media/ingress/default-back-end.png)
+
+### <a name="use-an-existing-static-public-ip-address"></a>Использование имеющегося статического общедоступного IP-адреса
+
+В предыдущем шаге `helm install` контроллер входящего трафика NGINX был создан с новым динамическим общедоступным назначением IP-адресов. Общее требование конфигурации — предоставить имеющийся *статический* общедоступный IP-адрес. Такой подход позволяет согласованно использовать имеющиеся записи DNS и сетевые конфигурации. Следующие необязательные действия можно использовать вместо предыдущей команды `helm install`, где динамический общедоступный IP-адрес назначается автоматически.
+
+Если необходимо создать статический общедоступный IP-адрес, сначала нужно получить имя группы ресурсов кластера AKS с помощью команды [az aks show][az-aks-show].
+
+```azurecli
+az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
+```
+
+Создайте общедоступный IP-адрес с помощью метода *статического* выделения, используя команду [az network public-ip create][az-network-public-ip-create]. В следующем примере создается общедоступный IP-адрес *myPublicIP* в группе ресурсов AKS, о которой говорилось на предыдущих шагах.
+
+```azurecli
+az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eastus --name myAKSPublicIP --allocation-method static
+```
+
+Разверните диаграмму *nginx ingress* с помощью Helm. Добавьте параметр `--set controller.service.loadBalancerIP` и укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге.
+
+```console
+helm install stable/nginx-ingress --namespace kube-system --set controller.service.loadBalancerIP="40.121.63.72"
+```
+
+При создании службы распределения нагрузки Kubernetes входящего контроллера NGINX назначается статический IP-адрес, как показано в следующем примере выходных данных.
+
+```
+$ kubectl get service -l app=nginx-ingress --namespace kube-system
+
+NAME                                        TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)                      AGE
+dinky-panda-nginx-ingress-controller        LoadBalancer   10.0.232.56   40.121.63.72   80:31978/TCP,443:32037/TCP   3m
+dinky-panda-nginx-ingress-default-backend   ClusterIP      10.0.95.248   <none>         80/TCP                       3m
+```
+
+Так как правила входящего трафика не созданы, при переходе к общедоступному IP-адресу по умолчанию будет отображаться страница контроллеров входящего трафика NGINX с ошибкой "404 — страница не найдена". В следующих шагах настраиваются правила входящего трафика.
 
 ## <a name="configure-a-dns-name"></a>Настройка DNS-имени
 
@@ -119,10 +153,10 @@ spec:
     http01: {}
 ```
 
-Чтобы создать издатель, используйте команду `kubectl create -f cluster-issuer.yaml`.
+Чтобы создать издатель, используйте команду `kubectl apply -f cluster-issuer.yaml`.
 
 ```
-$ kubectl create -f cluster-issuer.yaml
+$ kubectl apply -f cluster-issuer.yaml
 
 clusterissuer.certmanager.k8s.io/letsencrypt-staging created
 ```
@@ -153,10 +187,10 @@ spec:
     kind: ClusterIssuer
 ```
 
-Чтобы создать ресурс сертификата, используйте команду `kubectl create -f certificates.yaml`.
+Чтобы создать ресурс сертификата, используйте команду `kubectl apply -f certificates.yaml`.
 
 ```
-$ kubectl create -f certificates.yaml
+$ kubectl apply -f certificates.yaml
 
 certificate.certmanager.k8s.io/tls-secret created
 ```
@@ -219,10 +253,10 @@ spec:
           servicePort: 80
 ```
 
-Создайте ресурс входящего трафика, используя команду `kubectl create -f hello-world-ingress.yaml`.
+Создайте ресурс входящего трафика, используя команду `kubectl apply -f hello-world-ingress.yaml`.
 
 ```
-$ kubectl create -f hello-world-ingress.yaml
+$ kubectl apply -f hello-world-ingress.yaml
 
 ingress.extensions/hello-world-ingress created
 ```
@@ -267,3 +301,5 @@ ingress.extensions/hello-world-ingress created
 <!-- LINKS - internal -->
 [use-helm]: kubernetes-helm.md
 [azure-cli-install]: /cli/azure/install-azure-cli
+[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-network-public-ip-create]: /cli/azure/network/public-ip#az-network-public-ip-create

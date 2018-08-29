@@ -1,20 +1,8 @@
+---Data title: Миграция в Contoso. Перемещение локального приложения на виртуальные машины Azure и использование Управляемого экземпляра Базы данных SQL | Документация Майкрософт description: В этой статье рассказывается о том, как компания Contoso перемещает локальное приложение на виртуальные машины Azure и использует Управляемый экземпляр SQL Azure.
+services: site-recovery author: rayne-wiselman manager: carmonm ms.service: site-recovery ms.topic: conceptual ms.date: 08/13/2018 ms.author: raynew
+
 ---
-title: Повторное размещение локального приложения компании Contoso путем перехода на виртуальные машины Azure и Управляемый экземпляр Базы данных SQL Azure | Документация Майкрософт
-description: В этой статье рассказывается о том, как компания Contoso перемещает локальное приложение в виртуальные машины Azure используя Управляемый экземпляр Базы данных SQL Azure.
-services: site-recovery
-author: rayne-wiselman
-manager: carmonm
-ms.service: site-recovery
-ms.topic: conceptual
-ms.date: 07/12/2018
-ms.author: raynew
-ms.openlocfilehash: 3e3f8dffbaa7109423aacdbfbaa658bada8bb84a
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39215345"
----
+
 # <a name="contoso-migration-rehost-an-on-premises-app-on-an-azure-vm-and-sql-database-managed-instance"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальную машину Azure и в Управляемом экземпляре Базы данных SQL
 
 В этой статье компания Contoso переносит виртуальной машину внешнего интерфейса приложения SmartHotel на виртуальную машину Azure с помощью службы Azure Site Recovery. Компания Contoso также переносит базу данных приложения на Управляемый экземпляр Базы данных SQL Azure.
@@ -94,7 +82,7 @@ ms.locfileid: "39215345"
 
 Service | ОПИСАНИЕ | Стоимость
 --- | --- | ---
-[Служба управления базами данных](https://docs.microsoft.com/azure/dms/dms-overview) | Служба управления базами данных обеспечивает прозрачную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. | Дополнительные сведения о [поддерживаемых регионах ](https://docs.microsoft.com/azure/dms/dms-overview#regional-availability) см. в статье [Цены на Службу миграции баз данных Azure ](https://azure.microsoft.com/pricing/details/database-migration/).
+[Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview) | Database Migration Service обеспечивает прозрачную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. | Дополнительные сведения о [поддерживаемых регионах](https://docs.microsoft.com/azure/dms/dms-overview#regional-availability) см. на странице [цен на Database Migration Service](https://azure.microsoft.com/pricing/details/database-migration/).
 [Управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) | Управляемый экземпляр — это служба управляемой базы данных, которая представляет полностью управляемый экземпляр SQL Server в облаке Azure. Он использует тот же код, что и последняя версия ядра СУБД SQL Server, и имеет новейшие функции, улучшения производительности и исправления системы безопасности. | За использование Управляемых экземпляров Базы данных SQL, выполняемых в Azure, взимается плата на основе емкости. Дополнительные сведения см. в статье [Цены на Базу данных SQL Azure ](https://azure.microsoft.com/pricing/details/sql-database/managed/). 
 [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/) | Служба Site Recovery организует и контролирует миграцию и аварийное восстановление виртуальных машин Azure, а также локальных виртуальных машин и физических серверов.  | Во время репликации в Azure взимается плата за службу хранилища Azure.  При отработке отказа создаются виртуальные машины Azure, за которые взимается плата. Дополнительными сведениями см. в статье [Цены на Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 
@@ -117,7 +105,7 @@ Service | ОПИСАНИЕ | Стоимость
 **Регистрация в предварительной версии Управляемого экземпляра** | Необходимо зарегистрироваться в ограниченной общедоступной предварительной версии Управляемого экземпляра Базы данных SQL. Чтобы [зарегистрироваться](https://portal.azure.com#create/Microsoft.SQLManagedInstance), необходима подписка Azure. Регистрация может занять несколько дней, поэтому ее необходимо выполнить перед началом работы с этим сценарием развертывания.
 **Подписка Azure.** | Вы должны были создать подписку, когда выполняли оценку в первой статье этой серии. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/).<br/><br/> Если вы создаете бесплатную учетную запись, вы являетесь администратором своей подписки и можете выполнять любые действия.<br/><br/> Если вы используете существующую подписку, в которой не являетесь администратором, администратор должен назначить вам права владельца или участника.<br/><br/> Если вам требуется более детализированные разрешения, см. в разделе [Use Role-Based Access Control to manage Site Recovery access](../site-recovery/site-recovery-role-based-linked-access-control.md) (Использование управления доступом на основе ролей для управления доступом к Site Recovery). 
 **Site Recovery (локальный экземпляр)** | Потребуется локальный экземпляр сервера vCenter Server версии 5.5, 6.0 или 6.5<br/><br/> Узел ESXi под управлением версии 5.5, 6.0 или 6.5<br/><br/> Одна или несколько виртуальных машин VMware, которые выполняются на узле ESXi.<br/><br/> Виртуальные машины должны соответствовать [требованиям Azure](https://docs.microsoft.com/azure/site-recovery/vmware-physical-azure-support-matrix#azure-vm-requirements).<br/><br/> Поддерживаемая конфигурация [сети](https://docs.microsoft.com/azure/site-recovery/vmware-physical-azure-support-matrix#network) и [хранилища](https://docs.microsoft.com/azure/site-recovery/vmware-physical-azure-support-matrix#storage).
-**Служба управления базами данных** | Для службы управления базами данных необходимо иметь [совместимое локальное VPN-устройство](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices).<br/><br/> Необходимо настроить локальное VPN-устройство. Оно должно иметь внешний общедоступный IPv4-адрес. Этот адрес не может быть за устройством преобразования сетевых адресов (NAT).<br/><br/> Убедитесь, что у вас есть доступ к локальной базе данных SQL Server.<br/><br/> Брандмауэр Windows должен иметь доступ к ядру исходной СУБД. Дополнительные сведения о [настройке брандмауэра Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).<br/><br/> Если перед вашим компьютером базы данных есть брандмауэр, добавьте правила, разрешающие доступ к базе данных и файлам через SMB-порт 445.<br/><br/> Учетные данные, используемые для подключения к исходному экземпляру сервера SQL Server и целевому Управляемому экземпляру, должны принадлежать к серверной роли sysadmin.<br/><br/> Необходимо иметь сетевую папку в локальной базе данных, которую Служба управления базами данных может использовать для резервного копирования базы данных источника.<br/><br/> Убедитесь, что учетная запись службы, от имени которой выполняется исходный экземпляр SQL Server, имеет разрешения на запись для этой сетевой папки.<br/><br/> Запишите имя пользователя и пароль учетной записи Windows, которой предоставлены полные права доступа к этой сетевой папке. Служба управления базами данных олицетворяет пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure.<br/><br/> В процессе установки SQL Server Express для протокола TCP/IP устанавливается **отключенное состояние** по умолчанию. Убедитесь, что он включен.
+**Database Migration Service** | Для Database Migration Service необходимо иметь [совместимое локальное VPN-устройство](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices).<br/><br/> Необходимо настроить локальное VPN-устройство. Оно должно иметь внешний общедоступный IPv4-адрес. Этот адрес не может быть за устройством преобразования сетевых адресов (NAT).<br/><br/> Убедитесь, что у вас есть доступ к локальной базе данных SQL Server.<br/><br/> Брандмауэр Windows должен иметь доступ к ядру исходной СУБД. Дополнительные сведения о [настройке брандмауэра Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).<br/><br/> Если перед вашим компьютером базы данных есть брандмауэр, добавьте правила, разрешающие доступ к базе данных и файлам через SMB-порт 445.<br/><br/> Учетные данные, используемые для подключения к исходному экземпляру сервера SQL Server и целевому Управляемому экземпляру, должны принадлежать к серверной роли sysadmin.<br/><br/> Необходимо иметь сетевую папку в локальной базе данных, которую Database Migration Service может использовать для резервного копирования базы данных источника.<br/><br/> Убедитесь, что учетная запись службы, от имени которой выполняется исходный экземпляр SQL Server, имеет разрешения на запись для этой сетевой папки.<br/><br/> Запишите имя пользователя и пароль учетной записи Windows, которой предоставлены полные права доступа к этой сетевой папке. Служба Database Migration Service олицетворяет пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure.<br/><br/> В процессе установки SQL Server Express для протокола TCP/IP устанавливается **отключенное состояние** по умолчанию. Убедитесь, что он включен.
 
 ## <a name="scenario-steps"></a>Шаги выполнения сценария
 
@@ -125,11 +113,11 @@ Service | ОПИСАНИЕ | Стоимость
 
 > [!div class="checklist"]
 > * **Шаг 1. Настройка Управляемого экземпляра Базы данных SQL Azure**. Компании Contoso необходимо предварительно создать Управляемый экземпляр, в который будет переноситься локальная база данных SQL Server.
-> * **Шаг 2: Подготовка службы управления базами данных**. Компании Contoso необходимо зарегистрировать поставщик миграции базы данных, создать экземпляр, а затем создать проект Службы управления базами данных. Специалистам компании Contoso также необходимо настроить универсальный код ресурса (URI) подписанного URL-адреса (SAS) для Службы управления базами данных. URI SAS предоставляет делегированный доступ к ресурсам в учетной записи хранения компании Contoso, поэтому компания может предоставлять ограниченные разрешения к объектам в хранилище. Они настроят URI SAS, чтобы служба управления базами данных могла получить доступ к контейнеру учетной записи хранения, в который служба отправляет файлы архивации SQL Server.
+> * **Шаг 2. Подготовка Database Migration Service**. Компании Contoso необходимо зарегистрировать поставщик миграции базы данных, создать экземпляр, а затем создать проект Database Migration Service. Специалистам компании Contoso также необходимо настроить универсальный код ресурса (URI) подписанного URL-адреса (SAS) для Database Migration Service. URI SAS предоставляет делегированный доступ к ресурсам в учетной записи хранения компании Contoso, поэтому компания может предоставлять ограниченные разрешения к объектам в хранилище. Они настроят URI SAS, чтобы Database Migration Service могла получить доступ к контейнеру учетной записи хранения, в который служба отправляет файлы архивации SQL Server.
 > * **Шаг 3. Подготовка Azure для Site Recovery**. Компания Contoso создаст учетную запись хранения Azure для хранения реплицируемых данных для Site Recovery. Также необходимо создать хранилище служб восстановления Azure.
 > * **Шаг 4. Подготовка локальных ресурсов VMware для Site Recovery**. Компания Contoso подготовит учетные записи для обнаружения виртуальных машин и установки агента для подключения к виртуальным машинам Azure после отработки отказа.
 > * **Шаг 5. Репликация виртуальных машин**. Чтобы настроить репликацию, специалисты компании Contoso настроят исходную и целевую среды Site Recovery, установят политику репликации и запустят репликацию виртуальных машин в хранилище Azure.
-> * **Шаг 6. Миграция базы данных с помощью Службы управления базой данных**. Компания Contoso выполняет миграцию базы данных.
+> * **Шаг 6. Миграция базы данных с помощью Database Migration Service**. Компания Contoso выполняет миграцию базы данных.
 > * **Шаг 7. Миграция виртуальных машин с помощью Site Recovery**. Компания Contoso запускает тестовую отработку отказа, чтобы убедиться, что все работает. Затем компания запускает полную отработку отказа для выполнения миграции виртуальных машин в Azure.
 
 ## <a name="step-1-prepare-a-sql-database-managed-instance"></a>Шаг 1. Подготовка Управляемого экземпляра базы данных SQL Azure
@@ -229,36 +217,36 @@ Service | ОПИСАНИЕ | Стоимость
 
 См. в разделе [Создание управляемого экземпляра базы данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-create-tutorial-portal).
 
-## <a name="step-2-prepare-the-database-management-service"></a>Шаг 2. Подготовка Службы управления базами данных
+## <a name="step-2-prepare-the-database-migration-service"></a>Шаг 2. Подготовка Database Migration Service
 
-Чтобы подготовить Службу управления базами данных, компании Contoso необходимо выполнить ряд действий.
+Чтобы подготовить службу Database Migration Service, компании Contoso необходимо выполнить ряд действий.
 
-- Зарегистрировать поставщик Службы управления базами данных в Azure.
-- Предоставить Службе управления базами данных доступ к службе хранилища Azure для передачи файлов резервных копий, применяемый для миграции базы данных. Чтобы предоставить доступ к службе хранилища Azure, компания Contoso создает контейнер хранилища BLOB-объектов Azure. Компания Contoso создает URI SAS для контейнера хранилища BLOB-объектов. 
-- Создается проект Службы управления базами данных.
+- Зарегистрировать поставщик Database Migration Service в Azure.
+- Предоставить Database Migration Service доступ к службе хранилища Azure для передачи файлов резервных копий, применяемый для миграции базы данных. Чтобы предоставить доступ к службе хранилища Azure, компания Contoso создает контейнер хранилища BLOB-объектов Azure. Компания Contoso создает URI SAS для контейнера хранилища BLOB-объектов. 
+- Создать проект Database Migration Service.
 
 После этого компания выполняет следующие действия.
 
 1. Компания Contoso регистрирует поставщик службы миграции баз данных в своей подписке.
-    ![Служба управления базами данных — регистрация](media/contoso-migration-rehost-vm-sql-managed-instance/dms-subscription.png)
+    ![Database Migration Service: регистрация](media/contoso-migration-rehost-vm-sql-managed-instance/dms-subscription.png)
 
-2. Компания Contoso создает контейнер хранилища BLOB-объектов. Компания Contoso создает URI SAS, таким образом, чтобы Служба управления базами данных имела к нему доступ.
+2. Компания Contoso создает контейнер хранилища BLOB-объектов. Компания Contoso создает URI SAS, чтобы Database Migration Service имела доступ к этому контейнеру.
 
-    ![Служба управления базами данных — создание URI SAS](media/contoso-migration-rehost-vm-sql-managed-instance/dms-sas.png)
+    ![Database Migration Service: создание URI SAS](media/contoso-migration-rehost-vm-sql-managed-instance/dms-sas.png)
 
-3. Компания Contoso создает экземпляр Службы управления базами данных. 
+3. Компания Contoso создает экземпляр Database Migration Service. 
 
-    ![Служба управления базами данных — создание экземпляра](media/contoso-migration-rehost-vm-sql-managed-instance/dms-instance.png)
+    ![Database Migration Service: создание экземпляра](media/contoso-migration-rehost-vm-sql-managed-instance/dms-instance.png)
 
-4. Компания Contoso размещает экземпляр Службы управления базами данных в подсеть **PROD-DC-EUS2** виртуальной сети **VNET-PROD-DC-EUS2**.
-    - Компания размещает Службу управления базами данных там, так как служба должна быть в виртуальной сети с доступом к локальной виртуальной машине SQL Server через VPN-шлюз.
-    - Виртуальная сеть **PROD-EUS2** участвует в пиринге с виртуальной сетью **HUB-EUS2** и ей разрешено использовать удаленные шлюзы. Параметр **Use remote gateways** (Использование удаленных шлюзов) гарантирует, что Служба управления базами данных может при необходимости обмениваться данными.
+4. Компания Contoso размещает экземпляр Database Migration Service в подсеть **PROD-DC-EUS2** виртуальной сети **VNET-PROD-DC-EUS2**.
+    - Компания размещает Database Migration Service там, так как служба должна быть в виртуальной сети с доступом к локальной виртуальной машине SQL Server через VPN-шлюз.
+    - Виртуальная сеть **PROD-EUS2** участвует в пиринге с виртуальной сетью **HUB-EUS2** и ей разрешено использовать удаленные шлюзы. Параметр **Use remote gateways** (Использование удаленных шлюзов) гарантирует, что служба Database Migration Service может при необходимости обмениваться данными.
 
-        ![Служба управления базами данных – настройка сети](media/contoso-migration-rehost-vm-sql-managed-instance/dms-network.png)
+        ![Database Migration Service: настройка сети](media/contoso-migration-rehost-vm-sql-managed-instance/dms-network.png)
 
 *Нужна дополнительная помощь?*
 
-- Узнайте, как [настроить службу управления базами данных](https://docs.microsoft.com/azure/dms/quickstart-create-data-migration-service-portal).
+- Узнайте, как [настроить службу Database Migration Service](https://docs.microsoft.com/azure/dms/quickstart-create-data-migration-service-portal).
 - Узнайте, как [создать и использовать подписанный URL-адрес](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2).
 
 
@@ -451,15 +439,15 @@ Site Recovery требуется доступ к серверам VMware, что
 
 Полное пошаговое руководство для этих шагов см. в статье [Включение репликации в Azure для виртуальных машин VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-enable-replication).
 
-## <a name="step-6-migrate-the-database-by-using-the-database-management-service"></a>Шаг 6. Миграция базы данных с помощью Службы управления базой данных
+## <a name="step-6-migrate-the-database-by-using-the-database-migration-service"></a>Шаг 6. Миграция базы данных с помощью службы Database Migration Service
 
-Компании Contoso необходимо создать проект Службы управления базами данных,а затем перенести базу данных.
+Компании Contoso необходимо создать проект Database Migration Service, а затем перенести базу данных.
 
-### <a name="create-a-database-management-service-project"></a>Создание проекта Службы управления базами данных
+### <a name="create-a-database-migration-service-project"></a>Создание проекта Database Migration Service
 
-1. Компания Contoso создает проект Службы управления базами данных. Компания Contoso выбирает тип исходного сервера **SQL Server**. Компания Contoso выбирает целевым объектом **Управляемый экземпляр Базы данных SQL Azure**.
+1. Компания Contoso создает проект Database Migration Service. Компания Contoso выбирает тип исходного сервера **SQL Server**. Компания Contoso выбирает целевым объектом **Управляемый экземпляр Базы данных SQL Azure**.
 
-     ![Служба управления базами данных — новый проект миграции](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-project.png)
+     ![Database Migration Service: создание нового проекта](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-project.png)
 
 2. Откроется мастер миграции.
 
@@ -467,34 +455,34 @@ Site Recovery требуется доступ к серверам VMware, что
 
 1. В мастере миграции компания Contoso указывает исходную виртуальную машину, на которой находится локальная база данных. Компания Contoso вводит учетные данные для доступа к базе данных.
 
-    ![Служба управления базами данных — сведения об источнике](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-wizard-source.png)
+    ![Database Migration Service: сведения об источнике](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-wizard-source.png)
 
 2. Сотрудники компании Contoso выбирают базу данных для выполнения миграции (**SmartHotel.Registration**).
 
-    ![Служба управления базами данных — выбор источника базы данных](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-wizard-sourcedb.png)
+    ![Database Migration Service: выбор баз данных-источников](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-wizard-sourcedb.png)
 
 3. Для целевого объекта компания Contoso вводит имя Управляемого экземпляра в Azure. Компания вводит учетные данные для доступа к Управляемому экземпляру.
 
-    ![Служба управления базами данных — сведения о целевом объекте](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-target-details.png)
+    ![Database Migration Service: сведения о целевом объекте](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-target-details.png)
 
 4. В разделе **Новое действие** > **Запустить миграцию** компания указывает параметры для выполнения миграции.
     - Источник и цель учетных данных.
     - База данных для переноса.
-    - Общий сетевой ресурс, созданный компанией Contoso на локальной виртуальной машине. Служба управления базами данных создает резервные копии источника для этого ресурса. 
+    - Общий сетевой ресурс, созданный компанией Contoso на локальной виртуальной машине. Служба Database Migration Service создает резервные копии источника для этого ресурса. 
         - Учетная запись службы, которая выполняет исходный экземпляр SQL Server, должна иметь права записи для этой общей папки.
         - Должен использоваться полный путь FQDN к общей папке.
-    - URI SAS, который позволяет Службе управления базами данных обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий для миграции.
+    - URI SAS, который позволяет Database Migration Service обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий для миграции.
 
-        ![Служба управления базами данных — настройка параметров миграции](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-migration-settings.png)
+        ![Database Migration Service: настройка параметров миграции](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-migration-settings.png)
 
 5. Компания Contoso сохраняет миграцию и затем запускает ее.
 6. В разделе **Обзор** она отслеживает состояние миграции.
 
-    ![Служба управления базами данных — монитор](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-monitor1.png)
+    ![Database Migration Service: мониторинг](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-monitor1.png)
 
 7. После завершения миграции специалисты компании Contoso убеждаются, что целевые базы данных существуют в Управляемом экземпляре.
 
-    ![Служба управления базами данных — проверка миграции базы данных](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-monitor2.png)
+    ![Database Migration Service: проверка миграции базы данных](./media/contoso-migration-rehost-vm-sql-managed-instance/dms-monitor2.png)
 
 ## <a name="step-7-migrate-the-vm-by-using-site-recovery"></a>Шаг 7. Миграция виртуальной машины с помощью Site Recovery
 
@@ -592,7 +580,7 @@ Site Recovery требуется доступ к серверам VMware, что
 
 ## <a name="conclusion"></a>Заключение
 
-В этой статье рассказано, как компания Contoso повторно размещает приложение SmartHotel в Azure путем миграции виртуальных машин внешнего интерфейса приложения в Azure с помощью службы Site Recovery. Как компания Contoso выполняет миграцию локальной базы данных в Управляемый экземпляр Базы данных SQL Azure с помощью службы Azure Database Management Service.
+В этой статье рассказано, как компания Contoso повторно размещает приложение SmartHotel в Azure путем миграции виртуальных машин внешнего интерфейса приложения в Azure с помощью службы Site Recovery. Как компания Contoso выполняет миграцию локальной базы данных в Управляемый экземпляр Базы данных SQL Azure с помощью службы Azure Database Migration Service.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

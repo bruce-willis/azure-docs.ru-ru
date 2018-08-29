@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.component: compliance
-ms.date: 07/31/2018
+ms.date: 08/22/2018
 ms.author: rolyon
-ms.openlocfilehash: edf8eccf8c0a1cba70ac178ac5863a68b26f14a3
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 6162ee59689df12e2dace9a0419490979a13d4c5
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622081"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616869"
 ---
 # <a name="azure-active-directory-terms-of-use-feature"></a>Функция "Условия использования Azure Active Directory"
 Функция "Условия использования Azure AD" — это простой способ, которым организации могут предоставлять сведения своим пользователям. Благодаря этой презентации пользователи видят соответствующие заявления об отказе согласно юридическим требованиям и для соответствия стандартам. В этой статье описывается, как приступить к работе с условиями использования в Azure AD.
@@ -122,6 +122,8 @@ ms.locfileid: "39622081"
 На рис. ниже показано, как выглядят условия использования на мобильных устройствах.
 
 ![Событие аудита](media/active-directory-tou/mobile-tou.png)
+
+Пользователи должны принять условия использования только один раз, и при последующих входах они не будут видеть условия использования снова.
 
 ### <a name="how-users-can-review-their-terms-of-use"></a>Каким образом пользователи могут изменить свое решение об условиях использования
 Чтобы изменить решение об условиях использования, принятое пользователем, ему необходимо сделать следующее.

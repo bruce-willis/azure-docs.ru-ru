@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/12/2018
-ms.openlocfilehash: e04d1072acee635235b0a5bd8465ca38c861017b
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: d3b01e75a9b34ce4e38138816935bdae2e0ea778
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31523529"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143904"
 ---
 # <a name="common-issues-in-stream-analytics-and-steps-to-troubleshoot"></a>Распространенные проблемы в Stream Analytics и инструкции по их устранению
 
@@ -38,7 +38,9 @@ ms.locfileid: "31523529"
 
 3. Чтобы получить данные JSON, которые имеют неверный формат, запустите код CheckMalformedEvents.cs. Этот пример доступен в [репозитории примеров GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/CheckMalformedEventsEH). При помощи этого кода считываются идентификатор раздела и смещение, а затем выводятся данные для этого смещения. 
 
-4. После считывания данных можно проанализировать и исправить формат сериализации. 
+4. После считывания данных можно проанализировать и исправить формат сериализации.
+
+5. Вы также можете считывать события из Центра Интернета вещей с помощью обозревателя служебной шины. Дополнительные сведения см. [здесь](https://code.msdn.microsoft.com/How-to-read-events-from-an-1641eb1b).
 
 ## <a name="delayed-output"></a>Задержанные выходные данные
 

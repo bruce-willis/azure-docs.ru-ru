@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/28/2018
+ms.date: 08/17/2018
 ms.author: jingwang
-ms.openlocfilehash: 11647c231db3ff7beb2fed641dc72ff339b2b45a
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: f9d1d2181649cf24784dc7ad11638946c9ee4406
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046247"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42143882"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Копирование данных из DB2 с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -46,7 +46,7 @@ ms.locfileid: "37046247"
 > - DB2 для i (AS400): позволяет опытному пользователю создать коллекцию для имени пользователя для входа перед использованием действия копирования. Команда: `create collection <username>`
 > - DB2 для z/OS или LUW: использование учетной записи с высоким уровнем привилегий — опытного пользователя или администратора с правами на работу с пакетами и разрешениями BIND, BINDADD, GRANT EXECUTE TO PUBLIC — для однократного выполнения действия копирования, после чего необходимый пакет создается автоматически во время копирования. Для выполнения последующих действий копирования можно переключиться на обычную учетную запись.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать копирование данных из базы данных DB2, которая не является общедоступной, необходимо настроить локальную среду IR. Дополнительные сведения о локальной среде IR см. в статье [How to create and configure Self-hosted Integration Runtime](create-self-hosted-integration-runtime.md) (Создание и настройка локальной среды IR). Среда выполнения интеграции предоставляет встроенный драйвер DB2, поэтому при копировании данных из DB2 вам не потребуется устанавливать драйвер вручную.
 
@@ -63,7 +63,7 @@ ms.locfileid: "37046247"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Для свойства типа необходимо задать значение **Db2** | Yes |
-| server |Имя сервера DB2. |Yes |
+| server |Имя сервера DB2. Вы можете указать номер порта следом за именем сервера, разделив их двоеточием, например `server:port`. |Yes |
 | database |Имя базы данных DB2. |Yes |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных DB2.<br/>Допустимое значение: **Базовый**. |Yes |
 | Имя пользователя |Укажите имя пользователя для подключения к базе данных DB2. |Yes |
@@ -78,7 +78,7 @@ ms.locfileid: "37046247"
     "properties": {
         "type": "Db2",
         "typeProperties": {
-            "server": "<servername>",
+            "server": "<servername:port>",
             "database": "<dbname>",
             "authenticationType": "Basic",
             "username": "<username>",

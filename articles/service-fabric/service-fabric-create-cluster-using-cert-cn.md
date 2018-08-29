@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/24/2018
 ms.author: ryanwi
-ms.openlocfilehash: 8725dd1931b120b0369d0810fa49108a00c71e8e
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: c4c60cccb890c883e9e57c9f146cc93aae99f224
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211071"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143075"
 ---
 # <a name="deploy-a-service-fabric-cluster-that-uses-certificate-common-name-instead-of-thumbprint"></a>Развертывание кластера Service Fabric, использующего вместо отпечатка общее имя сертификата
 Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет смену сертификатов кластера и управление им. Тем не менее несколько сертификатов могут иметь одно общее имя или тему.  Кластер, использующий общие имена сертификата, упрощает управление сертификатами. В этой статье описывается развертывание кластера Service Fabric для использования общего имени сертификата вместо отпечатка сертификата.
@@ -116,7 +116,15 @@ Write-Host "Common Name              :"  $CommName
     "sfrpApiVersion": "2018-02-01",
     ```
 
-3. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В параметрах **virtualMachineProfile**->**extenstionProfile**->**extensions**->**properties**->**settings**->**certificate** добавьте `"commonNames": ["[parameters('certificateCommonName')]"],` и удалите `"thumbprint": "[parameters('certificateThumbprint')]",`.
+3. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В параметрах **virtualMachineProfile**->**extenstionProfile**->**extensions**->**properties**->**settings**->**certificate** добавьте 
+    ```json
+       "commonNames": [
+        "[parameters('certificateCommonName')]"
+       ],
+    ```
+
+    и удалите `"thumbprint": "[parameters('certificateThumbprint')]",`.
+
     ```json
     "virtualMachineProfile": {
       "extensionProfile": {
@@ -139,7 +147,9 @@ Write-Host "Common Name              :"  $CommName
                 "enableParallelJobs": true,
                 "nicPrefixOverride": "[variables('subnet0Prefix')]",
                 "certificate": {
-                  "commonNames": ["[parameters('certificateCommonName')]"],
+                  "commonNames": [
+                     "[parameters('certificateCommonName')]"
+                  ],
                   "x509StoreName": "[parameters('certificateStoreValue')]"
                 }
               },
@@ -196,6 +206,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $groupname -TemplateParame
 ## <a name="next-steps"></a>Дополнительная информация
 * Дополнительные сведения о безопасности кластеров см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).
 * Дополнительные сведения о [выделении сертификата кластера](service-fabric-cluster-rollover-cert-cn.md).
-* [Добавление и удаление сертификатов для кластера Service Fabric в Azure](service-fabric-cluster-security-update-certs-azure.md).
+* [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)
+* Упростите управление сертификатами с помощью [Перехода с отпечатка на общее имя сертификата для кластера](service-fabric-cluster-change-cert-thumbprint-to-cn.md)
 
 [image1]: .\media\service-fabric-cluster-change-cert-thumbprint-to-cn\PortalViewTemplates.png

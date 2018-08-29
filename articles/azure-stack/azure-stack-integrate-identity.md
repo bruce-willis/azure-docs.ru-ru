@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 08/01/2018
+ms.date: 08/07/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: c22831ae781239f2474720ee9cd1b58f6e14fe41
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 9bbe55e08d7a005d38c5608df39f9285d79eb203
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412871"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41947969"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -151,7 +151,7 @@ Graph поддерживает только интеграцию с отдель
 
 ## <a name="setting-up-ad-fs-integration-by-providing-federation-metadata-file"></a>Настройка интеграции AD FS путем предоставления файла метаданных федерации
 
-Используйте этот метод, если выполняется одно из следующих условий:
+Начиная с версии 1807, используйте этот метод, если выполняется какое-либо из следующих условий:
 
 - Цепочка сертификатов для AD FS отличается по сравнению с другими конечными точками в Azure Stack.
 - Нет сетевого подключения между экземпляром AD FS Azure Stack и существующим сервером AD FS.
@@ -163,6 +163,8 @@ Graph поддерживает только интеграцию с отдель
 |---------|---------|---------|
 |CustomAdfsName|Имя поставщика утверждений. Так оно отображается на целевой странице AD FS.|Contoso|
 |CustomADFSFederationMetadataFileContent|Содержимое метаданных|$using:federationMetadataFileContent|
+
+
 
 ### <a name="create-federation-metadata-file"></a>Создание файла метаданных федерации
 

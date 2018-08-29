@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/05/2016
 ms.author: mlearned
-ms.openlocfilehash: 2764d8a17d50f1589d413c2343badfded6adb66e
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: db3cc8bb546758402e4f0b3fe91449e597e754fa
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39216348"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42145915"
 ---
 # <a name="tutorial-devops-with-the-azure-portal"></a>Руководство по DevOps на портале Azure
 Платформа Azure поддерживает множество гибких рабочих процессов разработки и операций (DevOps). В этом руководстве вы узнаете, как использовать возможности портала Azure для разработки, тестирования, развертывания, устранения неполадок и мониторинга выполняемых приложений, а также управления ими. Здесь рассматриваются следующие вопросы.
@@ -125,7 +125,7 @@ ms.locfileid: "39216348"
 12. Вернитесь к колонке "Инструменты" и в категории "Разработка" щелкните "Тест производительности".
     
     ![рисунок 28][image28]
-13. Чтобы выполнить тест производительности, необходимо создать учетную запись Team Services. Дополнительные сведения о создании учетной записи Team Services. см. [здесь](https://www.visualstudio.com/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services).
+13. Чтобы выполнить тест производительности, необходимо создать учетную запись Team Services. Дополнительные сведения о создании учетной записи Team Services см. [здесь](https://docs.microsoft.com/vsts/organizations/accounts/create-organization-msa-or-work-student).
 14. Щелкните "Создать", чтобы создать тест производительности.
     
     ![рисунок 29][image29]

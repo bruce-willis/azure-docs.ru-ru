@@ -10,12 +10,12 @@ ms.custom: security
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: giladm
-ms.openlocfilehash: cc093bebb4b3c39140d6fa5370a78d59168990fa
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 6ef9a701f3a228e4c40da94f83310ef2884a3f59
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37950816"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42142714"
 ---
 # <a name="azure-sql-database-data-discovery-and-classification"></a>Обнаружение и классификация данных в службе "База данных SQL Azure"
 Служба обнаружения и классификации данных (в настоящее время находится на этапе предварительной версии) предоставляет расширенные возможности, встроенные в службу "База данных SQL Azure", для **обнаружения**, **классификации**, **добавления меток**  & и **защиты** конфиденциальных данных в базах данных.
@@ -107,6 +107,13 @@ ms.locfileid: "37950816"
 * Добавление и обновление классификации одного или нескольких столбцов: [ADD SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/en-us/sql/t-sql/statements/add-sensitivity-classification-transact-sql)
 * Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
 * Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
+
+Также интерфейсы REST API можно использовать для программного управления классификациями. Опубликованные интерфейсы REST API поддерживают следующие операции:
+* [Create или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate). Создание или обновление метки конфиденциальности данного столбца.
+* [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/delete). Удаление метки конфиденциальности данного столбца.
+* [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
+* [List By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listbydatabase). Получение списка меток конфиденциальности для конкретной базы данных.
+
 
 ## <a id="subheading-5"></a>Дальнейшие действия
 

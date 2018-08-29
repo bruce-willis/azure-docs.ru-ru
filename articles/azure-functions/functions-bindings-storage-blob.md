@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 02/12/2018
 ms.author: glenga
-ms.openlocfilehash: 0bd14e85496da8c6c12ecb98b7c8f1730a16e640
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 4a5a0634e371e4a762b3877b0c3e45682924a27d
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524572"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143441"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
@@ -84,6 +84,7 @@ ms.locfileid: "39524572"
 * [C#](#trigger---c-example)
 * [Скрипт C# (CSX)](#trigger---c-script-example)
 * [JavaScript](#trigger---javascript-example)
+* [Java](#trigger---javascript-example)
 
 ### <a name="trigger---c-example"></a>Пример C# в триггере
 
@@ -181,6 +182,45 @@ module.exports = function(context) {
     context.done();
 };
 ```
+
+### <a name="trigger---java-example"></a>Пример Java в триггере
+
+В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [код Java](functions-reference-java.md), который использует привязку данных. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в контейнере `myblob`.
+
+Ниже показан файл *function.json*.
+
+```json
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "file",
+            "type": "blobTrigger",
+            "direction": "in",
+            "path": "myblob/{name}",
+            "connection":"MyStorageAccountAppSetting"
+        }
+    ]
+}
+```
+
+Ниже приведен код Java.
+
+```java
+ @FunctionName("blobprocessor")
+ public void run(
+    @BlobTrigger(name = "file",
+                  dataType = "binary",
+                  path = "myblob/filepath",
+                  connection = "myconnvarname") byte[] content,
+    @BindingName("name") String filename,
+     final ExecutionContext context
+ ) {
+     context.getLogger().info("Name: " + name + " Size: " + content.length + " bytes");
+ }
+
+```
+
 
 ## <a name="trigger---attributes"></a>Атрибуты триггера
 
@@ -391,6 +431,7 @@ module.exports = function (context, myBlob) {
 * [C#](#input---c-example)
 * [Скрипт C# (CSX)](#input---c-script-example)
 * [JavaScript](#input---javascript-example)
+* [Java](#input---java-example)
 
 ### <a name="input---c-example"></a>Пример входных данных C#
 
@@ -505,6 +546,23 @@ module.exports = function(context) {
 };
 ```
 
+### <a name="input---java-example"></a>Входные данные в примере Java
+
+Ниже приведен пример функции Java, которая использует триггер очереди и входную привязку большого двоичного объекта. Сообщение в очереди содержит имя большого двоичного объекта, а функция записывает в журнал размер большого двоичного объекта.
+
+```java
+@FunctionName("getBlobSize")
+@StorageAccount("AzureWebJobsStorage")
+public void blobSize(@QueueTrigger(name = "filename",  queueName = "myqueue-items") String filename,
+                    @BlobInput(name = "file", dataType = "binary", path = "samples-workitems/{queueTrigger") byte[] content,
+       final ExecutionContext context) {
+      context.getLogger().info("The size of \"" + filename + "\" is: " + content.length + " bytes");
+ }
+ ```
+
+  В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@BlobInput` для параметров, значение которых будут поступать из большого двоичного объекта.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`. 
+
+
 ## <a name="input---attributes"></a>Входные атрибуты
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [BlobAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/BlobAttribute.cs).
@@ -587,6 +645,7 @@ public static void Run(
 * [C#](#output---c-example)
 * [Скрипт C# (CSX)](#output---c-script-example)
 * [JavaScript](#output---javascript-example)
+* [Java](#output---java-example)
 
 ### <a name="output---c-example"></a>Пример выходных данных C#
 
@@ -718,6 +777,24 @@ module.exports = function(context) {
     context.done();
 };
 ```
+
+### <a name="output---java-example"></a>Пример выходных данных Java
+
+В следующем примере показаны привязки большого двоичного объекта входных и выходных данных в функции Java. Функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект получает имя {originalblobname}-Copy
+
+```java
+@FunctionName("copyTextBlob")
+@StorageAccount("AzureWebJobsStorage")
+@BlobOutput(name = "target", path = "samples-workitems/{queueTrigger}-Copy")
+public String blobCopy(
+    @QueueTrigger(name = "filename", queueName = "myqueue-items") String filename,
+    @BlobInput(name = "source", path = "samples-workitems/{queueTrigger}") String content ) {
+      return content;
+ }
+ ```
+
+ В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@BlobOutput` для параметров функции, значение которых будут записываться в хранилище больших двоичных объектов.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
+
 
 ## <a name="output---attributes"></a>Выходные атрибуты
 

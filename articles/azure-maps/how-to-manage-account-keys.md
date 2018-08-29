@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 38926cc42b44e61bd83f6b1e33946a9026cda06d
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: f5596f4c9bc827852c730d18856753e87de3c59c
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989407"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42146938"
 ---
 # <a name="how-to-manage-your-azure-maps-account-and-keys"></a>Как управлять учетной записью и ключами службы "Карты Azure"
 
@@ -51,4 +51,5 @@ ms.locfileid: "38989407"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте, как с помощью [API управления службой "Карты"](https://docs.microsoft.com/rest/api/maps-management/accounts) создавать, обновлять и удалять учетные записи службы "Карты". 
+* Дополнительные сведения о том, как использовать поисковые интерфейсы API в Azure Maps для поиска адреса, см. в статье [Как найти адрес с помощью службы поиска по Картам Azure](./how-to-search-for-address.md).
+* Дополнительные сведения о том, как использовать управление картой JavaScript в Azure Maps, см. в статье [Как использовать библиотеку Map Control в службе "Карты Azure"](./how-to-use-map-control.md).

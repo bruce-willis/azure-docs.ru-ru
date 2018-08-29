@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/22/2018
 ms.author: nachandr
-ms.openlocfilehash: a74eab546eefd765b89aae6f12fcff554d9937c4
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: bc9fbf56b37cb8c6690bd036db704532cb8b0437
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39036944"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42142982"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -391,6 +391,10 @@ RebootRequired | true — требовалась перезагрузка<br> f
 - Исправлена ошибка при создании задач службы управления правами, из-за которой проверка работоспособности не выполнялась должным образом во время подготовки задач восстановления.
 - Режим автоматического запуска службы POANodeSvc для Windows изменен на отложенный автоматический запуск.
 
-### <a name="version-121-latest"></a>Версия 1.2.1 (последняя)
+### <a name="version-121"></a>Версия 1.2.1
 
 - Исправлены ошибки в рабочем процессе уменьшения масштаба кластера. Добавлена логика сборки мусора для задач восстановления POA, относящихся к несуществующим узлам.
+
+### <a name="version-122-latest"></a>Версия 1.2.2 (последняя)
+
+- Прочие исправления ошибок.

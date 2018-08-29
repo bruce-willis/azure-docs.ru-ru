@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: ac8262da05837dcdb4ebddd5029f9b5ece3dbc6f
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: cc174822af436e7c31eb5ad4bfa419e1fa022f44
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34067953"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617375"
 ---
 # <a name="submit-a-request-to-pay-azure-subscription-by-invoice"></a>Отправка запроса на оплату подписки Azure по счету
 
@@ -27,7 +27,7 @@ ms.locfileid: "34067953"
 
 > [!IMPORTANT]
 > * Оплата по счету доступна только для учетных записей организаций.
-> * [Сторонние и внешние службы](billing-understand-your-azure-marketplace-charges.md) не могут приобретаться или оплачиваться с помощью оплаты по счету. Если подписка содержит ресурсы из внешних служб, таких как ClearDB или SendGrid, то их следует удалить, прежде чем переходить на оплату по счету. Для приобретения внешних служб после перехода на оплату по счету необходимо иметь отдельную подписку с кредитной или дебетовой картой.
+> * [Сторонние и внешние службы](billing-understand-your-azure-marketplace-charges.md) не могут приобретаться или оплачиваться с помощью оплаты по счету. Если подписка содержит ресурсы из внешних служб, таких как SendGrid, то их следует удалить, прежде чем переходить к оплате по счету. Для приобретения внешних служб после перехода на оплату по счету необходимо иметь отдельную подписку с кредитной или дебетовой картой.
 > * После перехода на оплату по счету вы не сможете перейти обратно на оплату кредитной или дебетовой картой.
 
 ## <a name="request-pay-by-invoice"></a>Запрос оплаты по счету

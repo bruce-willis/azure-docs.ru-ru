@@ -12,14 +12,14 @@ ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/27/2017
+ms.date: 08/08/2018
 ms.author: LADocs; padmavc
-ms.openlocfilehash: fe8a2b00f15fa737c8ed343a47e1cab1c260346b
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: b3b57b2505c4185f3a81530cbc9eeb464dcfa518
+ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297936"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42144976"
 ---
 # <a name="encode-as2-messages-for-azure-logic-apps-with-the-enterprise-integration-pack"></a>Кодирование сообщений AS2 для Azure Logic Apps с помощью пакета интеграции Enterprise
 
@@ -71,6 +71,14 @@ ms.locfileid: "35297936"
 * Подписывание исходящих сообщений (если настроено).
 * Кодирование исходящих сообщений (если настроено).
 * Сжатие сообщения (если настроено).
+* Передача имени файла в заголовок MIME (если настроено).
+
+
+  > [!NOTE]
+  > При использовании для управления сертификатами Azure Key Vault убедитесь, что вы настроили ключи, чтобы разрешить операцию **Encrypt**.
+  > В противном случае кодирование AS2 не удастся.
+  >
+  > ![Расшифровки хранилища ключей](media/logic-apps-enterprise-integration-as2-encode/keyvault1.png)
 
 ## <a name="try-this-sample"></a>Пробное использование примера
 

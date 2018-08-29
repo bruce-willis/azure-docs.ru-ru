@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: cfb6fb512ecb7d57cf411a31b2e04726bfc4b743
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: a628e28e9e6bd603fb2a3789c3281bc2181c91fe
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39263408"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42143848"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: учетные записи и разрешения
 
@@ -121,7 +121,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 | Функция | Разрешения |
 | --- | --- |
-| msDS-ConsistencyGuid feature |Разрешения на запись для атрибута msDS-ConsistencyGuid, описанного в статье [Azure AD Connect: принципы проектирования](active-directory-aadconnect-design-concepts.md#using-msds-consistencyguid-as-sourceanchor). | 
+| функция ms-DS-ConsistencyGuid |Разрешения на запись для атрибута ms-DS-ConsistencyGuid см. в статье [Azure AD Connect: принципы проектирования](active-directory-aadconnect-design-concepts.md#using-ms-ds-consistencyguid-as-sourceanchor). | 
 | Синхронизация хэша паролей |<li>Репликация изменений каталога</li>  <li>Репликация всех изменений каталога |
 | Гибридное развертывание Exchange |Запишите разрешения в атрибуты, описанные в статье [Гибридная обратная запись Exchange](active-directory-aadconnectsync-attributes-synchronized.md#exchange-hybrid-writeback) для пользователей, групп и контактов. |
 | Общедоступная папка почты Exchange |Разрешения на чтение для атрибутов, описанных в статье [Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory](active-directory-aadconnectsync-attributes-synchronized.md#exchange-mail-public-folder), для общедоступных папок. | 

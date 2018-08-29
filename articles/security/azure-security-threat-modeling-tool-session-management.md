@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 24bd0e8eff616920dba0eb5353f983444e3161cd
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: 31fe386cfbe5b6ccf842c05a2dd1d6fcd45bc9b7
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28019965"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42142956"
 ---
 # <a name="security-frame-session-management--articles"></a>Механизм безопасности. Управление сеансами | Статьи 
 | Продукт или служба | Статья |
@@ -552,6 +552,11 @@ public ViewResult SubmitUpdate()
 | **Действия** | Если для защиты веб-интерфейса API используется OAuth 2.0, в заголовке запроса авторизации должен находиться токен носителя. Доступ к веб-приложению предоставляется, только если этот токен в запросе действительный. В отличие от проверки подлинности на основе файлов cookie браузеры не добавляют токены носителя к запросам. Клиент, отправивший запрос, должен явным образом прикрепить токен носителя в заголовке запроса. Таким образом, в веб-интерфейсах API ASP.NET, защищенных с помощью OAuth 2.0, токены носителя используются для защиты от подделки межсайтовых запросов. Обратите внимание, что если сегмент MVC приложения использует проверку подлинности на основе форм (то есть использует файлы cookie), в веб-приложении MVC необходимо использовать токены защиты от подделки. |
 
 ### <a name="example"></a>Пример
-Веб-API должен использовать только токены носителя, а не файлы cookie. Это можно сделать, выполнив в методе `WebApiConfig.Register` следующую конфигурацию: ```C-Sharp code config.SuppressDefaultHostAuthentication(); config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+Веб-API должен использовать только токены носителя, а не файлы cookie. Это можно сделать с помощью следующей настройки в методе `WebApiConfig.Register`.
+
+```csharp
+config.SuppressDefaultHostAuthentication();
+config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 ```
-The SuppressDefaultHostAuthentication method tells Web API to ignore any authentication that happens before the request reaches the Web API pipeline, either by IIS or by OWIN middleware. That way, we can restrict Web API to authenticate only using bearer tokens.
+
+Метод SuppressDefaultHostAuthentication сообщает веб-API, что необходимо игнорировать любые проверки подлинности, которые происходят прежде, чем запрос достигнет конвейера веб-API, либо с помощью службы IIS, либо с помощью ПО промежуточного слоя OWIN. Таким образом можно ограничить веб-API для проверки подлинности только с помощью токенов носителя.

@@ -14,16 +14,16 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: lizross
 ms.reviewer: dhanyahk
-ms.openlocfilehash: d39d98a39fb8692d696adfbedc9bb1a34f8be4d6
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: d4bbf26f6535f50b15068125d911df6a1ca20a72
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358840"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42145013"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
-> Подпишитесь на [веб-канал](https://docs.microsoft.com/api/search/rss?search=%22whats%20new%20in%20azure%20active%20directory%22&locale=en-us) [![RSS](./media/whats-new/feed-icon-16x16.png)](https://docs.microsoft.com/api/search/rss?search=%22whats%20new%20in%20azure%20active%20directory%22&locale=en-us) и получайте напоминания зайти на эту страницу и ознакомиться с последними новостями.
+>Получение уведомлений о том, когда следует повторно посетить эту страницу для обновлений, добавив этот [URL-адрес](https://docs.microsoft.com/api/search/rss?search=%22whats%20new%20in%20azure%20active%20directory%22&locale=en-us) в свой ![значок RSS](./media/whats-new/feed-icon-16x16.png) читателя веб-канала.
 
 Azure AD усовершенствуется на постоянной основе. Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -38,6 +38,24 @@ Azure AD усовершенствуется на постоянной основ
 ---
 
 ## <a name="july-2018"></a>Июль 2018 г.
+
+### <a name="changes-to-azure-active-directory-ip-address-ranges"></a>Изменения в диапазонах IP-адресов Azure Active Directory
+
+**Тип.** Планирование изменений.  
+**Категория службы.** Другая.  
+**Возможности продукта.** Платформа.
+
+Мы вводим большие диапазоны IP-адресов в Azure Active Directory, то есть, если вы настроили диапазоны IP-адресов Azure AD для брандмауэров, маршрутизаторов или групп безопасности сети, вам потребуется их обновить. Мы выполняем это обновление, поэтому вам не придется менять конфигурацию диапазона IP-адресов брандмауэра, маршрутизатора или сети безопасности, когда Azure Active Directory добавляет новые конечные точки. 
+
+Сетевой трафик перейдет в эти новые диапазоны в течение следующих двух месяцев. Чтобы продолжить непрерывное обслуживание, вам необходимо добавить эти обновленные значения в свои IP-адреса до 10 сентября 2018 года:
+
+- 20.190.128.0/18 
+
+- 40.126.0.0/18 
+
+Мы настоятельно рекомендуем не удалять старые диапазоны IP-адресов, пока весь сетевой трафик не переместится на новые диапазоны. Сведения о переносе и о том, когда вы сможете удалить старые диапазоны, см. в разделе [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
+
+---
 
 ### <a name="improvements-to-azure-active-directory-email-notifications"></a>Усовершенствования уведомлений по электронной почте Azure Active Directory
 
@@ -795,7 +813,7 @@ Azure AD отправляет уведомление о сертификатах
 
 Дополнительные сведения можно найти в разделе 
 
-- [Условный доступ на основе приложений Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam)
+- [Условный доступ на основе приложений Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 - [Управление доступом в Интернет с помощью политик Managed Browser в Microsoft Intune](https://aka.ms/managedbrowser)  
 
@@ -1155,7 +1173,7 @@ Azure AD Connect предпочтительней использовать дл�
 Дополнительные сведения можно найти в разделе 
 
 - [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
-- [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam)
+- [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
 
@@ -1447,13 +1465,13 @@ Azure AD Connect предпочтительней использовать дл�
 
 Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement):
 
-- [Microsoft Kaizala](https://microsoft.com/garage/profiles/kaizala/);
+- [Microsoft Kaizala](https://www.microsoft.com/garage/profiles/kaizala/);
 - [Microsoft StaffHub](https://staffhub.office.com/what-it-is).
 
 Дополнительные сведения можно найти в разделе 
 
 - [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
-- [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam)
+- [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
 
@@ -1491,9 +1509,9 @@ Azure AD Connect предпочтительней использовать дл�
 **Категория службы.** Azure AD.  
 **Возможности продукта.** Безопасность и защита удостоверений.
 
-Теперь с помощью [условного доступа на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam) вы можете предоставить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, [утвержденным клиентским приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement), поддерживающим политики защиты приложений Intune. Политики защиты приложений Intune используются для настройки и защиты данных компании в этих клиентских приложениях.
+Теперь с помощью [условного доступа на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) вы можете предоставить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, [утвержденным клиентским приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement), поддерживающим политики защиты приложений Intune. Политики защиты приложений Intune используются для настройки и защиты данных компании в этих клиентских приложениях.
 
-Объединив политики условного доступа [на основе приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam) и [на основе устройства](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications), вы сможете защитить данные корпоративных и личных устройств.
+Объединив политики условного доступа [на основе приложения](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) и [на основе устройства](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications), вы сможете защитить данные корпоративных и личных устройств.
 
 Следующие условия и элементы управления теперь доступны для использования с условным доступом на основе приложения:
 
@@ -1510,7 +1528,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 - Требование утвержденного клиентского приложения
 
-Дополнительные сведения см. в статье [Условный доступ на основе приложений Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam).
+Дополнительные сведения см. в статье [Условный доступ на основе приложений Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
  
 ---
 
@@ -1607,7 +1625,7 @@ Azure AD Connect предпочтительней использовать дл�
 Дополнительные сведения можно найти в разделе 
 
 - [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
-- [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam)
+- [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 
 ---

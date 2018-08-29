@@ -9,12 +9,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 07/01/2018
 ms.author: panosper
-ms.openlocfilehash: a219db14d659348ef3ed4de1dffa640a948f1954
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: db324b6c5444955debdc6a3e09906a0de47ff819
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39283346"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "41929843"
 ---
 # <a name="transcription-guidelines-for-using-speech-service"></a>Рекомендации по транскрибированию для обучения службы "Речь"
 
@@ -154,7 +154,7 @@ ms.locfileid: "39283346"
 *   Десятичным разделителем должна быть запятая (","), а не точка ("."):
 *   Разделителем между часами и минутами должно быть двоеточие (":"), а не точка ("."): 12:00 Uhr.
 *   Такие сокращения, как "ca.", не заменяются. Мы рекомендуем использовать полную форму.
-*   Пять основных математических операторов удаляются: +, -, \*, /. Мы рекомендуем заменить их речевыми формами: plus, minus, mal, geteilt.
+*   Удаляются четыре основные математические операторы: +, -, \*, /. Мы рекомендуем заменить их речевыми формами: plus, minus, mal, geteilt.
 *   То же относится к операторам сравнения (=, <, >,) — gleich, kleiner als, grösser als.
 *   Используйте дроби, например 3/4, в словесной форме (например, drei viertel вместо ¾).
 *   Замените символ € словом Euro.

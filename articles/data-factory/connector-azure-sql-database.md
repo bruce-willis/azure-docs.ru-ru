@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/05/2018
 ms.author: jingwang
-ms.openlocfilehash: 59a48d06ca3c3bced73ed4043691b33784a4f81a
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: ce3a3d28a25c8e904eeebbfc4cf68003fdda07a5
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40006033"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42443638"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
@@ -65,6 +65,9 @@ ms.locfileid: "40006033"
 - [Проверка подлинности SQL.](#sql-authentication)
 - [Аутентификация по маркеру приложения Azure AD на основе субъекта-службы.](#service-principal-authentication)
 - [Аутентификация по маркеру приложения Azure AD на основе управляемого удостоверения службы.](#managed-service-identity-authentication)
+
+>[!TIP]
+>Если вы получили ошибку с кодом ошибки UserErrorFailedToConnectToSqlServer и сообщение типа "Предел сеанса для базы данных — XXX, и он был достигнут", добавьте `Pooling=false` в строку подключения и повторите попытку.
 
 ### <a name="sql-authentication"></a>Аутентификация SQL
 

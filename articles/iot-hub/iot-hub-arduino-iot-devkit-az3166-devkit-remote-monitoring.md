@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: 806ae38f614c44ce25b8fcc159b74f1bda3f00f3
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 79a44e3f5303aaf0d337333b482c2df670e0b3da
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39343123"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143082"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure
 
@@ -120,7 +120,7 @@ ms.locfileid: "39343123"
 
 ## <a name="change-device-id"></a>Изменение идентификатора устройства
 
-См. дополнительные сведения об [изменении идентификатора устройства в Центре Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/docs/customize-device-id/). Если вы хотите изменить указанный в коде идентификатор **AZ3166** на пользовательский идентификатор устройства, измените строку кода, как показано в [примере удаленного мониторинга](https://github.com/Microsoft/devkit-sdk/blob/master/AZ3166/src/libraries/AzureIoT/examples/RemoteMonitoring/RemoteMonitoring.ino#L23).
+Если необходимо изменить указанный в коде идентификатор **AZ3166** на пользовательский идентификатор устройства, измените строку кода, как показано в [примере удаленного мониторинга](https://github.com/Microsoft/devkit-sdk/blob/master/AZ3166/src/libraries/AzureIoT/examples/RemoteMonitoring/RemoteMonitoring.ino#L23).
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 
@@ -136,3 +136,5 @@ ms.locfileid: "39343123"
 * [Обзор акселераторов решений для Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
 
 * [Connect an MXChip IoT DevKit device to your Azure IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+
+* [Пакет средств разработки Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/) 

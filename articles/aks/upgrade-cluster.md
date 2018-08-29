@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/18/2018
 ms.author: gamonroy
 ms.custom: mvc
-ms.openlocfilehash: 9557311c97ea0fde66790c37b08d1a22d1197405
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: 4ff2b56afc4496b6344735b4e3c813b06cee17e3
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39144590"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42144566"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -39,7 +39,7 @@ default  mytestaks007     1.8.10           1.8.10             1.9.1, 1.9.2, 1.9.
 У нас есть три версии для обновления: 1.9.1, 1.9.2 и 1.9.6. Мы можем выполнить команду `az aks upgrade` для обновления до последней доступной версии.  Чтобы сократить время простоя работающих приложений, в ходе обновления AKS добавит новый узел в кластер, а затем узлы будут по очереди [блокироваться и останавливаться][kubernetes-drain].
 
 > [!NOTE]
-> При обновлении кластера AKS нельзя пропускать дополнительные номера версий Kubernetes. Например, обновлять систему с 1.8.x до 1.9.x или с 1.9.x до 1.10.x можно, а с 1.8 до 1.10 — нельзя.
+> При обновлении кластера AKS нельзя пропускать дополнительные номера версий Kubernetes. Например, обновлять систему с 1.8.x до 1.9.x или с 1.9.x до 1.10.x можно, а с 1.8 до 1.10 — нельзя. Для обновления с 1.8 до 1.10 нужно сначала обновить систему с 1.8 до 1.9, а затем выполнить еще одно обновление с 1.9 до 1.10.
 
 ```azurecli-interactive
 az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.9.6

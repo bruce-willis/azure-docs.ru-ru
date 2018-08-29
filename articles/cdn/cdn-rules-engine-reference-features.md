@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: v-deasim
-ms.openlocfilehash: e1e002b51aa5a93e7fcc800f5cf48ac401c5cb2d
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: 57648486e515b5438f937c4295b33843583e622e
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011430"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42142158"
 ---
 # <a name="azure-cdn-rules-engine-features"></a>Функции обработчика правил Azure CDN
 В этой статье приводятся подробные описания доступных функций для [обработчика правил](cdn-rules-engine.md) сети доставки содержимого (CDN) Azure.
@@ -333,7 +333,7 @@ type|ОПИСАНИЕ
 
 В следующем примере использования этой функции предоставляется пример запроса и ключ кэша по умолчанию:
 
-- **Пример запроса:** http://wpc.0001.&lt;Домен&gt;/800001/Origin/folder/asset.htm?sessionid=1234&language=EN&userid=01
+- **Пример запроса:** http://wpc.0001.&lt;Domain&gt;/800001/Origin/folder/asset.htm?sessionid=1234&language=EN&userid=01
 - **Ключ кэша по умолчанию:** /800001/Origin/folder/asset.htm
 
 ##### <a name="include"></a>Включить
@@ -497,8 +497,8 @@ application/javascript|JavaScript
 
 Тип заголовка|Формат|Примеры
 -|-|-
-Заголовок запроса|%{[RequestHeader]()}[i]() | %{Accept-Encoding}i <br/> {Referer}i <br/> %{Authorization}i
-Заголовок ответа|%{[ResponseHeader]()}[o]()| %{Age}o <br/> %{Content-Type}o <br/> %{Cookie}o
+Заголовок запроса|`%{[RequestHeader]()}[i]()` | %{Accept-Encoding}i <br/> {Referer}i <br/> %{Authorization}i
+Заголовок ответа|`%{[ResponseHeader]()}[o]()`| %{Age}o <br/> %{Content-Type}o <br/> %{Cookie}o
 
 Основные сведения
 

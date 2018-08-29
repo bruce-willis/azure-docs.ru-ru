@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e10f6cdb60a2c03bfb42e46f179546b623d625dd
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 5803bf2c71b2cf3fe7bb145b4d3d664c60642294
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443772"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42142951"
 ---
 # <a name="get-data"></a>Получение данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "37443772"
   
 Предполагаемое время выполнения этого занятия: **10 минут**  
   
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие1. Создание проекта табличной модели](../tutorials/aas-lesson-1-create-a-new-tabular-model-project.md).  
   
 ## <a name="create-a-connection"></a>Создание подключения  
@@ -52,11 +52,11 @@ ms.locfileid: "37443772"
   
 5.  В навигаторе выберите базу данных **AdventureWorksDW2014**, а затем нажмите кнопку **ОК**. Создается подключение к базе данных. 
   
-6.  В навигаторе установите флажок для следующих таблиц: **DimCustomer**, **DimDate**, **DimGeography**, **DimProduct**, **DimProductCategory**, **DimProductSubcategory** и **FactInternetSales**.  
+6.  В навигаторе установите флажок для следующих таблиц: **DimCustomer**, **DimDate**, **DimGeography**, **DimProduct**, **DimProductCategory**, **DimProductSubcategory** и **FactInternetSales**, а затем нажмите **Изменить**.
 
     ![aas-lesson2-select-tables](../tutorials/media/aas-lesson2-select-tables.png)
   
-После нажатия кнопки "ОК" откроется редактор запросов. В следующем разделе выберите только данные, которые нужно импортировать.
+    Откроется редактор запросов. В следующем разделе выберите только данные, которые нужно импортировать.
 
   
 ## <a name="filter-the-table-data"></a>Фильтрация данных таблицы  

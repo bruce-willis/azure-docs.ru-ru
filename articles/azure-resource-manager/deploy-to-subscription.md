@@ -9,20 +9,34 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/08/2018
+ms.date: 08/22/2018
 ms.author: tomfitz
-ms.openlocfilehash: 766534bfa02146e894916e2f9c953ef631913764
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 6166161f6d50e747681217281a0afc6514df78fb
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40024801"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617457"
 ---
 # <a name="deploy-resources-to-an-azure-subscription"></a>Развертывание ресурсов в подписку Azure
 
 Как правило,вы развертываете ресурсы в группу ресурсов в подписке Azure. Кроме того, некоторые ресурсы могут быть развернуты на уровне подписки Azure. Эти ресурсы применяются ко всей подписке. [Политики](../azure-policy/azure-policy-introduction.md), [Управление доступом на основе ролей](../role-based-access-control/overview.md) и [центр безопасности Azure](../security-center/security-center-intro.md) — это службы, которые можно применить на уровне подписки, а не на уровне группы ресурсов.
 
-В этой статье используется Azure CLI для развертывания шаблонов. В настоящее время PowerShell не поддерживает развертывание шаблона в подписке.
+В этой статье для развертывания шаблонов используются Azure CLI и PowerShell.
+
+## <a name="name-and-location-for-deployment"></a>Имя и расположение для развертывания
+
+При развертывании в подписке, необходимо указать расположение для развертывания. Можно также указать имя для развертывания. Если не указать имя для развертывания, имя шаблона будет использоваться как имя развертывания. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+
+Расположение развертывания уровня подписки является неизменяемым. Не возможно создать развертывание в одном расположении, если в другом расположении уже существует развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+
+## <a name="using-template-functions"></a>Использование функций шаблонов
+
+Для развертывания на уровне подписки существуют важные рассматриваемые вопросы при использовании функций шаблонов:
+
+* Функция [resourceGroup()](resource-group-template-functions-resource.md#resourcegroup) **не** поддерживается.
+* Функция [resourceId()](resource-group-template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Например получите идентификатор ресурса для определения политики с помощью `resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))`
+* Функции [reference()](resource-group-template-functions-resource.md#reference) и [list()](resource-group-template-functions-resource.md#list) поддерживаются.
 
 ## <a name="assign-policy"></a>Назначение политики
 
@@ -73,6 +87,19 @@ az deployment create \
   --parameters policyDefinitionID=$definition policyName=auditRGLocation
 ```
 
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+$definition = Get-AzureRmPolicyDefinition | Where-Object { $_.Properties.DisplayName -eq 'Audit resource location matches resource group location' }
+
+New-AzureRmDeployment `
+  -Name policyassign `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policyassign.json `
+  -policyDefinitionID $definition.PolicyDefinitionId `
+  -policyName auditRGLocation
+```
+
 Чтобы применить встроенную политику к подписке Azure, используйте следующие команды Azure CLI. В этом примере в политике есть параметры.
 
 ```azurecli-interactive
@@ -84,6 +111,23 @@ az deployment create \
   -l southcentralus \
   --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policyassign.json \
   --parameters policyDefinitionID=$definition policyName=setLocation policyParameters="{'listOfAllowedLocations': {'value': ['westus']} }"
+```
+
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+$definition = Get-AzureRmPolicyDefinition | Where-Object { $_.Properties.DisplayName -eq 'Allowed locations' }
+
+$locations = @("westus", "westus2")
+$policyParams =@{listOfAllowedLocations = @{ value = $locations}}
+
+New-AzureRmDeployment `
+  -Name policyassign `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policyassign.json `
+  -policyDefinitionID $definition.PolicyDefinitionId `
+  -policyName setLocation `
+  -policyParameters $policyParams
 ```
 
 ## <a name="define-and-assign-policy"></a>Определение и назначение политики
@@ -140,6 +184,15 @@ az deployment create \
   --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policydefineandassign.json
 ```
 
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+New-AzureRmDeployment `
+  -Name definePolicy `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policydefineandassign.json
+```
+
 ## <a name="assign-role"></a>Назначение роли
 
 В следующем примере присваивается роль пользователю или группе.
@@ -178,7 +231,7 @@ az deployment create \
 role=$(az role definition list --name Contributor --query [].name --output tsv)
 
 # Get ID of the AD group to assign the role to
-principalid=$(az ad group show --group tomfitzexample --query objectId --output tsv)
+principalid=$(az ad group show --group demogroup --query objectId --output tsv)
 
 az deployment create \
   -n demoRole \
@@ -187,8 +240,24 @@ az deployment create \
   --parameters principalId=$principalid roleDefinitionId=$role
 ```
 
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+$role = Get-AzureRmRoleDefinition -Name Contributor
+
+$adgroup = Get-AzureRmADGroup -DisplayName demogroup
+
+New-AzureRmDeployment `
+  -Name demoRole `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/roleassign.json `
+  -roleDefinitionId $role.Id `
+  -principalId $adgroup.Id
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
+* Чтобы создать группу ресурсов, см. [Создание группы ресурсов в шаблонах Azure Resource Manager](create-resource-group-in-template.md).
 * Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](resource-group-authoring-templates.md). 
 * Список доступных в шаблоне функций см. в статье о [функциях шаблонов](resource-group-template-functions.md).
 

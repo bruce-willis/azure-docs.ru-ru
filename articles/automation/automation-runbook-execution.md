@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/08/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3dfe16cc09f0453aef8adf8bf87a00aebd2054bc
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: eb6516400d362fe60adc05590353ec003c70e059
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214641"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42143845"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "39214641"
 
 ## <a name="retrieving-job-status-using-windows-powershell"></a>Получение состояния задания с помощью Windows PowerShell
 
-Чтобы получить сведения о созданных для модуля Runbook заданиях и о конкретном задании, воспользуйтесь командлетом [Get-AzureRmAutomationJob](https://msdn.microsoft.com/library/mt619440.aspx). Если запустить модуль Runbook с помощью Windows PowerShell, то команда [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx) вернет результирующее задание. Получить выходные данные задания можно с помощью команды [Get-AzureRmAutomationJob](https://msdn.microsoft.com/library/mt619440.aspx).
+Чтобы получить сведения о созданных для модуля Runbook заданиях и о конкретном задании, воспользуйтесь командлетом [Get-AzureRmAutomationJob](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjob). Если запустить модуль Runbook с помощью Windows PowerShell, то команда [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook) вернет результирующее задание. Получить выходные данные задания можно с помощью команды [Get-AzureRmAutomationJobOutput](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjoboutput).
 
 Приведенные ниже примеры команд получают сведения о последнем задании для примера runbook и отображают его состояние, значения параметров runbook, а также выходные данные этого задания.
 

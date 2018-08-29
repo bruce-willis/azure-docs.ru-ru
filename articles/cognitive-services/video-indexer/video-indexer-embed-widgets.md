@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 07/31/2018
 ms.author: juliako
-ms.openlocfilehash: 4ce1eedac69b06f491510be93fcfbdfbc879ff7e
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: ba81030c3d6384ca6b66d6a3b14e614d1626e3e0
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398138"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41929785"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
@@ -241,6 +241,4 @@ URL-адрес внедрения будет выглядеть так: https://
 
 Сведения о том, как просматривать и редактировать аналитические сведения в Индексаторе видео, см. в [этой](video-indexer-view-edit.md) статье.
 
-## <a name="see-also"></a>См. также
-
-[Общие сведения об Индексаторе видео](video-indexer-overview.md)
+Кроме того, ознакомьтесь с [Индексатором видео codepen](https://codepen.io/videoindexer/pen/eGxebZ).

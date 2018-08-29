@@ -5,20 +5,20 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 08/13/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 59dc2dad103de60cb7d4b6a44a6d6f7271368391
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 10bcf54da9660da1edcc8358f10289e9678be5cb
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444945"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42145599"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
 Локальный шлюз данных является обязательным, когда один или несколько серверов Azure Analysis Services в том же регионе подключаются к локальным источникам данных. Дополнительные сведения о шлюзе см. в разделе [Установка локального шлюза](analysis-services-gateway.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 **Минимальные требования:**
 
 * .NET Framework 4.5;
@@ -38,6 +38,7 @@ ms.locfileid: "37444945"
 * Устанавливайте шлюз на компьютере, который не выключается и не переходит в спящий режим.
 * Не устанавливайте шлюз на компьютере, подключенном к сети с помощью беспроводного соединения. Это может стать причиной снижения производительности.
 * Войдите в Azure с помощью учетной записи в Azure AD для того же [клиента](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant), что и подписка, в которой вы регистрируете шлюз. Учетные записи Azure B2B (гостевые) не поддерживаются при установке и регистрации шлюза.
+* Если источники данных находятся в виртуальной сети Azure, необходимо настроить свойство сервера [AlwaysUseGateway](analysis-services-vnet-gateway.md).
 * Описанный здесь шлюз (унифицированный) не поддерживается в Azure для государственных организаций, а также в независимых регионах (Azure для Германии и Azure для Китая). Используйте **выделенный локальный шлюз для Azure Analysis Services**, установленный с помощью шаблона**быстрого запуска** для вашего сервера на портале. 
 
 
@@ -114,4 +115,5 @@ ms.locfileid: "37444945"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Управление службами Analysis Services](analysis-services-manage.md)   
-* [Получение данных из служб Azure Analysis Services](analysis-services-connect.md)
+* [Получение данных из служб Azure Analysis Services](analysis-services-connect.md)   
+* [Использование шлюза для источников данных в виртуальной сети Azure](analysis-services-vnet-gateway.md)

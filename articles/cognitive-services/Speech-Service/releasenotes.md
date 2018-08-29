@@ -1,22 +1,49 @@
 ---
-title: Документация по пакету SDK для службы "Речь" в Cognitive Services
+title: Документация по пакету SDK для службы "Речь" в Cognitive Services | Документы Майкрософт
 description: Заметки о выпуске — что изменилось в последних версиях
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: wolfma61
+manager: onano
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
-ms.date: 07/17/2018
+ms.date: 08/16/2018
 ms.author: wolfma
-ms.openlocfilehash: f346241e1d10d16eae08e389296f4be9149ec086
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 0900588f818855d72e415678338c96fb6505318d
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39502464"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41929904"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+
+## <a name="cognitive-services-speech-sdk-060-2018-august-release"></a>Пакет SDK 0.6.0 для службы "Речь" в Cognitive Services: выпуск за август 2018 г.
+
+**Новые функции**
+
+* Теперь приложения UWP, созданные с использованием пакета SDK для службы "Речь", могут пройти сертификацию WACK (комплект сертификации приложений для Windows).
+  Ознакомьтесь с [кратким руководством по UWP](quickstart-csharp-uwp.md).
+* Поддержка платформы .NET Standard 2.0 в Linux (Ubuntu 16.04 x 64).
+* Экспериментальная функция: поддержка Java 8 в 64-разрядной версии Windows и Linux (Ubuntu 16.04 x 64).
+  Ознакомьтесь с [кратким руководством по распознанию речи в Java (для Windows или Linux)](quickstart-java-jre.md)
+
+**Функциональные изменения**
+
+* Предоставление дополнительных подробных сведений об ошибках подключения.
+
+**Критические изменения**
+
+* В Java (Android) функция `SpeechFactory.configureNativePlatformBindingWithDefaultCertificate` больше не требует параметр пути. Теперь путь автоматически определяется на всех поддерживаемых платформах.
+* Функция доступа get для свойства `EndpointUrl` в Java и C# была удалена.
+
+**Исправления ошибок**
+
+* Теперь в Java реализован результат аудиосинтеза на распознавателе перевода.
+* Исправлена ошибка, которая могла привести к неактивным потокам и увеличению числа открытых и неиспользуемых сокетов.
+* Исправлена проблема, при которой длительное распознавание могло завершиться в середине передачи.
+* Исправлено состояние гонки при завершении работы распознавателя.
 
 ## <a name="cognitive-services-speech-sdk-050-2018-july-release"></a>Пакет SDK для службы "Речь" в Cognitive Services 0.5.0: выпуск за июль 2018 г.
 

@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по использованию пакета SDK для API "Поиск изображений" для Python | Документация Майкрософт
-description: Установка компонентов консольного приложения пакета SDK для API "Поиск изображений".
+title: Краткое руководство. Запрос и фильтрация изображений с помощью пакета SDK в Python
+description: Из этого краткого руководства вы узнаете, как запрашивать и фильтровать изображения, возвращаемые Поиском изображений Bing, с помощью Python.
 titleSuffix: Azure Image Search SDK Python quickstart
 services: cognitive-services
 author: mikedodaro
@@ -10,14 +10,14 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 02/14/2018
 ms.author: v-gedod
-ms.openlocfilehash: e30852439ad8ec2d5ddc667b75167e8b5d35be33
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 4729f103bb9b50d4ff039907db8eb677f3dc290a
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382589"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41929703"
 ---
-# <a name="image-search-sdk-python-quickstart"></a>Краткое руководство по использованию пакета SDK для API "Поиск изображений" для Python
+ # <a name="quickstart-request-and-filter-images-using-the-sdk-and-python"></a>Краткое руководство. Запрос и фильтрация изображений с помощью пакета SDK и Python
 
 Пакет SDK для API "Поиск изображений" содержит функции REST API для обработки веб-запросов и анализа результатов. 
 

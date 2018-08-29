@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 08/14/2018
 ms.author: raynew
-ms.openlocfilehash: 709afe03570ca4cf81718fb071778439444d6bf6
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: e363885afb77a60bfc0229a872fdb4e519d5979d
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171989"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143159"
 ---
 # <a name="support-matrix-for-hyper-v-replication-to-azure"></a>Матрица поддержки для репликации Hyper-V в Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "39171989"
 
 **Сценарий** | **Дополнительные сведения**
 --- | ---
-Hyper-V с Virtual Machine Manager | Вы можете выполнять аварийное восстановление в Azure для виртуальных машин, работающих на узлах Hyper-V под управлением структуры System Center Virtual Machine Manager.<br/><br/> Этот сценарий можно развернуть с помощью портала Azure или PowerShell.<br/><br/> Если узлами Hyper-V управляет Virtual Machine Manager, вы можете также выполнять аварийное восстановление на вторичный локальный сайт. Дополнительные сведения об этом сценарии см. в [этом руководстве](tutorial-vmm-to-vmm.md).
+Hyper-V с Virtual Machine Manager | Вы можете выполнять аварийное восстановление в Azure для виртуальных машин, работающих на узлах Hyper-V под управлением структуры System Center Virtual Machine Manager.<br/><br/> Этот сценарий можно развернуть с помощью портала Azure или PowerShell.<br/><br/> Если узлами Hyper-V управляет Virtual Machine Manager, вы можете также выполнять аварийное восстановление на вторичный локальный сайт. Дополнительные сведения об этом сценарии см. в [этом руководстве](hyper-v-vmm-disaster-recovery.md).
 Hyper-V без Virtual Machine Manager | Вы можете выполнять аварийное восстановление в Azure для виртуальных машин, работающих на узлах Hyper-V без управления Virtual Machine Manager.<br/><br/> Этот сценарий можно развернуть с помощью портала Azure или PowerShell.
 
 
@@ -44,8 +44,8 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Mac
 
  **Компонент** | **Дополнительные сведения**
 --- | ---
-Конфигурация виртуальной машины | Виртуальные машины, которые реплицируются в Azure, должны соответствовать [требованиям Azure](#failed-over-azure-vm-requirements).
-Операционная система на виртуальной машине | Любая гостевая ОС, поддерживаемая в Azure.<br/><br/> Nano Server Windows Server 2016 не поддерживается.
+Конфигурация виртуальной машины | Виртуальные машины, которые реплицируются в Azure, должны соответствовать [требованиям Azure](#azure-vm-requirements).
+Операционная система на виртуальной машине | Любая гостевая ОС, [поддерживаемая в Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases).<br/><br/> Nano Server Windows Server 2016 не поддерживается.
 
 
 ## <a name="vmdisk-management"></a>Управление виртуальной машиной и диском
@@ -113,7 +113,8 @@ RDM | Нет данных | Нет данных
 Диски размером более 1 ТБ | Да, до 4095 ГБ | Да, до 4095 ГБ
 Диск: логический и физический сектор размером 4 КБ | Не поддерживается: поколение 1 или 2 | Не поддерживается: поколение 1 или 2
 Диск: логический сектор размером 4 КБ и физический сектор размером 512 байт | Yes |  Yes
-Том с чередующимся диском размером более 1 ТБ<br/><br/> Управление логическими томами (LVM) | Yes | Yes
+Управление логическими томами (LVM). LVM поддерживается только на дисках данных. Azure предоставляет только один диск с ОС. | Yes | Yes
+Том с чередующимся диском размером более 1 ТБ | Yes | Yes
 Дисковые пространства | Yes | Yes
 "Горячее" добавление или удаление диска | Нет  | Нет 
 Исключение диска | Yes | Yes

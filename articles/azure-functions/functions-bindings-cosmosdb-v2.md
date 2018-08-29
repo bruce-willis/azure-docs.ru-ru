@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: glenga
-ms.openlocfilehash: e77ccdc5b4bc03ba233aae49eda8465704e5405e
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: e562b694b2d3f226d0b4f5bc03b54d6562e52244
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39344381"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143078"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x-preview"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х (предварительная версия)
 
@@ -54,6 +54,7 @@ ms.locfileid: "39344381"
 * [C#](#trigger---c-example)
 * [Скрипт C# (CSX)](#trigger---c-script-example)
 * [JavaScript](#trigger---javascript-example)
+* [Java](#trigger---java-example)
 
 [Пропустить примеры триггеров](#trigger---attributes)
 
@@ -159,7 +160,43 @@ namespace CosmosDBSamplesV2
     }
 ```
 
-## <a name="trigger---attributes"></a>Атрибуты триггера
+### <a name="trigger---java-example"></a>Пример Java в триггере
+
+В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция Java](functions-reference-java.md), которая использует эту привязку. Эта функция используется при вставке или обновлении в указанной базе данных и коллекции.
+
+```json
+{
+    "type": "cosmosDBTrigger",
+    "name": "items",
+    "direction": "in",
+    "leaseCollectionName": "leases",
+    "connectionStringSetting": "AzureCosmosDBConnection",
+    "databaseName": "ToDoList",
+    "collectionName": "Items",
+    "createLeaseCollectionIfNotExists": false
+}
+```
+
+Ниже приведен код Java.
+
+```java
+    @FunctionName("cosmosDBMonitor")
+    public void cosmosDbProcessor(
+        @CosmosDBTrigger(name = "items",
+            databaseName = "ToDoList",
+            collectionName = "Items",
+            leaseCollectionName = "leases",
+            reateLeaseCollectionIfNotExists = true,
+            connectionStringSetting = "AzureCosmosDBConnection") String[] items,
+            final ExecutionContext context ) {
+                context.getLogger().info(items.length + "item(s) is/are changed.");
+            }
+```
+
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBTrigger` для параметров, значения которых будут поступать из Cosmos DB.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями nullable, которые необязательно использовать<T>. 
+
+## <a name="trigger---c-attributes"></a>C# атрибуты триггера
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [CosmosDBTrigger](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/Trigger/CosmosDBTriggerAttribute.cs).
 
@@ -177,6 +214,7 @@ namespace CosmosDBSamplesV2
 ```
 
 Полный пример см. в разделе [Пример C# в триггере](#trigger---c-example).
+
 
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
@@ -229,6 +267,7 @@ namespace CosmosDBSamplesV2
 * [Скрипт C# (CSX)](#input---c-script-examples)
 * [JavaScript](#input---javascript-examples)
 * [F#](#input---f-examples)
+* [Java](#input---java-examples)
 
 [Пропустить примеры входных данных](#input---attributes)
 
@@ -1156,6 +1195,32 @@ module.exports = function (context, req, toDoItem) {
 
 Чтобы добавить файл `project.json`, см. раздел [об управлении пакетом F#](functions-reference-fsharp.md#package).
 
+### <a name="input---java-examples"></a>Примеры входных данных Java
+
+В следующем примере показана функция Java, которая получает один документ. Функция инициируется HTTP-запросом, который в строке запроса указывает идентификатор для поиска. Этот идентификатор используется для получения документа ToDoItem из указанной базы данных и коллекции.
+
+Ниже приведен код Java.
+
+```java
+@FunctionName("getItem")
+public String cosmosDbQueryById(
+    @HttpTrigger(name = "req",
+                  methods = {HttpMethod.GET},
+                  authLevel = AuthorizationLevel.ANONYMOUS) Optional<String> dummy,
+    @CosmosDBInput(name = "database",
+                      databaseName = "ToDoList",
+                      collectionName = "Items",
+                      leaseCollectionName = "",
+                      id = "{Query.id}"
+                      connectionStringSetting = "AzureCosmosDBConnection") Optional<String> item,
+    final ExecutionContext context
+ ) {
+    return item.orElse("Not found");
+ }
+ ```
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBInput` для параметров функции, значения которых будут поступать из Cosmos DB.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями nullable, которые необязательно использовать<T>. 
+
 ## <a name="input---attributes"></a>Входные атрибуты
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [CosmosDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs).
@@ -1201,6 +1266,7 @@ module.exports = function (context, req, toDoItem) {
 * [Скрипт C# (CSX)](#output---c-script-examples)
 * [JavaScript](#output---javascript-examples)
 * [F#](#output---f-examples)
+* [Java](#output---java-example)
 
 См. также [пример входных данных](#input---c-examples), в котором используется `DocumentClient`.
 
@@ -1564,6 +1630,24 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 ```
 
 Чтобы добавить файл `project.json`, см. раздел [об управлении пакетом F#](functions-reference-fsharp.md#package).
+
+## <a name="output---java-examples"></a>Примеры выходных данных Java
+
+В следующем примере показана функция Java, которая добавляет документ в базу данных, используя данные из сообщения в хранилище очередей.
+
+```java
+@FunctionName("getItem")
+@CosmosDBOutput(name = "database", databaseName = "ToDoList", collectionName = "Items", connectionStringSetting = "AzureCosmosDBConnection")
+public String cosmosDbQueryById(
+     @QueueTrigger(name = "msg", queueName = "myqueue-items", connection = "AzureWebJobsStorage") String message,
+     final ExecutionContext context
+)  {
+     return "{ id: " + System.currentTimeMillis() + ", Description: " + message + " }";
+   }
+```
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBOutput` для параметров, которые будут записываться в Cosmos DB.  Типом параметра заметки должен быть OutputBinding<T>, где T является собственным типом Java или POJO.
+
 
 ## <a name="output---attributes"></a>Выходные атрибуты
 

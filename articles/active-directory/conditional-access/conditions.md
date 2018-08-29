@@ -17,16 +17,16 @@ ms.workload: identity
 ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 5f5e2051f9c67fa4e37ce0e1213e14e197222f05
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 9feb6ef5b708813c2f73a70a930cabfd69dff114
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627548"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143310"
 ---
 # <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Что собой представляют условия условного доступа Azure Active Directory 
 
-С помощью [условного доступа Azure Active Directory (Azure AD)](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal) можно контролировать доступ авторизованных пользователей к облачным приложениям. В политике условного доступа определяется реакция на причину активации политики. Пример ответа: **Сделать это**. Пример причины: **В этом случае**.
+С помощью [условного доступа Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) можно контролировать доступ авторизованных пользователей к облачным приложениям. В политике условного доступа определяется реакция ("Сделать это") на конкретное условие, при котором активируется политика ("В этом случае"). 
 
 ![Причина и ответ](./media/conditions/10.png)
 
@@ -64,15 +64,17 @@ ms.locfileid: "39627548"
 
 ## <a name="cloud-apps"></a>Облачные приложения 
 
-Облачное приложение — это веб-сайт или служба. Веб-сайты, защищенные с помощью прокси приложения Azure AD, также являются облачными приложениями. Подробное описание поддерживаемых облачных приложений приведено в разделе [Назначения облачных приложений](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-technical-reference#cloud-apps-assignments). 
+Облачное приложение — это веб-сайт или служба. Веб-сайты, защищенные с помощью прокси приложения Azure AD, также являются облачными приложениями. Подробное описание поддерживаемых облачных приложений приведено в разделе [Назначения облачных приложений](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#cloud-apps-assignments). 
 
 Условие **облачных приложений** является обязательным в политике условного доступа. В политике можно либо выбрать параметр **Все облачные приложения**, либо указать определенные приложения.
 
 ![Включение облачных приложений](./media/conditions/03.png)
 
-- Выберите **Все облачные приложения**, чтобы базовая политика применялась ко всей организации. Используйте этот параметр для является политик, которые требуют прохождения многофакторной проверки подлинности, если обнаружен риск при входе для какого-либо облачного приложения. Политика, применяемая ко **всем облачным приложениям**, распространяется на доступ ко всем веб-сайтам и службам. Этот параметр не ограничивается облачными приложениями, которые отображаются в списке **Выберите приложения**. 
+Выбор:
 
-- Выберите отдельные облачные приложения для нацеливания политики на определенные службы. Например, можно требовать наличия у пользователей [соответствующего требованиям устройства](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online) для доступа к SharePoint Online. Эта политика также применяется к другим службам, когда они обращаются к содержимому SharePoint. Например, Microsoft Teams. 
+- **Все облачные приложения** необходимы для того, чтобы базовая политика применялась ко всей организации. Используйте этот параметр для является политик, которые требуют прохождения многофакторной проверки подлинности, если обнаружен риск при входе для какого-либо облачного приложения. Политика, применяемая ко **всем облачным приложениям**, распространяется на доступ ко всем веб-сайтам и службам. Этот параметр не ограничивается облачными приложениями, которые отображаются в списке **Выберите приложения**. 
+
+- Отдельные облачные приложения для нацеливания политики на определенные службы. Например, можно требовать наличия у пользователей [соответствующего требованиям устройства](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online) для доступа к SharePoint Online. Эта политика также применяется к другим службам, когда они обращаются к содержимому SharePoint. Например, Microsoft Teams. 
 
 Из политики можно исключить конкретные приложения. Тем не менее, эти приложения по-прежнему регулируются политиками, применяемыми к службам, к которым они обращаются. 
 
@@ -80,18 +82,18 @@ ms.locfileid: "39627548"
 
 ## <a name="sign-in-risk"></a>Риск при входе
 
-Уровень риска при входе ("Высокий", "Средний" или "Низкий") указывает, насколько вероятно то, что попытка входа выполнена пользователем, который не является правомочным владельцем учетной записи. Azure AD вычисляет уровень риска при входе во время входа пользователя. Вычисляемый уровень риска можно использовать как условие в политике условного доступа. 
+Уровень риска при входе ("Высокий", "Средний" или "Низкий") указывает, насколько вероятно то, что попытка входа выполнена пользователем, который не является правомочным владельцем учетной записи. Azure AD вычисляет уровень риска при входе во время входа пользователя. Вычисляемый уровень риска можно использовать как условие в политике условного доступа.
 
 ![Уровни риска при входе](./media/conditions/22.png)
 
-Чтобы использовать это условие, необходимо включить службу [Защита идентификации Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-identityprotection-enable).
+Чтобы использовать это условие, необходимо включить службу [Защита идентификации Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection-enable).
  
 Ниже приведены распространенные варианты использования данного условия политики. 
 
 - Блокирование пользователей с высоким уровнем риска при входе. Эта защита позволяет запретить доступ к вашим облачным приложениям потенциально неправомочным пользователям. 
 - Требование прохождения многофакторной проверки подлинности пользователями со средним уровнем риска при входе. Применяя многофакторную проверку подлинности, можно обеспечить дополнительное подтверждение того, что вход выполняет правомочный владелец учетной записи.
 
-Дополнительные сведения см. в разделе [Вход, представляющий риск](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-security-risky-sign-ins).  
+Дополнительные сведения см. в разделе [Вход, представляющий риск](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-security-risky-sign-ins).  
 
 ## <a name="device-platforms"></a>Платформы устройств
 
@@ -114,7 +116,7 @@ ms.locfileid: "39627548"
 
 ![Настройка состояния устройства](./media/conditions/112.png)
 
-Если вы хотите заблокировать доступ для неуправляемых устройств, необходимо реализовать [условный доступ на основе устройства](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online).
+Если вы хотите заблокировать доступ для неуправляемых устройств, необходимо реализовать [условный доступ на основе устройства](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online).
 
 
 ## <a name="locations"></a>Расположения
@@ -148,7 +150,7 @@ ms.locfileid: "39627548"
 
 Ниже приведены распространенные варианты использования данного условия политики. 
 
-- Требование наличия [соответствующего требованиям устройства](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online) для мобильных и классических приложений, которые скачивают большие объемы данных на устройство. При этом доступ через браузер с любого устройства разрешен.
+- Требование наличия [соответствующего требованиям устройства](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online) для мобильных и классических приложений, которые скачивают большие объемы данных на устройство. При этом доступ через браузер с любого устройства разрешен.
 
 - Блокирование доступа из веб-приложений, но разрешение доступа из мобильных и классических приложений.
 
@@ -163,7 +165,7 @@ ms.locfileid: "39627548"
  
 ![Применение политики только к поддерживаемым платформам](./media/conditions/33.png)
 
-Применение этого условия только к поддерживаемым платформам равнозначно выбору параметра "Все платформы" в [условии платформы устройств](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online).
+Применение этого условия только к поддерживаемым платформам равнозначно выбору параметра "Все платформы" в [условии платформы устройств](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam#app-based-or-compliant-device-policy-for-exchange-online-and-sharepoint-online).
 
 ![Настройка платформ устройств](./media/conditions/34.png)
 
@@ -172,7 +174,7 @@ ms.locfileid: "39627548"
 
 - [Настройка SharePoint Online и Exchange Online для условного доступа Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
  
-- [Условный доступ на основе приложений Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-mam). 
+- [Условный доступ на основе приложений Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). 
 
 
 ### <a name="legacy-authentication"></a>Устаревшие способы аутентификации  

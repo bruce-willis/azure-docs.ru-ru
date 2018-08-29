@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/05/2018
+ms.date: 08/20/2018
 ms.author: anwestg
-ms.openlocfilehash: 22901374988f6654bc1fb282315db81bb17c815f
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: e5fc6b5d396a45d15548cfdd8f445158147ad12f
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857871"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41946538"
 ---
 # <a name="before-you-get-started-with-app-service-on-azure-stack"></a>Подготовка к работе со службой приложений в Azure Stack
 
@@ -28,7 +28,7 @@ ms.locfileid: "37857871"
 Перед развертыванием Службы приложений Azure в Azure Stack необходимо выполнить предварительные действия, описанные в этой статье.
 
 > [!IMPORTANT]
-> Прежде чем развертывать Службу приложений Azure 1.2, примените обновление 1804 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack (ASDK).
+> Прежде чем развернуть Службу приложений Azure 1.3, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний Пакет средств разработки Azure Stack (ASDK).
 
 ## <a name="download-the-installer-and-helper-scripts"></a>Скачивание установочного и вспомогательного скриптов
 
@@ -241,27 +241,6 @@ net share %WEBSITES_SHARE% /delete
 net share %WEBSITES_SHARE%=%WEBSITES_FOLDER% /grant:Everyone,full
 ```
 
-### <a name="add-the-fileshareowners-group-to-the-local-administrators-group"></a>Добавление группы FileShareOwners в группу локальных администраторов
-
-Для правильной работы службы удаленного управления Windows необходимо добавить группу FileShareOwners в группу локальных администраторов.
-
-#### <a name="active-directory"></a>Active Directory
-
-Выполните следующие команды в командной строке с повышенными привилегиями на файловом сервере или на каждом файловом сервере, который используется как узел отказоустойчивого кластера. Замените значение `<DOMAIN>` доменным именем, которое необходимо использовать.
-
-```DOS
-set DOMAIN=<DOMAIN>
-net localgroup Administrators %DOMAIN%\FileShareOwners /add
-```
-
-#### <a name="workgroup"></a>Рабочая группа
-
-Выполните следующую команду в командной строке с повышенными привилегиями на файловом сервере:
-
-```DOS
-net localgroup Administrators FileShareOwners /add
-```
-
 ### <a name="configure-access-control-to-the-shares"></a>Настройка управления доступом к общим папкам
 
 Выполните указанные ниже команды в командной строке с повышенными привилегиями на файловом сервере или на узле отказоустойчивого кластера, который является текущим владельцем кластерного ресурса. Замените значения, выделенные курсивом, значениями для конкретной среды.
@@ -353,6 +332,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 | AzureStackAdminCredential | Обязательно | Null | Учетные данные администратора службы Azure AD. |
 | CertificateFilePath | Обязательно | Null | **Полный путь** к файлу сертификата приложения идентификации, созданному ранее. |
 | CertificatePassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата. |
+| Среда | Необязательно | AzureCloud; | Имя поддерживаемой облачной среды, в которой доступна целевая служба Azure Active Directory Graph.  Доступные значения: "AzureCloud", "AzureChinaCloud", "AzureUSGovernment", "AzureGermanCloud".|
 
 ## <a name="create-an-active-directory-federation-services-application"></a>Создание приложения служб федерации Active Directory (AD FS)
 
@@ -390,4 +370,4 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Установка поставщика ресурсов службы приложений](azure-stack-app-service-deploy.md).
+[Установка поставщика ресурсов Службы приложений Azure](azure-stack-app-service-deploy.md)

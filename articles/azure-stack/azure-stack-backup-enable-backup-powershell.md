@@ -3,7 +3,7 @@ title: Включение резервного копирования для Azu
 description: Включите службу резервного копирования инфраструктуры с помощью Windows PowerShell для восстановления Azure Stack в случае сбоя.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: jeffgilb
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 5/10/2018
-ms.author: mabrigg
+ms.date: 08/16/2018
+ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: 76a24e7096cbc2a9bcea8bf68e2b333345dbff68
-ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
+ms.openlocfilehash: 8fe7f0ddd630cfca0242af6cc1d728bdef163352
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242960"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41947461"
 ---
 # <a name="enable-backup-for-azure-stack-with-powershell"></a>Включение резервного копирования для Azure Stack с помощью PowerShell
 
@@ -44,31 +44,26 @@ ms.locfileid: "39242960"
 | Переменная        | ОПИСАНИЕ   |
 |---              |---                                        |
 | $username       | Введите **имя пользователя**, указав домен и имя пользователя для расположения общего диска. У этого пользователя должны быть достаточные права на чтение и запись файлов. Например, `Contoso\backupshareuser`. |
-| $key            | Введите **ключ шифрования**, используемый для шифрования каждой резервной копии. |
 | $password       | Введите **пароль** пользователя. |
 | $sharepath      | Введите путь к **расположению хранилища резервных копий**. В качестве пути к общей папке на отдельном устройстве нужно использовать UNC-строку. UNC-строка указывает расположение ресурсов, например общих файлов или устройств. Чтобы обеспечить доступность резервных копий, устройство должно находиться в отдельном расположении. |
+| $frequencyInHours | Частота, измеряемая в часах, определяет, как часто создаются резервные копии. По умолчанию используется значение 12. Планировщик поддерживает число, находящееся в диапазоне межу 4 и 12.|
+| $retentionPeriodInDays | Период хранения в днях определяет, сколько дней резервные копии будут храниться во внешнем расположении. По умолчанию используется значение 7. Планировщик поддерживает число, находящееся в диапазоне межу 2 и 14. Резервные копии, период хранения которых превысил допустимое значение, автоматически удаляются из внешнего расположения.|
+|     |     |
 
    ```powershell
+    # Example username:
     $username = "domain\backupadmin"
-   
-    $Secure = Read-Host -Prompt ("Password for: " + $username) -AsSecureString
-    $Encrypted = ConvertFrom-SecureString -SecureString $Secure
-    $password = ConvertTo-SecureString -String $Encrypted
-    
-    $BackupEncryptionKeyBase64 = ""
-    $tempEncryptionKeyString = ""
-    foreach($i in 1..64) { $tempEncryptionKeyString += -join ((65..90) + (97..122) | Get-Random | % {[char]$_}) }
-    $tempEncryptionKeyBytes = [System.Text.Encoding]::UTF8.GetBytes($tempEncryptionKeyString)
-    $BackupEncryptionKeyBase64 = [System.Convert]::ToBase64String($tempEncryptionKeyBytes)
-    $BackupEncryptionKeyBase64
-    
-    $Securekey = ConvertTo-SecureString -String $BackupEncryptionKeyBase64 -AsPlainText -Force
-    $Encryptedkey = ConvertFrom-SecureString -SecureString $Securekey
-    $key = ConvertTo-SecureString -String $Encryptedkey
-    
+    # Example share path:
     $sharepath = "\\serverIP\AzSBackupStore\contoso.com\seattle"
+   
+    $password = Read-Host -Prompt ("Password for: " + $username) -AsSecureString
+    
+    # The encryption key is generated using the New-AzsEncryptionKeyBase64 cmdlet provided in Azure Stack PowerShell.
+    # Make sure to store your encryption key in a secure location after it is generated.
+    $Encryptionkey = New-AzsEncryptionKeyBase64
+    $key = ConvertTo-SecureString -String ($Encryptionkey) -AsPlainText -Force
 
-    Set-AzSBackupShare -BackupShare $sharepath -Username $username -Password $password -EncryptionKey $key
+    Set-AzsBackupShare -BackupShare $sharepath -Username $username -Password $password -EncryptionKey $key
    ```
    
 ##  <a name="confirm-backup-settings"></a>Подтверждение параметров архивации
@@ -76,15 +71,36 @@ ms.locfileid: "39242960"
 В этом же сеансе PowerShell выполните следующие команды:
 
    ```powershell
-    Get-AzsBackupLocation | Select-Object -Property Path, UserName, AvailableCapacity
+    Get-AzsBackupLocation | Select-Object -Property Path, UserName
    ```
 
-В результате должно отобразиться следующее:
+В результате должно отобразиться следующее.
 
    ```powershell
-    Path                        : \\serverIP\AzSBackupStore\contoso.com\seattle
+    Path                        : \\serverIP\AzsBackupStore\contoso.com\seattle
+    UserName                    : domain\backupadmin
+   ```
+
+## <a name="update-backup-settings"></a>Обновление резервного набора данных
+В этом же сеансе PowerShell можно обновить значения по умолчанию для срока хранения и частоту резервного копирования. 
+
+   ```powershell
+    #Set the backup frequency and retention period values.
+    $frequencyInHours = 10
+    $retentionPeriodInDays = 5
+
+    Set-AzsBackupShare -BackupFrequencyInHours $frequencyInHours -BackupRetentionPeriodInDays $retentionPeriodInDays
+    Get-AzsBackupLocation | Select-Object -Property Path, UserName, AvailableCapacity, BackupFrequencyInHours, BackupRetentionPeriodInDays
+   ```
+
+В результате должно отобразиться следующее.
+
+   ```powershell
+    Path                        : \\serverIP\AzsBackupStore\contoso.com\seattle
     UserName                    : domain\backupadmin
     AvailableCapacity           : 60 GB
+    BackupFrequencyInHours      : 10
+    BackupRetentionPeriodInDays : 5
    ```
 
 ## <a name="next-steps"></a>Дополнительная информация

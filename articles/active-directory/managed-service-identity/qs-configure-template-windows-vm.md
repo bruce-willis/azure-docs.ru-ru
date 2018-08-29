@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2017
 ms.author: daveba
-ms.openlocfilehash: 79b499f8063e5c15f76d89182955cbd90fb1039f
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 4b25c82de4d2d3f4300fbb688c75be74ce63fe40
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39629316"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146557"
 ---
 # <a name="configure-a-vm-managed-service-identity-by-using-a-template"></a>Настройка управляемого удостоверения службы виртуальной машины с помощью шаблона
 
@@ -57,23 +57,15 @@ ms.locfileid: "39629316"
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину.
 
-2. Загрузив шаблон в редактор, найдите ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Имя вашего ресурса может немного отличаться от указанного на этом снимке экрана, в зависимости от используемого редактора и от того, изменяете ли вы шаблон для нового или имеющегося развертывания.
-
-   >[!NOTE] 
-   > В этом примере предполагается, что используются переменные `vmName`, `storageAccountName` и `nicName`, определенные в шаблоне.
-   >
-
-   ![Снимок экрана шаблона: поиск виртуальной машины](../managed-service-identity/media/msi-qs-configure-template-windows-vm/template-file-before.png) 
-
-3. Чтобы включить системное удостоверение, добавьте свойство `"identity"` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachines"`. Используйте следующий синтаксис:
+2. Чтобы включить назначаемое системой удостоверение, загрузите шаблон в редактор, найдите интересующий ресурс `Microsoft.Compute/virtualMachines` в разделе `resources` и добавьте свойство `"identity"` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachines"`. Используйте следующий синтаксис:
 
    ```JSON
    "identity": { 
-       "type": "systemAssigned"
+       "type": "SystemAssigned"
    },
    ```
 
-4. (Необязательно.) Добавьте расширение виртуальной машины MSI в качестве элемента `resources`. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Используйте следующий синтаксис:
+3. (Необязательно.) Добавьте расширение виртуальной машины MSI в качестве элемента `resources`. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Используйте следующий синтаксис:
 
    >[!NOTE] 
    > В следующем примере предполагается, что расширение виртуальной машины Windows (`ManagedIdentityExtensionForWindows`) развертывается. Можно также выполнить настройку для Linux, используя расширение `ManagedIdentityExtensionForLinux` для элементов `"name"` и `"type"`.
@@ -83,7 +75,7 @@ ms.locfileid: "39629316"
    { 
        "type": "Microsoft.Compute/virtualMachines/extensions",
        "name": "[concat(variables('vmName'),'/ManagedIdentityExtensionForWindows')]",
-       "apiVersion": "2016-03-30",
+       "apiVersion": "2018-06-01",
        "location": "[resourceGroup().location]",
        "dependsOn": [
            "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
@@ -101,9 +93,40 @@ ms.locfileid: "39629316"
    }
    ```
 
-5. По завершении шаблон должен выглядеть следующим образом.
+4. Когда все будет готово, следующие разделы должны быть добавлены в раздел `resource` шаблона, который в результате должен выглядеть следующим образом.
 
-   ![Снимок экрана шаблона после изменения](../managed-service-identity/media/msi-qs-configure-template-windows-vm/template-file-after.png)
+   ```JSON
+   "resources": [
+        {
+            //other resource provider properties...
+            "apiVersion": "2018-06-01",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('vmName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "SystemAssigned",
+                },
+            },
+            {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(variables('vmName'),'/ManagedIdentityExtensionForLinux')]",
+            "apiVersion": "2018-06-01",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.ManagedIdentity",
+                "type": "ManagedIdentityExtensionForWindows",
+                "typeHandlerVersion": "1.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "port": 50342
+                }
+            }
+        }
+    ]
+   ```
 
 ### <a name="assign-a-role-the-vms-system-assigned-identity"></a>Назначение роли удостоверения, назначенного системой, для виртуальной машины
 
@@ -155,18 +178,28 @@ ms.locfileid: "39629316"
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину.
 
-2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только назначаемое системой удостоверение, его можно отключить, изменив тип удостоверения на `None`.  Если у виртуальной машины есть удостоверения, назначенные системой и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните `UserAssigned` с массивом `identityIds` пользовательских удостоверений.  В следующем примере показано, как удалить назначенное системой удостоверение с виртуальной машины без пользовательских удостоверений:
+2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только назначаемое системой удостоверение, его можно отключить, изменив тип удостоверения на `None`.  
    
-   ```JSON
-    {
-      "apiVersion": "2017-12-01",
-      "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmName')]",
-      "location": "[resourceGroup().location]",
-      "identity": { 
-          "type": "None"
-    }
-   ```
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01**
+
+   Если у виртуальной машины есть удостоверения, назначенные как системой, так и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните `UserAssigned` вместе со значениями словаря `userAssignedIdentities`.
+
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01 и более ранних версий**
+   
+   Если значение `apiVersion` соответствует `2017-12-01` и у виртуальной машины есть удостоверения, назначенные как системой, так и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните`UserAssigned` с массивом пользовательских удостоверений `identityIds`.  
+   
+В следующем примере показано, как удалить назначенное системой удостоверение с виртуальной машины без пользовательских удостоверений:
+
+```JSON
+{
+    "apiVersion": "2018-06-01",
+    "type": "Microsoft.Compute/virtualMachines",
+    "name": "[parameters('vmName')]",
+    "location": "[resourceGroup().location]",
+    "identity": { 
+        "type": "None"
+}
+```
 
 ## <a name="user-assigned-identity"></a>Удостоверение, назначенное пользователем
 
@@ -178,30 +211,52 @@ ms.locfileid: "39629316"
  ### <a name="assign-a-user-assigned-identity-to-an-azure-vm"></a>Назначение пользовательского удостоверения виртуальной машине Azure
 
 1. Чтобы назначить пользовательское удостоверение виртуальной машине, в элементе `resources` добавьте приведенную ниже запись.  Не забудьте заменить `<USERASSIGNEDIDENTITY>` именем созданного пользовательского удостоверения.
+
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01**
+
+   Если значение `apiVersion` соответствует `2018-06-01`, удостоверения назначаемые пользователем, хранятся в `userAssignedIdentities` формате словаря, а значение `<USERASSIGNEDIDENTITYNAME>` должно храниться в переменной, определенной в разделе шаблона `variables`.
+
+   ```json
+   {
+       "apiVersion": "2018-06-01",
+       "type": "Microsoft.Compute/virtualMachines",
+       "name": "[variables('vmName')]",
+       "location": "[resourceGroup().location]",
+       "identity": {
+           "type": "userAssigned",
+           "userAssignedIdentities": {
+               "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]": {}
+           }
+        }
+   }
+   ```
    
-   > [!Important]
-   > Значение `<USERASSIGNEDIDENTITYNAME>`, показанное в следующем примере, должно храниться в переменной.  Кроме того, для поддерживаемой в настоящее время реализации назначения виртуальной машине назначенных пользователем удостоверений в шаблоне Resource Manager версия api должна соответствовать версии в следующем примере.
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01 и более ранних версий**
     
-    ```json
-    {
-        "apiVersion": "2017-12-01",
-        "type": "Microsoft.Compute/virtualMachines",
-        "name": "[variables('vmName')]",
-        "location": "[resourceGroup().location]",
-        "identity": {
-            "type": "userAssigned",
-            "identityIds": [
-                "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]"
-            ]
-        },
-    ```
+   Если значение `apiVersion` соответствует `2017-12-01`, удостоверения, назначаемые пользователем, хранятся в массиве `identityIds`, а значение `<USERASSIGNEDIDENTITYNAME>` должно храниться в переменных, определенных в разделе шаблона `variables`.
     
+   ```json
+   {
+       "apiVersion": "2017-12-01",
+       "type": "Microsoft.Compute/virtualMachines",
+       "name": "[variables('vmName')]",
+       "location": "[resourceGroup().location]",
+       "identity": {
+           "type": "userAssigned",
+           "identityIds": [
+               "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]"
+           ]
+       }
+   }
+   ```
+       
+
 2. (Необязательно.) Далее, добавьте в элемент `resources` приведенную ниже запись, чтобы назначить расширение управляемых удостоверений виртуальной машине. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS). Используйте следующий синтаксис:
     ```json
     {
         "type": "Microsoft.Compute/virtualMachines/extensions",
         "name": "[concat(variables('vmName'),'/ManagedIdentityExtensionForWindows')]",
-        "apiVersion": "2015-05-01-preview",
+        "apiVersion": "2018-06-01",
         "location": "[resourceGroup().location]",
         "dependsOn": [
             "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
@@ -218,9 +273,83 @@ ms.locfileid: "39629316"
     }
     ```
     
-3.  По завершении шаблон должен выглядеть следующим образом.
+3. Когда все будет готово, следующие разделы должны быть добавлены в раздел `resource` шаблона, который в результате должен выглядеть следующим образом.
+   
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01**    
 
-      ![Снимок экрана с пользовательским удостоверением](./media/qs-configure-template-windows-vm/qs-configure-template-windows-vm-ua-final.PNG)
+   ```JSON
+   "resources": [
+        {
+            //other resource provider properties...
+            "apiVersion": "2018-06-01",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('vmName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "userAssigned",
+                "userAssignedIdentities": {
+                   "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]": {}
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(variables('vmName'),'/ManagedIdentityExtensionForLinux')]",
+            "apiVersion": "2018-06-01-preview",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.ManagedIdentity",
+                "type": "ManagedIdentityExtensionForWindows",
+                "typeHandlerVersion": "1.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "port": 50342
+            }
+        }
+       }
+    ]
+   ```
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01 и более ранних версий**
+   
+   ```JSON
+   "resources": [
+        {
+            //other resource provider properties...
+            "apiVersion": "2017-12-01",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('vmName')]",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "userAssigned",
+                "identityIds": [
+                   "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITYNAME>'))]"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(variables('vmName'),'/ManagedIdentityExtensionForLinux')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.ManagedIdentity",
+                "type": "ManagedIdentityExtensionForWindows",
+                "typeHandlerVersion": "1.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "port": 50342
+            }
+        }
+       }
+    ]
+   ```
+    
 
 ### <a name="remove-user-assigned-identity-from-an-azure-vm"></a>Удаление назначаемого пользователем удостоверения из виртуальной машины Azure
 
@@ -228,15 +357,13 @@ ms.locfileid: "39629316"
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину.
 
-2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только назначаемое пользователем удостоверение, его можно отключить, изменив тип удостоверения на `None`.  Если у виртуальной машины есть назначаемое системой удостоверение и назначаемые пользователем удостоверения и вам нужно сохранить назначаемое системой удостоверение, удалите `UserAssigned` из типа удостоверения вместе с массивом назначаемых пользователем удостоверений `identityIds`.
-    
-   Чтобы удалить отдельное назначаемое пользователем удостоверение из виртуальной машины, удалите его из массива `identityIds`.
-   
+2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только назначаемое пользователем удостоверение, его можно отключить, изменив тип удостоверения на `None`.
+ 
    В следующем примере показано, как удалить все назначаемые пользователем удостоверения из виртуальной машины без назначаемых системой удостоверений.
    
-   ```JSON
+   ```json
     {
-      "apiVersion": "2017-12-01",
+      "apiVersion": "2018-06-01",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[parameters('vmName')]",
       "location": "[resourceGroup().location]",
@@ -244,7 +371,19 @@ ms.locfileid: "39629316"
           "type": "None"
     }
    ```
+   
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01 и более ранних версий**
+    
+   Чтобы удалить отдельное назначаемое пользователем удостоверение из виртуальной машины, удалите его из словаря `useraAssignedIdentities`.
 
+   Если у вас есть удостоверение, назначенное системой, сохраните его в значении `type` в рамках значения `identity`.
+ 
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01**
+
+   Чтобы удалить отдельное назначаемое пользователем удостоверение из виртуальной машины, удалите его из массива `identityIds`.
+
+   Если у вас есть удостоверение, назначенное системой, сохраните его в значении `type` в рамках значения `identity`.
+   
 ## <a name="related-content"></a>Связанная информация
 
 - Чтобы получить более обширное представление о компоненте "Управляемое удостоверение службы", прочитайте [обзор компонента "Управляемое удостоверение службы"](overview.md).

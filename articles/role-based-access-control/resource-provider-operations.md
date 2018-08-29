@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/07/2018
+ms.date: 08/19/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: a4e062b1bc56eada2fa2c27797151e265271022e
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 86a2fba7730a653a254a2fd996f9e45ed322fbe3
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621163"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143321"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -391,8 +391,12 @@ ms.locfileid: "39621163"
 > | --- | --- | --- |
 > | Действие | Microsoft.Authorization/checkAccess/action | Проверка того, может ли вызывающий объект выполнять определенное действие. |
 > | Действие | Microsoft.Authorization/classicAdministrators/delete | Удаляет учетные данные администратора из подписки. |
+> | Действие | Microsoft.Authorization/classicAdministrators/operationstatuses/read | Получает сведения о состоянии операций администратора подписки. |
 > | Действие | Microsoft.Authorization/classicAdministrators/read | Считывает администраторов для подписки. |
 > | Действие | Microsoft.Authorization/classicAdministrators/write | Добавляет или изменяет администратора подписки. |
+> | Действие | Microsoft.Authorization/denyAssignments/delete | Удаление запрета назначения в указанной области. |
+> | Действие | Microsoft.Authorization/denyAssignments/read | Получение сведений о запрете назначения. |
+> | Действие | Microsoft.Authorization/denyAssignments/write | Создание запрета назначения в указанной области. |
 > | Действие | Microsoft.Authorization/elevateAccess/action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
 > | Действие | Microsoft.Authorization/locks/delete | Удаляет блокировки в указанной области. |
 > | Действие | Microsoft.Authorization/locks/read | Возвращает блокировки в указанной области. |
@@ -1165,6 +1169,7 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.Compute/virtualMachineScaleSets/instanceView/read | Получение представления экземпляров масштабируемого набора виртуальных машин. |
 > | Действие | Microsoft.Compute/virtualMachineScaleSets/manualUpgrade/action | Выполнение ручного обновления экземпляров до последней модели масштабируемого набора виртуальных машин. |
 > | Действие | Microsoft.Compute/virtualMachineScaleSets/networkInterfaces/read | Получение свойства всех сетевых интерфейсов масштабируемого набора виртуальных машин. |
+> | Действие | Microsoft.Compute/virtualMachineScaleSets/osRollingUpgrade/action | Запускает последовательное обновление для перевода всех экземпляров масштабируемых наборов виртуальных машин на последнюю доступную версию ОС образа платформы. |
 > | Действие | Microsoft.Compute/virtualMachineScaleSets/osUpgradeHistory/read | Получение журнала обновлений ОС для масштабируемого набора виртуальных машин. |
 > | Действие | Microsoft.Compute/virtualMachineScaleSets/performMaintenance/action | Выполнение планового обслуживания экземпляров масштабируемого набора виртуальных машин. |
 > | Действие | Microsoft.Compute/virtualMachineScaleSets/powerOff/action | Завершение работы экземпляров масштабируемого набора виртуальных машин. |
@@ -1244,10 +1249,23 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.ContainerRegistry/locations/operationResults/read | Получение результата асинхронной операции. |
 > | Действие | Microsoft.ContainerRegistry/operations/read | Вывод списка всех доступных операций API REST реестра контейнеров Azure. |
 > | Действие | Microsoft.ContainerRegistry/register/action | Регистрирует подписку для поставщика ресурсов реестра контейнеров и позволяет создавать реестры контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/builds/cancel/action | Отменяет существующую сборку. |
+> | Действие | Microsoft.ContainerRegistry/registries/builds/getLogLink/action | Возвращает ссылку для скачивания журналов сборки. |
+> | Действие | Microsoft.ContainerRegistry/registries/builds/read | Получает свойства указанной сборки или списка сборок для указанного реестра контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/builds/write | Обновляет сборку для реестра контейнеров с указанными параметрами. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/delete | Удаляет задание сборки из реестра контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/listSourceRepositoryProperties/action | Перечисляет свойства системы управления версиями для задачи сборки. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/read | Получает свойства указанной задачи сборки или списка задач сборок для указанного реестра контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/steps/delete | Удаляет шаг создания из задачи сборки. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/steps/listBuildArguments/action | Перечисляет аргументы сборки для шага сборки, включая аргументы секретов. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/steps/read | Получает свойства указанного шага сборки или списка шагов сборок для указанной задачи сборки. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/steps/write | Создает или обновляет шаг сборки для задачи сборки с указанными параметрами. |
+> | Действие | Microsoft.ContainerRegistry/registries/buildTasks/write | Создает или обновляет задачу сборки для реестра контейнеров с указанными параметрами. |
 > | Действие | Microsoft.ContainerRegistry/registries/delete | Удаление реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/eventGridFilters/delete | Удаление фильтра сетки событий из реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/eventGridFilters/read | Получение свойств указанного фильтра сетки событий или списка всех фильтров сетки событий для указанного реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/eventGridFilters/write | Создание или обновление фильтра сетки событий для реестра контейнеров с указанными параметрами. |
+> | Действие | Microsoft.ContainerRegistry/registries/getBuildSourceUploadUrl/action | Получает расположение для передачи, чтобы пользователь мог передать источник. |
 > | Действие | Microsoft.ContainerRegistry/registries/importImage/action | Импорт образа в реестр контейнеров с указанными параметрами. |
 > | Действие | Microsoft.ContainerRegistry/registries/listCredentials/action | Выводит список учетных данных входа для указанного реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/listPolicies/read | Выводит список политик для указанного реестра контейнеров. |
@@ -1256,12 +1274,18 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.ContainerRegistry/registries/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
 > | Действие | Microsoft.ContainerRegistry/registries/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
 > | Действие | Microsoft.ContainerRegistry/registries/providers/Microsoft.Insights/metricDefinitions/read | Получение доступных метрик для реестра контейнеров Майкрософт. |
+> | Действие | Microsoft.ContainerRegistry/registries/pull/read | Извлечение или получение образов из реестра контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/push/write | Передача или запись образов в реестр контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/quarantineRead/read | Извлечение или получение помещенных в карантин образов из реестра контейнеров. |
+> | Действие | Microsoft.ContainerRegistry/registries/quarantineWrite/write | Запись и изменение состояния карантина образов, помещенных в карантин. |
+> | Действие | Microsoft.ContainerRegistry/registries/queueBuild/action | Создает новую сборку на основе параметров запроса и добавляет ее в очередь сборки. |
 > | Действие | Microsoft.ContainerRegistry/registries/read | Получение свойств указанного реестра контейнеров или вывод списка всех реестров контейнеров в указанной группе ресурсов или подписке. |
 > | Действие | Microsoft.ContainerRegistry/registries/regenerateCredential/action | Повторное создание учетных данных входа для указанного реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/replications/delete | Удаление репликации из реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/replications/operationStatuses/read | Получение состояния асинхронной операции репликации. |
 > | Действие | Microsoft.ContainerRegistry/registries/replications/read | Получение свойств указанной репликации или списка репликаций для указанного реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/replications/write | Создание или обновление репликаций для реестра контейнеров с указанными параметрами. |
+> | Действие | Microsoft.ContainerRegistry/registries/sign/write | Передача или извлечение метаданных доверия к содержимому для реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/updatePolicies/write | Обновляет политики для указанного реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/webhooks/delete | Удаление веб-перехватчика из реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/webhooks/getCallbackConfig/action | Получение конфигурации URI службы и пользовательских заголовков для веб-перехватчика. |
@@ -1524,9 +1548,11 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.DataFactory/factories/pipelineruns/activityruns/read | Считывает выполнения действий для указанного идентификатора запуска конвейера. |
 > | Действие | Microsoft.DataFactory/factories/pipelineruns/cancel/action | Отменяет запуск конвейера, указанный идентификатором запуска. |
 > | Действие | Microsoft.DataFactory/factories/pipelineruns/queryactivityruns/action | Запрашивает выполнения действий для указанного идентификатора запуска конвейера. |
+> | Действие | Microsoft.DataFactory/factories/pipelineruns/queryactivityruns/read | Считывает результат выполнения действий запросов для указанного идентификатора запуска конвейера. |
 > | Действие | Microsoft.DataFactory/factories/pipelineruns/read | Считывает выполнения конвейера. |
 > | Действие | Microsoft.DataFactory/factories/pipelines/createrun/action | Создает выполнение для конвейера. |
 > | Действие | Microsoft.DataFactory/factories/pipelines/delete | Удаляет конвейер. |
+> | Действие | Microsoft.DataFactory/factories/pipelines/pipelineruns/activityruns/progress/read | Возвращает ход выполнения действий. |
 > | Действие | Microsoft.DataFactory/factories/pipelines/pipelineruns/read | Считывает выполнение конвейера. |
 > | Действие | Microsoft.DataFactory/factories/pipelines/read | Считывает конвейер. |
 > | Действие | Microsoft.DataFactory/factories/pipelines/write | Создает или обновляет конвейер. |
@@ -1535,7 +1561,9 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.DataFactory/factories/providers/Microsoft.Insights/logDefinitions/read | Получение доступных журналов для фабрик данных. |
 > | Действие | Microsoft.DataFactory/factories/providers/Microsoft.Insights/metricDefinitions/read | Получение доступных метрик для фабрик данных. |
 > | Действие | Microsoft.DataFactory/factories/querypipelineruns/action | Запрашивает выполнения конвейера. |
+> | Действие | Microsoft.DataFactory/factories/querypipelineruns/read | Считывает результат выполнения конвейера запросов. |
 > | Действие | Microsoft.DataFactory/factories/querytriggerruns/action | Запрашивает выполнения триггеров. |
+> | Действие | Microsoft.DataFactory/factories/querytriggerruns/read | Считывает результат запусков триггера. |
 > | Действие | Microsoft.DataFactory/factories/read | Считывает фабрику данных. |
 > | Действие | Microsoft.DataFactory/factories/triggerruns/read | Считывает выполнения триггеров. |
 > | Действие | Microsoft.DataFactory/factories/triggers/delete | Удаляет триггер. |
@@ -1546,6 +1574,7 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.DataFactory/factories/triggers/write | Создает или обновляет триггер. |
 > | Действие | Microsoft.DataFactory/factories/write | Создает или обновляет фабрику данных. |
 > | Действие | Microsoft.DataFactory/locations/configureFactoryRepo/action | Настройка репозитория для производства. |
+> | Действие | Microsoft.DataFactory/operations/read | Считывает все операции в поставщике Фабрики данных Майкрософт. |
 > | Действие | Microsoft.DataFactory/register/action | Регистрирует подписку для поставщика ресурсов фабрики данных. |
 > | Действие | Microsoft.DataFactory/unregister/action | Отменяет регистрацию подписки для поставщика ресурсов фабрики данных. |
 
@@ -2071,6 +2100,14 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.Features/providers/features/unregister/action | Отмена регистрации функции для подписки в заданном поставщике ресурсов. |
 > | Действие | Microsoft.Features/register/action | Регистрирует компонент подписки. |
 
+## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
+
+> [!div class="mx-tdCol2BreakAll"]
+> | Тип действия | Операция | ОПИСАНИЕ |
+> | --- | --- | --- |
+> | Действие | Microsoft.GuestConfiguration/guestConfigurationAssignments/read | Получение назначения конфигурации гостевой системы. |
+> | Действие | Microsoft.GuestConfiguration/guestConfigurationAssignments/write | Создание назначения конфигурации гостевой системы. |
+
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
 > [!div class="mx-tdCol2BreakAll"]
@@ -2503,6 +2540,7 @@ ms.locfileid: "39621163"
 > | DataAction | Microsoft.LogAnalytics/logs/WindowsFirewall/read | Чтение данных из таблицы WindowsFirewall. |
 > | DataAction | Microsoft.LogAnalytics/logs/WindowsServerAssessmentRecommendation/read | Чтение данных из таблицы WindowsServerAssessmentRecommendation. |
 > | DataAction | Microsoft.LogAnalytics/logs/WireData/read | Чтение данных из таблицы WireData. |
+> | DataAction | Microsoft.LogAnalytics/logs/WorkloadMonitoringPerf/read | Чтение данных из таблицы WorkloadMonitoringPerf. |
 > | DataAction | Microsoft.LogAnalytics/logs/WUDOAggregatedStatus/read | Чтение данных из таблицы WUDOAggregatedStatus. |
 > | DataAction | Microsoft.LogAnalytics/logs/WUDOStatus/read | Чтение данных из таблицы WUDOStatus. |
 
@@ -2715,6 +2753,7 @@ ms.locfileid: "39621163"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | DataAction | Microsoft.Maps/accounts/data/read | Предоставляет доступ на чтение данных учетных записей карт. |
 > | Действие | Microsoft.Maps/accounts/delete | Удаление учетной записи Maps. |
 > | Действие | Microsoft.Maps/accounts/listKeys/action | Вывод списка ключей учетной записи Maps. |
 > | Действие | Microsoft.Maps/accounts/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
@@ -3449,8 +3488,11 @@ ms.locfileid: "39621163"
 > | --- | --- | --- |
 > | Действие | Microsoft.PolicyInsights/asyncOperationResults/read | Получает результат асинхронной операции. |
 > | Действие | Microsoft.PolicyInsights/policyEvents/queryResults/action | Запрашивает сведения о событиях политики. |
+> | Действие | Microsoft.PolicyInsights/policyEvents/queryResults/read | Запрашивает сведения о событиях политики. |
 > | Действие | Microsoft.PolicyInsights/policyStates/queryResults/action | Запрашивает сведения о состояниях политики. |
+> | Действие | Microsoft.PolicyInsights/policyStates/queryResults/read | Запрашивает сведения о состояниях политики. |
 > | Действие | Microsoft.PolicyInsights/policyStates/summarize/action | Запрашивает сводную информацию о последних состояниях политики. |
+> | Действие | Microsoft.PolicyInsights/policyStates/summarize/read | Запрашивает сводную информацию о последних состояниях политики. |
 > | Действие | Microsoft.PolicyInsights/policyStates/triggerEvaluation/action | Активирует новую оценку соответствия для выбранной области. |
 > | Действие | Microsoft.PolicyInsights/register/action | Регистрирует поставщика ресурсов аналитики политик и включает в нем действия |
 
@@ -4809,6 +4851,7 @@ ms.locfileid: "39621163"
 > | Действие | microsoft.web/sites/config/delete | Удаляет конфигурацию веб-приложений. |
 > | Действие | Microsoft.Web/sites/config/list/Action | Отображает влияющие на безопасность параметры веб-приложения, такие как учетные данные для публикации, параметры приложения и строки подключения. |
 > | Действие | Microsoft.Web/sites/config/Read | Возвращает параметры конфигурации веб-приложения. |
+> | Действие | microsoft.web/sites/config/snapshots/read | Получение моментальных снимков конфигурации веб-приложений. |
 > | Действие | Microsoft.Web/sites/config/Write | Обновляет параметры конфигурации веб-приложения. |
 > | Действие | microsoft.web/sites/containerlogs/action | Получение сжатых журналов контейнеров для веб-приложений. |
 > | Действие | microsoft.web/sites/continuouswebjobs/delete | Удаляет непрерывные веб-задания веб-приложений. |
@@ -4857,6 +4900,8 @@ ms.locfileid: "39621163"
 > | Действие | microsoft.web/sites/hostnamebindings/delete | Удаляет привязки имен узлов для веб-приложений. |
 > | Действие | microsoft.web/sites/hostnamebindings/read | Возвращает привязки имен узлов для веб-приложений. |
 > | Действие | microsoft.web/sites/hostnamebindings/write | Обновляет привязки имен узлов для веб-приложений. |
+> | Действие | Microsoft.Web/sites/hostruntime/host/_master/read | Получение главного ключа приложения-функции для операций администрирования. |
+> | Действие | Microsoft.Web/sites/hostruntime/host/action | Выполнение действий среды выполнения приложения-функции, таких как синхронизация триггеров, добавление функций, вызов функций, их удаление и т.д. |
 > | Действие | microsoft.web/sites/hybridconnection/delete | Удаляет гибридное подключение для веб-приложений. |
 > | Действие | microsoft.web/sites/hybridconnection/read | Возвращает гибридное подключение для веб-приложений. |
 > | Действие | microsoft.web/sites/hybridconnection/write | Обновляет гибридное подключение для веб-приложений. |
@@ -4871,6 +4916,7 @@ ms.locfileid: "39621163"
 > | Действие | microsoft.web/sites/instances/extensions/read | Получение расширений экземпляров веб-приложений. |
 > | Действие | microsoft.web/sites/instances/processes/delete | Удаляет процессы экземпляров веб-приложений. |
 > | Действие | microsoft.web/sites/instances/processes/read | Возвращает процессы экземпляров веб-приложений. |
+> | Действие | microsoft.web/sites/instances/processes/threads/read | Возвращение потоков процессов экземпляров веб-приложений. |
 > | Действие | microsoft.web/sites/instances/read | Возвращает экземпляры веб-приложений. |
 > | Действие | microsoft.web/sites/listsyncfunctiontriggerstatus/action | Отображает состояние триггера функции синхронизации для веб-приложений. |
 > | Действие | microsoft.web/sites/metricdefinitions/read | Возвращает определения метрик веб-приложений. |
@@ -4886,6 +4932,7 @@ ms.locfileid: "39621163"
 > | Действие | microsoft.web/sites/premieraddons/delete | Удаляет надстройки Premier для веб-приложений. |
 > | Действие | microsoft.web/sites/premieraddons/read | Возвращает надстройки Premier для веб-приложений. |
 > | Действие | microsoft.web/sites/premieraddons/write | Обновляет надстройки Premier для веб-приложений. |
+> | Действие | microsoft.web/sites/privateaccess/read | Возвращение данных контроля доступа к частным сайтам и авторизованные виртуальные сети, у которых есть доступ к сайту. |
 > | Действие | microsoft.web/sites/processes/read | Получение процессов веб-приложений. |
 > | Действие | microsoft.web/sites/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
 > | Действие | microsoft.web/sites/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
@@ -4907,6 +4954,7 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.Web/sites/restart/Action | Перезапускает веб-приложение. |
 > | Действие | microsoft.web/sites/restore/read | Возвращает данные о восстановлении веб-приложений. |
 > | Действие | microsoft.web/sites/restore/write | Восстановление веб-приложений. |
+> | Действие | microsoft.web/sites/restorefrombackupblob/action | Восстановление веб-приложения из большого двоичного объекта резервных копий. |
 > | Действие | microsoft.web/sites/restorefromdeletedwebapp/action | Восстановление веб-приложений из удаленного приложения. |
 > | Действие | microsoft.web/sites/restoresnapshot/action | Восстановление моментальных снимков веб-приложений. |
 > | Действие | microsoft.web/sites/siteextensions/delete | Удаление расширений сайта веб-приложений. |
@@ -4917,6 +4965,7 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.Web/sites/slots/backup/Action | Создает резервную копию слота веб-приложения. |
 > | Действие | microsoft.web/sites/slots/backup/read | Получение резервной копии слотов для веб-приложений. |
 > | Действие | microsoft.web/sites/slots/backup/write | Обновляет резервную копию слотов веб-приложений. |
+> | Действие | microsoft.web/sites/slots/backups/action | Обнаружение резервных копий слотов для веб-приложений. |
 > | Действие | microsoft.web/sites/slots/backups/delete | Удаление резервной копии слотов для веб-приложений. |
 > | Действие | microsoft.web/sites/slots/backups/list/action | Выводит список резервных копий слотов веб-приложений. |
 > | Действие | Microsoft.Web/sites/slots/backups/Read | Возвращает свойства резервной копии слотов веб-приложения. |
@@ -4925,6 +4974,7 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.Web/sites/slots/config/list/Action | Отображает влияющие на безопасность параметры слота веб-приложения, такие как учетные данные для публикации, параметры приложения и строки подключения. |
 > | Действие | Microsoft.Web/sites/slots/config/Read | Возвращает параметры конфигурации слота веб-приложения. |
 > | Действие | Microsoft.Web/sites/slots/config/Write | Обновляет параметры конфигурации слота веб-приложения. |
+> | Действие | microsoft.web/sites/slots/containerlogs/action | Получение сжатых журналов контейнеров для слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/continuouswebjobs/delete | Удаляет непрерывные веб-задания слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/continuouswebjobs/read | Возвращает непрерывные веб-задания слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/continuouswebjobs/start/action | Запускает непрерывные веб-задания слотов веб-приложений. |
@@ -4934,6 +4984,7 @@ ms.locfileid: "39621163"
 > | Действие | microsoft.web/sites/slots/deployments/log/read | Возвращает журнал развертываний слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/deployments/read | Возвращает развертывания слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/deployments/write | Обновляет развертывания слотов веб-приложений. |
+> | Действие | microsoft.web/sites/slots/detectors/read | Возвращение средств обнаружения слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/diagnostics/analyses/execute/Action | Запуск анализа данных диагностики слотов для веб-приложений. |
 > | Действие | microsoft.web/sites/slots/diagnostics/analyses/read | Получение анализа данных диагностики слотов для веб-приложений. |
 > | Действие | microsoft.web/sites/slots/diagnostics/aspnetcore/read | Получение данных диагностики слотов для веб-приложений для приложения ASP.NET Core. |
@@ -4958,6 +5009,7 @@ ms.locfileid: "39621163"
 > | Действие | microsoft.web/sites/slots/diagnostics/workeravailability/read | Получение данных диагностики слотов для веб-приложений о доступности рабочих процессов. |
 > | Действие | microsoft.web/sites/slots/diagnostics/workerprocessrecycle/read | Получение данных диагностики слотов для веб-приложений о перезапуске рабочих процессов. |
 > | Действие | microsoft.web/sites/slots/domainownershipidentifiers/read | Получение идентификаторов владения доменом слотов для веб-приложений. |
+> | Действие | microsoft.web/sites/slots/functions/read | Возвращение функций слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/hostnamebindings/delete | Удаляет привязки имен узлов для слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/hostnamebindings/read | Возвращает привязки имен узлов для слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/hostnamebindings/write | Обновляет привязки имен узлов для слотов веб-приложений. |
@@ -4999,6 +5051,7 @@ ms.locfileid: "39621163"
 > | Действие | Microsoft.Web/sites/slots/restart/Action | Перезапускает слот веб-приложения. |
 > | Действие | microsoft.web/sites/slots/restore/read | Возвращает данные о восстановлении слотов веб-приложений. |
 > | Действие | microsoft.web/sites/slots/restore/write | Восстановление слотов для веб-приложений. |
+> | Действие | microsoft.web/sites/slots/restorefrombackupblob/action | Восстановление слота веб-приложений из большого двоичного объекта резервных копий. |
 > | Действие | microsoft.web/sites/slots/restorefromdeletedwebapp/action | Восстановление слотов веб-приложений из удаленного приложения. |
 > | Действие | microsoft.web/sites/slots/restoresnapshot/action | Восстановление моментальных снимков слотов для веб-приложений. |
 > | Действие | microsoft.web/sites/slots/siteextensions/delete | Удаление расширений сайта слотов для веб-приложений. |
@@ -5057,21 +5110,15 @@ ms.locfileid: "39621163"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
-> | Действие | Microsoft.WorkloadMonitor/components/read | Чтение ресурсов операций. |
-> | Действие | Microsoft.WorkloadMonitor/healthInstances/read | Чтение ресурсов операций. |
-> | Действие | Microsoft.WorkloadMonitor/Operations/read | Чтение ресурсов операций. |
-> | Действие | Microsoft.WorkloadMonitor/workloadInsights/delete | Удаляет ресурс workloadInsights. |
-> | Действие | Microsoft.WorkloadMonitor/workloadInsights/delete | Удаляет ресурс workloadInsights. |
-> | Действие | Microsoft.WorkloadMonitor/workloadInsights/read | Считывает ресурс workloadInsights. |
-> | Действие | Microsoft.WorkloadMonitor/workloadInsights/read | Считывает ресурс workloadInsights. |
-> | Действие | Microsoft.WorkloadMonitor/workloadInsights/write | Записывает ресурс workloadInsights. |
-> | Действие | Microsoft.WorkloadMonitor/workloadInsights/write | Записывает ресурс workloadInsights. |
-> | Действие | Microsoft.WorkloadMonitor/workloads/delete |  |
-> | Действие | Microsoft.WorkloadMonitor/workloads/delete |  |
-> | Действие | Microsoft.WorkloadMonitor/workloads/read | Чтение ресурса рабочей нагрузки. |
-> | Действие | Microsoft.WorkloadMonitor/workloads/read | Чтение ресурса рабочей нагрузки. |
-> | Действие | Microsoft.WorkloadMonitor/workloads/write | Запись ресурса рабочей нагрузки. |
-> | Действие | Microsoft.WorkloadMonitor/workloads/write | Запись ресурса рабочей нагрузки. |
+> | Действие | Microsoft.WorkloadMonitor/components/read | Возвращает компоненты ресурса. |
+> | Действие | Microsoft.WorkloadMonitor/componentsSummary/read | Возвращает сводки компонентов. |
+> | Действие | Microsoft.WorkloadMonitor/monitorInstances/read | Получает экземпляры мониторов ресурса. |
+> | Действие | Microsoft.WorkloadMonitor/monitorInstancesSummary/read | Получает сводку экземпляров монитора. |
+> | Действие | Microsoft.WorkloadMonitor/monitors/read | Получает мониторы ресурсов. |
+> | Действие | Microsoft.WorkloadMonitor/monitors/write | Настойка монитора ресурса. |
+> | Действие | Microsoft.WorkloadMonitor/notificationSettings/read | Получает параметры уведомлений для ресурса. |
+> | Действие | Microsoft.WorkloadMonitor/notificationSettings/write | Настройка параметров уведомлений для ресурса. |
+> | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

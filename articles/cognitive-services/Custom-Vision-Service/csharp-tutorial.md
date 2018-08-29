@@ -9,26 +9,32 @@ ms.component: custom-vision
 ms.topic: article
 ms.date: 05/03/2018
 ms.author: anroth
-ms.openlocfilehash: 80cb022808748ed2c60dff7c363d6020cb4043a8
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: d3c2ffb0fd9578458bd07241eed4a87cf70d3c3c
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381004"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617440"
 ---
 # <a name="use-the-custom-vision-service-from-a-c35-application"></a>Использование Пользовательской службы визуального распознавания в приложении C&#35;
 
 Сведения о том, как использовать Пользовательскую службу визуального распознавания в приложении C#. Создав проект, вы можете добавить теги, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования проекта по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример с открытым исходным кодом можно применить как шаблон для построения собственного приложения для Windows на базе API Пользовательской службы визуального распознавания.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск Visual Studio 2015 или 2017 для Windows.
+* Любой выпуск Visual Studio 2017 для Windows.
 
-* Пакет [SDK для Пользовательской службы визуального распознавания](http://github.com/Microsoft/Cognitive-CustomVision-Windows/). В него входят примеры и изображения, используемые в этом документе.
+## <a name="get-the-custom-vision-sdk-and-samples"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров
+Для сборки этого примера потребуются пакеты SDK NuGet для Пользовательской службы визуального распознавания:
+
+* [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/);
+* [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/).
+
+Вы можете скачать изображения вместе с [примерами для C#](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/CustomVision).
 
 ## <a name="get-the-training-and-prediction-keys"></a>Получение ключей обучения и прогнозирования
 
-Чтобы получить ключи, используемые в этом примере, посетите [веб-страницу Пользовательской службы визуального распознавания](https://customvision.ai) и выберите __значок шестеренки__ в правом верхнем углу. В разделе __Учетные записи__ скопируйте значения в полях __Ключ обучения__ и __Ключ прогнозирования__.
+Чтобы получить ключи, используемые в этом примере, посетите [веб-страницу Пользовательской службы визуального распознавания](https://customvision.ai) и выберите __значок шестеренки__ в правом верхнем углу. В разделе __Accounts__ (Учетные записи) скопируйте значения в полях __Training Key__ (Ключ обучения) и __Prediction Key__ (Ключ прогнозирования).
 
 ![Изображение пользовательского интерфейса с ключами](./media/csharp-tutorial/training-prediction-keys.png)
 

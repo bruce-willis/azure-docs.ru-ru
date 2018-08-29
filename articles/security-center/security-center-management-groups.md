@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/18/2018
+ms.date: 08/22/2018
 ms.author: terrylan
-ms.openlocfilehash: 800ec83b3599dba716e7a4a015b9b8c1745a0975
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: 91d1be062dbf05f4c7c9c5c4a1eb3dfcfdb001af
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39144573"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42441700"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.
@@ -85,21 +85,26 @@ ms.locfileid: "39144573"
 
 5. Выполните задачи, для которых требуются повышенные права доступа. Закончив, установите переключатель обратно в положение **Нет**.
 
-### <a name="open-or-refresh-security-center"></a>Открытие или обновление центра безопасности
-После получения повышенных прав доступа откройте или обновите центр безопасности Azure, чтобы проверить, можете ли вы отслеживать все подписки в своем клиенте Azure AD. 
-
-1. Войдите на [портале Azure](https://portal.azure.com). 
-2. Убедитесь, что выбраны все подписки в селекторе подписки, который вы хотите просмотреть в центре безопасности.
-    ![Снимок экрана с селектором подписки](./media/security-center-management-groups/subscription-selector.png)
-1. В главном меню Azure выберите **Все службы**, а затем щелкните **Центр безопасности**.
-2. На странице **Обзор** приведена диаграмма покрытия подписок. 
-    ![Снимок экрана диаграммы покрытия подписок](./media/security-center-management-groups/security-center-subscription-coverage.png)
-3. Щелкните **Покрытие**, чтобы просмотреть список покрытия подписок. 
-    ![Снимок экрана списка покрытия подписок](./media/security-center-management-groups/security-center-coverage.png)
 
 ### <a name="assign-rbac-roles-to-users"></a>Назначение пользователям ролей
-После повышения прав доступа администратор клиента может назначать роль RBAC соответствующим пользователям на уровне корневой группы управления. Мы советуем назначать роль [**Читатель**](../role-based-access-control/built-in-roles.md#reader). Эта роль позволяет обеспечить видимость на уровне клиента. Назначенная роль автоматически применяется ко всем группам управления и подпискам в корневой группе управления. Дополнительные сведения о ролях RBAC см. в разделе [Available roles](../active-directory/users-groups-roles/directory-assign-admin-roles.md#available-roles) (Доступные роли). 
+Чтобы получить видимость для всех подписок, администраторы клиентов должны назначить соответствующую роль RBAC на уровне группы корневого управления всем пользователям, которым они хотят предоставить видимость на уровне клиента, включая себя. Рекомендуемые роли для назначения — **Администратор безопасности** или **Чтение данных безопасности**. Как правило, роль "Администратор безопасности" требуется для применения политик на корневом уровне, в то время как для обеспечения видимости на уровне клиента будет достаточно роли "Чтение данных безопасности". Дополнительные сведения о разрешениях, предоставляемых этими ролями, см. в разделе [Встроенные роли в Azure. Администратор безопасности](../role-based-access-control/built-in-roles.md#security-admin) или [Встроенные роли в Azure. Чтение данных безопасности](../role-based-access-control/built-in-roles.md#security-reader).
 
+
+#### <a name="assign-rbac-roles-to-users-through-the-azure-portal"></a>Назначение ролей RBAC пользователям через портал Azure: 
+
+1. Войдите на [портале Azure](https://portal.azure.com). 
+2. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**, а затем выберите **Группы управления**.
+3.  Выберите группу управления и щелкните **Сведения**.
+
+    ![Снимок экрана сведений группы управления](./media/security-center-management-groups/management-group-details.PNG)
+ 
+4. Щелкните **Управление доступом (IAM)**, а затем **Добавить**.
+5. Выберите пользователя и роль для назначения, а затем щелкните **Сохранить**.  
+   
+   ![Добавление снимка экрана роли "Чтение данных безопасности"](./media/security-center-management-groups/asc-security-reader.png)
+
+
+#### <a name="assign-rbac-roles-to-users-with-powershell"></a>Назначение пользователям ролей RBAC с помощью PowerShell. 
 1. Установите [Azure PowerShell](/powershell/azure/install-azurerm-ps).
 2. Выполните следующие команды: 
 
@@ -128,19 +133,17 @@ ms.locfileid: "39144573"
     Remove-AzureRmRoleAssignment -SignInName "user@domain.com" -RoleDefinitionName "Reader" -Scope "/" 
     ```
 
-<!-- Currently, PowerShell method only 6/26/18
+### <a name="open-or-refresh-security-center"></a>Открытие или обновление центра безопасности
+После получения повышенных прав доступа откройте или обновите центр безопасности Azure, чтобы проверить, можете ли вы отслеживать все подписки в своем клиенте Azure AD. 
 
-1. Sign in to the [Azure portal](https://portal.azure.com). 
-2. To view management groups, select **All services** under the Azure main menu then select **Management Groups**.
-3.  Select a management group and click **details**.
-
-    ![Management Groups details screenshot](./media/security-center-management-groups/management-group-details.PNG)
- 
-4. Click **Access control (IAM)** then **Add**.
-5. Select the role to assign and the user, then click **Save**.  
-   
-   ![Add Security Reader role screenshot](./media/security-center-management-groups/asc-security-reader.png)
--->
+1. Войдите на [портале Azure](https://portal.azure.com). 
+2. Убедитесь, что выбраны все подписки в селекторе подписки, который вы хотите просмотреть в центре безопасности Azure.
+    ![Снимок экрана с селектором подписки](./media/security-center-management-groups/subscription-selector.png)
+1. В главном меню Azure выберите **Все службы**, а затем щелкните **Центр безопасности**.
+2. На странице **Обзор** приведена диаграмма покрытия подписок. 
+    ![Снимок экрана диаграммы покрытия подписок](./media/security-center-management-groups/security-center-subscription-coverage.png)
+3. Щелкните **Покрытие**, чтобы просмотреть список покрытия подписок. 
+    ![Снимок экрана списка покрытия подписок](./media/security-center-management-groups/security-center-coverage.png)
 
 ### <a name="remove-elevated-access"></a>Удаление повышенного права доступа 
 После назначения ролей RBAC пользователям администратор клиента должен удалить свою роль администратора доступа пользователей.

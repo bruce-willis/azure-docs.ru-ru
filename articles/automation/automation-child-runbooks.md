@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 05/04/2018
+ms.date: 08/14/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 582513e7e556859e70c1af9c4f6179e1d60e0139
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 2060239b27ef05c34ea6f5b388b4c4086a44a826
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39216747"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42139920"
 ---
 # <a name="child-runbooks-in-azure-automation"></a>Дочерние модули Runbook в службе автоматизации Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "39216747"
 
 Чтобы вызвать Runbook изнутри другого Runbook, используйте имя Runbook и укажите значения его параметров точно так же, как при использовании действия или командлета.  Так все Runbook в одной учетной записи службы автоматизации доступны для использования всем остальным. Родительский Runbook ожидает завершения работы дочернего Runbook, прежде чем перейти к следующей строке, и любые выходные данные возвращаются непосредственно в родительский Runbook.
 
-При встроенном вызове дочерний Runbook выполняется в той же задаче, что и родительский Runbook. В журнале заданий дочернего Runbook не будет записей о его выполнении. Любые исключения и любой потоковый вывод дочернего Runbook будут связаны с родительским Runbook. Это уменьшает число заданий и упрощает отслеживание и устранение неполадок, так как все исключения, порождаемые дочерним Runbook, и любой его потоковый вывод связан с родительским заданием.
+При встроенном вызове дочерний Runbook выполняется в той же задаче, что и родительский Runbook. В журнале заданий дочернего Runbook не будет записей о его выполнении. Любые исключения и любой потоковый вывод дочернего Runbook будут связаны с родительским Runbook. Это уменьшает число заданий и упрощает отслеживание и устранение неполадок, так как все исключения, вызванные дочерним модулем Runbook и любыми ее потоковыми выходами, связаны с родительским заданием.
 
 При публикации Runbook все дочерние Runbook, которые он вызывает, уже должны быть опубликованы. Это связано с тем, что служба автоматизации Azure создает связь с любыми дочерними Runbook при компиляции Runbook. В противном случае родительский компонент Runbook будет отображаться как доступный для публикации, но будет выдавать исключение при запуске. В этом случае можно повторно опубликовать родительский Runbook, чтобы исправить ссылки на дочерние Runbook. Не надо повторно публиковать родительский Runbook, если были изменены все дочерние Runbook, так как связь уже будет создана.
 
@@ -42,7 +42,7 @@ ms.locfileid: "39216747"
 
 * Порядок публикации модулей Runbook имеет значение только для модулей Runbook рабочего процесса PowerShell и графических модулей Runbook рабочего процесса PowerShell.
 
-При вызове графического Runbook и Runbook рабочего процесса PowerShell с помощью встроенного выполнения просто используйте имя необходимого Runbook.  При вызове дочернего модуля runbook PowerShell необходимо поставить перед его именем символ *.\\*, чтобы указать, что скрипт находится в локальном каталоге. 
+При вызове графического Runbook и Runbook рабочего процесса PowerShell с помощью встроенного выполнения просто используйте имя необходимого Runbook.  Вызывая дочерний модуль Runbook PowerShell, нужно начать его имя с *.\\*, чтобы указать, что скрипт находится в локальном каталоге.
 
 ### <a name="example"></a>Пример
 
@@ -72,25 +72,36 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 
 Параметры дочернего Runbook, запускаемого с помощью командлета, предоставляются в виде хэш-таблицы, как описано в статье [Параметры Runbook](automation-starting-a-runbook.md#runbook-parameters). Можно использовать только простые типы данных. Если у Runbook есть параметр со сложным типом данных, то для него необходимо использовать встроенный вызов.
 
+При работе с несколькими подписками контекст подписки может быть потерян при вызове дочерних модулей Runbook. Чтобы убедиться, что контекст подписки передан дочерним модулям runbook, добавьте параметр `DefaultProfile` в командлет и передайте ему контекст.
+
 ### <a name="example"></a>Пример
 
 В следующем примере с помощью командлета Start-AzureRmAutomationRunbook с параметром -wait запускается дочерний модуль Runbook с параметрами и ожидается его завершение. После завершения его выходные данные собираются из дочернего модуля Runbook. Для использования `Start-AzureRmAutomationRunbook` необходимо пройти проверку подлинности в подписке Azure.
 
 ```azurepowershell-interactive
 # Connect to Azure with RunAs account
-$conn = Get-AutomationConnection -Name "AzureRunAsConnection"
+$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
 
-$null = Add-AzureRmAccount `
-  -ServicePrincipal `
-  -TenantId $conn.TenantId `
-  -ApplicationId $conn.ApplicationId `
-  -CertificateThumbprint $conn.CertificateThumbprint
+Add-AzureRmAccount `
+    -ServicePrincipal `
+    -TenantId $ServicePrincipalConnection.TenantId `
+    -ApplicationId $ServicePrincipalConnection.ApplicationId `
+    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint
+
+$AzureContext = Select-AzureRmSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID
 
 $params = @{"VMName"="MyVM";"RepeatCount"=2;"Restart"=$true}
-$joboutput = Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-ChildRunbook" -ResourceGroupName "LabRG" –Parameters $params –wait
+
+Start-AzureRmAutomationRunbook `
+    –AutomationAccountName 'MyAutomationAccount' `
+    –Name 'Test-ChildRunbook' `
+    -ResourceGroupName 'LabRG' `
+    -DefaultProfile $AzureContext `
+    –Parameters $params –wait
 ```
 
 ## <a name="comparison-of-methods-for-calling-a-child-runbook"></a>Сравнение методов вызова дочернего Runbook
+
 В следующей таблице перечислены различия между двумя методами вызова Runbook из другого Runbook.
 
 |  | Встроенный | Командлет |

@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 3719e037f1564411a8f94d1ca962ba1ef6b5d435
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 884edbf56fbf67e4ee71e0832f8924a3747994c9
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22987459"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42142923"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
-В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](/services/app-service/) как единое целое. 
+В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
 
-Залогом успеха при подготовке и развертывании крупномасштабных приложений, которые состоят из разъединенных микрослужб, являются повторяемость и предсказуемость. [Служба приложений Azure](/services/app-service/) позволяет создавать микрослужбы, которые содержат веб-приложения, мобильные приложения, приложения API и приложения логики. [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) позволяет управлять микрослужбами как единым целым, вместе с зависимостями ресурсов, например параметрами управления базами данных и систем управления версиями. Теперь можно также развернуть такое приложение с помощью шаблонов JSON и простых скриптов PowerShell. 
+Залогом успеха при подготовке и развертывании крупномасштабных приложений, которые состоят из разъединенных микрослужб, являются повторяемость и предсказуемость. [Служба приложений Azure](https://azure.microsoft.com/services/app-service/) позволяет создавать микрослужбы, которые содержат веб-приложения, мобильные приложения, приложения API и приложения логики. [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) позволяет управлять микрослужбами как единым целым, вместе с зависимостями ресурсов, например параметрами управления базами данных и систем управления версиями. Теперь можно также развернуть такое приложение с помощью шаблонов JSON и простых скриптов PowerShell. 
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 

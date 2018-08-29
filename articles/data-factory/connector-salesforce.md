@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/18/2018
+ms.date: 08/21/2018
 ms.author: jingwang
-ms.openlocfilehash: 69e3e308fb5af98dd5763c56503cc28bd4ecfa9e
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 19ba4a97b93c01a049f921904d0f5aba4b8c0617
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39125254"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42442060"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -184,7 +184,7 @@ ms.locfileid: "39125254"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство type источника действия копирования должно иметь значение **SalesforceSource**. | Yes |
-| query |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm). Например, `select * from MyTable__c`. | Нет (если для набора данных задано свойство tableName) |
+| query |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm), или запрос SQL-92. Дополнительные советы см. в разделе [Советы по запросам](#query-tips). | Нет (если для набора данных задано свойство tableName) |
 | readBehavior | Указывает, следует ли запрашивать существующие записи или все записи, включая удаленные. Если значение не задано, по умолчанию используется первое значение. <br>Допустимые значения: **query** (по умолчанию), **queryAll**.  | Нет  |
 
 > [!IMPORTANT]
@@ -282,10 +282,20 @@ ms.locfileid: "39125254"
 
 ### <a name="retrieve-deleted-records-from-the-salesforce-recycle-bin"></a>Получение удаленных записей из корзины Salesforce
 
-Чтобы запросить из корзины Salesforce обратимо удаленные записи, укажите в своем запросе **"IsDeleted = 1"**. Например: 
+Чтобы запросить обратимо удаленные записи из корзины Salesforce, укажите `readBehavior` как `queryAll`. 
 
-* Чтобы запросить только удаленные записи, укажите "select \* from MyTable__c **where IsDeleted= 1**".
-* Чтобы запросить все записи, включая существующие и удаленные, укажите "select from MyTable__c **where IsDeleted = 0 or IsDeleted = 1**".
+### <a name="difference-between-soql-and-sql-query-syntax"></a>Различия между синтаксисом запросов SOQL и SQL
+
+При копировании данных из Salesforce можно использовать SOQL или SQL-запрос. Обратите внимание, что эти два запроса имеют различную поддержку синтаксиса и функциональности, их не следует смешивать. Рекомендуется использовать SOQL-запрос, который поддерживается корпорацией Salesforce. Главные различия показаны в следующей таблице.
+
+| Синтаксис | Режим SOQL | Режим SQL |
+|:--- |:--- |:--- |
+| Выбор столбцов | Необходимо переименовать поля, копируемые в запросе, например `SELECT field1, filed2 FROM objectname`. | `SELECT *` поддерживается в дополнении к выделенному фрагменту столбца. |
+| Кавычки | Имена полей или объектов не заключаются в кавычки. | Имена полей или объектов заключаются в кавычки, например `SELECT "id" FROM "Account"` |
+| Формат даты и времени |  Подробнее см. [здесь](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm), а примеры — в следующем разделе. | Подробнее см. [здесь](https://docs.microsoft.com/sql/odbc/reference/develop-app/date-time-and-timestamp-literals?view=sql-server-2017), а примеры — в следующем разделе. |
+| Логические значения | Представленные в виде `False` и `Ture`, например `SELECT … WHERE IsDeleted=True`. | Представленные в значении 0 или 1, например `SELECT … WHERE IsDeleted=1`. |
+| Переименование столбцов | Не поддерживается. | Поддерживается, например, `SELECT a AS b FROM …`. |
+| Связь | Поддерживается, например, `Account_vod__r.nvs_Country__c`. | Не поддерживается. |
 
 ### <a name="retrieve-data-by-using-a-where-clause-on-the-datetime-column"></a>Извлечение данных с использованием предложения where для столбца даты и времени
 

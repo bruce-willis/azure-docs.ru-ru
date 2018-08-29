@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 08/01/2018
 ms.author: genli
-ms.openlocfilehash: 48037bc92d26cd01086451fdc778651df5b6bf67
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 0f7b19b0848886c7a906e79d63a814fddf5ef5a6
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398977"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42145952"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 Перед тем как передать виртуальные машины Windows из локальной среды в Microsoft Azure, следует правильно подготовить виртуальный жесткий диск (VHD или VHDX). В Azure поддерживаются **только виртуальные машины первого поколения**, использующие формат файла VHD и фиксированный размер диска. Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ. Вы можете преобразовать виртуальную машину первого поколения, заменив файловую систему VHDX на VHD, а динамически расширяемый диск на диск фиксированного размера. Но вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [как выбрать поколение для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
@@ -67,7 +67,7 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
 1. Удалите все постоянные статические маршруты из таблицы маршрутизации.
    
    * Чтобы просмотреть таблицу маршрутов, запустите `route print` из окна командной строки.
-   * Проверьте разделы **Persistence Routes** (Сохраняемые маршруты). При наличии постоянного маршрута удалите его с помощью команды [route delete](https://technet.microsoft.com/library/cc739598.apx) .
+   * Проверьте разделы **Persistence Routes** (Сохраняемые маршруты). При наличии постоянного маршрута удалите его с помощью команды **route delete**.
 2. Удалите прокси-сервер WinHTTP.
    
     ```PowerShell
@@ -90,7 +90,7 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
     ```PowerShell
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation' -name "RealTimeIsUniversal" 1 -Type DWord
 
-    Set-Service -Name w32time -StartupType Auto
+    Set-Service -Name w32time -StartupType Automatic
     ```
 5. Для профиля управления питанием установите **Высокая производительность**:
 
@@ -102,17 +102,17 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
 Убедитесь, что для каждой из приведенных ниже служб Windows заданы **значения Windows по умолчанию**. Это минимальное количество служб, которые необходимо настроить для обеспечения возможности подключения виртуальной машины. Чтобы сбросить параметры загрузки, можно использовать приведенные ниже команды.
    
 ```PowerShell
-Set-Service -Name bfe -StartupType Auto
-Set-Service -Name dhcp -StartupType Auto
-Set-Service -Name dnscache -StartupType Auto
-Set-Service -Name IKEEXT -StartupType Auto
-Set-Service -Name iphlpsvc -StartupType Auto
+Set-Service -Name bfe -StartupType Automatic
+Set-Service -Name dhcp -StartupType Automatic
+Set-Service -Name dnscache -StartupType Automatic
+Set-Service -Name IKEEXT -StartupType Automatic
+Set-Service -Name iphlpsvc -StartupType Automatic
 Set-Service -Name netlogon -StartupType Manual
 Set-Service -Name netman -StartupType Manual
-Set-Service -Name nsi -StartupType Auto
+Set-Service -Name nsi -StartupType Automatic
 Set-Service -Name termService -StartupType Manual
-Set-Service -Name MpsSvc -StartupType Auto
-Set-Service -Name RemoteRegistry -StartupType Auto
+Set-Service -Name MpsSvc -StartupType Automatic
+Set-Service -Name RemoteRegistry -StartupType Automatic
 ```
 
 ## <a name="update-remote-desktop-registry-settings"></a>Обновление параметров реестра для удаленного рабочего стола
@@ -307,18 +307,29 @@ Set-Service -Name RemoteRegistry -StartupType Auto
     - Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Запретить вход в систему через службу удаленных рабочих столов.
 
 
-9. Перезапустите виртуальную машину — ОС Windows должна быть по-прежнему работоспособна и доступна с помощью подключения к удаленному рабочему столу. На этом этапе можно создать виртуальную машину в локальной Hyper-V для обеспечения ее полного запуска, а затем проверить ее доступность через протокол RDP.
+9. Проверьте следующую политику AD, чтобы убедиться в том, что вы не удаляете какую-либо из следующих учетных записей, необходимых для доступа:
 
-10. Удалите все дополнительные фильтры TDI, например программное обеспечение, которое анализирует пакеты TCP, или дополнительные брандмауэры. При необходимости проверку можно также выполнить позже — после развертывания виртуальной машины в Azure.
+    - Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Доступ к этому компьютеру из сети
 
-11. Удалите все стороннее программное обеспечение и драйверы, связанные с физическими компонентами или какой-либо другой технологией виртуализации.
+    В этой политике должны быть указаны следующие группы.
+
+    - Администраторы
+    - Операторы архивации
+    - Все
+    - Пользователи
+
+10. Перезапустите виртуальную машину — ОС Windows должна быть по-прежнему работоспособна и доступна с помощью подключения к удаленному рабочему столу. На этом этапе можно создать виртуальную машину в локальной Hyper-V для обеспечения ее полного запуска, а затем проверить ее доступность через протокол RDP.
+
+11. Удалите все дополнительные фильтры TDI, например программное обеспечение, которое анализирует пакеты TCP, или дополнительные брандмауэры. При необходимости проверку можно также выполнить позже — после развертывания виртуальной машины в Azure.
+
+12. Удалите все стороннее программное обеспечение и драйверы, связанные с физическими компонентами или какой-либо другой технологией виртуализации.
 
 ### <a name="install-windows-updates"></a>Установка обновлений Windows
 Лучше всего, когда у вас есть **последний уровень исправлений машины**. Если это невозможно, установите следующие обновления:
 
 | Компонент               | Binary         | Windows 7 с пакетом обновления 1 (SP1), Windows Server 2008 R2 с пакетом обновления 1 (SP1) | Windows Server 8, Windows Server 2012               | Windows Server 8.1, Windows Server 2012 R2 | Windows 10 версии 1607, Windows Server 2016 версии 1607 | Windows 10 версии 1703    | Windows 10 версии 1709, Windows Server 2016 версии 1709 | Windows 10 версии 1803, Windows Server 2016 версии 1803 |
 |-------------------------|----------------|-------------------------------------------|---------------------------------------------|------------------------------------|---------------------------------------------------------|----------------------------|-------------------------------------------------|-------------------------------------------------|
-| Хранилище                 | disk.sys       | 6.1.7601.23403 — KB3125574                | 6.2.9200.17638 / 6.2.9200.21757 — KB3137061 | 6.3.9600.18203 — KB3137061         | -                                                       | -                          | -                                               | -                                               |
+| служба хранилища.                 | disk.sys       | 6.1.7601.23403 — KB3125574                | 6.2.9200.17638 / 6.2.9200.21757 — KB3137061 | 6.3.9600.18203 — KB3137061         | -                                                       | -                          | -                                               | -                                               |
 |                         | storport.sys   | 6.1.7601.23403 — KB3125574                | 6.2.9200.17188 / 6.2.9200.21306 — KB3018489 | 6.3.9600.18573 — KB4022726         | 10.0.14393.1358 — KB4022715                             | 10.0.15063.332             | -                                               | -                                               |
 |                         | ntfs.sys       | 6.1.7601.23403 — KB3125574                | 6.2.9200.17623 / 6.2.9200.21743 — KB3121255 | 6.3.9600.18654 — KB4022726         | 10.0.14393.1198 — KB4022715                             | 10.0.15063.447             | -                                               | -                                               |
 |                         | Iologmsg.dll   | 6.1.7601.23403 — KB3125574                | 6.2.9200.16384 — KB2995387                  | -                                  | -                                                       | -                          | -                                               | -                                               |

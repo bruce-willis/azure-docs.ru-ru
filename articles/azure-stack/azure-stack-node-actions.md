@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 08/14/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: 3ecc8885a30a11472fe93bbda60c39131c6b3bd7
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 1f59f2ce6e3bf8d34ce225aa93da76ad523775e0
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801421"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41946489"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Действия с узлами единицы масштабирования в Azure Stack
 
@@ -70,9 +70,8 @@ ms.locfileid: "34801421"
 
 Просматривая сведения об узле единицы масштабирования, вы также можете выполнять некоторые действия, например:
 
-- включение и выключение питания;
 - остановка и возобновление;
-- восстановление.
+- Восстановление
 
 Доступные действия зависят от текущего рабочего состояния узла.
 
@@ -154,4 +153,4 @@ ms.locfileid: "34801421"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о модуле для администраторов Fabric в Azure Stack см. [здесь](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.3.0).
+Дополнительные сведения о модуле для администраторов Fabric в Azure Stack см. [здесь](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.4.0).

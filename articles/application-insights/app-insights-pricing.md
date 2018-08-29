@@ -12,16 +12,20 @@ ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
 ms.reviewer: Dale.Koetke
-ms.date: 06/21/2018
+ms.date: 08/11/2018
 ms.author: mbullwin
-ms.openlocfilehash: a401bc3ed68dc9273ac14cfd357b9c05111dd54c
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: 221d0d8a78a46cad9f1994e9313b21e2867d9563
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36311108"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42143288"
 ---
 # <a name="manage-pricing-and-data-volume-in-application-insights"></a>Управление ценами и объемом данных в Application Insights
+
+> [!NOTE]
+> В этой статье описывается анализ использования данных в Application Insights.  Дополнительные сведения приведены в статьях ниже.
+> - В статье [Мониторинг использования и ожидаемых затрат](../monitoring-and-diagnostics/monitoring-usage-and-estimated-costs.md) описано, как можно просмотреть сведения об использовании и оценить затраты по нескольким функциям мониторинга Azure для разных моделей ценообразования. Там также описано, как можно изменить модель ценообразования.
 
 Цены на [Azure Application Insights][start] зависят от объема данных для каждого приложения. Каждый ресурс Application Insights оплачивается как отдельная служба и включается в счет за подписку Azure.
 

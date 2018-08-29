@@ -12,14 +12,14 @@ ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/27/2016
+ms.date: 08/08/2018
 ms.author: LADocs; padmavc
-ms.openlocfilehash: a5ca615d984d07513b12399b6f7e7901490f2e41
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: a1b2d68a4a9433dc5c68d65552bf6bd509463958
+ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298837"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42145163"
 ---
 # <a name="decode-as2-messages-for-azure-logic-apps-with-the-enterprise-integration-pack"></a>Декодирование сообщений AS2 для Azure Logic Apps с помощью пакета интеграции Enterprise 
 
@@ -67,6 +67,7 @@ ms.locfileid: "35298837"
 
     ![Выберите текст и заголовки из выходных данных запроса](media/logic-apps-enterprise-integration-as2-decode/as2decodeimage5.png) 
 
+
 ## <a name="as2-decoder-details"></a>Сведения о декодере AS2
 
 Соединитель декодирования AS2 выполняет следующие задачи: 
@@ -75,6 +76,7 @@ ms.locfileid: "35298837"
 * проверяет подпись (если настроено);
 * расшифровывает сообщения (если настроено);
 * распаковывает сообщения (если настроено);
+* проверяет и запрещает дублирование идентификаторов сообщений (если настроено);
 * сопоставляет полученный MDN с первоначальным исходящим сообщением;
 * обновляет и сопоставляет записи в базе данных неотрекаемости;
 * сохраняет записи отчетов о состоянии AS2;
@@ -82,6 +84,13 @@ ms.locfileid: "35298837"
 * определяет, требуется ли MDN, а также синхронность или асинхронность MDN, исходя из установленной в соглашении AS2 конфигурации;
 * создает синхронное или асинхронное MDN (в зависимости от конфигурации соглашения);
 * задает маркеры корреляции и свойства для MDN.
+
+
+  > [!NOTE]
+  > При использовании для управления сертификатами Azure Key Vault убедитесь, что вы настроили ключи, чтобы разрешить операцию **Decrypt** (Расшифровать).
+  > В противном случае раскодировка AS2 не удастся.
+  >
+  > ![Расшифровки хранилища ключей](media/logic-apps-enterprise-integration-as2-decode/keyvault1.png)
 
 ## <a name="try-this-sample"></a>Пробное использование примера
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/08/2018
 ms.author: brenduns
 ms.reviewer: alfredo
-ms.openlocfilehash: efd1c1eafbff8bf56b16131e44cff6b03ce7338a
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: bb46881425398618df54288a9d2e6d65bb03dad4
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39264816"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41947460"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Управление регистрацией клиента в Azure Stack
 
@@ -86,10 +86,10 @@ ms.locfileid: "39264816"
 
 ### <a name="powershell"></a>PowerShell
 
-Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом Get-AzureRmResovurce. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которую вы использовали для первоначальной регистрации. Пример добавления клиента:
+Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом Get-AzureRmResource. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которую вы использовали для первоначальной регистрации. Пример добавления клиента:
 
 ```powershell
-  Get-AzureRmResovurce -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
+  Get-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01
 ```
 
 ### <a name="api-call"></a>Вызов API

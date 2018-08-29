@@ -9,12 +9,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 04/28/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 7d653a17212c727d65820382e22196d62af086e9
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 3559a25f3073f88e99379e98bc4562209b0c0825
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39324414"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42108450"
 ---
 # <a name="about-the-speech-translation-api"></a>Сведения об API перевода речи
 
@@ -43,3 +43,5 @@ API перевода речи использует те же технологи�
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Узнайте, как переводить речь с помощью C#](how-to-translate-speech-csharp.md)
+* [Узнайте, как переводить речь с помощью C++](how-to-translate-speech-cpp.md)
+* [Узнайте, как переводить речь с помощью Java](how-to-translate-speech-java.md)

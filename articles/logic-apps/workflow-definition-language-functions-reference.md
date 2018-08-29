@@ -1,32 +1,287 @@
 ---
 title: Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps | Документация Майкрософт
-description: Дополнительные сведения о возможности создания приложений логики с помощью языка определения рабочих процессов
+description: Сведения о функциях языка определения рабочих процессов в Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
 author: ecfan
 ms.author: estfan
 manager: jeconnoc
 ms.topic: reference
-ms.date: 04/25/2018
+ms.date: 08/15/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 46ccf9484b76ec5f24dba470a194b5b83c32f013
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: 6292ea4ccd3780e1da86252b7ec9c09c2eea3982
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39263782"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143910"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps
 
-В этой статье описываются функции, которые можно использовать при создании автоматических рабочих процессов с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Дополнительные сведения о функциях в определениях приложений логики см. в статье [Схема языка определения рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md#functions). 
+Некоторые [выражения](../logic-apps/logic-apps-workflow-definition-language.md#expressions) в [Azure Logic Apps](../logic-apps/logic-apps-overview.md) получают значения из действий среды выполнения, которые могут не существовать в начале определения рабочего процесса приложения логики. Чтобы работать с этими значениями или ссылаться на них в выражениях, вы можете использовать *функции*, предоставляемые [языком определений рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md). Например, вы можете использовать математические функции для вычислений, такие как функция [add()](../logic-apps/workflow-definition-language-functions-reference.md#add), которая возвращает сумму из целых чисел или чисел с плавающей запятой. Вот еще несколько примеров задач, которые можно выполнять с помощью функций:
+
+| Задача | Синтаксис функции | Результат | 
+| ---- | --------------- | ------ | 
+| Возвращает строку символов в нижнем регистре. | toLower('<*текст*>') <p>Например, toLower('Hello'). | "hello" | 
+| Возвращение глобального уникального идентификатора (GUID). | guid() |"c2ecc88d-88c8-4096-912c-d6f2e2b138ce" | 
+|||| 
+
+В этой статье описываются функции, которые можно использовать при создании определений приложений логики.
+Чтобы найти функции, [основанные на общем назначении](#ordered-by-purpose), продолжайте с помощью следующих таблиц. Или, подробные сведения о каждой функции см. в [алфавитном списке](#alphabetical-list). 
 
 > [!NOTE]
 > В синтаксисе для определения параметров знак вопроса (?), который расположен после параметра, означает, что параметр является необязательным. Примеры см. в разделе о [getFutureTime()](#getFutureTime).
 
+## <a name="functions-in-expressions"></a>Функции в выражениях
+
+Чтобы показать, как использовать функцию в выражении, в этом примере показано, как можно получить значение из параметра `customerName` и присвоить его свойству `accountName` с помощью функции [parameters()](#parameters) в выражении:
+
+```json
+"accountName": "@parameters('customerName')"
+```
+
+Вот некоторые другие общие способы использования функций в выражениях:
+
+| Задача | Синтаксис функции в выражении | 
+| ---- | -------------------------------- | 
+| Выполнить операцию с элементом, передав этот элемент функции. | "\@<*имя_функции*>(<*элемент*>)" | 
+| 1. Получить значение *параметра*, используя вложенную функцию `parameters()`. </br>2. Выполнить операцию с результатом, передав это значение *функции*. | "\@<*имя_функции*>(parameters('<*имя_параметра*>'))" | 
+| 1. Получить результат из вложенной внутренней *функции*. </br>2. Передать результат внешней функции (*имя_функции2*). | "\@<*имя_функции2*>(<*имя_функции*>(<*элемент*>))" | 
+| 1. Получить результат выполнения *функции*. </br>2. Учитывая, что результат является объектом со свойством *имя_свойства*, получить значение этого свойства. | "\@<*имя_функции*>(<*элемент*>).<*имя_свойства*>" | 
+||| 
+
+Например, функция `concat()` может принимать два или более строковых значения в качестве параметров. Эта функция объединяет эти строки в одну. Вы можете передать строковые литералы, например "Sophia" и "Owen", чтобы получить комбинированную строку "SophiaOwen":
+
+```json
+"customerName": "@concat('Sophia', 'Owen')"
+```
+
+Или можно получить строковые значения параметров. В этом примере используется функция `parameters()` в каждом параметре `concat()` и параметры `firstName` и `lastName`. Затем передайте полученные строки в функцию `concat()`, чтобы получить комбинированную строку, например "SophiaOwen":
+
+```json
+"customerName": "@concat(parameters('firstName'), parameters('lastName'))"
+```
+
+В любом случае в обоих примерах присвойте результат свойству `customerName`. 
+
+Ниже приведены доступные функции, упорядоченные по общему назначению, или вы можете просмотреть функции в [алфавитном порядке](#alphabetical-list).
+
+<a name="ordered-by-purpose"></a>
+<a name="string-functions"></a>
+
+## <a name="string-functions"></a>Строковые функции
+
+Для работы со строками вы можете использовать эти строковые функции, а также некоторые [функции для коллекций](#collection-functions). Строковые функции работают только со строками. 
+
+| Строковая функция | Задача | 
+| --------------- | ---- | 
+| [concat](../logic-apps/workflow-definition-language-functions-reference.md#concat) | Объединяет две или более строк и возвращает объединенную строку. | 
+| [endsWith](../logic-apps/workflow-definition-language-functions-reference.md#endswith) | Проверяет, заканчивается ли строка определенной подстрокой. | 
+| [guid](../logic-apps/workflow-definition-language-functions-reference.md#guid) | Создает глобально уникальный идентификатор (GUID) в виде строки. | 
+| [indexOf](../logic-apps/workflow-definition-language-functions-reference.md#indexof) | Возвращает начальную позицию подстроки. | 
+| [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает конечную позицию подстроки. | 
+| [replace](../logic-apps/workflow-definition-language-functions-reference.md#replace) | Заменяет подстроку указанной строкой и возвращает обновленную строку. | 
+| [split](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, который содержит все символы из строки, отделенные разделителем. | 
+| [startsWith](../logic-apps/workflow-definition-language-functions-reference.md#startswith) | Проверяет, начинается ли строка с определенной подстроки. | 
+| [substring](../logic-apps/workflow-definition-language-functions-reference.md#substring) | Возвращает символы из строки, начиная с указанной позиции. | 
+| [toLower](../logic-apps/workflow-definition-language-functions-reference.md#toLower) | Возвращает строку символов в нижнем регистре. | 
+| [toUpper](../logic-apps/workflow-definition-language-functions-reference.md#toUpper) | Возвращает строку символов в верхнем регистре. | 
+| [trim](../logic-apps/workflow-definition-language-functions-reference.md#trim) | Удаляет все начальные и конечные пробелы и возвращает обновленную строку. | 
+||| 
+
+<a name="collection-functions"></a>
+
+## <a name="collection-functions"></a>Функции для коллекций
+
+Для работы с коллекциями, обычно массивами, строками, а иногда и словарями, вы можете использовать следующие функции. 
+
+| Функция для коллекций | Задача | 
+| ------------------- | ---- | 
+| [contains](../logic-apps/workflow-definition-language-functions-reference.md#contains) | Проверяет наличие определенного элемента в коллекции. |
+| [empty](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Проверяет, является ли коллекция пустой. | 
+| [first](../logic-apps/workflow-definition-language-functions-reference.md#first) | Возвращает первый элемент из коллекции. | 
+| [intersection](../logic-apps/workflow-definition-language-functions-reference.md#intersection) | Возвращает коллекцию, которая содержит *только* общие элементы в указанных коллекциях. | 
+| [join](../logic-apps/workflow-definition-language-functions-reference.md#join) | Возвращает строку, содержащую *все* элементы из массива, в которой каждый символ отделен разделителем. | 
+| [last](../logic-apps/workflow-definition-language-functions-reference.md#last) | Возвращает последний элемент из коллекции. | 
+| [длина](../logic-apps/workflow-definition-language-functions-reference.md#length) | Возвращает число элементов в строке или массиве. | 
+| [skip](../logic-apps/workflow-definition-language-functions-reference.md#skip) | Удаляет элементы из начала коллекции и возвращает *все другие элементы*. | 
+| [take](../logic-apps/workflow-definition-language-functions-reference.md#take) | Возвращает элементы, расположенные в начале коллекции. | 
+| [union](../logic-apps/workflow-definition-language-functions-reference.md#union) | Возвращает коллекцию, которая содержит *все* элементы из указанных коллекций. | 
+||| 
+
+<a name="comparison-functions"></a>
+
+## <a name="logical-comparison-functions"></a>Функции логического сравнения
+
+Чтобы работать с условиями, сравнивать значения и результаты выражений или оценивать различные типы логики, можно использовать следующие функции логического сравнения. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Функция логического сравнения | Задача | 
+| --------------------------- | ---- | 
+| [and](../logic-apps/workflow-definition-language-functions-reference.md#and) (и); | Проверяет, истинны ли все выражения. | 
+| [equals](../logic-apps/workflow-definition-language-functions-reference.md#equals) | Проверяет, эквивалентны ли оба значения. | 
+| [greater](../logic-apps/workflow-definition-language-functions-reference.md#greater) | Проверяет, является ли первое значение большим, чем второе. | 
+| [greaterOrEquals](../logic-apps/workflow-definition-language-functions-reference.md#greaterOrEquals) | Проверяет, является ли первое значение большим, чем второе, или равным ему. | 
+| [if](../logic-apps/workflow-definition-language-functions-reference.md#if) (если); | Проверьте, какое значение имеет выражение: true или false. Возвращает указанное значение на основе результата. | 
+| [less](../logic-apps/workflow-definition-language-functions-reference.md#less) | Проверяет, является ли первое значение меньшим, чем второе. | 
+| [lessOrEquals](../logic-apps/workflow-definition-language-functions-reference.md#lessOrEquals) | Проверяет, является ли первое значение меньшим, чем второе, или равным ему. | 
+| [not](../logic-apps/workflow-definition-language-functions-reference.md#not) (не); | Проверяет, имеет ли выражение значение false. | 
+| [or](../logic-apps/workflow-definition-language-functions-reference.md#or) (или). | Проверяет, является ли хотя бы одно выражение истинным. |
+||| 
+
+<a name="conversion-functions"></a>
+
+## <a name="conversion-functions"></a>Функции преобразования
+
+Чтобы изменить тип или формат значения, можно использовать приведенные ниже функции преобразования. Например, вы можете изменить значение с логического на целочисленное. Чтобы узнать, как приложения логики обрабатывают типы содержимого во время преобразования, см. статью [Обработка типов содержимого в приложениях логики](../logic-apps/logic-apps-content-type.md). Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Функция преобразования | Задача | 
+| ------------------- | ---- | 
+| [array](../logic-apps/workflow-definition-language-functions-reference.md#array). | Возвращает массив из одного экземпляра указанных входных данных. Для использования нескольких входных данных см. раздел [createArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray). | 
+| [base64](../logic-apps/workflow-definition-language-functions-reference.md#base64) | Возвращает версию строки с кодировкой base64 для заданной строки. | 
+| [base64ToBinary](../logic-apps/workflow-definition-language-functions-reference.md#base64ToBinary) | Возвращает двоичную версию строки с кодировкой base64. | 
+| [base64ToString](../logic-apps/workflow-definition-language-functions-reference.md#base64ToString) | Возвращает строковую версию строки с кодировкой base64. | 
+| [binary](../logic-apps/workflow-definition-language-functions-reference.md#binary) | Возвращает двоичную версию входного значения. | 
+| [bool](../logic-apps/workflow-definition-language-functions-reference.md#bool); | Возвращает логическую версию входного значения. | 
+| [createArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray) | Возвращает массив из нескольких экземпляров входных данных. | 
+| [dataUri](../logic-apps/workflow-definition-language-functions-reference.md#dataUri) | Возвращает URI данных входного значения. | 
+| [dataUriToBinary](../logic-apps/workflow-definition-language-functions-reference.md#dataUriToBinary) | Возвращает двоичную версию строки URI данных. | 
+| [dataUriToString](../logic-apps/workflow-definition-language-functions-reference.md#dataUriToString) | Возвращает строковую версию URI данных. | 
+| [decodeBase64](../logic-apps/workflow-definition-language-functions-reference.md#decodeBase64) | Возвращает строковую версию строки с кодировкой base64. | 
+| [decodeDataUri](../logic-apps/workflow-definition-language-functions-reference.md#decodeDataUri) | Возвращает двоичную версию строки URI данных. | 
+| [decodeUriComponent](../logic-apps/workflow-definition-language-functions-reference.md#decodeUriComponent) | Возвращает строку, которая заменяет escape-символы декодированными версиями. | 
+| [encodeUriComponent](../logic-apps/workflow-definition-language-functions-reference.md#encodeUriComponent) | Возвращает строку, которая заменяет символы, опасные для URL-адреса, escape-символами. | 
+| [float](../logic-apps/workflow-definition-language-functions-reference.md#float) | Возвращает значение с плавающей запятой в качестве входного значения. | 
+| [int](../logic-apps/workflow-definition-language-functions-reference.md#int) | Возвращает целочисленную версию строки. | 
+| [json](../logic-apps/workflow-definition-language-functions-reference.md#json) | Возвращает значение типа JSON либо объект для строки или XML. | 
+| [string](../logic-apps/workflow-definition-language-functions-reference.md#string) | Возвращает строковую версию входного значения. | 
+| [uriComponent](../logic-apps/workflow-definition-language-functions-reference.md#uriComponent) | Возвращает кодированную версию URI для входного значения, заменив символы, опасные для URL-адреса, на escape-символы. | 
+| [uriComponentToBinary](../logic-apps/workflow-definition-language-functions-reference.md#uriComponentToBinary) | Возвращает двоичную версию строки с закодированным URI. | 
+| [uriComponentToString](../logic-apps/workflow-definition-language-functions-reference.md#uriComponentToString) | Возвращает строковую версию строки с закодированным URI. | 
+| [xml](../logic-apps/workflow-definition-language-functions-reference.md#xml) | Возвращает XML-версию строки. | 
+||| 
+
+<a name="math-functions"></a>
+
+## <a name="math-functions"></a>Математические функции
+
+Для работы с целыми числами и числами с плавающей запятой можно использовать следующие математические функции. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Математическая функция | Задача | 
+| ------------- | ---- | 
+| [добавление](../logic-apps/workflow-definition-language-functions-reference.md#add) | Возвращает результат сложения двух чисел. | 
+| [div](../logic-apps/workflow-definition-language-functions-reference.md#div) | Возвращает результат деления двух чисел. | 
+| [max](../logic-apps/workflow-definition-language-functions-reference.md#max) | Возвращает наибольшее значение из набора чисел или массива. | 
+| [min](../logic-apps/workflow-definition-language-functions-reference.md#min) | Возвращает наименьшее значение из набора чисел или массива. | 
+| [mod (модуль)](../logic-apps/workflow-definition-language-functions-reference.md#mod) | Возвращает остаток результата деления двух чисел. | 
+| [mul](../logic-apps/workflow-definition-language-functions-reference.md#mul) | Возвращает результат умножения двух чисел. | 
+| [rand](../logic-apps/workflow-definition-language-functions-reference.md#rand) | Возвращает случайное целое число из указанного диапазона. | 
+| [range](../logic-apps/workflow-definition-language-functions-reference.md#range) | Возвращает массив целых чисел, который начинается с заданного целого числа. | 
+| [sub](../logic-apps/workflow-definition-language-functions-reference.md#sub) | Вычитает второе число из первого числа и возвращает результат. | 
+||| 
+
+<a name="date-time-functions"></a>
+
+## <a name="date-and-time-functions"></a>Функции даты и времени
+
+Чтобы работать с датами и временем, вы можете использовать эти функции даты и времени.
+Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Функция даты и времени | Задача | 
+| --------------------- | ---- | 
+| [addDays](../logic-apps/workflow-definition-language-functions-reference.md#addDays) | Добавляет количество дней к метке времени. | 
+| [addHours](../logic-apps/workflow-definition-language-functions-reference.md#addHours) | Добавляет количество часов к метке времени. | 
+| [addMinutes](../logic-apps/workflow-definition-language-functions-reference.md#addMinutes) | Добавляет количество минут к метке времени. | 
+| [addSeconds](../logic-apps/workflow-definition-language-functions-reference.md#addSeconds) | Добавляет количество секунд к метке времени. |  
+| [addToTime](../logic-apps/workflow-definition-language-functions-reference.md#addToTime) | Добавляет количество единиц времени к метке времени. См. раздел [getFutureTime](../logic-apps/workflow-definition-language-functions-reference.md#getFutureTime). | 
+| [convertFromUtc](../logic-apps/workflow-definition-language-functions-reference.md#convertFromUtc) | Преобразовывает метку времени формата UTC в целевой часовой пояс. | 
+| [convertTimeZone](../logic-apps/workflow-definition-language-functions-reference.md#convertTimeZone) | Преобразовывает метку времени из исходного часового пояса в целевой. | 
+| [convertToUtc](../logic-apps/workflow-definition-language-functions-reference.md#convertToUtc) | Преобразует метку времени с исходным часовым поясом в формат UTC. | 
+| [dayOfMonth](../logic-apps/workflow-definition-language-functions-reference.md#dayOfMonth) | Возвращает компонент дня месяца из метки времени. | 
+| [dayOfWeek](../logic-apps/workflow-definition-language-functions-reference.md#dayOfWeek) | Возвращает компонент дня недели из метки времени. | 
+| [dayOfYear](../logic-apps/workflow-definition-language-functions-reference.md#dayOfYear) | Возвращает компонент дня года из метки времени. | 
+| [formatDateTime](../logic-apps/workflow-definition-language-functions-reference.md#formatDateTime) | Возвращает дату из метки времени. | 
+| [getFutureTime](../logic-apps/workflow-definition-language-functions-reference.md#getFutureTime) | Возвращает текущую метку времени, а также указанные единицы времени. См. раздел [addToTime](../logic-apps/workflow-definition-language-functions-reference.md#addToTime). | 
+| [getPastTime](../logic-apps/workflow-definition-language-functions-reference.md#getPastTime) | Возвращает текущую метку времени, вычитая указанные единицы времени. См. раздел [subtractFromTime](../logic-apps/workflow-definition-language-functions-reference.md#subtractFromTime). | 
+| [startOfDay](../logic-apps/workflow-definition-language-functions-reference.md#startOfDay) | Возвращает начало дня для метки времени. | 
+| [startOfHour](../logic-apps/workflow-definition-language-functions-reference.md#startOfHour) | Возвращает начало часа для метки времени. | 
+| [startOfMonth](../logic-apps/workflow-definition-language-functions-reference.md#startOfMonth) | Возвращает начало месяца для метки времени. | 
+| [subtractFromTime](../logic-apps/workflow-definition-language-functions-reference.md#subtractFromTime) | Вычитает количество единиц времени из метки времени. См. раздел [getPastTime](../logic-apps/workflow-definition-language-functions-reference.md#getPastTime). | 
+| [ticks](../logic-apps/workflow-definition-language-functions-reference.md#ticks) | Возвращает значение свойства `ticks` для указанной метки времени. | 
+| [utcNow](../logic-apps/workflow-definition-language-functions-reference.md#utcNow) | Возвращает текущую метку времени в виде строки. | 
+||| 
+
+<a name="workflow-functions"></a>
+
+## <a name="workflow-functions"></a>Функции рабочего процесса
+
+Эти функции рабочего процесса могут помочь:
+
+* получить сведения об экземпляре рабочего процесса во время выполнения; 
+* работать с входными данными, используемыми при создании экземпляра приложения логики;
+* ссылаться на выходные данные из триггеров и действий.
+
+Например, вы можете ссылаться на выходные данные одного действия и использовать их в действии, которое выполняется позже. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Функция рабочего процесса | Задача | 
+| ----------------- | ---- | 
+| [action](../logic-apps/workflow-definition-language-functions-reference.md#action) | Возвращает выходные данные текущего действия во время выполнения или значения из других пар "имя — значение" JSON. См. раздел об [actions](../logic-apps/workflow-definition-language-functions-reference.md#actions). | 
+| [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody) | Возвращает результат действия `body` во время выполнения. См. раздел [body](../logic-apps/workflow-definition-language-functions-reference.md#body). | 
+| [actionOutputs](../logic-apps/workflow-definition-language-functions-reference.md#actionOutputs) | Возвращает результат действия во время выполнения. См. раздел [actions](../logic-apps/workflow-definition-language-functions-reference.md#actions). | 
+| [actions](../logic-apps/workflow-definition-language-functions-reference.md#actions) | Возвращает выходные данные действия во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [action](../logic-apps/workflow-definition-language-functions-reference.md#action).  | 
+| [body](#body) | Возвращает результат действия `body` во время выполнения. См. раздел [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody). | 
+| [formDataMultiValues](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* действия. | 
+| [formDataValue](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) | Возвращает значение, которое соответствует имени ключа в выходных данных *form-data* или *form-encoded* действия. | 
+| [Item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. | 
+| [items](../logic-apps/workflow-definition-language-functions-reference.md#items) | При использовании внутри цикла for-each или do-until возвращает текущий элемент из указанного цикла.| 
+| [listCallbackUrl](../logic-apps/workflow-definition-language-functions-reference.md#listCallbackUrl) | Возвращает URL-адрес обратного вызова, который вызывает триггер или действие. | 
+| [multipartBody](../logic-apps/workflow-definition-language-functions-reference.md#multipartBody) | Возвращает текст указанной части выходных данных действия, которые состоят из нескольких частей. | 
+| [parameters](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Возвращает значение параметра, описанного в определении вашего приложения логики. | 
+| [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. разделы [triggerOutputs](#triggerOutputs) и [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). | 
+| [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody) | Возвращает выходные данные `body` триггера во время выполнения. См. раздел [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). | 
+| [triggerFormDataValue](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue) | Возвращает одно значение, соответствующее имени ключа, из выходных данных *form-data* или *form-encoded* триггера. | 
+| [triggerMultipartBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerMultipartBody) | Возвращает текст указанной части выходных данных триггера, которые состоят из нескольких частей. | 
+| [triggerFormDataMultiValues](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* триггера. | 
+| [triggerOutputs](../logic-apps/workflow-definition-language-functions-reference.md#triggerOutputs) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). | 
+| [variables](../logic-apps/workflow-definition-language-functions-reference.md#variables) | Возвращает значение для указанной переменной. | 
+| [workflow](../logic-apps/workflow-definition-language-functions-reference.md#workflow) | Возвращает все сведения о самом рабочем процессе во время выполнения. | 
+||| 
+
+<a name="uri-parsing-functions"></a>
+
+## <a name="uri-parsing-functions"></a>Функции анализа URI
+
+Чтобы работать с идентификаторами URI и получать различные значения их свойств, вы можете использовать эти функции анализа URI. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Функция анализа URI | Задача | 
+| -------------------- | ---- | 
+| [uriHost](../logic-apps/workflow-definition-language-functions-reference.md#uriHost) | Возвращает значение `host` для URI. | 
+| [uriPath](../logic-apps/workflow-definition-language-functions-reference.md#uriPath) | Возвращает значение `path` для URI. | 
+| [uriPathAndQuery](../logic-apps/workflow-definition-language-functions-reference.md#uriPathAndQuery) | Возвращает значения `path` и `query` для URI. | 
+| [uriPort](../logic-apps/workflow-definition-language-functions-reference.md#uriPort) | Возвращает значение `port` для URI. | 
+| [uriQuery](../logic-apps/workflow-definition-language-functions-reference.md#uriQuery) | Возвращает значение `query` для URI. | 
+| [uriScheme](../logic-apps/workflow-definition-language-functions-reference.md#uriScheme) | Возвращает значение `scheme` для URI. | 
+||| 
+
+<a name="manipulation-functions"></a>
+
+## <a name="manipulation-functions-json--xml"></a>Функции обработки. JSON и язык XML
+
+Для работы с объектами JSON и узлами XML вы можете использовать следующие функции обработки. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+| Функция обработки | Задача | 
+| --------------------- | ---- | 
+| [addProperty](../logic-apps/workflow-definition-language-functions-reference.md#addProperty) | Добавляет свойство и его значения или пару "имя — значение" в объект JSON и возвращает обновленный объект. | 
+| [coalesce](../logic-apps/workflow-definition-language-functions-reference.md#coalesce) | Возвращает первое ненулевое значение из одного или нескольких параметров. | 
+| [removeProperty](../logic-apps/workflow-definition-language-functions-reference.md#removeProperty) | Удаляет свойство из объекта JSON и возвращает обновленный объект. | 
+| [setProperty](../logic-apps/workflow-definition-language-functions-reference.md#setProperty) | Задает значение свойства объекта JSON и возвращает обновленный объект. | 
+| [xpath](../logic-apps/workflow-definition-language-functions-reference.md#xpath) | Проверяет XML на наличие узлов или значений, которые соответствуют выражению XPath, и возвращает соответствующие узлы или значения. | 
+||| 
+
+<a name="alphabetical-list"></a>
 <a name="action"></a>
 
-## <a name="action"></a>action
+### <a name="action"></a>action
 
 Возвращает *текущие* выходные данные действия во время выполнения или значения из других пар "имя — значение" JSON, которые вы можете назначить выражению. По умолчанию эта функция ссылается на весь объект действия, но вы можете дополнительно указать свойство, значение которого требуется. См. раздел об [actions()](../logic-apps/workflow-definition-language-functions-reference.md#actions).
 
@@ -53,7 +308,7 @@ action().outputs.body.<property>
 
 <a name="actionBody"></a>
 
-## <a name="actionbody"></a>actionBody
+### <a name="actionbody"></a>actionBody
 
 Возвращает результат действия `body` во время выполнения. Сокращение для `actions('<actionName>').outputs.body`. См. разделы о [body()](#body) и [actions()](#actions).
 
@@ -98,7 +353,7 @@ actionBody('Get_user')
 
 <a name="actionOutputs"></a>
 
-## <a name="actionoutputs"></a>actionOutputs
+### <a name="actionoutputs"></a>actionOutputs
 
 Возвращает результат действия во время выполнения. Сокращение для `actions('<actionName>').outputs`. См. раздел об [actions()](#actions).
 
@@ -161,7 +416,7 @@ actionOutputs('Get_user')
 
 <a name="actions"></a>
 
-## <a name="actions"></a>actions
+### <a name="actions"></a>actions
 
 Возвращает выходные данные действия во время выполнения или значения из других пар "имя — значение" JSON, которые вы можете назначить выражению. По умолчанию эта функция ссылается на весь объект действия, но вы можете дополнительно указать свойство, значение которого требуется. Сокращенные версии см. в разделах об [actionBody()](#actionBody), [actionOutputs()](#actionOutputs) и [body()](#body). Для текущего действия см. раздел об [()](#action).
 
@@ -196,7 +451,7 @@ actions('Get_user').outputs.body.status
 
 <a name="add"></a>
 
-## <a name="add"></a>добавление
+### <a name="add"></a>добавление
 
 Возвращает результат сложения двух чисел.
 
@@ -226,7 +481,7 @@ add(1, 1.5)
 
 <a name="addDays"></a>
 
-## <a name="adddays"></a>addDays
+### <a name="adddays"></a>addDays
 
 Добавляет количество дней к метке времени.
 
@@ -268,7 +523,7 @@ addDays('2018-03-15T00:00:00Z', -5)
 
 <a name="addHours"></a>
 
-## <a name="addhours"></a>addhours
+### <a name="addhours"></a>addhours
 
 Добавляет количество часов к метке времени.
 
@@ -310,7 +565,7 @@ addHours('2018-03-15T15:00:00Z', -5)
 
 <a name="addMinutes"></a>
 
-## <a name="addminutes"></a>addminutes
+### <a name="addminutes"></a>addminutes
 
 Добавляет количество минут к метке времени.
 
@@ -352,7 +607,7 @@ addMinutes('2018-03-15T00:20:00Z', -5)
 
 <a name="addProperty"></a>
 
-## <a name="addproperty"></a>addProperty
+### <a name="addproperty"></a>addProperty
 
 Добавляет свойство и его значения или пару "имя — значение" в объект JSON и возвращает обновленный объект. Если объект уже существует во время выполнения, функция выдает ошибку.
 
@@ -382,7 +637,7 @@ addProperty(json('customerProfile'), 'accountNumber', guid())
 
 <a name="addSeconds"></a>
 
-## <a name="addseconds"></a>addseconds
+### <a name="addseconds"></a>addseconds
 
 Добавляет количество секунд к метке времени.
 
@@ -424,7 +679,7 @@ addSeconds('2018-03-15T00:00:30Z', -5)
 
 <a name="addToTime"></a>
 
-## <a name="addtotime"></a>addToTime
+### <a name="addtotime"></a>addToTime
 
 Добавляет количество единиц времени к метке времени. См. раздел [getFutureTime()](#getFutureTime).
 
@@ -467,7 +722,7 @@ addToTime('2018-01-01T00:00:00Z', 1, 'Day', 'D')
 
 <a name="and"></a>
 
-## <a name="and"></a>и
+### <a name="and"></a>и
 
 Проверяет, истинны ли все выражения. Возвращает значение true, если все выражения имеют значения, и false, если хотя бы одно выражение имеет значение false.
 
@@ -519,7 +774,7 @@ and(equals(1, 2), equals(1, 3))
 
 <a name="array"></a>
 
-## <a name="array"></a>array
+### <a name="array"></a>array
 
 Возвращает массив из одного экземпляра указанных входных данных. Для использования нескольких входных данных см. раздел [createArray()](#createArray). 
 
@@ -549,7 +804,7 @@ array('hello')
 
 <a name="base64"></a>
 
-## <a name="base64"></a>base64
+### <a name="base64"></a>base64
 
 Возвращает версию строки с кодировкой base64 для заданной строки.
 
@@ -579,7 +834,7 @@ base64('hello')
 
 <a name="base64ToBinary"></a>
 
-## <a name="base64tobinary"></a>base64ToBinary
+### <a name="base64tobinary"></a>base64ToBinary
 
 Возвращает двоичную версию строки с кодировкой base64.
 
@@ -611,7 +866,7 @@ base64ToBinary('aGVsbG8=')
 
 <a name="base64ToString"></a>
 
-## <a name="base64tostring"></a>base64ToString
+### <a name="base64tostring"></a>base64ToString
 
 Возвращает декодированную версию строки с кодировкой base64. Используйте эту функцию вместо [decodeBase64()](#decodeBase64). Хотя обе функции работают одинаково, `base64ToString()` является предпочтительной.
 
@@ -641,7 +896,7 @@ base64ToString('aGVsbG8=')
 
 <a name="binary"></a>
 
-## <a name="binary"></a>binary; 
+### <a name="binary"></a>binary; 
 
 Возвращает двоичную версию строки.
 
@@ -673,7 +928,7 @@ binary('hello')
 
 <a name="body"></a>
 
-## <a name="body"></a>текст
+### <a name="body"></a>текст
 
 Возвращает результат действия `body` во время выполнения. Сокращение для `actions('<actionName>').outputs.body`. См. разделы [actionBody()](#actionBody) и [actions()](#actions).
 
@@ -718,7 +973,7 @@ body('Get_user')
 
 <a name="bool"></a>
 
-## <a name="bool"></a>bool
+### <a name="bool"></a>bool
 
 Возвращает логическую версию значения.
 
@@ -752,7 +1007,7 @@ bool(0)
 
 <a name="coalesce"></a>
 
-## <a name="coalesce"></a>coalesce
+### <a name="coalesce"></a>coalesce
 
 Возвращает первое ненулевое значение из одного или нескольких параметров. Пустые строки, пустые массивы и пустые объекты не имеют значение null.
 
@@ -788,7 +1043,7 @@ coalesce(null, null, null)
 
 <a name="concat"></a>
 
-## <a name="concat"></a>concat
+### <a name="concat"></a>concat
 
 Объединяет две или более строк и возвращает объединенную строку. 
 
@@ -818,7 +1073,7 @@ concat('Hello', 'World')
 
 <a name="contains"></a>
 
-## <a name="contains"></a>contains
+### <a name="contains"></a>contains
 
 Проверяет наличие определенного элемента в коллекции. Возвращает true, когда элемент найден, и false, когда не найден. Эта функция учитывает регистр.
 
@@ -862,7 +1117,7 @@ contains('hello world', 'universe')
 
 <a name="convertFromUtc"></a>
 
-## <a name="convertfromutc"></a>convertFromUtc
+### <a name="convertfromutc"></a>convertFromUtc
 
 Преобразовывает метку времени формата UTC в целевой часовой пояс.
 
@@ -904,7 +1159,7 @@ convertFromUtc('2018-01-01T08:00:00.0000000Z', 'Pacific Standard Time', 'D')
 
 <a name="convertTimeZone"></a>
 
-## <a name="converttimezone"></a>convertTimeZone
+### <a name="converttimezone"></a>convertTimeZone
 
 Преобразовывает метку времени из исходного часового пояса в целевой.
 
@@ -947,7 +1202,7 @@ convertTimeZone('2018-01-01T80:00:00.0000000Z', 'UTC', 'Pacific Standard Time', 
 
 <a name="convertToUtc"></a>
 
-## <a name="converttoutc"></a>convertToUtc
+### <a name="converttoutc"></a>convertToUtc
 
 Преобразует метку времени с исходным часовым поясом в формат UTC.
 
@@ -989,7 +1244,7 @@ convertToUtc('01/01/2018 00:00:00', 'Pacific Standard Time', 'D')
 
 <a name="createArray"></a>
 
-## <a name="createarray"></a>createArray
+### <a name="createarray"></a>createArray
 
 Возвращает массив из нескольких экземпляров входных данных. Массивы из одного экземпляра входных данных см. в разделе [array()](#array).
 
@@ -1019,7 +1274,7 @@ createArray('h', 'e', 'l', 'l', 'o')
 
 <a name="dataUri"></a>
 
-## <a name="datauri"></a>dataUri
+### <a name="datauri"></a>dataUri
 
 Возвращает URI данных для строки. 
 
@@ -1049,7 +1304,7 @@ dataUri('hello')
 
 <a name="dataUriToBinary"></a>
 
-## <a name="datauritobinary"></a>dataUriToBinary
+### <a name="datauritobinary"></a>dataUriToBinary
 
 Возвращает двоичную версию URI данных. Используйте эту функцию вместо [decodeDataUri()](#decodeDataUri). Хотя обе функции работают одинаково, `decodeDataUri()` является предпочтительной.
 
@@ -1084,7 +1339,7 @@ dataUriToBinary('data:text/plain;charset=utf-8;base64,aGVsbG8=')
 
 <a name="dataUriToString"></a>
 
-## <a name="datauritostring"></a>dataUriToString
+### <a name="datauritostring"></a>dataUriToString
 
 Возвращает строковую версию URI данных.
 
@@ -1114,7 +1369,7 @@ dataUriToString('data:text/plain;charset=utf-8;base64,aGVsbG8=')
 
 <a name="dayOfMonth"></a>
 
-## <a name="dayofmonth"></a>dayOfMonth
+### <a name="dayofmonth"></a>dayOfMonth
 
 Возвращает день месяца из метки времени. 
 
@@ -1144,7 +1399,7 @@ dayOfMonth('2018-03-15T13:27:36Z')
 
 <a name="dayOfWeek"></a>
 
-## <a name="dayofweek"></a>dayOfWeek
+### <a name="dayofweek"></a>dayOfWeek
 
 Возвращает день недели из метки времени.  
 
@@ -1174,7 +1429,7 @@ dayOfWeek('2018-03-15T13:27:36Z')
 
 <a name="dayOfYear"></a>
 
-## <a name="dayofyear"></a>dayOfYear
+### <a name="dayofyear"></a>dayOfYear
 
 Возвращает день года из метки времени. 
 
@@ -1204,7 +1459,7 @@ dayOfYear('2018-03-15T13:27:36Z')
 
 <a name="decodeBase64"></a>
 
-## <a name="decodebase64"></a>decodeBase64
+### <a name="decodebase64"></a>decodeBase64
 
 Возвращает декодированную версию строки с кодировкой base64. Используйте [base64ToString()](#base64ToString) вместо `decodeBase64()`. Хотя обе функции работают одинаково, `base64ToString()` является предпочтительной.
 
@@ -1234,7 +1489,7 @@ decodeBase64('aGVsbG8=')
 
 <a name="decodeDataUri"></a>
 
-## <a name="decodedatauri"></a>decodeDataUri
+### <a name="decodedatauri"></a>decodeDataUri
 
 Возвращает двоичную версию URI данных. Используйте [dataUriToBinary()](#dataUriToBinary) вместо `decodeDataUri()`. Хотя обе функции работают одинаково, `dataUriToBinary()` является предпочтительной.
 
@@ -1269,7 +1524,7 @@ decodeDataUri('data:text/plain;charset=utf-8;base64,aGVsbG8=')
 
 <a name="decodeUriComponent"></a>
 
-## <a name="decodeuricomponent"></a>decodeUriComponent
+### <a name="decodeuricomponent"></a>decodeUriComponent
 
 Возвращает строку, которая заменяет escape-символы декодированными версиями. 
 
@@ -1299,7 +1554,7 @@ decodeUriComponent('http%3A%2F%2Fcontoso.com')
 
 <a name="div"></a>
 
-## <a name="div"></a>div
+### <a name="div"></a>div
 
 Возвращает целочисленный результат деления двух чисел. Чтобы получить остаток, см. раздел [mod()](#mod).
 
@@ -1331,7 +1586,7 @@ div(11, 5)
 
 <a name="encodeUriComponent"></a>
 
-## <a name="encodeuricomponent"></a>encodeUriComponent
+### <a name="encodeuricomponent"></a>encodeUriComponent
 
 Возвращает кодированную версию URI для строки, заменив символы, опасные для URL-адреса, на escape-символы. Используйте [uriComponent()](#uriComponent) вместо `encodeUriComponent()`. Хотя обе функции работают одинаково, `uriComponent()` является предпочтительной.
 
@@ -1361,7 +1616,7 @@ encodeUriComponent('https://contoso.com')
 
 <a name="empty"></a>
 
-## <a name="empty"></a>empty
+### <a name="empty"></a>empty
 
 Проверяет, является ли коллекция пустой. Возвращает значение true, если коллекция пуста, или false, если нет.
 
@@ -1396,7 +1651,7 @@ empty('abc')
 
 <a name="endswith"></a>
 
-## <a name="endswith"></a>endsWith
+### <a name="endswith"></a>endsWith
 
 Проверяет, заканчивается ли строка определенной подстрокой. Возвращает true, если подстрока найдена, или возвращает false, если нет. Эта функция не учитывает регистр.
 
@@ -1437,7 +1692,7 @@ endsWith('hello world', 'universe')
 
 <a name="equals"></a>
 
-## <a name="equals"></a>equals (равно)
+### <a name="equals"></a>equals (равно)
 
 Проверяет, эквивалентны ли оба значения, выражения или объекта. Возвращается значение true, если они эквивалентны, или false, если нет.
 
@@ -1471,7 +1726,7 @@ equals('abc', 'abcd')
 
 <a name="first"></a>
 
-## <a name="first"></a>first
+### <a name="first"></a>first
 
 Возвращает первый элемент из строки или массива.
 
@@ -1506,7 +1761,7 @@ first([0, 1, 2])
 
 <a name="float"></a>
 
-## <a name="float"></a>float;
+### <a name="float"></a>float;
 
 Преобразует строковую версию числа с плавающей запятой в фактическое число с плавающей запятой. Эта функция используется только при передаче пользовательских параметров в приложение, такое как приложение логики.
 
@@ -1536,7 +1791,7 @@ float('10.333')
 
 <a name="formatDateTime"></a>
 
-## <a name="formatdatetime"></a>formatDateTime
+### <a name="formatdatetime"></a>formatDateTime
 
 Возвращает метку времени в указанном формате.
 
@@ -1567,7 +1822,7 @@ formatDateTime('03/15/2018 12:00:00', 'yyyy-MM-ddTHH:mm:ss')
 
 <a name="formDataMultiValues"></a>
 
-## <a name="formdatamultivalues"></a>formDataMultiValues
+### <a name="formdatamultivalues"></a>formDataMultiValues
 
 Возвращает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* действия. 
 
@@ -1598,7 +1853,7 @@ formDataMultiValues('Send_an_email', 'Subject')
 
 <a name="formDataValue"></a>
 
-## <a name="formdatavalue"></a>formDataValue
+### <a name="formdatavalue"></a>formDataValue
 
 Возвращает значение, которое соответствует имени ключа в выходных данных *form-data* или *form-encoded* действия. Если функция обнаруживает более одного совпадения, она выдает ошибку.
 
@@ -1629,7 +1884,7 @@ formDataValue('Send_an_email', 'Subject')
 
 <a name="getFutureTime"></a>
 
-## <a name="getfuturetime"></a>getFutureTime
+### <a name="getfuturetime"></a>getFutureTime
 
 Возвращает текущую метку времени, а также указанные единицы времени.
 
@@ -1671,7 +1926,7 @@ getFutureTime(5, 'Day', 'D')
 
 <a name="getPastTime"></a>
 
-## <a name="getpasttime"></a>getPastTime
+### <a name="getpasttime"></a>getPastTime
 
 Возвращает текущую метку времени, вычитая указанные единицы времени.
 
@@ -1713,7 +1968,7 @@ getPastTime(5, 'Day', 'D')
 
 <a name="greater"></a>
 
-## <a name="greater"></a>greater
+### <a name="greater"></a>greater
 
 Проверяет, является ли первое значение большим, чем второе. Возвращает значение true, если первое значение больше, или значение false, если меньше.
 
@@ -1749,7 +2004,7 @@ greater('apple', 'banana')
 
 <a name="greaterOrEquals"></a>
 
-## <a name="greaterorequals"></a>greaterOrEquals
+### <a name="greaterorequals"></a>greaterOrEquals
 
 Проверяет, является ли первое значение большим, чем второе, или равным ему.
 Возвращает true, если первое значение больше или равно, или значение false, если первое значение меньше.
@@ -1786,7 +2041,7 @@ greaterOrEquals('apple', 'banana')
 
 <a name="guid"></a>
 
-## <a name="guid"></a>GUID
+### <a name="guid"></a>GUID
 
 Создает глобально уникальный идентификатор (GUID) в виде строки, например, "c2ecc88d-88c8-4096-912c-d6f2e2b138ce": 
 
@@ -1822,7 +2077,7 @@ guid('P')
 
 <a name="if"></a>
 
-## <a name="if"></a>if
+### <a name="if"></a>if
 
 Проверьте, какое значение имеет выражение: true или false. Возвращает указанное значение на основе результата.
 
@@ -1852,7 +2107,7 @@ if(equals(1, 1), 'yes', 'no')
 
 <a name="indexof"></a>
 
-## <a name="indexof"></a>indexOf
+### <a name="indexof"></a>indexOf
 
 Возвращает начальную позицию или значение индекса для подстроки. Эта функция не учитывает регистр, и индексы начинаются с числа 0. 
 
@@ -1883,7 +2138,7 @@ indexOf('hello world', 'world')
 
 <a name="int"></a>
 
-## <a name="int"></a>int
+### <a name="int"></a>int
 
 Возвращает целочисленную версию строки.
 
@@ -1913,7 +2168,7 @@ int('10')
 
 <a name="item"></a>
 
-## <a name="item"></a>item
+### <a name="item"></a>item
 
 При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. Вы также можете получить значения свойств этого элемента. 
 
@@ -1936,7 +2191,7 @@ item().body
 
 <a name="items"></a>
 
-## <a name="items"></a>Items
+### <a name="items"></a>Items
 
 Возвращает текущий элемент из каждого цикла в цикле for-each. Используйте эту функцию внутри цикла for-each.
 
@@ -1964,7 +2219,7 @@ items('myForEachLoopName')
 
 <a name="json"></a>
 
-## <a name="json"></a>json
+### <a name="json"></a>json
 
 Возвращает значение типа JSON либо объект для строки или XML.
 
@@ -2033,7 +2288,7 @@ json(xml('<?xml version="1.0"?> <root> <person id='1'> <name>Sophia Owen</name> 
 
 <a name="intersection"></a>
 
-## <a name="intersection"></a>пересечению
+### <a name="intersection"></a>пересечению
 
 Возвращает коллекцию, которая содержит *только* общие элементы в указанных коллекциях. Чтобы появиться в результатах, элемент должен находиться во всех коллекциях, переданных этой функции. Если один или несколько элементов имеют одинаковое имя, в результатах появляется последний элемент с таким именем.
 
@@ -2064,7 +2319,7 @@ intersection([1, 2, 3], [101, 2, 1, 10], [6, 8, 1, 2])
 
 <a name="join"></a>
 
-## <a name="join"></a>join
+### <a name="join"></a>join
 
 Возвращает строку, содержащую все элементы из массива, в которой каждый символ отделен *разделителем*.
 
@@ -2095,7 +2350,7 @@ join([a, b, c], '.')
 
 <a name="last"></a>
 
-## <a name="last"></a>last
+### <a name="last"></a>last
 
 Возвращает последний элемент из коллекции.
 
@@ -2130,7 +2385,7 @@ last([0, 1, 2, 3])
 
 <a name="lastindexof"></a>
 
-## <a name="lastindexof"></a>lastIndexOf
+### <a name="lastindexof"></a>lastIndexOf
 
 Возвращает конечную позицию или значение индекса подстроки. Эта функция не учитывает регистр, и индексы начинаются с числа 0.
 
@@ -2161,7 +2416,7 @@ lastIndexOf('hello world', 'world')
 
 <a name="length"></a>
 
-## <a name="length"></a>длина
+### <a name="length"></a>длина
 
 Возвращает число элементов в коллекции.
 
@@ -2193,7 +2448,7 @@ length([0, 1, 2, 3])
 
 <a name="less"></a>
 
-## <a name="less"></a>less
+### <a name="less"></a>less
 
 Проверяет, является ли первое значение меньшим, чем второе.
 Возвращает true, если первое значение меньше, или значение false, если первое значение больше.
@@ -2230,7 +2485,7 @@ less('banana', 'apple')
 
 <a name="lessOrEquals"></a>
 
-## <a name="lessorequals"></a>lessOrEquals
+### <a name="lessorequals"></a>lessOrEquals
 
 Проверяет, является ли первое значение меньшим, чем второе, или равным ему.
 Возвращает true, если первое значение меньше или равно, или значение false, если первое значение больше.
@@ -2267,7 +2522,7 @@ lessOrEquals('apply', 'apple')
 
 <a name="listCallbackUrl"></a>
 
-## <a name="listcallbackurl"></a>listCallbackUrl
+### <a name="listcallbackurl"></a>listCallbackUrl
 
 Возвращает URL-адрес обратного вызова, который вызывает триггер или действие. Эта функция работает только с триггерами и действиями для типов соединителей **HttpWebhook** и **ApiConnectionWebhook**, но не типов **Manual**, **Recurrence**, **HTTP** и **APIConnection**. 
 
@@ -2288,7 +2543,7 @@ listCallbackUrl()
 
 <a name="max"></a>
 
-## <a name="max"></a>max
+### <a name="max"></a>max
 
 Возвращает наибольшее значение из списка или массива, охватывающих последние и начальные значения. 
 
@@ -2321,7 +2576,7 @@ max([1, 2, 3])
 
 <a name="min"></a>
 
-## <a name="min"></a>Min
+### <a name="min"></a>Min
 
 Возвращает наименьшее значение из набора чисел или массива.
 
@@ -2354,7 +2609,7 @@ min([1, 2, 3])
 
 <a name="mod"></a>
 
-## <a name="mod"></a>mod (модуль)
+### <a name="mod"></a>mod (модуль)
 
 Возвращает остаток результата деления двух чисел. Чтобы получить целочисленный результат, см. раздел [div()](#div).
 
@@ -2385,7 +2640,7 @@ mod(3, 2)
 
 <a name="mul"></a>
 
-## <a name="mul"></a>mul
+### <a name="mul"></a>mul
 
 Возвращает результат умножения двух чисел.
 
@@ -2420,7 +2675,7 @@ mul(1.5, 2)
 
 <a name="multipartBody"></a>
 
-## <a name="multipartbody"></a>multipartBody
+### <a name="multipartbody"></a>multipartBody
 
 Возвращает текст указанной части выходных данных действия, которые состоят из нескольких частей.
 
@@ -2441,7 +2696,7 @@ multipartBody('<actionName>', <index>)
 
 <a name="not"></a>
 
-## <a name="not"></a>not
+### <a name="not"></a>not
 
 Проверяет, имеет ли выражение значение false. Возвращает значение true, если выражение ложно, или значение false, если значение истинно.
 
@@ -2489,7 +2744,7 @@ not(equals(1, 1))
 
 <a name="or"></a>
 
-## <a name="or"></a>или
+### <a name="or"></a>или
 
 Проверяет, является ли хотя бы одно выражение истинным. Возвращает значение true, если хотя бы одно выражение истинно, или значение false, когда все являются ложными.
 
@@ -2537,7 +2792,7 @@ or(equals(1, 2), equals(1, 3))
 
 <a name="parameters"></a>
 
-## <a name="parameters"></a>parameters
+### <a name="parameters"></a>parameters
 
 Возвращает значение параметра, описанного в определении вашего приложения логики. 
 
@@ -2575,7 +2830,7 @@ parameters('fullName')
 
 <a name="rand"></a>
 
-## <a name="rand"></a>rand
+### <a name="rand"></a>rand
 
 Возвращает случайное целое число из указанного диапазона с включительным значением только в начале.
 
@@ -2606,7 +2861,7 @@ rand(1, 5)
 
 <a name="range"></a>
 
-## <a name="range"></a>range
+### <a name="range"></a>range
 
 Возвращает массив целых чисел, который начинается с заданного целого числа.
 
@@ -2637,7 +2892,7 @@ range(1, 4)
 
 <a name="replace"></a>
 
-## <a name="replace"></a>replace
+### <a name="replace"></a>replace
 
 Заменяет подстроку указанной строкой и возвращает полученную строку. Эта функция учитывает регистр.
 
@@ -2669,7 +2924,7 @@ replace('the old string', 'old', 'new')
 
 <a name="removeProperty"></a>
 
-## <a name="removeproperty"></a>removeProperty
+### <a name="removeproperty"></a>removeProperty
 
 Удаляет свойство из объекта и возвращает обновленный объект.
 
@@ -2698,7 +2953,7 @@ removeProperty(json('customerProfile'), 'accountLocation')
 
 <a name="setProperty"></a>
 
-## <a name="setproperty"></a>setProperty
+### <a name="setproperty"></a>setProperty
 
 Задает значение свойства объекта и возвращает обновленный объект. Чтобы добавить новое свойство, можно использовать эту функцию или функцию [addProperty()](#addProperty).
 
@@ -2728,7 +2983,7 @@ setProperty(json('customerProfile'), 'accountNumber', guid())
 
 <a name="skip"></a>
 
-## <a name="skip"></a>skip
+### <a name="skip"></a>skip
 
 Удаляет элементы из начала коллекции и возвращает *все другие элементы*.
 
@@ -2759,7 +3014,7 @@ skip([0, 1, 2, 3], 1)
 
 <a name="split"></a>
 
-## <a name="split"></a>split
+### <a name="split"></a>split
 
 Возвращает массив, который содержит все символы из строки, отделенные *разделителем*.
 
@@ -2790,7 +3045,7 @@ split('abc', ',')
 
 <a name="startOfDay"></a>
 
-## <a name="startofday"></a>startOfDay
+### <a name="startofday"></a>startOfDay
 
 Возвращает начало дня для метки времени. 
 
@@ -2821,7 +3076,7 @@ startOfDay('2018-03-15T13:30:30Z')
 
 <a name="startOfHour"></a>
 
-## <a name="startofhour"></a>startOfHour
+### <a name="startofhour"></a>startOfHour
 
 Возвращает начало часа для метки времени. 
 
@@ -2852,7 +3107,7 @@ startOfHour('2018-03-15T13:30:30Z')
 
 <a name="startOfMonth"></a>
 
-## <a name="startofmonth"></a>startOfMonth
+### <a name="startofmonth"></a>startOfMonth
 
 Возвращает начало месяца для метки времени. 
 
@@ -2883,7 +3138,7 @@ startOfMonth('2018-03-15T13:30:30Z')
 
 <a name="startswith"></a>
 
-## <a name="startswith"></a>startsWith
+### <a name="startswith"></a>startsWith
 
 Проверяет, начинается ли строка с определенной подстроки. Возвращает true, если подстрока найдена, или возвращает false, если нет. Эта функция не учитывает регистр.
 
@@ -2924,7 +3179,7 @@ startsWith('hello world', 'greetings')
 
 <a name="string"></a>
 
-## <a name="string"></a>строка
+### <a name="string"></a>строка
 
 Возвращает строковую версию значения.
 
@@ -2964,7 +3219,7 @@ string( { "name": "Sophie Owen" } )
 
 <a name="sub"></a>
 
-## <a name="sub"></a>sub
+### <a name="sub"></a>sub
 
 Вычитает второе число из первого числа и возвращает результат.
 
@@ -2995,7 +3250,7 @@ sub(10.3, .3)
 
 <a name="substring"></a>
 
-## <a name="substring"></a>substring
+### <a name="substring"></a>substring
 
 Возвращает символы из строки, начиная с указанной позиции или индекса. Значения индекса начинаются с числа 0. 
 
@@ -3027,7 +3282,7 @@ substring('hello world', 6, 5)
 
 <a name="subtractFromTime"></a>
 
-## <a name="subtractfromtime"></a>subtractFromTime
+### <a name="subtractfromtime"></a>subtractFromTime
 
 Вычитает количество единиц времени из метки времени. См. раздел [getPastTime](#getPastTime).
 
@@ -3070,7 +3325,7 @@ subtractFromTime('2018-01-02T00:00:00Z', 1, 'Day', 'D')
 
 <a name="take"></a>
 
-## <a name="take"></a>take
+### <a name="take"></a>take
 
 Возвращает элементы, расположенные в начале коллекции. 
 
@@ -3106,7 +3361,7 @@ take([0, 1, 2, 3, 4], 3)
 
 <a name="ticks"></a>
 
-## <a name="ticks"></a>ticks
+### <a name="ticks"></a>ticks
 
 Возвращает значение свойства `ticks` для указанной метки времени. *Интервал* составляет 100 наносекунд.
 
@@ -3126,7 +3381,7 @@ ticks('<timestamp>')
 
 <a name="toLower"></a>
 
-## <a name="tolower"></a>toLower
+### <a name="tolower"></a>toLower
 
 Возвращает строку символов в нижнем регистре. Если символ в строке не имеет версии в нижнем регистре, он добавляется в возвращаемую строку без изменений.
 
@@ -3156,7 +3411,7 @@ toLower('Hello World')
 
 <a name="toUpper"></a>
 
-## <a name="toupper"></a>toUpper
+### <a name="toupper"></a>toUpper
 
 Возвращает строку символов в верхнем регистре. Если символ в строке не имеет версии в верхнем регистре, он добавляется в возвращаемую строку без изменений.
 
@@ -3186,7 +3441,7 @@ toUpper('Hello World')
 
 <a name="trigger"></a>
 
-## <a name="trigger"></a>trigger
+### <a name="trigger"></a>trigger
 
 Возвращает выходные данные триггера во время выполнения или значение из других пар "имя — значение" JSON, которые вы можете назначить выражению. 
 
@@ -3207,7 +3462,7 @@ trigger()
 
 <a name="triggerBody"></a>
 
-## <a name="triggerbody"></a>triggerBody
+### <a name="triggerbody"></a>triggerBody
 
 Возвращает выходные данные `body` триггера во время выполнения. Сокращение для `trigger().outputs.body`. См. раздел [trigger()](#trigger). 
 
@@ -3222,7 +3477,7 @@ triggerBody()
 
 <a name="triggerFormDataMultiValues"></a>
 
-## <a name="triggerformdatamultivalues"></a>triggerFormDataMultiValues
+### <a name="triggerformdatamultivalues"></a>triggerFormDataMultiValues
 
 Возвращает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* триггера. 
 
@@ -3252,7 +3507,7 @@ triggerFormDataMultiValues('feedUrl')
 
 <a name="triggerFormDataValue"></a>
 
-## <a name="triggerformdatavalue"></a>triggerFormDataValue
+### <a name="triggerformdatavalue"></a>triggerFormDataValue
 
 Возвращает строку с одним значением, которое соответствует имени ключа в выходных данных *form-data* или *form-encoded* триггера. Если функция обнаруживает более одного совпадения, она выдает ошибку.
 
@@ -3300,7 +3555,7 @@ triggerMultipartBody(<index>)
 
 <a name="triggerOutputs"></a>
 
-## <a name="triggeroutputs"></a>triggerOutputs
+### <a name="triggeroutputs"></a>triggerOutputs
 
 Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. Сокращение для `trigger().outputs`. См. раздел [trigger()](#trigger). 
 
@@ -3315,7 +3570,7 @@ triggerOutputs()
 
 <a name="trim"></a>
 
-## <a name="trim"></a>trim
+### <a name="trim"></a>trim
 
 Удаляет все начальные и конечные пробелы и возвращает обновленную строку.
 
@@ -3345,7 +3600,7 @@ trim(' Hello World  ')
 
 <a name="union"></a>
 
-## <a name="union"></a>union
+### <a name="union"></a>union
 
 Возвращает коллекцию, которая содержит *все* элементы из указанных коллекций. Чтобы появиться в результатах, элемент должен содержаться в любой коллекции, переданной этой функции. Если один или несколько элементов имеют одинаковое имя, в результатах появляется последний элемент с таким именем. 
 
@@ -3376,7 +3631,7 @@ union([1, 2, 3], [1, 2, 10, 101])
 
 <a name="uriComponent"></a>
 
-## <a name="uricomponent"></a>uriComponent
+### <a name="uricomponent"></a>uriComponent
 
 Возвращает кодированную версию URI для строки, заменив символы, опасные для URL-адреса, на escape-символы. Используйте эту функцию вместо [encodeUriComponent()](#encodeUriComponent). Хотя обе функции работают одинаково, `uriComponent()` является предпочтительной.
 
@@ -3406,7 +3661,7 @@ uriComponent('https://contoso.com')
 
 <a name="uriComponentToBinary"></a>
 
-## <a name="uricomponenttobinary"></a>uriComponentToBinary
+### <a name="uricomponenttobinary"></a>uriComponentToBinary
 
 Возвращает двоичную версию компонента URI.
 
@@ -3441,7 +3696,7 @@ uriComponentToBinary('http%3A%2F%2Fcontoso.com')
 
 <a name="uriComponentToString"></a>
 
-## <a name="uricomponenttostring"></a>uriComponentToString
+### <a name="uricomponenttostring"></a>uriComponentToString
 
 Возвращает декодированную версию строки с закодированным URI.
 
@@ -3471,7 +3726,7 @@ uriComponentToString('http%3A%2F%2Fcontoso.com')
 
 <a name="uriHost"></a>
 
-## <a name="urihost"></a>uriHost
+### <a name="urihost"></a>uriHost
 
 Возвращает значение `host` для URI.
 
@@ -3501,7 +3756,7 @@ uriHost('https://www.localhost.com:8080')
 
 <a name="uriPath"></a>
 
-## <a name="uripath"></a>uriPath
+### <a name="uripath"></a>uriPath
 
 Возвращает значение `path` для URI. 
 
@@ -3531,7 +3786,7 @@ uriPath('http://www.contoso.com/catalog/shownew.htm?date=today')
 
 <a name="uriPathAndQuery"></a>
 
-## <a name="uripathandquery"></a>uriPathAndQuery
+### <a name="uripathandquery"></a>uriPathAndQuery
 
 Возвращает значения `path` и `query` для URI.
 
@@ -3561,7 +3816,7 @@ uriPathAndQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
 
 <a name="uriPort"></a>
 
-## <a name="uriport"></a>uriPort
+### <a name="uriport"></a>uriPort
 
 Возвращает значение `port` для URI.
 
@@ -3591,7 +3846,7 @@ uriPort('http://www.localhost:8080')
 
 <a name="uriQuery"></a>
 
-## <a name="uriquery"></a>uriQuery
+### <a name="uriquery"></a>uriQuery
 
 Возвращает значение `query` для URI.
 
@@ -3621,7 +3876,7 @@ uriQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
 
 <a name="uriScheme"></a>
 
-## <a name="urischeme"></a>uriScheme
+### <a name="urischeme"></a>uriScheme
 
 Возвращает значение `scheme` для URI.
 
@@ -3651,7 +3906,7 @@ uriScheme('http://www.contoso.com/catalog/shownew.htm?date=today')
 
 <a name="utcNow"></a>
 
-## <a name="utcnow"></a>utcnow
+### <a name="utcnow"></a>utcnow
 
 Возвращает текущую метку времени. 
 
@@ -3694,7 +3949,7 @@ utcNow('D')
 
 <a name="variables"></a>
 
-## <a name="variables"></a>variables
+### <a name="variables"></a>variables
 
 Возвращает значение для указанной переменной. 
 
@@ -3724,7 +3979,7 @@ variables('numItems')
 
 <a name="workflow"></a>
 
-## <a name="workflow"></a>рабочий процесс
+### <a name="workflow"></a>рабочий процесс
 
 Возвращает все сведения о самом рабочем процессе во время выполнения. 
 
@@ -3747,7 +4002,7 @@ workflow().run.name
 
 <a name="xml"></a>
 
-## <a name="xml"></a>xml
+### <a name="xml"></a>xml
 
 Возвращает версию XML строки, которая содержит объект JSON. 
 
@@ -3805,7 +4060,7 @@ xml('<value>')
 
 <a name="xpath"></a>
 
-## <a name="xpath"></a>xpath
+### <a name="xpath"></a>xpath
 
 Проверяет XML на наличие узлов или значений, которые соответствуют выражению XPath, и возвращает соответствующие узлы или значения. Выражение XPath (или просто "XPath") помогает перемещаться по структуре документа XML, чтобы вы могли выбирать узлы или вычислять значения в содержимом XML.
 

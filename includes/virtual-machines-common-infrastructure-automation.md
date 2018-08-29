@@ -19,8 +19,8 @@
 Вы узнаете, как выполнять следующие задачи:
 
 - [Установка и настройка Ansible для управления виртуальными машинами в Azure](../articles/virtual-machines/linux/ansible-install-configure.md)
-- [Создание базовой виртуальной машины в Azure с помощью Ansible](../articles/virtual-machines/linux/ansible-create-vm.md)
-- [Создание готовой среды виртуальных машин Linux в Azure с помощью Ansible](../articles/virtual-machines/linux/ansible-create-complete-vm.md)
+- [Создание виртуальной машины Linux](../articles/virtual-machines/linux/ansible-create-vm.md)
+- [Управление виртуальной машиной Linux](../articles/virtual-machines/linux/ansible-manage-linux-vm.md)
 
 
 ## <a name="chef"></a>Chef
@@ -37,7 +37,7 @@
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/puppet.puppet-enterprise-2016-1?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
+- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/puppet.puppet-enterprise-2017-2?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
 
 
 ## <a name="cloud-init"></a>Cloud-init

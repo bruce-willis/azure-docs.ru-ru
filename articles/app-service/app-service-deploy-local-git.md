@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: dariagrigoriu;cephalin
-ms.openlocfilehash: 0f6a0e2fe3aa632137392efe806aaab265eedf10
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f461a9a7cc900ce5f8fdba7b255417b1790d3f4d
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39435548"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42142716"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
@@ -124,7 +124,7 @@ git push azure master
 
 На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
 
-В зависимости от [ценовой категории](/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, где нужно включить слоты развертывания, затем щелкните **Продолжить**.
+В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, где нужно включить слоты развертывания, затем щелкните **Продолжить**.
 
 На странице **Сводка** проверьте параметры и нажмите **Готово**.
 

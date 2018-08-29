@@ -8,18 +8,20 @@ manager: timlt
 editor: ''
 ms.service: event-grid
 ms.topic: reference
-ms.date: 01/30/2018
+ms.date: 08/17/2018
 ms.author: kgremban
-ms.openlocfilehash: 812ca3ba546112f54a76319fda853d441ce34f1b
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 4bb33eae53d31701b66d13cb4e810b1a0b8a4b0b
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303544"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42143886"
 ---
 # <a name="azure-event-grid-event-schema-for-iot-hub"></a>Схема событий службы "Сетка событий Azure" для Центра Интернета вещей
 
 В этой статье описаны свойства и схема для событий Центра Интернета вещей Azure. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). 
+
+Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#iot-hub).
 
 ## <a name="available-event-types"></a>Доступные типы событий
 

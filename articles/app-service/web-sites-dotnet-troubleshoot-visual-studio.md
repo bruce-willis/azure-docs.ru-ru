@@ -14,16 +14,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.author: cephalin
-ms.openlocfilehash: 522bc9e757abeae930e47eaf53bb6da4bd9d0531
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 1c56f705c07e2001e1ef8f5f9f05c264c33c2c3f
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224115"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42144416"
 ---
 # <a name="troubleshoot-a-web-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
-В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу веб-приложения в [службе приложений](http://go.microsoft.com/fwlink/?LinkId=529714) путем запуска веб-приложения удаленно в [режиме отладки](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) или путем просмотра журналов приложения и журналов веб-сервера.
+В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу веб-приложения в [службе приложений](http://go.microsoft.com/fwlink/?LinkId=529714) путем запуска веб-приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -134,7 +134,8 @@ public ActionResult About()
     return View();
 }
 ```
-4. [Задайте точку останова](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) в строке `ViewBag.Message`.
+
+4. [Задайте точку останова](https://docs.microsoft.com/visualstudio/debugger/) в строке `ViewBag.Message`.
 
 5. В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Опубликовать**.
 
@@ -185,7 +186,7 @@ public ActionResult About()
 
 2. В проекте ContosoAdsWebJob откройте *Functions.cs*.
 
-3. [Установите точку останова](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) в первом операторе метода `GnerateThumbnail`.
+3. [Установите точку останова](https://docs.microsoft.com/visualstudio/debugger/) в первом операторе метода `GnerateThumbnail`.
 
     ![Задание точки останова](./media/web-sites-dotnet-troubleshoot-visual-studio/wjbreakpoint.png)
 
@@ -250,7 +251,7 @@ public ActionResult About()
   <httpRuntime targetFramework="4.5" />
 </system.web>
 ```
-* Если вы обнаружите, что отладчик не осуществляет пошаговое выполнение кода, который требуется отладить, может потребоваться изменить параметр "Только мой код".  Дополнительные сведения см. в разделе [Ограничение выполнения шагов только моим кодом](http://msdn.microsoft.com/library/vstudio/y740d9d3.aspx#BKMK_Restrict_stepping_to_Just_My_Code).
+* Если вы обнаружите, что отладчик не осуществляет пошаговое выполнение кода, который требуется отладить, может потребоваться изменить параметр "Только мой код".  Дополнительные сведения см. в разделе [Укажите, следует ли отладка пользовательского кода, с помощью "только мой код" в Visual Studio](https://docs.microsoft.com/visualstudio/debugger/just-my-code).
 * При активации функции удаленной отладки на сервере запускается таймер, который автоматически отключает эту функцию по истечении 48 часов. Это 48-часовое ограничение установлено в целях повышения безопасности и производительности. Вы можете в любое время снова активировать эту функцию. Если вы не ведете отладку, эту функцию рекомендуется оставить отключенной.
 * Вы можете вручную присоединить отладчик к любому процессу, а не только к процессу веб-приложения (w3wp.exe). Дополнительные сведения о том, как использовать режим отладки в Visual Studio, см. в разделе [Отладка в Visual Studio](http://msdn.microsoft.com/library/vstudio/sc65sadd.aspx).
 

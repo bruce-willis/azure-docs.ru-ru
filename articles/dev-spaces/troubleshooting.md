@@ -11,12 +11,12 @@ ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 61bc081ca3221c0d588b7b7a2d9482d2fc70c0d5
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 001d58aa22d4fc52acebfc88ba07d2467c1be08e
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038623"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42144413"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -78,9 +78,10 @@ azds list-uris
 
 Если URL-адрес находится в режиме*Ожидание*, это значит, что Dev Spaces по-прежнему ожидает завершения регистрации DNS. Иногда для выполнения этого действия требуется несколько минут. Для каждой службы Dev Spaces также открывается туннель localhost, который можно использовать во время ожидания регистрации DNS.
 
-Если URL-адрес остается в режиме*Ожидание* более 5 минут, это может указывать на проблему, связанную с контроллером входящего трафика NGINX, который отвечает за загрузку общедоступной конечной точки. Чтобы удалить pod, на котором работает контроллер NGINX, можно использовать следующую команду: Он будет создан заново автоматически.
+Если URL-адрес остается в состоянии *Ожидание* более 5 минут, это может указывать на проблему с внешним модулем DNS pod, который создает общедоступную конечную точку и/или контроллер nginx-входа, который приобретает общедоступную конечную точку. Чтобы удалить модули pod можно использовать следующие команды. Они автоматически будут созданы заново.
 
 ```cmd
+kubectl delete pod -n kube-system -l app=addon-http-application-routing-external-dns
 kubectl delete pod -n kube-system -l app=addon-http-application-routing-nginx-ingress
 ```
 
@@ -139,6 +140,14 @@ kubectl delete pod -n kube-system -l app=addon-http-application-routing-nginx-in
 1. Закройте и снова откройте VS Code.
 2. Нажмите клавишу F5 еще раз.
 
+## <a name="debugging-error-failed-to-find-debugger-extension-for-typecoreclr"></a>Ошибка отладки "Не удалось найти расширение отладчика для типа: coreclr"
+При запуске отладчика VS Code возникает ошибка: `Failed to find debugger extension for type:coreclr.`
+
+### <a name="reason"></a>Причина
+У вас нет установленного на компьютере для разработки расширения VS Code для C#, которое включает поддержку отладки для.Net Core (CoreCLR).
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+Установите [расширение VS Code для C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
 
 ## <a name="debugging-error-configured-debug-type-coreclr-is-not-supported"></a>Ошибка отладки "Configured debug type 'coreclr' is not supported" (Настроенный тип отладки "coreclr" не поддерживается)
 При запуске отладчика VS Code возникает ошибка: `Configured debug type 'coreclr' is not supported.`

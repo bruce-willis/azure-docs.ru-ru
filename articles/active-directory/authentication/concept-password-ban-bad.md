@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: rogoya
-ms.openlocfilehash: dfeacb266d6aa6a43e49a39bd19c9699ef65ce82
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 1ad499e2703ff8376c063d933c0cc1f03765fc23
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39162020"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42143679"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Исключение неправильных паролей в организации
 
@@ -54,11 +54,10 @@ ms.locfileid: "39162020"
 
 ## <a name="license-requirements"></a>Требования лицензий
 
-Преимущества списка глобально заблокированных паролей применяются ко всем пользователям Azure Active Directory (Azure AD).
-
-Пользовательский список заблокированных паролей требует наличия лицензий Azure AD Basic.
-
-Защита паролем Azure AD для Windows Server Active Directory требует наличия лицензий Azure AD Premium. 
+|   | Защита паролей Azure AD с помощью списка глобально заблокированных паролей | Защита паролей Azure AD с помощью настраиваемого списка заблокированных паролей|
+| --- | --- | --- |
+| Только пользователи облака | Azure AD уровня "Бесплатный" | Azure AD Basic |
+| Пользователи, синхронизированные с локальным сервером Windows Server Active Directory | Azure AD Premium (P1 или P2) | Azure AD Premium (P1 или P2) |
 
 Дополнительные сведения о лицензировании, включая расходы, можно найти на [сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 

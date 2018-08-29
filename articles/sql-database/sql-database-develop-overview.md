@@ -10,12 +10,12 @@ ms.custom: develop apps
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: sstein
-ms.openlocfilehash: 2194293d23e5db277f2ff7aa207c298533f74571
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: 4236372370858e940d7e3a1671c0e8a8278796fb
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308872"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42144676"
 ---
 # <a name="sql-database-application-development-overview"></a>Обзор разработки приложений базы данных SQL
 В этой статье рассматриваются основные вопросы, которые разработчик должен учитывать при программировании подключения к базе данных SQL Azure.
@@ -35,10 +35,10 @@ ms.locfileid: "36308872"
 ## <a name="resource-limitations"></a>Ограничения ресурсов
 База данных SQL Azure управляет ресурсами, доступными для базы данных, с использованием двух разных механизмов: управления ресурсами и принудительного применения ограничений. Дополнительные сведения можно найти в разделе 
 
-- [Ограничения ресурсов для отдельной базы данных при использовании модели на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
-- [Ограничения ресурсов для эластичных пулов при использовании модели на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
-- [Ограничения ресурсов для отдельной базы данных при использовании модели на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)
-- [Ограничения ресурсов для эластичных пулов при использовании модели на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
+- [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU](sql-database-dtu-resource-limits-single-databases.md)
+- [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
+- [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)
+- [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
 
 ## <a name="security"></a>Безопасность
 База данных SQL Azure предоставляет ресурсы для ограничения доступа, защиты данных и мониторинга действий в базе данных SQL.

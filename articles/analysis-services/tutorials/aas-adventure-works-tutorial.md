@@ -8,22 +8,21 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 4b6e642c86c5e618cae2d46aad84a61b3f4866ae
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: a53bcbe90f39999a838c84807ca834a1e6cd1813
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446152"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42143175"
 ---
 # <a name="azure-analysis-services---adventure-works-tutorial"></a>Azure Analysis Services — учебник по Adventure Works
 
-Это руководство описывает, как создать и развернуть табличную модель на уровне совместимости 1400 с помощью Visual Studio и [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).  
-
+В этом руководстве описывается, как создать и развернуть табличную модель на уровне совместимости 1400 с помощью Visual Studio с [проектами служб Analysis Services](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects) или [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).  
 Если вы ранее не работали со службами Analysis Services и табличным моделированием, при помощи этого руководства вы быстро научитесь создавать и развертывать простые табличные модели с использованием Visual Studio. После установки всех необходимых компонентов прохождение руководства займет около 2–3 часов.  
   
 ## <a name="what-you-learn"></a>Что вы узнаете   
   
--   Как создать проект табличной модели на **уровне совместимости 1400** в Visual Studio с помощью SSDT.
+-   Как создать проект табличной модели на **уровне совместимости 1400** в Visual Studio.
   
 -   Как импортировать данные из реляционной базы данных в базу данных рабочего пространства проекта табличной модели.  
   
@@ -37,9 +36,9 @@ ms.locfileid: "37446152"
   
 -   Защита объектов и данных посредством создания ролей с членами в виде пользователей.  
   
--   Как развернуть табличную модель на сервере **Azure Analysis Services** или **SQL Server 2017 Analysis Services** при помощи SSDT.  
+-   Как развернуть табличную модель на сервере **Azure Analysis Services** или **SQL Server 2017 Analysis Services** при помощи Visual Studio.  
   
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 Для работы с этим учебником необходимы указанные ниже компоненты.  
   
 -   Сервер Azure Analysis Services. Подпишитесь для получения бесплатной [пробной версии служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) и [создайте сервер](../analysis-services-create-server.md). 

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/11/2018
 ms.author: mikeray
-ms.openlocfilehash: a4b63c9d184f58fe13c1271f9a425919a42fd897
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 8e107c1721d5623239a694eba39b32e8a2a6089d
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39216750"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42144608"
 ---
 # <a name="configure-sql-server-failover-cluster-instance-on-azure-virtual-machines"></a>Настройка экземпляра отказоустойчивого кластера SQL Server на виртуальных машинах Azure
 
@@ -481,7 +481,13 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 >При необходимости можно [скачать SQL Server Management Studio](http://msdn.microsoft.com/library/mt238290.aspx).
 
 ## <a name="limitations"></a>Ограничения
-На виртуальных машинах Azure координатор распределенных транзакций не поддерживается в экземпляре отказоустойчивого кластера, так как RPC-порт не поддерживается в балансировщике нагрузки.
+
+Виртуальные машины Azure поддерживают координатор распределенных транзакций Microsoft (MSDTC) на Windows Server 2019 с хранилищем на общем томе кластера (CSV) и с [Load Balancer ценовой категории "Базовый"](../../../load-balancer/load-balancer-standard-overview.md).
+
+MSDTC не поддерживается на виртуальных машинах Azure в Windows Server 2016 и более ранних версий, поскольку:
+
+- Кластерный ресурс MSDTC нельзя настроить для использования общего хранилища. Windows Server 2016, если вы создаете ресурс MSDTC, не будет показывать доступное общее хранилище для использования, даже если оно существует. Эта проблема устранена в Windows Server 2019.
+- Load Balancer ценовой категории "Базовый" не обрабатывает порты RPC.
 
 ## <a name="see-also"></a>См. также
 

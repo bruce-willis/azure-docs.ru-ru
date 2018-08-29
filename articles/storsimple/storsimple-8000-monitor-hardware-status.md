@@ -4,7 +4,7 @@ description: Узнайте, как отслеживать аппаратные 
 services: storsimple
 documentationcenter: ''
 author: alkohli
-manager: timlt
+manager: twooley
 editor: ''
 ms.assetid: ''
 ms.service: storsimple
@@ -12,16 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/04/2017
+ms.date: 08/15/2018
 ms.author: alkohli
-ms.openlocfilehash: 90724099842eac513c39dccf113ad1c0a63983f2
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 58007eea9ce25423bc3a9c2847de42db04be43eb
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23110062"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42143713"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-hardware-components-and-status"></a>Использование службы диспетчера устройств StorSimple для мониторинга компонентов оборудования и их состояния
+
 ## <a name="overview"></a>Обзор
 В этой статье описываются различные физические и логические компоненты локального устройства StorSimple серии 8000. В ней также объясняется, как отслеживать состояние компонента устройства с помощью колонки **Состояние и работоспособность оборудования** в службе диспетчера устройств StorSimple.
 
@@ -29,7 +30,7 @@ ms.locfileid: "23110062"
 
 В списке компонентов для устройства 8100 существует три раздела.
 
-* **Общие компоненты** — они не являются частью контроллеров, например диски, корпус, компоненты PCM и датчики температуры PCM, напряжения и тока.
+* **Общие компоненты** не являются частью контроллеров, например дисков, корпуса, компонентов блоков питания и охлаждения (PCM) и датчиков температуры, напряжения и тока PCM.
 * **Компоненты контроллера 0** — компоненты, которые находятся на контроллере 0, например контроллер, расширитель и соединитель SAS, датчики температуры контроллера и различные сетевые интерфейсы.
 * **Компоненты контроллера 1** — компоненты, составляющие контроллер 1, аналогичные указанным для контроллера 0.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/27/2016
 ms.author: hascipio; v-divte
-ms.openlocfilehash: 675316b97e821a81ca4946d57a76d7bce978361b
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 0e1c049596b5231ad72590fc17a73cd5aa457e4d
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714552"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246624"
 ---
 # <a name="guide-to-create-a-solution-template-for-azure-marketplace"></a>Руководство по созданию шаблона решения для Azure Marketplace
 Выполнив шаг 1 [Создание учетной записи разработчика Майкрософт][link-acct-creation], вы перейдете к статье [Технические компоненты, необходимые для создания шаблона решения для Azure Marketplace](marketplace-publishing-solution-template-creation-prerequisites.md) с инструкциями по созданию шаблона решения, совместимого с Azure. Рассмотрим процедуру создания шаблона решения для нескольких виртуальных машин на [портале публикации][link-pubportal] для Azure Marketplace.
@@ -60,7 +60,7 @@ ms.locfileid: "39714552"
 Вас также могут заинтересовать следующие связанные статьи:
 
 * Образы виртуальных машин: [Об образах виртуальных машин в Azure](https://msdn.microsoft.com/library/azure/dn790290.aspx)
-* Расширения виртуальных машин: [общие сведения об агенте, расширениях](https://msdn.microsoft.com/library/azure/dn832621.aspx) и [компонентах виртуальных машин Azure](https://msdn.microsoft.com/library/azure/dn606311.aspx)
+* Расширения виртуальных машин: [Расширения и компоненты виртуальных машин Azure](../virtual-machines/extensions/features-windows.md)
 * Azure Resource Manager: [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) и [простые примеры шаблонов](https://github.com/rjmax/ArmExamples)
 * Регулирование учетной записи хранения: [How to Monitor for Storage Account Throttling](http://blogs.msdn.com/b/mast/archive/2014/08/02/how-to-monitor-for-storage-account-throttling.aspx) (Отслеживание регулирования учетной записи хранения) и [Хранилище класса "Премиум": высокопроизводительная служба хранилища для рабочих нагрузок виртуальных машин Azure](../virtual-machines/windows/premium-storage.md#scalability-and-performance-targets)
 

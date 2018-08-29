@@ -4,18 +4,17 @@ description: Драйвер файловой системы Hadoop ABFS
 services: storage
 keywords: ''
 author: jamesbak
-manager: jahogg
 ms.topic: article
 ms.author: jamesbak
 ms.date: 06/27/2018
 ms.service: storage
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: e92c4efba29f1c40f6d4cb155974ca3a896796e5
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: dedf398064dd0a49e5691e952ea7c9b6d16e34fd
+ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37114339"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42144526"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop
 
@@ -23,9 +22,7 @@ ms.locfileid: "37114339"
 
 ## <a name="prior-capability-the-windows-azure-storage-blob-driver"></a>Предыдущая возможность: драйвер Windows Azure Storage Blob
 
-Драйвер Windows Azure Storage Blob или [WASB](https://hadoop.apache.org/docs/current/hadoop-azure/index.html) предоставлял оригинальную поддержку больших двоичных объектов хранилища Azure. Этот драйвер выполнял сложную задачу сопоставления семантики файловой системы (как это требуется интерфейсом файловой системы Hadoop) с семантикой интерфейса стиля хранилища объектов, предоставляемого хранилищем BLOB-объектов Azure. Этот драйвер продолжает поддерживать эту модель, обеспечивая высокопроизводительный доступ к данным, хранящимся в больших двоичных объектах. Также он содержит значительный объем кода, который выполняет это сопоставление, что и затрудняет его техническое обслуживание. Кроме того, при некоторых применяемых к каталогам операциях, таких как [FileSystem.rename()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_renamePath_src_Path_d) и [FileSystem.delete()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_deletePath_p_boolean_recursive), требуется, чтобы драйвер выполнил большое количество операций (из-за того, что объекты хранилища не поддерживают каталоги), что часто приводит к снижению производительности.
-
-Таким образом, для преодоления присущих структуре WASB недостатков реализована новая служба хранилища Azure Data Lake Storage с поддержкой нового драйвера ABFS.
+Драйвер Windows Azure Storage Blob или [WASB](https://hadoop.apache.org/docs/current/hadoop-azure/index.html) предоставлял оригинальную поддержку больших двоичных объектов хранилища Azure. Этот драйвер выполнял сложную задачу сопоставления семантики файловой системы (как это требуется интерфейсом файловой системы Hadoop) с семантикой интерфейса стиля хранилища объектов, предоставляемого хранилищем BLOB-объектов Azure. Этот драйвер продолжает поддерживать эту модель, обеспечивая высокопроизводительный доступ к данным, хранящимся в больших двоичных объектах. Также он содержит значительный объем кода, который выполняет это сопоставление, что и затрудняет его техническое обслуживание. Кроме того, при некоторых применяемых к каталогам операциях, таких как [FileSystem.rename()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_renamePath_src_Path_d) и [FileSystem.delete()](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/filesystem/filesystem.html#boolean_deletePath_p_boolean_recursive), требуется, чтобы драйвер выполнил большое количество операций (из-за того, что объекты хранилища не поддерживают каталоги), что часто приводит к снижению производительности. Для преодоления присущих WASB недостатков разработана новая служба Azure Data Lake Storage.
 
 ## <a name="the-azure-blob-file-system-driver"></a>Драйвер файловой системы больших двоичных объектов Azure
 
@@ -48,7 +45,11 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 ### <a name="authentication"></a>Authentication
 
-В настоящее время драйвер ABFS поддерживает аутентификацию с использованием общего ключа, поэтому приложение Hadoop может безопасно обращаться к ресурсам, содержащимся в хранилище Data Lake Gen2. Ключ шифруется и сохраняется в конфигурации Hadoop.
+Драйвер ABFS поддерживает две формы проверки подлинности, поэтому приложение Hadoop может безопасно обращаться к ресурсам, содержащимся в учетной записи, совместимой с Data Lake Storage 2-го поколения. Дополнительные сведения о схемах проверки подлинности приведены в [Руководстве по безопасности службы хранилища Azure](../common/storage-security-guide.md). К ним относятся:
+
+- **Общий ключ** позволяет пользователям получать доступ ко всем ресурсам в учетной записи. Ключ шифруется и сохраняется в конфигурации Hadoop.
+
+- **Токен носителя OAuth Azure Active Directory**. Токен носителя Azure AD приобретается и обновляется с помощью драйвера, используя либо идентификатор пользователя, либо настроенный субъект-службу. С помощью этой модели проверки подлинности доступ разрешен для каждого вызова, использующего идентификатор, который связан с предоставленным токеном и оценивается с помощью назначенного списка управления доступом POSIX (ACL).
 
 ### <a name="configuration"></a>Параметр Configuration
 

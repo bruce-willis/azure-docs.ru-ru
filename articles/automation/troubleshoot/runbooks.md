@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 53b35fbdc469639b1fdc09293e05247bcc5d8c31
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 78f9ba817008a28e63ec167c4e2ccc7f3859be16
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714491"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42146727"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -137,7 +137,43 @@ Exception: A task was canceled.
 
 Эту ошибку можно устранить, обновив модули Azure до последней версии.
 
-В учетной записи службы автоматизации щелкните **Модули** и **Обновить модули Azure**. Обновление занимает примерно 15 минут. После его завершения перезапустите проблемный модуль.
+В учетной записи службы автоматизации щелкните **Модули** и **Обновить модули Azure**. Обновление занимает примерно 15 минут. После его завершения перезапустите проблемный модуль. Дополнительные сведения об обновлении модулей см. в разделе [Обновление модулей Azure в службе автоматизации Azure](../automation-update-azure-modules.md).
+
+### <a name="child-runbook-auth-failure"></a>Сценарий: сбой дочернего модуля при работе с несколькими подписками
+
+#### <a name="issue"></a>Проблема
+
+При выполнении `Start-AzureRmRunbook` дочерний модуль runbooks не может управлять ресурсами Azure.
+
+#### <a name="cause"></a>Причина:
+
+При запуске дочернего модуля runbook используется неправильный контекст.
+
+#### <a name="resolution"></a>Способы устранения:
+
+При работе с несколькими подписками контекст подписки может быть потерян при вызове дочерних модулей runbook. Чтобы убедиться, что контекст подписки передан дочерним модулям runbook, добавьте параметр `DefaultProfile` в командлет и передайте ему контекст.
+
+```azurepowershell-interactive
+# Connect to Azure with RunAs account
+$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
+
+Add-AzureRmAccount `
+    -ServicePrincipal `
+    -TenantId $ServicePrincipalConnection.TenantId `
+    -ApplicationId $ServicePrincipalConnection.ApplicationId `
+    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint
+
+$AzureContext = Select-AzureRmSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID
+
+$params = @{"VMName"="MyVM";"RepeatCount"=2;"Restart"=$true}
+
+Start-AzureRmAutomationRunbook `
+    –AutomationAccountName 'MyAutomationAccount' `
+    –Name 'Test-ChildRunbook' `
+    -ResourceGroupName 'LabRG' `
+    -DefaultProfile $AzureContext `
+    –Parameters $params –wait
+```
 
 ### <a name="not-recognized-as-cmdlet"></a>Сценарий: сбой модуля Runbook из-за отсутствующего командлета
 
@@ -189,6 +225,8 @@ The job was tried three times but it failed
 * Чтобы работа выполнялась в заданных пределах объема памяти, рекомендуется разделить рабочую нагрузку между несколькими модулями Runbook, не обрабатывать слишком большой объем данных в памяти, не записывать ненужные выходные данные из модулей Runbook или учитывать, сколько контрольных точек записывается в модули Runbook рабочих процессов PowerShell.  
 
 * Обновите модули Azure с помощью действий, описанных в статье [How to update Azure PowerShell modules in Azure Automation](../automation-update-azure-modules.md) (Как обновить модули Azure PowerShell в службе автоматизации Azure).  
+
+* Другим решением является запуск модуля Runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). Гибридные рабочие роли не ограничены [справедливым распределением ресурсов](../automation-runbook-execution.md#fair-share), как в песочницах Azure.
 
 ### <a name="fails-deserialized-object"></a>Сценарий: сбой модуля Runbook из-за десериализованного объекта
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
 ms.author: lmolkova
-ms.openlocfilehash: 847056acd2d97391782dcac1874a2739b7f5825c
-ms.sourcegitcommit: 6fb44d6fbce161b26328f863479ef09c5303090f
+ms.openlocfilehash: 5489fa999f3427345c3ee9f07f904296de224e31
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
-ms.locfileid: "27741221"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42142830"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
 
@@ -45,8 +45,8 @@ ms.locfileid: "27741221"
 [Microsoft Application Insights](https://azure.microsoft.com/services/application-insights/) предоставляет широкие возможности мониторинга производительности, включая автоматическое создание запросов и отслеживание зависимостей.
 
 В зависимости от типа проекта установите пакет SDK для Application Insights:
-- [ASP.NET](../application-insights/app-insights-asp-net.md) 2.5-beta2 или более поздней версии.
-- [ASP.NET Core](../application-insights/app-insights-asp-net-core.md) 2.2.0-beta2 или более поздней версии.
+- [ASP.NET](../application-insights/app-insights-asp-net.md): установите версию 2.5-beta2 или более позднюю.
+- [ASP.NET Core](../application-insights/app-insights-asp-net-core.md): установите версию 2.2.0-beta2 или более позднюю.
 Эти ссылки содержат подробные сведения об установке пакета SDK, создании ресурсов и настройке пакета SDK (при необходимости). Сведения для приложений без ASP.NET см. в статье [Application Insights for .NET console applications](../application-insights/application-insights-console.md) (Application Insights для консольных приложений .NET).
 
 При использовании [шаблона обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler) для обработки отправленных сообщений все вызовы служебной шины, сделанные вашей службой, автоматически отслеживаются и связываются с другими элементами телеметрии. В противном случае ознакомьтесь с указанным ниже примером для отслеживания обработки сообщений вручную.

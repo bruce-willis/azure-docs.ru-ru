@@ -11,22 +11,24 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/04/2017
+ms.date: 08/14/2018
 ms.author: mbullwin
-ms.openlocfilehash: d891cd92e70d3491ee0c7a58f1409823301b299c
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: cfcdf13f8aa4dfab9b361ccbb82ea4b2c3e2ca0d
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989763"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142491"
 ---
 # <a name="import-data-into-analytics"></a>Импорт данных в инструмент аналитики
 
 Импортируйте табличные данные в инструмент [аналитики](app-insights-analytics.md), чтобы объединить их с данными телеметрии [Application Insights](app-insights-overview.md) из приложения или проанализировать в отдельном потоке. Аналитика — это эффективный язык запросов, который удобно использовать для анализа больших потоков данных телеметрии с метками времени.
-
 Вы можете импортировать данные в инструмент аналитики, используя собственную схему. В этой схеме не обязательно использовать стандартные схемы Application Insights, например запрос или трассировку.
 
 Можно импортировать файлы в формате JSON или DSV (значения с разделителями — запятыми, точками с запятой или знаками табуляции).
+
+> [!IMPORTANT]
+> Эта статья признана **устаревшей**. Рекомендуемый метод загрузки данных в Log Analytics — через [API сборщика данных Log Analytics.](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api)
 
 Импорт в инструмент аналитики может понадобиться в трех ситуациях.
 

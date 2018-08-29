@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry, michmcla
-ms.openlocfilehash: 4a0fb5739812950f3a01a18acae1d797fa4f9158
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 7776ca63dd5c02e470ead35e3dad73c051731fd1
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622258"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42142729"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 
@@ -136,6 +136,8 @@ ms.locfileid: "39622258"
 >
 > Если требуются два метода, то пользователи смогут сбросить пароль **ИЛИ** с помощью уведомления, **ИЛИ** с помощью кода проверки в дополнение к любым другим включенным методам.
 >
+
+Если включить использование обоих уведомлений посредством мобильного приложения и кода проверки из мобильного приложения, то пользователи, которые регистрируются с помощью системы уведомлений приложения Microsoft Authenticator, смогут использовать уведомление и код для подтверждения своей личности.
 
 ### <a name="verification-code-from-mobile-app"></a>Код проверки от мобильного приложения
 

@@ -13,18 +13,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/9/2017
+ms.date: 06/15/2018
 ms.author: adpick
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6f7d8b89806e1f6d59e1a64e589558cd972f4fdc
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: bd99cf7b57cd004eb5ab2b62fd4c56e129583c8c
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33203975"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617658"
 ---
 # <a name="understand-your-azure-billing-for-external-service-charges"></a>Основные сведения о выставлении счетов за использование внешних служб в Azure
-Внешние службы публикуются сторонними поставщиками программного обеспечения в Azure Marketplace. Например, ClearDB и SendGrid — это внешние службы, которые можно приобрести в Azure, но которые не опубликованы корпорацией Майкрософт.
+Внешние службы публикуются сторонними поставщиками программного обеспечения в Azure Marketplace. Например, SendGrid — это внешние службы, которые можно приобрести в Azure, но которые не опубликованы корпорацией Майкрософт.
 
 При подготовке новой внешней службы или ресурса отображается предупреждение.
 

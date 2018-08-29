@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/17/2017
 ms.author: suhuruli
-ms.openlocfilehash: 87721428e1cd8a5360dcecc5f29225f813705a4f
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 2ea120ed1c43db5cf843bdd64c32a6c8d9c02bb1
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37344762"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42144612"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Настройка среды разработки для Mac OS X
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "37344762"
 
 Вы можете собирать приложения Azure Service Fabric на базе Mac OS X, которые работают в кластерах Linux. Из этого документа вы узнаете, как настроить систему Mac для разработки приложений.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Платформа Azure Service Fabric изначально не предназначена для работы в Mac OS X. Чтобы запустить локальный кластер Service Fabric, предоставляется предварительно настроенный образ контейнера Docker. Перед началом работы вам потребуются:
 
 * Не менее 4 ГБ ОЗУ.
@@ -118,7 +118,7 @@ ms.locfileid: "37344762"
 
 
 
-6. Когда все будет готово, вы сможете остановить работу контейнера и очистить его с помощью следующей команды:
+6. Когда все будет готово, остановите работу контейнера и очистите его с помощью следующей команды:
 
     ```bash 
     docker rm -f sftestcluster

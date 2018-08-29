@@ -3,21 +3,22 @@ title: Схема событий службы "Сетка событий Azure" 
 description: Описание свойств событий хранилища больших двоичных объектов в службе "Сетка событий Azure"
 services: event-grid
 author: tfitzmac
-manager: timlt
 ms.service: event-grid
 ms.topic: reference
-ms.date: 01/30/2018
+ms.date: 08/17/2018
 ms.author: tomfitz
-ms.openlocfilehash: a4d3f5d50df49851437cfd3bcec16ad217220eca
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 11524f8868a0102e30b06f3385a26b1bd06aae6e
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34301395"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42145926"
 ---
 # <a name="azure-event-grid-event-schema-for-blob-storage"></a>Схема событий службы "Сетка событий Azure" для хранилища BLOB-объектов
 
 В этой статье описаны свойства и схема событий хранилища BLOB-объектов. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+
+Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#storage).
 
 ## <a name="available-event-types"></a>Доступные типы событий
 

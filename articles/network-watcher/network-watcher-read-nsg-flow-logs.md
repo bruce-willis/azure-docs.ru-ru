@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/25/2017
 ms.author: jdial
-ms.openlocfilehash: 492a0a63198fe2013cfeac0459fc6da8521a5e6e
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: b43c082b5c4925fee2b1145956a2847e7f30bb11
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056806"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42146054"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов последовательностей NSG
 
@@ -28,7 +28,7 @@ ms.locfileid: "39056806"
 
 ## <a name="scenario"></a>Сценарий
 
-В следующем сценарии используется пример журнала последовательностей, хранящийся в учетной записи хранения. Мы шаг за шагом покажем, как выборочно просматривать последние события в журналах последовательностей NSG. В этой статье мы будем использовать PowerShell, однако описанные здесь концепции не ограничиваются одним языком программирования и применимы для всех языков, которые поддерживаются интерфейсами API службы хранилища Azure.
+В следующем сценарии используется пример журнала последовательностей, хранящийся в учетной записи хранения. Вы узнаете, как выборочно просматривать последние события в журналах последовательностей NSG. В этой статье вы будете использовать PowerShell, однако описанные здесь концепции не ограничиваются одним языком программирования и применимы для всех языков, которые поддерживаются интерфейсами API службы хранилища Azure.
 
 ## <a name="setup"></a>Настройка
 
@@ -98,7 +98,7 @@ ZjAyZTliYWE3OTI1YWZmYjFmMWI0MjJhNzMxZTI4MDM=      2      True
 
 ## <a name="read-the-block-blob"></a>Чтение блочного BLOB-объекта
 
-Чтобы получить данные, нам необходимо прочитать переменную `$blocklist`. В этом примере мы выполняем итерацию по списку блоков, считываем байты из каждого блока и сохраняем их в массиве. Для извлечения данных мы используем метод [DownloadRangeToByteArray](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblob.downloadrangetobytearray?view=azurestorage-8.1.3#Microsoft_WindowsAzure_Storage_Blob_CloudBlob_DownloadRangeToByteArray_System_Byte___System_Int32_System_Nullable_System_Int64__System_Nullable_System_Int64__Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_).
+Чтобы получить данные, необходимо прочитать переменную `$blocklist`. В этом примере мы выполняем итерацию по списку блоков, считываем байты из каждого блока и сохраняем их в массиве. Для извлечения данных используйте метод [DownloadRangeToByteArray](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblob.downloadrangetobytearray?view=azurestorage-8.1.3#Microsoft_WindowsAzure_Storage_Blob_CloudBlob_DownloadRangeToByteArray_System_Byte___System_Int32_System_Nullable_System_Int64__System_Nullable_System_Int64__Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_).
 
 ```powershell
 # Set the size of the byte array to the largest block
@@ -132,7 +132,7 @@ $valuearray += $value
 }
 ```
 
-Теперь массив `$valuearray` содержит строковое значение каждого блока. Чтобы проверить запись, получите предпоследнее значение из массива, выполнив команду `$valuearray[$valuearray.Length-2]`. Нам не нужно последнее значение, так как оно содержит только закрывающую скобку.
+Теперь массив `$valuearray` содержит строковое значение каждого блока. Чтобы проверить запись, получите предпоследнее значение из массива, выполнив команду `$valuearray[$valuearray.Length-2]`. Последнее значение не потребуется, так как оно содержит закрывающую скобку.
 
 В следующем примере показано полученное значение:
 
@@ -157,7 +157,6 @@ A","1497646742,10.0.0.4,168.62.32.14,44942,443,T,O,A","1497646742,10.0.0.4,52.24
 ```
 
 Этот сценарий является примером того, как прочитать записи в журналах последовательностей NSG, не анализируя весь журнал. Вы можете считывать новые записи в журнале по мере их записывания, используя идентификатор блока или отслеживая длину блоков, сохраненных в блочном BLOB-объекте. Это позволяет считывать только новые записи.
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 

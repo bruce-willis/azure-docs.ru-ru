@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 07/03/2018
+ms.date: 08/20/2018
 ms.author: roiyz
-ms.openlocfilehash: d95a1b510411f913a05762494dd48d6a5b6f84fd
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 307bdb5fa7a5d14a77c71d0ea40634a55d8507b6
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413677"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143605"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -63,7 +63,8 @@ ms.locfileid: "39413677"
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.0",
+    "typeHandlerVersion": "1.1",
+    "autoUpgradeMinorVersion": true,
     "settings": {
     }
   }
@@ -77,7 +78,7 @@ ms.locfileid: "39413677"
 | версия_API | 2015-06-15 | дата |
 | publisher | Microsoft.HpcCompute | строка |
 | Тип | NvidiaGpuDriverLinux | строка |
-| typeHandlerVersion | 1.0 | int |
+| typeHandlerVersion | 1,1 | int |
 
 
 ## <a name="deployment"></a>Развертывание
@@ -103,7 +104,8 @@ ms.locfileid: "39413677"
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.0",
+    "typeHandlerVersion": "1.1",
+    "autoUpgradeMinorVersion": true,
     "settings": {
     }
   }
@@ -120,7 +122,7 @@ Set-AzureRmVMExtension
     -Publisher "Microsoft.HpcCompute" `
     -ExtensionName "NvidiaGpuDriverLinux" `
     -ExtensionType "NvidiaGpuDriverLinux" `
-    -TypeHandlerVersion 1.0 `
+    -TypeHandlerVersion 1.1 `
     -SettingString '{ `
     }'
 ```
@@ -133,7 +135,7 @@ az vm extension set `
   --vm-name myVM `
   --name NvidiaGpuDriverLinux `
   --publisher Microsoft.HpcCompute `
-  --version 1.0 `
+  --version 1.1 `
   --settings '{ `
   }'
 ```
@@ -166,6 +168,8 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 | 1 | Неправильное использование расширения. | Обратитесь в службу поддержки, предоставив журнал выходных данных выполнения. |
 | 10 | Integration Services в Linux для Hyper-V и Azure недоступны или не установлены. | Проверьте выходные данные lspci. |
 | 11 | Для этого размера виртуальной машины не обнаружен GPU NVIDIA. | Используйте [поддерживаемые размер виртуальной машины и ОС](../linux/n-series-driver-setup.md). |
+| 12 | Предложение образа не поддерживается |
+| 13 | Размер виртуальной машины не поддерживается | Для развертывания используйте виртуальную машину серии N |
 | 14 | Не удалось выполнить операцию. | |
 | 21 | Сбой обновления в Ubuntu. | Проверьте выходные данные команды "sudo apt-get update". |
 

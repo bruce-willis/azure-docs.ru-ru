@@ -1,26 +1,23 @@
 ---
 title: Azure Active Directory Application Proxy и Tableau | Документация Майкрософт
-description: Сведения об использовании Azure Active Directory Application Proxy (Azure AD) для предоставления удаленного доступа к развертыванию Tableau.  .
+description: Сведения об использовании Azure Active Directory Application Proxy (Azure AD) для предоставления удаленного доступа к развертыванию Tableau.
 services: active-directory
-documentationcenter: ''
 author: barbkess
 manager: mtillman
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/24/2018
+ms.date: 08/20/2018
 ms.author: barbkess
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: 7cace1af527c1c7c80bf0e23f7a88aa9ac9f9d03
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: a68b0465acdb416cd953e22d7f024eb399c94493
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39365028"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246611"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory Application Proxy и Tableau 
 
@@ -35,19 +32,10 @@ ms.locfileid: "39365028"
 - [соединитель прокси приложения](application-proxy-enable.md) установлен. 
 
  
-
 ## <a name="enabling-application-proxy-for-tableau"></a>Включение прокси приложения для Tableau 
 
-Если вы хотите использовать Application Proxy для Tableau, отправьте электронное письмо на адрес [aadapfeedback@microsoft.com](mailto:aadapfeedback@microsoft.com), чтобы включить этот сценарий.
-В вашем электронном письме:
+Прокси приложения поддерживает поток предоставления OAuth 2.0, который необходим для корректной работы Tableau. Это означает, что больше не требуется каких-либо особых действий для включения этого приложения. Чтобы это сделать, настройте приложение в соответствии с инструкциями, приведенными далее.
 
--   В поле темы укажите "Включение прокси приложения для Tableau".
--   В тексте письма укажите свой ИД клиента.    
-
-Вы получите подтверждение, когда будете готовы использовать приложение. Вы можете завершить настройки во время ожидания подтверждения.
-
-
- 
 
 ## <a name="publish-your-applications-in-azure"></a>Публикация приложений в Azure 
 

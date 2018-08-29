@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 08/20/2018
 ms.author: anwestg
 ms.reviewer: brenduns
-ms.openlocfilehash: 7cf41a10f13e2edeb4ab1944c0d38cc7064c02bb
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 88a4bcf018387ac83b485ec9e2efac11f85ba97c
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40161508"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42432295"
 ---
 # <a name="app-service-on-azure-stack-update-3-release-notes"></a>Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
 
@@ -70,6 +70,10 @@ ms.locfileid: "40161508"
   - Добавлено Wincache 2.0.0.8
   - Обновлено Git для Windows для версии 2.17.1.2
   - Обновлено Kudu до 74.10611.3437
+  
+- **Обновления базовой операционной системы всех ролей**.
+  - [Обновление стека обслуживания для Windows Server 2016 для x64-разрядных систем (KB4132216)](https://support.microsoft.com/help/4132216/servicing-stack-update-for-windows-10-1607-may-17-2018)
+  - [Накопительное обновление для Windows Server 2016 для x64-разрядных систем от июля 2018 г. (KB4338822)](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822)
 
 ### <a name="post-update-steps-optional"></a>Инструкция после обновления (необязательно)
 
@@ -80,7 +84,7 @@ ms.locfileid: "40161508"
 >
 >
 
-1. Добавьте [базу данных в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database)
+1. Добавьте [базы данных службы приложений (appservice_hosting и appservice_metering) в группу доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database)
 
 1. Включите автономную базу данных
     ```sql

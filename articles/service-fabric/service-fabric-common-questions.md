@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: d864a663604794a249b08a7c7be471c3abba32af
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 0b731e94675992e59f79b61a2f3a15fa20bdf8a7
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971542"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146582"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -27,7 +27,7 @@ ms.locfileid: "38971542"
 
 ## <a name="cluster-setup-and-management"></a>Настройка кластера и управление им
 
-### <a name="how-do-i-rollback-my-service-fabric-cluster-certificate"></a>Как откатить смену сертификата кластера Service Fabric?
+### <a name="how-do-i-roll-back-my-service-fabric-cluster-certificate"></a>Как откатить сертификат кластера Service Fabric?
 
 Для отката каких-либо обновлений приложения нужно выполнить обнаружение сбоев работоспособности. После этого изменения фиксируются в кворуме кластера Service Fabric. Для зафиксированных изменений можно выполнить только накат. Чтобы восстановить кластер, возможно, инженеру потребуется повысить привилегии в службе поддержки пользователей, если введено критическое изменение сертификата, для которого не выполняется мониторинг.  При [обновлении приложения Service Fabric](https://review.docs.microsoft.com/azure/service-fabric/service-fabric-application-upgrade?branch=master) применяются [параметры обновления приложения](https://review.docs.microsoft.com/azure/service-fabric/service-fabric-application-upgrade-parameters?branch=master) и гарантируется нулевое время простоя.  В рекомендуемом режиме мониторинга приложение автоматически обновляется в доменах обновления, если пройдены проверки работоспособности. Если обновление службы по умолчанию завершается сбоем, выполняется автоматический откат.
  
@@ -119,6 +119,12 @@ ms.locfileid: "38971542"
 | FabricRM.exe |
 | FileStoreService.exe |
  
+### <a name="how-can-my-application-authenticate-to-keyvault-to-get-secrets"></a>Как приложение может выполнить аутентификацию в хранилище ключей и получить секреты?
+Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
+
+О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
+B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/Get-AzureKeyVaultSecret?view=azurermps-6.5.0)
+
 ## <a name="application-design"></a>Проектирование приложений
 
 ### <a name="whats-the-best-way-to-query-data-across-partitions-of-a-reliable-collection"></a>Как лучше запрашивать данные из всех разделов Reliable Collection?

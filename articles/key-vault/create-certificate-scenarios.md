@@ -3,7 +3,7 @@ title: Мониторинг и администрирование процесс
 description: Сценарии, демонстрирующие ряд возможностей для создания, мониторинга и взаимодействия с процессом создания сертификата с помощью Key Vault.
 services: key-vault
 documentationcenter: ''
-author: lleonard-msft
+author: bryanla
 manager: mbaldwin
 tags: azure-resource-manager
 ms.assetid: 0d0995aa-b60d-4811-be12-ba0a45390197
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
-ms.author: alleonar
-ms.openlocfilehash: e1ea77304fa59b67e0e28a4c7e0b13633eeeff6f
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.author: bryanla
+ms.openlocfilehash: 80f350b9b83438ee04540527cce0ea6821d148ca
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011987"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143274"
 ---
 # <a name="monitor-and-manage-certificate-creation"></a>Мониторинг и администрирование процесса создания сертификатов
 Область применения: Azure  
@@ -46,7 +46,7 @@ ms.locfileid: "34011987"
 |------------|-----------------|  
 |ПУБЛИКАЦИЯ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|  
 
-Для следующего примера необходимо, чтобы объект с именем mydigicert уже был доступен в хранилище ключей с поставщиком издателя DigiCert. Дополнительные сведения о работе с издателями см. в статье [Certificate issuers](/rest/api/keyvault/certificate-issuers.md) (Издатели сертификатов).  
+Для следующего примера необходимо, чтобы объект с именем mydigicert уже был доступен в хранилище ключей с поставщиком издателя DigiCert. Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.  
 
 ### <a name="request"></a>Запрос  
 
@@ -84,7 +84,7 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ```  
 
-## <a name="get-pending-request---request-status-is-inprogress"></a>Получение ожидающего запроса (состояние запроса "Выполняется")
+## <a name="get-pending-request---request-status-is-inprogress"></a>Получение ожидающего запроса (состояние запроса "Выполняется").
 
 |Метод|URI запроса|  
 |------------|-----------------|  
@@ -118,7 +118,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ```  
 
-## <a name="get-pending-request---request-status-is-complete"></a>Получение ожидающего запроса (состояние запроса "Готово")
+## <a name="get-pending-request---request-status-is-complete"></a>Получение ожидающего запроса (состояние запроса "Готово").
 
 ### <a name="request"></a>Запрос  
 
@@ -150,7 +150,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ```  
 
-## <a name="get-pending-request---pending-request-status-is-canceled-or-failed"></a>Получение ожидающих запросов (состояние ожидающего запроса "Отменено" или "Сбой")  
+## <a name="get-pending-request---pending-request-status-is-canceled-or-failed"></a>Получение ожидающих запросов (состояние ожидающего запроса "Отменено" или "Сбой").  
 
 ### <a name="request"></a>Запрос  
 
@@ -218,7 +218,7 @@ StatusCode: 404, ReasonPhrase: 'Not Found'
 
 ```  
 
-## <a name="create-or-import-when-pending-request-exists---status-is-inprogress"></a>Создание (или импорт) при имеющемся ожидающем запросе (состояние "Выполняется")
+## <a name="create-or-import-when-pending-request-exists---status-is-inprogress"></a>Создание (или импорт) при имеющемся ожидающем запросе (состояние "Выполняется").
  Ожидающий объект может находиться в одном из четырех возможных состояний: "Выполняется", "Отменено", "Сбой" или "Готово".
 
  Если состояние ожидающего запроса — "Выполняется", операции создания и импорта завершаются ошибкой с кодом состояния HTTP 409 (конфликт).  
@@ -299,7 +299,7 @@ StatusCode: 403, ReasonPhrase: 'Forbidden'
 
 ```  
 
-## <a name="request-a-cancellation-while-the-pending-request-status-is-inprogress"></a>Запрос отмены при состоянии ожидающего запроса "Выполняется"  
+## <a name="request-a-cancellation-while-the-pending-request-status-is-inprogress"></a>Запрос отмены при состоянии ожидающего запроса "Выполняется".  
  Отмену можно только запросить.  При необходимости запрос можно отменить. Если запрос не выполняется, возвращается код состояния HTTP 400 (недопустимый запрос).  
 
 |Метод|URI запроса|  
@@ -338,7 +338,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ```  
 
-## <a name="delete-a-pending-request-object"></a>Удаление ожидающего объекта запроса  
+## <a name="delete-a-pending-request-object"></a>Удаление ожидающего объекта запроса.  
 
 > [!NOTE]
 > Удаление ожидающего объекта может отменить запрос сертификата x509 с помощью поставщика.  
@@ -370,7 +370,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 }  
 ```  
 
-## <a name="create-a-kv-certificate-manually"></a>Создание сертификата Key Vault вручную  
+## <a name="create-a-kv-certificate-manually"></a>Создание сертификата Key Vault вручную.  
  Вы можете вручную создать сертификат, выданный в центре сертификации. В качестве имени издателя укажите Unknown либо оставьте поле издателя пустым.  
 
 |Метод|URI запроса|  
@@ -411,7 +411,7 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ```  
 
-## <a name="merge-when-a-pending-request-is-created---manual-certificate-creation"></a>Слияние при создании ожидающего запроса (создание сертификата вручную)  
+## <a name="merge-when-a-pending-request-is-created---manual-certificate-creation"></a>Слияние при создании ожидающего запроса (создание сертификата вручную).  
 
 |Метод|URI запроса|  
 |------------|-----------------|  

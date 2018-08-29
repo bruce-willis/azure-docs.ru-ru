@@ -14,29 +14,30 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: alleonar
-ms.openlocfilehash: 046b2e31aaefa5916a42b3652f9e6a8fdceff367
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 71143549916fc7440d5f21bcb03f1f795ddc73ac
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064615"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142601"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Проверка данных для выставления счетов по регистрации учетных записей корпоративных пользователей с помощью REST API
 
 Интерфейсы API отчетов Azure позволяют проверять данные о расходах на Azure и управлять ими.
 
-Из этой статьи вы узнаете, как получить текущий счет по регистрации учетных записей корпоративных пользователей.
+В этой статье вы узнаете, как получать данные для выставления счетов, связанные с учетными записями счетов, отделов или соглашениями предприятий (EA), используя API Azure REST. 
 
-Чтобы получить текущий счет, сделайте следующее:
-``` http
-GET https://consumption.azure.com/v2/enrollments/{enrollmentID}/usagedetails
+## <a name="individual-account-billing"></a>Отдельная учетная запись выставления счетов
+
+Чтобы получить сведения об использовании учетных записей пользователей в подразделении, выполните следующую команду.
+
+```http
+GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/usageDetails?api-version=2018-06-30
 Content-Type: application/json   
 Authorization: Bearer
 ```
 
-## <a name="build-the-request"></a>Создание запроса  
-
-Параметр `{enrollmentID}` является обязательным и должен содержать идентификатор регистрации для корпоративной учетной записи.
+Параметр `{billingAccountId}` является обязательным и должен содержать идентификатор регистрации для учетной записи.
 
 Ниже приведены обязательные заголовки. 
 
@@ -50,53 +51,143 @@ Authorization: Bearer
 
 ## <a name="response"></a>Ответ  
 
-Код состояния 200 (ОК) возвращается в случае успешного ответа, который содержит список расходов с подробными сведениями для учетной записи.
+Код состояния 200 (ОК) возвращается в случае успешного ответа, который содержит список затрат с подробными сведениями для учетной записи.
 
-``` json
+```json
 {
-    "id": "${id}",
-    "data": [
-        {
-            "cost": ${cost}, 
-            "departmentId": ${departmentID},
-            "subscriptionGuid" : ${subscriptionGuid} 
-            "date": "${date}",
-            "tags": "${tags}",
-            "resourceGroup": "${resourceGroup}"
-        } // ...
-    ],
-    "nextLink": "${nextLinkURL}"
+  "value": [
+    {
+      "id": "/providers/Microsoft.Billing/BillingAccounts/1234/providers/Microsoft.Billing/billingPeriods/201702/providers/Microsoft.Consumption/usageDetails/usageDetailsId1",
+      "name": "usageDetailsId1",
+      "type": "Microsoft.Consumption/usageDetails",
+      "properties": {
+        ...
+        "usageStart": "2017-02-13T00:00:00Z",
+        "usageEnd": "2017-02-13T23:59:59Z",
+        "instanceName": "shared1",
+        "instanceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Default-Web-eastasia/providers/Microsoft.Web/sites/shared1",
+        "currency": "USD",
+        "usageQuantity": 0.00328,
+        "billableQuantity": 0.00328,
+        "pretaxCost": 0.67,
+        "isEstimated": false,
+        ...
+      }
+    }
+  ]
 }
 ```  
 
-Каждый элемент в параметре **data** обозначает конкретные расходы.
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Billing Account](/rest/api/consumption/usagedetails/listbybillingaccount) (Подробные сведения об использовании, список учетной записи выставления счетов).
 
-|Свойство ответа|ОПИСАНИЕ|
-|----------------|----------|
-|**cost** | Сумма, подлежащая оплате, в валюте, используемой на территории, где расположен конкретный центр обработки данных. |
-|**subscriptionGuid** | Глобальный уникальный идентификатор для подписки. | 
-|**departmentId** | Идентификатор подразделения, если применимо. |
-|**date** | Дата начисления этих расходов. |
-|**теги** | Строка в формате JSON, которая содержит связанные с подпиской теги. |
-|**resourceGroup**|Имя группы ресурсов, которая содержит объект, за который начислена плата. |
-|**nextLink**| Если этот параметр задан, в его значении указывается URL-адрес следующей страницы со сведениями. Если страница последняя, значение не указывается. |  
-||
-  
-Идентификаторы подразделений, группы ресурсов, теги и другие связанные с ними поля определяются администратором корпоративной учетной записи.  
+## <a name="department-billing"></a>Выставление счетов в отделе 
 
-Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа см. в разделе [о получении сведений об использовании](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail). 
+Получение сведений об использовании, объединенных для всех учетных записей в отделе. 
 
-Другие коды состояния означают состояния ошибки. В этих случаях объект ответа содержит описание с объяснением причины сбоя запроса.
+```http
+GET https://management.azure.com/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Consumption/usageDetails?api-version=2018-06-30
+Content-Type: application/json   
+Authorization: Bearer
+```
 
-``` json
-{  
-  "error": [  
-    { "code": "Error type." 
-      "message": "Error response describing why the operation failed."  
-    }  
-  ]  
-}  
+Параметр `{departmentId}` является обязательным и должен содержать идентификатор отдела в учетной записи регистрации.
+
+Ниже приведены обязательные заголовки. 
+
+|Заголовок запроса|ОПИСАНИЕ|  
+|--------------------|-----------------|  
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный элемент. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+
+В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
+
+### <a name="response"></a>Ответ  
+
+Код состояния 200 (ОК) возвращается для успешного ответа, который содержит список подробной информации об использовании и стоимости за данный расчетный период и идентификатор счета для отдела.
+
+
+В следующем примере показано выходные данные API REST для отдела `1234`.
+
+```json
+{
+  "value": [
+    {
+      "id": "/providers/Microsoft.Billing/Departments/1234/providers/Microsoft.Billing/billingPeriods/201702/providers/Microsoft.Consumption/usageDetails/usageDetailsId1",
+      "name": "usageDetailsId1",
+      "type": "Microsoft.Consumption/usageDetails",
+      "properties": {
+        "billingPeriodId": "/providers/Microsoft.Billing/Departments/1234/providers/Microsoft.Billing/billingPeriods/201702",
+        "invoiceId": "/providers/Microsoft.Billing/Departments/1234/providers/Microsoft.Billing/invoices/201703-123456789",
+        "usageStart": "2017-02-13T00:00:00Z",
+        "usageEnd": "2017-02-13T23:59:59Z",
+        "instanceName": "shared1",
+        "instanceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Default-Web-eastasia/providers/Microsoft.Web/sites/shared1",
+        "instanceLocation": "eastasia",
+        "currency": "USD",
+        "usageQuantity": 0.00328,
+        "billableQuantity": 0.00328,
+        "pretaxCost": 0.67,
+        ...
+      }
+    }
+  ]
+}
 ```  
+
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Department](/rest/api/consumption/usagedetails/listbydepartment) (Подробные сведения об использовании, список для отдела).
+
+## <a name="enrollment-account-billing"></a>Выставление счетов учетной записи регистрации
+
+Получение сведений об использовании, объединенных для учетной записи регистрации.
+
+```http
+GET GET https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}/providers/Microsoft.Consumption/usageDetails?api-version=2018-06-30
+Content-Type: application/json   
+Authorization: Bearer
+```
+
+Параметр `{enrollmentAccountId}` является обязательным и должен содержать идентификатор учетной записи регистрации.
+
+Ниже приведены обязательные заголовки. 
+
+|Заголовок запроса|ОПИСАНИЕ|  
+|--------------------|-----------------|  
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный элемент. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+
+В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
+
+### <a name="response"></a>Ответ  
+
+Код состояния 200 (ОК) возвращается для успешного ответа, который содержит список подробной информации об использовании и стоимости за данный расчетный период и идентификатор счета для отдела.
+
+В следующем примере показано выходные данные API REST для отдела `1234`.
+
+```json
+{
+  "value": [
+    {
+      "id": "/providers/Microsoft.Billing/EnrollmentAccounts/1234/providers/Microsoft.Billing/billingPeriods/201702/providers/Microsoft.Consumption/usageDetails/usageDetailsId1",
+      "name": "usageDetailsId1",
+      "type": "Microsoft.Consumption/usageDetails",
+      "properties": {
+        "billingPeriodId": "/providers/Microsoft.Billing/EnrollmentAccounts/1234/providers/Microsoft.Billing/billingPeriods/201702",
+        "invoiceId": "/providers/Microsoft.Billing/EnrollmentAccounts/1234/providers/Microsoft.Billing/invoices/201703-123456789",
+        "usageStart": "2017-02-13T00:00:00Z",
+        "usageEnd": "2017-02-13T23:59:59Z",
+        ....
+        "currency": "USD",
+        "usageQuantity": 0.00328,
+        "billableQuantity": 0.00328,
+        "pretaxCost": 0.67,
+        ...
+      }
+    }
+  ]
+}
+``` 
+
+Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Enrollment Account](/rest/api/consumption/usagedetails/listbyenrollmentaccount) (Подробные сведения об использовании, список для учетной записи регистрации).
 
 ## <a name="next-steps"></a>Дополнительная информация 
 - Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)

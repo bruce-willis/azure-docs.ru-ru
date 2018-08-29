@@ -10,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: article
 ms.date: 05/08/2017
 ms.author: brumbaug
-ms.openlocfilehash: 7d371a5a44f44ca743294f3f73f84e81d390cdea
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 0dd3a2057e73adda3224e7cebe7c492572f94105
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37867782"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41929984"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Создание клиента поиска в виде консольного приложения на C#
 
@@ -26,7 +26,7 @@ ms.locfileid: "37867782"
 - выполнение простого запроса к API Bing для поиска в Интернете;
 - отображение результатов запроса в порядке приоритета.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -46,7 +46,7 @@ ms.locfileid: "37867782"
 Json.NET позволяет работать с ответами JSON, которые возвращает API. Добавьте в проект этот пакет NuGet.
 
 - В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите пункт **Управление пакетами NuGet...**. 
-- На вкладке **Обзор** выполните поиск по фразе `Newtonsoft.Json`. Выберите последнюю версию и щелкните **Установить**. 
+- На вкладке **Обзор** выполните поиск по `Newtonsoft.Json`. Выберите последнюю версию и щелкните **Установить**. 
 - Нажмите кнопку **ОК** в окне **Просмотреть изменения**.
 - Закройте вкладку Visual Studio с именем **NuGet: MyConsoleSearchApp**.
 

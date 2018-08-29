@@ -1,96 +1,304 @@
 ---
-title: Интеграция центра обработки данных Azure Stack. Безопасность
-description: Узнайте, как интегрировать системы безопасности Azure Stack и вашего центра обработки данных.
+title: Перенаправление системного журнала Azure Stack
+description: Сведения об интеграции Azure Stack с решениями для мониторинга с помощью перенаправления системного журнала
 services: azure-stack
-author: jeffgilb
+author: PatAltimore
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 02/28/2018
-ms.author: jeffgilb
-ms.reviewer: wfayed
+ms.date: 08/14/2018
+ms.author: patricka
+ms.reviewer: fiseraci
 keywords: ''
-ms.openlocfilehash: 8ce9045a3e4fd12d61e9b1600ee98880762bc544
-ms.sourcegitcommit: 782d5955e1bec50a17d9366a8e2bf583559dca9e
+ms.openlocfilehash: 8e59f2e7e2fceda7f30e12571cd9e2a552f76231
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2018
-ms.locfileid: "29734433"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41946449"
 ---
-# <a name="azure-stack-datacenter-integration---security"></a>Интеграция центра обработки данных Azure Stack. Безопасность
-При планировании и разработке инфраструктуры Azure Stack огромное внимание уделялось безопасности. Azure Stack является защищенной системой, и для нее не поддерживается установка программных агентов безопасности.
+# <a name="azure-stack-datacenter-integration---syslog-forwarding"></a>Интеграция центра обработки данных Azure Stack. Перенаправление системного журнала
 
-Эта статья поможет вам интегрировать решения по обеспечению безопасности Azure Stack с системами, уже развернутыми в вашем центре обработки данных.
+В этой статье показано, как с помощью системного журнала настроить интеграцию инфраструктуры Azure Stack с внешними решениями безопасности, развернутыми в вашем центре обработки данных. Например, с системой управления информационной безопасностью и событиями безопасности (SIEM). Канал системного журнала передает журналы аудита, оповещений и безопасности от всех компонентов инфраструктуры Azure Stack. Перенаправление системного журнала позволяет наладить интеграцию с решениями для мониторинга безопасности и (или) извлечь все журналы аудита, оповещений и безопасности для длительного хранения. 
 
-## <a name="security-logs"></a>Журналы безопасности
+Начиная с обновления 1805, Azure Stack имеет встроенный клиент системного журнала, который можно настроить на выдачу сообщений системного журнала с полезными данными в формате CEF (общий формат событий). 
 
-Azure Stack каждые две минуты собирает события операционной системы и события системы безопасности для инфраструктурных ролей и узлов единиц масштабирования. Журналы хранятся в контейнерах BLOB-объектов учетной записи хранения.
+> [!IMPORTANT]
+> Перенаправление системного журнала предоставляется в режиме предварительной версии. Эту функцию пока не стоит использовать в рабочих средах. 
 
-Для каждой инфраструктурной роли выделяется одна учетная запись хранения, и еще одна учетная запись хранения является общей для всех стандартных событий операционной системы.
+На следующей схеме показаны основные компоненты, которые участвуют в интеграции системного журнала.
 
-К поставщику ресурсов работоспособности можно обратиться по протоколу REST, чтобы узнать URL-адреса этого контейнера BLOB-объектов. Сторонние решения по обеспечению безопасности могут использовать API-интерфейсы и учетные записи хранения для получения событий и их обработки.
+![Схема перенаправления системного журнала](media/azure-stack-integrate-security/syslog-forwarding.png)
 
-### <a name="use-azure-storage-explorer-to-view-events"></a>Использование обозревателя службы хранилища Azure для просмотра событий
+## <a name="configuring-syslog-forwarding"></a>Настройка перенаправления системного журнала
 
-События, собранные Azure Stack, можно просматривать с помощью инструмента "Обозреватель службы хранилища Microsoft Azure". Обозреватель службы хранилища Azure можно скачать на сайте [http://storageexplorer.com/](http://storageexplorer.com).
+Клиент системного журнала в Azure Stack поддерживает следующие конфигурации:
 
-Ниже приведен пример настройки обозревателя службы хранилища Azure для работы с Azure Stack.
+1. **Передача системного журнала по протоколу TCP со взаимной проверкой подлинности между клиентом и сервером и шифрованием TLS 1.2**. В этой конфигурации сервер и клиент системного журнала идентифицируют друг друга с помощью сертификатов. Сообщения передаются по зашифрованному каналу TLS 1.2.
 
-1. Войдите на портал администратора Azure Stack с учетной записью оператора.
-2. Откройте список **учетных записей хранения** и найдите в нем **frphealthaccount**. Учетная запись **frphealthaccount** является общей и используется для хранения всех событий операционной системы.
+2. **Передача системного журнала по протоколу TCP с проверкой подлинности сервера и шифрованием TLS 1.2**. В этой конфигурации клиент системного журнала идентифицирует сервер с помощью сертификата. Сообщения передаются по зашифрованному каналу TLS 1.2.
 
-   ![учетные записи хранения;](media/azure-stack-integrate-security/storage-accounts.png)
+3. **Передача системного журнала по протоколу TCP без шифрования**. В этой конфигурации ни клиент, ни сервер системного журнала не идентифицируют друг друга. Сообщения отправляются в формате открытого текста по протоколу TCP.
 
-3. Выберите **frphealthaccount** и щелкните **Ключи доступа**.
+4. **Передача системного журнала по протоколу UDP без шифрования**. В этой конфигурации ни клиент, ни сервер системного журнала не идентифицируют друг друга. Сообщения отправляются в формате открытого текста по протоколу UDP.
 
-   ![Ключи доступа](media/azure-stack-integrate-security/access-keys.png)
+> [!IMPORTANT]
+> Корпорация Майкрософт настоятельно рекомендует использовать в рабочей среде только протокол TCP с проверкой подлинности и шифрованием (конфигурация 1 или в крайнем случае 2), чтобы предотвратить атаки "злоумышленник в середине" и неавторизованное прослушивание сообщений.
 
-4. Скопируйте ключ доступа в буфер обмена.
-5. Откройте обозреватель службы хранилища Azure.
-6. В меню **Изменить** выберите элемент **Target Azure Stack** (Целевой объект Azure Stack).
-7. Выберите **Добавление учетной записи**, а затем **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения).
+### <a name="cmdlets-to-configure-syslog-forwarding"></a>Командлеты для настройки перенаправления системного журнала
+Чтобы настроить перенаправление системного журнала, требуется доступ к привилегированной конечной точке. Привилегированная конечная точка теперь включает два командлета PowerShell для настройки перенаправления системного журнала:
 
-   ![Подключение хранилища](media/azure-stack-integrate-security/connect-storage.png)
 
-8. Нажмите кнопку **Далее**.
-9. На странице **Attach External Storage** (Подключение внешнего хранилища) выполните следующие действия.
+```powershell
+### cmdlet to pass the syslog server information to the client and to configure the transport protocol, the encryption and the authentication between the client and the server
 
-   a. Введите имя учетной записи **frphealthaccount**.
+Set-SyslogServer [-ServerName <String>] [-NoEncryption] [-SkipCertificateCheck] [-SkipCNCheck] [-UseUDP] [-Remove]
 
-   Б. Вставьте ключ доступа к учетной записи хранения.
+### cmdlet to configure the certificate for the syslog client to authenticate with the server
 
-   c. В разделе **Домен конечных точек хранилища** выберите **Другие** и укажите конечную точку хранилища в формате **[регион].[имя_домена]**.
+Set-SyslogClient [-pfxBinary <Byte[]>] [-CertPassword <SecureString>] [-RemoveCertificate] 
+```
+#### <a name="cmdlets-parameters"></a>Параметры командлетов
 
-   d. Установите флажок **Использовать HTTP**.
+Параметры для командлета *Set-SyslogServer*.
 
-   ![Подключение внешнего хранилища](media/azure-stack-integrate-security/attach-storage.png)
+| Параметр | ОПИСАНИЕ | type |
+|---------|---------| ---------|
+| *ServerName* | Полное доменное имя или IP-адрес сервера системного журнала | Строка |
+|*NoEncryption*| Принудительная отправка сообщений из клиента системного журнала в формате открытого текста | Флаг | 
+|*SkipCertificateCheck*| Отмена проверки сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг |
+|*SkipCNCheck*| Отмена проверки общего имени сертификата, который предоставляется сервером системного журнала во время первоначального подтверждения TLS | Флаг |
+|*UseUDP*| Использование UDP в качестве транспортного протокола для системного журнала |Флаг |
+|*Remove*| Удаление конфигурации сервера из клиента и прекращение перенаправления системного журнала| Флаг |
 
-10. Нажмите кнопку **Далее**, просмотрите сводку и завершите работу мастера с помощью кнопки **Готово**.
-11. Теперь вы можете просматривать отдельные контейнеры BLOB-объектов и скачивать события.
+Параметры для командлета *Set-SyslogClient*.
+| Параметр | ОПИСАНИЕ | type |
+|---------|---------| ---------|
+| *pfxBinary* | PFX-файл, содержащий сертификат, который используется в качестве идентификатора для аутентификации клиента на сервере системного журнала  | Byte[] |
+| *CertPassword* |  Пароль для импорта закрытого ключа, связанного с PFX-файлом | SecureString |
+|*RemoveCertificate* | Удаление сертификата из клиента | Флаг|
 
-   ![Просмотр больших двоичных объектов](media/azure-stack-integrate-security/browse-blob.png)
+### <a name="configuring-syslog-forwarding-with-tcp-mutual-authentication-and-tls-12-encryption"></a>Настройка перенаправления системного журнала с протоколом TCP, взаимной проверкой подлинности и шифрованием TLS 1.2
 
-### <a name="use-programming-languages-to-access-events"></a>Доступ к событиям программными методами
+В этой конфигурации клиент системного журнала в Azure Stack передает сообщения на сервер системного журнала по протоколу TCP с шифрованием TLS 1.2. Во время первоначального подтверждения клиент проверяет подлинность и доверие предоставленного сервером сертификата, и со своей стороны предоставляет серверу сертификат для идентификации. Такая конфигурация является наиболее безопасной, так как обеспечивает идентификацию как клиента, так и сервера, а все сообщения передаются по зашифрованному каналу. 
 
-Для доступа к учетной записи хранения вы можете использовать разные языки программирования. По ссылке ниже можно выбрать документы с примерами для вашего любимого языка:
+> [!IMPORTANT]
+> Корпорация Майкрософт настоятельно рекомендует использовать для рабочей среды только эту конфигурацию. 
 
-[https://azure.microsoft.com/resources/samples/?term=storage+account](https://azure.microsoft.com/resources/samples/?term=storage+account)
+Чтобы настроить перенаправление системного журнала по протоколу TCP со взаимной проверкой подлинности и шифрованием TLS 1.2, выполните эти два командлета:
+```powershell
+# Configure the server
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
 
-## <a name="device-access-auditing"></a>Аудит доступа к устройствам
+# Provide certificate to the client to authenticate against the server
+Set-SyslogClient -pfxBinary <Byte[] of pfx file> -CertPassword <SecureString, password for accessing the pfx file>
+```
+Для сертификата клиента должен быть указан тот же корневой сертификат, который был указан во время развертывания Azure Stack. Также он должен содержать закрытый ключ.
 
-Все физические устройства в Azure Stack поддерживают использование TACACS или RADIUS. Это также касается доступа к контроллерам управления основной платой (BMC) и сетевыми коммутаторами.
+```powershell
+##Example on how to set your syslog client with the ceritificate for mutual authentication. 
+##Run these cmdlets from your hardware lifecycle host or privileged access workstation.
 
-Решения Azure Stack не содержат RADIUS или TACACS в стандартной комплектации. Но все эти решения проверены на совместимость с существующими на рынке решениями на базе RADIUS или TACACS.
+$ErcsNodeName = "<yourPEP>"
+$password = ConvertTo-SecureString -String "<your cloudAdmin account password" -AsPlainText -Force
+ 
+$cloudAdmin = "<your cloudAdmin account name>"
+$CloudAdminCred = New-Object System.Management.Automation.PSCredential ($cloudAdmin, $password)
+ 
+$certPassword = $password
+$certContent = Get-Content -Path C:\cert\<yourClientCertificate>.pfx -Encoding Byte
+ 
+$params = @{ 
+    ComputerName = $ErcsNodeName 
+    Credential = $CloudAdminCred 
+    ConfigurationName = "PrivilegedEndpoint" 
+}
 
-Протокол MSCHAPv2 прошел проверку только для RADIUS. Это позволяет создать самое защищенное решение на базе RADIUS.
-Обратитесь к поставщику оборудования OEM, чтобы активировать TACACS или RADIUS на устройствах, которые входят в ваше решение Azure Stack.
+$session = New-PSSession @params
+ 
+$params = @{ 
+    Session = $session 
+    ArgumentList = @($certContent, $certPassword) 
+}
+Write-Verbose "Invoking cmdlet to set syslog client certificate..." -Verbose 
+Invoke-Command @params -ScriptBlock { 
+    param($CertContent, $CertPassword) 
+    Set-SyslogClient -PfxBinary $CertContent -CertPassword $CertPassword 
+```
 
-## <a name="syslog"></a>syslog
+### <a name="configuring-syslog-forwarding-with-tcp-server-authentication-and-tls-12-encryption"></a>Настройка перенаправления системного журнала по протоколу TCP с проверкой подлинности сервера и шифрованием TLS 1.2
 
-Все физические устройства в Azure Stack могут отправлять сообщения системного журнала. Решения Azure Stack не содержат сервер системного журнала в стандартной комплектации. Но все эти решения проверены на возможность отправки сообщений в существующие на рынке решения системного журнала.
+В этой конфигурации клиент системного журнала в Azure Stack передает сообщения на сервер системного журнала по протоколу TCP с шифрованием TLS 1.2. При первоначальном подтверждении клиент проверяет подлинность и доверие предоставленного сервером сертификата. Это защищает от отправки сообщений ненадежным получателям.
+Протокол TCP с проверкой подлинности и шифрованием используется как конфигурация по умолчанию, так как корпорация Майкрософт считает такой уровень безопасности минимально допустимым для рабочих сред. 
 
-Для всех развертываний собирается необязательный параметр адреса объекта назначения системного журнала. Также его можно добавить отдельно, после развертывания.
+```powershell
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server>
+```
 
+Если вы хотите только протестировать интеграцию клиента Azure Stack с сервером системного журнала, используя самозаверяющий и (или) ненадежный сертификат, с помощью следующих флагов пропустите проверку сервера, которую клиент выполняет при первоначальном подтверждении.
+
+```powershell
+ #Skip validation of the Common Name value in the server certificate. Use this flag if you provide an IP address for your syslog server
+ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCNCheck
+ 
+ #Skip entirely the server certificate validation
+ Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -SkipCertificateCheck
+```
+> [!IMPORTANT]
+> Корпорация Майкрософт не рекомендует использовать флаг -SkipCertificateCheck для рабочих сред. 
+
+
+### <a name="configuring-syslog-forwarding-with-tcp-and-no-encryption"></a>Настройка перенаправления системного журнала по протоколу TCP без шифрования
+
+В этой конфигурации клиент системного журнала в Azure Stack передает сообщения на сервер системного журнала по протоколу TCP без шифрования. Клиент не будет проверять подлинность сервера и не будет предоставлять серверу сведения для собственной идентификации. 
+
+```powershell
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -NoEncryption
+```
+> [!IMPORTANT]
+> Корпорация Майкрософт настоятельно рекомендует не использовать эту конфигурацию для рабочей среды. 
+
+
+### <a name="configuring-syslog-forwarding-with-udp-and-no-encryption"></a>Настройка перенаправления системного журнала по протоколу UDP без шифрования
+
+В этой конфигурации клиент системного журнала в Azure Stack передает сообщения на сервер системного журнала по протоколу UDP без шифрования. Клиент не будет проверять подлинность сервера и не будет предоставлять серверу сведения для собственной идентификации. 
+
+```powershell
+Set-SyslogServer -ServerName <FQDN or ip address of syslog server> -UseUDP
+```
+Настройка протокола UDP без шифрования будет самой простой, но этот вариант не обеспечивает защиту от атак "злоумышленник в середине" и (или) от неавторизованного прослушивания сообщений. 
+
+> [!IMPORTANT]
+> Корпорация Майкрософт настоятельно рекомендует не использовать эту конфигурацию для рабочей среды. 
+
+
+## <a name="removing-syslog-forwarding-configuration"></a>Удаление конфигурации перенаправления системного журнала
+
+Чтобы полностью удалить конфигурацию сервера системного журнала и прекратить перенаправление системного журнала, выполните следующие действия.
+
+**Удаление из клиента конфигурации сервера системного журнала**
+
+```PowerShell  
+Set-SyslogServer -Remove
+```
+
+**Удаление из клиента сертификата клиента**
+
+```PowerShell  
+Set-SyslogClient -RemoveCertificate
+```
+
+## <a name="verifying-the-syslog-setup"></a>Проверка настройки системного журнала
+
+Прием событий начнется автоматически, когда клиент системного журнала успешно подключиться к серверу системного журнала. Если вы не видите принятых событий, проверьте конфигурацию клиента системного журнала, выполнив следующие командлеты.
+
+**Проверка конфигурации сервера системного журнала в клиенте**
+
+```PowerShell  
+Get-SyslogServer
+```
+
+**Проверка настроек сертификата в клиенте системного журнала**
+
+```PowerShell  
+Get-SyslogClient
+```
+
+## <a name="syslog-message-schema"></a>Схема сообщений системного журнала
+
+Перенаправление системного журнала в инфраструктуре Azure Stack позволяет отправлять сообщения в формате CEF.
+Каждое сообщение системного журнала имеет следующую структуру: 
+
+```Syslog
+<Time> <Host> <CEF payload>
+```
+
+Полезные данные CEF имеют описанную ниже структуру, но сопоставление конкретных полей зависит от типа сообщения (событие Windows, созданное оповещение, закрытое оповещение).
+
+```CEF
+# Common Event Format schema
+CEF: <Version>|<Device Vendor>|<Device Product>|<Device Version>|<Signature ID>|<Name>|<Severity>|<Extensions>
+* Version: 0.0 
+* Device Vendor: Microsoft
+* Device Product: Microsoft Azure Stack
+* Device Version: 1.0
+```
+
+### <a name="cef-mapping-for-windows-events"></a>Сопоставление полей CEF для событий Windows
+```
+* Signature ID: ProviderName:EventID
+* Name: TaskName
+* Severity: Level (for details, see the severity table below)
+* Extension: Custom Extension Name (for details, see the Custom Extension table below)
+```
+
+Таблица уровней серьезности для событий Windows 
+| Уровень серьезности CEF | Уровень события Windows | Числовое значение |
+|--------------------|---------------------| ----------------|
+|0|Не определено|Значение: 0. Обозначает журналы всех уровней.|
+|10|критические ошибки.|Значение: 1. Обозначает журналы критических оповещений.|
+|8|Ошибка| Значение: 2. Обозначает журналы ошибок.|
+|5|Предупреждение|Значение: 3. Обозначает журналы предупреждений.|
+|2|Информация|Значение: 4. Обозначает журналы для информационных сообщений.|
+|0|Подробная информация|Значение: 5. Обозначает журналы всех уровней.|
+
+Таблица пользовательских расширений для событий Windows в Azure Stack:
+| Имя пользовательского расширения | Пример события Windows | 
+|-----------------------|---------|
+|MasChannel | системный;|
+|MasComputer | test.azurestack.contoso.com|
+|MasCorrelationActivityID| C8F40D7C-3764-423B-A4FA-C994442238AF|
+|MasCorrelationRelatedActivityID| C8F40D7C-3764-423B-A4FA-C994442238AF|
+|MasEventData| svchost!!4132,G,0!!!!EseDiskFlushConsistency!!ESENT!!0x800000|
+|MasEventDescription| Параметры групповой политики для пользователя были успешно обработаны. Не обнаружено изменений с момента последней успешной обработки групповой политики.|
+|MasEventID|1501|
+|MasEventRecordID|26637|
+|MasExecutionProcessID | 29380|
+|MasExecutionThreadID |25480|
+|MasKeywords |0x8000000000000000|
+|MasKeywordName |Аудит выполнен успешно|
+|MasLevel |4.|
+|MasOpcode |1|
+|MasOpcodeName |info|
+|MasProviderEventSourceName ||
+|MasProviderGuid |AEA1B4FA-97D1-45F2-A64C-4D69FFFD92C9|
+|MasProviderName |Microsoft-Windows-GroupPolicy|
+|MasSecurityUserId |\<ИД безопасности Windows\> |
+|MasTask |0|
+|MasTaskCategory| Создание процесса|
+|MasUserData|KB4093112!!5112!!Installed!!0x0!!WindowsUpdateAgent Xpath: /Event/UserData/*|
+|MasVersion|0|
+
+### <a name="cef-mapping-for-alerts-created"></a>Сопоставление полей CEF для созданных оповещений
+```
+* Signature ID: Microsoft Azure Stack Alert Creation : FaultTypeId
+* Name: FaultTypeId : AlertId
+* Severity: Alert Severity (for details, see alerts severity table below)
+* Extension: Custom Extension Name (for details, see the Custom Extension table below)
+```
+Таблица уровней серьезности для оповещений
+| Уровень серьезности | Уровень |
+|----------|-------|
+|0|Не определено|
+|10|критические ошибки.|
+|5|Предупреждение|
+
+Таблица пользовательских расширений для оповещений, созданных в Azure Stack
+| Имя пользовательского расширения | Пример | 
+|-----------------------|---------|
+|MasEventDescription|Описание: создана учетная запись пользователя \<TestUser\> для \<TestDomain\>. Это может означать угрозу безопасности. Метод исправления: обратитесь в службу поддержки. Для устранения этой проблемы потребуется помощь службы поддержки клиентов. Не пытайтесь устранять эту проблему самостоятельно. Прежде чем отправить запрос в службу поддержки, запустите процесс сбора файлов журнала по рекомендациям из статьи https://aka.ms/azurestacklogfiles. |
+
+### <a name="cef-mapping-for-alerts-closed"></a>Сопоставление полей CEF для закрытых оповещений
+```
+* Signature ID: Microsoft Azure Stack Alert Creation : FaultTypeId
+* Name: FaultTypeId : AlertId
+* Severity: Information
+```
+
+Ниже приводится пример сообщения системного журнала с полезными данными в формате CEF.
+```
+2018:05:17:-23:59:28 -07:00 TestHost CEF:0.0|Microsoft|Microsoft Azure Stack|1.0|3|TITLE: User Account Created -- DESCRIPTION: A user account \<TestUser\> was created for \<TestDomain\>. It's a potential security risk. -- REMEDIATION: Please contact Support. Customer Assistance is required to resolve this issue. Do not try to resolve this issue without their assistance. Before you open a support request, start the log file collection process using the guidance from https://aka.ms/azurestacklogfiles|10
+```
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Политика обслуживания](azure-stack-servicing-policy.md)

@@ -9,18 +9,18 @@ ms.technology: anomaly-detection
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: ca4754514ba5012f7e9e28981d0869d174561fb3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6eb559f8971583afe9619fb41fe331bd3013bb69
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381308"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41929759"
 ---
 # <a name="use-the-anomaly-finder-api-with-ruby"></a>Использование API средства для поиска аномалий на Ruby
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API поиска аномалий и Ruby для получения результатов обнаружения аномалий в данных временных рядов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
@@ -28,7 +28,9 @@ ms.locfileid: "35381308"
 [!INCLUDE [DataContract](../includes/datacontract.md)]
 
 ### <a name="example-of-time-series-data"></a>Пример данных временных рядов
-Ниже приведен пример точек данных по временным рядам, [!INCLUDE [Request](../includes/request.md)].
+Ниже приведен пример точек данных по временным рядам.
+
+[!INCLUDE [Request](../includes/request.md)]
 
 ### <a name="analyze-data-and-get-anomaly-points-ruby-example"></a>Пример анализа данных и получения точек аномалий с помощью Ruby
 

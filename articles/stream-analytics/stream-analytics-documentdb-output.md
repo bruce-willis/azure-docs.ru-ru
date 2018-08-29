@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/28/2017
-ms.openlocfilehash: ff2071a703b0b5e94cd68122a878b51e9d97669a
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 95cfc7e6d9515274aa7a3c5fde382244f3b33fab
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112757"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143088"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
 Stream Analytics позволяет направлять данные из [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) в формат JSON, позволяя архивировать данные и уменьшать задержки запросов в отношении неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации.
@@ -40,6 +40,8 @@ Stream Analytics использует оптимистичный подход Up
 
 ## <a name="data-partitioning-in-cosmos-db"></a>Секционирование данных в Cosmos DB
 Режим [неограниченный](../cosmos-db/partition-data.md) для Azure Cosmos DB — это рекомендуемый способ секционирования данных, так как Azure Cosmos DB автоматически масштабирует разделы на основе рабочей нагрузки. При записи в неограниченные контейнеры Stream Analytics используются столько же параллельных модулей записи, сколько и на предыдущем шаге запроса или в схеме разбиения входных данных.
+> [!Note]
+> В настоящее время Azure Stream Analytics поддерживает только неограниченные коллекции с ключами разделов на верхнем уровне. Например, `/region` поддерживается. Вложенные ключи разделов (например, `/region/name`) не поддерживаются. 
 
 Фиксированные коллекции Azure Cosmos DB Stream Analytics не позволяет увеличить или уменьшить, когда они уже полные. Верхний предел их пропускной способности: 10 ГБ и 10 000 ЕЗ/с.  Чтобы перенести данные из контейнера фиксированного размера в контейнер неограниченного размера (например, с ключом секции и пропускной способностью не менее 1000 ЕЗ/с), вам нужно использовать [средство миграции данных](../cosmos-db/import-data.md) или [библиотеку канала изменений](../cosmos-db/change-feed.md).
 

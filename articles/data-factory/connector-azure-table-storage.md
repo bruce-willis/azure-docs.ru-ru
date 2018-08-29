@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/14/2018
+ms.date: 08/17/2018
 ms.author: jingwang
-ms.openlocfilehash: 24954cfc128834313bf13a1917e67d5c1812cf66
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 0399836191050996ac3eaf0fbe59496e10e2b426
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37055527"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143317"
 ---
 # <a name="copy-data-to-and-from-azure-table-storage-by-using-azure-data-factory"></a>Копирование данных в службу "Хранилище таблиц Azure" и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -47,9 +47,12 @@ ms.locfileid: "37055527"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AzureStorage**. |Yes |
+| Тип | Для свойства type необходимо задать значение **AzureTableStorage**. |Yes |
 | connectionString | В свойстве connectionString указываются сведения, необходимые для подключения к службе хранилища. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+>[!NOTE]
+>Если вы использовали связанную службу типа AzureStorage, она по-прежнему поддерживается как есть, но в дальнейшем рекомендуется использовать новый тип связанной службы — AzureTableStorage.
 
 **Пример.**
 
@@ -57,7 +60,7 @@ ms.locfileid: "37055527"
 {
     "name": "AzureStorageLinkedService",
     "properties": {
-        "type": "AzureStorage",
+        "type": "AzureTableStorage",
         "typeProperties": {
             "connectionString": {
                 "type": "SecureString",
@@ -72,27 +75,30 @@ ms.locfileid: "37055527"
 }
 ```
 
-### <a name="use-service-shared-access-signature-authentication"></a>Использование проверки подлинности на основе подписанного URL-адреса уровня службы
+### <a name="use-shared-access-signature-authentication"></a>Использование аутентификации SAS
 
 Вы также можете создать связанную службу хранилища с помощью подписанного URL-адреса. В этом случае фабрика данных получает ограниченный или привязанный ко времени доступ ко всем или конкретным ресурсам в хранилище.
 
 Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Вы можете использовать ее, чтобы предоставить ограниченное право на работу с объектами в вашей учетной записи хранения на определенный период и с определенным набором разрешений. Не нужно предоставлять совместный доступ к ключам доступа для учетной записи. Подписанный URL-адрес — это универсальный код ресурса (URI), который в своих параметрах запроса содержит все сведения, необходимые для доступа к ресурсу хранилища с прохождением аутентификации. Для доступа к ресурсам хранилища с помощью подписанного URL-адреса клиенту достаточно передать SAS в соответствующий конструктор или метод. Дополнительные сведения о подписанном URL-адресе см. в статье [Использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
 > [!NOTE]
-> Сейчас Фабрика данных поддерживает подписанные URL-адреса как уровня службы, так и уровня учетной записи. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). 
+> Сейчас Фабрика данных поддерживает как **подписанные URL-адреса уровня службы**, так и **подписанные URL-адреса уровня учетной записи**. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). 
 
 > [!TIP]
 > Чтобы создать подписанный URL-адрес уровня службы для учетной записи хранения, можно выполнить следующие команды PowerShell. Замените заполнители и предоставьте необходимое разрешение.
 > `$context = New-AzureStorageContext -StorageAccountName <accountName> -StorageAccountKey <accountKey>`
 > `New-AzureStorageContainerSASToken -Name <containerName> -Context $context -Permission rwdl -StartTime <startTime> -ExpiryTime <endTime> -FullUri`
 
-При использовании проверки подлинности на основе подписанного URL-адреса уровня службы поддерживаются следующие свойства.
+При использовании аутентификации SAS поддерживаются следующие свойства.
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AzureStorage**. |Yes |
+| Тип | Для свойства type необходимо задать значение **AzureTableStorage**. |Yes |
 | sasUri | Укажите URI подписанного URL-адреса для ресурсов хранилища, например для большого двоичного объекта, контейнера или таблицы. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+>[!NOTE]
+>Если вы использовали связанную службу типа AzureStorage, она по-прежнему поддерживается как есть, но в дальнейшем рекомендуется использовать новый тип связанной службы — AzureTableStorage.
 
 **Пример.**
 
@@ -100,7 +106,7 @@ ms.locfileid: "37055527"
 {
     "name": "AzureStorageLinkedService",
     "properties": {
-        "type": "AzureStorage",
+        "type": "AzureTableStorage",
         "typeProperties": {
             "sasUri": {
                 "type": "SecureString",
@@ -141,7 +147,7 @@ ms.locfileid: "37055527"
     {
         "type": "AzureTable",
         "linkedServiceName": {
-            "referenceName": "<Azure Storage linked service name>",
+            "referenceName": "<Azure Table storage linked service name>",
             "type": "LinkedServiceReference"
         },
         "typeProperties": {

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 07/03/2018
+ms.date: 08/20/2018
 ms.author: roiyz
-ms.openlocfilehash: 463a00823997f1acfb65fdd739a093e556982a61
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: f7c7877768e2dc06e73f8c91016edd521151a11c
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39411956"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143446"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -63,7 +63,8 @@ ms.locfileid: "39411956"
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverWindows",
-    "typeHandlerVersion": "1.0",
+    "typeHandlerVersion": "1.2",
+    "autoUpgradeMinorVersion": true,
     "settings": {
     }
   }
@@ -77,7 +78,7 @@ ms.locfileid: "39411956"
 | версия_API | 2015-06-15 | дата |
 | publisher | Microsoft.HpcCompute | строка |
 | Тип | NvidiaGpuDriverWindows | строка |
-| typeHandlerVersion | 1.0 | int |
+| typeHandlerVersion | 1.2 | int |
 
 
 ## <a name="deployment"></a>Развертывание
@@ -103,7 +104,8 @@ ms.locfileid: "39411956"
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverWindows",
-    "typeHandlerVersion": "1.0",
+    "typeHandlerVersion": "1.2",
+    "autoUpgradeMinorVersion": true,
     "settings": {
     }
   }
@@ -120,7 +122,7 @@ Set-AzureRmVMExtension
     -Publisher "Microsoft.HpcCompute" `
     -ExtensionName "NvidiaGpuDriverWindows" `
     -ExtensionType "NvidiaGpuDriverWindows" `
-    -TypeHandlerVersion 1.0 `
+    -TypeHandlerVersion 1.2 `
     -SettingString '{ `
     }'
 ```
@@ -133,7 +135,7 @@ az vm extension set `
   --vm-name myVM `
   --name NvidiaGpuDriverWindows `
   --publisher Microsoft.HpcCompute `
-  --version 1.0 `
+  --version 1.2 `
   --settings '{ `
   }'
 ```
@@ -164,7 +166,8 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 | :---: | --- | --- |
 | 0 | Операция выполнена успешно |
 | 1 | Операция выполнена успешно. Требуется перезагрузка. |
-| 4, 10 | Время ожидания операции истекло. | Повторите операцию.
+| 100 | Операция не поддерживается или не может быть выполнена. | Возможные причины: версия PowerShell не поддерживается, размер виртуальной машины отличается от размера виртуальной машины серии N, сбой при загрузке данных. Проверьте файлы журнала, чтобы определить причину ошибки. |
+| 240, 840 | Время ожидания операции истекло. | Повторите операцию. |
 | -1 | Возникло исключение. | Проверьте файлы журнала, чтобы определить причину исключения. |
 | -5x | Операция прервана из-за ожидаемой перезагрузки. | Перезагрузите виртуальную машину. Установка будет продолжена после перезагрузки. Удаление должно быть вызвано вручную. |
 

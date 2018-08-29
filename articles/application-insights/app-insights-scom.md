@@ -1,8 +1,8 @@
 ---
-title: "Интеграция SCOM с Application Insights | Документация Майкрософт"
-description: "Если вы используете SCOM, примените Application Insights для мониторинга производительности и диагностики. Подробные панели мониторинга, смарт-оповещения, мощные средства диагностики и аналитические запросы."
+title: Интеграция SCOM с Application Insights | Документация Майкрософт
+description: Если вы используете SCOM, примените Application Insights для мониторинга производительности и диагностики. Подробные панели мониторинга, смарт-оповещения, мощные средства диагностики и аналитические запросы.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: 606e9d03-c0e6-4a77-80e8-61b75efacde0
@@ -10,19 +10,23 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
-ms.date: 08/12/2016
+ms.topic: conceptual
+ms.date: 08/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: 35ea37b751909e14e616a965462b832e4e51bae0
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 8880fbeaad85bc2615292820527c6a9e87000d66
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246671"
 ---
 # <a name="application-performance-monitoring-using-application-insights-for-scom"></a>Мониторинг производительности приложений с помощью Application Insights для SCOM
 Если для управления серверами вы используете System Center Operations Manager (SCOM), мониторинг производительности и диагностику проблем можно выполнять с помощью [Azure Application Insights](app-insights-asp-net.md). Application Insights отслеживает входящие запросы вашего веб-приложения, исходящие вызовы REST и SQL, а также исключения и трассировку журналов. Вы можете использовать панели мониторинга с диаграммами метрик и смарт-оповещениями, а также мощные средства диагностического поиска и аналитических запросов для работы с данными телеметрии. 
 
 Мониторинг Application Insights можно включить с помощью пакета управления SCOM.
+
+> [!IMPORTANT]
+> Этот пакет управления System Center Operations Manager считается **устаревшим**. Он не поддерживает последние пакеты SDK Application Insights и больше не рекомендуется.
 
 ## <a name="before-you-start"></a>Перед началом работы
 Предполагается следующий сценарий:
@@ -73,7 +77,7 @@ ms.lasthandoff: 11/01/2017
      ![На вкладке параметров Application Insights нажмите кнопку "Войти" и укажите учетные данные учетной записи Майкрософт для Azure. Затем выберите подписку, группу ресурсов и ресурс.](./media/app-insights-scom/060.png)
 3. Завершите работу мастера.
    
-    ![Нажмите кнопку "Создать"](./media/app-insights-scom/070.png)
+    ![Щелкните Создать. ](./media/app-insights-scom/070.png)
 
 Повторите эту процедуру для каждого приложения, которое нужно отслеживать.
 

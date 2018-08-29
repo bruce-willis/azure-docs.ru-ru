@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/25/2018
 ms.author: laevenso
-ms.openlocfilehash: 9c26a85a50bf4e7272b229bac8a8b9aa8c1ae364
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 93b9075831db356607438288a7c153dde2f8b210
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238528"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143188"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -33,13 +33,19 @@ ms.locfileid: "39238528"
 Надстройку для маршрутизации приложений HTTP можно активировать с помощью Azure CLI при развертывании кластера AKS. Для этого используйте команду [az aks create][az-aks-create] с аргументом `--enable-addons`.
 
 ```azurecli
-az aks create --resource-group myAKSCluster --name myAKSCluster --enable-addons http_application_routing
+az aks create --resource-group myResourceGroup --name myAKSCluster --enable-addons http_application_routing
 ```
 
-После развертывания кластера с помощью команды [az aks show][az-aks-show] получите имя зоны DNS. Оно потребуется, чтобы развертывать приложения в кластер службы AKS.
+Можно также включить маршрутизацию HTTP для существующего кластера AKS с помощью команды [az aks enable-addons][az-aks-enable-addons]. Чтобы включить маршрутизацию HTTP в существующем кластере, добавьте параметр `--addons` и укажите *http_application_routing*, как показано в следующем примере.
 
 ```azurecli
-$ az aks show --resource-group myAKSCluster --name myAKSCluster --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
+az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addons http_application_routing
+```
+
+После развертывания или обновления кластера получите имя зоны DNS с помощью команды [az aks show][az-aks-show]. Оно потребуется, чтобы развертывать приложения в кластер службы AKS.
+
+```azurecli
+$ az aks show --resource-group myResourceGroup --name myAKSCluster --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
 
 Result
 -----------------------------------------------------
@@ -155,7 +161,7 @@ $ curl party-clippy.471756a6-e744-4aa0-aa01-89c4d162a7a7.canadaeast.aksapp.io
 Решение для маршрутизации HTTP можно удалить с помощью Azure CLI. Для этого выполните следующую команду, заменив свой кластер AKS и имя группы ресурсов.
 
 ```azurecli
-az aks disable-addons --addons http_application_routing --name myAKSCluster --resource-group myAKSCluster --no-wait
+az aks disable-addons --addons http_application_routing --name myAKSCluster --resource-group myResourceGroup --no-wait
 ```
 
 ## <a name="troubleshoot"></a>Устранение неполадок
@@ -232,6 +238,7 @@ ingress "party-clippy" deleted
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create
 [az-aks-show]: /cli/azure/aks?view=azure-cli-latest#az-aks-show
 [ingress-https]: ./ingress.md
+[az-aks-enable-addons]: /cli/azure/aks#az-aks-enable-addons
 
 
 <!-- LINKS - external -->

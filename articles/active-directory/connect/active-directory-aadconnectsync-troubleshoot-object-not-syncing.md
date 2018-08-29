@@ -12,22 +12,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/13/2017
+ms.date: 08/10/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 997269efc017a024f2abbcb6561c951d7957af86
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e9bd3f60800976967e1fc1e5f163a6ae3ea525f2
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34594335"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42146657"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-to-azure-ad"></a>Устранение неполадок синхронизации объекта с Azure AD
 
 Если при синхронизации объекта с Azure AD возникают неполадки, то это может быть вызвано несколькими причинами. Если вы получили от Azure AD сообщение об ошибке по электронной почте или ошибка отображается в службе Azure AD Connect Health, то ознакомьтесь со статьей [Устранение ошибок синхронизации](active-directory-aadconnect-troubleshoot-sync-errors.md). Но если возникла ситуация, при которой объект не находится в Azure AD, то вы найдете все необходимые сведения в этой статье. Здесь описывается, как найти ошибки в локальном компоненте под названием "Синхронизация Azure AD Connect".
 
 >[!IMPORTANT]
->Чтобы устранить неполадки с синхронизацией объектов в развертывании Azure Active Directory (AAD) Connect версии <verison> и выше, используйте [задачу устранения неполадок](active-directory-aadconnect-troubleshoot-objectsync.md) в мастере. 
+>Чтобы устранить неполадки с синхронизацией объектов в развертывании Azure Active Directory (AAD) Connect версии 1.1.749.0 и выше, используйте в мастере [задачу устранения неполадок](active-directory-aadconnect-troubleshoot-objectsync.md). 
 
 Чтобы найти ошибки, необходимо просмотреть несколько различных расположений в следующем порядке:
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/08/2017
 ms.author: glenga
-ms.openlocfilehash: f42948f0f3acf1bacf6c80010489890f4b8d122b
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 28a6082718080314a769b59c81cf51a20ff7e120
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523671"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42146588"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -58,6 +58,7 @@ ms.locfileid: "39523671"
 * [Скрипт C# — привязка к CloudTable](#input---c-script-example---cloudtable)
 * [F#](#input---f-example)
 * [JavaScript](#input---javascript-example)
+* [Java](#input---java-example)
 
 ### <a name="input---c-example---one-entity"></a>Пример входных данных C# — одна сущность
 
@@ -414,6 +415,25 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
+### <a name="input---java-example"></a>Входные данные в примере Java
+
+В следующем примере показана функция, активируемая HTTP, которая возвращает общее количество элементов в указанном разделе в Хранилище таблиц.
+
+```java
+@FunctionName("getallcount")
+public int run(
+   @HttpTrigger(name = "req",
+                 methods = {"get"},
+                 authLevel = AuthorizationLevel.ANONYMOUS) Object dummyShouldNotBeUsed,
+   @TableInput(name = "items",
+                tableName = "mytablename",  partitionKey = "myparkey",
+                connection = "myconnvarname") MyItem[] items
+) {
+    return items.length;
+}
+```
+
+
 ## <a name="input---attributes"></a>Входные атрибуты
  
 В [библиотеках класса C#](functions-dotnet-class-library.md) используйте следующие атрибуты для настройки входной привязки таблицы:
@@ -471,6 +491,10 @@ module.exports = function (context, myQueueItem) {
 * Атрибут `StorageAccount`, примененный к функции.
 * Атрибут `StorageAccount`, примененный к классу.
 * Учетная запись хранения по умолчанию для приложения-функции (параметр приложения AzureWebJobsStorage).
+
+## <a name="input---java-annotations"></a>Входные данные в заметках Java
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@TableInput` для параметров, значения которых будут поступать из Хранилища таблиц.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями nullable, которые необязательно использовать<T>. 
 
 ## <a name="input---configuration"></a>Входная конфигурация
 

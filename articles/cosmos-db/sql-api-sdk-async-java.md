@@ -8,14 +8,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 06/20/2018
+ms.date: 08/16/2018
 ms.author: sngun
-ms.openlocfilehash: 97c7051252ecc8a29cf487f74a68055cd2b3e163
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 9852edfca26e78ad1b373418970dfe9c7ab477d8
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38990282"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42142503"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Async Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -38,7 +38,7 @@ ms.locfileid: "38990282"
 
 <tr><td>**Скачивание пакета SDK**</td><td>[Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb)</td></tr>
 
-<tr><td>**Документация по API**</td><td>[Справочная документация по API Java](https://docs.microsoft.com/java/api/cosmosdb/client/async?view=azure-java-stable)</td></tr>
+<tr><td>**Документация по API**</td><td>[Справочная документация по API Java](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx._async_document_client?view=azure-java-stable)</td></tr>
 
 <tr><td>**Участие в разработке пакета SDK**</td><td>[GitHub](https://github.com/Azure/azure-cosmosdb-java)</td></tr>
 
@@ -52,6 +52,10 @@ ms.locfileid: "38990282"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name201201"></a><a name="2.0.1"/>2.0.1
+* Исправлена ошибка для не английских языковых стандартов ([github #51](https://github.com/Azure/azure-cosmosdb-java/issues/51)).
+* Добавлены вспомогательные методы в раздел "Конфликт ресурсов".
 
 ### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
 * Заменена зависимость org.json от jackson из соображений производительности и лицензирования ([github #29](https://github.com/Azure/azure-cosmosdb-java/issues/29)).
@@ -99,6 +103,7 @@ ms.locfileid: "38990282"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.0.1](#2.0.1) |16 августа 2018 г.|--- |
 | [2.0.0](#2.0.0) |20 июня 2018 г.|--- |
 | [1.0.2](#1.0.2) |18 мая 2018 г.|--- |
 | [1.0.1](#1.0.1) |20 апреля 2018 г.|--- |

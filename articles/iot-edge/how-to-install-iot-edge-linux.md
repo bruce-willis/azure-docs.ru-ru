@@ -7,14 +7,14 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 07/27/2018
+ms.date: 08/14/2018
 ms.author: kgremban
-ms.openlocfilehash: be8fb801acfb625685604a302051d813bfd97939
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 5cd12d4fab97f295cad1e0ea06112fc53e376b12
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325308"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146821"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -128,6 +128,9 @@ sudo nano /etc/iotedge/config.yaml
 ```cmd/sh
 sudo systemctl restart iotedge
 ```
+
+>[!TIP]
+>Для запуска команд `iotedge` требуется более высокий уровень привилегий. После установки среды выполнения IoT Edge, выхода из компьютера и обратного входа ваши разрешения обновляются автоматически. До этого момента используйте перед командой префикс **sudo**. 
 
 ## <a name="verify-successful-installation"></a>Проверка установки
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: c2297f072786bdc1e80255dee278d640b0c0d26d
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 5a134e14768e0576c501232b6aedb1f836bc05b1
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39629520"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42143419"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание и управление центров уведомлений с помощью PowerShell
 ## <a name="overview"></a>Обзор
@@ -89,15 +89,15 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 В этой части сценария выполняется настройка четырех локальных переменных. 
 
-1. `$Namespace` : присвойте имя пространства имен, в котором нужно создать центр уведомлений.
-2. `$Path` : присвойте путь к имени нового центра уведомлений.  Например, MyHub.    
-3. `$WnsPackageSid`: присвойте идентификатор безопасности пакета для своего приложения для Windows из [Центра разработки для Windows](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409).
-4. `$WnsSecretkey`: присвойте значение секретного ключа для своего приложения Windows из [Центра разработки для Windows](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409).
+1. `$Namespace`: присвойте имя пространству имен, в котором нужно создать центр уведомлений.
+2. `$Path`: присвойте путь к имени нового центра уведомлений.  Например, MyHub.    
+3. `$WnsPackageSid`: присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+4. `$WnsSecretkey`: присвойте значение секретного ключа для своего приложения Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
 
 Эти переменные используются для подключения к пространству имен и создания нового центра уведомлений, настроенного для обработки уведомлений от служб уведомлений Windows (WNS) с использованием учетных данных WNS для приложения для Windows. Сведения о получении идентификатора безопасности пакета и секретного ключа см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). 
 
 * Фрагмент сценария использует объект `NamespaceManager` для проверки существования центра уведомлений, идентифицируемого по `$Path`.
-* Если его не существует, сценарий создает `NotificationHubDescription` по учетным данным WNS и передает его в метод `CreateNotificationHub` класса `NamespaceManager`.
+* Если его не существует, то сценарий создает `NotificationHubDescription` по учетным данным WNS и передает его в метод `CreateNotificationHub` класса `NamespaceManager`.
 
 ``` powershell
 

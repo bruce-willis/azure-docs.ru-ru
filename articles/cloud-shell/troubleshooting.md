@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: f954e726aabb34f74d81580e3afc08f2b0b9914b
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 0056364883d5a4a350e5b35374e1fc3abd0c7bea
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39619412"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143863"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -31,6 +31,11 @@ ms.locfileid: "39619412"
 
 - **Сведения.** Cloud Shell использует открытый WebSocket для передачи входящих и исходящих значений в браузер. FireFox включает предварительно заданные политики, которые могут преждевременно закрыть подключение по протоколу WebSocket, что может стать причиной преждевременного истечения времени ожидания в Cloud Shell.
 - **Решение.** Откройте FireFox и перейдите в область about:config в поле URL-адреса. Введите в строку поиска network.websocket.timeout.ping.request и измените значение 0 на 10.
+
+### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>Отключение Cloud Shell в заблокированной среде сети
+
+- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который может быть запрещен, останавливая любой доступ к точкам входа Cloud Shell, включая portal.azure.com, shell.azure.com, расширения Visual Studio Code для учетной записи Azure и на сайте docs.microsoft.com.
+- **Решение**. Ограничение доступа к `ux.console.azure.com` через параметры сети к вашей среде. Значок Cloud Shell по-прежнему будет присутствовать на сайте portal.azure.com, но подключение к службе не произойдет.
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно службы хранилища. Ошибка: 403 RequestDisallowedByPolicy
 

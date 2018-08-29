@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 10/23/2017
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 04502e80cea096ce384f97559bc7bad95ee2bcd8
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: e034d6c57c619ea74003f531d3309f7da17210b0
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39344105"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42147012"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -54,6 +54,7 @@ ms.locfileid: "39344105"
 * [C#](#trigger---c-example)
 * [Скрипт C# (CSX)](#trigger---c-script-example)
 * [JavaScript](#trigger---javascript-example)
+* [Java](#trigger---Java-example)
 
 ### <a name="trigger---c-example"></a>Пример C# в триггере
 
@@ -166,6 +167,22 @@ module.exports = function (context) {
 ```
 
 В этом [разделе](#trigger---usage) показано свойство `myQueueItem`, имя которому назначает свойство `name` в function.json.  В разделе [Метаданные сообщений](#trigger---message-metadata) показаны все остальные переменные.
+
+### <a name="trigger---java-example"></a>Пример Java в триггере
+
+В следующем примере Java показано триггерные функции очереди хранилища, которые регистрируют активированное сообщение, помещенное в очередь `myqueuename`.
+ 
+ ```java
+ @FunctionName("queueprocessor")
+ public void run(
+    @QueueTrigger(name = "msg",
+                   queueName = "myqueuename",
+                   connection = "myconnvarname") String message,
+     final ExecutionContext context
+ ) {
+     context.getLogger().info(message);
+ }
+ ```
 
 ## <a name="trigger---attributes"></a>Атрибуты триггера
  
@@ -299,6 +316,7 @@ module.exports = function (context) {
 * [C#](#output---c-example)
 * [Скрипт C# (CSX)](#output---c-script-example)
 * [JavaScript](#output---javascript-example)
+* [Java](#output---java-example)
 
 ### <a name="output---c-example"></a>Пример выходных данных C#
 
@@ -428,6 +446,25 @@ module.exports = function(context) {
     context.done();
 };
 ```
+
+### <a name="output---java-example"></a>Пример выходных данных Java
+
+ В следующем примере показана функция Java, которая создает сообщения очереди, если оно активировано HTTP-запросом.
+
+```java
+@FunctionName("httpToQueue")
+@QueueOutput(name = "item", queueName = "myqueue-items", connection = "AzureWebJobsStorage")
+ public String pushToQueue(
+     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+     final String message,
+     @HttpOutput(name = "response") final OutputBinding&lt;String&gt; result) {
+       result.setValue(message + " has been added.");
+       return message;
+ }
+ ```
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров, значения которых будут записываться в хранилище очередей.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
+
 
 ## <a name="output---attributes"></a>Выходные атрибуты
  

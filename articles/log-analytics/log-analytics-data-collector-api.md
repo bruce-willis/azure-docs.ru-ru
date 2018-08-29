@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: a2aab89bcd550cc2b1dcc4f980f09b5c1e0e9464
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 3c4c2d8f49fbddc4875d7a4abf5d7629bc8f942e
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37436385"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142939"
 ---
 # <a name="send-data-to-log-analytics-with-the-http-data-collector-api-public-preview"></a>Отправка данных в Log Analytics c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправить данные в Log Analytics из клиента REST API.  Здесь также описано, как отформатировать данные, собранные сценарием или приложением, добавить их в запрос и авторизовать этот запрос в Log Analytics.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -471,3 +471,5 @@ post_data(customer_id, shared_key, body, log_type)
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Чтобы получить данные из репозитория Log Analytics, используйте [API поиска по журналам](log-analytics-log-search-api.md).
+
+- Дополнительные сведения о [создании конвейера данных с помощью API сборщика данных](log-analytics-create-pipeline-datacollector-api.md), используя рабочий процесс Logic Apps в Log Analytics.

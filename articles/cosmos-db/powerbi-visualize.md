@@ -8,14 +8,14 @@ manager: kfile
 ms.service: cosmos-db
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/19/2018
+ms.date: 08/17/2018
 ms.author: sngun
-ms.openlocfilehash: 3734c30dad0735164d4501d1d63d8ffe301396a3
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: 63ea7e384f9bc5713a41f6c5537ec5548810e5d9
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39249120"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143183"
 ---
 # <a name="power-bi-tutorial-for-azure-cosmos-db-visualize-data-using-the-power-bi-connector"></a>Руководство по Power BI для Azure Cosmos DB: визуализация данных с помощью соединителя Power BI
 [PowerBI.com](https://powerbi.microsoft.com/) — это веб-служба, с помощью которой можно создавать и совместно использовать панели мониторинга и отчеты с важными данными.  Power BI Desktop — это специальное средство создания отчетов, позволяющее получать данные из различных источников, объединять и преобразовывать их, создавая подробные отчеты и визуализации, и публиковать их в Power BI.  Последняя версия Power BI Desktop теперь позволяет подключаться к вашей учетной записи Azure Cosmos DB через соединитель Azure Cosmos DB для Power BI.   
@@ -42,8 +42,8 @@ ms.locfileid: "39249120"
 * [Последняя версия Power BI Desktop](https://powerbi.microsoft.com/desktop).
 * Доступ к демонстрационной учетной записи или данным в учетной записи Azure Cosmos DB.
   * В демонстрационной учетной записи используются данные о вулкане, показанные в этом руководстве. Использование этой демонстрационной учетной записи не регулируется соглашениями об уровне обслуживания. Она предназначена только для демонстрационных целей.  Мы оставляем за собой право вносить изменения в эту демонстрационную учетную запись, включая, кроме прочего, закрытие учетной записи, изменение ключа, ограничение доступа, изменение и удаление данных в любое время без уведомления или указания причины.
-    * URL-адрес: https://analytics.documents.azure.com
-    * Ключ только для чтения: MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==
+    * URL-адрес: `https://analytics.documents.azure.com`
+    * Ключ только для чтения: `MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==`
   * Сведения о создании учетной записи см. в статье [Azure Cosmos DB. Создание веб-приложения API DocumentDB с использованием языка .NET и портала Azure](https://azure.microsoft.com/documentation/articles/create-account/). Для получения примера данных о вулкане, схожих с теми, которые используются в этом руководстве (но не содержат блоки GeoJSON), посетите [сайт NOAA](https://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=5&d=5), а затем импортируйте данные с помощью [средства миграции данных Azure Cosmos DB](import-data.md).
 
 Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Дополнительные сведения о бесплатной версии Power BI и Power BI Pro см. по адресу [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing).

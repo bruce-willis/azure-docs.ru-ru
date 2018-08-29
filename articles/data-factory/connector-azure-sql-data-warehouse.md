@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 7a9adc8e9b7bcf69cce6b8ecf00e44477c1b0da3
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 3c447a37b1dfbdac2c6e2a4eaa61d0e0e08a2176
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39430745"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42442245"
 ---
 #  <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -71,6 +71,9 @@ ms.locfileid: "39430745"
 - [Проверка подлинности SQL](#sql-authentication).
 - Аутентификация по маркеру приложения Azure AD на основе [субъекта-службы](#service-principal-authentication).
 - Аутентификация по маркеру приложения Azure AD на основе [управляемого удостоверения службы](#managed-service-identity-authentication).
+
+>[!TIP]
+>Если вы получили ошибку с кодом ошибки UserErrorFailedToConnectToSqlServer и сообщение типа "Предел сеанса для базы данных — XXX, и он был достигнут", добавьте `Pooling=false` в строку подключения и повторите попытку.
 
 ### <a name="sql-authentication"></a>Аутентификация SQL
 
@@ -397,7 +400,7 @@ PolyBase хранилища данных SQL напрямую поддержив
 
 Если требования не выполняются, фабрика данных Azure проверяет параметры и автоматически возвращается к механизму перемещения данных BULKINSERT.
 
-1. Тип **связанной службы источника** — **AzureStorage** или **AzureDataLakeStore** с проверкой подлинности на основе субъекта-службы.
+1. Тип **Связанной службы источника** — хранилище BLOB-объектов Azure (**AzureBLobStorage**/**AzureStorage**) с ключом проверки подлинности учетной записи или хранилище Azure Data Lake 1-го поколения (**AzureDataLakeStore**) с проверкой подлинности субъекта-службы.
 1. Тип **входного набора данных** — **AzureBlob** или **AzureDataLakeStoreFile**. Тип формата в свойствах типа `type` — **OrcFormat**, **ParquetFormat** или **TextFormat** со следующими конфигурациями:
 
    1. Параметр `rowDelimiter` должен иметь значение **\n**.

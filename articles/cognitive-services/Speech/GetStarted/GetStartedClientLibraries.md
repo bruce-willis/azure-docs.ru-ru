@@ -1,5 +1,5 @@
 ---
-title: Начало работы с Microsoft API распознавания речи с помощью клиентских библиотек | Документация Майкрософт
+title: Начало работы с API распознавания речи Microsoft с помощью клиентских библиотек для Распознавания речи Bing | Документация Майкрософт
 description: Используйте клиентские библиотеки для работы с речью Microsoft в Microsoft Cognitive Services для разработки приложений, которые преобразуют аудиозапись речи в текст.
 services: cognitive-services
 author: zhouwangzw
@@ -9,28 +9,31 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: zhouwang
-ms.openlocfilehash: 5abe5bc48c2bd73d0facf33e41a8076df2972153
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f4b6a97260c6dc176600af8844001e4de819ff7c
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380544"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42357516"
 ---
-# <a name="get-started-with-speech-service-client-libraries"></a>Знакомство с клиентскими библиотеками для работы с речью
+# <a name="get-started-with-bing-speech-service-client-libraries"></a>Знакомство с клиентскими библиотеками для службы "Распознавание речи Bing"
 
-Помимо перенаправления HTTP-запросов через REST API, служба для работы с речью предоставляет разработчикам клиентские библиотеки для работы с речью на разных языках. Клиентские библиотеки для работы с речью:
+Помимо перенаправления HTTP-запросов через REST API, служба "Распознавание речи Bing" предоставляет разработчикам клиентские библиотеки для работы с речью на разных языках. Клиентские библиотеки для работы с речью:
 
 - Поддерживают дополнительные возможности при распознавании речи, такие как промежуточные результаты в режиме реального времени, длительный аудиопоток (до 10 минут) и непрерывное распознавание.
 - Предоставляют простой и идиоматический программный API на выбранном языке.
 - Скрывают подробности сообщения.
 
-В настоящее время доступны следующие клиентские библиотеки для работы с речью:
+В настоящее время доступны следующие клиентские библиотеки для Распознавания речи Bing:
 
 - [Библиотека для классических приложений C#](GetStartedCSharpDesktop.md)
 - [Библиотека для служб C#](GetStartedCSharpServiceLibrary.md)
 - [Библиотека для JavaScript](GetStartedJSWebsockets.md)
 - [Библиотека Java для Android](GetStartedJavaAndroid.md)
 - [Библиотека Objective-C для iOS](Get-Started-ObjectiveC-iOS.md)
+
+> [!NOTE] 
+В мае 2018 года мы также выпустили новую [Службу распознавания речи](/speech-service/overview.md) в общедоступной предварительной версии. Мы приглашаем [опробовать ее бесплатно](/speech-service/get-started.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

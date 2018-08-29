@@ -5,15 +5,15 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: reference
-ms.date: 7/18/2018
+ms.date: 8/21/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: a075b60c525fc3883f4464f19a8964fb64ce15a0
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 69ff295e434f199f3a15e96f134f92098b1b8b79
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627718"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42143333"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -53,21 +53,23 @@ ms.locfileid: "39627718"
 | Шлюзы приложений |[Ведение журнала диагностики для шлюза приложений](../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Пакетная служба Azure |[Ведение журналов диагностики пакетной службы Azure](../batch/batch-diagnostics.md) |
+| Cognitive Services | Схема недоступна. |
 | Сеть доставки содержимого | [Журналы Системы диагностики Azure для CDN](../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../cosmos-db/logging.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам диагностики для Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
 | Data Lake Store |[Доступ к журналам диагностики Azure Data Lake Store](../data-lake-store/data-lake-store-diagnostic-logs.md) |
 | База данных для PostgreSQL |  Схема недоступна. |
-| концентраторы событий; |[Журналы диагностики концентраторов событий Azure](../event-hubs/event-hubs-diagnostic-logs.md) |
+| Центры событий; |[Журналы диагностики Центров событий Azure](../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
+| Брандмауэр Azure | Схема недоступна. |
 | Центр Интернета вещей | [Использование Azure Monitor](../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
 | Key Vault |[Ведение журнала хранилища ключей Azure](../key-vault/key-vault-logging.md) |
 | Load Balancer |[Log Analytics для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Настраиваемая схема отслеживания сообщений B2B для приложений логики](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | группы сетевой безопасности; |[Аналитика журналов для групп безопасности сети](../virtual-network/virtual-network-nsg-manage-log.md) |
 | Защита от атак DDoS | [Управление службой "Защита от атак DDoS Azure" уровня "Стандартный"](../virtual-network/manage-ddos-protection.md) |
-| Выделенная служба PowerBI | Схема недоступна. |
+| Выделенная служба PowerBI | [Ведение журнала диагностики для Power BI Embedded в Azure](https://docs.microsoft.com/power-bi/developer/azure-pbie-diag-logs) |
 | Службы восстановления | [Модель данных для Azure Backup](../backup/backup-azure-reports-data-model.md)|
 | поиска |[Включение и использование аналитики поискового трафика](../search/search-traffic-analytics.md) |
 | Служебная шина Azure |[Журналы диагностики служебной шины Azure](../service-bus-messaging/service-bus-diagnostic-logs.md) |
@@ -88,6 +90,12 @@ ms.locfileid: "39627718"
 |Microsoft.Automation/automationAccounts|DscNodeStatus|Состояние узла DSC.|
 |Microsoft.Batch/batchAccounts|ServiceLog|Журналы служб|
 |Microsoft.Cdn/profiles/endpoints|CoreAnalytics|Возвращает метрики конечной точки, например пропускную способность, исходящий трафик и т. д.|
+|Microsoft.ClassicNetwork/networksecuritygroups|Событие потока правил группы безопасности сети|Событие потока правил группы безопасности сети|
+|Microsoft.CognitiveServices/accounts|Аудит|Аудит|
+|Microsoft.ContainerService/managedClusters|kube-apiserver|Сервер API Kubernetes|
+|Microsoft.ContainerService/managedClusters|kube-controller-manager|Диспетчер контроллеров Kubernetes|
+|Microsoft.ContainerService/managedClusters|kube-scheduler|Планировщик Kubernetes|
+|Microsoft.ContainerService/managedClusters|guard|Веб-перехватчик проверки подлинности|
 |Microsoft.CustomerInsights/hubs|AuditEvents|AuditEvents|
 |Microsoft.DataFactory/factories;|ActivityRuns|Журнал выполнения действий конвейера|
 |Microsoft.DataFactory/factories;|PipelineRuns|Журнал запусков конвейера|
@@ -97,7 +105,6 @@ ms.locfileid: "39627718"
 |Microsoft.DataLakeStore/accounts|Аудит|Журналы аудита|
 |Microsoft.DataLakeStore/accounts|Requests|Журналы запросов|
 |Microsoft.DBforPostgreSQL/servers|PostgreSQLLogs|Журналы сервера PostgreSQL|
-|Microsoft.DBforPostgreSQL/servers|PostgreSQLBackupEvents|События резервного копирования PostgreSQL|
 |Microsoft.Devices/IotHubs|Подключения|Подключения|
 |Microsoft.Devices/IotHubs|DeviceTelemetry|Телеметрия устройства|
 |Microsoft.Devices/IotHubs|C2DCommands|Команды, отправляемые из облака на устройство|
@@ -110,6 +117,7 @@ ms.locfileid: "39627718"
 |Microsoft.Devices/IotHubs|JobsOperations|Операции заданий|
 |Microsoft.Devices/IotHubs|DirectMethods|Прямые методы|
 |Microsoft.Devices/IotHubs|E2EDiagnostics|Диагностика E2E (предварительная версия)|
+|Microsoft.Devices/IotHubs|Конфигурации|Конфигурации|
 |Microsoft.Devices/provisioningServices|DeviceOperations|Операции с устройствами|
 |Microsoft.Devices/provisioningServices|ServiceOperations|Операции со службой|
 |Microsoft.DocumentDB/databaseAccounts|DataPlaneRequests|DataPlaneRequests|
@@ -130,13 +138,17 @@ ms.locfileid: "39627718"
 |Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog|Журнал доступа к шлюзу приложений|
 |Microsoft.Network/applicationGateways|ApplicationGatewayPerformanceLog|Журнал производительности шлюза приложений|
 |Microsoft.Network/applicationGateways|ApplicationGatewayFirewallLog|Журнал брандмауэра шлюза приложений|
+|Microsoft.Network/securegateways|AzureFirewallApplicationRule|Правило приложения службы "Брандмауэр Azure"|
+|Microsoft.Network/securegateways|AzureFirewallNetworkRule|Правило сети службы "Брандмауэр Azure"|
+|Microsoft.Network/azurefirewalls|AzureFirewallApplicationRule|Правило приложения службы "Брандмауэр Azure"|
+|Microsoft.Network/azurefirewalls|AzureFirewallNetworkRule|Правило сети службы "Брандмауэр Azure"|
 |Microsoft.Network/virtualNetworkGateways|GatewayDiagnosticLog|Журналы диагностики шлюзов|
 |Microsoft.Network/virtualNetworkGateways|TunnelDiagnosticLog|Журналы диагностики туннелей|
 |Microsoft.Network/virtualNetworkGateways|RouteDiagnosticLog|Журналы диагностики маршрутов|
 |Microsoft.Network/virtualNetworkGateways|IKEDiagnosticLog|Журналы диагностики IKE|
 |Microsoft.Network/virtualNetworkGateways|P2SDiagnosticLog|Журналы диагностики P2S|
 |Microsoft.Network/trafficManagerProfiles|ProbeHealthStatusEvents|Событие вывода результатов проверки работоспособности диспетчера трафика|
-|Microsoft.Network/expressRouteCircuits|GWMCountersTable|Таблица счетчиков GWM.|
+|Microsoft.Network/expressRouteCircuits|PeeringRouteLog|Журналы таблиц пиринга маршрутов|
 |Microsoft.PowerBIDedicated/capacities|Двигатель|Двигатель|
 |Microsoft.RecoveryServices/Vaults|AzureBackupReport|Данные отчетов службы архивации Azure|
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryJobs|Задания Azure Site Recovery|
@@ -148,21 +160,25 @@ ms.locfileid: "39627718"
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryProtectedDiskDataChurn|Обновление данных защищенного диска Azure Site Recovery|
 |Microsoft.Search/searchServices|OperationLogs|Журналы операций|
 |Microsoft.ServiceBus/namespaces|OperationalLogs|Журналы операций|
+|Microsoft.Sql/servers/databases|SQLInsights|Аналитика SQL|
+|Microsoft.Sql/servers/databases|AutomaticTuning|Автоматическая настройка|
 |Microsoft.Sql/servers/databases|QueryStoreRuntimeStatistics|Статистика среды выполнения хранилища запросов|
 |Microsoft.Sql/servers/databases|QueryStoreWaitStatistics|Статистика времени ожидания хранилища запросов|
 |Microsoft.Sql/servers/databases|Errors|Errors|
 |Microsoft.Sql/servers/databases|DatabaseWaitStatistics|Статистика времени ожидания базы данных|
 |Microsoft.Sql/servers/databases|Время ожидания|Время ожидания|
 |Microsoft.Sql/servers/databases|Блоки|Блоки|
-|Microsoft.Sql/servers/databases|SQLInsights|Аналитика SQL|
+|Microsoft.Sql/servers/databases|Взаимоблокировки|Взаимоблокировки|
 |Microsoft.Sql/servers/databases|Аудит|Журналы аудита|
 |Microsoft.Sql/servers/databases|SQLSecurityAuditEvents|Событие аудита безопасности SQL|
+|Microsoft.Sql/servers/databases|SqlDw_Requests|Запросы SQL DW|
+|Microsoft.Sql/servers/databases|SqlDw_RequestSteps|Шаги запроса SQL DW|
 |Microsoft.StreamAnalytics/streamingjobs|Выполнение|Выполнение|
 |Microsoft.StreamAnalytics/streamingjobs|Разработка|Разработка|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сбор и использование данных журнала из ресурсов Azure](monitoring-overview-of-diagnostic-logs.md)
-* [Потоковая передача журналов диагностики Azure в **концентраторы событий**](monitoring-stream-diagnostic-logs-to-event-hubs.md)
+* [Потоковая передача журналов диагностики Azure в **Центры событий**](monitoring-stream-diagnostic-logs-to-event-hubs.md)
 * [Создание или обновление диагностического параметра](https://msdn.microsoft.com/library/azure/dn931931.aspx)
 * [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../log-analytics/log-analytics-azure-storage.md)
