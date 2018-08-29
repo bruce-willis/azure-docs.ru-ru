@@ -9,19 +9,19 @@ ms.technology: Speech
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: fmegen
-ms.openlocfilehash: ad1bf15f198529487dbed92d8f8639704b0c5fc7
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: bbf10d9bd0912dab22c81e2bb850ede52a3bd9e3
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325131"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41929967"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
 [!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как в Android с помощью пакета SDK службы "Речь" в Cognitive Services создать приложение Java, которое будет преобразовывать речь в текст.
-Приложение основано на пакете SDK службы "Речь" в Microsoft Cognitive Services для Maven версии 0.5.0 и Android Studio 3.1.
+Приложение основано на пакете SDK службы "Речь" в Microsoft Cognitive Services для Maven версии 0.6.0 и Android Studio 3.1.
 
 > [!NOTE]
 > Описание пакета SDK для устройств распознавания речи и устройства Roobo доступно на странице [пакета SDK для устройств распознавания речи](speech-devices-sdk.md).
@@ -63,7 +63,7 @@ ms.locfileid: "39325131"
 
 [!include[License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.5.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.6.0`.
 
 Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит библиотеки и разрешения Android, необходимые для его использования.
 Она размещена в репозитории Maven в https://csspeechstorage.blob.core.windows.net/maven/.
@@ -81,7 +81,7 @@ ms.locfileid: "39325131"
 
   ![](media/sdk/qs-java-android-07-add-module-dependency.png)
 
-1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android (`com.microsoft.cognitiveservices.speech:client-sdk:0.5.0`), затем нажмите кнопку **ОК**.
+1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android (`com.microsoft.cognitiveservices.speech:client-sdk:0.6.0`), затем нажмите кнопку **ОК**.
    Пакет SDK для службы "Речь" должен быть добавлен в список зависимостей, как показано ниже.
 
   ![](media/sdk/qs-java-android-08-dependency-added.png)

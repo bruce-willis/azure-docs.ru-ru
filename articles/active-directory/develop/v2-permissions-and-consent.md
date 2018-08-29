@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/07/2017
+ms.date: 08/21/2018
 ms.author: celested
 ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
-ms.openlocfilehash: b38d90251ab59e537e7d637f45f04c4db87a94ae
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 6d3847f547646ae7c62f98b4cee716af5c6ba5e9
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39581089"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42143097"
 ---
 # <a name="scopes-permissions-and-consent-in-the-azure-active-directory-v20-endpoint"></a>Области, разрешения и согласие для конечной точки Azure Active Directory версии 2.0
 Приложения, интегрируемые с Azure Active Directory (Azure AD), придерживаются определенной модели авторизации, позволяющей пользователям контролировать способ получения приложением доступа к их данным. Реализация версии 2.0 этой модели авторизации была обновлена, в результате чего изменился механизм взаимодействия приложения с Azure AD. В этой статье рассматриваются основные понятия этой модели авторизации, включая области, разрешения и согласие на их предоставление.
@@ -73,6 +73,19 @@ Azure AD реализует протокол авторизации [OAuth 2.0](
 Если приложение не запросит область `offline_access`, оно не получит маркеры обновления. Это значит, что при использовании кода авторизации в [потоке кода авторизации OAuth 2.0](active-directory-v2-protocols.md) от конечной точки `/token` вы получите только маркер доступа. Маркер доступа действителен недолго. Как правило, его срок действия истекает через один час. В этот момент приложению будет необходимо перенаправить пользователя обратно к конечной точке `/authorize`, чтобы получить новый код авторизации. При этом, в зависимости от типа приложения, пользователю может потребоваться повторно ввести учетные данные или предоставить разрешения.
 
 Дополнительные сведения о том, как получать и использовать маркеры обновления, можно найти в [справочнике по протоколу версии 2.0](active-directory-v2-protocols.md).
+
+## <a name="accessing-v10-resources"></a>Доступ к ресурсам версии 1.0
+Приложения версии 2.0 могут запрашивать маркеры и согласие на приложения версии 1.0 (такие как API PowerBI `https://analysis.windows.net/powerbi/api` или API Sharepoint `https://{tenant}.sharepoint.com`).  Для этого вы можете ссылаться на строку универсального кода ресурса (URI) приложения и область видимости в параметре `scope`.  Например, `scope=https://analysis.windows.net/powerbi/api/Dataset.Read.All` запрашивает разрешение `View all Datasets` PowerBI для вашего приложения. 
+
+Чтобы запросить несколько разрешений, добавьте весь универсальный код ресурса (URI) с пробелом или `+`, например `scope=https://analysis.windows.net/powerbi/api/Dataset.Read.All+https://analysis.windows.net/powerbi/api/Report.Read.All`.  Таким образом запрашивается как разрешение `View all Datasets`, так и разрешение `View all Reports`.  Обратите внимание, что, как и во всех областях и разрешениях Azure Active Directory, приложения могут отправлять запрос только одному ресурсу за раз, поэтому запрос `scope=https://analysis.windows.net/powerbi/api/Dataset.Read.All+https://api.skypeforbusiness.com/Conversations.Initiate`, который запрашивает разрешение `View all Datasets` PowerBI и разрешение Skype для бизнеса `Initiate conversations`, будет отклонен из-за запроса разрешений на два разных ресурса.  
+
+### <a name="v10-resources-and-tenancy"></a>Ресурсы версии 1.0 и аренда
+Протоколы Azure AD версии 1.0 и версии 2.0 используют параметр `{tenant}`, внедренный в универсальный код ресурса (URI) (`https://login.microsoftonline.com/{tenant}/oauth2/`).  При использовании конечной точки версии 2.0 для доступа к ресурсам организации версии 1.0 клиенты `common` и `consumers` не могут использоваться, так как эти ресурсы доступны только с организационными учетными записями (Azure AD).  Таким образом, при доступе к этим ресурсам только клиент GUID или `organizations` может быть использован в качестве параметра `{tenant}`.  
+
+Если приложение пытается получить доступ к ресурсу организации версии 1.0 с использованием некорректного клиента, будет возвращена ошибка, аналогичная приведенной ниже. 
+
+`AADSTS90124: Resource 'https://analysis.windows.net/powerbi/api' (Microsoft.Azure.AnalysisServices) is not supported over the /common or /consumers endpoints. Please use the /organizations or tenant-specific endpoint.`
+
 
 ## <a name="requesting-individual-user-consent"></a>Запрос на получение согласия одного пользователя
 В запросе авторизации [OpenID Connect или OAuth 2.0](active-directory-v2-protocols.md) приложение может запросить необходимые разрешения с помощью параметра запроса `scope`. Например, при входе пользователя в приложение оно отправит запрос следующего вида (разрывы строк добавлены для удобства чтения).
