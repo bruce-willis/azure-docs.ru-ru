@@ -80,8 +80,6 @@ items:
         href: physical-azure-architecture.md
       - name: Поддержка нескольких клиентов при репликации из VMware в Azure
         href: vmware-azure-multi-tenant-overview.md
-      - name: Сведения о службе Mobility Service
-        href: vmware-azure-install-mobility-service.md
       - name: Варианты расположения для восстановления размещения
         href: concepts-types-of-failback.md
     - name: Репликация на дополнительный сайт
@@ -190,26 +188,26 @@ items:
       items:
       - name: Репликация виртуальных машин VMware в Azure с помощью PowerShell
         href: vmware-azure-disaster-recovery-powershell.md
-      - name: Аварийное восстановление физических серверов в Azure
-        href: physical-azure-disaster-recovery.md
       - name: Настройка исходной среды для виртуальных машин VMware
         href: vmware-azure-set-up-source.md
-      - name: Настройка исходной среды для физических серверов
-        href: physical-azure-set-up-source.md
       - name: Развертывание сервера конфигурации для репликации из VMware
         href: vmware-azure-deploy-configuration-server.md
       - name: Настройка целевой среды для виртуальных машин VMware
         href: vmware-azure-set-up-target.md
-      - name: Настройка целевой среды для физических серверов
-        href: physical-azure-set-up-target.md
       - name: Настройка параметров репликации
         href: vmware-azure-set-up-replication.md
-      - name: Исключение дисков из репликации
-        href: vmware-azure-exclude-disk.md
       - name: Включение репликации виртуальных машин VMware
         href: vmware-azure-enable-replication.md
+      - name: Исключение дисков из репликации
+        href: vmware-azure-exclude-disk.md
       - name: Мультитенантность с использованием поставщика служб шифрования для виртуальных машин VMWare
         href: vmware-azure-multi-tenant-csp-disaster-recovery.md
+      - name: Настройка исходной среды для физических серверов
+        href: physical-azure-set-up-source.md
+      - name: Настройка целевой среды для физических серверов
+        href: physical-azure-set-up-target.md
+      - name: Аварийное восстановление физических серверов в Azure
+        href: physical-azure-disaster-recovery.md
     - name: Развертывание службы Mobility Service
       items:
       - name: Общие сведение о службе мобильности
@@ -218,24 +216,24 @@ items:
         href: vmware-azure-mobility-install-configuration-mgr.md
     - name: Отработка отказа и восстановление размещения
       items:
-      - name: Выполнение отработки аварийного восстановления в Azure
-        href: site-recovery-test-failover-to-azure.md
       - name: Настройка планов восстановления
         href: site-recovery-create-recovery-plans.md
       - name: Добавление модулей Runbook Azure в планы восстановления
         href: site-recovery-runbook-automation.md
+      - name: Выполнение отработки аварийного восстановления в Azure
+        href: site-recovery-test-failover-to-azure.md
+      - name: Выполнение отработки отказа в Azure
+        href: site-recovery-failover.md
+      - name: 'Повторное включение защиты: Azure — локальная среда VMware'
+        href: vmware-azure-reprotect.md
+      - name: Восстановление размещения из Azure в VMware
+        href: vmware-azure-failback.md
       - name: Настройка и администрирование сервера обработки для восстановления размещения в Azure
         href: vmware-azure-set-up-process-server-azure.md
       - name: Настройка главного целевого сервера Linux для восстановления размещения
         href: vmware-azure-install-linux-master-target.md
-      - name: Выполнение отработки отказа в Azure
-        href: site-recovery-failover.md
       - name: Выполнение отработки отказа и восстановления размещения для физических серверов
         href: physical-to-azure-failover-failback.md
-      - name: Восстановление размещения из Azure в VMware
-        href: vmware-azure-failback.md
-      - name: 'Повторное включение защиты: Azure — локальная среда VMware'
-        href: vmware-azure-reprotect.md
     - name: управление
       items:
       - name: Управление сервером конфигурации для репликации из VMware
@@ -390,9 +388,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=site-recovery
-ms.openlocfilehash: cdc1990f71a38e7e0740456ccc8fb82e8ed1b5f9
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: f0469d554b25565411bb8c484f3d3937bb9a87f6
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42914924"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126076"

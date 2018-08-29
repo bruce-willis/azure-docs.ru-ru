@@ -128,31 +128,6 @@
 #### [Регистрация для самостоятельного сброса пароля](user-help/active-directory-passwords-reset-register.md)
 
 
-## Управление устройствами
-### [Обзор](devices/overview.md)
-
-### Быстрое начало работы
-#### [Настройка устройств Windows 10, зарегистрированных в Azure AD](user-help/device-management-azuread-registered-devices-windows10-setup.md)
-#### [Настройка устройств, присоединенных к Azure AD](user-help/device-management-azuread-joined-devices-setup.md)
-
-### Учебники
-#### [Настройка гибридного присоединения к Azure Active Directory для управляемых доменов](devices/hybrid-azuread-join-managed-domains.md)
-#### [Настройка гибридного присоединения к Azure Active Directory для федеративных доменов](devices/hybrid-azuread-join-federated-domains.md)
-#### [Настройка гибридного присоединения к Azure Active Directory вручную](devices/hybrid-azuread-join-manual-steps.md)
-#### [Настройка присоединения к Azure Active Directory во время первого запуска Windows 10](devices/azuread-joined-devices-frx.md)
-
-### Инструкции
-#### [Планирование присоединения к Azure Active Directory](devices/azureadjoin-plan.md)
-#### [Планирование реализации гибридного присоединения к Azure Active Directory](devices/hybrid-azuread-join-plan.md)
-#### [Управление гибридным присоединением устройств к Azure Active Directory](devices/hybrid-azuread-join-control.md)
-#### [Назначение локальных администраторов присоединенным к Azure AD устройствам](devices/assign-local-admin.md)
-#### [Устранение неполадок с текущими устройствами Windows, присоединенными к гибридной среде Azure Active Directory](devices/troubleshoot-hybrid-join-windows-current.md)
-#### [Устранение неполадок с устаревшими устройствами Windows, присоединенными к гибридной среде Azure Active Directory](devices/troubleshoot-hybrid-join-windows-legacy.md)
-
-### Основные понятия
-#### [Управление устройствами с помощью портала Azure](devices/device-management-azure-portal.md)
-#### [Часто задаваемые вопросы](devices/faq.md)
-
 ## Управление приложениями
 ### [Обзор](manage-apps/what-is-application-management.md)
 ### [Приступая к работе](manage-apps/plan-an-application-integration.md)
