@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 06/25/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5c347a024af385e04bfdf3631ddcbaec89df4f40
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 6c648a9cb6b8d8dbfb60f1a5a6ebc386c57460b0
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937370"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42887252"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
@@ -48,7 +48,7 @@ ms.locfileid: "36937370"
 |Командлет|ОПИСАНИЕ| 
 |------------|-----------------| 
 |[Add-AzureAnalysisServicesAccount](/powershell/module/azure.analysisservices/add-azureanalysisservicesaccount)|Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к серверу Azure Analysis Services.| 
-|[Export-AzureAnalysisServicesInstance]()|Экспортирует журнал из экземпляра сервера службы Analysis Services в среде, в которую выполнен вход в данный момент, как указано в команде Add AzureAnalysisServicesAccount.|  
+|[Export-AzureAnalysisServicesInstance](/powershell/module/azurerm.analysisservices/export-azureanalysisservicesinstancelog)|Экспортирует журнал из экземпляра сервера службы Analysis Services в среде, в которую выполнен вход в данный момент, как указано в команде Add AzureAnalysisServicesAccount.|  
 |[Restart-AzureAnalysisServicesInstance](/powershell/module/azurerm.analysisservices/restart-azureanalysisservicesinstance)|Перезапускает экземпляр сервера служб Analysis Services в среде, в которую выполнен вход в данный момент. Указан в команде Add AzureAnalysisServicesAccount.|  
 |[Sync-AzureAnalysisServicesInstance](/powershell/module/azurerm.analysisservices/restart-azureanalysisservicesinstance)|Синхронизирует указанную базу данных на конкретном экземпляре сервера служб Analysis Services со всеми экземплярами запросов с масштабированием в среде, в которую выполнен вход в данный момент, как указано в команде Add-AzureAnalysisServicesAccount.|  
 

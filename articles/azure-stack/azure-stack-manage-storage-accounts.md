@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 05/10/2018
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: 2ae2b628b2e61893a5289151c3b405e7412e7d13
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.openlocfilehash: 8914391a586bb508192200beaba7f591649a1e99
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34076939"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43050388"
 ---
 # <a name="manage-storage-accounts-in-azure-stack"></a>Управление учетными записями хранения в Azure Stack
 В этой статье приведены сведения об управлении учетными записями хранения, включая их поиск, восстановление и освобождение емкости хранилища в соответствии с бизнес-потребностями.
@@ -150,7 +150,7 @@ ms.locfileid: "34076939"
     Start-AzsReclaimStorageCapacity -FarmName $farm_name
 ````
 
-Дополнительные сведения см. в [документации по PowerShell для Azure Stack](https://msdn.microsoft.com/library/mt637964.aspx).
+Дополнительные сведения см. в [документации по PowerShell для Azure Stack](https://docs.microsoft.com/powershell/module/azurerm.azurestackstorage).
  
 
 ## <a name="next-steps"></a>Дополнительная информация

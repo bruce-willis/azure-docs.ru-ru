@@ -3,7 +3,7 @@ title: Хранилище Azure Stack. Особенности и рекомен�
 description: Сведения о различиях между хранилищем Azure Stack и службой хранилища Azure, а также рекомендации по развертыванию Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: jeffgilb
+author: mattbriggs
 manager: femila
 ms.assetid: ''
 ms.service: azure-stack
@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/21/2018
-ms.author: jeffgilb
+ms.date: 08/15/2018
+ms.author: mabrigg
 ms.reviwer: xiaofmao
-ms.openlocfilehash: 2a6cb3f1a1f8009af411ba4d97a23194f6f089ae
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.openlocfilehash: 6c0c42763ec3d124850555500c3a322073af2479
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34604466"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "43050409"
 ---
 # <a name="azure-stack-storage-differences-and-considerations"></a>Хранилище Azure Stack. Отличия и рекомендации
 

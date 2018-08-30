@@ -3,7 +3,7 @@ title: Управление дисками виртуальной машины �
 description: Подготовка дисков для виртуальных машин в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: mattbriggs
 manager: femila
 editor: ''
 ms.assetid: 4e5833cf-4790-4146-82d6-737975fb06ba
@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/11/2018
-ms.author: brenduns
+ms.date: 08/15/2018
+ms.author: mabrigg
 ms.reviewer: jiahan
-ms.openlocfilehash: 6364c0bec8437ba0dfa195c6532b26ec506a2e90
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: fc17ce0ebd13fb7e89405fcf4d6633551f340a27
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34807437"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "43050452"
 ---
 # <a name="provision-virtual-machine-disk-storage-in-azure-stack"></a>Подготовка хранилища для дисков виртуальных машин в Azure Stack
 
