@@ -1,20 +1,18 @@
 ---
 title: Запрос данных Avro с помощью Azure Data Lake Analytics | Документы Майкрософт
 description: В этой статье описано, как с помощью свойств текста сообщения передать данные телеметрии устройства в хранилище BLOB-объектов и запросить записанные в это хранилище данные в формате Avro.
-services: iot-hub
-documentationcenter: ''
-author: ksaye
-manager: obloch
+author: ash2017
 ms.service: iot-hub
-ms.topic: article
+services: iot-hub
+ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: Kevin.Saye
-ms.openlocfilehash: c56b567498047ee996018675134c252ec1de7e0c
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.author: asrastog
+ms.openlocfilehash: a17df39c55b5c02c83e3f0b74a91d7109ddb4d3d
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37081374"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188950"
 ---
 # <a name="query-avro-data-by-using-azure-data-lake-analytics"></a>Запрос данных Avro с помощью Azure Data Lake Analytics
 
