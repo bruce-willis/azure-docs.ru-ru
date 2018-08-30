@@ -3,18 +3,18 @@ title: Краткое руководство по созданию класте�
 description: В этом кратком руководстве показано, как использовать шаблон Resource Manager для создания кластера Apache Spark в Azure HDInsight и выполнить простой SQL-запрос Spark.
 services: azure-hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: jasonh
 ms.custom: mvc
-ms.openlocfilehash: d8a56704afda30a0a9466cab9d78a31490b113de
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: eccef79b53a78abc577ff40d84b615968be3dd0f
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39619453"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43046119"
 ---
 # <a name="quickstart-create-a-spark-cluster-in-hdinsight-using-template"></a>Краткое руководство по созданию кластера Spark в HDInsight с помощью шаблона
 

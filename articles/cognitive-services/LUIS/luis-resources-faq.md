@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 07/26/2018
 ms.author: diberry
-ms.openlocfilehash: 93ced2d0c79d80a631ad90aa3f5d2dc9f8c79c7e
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: a266055c7685dca87d985775584a9ea7a4bda883
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390200"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128526"
 ---
 # <a name="language-understanding-faq"></a>Вопросы и ответы о службе "Распознавание речи"
 
@@ -151,7 +151,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 Нет. Модели данных приложения LUIS не используется LUIS для улучшения LUIS как платформы или корпорацией Майкрософт каким-либо способом. Данные каждого приложения являются отдельными, а их владельцем являются только пользователи, включая тех, которым предоставлен совместный доступ. 
 
-См. дополнительные сведения о [конфиденциальности пользователей](luis-reference-gdpr.md), [обеспечении дополнительных требований к безопасности](luis-concept-security.md#security-compliance) и [хранении данных](luis-concept-data-storage.md).
+См. дополнительные сведения о [конфиденциальности пользователей](luis-user-privacy.md), [обеспечении дополнительных требований к безопасности](luis-concept-security.md#security-compliance) и [хранении данных](luis-concept-data-storage.md).
 
 ## <a name="language-and-translation-support"></a>Поддержка языка и преобразования 
 
@@ -208,5 +208,4 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
-* 
-  [Форум MSDN, посвященный Интеллектуальной службе распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
+* [Форум MSDN, посвященный Интеллектуальной службе распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 

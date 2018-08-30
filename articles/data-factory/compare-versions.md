@@ -9,15 +9,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: 4821ce5911508cc90c3a784d617a4528ecdeb384
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: ca00a414402c1cfdef55cfbde9291688f091bf77
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37053302"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43095925"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 В этой статье сравниваются возможности Фабрики данных с возможностями Фабрики данных версии 1. Дополнительные сведения о Фабрике данных см. [здесь](introduction.md). Дополнительные сведения о Фабрике данных Azure версии 1 см. в [этой статье](v1/data-factory-introduction.md). 
@@ -134,7 +134,7 @@ ms.locfileid: "37053302"
 | Портал Azure | [Да](quickstart-create-data-factory-portal.md) | [Да](data-factory-build-your-first-pipeline-using-editor.md) |
 | Azure PowerShell | [Да](quickstart-create-data-factory-powershell.md) | [Да](data-factory-build-your-first-pipeline-using-powershell.md) |
 | ПАКЕТ SDK .NET | [Да](quickstart-create-data-factory-dot-net.md) | [Да](data-factory-build-your-first-pipeline-using-vs.md) |
-| ИНТЕРФЕЙС REST API | [Да](quickstart-create-data-factory-rest-api.md) | [Да](data-factory-build-your-first-pipeline-using-rest-api.md) |
+| REST API | [Да](quickstart-create-data-factory-rest-api.md) | [Да](data-factory-build-your-first-pipeline-using-rest-api.md) |
 | Пакет SDK для Python | [Да](quickstart-create-data-factory-python.md) | Нет  |
 | Шаблон Resource Manager | [Да](quickstart-create-data-factory-resource-manager-template.md) | [Да](data-factory-build-your-first-pipeline-using-arm.md) | 
 

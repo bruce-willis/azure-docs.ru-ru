@@ -17,12 +17,12 @@ ms.date: 04/27/2017
 ms.author: celested
 ms.reviewer: arielgo
 ms.custom: aaddev, signin_art
-ms.openlocfilehash: 78a0b9bf7f49cc41c8d78287bcbe54c5c88f0809
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 92990a71a0b138f08c515450ecd71692fa57f297
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "39597911"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43185426"
 ---
 # <a name="branding-guidelines-for-applications"></a>Рекомендации по фирменной символике для приложений
 
@@ -72,7 +72,7 @@ ms.locfileid: "39597911"
 
 | Asset                                | Формат PNG | Формат SVG |
 | ------------------------------------ | ---------- | ---------- |
-| Логотип Майкрософт  | ![Логотип Майкрософт в формате PNG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_MSSymbol_19.png) | ![Логотип Майкрософт в формате SVG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_MSSymbol_19.svg) |
+| Логотип Майкрософт  | ![Логотип Майкрософт в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.png) | ![Логотип Майкрософт в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.svg) |
 
 ## <a name="visual-guidance-for-sign-in"></a>Визуальная подсказка для входа
 
@@ -84,16 +84,16 @@ ms.locfileid: "39597911"
 
 На схеме ниже показаны рекомендуемые корпорацией Майкрософт исправления при использовании этих ресурсов в приложении. Исправления относятся к надписи "Вход с помощью учетной записи Майкрософт" или ее более краткой версии "Вход".
 
-![Исправления надписи "Вход с помощью учетной записи Майкрософт"](./media/howto-add-branding-in-azure-ad-apps/Sign-in-with-Microsoft-redlines.png)
+![Исправления надписи "Вход с помощью учетной записи Майкрософт"](./media/howto-add-branding-in-azure-ad-apps/sign-in-with-microsoft-redlines.png)
 
 Чтобы скачать официальные изображения для использования в приложении, щелкните одно из них правой кнопкой мыши и сохраните его на компьютере.
 
 | Asset                                | Формат PNG | Формат SVG |
 | ------------------------------------ | ---------- | ---------- |
-| "Вход с помощью учетной записи Майкрософт" (темная тема)  | ![Кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_dark.png) | !["Вход с помощью учетной записи Майкрософт" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_dark.svg) |
-| "Вход с помощью учетной записи Майкрософт" (светлая тема) | ![Кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_light.png) | ![Кнопка "Вход с помощью учетной записи Майкрософт" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_light.svg) |
-| "Вход" (темная тема)                 | ![Уменьшенная кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_dark_short.png) | ![Уменьшенная кнопка "Вход" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_dark_short.svg) |
-| "Вход" (светлая тема)                | ![Уменьшенная кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_light_short.png) | ![Уменьшенная кнопка "Вход" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/MS-SymbolLockup_SignIn_light_short.svg) |
+| "Вход с помощью учетной записи Майкрософт" (темная тема)  | ![Кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.png) | !["Вход с помощью учетной записи Майкрософт" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.svg) |
+| "Вход с помощью учетной записи Майкрософт" (светлая тема) | ![Кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light.png) | ![Кнопка "Вход с помощью учетной записи Майкрософт" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light.svg) |
+| "Вход" (темная тема)                 | ![Уменьшенная кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark_short.png) | ![Уменьшенная кнопка "Вход" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark_short.svg) |
+| "Вход" (светлая тема)                | ![Уменьшенная кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light_short.png) | ![Уменьшенная кнопка "Вход" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light_short.svg) |
 
 
 ## <a name="branding-dos-and-donts"></a>Что следует и что не следует делать с фирменно символикой

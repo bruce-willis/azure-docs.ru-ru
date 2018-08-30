@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/14/2018
 ms.author: tonguyen
-ms.openlocfilehash: 689ea9e0d029bb65bc579fc914c6ed3073b4a96b
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: c782cadadb0250e6c3ca4912dbf8f81e19cb88c5
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064623"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42919060"
 ---
 # <a name="understand-your-bill-for-microsoft-azure"></a>Расшифровка счета за использование Microsoft Azure
 Чтобы расшифровать счет Azure, сравните счет и файл с подробными данными о ежедневном использовании, а также отчеты об управлении затратами на портале Azure.
@@ -33,6 +33,9 @@ ms.locfileid: "37064623"
 Подробное описание терминов в счете и файле с данными о ежедневном использовании см. в статьях [Значение терминов в счете Microsoft Azure](billing-understand-your-invoice.md) и [Значение терминов в файле с подробными данными об использовании Microsoft Azure](billing-understand-your-usage.md). 
 
 Описание отчетов об управлении затратами см. в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](https://docs.microsoft.com/azure/billing/billing-getting-started).
+
+> [!div class="nextstepaction"]
+> [Помогите нам улучшить документацию по управлению счетами и подписками в Azure](https://go.microsoft.com/fwlink/p/?linkid=2010091)
 
 ## <a name="charges"></a>Как мне убедиться в правильности формирования моего счета?
 

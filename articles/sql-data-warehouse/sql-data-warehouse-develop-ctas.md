@@ -3,19 +3,19 @@ title: Инструкция CREATE TABLE AS SELECT (CTAS) в хранилище 
 description: Рекомендации по составлению кода с использованием инструкции CREATE TABLE AS SELECT (CTAS) в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
 author: ckarst
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 9bff6b1216ae826203b24a2cdf8a3d7fd0fd586f
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: dad0b1570f54cde1b1d474d8ebfc78f793724ef4
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31599090"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247759"
 ---
 # <a name="using-create-table-as-select-ctas-in-azure-sql-data-warehouse"></a>Использование инструкции CREATE TABLE AS SELECT (CTAS) в хранилище данных SQL Azure
 Рекомендации по составлению кода с использованием инструкции T-SQL CREATE TABLE AS SELECT (CTAS) в хранилище данных SQL Azure для разработки решений.

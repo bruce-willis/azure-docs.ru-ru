@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/24/2018
+ms.date: 08/24/2018
 ms.author: cephalin
-ms.openlocfilehash: 2ca1c1518589e60a03570e1c2063381f749ed9aa
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 78487061dd49c057e8f569fd2ccdaa6408443fd2
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34659826"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42885876"
 ---
 # <a name="security-in-azure-app-service-and-azure-functions"></a>Безопасность в службе приложений Azure и службе "Функции Azure"
 
@@ -49,7 +49,7 @@ ms.locfileid: "34659826"
 
 Чтобы защитить ваше приложение от всех незашифрованных подключений (HTTP), служба приложений предоставляет конфигурацию в один щелчок для принудительного использования HTTPS. Незащищенные запросы отсеиваются еще до того, как они достигнут кода приложения. Дополнительные сведения см. в разделе [Принудительное использование HTTPS](app-service-web-tutorial-custom-ssl.md#enforce-https).
 
-Протокол [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) версии 1.0 больше не считается безопасным в соответствии с отраслевыми стандартами, такими как [PCI DSS](https://wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard). Служба приложений позволяет отключить устаревшие протоколы путем принудительного использования протокола [TLS версии 1.1 или 1.2](app-service-web-tutorial-custom-ssl.md#enforce-tls-1112).
+Протокол [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) версии 1.0 больше не считается безопасным в соответствии с отраслевыми стандартами, такими как [PCI DSS](https://wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard). Служба приложений позволяет отключить устаревшие протоколы путем принудительного использования протокола [TLS версии 1.1 или 1.2](app-service-web-tutorial-custom-ssl.md#enforce-tls-versions).
 
 Служба приложений поддерживает протоколы FTP и FTPS для развертывания файлов. Но если возможно, лучше использовать протокол FTPS вместо FTP. Если один из этих протоколов или оба протокола не используются, нужно [их отключить](app-service-deploy-ftp.md#enforce-ftps).
 

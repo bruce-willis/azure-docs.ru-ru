@@ -1,26 +1,18 @@
 ---
 title: Приступая к работе с предварительно настроенными решениями | Документация Майкрософт
 description: Следуйте инструкциям этого учебника, чтобы научиться развертывать предварительно настроенные решения набора IoT Microsoft Azure
-services: ''
-suite: iot-suite
-documentationcenter: ''
-author: dominicbetts
-manager: timlt
-editor: ''
-ms.assetid: 6ab38d1a-b564-469e-8a87-e597aa51d0f7
+services: iot-suite
 ms.service: iot-suite
-ms.devlang: na
-ms.topic: hero-article
-ms.tgt_pltfrm: na
-ms.workload: na
+author: dominicbetts
+ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: dobett
-ms.openlocfilehash: 12eb858f0be4220419300019497070a081e58249
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0c499d5f4d1d6256294e25921cef1fb0dfed0c05
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38723023"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43185612"
 ---
 # <a name="get-started-with-the-preconfigured-solutions"></a>Приступая к работе с предварительно настроенными решениями
 

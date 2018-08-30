@@ -9,12 +9,12 @@ ms.component: translator-text
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: v-jansko
-ms.openlocfilehash: 5542c1c0eee5e4c7c85c566908dc8999b118f06e
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: f5b916ba3b6b044f12b84958b2eb69f44e2f8136
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37032443"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42888147"
 ---
 # <a name="supported-languages-in-the-microsoft-translator-text-api"></a>Поддерживаемые языки в API перевода текстов Microsoft
 
@@ -141,7 +141,7 @@ API для работы с текстами Microsoft поддерживает �
 | Гаитянский креольский      | `ht`          |
 | Иврит      | `he`          |
 | Хинди      | `hi`          |
-| Хмонг      | `mww`          |
+| Хмонг дау      | `mww`          |
 | Венгерский      | `hu`          |
 | Исландский    | `is`  |
 | Индонезийский      | `id`          |

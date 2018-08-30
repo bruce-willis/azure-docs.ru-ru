@@ -8,18 +8,18 @@ ms.technology: project-answer-search
 ms.topic: article
 ms.date: 04/13/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: b05b7745bdb5020a4a0912635e040256415b2626
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c8e2a6a7fc3609932a7a1139d7b34553e5f9c291
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381720"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42888329"
 ---
 # <a name="project-answer-search-query-in-c"></a>Запрос для поиска ответов в проектах на C#
 
 С помощью приведенного ниже примера C# можно создать и отправить запрос для получения сведений о третьем правиле математического анализа.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
 
@@ -53,7 +53,7 @@ namespace Answers_csharp
         // Replace the accessKey string value with your valid access key.
         const string accessKey = "YOUR-SUBSCRIPTION-KEY";
 
-        const string uriBase = "https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search "; 
+        const string uriBase = "https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search"; 
 
         const string searchTerm = "third law of calculus"; 
 
@@ -187,10 +187,10 @@ namespace Answers_csharp
 
 Чтобы запустить приложение, выполните следующие действия:
 
-1. В Visual Studio создайте консольное приложение.
+1. Создайте консольное приложение в Visual Studio.
 2. Замените `Program.cs` указанным кодом.
-3. Замените значение `YOUR-ACCESS-KEY` действительным ключом доступа для своей подписки.
+3. Замените значение `YOUR-ACCESS-KEY` ключом доступа, допустимым для вашей подписки.
 4. Запустите программу.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Краткое руководство — Java](java-quickstart.md)
+[Краткое руководство для Java](java-quickstart.md)

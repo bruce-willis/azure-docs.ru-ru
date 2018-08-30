@@ -3,18 +3,18 @@ title: Использование Hive с Hadoop в HDInsight с помощью 
 description: Использование PowerShell для выполнения запросов Hive в Hadoop в HDInsight.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: jasonh
-ms.openlocfilehash: d074ce2426f2d18a98c018ac9e0dfe07064dadef
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 16caee1b04b8fb3ae2e83b8105b802e121092f60
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39598482"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43051782"
 ---
 # <a name="run-hive-queries-using-powershell"></a>Выполнение запросов Hive с помощью PowerShell
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]

@@ -3,24 +3,18 @@ title: Пример скрипта Azure PowerShell. Настройка VPN-по
 description: Настройка подключения VPN типа "сеть — сеть".
 services: vpn-gateway
 documentationcenter: vpn-gateway
-author: cherylmc
-manager: jpconnock
-editor: ''
-tags: ''
-ms.assetid: ''
+author: anzaman
 ms.service: vpn-gateway
 ms.devlang: powershell
 ms.topic: sample
-ms.tgt_pltfrm: ''
-ms.workload: infrastructure
-ms.date: 05/02/2018
-ms.author: anzaman
-ms.openlocfilehash: 8136ed2537b63fbba0bafc2ef00e7a65e176fde8
-ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
+ms.date: 04/30/2018
+ms.author: alzam
+ms.openlocfilehash: d7eb1fa2bf5991c70d7bb1cb813895883bb2014a
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34757456"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42886702"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью PowerShell
 
@@ -146,7 +140,7 @@ Remove-AzureRmResourceGroup -Name TestRG2
 
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [Add-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/add-azurermvirtualnetworksubnetconfig) | Добавление конфигурации подсети. Эта конфигурация используется в процессе создания виртуальной сети. |
 | [Get-AzureRmVirtualNetwork](/powershell/module/azurerm.network/get-azurermvirtualnetwork) | Получение сведений о виртуальной сети. |

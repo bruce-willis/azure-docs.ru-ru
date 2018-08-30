@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.author: cephalin
-ms.openlocfilehash: 1c56f705c07e2001e1ef8f5f9f05c264c33c2c3f
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: ba84d297420ca5a9b75b4cfa432373d3070e0d01
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42144416"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125250"
 ---
 # <a name="troubleshoot-a-web-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
@@ -623,7 +623,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 ### <a name="azure-web-app-troubleshooting"></a>Устранение неполадок веб-приложения Azure
 Дополнительную информацию об устранении неполадок, связанных с веб-приложениями в службе приложений Azure, см. на следующих ресурсах:
 
-* [Мониторинг веб-приложений](/manage/services/web-sites/how-to-monitor-websites/)
+* [Мониторинг веб-приложений](web-sites-monitor.md)
 * [Исследование проблемы утечки памяти в веб-приложениях Azure с использованием Visual Studio 2013](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Запись блога Microsoft ALM о функциях Visual Studio для анализа проблем с управляемой памятью.
 * [Онлайн-инструменты веб-приложений Azure, о которых вам следует знать](https://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Запись в блоге Амита Эппла (Amit Apple).
 
@@ -674,7 +674,7 @@ catch (Exception ex)
 
 * [Потоковая передача диагностических журналов трассировки из командной строки Azure (включая Glimpse!)](http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
   Как использовать командную строку, чтобы сделать все, что показано в этом руководстве на примере Visual Studio. [Glimpse](http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) – это средство для отладки приложений ASP.NET.
-* [Использование функций диагностики и ведения журнала для веб-приложений с Дэвидом Эббо (David Ebbo)](/documentation/videos/azure-web-site-logging-and-diagnostics/) и [Потоковая передача журналов из веб-приложений с Дэвидом Эббо (David Ebbo)](/documentation/videos/log-streaming-with-azure-web-sites/)<br>
+* [Использование функций диагностики и ведения журнала для веб-приложений с Дэвидом Эббо (David Ebbo)](https://azure.microsoft.com/documentation/videos/azure-web-site-logging-and-diagnostics/) и [Потоковая передача журналов из веб-приложений с Дэвидом Эббо (David Ebbo)](https://azure.microsoft.com/documentation/videos/log-streaming-with-azure-web-sites/)<br>
   Авторы видео: Скотт Хансельман (Scott Hanselman) и Дэвид Эббо (David Ebbo).
 
 Для ведения журнала ошибок вместо написания своего кода трассировки можно использовать платформу ведения журналов с открытым кодом, например [ELMAH](http://nuget.org/packages/elmah/). Дополнительные сведения см. в [записях блога Скотта Хансельмана (Scott Hanselman), посвященных ELMAH](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx).

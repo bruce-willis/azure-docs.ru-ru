@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 07/03/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 03d4ad081a788299bab563ca6b956edc347732da
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: f659c424f7d5e705343c113d2ba0971164ca622a
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37447964"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43108812"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины под управлением Linux на портале Azure
 
@@ -53,7 +53,7 @@ ssh-keygen -t rsa -b 2048
 
 3. Укажите имя виртуальной машины, например *myVM*, сохраните тип диска *SSD* и укажите имя пользователя, например *azureuser*.
 
-4. . Для параметра **Тип проверки подлинности** выберите **Открытый ключ SSH** и вставьте открытый ключ в текстовое поле. Обязательно удалите из открытого ключа все начальные и (или) конечные пробелы.
+4. Для параметра **Тип проверки подлинности** выберите **Открытый ключ SSH** и вставьте открытый ключ в текстовое поле. Обязательно удалите из открытого ключа все начальные и (или) конечные пробелы.
 
     ![Ввод основных сведений о виртуальной машине в колонке портала](./media/quick-create-portal/create-vm-portal-basic-blade.png)
 

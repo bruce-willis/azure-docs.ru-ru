@@ -9,16 +9,16 @@ ms.technology: Speech
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: b8bc24123fe75e876f607b07e37423ae68d92ee4
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 92bd5980ac2e6befbe352df6ddf8644f04d37d34
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41936190"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126871"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
 
-[!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
+[!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как в Linux (Ubuntu 16.04) с помощью пакета SDK службы "Речь" в Cognitive Services создать консольное приложение C++, которое будет преобразовывать речь в текст.
 
@@ -35,7 +35,7 @@ ms.locfileid: "41936190"
 
 ## <a name="get-the-speech-sdk"></a>Получение пакета SDK для службы "Речь"
 
-[!include[License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
+[!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
 Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.6.0`.
 
@@ -71,7 +71,7 @@ ms.locfileid: "41936190"
 
    В нем должно находиться уведомление сторонних разработчиков и файлы лицензий, а также каталог `include` для заголовков и каталог `lib` для библиотек.
 
-   [!include[Linux Binary Archive Content](../../../includes/cognitive-services-speech-service-linuxbinary-content.md)]
+   [!INCLUDE [Linux Binary Archive Content](../../../includes/cognitive-services-speech-service-linuxbinary-content.md)]
 
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
@@ -129,7 +129,7 @@ ms.locfileid: "41936190"
    We recognized: What's the weather
    ```
 
-[!include[Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
+[!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Этот пример можно найти в папке `quickstart/cpp-linux`.
 
 ## <a name="next-steps"></a>Дополнительная информация

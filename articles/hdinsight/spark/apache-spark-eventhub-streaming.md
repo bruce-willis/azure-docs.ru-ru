@@ -1,22 +1,22 @@
 ---
 title: 'Руководство по обработке данных из Центров событий Azure с помощью Apache Spark в Azure HDInsight '
-description: Подключите Apache Spark в Azure HDInsight к концентраторам событий Azure и выполните потоковою передачу данных.
+description: Подключите Apache Spark в Azure HDInsight к Центрам событий Azure и выполните потоковою передачу данных.
 services: hdinsight
 ms.service: hdinsight
 author: jasonwhowell
 ms.author: jasonh
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.custom: hdinsightactive,mvc
 ms.topic: conceptual
 ms.date: 06/14/2018
-ms.openlocfilehash: 27c8a51ee3f0274489041f4dafbbf73d906e2fa4
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 9cdb5ae31e2743b5ebe877ddd8d6680423e3d9b2
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617652"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43046258"
 ---
-# <a name="tutorial-process-tweets-using-azure-event-hubs-and-spark-in-hdinsight"></a>Руководство. Обработка твитов с помощью концентраторов событий Azure и Spark в HDInsight
+# <a name="tutorial-process-tweets-using-azure-event-hubs-and-spark-in-hdinsight"></a>Руководство. Обработка твитов с помощью Центров событий Azure и Spark в HDInsight
 
 В этом руководстве вы научитесь создавать приложение потоковой передачи Apache Spark для отправки твитов в концентратор событий Azure, а также приложение для чтения твитов из концентратора событий. Подробное описание потоковой передачи Spark см. в [этом разделе](http://spark.apache.org/docs/latest/streaming-programming-guide.html#overview). HDInsight предоставляет аналогичные функции потоковой передачи для кластера Spark в Azure.
 
@@ -60,7 +60,7 @@ ms.locfileid: "39617652"
 
 1. Войдите на [портал Azure](https://ms.portal.azure.com).
 2. В верхней левой части экрана выберите **Create a resource** (Создать ресурс).
-3. Выберите **Интернет вещей**, а затем — **Концентраторы событий**.
+3. Выберите **Интернет вещей**, а затем — **Центры событий**.
 
     ![Создание концентратора событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-create-event-hub-for-spark-streaming.png "Создание концентратора событий для примера приложения потоковой передачи Spark")
 4. Для пространства имен нового концентратора событий введите следующие значения.
@@ -76,12 +76,12 @@ ms.locfileid: "39617652"
 6. Откройте пространство имен концентратора событий, выполнив следующие инструкции:
 
     1. На портале щелкните **Все службы**.
-    2. В текстовом поле "Фильтр" введите **концентраторы событий**.
+    2. В текстовом поле "Фильтр" введите **Центры событий**.
     3. Дважды щелкните созданное пространство имен.
     4. Выберите **+ Концентратор событий**.
 
-6. В списке пространств имен концентраторов событий выберите созданное пространство имен.      
-5. Чтобы создать концентратор событий, выберите **Концентраторы событий**, а затем — **+ Концентратор событий**.
+6. В списке пространств имен Центров событий выберите созданное пространство имен.      
+5. Чтобы создать концентратор событий, выберите **Центры событий**, а затем — **+ Концентратор событий**.
   
 
 6. Введите следующие значения.

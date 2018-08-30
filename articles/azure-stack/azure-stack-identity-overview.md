@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 2/22/2018
 ms.author: brenduns
 ms.reviewer: ''
-ms.openlocfilehash: 607c7938a789b3504a425057645b291bd4c8235b
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 9a5390b51b3b901b159f99e757ca4db1aaf8258e
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31399037"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43050973"
 ---
 # <a name="overview-of-identity-for-azure-stack"></a>Общие сведения об удостоверениях Azure Stack
 
@@ -137,7 +137,7 @@ ms.locfileid: "31399037"
 |Слой    |Проверка подлинности между слоями  |
 |---------|---------|
 |Средства и клиенты, например портал администрирования     | Чтобы получить доступ к ресурсам в Azure Stack или изменить их, средства и клиенты используют [JSON Web Token](/azure/active-directory/develop/active-directory-token-and-claims) для вызова Azure Resource Manager. <br>Azure Resource Manager проверяет JSON Web Token и просматривает *утверждения* в выданном маркере, чтобы оценить уровень авторизации пользователя или субъекта-службы в Azure Stack. |
-|Платформа Azure Resource Manager и ее основные службы     |Azure Resource Manager взаимодействует с поставщиками ресурсов для передачи данных от пользователей. <br> Для передачи данных используются *прямые императивные* вызовы или *декларативные* вызовы через [шаблоны Azure Resource Manager](/azure/azure-stack/user/azure-stack-arm-templates.md).|
+|Платформа Azure Resource Manager и ее основные службы     |Azure Resource Manager взаимодействует с поставщиками ресурсов для передачи данных от пользователей. <br> Для передачи данных используются *прямые императивные* вызовы или *декларативные* вызовы через [шаблоны Azure Resource Manager](/azure/azure-stack/user/azure-stack-arm-templates).|
 |Поставщики ресурсов     |Вызовы, которые передаются поставщикам ресурсов, защищены проверкой подлинности на основе сертификатов. <br>Azure Resource Manager и поставщик удостоверений затем взаимодействуют с помощью API. Каждый вызов, полученный из Azure Resource Manager, поставщик удостоверений проверяет с помощью сертификата.|
 |Инфраструктура и бизнес-логика     |Поставщики ресурсов взаимодействуют с бизнес-логикой и инфраструктурой с помощью режима проверки подлинности на свой выбор. Стандартные поставщики удостоверений, которые поставляются с Azure Stack, используют проверку подлинности Windows для защиты этой связи.|
 
@@ -180,7 +180,7 @@ ms.locfileid: "31399037"
 Сведения об использовании Azure PowerShell для выполнения проверки подлинности с помощью Azure Stack см. в статье [Настройка пользовательской среды PowerShell в Azure Stack](azure-stack-powershell-configure-user.md).
 
 ### <a name="authenticate-with-azure-cli"></a>Проверка подлинности с помощью Azure CLI
-Сведения об использовании Azure PowerShell для выполнения проверки подлинности с помощью Azure Stack см. в статье [Установка и настройка интерфейса командной строки для работы с Azure Stack](/azure/azure-stack/user/azure-stack-connect-cli.md).
+Сведения об использовании Azure PowerShell для выполнения проверки подлинности с помощью Azure Stack см. в статье [Установка и настройка интерфейса командной строки для работы с Azure Stack](/azure/azure-stack/user/azure-stack-connect-cli).
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Архитектура удостоверения Azure Stack](azure-stack-identity-architecture.md)   

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: 1cf67b61d330363690aea1da706e8cce4700ddcd
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 32e76d1593f8bda0ebf745e76373908970aeb181
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39618688"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124175"
 ---
 # <a name="wire-data-20-preview-solution-in-log-analytics"></a>Решение Wire Data 2.0 (предварительная версия) в Log Analytics
 
@@ -386,8 +386,6 @@ rpm -e dependency-agent dependency-agent-connector
 | Агенты, записывающие сетевой трафик | Отображает число агентов, которые записывают сетевой трафик, и показывает первые 10 компьютеров, записывающих сетевой трафик. Щелкните количество, чтобы выполнить поиск по журналам: <code>Type:WireData &#124; measure Sum(TotalBytes) by Computer &#124; top 500000</code>. Щелкните в списке компьютер, чтобы выполнить поиск по журналам и получить общее число записанных байт. |
 | Локальные подсети | Показывает число локальных подсетей, которые обнаружили агенты.  Щелкните число, чтобы выполнить поиск по журналам: <code>Type:WireData &#124; Measure Sum(TotalBytes) by LocalSubnet</code>. В результате вы получите список всех подсетей и количество байт, отправленных в каждой из них. Выберите подсеть в списке, чтобы выполнить поиск по журналам и получить общее число байт, отправленных в подсети. |
 | Протоколы уровня приложений | Показывает количество используемых протоколов уровня приложений, обнаруженных агентами. Щелкните количество, чтобы выполнить поиск по журналам: <code>Type:WireData &#124; Measure Sum(TotalBytes) by ApplicationProtocol</code>. Щелкните в списке протокол, чтобы выполнить поиск по журналам и получить общее число байт, отправленных с помощью протокола. |
-
-[!INCLUDE[log-analytics-log-search-nextgeneration](../../includes/log-analytics-log-search-nextgeneration.md)]
 
 ![Панель мониторинга "Данные передачи"](./media/log-analytics-wire-data/wire-data-dash.png)
 

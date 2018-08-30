@@ -4,18 +4,18 @@ description: Узнайте, как создать кластеры HDInsight н
 keywords: начало работы с hadoop, hadoop под управлением linux, краткое руководство по hadoop, начало работы с hive, краткое руководство по hive
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,mvc
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: jasonh
-ms.openlocfilehash: 67fa5debac4039bf3ae9c3ef62418f033e2fa9c2
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 802c35f94457cc60ec27b3dd061d763d1acab4f5
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39598975"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43042242"
 ---
 # <a name="quickstart-get-started-with-hadoop-and-hive-in-azure-hdinsight-using-the-azure-portal"></a>Краткое руководство по началу работы с Hadoop и Hive в Azure HDInsight с помощью портала Azure
 

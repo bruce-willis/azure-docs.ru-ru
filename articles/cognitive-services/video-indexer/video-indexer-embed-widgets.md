@@ -7,14 +7,14 @@ author: juliako
 manager: erikre
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 07/31/2018
+ms.date: 08/25/2018
 ms.author: juliako
-ms.openlocfilehash: ba81030c3d6384ca6b66d6a3b14e614d1626e3e0
-ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
+ms.openlocfilehash: b8de9e8d73ba899fb7f3036d871c5d30daf101de
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "41929785"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43049361"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
@@ -95,7 +95,7 @@ ms.locfileid: "41929785"
 
 Теперь, когда пользователь щелкнет элемент управления аналитическими сведениями в приложении, проигрыватель перейдет к соответствующему моменту в видео.
 
-Дополнительные сведения см. в [этом примере](https://api-portal.videoindexer.ai/demo-all-widgets).
+Дополнительные сведения см. в [этом примере](https://codepen.io/videoindexer/pen/NzJeOb).
 
 ### <a name="embed-the-cognitive-insights-widget-and-use-azure-media-player-to-play-the-content"></a>Внедрение мини-приложения Cognitive Insights и использование Проигрывателя мультимедиа Azure для воспроизведения содержимого
 
@@ -153,7 +153,7 @@ ms.locfileid: "41929785"
 
 Теперь можно обмениваться данными с Проигрывателем мультимедиа Azure.
 
-Дополнительные сведения см. в [этом примере](https://api-portal.videoindexer.ai/demo-your-amp).
+Дополнительные сведения см. в [этом примере](https://codepen.io/videoindexer/pen/rYONrO).
 
 ### <a name="embed-video-indexer-cognitive-insights-widget-and-use-your-own-player-could-be-any-player"></a>Внедрение мини-приложения Cognitive Insights Индексатора видео и использование собственного проигрывателя (то есть любого проигрывателя)
 
@@ -201,7 +201,7 @@ ms.locfileid: "41929785"
         </script>
 
 
-Дополнительные сведения см. в [этом примере](https://api-portal.videoindexer.ai/demo-your-player).
+Дополнительные сведения см. в [этом примере](https://codepen.io/videoindexer/pen/YEyPLd).
 
 ## <a name="adding-subtitles"></a>Добавление субтитров
 

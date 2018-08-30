@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/03/2018
 ms.reviewers: billgib
 ms.author: genemi
-ms.openlocfilehash: 816cde31e84eeda8110c042f4e0640f12fb4cc53
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 026f3450535e4bed6a636fc5ae6ee9d821dbbb72
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645996"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247672"
 ---
 # <a name="manage-schema-in-a-saas-application-that-uses-sharded-multi-tenant-sql-databases"></a>Управление схемой в приложении SaaS, использующем сегментированные мультитенантные базы данных SQL
 
@@ -32,7 +32,7 @@ ms.locfileid: "34645996"
 
 Функция Базы данных SQL Azure [Задания обработки эластичных баз данных](sql-database-elastic-jobs-overview.md) используется для выполнения этих операций на всех клиентах. Задания также выполняются для шаблона базы данных клиента. В примере приложения Wingtip Tickets этот шаблон базы данных копируется для подготовки новой базы данных клиента.
 
-Из этого руководства вы узнали, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Создание агента задания.
@@ -40,7 +40,7 @@ ms.locfileid: "34645996"
 > * Обновление ссылочных данных во всех базах данных клиента.
 > * Создание индекса для таблицы во всех базах данных клиента.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Должно быть развернуто приложение SaaS Wingtip Tickets для мультитенантных баз данных.
     - Соответствующие инструкции представлены в первом руководстве по приложению SaaS Wingtip Tickets для мультитенантных баз данных.<br />[Deploy and explore a sharded multi-tenant application that uses Azure SQL Database](saas-multitenantdb-get-started-deploy.md) (Развертывание и изучение сегментированного мультитенантного приложения, использующего базу данных SQL Azure).
@@ -168,7 +168,6 @@ ms.locfileid: "34645996"
 Из этого руководства вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-.
 > * Создание агента заданий для выполнения заданий T-SQL в нескольких базах данных.
 > * Обновление ссылочных данных во всех базах данных клиента.
 > * Создание индекса для таблицы во всех базах данных клиента.

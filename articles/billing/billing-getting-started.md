@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2018
 ms.author: tonguyen
-ms.openlocfilehash: dc516aa64399447973cefa47e913193adce2f8f5
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 9396e954305ecc9ff6cbdd664c6cb71846bd5bfa
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528271"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42919132"
 ---
 # <a name="prevent-unexpected-charges-with-azure-billing-and-cost-management"></a>Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure
 
@@ -31,6 +31,9 @@ ms.locfileid: "39528271"
 - Если ваша подписка используется в режиме бесплатной пробной версии, [Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), Azure с открытой лицензией (AIO) или BizSpark, такая подписка будет автоматически деактивирована, когда будут израсходованы кредиты. Во избежание неожиданной деактивации подписки вам следует знать свою [предельную сумму расходов](#spending-limit).
 
 - Если вы вошли в систему с [бесплатной учетной записью Azure](https://azure.microsoft.com/free/), [вы можете бесплатно работать с некоторыми широко используемыми службами Azure в течение 12 месяцев](billing-create-free-services-included-free-account.md). Помимо приведенных ниже рекомендаций, ознакомьтесь со статьей о [Avoid getting charged for your Azure free account](billing-avoid-charges-free-account.md) (Как избежать выставления счетов для бесплатной учетной записи Azure).
+
+> [!div class="nextstepaction"]
+> [Помогите нам улучшить документацию по управлению счетами и подписками в Azure](https://go.microsoft.com/fwlink/p/?linkid=2010091) 
 
 ## <a name="get-estimated-costs-before-adding-azure-services"></a>Перед добавлением служб Azure узнайте их расчетную стоимость
 

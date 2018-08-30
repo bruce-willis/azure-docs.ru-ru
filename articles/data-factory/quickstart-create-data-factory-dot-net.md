@@ -10,15 +10,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: dotnet
-ms.topic: hero-article
+ms.topic: quickstart
 ms.date: 03/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 3d1d77e585ae8d608a8f9a4e3de0943315d897af
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.openlocfilehash: a7916a434552cbcb999f1e69c7a5bc2419f517fb
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41919961"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43094348"
 ---
 # <a name="create-a-data-factory-and-pipeline-using-net-sdk"></a>Создание фабрики данных и конвейера с помощью пакета SDK .NET
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -32,67 +32,7 @@ ms.locfileid: "41919961"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
-
-### <a name="azure-subscription"></a>Подписка Azure.
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
-
-### <a name="azure-roles"></a>Роли Azure
-Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure. На портале Azure щелкните **имя пользователя** в правом верхнем углу и выберите **Разрешения**, чтобы просмотреть существующие разрешения в подписке. Если у вас есть доступ к нескольким подпискам, выберите соответствующую подписку. Примеры инструкций по назначению пользователю роли см. в статье [о добавлении ролей](../billing/billing-add-change-azure-subscription-administrator.md).
-
-### <a name="azure-storage-account"></a>Учетная запись хранения Azure
-В этом кратком руководстве в качестве **исходного** и **целевого** хранилища данных используется учетная запись хранения Azure общего назначения (в частности, хранилища BLOB-объектов). Если у вас нет учетной записи хранения Azure общего назначения, см. инструкции по [созданию учетной записи хранения](../storage/common/storage-quickstart-create-account.md). 
-
-#### <a name="get-storage-account-name-and-account-key"></a>Получение имени и ключа учетной записи хранения
-В этом кратком руководстве вы будете использовать имя и ключ своей учетной записи хранения Azure. Далее описана процедура получения имени и ключа учетной записи хранения. 
-
-1. Откройте браузер и перейдите на [портал Azure](https://portal.azure.com). Войдите, используя имя пользователя и пароль Azure. 
-2. Щелкните **Больше служб >** в меню слева, отфильтруйте содержимое по ключевому слову **хранение**, затем выберите пункт **Учетные записи хранения**.
-
-    ![Поиск учетной записи хранения](media/quickstart-create-data-factory-dot-net/search-storage-account.png)
-3. В списке учетных записей хранения найдите с помощью фильтра свою учетную запись хранения (при необходимости), а затем выберите **эту учетную запись**. 
-4. На странице **учетной записи хранения** выберите в меню параметр **Ключи доступа**.
-
-    ![Получение имени и ключа учетной записи хранения](media/quickstart-create-data-factory-dot-net/storage-account-name-key.png)
-5. Скопируйте значения полей **Имя учетной записи хранения** и **key1** в буфер обмена. Вставьте их в Блокнот или другой редактор и сохраните файл.  
-
-#### <a name="create-input-folder-and-files"></a>Создание входной папки и файлов
-В этом разделе вы создадите контейнер больших двоичных объектов с именем **adftutorial** в хранилище BLOB-объектов Azure. Затем вы создадите папку с именем **input** в контейнере и отправите в нее пример файла. 
-
-1. На странице **Учетная запись хранения** перейдите на вкладку **Обзор** и щелкните **BLOB-объекты**. 
-
-    ![Выбор параметра "BLOB-объекты"](media/quickstart-create-data-factory-dot-net/select-blobs.png)
-2. На странице **Служба BLOB-объектов** щелкните **+ Контейнер** на панели инструментов. 
-
-    ![Кнопка добавления контейнера](media/quickstart-create-data-factory-dot-net/add-container-button.png)    
-3. В диалоговом окне **Создание контейнера** введите **adftutorial** в поле имени и нажмите кнопку **ОК**. 
-
-    ![Ввод имени контейнера](media/quickstart-create-data-factory-dot-net/new-container-dialog.png)
-4. Щелкните **adftutorial** в списке контейнеров. 
-
-    ![Выбор контейнера](media/quickstart-create-data-factory-dot-net/select-adftutorial-container.png)
-1. На странице **Контейнер** щелкните **Отправить** на панели инструментов.  
-
-    ![Кнопка "Отправить"](media/quickstart-create-data-factory-dot-net/upload-toolbar-button.png)
-6. На странице **Отправить BLOB-объект** щелкните **Дополнительно**.
-
-    ![Переход по ссылке "Дополнительно"](media/quickstart-create-data-factory-dot-net/upload-blob-advanced.png)
-7. Откройте **Блокнот** и создайте файл **emp.txt** с содержимым, приведенным ниже. Сохраните файл в папке **c:\ADFv2QuickStartPSH**. Если папка **ADFv2QuickStartPSH** отсутствует, создайте ее.
-    
-    ```
-    John, Doe
-    Jane, Doe
-    ```    
-8. На странице **Отправить BLOB-объект** на портале Azure найдите и выберите файл **emp.txt** в поле **Файлы**. 
-9. Введите в поле **Отправить в папку** значение **input**. 
-
-    ![Параметры отправки больших двоичных объектов](media/quickstart-create-data-factory-dot-net/upload-blob-settings.png)    
-10. Убедитесь, что указана папка **input** и файл **emp.txt**, а затем щелкните **Отправить**.
-11. В списке должен отобразиться файл **emp.txt** с состоянием отправки. 
-12. Закройте страницу **Отправить BLOB-объект**, нажав значок **X** в углу. 
-
-    ![Закрытие страницы отправки BLOB-объекта](media/quickstart-create-data-factory-dot-net/close-upload-blob.png)
-1. Не закрывайте страницу **контейнера**. Она понадобится для проверки выходных данных в конце этого руководства.
+[!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 
 
 ### <a name="visual-studio"></a>Visual Studio
 В этом руководстве используется Visual Studio 2017. Вы также можете использовать Visual Studio 2013 или 2015.
@@ -100,7 +40,7 @@ ms.locfileid: "41919961"
 ### <a name="azure-net-sdk"></a>Пакет Azure SDK для .NET
 Скачайте и установите [пакет Azure SDK для .NET](http://azure.microsoft.com/downloads/) на компьютер.
 
-### <a name="create-an-application-in-azure-active-directory"></a>Создание приложения в Azure Active Directory
+## <a name="create-an-application-in-azure-active-directory"></a>Создание приложения в Azure Active Directory
 Следуйте инструкциям из разделов [этой статьи](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application), чтобы выполнить следующие задачи: 
 
 1. **Создайте приложение Azure Active Directory**. Создайте приложение в Azure Active Directory, которое представляет приложение .NET, создаваемое в этом руководстве. В качестве URL-адреса входа можно указать фиктивный URL-адрес, как показано в статье (`https://contoso.org/exampleapp`).

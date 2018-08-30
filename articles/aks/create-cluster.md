@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 06/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 5c133c61c989bf19be3e84287cb76a7d110dccc8
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6bfe6f9b76693ded79aa9b9d21ddcac4e1a0733e
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39440479"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43110310"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster"></a>Создание кластера службы Azure Kubernetes (AKS)
 
@@ -48,7 +48,7 @@ az aks create --resource-group myResourceGroup --name myAKSCluster
 | `--enable-rbac` `-r` | Включение управления доступом на основе ролей Kubernetes. | Нет |
 | `--generate-ssh-keys` | Создание файлов открытого и закрытого ключей SSH, если они отсутствуют. | Нет |
 | `--kubernetes-version` `-k` | Версия Kubernetes, используемая для создания кластера, например 1.7.9 или 1.9.6. | Нет |
-| `--locaton` `-l` | Расположение автоматически созданной группы ресурсов. | Нет |
+| `--location` `-l` | Расположение автоматически созданной группы ресурсов. | Нет |
 | `--max-pods` `-m` | Максимальное число контейнеров pod, развертываемых на узле. | Нет |
 | `--network-plugin` | Используемый подключаемый модуль сети Kubernetes. | Нет |
 | `--no-ssh-key` `-x` | Запрет использования или создания локального ключа SSH. | Нет |

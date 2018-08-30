@@ -3,18 +3,18 @@ title: Использование MapReduce и Curl с Hadoop в HDInsight в Az
 description: Информация об удаленном выполнении заданий MapReduce с помощью Curl с использованием Hadoop в HDInsight.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: jasonh
-ms.openlocfilehash: f6b72a464bfd5eee2bedc52fd9f7163f2c970c13
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: f497184b05432d6e32883bb3470f7e4da5fe550f
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39590723"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43047191"
 ---
 # <a name="run-mapreduce-jobs-with-hadoop-on-hdinsight-using-rest"></a>Выполнение заданий MapReduce с помощью REST в Hadoop в HDInsight
 

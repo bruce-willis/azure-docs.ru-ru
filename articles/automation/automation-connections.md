@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5c865ff5c83626f13bb4fb9df7c1533371733540
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 4ead83dc449f2b32461b0585f276c9f3bfd3f847
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038458"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42919108"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 
@@ -84,7 +84,7 @@ New-AzureRmAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAcc
   
 ## <a name="using-a-connection-in-a-runbook-or-dsc-configuration"></a>Использование подключения в модуле Runbook или конфигурации DSC
 
-Для получения подключения в модуле Runbook или конфигурации DSC используется командлет **Get-AutomationConnection** .  Вы не можете использовать действие [Get-AzureRmAutomationConnection](https://docs.microsoft.com/powershell/resourcemanager/azurerm.automation/v1.0.12/Get-AzureRmAutomationConnection?redirectedfrom=msdn).  Это действие получает значения различных полей в подключении и возвращает их в виде [хэш-таблицы](http://go.microsoft.com/fwlink/?LinkID=324844), которую затем можно использовать с помощью соответствующих команд в модуле Runbook или конфигурации DSC.
+Для получения подключения в модуле Runbook или конфигурации DSC используется командлет **Get-AutomationConnection** .  Вы не можете использовать действие [Get-AzureRmAutomationConnection](/powershell/module/azurerm.automation/get-azurermautomationconnection).  Это действие получает значения различных полей в подключении и возвращает их в виде [хэш-таблицы](http://go.microsoft.com/fwlink/?LinkID=324844), которую затем можно использовать с помощью соответствующих команд в модуле Runbook или конфигурации DSC.
 
 ### <a name="textual-runbook-sample"></a>Пример текстового Runbook
 

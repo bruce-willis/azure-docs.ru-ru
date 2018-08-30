@@ -3,18 +3,18 @@ title: Разработка топологий Apache Storm с помощью Vi
 description: Сведения о создании топологий Storm в C#. Создайте простую топологию статистики в Visual Studio с помощью средств Hadoop для Visual Studio.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: jasonh
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1ed10fca7e9351aa4cbec42011b5f961a461ccef
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 3844bf101287774e1e4278cabf5a3e5b2c3dfa3c
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39620337"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43045594"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
 
@@ -107,8 +107,8 @@ namespace ConsoleApplication2
 | Пример модуля записи Storm Azure SQL |Запись в базу данных SQL Azure. |
 | Пример модуля чтения Storm Azure Cosmos DB |Чтение из базы данных Azure Cosmos DB. |
 | Пример модуля записи Storm Azure Cosmos DB |Запись в базу данных Azure Cosmos DB. |
-| Пример модуля чтения концентратора событий Storm |Чтение из концентраторов событий Azure. |
-| Пример модуля записи концентратора событий Storm |Запись в концентраторы событий Azure. |
+| Пример модуля чтения концентратора событий Storm |Чтение из Центров событий Azure. |
+| Пример модуля записи концентратора событий Storm |Запись в Центры событий Azure. |
 | Пример модуля чтения Storm HBase |Чтение из HBase в кластерах HDInsight. |
 | Пример модуля записи Storm HBase |Запись в HBase в кластерах HDInsight. |
 | Пример Storm Hybrid |Использование компонентов Java. |
@@ -476,9 +476,9 @@ return topologyBuilder;
 
 * Отправляя топологию на сервер, необходимо использовать параметр **Дополнительные конфигурации**, чтобы задать **пути к файлам Java**. При этом следует указать путь к каталогу, содержащему JAR-файлы с классами Java.
 
-### <a name="azure-event-hubs"></a>Концентраторы событий Azure
+### <a name="azure-event-hubs"></a>Центры событий Azure
 
-В SCP.NET версии 0.9.4.203 появились новые класс и метод, предназначенные специально для работы с компонентом spout концентратора событий (компонентом spout Java, который считывает данные из концентраторов событий). При создании топологии, которая использует компонент spout концентратора событий, используйте указанные ниже методы.
+В SCP.NET версии 0.9.4.203 появились новые класс и метод, предназначенные специально для работы с компонентом spout концентратора событий (компонентом spout Java, который считывает данные из Центров событий). При создании топологии, которая использует компонент spout концентратора событий, используйте указанные ниже методы.
 
 * Класс **EventHubSpoutConfig**. Создает объект, который содержит настройки для компонента spout.
 
@@ -739,7 +739,7 @@ Context.Logger.Info("Component started");
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Пример обработки данных из концентраторов событий см. в статье [Обработка событий из концентраторов событий Azure с помощью Storm в HDInsight](apache-storm-develop-csharp-event-hub-topology.md).
+Пример обработки данных из Центров событий см. в статье [Обработка событий из Центров событий Azure с помощью Storm в HDInsight](apache-storm-develop-csharp-event-hub-topology.md).
 
 Пример топологии C#, которая разбивает поток данных на несколько потоков, см. на странице с [примером C# Storm](https://github.com/Blackmist/csharp-storm-example).
 

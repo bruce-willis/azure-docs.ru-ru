@@ -2,26 +2,20 @@
 title: Распространенные сценарии работы с коллекциями рабочих областей Microsoft Power BI
 description: Типичные сценарии использования Microsoft Power BI Embedded
 services: power-bi-embedded
-documentationcenter: ''
 author: markingmyname
-manager: kfile
-editor: ''
-tags: ''
 ROBOTS: NOINDEX
 ms.assetid: 0bf9706c-11bd-432a-bab3-89c04bc4dd1f
 ms.service: power-bi-embedded
-ms.devlang: NA
 ms.topic: article
-ms.tgt_pltfrm: NA
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 57eb3bc52dc61be38b94e93e7872b9a2166279cf
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 04c54250a12e2f5989b474b7c6865ff8052743ef
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31407305"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43041891"
 ---
 # <a name="common-power-bi-workspace-collection-scenarios"></a>Распространенные сценарии работы с коллекциями рабочих областей Power BI
 

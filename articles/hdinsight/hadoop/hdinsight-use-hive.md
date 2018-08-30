@@ -5,17 +5,17 @@ keywords: hiveql, что такое hive, hadoop hiveql, как использо
 services: hdinsight
 author: jasonwhowell
 ms.author: jasonh
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/23/2018
-ms.openlocfilehash: 0ca968c0412396852e531af3b37f6675e0b519db
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 446bb23e15d908c8afe189a33e4d8a70faad284a
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39596666"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126643"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Обзор Apache Hive и HiveQL в Azure HDInsight
 
@@ -222,7 +222,7 @@ HDInsight предоставляет LLAP в кластере интеракти
 
 ### <a name="azure-data-factory"></a>Фабрика данных Azure
 
-Фабрика данных Azure позволяет использовать HDInsight как часть конвейера фабрики данных. Дополнительные сведения об использовании Hive из конвейера см. в документе [Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure](/data-factory/transform-data-using-hadoop-hive.md).
+Фабрика данных Azure позволяет использовать HDInsight как часть конвейера фабрики данных. Дополнительные сведения об использовании Hive из конвейера см. в документе [Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure](../../data-factory/transform-data-using-hadoop-hive.md).
 
 ### <a name="hive-jobs-and-sql-server-integration-services"></a>Задания Pig и SQL Server Integration Services
 

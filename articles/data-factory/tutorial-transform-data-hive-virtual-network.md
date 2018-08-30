@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью Hive в виртуальной сети Azure | Документы Майкрософт
+title: Преобразование данных с помощью Hive в виртуальной сети Azure | Документация Майкрософт
 description: В этом руководстве представлены пошаговые инструкции по преобразованию данных с использованием действия Hive в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -9,26 +9,26 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: douglasl
-ms.openlocfilehash: 4a96fae7d6af8f37bcdf1fe13761caef471df7d2
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 94269056a7bf0a89c3d1b2f4968ad9ff90abbc82
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37085699"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43106650"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
 В этом руководстве с помощью Azure PowerShell вы создадите конвейер Фабрики данных, который преобразует данные, используя действие Hive в кластере HDInsight, находящемся в виртуальной сети Azure (VNet). В этом руководстве вы выполните следующие шаги:
 
 > [!div class="checklist"]
-> * Создание фабрики данных. 
+> * Создали фабрику данных. 
 > * Создали и настроили среду выполнения интеграции с самостоятельным размещением.
 > * Создали и развернули эти связанные службы.
 > * Создали и развернули конвейер, который содержит действие Hive.
-> * Запуск конвейера.
-> * Мониторинг конвейера. 
+> * Осуществили запуск конвейера.
+> * Мониторинг конвейера 
 > * Проверили выходные данные. 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
@@ -391,7 +391,7 @@ Set-AzureRmDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGrou
    246 en-US SCH-i500 District Of Columbia
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 В этом руководстве вы выполнили следующие шаги: 
 
 > [!div class="checklist"]

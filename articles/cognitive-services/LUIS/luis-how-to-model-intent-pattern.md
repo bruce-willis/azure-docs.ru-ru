@@ -1,7 +1,7 @@
 ---
 title: Добавление шаблонов шаблонов в приложениях LUIS | Документы Майкрософт
 titleSuffix: Azure
-description: Дополнительные сведения о добавлении шаблонов шаблонов в приложения Language Understanding (LUIS) для повышения точности прогнозирования.
+description: Сведения о добавлении шаблонов в приложения службы "Распознавание речи" (LUIS) для повышения точности прогнозирования.
 services: cognitive-services
 author: diberry
 manager: cjgronlund
@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.technology: luis
 ms.topic: article
 ms.date: 06/08/2018
-ms.author: diberry;
-ms.openlocfilehash: bf1931355fd873eaeac6c313b70717dfa99814c6
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.author: diberry
+ms.openlocfilehash: 8926ce48a8426aa667787f7bbe104e27e1a68669
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39222602"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124690"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозирования
 После получения фрагментов речи конечной точки приложением LUIS используйте [понятие](luis-concept-patterns.md) шаблонов для повышения точности прогнозирования для фрагментов речи, в которых наблюдается определенный шаблон в порядке и выборе слов. Шаблоны используют [сущности](luis-concept-entity-types.md) и их роли для извлечения данных с помощью определенного синтаксиса шаблона. 

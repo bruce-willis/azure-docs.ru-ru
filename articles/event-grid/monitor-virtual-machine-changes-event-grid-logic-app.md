@@ -1,22 +1,20 @@
 ---
 title: Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure" | Документация Майкрософт
 description: Проверка наличия изменений конфигурации в виртуальных машинах с помощью службы "Сетка событий Azure" и Logic Apps.
-keywords: приложения логики, сетки событий, виртуальная машина, VM
 services: logic-apps
-author: ecfan
-manager: anneta
-ms.assetid: ''
-ms.workload: logic-apps
 ms.service: logic-apps
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.date: 11/30/2017
-ms.author: LADocs; estfan
-ms.openlocfilehash: ea3063b5c445dab85a7ef1e5663c40efc34f961e
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 29b28b0d81314d062c1b334092979cc9bccbeb31
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303119"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127665"
 ---
 # <a name="monitor-virtual-machine-changes-with-azure-event-grid-and-logic-apps"></a>Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"
 
@@ -33,14 +31,14 @@ ms.locfileid: "34303119"
 
 ![Обзор: отслеживание виртуальной машины с помощью службы "Сетка событий" и приложения логики](./media/monitor-virtual-machine-changes-event-grid-logic-app/monitor-virtual-machine-event-grid-logic-app-overview.png)
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание приложения логики, отслеживающего события с помощью службы "Сетка событий".
 > * Добавление условия, проверяющего наличие изменений виртуальной машины.
 > * Отправка электронного сообщения при изменении виртуальной машины.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись электронной почты [любого поставщика электронной почты, поддерживаемого Azure Logic Apps](../connectors/apis-list.md), например Office 365 Outlook, Outlook.com или Gmail, для отправки уведомлений. В этом руководстве используется Office 365 Outlook.
 
@@ -98,7 +96,7 @@ ms.locfileid: "34303119"
 
    ![Ввод сведений подписки на события](./media/monitor-virtual-machine-changes-event-grid-logic-app/logic-app-event-grid-trigger-details-generic.png)
 
-   | Параметр | Рекомендуемое значение | ОПИСАНИЕ | 
+   | Параметр | Рекомендуемое значение | Описание | 
    | ------- | --------------- | ----------- | 
    | **Подписка** | *{подписка_Azure_виртуальной_машины}* | Выберите подписку Azure издателя событий. Для работы с этим руководством выберите для виртуальной машины подписку Azure. | 
    | **Тип ресурса** | Microsoft.Resources.resourceGroups | Выберите тип ресурса издателя событий. Для работы с этим руководством выберите указанное значение, чтобы приложение логики отслеживало только группы ресурсов. | 

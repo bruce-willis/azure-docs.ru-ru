@@ -5,16 +5,16 @@ services: hdinsight
 ms.service: hdinsight
 author: jasonwhowell
 ms.author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2016
-ms.openlocfilehash: 8ac0703fa0ec5f9a9e3f994ccaac61c3748bb8f0
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: daf9efb2f9044ed1395b0f2aa3663c2471406e2f
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038495"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43045470"
 ---
 # <a name="scp-programming-guide"></a>Руководство по программированию для SCP
 SPC — это платформа для создания надежного, согласованного и высокопроизводительного приложения для обработки данных в реальном времени. Она основана на [Apache Storm](http://storm.incubator.apache.org/) — системе обработки потоковых данных, созданной сообществами разработчиков OSS. Создателем Storm является Натан Марц (Nathan Marz), программа имеет открытый код и распространяется компанией Twitter. В платформе используется [Apache ZooKeeper](http://zookeeper.apache.org/)— еще один проект Apache для обеспечения высоконадежной распределенной координации и управления состоянием. 
@@ -645,7 +645,6 @@ SCP предоставляет пользовательскому коду во�
 Примеры топологий Storm, созданных с помощью SCP, приведены в следующих документах.
 
 * [Разработка топологий для Apache Storm в HDInsight на C# с помощью Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md)
-* [Обработка событий из концентраторов событий Azure с помощью Storm в HDInsight](apache-storm-develop-csharp-event-hub-topology.md)
-* [Обработка данных с датчиков автомобиля из концентраторов событий с использованием Storm в HDInsight](https://github.com/hdinsight/hdinsight-storm-examples/tree/master/IotExample)
-* 
-  [Извлечение, преобразование и загрузка данных из Центров событий Azure в HBase](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample)
+* [Обработка событий из Центров событий Azure с помощью Storm в HDInsight](apache-storm-develop-csharp-event-hub-topology.md)
+* [Обработка данных с датчиков автомобиля из Центров событий с использованием Storm в HDInsight](https://github.com/hdinsight/hdinsight-storm-examples/tree/master/IotExample)
+* [Извлечение, преобразование и загрузка данных из Центров событий Azure в HBase](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample)

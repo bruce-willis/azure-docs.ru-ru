@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: e83a722ee58f49c20871faaca6aae7d7a5678361
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 2dcbd0cab055e8a2b2128b1f83f5c080a0887b85
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37130613"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122526"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-log-analytics"></a>Оптимизация среды SQL Server с помощью решения проверки работоспособности SQL Server в Log Analytics
 
@@ -40,7 +40,7 @@ ms.locfileid: "37130613"
 
 ![изображение панели мониторинга "Проверка работоспособности SQL"](./media/log-analytics-sql-assessment/sql-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Для решения проверки работоспособности SQL на каждом компьютере с агентом Microsoft Monitoring Agent (MMA) должна быть установлена поддерживаемая версия платформы .NET Framework 4.  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также службами Log Analytics.  
 * Решение поддерживает SQL Server версий 2012, 2014 и 2016.
@@ -174,8 +174,6 @@ Log Analytics использует агент Operations Manager и группу
 
 ## <a name="ignore-recommendations"></a>Игнорирование рекомендаций
 Если нужно проигнорировать определенные рекомендации, создайте текстовый файл, при помощи которого рекомендации будут удалены из результатов оценки в Log Analytics.
-
-[!INCLUDE[log-analytics-log-search-nextgeneration](../../includes/log-analytics-log-search-nextgeneration.md)]
 
 ### <a name="to-identify-recommendations-that-you-will-ignore"></a>Указание рекомендаций, которые нужно проигнорировать
 1. На портале Azure на странице Log Analytics для выбранной рабочей области щелкните плитку **Поиск по журналу**.

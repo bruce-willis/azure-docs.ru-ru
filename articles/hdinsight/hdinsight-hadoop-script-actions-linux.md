@@ -3,18 +3,18 @@ title: Разработка действий скриптов с помощью 
 description: Узнайте, как настраивать кластеры HDInsight под управлением Linux с помощью bash-сценариев. Действия сценариев в HDInsight позволяют выполнять сценарии во время или после создания кластера. С помощью сценария можно изменить параметры конфигурации кластера или установить дополнительное программное обеспечение.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: jasonh
-ms.openlocfilehash: 35d54970e41a7e1533f3d5adc09fc60dc1bbd68d
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 0225115fb6c74f736e6a5fba09414dc2ebafd84e
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600495"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43104829"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 

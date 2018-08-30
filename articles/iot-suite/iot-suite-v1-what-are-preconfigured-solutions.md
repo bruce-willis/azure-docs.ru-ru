@@ -1,26 +1,18 @@
 ---
 title: Предварительно настроенные решения IoT Azure | Документация Майкрософт
 description: Описание предварительно настроенных решений IoT Azure и их архитектуры со ссылками на дополнительные ресурсы.
-services: ''
-suite: iot-suite
-documentationcenter: ''
 author: dominicbetts
-manager: timlt
-editor: ''
-ms.assetid: 59009f37-9ba0-4e17-a189-7ea354a858a2
 ms.service: iot-suite
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-suite
+ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: dobett
-ms.openlocfilehash: d860c768a73737e6c8c52a8652d6b43434a3a07d
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 9642bfb8bb6b2e6d63082ff8287c1d5b31bbaefa
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34361994"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43191571"
 ---
 # <a name="what-are-the-azure-iot-suite-preconfigured-solutions"></a>Что такое предварительно настроенные решения Azure IoT Suite?
 
@@ -40,9 +32,9 @@ ms.locfileid: "34361994"
 
 | Решение | Прием данных | Удостоверение устройства | Управление устройствами | Команды и управление | Правила и действия | Прогнозная аналитика |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Удаленный мониторинг][lnk-getstarted-preconfigured] |Yes |Yes |Yes |Yes |Yes |- |
-| [Диагностическое обслуживание][lnk-predictive-maintenance] |Yes |Yes |- |Yes |Yes |Yes |
-| [Подключенная фабрика][lnk-getstarted-factory] |Yes |Yes |Yes |Yes |Yes |- |
+| [Удаленный мониторинг][lnk-getstarted-preconfigured] |Yes |Да |Да |Да |Yes |- |
+| [Диагностическое обслуживание][lnk-predictive-maintenance] |Yes |Да |- |Да |Да |Yes |
+| [Подключенная фабрика][lnk-getstarted-factory] |Yes |Да |Да |Да |Yes |- |
 
 * *Прием данных*: прием данных в облако в нужном масштабе.
 * *Удостоверения устройств*: управление уникальными удостоверениями устройств и контроль доступа устройств к решению.
@@ -121,7 +113,7 @@ ms.locfileid: "34361994"
 
 В этом предварительно настроенном решении обработчик событий представляет собой часть **серверной части решения Интернета вещей** в стандартной [архитектуре решения Интернета вещей][lnk-what-is-azure-iot].
 
-**Задание отправки сведений об устройстве** и **задание выполнения правил** отправляют свои выходные данные в концентраторы событий, чтобы эти данные перенаправлялись в другие службы серверной части. Для чтения сообщений из этих концентраторов событий в решении используется экземпляр [EventProcessorHost][lnk-event-processor], который выполняется в рамках [веб-задания][lnk-web-job]. **EventProcessorHost** использует:
+**Задание отправки сведений об устройстве** и **задание выполнения правил** отправляют свои выходные данные в Центры событий, чтобы эти данные перенаправлялись в другие службы серверной части. Для чтения сообщений из этих Центров событий в решении используется экземпляр [EventProcessorHost][lnk-event-processor], который выполняется в рамках [веб-задания][lnk-web-job]. **EventProcessorHost** использует:
 - данные **задания отправки сведений об устройстве**, чтобы обновить данные устройства в базе данных Cosmos DB;
 - данные **задания выполнения правил**, чтобы вызвать приложение логики и обновить предупреждения, отображаемые на портале решения.
 
@@ -165,11 +157,11 @@ ms.locfileid: "34361994"
 [img-dashboard]: ./media/iot-suite-v1-what-are-preconfigured-solutions/dashboard.png
 [lnk-what-is-azure-iot]: iot-suite-what-is-azure-iot.md
 [lnk-asa]: https://azure.microsoft.com/documentation/services/stream-analytics/
-[lnk-event-processor]: ../event-hubs/event-hubs-programming-guide.md#event-processor-host
+[lnk-event-processor]: ../event-hubs/event-hubs-programming-guide.md#event-consumers
 [lnk-web-job]: ../app-service/web-sites-create-web-jobs.md
 [lnk-identity-registry]: ../iot-hub/iot-hub-devguide-identity-registry.md
-[lnk-predictive-maintenance]: iot-suite-predictive-overview.md
-[lnk-azureiotsuite]: https://www.azureiotsuite.com/
+[lnk-predictive-maintenance]:../iot-accelerators/iot-accelerators-predictive-overview.md
+[lnk-azureiotsuite]: https://www.azureiotsolutions.com/
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 [lnk-getstarted-preconfigured]: iot-suite-v1-getstarted-preconfigured-solutions.md
 [lnk-c2d-guidance]: ../iot-hub/iot-hub-devguide-c2d-guidance.md

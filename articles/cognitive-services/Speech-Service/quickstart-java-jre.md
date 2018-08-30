@@ -9,16 +9,16 @@ ms.technology: Speech
 ms.topic: article
 ms.date: 08/16/2018
 ms.author: fmegen
-ms.openlocfilehash: 11aba1ae6f49d6c00fabd928ae3aefedcbea8ed8
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 923ab3378d5e2d833e11c5111d4dd9964fea6dc4
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234279"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126619"
 ---
 # <a name="quickstart-recognize-speech-in-java-windows-or-linux"></a>Краткое руководство. Распознавание речи в Java (Windows или Linux)
 
-[!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
+[!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 В этом документе описывается создание консольного приложения на платформе Java для среды выполнения Java (JRE), которое использует пакет SDK для распознавания речи.
 Приложение основано на пакете SDK Microsoft Cognitive Services для Maven.
@@ -107,7 +107,7 @@ ms.locfileid: "40234279"
 
 ![Вывод на консоль после успешного распознавания](media/sdk/qs-java-jre-07-console-output.png)
 
-[!include[Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
+[!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Этот пример можно найти в папке `quickstart/java-jre`.
 
 ## <a name="next-steps"></a>Дополнительная информация

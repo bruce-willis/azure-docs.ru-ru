@@ -8,12 +8,12 @@ ms.date: 6/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 91821d66ac0be265e6b66fd9eb2378169e337430
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 696a752f199e2f7018713cb87c3b098556c5b4f5
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144452"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247622"
 ---
 # <a name="azure-iot-edge-support"></a>Поддержка Azure IoT Edge
 Есть много способов реализовать поддержку продуктов Azure IoT Edge.
@@ -53,12 +53,14 @@ Azure IoT Edge работает на большинстве операционн
 
 | Операционная система | AMD64 | ARM32 |
 | ---------------- | ----- | ----- |
-| Ubuntu 18.04 | Yes | Нет  |
-| Ubuntu 16.04. | Yes | Нет  |
+| Ubuntu 18.04 | Yes | Yes |
+| Ubuntu 16.04. | Yes | Yes |
+| CentOS 7.5 | Yes | Yes |
+| RHEL 7.5 | Yes | Yes |
 | Wind River 8 | Yes | Нет  |
 | Yocto | Yes | Нет  |
-| Debian | Yes | Нет  |
-| Mac | Yes | Нет  |
+| Debian 8; | Yes | Yes |
+| Debian 9 | Yes | Yes |
 
 ## <a name="container-engines"></a>Подсистемы контейнеров
 Azure IoT Edge требует наличия контейнера для запуска модулей в любой из поддерживаемых операционных систем. Корпорация Майкрософт предоставляет для этого подсистему контейнеров moby-engine. Она основана на проекте Moby с открытым кодом. Также часто используются подсистемы контейнеров Docker CE и Docker EE. Они также основаны на проекте Moby с открытым кодом и полностью совместимы с Azure IoT Edge. Корпорация Майкрософт поддерживает системы, использующие эти подсистемы контейнеров, по принципу "насколько возможно", но не гарантирует исправление всех возможных проблем, связанных с их использованием. По этой причине мы рекомендуем использовать для рабочей среды только подсистему moby-engine.

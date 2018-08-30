@@ -4,29 +4,23 @@ description: Узнайте, как настроить масштабируем�
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 author: tomarcher
-manager: jpconnock
-editor: na
-ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.date: 07/11/2018
+manager: jeconnoc
 ms.author: tarcher
-ms.openlocfilehash: b9c8058606e13c0db4908530e98cddb69d2caf50
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.topic: tutorial
+ms.date: 08/24/2018
+ms.openlocfilehash: 762c14b5b6e30f6410a8d572d69651c803f079c2
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39011502"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918092"
 ---
 # <a name="deploy-applications-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.  
 
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- **Настройка Ansible** - [Создание учетных данных Azure](../virtual-machines/linux/ansible-install-configure.md#create-azure-credentials).
-- **Модули Ansible и пакета SDK для Python в Azure** 
-  - [CentOS 7.4](../virtual-machines/linux/ansible-install-configure.md#centos-74)
-  - [Ubuntu 16.04 LTS](../virtual-machines/linux/ansible-install-configure.md#ubuntu-1604-lts)
-  - [SLES 12 SP2](../virtual-machines/linux/ansible-install-configure.md#sles-12-sp2)
+- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 - **Масштабируемый набор виртуальных машин**. Если у вас еще нет масштабируемого набора виртуальных машин, вы можете [создать его с помощью Ansible](ansible-create-configure-vmss.md). 
 - **git** - [git](https://git-scm.com) используется для скачивания примеров Java, которые есть в этом руководстве.
 - **Пакет SDK для Java SE (JDK)**. JDK используется для создания примера проекта Java.
@@ -159,7 +153,7 @@ Ansible позволяет автоматизировать развертыва
   - Для Ubunto версии 16.04 выполните команду `apt-get install sshpass`.
   - Для CentOS версии 7.4 выполните команду `yum install sshpass`.
 
-Могут появиться следующие сообщения об ошибке. **Использование пароля SSH вместо ключа невозможно, так как проверка ключа узла включена и sshpass не поддерживает ее.  Добавьте отпечаток узла в файл known_hosts для управления этим узлом.** Если вы видите эту ошибку, можно отключить проверку ключа узла, добавив следующую строку в файл `/etc/ansible/ansible.cfg` или `~/.ansible.cfg`:
+Могут появиться следующие сообщения об ошибке. **Использование пароля SSH вместо ключа невозможно, так как проверка ключа узла включена и sshpass не поддерживает ее. Добавьте отпечаток узла в файл known_hosts для управления этим узлом.** Если вы видите эту ошибку, можно отключить проверку ключа узла, добавив следующую строку в файл `/etc/ansible/ansible.cfg` или `~/.ansible.cfg`:
   ```bash
   [defaults]
   host_key_checking = False

@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: dobett
-ms.openlocfilehash: 9cf13589fb83f100dd024e65dfe9178cb54802f2
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: f468567aa67560eed972fb53669638a17778b307
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143555"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189960"
 ---
 # <a name="configure-iot-hub-file-uploads-using-powershell"></a>Настройка отправки файлов в Центре Интернета вещей с помощью PowerShell
 
@@ -134,4 +134,4 @@ Set-AzureRmIotHub `
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
 * [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
-* [Комплексная защита в Интернете вещей](/../iot-fundamentals/iot-security-ground-up.md)
+* [Комплексная защита в Интернете вещей](../iot-fundamentals/iot-security-ground-up.md)

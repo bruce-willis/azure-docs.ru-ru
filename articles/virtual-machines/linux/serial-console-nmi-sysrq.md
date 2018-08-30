@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 14bf68355550d756bd3f4da1a367133d83ddbf07
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 110bdcacf7433c1e0ab0cb31e1a04734137f9596
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146565"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42885245"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
@@ -84,13 +84,17 @@ echo "1" >/proc/sys/kernel/sysrq
 
 ### <a name="distribution-specific-documentation"></a>Документация для конкретного дистрибутива ###
 Документация по SysRq для конкретного дистрибутива и шаги по настройке Linux для создания аварийного дампа при получении команды Crash SysRq доступны по ссылкам ниже.
+
 #### <a name="ubuntu"></a>Ubuntu ####
  - [Аварийный дамп памяти ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
+
 #### <a name="red-hat"></a>Red Hat ####
 - [Что такое средство SysRq и как его использовать?](https://access.redhat.com/articles/231663)
 - [Как использовать средство SysRq для сбора информации с сервера RHEL?](https://access.redhat.com/solutions/2023)
+
 #### <a name="suse"></a>SUSE ####
 - [Настройка записи дампа ядра](https://www.suse.com/support/kb/doc/?id=3374462)
+
 #### <a name="coreos"></a>CoreOS ####
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
@@ -109,16 +113,17 @@ echo "1" >/proc/sys/kernel/sysrq
 
 Дополнительные сведения о конфигурации ядра Linux, включая `unknown_nmi_panic`, `panic_on_io_nmi` и `panic_on_unrecovered_nmi`, см. в разделе [документации по /proc/sys/kernel/*](https://www.kernel.org/doc/Documentation/sysctl/kernel.txt). Документацию по немаскируемому прерыванию для конкретного дистрибутива и шаги по настройке Linux для создания аварийного дампа при получении немаскируемого прерывания см. по ссылкам ниже.
  
- ### <a name="ubuntu"></a>Ubuntu 
+### <a name="ubuntu"></a>Ubuntu 
  - [Аварийный дамп памяти ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
 
- ### <a name="red-hat"></a>Red Hat 
+### <a name="red-hat"></a>Red Hat 
  - [Что такое немаскируемое прерывание и для чего его можно использовать?](https://access.redhat.com/solutions/4127)
  - [Как я могу настроить свою систему на сбой при передаче немаскируемого прерывания?](https://access.redhat.com/solutions/125103)
  - [Руководство администратора по выполнению аварийного дампа](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/pdf/kernel_crash_dump_guide/kernel-crash-dump-guide.pdf)
 
 ### <a name="suse"></a>SUSE 
 - [Настройка записи дампа ядра](https://www.suse.com/support/kb/doc/?id=3374462)
+
 ### <a name="coreos"></a>CoreOS 
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 

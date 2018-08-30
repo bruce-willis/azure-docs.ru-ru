@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 9a65237b3eba6c9878d73148f0143f20dd60dd79
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a3a007bf19a28e6f361837856f83a191a761ef9b
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34636554"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247420"
 ---
 # <a name="use-powershell-to-add-a-marketplace-image-to-a-lab-in-azure-devtest-labs"></a>Добавление образа marketplace в лабораторию в Azure DevTest Labs с помощью PowerShell
 
@@ -25,8 +25,8 @@ ms.locfileid: "34636554"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
-* **Лаборатория**. Этот сценарий требует наличия лаборатории. 
+## <a name="prerequisites"></a>Предварительные требования
+* **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -36,9 +36,9 @@ ms.locfileid: "34636554"
 
 Этот сценарий использует следующие команды: 
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [Find-AzureRmResource](/module/azurerm.resources/find-azurermresource) | Выполняет поиск ресурсов на основе указанных параметров. |
+| [Find-AzureRmResource](/powershell/module/azurerm.resources/find-azurermresource) | Выполняет поиск ресурсов на основе указанных параметров. |
 | [Get-AzureRmResource](/powershell/module/azurerm.resources/get-azurermresource) | Получает ресурсы. |
 | [Set-AzureRmResource](/powershell/module/azurerm.resources/set-azurermresource) | Изменяет ресурс. |
 | [New-AzureRmResource](/powershell/module/azurerm.resources/new-azurermresource) | Создает ресурса. |

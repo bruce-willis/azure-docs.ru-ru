@@ -15,16 +15,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/14/2018
 ms.author: genli
-ms.openlocfilehash: 97210c0d9dba9c4130b1da9ad17a257ff1d81b42
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: b0e24e498acd823242b3613abb62df978466d56d
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449228"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918318"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
 
 Чтобы управлять доступом к ресурсам Azure, требуется соответствующая роль администратора. В этой статье описано, как добавлять или изменять роли администратора для пользователя на уровне подписки.
+
+> [!div class="nextstepaction"]
+> [Помогите нам улучшить документацию по управлению счетами и подписками в Azure](https://go.microsoft.com/fwlink/p/?linkid=2010091)
 
 ## <a name="what-administrator-role-do-i-use"></a>Какую роль администратора следует использовать?
 
@@ -91,7 +94,7 @@ Azure предлагает несколько разных ролей. Для у
   | Метод входа | Возможность добавления пользователя учетной записи Майкрософт в качестве администратора служб | Возможность добавления рабочей или учебной учетной записи в той же организации, к которой относится администратор служб | Возможность добавления рабочей или учебной учетной записи в организации, к которой не относится администратор служб |
   | --- | --- | --- | --- |
   |  Учетная запись Майкрософт |Yes |Нет  |Нет  |
-  |  Рабочая или учебная учетная запись |Yes |Yes |Нет  |
+  |  Рабочая или учебная учетная запись |Yes |Да |Нет  |
 
 ## <a name="change-the-account-administrator-for-an-azure-subscription"></a>Изменение администратора учетной записи для подписки Azure
 

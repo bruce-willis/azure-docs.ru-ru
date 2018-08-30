@@ -6,15 +6,15 @@ services: hdinsight
 ms.service: hdinsight
 author: jasonwhowell
 ms.author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 11/2/2017
-ms.openlocfilehash: c90c793949f1c37d18d0227fd9407e65c332ed0c
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: cad9e6ceb22ab66b5a3fe00358eb6b6170a3f29f
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038367"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43049593"
 ---
 # <a name="troubleshoot-storm-by-using-azure-hdinsight"></a>Устранение неполадок в Storm с помощью Azure HDInsight
 
@@ -39,7 +39,7 @@ https://\<DNS-имя кластера\>/stormui
 
 ## <a name="how-do-i-transfer-storm-event-hub-spout-checkpoint-information-from-one-topology-to-another"></a>Как передать сведения о контрольной точке spout концентратора событий Storm из одной топологии в другую?
 
-При разработке топологий, которые считывают концентраторы событий Azure с помощью JAR-файла spout концентратора событий HDInsight Storm, необходимо развернуть топологию, которая имеет то же имя в новом кластере. Однако нужно сохранить данные контрольных точек, которые были зафиксированы в Apache ZooKeeper на старом кластере.
+При разработке топологий, которые считывают данные из Центров событий Azure с помощью JAR-файла spout концентратора событий HDInsight Storm, необходимо развернуть топологию, которая имеет то же имя в новом кластере. Однако нужно сохранить данные контрольных точек, которые были зафиксированы в Apache ZooKeeper на старом кластере.
 
 ### <a name="where-checkpoint-data-is-stored"></a>Где хранятся данные контрольных точек
 Данные контрольных точек для смещений сохраняются объектом spout концентратора событий в Zookeeper. Имеется два корневых пути:
@@ -122,10 +122,10 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 Дополнительные сведения об использовании JAR-файлов spout концентратора событий Storm с топологией см. на следующих ресурсах.
  
 ### <a name="java-based-topology"></a>Топология на основе Java
-[Обработка событий из службы концентраторов событий Azure с помощью Storm в HDInsight (Java)](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-develop-java-event-hub-topology)
+[Обработка событий из службы "Центры событий" Azure с помощью Storm в HDInsight (Java)](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-develop-java-event-hub-topology)
  
 ### <a name="c-based-topology-mono-on-hdinsight-34-linux-storm-clusters"></a>Топология на основе C# (Mono в кластерах Linux Storm для HDInsight 3.4+)
-[Обработка событий из службы концентраторов событий Azure с помощью Storm в HDInsight (C#)](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-develop-csharp-event-hub-topology)
+[Обработка событий из службы "Центры событий" Azure с помощью Storm в HDInsight (C#)](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-develop-csharp-event-hub-topology)
  
 ### <a name="latest-storm-event-hub-spout-binaries-for-hdinsight-35-linux-storm-clusters"></a>Последние двоичные файлы spout концентратора событий Storm для кластеров Linux Storm для HDInsight 3.5+
 Дополнительные сведения об использовании объекта spout концентратора событий Storm, который работает с кластерами Linux Storm для HDInsight 3.5+, см. в [файле сведений](https://github.com/hdinsight/mvn-repo/blob/master/README.md) репозитория mvn-repo.

@@ -5,16 +5,16 @@ services: hdinsight
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/26/2018
-ms.openlocfilehash: a7f17aafd7798c1bada9fef01a6c8f1022d291f4
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 69bf885ad5d6244997c7ce9cf61bdee9e05c1826
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39616856"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43048980"
 ---
 # <a name="run-apache-oozie-in-domain-joined-hdinsight-hadoop-clusters"></a>Запуск Apache Oozie в присоединенных к домену кластерах HDInsight Hadoop
 Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Служба Oozie интегрирована со стеком Hadoop и поддерживает следующие задания:

@@ -2,18 +2,18 @@
 title: Подключение устройства Windows IoT Core к приложению Azure IoT Central | Документация Майкрософт
 description: Вы узнаете, как разработчик устройства может подключить устройство MXChip IoT DevKit к приложению Azure IoT Central.
 author: miriambrus
-ms.author: mriamb
+ms.author: miriamb
 ms.date: 04/09/2018
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 39eb6f137750f7f741c88dcdf9a55f34d24eaa59
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: 73a23ace23d2373e238c6887c4a41c6037d233de
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205754"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189010"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -44,7 +44,7 @@ ms.locfileid: "39205754"
 
 ### <a name="prepare-the-windows-iot-core-device"></a>Подготовка устройства Windows IoT Core
 
-Для настройки устройства Windows IoT Core выполните инструкции из [этого пошагового руководства](https://github.com/Microsoft/microsoft-iot-central-firmware/tree/master/WindowsIoT#setup-a-physical-device).
+Для настройки устройства Windows IoT Core выполните инструкции из [этого пошагового руководства](https://github.com/Azure/iot-central-firmware/tree/master/WindowsIoT#setup-a-physical-device).
 
 ### <a name="add-a-real-device"></a>Добавление реального устройства
 

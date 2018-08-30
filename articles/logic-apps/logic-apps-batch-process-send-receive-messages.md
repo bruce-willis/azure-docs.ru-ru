@@ -3,19 +3,18 @@ title: Пакетная обработка сообщений как групп�
 description: Отправка и получение сообщений в виде пакетов в Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
-manager: jeconnoc
+ms.reviewer: estfan, jonfan, LADocs
 ms.topic: article
 ms.date: 08/19/2018
-ms.reviewer: estfan, LADocs
-ms.suite: integration
-ms.openlocfilehash: 5190e5d4191cb4d07b000920dd1be1b53e679350
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: ee1df77dc18350a64082cb62c297a53700cad223
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144457"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128751"
 ---
 # <a name="send-receive-and-batch-process-messages-in-azure-logic-apps"></a>Отправка, получение и пакетная обработка сообщений в Azure Logic Apps
 
@@ -35,7 +34,7 @@ ms.locfileid: "42144457"
 
 Для выполнения этого примера необходимы следующие компоненты:
 
-* Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). Или [зарегистрироваться для получения подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
+* Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). Или [зарегистрируйтесь для получения подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
 
 * Учетная запись электронной почты любого [поставщика электронной почты, поддерживаемого Azure Logic Apps](../connectors/apis-list.md).
 

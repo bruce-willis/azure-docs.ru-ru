@@ -4,18 +4,18 @@ description: Узнайте, как использовать Python для за�
 services: hdinsight
 keyword: mapreduce python,python map reduce,python mapreduce
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: jasonh
-ms.openlocfilehash: 34a270ce321770c3e024580be7b234bfa5f21b22
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 8e2d13e0d9e51855bc8945db61c78a2fec736c33
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39594463"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43041716"
 ---
 # <a name="develop-python-streaming-mapreduce-programs-for-hdinsight"></a>Разработка программ MapReduce с потоковой передачей Python для HDInsight
 

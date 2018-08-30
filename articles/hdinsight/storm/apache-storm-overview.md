@@ -3,19 +3,19 @@ title: Основные сведения об Apache Storm в Azure HDInsight
 description: Apache Storm позволяет обрабатывать потоки данных в режиме реального времени. Azure HDInsight позволяет легко создавать кластеры Storm в облаке Azure. С помощью Visual Studio можно создать решения Storm, используя C#, а затем развернуть их в кластерах HDInsight Storm.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 keywords: варианты использования apache storm, кластер storm, сведения об apache storm
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: jasonh
-ms.openlocfilehash: e17c1f50fdfb1b34c8a277c26e1e6fa8ba99dd02
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 3446488a5dc2bdd1bb01b39bc25b60137fcbc331
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621136"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43040053"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
@@ -42,9 +42,9 @@ ms.locfileid: "39621136"
     > [!NOTE]
     > Чтобы использовать новые узлы, добавленные с помощью операций масштабирования, нужно деактивировать и повторно активировать выполняющиеся топологии.
 
-* **Создание конвейеров потоковой передачи с помощью различных служб Azure.** Storm в HDInsight интегрируется с другими службами Azure, такими как концентраторы событий, База данных SQL, служба хранилища Azure и Azure Data Lake Store.
+* **Создание конвейеров потоковой передачи с помощью различных служб Azure.** Storm в HDInsight интегрируется с другими службами Azure, такими как Центры событий, База данных SQL, служба хранилища Azure и Azure Data Lake Store.
 
-    Пример приложения, которое интегрируется со службами Azure, см. в примере [Process events from Azure Event Hubs with Storm on HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/) (Обработка событий из концентраторов событий Azure с помощью Storm в HDInsight (Java)).
+    Пример приложения, которое интегрируется со службами Azure, см. в примере [Process events from Azure Event Hubs with Storm on HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/) (Обработка событий из Центров событий Azure с помощью Storm в HDInsight (Java)).
 
 Список компаний, использующих Apache Storm в качестве решения для анализа данных в реальном времени, см. на [этой странице](https://storm.apache.org/documentation/Powered-By.html).
 
@@ -94,13 +94,13 @@ Storm работает с топологиями, а не заданиями Map
 
 * __Azure Data Lake Store.__ Примеры использования Data Lake Store с помощью кластера Storm см. в статье [Использование Azure Data Lake Store с помощью Apache Storm в HDInsight (Java)](apache-storm-write-data-lake-store.md).
 
-* __Концентраторы событий.__ Примеры использования концентраторов событий с кластером Storm:
+* __Центры событий.__ Примеры использования Центров событий с кластером Storm:
 
-    * [Обработка событий из службы концентраторов событий Azure с помощью Storm в HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/)
+    * [Обработка событий из службы "Центры событий" Azure с помощью Storm в HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/)
 
-    * [Обработка событий из службы концентраторов событий Azure с помощью Storm в HDInsight (C#)](apache-storm-develop-csharp-event-hub-topology.md)
+    * [Обработка событий из службы "Центры событий" Azure с помощью Storm в HDInsight (C#)](apache-storm-develop-csharp-event-hub-topology.md)
 
-* __База данных SQL__, __Cosmos DB__, __концентраторы событий__ и __HBase.__ Примеры шаблонов для работы с ними включены в средства Data Lake для Visual Studio. Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
+* __База данных SQL__, __Cosmos DB__, __Центры событий__ и __HBase.__ Примеры шаблонов для работы с ними включены в средства Data Lake для Visual Studio. Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
 
 ## <a name="support"></a>Поддержка
 

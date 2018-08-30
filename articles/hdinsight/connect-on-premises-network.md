@@ -2,18 +2,18 @@
 title: Подключение HDInsight к локальной сети в Azure HDInsight
 description: Узнайте, как создать кластер HDInsight в виртуальной сети Azure, а затем подключить его к локальной сети. Узнайте, как настроить разрешение имен между HDInsight и локальной сетью с помощью DNS-сервера.
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: jasonh
-ms.openlocfilehash: c7186298c95667f1f29febca8c85d6799710deab
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: b9b744edbcb2abce70487c84c85a0aae71494e52
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39597513"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43105874"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>Подключение HDInsight к локальной сети
 

@@ -3,18 +3,18 @@ title: Установка или обновление Mono в HDInsight в Azure
 description: Сведения об использовании конкретной версии Mono с кластером HDInsight. Mono используется для запуска приложений .NET в кластерах HDInsight под управлением Linux.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: jasonh
 ms.custom: hdinsightactive
-ms.openlocfilehash: 5f15d199ac60421340ad844c0964c39a8bfe705a
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: db460c6ebe934fa9ca9b6b42d517f39acbecf0c9
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39598314"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43105319"
 ---
 # <a name="install-or-update-mono-on-hdinsight"></a>Установка или обновление Mono в HDInsight
 

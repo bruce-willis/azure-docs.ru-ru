@@ -3,12 +3,12 @@ layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
 description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Вы можете получить документацию, примеры кода, учебники и многое другое.
-ms.openlocfilehash: 103d09b1a71239948c730f8dba47253741bbaa9c
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 37b60b41859432543ed14b8529bebc15ec215115
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038586"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189567"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -678,12 +678,12 @@ ms.locfileid: "40038586"
                             </li>
                             <li>
                                 <div class="group">
-                                    <h3>Хранилище</h3>
+                                    <h3>служба хранилища.</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/storage/">
                                                 <img src="media/index/Storage.svg" alt="" />
-                                                <p>Хранилище</p>
+                                                <p>служба хранилища.</p>
                                             </a>
                                         </li>
                                         <li>
@@ -783,7 +783,7 @@ ms.locfileid: "40038586"
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/azure/devtest-lab/">
+                                            <a href="/services/devtest-lab/">
                                                 <img src="media/index/DevTestLabs.svg" alt="" />
                                                 <p>Azure DevTest Labs</p>
                                             </a>
@@ -830,7 +830,7 @@ ms.locfileid: "40038586"
                                         <li>
                                             <a href="/azure/event-hubs/">
                                                 <img src="media/index/EventHubs.svg" alt="" />
-                                                <p>концентраторы событий;</p>
+                                                <p>Центры событий;</p>
                                             </a>
                                         </li>
                                         <li>
@@ -2361,7 +2361,7 @@ ms.locfileid: "40038586"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>концентраторы событий;</h3>
+                                                    <h3>Центры событий;</h3>
                                                     <p>Получение телеметрии от миллионов устройств</p>
                                                 </div>
                                             </div>
@@ -2746,7 +2746,7 @@ ms.locfileid: "40038586"
                                 </a>
                             </li>
                             <li>
-                                <a href="/azure/devtest-lab/">
+                                <a href="/services/devtest-lab/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

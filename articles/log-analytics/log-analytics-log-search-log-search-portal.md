@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/15/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: e97bab36a9a1a18cab1d45abfa451139323b2320
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 532df20a7639f42d8ba1c840a5fd19f0ad0e4042
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42142510"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43246339"
 ---
 # <a name="create-log-searches-in-azure-log-analytics-using-the-log-search-portal"></a>Создание поисков по журналам в Azure Log Analytics с помощью портала поиска по журналам
 
@@ -38,9 +38,8 @@ ms.locfileid: "42142510"
 
 1. Перейдите на портал Azure.
 2. Перейдите к Log Analytics и выберите рабочую область.
-3. Выберите **Поиск по журналам**.
+3. Выберите **Журналы**.
 
-![Кнопка поиска по журналу](media/log-analytics-log-search-log-search-portal/log-search-button.png)
 
 ## <a name="create-a-simple-search"></a>Создание простого поиска
 Самый быстрый способ получить некоторые данные для работы — создать простой запрос, который возвращает все записи в таблице.  Если у вас есть клиенты Windows или Linux, подключенные к рабочей области, у вас будут данные в таблице событий (Windows) или таблице системного журнала (Linux).

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
-ms.openlocfilehash: bd86e44c21ca3c0b9c061f9a5c24bd19c4b207f9
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0acff1eb4cee441187205b11a7e07cc718072cbf
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34636449"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43248195"
 ---
 # <a name="use-powershell-to-add-an-external-user-to-a-lab-in-azure-devtest-labs"></a>Добавление внешнего пользователя в лабораторию в Azure DevTest Labs с помощью PowerShell
 
@@ -25,8 +25,8 @@ ms.locfileid: "34636449"
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
-* **Лаборатория**. Этот сценарий требует наличия лаборатории. 
+## <a name="prerequisites"></a>Предварительные требования
+* **Лаборатория.** Этот сценарий требует наличия лаборатории. 
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -36,10 +36,10 @@ ms.locfileid: "34636449"
 
 Этот сценарий использует следующие команды: 
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [Get-AzureRmADUser](/powershell/module/azurerm.resources/get-azurermaduser) | Извлекает объект-пользователь из Azure Active Directory. |
-| [New-AzureRmRoleAssignment](/module/azurerm.resources/new-azurermroleassignment) | Присваивает указанную роль заданному субъекту в определенной области. |
+| [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) | Присваивает указанную роль заданному субъекту в определенной области. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

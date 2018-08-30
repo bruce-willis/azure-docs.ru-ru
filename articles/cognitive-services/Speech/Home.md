@@ -9,12 +9,12 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: zhouwang
-ms.openlocfilehash: ee328145419aaf8962c08bca2fb9cf1a42daae0c
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: d58642b95a60d4f1c83dfd969d0c76511dca4653
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "41929784"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43097401"
 ---
 # <a name="microsoft-bing-speech-api-overview"></a>Обзор API распознавания речи Bing компании Microsoft
 
@@ -24,7 +24,7 @@ ms.locfileid: "41929784"
 - API **преобразование текста в речь** преобразовывает текст в аудиопотоки, которые могут быть воспроизведены пользователю приложения.
 
 > [!NOTE] 
-> В мае 2018 года в была выпущена общедоступная предварительная версия [службы распознавания речи](/speech-service/overview.md). Мы приглашаем [опробовать ее бесплатно](/speech-service/get-started.md).
+> В мае 2018 года в была выпущена общедоступная предварительная версия [службы распознавания речи](../speech-service/overview.md). Мы приглашаем [опробовать ее бесплатно](../speech-service/get-started.md).
 
 ## <a name="speech-to-text-speech-recognition"></a>Преобразование речи в текст (распознавание речи)
 

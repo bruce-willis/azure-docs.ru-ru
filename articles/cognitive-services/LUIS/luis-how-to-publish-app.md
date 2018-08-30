@@ -1,6 +1,6 @@
 ---
 title: Публикация вашего приложения LUIS | Документация Майкрософт
-description: После создания и тестирования приложения с использованием распознавания речи (LUIS) опубликуйте его как веб-службу на портале Azure.
+description: После создания и тестирования приложения с помощью службы "Распознавание речи" (LUIS) опубликуйте его как веб-службу на портале Azure.
 services: cognitive-services
 titleSuffix: Azure
 author: diberry
@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
-ms.author: diberry;
-ms.openlocfilehash: b827f157ccd2919c959385eefd0e0223a8e23607
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.author: diberry
+ms.openlocfilehash: a653d854901f5dc84b957c316c4174610af4be30
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39225546"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43130531"
 ---
 # <a name="publish-your-trained-app"></a>Публикация обученного приложения
 Опубликуйте ваше приложение LUIS после окончания сборки и тестирования. После публикации приложения страница публикации показывает все связанные с ней [конечные точки](luis-glossary.md#endpoint) HTTP. Эти конечные точки интегрируются в любой клиент, чат-бот или внутреннее приложение для каждого [региона](luis-reference-regions.md) и для каждого [ключа](luis-how-to-manage-keys.md). 

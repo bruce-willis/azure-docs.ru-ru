@@ -1,25 +1,19 @@
 ---
-title: Особенности внедрения каталога данных Azure | Документация Майкрософт
+title: Процедура внедрения каталога данных Azure | Документация Майкрософт
 description: Эта статья предназначена для организаций, которые планируют внедрить у себя каталог данных Azure. В ней описаны подход к внедрению, непосредственно процесс внедрения, а также такие моменты, как разработка концепции, определение основных вариантов использования каталога в организации и выбор пилотного проекта.
 services: data-catalog
-documentationcenter: ''
 author: steelanddata
-manager: NA
-editor: ''
-tags: ''
+ms.author: maroche
 ms.assetid: 0c771e7a-6fcd-417f-9247-897177719567
 ms.service: data-catalog
-ms.devlang: NA
-ms.topic: hero-article
-ms.tgt_pltfrm: NA
-ms.workload: data-catalog
+ms.topic: conceptual
 ms.date: 01/18/2018
-ms.author: maroche
-ms.openlocfilehash: e7c104fa9b136df8ac4b94ee1e444100e2a2f969
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: daeb8abdf52466ad5231e9d08e4eb6d853d1f4a8
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43053148"
 ---
 # <a name="approach-and-process-for-adopting-azure-data-catalog"></a>Процедура внедрения каталога данных Azure | Документация Майкрософт
 Эта статья поможет вам начать внедрение **каталога данных Azure** в своей организации. Чтобы успешно внедрить **каталог данных Azure**, вам нужно сосредоточиться на трех ключевых элементах: разработать концепцию, определить основные варианты использования каталога в организации и выбрать пилотный проект.

@@ -4,18 +4,18 @@ description: Сведения об установке кластеров Hadoop,
 keywords: установка кластера hadoop, установка кластера kafka, установка кластера spark, что такое кластер hadoop
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.author: jasonh
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 05/14/2018
-ms.author: jasonh
-ms.openlocfilehash: 0cb3840c0ce40e062b4de0b7bbd5c9e324d6081f
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.date: 08/27/2018
+ms.openlocfilehash: 0df38e1bd9c4db1cf988beab31b1c3189da4f0c2
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39595847"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127913"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-hadoop-spark-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий
 
@@ -34,7 +34,7 @@ ms.locfileid: "39595847"
 
 | Метод создания кластеров | браузер | Команда | REST API | SDK | 
 | --- |:---:|:---:|:---:|:---:|
-| [портал Azure](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
+| [портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
 | [Фабрика данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md) |✔ |✔ |✔ |✔ |
 | [Azure CLI (версия 1.0)](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 | [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
@@ -86,7 +86,7 @@ ms.locfileid: "39595847"
 
 ### <a name="enterprise-security-package"></a>Пакет безопасности корпоративного уровня
 
-Для кластеров типа Hadoop, Spark и Interactive Query вы можете включить **пакет безопасности предприятия**. Этот пакет содержит параметр для более безопасной настройки кластера с помощью Apache Ranger и интеграции с Azure Active Direcotry. Дополнительные сведения см. в статье о [пакете безопасности предприятия в Azure HDInsight](./domain-joined/apache-domain-joined-introduction.md).
+Для кластеров типа Hadoop, Spark и Interactive Query вы можете включить **пакет безопасности предприятия**. Этот пакет содержит параметр для более безопасной настройки кластера с помощью Apache Ranger и интеграции с Azure Active Directory. Дополнительные сведения см. в статье о [корпоративном пакете безопасности в Azure HDInsight](./domain-joined/apache-domain-joined-introduction.md).
 
 ![hdinsight create options choose enterprise security package](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-creation-enterprise-security-package.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "39595847"
 * Пользователь HTTP: имя пользователя HTTP по умолчанию — *admin*. Эта учетная запись использует базовую конфигурацию на портале Azure. Иногда его называют "пользователем кластера".
 * Пользователь SSH (кластеры Linux): используется для подключения к кластеру через SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-Пакет безопасности предприятия позволяет интегрировать HDInsight с Active Directory и Apache Ranger. При помощи пакета безопасности предприятия можно создать нескольких пользователей.
+Пакет безопасности предприятия позволяет интегрировать HDInsight с Active Directory и Apache Ranger. При помощи пакета безопасности корпоративного уровня можно создать нескольких пользователей.
 
 ## <a name="location"></a>Расположение (регионы) для кластеров и хранилища
 
@@ -140,10 +140,23 @@ ms.locfileid: "39595847"
 > [!IMPORTANT]
 > Повторно использовать хранилище метаданных Oozie невозможно. Чтобы использовать пользовательское хранилище метаданных Oozie, при создании кластера HDInsight необходимо предоставить пустую базу данных SQL Azure.
 
+
+## <a name="custom-cluster-setup"></a>Пользовательская установка кластера
+Пользовательская установка кластера основана на параметрах быстрого создания, к которым добавляются следующие параметры:
+- [Приложения HDInsight](#install-hdinsight-applications-on-clusters)
+- [Размер кластера](#configure-cluster-size)
+- [Действия скриптов](#advanced-settings-script-actions)
+- [Виртуальная сеть](#advanced-settings-extend-clusters-with-a-virtual-network)
+
+## <a name="install-hdinsight-applications-on-clusters"></a>Установка приложений HDInsight в кластерах
+
+Пользователи могут устанавливать приложения HDInsight в кластере HDInsight под управлением Linux. Вы можете использовать приложения, предоставляемые корпорацией Майкрософт, сторонними производителями или разработанные самостоятельно. Дополнительные сведения см. в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
+
+Большинство приложений HDInsight устанавливаются в пустой граничный узел.  Пустой граничный узел — это виртуальная машина Linux, на которой установлены и настроены те же клиентские инструменты, что и на головном узле. Граничный узел можно использовать для доступа к кластеру, а также тестирования и размещения клиентских приложений. Подробные сведения см. в статье [Использование пустых граничных узлов в HDInsight](hdinsight-apps-use-edge-node.md).
+
 ## <a name="configure-cluster-size"></a>Настройка размера кластера
 
 Плата за использование узлов взимается, пока существует кластер. Начисление оплаты начинается после создания кластера и прекращается только после его удаления. Перевести кластер в режим ожидания или отменить его выделение невозможно.
-
 
 ### <a name="number-of-nodes-for-each-cluster-type"></a>Количество узлов для каждого типа кластера
 Для каждого типа кластера используется своя терминология. Кроме того, типы отличаются количеством узлов и стандартными размерами виртуальных машин. В следующей таблице число узлов каждого типа указано в скобках.
@@ -191,20 +204,6 @@ ms.locfileid: "39595847"
 >
 
 Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).   
-
-## <a name="custom-cluster-setup"></a>Пользовательская установка кластера
-Пользовательская установка кластера основана на параметрах быстрого создания, к которым добавляются следующие параметры:
-- [Приложения HDInsight](#hdinsight-applications)
-- [Размер кластера](#cluster-size)
-- Дополнительные параметры
-  - [Действия скриптов](#customize-clusters-using-script-action)
-  - [Виртуальная сеть](#use-virtual-network)
-
-## <a name="install-hdinsight-applications-on-clusters"></a>Установка приложений HDInsight в кластерах
-
-Пользователи могут устанавливать приложения HDInsight в кластере HDInsight под управлением Linux. Вы можете использовать приложения, предоставляемые корпорацией Майкрософт, сторонними производителями или разработанные самостоятельно. Дополнительные сведения см. в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
-
-Большинство приложений HDInsight устанавливаются в пустой граничный узел.  Пустой граничный узел — это виртуальная машина Linux, на которой установлены и настроены те же клиентские инструменты, что и на головном узле. Граничный узел можно использовать для доступа к кластеру, а также тестирования и размещения клиентских приложений. Подробные сведения см. в статье [Использование пустых граничных узлов в HDInsight](hdinsight-apps-use-edge-node.md).
 
 ## <a name="advanced-settings-script-actions"></a>Дополнительные параметры: действия скриптов
 

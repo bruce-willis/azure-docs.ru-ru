@@ -3,18 +3,18 @@ title: Apache Spark в Azure HDInsight
 description: В этой статье представлены общие сведения о Spark в HDInsight и различные сценарии, в которых вы можете использовать кластер Spark в HDInsight.
 services: hdinsight
 author: jasonwhowell
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: overview
 ms.date: 05/07/2018
 ms.author: jasonh
-ms.openlocfilehash: 319940210f77055e2ee7cad7b72d08bfbc63d2fd
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 9e4cb497a2dc81b9503b03fd2db27ff2538d424a
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617646"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43039688"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -37,7 +37,7 @@ Spark предоставляет примитивы для кластерных 
 | Простота использования |Кластер Spark в HDInsight включает записные книжки Jupyter и Zeppelin. Их можно использовать для интерактивной обработки и визуализации данных.|
 | Интерфейсы API REST |Кластеры Spark в HDInsight включают [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе API REST, который позволяет пользователям удаленно отправлять задания и отслеживать их. |
 | Поддержка хранилища озера данных Azure | Кластеры Spark в HDInsight могут использовать Azure Data Lake Store как основное и дополнительное хранилище. Дополнительные сведения о Data Lake Store см. в [обзоре Azure Data Lake Store](../../data-lake-store/data-lake-store-overview.md). |
-| Интеграция со службами Azure |Кластер Spark в HDInsight поставляется с соединителем для концентраторов событий Azure. Вы можете создавать приложения потоковой передачи с помощью концентраторов событий (в дополнение к системе [Kafka](http://kafka.apache.org/), которая уже входит в состав Spark). |
+| Интеграция со службами Azure |Кластер Spark в HDInsight поставляется с соединителем для Центров событий Azure. Вы можете создавать приложения потоковой передачи с помощью Центров событий (в дополнение к системе [Kafka](http://kafka.apache.org/), которая уже входит в состав Spark). |
 | Поддержка ML Server | Поддержка ML Server в HDInsight предоставляется в рамках типа кластера **Служб машинного обучения**. В кластере Служб машинного обучения можно настроить выполнение распределенных вычислений в среде R со скоростью, заявленной для кластера Spark. Дополнительные сведения см. в статье [Начало работы с кластером R Server в Azure HDInsight](../r-server/r-server-get-started.md). |
 | Интеграция со сторонними IDE | HDInsight предоставляет несколько подключаемых модулей IDE, которые можно использовать для создания приложений и их отправки в кластер HDInsight Spark. Дополнительные сведения см. в статьях [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md), [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md) и [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для Eclipse](apache-spark-eclipse-tool-plugin.md).|
 | Параллельные запросы |Кластеры Spark в HDInsight поддерживают параллельные запросы. Благодаря этому несколько запросов от одного пользователя или несколько запросов от разных пользователей и из различных приложений могут использовать одни и те же ресурсы кластера. |
@@ -87,7 +87,7 @@ SparkContext подключается к главному узлу Spark и от
     [Руководство по прогнозированию температуры в зданиях с помощью данных системы кондиционирования](apache-spark-ipython-notebook-machine-learning.md) [Руководство по прогнозированию результатов контроля качества пищевых продуктов](apache-spark-machine-learning-mllib-ipython.md)    
 - Потоковая передача и анализ данных в режиме реального времени в Spark
 
-    Кластеры Spark в HDInsight обладают широкой поддержкой для создания решений для аналитики в режиме реального времени. Поскольку в состав Spark уже входят соединители для приема данных из различных источников, таких как Flume, Kafka, Twitter, ZeroMQ или сокеты TCP, Spark в HDInsight позволяет реализовать первоклассную поддержку для приема данных из концентраторов событий Azure. Концентраторы событий — это наиболее часто используемые службы очередей в Azure. Встроенная поддержка концентраторов событий делает кластеры Spark в HDInsight идеальной платформой для создания конвейеров аналитики в режиме реального времени.
+    Кластеры Spark в HDInsight обладают широкой поддержкой для создания решений для аналитики в режиме реального времени. Поскольку в состав Spark уже входят соединители для приема данных из различных источников, таких как Flume, Kafka, Twitter, ZeroMQ или сокеты TCP, Spark в HDInsight позволяет реализовать первоклассную поддержку для приема данных из Центров событий Azure. Центры событий — это наиболее часто используемые службы очередей в Azure. Встроенная поддержка Центров событий делает кластеры Spark в HDInsight идеальной платформой для создания конвейеров аналитики в режиме реального времени.
     
 ## <a name="where-do-i-start"></a>С чего начать?
 

@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/03/2016
 ms.author: cephalin
-ms.openlocfilehash: 34ee673ee1cf870e376ac8c954a9f3fc468abaa2
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 0f053c0293488f19adcd058f1ba8304d8d238738
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42144982"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128312"
 ---
 # <a name="troubleshoot-slow-web-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности веб-приложения в службе приложений Azure
 Эта статья поможет устранить причины снижения производительности веб-приложения, размещенного в [службе приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -46,7 +46,7 @@ ms.locfileid: "42144982"
 2. [Сбор данных.](#collect)
 3. [Устранение проблемы.](#mitigate)
 
-[Веб-приложения службы приложений](/services/app-service/web/) содержат несколько инструментов для каждого из этих этапов.
+[Веб-приложения службы приложений](app-service-web-overview.md) содержат несколько инструментов для каждого из этих этапов.
 
 <a name="observe" />
 

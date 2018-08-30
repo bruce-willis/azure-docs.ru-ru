@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/20/2018
 ms.author: iainfou
-ms.openlocfilehash: 129a39294d52a312c91fc6a4fd009d76e88b4ff7
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 7048ab4e08d25fd5181857a4e7592d0bcb7d3b5f
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185228"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42885600"
 ---
 # <a name="create-persistent-volumes-with-azure-disks-for-azure-kubernetes-service-aks"></a>Создание постоянных томов в службе Azure Kubernetes (AKS) с помощью дисков Azure
 
@@ -150,7 +150,7 @@ azure-managed-disk   Bound     pvc-faf0f176-8b8d-11e8-923b-deb28c58d242   5Gi   
 Это имя тома формирует имя соответствующего диска Azure. Отправьте запрос идентификатора диска с помощью команды [az disk list][az-disk-list] и укажите имя тома PVC, как показано в примере ниже.
 
 ```
-$ az disk list --query '[].id|[?contains(@,`pvc-faf0f176-8b8d-11e8-923b-deb28c58d242`)]' -o tsv
+$ az disk list --query '[].id | [?contains(@,`pvc-faf0f176-8b8d-11e8-923b-deb28c58d242`)]' -o tsv
 
 /subscriptions/<guid>/resourceGroups/MC_MYRESOURCEGROUP_MYAKSCLUSTER_EASTUS/providers/MicrosoftCompute/disks/kubernetes-dynamic-pvc-faf0f176-8b8d-11e8-923b-deb28c58d242
 ```

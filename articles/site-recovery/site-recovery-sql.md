@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/22/2018
 ms.author: raynew
-ms.openlocfilehash: 23cf9430f82be860cb9acbfac42163f9243b2d0f
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: a734999f0fa473b5f1ee8ed55c4b73950566490d
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42139908"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188779"
 ---
 # <a name="protect-sql-server-using-sql-server-disaster-recovery-and-azure-site-recovery"></a>Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery
 
@@ -83,7 +83,6 @@ Site Recovery может интегрироваться с собственны�
 
 * Локальное развертывание SQL Server с поддерживаемой версией SQL Server. Обычно также требуется служба Active Directory для SQL Server.
 * Необходимые условия для сценария, который требуется развернуть. Ознакомьтесь с дополнительными сведениями о требованиях к поддержке для [репликации в Azure](site-recovery-support-matrix-to-azure.md), [в локальную среду](site-recovery-support-matrix.md) и с [предварительными требованиями для развертывания](site-recovery-prereq.md).
-* Для настройки восстановления в Azure на виртуальных машинах SQL Server запустите средство [оценки готовности виртуальной машины Azure](http://www.microsoft.com/download/details.aspx?id=40898), чтобы убедиться в их совместимости с Azure и Site Recovery.
 
 ## <a name="set-up-active-directory"></a>настроить Active Directory;
 

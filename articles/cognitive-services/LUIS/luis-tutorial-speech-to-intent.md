@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.technology: luis
 ms.topic: article
 ms.date: 06/26/2018
-ms.author: diberry;
-ms.openlocfilehash: 286efcd97c0c9ab95a8241215bc36799c486a8b6
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.author: diberry
+ms.openlocfilehash: aadca428fa076d697cc0f893673672850ddc27d4
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247721"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124402"
 ---
 # <a name="integrate-speech-service"></a>Интеграция службы распознавания речи
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS.
@@ -25,7 +25,7 @@ ms.locfileid: "39247721"
 Для работы с этой статьей требуется бесплатная учетная запись для веб-сайта [LUIS][LUIS], в которую вы импортируете приложение.
 
 ## <a name="create-luis-endpoint-key"></a>Создание ключа конечной точки LUIS
-На портале Azure [создайте](luis-how-to-azure-subscription.md#create-luis-endpoint-key) ключ **Language Understanding** (LUIS). 
+На портале Azure [создайте](luis-how-to-azure-subscription.md#create-luis-endpoint-key) ключ **службы "Распознавание речи"** (LUIS). 
 
 ## <a name="import-human-resources-luis-app"></a>Импорт приложения LUIS Human Resources
 Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Загрузите файл [HumanResources.json](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/HumanResources.json), сохраните его с расширением JSON и [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
@@ -55,7 +55,7 @@ Do I have any paid time off?
 
   Эти значения включены в URL-адрес конечной точки в нижней части страницы **публикации** для созданного ключа. 
   
-  Для этого упражнения **не используйте** бесплатный начальный ключ. Здесь подойдет ключ **Language Understanding**, созданный на портале Azure. 
+  Для этого упражнения **не используйте** бесплатный начальный ключ. Здесь подойдет ключ **Распознавание речи**, созданный на портале Azure. 
 
   https://**Регион**.api.cognitive.microsoft.com/luis/v2.0/apps/**ИД_приложения**?subscription-key=**Ключ_LUIS**&q=
 

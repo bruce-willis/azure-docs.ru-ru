@@ -9,18 +9,18 @@ ms.topic: quickstart
 ms.date: 05/08/2018
 ms.author: marsma
 ms.custom: mvc
-ms.openlocfilehash: 282cd4bc9256fc483014b53626c02106d0de236a
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: e6c3330519692eb829803af2582b711be2fb3efe
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33885125"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43092884"
 ---
 # <a name="quickstart-create-an-azure-container-registry-using-powershell"></a>Краткое руководство. Создание Реестра контейнеров Azure с помощью PowerShell
 
 Реестр контейнеров Azure — это управляемая служба частного реестра контейнеров Docker для создания, хранения и обслуживания образов контейнеров Docker. В этом руководстве рассматривается создание реестра контейнеров Azure с помощью PowerShell. Создав реестр, вы отправите в него образ контейнера, а затем развернете контейнер из реестра в службу "Экземпляры контейнеров Azure" (ACI).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством требуется модуль Azure PowerShell 5.7.0 или более поздней версии. Выполните команду `Get-Module -ListAvailable AzureRM`, чтобы определить установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
@@ -252,7 +252,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 [Get-AzureRmContainerRegistryCredential]: /powershell/module/azurerm.containerregistry/get-azurermcontainerregistrycredential
 [Get-Module]: /powershell/module/microsoft.powershell.core/get-module
 [New-AzureRmContainerGroup]: /powershell/module/azurerm.containerinstance/new-azurermcontainergroup
-[New-AzureRMContainerRegistry]: /powershell/module/containerregistry/New-AzureRMContainerRegistry
+[New-AzureRMContainerRegistry]: /powershell/module/azurerm.containerregistry/New-AzureRMContainerRegistry
 [New-AzureRmResourceGroup]: /powershell/module/azurerm.resources/new-azurermresourcegroup
 [Remove-AzureRmResourceGroup]: /powershell/module/azurerm.resources/remove-azurermresourcegroup
 

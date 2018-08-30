@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fdf5685ad8072175bdabf8938ef293bed6f5cc13
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: e7ad93cbfd096cacadaef8666b0ea5b31d7fd992
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075704"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918807"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -263,7 +263,7 @@ Azure обеспечивает квоту на количество операц
 
 
 ## <a name="azure-network-considerations"></a>Рекомендации по сети Azure 
-Для крупномасштабных развертываний SAP рекомендуется использовать схему [виртуального центра обработки данных Azure](https://docs.microsoft.com/azure/networking/networking-virtual-datacenter) для настройки виртуальной сети и для назначения разрешений и ролей для различных частей организации.
+Для крупномасштабных развертываний SAP рекомендуется использовать схему [виртуального центра обработки данных Azure](https://docs.microsoft.com/azure/architecture/vdc/networking-virtual-datacenter) для настройки виртуальной сети и для назначения разрешений и ролей для различных частей организации.
 
 Существует ряд проверенных рекомендаций, которые позволили успешно завершить несколько сотен клиентских развертываний:
 

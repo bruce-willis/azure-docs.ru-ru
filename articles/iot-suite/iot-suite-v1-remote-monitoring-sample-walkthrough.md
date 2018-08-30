@@ -1,26 +1,18 @@
 ---
 title: Пошаговое руководство по предварительно настроенному решению удаленного мониторинга | Документация Майкрософт
 description: Описание предварительно настроенного решения удаленного мониторинга Azure IoT и его архитектура.
-services: ''
-suite: iot-suite
-documentationcenter: ''
 author: dominicbetts
-manager: timlt
-editor: ''
-ms.assetid: 31fe13af-0482-47be-b4c8-e98e36625855
 ms.service: iot-suite
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-suite
+ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: dobett
-ms.openlocfilehash: d35052087899925e0e8119ce104345f718cc12bd
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 8cb6c3087bac460069a689f7b109a20aa9125ae9
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37858519"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43184919"
 ---
 # <a name="remote-monitoring-preconfigured-solution-walkthrough"></a>Пошаговое руководство по работе с настроенным решением для удаленного мониторинга
 
@@ -237,9 +229,9 @@ GROUP BY
     SlidingWindow (mi, 5)
 ```
 
-## <a name="event-hubs"></a>Концентраторы событий
+## <a name="event-hubs"></a>Центры событий;
 
-Задания ASA **Сведения об устройстве** и **Правила** выводят данные в концентраторы событий, чтобы надежно перенаправить их в **обработчик событий**, запущенный в веб-задании.
+Задания ASA **Сведения об устройстве** и **Правила** выводят данные в Центры событий, чтобы надежно перенаправить их в **обработчик событий**, запущенный в веб-задании.
 
 ## <a name="azure-storage"></a>Хранилище Azure
 

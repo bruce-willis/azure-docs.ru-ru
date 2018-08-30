@@ -4,18 +4,17 @@ description: Узнайте, как с помощью средств Azure Data 
 services: data-lake-analytics
 author: Jejiang
 ms.author: jejiang
-manager: kfile
-editor: jasonwhowell
+ms.reviewer: jasonwhowell
 ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 02/09/2018
-ms.openlocfilehash: 79cd1a04c99891e5146ad20cfd36b8bd4fe4d893
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: b06b4c4484e3f41b64ff2d60ce558726c555a2e3
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261490"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43047917"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
 
@@ -23,7 +22,7 @@ ms.locfileid: "35261490"
 
 <a href="https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode"><img src="./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png"></a>
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS.  
 
@@ -65,8 +64,8 @@ ms.locfileid: "35261490"
 **Открытие папки для проекта U-SQL**
 
 1. В Visual Studio Code выберите меню **Файл**, а затем — **Открыть папку**.
-2. Укажите папку и выберите **Выбор папки**.
-3. Выберите меню **Файл**, а затем **Новый файл**. К проекту будет добавлен файл с именем Untitled-1.
+2. Укажите папку и выберите **Выбрать папку**.
+3. Выберите меню **Файл**, а затем **Создать**. К проекту будет добавлен файл с именем Untitled-1.
 4. Введите следующий код в файле Untitled-1:
 
         @departments  = 
@@ -289,7 +288,7 @@ ms.locfileid: "35261490"
 **Получение списка учетных записей Azure Data Lake Analytics в подписке Azure**
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд.
-2. Введите команду **ADL: List Accounts**. Учетные записи отображаются в области **Вывод**.
+2. Введите команду **ADL: List Accounts**. Учетные записи отображаются в области **Вывода**.
 
 **Доступ к метаданным Azure Data Lake Analytics**
 

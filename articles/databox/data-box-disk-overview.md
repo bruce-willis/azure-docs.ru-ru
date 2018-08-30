@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о диске Microsoft Azure Data Box | Документация Майкрософт
+title: Обзор диска Microsoft Azure Data Box | Документация Майкрософт
 description: В этой статье содержатся общие сведения о диске Azure Data Box, облачном решении, которое позволяет передавать большие объемы данных в Azure
 services: databox
 documentationcenter: NA
@@ -12,15 +12,15 @@ ms.devlang: NA
 ms.topic: overview
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 07/17/2018
+ms.date: 08/28/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand what Data Box Disk is and how it works so I can use it to import on-premises data into Azure.
-ms.openlocfilehash: 22211f52f6b9a16f785cacb9364ebe5b74617453
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: f2e1a59584507b52d0a834af1869e3e9f2db5f07
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126632"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127370"
 ---
 # <a name="what-is-azure-data-box-disk-preview"></a>Что такое диск Azure Data Box (предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "39126632"
 > [!IMPORTANT]
 > - Диск Data Box находится в режиме предварительной версии. Прежде чем развертывать это решение, просмотрите [условия использования Azure для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
 > - Вам необходимо зарегистрироваться для использования этой службы. Для этого войдите на [портал предварительной версии](http://aka.ms/azuredataboxfromdiskdocs).
-> - На этапе предварительной версии диск Data Box можно отправить клиентам в США и Европейском Союзе. Дополнительные сведения см. в разделе о [доступности по регионам](#region-availability).
+> - На этапе предварительной версии диск Data Box можно отправить клиентам в США и Европейском Союзе. Дополнительные сведения см. в разделе [Регионы доступности](#region-availability).
 
 ## <a name="use-cases"></a>Варианты использования
 
@@ -106,11 +106,13 @@ ms.locfileid: "39126632"
 
 |Регион Azure  |Регион Azure  |
 |---------|---------|
-|Западно-центральная часть США     |Северо-центральный регион США         |        
-|Западная часть США 2     | Восточная часть США          |     
-|Запад США     | Восток США 2           |      
-|Южно-центральный регион США   | Западная Европа       |         
-|Центральный регион США     | Северная Европа |
+|Западно-центральная часть США     |Восточная часть США        |        
+|Западная часть США 2     |Восток США 2          |     
+|Запад США     | Западная Европа        |      
+|Центрально-южная часть США   |Северная Европа     |         
+|Центральный регион США     |Восточная Канада|
+|Центрально-северная часть США  |Центральная Канада    |
+
 
 
 
@@ -120,6 +122,6 @@ ms.locfileid: "39126632"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь с [требованиями к диску Data Box](data-box-disk-system-requirements.md).
-- Изучите [ограничения диска Data Box](data-box-disk-limits.md).
-- Быстро разверните [диск Azure Data Box](data-box-disk-quickstart-portal.md) на портале Azure.
+- Знакомство с [требованиями диска Data Box](data-box-disk-system-requirements.md).
+- Объяснение [ограничений диска Data Box](data-box-disk-limits.md).
+- Быстрое развертывание [диска Azure Data Box](data-box-disk-quickstart-portal.md) на портале Azure.

@@ -5,16 +5,16 @@ services: hdinsight
 ms.service: hdinsight
 author: jasonwhowell
 ms.author: jasonh
-editor: jasonwhowell
+ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/09/2018
-ms.openlocfilehash: 85741e91ab074ca45fef79e7e946a74824a1734f
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 0b22e51814f79b00257433a7e601349ad25cd2b7
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038554"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43104306"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -66,14 +66,14 @@ ms.locfileid: "40038554"
     >
     > Чтобы получить доступ ко всем функциям веб-интерфейса Ambari, используйте туннелирование SSH для проксирования веб-трафика на головной узел кластера. Дополнительные сведения см. в статье [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md).
 
-* **Ambari (REST)**  —https://&lt;имя_кластера>.azurehdinsight.net/ambari.
+* **Ambari (REST)**  — https://&lt;имя_кластера>.azurehdinsight.net/ambari.
 
     > [!NOTE]
     > Выполните аутентификацию, используя имя пользователя и пароль администратора кластера.
     >
     > При аутентификации используется открытый текст. Всегда используйте протокол HTTPS, чтобы обеспечить безопасное подключение.
 
-* **WebHCat (Templeton)**  —https://&lt;имя_кластера>.azurehdinsight.net/templeton.
+* **WebHCat (Templeton)**  — https://&lt;имя_кластера>.azurehdinsight.net/templeton.
 
     > [!NOTE]
     > Выполните аутентификацию, используя имя пользователя и пароль администратора кластера.
