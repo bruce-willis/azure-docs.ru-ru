@@ -1,30 +1,30 @@
 ---
-title: Обзор интерфейсов API концентраторов событий Azure для платформы .NET Framework | Документация Майкрософт
-description: Сводные сведения о некоторых ключевых клиентских API концентраторов событий для .NET Framework.
+title: Обзор интерфейсов API Центров событий Azure для платформы .NET Framework | Документация Майкрософт
+description: Сводные сведения о некоторых ключевых клиентских API Центров событий для .NET Framework.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 06/13/2018
+ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: dd915671c8b7d51595fea520187b917005f5dc53
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 46b0599e6c4d5b4cc2dd9370a28616019b79b50d
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40007561"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42745657"
 ---
-# <a name="event-hubs-net-framework-api-overview"></a>Обзор API концентраторов событий для платформы .NET Framework
+# <a name="event-hubs-net-framework-api-overview"></a>Обзор API Центров событий для платформы .NET Framework
 
-В этой статье перечислены некоторые ключевые [клиентские API Центров событий Azure для .NET Framework](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Существуют две категории: API управления и API среды выполнения. API среды выполнения состоят из всех операций, необходимых для отправки и получения сообщения. Операции управления позволяют управлять состоянием сущности концентраторов событий путем создания, обновления и удаления сущностей.
+В этой статье перечислены некоторые ключевые [клиентские API Центров событий Azure для .NET Framework](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Существуют две категории: API управления и API среды выполнения. API среды выполнения состоят из всех операций, необходимых для отправки и получения сообщения. Операции управления позволяют управлять состоянием сущности Центров событий путем создания, обновления и удаления сущностей.
 
 [Сценарии мониторинга](event-hubs-metrics-azure-monitor.md) распространяются как на управление, так и на среду выполнения. Подробную справочную документацию по API .NET см. в руководстве по [.NET Framework](/dotnet/api/microsoft.servicebus.messaging.eventhubclient), [.NET Standard](/dotnet/api/microsoft.azure.eventhubs) и [API EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor).
 
 ## <a name="management-apis"></a>API управления
 
-Для выполнения указанных ниже операций управления требуется разрешение на **управление** пространством имен концентраторов событий.
+Для выполнения указанных ниже операций управления требуется разрешение на **управление** пространством имен Центров событий.
 
 ### <a name="create"></a>Создание
 
@@ -176,10 +176,10 @@ public class SimpleEventProcessor : IEventProcessor
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о сценариях концентраторов событий см. в разделах, ссылки на которые указаны ниже.
+Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 
-* [Что такое концентраторы событий Azure?](event-hubs-what-is-event-hubs.md)
-* [Руководство по программированию концентраторов событий](event-hubs-programming-guide.md)
+* [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
+* [Руководство по программированию Центров событий](event-hubs-programming-guide.md)
 
 Ссылки на API-интерфейсы .NET:
 

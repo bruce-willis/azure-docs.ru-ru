@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: bd3eeb5ebb9b30ac315fee1597348f3bd34f3bb6
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 6b310daec67f41ba589ce279e4a2dad427adb734
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42143600"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818898"
 ---
 # <a name="getting-compliance-data"></a>Получение данных о соответствии
 
@@ -23,7 +23,7 @@ ms.locfileid: "42143600"
 Существует несколько способов доступа к информации о соответствии, которая создается при назначении политик и инициатив:
 
 - с помощью [портала Azure](#portal);
-- с помощью скриптов [командной строки](#command_line).
+- с помощью скриптов [командной строки](#command-line).
 
 Прежде чем переходить к способам создания отчетов о соответствии, давайте рассмотрим, когда обновляются данные о соответствии, а также с какой частотой и какие события запускают цикл оценки.
 

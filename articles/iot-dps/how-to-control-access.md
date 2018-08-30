@@ -8,12 +8,12 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 09/28/2017
 ms.author: wesmc
-ms.openlocfilehash: 4751a76c39060f48d3b816ecee0de5b58e29bdaa
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: e476ca498e4dc1b36d18927beddc812d6d803120
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143728"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818516"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "42143728"
 
 * **Политики авторизации общего доступа**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#device-provisioning-service-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программными средствами, используя [интерфейсы REST API службы подготовки устройств][lnk-resource-provider-apis]. По умолчанию для только что созданной службы подготовки задана следующая политика по умолчанию:
 
-   **provisioningserviceowner.** Политика со всеми разрешениями.
+* **provisioningserviceowner.** Политика со всеми разрешениями.
 
 > [!NOTE]
 > Дополнительные сведения см. в статье о [разрешениях](#device-provisioning-service-permissions).

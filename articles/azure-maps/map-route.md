@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: codepen
-ms.openlocfilehash: 5e9ab73ddc16517e17894cddd9bc102f3941f00c
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 52462c1c5a2a1a9698a2b51708e63b1bb1664f6e
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "35778804"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42745542"
 ---
 # <a name="show-directions-from-a-to-b"></a>Отображение направлений от точки А до точки Б 
 
@@ -29,7 +29,7 @@ ms.locfileid: "35778804"
 
 Во втором блоке кода создаются и добавляются на карту маркеры, представляющие начальную и конечную точку маршрута. См. инструкции по [добавлению маркеров на карту](map-add-pin.md).
 
-В третьем блоке кода используется функция [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#setcamerabounds) класса Map, чтобы задать координаты ограничивающего прямоугольника карты на основе начальной и конечной точек маршрута.
+В третьем блоке кода используется функция [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamerabounds) класса Map, чтобы задать координаты ограничивающего прямоугольника карты на основе начальной и конечной точек маршрута.
 
 В четвертом блоке кода [XMLHttpRequest](https://xhr.spec.whatwg.org/) отправляется в [API маршрутов службы "Карты Azure"](https://docs.microsoft.com/rest/api/maps/route/getroutedirections).
 
@@ -39,10 +39,10 @@ ms.locfileid: "35778804"
 
 Дополнительные сведения о классах и методах, которые используются в этой статье: 
 
-* класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest);
-    * [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#setcamerabounds);
-    * [addLinestrings](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addlinestrings);
-    * [addPins](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addpins).
+* класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+    * [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamerabounds);
+    * [addLinestrings](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addlinestrings);
+    * [addPins](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addpins).
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
 * [Отображение данных дорожного движения на карте](./map-show-traffic.md)

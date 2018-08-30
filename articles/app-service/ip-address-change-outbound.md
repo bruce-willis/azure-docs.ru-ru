@@ -10,12 +10,12 @@ ms.workload: web
 ms.topic: article
 ms.date: 06/28/2018
 ms.author: cephalin
-ms.openlocfilehash: 5e17638e030ae2827b0de7dc82ecf75062504112
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: dfc0a13c1804d8ea74c78a61bfa85e9f5bdd1685
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39575936"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42819076"
 ---
 # <a name="how-to-prepare-for-an-outbound-ip-address-change"></a>Подготовка к изменению исходящего IP-адреса
 
@@ -39,7 +39,7 @@ ms.locfileid: "39575936"
 
 3.  Выберите в списке приложение Службы приложений Azure.
 
-4.  Если приложение является приложением-функцией, см. раздел [Function app outbound IP address](../azure-functions/ip-addresses.md#function-app-outbound-ip-addresses) (Исходящий IP-адрес приложения-функции).
+4.  Если приложение является приложением-функцией, см. раздел [Function app outbound IP address](../azure-functions/ip-addresses.md#find-outbound-ip-addresses) (Исходящий IP-адрес приложения-функции).
 
 4.  Под заголовком **Параметры** в области навигации слева щелкните **Свойства** и найдите раздел с меткой **Исходящие IP-адреса**.
 

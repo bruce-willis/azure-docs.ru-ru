@@ -1,6 +1,6 @@
 ---
-title: Интеграция Apache Spark с концентраторами событий Azure | Документация Майкрософт
-description: Интеграция с Apache Spark для обеспечения структурированной потоковой передачи с помощью концентраторов событий
+title: Интеграция Apache Spark с Центрами событий Azure | Документация Майкрософт
+description: Интеграция с Apache Spark для обеспечения структурированной потоковой передачи с помощью Центров событий
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -11,18 +11,18 @@ ms.devlang: java
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/21/2018
+ms.date: 08/21/2018
 ms.author: shvija
-ms.openlocfilehash: 301770d8950d820ddace6e47eac8cab5950b7ac8
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 688daedf29bbd68c7451be66b47ac90e404d4093
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40004588"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42746666"
 ---
-# <a name="integrating-apache-spark-with-azure-event-hubs"></a>Интеграция Apache Spark с концентраторами событий Azure
+# <a name="integrating-apache-spark-with-azure-event-hubs"></a>Интеграция Apache Spark с Центрами событий Azure
 
-Концентраторы событий Azure плавно интегрируются с [Apache Spark](https://spark.apache.org/) для создания распределенных потоковых приложений. Такая интеграция поддерживается для [Spark Core](http://spark.apache.org/docs/latest/rdd-programming-guide.html), [Spark Streaming](http://spark.apache.org/docs/latest/streaming-programming-guide.html) и [Structured Streaming](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html). Соединитель службы "Концентраторы событий" для Apache Spark можно найти на [GitHub](https://github.com/Azure/azure-event-hubs-spark). Эту библиотеку также можно использовать в проектах Maven из [центрального репозитория Maven](http://search.maven.org/#artifactdetails%7Ccom.microsoft.azure%7Cazure-eventhubs-spark_2.11%7C2.1.6%7C).
+Центры событий Azure плавно интегрируются с [Apache Spark](https://spark.apache.org/) для создания распределенных потоковых приложений. Такая интеграция поддерживается для [Spark Core](http://spark.apache.org/docs/latest/rdd-programming-guide.html), [Spark Streaming](http://spark.apache.org/docs/latest/streaming-programming-guide.html) и [Structured Streaming](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html). Соединитель службы "Центры событий" для Apache Spark можно найти на [GitHub](https://github.com/Azure/azure-event-hubs-spark). Эту библиотеку также можно использовать в проектах Maven из [центрального репозитория Maven](http://search.maven.org/#artifactdetails%7Ccom.microsoft.azure%7Cazure-eventhubs-spark_2.11%7C2.1.6%7C).
 
 В этой статье показано, как создать непрерывное приложение в [Azure Databricks](https://azure.microsoft.com/services/databricks/). Хотя в этой статье используется Azure Databricks, кластеры Spark также доступны с [HDInsight](../hdinsight/spark/apache-spark-overview.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "40004588"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет подписки, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-* Экземпляр концентратора событий. Если у вас нет экземпляра, [создайте его](event-hubs-create.md).
+* Экземпляр Центров событий. Если у вас нет экземпляра, [создайте его](event-hubs-create.md).
 * Экземпляр [Azure Databricks](https://azure.microsoft.com/services/databricks/). Если у вас нет экземпляра, [создайте его](../azure-databricks/quickstart-create-databricks-workspace-portal.md).
 * [Создайте библиотеку, используя такие координаты maven](https://docs.databricks.com/user-guide/libraries.html#upload-a-maven-package-or-spark-package): `com.microsoft.azure:azure‐eventhubs‐spark_2.11:2.3.1`
 
@@ -87,7 +87,7 @@ df.write
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь вы знаете, как настроить масштабируемый и отказоустойчивый поток с помощью соединителя концентраторов событий для Apache Spark. Дополнительные сведения об использовании концентраторов событий со структурированной потоковой передачей и потоковой передачей Spark см. по следующим ссылкам:
+Теперь вы знаете, как настроить масштабируемый и отказоустойчивый поток с помощью соединителя Центров событий для Apache Spark. Дополнительные сведения об использовании Центров событий со структурированной потоковой передачей и потоковой передачей Spark см. по следующим ссылкам:
 
-* [Structured Streaming + Azure Event Hubs Integration Guide](https://github.com/Azure/azure-event-hubs-spark/blob/master/docs/structured-streaming-eventhubs-integration.md) (Руководство по интеграции Structured Streaming со службой Azure "Концентраторы событий")
-* [Spark Streaming + Event Hubs Integration Guide](https://github.com/Azure/azure-event-hubs-spark/blob/master/docs/spark-streaming-eventhubs-integration.md) (Руководство по интеграции Spark Streaming со службой "Концентраторы событий")
+* [Structured Streaming + Azure Event Hubs Integration Guide](https://github.com/Azure/azure-event-hubs-spark/blob/master/docs/structured-streaming-eventhubs-integration.md) (Руководство по интеграции Structured Streaming со службой Azure "Центры событий")
+* [Spark Streaming + Event Hubs Integration Guide](https://github.com/Azure/azure-event-hubs-spark/blob/master/docs/spark-streaming-eventhubs-integration.md) (Руководство по интеграции Spark Streaming со службой "Центры событий")

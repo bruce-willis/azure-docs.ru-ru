@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 07/06/2018
 ms.author: ramamill
 ms.openlocfilehash: 6aff17908d220557720776a2d7884adc28b5deee
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.sourcegitcommit: baed5a8884cb998138787a6ecfff46de07b8473d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "37917175"
 ---
 # <a name="automate-mobility-service-installation-with-system-center-configuration-manager"></a>Автоматизация установки Mobility Service с помощью System Center Configuration Manager
@@ -26,7 +26,7 @@ ms.locfileid: "37917175"
 
 Кроме того, установку службы Mobility Service можно автоматизировать с помощью [Azure Automation DSC](vmware-azure-mobility-deploy-automation-dsc.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Установленное в вашей среде средство развертывания программного обеспечения, например Configuration Manager.
 2. Необходимо создать две [коллекции устройств](https://technet.microsoft.com/library/gg682169.aspx) — одну для всех **серверов Windows** и другую для всех **серверов Linux**, для защиты которых вы будете применять Site Recovery.

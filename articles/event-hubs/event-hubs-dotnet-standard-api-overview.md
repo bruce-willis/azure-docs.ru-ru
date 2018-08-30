@@ -1,5 +1,5 @@
 ---
-title: Обзор интерфейсов API концентраторов событий Azure для платформы .NET Standard | Документация Майкрософт
+title: Обзор интерфейсов API Центров событий Azure для платформы .NET Standard | Документация Майкрософт
 description: Обзор API для платформы .NET Standard
 services: event-hubs
 documentationcenter: na
@@ -7,27 +7,27 @@ author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.topic: article
-ms.date: 06/13/2018
+ms.date: 08/13/2018
 ms.author: shvija
-ms.openlocfilehash: d44cdf9204ac041a12cecce995efef71272204e6
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 9b952bd96828c4f2c140cb2d75cecb9379895a63
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40007569"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42746649"
 ---
-# <a name="event-hubs-net-standard-api-overview"></a>Обзор API концентраторов событий для платформы .NET Standard
+# <a name="event-hubs-net-standard-api-overview"></a>Обзор API Центров событий для платформы .NET Standard
 
 В этой статье перечислены некоторые ключевые [клиентские API Центров событий Azure для .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Сейчас существует две клиентские библиотеки .NET Standard для Центров событий:
 
 * [Microsoft.Azure.EventHubs.](/dotnet/api/microsoft.azure.eventhubs) Предоставляет все основные операции среды выполнения.
 * [Microsoft.Azure.EventHubs.Processor.](/dotnet/api/microsoft.azure.eventhubs.processor) Расширяет функциональные возможности, позволяя отслеживать обработанные события. Это самый простой способ чтения из концентратора событий.
 
-## <a name="event-hubs-client"></a>Клиент концентраторов событий
+## <a name="event-hubs-client"></a>Клиент Центров событий
 
-[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient) является основным объектом, который используется для отправки событий, создания приемников и получения данных среды выполнения. Этот клиент связан с определенным концентратором событий и создает подключение к конечной точке концентраторов событий.
+[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient) является основным объектом, который используется для отправки событий, создания приемников и получения данных среды выполнения. Этот клиент связан с определенным концентратором событий и создает подключение к конечной точке Центров событий.
 
-### <a name="create-an-event-hubs-client"></a>Создание клиента концентратора событий
+### <a name="create-an-event-hubs-client"></a>Создание клиента Центров событий
 
 Объект [EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient) создается из строки подключения. В следующем примере показан самый простой способ создания клиента:
 
@@ -61,7 +61,7 @@ await eventHubClient.SendAsync(data);
 
 ### <a name="receive-events"></a>Получение событий
 
-Для получения событий из службы "Концентраторы событий" рекомендуем использовать узел [Event Processor Host](#event-processor-host-apis), который позволяет автоматически отслеживать смещение и сведения о секциях концентратора событий. Однако, существуют определенные ситуации, в которых для получения событий может потребоваться гибкость основной библиотеки концентраторов событий.
+Для получения событий из службы "Центры событий" рекомендуем использовать узел [Event Processor Host](#event-processor-host-apis), который позволяет автоматически отслеживать смещение и сведения о секциях концентратора событий. Однако, существуют определенные ситуации, в которых для получения событий может потребоваться гибкость основной библиотеки Центров событий.
 
 #### <a name="create-a-receiver"></a>Создание приемника
 
@@ -182,10 +182,10 @@ public class SimpleEventProcessor : IEventProcessor
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о сценариях концентраторов событий см. в разделах, ссылки на которые указаны ниже.
+Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 
-* [Что такое концентраторы событий Azure?](event-hubs-what-is-event-hubs.md)
-* [Общие сведения об API концентраторов событий](event-hubs-api-overview.md)
+* [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
+* [Общие сведения об API Центров событий](event-hubs-api-overview.md)
 
 Ссылки на API-интерфейсы .NET:
 

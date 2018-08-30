@@ -13,10 +13,10 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 10/17/2017
 ms.openlocfilehash: 48c21638fe5756e6527288ed0fdc73dd9e331afd
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.sourcegitcommit: baed5a8884cb998138787a6ecfff46de07b8473d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "35640644"
 ---
 # <a name="image-classification-using-azure-machine-learning-workbench"></a>Классификация изображений в Azure Machine Learning Workbench
@@ -46,7 +46,7 @@ ms.locfileid: "35640644"
 Хотя предыдущий опыт работы с машинным обучением и CNTK не требуется, он поможет понять базовые принципы. Точность, время обучения и т. д, указанные в руководстве, предназначены только для справки, а фактические значения, которые вы получите при выполнении кода, почти наверняка будут отличаться.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Предварительные требования для выполнения этого сценария:
 

@@ -9,16 +9,16 @@ ms.technology: Speech
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: fmegen
-ms.openlocfilehash: bbf10d9bd0912dab22c81e2bb850ede52a3bd9e3
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 9f761fed46f0730a64a984111da1bae1229cc93d
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41929967"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127077"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
-[!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
+[!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как в Android с помощью пакета SDK службы "Речь" в Cognitive Services создать приложение Java, которое будет преобразовывать речь в текст.
 Приложение основано на пакете SDK службы "Речь" в Microsoft Cognitive Services для Maven версии 0.6.0 и Android Studio 3.1.
@@ -61,7 +61,7 @@ ms.locfileid: "41929967"
 
 ## <a name="configure-your-project-for-the-speech-sdk"></a>Настройка проекта для пакета SDK для службы "Речь"
 
-[!include[License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
+[!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
 Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.6.0`.
 
@@ -154,7 +154,7 @@ ms.locfileid: "41929967"
 
 На этом снимке экрана краткое руководство для Android завершается. Полный код примера проекта можно скачать из репозитория примеров.
 
-[!include[Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
+[!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Этот пример можно найти в папке `quickstart/java-android`.
 
 ## <a name="next-steps"></a>Дополнительная информация

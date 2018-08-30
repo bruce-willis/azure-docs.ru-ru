@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: c6c5e27dad7f80a329edbd8fbcb95647dc4cd15a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8cb3cae396016545c5d78a2ff7ccde4a053c4cf1
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34626737"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42746985"
 ---
 # <a name="configure-the-connected-factory-solution-accelerator"></a>Настройка акселератора решения "Подключенная фабрика"
 
@@ -282,7 +282,7 @@ WebApp поддерживает внутренний словарь данных
 * Значений узлов OPC UA, которые должны быть включены в вычисление.
 * Способа вычисления показателей на основе значений телеметрии.
 
-В решении "Подключенная фабрика" используются формулы OEE, опубликованные http://oeeindustrystandard.oeefoundation.org.
+В решении "Подключенная фабрика" используются формулы OEE, опубликованные http://www.oeefoundation.org.
 
 Объекты узлов OPC UA на станциях позволяют применять теги для вычислений показателя OEE и ключевого показателя эффективности. Свойство **Relevance** указывает, для какого показателя OEE или ключевого показателя эффективности следует использовать значение узла OPC UA. Свойство **OpCode** определяет, каким образом это значение включается в вычисление.
 

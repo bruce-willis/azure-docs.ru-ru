@@ -4,17 +4,17 @@ description: В этом руководстве вы развернете слу
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 06/25/2018
+ms.date: 08/22/2018
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c13cd495f7802f14937321134a975b7a00c791ab
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: db22b8ddeaa7fc8fd4d8f7a8b3b3d8b4bc143974
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "41917716"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42746405"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -61,7 +61,7 @@ ms.locfileid: "41917716"
 
 Чтобы отключить процесс идентификации на устройстве IoT Edge, в конфигурации управляющей программы IoT Edge в разделе **connect** для **workload_uri** и **management_uri** необходимо указать IP-адрес и порт.
 
-Сначала получите IP-адрес. Введите `ifconfig` в командную строку и скопируйте IP-адрес интерфейса **docker0**.
+Сначала получите IP-адрес. Введите `ipconfig` в командную строку и скопируйте IP-адрес интерфейса **docker0**.
 
 Измените файл конфигурации управляющей программы IoT Edge.
 

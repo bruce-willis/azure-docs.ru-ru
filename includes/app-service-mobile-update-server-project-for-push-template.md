@@ -1,95 +1,119 @@
+---
+author: conceptdev
+ms.author: crdun
+ms.service: app-service-mobile
+ms.topic: include
+ms.date: 08/23/2018
+ms.openlocfilehash: 0e7118ff6a2860351a7bfa38637f1d767b0f4a2d
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42816208"
+---
 В этом разделе описывается обновление кода в существующем проекте серверной части мобильных приложений, которое позволит отправлять push-уведомления при каждом добавлении нового элемента. Этот процесс реализуется с помощью [шаблонов](../articles/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) Центров уведомлений, включая отправку push-уведомлений между разными платформами. Разные клиенты регистрируются для обмена push-уведомлениями с помощью шаблонов; одно такое универсальное push-уведомление можно получать на всех клиентских платформах.
 
 Выберите одну из процедур ниже, которая соответствует типу вашего серверного проекта: [серверный проект .NET](#dotnet) или [серверный проект Node.js](#nodejs).
 
 ### <a name="dotnet"></a>Серверный проект .NET
+
 1. В Visual Studio щелкните правой кнопкой мыши серверный проект. Затем выберите **Управление пакетами NuGet**. Найдите `Microsoft.Azure.NotificationHubs`, а затем нажмите кнопку **Установить**. Этот процесс устанавливает библиотеку Центров уведомлений для отправки уведомлений из серверной части.
 2. В серверном проекте откройте **Контроллеры** > **TodoItemController.cs**. Затем добавьте следующие операторы using:
 
-        using System.Collections.Generic;
-        using Microsoft.Azure.NotificationHubs;
-        using Microsoft.Azure.Mobile.Server.Config;
+    ```csharp
+    using System.Collections.Generic;
+    using Microsoft.Azure.NotificationHubs;
+    using Microsoft.Azure.Mobile.Server.Config;
+    ```
+
 3. В метод **PostTodoItem** добавьте следующий код после вызова **InsertAsync**.  
 
-        // Get the settings for the server project.
-        HttpConfiguration config = this.Configuration;
-        MobileAppSettingsDictionary settings =
-            this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
+    ```csharp
+    // Get the settings for the server project.
+    HttpConfiguration config = this.Configuration;
+    MobileAppSettingsDictionary settings =
+        this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
 
-        // Get the Notification Hubs credentials for the mobile app.
-        string notificationHubName = settings.NotificationHubName;
-        string notificationHubConnection = settings
-            .Connections[MobileAppSettingsKeys.NotificationHubConnectionString].ConnectionString;
+    // Get the Notification Hubs credentials for the mobile app.
+    string notificationHubName = settings.NotificationHubName;
+    string notificationHubConnection = settings
+        .Connections[MobileAppSettingsKeys.NotificationHubConnectionString].ConnectionString;
 
-        // Create a new Notification Hub client.
-        NotificationHubClient hub = NotificationHubClient
-        .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
+    // Create a new Notification Hub client.
+    NotificationHubClient hub = NotificationHubClient
+    .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
 
-        // Send the message so that all template registrations that contain "messageParam"
-        // receive the notifications. This includes APNS, GCM, WNS, and MPNS template registrations.
-        Dictionary<string,string> templateParams = new Dictionary<string,string>();
-        templateParams["messageParam"] = item.Text + " was added to the list.";
+    // Send the message so that all template registrations that contain "messageParam"
+    // receive the notifications. This includes APNS, GCM, WNS, and MPNS template registrations.
+    Dictionary<string,string> templateParams = new Dictionary<string,string>();
+    templateParams["messageParam"] = item.Text + " was added to the list.";
 
-        try
-        {
-            // Send the push notification and log the results.
-            var result = await hub.SendTemplateNotificationAsync(templateParams);
+    try
+    {
+        // Send the push notification and log the results.
+        var result = await hub.SendTemplateNotificationAsync(templateParams);
 
-            // Write the success result to the logs.
-            config.Services.GetTraceWriter().Info(result.State.ToString());
-        }
-        catch (System.Exception ex)
-        {
-            // Write the failure result to the logs.
-            config.Services.GetTraceWriter()
-                .Error(ex.Message, null, "Push.SendAsync Error");
-        }
+        // Write the success result to the logs.
+        config.Services.GetTraceWriter().Info(result.State.ToString());
+    }
+    catch (System.Exception ex)
+    {
+        // Write the failure result to the logs.
+        config.Services.GetTraceWriter()
+            .Error(ex.Message, null, "Push.SendAsync Error");
+    }
+    ```
 
     При вставке нового элемента отправляется шаблонное уведомление, содержащее item.Text.
+
 4. Повторная публикация серверного проекта
 
 ### <a name="nodejs"></a>Серверный проект Node.js
+
 1. При необходимости [скачайте серверный проект быстрого запуска](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart) или воспользуйтесь [онлайн-редактором на портале Azure](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
 2. Замените существующий код в файле todoitem.js следующим кодом:
 
-        var azureMobileApps = require('azure-mobile-apps'),
-        promises = require('azure-mobile-apps/src/utilities/promises'),
-        logger = require('azure-mobile-apps/src/logger');
+    ```javascript
+    var azureMobileApps = require('azure-mobile-apps'),
+    promises = require('azure-mobile-apps/src/utilities/promises'),
+    logger = require('azure-mobile-apps/src/logger');
 
-        var table = azureMobileApps.table();
+    var table = azureMobileApps.table();
 
-        table.insert(function (context) {
-        // For more information about the Notification Hubs JavaScript SDK,
-        // see http://aka.ms/nodejshubs.
-        logger.info('Running TodoItem.insert');
+    table.insert(function (context) {
+    // For more information about the Notification Hubs JavaScript SDK,
+    // see http://aka.ms/nodejshubs.
+    logger.info('Running TodoItem.insert');
 
-        // Define the template payload.
-        var payload = '{"messageParam": "' + context.item.text + '" }';  
+    // Define the template payload.
+    var payload = '{"messageParam": "' + context.item.text + '" }';  
 
-        // Execute the insert. The insert returns the results as a promise.
-        // Do the push as a post-execute action within the promise flow.
-        return context.execute()
-            .then(function (results) {
-                // Only do the push if configured.
-                if (context.push) {
-                    // Send a template notification.
-                    context.push.send(null, payload, function (error) {
-                        if (error) {
-                            logger.error('Error while sending push notification: ', error);
-                        } else {
-                            logger.info('Push notification sent successfully!');
-                        }
-                    });
-                }
-                // Don't forget to return the results from the context.execute().
-                return results;
-            })
-            .catch(function (error) {
-                logger.error('Error while running context.execute: ', error);
-            });
+    // Execute the insert. The insert returns the results as a promise.
+    // Do the push as a post-execute action within the promise flow.
+    return context.execute()
+        .then(function (results) {
+            // Only do the push if configured.
+            if (context.push) {
+                // Send a template notification.
+                context.push.send(null, payload, function (error) {
+                    if (error) {
+                        logger.error('Error while sending push notification: ', error);
+                    } else {
+                        logger.info('Push notification sent successfully!');
+                    }
+                });
+            }
+            // Don't forget to return the results from the context.execute().
+            return results;
+        })
+        .catch(function (error) {
+            logger.error('Error while running context.execute: ', error);
         });
+    });
 
-        module.exports = table;  
+    module.exports = table;  
+    ```
 
     При вставке нового элемента отправляется шаблонное уведомление, содержащее item.Text.
+
 3. При редактировании этого файла на локальном компьютере повторно опубликуйте серверный проект.
