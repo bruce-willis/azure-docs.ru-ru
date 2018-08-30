@@ -1,0 +1,76 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: b741e9fd30119aaeb5248ae3fae906a70cb163e4
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43144838"
+documentType: LandingData
+title: Документация по Azure Relay — службе ретрансляции служебной шины
+metadata:
+  title: Документация по Azure Relay — службе ретрансляции служебной шины
+  meta.description: Learn how the Azure Relay service work in a hybrid cloud and on-premises environment, complete with how to, Tutorials, videos, API references, and more.
+  services: service-bus-relay
+  author: sethmanheim
+  manager: timlt
+  ms.service: service-bus-relay
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 08/21/2018
+  ms.author: sethm
+abstract:
+  description: Служба Azure Relay упрощает работу с гибридными приложениями в локальных и облачных средах, используемых в корпоративной сети предприятия и общедоступном облаке, без необходимости открывать подключения брандмауэра или вносить значительные изменения в инфраструктуру корпоративной сети.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: 'Узнайте, как отправлять и получать сообщения с помощью Azure Relay:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: /azure/media/index/logo_net.svg
+      text: Соединения WebSocket в .NET
+      href: /azure/service-bus-relay/relay-hybrid-connections-dotnet-get-started
+    - image:
+        src: /azure/media/index/logo_net.svg
+      text: .NET HTTP
+      href: /azure/service-bus-relay/relay-hybrid-connections-http-requests-dotnet-get-started
+    - image:
+        src: /azure/media/index/logo_nodejs.svg
+      text: Соединения WebSocket в Node.js
+      href: /azure/service-bus-relay/relay-hybrid-connections-node-get-started
+    - image:
+        src: /azure/media/index/logo_nodejs.svg
+      text: Node.js HTTP
+      href: /azure/service-bus-relay/relay-hybrid-connections-http-requests-node-get-started
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как создавать, администрировать, отправлять и получать сообщения с помощью службы Azure Relay
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/azure/service-bus-relay/service-bus-dotnet-hybrid-app-using-service-bus-relay">Предоставление локальной службы WCF для веб-приложения в облаке</a>
+    - html: <a href="/azure/service-bus-relay/service-bus-relay-tutorial">Предоставление локальной службы WCF для клиента WCF за пределами сети</a>
+    - html: <a href="/azure/service-bus-relay/service-bus-relay-rest-tutorial">Предоставление локальной службы WCF для приложения за пределами сети</a>
+- title: Примеры
+  items:
+  - type: paragraph
+    text: Поиск скриптов для выполнения типовых задач.
+  - type: list
+    style: unordered
+    className: spaced noBullet
+    items:
+    - html: <a href="https://github.com/Azure/azure-relay/tree/master/samples">Примеры кода для Azure Relay</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Языки
+      html: <p><a href="/dotnet/api/microsoft.azure.relay?view=azure-dotnet">.NET Framework</a></p>
+    - title: REST
+      html: <p><a href="/rest/api/servicebus/">справочник по API REST</a></p>

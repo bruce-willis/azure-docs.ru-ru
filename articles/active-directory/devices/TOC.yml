@@ -1,0 +1,57 @@
+items:
+- name: Документация по управлению устройствами
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Общие сведения об управлении устройствами в Azure AD
+    href: overview.md
+- name: Учебники
+  items:
+  - name: Настройка гибридного присоединения к Azure AD для управляемых доменов
+    href: hybrid-azuread-join-managed-domains.md
+  - name: Настройка гибридного присоединения к Azure AD для федеративных доменов
+    href: hybrid-azuread-join-federated-domains.md
+  - name: Настройка гибридного присоединения к Azure AD вручную
+    href: hybrid-azuread-join-manual-steps.md
+  - name: Настройка присоединения к Azure AD во время первого запуска Windows 10
+    href: azuread-joined-devices-frx.md
+  expanded: false
+- name: Практические руководства
+  items:
+  - name: Управление устройствами с помощью портала Azure
+    href: device-management-azure-portal.md
+  - name: Планирование присоединения к Azure AD
+    href: azureadjoin-plan.md
+  - name: Планирование реализации гибридного присоединения к Azure AD
+    href: hybrid-azuread-join-plan.md
+  - name: Управление гибридным присоединением устройств к Azure AD
+    href: hybrid-azuread-join-control.md
+  - name: Назначение локальных администраторов присоединенным к Azure AD устройствам
+    href: assign-local-admin.md
+  - name: Устранение неполадок с текущими устройствами Windows, присоединенными к гибридной среде Azure AD
+    href: troubleshoot-hybrid-join-windows-current.md
+  - name: Устранение неполадок с устаревшими устройствами Windows, присоединенными к гибридной среде Azure AD
+    href: troubleshoot-hybrid-join-windows-legacy.md
+  - name: Часто задаваемые вопросы
+    href: faq.md
+  expanded: true
+- name: Ресурсы
+  items:
+  - name: Форум отзывов и предложений по Azure
+    href: https://feedback.azure.com/forums/169401-azure-active-directory
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/active-directory/
+  - name: Обновления службы
+    href: ../fundamentals/whats-new.md
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-active-directory
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+ms.openlocfilehash: e20a017ea6ce00749cf0dad990dd7a66907e074b
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43130635"

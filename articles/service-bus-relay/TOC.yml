@@ -1,0 +1,87 @@
+items:
+- name: Документация по ретранслятору служебной шины
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Что такое ретранслятор?
+    href: relay-what-is-it.md
+  - name: Часто задаваемые вопросы
+    href: relay-faq.md
+- name: Быстрое начало работы
+  items:
+  - name: Создание гибридного локального и облачного приложения
+    href: service-bus-dotnet-hybrid-app-using-service-bus-relay.md
+  - name: через гибридные подключения
+    items:
+    - name: Соединения WebSocket в .NET
+      href: relay-hybrid-connections-dotnet-get-started.md
+    - name: .NET HTTP
+      href: relay-hybrid-connections-http-requests-dotnet-get-started.md
+    - name: Соединения WebSocket в Node
+      href: relay-hybrid-connections-node-get-started.md
+    - name: Node HTTP
+      href: relay-hybrid-connections-http-requests-node-get-started.md
+  - name: Руководство по Ретранслятору WCF
+    href: service-bus-relay-tutorial.md
+  - name: Руководство по REST для Ретранслятора WCF
+    href: service-bus-relay-rest-tutorial.md
+- name: Практическое руководство
+  items:
+  - name: Планирование и проектирование
+    items:
+    - name: Проверка подлинности и безопасность
+      href: relay-authentication-and-authorization.md
+      items:
+      - name: Миграция из ACS в SAS
+        href: relay-migrate-acs-sas.md
+    - name: Протокол гибридных подключений
+      href: relay-hybrid-connections-protocol.md
+  - name: Разработка
+    items:
+    - name: Создание пространства имен
+      href: relay-create-namespace-portal.md
+    - name: Предоставление доступа к службам WCF внешним клиентам с помощью Ретранслятора WCF
+      href: relay-wcf-dotnet-get-started.md
+    - name: Доступные API
+      href: relay-api-overview.md
+      items:
+      - name: .NET
+        href: relay-hybrid-connections-dotnet-api-overview.md
+      - name: Узел
+        href: relay-hybrid-connections-node-ws-api-overview.md
+  - name: управление
+    items:
+    - name: Мониторинг Azure Relay с помощью Azure Monitor
+      href: relay-metrics-azure-monitor.md
+- name: Справочные материалы
+  items:
+  - name: .NET
+    items:
+    - name: Microsoft.Azure.Relay
+      href: /dotnet/api/microsoft.azure.relay
+    - name: Microsoft.ServiceBus
+      href: /dotnet/api/Microsoft.ServiceBus
+  - name: Исключения
+    href: relay-exceptions.md
+  - name: Параметры портов
+    href: relay-port-settings.md
+- name: Ресурсы
+  items:
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=enterprise-integration
+  - name: Блог
+    href: https://blogs.msdn.microsoft.com/servicebus/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/service-bus/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Примеры
+    href: https://github.com/azure/azure-relay/tree/master/samples
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-servicebusrelay
+ms.openlocfilehash: 1c15d984e19f0585f386620f1e6e12667c69da5e
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43144784"

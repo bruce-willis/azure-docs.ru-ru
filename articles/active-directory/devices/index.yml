@@ -1,0 +1,41 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 03a96770462e66c897b93ae0790838a9c8f1bd9b
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43130626"
+documentType: LandingData
+title: Документация по управлению устройствами в Azure AD
+metadata:
+  document_id: 
+  title: 'Документация по управлению устройствами в Azure AD: руководства, основные понятия, справочники | Документация Майкрософт'
+  description: Узнайте, как настроить и протестировать функцию управления устройствами в Azure Active Directory.
+  services: active-directory
+  ms.component: devices
+  author: MarkusVi
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 08/14/2018
+  ms.author: markvi
+abstract:
+  description: С помощью устройств пользователи получают доступ к корпоративным ресурсам. В целях защиты корпоративных ресурсов ИТ-администраторам требуются возможности управления этими устройствами. Это позволит предоставлять пользователям доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям.<br>Управление устройствами также лежит в основе условного доступа с устройств. Используя условный доступ на основе устройств, можно разрешать доступ к ресурсам в своей среде только управляемым устройствам.
+sections:
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как с помощью Azure AD интегрировать локальные устройства, присоединенные к Azure AD.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: ./media/index/i_security-management.png
+      text: управляемые домены;
+      href: hybrid-azuread-join-managed-domains.md
+    - image:
+        src: ./media/index/i_security-management.png
+      text: федеративные домены.
+      href: hybrid-azuread-join-federated-domains.md

@@ -57,8 +57,10 @@ items:
     href: security-center-monitoring.md
     items:
     - name: Безопасность вычислений и приложений
-      href: security-center-virtual-machine-recommendations.md
+      href: security-center-virtual-machine-protection.md
       items:
+      - name: Рекомендации по виртуальным машинам
+        href: security-center-virtual-machine-recommendations.md
       - name: Применение шифрования дисков
         href: security-center-apply-disk-encryption.md
       - name: Применение обновлений системы
@@ -143,6 +145,8 @@ items:
       href: security-center-custom-alert.md
     - name: Проверка оповещений
       href: security-center-alert-validation.md
+    - name: Оценка достоверности оповещения
+      href: security-center-confidence-score.md
     - name: Карта анализа угроз
       href: security-center-threat-intel.md
     - name: Исследование
@@ -183,10 +187,6 @@ items:
     href: security-center-faq.md
   - name: Поддерживаемые платформы
     href: security-center-os-coverage.md
-  - name: Миграция платформы
-    href: security-center-platform-migration.md
-  - name: 'Миграция платформы: часто задаваемые вопросы'
-    href: security-center-platform-migration-faq.md
   - name: Планирование и эксплуатация
     href: security-center-planning-and-operations-guide.md
   - name: Безопасность в Azure
@@ -207,9 +207,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=security-center
   - name: Доступ по регионам
     href: https://azure.microsoft.com/regions/services/
-ms.openlocfilehash: c382c8e4d17352d7f87e82fe9a03a4c2e30880b8
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 62f713d5e0412eef2cb4dbb176e355371cbc924a
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42810180"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126408"
