@@ -14,22 +14,25 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/17/2017
 ms.author: crdun
-ms.openlocfilehash: 9e9f7aba49c53a1a6fcc611ed771f266eb49c883
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 557f6f6a6d4925ec167760455dfc67449582c05c
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38547181"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42811676"
 ---
 # <a name="add-push-notifications-to-your-android-app"></a>Добавление push-уведомлений в приложение Android
+
 [!INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
 ## <a name="overview"></a>Обзор
+
 В этом учебнике мы добавим push-уведомления в [ознакомительный проект для платформы Android], чтобы при каждом добавлении новой записи на устройство отправлялось push-уведомление.
 
 Если вы не используете скачанный проект сервера, необходимо добавить пакет расширений для push-уведомлений. Дополнительные сведения см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 Кроме этого, вам потребуются:
 
 * Интегрированная среда разработки, в зависимости от серверной части вашего проекта:
@@ -40,21 +43,27 @@ ms.locfileid: "38547181"
 * Изучение [ознакомительный проект для платформы Android].
 
 ## <a name="create-a-project-that-supports-firebase-cloud-messaging"></a>Создание проекта с поддержкой Firebase Cloud Messaging
+
 [!INCLUDE [notification-hubs-enable-firebase-cloud-messaging](../../includes/notification-hubs-enable-firebase-cloud-messaging.md)]
 
 ## <a name="configure-a-notification-hub"></a>Настройка центра уведомлений
+
 [!INCLUDE [app-service-mobile-configure-notification-hub](../../includes/app-service-mobile-configure-notification-hub.md)]
 
 ## <a name="configure-azure-to-send-push-notifications"></a>Настройка Azure для отправки push-уведомлений
+
 [!INCLUDE [app-service-mobile-android-configure-push](../../includes/app-service-mobile-android-configure-push-for-firebase.md)]
 
 ## <a name="enable-push-notifications-for-the-server-project"></a>Включение push-уведомлений для серверного проекта
+
 [!INCLUDE [app-service-mobile-dotnet-backend-configure-push-google](../../includes/app-service-mobile-dotnet-backend-configure-push-google.md)]
 
 ## <a name="add-push-notifications-to-your-app"></a>Добавление push-уведомлений в приложение
+
 В этом разделе мы обновим клиентское приложение Android для обработки push-уведомлений.
 
 ### <a name="verify-android-sdk-version"></a>Проверка версии пакета SDK для Android
+
 [!INCLUDE [app-service-mobile-verify-android-sdk-version](../../includes/app-service-mobile-verify-android-sdk-version.md)]
 
 Далее следует установить службы Google Play. Firebase Cloud Messaging предъявляет некоторые требования к минимальному уровню API для разработки и тестирования, которым должно удовлетворять свойство **minSdkVersion** в манифесте.
@@ -62,15 +71,19 @@ ms.locfileid: "38547181"
 Если вы тестируете приложение на более старом устройстве, обратитесь к руководству [Добавление Firebase в проект Android] (Добавление Firebase в проект Android), чтобы определить, насколько малым можно задать это значение.
 
 ### <a name="add-firebase-cloud-messaging-to-the-project"></a>Добавление Firebase Cloud Messaging в проект
+
 [!INCLUDE [Add Firebase Cloud Messaging](../../includes/app-service-mobile-add-firebase-cloud-messaging.md)]
 
 ### <a name="add-code"></a>Добавление кода
+
 [!INCLUDE [app-service-mobile-android-getting-started-with-push](../../includes/app-service-mobile-android-getting-started-with-push.md)]
 
 ## <a name="test-the-app-against-the-published-mobile-service"></a>Тестирование приложения с помощью опубликованной мобильной службы
+
 Приложение можно проверить, подключив телефон Android напрямую с помощью USB-кабеля или используя виртуальное устройство в эмуляторе.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Вы изучили это руководство и теперь можете перейти к ознакомлению с одной из следующих тем.
 
 * [Добавление аутентификации в приложение Android](app-service-mobile-android-get-started-users.md).
