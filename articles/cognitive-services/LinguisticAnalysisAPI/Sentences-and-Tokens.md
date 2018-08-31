@@ -29,13 +29,13 @@ ms.locfileid: "37084048"
 
 Рассмотрим следующий пример текста:
 
-> Что вы сказали?!? Я не слышал о "новом предложении" директора. Это важно для г. Смита и г. Смит.
+> What did you say?!? I didn't hear about the director's "new proposal." It's important to Mr. and Mrs. Smith.
 
-Этот текст содержит три предложения:
+This text contains three sentences:
 
-- Что вы сказали?!?
-- Я не слышал о "новом предложении" директора.
-- Это важно для г. Смита и г. Смит.
+- What did you say?!?
+- I didn't hear about the director's "new proposal."
+- It's important to Mr. and Mrs. Smith.
 
 Обратите внимание, что концы предложений отмечены совершенно по-разному.
 Первое заканчивается комбинацией вопросительных и восклицательного знаков (иногда называемых лигатура из вопросительных и восклицательных знаков).
@@ -48,7 +48,7 @@ ms.locfileid: "37084048"
 Следующая задача — разбить эти предложения на лексемы.
 В большинстве случаев английские лексемы разделяются пробелами.
 (Поиск лексем или слов в английском языке гораздо проще, чем в китайском, где практически не используются пробелы между словами.
-Первое предложение может быть написано как "Чтовысказали?")
+Первое предложение может быть написано как "Whatdidyousay?")
 
 Есть несколько сложных случаев.
 Во-первых, пунктуация часто (но не всегда) должна отделяться от окружающего контекста.
@@ -57,9 +57,9 @@ ms.locfileid: "37084048"
 Вернемся к примерам предложений выше.
 Теперь мы разместили "центральную точку" (&middot;) между каждой отдельной лексемой.
 
-- Что &middot; &middot; вы &middot; сказали &middot; ?!?
-- Я &middot; &middot; не &middot; слышал &middot; о &middot; &middot;новом&middot; &middot; предложении &middot; &middot; директора &middot; . &middot; "
-- Это &middot; &middot; важно &middot; для &middot; г. &middot; Смита и &middot; г. &middot; Смит &middot; .
+- What &middot; did &middot; you &middot; say &middot; ?!?
+- I &middot; did &middot; n't &middot; hear &middot; about &middot; the &middot; director &middot; 's &middot; " &middot; new &middot; proposal &middot; . &middot; "
+- It &middot; 's &middot; important &middot; to &middot; Mr. &middot; and &middot; Mrs. &middot; Smith &middot; .
 
 Обратите внимание, что большинство лексем — это слова, которые можно найти в словаре (например, *важный*, *директор*).
 Другие исключительно состоят из знаков препинания.
