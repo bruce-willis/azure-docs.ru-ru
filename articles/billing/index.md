@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 05/24/2018
 ms.author: cwatson
-ms.openlocfilehash: db2c6f9995356abc233e971a2fae5a1ee6233ed1
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: 40070acab5f656cab7f3034e3b35c113c0ff6051
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42915702"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43300817"
 ---
 # <a name="azure-billing-and-cost-management-documentation"></a>Документация по выставлению счетов и управлению затратами в Azure
 
@@ -104,8 +104,8 @@ ms.locfileid: "42915702"
                         <p>
                         <a href="/azure/billing/billing-manage-access">Доступ к данным для выставления счетов</a><br/>
                         <a href="/azure/billing/billing-how-to-pay-by-invoice">Оплата по счету</a><br/>
-                        <a href="/azure/billing/billing-manage-reserved-vm-instance">Управление зарезервированными экземплярами в Azure</a><br/>
-                        <a href="/azure/billing/billing-understand-reserved-instance-usage-ea">Использование резервирований Azure</a>
+                        <a href="/azure/billing/billing-manage-reserved-vm-instance">Управление Azure Reserved VM Instances</a><br/>
+                        <a href="/azure/billing/billing-understand-reserved-instance-usage-ea">Использование Azure Reserved VM Instances</a>
                         </p>
                     </div>
                 </div>
@@ -134,9 +134,9 @@ ms.locfileid: "42915702"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Экономия средств за счет использования резервирований Azure</h3>
+                        <h3>Экономия средств за счет использования Azure Reserved VM Instances</h3>
                         <p>
-                        <a href="/azure/billing/billing-save-compute-costs-reservations">Что такое резервирования Azure?</a> <br/>
+                        <a href="/azure/billing/billing-save-compute-costs-reservations">Общие сведения об Azure Reserved VM Instances</a> <br/>
                         <a href="/azure/virtual-machines/windows/prepay-reserved-vm-instances?toc=/azure/billing/TOC.json">Приобретение зарезервированного экземпляра виртуальной машины</a><br/>
                         <a href="/azure/sql-database/sql-database-reserved-capacity?toc=/azure/billing/TOC.json">Покупка резервной мощности Базы данных SQL</a><br/>
                         <a href="/azure/billing/billing-understand-vm-reservation-charges">Применение скидок на виртуальные машины</a><br/>
