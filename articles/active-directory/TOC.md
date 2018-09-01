@@ -123,10 +123,6 @@
 #### [Использование сертификатов](reports-monitoring/tutorial-access-api-with-certificates.md)
 
 ## [Управление паролями](authentication/concept-sspr-howitworks.md)
-### Документы пользователя
-#### [Сброс или изменение пароля](user-help/active-directory-passwords-update-your-own-password.md)
-#### [Регистрация для самостоятельного сброса пароля](user-help/active-directory-passwords-reset-register.md)
-
 
 ## Управление приложениями
 ### [Обзор](manage-apps/what-is-application-management.md)
@@ -338,10 +334,6 @@
 ### [Получение результатов проверок доступа](active-directory-azure-ad-controls-retrieve-access-review.md)
 
 ## Защита удостоверений
-### Аутентификация на основе сертификата
-#### [Android](active-directory-certificate-based-authentication-android.md)
-#### [iOS](active-directory-certificate-based-authentication-ios.md)
-#### [Начало работы](active-directory-certificate-based-authentication-get-started.md)
 
 ### защиту идентификации Azure AD
 #### [Обзор](identity-protection/overview.md)
