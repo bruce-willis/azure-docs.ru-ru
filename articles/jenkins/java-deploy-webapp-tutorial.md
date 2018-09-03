@@ -1,19 +1,19 @@
 ---
 title: Развертывание веб-приложений в Azure с помощью Jenkins
 description: Сведения о настройке непрерывной интеграции из GitHub в службу приложений Azure для веб-приложений Java с помощью Jenkins и Docker.
-ms.topic: tutorial
-ms.author: tarcher
+ms.service: jenkins
+keywords: jenkins, azure, devops, app service, continuous integration, ci, continuous deployment, cd
 author: tomarcher
-manager: jpconnock
-ms.service: devops
-ms.custom: jenkins
+manager: jeconnoc
+ms.author: tarcher
+ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: e880d84c3ae0fd23c11bb9b30733544bd5f28872
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: b1af82060d316a18cd6427f70695ca4fa982064d
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39389948"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43106803"
 ---
 # <a name="set-up-continuous-integration-and-deployment-to-azure-app-service-with-jenkins"></a>Настройка непрерывной интеграции и развертывания в службе приложений Azure с помощью Jenkins и GitHub
 
@@ -102,7 +102,7 @@ ms.locfileid: "39389948"
 ## <a name="configure-the-azure-app-service-jenkins-plug-in"></a>Настройка подключаемого модуля Jenkins службы приложений Azure
 
 1. В веб-консоли Jenkins выберите созданное задание **MyJavaApp**, а затем щелкните **Configure** (Настройка) в левой части страницы.
-2. Прокрутите вниз до раздела **Post-build Actions** (Действия после сборки), выберите **Add post-build action** (Добавление действия после сборки), а затем — **Publish an Azure Web App** (Публикация веб-приложения Azure).
+2. Прокрутите вниз до раздела **Post-build Actions** (Действия после сборки), выберите **Add post-build action** (Добавить действие после сборки), а затем — **Publish an Azure Web App** (Опубликовать веб-приложение Azure).
 3. В разделе **Azure Profile Configuration** (Конфигурация профиля Azure) щелкните **Add** (Добавить) рядом с **учетными данными Azure**, а затем выберите **Jenkins**.
 4. В диалоговом окне **добавления учетных данных** выберите **субъект-службу Microsoft Azure** в раскрывающемся списке **Kind** (Вид).
 5. Создайте субъект-службу Active Directory с помощью Azure CLI или [Cloud Shell](/azure/cloud-shell/overview).

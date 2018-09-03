@@ -5,21 +5,23 @@ services: functions
 author: ggailey777
 ms.service: functions
 ms.topic: include
-ms.date: 07/17/2018
+ms.date: 08/26/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: e8cb5dadb7eed5eb33c15d7a4d1d4640a10099c9
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: f0bcb2e7f99689d31be610f1523d2c57e332deb7
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40245791"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43049783"
 ---
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите пункт **Опубликовать**.
 
 2. Выберите **Приложение-функция Azure**, **Создать** и **Опубликовать**.
 
     ![Выбор целевого объекта публикации](./media/functions-vstools-publish/functions-vstools-create-new-function-app.png)
+
+    При включении параметра **Запуск из ZIP-файла** приложение-функция в Azure будет запущено непосредственно из пакета развертывания. Дополнительные сведения см. в руководстве по [запуску Функций Azure из файла пакета](../articles/azure-functions/run-functions-from-deployment-package.md).
 
 3. Если вы еще не подключили Visual Studio к учетной записи Azure, нажмите кнопку **Добавить учетную запись**.
 

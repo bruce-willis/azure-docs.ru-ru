@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 07/19/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d94f8d38ef771bd5ab03f4d3cef25233c33e7546
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 6759568a678394f7cec4ac9f0bdd99d8ed1db9de
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39282623"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42886796"
 ---
 # <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Учебник. Выявление проблем с устройствами, подключенными к решению для мониторинга
 
@@ -112,11 +112,23 @@ ms.locfileid: "39282623"
 
 ## <a name="disable-a-rule"></a>Отключение устройства
 
-Временно отключить правило можно в списке правил. Выберите правило для отключения, а затем выберите **Отключить**. **Состояние** правила в списке изменится, указывая, что правило отключено. Вы можете снова включить правило, которое ранее было отключено, используя ту же процедуру.
+Временно отключить правило можно в списке правил. Выберите правило для отключения и щелкните **Отключить**. **Состояние** правила в списке изменится, указывая, что правило отключено. Вы можете снова включить правило, которое ранее было отключено, используя ту же процедуру.
 
 [![Отключение правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdisable-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdisable-expanded.png#lightbox)
 
 Чтобы включить или отключить несколько правил одновременно, выберите их в списке.
+
+## <a name="delete-a-rule"></a>Удаление правила
+
+Чтобы окончательно удалить правило, удалите его из списка правил. Выберите правило для удаления и щелкните **Удалить**.
+
+[![Удаление правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdelete-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdelete-expanded.png#lightbox)
+
+Когда вы подтвердите удаление правила, вы сможете также удалить все оповещения, связанные с правилом, на странице **Обслуживание**.
+
+[![Удаление правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdeletetidy-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdeletetidy-expanded.png#lightbox)
+
+Вы можете удалить только одно правило за раз.
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 

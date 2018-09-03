@@ -78,7 +78,7 @@ ms.locfileid: "39213162"
 
 Щелкните **Запустить имитацию**. Имитация выполняется на протяжении установленного времени. Имитацию можно остановить в любой момент, щелкнув **Остановить имитацию**. Эта имитация содержит статистические данные текущего выполнения. Щелкните **View IoT Hub metrics in the Azure portal** (Просмотреть метрики Центра Интернета вещей на портале Azure), чтобы просмотреть метрики, о которых сообщает Центр Интернета вещей:
 
-[Выполнение имитации![](./media/quickstart-device-simulation-deploy/simulationrun-inline.png)](./media/quickstart-device-simulation-deploy/simulationrun-expanded.png#lightbox)
+[![Выполнение имитации](./media/quickstart-device-simulation-deploy/simulationrun-inline.png)](./media/quickstart-device-simulation-deploy/simulationrun-expanded.png#lightbox)
 
 На подготовленном экземпляре акселератора решений можно выполнять только одно моделирование одновременно.
 

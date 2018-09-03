@@ -3,18 +3,18 @@ title: Поиск с помощью службы "Карты Azure" | Докум
 description: Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 author: dsk-2015
 ms.author: dkshir
-ms.date: 05/07/2018
+ms.date: 08/23/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: ffc4b7625a6c43f8e2801313c61f14c785a3ec5f
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: e30d84c70f786a5bea25073c70a29b63c9a00ae9
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38988880"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42917668"
 ---
 # <a name="search-nearby-points-of-interest-using-azure-maps"></a>Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -81,8 +81,9 @@ API элементов управления картой — это удобна
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <title>Map Search</title>
 
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1.0" type="text/css" />
-        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1.0"></script>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1" type="text/css" /> 
+        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script> 
+        <script src="https://atlas.microsoft.com/sdk/js/atlas-service.min.js?api-version=1"></script> 
 
         <style>
             html,
@@ -131,10 +132,12 @@ API элементов управления картой — это удобна
 
 ## <a name="add-search-capabilities"></a>Добавление возможностей поиска
 
-В этом разделе показано, как использовать API службы "Карты Azure" для поиска точки интереса на карте. Это RESTful API, предназначенный для разработчиков. Он позволяет находить адреса, объекты и другие географические сведения. Служба поиска назначает широту и долготу для определенного адреса. 
+В этом разделе показано, как использовать API службы "Карты Azure" для поиска точки интереса на карте. Это RESTful API, предназначенный для разработчиков. Он позволяет находить адреса, объекты и другие географические сведения. Служба поиска назначает широту и долготу для определенного адреса. С помощью описанного ниже **модуля службы** можно искать расположение, используя API поиска службы "Карты Azure".
 
-1. Добавьте новый слой на карту для отображения результатов поиска. Добавьте следующий код Javascript в блок *script* после кода, который инициализирует карту. 
+### <a name="service-module"></a>Модуль службы
 
+1. Добавьте новый слой на карту для отображения результатов поиска. Добавьте следующий код Javascript в блок сценария после кода, который инициализирует карту. 
+    
     ```JavaScript
     // Initialize the pin layer for search results to the map
     var searchLayerName = "search-results";
@@ -145,69 +148,50 @@ API элементов управления картой — это удобна
     });
     ```
 
-2. Создайте [XMLHttpRequest](https://xhr.spec.whatwg.org/) и добавьте обработчик событий, чтобы проанализировать ответ JSON, отправленный службой поиска "Карты Azure". Этот фрагмент кода создает обработчик событий для сбора сведений об адресах, названиях, широте и долготе для каждого расположения, возвращенного в переменной `searchPins`. Наконец, он добавляет коллекцию расположений в элемент управления `map` в виде маркеров. 
+2. Чтобы создать экземпляр службы клиента, добавьте следующий код Javascript в блок сценария, который инициализирует карту.
 
     ```JavaScript
-    // Perform a request to the search service and create a pin on the map for each result
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        var searchPins = [];
-
-        if (this.readyState === 4 && this.status === 200) {
-            var response = JSON.parse(this.responseText);
-
-            var poiResults = response.results.filter((result) => { return result.type === "POI" }) || [];
-
-            searchPins = poiResults.map((poiResult) => {
-                var poiPosition = [poiResult.position.lon, poiResult.position.lat];
-                return new atlas.data.Feature(new atlas.data.Point(poiPosition), {
-                    name: poiResult.poi.name,
-                    address: poiResult.address.freeformAddress,
-                    position: poiResult.position.lat + ", " + poiResult.position.lon
-                });
-            });
-
-            map.addPins(searchPins, {
-                name: searchLayerName
-            });
-
-            var lons = searchPins.map((pin) => { return pin.geometry.coordinates[0] });
-            var lats = searchPins.map((pin) => { return pin.geometry.coordinates[1] });
-
-            var swLon = Math.min.apply(null, lons);
-            var swLat = Math.min.apply(null, lats);
-            var neLon = Math.max.apply(null, lons);
-            var neLat = Math.max.apply(null, lats);
-
-            map.setCameraBounds({
-                bounds: [swLon, swLat, neLon, neLat],
-                padding: 50
-            });
-        }
-    };
+    var client = new atlas.service.Client(subscriptionKey);
     ```
 
-3. Добавьте следующий код в блок *script* для создания запроса и отправки XMLHttpRequest в службу поиска "Карты Azure":
+3. Чтобы создать запрос, добавьте следующий блок сценария. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например любую комбинацию маркеров адресов и точек интереса (POI). Она ищет близлежащие бензозаправочные станции в пределах указанного радиуса. Ответ преобразуется в формат GeoJSON, а затем — в точечные объекты, которые добавляются на карту в виде закреплений. Последняя часть сценария добавляет границы камеры для карты с использованием свойства [setCameraBounds](https://docs.microsoft.com/javascript/api/azure-maps-control/models.cameraboundsoptions?view=azure-iot-typescript-latest).
 
     ```JavaScript
-    var url = "https://atlas.microsoft.com/search/fuzzy/json?";
-    url += "api-version=1.0";
-    url += "&query=gasoline%20station";
-    url += "&subscription-key=" + MapsAccountKey;
-    url += "&lat=47.6292";
-    url += "&lon=-122.2337";
-    url += "&radius=100000";
-
-    xhttp.open("GET", url, true);
-    xhttp.send();
-    ``` 
-    Этот фрагмент кода использует базовый API службы поиска, **Fuzzy Search**. Он обрабатывает нечеткие входные данные, принимая любое сочетание маркеров адреса или точек интереса. Он выполняет поиск ближайшей **бензозаправочной станции** для заданных координат широты и долготы в пределах указанного адреса. Он использует первичный ключ вашей учетной записи, ранее указанный в примере файла, в вызове к службе "Карты". Этот API возвращает результаты в виде пар широты и долготы найденных мест. 
-    
+    client.search.getSearchFuzzy("gasoline station", {
+     lat: 47.6292,
+     lon: -122.2337,
+     radius: 100000
+    }).then(response => {
+       // Parse the response into GeoJSON 
+       var geojsonResponse = new atlas.service.geojson.GeoJsonSearchResponse(response); 
+ 
+       // Create the point features that will be added to the map as pins 
+       var searchPins = geojsonResponse.getGeoJsonResults().features.map(poiResult => { 
+           var poiPosition = [poiResult.properties.position.lon, poiResult.properties.position.lat]; 
+           return new atlas.data.Feature(new atlas.data.Point(poiPosition), { 
+                name: poiResult.properties.poi.name, 
+                address: poiResult.properties.address.freeformAddress, 
+                position: poiPosition[1] + ", " + poiPosition[0] 
+           }); 
+       }); 
+ 
+       // Add pins to the map for each POI 
+       map.addPins(searchPins, { 
+           name: searchLayerName 
+       }); 
+ 
+       // Set the camera bounds 
+       map.setCameraBounds({ 
+           bounds: geojsonResponse.getGeoJsonResults().bbox, 
+           padding: 50 
+       ); 
+    }); 
+    ```
 4. Сохраните файл **MapSearch.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл, и синие пометки указывают расположение бензозаправочных станций в области. 
 
    ![Просмотр карты с результатами поиска](./media/tutorial-search-location/pins-map.png)
 
-5. Чтобы просмотреть необработанные данные, которые карта преобразовывает для просмотра, введите в браузере запрос XMLHTTPRequest, созданный в файле. Замените \<ключ учетной записи\> на ваш первичный ключ. 
+5. Вы можете увидеть необработанные данные, которые отображаются на карте в преобразованном для просмотра виде, введя следующий HTTP-запрос в вашем браузере. Замените \<ключ учетной записи\> на ваш первичный ключ. 
 
    ```http
    https://atlas.microsoft.com/search/fuzzy/json?api-version=1.0&query=gasoline%20station&subscription-key=<your account key>&lat=47.6292&lon=-122.2337&radius=100000
@@ -237,7 +221,7 @@ API элементов управления картой — это удобна
         popupContentElement.appendChild(popupAddressElement);
 
         var popupPositionElement = document.createElement("div");
-        popupPositionElement.innerText = e.features[0].properties.name;
+        popupPositionElement.innerText = e.features[0].properties.position;
         popupContentElement.appendChild(popupPositionElement);
 
         popup.setPopupOptions({

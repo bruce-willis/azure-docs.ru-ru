@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 11/15/2017
 ms.author: govindk
 ms.custom: mvc
-ms.openlocfilehash: b53328875f2242faba369dea0df655bc78117009
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 55a6fec1b6ac018b4b24c0d27dcfdd5812455800
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41917955"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189682"
 ---
-# <a name="azure-cosmos-db-import-cassandra-data"></a>Azure Cosmos DB: импорт данных Cassandra
+# <a name="migrate-your-data-to-azure-cosmos-db-cassandra-api-account"></a>Перенос данных в учетную запись API Cassandra в Azure Cosmos DB
 
-Это руководство содержит инструкции по импорту данных Cassandra в Azure Cosmos DB с помощью команды COPY языка запросов Cassandra (CQL). 
+В это руководстве описано, как импортировать данные Cassandra в Azure Cosmos DB с помощью команды COPY языка запросов Cassandra (CQL). 
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -31,11 +31,13 @@ ms.locfileid: "41917955"
 
 # <a name="prerequisites"></a>Предварительные требования
 
-* Установите [Apache Cassandra](http://cassandra.apache.org/download/) и убедитесь, что присутствует *cqlsh*.
-* Увеличьте пропускную способность. Продолжительность переноса данных зависит от пропускной способности, которую вы предоставите для таблиц. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности с помощью [портала Azure](https://portal.azure.com) см. в статье [Настройка пропускной способности для коллекций Azure Cosmos DB](set-throughput.md).
+* Установите [Apache Cassandra](http://cassandra.apache.org/download/) и убедитесь, что присутствует *cqlsh*.  
+
+* Увеличьте пропускную способность. Продолжительность переноса данных зависит от пропускной способности, которую вы предоставите для таблиц. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности с помощью [портала Azure](https://portal.azure.com) см. в статье [Настройка пропускной способности для коллекций Azure Cosmos DB](set-throughput.md).  
+
 * Включите SSL. В Azure Cosmos DB строгие требования к безопасности и стандарты. Обязательно включите SSL при взаимодействии с учетной записью. При использовании CQL с SSH у вас есть возможность предоставить сведения SSL. 
 
-## <a name="find-your-connection-string"></a>Получение строки подключения
+## <a name="get-your-connection-string"></a>Получение строки подключения
 
 1. На [портале Azure](https://portal.azure.com) слева щелкните **Azure Cosmos DB**.
 
@@ -45,14 +47,14 @@ ms.locfileid: "41917955"
 
     ![Страница строки подключения](./media/cassandra-import-data/keys.png)
 
-## <a name="use-cqlsh-copy"></a>Использование cqlsh COPY
+## <a name="migrate-data-by-using-cqlsh-copy"></a>Перенос данных с помощью cqlsh COPY
 
 Чтобы импортировать в Azure Cosmos DB данные Cassandra, которые можно использовать с API-интерфейсом Cassandra, следуйте инструкциям ниже.
 
 1. Войдите в cqhsh, используя полученные на портале сведения о подключении.
 2. Используйте [команду CQL COPY](http://cassandra.apache.org/doc/latest/tools/cqlsh.html#cqlsh), чтобы скопировать локальные данные в конечную точку API-интерфейса Apache Cassandra. Убедитесь, что исходный и целевой объекты находятся в одном центре обработки данных, чтобы свести к минимуму проблемы задержки.
 
-### <a name="guide-for-moving-data-with-cqlsh"></a>Руководство по переносу данных с помощью cqlsh
+### <a name="steps-to-move-data-with-cqlsh"></a>Действия по перемещению данных с помощью cqlsh
 
 1. Заранее создайте и масштабируйте таблицу:
     * Azure Cosmos DB по умолчанию подготавливает новую таблицу API-интерфейса Cassandra с пропускной способностью 1000 единиц запроса в секунду, а при подготовке на основе CQL — 400 единиц запроса в секунду. Прежде чем запустить миграцию командой cqlsh, создайте все таблицы с помощью [портала Azure](https://portal.azure.com) или cqlsh. 
@@ -80,11 +82,11 @@ ms.locfileid: "41917955"
 
 5. Выполните команду для начала переноса. Чтобы эта команда выполнилась успешно, сеанс cqlsh нужно запускать с информацией о строке подключения.
 
-   ```
+   ```bash
    COPY exampleks.tablename FROM filefolderx/*.csv 
    ```
 
-## <a name="use-spark-to-import-data"></a>Использование Spark для импорта данных
+## <a name="migrate-data-by-using-spark"></a>Перенос данных с помощью Spark
 
 Для данных, хранящихся в существующем кластере виртуальных машин Azure, можно применить импорт данных с помощью Spark. Для этого следует настроить Spark в качестве промежуточного звена для однократного или регулярного приема данных. 
 

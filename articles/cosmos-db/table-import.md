@@ -10,16 +10,16 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/28/2017
 ms.author: sngun
-ms.openlocfilehash: e4e783d131c4ceee9315b3442ee504e662157d8c
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 905815259707116759e0b980690fac108ab81c7b
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37856813"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43186836"
 ---
-# <a name="import-data-for-use-with-the-azure-cosmos-db-table-api"></a>Импорт данных для использования с помощью API таблицы Azure Cosmos DB
+# <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Перенос данных в учетную запись API таблиц в Azure Cosmos DB
 
-Это руководство содержит инструкции по импорту данных для использования с помощью [API таблицы](table-introduction.md) Azure Cosmos DB. Данные, хранящиеся в хранилище таблиц Azure, можно импортировать с помощью средства переноса данных или AzCopy. Данные, хранящиеся в учетной записи API таблицы Azure Cosmos DB (предварительная версия), необходимо переносить с помощью средства переноса данных. Импортировав данные, вы сможете воспользоваться возможностями категории "Премиум", которые предоставляет Azure Cosmos DB, например готовым к использованию глобальным распространением, выделенной пропускной способностью, задержкой, измеряемой единицами (в миллисекундах), на уровне 99-го процентиля, гарантированной высокой производительностью и автоматическим вторичным индексированием.
+Это руководство содержит инструкции по импорту данных для использования с помощью [API таблицы](table-introduction.md) Azure Cosmos DB. Данные, хранящиеся в хранилище таблиц Azure, можно импортировать в API таблиц в Azure Cosmos DB, используя средства переноса данных или средство AzCopy. Данные, хранящиеся в учетной записи API таблицы Azure Cosmos DB (предварительная версия), необходимо переносить с помощью средства переноса данных. 
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -28,7 +28,7 @@ ms.locfileid: "37856813"
 > * импорт данных с помощью AzCopy.
 > * миграция из API таблицы (предварительная версия) в API таблицы. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Увеличьте пропускную способность. Продолжительность переноса данных зависит от пропускной способности, настроенной для отдельного контейнера или набора контейнеров. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности на портале Azure см. в статье об уровнях производительности и ценовых категориях в Azure Cosmos DB.
 
@@ -39,11 +39,11 @@ ms.locfileid: "37856813"
 Чтобы выполнить миграцию данных таблицы, сделайте следующее:
 
 1. Скачайте средство миграции с сайта [GitHub](https://github.com/azure/azure-documentdb-datamigrationtool).
-2. Запустите `dt.exe` с помощью аргументов командной строки для своего сценария.
+2. Запустите `dt.exe` с помощью аргументов командной строки для своего сценария. `dt.exe` принимает команду в следующем формате:
 
-dt.exe принимает команду в следующем формате:
-
+   ```bash
     dt.exe [/<option>:<value>] /s:<source-name> [/s.<source-option>:<value>] /t:<target-name> [/t.<target-option>:<value>] 
+```
 
 Существуют такие параметры для команды:
 
@@ -105,7 +105,7 @@ dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=
 dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Table API preview account name>;AccountKey=<Table API preview account key>;TableEndpoint=https://<Account Name>.documents.azure.com; /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
 ```
 
-## <a name="azcopy-command"></a>Команда AzCopy
+## <a name="migrate-data-by-using-azcopy"></a>Перенос данных с помощью AzCopy
 
 С помощью служебной программы командной строки AzCopy можно также перенести данные из табличного хранилища Azure в API таблицы Azure Cosmos DB. Чтобы использовать AzCopy, сначала необходимо экспортировать данные, как описано в разделе [Экспорт данных из хранилища таблиц](../storage/common/storage-use-azcopy.md#export-data-from-table-storage), а затем импортировать их, как описано в разделе [Импорт данных в хранилище таблиц](../storage/common/storage-use-azcopy.md#import-data-into-table-storage).
 

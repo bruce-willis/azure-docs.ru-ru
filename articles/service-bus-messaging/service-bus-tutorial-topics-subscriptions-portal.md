@@ -9,18 +9,18 @@ ms.date: 05/22/2018
 ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
-ms.openlocfilehash: f504f3bf513a20d8590d9907106b1fd12f907877
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 654cb09621837c360deccecb7778c5d467592dd1
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34651691"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124220"
 ---
 # <a name="tutorial-update-inventory-using-azure-portal-and-topicssubscriptions"></a>Руководство. Обновление информации о запасах с помощью портала Azure, разделов и подписок
 
 Служебная шина Microsoft Azure — это мультитенантная облачная служба для обмена сообщениями, которая позволяет пересылать информацию между приложениями и службами. Асинхронная работа обеспечивает гибкий обмен сообщениями через брокер и обработку сообщений в порядке поступления, а также возможность публикации и подписки. В этом руководстве объясняется, как использовать подписки и темы Служебной шины Azure для обновления списка розничных товаров через каналы публикации (подписки) с помощью портала Azure и .NET.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание раздела служебной шины и одной или нескольких подписок на этот раздел с помощью портала Azure;
 > * добавление фильтров раздела в коде .NET;
@@ -32,9 +32,9 @@ ms.locfileid: "34651691"
 
 ![Раздел](./media/service-bus-tutorial-topics-subscriptions-portal/about-service-bus-topic.png)
 
-Если у вас еще нет подписки Azure, вы можете создать [бесплатную учетную запись][], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, вы можете создать [бесплатная учетная запись][], прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуются:
 
@@ -45,7 +45,7 @@ ms.locfileid: "34651691"
 
 Каждая [подписка на раздел](service-bus-messaging-overview.md#topics) может получать копию любого сообщения. Разделы полностью совместимы с очередями служебной шины на уровнях протоколов и семантики. Разделы служебной шины поддерживают широкий набор правил отбора и условий фильтра, а также позволяют создать действия для присвоения или изменения свойств сообщения. Каждый раз, когда срабатывает правило, создается новое сообщение. Чтобы узнать больше о правилах, фильтрах и действиях, перейдите по [этой ссылке](topic-filters.md).
 
-## <a name="log-on-to-the-azure-portal"></a>Вход на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Сначала откройте [портал Azure][Azure portal] и выполните вход, используя подписку Azure. Здесь вам в первую очередь нужно создать пространство имен служебной шины с типом **обмен сообщениями**.
 
@@ -443,14 +443,14 @@ private async Task ReceiveMessages(string subscription)
 > * отправка сообщений и проверка их поступления в ожидаемые подписки;
 > * получение сообщений из подписок.
 
-Чтобы изучить дополнительные примеры отправки и получения сообщений, перейдите к [описанию примеров для Служебной шины на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted).
+Чтобы изучить дополнительные примеры отправки и получения сообщений, перейдите к [описанию примеров для служебной шины на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted).
 
 Следующее руководство содержит дополнительные сведения об использовании возможностей публикации и подписки в cлужебной шине Azure.
 
 > [!div class="nextstepaction"]
 > [Обновление информации о запасах с помощью PowerShell, разделов и подписок](service-bus-tutorial-topics-subscriptions-powershell.md)
 
-[бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [полному доменному имени]: https://wikipedia.org/wiki/Fully_qualified_domain_name
 [Azure portal]: https://portal.azure.com/
 

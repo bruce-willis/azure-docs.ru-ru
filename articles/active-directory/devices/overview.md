@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об управлении устройствами в Azure Active Directory | Документация Майкрософт
+title: Что такое управление устройствами в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как с помощью управления устройствами можно контролировать устройства, получающие доступ к ресурсам в вашей среде.
 services: active-directory
 documentationcenter: ''
@@ -12,18 +12,18 @@ ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/21/2018
+ms.topic: overview
+ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 7e71ff5f5da17165d5127f3547d8eb0756411b8c
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 456b28c50bd5e7d69c3f16dd3e76a9ced20112f9
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39597699"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43048868"
 ---
-# <a name="introduction-to-device-management-in-azure-active-directory"></a>Общие сведения об управлении устройствами в Azure Active Directory
+# <a name="what-is-device-management-in-azure-active-directory"></a>Что такое управление устройствами в Azure Active Directory?
 
 В эпоху мобильных и облачных технологий Azure Active Directory (Azure AD) обеспечивает единый вход для устройств, приложений и служб из любого расположения. В связи с увеличением количества устройств (включая BYOD) ИТ-специалисты все чаще сталкиваются с двумя противоположными задачами:
 

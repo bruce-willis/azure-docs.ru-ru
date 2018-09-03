@@ -1,5 +1,5 @@
 ---
-title: Руководство по администрированию Azure Data Box на портале Azure | Документация Майкрософт
+title: Руководство по администрированию Диска Azure Data Box на портале Azure | Документация Майкрософт
 description: В этой статье описывается администрирование устройства Azure Data Box с помощью портала Azure.
 services: databox
 documentationcenter: NA
@@ -13,16 +13,16 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 07/10/2018
+ms.date: 08/28/2018
 ms.author: alkohli
-ms.openlocfilehash: c76d8bc6af808fd1257e44ad296e3e2d65b8695d
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 7bf88a4e9d7af1033f014939d95783f9430dd84a
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238120"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124969"
 ---
-# <a name="use-azure-portal-to-administer-your-data-box-preview"></a>Администрирование устройства Data Box (предварительная версия) с помощью портала Azure
+# <a name="use-azure-portal-to-administer-your-data-box-disk-preview"></a>Администрирование Диска Data Box (предварительная версия) с помощью портала Azure
 
 Рекомендации, приведенные в этой статье, применяются к диску Microsoft Azure Data Box на время действия предварительной версии. В этой статье описываются некоторые сложные рабочие процессы и задачи управления, которые могут выполняться на диске Data Box. 
 

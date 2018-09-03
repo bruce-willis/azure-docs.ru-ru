@@ -6,19 +6,19 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 07/06/2018
+ms.date: 08/24/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: ee38fe542ca6e2e4e1f8e09b54717d4390b453d0
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 48714d71edcf54726eb362c7f56950a1350fd52b
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37922663"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42885331"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Перенос виртуальных машин Amazon Web Services (AWS) в Azure
 
-Из этого руководства вы узнаете, как с помощью Azure Site Recovery перенести виртуальные машины Amazon Web Services (AWS) в виртуальные машины Azure. При переносе экземпляров AWS EC2 в Azure эти виртуальные машины обрабатываются как физические локальные компьютеры. Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как с помощью Azure Site Recovery перенести виртуальные машины Amazon Web Services (AWS) в виртуальные машины Azure. При переносе экземпляров AWS EC2 в Azure эти виртуальные машины обрабатываются как физические локальные компьютеры. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * проверка предварительных требований;
@@ -31,12 +31,14 @@ ms.locfileid: "37922663"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - Убедитесь, что виртуальные машины, которые нужно перенести, работают под управлением поддерживаемой версии ОС. К таким версиям относятся: 
-    - Windows Server 2016
-    - Red Hat Enterprise Linux 6.7 (только виртуализированные экземпляры HVM) только с драйверами Citrix PV или AWS PV. Экземпляры, работающие с драйверами RedHat PV, **не** поддерживаются.
-
-- Служба Mobility Service должна быть установлена на каждой виртуальной машине, которую вы хотите реплицировать. 
+  - Windows Server 2016 
+  - Windows Server 2012 R2
+  - Windows Server 2012 
+  - 64-разрядная версия Windows Server 2008 R2 с пакетом обновления 1 (SP1) или выше.
+  - Red Hat Enterprise Linux 6.7 (только виртуализированные экземпляры HVM) с драйверами Citrix PV или AWS PV. Экземпляры, работающие с драйверами RedHat PV, *не* поддерживаются.
+ - Служба Mobility Service должна быть установлена на каждой виртуальной машине, которую вы хотите реплицировать. 
 
     > [!IMPORTANT]
     > Site Recovery устанавливает эту службу автоматически при включении репликации для виртуальной машины. Для автоматической установки следует подготовить учетную запись на экземплярах EC2, которые Site Recovery будет использовать для доступа к виртуальной машине. Вы можете использовать доменную или локальную учетную запись. 

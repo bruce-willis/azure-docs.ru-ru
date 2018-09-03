@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 07/20/2018
+ms.date: 08/27/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: bd559cb9f0140706a4b9735c642367e03616a14d
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 7509ed46ba07cd8250f82f8eb258d18e3f4a1ee6
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39188171"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43107111"
 ---
 # <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
@@ -56,12 +56,27 @@ ms.locfileid: "39188171"
 
 ## <a name="explore-the-template"></a>Обзор шаблона
 
+Рассматривая шаблон в этом разделе, постарайтесь ответить на следующие вопросы:
+
+- Сколько ресурсов Azure определено в этом шаблоне?
+- Одним из ресурсов является учетная запись хранения Azure.  Похоже ли это определение на использованное в предыдущем руководстве?
+- Можете ли вы найти справочники по шаблонам для ресурсов, определенных в этом шаблоне?
+- Можете ли вы найти зависимости ресурсов?
+
 1. В Visual Studio Code сверните элементы, пока не появятся элементы только первого уровня и элементы второго уровня внутри **ресурсов**.
 
     ![Шаблоны Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
     Шаблоном определено пять ресурсов.
-2. Развертывание четвертого элемента.
+2. Разверните первый ресурс. Это учетная запись хранения. Определение должно быть идентичным определению, используемому в начале предыдущего руководства.
+
+    ![Определение учетной записи хранения для шаблонов Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
+
+3. Разверните второй ресурс. Тип ресурса — **Microsoft.Network/publicIPAddresses**. Чтобы найти справочник по шаблону, перейдите по [этой ссылке](https://docs.microsoft.com/azure/templates/) и в поле **Фильтровать по названию** введите **общедоступный IP-адрес** или **общедоступные IP-адреса**. Сравните определение ресурса с определением в справочнике по шаблону.
+
+    ![Определение общедоступного IP-адреса для шаблонов Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
+4. Повторите последний шаг, чтобы найти справочники по шаблонам для других ресурсов, определенных в этом шаблоне.  Сравните определения ресурсов со справочными экземплярами.
+5. Разверните четвертый ресурс:
 
     ![Шаблоны Azure Resource Manager в Visual Studio Code для элемента dependsOn](./media/resource-manager-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependson.png)
 
@@ -70,7 +85,7 @@ ms.locfileid: "39188171"
     * publicIpAddress;
     * virtualNetwork.
 
-3. Развертывание пятого элемента. Этот ресурс — это виртуальная машина. Он зависит от двух других ресурсов:
+6. Разверните пятый ресурс. Этот ресурс — это виртуальная машина. Он зависит от двух других ресурсов:
 
     * storageAccount
     * networkInterface.

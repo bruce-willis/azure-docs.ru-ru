@@ -3,7 +3,7 @@ title: Руководство по устранению неполадок в ц
 description: В этом документе описаны способы устранения неполадок в центре безопасности Azure.
 services: security-center
 documentationcenter: na
-author: terrylan
+author: rkarlin
 manager: mbaldwin
 editor: ''
 ms.assetid: 44462de6-2cc5-4672-b1d3-dbb4749a28cd
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/01/2018
-ms.author: yurid
-ms.openlocfilehash: 0cbc0db7e982ad85dd1e3514def8cf13be595f24
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.date: 08/26/2018
+ms.author: rkarlin
+ms.openlocfilehash: eebdff338454b1fb50b27d5b3d8c1c37d28f6b6f
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32779232"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43121208"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Руководство по устранению неполадок в центре безопасности Azure
 Это руководство предназначено для ИТ-специалистов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых используют центр безопасности Azure и которым нужно устранять связанные с ним неполадки.
@@ -64,7 +64,7 @@ Microsoft Monitoring Agent используется в центре безопа
 > Чтобы избежать ситуации, приведенной во втором сценарии, скачайте последнюю версию агента.
 >
 
-## <a name="monitoring-agent-health-issues"></a>Окно проблем с работоспособностью агента мониторинга
+## Мониторинг работоспособности агента <a name="mon-agent"></a>
 **Состояние мониторинга** определяет причину, по которой центру безопасности не удалось выполнить мониторинг виртуальных машин и компьютеров, инициализированных для автоматической подготовки. В следующей таблице показаны значения, описания и действия для разрешения ошибок **Состояния мониторинга**.
 
 | Состояние мониторинга | ОПИСАНИЕ | Способы устранения |
@@ -81,7 +81,7 @@ Microsoft Monitoring Agent используется в центре безопа
 | Агент не установлен | Выключен сбор данных. | Включите сбор данных в политике безопасности и вручную установите Microsoft Monitoring Agent. |
 
 
-## <a name="troubleshooting-monitoring-agent-network-requirements"></a>Устранение неполадок, связанных с требованиями к сети для агента мониторинга
+## Устранение неполадок, связанных с требованиями к сети для агента мониторинга <a name="mon-network-req"></a>
 Для подключения агентов к центру безопасности и регистрации в нем требуется доступ к сетевым ресурсам, включая номера портов и URL-адреса доменов.
 
 - Для прокси-серверов необходимо убедиться, что в параметрах агента настроены соответствующие ресурсы прокси-сервера. Дополнительные сведения о том, как изменить параметры прокси-сервера, см. в [этой статье](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents#configure-proxy-settings).

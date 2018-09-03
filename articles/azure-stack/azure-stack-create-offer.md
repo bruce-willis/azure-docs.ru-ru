@@ -1,25 +1,25 @@
 ---
-title: Создание предложения в Azure Stack | Документы Майкрософт
+title: Создание предложения в Azure Stack | Документация Майкрософт
 description: Узнайте, как администратор облака может создать предложение для пользователей в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: brenduns
 manager: femila
 editor: ''
-ms.assetid: 96b080a4-a9a5-407c-ba54-111de2413d59
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/2/2018
+ms.date: 08/20/2018
 ms.author: brenduns
-ms.openlocfilehash: eed715a7c2cb967f6c9ea0b7d4442a4f9976bd17
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.reviewer: efemmano
+ms.openlocfilehash: 66a89c3cb14dd642ae993cbf3c45885635f59759
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345895"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "43050474"
 ---
 # <a name="create-an-offer-in-azure-stack"></a>Создание предложения в Azure Stack
 
@@ -46,22 +46,18 @@ ms.locfileid: "37345895"
    > [!TIP]  
    > Изменения, вносимые в предложение, видны пользователю не сразу. Чтобы увидеть новое предложение, возможно, потребуется выйти из пользовательского портала и снова войти.
 
-   Чтобы изменить состояние предложения, сделайте следующее.
-
-   - **1803 и более поздние версии.**  
-     В разделе "Обзор" предложения выберите **Состояние доступности**. Выберите состояние, которое необходимо использовать (например, *Общедоступно*), а затем выберите **Сохранить**.
+   В разделе "Обзор" предложения выберите **Состояние доступности**. Выберите состояние, которое необходимо использовать (например, **Общедоступно**), а затем выберите **Сохранить**.
  
-     ![Выбор состояния доступности](media/azure-stack-create-offer/change-state.png)
+     ![Выбор состояния](media/azure-stack-create-offer/change-stage-1807.png)
 
-     В качестве альтернативы после доступа к предложению можно перейти в **Параметры предложения**. Для изменения состояния выберите **Состояние доступности**.
+     Также можно нажать кнопку **Изменить состояние** и выбрать состояние.
 
-   - **Версии ниже 1803.**  
-     Выберите **Все ресурсы**, выполните поиск нового предложения, а затем выберите новое предложение. Щелкните **Изменить состояние** и выберите вариант **Общедоступно**.
+    ![Выбор состояния доступности](media/azure-stack-create-offer/change-stage-select-1807.png)
 
    > [!NOTE]
-   > Стандартные предложения, планы и квоты также можно создавать с помощью PowerShell. Дополнительные сведения см. в [документации по модулю Azure Stack PowerShell 1.3.0](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.3.0).
+   > Стандартные предложения, планы и квоты также можно создавать с помощью PowerShell. Дополнительные сведения см. в [документации по модулю Azure Stack PowerShell 1.4.0](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.4.0).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Создание подписок](azure-stack-subscribe-plan-provision-vm.md)
 - [Подготовка виртуальной машины](azure-stack-provision-vm.md)

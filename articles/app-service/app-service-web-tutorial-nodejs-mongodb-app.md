@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 7a3e91e8f928f6e7e2df7a26f52bd44b3b3a81b2
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 70b7af1701c13e6a5d7644f04e4502f76ef7743a
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39618960"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43187851"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-web-app-in-azure"></a>Руководство. Разработка веб-приложения на основе Node.js и MongoDB в Azure
 
@@ -117,6 +117,9 @@ MEAN.JS version: 0.5.0
 Чтобы добавить несколько статей, выберите **Администрирование > Manage Articles** (Управление статьями).
 
 Чтобы остановить Node.js в любое время, введите `Ctrl+C` в окне терминала. 
+
+> [!NOTE]
+> В [краткое руководстве по Node.js](app-service-web-get-started-nodejs.md) говорится о необходимости наличия файла web.config в корневом каталоге приложения. Тем не менее в рамках этого руководства файл web.config автоматически создается Службой приложений при развертывании файлов с использованием [ локального развертывания Git](app-service-deploy-local-git.md) вместо развертывания из ZIP-файла. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

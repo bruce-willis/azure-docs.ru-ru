@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 06/19/2018
+ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 6e3679a994a7340fc38bf98f370efd359785fd90
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 2aca366e6a433e3e71cccb49a13638dedacc38d6
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214971"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42887512"
 ---
 # <a name="tutorial-bind-an-existing-custom-ssl-certificate-to-azure-web-apps"></a>Руководство. Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure
 
@@ -237,11 +237,11 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 - `http://contoso.com`
 - `http://www.contoso.com`
 
-## <a name="enforce-tls-1112"></a>Принудительное применение TLS 1.1/1.2
+## <a name="enforce-tls-versions"></a>Принудительное применение версий TLS
 
-Приложение по умолчанию разрешает применение [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) версии 1.0, которая больше не считается безопасной в соответствии с отраслевыми стандартами, такими как [PCI DSS](https://wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard). Чтобы принудительно применить TLS более поздней версии, выполните следующие инструкции:
+Приложение по умолчанию разрешает применение [TLS](https://wikipedia.org/wiki/Transport_Layer_Security) версии 1.2, которая является рекомендуемой в соответствии с такими отраслевыми стандартами, как [PCI DSS](https://wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard). Чтобы принудительно применить другую версию TLS сделайте следующее:
 
-На странице веб-приложения в области слева выберите **Параметры SSL**. Затем в разделе **версии TLS** выберите минимальную требуемую версию TLS.
+На странице веб-приложения в области слева выберите **Параметры SSL**. Затем в разделе **версии TLS** выберите минимальную требуемую версию TLS. Этот параметр определяет только входящие вызовы. 
 
 ![Принудительное использование TLS 1.1 или 1.2](./media/app-service-web-tutorial-custom-ssl/enforce-tls1.2.png)
 

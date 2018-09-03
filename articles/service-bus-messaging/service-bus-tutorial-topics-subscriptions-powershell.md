@@ -9,12 +9,12 @@ ms.date: 05/22/2018
 ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
-ms.openlocfilehash: 05c30504eb9b4440694f78ee979d4b25f30f65dc
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 6246e951cb9b1e0b4dac656fef6acf8027e79271
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237970"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126557"
 ---
 # <a name="tutorial-update-inventory-using-powershell-and-topicssubscriptions"></a>Руководство. Обновление информации о запасах с помощью PowerShell, разделов и подписок
 
@@ -32,7 +32,7 @@ ms.locfileid: "39237970"
 
 Такой сценарий, например, отлично подходит для обновления сведений об ассортименте товаров в нескольких магазинах розничной торговли. В этом сценарии каждый магазин или группа магазинов получают сообщения, позволяющие им обновить ассортимент. В этом руководстве показано, как реализовать этот сценарий с помощью подписок и фильтров. Сначала вы создадите раздел с тремя подписками, добавите в него правила и фильтры, а затем отправите и получите сообщения через разделы и подписки.
 
-![очередь](./media/service-bus-quickstart-powershell/quick-start-queue.png)
+![Раздел](./media/service-bus-tutorial-topics-subscriptions-powershell/about-service-bus-topic.png)
 
 Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись][], прежде чем начинать работу.
 
@@ -47,9 +47,9 @@ ms.locfileid: "39237970"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Введите следующие команды, чтобы войти в Azure. Эти действия не требуются, если вы выполняете команды PowerShell в Cloud Shell: 
+Введите приведенные ниже команды, чтобы войти в Azure. Эти действия не требуются, если вы выполняете команды PowerShell в Cloud Shell: 
 
 1. Установите модуль PowerShell для служебной шины:
 

@@ -14,22 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
 ms.author: daveba
-ms.openlocfilehash: c2c138e7064ae5f8bfb11d2f8d4c6b8e9e45760d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b38804a4450bfc76f5048f8049a7369d7ebebc30
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442009"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42886241"
 ---
 # <a name="tutorial-use-a-linux-vm-managed-service-identity-to-access-azure-cosmos-db"></a>Руководство. Доступ к службе Azure Cosmos DB с помощью Управляемого удостоверения службы виртуальной машины Linux 
 
 [!INCLUDE[preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
 
-В этом руководстве описывается, как создать и использовать Управляемое удостоверение службы для виртуальной машины Linux. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве описывается, как получить доступ к Azure Cosmos DB с помощью удостоверения виртуальной машины Linux, назначаемого системой. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание виртуальной машины Linux с ее включением
 > * Создание учетной записи Cosmos DB
 > * Создание коллекции в учетной записи Cosmos DB
 > * Предоставление доступа Управляемому удостоверению службы к экземпляру Azure Cosmos DB
@@ -39,42 +38,20 @@ ms.locfileid: "39442009"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com), прежде чем продолжать.
+[!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
-[!INCLUDE [msi-tut-prereqs](~/includes/active-directory-msi-tut-prereqs.md)]
+[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+
+- [Войдите на портал Azure](https://portal.azure.com).
+
+- [Создайте виртуальную машину Linux](/azure/virtual-machines/linux/quick-create-portal).
+
+- [Включите назначенное системой удостоверение в виртуальной машине](/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm#enable-system-assigned-identity-on-an-existing-vm).
 
 Запустить примеры сценариев CLI в этом руководстве можно двумя способами:
 
 - Использовать службу [Azure Cloud Shell](~/articles/cloud-shell/overview.md) на портале Azure или с помощью кнопки **Попробовать**, расположенной в правом верхнем углу каждого блока кода.
 - [Установить последнюю версию интерфейса командной строки (CLI) 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.23 или более позднюю версию), если вы предпочитаете использовать локальную консоль CLI.
-
-## <a name="sign-in-to-azure"></a>Вход в Azure
-
-Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
-
-## <a name="create-a-linux-virtual-machine-in-a-new-resource-group"></a>Создание виртуальной машины Linux в новой группе ресурсов
-
-В рамках этого руководства будет создана виртуальная машина Linux с включенным Управляемым удостоверением службы.
-
-Чтобы создать виртуальную машину с включенным Управляемым удостоверением службы, необходимо выполнить следующие действия.
-
-1. Если вы используете Azure CLI в локальной консоли, сначала выполните вход в Azure с помощью команды [az login](/cli/azure/reference-index#az-login). Используйте учетную запись, которая связана с подпиской Azure, с помощью которой нужно развернуть виртуальную машину.
-
-   ```azurecli-interactive
-   az login
-   ```
-
-2. Создайте [группу ресурсов](../../azure-resource-manager/resource-group-overview.md#terminology) с помощью параметра [az group create](/cli/azure/group/#az-group-create), чтобы сохранить и развернуть виртуальную машину и связанные с ней ресурсы. Если вы уже создали группу ресурсов, которую можно использовать, этот шаг можно пропустить:
-
-   ```azurecli-interactive 
-   az group create --name myResourceGroup --location westus
-   ```
-
-3. Создайте виртуальную машину, выполнив команду [az vm create](/cli/azure/vm/#az-vm-create). В приведенном ниже примере создается виртуальная машина *myVM* с Управляемым удостоверением службы в соответствии с запросом параметра `--assign-identity`. В параметрах `--admin-username` и `--admin-password` определяются имя и пароль учетной записи администратора для входа в виртуальную машину. Подставьте соответствующие значения для своей среды: 
-
-   ```azurecli-interactive 
-   az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --admin-username azureuser --admin-password myPassword12
-   ```
 
 ## <a name="create-a-cosmos-db-account"></a>Создание учетной записи Cosmos DB 
 

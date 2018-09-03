@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: afa9aa4ef4d3d8d8a6816d194b69271fdf0d928a
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 4614eedd08eabf5c1c2eec6f26e542e20b0875bf
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37109680"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43040509"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "37109680"
 
 ## <a name="create-a-service-fabric-cluster-in-azure"></a>Создание кластера Service Fabric в Azure
 
-При выполнении следующих шагов создаются ресурсы, необходимые для развертывания вашего приложения в кластере Service Fabric. Кроме того, устанавливаются ресурсы, необходимые для мониторинга работоспособности вашего решения с использованием стека ELK (Elasticsearch, Logstash, Kibana). В частности, [концентраторы событий](https://azure.microsoft.com/services/event-hubs/) используются в качестве приемника для журналов из Service Fabric. Он настраивается для отправки журналов из кластера Service Fabric в ваш экземпляр Logstash.
+При выполнении следующих шагов создаются ресурсы, необходимые для развертывания вашего приложения в кластере Service Fabric. Кроме того, устанавливаются ресурсы, необходимые для мониторинга работоспособности вашего решения с использованием стека ELK (Elasticsearch, Logstash, Kibana). В частности, [Центры событий](https://azure.microsoft.com/services/event-hubs/) используются в качестве приемника для журналов из Service Fabric. Он настраивается для отправки журналов из кластера Service Fabric в ваш экземпляр Logstash.
 
 1. Откройте терминал и загрузите следующий пакет, содержащий необходимые вспомогательные скрипты и шаблоны для создания ресурсов в Azure.
 
@@ -114,7 +114,7 @@ ms.locfileid: "37109680"
     ?sv=2017-04-17&ss=bfqt&srt=sco&sp=rwdlacup&se=2018-01-31T03:24:04Z&st=2018-01-30T19:24:04Z&spr=https,http&sig=IrkO1bVQCHcaKaTiJ5gilLSC5Wxtghu%2FJAeeY5HR%2BPU%3D
     ```
 
-9. Создайте группу ресурсов, содержащую ресурсы концентратора событий. Концентраторы событий используются для отправки сообщений из Service Fabric на сервер, где запущены ресурсы ELK.
+9. Создайте группу ресурсов, содержащую ресурсы концентратора событий. Центры событий используются для отправки сообщений из Service Fabric на сервер, где запущены ресурсы ELK.
 
     ```bash
     az group create --location [REGION] --name [RESOURCE-GROUP-NAME]
@@ -122,7 +122,7 @@ ms.locfileid: "37109680"
     Example: az group create --location westus --name testeventhubsrg
     ```
 
-10. Создайте ресурс концентраторов событий, используя следующую команду. Следуя инструкциям, введите данные namespaceName, eventHubName, customerGroupName, sendAuthorizationRule и receiveAuthorizationRule.
+10. Создайте ресурс Центров событий, используя следующую команду. Следуя инструкциям, введите данные namespaceName, eventHubName, customerGroupName, sendAuthorizationRule и receiveAuthorizationRule.
 
     ```bash
     az group deployment create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
@@ -159,7 +159,7 @@ ms.locfileid: "37109680"
     }
     ```
 
-11. Запустите скрипт *eventhubssastoken.py*, чтобы создать URL-адрес SAS для созданного ресурса EventHubs. Этот URL-адрес SAS используется кластером Service Fabric для отправки журналов в концентраторы событий. В результате для формирования URL-адреса используется политика **отправителя**. Скрипт возвращает URL-адрес SAS для ресурса концентраторов событий, который используется на следующем шаге:
+11. Запустите скрипт *eventhubssastoken.py*, чтобы создать URL-адрес SAS для созданного ресурса EventHubs. Этот URL-адрес SAS используется кластером Service Fabric для отправки журналов в Центры событий. В результате для формирования URL-адреса используется политика **отправителя**. Скрипт возвращает URL-адрес SAS для ресурса Центров событий, который используется на следующем шаге:
 
     ```python
     python3 eventhubssastoken.py 'testeventhubs' 'testeventhubs' 'sender' '[PRIMARY-KEY]'
@@ -173,7 +173,7 @@ ms.locfileid: "37109680"
 
     URL-адрес SAS концентраторов событий имеет следующую структуру: https://<namespacename>.servicebus.windows.net/<eventhubsname>?sr=<sastoken>. Например, https://testeventhubnamespace.servicebus.windows.net/testeventhub?sr=https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
 
-12. Откройте файл *sfdeploy.parameters.json* и замените следующее содержимое из предыдущих шагов.
+12. Откройте файл *sfdeploy.parameters.json* и замените следующее содержимое из предыдущих шагов. [SAS-URL-STORAGE-ACCOUNT] — отмечено на шаге 8. [SAS-URL-EVENT-HUBS] — отмечено на шаге 11.
 
     ```json
     "applicationDiagnosticsStorageAccountName": {
@@ -187,7 +187,12 @@ ms.locfileid: "37109680"
     }
     ```
 
-13. Выполните следующую команду, чтобы создать кластер Service Fabric.
+13. Открывает **sfdeploy.parameters.json**. Измените следующие параметры, а затем сохраните файл.
+    - **clusterName**. Вы можете использовать только строчные буквы и цифры.
+    - **adminUserName** (на значение, отличное от пустого).
+    - **adminUserName** (на значение, отличное от пустого).
+
+14. Выполните следующую команду, чтобы создать кластер Service Fabric.
 
     ```bash
     az sf cluster create --location 'westus' --resource-group 'testlinux' --template-file sfdeploy.json --parameter-file sfdeploy.parameters.json --secret-identifier <certificate_url_from_step4>
@@ -206,13 +211,13 @@ ms.locfileid: "37109680"
 2. Чтобы развернуть приложение в этом кластере, вы должны использовать SFCTL, чтобы установить соединение с кластером. SFCTL требуется PEM-файл с открытым и закрытым ключом для подключения к кластеру. Выполните приведенную ниже команду, чтобы создать PEM-файл с открытым и закрытым ключом. 
 
     ```bash
-    openssl pkcs12 -in testservicefabric.westus.cloudapp.azure.com.pfx -out sfctlconnection.pem -nodes -passin pass:<password>
+    openssl pkcs12 -in <clustername>.<region>.cloudapp.azure.com.pfx -out sfctlconnection.pem -nodes -passin pass:<password>
     ```
 
 3. Выполните следующую команду для подключения к кластеру.
 
     ```bash
-    sfctl cluster select --endpoint https://testlinuxcluster.westus.cloudapp.azure.com:19080 --pem sfctlconnection.pem --no-verify
+    sfctl cluster select --endpoint https://<clustername>.<region>.cloudapp.azure.com:19080 --pem sfctlconnection.pem --no-verify
     ```
 
 4. Чтобы развернуть приложение, перейдите в папку *Voting/Scripts* и запустите скрипт **install.sh**.
@@ -235,7 +240,7 @@ ms.locfileid: "37109680"
     ./uninstall.sh
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

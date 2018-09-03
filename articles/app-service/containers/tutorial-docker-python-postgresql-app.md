@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 07/13/2018
 ms.author: beverst;cephalin
 ms.custom: mvc
-ms.openlocfilehash: ce84498ab89891bd7b96cfcc6b0c7ac029c93cbd
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 9a623156ad2a27abf7fa5e865f8b7452e2c70b3c
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423085"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124524"
 ---
 # <a name="build-a-docker-python-and-postgresql-web-app-in-azure"></a>Создание в Azure веб-приложения Docker Python с подключением к базе данных PostgreSQL
 
@@ -169,7 +169,9 @@ az postgres server create --resource-group myResourceGroup --name <postgresql_na
 
 ### <a name="create-a-firewall-rule-for-the-postgresql-server"></a>Создание правила брандмауэра для сервера PostgreSQL
 
-Чтобы разрешить доступ к базе данных со всех IP-адресов в Cloud Shell, выполните следующую команду Azure CLI. Если для начального и конечного IP-адресов задано значение `0.0.0.0`, брандмауэр открыт только для других ресурсов Azure. 
+Чтобы разрешить доступ к базе данных со всех IP-адресов в Cloud Shell, выполните следующую команду Azure CLI. 
+> [!Note]
+> Не рекомендуется оставлять все порты открытым для базы данных или делать базу данных доступной в Интернете.  Дополнительные сведения о защите базы данных для использования в рабочей среде см. в других [руководствах по обеспечению безопасности в Azure](https://docs.microsoft.com/azure/security/).  
 
 ```azurecli-interactive
 az postgres server firewall-rule create --resource-group myResourceGroup --server-name <postgresql_name> --start-ip-address=0.0.0.0 --end-ip-address=0.0.0.0 --name AllowAzureIPs

@@ -15,20 +15,20 @@ ms.workload: infrastructure
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: d2e4a014a0f7bb7f94885528abc930d2b243318b
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 1ac55b728a29ff1bb8129087da5992ffe5f23df9
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30911324"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42820291"
 ---
 # <a name="azure-and-linux"></a>Azure и Linux
-Microsoft Azure — это расширяющийся набор интегрированных общедоступных облачных служб, которые включают в себя возможности анализа, работы с виртуальными машинами и базами данных, мобильные средства, веб-технологии, а также возможности работы в сети и хранения данных &mdash; все для размещения ваших решений.  Microsoft Azure предоставляет масштабируемую платформу вычислений, которая позволяет платить только за те ресурсы, которые вы используете по требованию, без дополнительных затрат на локальное оборудование.  Среда Azure готова к использованию, когда вы можете масштабировать свои решения в соответствии с потребностями клиентов.
+Microsoft Azure — это расширяющийся набор интегрированных общедоступных облачных служб, которые включают в себя возможности анализа, работы с виртуальными машинами и базами данных, мобильные средства, веб-технологии, а также возможности работы в сети и хранения данных, требуемые для размещения ваших решений.  Microsoft Azure предоставляет масштабируемую платформу вычислений, которая позволяет платить только за те ресурсы, которые вы используете по требованию, без дополнительных затрат на локальное оборудование.  Среда Azure готова к использованию, когда вы можете масштабировать свои решения в соответствии с потребностями клиентов.
 
 Если вы знакомы с различными функциями Amazon AWS, то можете изучить [документ с сопоставлением определений](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/)Azure и AWS.
 
 ## <a name="regions"></a>регионы
-Ресурсы Microsoft Azure распределяются по нескольким географическим регионам по всему миру.  Под "регионом" подразумевается несколько центров обработки данных в отдельном географическом регионе. Сейчас (на ноябрь 2017 г.) в Azure есть 36 общедоступных регионов по всему миру. Также объявлено о поддержке еще шести. Обновленный список существующих и новых регионов можно найти на следующей странице:
+Ресурсы Microsoft Azure распределяются по нескольким географическим регионам по всему миру.  Под "регионом" подразумевается несколько центров обработки данных в отдельном географическом регионе. Сейчас (август 2018 г.) в Azure доступно 42 общедоступных региона по всему миру. Также объявлено о поддержке еще 12. Большее число глобальных регионов не предоставляет ни один поставщик облачных служб. Обновленный список существующих и новых регионов можно найти на следующей странице:
 
 * [Регионы Azure](https://azure.microsoft.com/regions/)
 
@@ -73,7 +73,7 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 
 * Linux в Azure — [рекомендованные дистрибутивы](endorsed-distros.md)
 * SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=%27SUSE%27)
-* Redhat — [Azure Marketplace — RedHat Enterprise Linux 7.2](https://azure.microsoft.com/marketplace/partners/redhat/redhatenterpriselinux72/)
+* RedHat: [Azure Marketplace — RedHat Enterprise Linux 7.2](https://azure.microsoft.com/marketplace/partners/redhat/redhatenterpriselinux72/)
 * Canonical — [Azure Marketplace — Ubuntu Server 16.04 LTS](https://azure.microsoft.com/marketplace/partners/canonical/ubuntuserver1604lts/)
 * Debian — [Azure Marketplace — Debian 8 "Jessie"](https://azure.microsoft.com/marketplace/partners/credativ/debian8/)
 * FreeBSD — [Azure Marketplace —FreeBSD 10.3](https://azure.microsoft.com/marketplace/partners/microsoft/freebsd103/)
@@ -110,7 +110,7 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 Теперь виртуальная машина работает в Azure, и вы готовы войти в систему.  Использование паролей для входа по протоколу SSH небезопасно и требует много времени.  Использование ключей SSH — наиболее безопасный и самый быстрый способ входа в систему.  При создании виртуальной машины Linux на портале или с помощью интерфейса командной строки можно выбрать один из двух вариантов аутентификации.  Если выбрать пароль для SSH, Azure настроит виртуальную машину для входа с помощью паролей.  Если выбрать использование открытого ключа SSH, Azure настроит виртуальную машину для входа только посредством ключей SSH и отключит вход по паролю. Чтобы защитить виртуальную машину Linux, разрешив только вход посредством ключей SSH, выберите использование открытого ключа SSH во время создания виртуальной машины с помощью портала или интерфейса командной строки.
 
 ## <a name="related-azure-components"></a>Связанные компоненты Azure
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>служба хранилища.
 * [Введение в службу хранилища Microsoft Azure](../../storage/common/storage-introduction.md)
 * [Добавление диска к виртуальной машине Linux](add-disk.md)
 * [Подключение диска данных к виртуальной машине Linux на портале Azure](attach-disk-portal.md)

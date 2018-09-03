@@ -4,29 +4,23 @@ description: Сведения об использовании Ansible для с�
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 author: tomarcher
-manager: jpconnock
-editor: na
-ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.date: 07/11/2018
+manager: jeconnoc
 ms.author: tarcher
-ms.openlocfilehash: 5f915f7b1b425a3bd6e5d62eb70bb3f633b7eda8
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.topic: tutorial
+ms.date: 08/24/2018
+ms.openlocfilehash: f3b08c41d3bf083c7cca5897cee11a1a4b9c9092
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39011712"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918581"
 ---
 # <a name="create-virtual-machine-scale-sets-in-azure-using-ansible"></a>Создание масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления масштабируемым набором виртуальных машин (VMSS) в Azure так же, как любым другим ресурсом Azure. В этой статье показано, как создать и развернуть масштабируемый набор виртуальных машин с помощью Ansible. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- **Настройка Ansible** - [Создание учетных данных Azure](../virtual-machines/linux/ansible-install-configure.md#create-azure-credentials).
-- **Модули Ansible и пакета SDK для Python в Azure** 
-  - [CentOS 7.4](../virtual-machines/linux/ansible-install-configure.md#centos-74)
-  - [Ubuntu 16.04 LTS](../virtual-machines/linux/ansible-install-configure.md#ubuntu-1604-lts)
-  - [SLES 12 SP2](../virtual-machines/linux/ansible-install-configure.md#sles-12-sp2)
+- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
 > Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6. 
@@ -186,7 +180,7 @@ Ansible позволяет автоматизировать развертыва
   az vmss show -n myVMSS -g myResourceGroup --query '{"capacity":sku.capacity}' 
   ```
 
-Должен быть получен результат, аналогичный приведенному ниже:
+Отобразятся похожие результаты:
 
   ```bash
   {
@@ -271,7 +265,7 @@ Ansible позволяет автоматизировать развертыва
   az vmss show -n myVMSS -g myResourceGroup --query '{"capacity":sku.capacity}' 
   ```
 
-Результаты выполнения команды в Cloud Shell показывают, что теперь существует три экземпляра. 
+В результатах выполнения команды в Cloud Shell показано, что теперь существует три экземпляра. 
 
   ```bash
   {

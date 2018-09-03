@@ -5,16 +5,16 @@ services: iot-edge
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 06/26/2018
+ms.date: 08/22/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 1bd6f048682b93e3dfa1e19f6b3c50bff2ed232e
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 7e02caf9706a5127d3729256fcc238f467eb2991
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "41918936"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43143506"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по хранению данных в пограничной системе с помощью баз данных SQL Server
 
@@ -73,7 +73,7 @@ ms.locfileid: "41918936"
 Следующий процесс позволяет создать модуль IoT Edge с использованием Visual Studio Code и расширения Azure IoT Edge.
 
 1. Откройте Visual Studio Code.
-2. Откройте интегрированный терминал VS Code, выберите **Вид** > **Интегрированный терминал**.
+2. Откройте интегрированный терминал VS Code, выбрав **Вид** > **Терминал**.
 3. Выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code.
 4. В палитре команд введите и выполните команду **Azure: Sign in** и следуйте инструкциям для входа в учетную запись Azure. Если вы уже выполняли вход, этот шаг можно пропустить.
 3. В палитре команд введите и выполните команду**Azure IoT Edge: New IoT Edge solution**. В палитре команд укажите следующие сведения для создания решения: 
@@ -253,15 +253,15 @@ ms.locfileid: "41918936"
 2. Следуйте указаниям по входу в учетную запись Azure. 
 3. В палитре команд выберите подписку Azure, а затем выберите свой Центр Интернета вещей. 
 4. В обозревателе VS Code разверните раздел **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure). 
-5. Щелкните правой кнопкой мыши устройство, которое необходимо сделать целью развертывания, и выберите **Create Deployment for IoT Edge** (Создание развертывания для устройств IoT Edge). 
+5. Щелкните правой кнопкой мыши имя устройства, которое необходимо сделать целевым объектом развертывания, и выберите **Create Deployment for IoT Edge** (Создание развертывания для устройств IoT Edge). 
 6. В проводнике перейдите к папке **config** в решении и выберите **deployment.json**. Щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). 
 
 Если развертывание завершено успешно, сообщение о подтверждении будет выведено в выходных данных VS Code. Кроме того, можно проверить, все ли модули отображаются и запущены на своем устройстве. 
 
 На своем устройстве IoT Edge выполните следующую команду, чтобы увидеть состояние модулей. Это может занять несколько минут.
 
-   ```bash
-   sudo iotedge list
+   ```PowerShell
+   iotedge list
    ```
 
 ## <a name="create-the-sql-database"></a>Создание базы данных SQL

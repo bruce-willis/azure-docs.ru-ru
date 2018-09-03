@@ -1,19 +1,19 @@
 ---
 title: Создание сервера Jenkins в Azure
 description: Установите Jenkins на виртуальной машине Azure под управлением Linux на основе шаблона решения Jenkins и создайте образец приложения Java.
-ms.topic: quickstart
-ms.author: tarcher
+ms.service: jenkins
+keywords: jenkins, azure, devops, portal, virtual machine, solution template
 author: tomarcher
-manager: jpconnock
-ms.service: devops
-ms.custom: jenkins
-ms.date: 07/31/2018
-ms.openlocfilehash: af1082d9b7b350f1845d6c8e22108b9238a40f28
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+manager: jeconnoc
+ms.author: tarcher
+ms.topic: quickstart
+ms.date: 6/7/2017
+ms.openlocfilehash: 92a0583ad01c4dc9263988f6ef48c95c380c9289
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390434"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43086580"
 ---
 # <a name="create-a-jenkins-server-on-an-azure-linux-vm-from-the-azure-portal"></a>Создание сервера Jenkins на виртуальной машине Azure под управлением Linux на портале Azure
 
@@ -75,7 +75,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ![Использование программы-оболочки Gradle для сборки](./media/install-jenkins-solution-template/jenkins-job-gradle-config.png) 
 
-Нажмите кнопку **Advanced..** (Дополнительно...) и введите `complete` в поле **Root Build script** (Корневой скрипт сборки). Щелкните **Сохранить**.
+Выберите **Advanced** (Дополнительно) и введите `complete` в поле **Root Build script** (Корневой скрипт сборки). Щелкните **Сохранить**.
 
 ![Установка дополнительных параметров на этапе сборки программы-оболочки Gradle](./media/install-jenkins-solution-template/jenkins-job-gradle-advances.png) 
 

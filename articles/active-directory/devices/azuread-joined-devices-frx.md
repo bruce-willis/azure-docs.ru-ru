@@ -12,18 +12,18 @@ ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/15/2018
+ms.topic: tutorial
+ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 1376f011d056aac33333f6ac31ee2eaadaf3ef4a
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: eaf0b3e3b607145598660dbb64cadd5a277360cb
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39415797"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43046328"
 ---
-# <a name="join-a-new-windows-10-device-with-azure-ad-during-a-first-run"></a>Присоединение нового устройства Windows 10 с помощью Azure AD во время первого запуска
+# <a name="tutorial-join-a-new-windows-10-device-with-azure-ad-during-a-first-run"></a>Руководство по присоединению нового устройства с Windows 10 с помощью Azure AD во время первого запуска
 
 Благодаря управлению устройствами в Azure Active Directory (Azure AD) ваши пользователи получают доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям. Дополнительные сведения см. в статье с [общими сведениями об управлении устройствами в Azure Active Directory](overview.md).
 
@@ -34,9 +34,13 @@ ms.locfileid: "39415797"
 
 Присоединение к локальному домену Active Directory (AD) во время *запуска Windows при первом включении компьютера* не поддерживается. Если вы планируете присоединить компьютер к домену AD, щелкните ссылку **Настроить Windows с помощью локальной учетной записи**. Затем вы сможете присоединиться к домену с помощью параметров компьютера.
  
+Из этого руководства вы узнаете, как присоединить устройство к Azure AD во время первого запуска:
+ > [!div class="checklist"]
+> * Предварительные требования
+> * Присоединение устройства
+> * Проверка
 
-
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы присоединить устройство Windows 10, необходимо настроить службу регистрации устройств для регистрации устройств. Помимо наличия разрешения на присоединение устройств в клиенте Azure AD, необходимо, чтобы число зарегистрированных устройств не превышало установленное максимальное значение. Дополнительные сведения см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md#configure-device-settings).
 

@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 07/20/2018
+ms.date: 08/27/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7c78636a210ae90c5bfe1d0bfd35e4e05633f5cd
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 57d5f7039831c9fd617926f20f3ff001b22ef314
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39188205"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43097891"
 ---
 # <a name="tutorial-create-an-azure-resource-manager-template-for-deploying-an-encrypted-storage-account"></a>Руководство. Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения
 
@@ -30,9 +30,7 @@ ms.locfileid: "39188205"
 
 > [!div class="checklist"]
 > * Открытие шаблона быстрого запуска
-> * Общие сведения о формате шаблона
-> * Использование параметров в шаблоне
-> * Использование переменных в шаблоне
+> * Общие сведения о шаблоне
 > * Изменение шаблона
 > * Развертывание шаблона
 
@@ -111,10 +109,10 @@ ms.locfileid: "39188205"
 
 ## <a name="edit-the-template"></a>Изменение шаблона
 
-Чтобы найти связанную с шифрованием настройку учетной записи хранения, используйте справочник по шаблонам учетной записи хранения Azure.
+В этом руководстве описано, как определить шаблон для создания зашифрованной учетной записи хранения.  Этот шаблон создает только базовую незашифрованную учетную запись хранения. Связанную с шифрованием конфигурацию см. в справочнике по шаблонам учетной записи хранения Azure.
 
 1. Перейдите к [шаблонам Azure](https://docs.microsoft.com/azure/templates/).
-2. В оглавлении в левой части выберите **Ссылка**->**Хранилище**->**Учетные записи хранения**. На странице содержится информация об определении сведений об учетной записи хранения.
+2. В оглавлении в левой части выберите **Ссылка**->**Хранилище**->**Учетные записи хранения**. Можно также ввести **хранилище** в поле **Фильтр по названию**.  На странице приведена схема для определения сведений об учетной записи хранения.
 3. Изучите сведения, связанные с шифрованием.  
 4. В элементе свойств для определения ресурсов учетной записи хранения добавьте следующий код json.
 
@@ -130,59 +128,17 @@ ms.locfileid: "39188205"
     ```
     Эта часть включает функцию шифрования службы хранилища больших двоичных объектов.
 
-Окончательный элемент ресурсов выглядит следующим образом.
+В Visual Studio Code измените шаблон, чтобы окончательный элемент ресурсов выглядит как:
 
 ![Зашифрованные ресурсы учетной записи хранения шаблона Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-resources.png)
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Существует множество методов по развертыванию шаблонов.  В этом руководстве используется Cloud Shell на портале Azure. Оболочка Cloud поддерживает как Azure CLI так и Azure PowerShell. В интерфейсе командной строки используются инструкции приведенные здесь.
+Дополнительные сведения о [развертывании шаблона](./resource-manager-quickstart-create-templates-use-visual-studio-code.md#deploy-the-template) см. в кратком руководстве по Visual Studio Code.
 
-1. Войдите на [портал Azure](https://portal.azure.com)
-2. В правом верхнем углу выберите **Cloud Shell** (как показано на следующем рисунке).
+На следующем рисунке показаны команды CLI для вывода созданной учетной записи хранения. Это означает, что для хранилища BLOB-объектов включено шифрование.
 
-    ![Cloud Shell на портале Azure](./media/resource-manager-tutorial-create-encrypted-storage-accounts/azure-portal-cloud-shell.png)
-
-3. Если Bash не выбран, щелкните стрелку вниз и выберите **Bash**. В этом руководстве понадобится Azure CLI.
-
-    ![Cloud Shell CLI на портале Azure](./media/resource-manager-tutorial-create-encrypted-storage-accounts/azure-portal-cloud-shell-choose-cli.png)
-4. Чтобы перезапустить оболочку, выберите **Перезапуск**.
-5. Выберите **Отправка и скачивание файлов**, а затем **Отправить**.
-
-    ![Файл отправки Cloud Shell портале Azure](./media/resource-manager-tutorial-create-encrypted-storage-accounts/azure-portal-cloud-shell-upload-file.png)
-6. Выберите файл, сохраненный ранее в этом руководстве. **azuredeploy.json** — имя по умолчанию.
-7. Чтобы проверить, что файл загружен успешно, в командной строке Cloud Shell необходимо выполнить команду **ls**. Для проверки содержимого шаблона также можно использовать команду **cat**.
-
-    ![Файл списка оболочки Cloud портала Azure](./media/resource-manager-tutorial-create-encrypted-storage-accounts/azure-portal-cloud-shell-list-file.png)
-8. Выполните следующую команду в командной строке оболочки Cloud.
-
-    ```cli
-    az group create --name <ResourceGroupName> --location <AzureLocation>
-
-    az group deployment create --name <DeploymentName> --resource-group <ResourceGroupName> --template-file azuredeploy.json
-    ```
-    Пример развертывания приведен на снимке экрана.
-
-    ![Шаблон развертывания оболочки Cloud портала Azure](./media/resource-manager-tutorial-create-encrypted-storage-accounts/azure-portal-cloud-shell-deploy-template.png)
-
-    Значения, которые были использованы, приведены на снимке экрана.
-
-    * **&lt;ResourceGroupName>**: myresourcegroup0719. Существуют два вида отображения параметра.  Убедитесь, что используется одинаковое значение.
-    * **&lt;AzureLocation>**: eastus2
-    * **&lt;DeployName>**: mydeployment0719
-    * **&lt;TemplateFile>**: azuredeploy.json
-
-    Как видно из результата, изображенного на снимке экрана, имя учетной записи хранения — *fhqbfslikdqdsstandardsa*. 
-
-9. Чтобы перечислить учетные записи хранения, которые были созданы, выполните следующую команду PowerShell.
-
-    ```cli
-    az storage account show --resource-group <ResourceGroupName> --name <StorageAccountName>
-    ```
-
-    Вы увидите результат, аналогичный приведенному ниже, который показывает, что шифрование было включено для хранилища BLOB-объектов.
-
-    ![Зашифрованная учетная запись хранения Azure Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-account.png)
+![Зашифрованная учетная запись хранения Azure Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-encrypted-storage-account.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -195,7 +151,7 @@ ms.locfileid: "39188205"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве описано, как использовать справочник по шаблонам для настройки существующего шаблона. Шаблон, использованный в этом руководстве, содержит только один ресурс Azure.  Сведения о том, как разработать шаблон с несколькими ресурсами, можно узнать из следующего руководства.  Некоторые ресурсы обладают зависимыми ресурсами.
+В этом руководстве описано, как использовать справочник по шаблонам для настройки существующего шаблона. Шаблон, использованный в этом руководстве, содержит только один ресурс Azure.  Сведения о том, как разработать шаблон с несколькими ресурсами, можно узнать из следующего руководства. Некоторые ресурсы обладают зависимыми ресурсами.
 
 > [!div class="nextstepaction"]
 > [Tutorial: create Azure Resource Manager templates with dependent resources](./resource-manager-tutorial-create-templates-with-dependent-resources.md) (Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами)

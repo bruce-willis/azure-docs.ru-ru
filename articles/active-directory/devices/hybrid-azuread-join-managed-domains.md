@@ -12,16 +12,16 @@ ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 08/08/2018
+ms.topic: tutorial
+ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 55818bf3c6997925fbac32f913d573d630bc20f4
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: b1f1c85cea9aa7c48478ef6ee1c9a4609a3df8e0
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40004384"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43045132"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -54,7 +54,8 @@ ms.locfileid: "40004384"
   
 
 Чтобы настроить сценарий в этой статье, вам потребуется [последняя версия Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) (1.1.819.0 или более поздняя версия). 
- 
+
+Проверьте, синхронизированы ли в Azure AD Connect объекты-компьютеры гибридных устройств, которые нужно присоединить к Azure AD. Если объекты-компьютеры принадлежат конкретным подразделениям (OU), эти подразделения также нужно настроить для синхронизации в Azure AD Connect.
 
 Начиная с версии 1.1.819.0 Azure AD Connect предоставляет мастер для настройки гибридного присоединения к Azure AD. Этот мастер позволяет значительно упростить настройку. Связанный мастер настраивает точки подключения службы (SCP) для регистрации устройств.
 

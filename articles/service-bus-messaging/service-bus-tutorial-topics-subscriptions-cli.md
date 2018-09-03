@@ -9,18 +9,18 @@ ms.date: 05/22/2018
 ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
-ms.openlocfilehash: 42f0781de5412310ecb5326f0384268aba9c53dd
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 81d538c0324f8fa89a7ce86ceaf2b0a2a76b4d51
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34651675"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43120690"
 ---
 # <a name="tutorial-update-inventory-using-cli-and-topicssubscriptions"></a>Руководство. Обновление информации о запасах с помощью интерфейса командной строки, разделов и подписок
 
 Служебная шина Microsoft Azure — это мультитенантная облачная служба для обмена сообщениями, которая позволяет пересылать информацию между приложениями и службами. Асинхронная работа обеспечивает гибкий обмен сообщениями через брокер и обработку сообщений в порядке поступления, а также возможность публикации и подписки. В этом руководстве объясняется, как использовать подписки и темы Служебной шины Azure для обновления списка розничных товаров через каналы публикации (подписки) с помощью Azure CLI и Java.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание раздела служебной шины и одной или нескольких подписок на этот раздел с помощью Azure CLI;
 > * добавление фильтров раздела с помощью Azure CLI;
@@ -32,9 +32,9 @@ ms.locfileid: "34651675"
 
 ![Раздел](./media/service-bus-tutorial-topics-subscriptions-cli/about-service-bus-topic.png)
 
-Если у вас еще нет подписки Azure, вы можете создать [бесплатную учетную запись][], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, вы можете создать [бесплатная учетная запись][], прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для разработки приложения Служебной шины с помощью Java должны быть установлены следующие компоненты:
 
@@ -50,9 +50,9 @@ ms.locfileid: "34651675"
 
 Каждая [подписка на раздел](service-bus-messaging-overview.md#topics) может получать копию любого сообщения. Разделы полностью совместимы с очередями служебной шины на уровнях протоколов и семантики. Разделы служебной шины поддерживают широкий набор правил отбора и условий фильтра, а также позволяют создать действия для присвоения или изменения свойств сообщения. Каждый раз, когда срабатывает правило, создается новое сообщение. Чтобы узнать больше о правилах, фильтрах и действиях, перейдите по [этой ссылке](topic-filters.md).
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
-После установки CLI откройте командную строку и выполните следующие команды, чтобы войти в Azure. Эти действия не нужно выполнять, если вы используете Cloud Shell:
+После установки CLI откройте командную строку и выполните следующие команды, чтобы войти в Azure: Эти действия не нужно выполнять, если вы используете Cloud Shell:
 
 1. Если же вы используете Azure CLI локально, для входа в Azure выполните следующую команду: Действие входа не требуется, если вы выполняете эти команды в Cloud Shell:
 
@@ -336,14 +336,14 @@ public CompletableFuture<Void> receiveAllMessageFromSubscription(String subscrip
 > * отправка сообщений и проверка их поступления в ожидаемые подписки;
 > * получение сообщений из подписок.
 
-Чтобы изучить дополнительные примеры отправки и получения сообщений, перейдите к [описанию примеров для Служебной шины на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted).
+Чтобы изучить дополнительные примеры отправки и получения сообщений, перейдите к [описанию примеров для служебной шины на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted).
 
 Следующее руководство содержит дополнительные сведения об использовании возможностей публикации и подписки в cлужебной шине Azure.
 
 > [!div class="nextstepaction"]
 > [Обновление информации о запасах с помощью PowerShell, разделов и подписок](service-bus-tutorial-topics-subscriptions-portal.md)
 
-[бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name
 [Install Azure CLI 2.0]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az_group_create

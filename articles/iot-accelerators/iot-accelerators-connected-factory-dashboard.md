@@ -46,7 +46,7 @@ ms.locfileid: "39075568"
 
 1. Щелкните **значок браузера** на панели навигации панели мониторинга:
 
-    [Обозреватель сервера акселератора решений для подключенной фабрики![](./media/iot-accelerators-connected-factory-dashboard/browser-inline.png)](./media/iot-accelerators-connected-factory-dashboard/browser-expanded.png#lightbox)
+    [![Обозреватель сервера акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/browser-inline.png)](./media/iot-accelerators-connected-factory-dashboard/browser-expanded.png#lightbox)
 
 1. Выберите сервер из списка серверов, развернутых в акселераторе решений:
 

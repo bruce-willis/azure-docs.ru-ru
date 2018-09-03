@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2018
 ms.author: kgremban
-ms.openlocfilehash: aab674f16fcc3fd4869f24f72f66878a8751d892
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 43b317cd9d1c9384a58e9d525fdd15d18eb63968
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34301490"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43246642"
 ---
 # <a name="send-email-notifications-about-azure-iot-hub-events-using-logic-apps"></a>Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "34301490"
 
 В этой статье рассматривается пример конфигурации, в котором используется Центр Интернета вещей и Сетка событий. По завершении работы с этим руководством у вас будет приложение логики Azure, настроенное на отправку уведомлений электронной почты каждый раз, когда в Центр Интернета вещей добавляется устройство. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](https://docs.microsoft.com/connectors/).
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/).
@@ -37,8 +37,7 @@ ms.locfileid: "34301490"
 
 ### <a name="create-a-logic-app-resource"></a>Создание ресурса приложения логики
 
-
-1. На [портале Azure](https://portal.azure.com) выберите **Создать** > **Интеграция Enterprise** > **Приложение логики**.
+1. На [портале Azure](https://portal.azure.com) выберите **Создать** > **Интеграция** > **Приложение логики**.
 
    ![Создание приложения логики](./media/publish-iot-hub-events-to-logic-apps/select-logic-app.png)
 
@@ -52,7 +51,7 @@ ms.locfileid: "34301490"
 
 4. В конструкторе приложений логики в разделе **Шаблоны** выберите **Пустое приложение логики**, чтобы создать приложение с нуля.
 
-## <a name="select-a-trigger"></a>Выбор триггера
+### <a name="select-a-trigger"></a>Выбор триггера
 
 Триггер представляет собой определенное событие, которое запускает приложение логики. В этом руководстве триггер, который инициирует рабочий процесс, получает запрос через HTTP.  
 
@@ -67,64 +66,60 @@ ms.locfileid: "34301490"
 
 4. Вставьте пример кода JSON ниже в текстовое поле, а затем нажмите кнопку **Готово**:
 
-   ```json
-   [{
-     "id": "56afc886-767b-d359-d59e-0da7877166b2",
-     "topic": "/SUBSCRIPTIONS/<Subscription ID>/RESOURCEGROUPS/<Resource group name>/PROVIDERS/MICROSOFT.DEVICES/IOTHUBS/<IoT hub name>",
-     "subject": "devices/LogicAppTestDevice",
-     "eventType": "Microsoft.Devices.DeviceCreated",
-     "eventTime": "2018-01-02T19:17:44.4383997Z",
-     "data": {
-       "twin": {
-         "deviceId": "LogicAppTestDevice",
-         "etag": "AAAAAAAAAAE=",
-         "status": "enabled",
-         "statusUpdateTime": "0001-01-01T00:00:00",
-         "connectionState": "Disconnected",
-         "lastActivityTime": "0001-01-01T00:00:00",
-         "cloudToDeviceMessageCount": 0,
-         "authenticationType": "sas",
-         "x509Thumbprint": {
-           "primaryThumbprint": null,
-           "secondaryThumbprint": null
-         },
-         "version": 2,
-         "properties": {
-           "desired": {
-             "$metadata": {
-               "$lastUpdated": "2018-01-02T19:17:44.4383997Z"
-             },
-             "$version": 1
-           },
-           "reported": {
-             "$metadata": {
-               "$lastUpdated": "2018-01-02T19:17:44.4383997Z"
-             },
-             "$version": 1
-           }
-         }
-       },
-       "hubName": "egtesthub1",
-       "deviceId": "LogicAppTestDevice",
-       "operationTimestamp": "2018-01-02T19:17:44.4383997Z",
-       "opType": "DeviceCreated"
-     },
-     "dataVersion": "",
-     "metadataVersion": "1"
-   }]
-   ```
-5. Вы можете получить всплывающее уведомление: **Не забудьте включить заголовок Content-Type со значением application/json в запросе.** Можно спокойно проигнорировать это уведомление и перейти к следующему разделу. 
+```json
+[{
+  "id": "56afc886-767b-d359-d59e-0da7877166b2",
+  "topic": "/SUBSCRIPTIONS/<subscription ID>/RESOURCEGROUPS/<resource group name>/PROVIDERS/MICROSOFT.DEVICES/IOTHUBS/<hub name>",
+  "subject": "devices/LogicAppTestDevice",
+  "eventType": "Microsoft.Devices.DeviceCreated",
+  "eventTime": "2018-01-02T19:17:44.4383997Z",
+  "data": {
+    "twin": {
+      "deviceId": "LogicAppTestDevice",
+      "etag": "AAAAAAAAAAE=",
+      "deviceEtag": "null",
+      "status": "enabled",
+      "statusUpdateTime": "0001-01-01T00:00:00",
+      "connectionState": "Disconnected",
+      "lastActivityTime": "0001-01-01T00:00:00",
+      "cloudToDeviceMessageCount": 0,
+      "authenticationType": "sas",
+      "x509Thumbprint": {
+        "primaryThumbprint": null,
+        "secondaryThumbprint": null
+      },
+      "version": 2,
+      "properties": {
+        "desired": {
+          "$metadata": {
+            "$lastUpdated": "2018-01-02T19:17:44.4383997Z"
+          },
+          "$version": 1
+        },
+        "reported": {
+          "$metadata": {
+            "$lastUpdated": "2018-01-02T19:17:44.4383997Z"
+          },
+          "$version": 1
+        }
+      }
+    },
+    "hubName": "egtesthub1",
+    "deviceId": "LogicAppTestDevice"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
 
+5. Вы можете получить всплывающее уведомление: **Не забудьте включить заголовок Content-Type со значением application/json в запросе.** Можно спокойно проигнорировать это уведомление и перейти к следующему разделу. 
 
 ### <a name="create-an-action"></a>Создание действия
 
 Действия представляют собой любые шаги, которые выполняются после запуска триггером рабочего процесса приложения логики. В этом руководстве действием является отправка уведомления электронной почты с помощью поставщика электронной почты. 
 
-1. Нажмите кнопку **Новый шаг**, а затем — **Добавить действие**. 
-
-   ![Выбор действий "Новый шаг" и "Добавить действие"](./media/publish-iot-hub-events-to-logic-apps/new-step.png)
-
-2. Введите в строку поиска **электронная почта**. 
+1. Выберите **Новый шаг**. Откроется окно **Выбор действия**.
+2. Введите в строку поиска **электронная почта**.
 3. Найдите и выберите соединитель, соответствующий поставщику услуг электронной почты. В этом руководстве используется **Office 365 Outlook**. Шаги для других поставщиков услуг электронной почты схожи. 
 
    ![Выбор соединителя поставщика услуг электронной почты](./media/publish-iot-hub-events-to-logic-apps/o365-outlook.png)
@@ -152,7 +147,7 @@ ms.locfileid: "34301490"
 
 3. Сохраните этот URL-адрес, чтобы использовать его в следующем разделе. 
 
-## <a name="publish-an-event-from-iot-hub"></a>Публикация события из Центра Интернета вещей
+## <a name="configure-subscription-for-iot-hub-events"></a>Настройка подписки на события Центра Интернета вещей
 
 В этом разделе вы настроите Центр Интернета вещей для публикации событий по мере их появления. 
 
@@ -166,21 +161,22 @@ ms.locfileid: "34301490"
    ![Создание подписки на события](./media/publish-iot-hub-events-to-logic-apps/event-subscription.png)
 
 4. Создайте подписку на события со следующими значениями: 
-   * **Имя**. Укажите описательное имя.
-   * **Подписка на все типы событий**. Снимите флажок.
-   * **Типы событий**. Выберите **DeviceCreated**.
-   * **Тип подписчика**. Выберите **Веб-перехватчик**.
-   * **Конечная точка подписчика**. Вставьте URL-адрес, скопированный из приложения логики. 
+    * **Тип события**: снимите флажок "Подписаться на все типы событий" и выберите **Устройство создано** в меню.
+    * **Сведения о конечной точке**: выберите для типа конечной точки **Веб-перехватчик**, щелкните выбранную конечную точку, вставьте URL-адрес, скопированный из приложения логики и подтвердите выбор.
 
-   На этом этапе можно сохранить подписку на события, после чего вы будете получать уведомления о каждом устройстве, созданном в Центре Интернета вещей. Однако при работе с этим руководством мы используем необязательные поля для фильтрации определенных устройств. 
+    ![Выбор URL-адреса конечной точки](./media/publish-iot-hub-events-to-logic-apps/endpoint-url.png)
 
-   * **Фильтр префиксов**. Введите `devices/Building1_` для фильтрации событий устройств в здании 1.
-   * **Фильтр суффиксов**. Введите `_Temperature` для фильтрации событий устройств, связанных с температурой.
+    * **Сведения о подписке на событие**: укажите описательное имя и выберите **Схема "Сетка событий"**.
 
-   По завершении форма должна выглядеть следующим образом: 
+  На этом этапе можно сохранить подписку на события, после чего вы будете получать уведомления о каждом устройстве, созданном в Центре Интернета вещей. Однако при работе с этим руководством мы используем необязательные поля для фильтрации определенных устройств. 
 
-   ![Пример формы подписки на события](./media/publish-iot-hub-events-to-logic-apps/subscription-form.png)
+  * **Тема начинается с**: введите `devices/Building1_` для фильтрации событий устройств в здании 1.
+  * **Тема заканчивается на**. Введите `_Temperature` для фильтрации событий устройств, связанных с температурой.
 
+  По завершении форма должна выглядеть следующим образом: 
+
+    ![Пример формы подписки на события](./media/publish-iot-hub-events-to-logic-apps/subscription-form.png)
+    
 5. Выберите **Создать**, чтобы сохранить подписку на события.
 
 ## <a name="create-a-new-device"></a>Создание устройства
@@ -201,7 +197,7 @@ ms.locfileid: "34301490"
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Вместо того чтобы использовать портал Azure, шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](https://docs.microsoft.com/cli/azure/iot/device) с использованием Azure CLI.
+Вместо того чтобы использовать портал Azure, шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity) с использованием Azure CLI.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -225,8 +221,8 @@ ms.locfileid: "34301490"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте больше о [реагировании на события в Центре Интернета вещей, используя службу "Cетка событий" для запуска действий](../iot-hub/iot-hub-event-grid.md).
-
-Узнайте о дополнительных возможностях службы [Сетка событий](overview.md).
+* Узнайте больше о [реагировании на события в Центре Интернета вещей, используя службу "Cетка событий" для запуска действий](../iot-hub/iot-hub-event-grid.md).
+* См. дополнительные сведения об [упорядочении событий подключения и отключения устройств](../iot-hub/iot-hub-how-to-order-connection-state-events.md).
+* Узнайте о дополнительных возможностях службы [Сетка событий](overview.md).
 
 

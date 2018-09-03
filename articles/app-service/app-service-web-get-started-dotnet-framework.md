@@ -1,6 +1,6 @@
 ---
-title: Создание веб-приложения ASP.NET Framework в Azure | Документация Майкрософт
-description: Узнайте, как запустить веб-приложение в службе приложений Azure, развернув веб-приложение ASP.NET по умолчанию.
+title: Создание веб-приложения C# ASP.NET Framework в Azure | Документация Майкрософт
+description: Узнайте, как запустить веб-приложение в службе приложений Azure, развернув веб-приложение C# ASP.NET по умолчанию.
 services: app-service\web
 documentationcenter: ''
 author: cephalin
@@ -12,34 +12,29 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 11/30/2017
+ms.date: 08/29/2018
 ms.author: cephalin
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 125377b91514b1615cfbb488f7ddfe59fbc016f5
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: f6f443dfe637e68b0e1e13f7c3b9e718ae48a85d
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43191320"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Создание веб-приложения ASP.NET Framework в Azure
 
 [Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве рассматривается развертывание первого веб-приложения ASP.NET в службе веб-приложений Azure. В результате будет создана группа ресурсов, состоящая из плана службы приложений и развернутого веб-приложения Azure.
 
-Просмотрите видео, чтобы увидеть выполнение краткого руководства, а затем самостоятельно выполните шаги, чтобы опубликовать свое первое приложение .NET в Azure.
-
-> [!VIDEO https://channel9.msdn.com/Shows/Azure-for-NET-Developers/Create-a-NET-app-in-Azure-Quickstart/player]
+![](./media/app-service-web-get-started-dotnet-framework/published-azure-web-app.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
-* Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с указанными ниже рабочими нагрузками:
-    - **ASP.NET и веб-разработка;**
-    - **разработка Azure.**
-
-    ![ASP.NET и веб-разработка, разработка Azure (в разделе Web & Cloud (Сеть и облако))](media/app-service-web-tutorial-dotnet-sqldatabase/workloads.png)
+Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
 Если вы уже установили Visual Studio, добавьте в него рабочие нагрузки. Для этого последовательно выберите **Инструменты** > **Get Tools and Features (Получить инструменты и функции)**.
 
@@ -144,6 +139,7 @@ ms.lasthandoff: 04/05/2018
 Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений**, а затем выберите **Опубликовать**.
 
 На странице публикации выберите команду **Опубликовать**.
+![Страница сводных сведений публикации в Visual Studio](./media/app-service-web-get-started-dotnet-framework/publish-summary-page.png)
 
 По завершении публикации Visual Studio открывает в браузере страницу с URL-адресом веб-приложения.
 
@@ -162,6 +158,12 @@ ms.lasthandoff: 04/05/2018
 ![Колонка службы приложений на портале Azure](./media/app-service-web-get-started-dotnet-framework/web-app-blade.png)
 
 В меню слева доступно несколько страниц для настройки приложения. 
+
+## <a name="video"></a>Видео
+
+Просмотрите видео, чтобы увидеть выполнение краткого руководства, а затем самостоятельно выполните шаги, чтобы опубликовать свое первое приложение .NET в Azure.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-for-NET-Developers/Create-a-NET-app-in-Azure-Quickstart/player]
 
 [!INCLUDE [Clean-up section](../../includes/clean-up-section-portal.md)]
 

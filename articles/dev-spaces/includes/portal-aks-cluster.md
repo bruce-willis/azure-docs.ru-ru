@@ -10,12 +10,12 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: aeb4ff26b05a5542fd77ac32589c8f8efb622798
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 4c4a5b66fe35da01a3661715e17a9fda20bc2411
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40165707"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43184840"
 ---
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
@@ -42,7 +42,7 @@ ms.locfileid: "40165707"
 
    ![Включение маршрутизации приложений HTTP](../media/common/Kubernetes-Create-Cluster-3.PNG)
 
-    > [!IMPORTANT]
-    > Обязательно включите параметр "Маршрутизация приложений HTTP" при создании кластера AKS. Вы не сможете изменить значение этого параметра позже.
+    > [!Note]
+    > Чтобы включить [маршрутизацию приложений HTTP](/azure/aks/http-application-routing) в существующем кластере, используйте эту команду: `az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addons http_application_routing`
 
 1. Выберите **Review + create** (Проверить и создать), а по завершении щелкните **Create** (Создать).
