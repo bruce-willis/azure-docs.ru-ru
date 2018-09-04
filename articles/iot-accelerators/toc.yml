@@ -88,7 +88,7 @@ items:
     - name: Визуализация данных телеметрии с помощью Power BI
       href: iot-accelerators-integrate-data-powerbi.md
     - name: Визуализация данных телеметрии с помощью службы "Аналитика временных рядов"
-      href: iot-accelerators-time-series-insights.md
+      href: iot-accelerators-remote-monitoring-time-series-insights.md
     - name: Анализ данных телеметрии с помощью Data Lake
       href: iot-accelerators-integrate-data-lake.md
     - name: Настройка управления доступом на основе ролей
@@ -166,6 +166,8 @@ items:
       href: iot-accelerators-device-simulation-choose-hub.md
     - name: Использование пользовательской модели устройства
       href: iot-accelerators-device-simulation-custom-model.md
+    - name: Визуализация данных телеметрии с помощью службы "Аналитика временных рядов"
+      href: iot-accelerators-device-simulation-time-series-insights.md
     - name: Создайте виртуальное устройство.
       href: iot-accelerators-device-simulation-create-simulated-device.md
     - name: Развертывание имитированного устройства
@@ -250,9 +252,9 @@ items:
     href: https://stackoverflow.com/questions/tagged/azure-iot-suite
   - name: Схема обучения работе с акселераторами решений Интернета вещей
     href: https://azure.microsoft.com/documentation/learning-paths/iot-suite/
-ms.openlocfilehash: 1770dbe5a88b4a8ac4dc036fb837c066291efb99
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: db9024fd8dc263d7d11fe522d934a629289ef922
+ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43339489"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43381643"
