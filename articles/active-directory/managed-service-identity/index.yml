@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d3be19c67027746ddb73cf2cd9b4545584fd3ce0
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: ccc508b8dbfb990639abe24efa2822ff27f2f910
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39389787"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43341570"
 documentType: LandingData
-title: Документация по MSI для Azure Active Directory
+title: Документация по управляемым удостоверениям Azure AD для ресурсов Azure
 metadata:
   document_id: 
-  title: Документация по MSI для Azure Active Directory
-  description: Узнайте, как с помощью функции "Управляемое удостоверение службы" выполнять безопасную аутентификацию в облачных службах Azure без необходимости хранить учетные данные в исходном коде.
+  title: Документация по управляемым удостоверениям Azure AD для ресурсов Azure
+  description: Узнайте, как с помощью управляемых удостоверений для ресурсов Azure выполнять безопасную аутентификацию в облачных службах Azure без необходимости хранить учетные данные в исходном коде.
   services: active-directory
   ms.component: msi
   author: daveba
@@ -22,21 +22,21 @@ metadata:
   ms.date: 03/16/2018
   ms.author: daveba
 abstract:
-  description: Управляемое удостоверение службы предоставляет службы Azure с автоматически управляемыми удостоверениями в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.  Узнайте, как создавать и администрировать управляемые удостоверения служб, из наших кратких руководств и других материалов.
+  description: Функция управляемых удостоверений для ресурсов Azure предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.  Узнайте, как создавать и администрировать управляемые удостоверения для ресурсов Azure, из наших кратких руководств и других материалов.
   aside:
     image:
       alt: 
       height: 112
       src: media/index/video-thumb-landing-page.png
       width: 200
-    title: Общие сведения об Управляемом удостоверении службы
+    title: Общие сведения об управляемых удостоверениях для ресурсов Azure
     href: https://www.youtube.com/embed/bBi1bll2928
     width: 200
 sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Узнайте, как получить доступ к API Azure Resource Manager с помощью функции "Управляемое удостоверение службы"
+    text: Узнайте, как получить доступ к API Azure Resource Manager, используя управляемые удостоверения для ресурсов Azure
   - type: list
     style: unordered
     items:
@@ -45,7 +45,7 @@ sections:
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как обеспечить безопасный доступ к ресурсам Azure с помощью функции "Управляемое удостоверение службы"
+    text: Узнайте, как обеспечить безопасный доступ к ресурсам Azure, используя управляемые удостоверения для ресурсов Azure
   - type: paragraph
     text: Виртуальные машины и масштабируемые наборы виртуальных машин Windows
   - type: list
@@ -56,7 +56,7 @@ sections:
     - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-sql">Доступ к Azure SQL</a>
     - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-nonaad">Доступ к Azure Key Vault</a>
     - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-cosmos-db">Доступ к Azure Cosmos DB</a>
-    - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-ua-arm">Доступ к Azure Resource Manager с помощью пользовательского удостоверения</a>
+    - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-ua-arm">Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения</a>
   - type: paragraph
     text: Виртуальные машины и масштабируемые наборы виртуальных машин Linux
   - type: list
@@ -66,7 +66,7 @@ sections:
     - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-storage-access-key">Доступ к службе хранилища Azure с помощью ключа доступа</a>
     - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-nonaad">Доступ к Azure Key Vault</a>
     - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-cosmos-db">Доступ к Azure Cosmos DB</a>
-    - html: <a href="/azure/active-directory/managed-service-identity/msi-tutorial-linux-vm-access-arm">Доступ к Azure Resource Manager с помощью пользовательского удостоверения</a>
+    - html: <a href="/azure/active-directory/managed-service-identity/msi-tutorial-linux-vm-access-arm">Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения</a>
 - title: Справочные материалы
   items:
   - type: list

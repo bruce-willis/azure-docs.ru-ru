@@ -55,6 +55,10 @@ items:
       href: how-to-use-map-control.md
     - name: Создание карты
       href: map-create.md
+    - name: Выбор стиля карты
+      href: choose-map-style.md
+    - name: Добавление элемента управления картой
+      href: map-add-controls.md
     - name: Добавление ПИН-кода
       href: map-add-pin.md
     - name: Добавление контекстного меню
@@ -153,9 +157,9 @@ items:
     href: https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured
   - name: Видеоролики
     href: https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo
-ms.openlocfilehash: f8610bf75e5209f907bc5ab0c6b7ec436b5320ed
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 9ff456a752ffecc3f4fa67fc8b85540833451fb5
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43189538"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43339137"
