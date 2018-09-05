@@ -1,27 +1,22 @@
 ---
 title: Добавление аутентификации в пользовательские API в Azure Logic Apps | Документация Майкрософт
-description: Настройка аутентификации для вызовов к пользовательским API из приложений логики
-author: ecfan
-manager: jeconnoc
-editor: ''
+description: Настройка аутентификации для вызовов пользовательских API из Azure Logic Apps
 services: logic-apps
-documentationcenter: ''
-ms.assetid: ''
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/22/2017
-ms.author: LADocs; estfan
-ms.openlocfilehash: 705abb2a3cc25c965bdce364eb169b4e3a814bff
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: b329fb1416d28b0732e7b9ea4612f5bac8580b3a
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298555"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43132478"
 ---
-# <a name="secure-calls-to-your-custom-apis-from-logic-apps"></a>Защита вызовов к пользовательским API из приложений логики
+# <a name="secure-calls-to-custom-apis-from-azure-logic-apps"></a>Защита вызовов к пользовательским API из Azure Logic Apps
 
 Для защиты вызовов к интерфейсам API настройте аутентификацию Azure Active Directory (Azure AD) на портале Azure, чтобы не обновлять код. Вы можете также применить обязательную проверку подлинности с помощью кода API.
 
@@ -29,7 +24,7 @@ ms.locfileid: "35298555"
 
 Защитить вызовы к настраиваемому API можно следующими способами:
 
-* [Без изменения кода.](#no-code) Защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
+* [Без изменения кода.](#no-code) Защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
 
   > [!NOTE]
   > По умолчанию проверка подлинности Azure AD, которую можно включить на портале Azure, не обеспечивает детального уровня авторизации. Например, при такой проверке подлинности API блокируется только для конкретного арендатора, а не для определенного пользователя или приложения. 
