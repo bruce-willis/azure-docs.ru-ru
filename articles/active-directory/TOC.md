@@ -103,6 +103,7 @@
 #### [Перенаправление журналов действий в концентратор событий Azure](reports-monitoring/quickstart-azure-monitor-stream-logs-to-event-hub.md)
 #### [Архивация журналов действий в учетной записи хранения Azure](reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md)
 #### [Интеграция журналов действий со Splunk с помощью Azure Monitor](reports-monitoring/tutorial-integrate-activity-logs-with-splunk.md)
+#### [Интеграция журналов действий с SumoLogic с помощью Azure Monitor](reports-monitoring/howto-integrate-activity-logs-with-sumologic.md)
 
 ### Справочные материалы
 #### [Сохранение](reports-monitoring/reference-reports-data-retention.md)
@@ -332,6 +333,8 @@
 ### [Управление доступом пользователей с помощью проверок](active-directory-azure-ad-controls-manage-user-access-with-access-reviews.md)
 ### [Управление программами и элементами управления](active-directory-azure-ad-controls-manage-programs-controls.md)
 ### [Получение результатов проверок доступа](active-directory-azure-ad-controls-retrieve-access-review.md)
+
+## [Условия использования](active-directory-tou.md)
 
 ## Защита удостоверений
 

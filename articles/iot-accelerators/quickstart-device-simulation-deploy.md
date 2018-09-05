@@ -72,7 +72,7 @@ ms.locfileid: "39213162"
 | Частота получения телеметрии | 10 с                  |
 | Длительность моделирования | 5 мин                   |
 
-[Настройка симулятора![](./media/quickstart-device-simulation-deploy/simulationconfig-inline.png)](./media/quickstart-device-simulation-deploy/simulationconfig-expanded.png#lightbox)
+[![Настройка симулятора](./media/quickstart-device-simulation-deploy/simulationconfig-inline.png)](./media/quickstart-device-simulation-deploy/simulationconfig-expanded.png#lightbox)
 
 ## <a name="run-the-simulation"></a>Запуск симулятора
 

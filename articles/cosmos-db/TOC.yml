@@ -37,7 +37,7 @@ items:
       href: create-mongodb-golang.md
   - name: Gremlin
     items:
-    - name: Использование консоли Gremlin
+    - name: Консоль Gremlin
       href: create-graph-gremlin-console.md
     - name: .NET
       href: create-graph-dotnet.md
@@ -78,6 +78,9 @@ items:
     href: distribute-data-globally.md
   - name: Пропускная способность
     href: request-units.md
+    items:
+    - name: Получение и настройка пропускной способности
+      href: set-throughput.md
   - name: Секционирование
     href: partition-data.md
   - name: Индексация
@@ -86,11 +89,11 @@ items:
     href: consistency-levels.md
   - name: Подход с несколькими источниками
     href: multi-region-writers.md
+    items:
+    - name: Архитектура с несколькими источниками
+      href: multi-master-workaround.md
   - name: Веб-канал изменений
     href: change-feed.md
-    items:
-    - name: Канал изменений для решения для электронной коммерции
-      href: changefeed-ecommerce-solution.md
   - name: Срок жизни
     href: time-to-live.md
   - name: Уникальные ключи
@@ -104,18 +107,16 @@ items:
       href: secure-access-to-data.md
     - name: Поддерживаемые брандмауэры
       href: firewall-support.md
-    - name: Настройка конечной точки службы для виртуальной сети
+    - name: Настройка конечной точки виртуальной сети
       href: vnet-service-endpoint.md
-    - name: Key Vault для хранения секретов
+    - name: Поддержка Key Vault
       href: access-secrets-from-keyvault.md
 - name: Многомодельные API-интерфейсы
   items:
   - name: Документация по API SQL
     items:
     - name: Обзор
-      items:
-      - name: Сведения об API SQL
-        href: sql-api-introduction.md
+      href: sql-api-introduction.md
     - name: Учебники
       items:
       - name: 1. Создание учетной записи
@@ -172,22 +173,16 @@ items:
         href: powershell-samples.md
       - name: Инфраструктура CLI Azure
         href: cli-samples.md
-    - name: Основные понятия
-      items:
-      - name: Данные документов модели
-        href: modeling-data.md
     - name: Практические руководства
       items:
-      - name: Использование массового исполнителя — библиотека .NET
+      - name: Массовый исполнитель — библиотека .NET
         href: bulk-executor-dot-net.md
-      - name: Использование массового исполнителя — библиотека Java
+      - name: Массовый исполнитель — библиотека Java
         href: bulk-executor-java.md
       - name: Написание SQL-запросов
         href: sql-api-sql-query.md
       - name: Настройка производительности запросов
         href: sql-api-sql-query-metrics.md
-      - name: Секционирование данных SQL
-        href: sql-api-partition-data.md
       - name: Типы данных
         items:
         - name: Datetime
@@ -220,16 +215,11 @@ items:
         href: /rest/api/cosmos-db-resource-provider/
       - name: Синтаксис языка SQL
         href: sql-api-sql-query-reference.md
-    - name: Ресурсы
-      items:
-      - name: SQL Playground
-        href: https://aka.ms/cosmos-db-playground
   - name: Документация по API MongoDB
     items:
     - name: Обзор
+      href: mongodb-introduction.md
       items:
-      - name: Сведения об API MongoDB
-        href: mongodb-introduction.md
       - name: Поддержка MongoDB
         href: mongodb-feature-support.md
     - name: Учебники
@@ -276,16 +266,11 @@ items:
         href: mongodb-time-to-live.md
       - name: Управление индексированием данных
         href: mongodb-indexing.md
-    - name: Ресурсы
-      items:
-      - name: Расширение Visual Studio Code
-        href: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb
   - name: Документация по API Gremlin
     items:
     - name: Обзор
+      href: graph-introduction.md
       items:
-      - name: Сведения об API Gremlin
-        href: graph-introduction.md
       - name: Поддержка Gremlin
         href: gremlin-support.md
     - name: Учебники
@@ -296,14 +281,10 @@ items:
       items:
       - name: Импорт данных графа
         href: bulk-executor-graph-dotnet.md
-      - name: Секционирование данных графов
-        href: graph-partitioning.md
   - name: Документация по API Cassandra
     items:
     - name: Обзор
-      items:
-      - name: Сведения об API Cassandra
-        href: cassandra-introduction.md
+      href: cassandra-introduction.md
     - name: Учебники
       items:
       - name: 1. Создание учетной записи
@@ -313,9 +294,7 @@ items:
   - name: Документация по API таблиц
     items:
     - name: Обзор
-      items:
-      - name: Сведения об API таблиц
-        href: table-introduction.md
+      href: table-introduction.md
     - name: Учебники
       items:
       - name: 1. Создание учетной записи
@@ -373,10 +352,8 @@ items:
       href: storage-explorer.md
     - name: Управление с помощью обозревателя данных
       href: data-explorer.md
-    - name: Управление ключами и уровнями согласованности
+    - name: Управление учетной записью
       href: manage-account.md
-    - name: Получение и настройка пропускной способности
-      href: set-throughput.md
   - name: Ведение журналов
     items:
     - name: Ведения журнала диагностики
@@ -407,6 +384,14 @@ items:
       href: performance-tips-async-java.md
     - name: Тест производительности — пример приложения
       href: performance-testing.md
+  - name: Рекомендации
+    items:
+    - name: Данные документов модели
+      href: modeling-data.md
+    - name: Секционирование данных SQL
+      href: sql-api-partition-data.md
+    - name: Секционирование данных графов
+      href: graph-partitioning.md
   - name: Аналитика больших данных
     items:
     - name: Лямбда-архитектура
@@ -415,9 +400,11 @@ items:
       href: spark-connector.md
     - name: Spark, Kafka и Azure Cosmos DB
       href: https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json
+    - name: Канал изменений для решения для электронной коммерции
+      href: changefeed-ecommerce-solution.md
   - name: Интеграция с другими службами Azure
     items:
-    - name: Развертывание веб-сайта в службе приложений Azure
+    - name: Служба приложений Azure
       href: create-website.md
     - name: Индексатор Поиска Azure
       href: https://docs.microsoft.com/azure/search/search-howto-index-cosmosdb?toc=/azure/cosmos-db/toc.json
@@ -427,7 +414,7 @@ items:
         href: serverless-computing-database.md
       - name: Привязки Функций Azure
         href: https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb?toc=/azure/cosmos-db/toc.json
-    - name: Перенос данных с помощью фабрики данных Azure
+    - name: Фабрика данных Azure
       href: https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db?toc=/azure/cosmos-db/toc.json
     - name: Azure Stream Analytics
       href: ../stream-analytics/stream-analytics-define-outputs.md#azure-cosmos-db
@@ -449,8 +436,6 @@ items:
     href: regional-failover.md
   - name: Хранимые процедуры, триггеры и определяемые пользователем функции
     href: programming.md
-  - name: Архитектура с несколькими источниками
-    href: multi-master-workaround.md
   - name: Общие сведения о библиотеке массового исполнителя
     href: bulk-executor-overview.md
   - name: Экономичные операции чтения и записи
@@ -459,8 +444,8 @@ items:
   items:
   - name: Краткий справочник запросов
     href: query-cheat-sheet.md
-  - name: Получение подсказок в течение 20 дней
-    href: 20-days-of-tips.md
+  - name: SQL Playground
+    href: https://aka.ms/cosmos-db-playground
   - name: Часто задаваемые вопросы
     href: faq.md
   - name: Технические документы
@@ -478,9 +463,9 @@ items:
     href: http://research.microsoft.com/apps/pubs/default.aspx?id=206913
   - name: Приложения социальных сетей
     href: social-media-apps.md
-ms.openlocfilehash: 882b7d69a8282beb2fcbbce0ed788810210236ca
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 8837d9bc6cf492a146d96d917d9157e51bffa0f5
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43184901"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43695988"
