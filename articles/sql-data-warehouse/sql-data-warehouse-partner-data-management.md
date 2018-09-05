@@ -10,12 +10,12 @@ ms.component: consume
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: b2179aa80e97a6c043bf97fe40a8de2f1ba25204
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: c300a28356249b019cefce382d92f9cc44345f47
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37341170"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42745868"
 ---
 # <a name="sql-data-warehouse-data-management-partners"></a>Партнеры по управлению данными хранилища данных SQL
 Для создания собственного решения для хранилища данных можно воспользоваться одним из широкого спектра лучших в отрасли инструментов. В данной статье рассматриваются компании-партнеры корпорации Майкрософт, которые предлагают инструменты и решения для управления данными, поддерживающие хранилище данных SQL Azure.
@@ -23,7 +23,7 @@ ms.locfileid: "37341170"
 ## <a name="data-management-partners"></a>Партнеры по управлению данными
 | Партнер | ОПИСАНИЕ | Ссылки | Видеоролики |
 | --- | --- | --- | --- |
-| ![Coffing Data Warehousing][1] |**Coffing Data Warehousing**<br>Coffing Data Warehousing предоставляет Nexus Chameleon, средство с 10-летней историей разработки систем создания запросов. Nexus предоставляется как средство работы с запросами для хранилища данных SQL. Nexus позволяет создавать запросы для локальных и облачных систем и объединять данные между разными платформами. Выбери, щелкни, создай отчет! |[Marketplace][coffing_marketplace]<br>[Веб-сайт][coffing_website]<br>[Пресс-релиз][coffing_press]<br>[Twitter][coffing_twitter]<br>[YouTube][coffing_youtube] |[![Видео о Coffing](./media/sql-data-warehouse-partner-data-management/coffing_video.jpg)](https://www.youtube.com/watch?v=N5GSxBEySFc) |
+| ![Coffing Data Warehousing][1] |**Coffing Data Warehousing**<br>Coffing Data Warehousing предоставляет Nexus Chameleon, средство с 10-летней историей разработки систем создания запросов. Nexus предоставляется как средство работы с запросами для хранилища данных SQL. Nexus позволяет создавать запросы для локальных и облачных систем и объединять данные между разными платформами. Выбери, щелкни, создай отчет! |[Веб-сайт][coffing_website]<br>[Пресс-релиз][coffing_press]<br>[Twitter][coffing_twitter]<br>[YouTube][coffing_youtube] |[![Видео о Coffing](./media/sql-data-warehouse-partner-data-management/coffing_video.jpg)](https://www.youtube.com/watch?v=N5GSxBEySFc) |
 | ![Inbrein][2] |**MicroERD**<br>Inbrein MicroERD предоставляет инструменты, с помощью которых вы можете создавать точные модели данных, снижать избыточность данных, повышать производительность и соблюдать стандарты. Используя пользовательский интерфейс, разработанный с учетом опыта работы пользователей, разработчик может легко создавать модели баз данных. Вы сможете использовать новые функции MicroERD благодаря регулярным и быстрым обновлениям. |[Веб-сайт][inbrein_website]<br>[Спецификация][inbrein_datasheet]<br>[Twitter][inbrein_twitter]<br>[YouTube][inbrein_youtube] |[![Видео о Inbrein](./media/sql-data-warehouse-partner-data-management/inbrein_video.jpg)](https://www.youtube.com/watch?v=IGHSAk4bxdE) |
 | ![Infolibrarian][3] |**Infolibrarian**<br>InfoLibrarian сводит в каталоги, сохраняет метаданные и управляет ими, помогая решать ключевые вопросы управления данными. Кроме того, Infolibrarian предоставляет программные решения для управления метаданными, данными и ресурсами, которые позволяют управлять метаданными и публиковать их из разных инструментов и технологий. |[Marketplace][infolibrarian_marketplace]<br>[Веб-сайт][infolibrarian_website]<br>[Twitter][infolibrarian_twitter] |[![Видео о Infolibrarian](./media/sql-data-warehouse-partner-data-management/infolibrarian_video.png)](http://www.infolibcorp.com/metadata-management-videos/vdbplayer.swf?volume=100&url=video/infolibrarian-azure-provisioning.mp4) |
 | ![Redpoint Global][4] |**RedPoint Interaction**<br>RedPoint Interaction расширяет возможности по привлечению клиентов к непрерывному диалогу посредством всех каналов связи и точек соприкосновения. Обеспечивается простое управление всем жизненным циклом многоканального маркетинга из одной точки оперативного управления. |[Marketplace][redpoint_it_marketplace]<br>[Веб-сайт][redpoint_it_website]<br>[Пресс-релиз][redpoint_press]<br>[Спецификация][redpoint_it_datasheet]<br>[Twitter][redpoint_twitter]<br>[YouTube][redpoint_youtube] |[![Видео о Redpoint DM](./media/sql-data-warehouse-partner-data-management/redpoint_it_video.jpg)](https://vimeo.com/103715582) |
@@ -56,11 +56,12 @@ ms.locfileid: "37341170"
 <!--ebook Links-->
 
 <!--Datasheet Links-->
-<!--[coffing_datasheet]:--> [inbrein_datasheet]:http://microerd.com/images/MicroERD_Manual/MicroERD_Manual.pdf <!--[infolibrarian_datasheet]:--> [redpoint_it_datasheet]:http://www.redpoint.net/wp-content/uploads/2016/06/RedPoint-Interaction-FS-wordle-8.5x11-RPIUS0815-07-PRINT.pdf [redpoint_dm_datasheet]:http://www.redpoint.net/wp-content/uploads/2014/09/RedPoint-Data-Management-FS-V2-wordle-8.5x11-0216-WEB.pdf <!--[sql_sentry_datasheet]:-->
+<!--[coffing_datasheet]:--> [inbrein_datasheet]:http://microerd.com/images/MicroERD_Manual/MicroERD_Manual.pdf <!--[infolibrarian_datasheet]:-->
+[redpoint_it_datasheet]:http://www.redpoint.net/wp-content/uploads/2016/06/RedPoint-Interaction-FS-wordle-8.5x11-RPIUS0815-07-PRINT.pdf [redpoint_dm_datasheet]:http://www.redpoint.net/wp-content/uploads/2014/09/RedPoint-Data-Management-FS-V2-wordle-8.5x11-0216-WEB.pdf <!--[sql_sentry_datasheet]:-->
 
 <!--Marketplace Links -->
-[coffing_marketplace]:https://azure.microsoft.com/marketplace/partners/nexus/nexus-chameleon-9/ 
-<!--[inbrein_marketplace]:--> [infolibrarian_marketplace]:https://azure.microsoft.com/marketplace/partners/infolibrarian/infolibrarian-metadata-management-server/ [redpoint_it_marketplace]:https://azure.microsoft.com/marketplace/partners/redpoint-global/redpoint-interaction/ [redpoint_dm_marketplace]:https://azure.microsoft.com/marketplace/partners/redpoint-global/redpoint-rpdm/ [sql_sentry_marketplace]:https://azure.microsoft.com/marketplace/partners/sqlsentry/sqlsentryplatform//
+<!--[coffing_marketplace]:https://azure.microsoft.com/marketplace/partners/nexus/nexus-chameleon-9/ -->
+<!--[inbrein_marketplace]:--> [infolibrarian_marketplace]:https://azure.microsoft.com/marketplace/partners/infolibrarian/infolibrarian-metadata-management-server/ [redpoint_it_marketplace]:https://azure.microsoft.com/marketplace/partners/redpoint-global/redpoint-interaction/ [redpoint_dm_marketplace]:https://azure.microsoft.com/marketplace/partners/redpoint-global/redpoint-rpdm/ [sql_sentry_marketplace]:https://www.sentryone.com/products/sentryone-platform/dw-sentry/azure-sql-data-warehouse-monitoring
 
 <!--Press links-->
 [coffing_press]:http://www.coffingdw.com/press-release-nexus-tuned-for-azure-sql-data-warehouse/
