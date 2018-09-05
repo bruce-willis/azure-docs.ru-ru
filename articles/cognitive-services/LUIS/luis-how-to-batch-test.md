@@ -1,6 +1,6 @@
 ---
 title: Пакетное тестирование приложения LUIS в Azure | Документы Майкрософт
-description: Используйте пакетное тестирование LUIS для поиска высказываний с неправильными намерениями и сущностями.
+description: Используйте пакетное тестирование службы "Распознавание речи" LUIS для поиска фрагментов речи с неправильными намерениями и сущностями.
 services: cognitive-services
 author: diberry
 manager: cjgronlund
@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: diberry
-ms.openlocfilehash: 2c648cdd82f89a9646fa0b311a7f1f68dd4bc4a9
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 07c38aa5f66fc8c38392c5407449ec6911e80d47
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39223587"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42888632"
 ---
 # <a name="batch-testing"></a>Пакетное тестирование
  Пакетное тестирование представляет собой комплексный тест текущей обученной модели для оценки ее производительности в LUIS. 
@@ -61,17 +61,11 @@ ms.locfileid: "39223587"
 
 ![Результаты пакетного тестирования](./media/luis-how-to-batch-test/run-test-results.png)
 
-<!--
- Select the **See results** link that appears after you run the test. A scatter graph known as an error matrix displays. The data points represent the utterances in the dataset. 
-
-Green points indicate correct prediction, and red ones indicate incorrect prediction.
-
-The filtering panel on the right side of the screen displays a list of all intents and entities in the app, with a green point for intents/entities that were predicted correctly in all dataset utterances, and a red point for those items with errors. Also, for each intent/entity, you can see the number of correct predictions out of the total utterances.
-
--->
+<!-- Select the **See results** link that appears after you run the test. A scatter graph known as an error matrix displays. The data points represent the utterances in the dataset. Green points indicate correct prediction, and red ones indicate incorrect prediction. The filtering panel on the right side of the screen displays a list of all intents and entities in the app, with a green point for intents/entities that were predicted correctly in all dataset utterances, and a red point for those items with errors. Also, for each intent/entity, you can see the number of correct predictions out of the total utterances.-->
 
 
-<a name="filter-chart-results-by-intent-or-entity"></a> ## Фильтрация результатов на диаграмме
+<a name="filter-chart-results-by-intent-or-entity"></a>  
+## <a name="filter-chart-results"></a>Фильтрация результатов на диаграмме
 
 Чтобы отфильтровать диаграмму по определенному намерению или сущности, выберите намерение или сущность на панели фильтрации справа. Точки данных и их распределение на диаграмме обновляются в зависимости от выбора. 
  

@@ -14,19 +14,21 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 292540100096b26a652094cb0ea8d8f585961a22
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: cbedb17bb7563620d0d9db81333d9a79301b4ee0
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39422439"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42817514"
 ---
 # <a name="how-to-use-the-mobile-apps-nodejs-sdk"></a>Использование пакета SDK Node.js для функции "Мобильные приложения"
+
 [!INCLUDE [app-service-mobile-selector-server-sdk](../../includes/app-service-mobile-selector-server-sdk.md)]
 
 Эта статья содержит подробную информацию о программировании серверной части на платформе Node.js в компоненте "Мобильные приложения" службы приложений Azure, а также соответствующие примеры.
 
 ## <a name="Introduction"></a>Введение
+
 Функция "Мобильные приложения" позволяет добавлять веб-API в веб-приложения для доступа к данным, оптимизированным для мобильных устройств. Пакет SDK для функции "Мобильные приложения" используется в веб-приложениях ASP.NET и Node.js. С помощью этого пакета SDK выполняются следующие операции:
 
 * Табличные операции (чтение, вставка, обновление, удаление данных).
@@ -37,6 +39,7 @@ ms.locfileid: "39422439"
 Примеры для каждого варианта использования можно найти в [каталоге примеров на сайте GitHub].
 
 ## <a name="supported-platforms"></a>Поддерживаемые платформы
+
 Пакет SDK Node.js для функции "Мобильные приложения" поддерживает текущий выпуск LTS Node и более поздние версии. Сейчас последней версией LTS является Node 4.5.0. Другие версии Node могут также работать, но они не поддерживаются.
 
 Пакет SDK Node.js для функции "Мобильные приложения" поддерживает два драйвера базы данных: 
@@ -45,11 +48,13 @@ ms.locfileid: "39422439"
 * Драйвер sqlite3 поддерживает базы данных SQLite только в отдельном экземпляре.
 
 ### <a name="howto-cmdline-basicapp"></a>Создание базовой серверной части на основе Node.js с помощью командной строки
+
 Каждая серверная часть на Node.js функции "Мобильные приложения" запускается как приложение ExpressJS. ExpressJS является наиболее популярной платформой веб-служб для Node.js. Вот как создать простое приложение [Express] :
 
 1. В командной строке или окне PowerShell создайте каталог для проекта.
 
         mkdir basicapp
+
 1. Запустите команду `npm init`, чтобы инициализировать структуру пакета.
 
         cd basicapp
@@ -58,25 +63,29 @@ ms.locfileid: "39422439"
    Для инициализации проекта команда `npm init` выводит ряд вопросов. Пример выходных данных приведен ниже.
 
    ![Выходные данные npm init][0]
+
 1. Установите библиотеки `express` и `azure-mobile-apps` из репозитория npm.
 
         npm install --save express azure-mobile-apps
+
 1. Создайте файл app.js для реализации базового мобильного сервера.
 
-        var express = require('express'),
-            azureMobileApps = require('azure-mobile-apps');
+    ```javascript
+    var express = require('express'),
+        azureMobileApps = require('azure-mobile-apps');
 
-        var app = express(),
-            mobile = azureMobileApps();
+    var app = express(),
+        mobile = azureMobileApps();
 
-        // Define a TodoItem table.
-        mobile.tables.add('TodoItem');
+    // Define a TodoItem table.
+    mobile.tables.add('TodoItem');
 
-        // Add the Mobile API so it is accessible as a Web API.
-        app.use(mobile);
+    // Add the Mobile API so it is accessible as a Web API.
+    app.use(mobile);
 
-        // Start listening on HTTP.
-        app.listen(process.env.PORT || 3000);
+    // Start listening on HTTP.
+    app.listen(process.env.PORT || 3000);
+    ```
 
 Это приложение создает веб-API, оптимизированный для мобильных устройств, с одной конечной точкой (`/tables/TodoItem`), которая с помощью динамической схемы предоставляет доступ к базовому хранилищу данных SQL без проверки подлинности. Этот пример подходит к следующим примерам использования клиентских библиотек:
 
@@ -91,6 +100,7 @@ ms.locfileid: "39422439"
 Код этого базового приложения можно найти в [примере basicapp на сайте GitHub].
 
 ### <a name="howto-vs2015-basicapp"></a>Создание серверной части на основе Node.js с помощью Visual Studio 2015
+
 Для разработки приложений на Node.js в рамках IDE с помощью Visual Studio 2015 требуется специальное расширение. Для начала установите [Node.js Tools 1.1 для Visual Studio]. После завершения установки создайте приложение Express 4.x.
 
 1. Откройте диалоговое окно **Новый проект** (последовательно выберите **Файл** > **Создать** > **Проект**).
@@ -107,22 +117,28 @@ ms.locfileid: "39422439"
 1. Нажмите кнопку **Закрыть**.
 1. Откройте файл app.js, чтобы добавить поддержку пакета SDK для функции "Мобильные приложения". В строке 6 в нижней части инструкций `require` библиотеки добавьте следующий код:
 
-        var bodyParser = require('body-parser');
-        var azureMobileApps = require('azure-mobile-apps');
+    ```javascript
+    var bodyParser = require('body-parser');
+    var azureMobileApps = require('azure-mobile-apps');
+    ```
 
-   Примерно в строке 27 после других инструкций `app.use` добавьте следующий код:
+    Примерно в строке 27 после других инструкций `app.use` добавьте следующий код:
 
-        app.use('/users', users);
+    ```javascript
+    app.use('/users', users);
 
-        // Mobile Apps initialization
-        var mobile = azureMobileApps();
-        mobile.tables.add('TodoItem');
-        app.use(mobile);
+    // Mobile Apps initialization
+    var mobile = azureMobileApps();
+    mobile.tables.add('TodoItem');
+    app.use(mobile);
+    ```
 
-   Сохраните файл.
+    Сохраните файл.
+
 1. Запустите приложение локально (API обслуживается по адресу http://localhost:3000)) или опубликуйте его в Azure.
 
 ### <a name="create-node-backend-portal"></a>Создание серверной части Node.js с помощью портала Azure
+
 Серверную часть функции "Мобильные приложения" можно создать прямо на [портал Azure]. Для этого выполните описанные ниже действия либо инструкции из руководства [Создание приложения iOS](app-service-mobile-ios-get-started.md), где описано одновременное создание клиента и сервера. В этом руководстве представлена упрощенная версия этих инструкций, что лучше всего подходит для проектов, предназначенных для подтверждения концепции.
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service-classic](../../includes/app-service-mobile-dotnet-backend-create-new-service-classic.md)]
@@ -131,7 +147,8 @@ ms.locfileid: "39422439"
 Установите флажок **Я понимаю, что это перезапишет все содержимое сайта** и выберите **Создание таблицы TodoItem**.
 
 ### <a name="download-quickstart"></a>Загрузка серверной части на основе Node.js в виде готового кода для быстрого запуска с помощью Git
-Когда вы создаете серверную часть функции "Мобильные приложения" для Node.js с помощью области портала **Быстрый запуск**, для вас будет создан и развернут на сайте проект Node.js. На портале вы сможете добавлять таблицы и API-интерфейсы, а также изменять файлы кода серверной части Node.js. С помощью различных средств развертывания вы можете скачать проект серверной части, чтобы добавить или изменить таблицы и интерфейсы API, а затем повторно опубликовать этот проект. Дополнительные сведения см. в [Развертывание локального репозитория Git в службе приложений Azure]. 
+
+Когда вы создаете серверную часть функции "Мобильные приложения" для Node.js с помощью области портала **Быстрый запуск**, для вас будет создан и развернут на сайте проект Node.js. На портале вы сможете добавлять таблицы и API-интерфейсы, а также изменять файлы кода серверной части Node.js. С помощью различных средств развертывания вы можете скачать проект серверной части, чтобы добавить или изменить таблицы и интерфейсы API, а затем повторно опубликовать этот проект. Дополнительные сведения см. в [Развертывание локального репозитория Git в службе приложений Azure].
 
 В следующей процедуре используется репозиторий Git для скачивания кода проекта быстрого запуска.
 
@@ -141,6 +158,7 @@ ms.locfileid: "39422439"
 1. Выполните команду `git clone`, указав URL-адрес клона Git. Введите пароль в ответ на запрос, как показано в следующем примере.
 
         $ git clone https://username@todolist.scm.azurewebsites.net:443/todolist.git
+
 1. Перейдите в локальный каталог (в приведенном выше примере это `/todolist`) и убедитесь, что файлы проекта скачаны. Найдите файл todoitem.json в каталоге `/tables`. Этот файл определяет разрешения для таблицы. В том же каталоге найдите файл todoitem.js. Он определяет скрипты операций CRUD для таблицы.
 1. После внесения изменений в файлы проекта выполните следующие команды, чтобы добавить, зафиксировать и передать изменения на сайт:
 
@@ -152,6 +170,7 @@ ms.locfileid: "39422439"
 Каждый раз, когда на сайт помещается новый набор фиксаций, сайт повторно публикуется.
 
 ### <a name="howto-publish-to-azure"></a>Публикация серверной части на основе Node.js в Azure
+
 Microsoft Azure предоставляет множество механизмов публикации серверной части на платформе Node.js для функции "Мобильные приложения". К этим механизмам относятся средства развертывания, интегрированные в Visual Studio, программы командной строки и средства непрерывного развертывания на основе системы управления версиями. Дополнительные сведения см. в [Развертывание локального репозитория Git в службе приложений Azure].
 
 В отношении приложений на Node.js в службе приложений Azure существуют четкие рекомендации, с которыми вам следует ознакомиться перед публикацией серверной части:
@@ -160,13 +179,17 @@ Microsoft Azure предоставляет множество механизмо
 * [Использование модулей Node]
 
 ### <a name="howto-enable-homepage"></a>Включение домашней страницы для приложения
+
 Многие приложения доступны в виде комбинации веб-приложений и мобильных приложений. Платформа ExpressJS позволяет комбинировать эти компоненты. Тем не менее иногда нужно реализовать только мобильный интерфейс. Это полезно, когда нужно создать домашнюю страницу, чтобы проверить работоспособность службы приложений. Можно указать свою домашнюю страницу или включить временную. Чтобы включить временную домашнюю страницу, используйте следующий код для создания экземпляра мобильных приложений.
 
-    var mobile = azureMobileApps({ homePage: true });
+```javascript
+var mobile = azureMobileApps({ homePage: true });
+```
 
 Если вам нужно использовать данную возможность только при локальной разработке, то этот параметр можно добавить в файл azureMobile.js.
 
 ## <a name="TableOperations"></a>Операции с таблицами
+
 Серверный пакет SDK azure-mobile-apps для Node.js предоставляет механизмы доступа через веб-интерфейсы к таблицам, хранящимся в базе данных SQL Azure. Он предоставляет пять операций.
 
 | Операция | ОПИСАНИЕ |
@@ -180,64 +203,73 @@ Microsoft Azure предоставляет множество механизмо
 Этот веб-API поддерживает протокол [OData] и расширяет схему таблицы для поддержки [автономной синхронизации данных].
 
 ### <a name="howto-dynamicschema"></a>Определение таблиц с помощью динамической схемы
+
 Перед использованием таблицы ее необходимо определить. Таблицы можно определять с помощью статических схем (когда вы определяете столбцы в схеме) или динамических схем (когда схема определяется пакетом SDK в зависимости от поступающих запросов). Кроме того, вы можете управлять некоторыми деталями работы WebAPI путем добавления в определение кода на JavaScript.
 
 Рекомендуется определять все таблицы в отдельных файлах JavaScript и размещать их в каталоге `tables`, а затем использовать метод `tables.import()`, чтобы импортировать таблицы. Расширим пример базового приложения, изменив файл app.js:
 
-    var express = require('express'),
-        azureMobileApps = require('azure-mobile-apps');
+```javascript
+var express = require('express'),
+    azureMobileApps = require('azure-mobile-apps');
 
-    var app = express(),
-        mobile = azureMobileApps();
+var app = express(),
+    mobile = azureMobileApps();
 
-    // Define the database schema that is exposed.
-    mobile.tables.import('./tables');
+// Define the database schema that is exposed.
+mobile.tables.import('./tables');
 
-    // Provide initialization of any tables that are statically defined.
-    mobile.tables.initialize().then(function () {
-        // Add the Mobile API so it is accessible as a Web API.
-        app.use(mobile);
+// Provide initialization of any tables that are statically defined.
+mobile.tables.initialize().then(function () {
+    // Add the Mobile API so it is accessible as a Web API.
+    app.use(mobile);
 
-        // Start listening on HTTP.
-        app.listen(process.env.PORT || 3000);
-    });
+    // Start listening on HTTP.
+    app.listen(process.env.PORT || 3000);
+});
+```
 
 Определение таблицы в файле ./tables/TodoItem.js:
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Additional configuration for the table goes here.
+// Additional configuration for the table goes here.
 
-    module.exports = table;
+module.exports = table;
+```
 
 По умолчанию в таблицах используется динамическая схема. Чтобы глобально отключить динамическую схему, на портале Azure установите значение false для параметра приложения `MS_DynamicSchema`.
 
 Полный пример можно найти в [примере todo на GitHub].
 
 ### <a name="howto-staticschema"></a>Определение таблиц с помощью статической схемы
+
 Вы можете явным образом определять столбцы, которые будут предоставляться через WebAPI. Пакет SDK для Node.js (azure-mobile-apps) автоматически добавляет к вашему списку дополнительные столбцы, необходимые для автономной синхронизации данных. Например, в примерах клиентских приложений требуется таблица с двумя столбцами: `text` (строка) и `complete` (логическое значение).  
 Эту таблицу можно указать в определении таблицы в файле JavaScript (расположен в каталоге `tables`) следующим образом.
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Define the columns within the table.
-    table.columns = {
-        "text": "string",
-        "complete": "boolean"
-    };
+// Define the columns within the table.
+table.columns = {
+    "text": "string",
+    "complete": "boolean"
+};
 
-    // Turn off the dynamic schema.
-    table.dynamicSchema = false;
+// Turn off the dynamic schema.
+table.dynamicSchema = false;
 
-    module.exports = table;
+module.exports = table;
+```
 
 Если таблица определяется статически, то вам потребуется вызвать метод `tables.initialize()`, чтобы создать схему базы данных при запуске приложения. Метод `tables.initialize()` возвращает объект [promise], чтобы веб-служба не начинала обслуживать запросы до инициализации базы данных.
 
 ### <a name="howto-sqlexpress-setup"></a>Использование SQL Server Express в качестве хранилища данных при разработке на локальном компьютере
+
 Пакет SDK Node.js для функции "Мобильные приложения" предоставляет три стандартных варианта обслуживания данных:
 
 * драйвер **memory** удобен для создания временного хранилища примеров;
@@ -248,8 +280,6 @@ Microsoft Azure предоставляет множество механизмо
 
 > [!TIP]
 > Драйвер memory не предоставляет полный набор средств для тестирования. Для тестирования серверной части в локальном режиме рекомендуется использовать базу данных SQL Server Express и драйвер mssql.
->
->
 
 1. Загрузите и установите [Microsoft SQL Server 2014 Express]. Убедитесь, что устанавливается выпуск SQL Server 2014 Express со средствами. Если вам явно не требуется 64-разрядная версия, воспользуйтесь 32-разрядной версией, которая потребляет меньше памяти во время выполнения.
 1. Запустите диспетчер конфигурации SQL Server 2014.
@@ -275,6 +305,7 @@ Microsoft Azure предоставляет множество механизмо
    i. Щелкните правой кнопкой мыши **SQL Server (SQLEXPRESS)** и выберите **Перезапустить**.
 
    j. Закройте диспетчер конфигурации SQL Server 2014.
+
 1. Запустите SQL Server 2014 Management Studio и подключитесь к локальному экземпляру SQL Server Express.
 
    1. Щелкните правой кнопкой мыши экземпляр SQL Express в обозревателе объектов и выберите **Свойства**.
@@ -304,7 +335,8 @@ Microsoft Azure предоставляет множество механизмо
 Доступ к базе данных осуществляется через подключение TCP/IP. Для этого подключения требуется указать имя пользователя и пароль.
 
 ### <a name="howto-config-localdev"></a>Настройка проекта для локальной разработки
-Мобильные приложения считывают файл JavaScript с именем *azureMobile.js* из локальной файловой системы. В рабочей среде не следует использовать этот файл для настройки пакета SDK для функции "Мобильные приложения". Вместо этого используйте **параметры приложения** на [портал Azure]. 
+
+Мобильные приложения считывают файл JavaScript с именем *azureMobile.js* из локальной файловой системы. В рабочей среде не следует использовать этот файл для настройки пакета SDK для функции "Мобильные приложения". Вместо этого используйте **параметры приложения** на [портал Azure].
 
 Файл azureMobile.js должен экспортировать объект конфигурации. Ниже перечислены основные параметры.
 
@@ -312,27 +344,30 @@ Microsoft Azure предоставляет множество механизмо
 * Параметры журнала ведения диагностики.
 * Дополнительные параметры CORS.
 
-Этот пример файла azureMobile.js реализует указанные выше параметры базы данных.
+Этот пример файла **azureMobile.js** реализует указанные выше параметры базы данных.
 
-    module.exports = {
-        cors: {
-            origins: [ 'localhost' ]
-        },
-        data: {
-            provider: 'mssql',
-            server: '127.0.0.1',
-            database: 'mytestdatabase',
-            user: 'azuremobile',
-            password: 'T3stPa55word'
-        },
-        logging: {
-            level: 'verbose'
-        }
-    };
+```javascript
+module.exports = {
+    cors: {
+        origins: [ 'localhost' ]
+    },
+    data: {
+        provider: 'mssql',
+        server: '127.0.0.1',
+        database: 'mytestdatabase',
+        user: 'azuremobile',
+        password: 'T3stPa55word'
+    },
+    logging: {
+        level: 'verbose'
+    }
+};
+```
 
-Мы рекомендуем добавить azureMobile.js в GITIGNORE-файл (или в другой файл игнорирования для системы управления исходным кодом), чтобы не допустить сохранения паролей в облаке. Параметры рабочей версии всегда следует настраивать в разделе **параметров приложений** на [портал Azure].
+Мы рекомендуем добавить **azureMobile.js** в **GITIGNORE**-файл (или в другой файл игнорирования для системы управления исходным кодом), чтобы не допустить сохранения паролей в облаке. Параметры рабочей версии всегда следует настраивать в разделе **параметров приложений** на [портал Azure].
 
 ### <a name="howto-appsettings"></a>Настройка параметров для мобильного приложения
+
 Для большинства параметров в файле azureMobile.js имеется эквивалентный параметр приложения на [портал Azure]. Используйте следующий список, чтобы настроить свое приложение в **параметрах приложения**:
 
 | Параметр приложения | Параметр azureMobile.js | ОПИСАНИЕ | Допустимые значения |
@@ -359,6 +394,7 @@ Microsoft Azure предоставляет множество механизмо
 Для большинства параметров после внесения изменений потребуется перезапустить службу.
 
 ### <a name="howto-use-sqlazure"></a>Использование базы данных SQL для хранения данных в рабочей среде
+
 <!--- ALTERNATE INCLUDE - we can't use ../includes/app-service-mobile-dotnet-backend-create-new-service.md - slightly different semantics -->
 
 Порядок использования базы данных SQL в качестве хранилища данных идентичен для всех типов приложений службы приложений Azure. Если вы этого еще не сделали, создайте серверную часть функции "Мобильные приложения", выполнив указанные ниже действия.
@@ -368,16 +404,16 @@ Microsoft Azure предоставляет множество механизмо
 1. В окне **Группа ресурсов** введите имя своего приложения.
 1. Будет выбран план службы приложений по умолчанию. Если вы хотите изменить план службы приложений, сделайте следующее:
 
-   a. Выберите **План службы приложений** > **+Создать**. 
-   
-   b. Введите имя нового плана службы приложений и выберите подходящее расположение. 
-   
-   c. Выберите соответствующую ценовую категорию для службы. Щелкните **Просмотреть все**, чтобы просмотреть другие варианты тарификации, например **Бесплатный** и **Общий**. 
-   
-   d. Нажмите кнопку **Выбрать**. 
-   
+   a. Выберите **План службы приложений** > **+Создать**.
+
+   b. Введите имя нового плана службы приложений и выберите подходящее расположение.
+
+   c. Выберите соответствующую ценовую категорию для службы. Щелкните **Просмотреть все**, чтобы просмотреть другие варианты тарификации, например **Бесплатный** и **Общий**.
+
+   d. Нажмите кнопку **Выбрать**.
+
    д. В области **План службы приложений** нажмите кнопку **ОК**.
-1. Нажмите кнопку **Создать**. 
+1. Нажмите кнопку **Создать**.
 
 Подготовка серверной части функции "Мобильные приложения" может занять несколько минут. Когда серверная часть функции "Мобильные приложения" будет подготовлена, на портале для нее откроется область **Параметры**.
 
@@ -385,8 +421,6 @@ Microsoft Azure предоставляет множество механизмо
 
 > [!NOTE]
 > Если у вас уже есть база данных в том же расположении, что и серверная часть функции "Мобильные приложения", то вы можете выбрать эту базу данных, щелкнув **Использовать существующую базу данных**. Ввиду более длительных задержек не рекомендуется использовать базу данных в другом расположении.
->
->
 
 1. В новой серверной части, созданной при помощи функции "Мобильные приложения", выберите **Параметры** > **Мобильное приложение** > **Данные** > **+Добавить**.
 1. В области **Добавить подключение данных** выберите **База данных SQL — Настройка обязательных параметров** > **Создать новую базу данных**. Введите имя новой базы данных в поле **Имя**.
@@ -402,6 +436,7 @@ Microsoft Azure предоставляет множество механизмо
 Создание базы данных может занять несколько минут. Используйте область **Уведомления** , чтобы отслеживать ход выполнения развертывания. Не выполняйте дальнейших действий, пока база данных не будет успешно развернута. После завершения развертывания базы данных в настройки серверной части функции "Мобильные приложения" будет добавлена строка подключения к экземпляру базы данных SQL Azure. Эту настройку можно увидеть, выбрав **Параметры** > **Параметры приложения** > **Строки подключения**.
 
 ### <a name="howto-tables-auth"></a>Обязательная проверка подлинности для доступа к таблицам
+
 Если вы хотите использовать проверку подлинности службы приложений для конечной точки `tables`, сначала нужно настроить проверку подлинности службы приложений на [портал Azure]. Дополнительные сведения см. в приведенном ниже руководстве по настройке соответствующего поставщика удостоверений.
 
 * [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory]
@@ -412,23 +447,25 @@ Microsoft Azure предоставляет множество механизмо
 
 В каждой таблице имеется свойство доступа (access), которое можно использовать для контроля доступа к таблице. В следующем примере показана статически определенная таблица с обязательной проверкой подлинности.
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Define the columns within the table.
-    table.columns = {
-        "text": "string",
-        "complete": "boolean"
-    };
+// Define the columns within the table.
+table.columns = {
+    "text": "string",
+    "complete": "boolean"
+};
 
-    // Turn off the dynamic schema.
-    table.dynamicSchema = false;
+// Turn off the dynamic schema.
+table.dynamicSchema = false;
 
-    // Require authentication to access the table.
-    table.access = 'authenticated';
+// Require authentication to access the table.
+table.access = 'authenticated';
 
-    module.exports = table;
+module.exports = table;
+```
 
 Свойство access может принимать одно из трех значений:
 
@@ -443,62 +480,65 @@ Microsoft Azure предоставляет множество механизмо
 
 Например, если вы настраиваете проверку подлинности учетных записей Майкрософт и запрашиваете утверждение электронного адреса, то можете добавить электронный адрес в запись с помощью следующего контроллера таблиц.
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    // Create a new table definition.
-    var table = azureMobileApps.table();
+// Create a new table definition.
+var table = azureMobileApps.table();
 
-    table.columns = {
-        "emailAddress": "string",
-        "text": "string",
-        "complete": "boolean"
-    };
-    table.dynamicSchema = false;
-    table.access = 'authenticated';
+table.columns = {
+    "emailAddress": "string",
+    "text": "string",
+    "complete": "boolean"
+};
+table.dynamicSchema = false;
+table.access = 'authenticated';
 
-    /**
-    * Limit the context query to those records with the authenticated user email address
-    * @param {Context} context the operation context
-    * @returns {Promise} context execution Promise
-    */
-    function queryContextForEmail(context) {
-        return context.user.getIdentity().then((data) => {
-            context.query.where({ emailAddress: data.microsoftaccount.claims.emailaddress });
-            return context.execute();
-        });
-    }
+/**
+* Limit the context query to those records with the authenticated user email address
+* @param {Context} context the operation context
+* @returns {Promise} context execution Promise
+*/
+function queryContextForEmail(context) {
+    return context.user.getIdentity().then((data) => {
+        context.query.where({ emailAddress: data.microsoftaccount.claims.emailaddress });
+        return context.execute();
+    });
+}
 
-    /**
-    * Adds the email address from the claims to the context item - used for
-    * insert operations
-    * @param {Context} context the operation context
-    * @returns {Promise} context execution Promise
-    */
-    function addEmailToContext(context) {
-        return context.user.getIdentity().then((data) => {
-            context.item.emailAddress = data.microsoftaccount.claims.emailaddress;
-            return context.execute();
-        });
-    }
+/**
+* Adds the email address from the claims to the context item - used for
+* insert operations
+* @param {Context} context the operation context
+* @returns {Promise} context execution Promise
+*/
+function addEmailToContext(context) {
+    return context.user.getIdentity().then((data) => {
+        context.item.emailAddress = data.microsoftaccount.claims.emailaddress;
+        return context.execute();
+    });
+}
 
-    // Configure specific code when the client does a request.
-    // READ: only return records that belong to the authenticated user.
-    table.read(queryContextForEmail);
+// Configure specific code when the client does a request.
+// READ: only return records that belong to the authenticated user.
+table.read(queryContextForEmail);
 
-    // CREATE: add or overwrite the userId based on the authenticated user.
-    table.insert(addEmailToContext);
+// CREATE: add or overwrite the userId based on the authenticated user.
+table.insert(addEmailToContext);
 
-    // UPDATE: only allow updating of records that belong to the authenticated user.
-    table.update(queryContextForEmail);
+// UPDATE: only allow updating of records that belong to the authenticated user.
+table.update(queryContextForEmail);
 
-    // DELETE: only allow deletion of records that belong to the authenticated user.
-    table.delete(queryContextForEmail);
+// DELETE: only allow deletion of records that belong to the authenticated user.
+table.delete(queryContextForEmail);
 
-    module.exports = table;
+module.exports = table;
+```
 
 Чтобы узнать, какие утверждения доступны, используйте веб-браузер для просмотра конечной точки `/.auth/me` своего сайта.
 
 ### <a name="howto-tables-disabled"></a>Запрет доступа к определенным операциям с таблицей
+
 Свойство доступа может относиться не только к таблице в целом, но и к отдельным операциям. Существует четыре операции:
 
 * `read` — REST-запрос GET для таблицы;
@@ -508,104 +548,117 @@ Microsoft Azure предоставляет множество механизмо
 
 Например, вы хотите создать таблицу с доступом только для чтения без проверки подлинности.
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Read-only table. Only allow READ operations.
-    table.read.access = 'anonymous';
-    table.insert.access = 'disabled';
-    table.update.access = 'disabled';
-    table.delete.access = 'disabled';
+// Read-only table. Only allow READ operations.
+table.read.access = 'anonymous';
+table.insert.access = 'disabled';
+table.update.access = 'disabled';
+table.delete.access = 'disabled';
 
-    module.exports = table;
+module.exports = table;
+```
 
 ### <a name="howto-tables-query"></a>Изменение запроса, используемого в операциях с таблицей
+
 Частой задачей в операциях с таблицей является ограничение доступа к определенным данным. Например, вам может потребоваться предоставить таблицу с указанием идентификатора прошедшего проверку подлинности пользователя, чтобы вы могли считывать или обновлять только свои записи. Эту возможность обеспечивает следующее определение таблицы.
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Define a static schema for the table.
-    table.columns = {
-        "userId": "string",
-        "text": "string",
-        "complete": "boolean"
-    };
-    table.dynamicSchema = false;
+// Define a static schema for the table.
+table.columns = {
+    "userId": "string",
+    "text": "string",
+    "complete": "boolean"
+};
+table.dynamicSchema = false;
 
-    // Require authentication for this table.
-    table.access = 'authenticated';
+// Require authentication for this table.
+table.access = 'authenticated';
 
-    // Ensure that only records for the authenticated user are retrieved.
-    table.read(function (context) {
-        context.query.where({ userId: context.user.id });
-        return context.execute();
-    });
+// Ensure that only records for the authenticated user are retrieved.
+table.read(function (context) {
+    context.query.where({ userId: context.user.id });
+    return context.execute();
+});
 
-    // When adding records, add or overwrite the userId with the authenticated user.
-    table.insert(function (context) {
-        context.item.userId = context.user.id;
-        return context.execute();
-    });
+// When adding records, add or overwrite the userId with the authenticated user.
+table.insert(function (context) {
+    context.item.userId = context.user.id;
+    return context.execute();
+});
 
-    module.exports = table;
+module.exports = table;
+```
 
 Операции, которые подразумевают выполнение запроса, содержат свойство query, которое можно изменить с помощью предложения `where`. Свойство query представляет собой объект [QueryJS], используемый для преобразования запроса OData в то, что может быть обработано серверной частью. В простых операциях сравнения (как в примере выше) можно использовать карту. Можно также добавить определенные предложения SQL.
 
-    context.query.where('myfield eq ?', 'value');
+```javascript
+context.query.where('myfield eq ?', 'value');
+```
 
 ### <a name="howto-tables-softdelete"></a>Настройка обратимого удаления для таблицы
+
 При обратимом удалении записи фактически не удаляются. Вместо этого они помечаются как удаленные установкой значения true в столбце deleted. Пакет SDK для функции "Мобильные приложения" автоматически удаляет записи, помеченные как удаленные, из результатов запроса, если только в методе не используется конструкция `IncludeDeleted()`. Чтобы настроить обратимое удаление из таблицы, настройте свойство `softDelete` в файле определения таблицы.
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Define the columns within the table.
-    table.columns = {
-        "text": "string",
-        "complete": "boolean"
-    };
+// Define the columns within the table.
+table.columns = {
+    "text": "string",
+    "complete": "boolean"
+};
 
-    // Turn off the dynamic schema.
-    table.dynamicSchema = false;
+// Turn off the dynamic schema.
+table.dynamicSchema = false;
 
-    // Turn on soft delete.
-    table.softDelete = true;
+// Turn on soft delete.
+table.softDelete = true;
 
-    // Require authentication to access the table.
-    table.access = 'authenticated';
+// Require authentication to access the table.
+table.access = 'authenticated';
 
-    module.exports = table;
+module.exports = table;
+```
 
 Следует создать механизм удаления записей: посредством клиентского приложения, веб-заданий, функции Azure или пользовательского API.
 
 ### <a name="howto-tables-seeding"></a>Заполнение базы данных данными
+
 При создании приложения вам может потребоваться заполнить таблицу данными. Это можно сделать в файле JavaScript определения таблицы:
 
-    var azureMobileApps = require('azure-mobile-apps');
+```javascript
+var azureMobileApps = require('azure-mobile-apps');
 
-    var table = azureMobileApps.table();
+var table = azureMobileApps.table();
 
-    // Define the columns within the table.
-    table.columns = {
-        "text": "string",
-        "complete": "boolean"
-    };
-    table.seed = [
-        { text: 'Example 1', complete: false },
-        { text: 'Example 2', complete: true }
-    ];
+// Define the columns within the table.
+table.columns = {
+    "text": "string",
+    "complete": "boolean"
+};
+table.seed = [
+    { text: 'Example 1', complete: false },
+    { text: 'Example 2', complete: true }
+];
 
-    // Turn off the dynamic schema.
-    table.dynamicSchema = false;
+// Turn off the dynamic schema.
+table.dynamicSchema = false;
 
-    // Require authentication to access the table.
-    table.access = 'authenticated';
+// Require authentication to access the table.
+table.access = 'authenticated';
 
-    module.exports = table;
+module.exports = table;
+```
 
 Заполнение данными выполняется только при создании таблицы с помощью пакета SDK для функции "Мобильные приложения". Если таблица уже существует в базе данных, данные не добавляются. Если включено использование динамической схемы, схема будет определена на основании добавляемых данных.
 
@@ -618,68 +671,81 @@ Microsoft Azure предоставляет множество механизмо
 
 Затем можно включить поддержку Swagger в конструкторе мобильных приложений:
 
-    var mobile = azureMobileApps({ swagger: true });
+```javascript
+var mobile = azureMobileApps({ swagger: true });
+```
 
 Возможно, вам потребуется включить поддержку Swagger только в разрабатываемых выпусках. Это можно сделать с помощью параметра `NODE_ENV` приложения.
 
-    var mobile = azureMobileApps({ swagger: process.env.NODE_ENV !== 'production' });
+```javascript
+var mobile = azureMobileApps({ swagger: process.env.NODE_ENV !== 'production' });
+```
 
 Конечная точка `swagger` находится по адресу http://*ваш_сайт*.azurewebsites.net/swagger. Доступ к пользовательскому интерфейсу Swagger можно получить с помощью конечной точки `/swagger/ui` . Swagger вернет ошибку для конечной точки, если настроить обязательную проверку подлинности для всего приложения. Чтобы достичь наилучших результатов, разрешите получать запросы без проверки подлинности в параметрах проверки подлинности и авторизации в службе приложений Azure, а затем управляйте проверкой подлинности с помощью свойства `table.access`.
 
 Кроме того, вы можете добавить параметр Swagger в файл azureMobile.js, если поддержка Swagger требуется только при локальной разработке.
 
-## <a name="a-namepushpush-notifications"></a><a name="push">Push-уведомления
+## <a name="a-namepushpush-notifications"></a><a name="push"/>Push-уведомления
+
 Мобильные приложения интегрируются с концентраторами уведомлений Azure, поэтому вы можете отправлять целевые push-уведомления на миллионы устройств в рамках всех основных платформ. С помощью Центров уведомлений можно отправлять push-уведомления на устройства iOS, Android и Windows. Дополнительные сведения обо всем, что можно сделать с помощью концентраторов уведомлений, см. в [обзоре Центров уведомлений](../notification-hubs/notification-hubs-push-notification-overview.md).
 
-### </a><a name="send-push"></a>Отправка push-уведомлений
+### <a name="send-push"></a>Отправка push-уведомлений
+
 В коде ниже показано, как использовать объект `push` для отправки широковещательных push-уведомлений на зарегистрированные устройства iOS.
 
-    // Create an APNS payload.
-    var payload = '{"aps": {"alert": "This is an APNS payload."}}';
+```javascript
+// Create an APNS payload.
+var payload = '{"aps": {"alert": "This is an APNS payload."}}';
 
-    // Only do the push if configured.
-    if (context.push) {
-        // Send a push notification by using APNS.
-        context.push.apns.send(null, payload, function (error) {
-            if (error) {
-                // Do something or log the error.
-            }
-        });
-    }
+// Only do the push if configured.
+if (context.push) {
+    // Send a push notification by using APNS.
+    context.push.apns.send(null, payload, function (error) {
+        if (error) {
+            // Do something or log the error.
+        }
+    });
+}
+```
 
 Создав шаблонную регистрацию push-уведомлений с клиента, можно отправлять шаблонные push-сообщения на устройства на всех поддерживаемых платформах. В коде ниже показано, как отправить шаблонное уведомление.
 
-    // Define the template payload.
-    var payload = '{"messageParam": "This is a template payload."}';
+```javascript
+// Define the template payload.
+var payload = '{"messageParam": "This is a template payload."}';
 
-    // Only do the push if configured.
-    if (context.push) {
-        // Send a template notification.
-        context.push.send(null, payload, function (error) {
-            if (error) {
-                // Do something or log the error.
-            }
-        });
-    }
-
+// Only do the push if configured.
+if (context.push) {
+    // Send a template notification.
+    context.push.send(null, payload, function (error) {
+        if (error) {
+            // Do something or log the error.
+        }
+    });
+}
+```
 
 ### <a name="push-user"></a>Отправка push-уведомлений прошедшему проверку подлинности пользователю с помощью тегов
 Когда прошедший проверку пользователь регистрируется для работы с push-уведомлениями, в регистрацию автоматически добавляется тег с идентификатором пользователя. С помощью этого тега можно отправлять push-уведомления на все устройства, зарегистрированные конкретным пользователем. Следующий код получает идентификатор SID пользователя, выполняющего запрос, и отправляет шаблонное push-уведомление в каждую регистрацию устройства для этого пользователя:
 
-    // Only do the push if configured.
-    if (context.push) {
-        // Send a notification to the current user.
-        context.push.send(context.user.id, payload, function (error) {
-            if (error) {
-                // Do something or log the error.
-            }
-        });
-    }
+```javascript
+// Only do the push if configured.
+if (context.push) {
+    // Send a notification to the current user.
+    context.push.send(context.user.id, payload, function (error) {
+        if (error) {
+            // Do something or log the error.
+        }
+    });
+}
+```
 
 При регистрации для работы с push-уведомлениями на клиенте, прошедшем проверку подлинности, убедитесь, что проверка подлинности завершена, и только после этого начинайте регистрацию.
 
 ## <a name="CustomAPI"></a>Настраиваемые API
+
 ### <a name="howto-customapi-basic"></a>Определение настраиваемого интерфейса API
+
 Помимо API доступа к данным через конечную точку `/tables`, функция "Мобильные приложения" может предоставлять настраиваемые службы API. Настраиваемые службы API определяются так же, как и таблицы, и могут использовать тот же набор возможностей, включая проверку подлинности.
 
 Если вы хотите использовать проверку подлинности службы приложений для настраиваемого API, сначала нужно настроить проверку подлинности службы приложений на [портал Azure]. Дополнительные сведения см. в приведенном ниже руководстве по настройке соответствующего поставщика удостоверений.
@@ -698,120 +764,137 @@ Microsoft Azure предоставляет множество механизмо
 
 Вот прототип определения API для использованного выше примера basic-app.
 
-    var express = require('express'),
-        azureMobileApps = require('azure-mobile-apps');
+```javascript
+var express = require('express'),
+    azureMobileApps = require('azure-mobile-apps');
 
-    var app = express(),
-        mobile = azureMobileApps();
+var app = express(),
+    mobile = azureMobileApps();
 
-    // Import the custom API.
-    mobile.api.import('./api');
+// Import the custom API.
+mobile.api.import('./api');
 
-    // Add the Mobile API so it is accessible as a Web API.
-    app.use(mobile);
+// Add the Mobile API so it is accessible as a Web API.
+app.use(mobile);
 
-    // Start listening on HTTP
-    app.listen(process.env.PORT || 3000);
+// Start listening on HTTP
+app.listen(process.env.PORT || 3000);
+```
 
 Рассмотрим пример API, который возвращает дату сервера с помощью метода `Date.now()`. Ниже приведено содержимое файла api/date.js:
 
-    var api = {
-        get: function (req, res, next) {
-            var date = { currentTime: Date.now() };
-            res.status(200).type('application/json').send(date);
-        });
-    };
+```javascript
+var api = {
+    get: function (req, res, next) {
+        var date = { currentTime: Date.now() };
+        res.status(200).type('application/json').send(date);
+    });
+};
 
-    module.exports = api;
+module.exports = api;
+```
 
 Каждый параметр соответствует стандартной команде RESTful: GET, POST, PATCH или DELETE. Этот метод является стандартной функцией [Использование промежуточных обработчиков], которая отправляет требуемые выходные данные.
 
 ### <a name="howto-customapi-auth"></a>Обязательная проверка подлинности для доступа к настраиваемому API
+
 Пакет SDK для функции "Мобильные приложения" реализует проверку подлинности точно так же, как конечные точки `tables` и настраиваемые службы API. Чтобы добавить проверку подлинности к API-интерфейсу, который мы создали в предыдущем разделе, добавьте свойство `access`:
 
-    var api = {
-        get: function (req, res, next) {
-            var date = { currentTime: Date.now() };
-            res.status(200).type('application/json').send(date);
-        });
-    };
-    // All methods must be authenticated.
-    api.access = 'authenticated';
+```javascript
+var api = {
+    get: function (req, res, next) {
+        var date = { currentTime: Date.now() };
+        res.status(200).type('application/json').send(date);
+    });
+};
+// All methods must be authenticated.
+api.access = 'authenticated';
 
-    module.exports = api;
+module.exports = api;
+```
 
 Также можно определить проверку подлинности для конкретных операций:
 
-    var api = {
-        get: function (req, res, next) {
-            var date = { currentTime: Date.now() };
-            res.status(200).type('application/json').send(date);
-        }
-    };
-    // The GET methods must be authenticated.
-    api.get.access = 'authenticated';
+```javascript
+var api = {
+    get: function (req, res, next) {
+        var date = { currentTime: Date.now() };
+        res.status(200).type('application/json').send(date);
+    }
+};
+// The GET methods must be authenticated.
+api.get.access = 'authenticated';
 
-    module.exports = api;
+module.exports = api;
+```
 
 Для настраиваемых служб API, требующих проверки подлинности, необходимо использовать тот же маркер, что и для конечных точек `tables`.
 
 ### <a name="howto-customapi-auth"></a>Обработка передачи больших файлов
+
 Пакет SDK для функции "Мобильные приложения" использует [ПО промежуточного слоя средства синтаксического анализа текста](https://github.com/expressjs/body-parser) для приема и расшифровки содержимого текста в отправляемых данных. Анализатор текста запроса можно предварительно настроить для приема отправки больших файлов:
 
-    var express = require('express'),
-        bodyParser = require('body-parser'),
-        azureMobileApps = require('azure-mobile-apps');
+```javascript
+var express = require('express'),
+    bodyParser = require('body-parser'),
+    azureMobileApps = require('azure-mobile-apps');
 
-    var app = express(),
-        mobile = azureMobileApps();
+var app = express(),
+    mobile = azureMobileApps();
 
-    // Set up large body content handling.
-    app.use(bodyParser.json({ limit: '50mb' }));
-    app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+// Set up large body content handling.
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
-    // Import the custom API.
-    mobile.api.import('./api');
+// Import the custom API.
+mobile.api.import('./api');
 
-    // Add the Mobile API so it is accessible as a Web API.
-    app.use(mobile);
+// Add the Mobile API so it is accessible as a Web API.
+app.use(mobile);
 
-    // Start listening on HTTP.
-    app.listen(process.env.PORT || 3000);
+// Start listening on HTTP.
+app.listen(process.env.PORT || 3000);
+```
 
 Перед передачей файл кодируется в Base-64. Это кодирование увеличивает размер передаваемых данных, что нужно учесть.
 
 ### <a name="howto-customapi-sql"></a>Выполнение пользовательских инструкций SQL
+
 Пакет SDK для функции "Мобильные приложения" предоставляет доступ ко всему контексту через объект запроса. Вы можете легко выполнять параметризованные инструкции SQL для определенного поставщика данных:
 
-    var api = {
-        get: function (request, response, next) {
-            // Check for parameters. If not there, pass on to a later API call.
-            if (typeof request.params.completed === 'undefined')
-                return next();
+```javascript
+var api = {
+    get: function (request, response, next) {
+        // Check for parameters. If not there, pass on to a later API call.
+        if (typeof request.params.completed === 'undefined')
+            return next();
 
-            // Define the query. Anything that the mssql
-            // driver can handle is allowed.
-            var query = {
-                sql: 'UPDATE TodoItem SET complete=@completed',
-                parameters: [{
-                    completed: request.params.completed
-                }]
-            };
+        // Define the query. Anything that the mssql
+        // driver can handle is allowed.
+        var query = {
+            sql: 'UPDATE TodoItem SET complete=@completed',
+            parameters: [{
+                completed: request.params.completed
+            }]
+        };
 
-            // Execute the query. The context for Mobile Apps is available through
-            // request.azureMobile. The data object contains the configured data provider.
-            request.azureMobile.data.execute(query)
-            .then(function (results) {
-                response.json(results);
-            });
-        }
-    };
+        // Execute the query. The context for Mobile Apps is available through
+        // request.azureMobile. The data object contains the configured data provider.
+        request.azureMobile.data.execute(query)
+        .then(function (results) {
+            response.json(results);
+        });
+    }
+};
 
-    api.get.access = 'authenticated';
-    module.exports = api;
+api.get.access = 'authenticated';
+module.exports = api;
+```
 
 ## <a name="Debugging"></a>Отладка, простые таблицы и простые интерфейсы API
+
 ### <a name="howto-diagnostic-logs"></a>Отладка, диагностика и устранение неполадок функции "Мобильные приложения"
+
 Служба приложений Azure предоставляет несколько методов отладки и устранения неполадок в приложениях на Node.js.
 Чтобы приступить к устранению неполадок серверной части функции "Мобильные приложения" на Node.js, ознакомьтесь со следующими статьями:
 
@@ -822,6 +905,7 @@ Microsoft Azure предоставляет множество механизмо
 Приложениям на Node.js предоставляется доступ к различным средствам работы с журналами диагностики. Для ведения журнала диагностики пакет SDK на Node.js для функции "Мобильные приложения" использует [Winston]. Ведение журналов включается автоматически при включении режима отладки или при установке значения true для параметра приложения `MS_DebugMode` на [портал Azure]. Созданные журналы появляются на странице "Журналы диагностики" [портал Azure].
 
 ### <a name="in-portal-editing"></a><a name="work-easy-tables"></a>Работа с простыми таблицами на портале Azure
+
 Средство "Простые таблицы" позволяет легко создавать и изменять таблицы непосредственно на портале. Можно передать набор данных в простые таблицы в формате CSV. Обратите внимание, что нельзя использовать имена свойств (в наборе данных CSV), которые конфликтуют с именами системных свойств серверной части функции "Мобильные приложения". Имена системных свойств:
 * дата создания
 * дата обновления
@@ -843,6 +927,7 @@ Microsoft Azure предоставляет множество механизмо
 * **View streaming logs** (Просмотреть журналы потоковой передачи) — позволяет подключиться к службе потоковой передачи журналов для вашего сайта.
 
 ### <a name="work-easy-apis"></a>Работа со средством "Простые API" на портале Azure
+
 Средство "Простые API" позволяет легко создавать и изменять настраиваемые API-интерфейсы непосредственно на портале. Вы даже можете редактировать скрипты API в редакторе службы приложений.
 
 Выбрав **Простые API** в параметрах сайта серверной части, вы сможете добавить, изменить или удалить настраиваемую конечную точку API.
@@ -852,6 +937,7 @@ Microsoft Azure предоставляет множество механизмо
 На портале можно изменять права доступа для выполнения действия HTTP, редактировать файл скрипта API в редакторе службы приложений или просматривать журналы потоковой передачи.
 
 ### <a name="online-editor"></a>Изменение кода в редакторе службы приложений
+
 На портале Azure можно редактировать файлы скрипта серверной части Node.js в редакторе службы приложений без скачивания проекта на локальный компьютер. Чтобы изменить файлы сценариев в онлайн-редакторе, выполните следующие действия.
 
 1. В области серверной части функции "Мобильные приложения" выберите **Все параметры**, а затем **Простые таблицы** или **Простые API**. Выберите таблицу или API и щелкните **Edit script** (Изменить скрипт). Файл скрипта будет открыт в редакторе службы приложений.

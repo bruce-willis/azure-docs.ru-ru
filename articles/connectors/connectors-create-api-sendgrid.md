@@ -1,48 +1,80 @@
 ---
-title: SendGrid | Документация Майкрософт
-description: Создание приложений логики с помощью службы приложений Azure. Поставщик подключений SendGrid позволяет отправлять электронную почту и управлять списками получателей.
+title: Подключение к SendGrid из Azure Logic Apps | Документация Майкрософт
+description: Автоматизация задач и рабочих процессов, которые отправляют сообщения электронной почты и управляют списками рассылки в SendGrid с помощью Azure Logic Apps.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: ecfan
-manager: jeconnoc
-editor: ''
-tags: connectors
-ms.assetid: bc4f1fc2-824c-4ed7-8de8-e82baff3b746
 ms.service: logic-apps
-ms.devlang: multiple
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, LADocs
+ms.assetid: bc4f1fc2-824c-4ed7-8de8-e82baff3b746
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
-ms.date: 08/18/2016
-ms.author: estfan; ladocs
-ms.openlocfilehash: 0b34a76ecaf4997cbf66c3d026cd770aa8aa080d
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+tags: connectors
+ms.date: 08/24/2018
+ms.openlocfilehash: c8747210a77879d551e323a7c0e46a9ab013fa3f
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295845"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42887195"
 ---
-# <a name="get-started-with-the-sendgrid-connector"></a>Начало работы с соединителем SendGrid
-Поставщик подключений SendGrid позволяет отправлять электронную почту и управлять списками получателей.
+# <a name="send-emails-and-manage-mailing-lists-in-sendgrid-by-using-azure-logic-apps"></a>Отправка сообщений электронной почты и управление списками рассылки в SendGrid с помощью Azure Logic Apps
 
-Для начала можно создать приложение логики, как описано [здесь](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+С помощью Azure Logic Apps и соединителя SendGrid можно создавать автоматизированные задачи и рабочие процессы, которые отправляют сообщения электронной почты и управляют списками получателей, например:
 
-## <a name="create-a-connection-to-sendgrid"></a>Создание подключения к SendGrid
-Для создания приложений логики с помощью SendGrid необходимо создать **подключение**, а затем указать данные для приведенных ниже свойств. 
+* отправлять сообщения электронной почты;
+* добавлять получателей в списки;
+* получать и добавлять глобальное подавление и управлять им.
 
-| Свойство | Обязательно | ОПИСАНИЕ |
-| --- | --- | --- |
-| ApiKey |Yes |Укажите ключ API SendGrid |
+Вы можете использовать действия SendGrid в своих приложениях логики для выполнения этих задач. Кроме того, выходные данные действий SendGrid могут использоваться другими действиями. 
 
-> [!INCLUDE [Steps to create a connection to SendGrid](../../includes/connectors-create-api-sendgrid.md)]
-> 
+Этот соединитель предоставляет только действия, поэтому для запуска приложения логики используйте отдельный триггер, такой как **Периодичность**. Например, если вы регулярно добавляете получателей в списки, вы можете отправить сообщение электронной почты о получателях и списках с помощью соединителя Office 365 Outlook или соединителя Outlook.com.
+Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
+## <a name="prerequisites"></a>Предварительные требования
 
-Созданное подключение можно использовать для выполнения действий и прослушивания триггеров.
+* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
-## <a name="connector-specific-details"></a>Сведения о соединителях
+* [Учетная запись SendGrid](https://www.sendgrid.com/) и [ключ API SendGrid](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).
 
-Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/sendgrid/).
+   Ваш ключ API авторизует приложение логики, чтобы оно могло создать подключение и получить доступ к вашей учетной записи SendGrid.
 
-## <a name="more-connectors"></a>Дополнительные сведения о соединителях
-Вы можете вернуться к [списку интерфейсов API](apis-list.md).
+* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+
+* Приложение логики, из которого необходимо получить доступ к учетной записи SendGrid. Чтобы использовать действие SendGrid, запустите приложение логики с другим триггером, например триггером **Периодичность**.
+
+## <a name="connect-to-sendgrid"></a>Подключение к SendGrid
+
+[!INCLUDE [Create connection general intro](../../includes/connectors-create-connection-general-intro.md)]
+
+1. Войдите на [портал Azure](https://portal.azure.com) и откройте свое приложение логики в конструкторе приложений логики, если оно еще не открыто.
+
+1. Выберите путь: 
+
+   * На последнем шаге, в котором необходимо добавить действие, выберите **Новый шаг**. 
+
+     -или-
+
+   * Между шагами, в которых вы хотите добавить действие, переместите указатель на стрелку между шагами. 
+   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+
+1. В поле поиска введите sendgrid в качестве условия фильтра. В списке действий выберите любое необходимое действие.
+
+1. Укажите имя подключения. 
+
+1. Введите ключ API SendGrid, а затем выберите **Создать**.
+
+1. Укажите необходимые сведения для выбранного действия и продолжайте создание рабочего процесса приложения логики.
+
+## <a name="connector-reference"></a>Справочник по соединителям
+
+Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/sendgrid/) соединителя.
+
+## <a name="get-support"></a>Получение поддержки
+
+* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+
+## <a name="next-steps"></a>Дополнительная информация
+
+* См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -1,47 +1,58 @@
 ---
-title: Соединитель Outlook.com в Azure Logic Apps | Документация Майкрософт
-description: Создание приложений логики с помощью службы приложений Azure. Соединитель Outlook.com позволяет управлять электронной почтой, календарями и контактами. С его помощью можно выполнять различные действия, такие как отправка сообщения электронной почты, планирование встреч, добавление контактов и т. д.
+title: Подключение к Outlook.com. Azure Logic Apps | Документация Майкрософт
+description: Управление сообщениями электронной почты, календарями и контактами с помощью REST API Outlook.com и Azure Logic Apps
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: ecfan
-manager: jeconnoc
-editor: ''
-tags: connectors
-ms.assetid: 87113c85-d158-4dd5-9ed5-5748130003d6
 ms.service: logic-apps
-ms.devlang: multiple
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
+ms.assetid: 87113c85-d158-4dd5-9ed5-5748130003d6
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
 ms.date: 08/18/2016
-ms.author: estfan; ladocs
-ms.openlocfilehash: 1338b7ce8f72a57cb65f9389e630fd7ebd0417b1
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: 8030ab9d317c1deefaf441008b9022c4a26bb17c
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295590"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42746168"
 ---
-# <a name="get-started-with-the-outlookcom-connector"></a>Начало работы с соединителем Outlook.com
-Соединитель Outlook.com позволяет управлять электронной почтой, календарями и контактами. С его помощью можно выполнять различные действия, такие как отправка сообщения электронной почты, планирование встреч, добавление контактов и т. д.
+# <a name="manage-email-calendars-and-contacts-in-outlookcom-with-azure-logic-apps"></a>Управление сообщениями электронной почты, календарями и контактами в Outlook.com с помощью Azure Logic Apps
 
-Для начала можно создать приложение логики, как описано [здесь](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+В этой статье показано, как вы можете создать учетную запись Outlook.com и управлять ею внутри приложения логики с помощью соединителя Box. Таким образом можно создавать приложения логики, которые автоматизируют задачи и рабочие процессы для учетной записи Outlook.com, например:
 
-## <a name="create-a-connection-to-outlookcom"></a>Создание подключения к Outlook.com
-Для создания приложений логики с помощью Outlook.com необходимо создать **подключение**, а затем указать данные для приведенных ниже свойств.
+* отправка сообщения электронной почты; 
+* планирование встреч;
+* добавление контактов. 
 
-| Свойство | Обязательно | ОПИСАНИЕ |
-| --- | --- | --- |
-| по маркеру |Yes |Укажите учетные данные Outlook.com |
+Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-Созданное подключение можно использовать для выполнения действий и прослушивания триггеров, описанных в этой статье.
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!INCLUDE [Steps to create a connection to Outlook.com](../../includes/connectors-create-api-outlook.md)]
->
+* [Учетная запись Outlook.com.](https://outlook.live.com/owa/)
 
-## <a name="connector-specific-details"></a>Сведения о соединителях
+* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
-Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/outlook/).
+* Приложение логики, из которого необходимо получить доступ к учетной записи Outlook.com. Чтобы запустить приложение логики с помощью триггера Outlook, требуется [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). 
 
-## <a name="more-connectors"></a>Дополнительные сведения о соединителях
-Вы можете вернуться к [списку интерфейсов API](apis-list.md).
+* Базовые знания о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+
+## <a name="connect-to-outlookcom"></a>Подключение к Outlook.com
+
+[!INCLUDE [Create connection general intro](../../includes/connectors-create-connection-general-intro.md)]
+
+[!INCLUDE [Connect to Outlook.com](../../includes/connectors-create-api-outlook.md)]
+
+## <a name="connector-reference"></a>Справочник по соединителям
+
+См. дополнительные технические сведения о [триггерах, действиях и ограничениях, описываемых файлом Swagger соединителя](/connectors/outlook/). 
+
+## <a name="get-support"></a>Получение поддержки
+
+* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](http://aka.ms/logicapps-wish).
+
+## <a name="next-steps"></a>Дополнительная информация
+
+* См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

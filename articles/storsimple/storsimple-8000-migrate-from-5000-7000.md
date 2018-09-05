@@ -4,25 +4,26 @@ description: Предоставляет обзор и предварительн
 services: storsimple
 documentationcenter: NA
 author: alkohli
-manager: jeconnoc
+manager: twooley
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 12/11/2017
+ms.date: 08/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 378eaea4c0cf19c48f47067e4f548f2d7f530377
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 23fde5fab8f223ff1d958a8fac6a31818f1fdd7c
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37856694"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818922"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-8000-series-device"></a>Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000
 
 > [!IMPORTANT]
+> - 31 июля 2019 года поддержка устройств StorSimple серий 5000/7000 будет прекращена. Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
 > - Сейчас миграции — это интерактивная операция. Если вы намерены перенести данные с устройства StorSimple 5000–7000 на устройство серии 8000, вам необходимо запланировать миграцию с помощью службы поддержки Майкрософт. Затем служба технической поддержки Майкрософт разрешит миграцию для вашей подписки. Дополнительные сведения см. в статье [Обращение в службу поддержки Майкрософт](storsimple-8000-contact-microsoft-support.md).
 > - После того, как вы подадите запрос на обслуживание, на реализацию плана миграции и саму миграцию может потребоваться несколько недель.
 > - Прежде чем обращаться в службу поддержки Майкрософт, обязательно просмотрите и выполните [предварительные требования для миграции](#migration-prerequisites), указанные в статье.

@@ -1,6 +1,6 @@
 ---
-title: Как разбить на страницы список доступных веб-страниц | Документация Майкрософт
-description: Показано, как разбить на страницы список всех веб-страниц, которые может вернуть Bing.
+title: Как разбить на страницы результаты, возвращаемые API Bing для поиска в Интернете | Документация Майкрософт
+description: Узнайте, как разбить на страницы результаты, возвращаемые API Bing для поиска в Интернете.
 services: cognitive-services
 author: swhite-msft
 manager: ehansen
@@ -8,22 +8,22 @@ ms.assetid: 26CA595B-0866-43E8-93A2-F2B5E09D1F3B
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: article
-ms.date: 04/15/2017
-ms.author: scottwhi
-ms.openlocfilehash: bf29783246c603270d59b20b63027fccdbd45b89
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.date: 08/20/2018
+ms.author: erhopf
+ms.openlocfilehash: cd03b3af08746674dd2ba2d4af593e19e066efca
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380109"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42888247"
 ---
-# <a name="paging-webpages"></a>Разбиение на страницы списка веб-страниц 
+# <a name="how-to-page-through-bing-web-search-api-results"></a>Как разбить на страницы результаты, возвращаемые API Bing для поиска в Интернете
 
 Когда вы вызываете API Bing для поиска в Интернете, Bing возвращает список результатов. Список — это подмножество общего количества результатов, относящихся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#totalestimatedmatches) объекта ответа.  
   
 В следующем примере показано поле `totalEstimatedMatches`, содержащееся в результатах поиска в Интернете.  
   
-```  
+```
 {
     "_type" : "SearchResponse",
     "webPages" : {
@@ -32,7 +32,7 @@ ms.locfileid: "35380109"
         "value" : [...]
     }
 }  
-```  
+```
   
 Чтобы разбить на страницы список доступных веб-страниц, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#offset).  
   

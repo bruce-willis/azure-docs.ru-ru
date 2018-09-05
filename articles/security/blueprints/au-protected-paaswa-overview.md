@@ -6,14 +6,14 @@ author: meladie
 ms.assetid: 708aa129-b226-4e02-85c6-1f86e54564e4
 ms.service: security
 ms.topic: article
-ms.date: 08/16/2018
+ms.date: 08/23/2018
 ms.author: meladie
-ms.openlocfilehash: a8d2eca785ad166aa4cff26bce876e41770a3427
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 7d200cfa6a529c33555a18cd6598183fedbfd2fc
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246283"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818279"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-australia-protected"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для среды AU-PROTECTED
 
@@ -95,7 +95,7 @@ ms.locfileid: "40246283"
 - Размещение внутри защищенной виртуальной сети Azure и использование правил безопасности сети.
 - В средах Службы приложений настраивается самозаверяющий сертификат внутренней подсистемы балансировки нагрузки для подключений HTTPS. Майкрософт рекомендует использовать доверенный центр сертификации для повышенной безопасности.
 - [Внутренняя балансировка нагрузки](https://docs.microsoft.com/azure/app-service-web/app-service-environment-with-internal-load-balancer) (режим 3).
-- отключение [TLS 1.0](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings);
+- отключение [TLS версий 1.0 и 1.1](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings);
 - Изменение [шифров TLS](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings).
 - управление [портами N/W для входящего трафика](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-control-inbound-traffic);
 - [Брандмауэр веб-приложения — ограничения доступа к данным](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-web-application-firewall).
@@ -129,10 +129,8 @@ Azure по умолчанию шифрует весь обмен данными 
 Для данных защищенной категории при передаче из сетей, принадлежащих клиенту, эта архитектура в Azure использует Интернет или ExpressRoute с VPN-шлюзом и протоколом IPSEC.
 
 Кроме того, все транзакции в Azure через портал управления Azure проходят по протоколу HTTPS версии TLS 1.2.
-Неактивные данные
 
 ### <a name="data-at-rest"></a>Неактивные данные
-
 Архитектура защищает неактивные данные, используя шифрование, аудит базы данных и другие меры.
 
 **Служба хранилища Azure**. Для выполнения требований к шифрованию неактивных данных во всей [службе хранилища Azure](https://azure.microsoft.com/services/storage/) используется [шифрование службы хранилища](https://docs.microsoft.com/azure/storage/storage-service-encryption). Это помогает защищать и охранять данные в рамках корпоративных обязательств по безопасности и соответствию требованиям, определенным в руководстве правительства Австралии по информационной безопасности (ISM).

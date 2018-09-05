@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 5/22/2018
 ms.author: nachandr
-ms.openlocfilehash: bc9fbf56b37cb8c6690bd036db704532cb8b0437
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: f43715b9c419aab1f5b95e140eac72642ef74198
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42142982"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42746903"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -139,7 +139,7 @@ ms.locfileid: "42142982"
 
 Приложение и сценарии установки можно скачать по [ссылке на архив](https://go.microsoft.com/fwlink/?linkid=869566).
 
-Приложение в формате sfpkg можно скачать по [ссылке на SFPKG-файл](https://go.microsoft.com/fwlink/?linkid=869567). Это удобно для [развертывания приложения на основе Azure Resource Manager](service-fabric-application-arm-resource.md).
+Приложение в формате sfpkg можно скачать по [ссылке на SFPKG-файл](https://aka.ms/POA/POA_v1.2.2.sfpkg). Это удобно для [развертывания приложения на основе Azure Resource Manager](service-fabric-application-arm-resource.md).
 
 ## <a name="configure-the-app"></a>Настройка приложения
 
@@ -398,3 +398,5 @@ RebootRequired | true — требовалась перезагрузка<br> f
 ### <a name="version-122-latest"></a>Версия 1.2.2 (последняя)
 
 - Прочие исправления ошибок.
+- Теперь двоичные файлы подписаны.
+- Ссылка для скачивания пакета sfpkg теперь указывает на конкретную версию.

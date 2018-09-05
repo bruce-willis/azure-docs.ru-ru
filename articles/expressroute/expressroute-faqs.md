@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: f68a4d699d1ad6592fe5481cd69795b06e7d8fca
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 2e332b361a1531eb5f6a8a1d3c46c2f258035258
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34160875"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818799"
 ---
 # <a name="expressroute-faq"></a>Вопросы и ответы по ExpressRoute
 

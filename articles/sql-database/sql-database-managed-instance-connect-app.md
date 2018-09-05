@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/21/2018
 ms.author: srbozovi
 ms.reviewer: bonova, carlrab
-ms.openlocfilehash: c9d656908d265aeb6143e857b0ea4f635203bdd9
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 82e8836892b033ccbb3c3ad9806257348afe3702
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39258734"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818408"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к Управляемому экземпляру Базы данных SQL
 
@@ -75,9 +75,23 @@ ms.locfileid: "39258734"
 
 Доступ к Управляемому экземпляру возможен только по частному IP-адресу, а значит для доступа к нему из окна разработчика необходимо установить подключение между окном разработчика и виртуальной сетью Управляемого экземпляра.  
  
-Настройка подключения типа "точка — сеть" к виртуальной сети с аутентификацией по собственным сертификатам Azure подробно описана в статьях для каждого средства: [портал Azure](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md).  
+Настройка подключения типа "точка — сеть" к виртуальной сети с аутентификацией по собственным сертификатам Azure подробно описана в статьях для каждого средства: [портал Azure](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md). 
+
+## <a name="required-versions-of-drivers-and-tools"></a>Необходимые версии драйверов и средств
+
+Ниже приведены рекомендуемые минимальные версии средств и драйверов, необходимые, чтобы подключиться к Управляемому экземпляру.
+
+| Драйвер или средство | Version (версия) |
+| --- | --- |
+|.NET Framework | 4.6.1 (или .NET Core) | 
+|Драйвер ODBC    | версия 17 |
+|Драйвер PHP | 5.2.0 |
+|Драйвер JDBC    | 6.4.0 |
+|Драйвер Node.js | 2.1.1 |
+|Драйвер OLEDB   | 18.0.2.0 |
+|SSMS   | 17.8.1 или [более поздней версии](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения об Управляемом экземпляре см. в [обзоре Управляемого экземпляра](sql-database-managed-instance.md).
-- См. инструкцию по [созданию Управляемого экземпляра](sql-database-managed-instance-create-tutorial-portal.md).
+- См. инструкцию по [созданию Управляемого экземпляра](sql-database-managed-instance-get-started.md).

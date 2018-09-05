@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: b05eef79e94cff74b1e02243cd7c8d94e5acbb3c
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: c9cebd16d34758550144a50b6ff26da84924a964
+ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39493976"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42745674"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -58,6 +58,11 @@ ms.locfileid: "39493976"
 
 > [!NOTE]
 > Во время передачи данных в базу данных и из нее все подключения к базе данных SQL Azure и хранилищу данных SQL Azure должны быть зашифрованы (с помощью SSL или TLS). Разрабатывая конвейер с помощью JSON, добавьте свойство "encryption" и в строке подключения задайте для него значение **true**. Для службы хранилища Azure вы можете использовать в строке подключения протокол **HTTPS**.
+
+> [!NOTE]
+> Чтобы включить шифрование при передаче данных из Oracle, следуйте одному из следующих вариантов:
+> 1. На сервере Oracle перейдите к Oracle Advanced Security (OAS) и задайте настройки шифрования, которые поддерживают шифрование Triple-DES (3DES) и Advanced Encryption Standard (AES). Подробности см. [здесь](https://docs.oracle.com/cd/E11882_01/network.112/e40393/asointro.htm#i1008759). ADF автоматически согласовывает метод шифрования таким образом, чтобы при установлении соединения с Oracle использовался тот метод шифрования, который вы настроили в OAS.
+> 2. В ADF вы можете добавить EncryptionMethod = 1 в строке подключения (в связанной службе). В таком случае в качестве метода шифрования будут использоваться протоколы SSL/TLS. Чтобы использовать эту функцию, необходимо отключить параметры шифрования без SSL в OAS на стороне сервера Oracle, чтобы избежать конфликтов шифрования.
 
 > [!NOTE]
 > Для TLS используется версия 1.2.

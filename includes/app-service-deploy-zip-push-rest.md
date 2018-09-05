@@ -12,7 +12,7 @@
 curl -X POST -u <deployment_user> --data-binary @"<zip_file_path>" https://<app_name>.scm.azurewebsites.net/api/zipdeploy
 ```
 
-Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. Вы можете просмотреть текущие и предыдущие развертывания, используя конечную точку https://<имя_приложения>.scm.azurewebsites.net/api/deployments, как показано в примере cURL ниже. Точно так же замените `<app_name>` именем приложения и `<deployment_user>` — именем пользователя из учетных данных развертывания.
+Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. Вы можете просмотреть текущие и предыдущие развертывания, используя конечную точку `https://<app_name>.scm.azurewebsites.net/api/deployments`, как показано в примере cURL ниже. Точно так же замените `<app_name>` именем приложения и `<deployment_user>` — именем пользователя из учетных данных развертывания.
 
 ```bash
 curl -u <deployment_user> https://<app_name>.scm.azurewebsites.net/api/deployments

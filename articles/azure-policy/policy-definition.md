@@ -4,16 +4,16 @@ description: Описывается, как определение полити�
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 08/03/2018
+ms.date: 08/16/2018
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: ced8ebad0122973595cdede4497cd200e3090043
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: ac561be75306cab6b73b457a7d450bd640aac067
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524113"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818703"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -107,7 +107,7 @@ ms.locfileid: "39524113"
 - `"existingResourceGroups"`
 - `"omsWorkspace"`
 
-В правилах политики полученные параметры используются так:
+В правилах политики полученные параметры используются со следующим синтаксисом функции для значения развертывания `parameters`:
 
 ```json
 {
@@ -245,6 +245,53 @@ ms.locfileid: "39524113"
 Пример аудита наличия развернутого расширения для виртуальных машин приведен в разделе [Проверка наличия расширения](scripts/audit-ext-not-exist.md).
 
 Подробные сведения о каждом эффекте, порядке оценки и свойствах, а также примеры см. в статье [Действия политик](policy-effects.md).
+
+### <a name="policy-functions"></a>Функции политики
+
+В рамках правила политики можно использовать подмножество [функций шаблона Resource Manager](../azure-resource-manager/resource-group-template-functions.md). В настоящее время поддерживаются следующие функции:
+
+- [parameters](../azure-resource-manager/resource-group-template-functions-deployment.md#parameters)
+- [concat](../azure-resource-manager/resource-group-template-functions-array.md#concat)
+- [resourceGroup](../azure-resource-manager/resource-group-template-functions-resource.md#resourcegroup)
+- [subscription](../azure-resource-manager/resource-group-template-functions-resource.md#subscription)
+
+Кроме того, для правил политики доступна функция `field`. Эта функция предназначена главным образом для использования с **AuditIfNotExists** и **DeployIfNotExists**, чтобы ссылаться на поля в ресурсе, который оценивается. Это можно увидеть на примере [DeployIfNotExists](policy-effects.md#deployifnotexists-example).
+
+#### <a name="policy-function-examples"></a>Примеры функций политики
+
+В этом примере правила политики функция ресурса `resourceGroup` используется для получения свойства **name** в сочетании с массивом `concat` и функцией объекта для создания условия `like`, требующего, чтобы имя ресурса начиналось с имени группы ресурсов.
+
+```json
+{
+    "if": {
+        "not": {
+            "field": "name",
+            "like": "[concat(resourceGroup().name,'*')]"
+        }
+    },
+    "then": {
+        "effect": "deny"
+    }
+}
+```
+
+В этом примере правила политики функция ресурса `resourceGroup` используется, чтобы получить значение массива свойств **tags** в теге **CostCenter** в группе ресурсов и добавить его в тег **CostCenter** в новом ресурсе.
+
+```json
+{
+    "if": {
+        "field": "tags.CostCenter",
+        "exists": "false"
+    },
+    "then": {
+        "effect": "append",
+        "details": [{
+            "field": "tags.CostCenter",
+            "value": "[resourceGroup().tags.CostCenter]"
+        }]
+    }
+}
+```
 
 ## <a name="aliases"></a>Псевдонимы
 

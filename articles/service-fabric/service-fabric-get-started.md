@@ -12,14 +12,14 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/13/2018
+ms.date: 08/23/2018
 ms.author: ryanwi
-ms.openlocfilehash: 3d4005c38c4c0730da3effbdca0907597b32aed3
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 48e04d3bdd783d1dc04ac5cc77c4183ef5f87865
+ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617474"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42818445"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -77,20 +77,19 @@ ms.locfileid: "42617474"
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 ```
+## <a name="install-docker-optional"></a>Установка Docker (необязательно)
+[Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 
 * [Создание первого приложения Service Fabric в Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md)
 * [Информация о развертывании приложений в локальном кластере и управлении ими](service-fabric-get-started-with-a-local-cluster.md)
-* [Подготовка среды разработки Linux в Windows](service-fabric-local-linux-cluster-windows.md)
 * [Информация о моделях программирования: Reliable Services и Reliable Actors](service-fabric-choose-framework.md)
-* [Periodic backup and restore in Azure Service Fabric](service-fabric-backuprestoreservice-quickstart-azurecluster.md) (Периодическое резервное копирование и восстановление в Azure Service Fabric)
 * [Ознакомление с примерами кода Service Fabric на GitHub](https://aka.ms/servicefabricsamples)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
 * [Используйте схему обучения Service Fabric, чтобы получить общие сведения о платформе](https://azure.microsoft.com/documentation/learning-paths/service-fabric/)
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)
-* [Автоматизация установки исправлений ОС в кластере](service-fabric-patch-orchestration-application.md)
 
 [1]: http://azure.microsoft.com/campaigns/service-fabric/ "Страница кампании Service Fabric"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
