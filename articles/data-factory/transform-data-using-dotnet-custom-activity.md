@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/16/2018
+ms.date: 08/29/2018
 ms.author: douglasl
-ms.openlocfilehash: 2dab0adb0728a1fb5e8ac9bebe01f861ed8c7c3a
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: f4a88c5495fc3297699110d8a12a22ff7d6c2bbb
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37055507"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43144360"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -108,6 +108,10 @@ ms.locfileid: "37055507"
 | folderPath            | Путь к папке пользовательского приложения и всех его зависимостей. | Нет        |
 | referenceObjects      | Массив имеющихся связанных служб и наборов данных. Указанные связанные службы и наборы данных передаются в пользовательское приложение в формате JSON. Пользовательский код может использовать ресурсы фабрики данных. | Нет        |
 | extendedProperties    | Определенные пользователем свойства, которые могут быть переданы в пользовательское приложение в формате JSON. Пользовательский код может использовать дополнительные свойства. | Нет        |
+
+## <a name="custom-activity-permissions"></a>Разрешения настраиваемых действий
+
+Настраиваемые действия предоставляют автоматической учетной записи пользователя пакетной службы Azure возможность *доступа от имени стандартного пользователя с областью задачи* (спецификация автоматических пользователей по умолчанию). Уровень разрешений автоматической учетной записи пользователя изменить невозможно. Дополнительные сведения см. в разделе [Автоматические учетные записи пользователей](../batch/batch-user-accounts.md#auto-user-accounts) статьи "Выполнение задач с учетными записями пользователей в пакетной службе".
 
 ## <a name="executing-commands"></a>Выполнение команд
 

@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 08/16/2018
 ms.author: wolfma
-ms.openlocfilehash: 0900588f818855d72e415678338c96fb6505318d
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: bbf3c5930de2ec6c709b6b527ae3eac107382420
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41929904"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43047805"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -78,7 +78,7 @@ ms.locfileid: "41929904"
 
 * Исправлены неправильные возвращаемые значения в результате после истечения времени ожидания `RecognizeAsync()`.
 * Удалена зависимость от библиотек Media Foundation в Windows. Пакет SDK теперь использует интерфейсы API Core Audio.
-* Исправление документации: добавлена страница с описанием поддерживаемых регионов.
+* Исправление документации: добавлена страница с описанием поддерживаемых [регионов](regions.md).
 
 **Известные проблемы**
 

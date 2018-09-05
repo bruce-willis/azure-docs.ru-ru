@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: 468bd70682b1b36e906d32cd7bde58c78bdbb376
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 1aa1bd085a312e379dc996a860c7f97b2e0dfe73
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522005"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918882"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
@@ -26,7 +26,7 @@ ms.locfileid: "39522005"
 ### <a name="prerequisites"></a>Предварительные требования
 Чтобы зарегистрировать сервер в службе синхронизации хранилища, для него должны быть выполнены все предварительные требования.
 
-* Сервер должен работать под управлением поддерживаемой версии Windows Server. Дополнительные сведения см. в разделе [Поддерживаемые версии Windows Server](storage-sync-files-planning.md#supported-versions-of-windows-server).
+* Сервер должен работать под управлением поддерживаемой версии Windows Server. Дополнительные сведения см. в разделе [Системные требования к службе "Синхронизация файлов Azure" и ее возможности взаимодействия](storage-sync-files-planning.md#azure-file-sync-system-requirements-and-interoperability).
 * Убедитесь, что служба синхронизации хранилища развернута. Сведения о развертывании службы синхронизации хранилища см. [в этой статье](storage-sync-files-deployment-guide.md).
 * Убедитесь, что сервер подключен к Интернету и вы имеете доступ к Azure.
 * Отключите конфигурацию усиленной безопасности Internet Explorer для администраторов с помощью пользовательского интерфейса диспетчера сервера.

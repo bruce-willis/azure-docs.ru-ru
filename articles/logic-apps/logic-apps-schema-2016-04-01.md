@@ -1,26 +1,21 @@
 ---
 title: Обновления схемы от 1 июня 2016 г. Azure Logic Apps | Документация Майкрософт
-description: Создание определений JSON для Azure Logic Apps с версией схемы 2016-06-01
-author: jeffhollan
-manager: jeconnoc
-editor: ''
+description: Обновленная схема от 1 июня 2016 г. для определений приложений логики в Azure Logic Apps
 services: logic-apps
-documentationcenter: ''
-ms.assetid: 349d57e8-f62b-4ec6-a92f-a6e0242d6c0e
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: kevinlam1
+ms.author: klam
+ms.reviewer: estfan, LADocs
+ms.assetid: 349d57e8-f62b-4ec6-a92f-a6e0242d6c0e
 ms.topic: article
-ms.custom: H1Hack27Feb2017
 ms.date: 07/25/2016
-ms.author: LADocs; jehollan
-ms.openlocfilehash: 1cbb20a96f39ffa6f4c7375a38b3bf8046d0bd3a
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 43fd52dd04e679b9756c07e8c6e260323469026a
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299697"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126208"
 ---
 # <a name="schema-updates-for-azure-logic-apps---june-1-2016"></a>Обновления схемы для Azure Logic Apps от 1 июня 2016 г.
 

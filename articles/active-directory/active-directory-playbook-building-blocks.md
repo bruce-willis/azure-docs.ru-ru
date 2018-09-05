@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: 3ae2e883e3e27adc167b7e831ca53d3cd1572257
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 4618c8a0298afdac28e7511e9521cf1e26238734
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038687"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189044"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -480,7 +480,7 @@ ms.locfileid: "40038687"
 | Выполните вход по адресу https://portal.azure.com как глобальный администратор и запустите начальную загрузку колонки PIM. Глобальный администратор, выполнивший этот шаг, назначается администратором безопасности.  Назовем этот субъект GA1. | [Использование мастера защиты в Azure AD Privileged Identity Management](privileged-identity-management/pim-security-wizard.md) |
 | Определите глобального администратора и переведите его из постоянного в соответствующий. Для наглядности этот администратор должен отличаться от использованного в шаге 1. Назовем этот субъект GA2. | [Управление привилегированными пользователями Azure AD: добавление и удаление роли пользователя](privileged-identity-management/pim-how-to-add-role-to-user.md)<br/>[Что такое Azure AD Privileged Identity Management? Настройка параметров активации ролей](privileged-identity-management/pim-configure.md#configure-the-role-activation-settings)  |
 | Теперь войдите как GA2 по адресу https://portal.azure.com и попробуйте изменить "Параметры пользователя". Обратите внимание, что некоторые параметры будут недоступны. | |
-| На новой вкладке в том же сеансе, что и в шаге 3, перейдите по адресу https://portal.azure.com и добавьте колонку PIM на панель мониторинга. | [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD: добавление приложения для управления привилегированными пользователями](privileged-identity-management/pim-how-to-activate-role.md#add-the-privileged-identity-management-application) |
+| На новой вкладке в том же сеансе, что и в шаге 3, перейдите по адресу https://portal.azure.com и добавьте колонку PIM на панель мониторинга. | [Начало работы с PIM](privileged-identity-management/pim-getting-started.md) |
 | Запросите активацию для роли глобального администратора. | [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD: активация роли](privileged-identity-management/pim-how-to-activate-role.md#activate-a-role) |
 | Обратите внимание, что если GA2 никогда не регистрировался для Многофакторной идентификации, потребуется выполнить такую регистрацию. |  |
 | Вернитесь на исходную вкладку в шаге 3 и нажмите кнопку обновления в браузере. Обратите внимание, что теперь вы можете изменять "Параметры пользователя". | |

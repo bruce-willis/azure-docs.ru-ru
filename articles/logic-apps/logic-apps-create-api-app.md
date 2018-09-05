@@ -1,28 +1,23 @@
 ---
 title: Создание интерфейсов веб-API и REST API для Azure Logic Apps | Документация Майкрософт
-description: Создание интерфейсов веб-API и REST API для вызова API, служб или систем из рабочих процессов приложения логики для интеграции систем
-keywords: интерфейсы веб-API, REST API, рабочие процессы, интеграция систем
+description: Создание интерфейсов веб-API и REST API для вызова API, служб или систем для интеграции систем в Azure Logic Apps.
 services: logic-apps
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: bd229179-7199-4aab-bae0-1baf072c7659
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, jehollan, LADocs
 ms.topic: article
-ms.date: 5/26/2017
-ms.author: LADocs; jehollan
-ms.openlocfilehash: 748070d43c34b501af3455d03429be1f44178b7f
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.assetid: bd229179-7199-4aab-bae0-1baf072c7659
+ms.date: 05/26/2017
+ms.openlocfilehash: a761e384a356a0cbf5531eee7340ddbbd1526909
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39172023"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122252"
 ---
-# <a name="create-custom-apis-that-you-can-call-from-logic-app-workflows"></a>Создание пользовательских API, которые можно вызывать из рабочих процессов приложения логики
+# <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
 Azure Logic Apps предоставляет [более 100 встроенных соединителей](../connectors/apis-list.md) для рабочих процессов приложений логики. Но вам может потребоваться вызвать интерфейсы API, системы и службы, недоступные в качестве соединителей. Вы можете создавать собственные API с действиями и триггерами для использования в приложениях логики. Ниже приведены другие причины создания собственных интерфейсов API, которые можно вызывать из рабочих процессов приложения логики.
 

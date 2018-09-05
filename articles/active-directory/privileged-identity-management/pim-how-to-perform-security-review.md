@@ -1,6 +1,6 @@
 ---
-title: Выполнение проверки доступа | Документация Майкрософт
-description: Сведения о выполнении проверки с помощью приложения для управления привилегированными пользователями Azure.
+title: Проверка доступа ролей каталога Azure AD в PIM | Документация Майкрософт
+description: Узнайте, как выполнить проверку доступа ролей каталога Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.component: pim
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 2c1cdecb0ce47e72550f430d2b87b3e6cc4eb176
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: b4cffbd1ce240e4792fba84581dafb1933c71a62
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39623040"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188557"
 ---
-# <a name="how-to-perform-an-access-review-in-azure-ad-privileged-identity-management"></a>Как выполнить проверку доступа в управлении привилегированными пользователями Azure AD
+# <a name="perform-an-access-review-of-my-azure-ad-directory-roles-in-pim"></a>Проверка доступа ролей каталога Azure AD в PIM
 Компонент Azure Active Directory (AD) Privileged Identity Management упрощает управление привилегированным доступом пользователей к ресурсам в Azure AD и других веб-службах Майкрософт, включая Office 365 и Microsoft Intune.  
 
 Если вам назначена роль администратора, администратор привилегированных ролей вашей организации может попросить вас регулярно подтверждать, что эта роль по-прежнему требуется вам для работы. Вы можете получить сообщение электронной почты, содержащее ссылку для подтверждения, или перейти непосредственно на [портал Azure](https://portal.azure.com). Следуйте указаниям в этой статье, чтобы выполнить самостоятельную проверку назначенных вам ролей.
@@ -47,4 +47,5 @@ ms.locfileid: "39623040"
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дополнительная информация
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]
+
+- [Выполнение проверки доступа своих ролей ресурсов Azure в PIM](pim-resource-roles-perform-access-review.md)

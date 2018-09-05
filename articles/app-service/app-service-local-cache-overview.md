@@ -16,17 +16,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/04/2016
 ms.author: cephalin
-ms.openlocfilehash: 59fe70e4d2a710160751ab8e7a83c9f86310dc24
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 4959e4e3a0692837a7775eaf813a8fcff925312d
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39597736"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918022"
 ---
 # <a name="azure-app-service-local-cache-overview"></a>Общие сведения о локальном кэше службы приложений Azure
 
 > [!NOTE]
-> Локальный кэш не поддерживается в контейнерных приложениях службы приложений, например в [службе приложений в Linux](containers/app-service-linux-intro.md).
+> Локальный кэш не поддерживается в приложениях-функциях и контейнерных приложениях службы приложений, например в [службе приложений в Linux](containers/app-service-linux-intro.md).
+
 
 Содержимое веб-приложения Azure хранится в службе хранилища Azure; оно доступно в долгосрочном режиме в общей папке содержимого. Эта схема рассчитана на работу с различными приложениями и имеет следующие атрибуты:  
 
@@ -55,7 +56,7 @@ ms.locfileid: "39597736"
 ## <a name="enable-local-cache-in-app-service"></a>Включение локального кэша в службе приложений
 Локальный кэш настраивается с помощью нескольких зарезервированных параметров приложения. Эти параметры приложения можно настроить следующими способами.
 
-* [портал Azure](#Configure-Local-Cache-Portal)
+* [портала Azure](#Configure-Local-Cache-Portal)
 * [Диспетчер ресурсов Azure](#Configure-Local-Cache-ARM)
 
 ### <a name="configure-local-cache-by-using-the-azure-portal"></a>Настройка локального кэша на портале Azure

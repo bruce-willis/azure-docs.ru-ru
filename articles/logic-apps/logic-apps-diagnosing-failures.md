@@ -1,27 +1,23 @@
 ---
 title: Диагностика и устранение сбоев в Azure Logic Apps | Документация Майкрософт
-description: Описывается, как и почему происходят сбои приложений логики.
+description: Сведения о том, как диагностировать и устранять сбои рабочих процессов в Azure Logic Apps.
 services: logic-apps
-documentationcenter: ''
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-ms.assetid: a6727ebd-39bd-4298-9e68-2ae98738576e
 ms.service: logic-apps
-ms.devlang: ''
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, jehollan, LADocs
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: logic-apps
+ms.assetid: a6727ebd-39bd-4298-9e68-2ae98738576e
 ms.date: 10/15/2017
-ms.author: LADocs; jehollan
-ms.openlocfilehash: b0bf6cd747860d938f80787d9bef6634a6a22d09
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 994e7945a7107815029bd415f4cc0d45bb68e335
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441538"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123693"
 ---
-# <a name="troubleshoot-and-diagnose-logic-app-failures"></a>Диагностика и устранение сбоев приложений логики
+# <a name="troubleshoot-and-diagnose-workflow-failures-in-azure-logic-apps"></a>Диагностика и устранение сбоев рабочих процессов в Azure Logic Apps
 
 Приложение логики создает сведения, которые помогут вам диагностировать и отладить проблемы в приложении. Произвести диагностику приложения логики можно, просмотрев каждый шаг в рабочем процессе на портале Azure. Или можно добавить определенные шаги в рабочий процесс для отладки во время выполнения.
 

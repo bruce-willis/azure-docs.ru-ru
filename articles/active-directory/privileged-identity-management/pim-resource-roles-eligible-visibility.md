@@ -1,6 +1,6 @@
 ---
-title: Допустимые назначения и видимость ресурсов для Azure в службе управления привилегированными пользователями | Документация Майкрософт
-description: Процедура назначения допустимых членов для ролей ресурса при использовании управления привилегированными пользователями.
+title: Допустимые назначения и видимость ресурсов в Azure PIM | Документация Майкрософт
+description: Узнайте, как назначать участников как допустимых для ролей ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 336453c1ef6ef8d0295d00f31afc6a5e7e42e8b6
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 3551c3231a94f8a844d26a713cbf171ca7653815
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621554"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189220"
 ---
-# <a name="eligible-assignments-and-resource-visibility-with-privileged-identity-management"></a>Допустимые назначения и видимость ресурсов при использовании управления привилегированными пользователями
+# <a name="eligible-assignments-and-resource-visibility-in-pim"></a>Допустимые назначения и видимость ресурсов в PIM
 
 Управление привилегированными пользователями (PIM) для ролей ресурсов Azure предоставляет расширенное управление безопасностью для организаций с критически важными ресурсами Azure. Администраторы ресурсов могут использовать PIM для назначения допустимых членов для ролей ресурса. Дополнительные сведения о типах и состояниях назначений для ролей ресурсов Azure представлены в следующих разделах. 
 
@@ -70,4 +70,4 @@ ms.locfileid: "39621554"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Assign roles for Azure resources by using Privileged Identity Management](pim-resource-roles-assign-roles.md) (Назначение ролей для ресурсов Azure с помощью управления привилегированными пользователями)
+- [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)

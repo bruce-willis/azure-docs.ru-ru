@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2018
 ms.author: spelluru
-ms.openlocfilehash: a6f6beedfc6c23be70693428388f6d0e585260bc
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 143d0d4b66fc8e6e62364090e3d3187c4aa7bb51
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433176"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42919012"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager
 
@@ -37,10 +37,11 @@ ms.locfileid: "39433176"
 > [!NOTE]
 > Если вы используете шаблон Resource Manager в качестве основы для создания дополнительных лабораторных виртуальных машин, то следует помнить, что существуют некоторые различия при создании нескольких виртуальных машин и одной виртуальной машины. В руководстве по [использованию шаблона Azure Resource Manager для виртуальной машины](devtest-lab-use-resource-manager-template.md) эти различия описываются более подробно.
 >
->
 
-## <a name="configure-azure-resource-manager-template-repositories"></a>Настройка репозиториев шаблонов Azure Resource Manager
+## <a name="devtest-labs-public-environments"></a>Общедоступные среды DevTest Labs
+Azure DevTest Labs имеет [общедоступный репозиторий шаблонов Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/Environments), который можно использовать, чтобы создавать среды без необходимости самостоятельно подключаться к внешнему источнику GitHub. В этом репозитории содержатся часто используемые шаблоны, такие как веб-приложения Azure, кластер Service Fabric и среда фермы SharePoint для разработки. Этот компонент похож на общедоступный репозиторий артефактов, включенный для каждой лаборатории, которую вы создаете. Репозиторий среды позволяет быстро приступить к работе с помощью предварительно созданных шаблонов с минимальным количеством входных параметров, чтобы вы могли быстро приступить к работе с ресурсами PaaS в лаборатории. Дополнительные сведения см. в статье [Настройка и использование общедоступных сред в Azure DevTest Labs](devtest-lab-configure-use-public-environments.md).
 
+## <a name="configure-your-own-template-repositories"></a>Настройка собственных репозиториев шаблонов
 При использования подходов "инфраструктура как код" и "конфигурация как код" управлять шаблонами среды рекомендуется в системе управления версиями. Служба Azure DevTest Labs следует этой рекомендации и загружает все шаблоны Azure Resource Manager непосредственно из репозиториев GitHub или VSTS Git. В результате шаблоны Resource Manager можно использовать в ходе всего цикла выпуска — от тестовой до рабочей среды.
 
 Изучите шаблоны, созданные командой DevTest Labs, в [общедоступном репозитории GitHub](https://github.com/Azure/azure-devtestlab/tree/master/Environments). В общедоступном репозитории можно просматривать шаблоны, к которым пользователи предоставили общий доступ и которые можно использовать напрямую или настроить в соответствии со своими потребностями. После создания шаблона сохраните его в этот репозиторий, чтобы поделиться с другими. Также можно настроить собственный репозиторий Git с помощью шаблонов, которые используются для настройки сред в облаке. 
@@ -56,12 +57,9 @@ ms.locfileid: "39433176"
 - Можно определить метаданные, чтобы указать отображаемое имя и описание шаблона. Эти метаданные должны находиться в файле с именем `metadata.json`. В следующем примере файла метаданных показано, как указать отображаемое имя и описание: 
 
     ```json
-    {
- 
-        "itemDisplayName": "<your template name>",
- 
-        "description": "<description of the template>"
- 
+    { 
+        "itemDisplayName": "<your template name>", 
+        "description": "<description of the template>" 
     }
     ```
 

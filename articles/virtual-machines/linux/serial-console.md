@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/07/2018
 ms.author: harijay
-ms.openlocfilehash: 20bd2d61671d89a5c2a13525ea119595cf0b7c93
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: d4ca44268740f48702594d9c87aa568d4f8eecb6
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246641"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122411"
 ---
 # <a name="virtual-machine-serial-console-preview"></a>Последовательная консоль виртуальной машины (предварительная версия) 
 
@@ -35,12 +35,20 @@ ms.locfileid: "40246641"
 ## <a name="prerequisites"></a>Предварительные требования 
 
 * Требуется использовать модель развертывания управления ресурсами. Классические развертывания не поддерживаются. 
-* На виртуальной машине ДОЛЖНА быть включена [диагностика загрузки](boot-diagnostics.md). 
-* Учетной записи, использующей последовательную консоль, должна быть присвоена [роль участника](../../role-based-access-control/built-in-roles.md) для виртуальной машины и учетная запись хранения [диагностики загрузки](boot-diagnostics.md). 
+* На виртуальной машине необходимо включить [диагностику загрузки](boot-diagnostics.md) (см. снимок экрана ниже).
+
+    ![](../media/virtual-machines-serial-console/virtual-machine-serial-console-diagnostics-settings.png)
+    
+* Учетной записи Azure, использующей последовательную консоль, необходимо присвоить [роль участника](../../role-based-access-control/built-in-roles.md) для виртуальной машины и учетной записи хранения [диагностики загрузки](boot-diagnostics.md). 
+* Виртуальная машина, для которой вы входите в последовательную консоль, также должна иметь учетную запись с использованием пароля. Вы можете создать ее с функцией [сброса пароля](https://docs.microsoft.com/azure/virtual-machines/extensions/vmaccess#reset-password) расширения для доступа к виртуальной машине (см. снимок экрана ниже).
+
+    ![](../media/virtual-machines-serial-console/virtual-machine-serial-console-reset-password.png)
+
 * Сведения о параметрах, относящихся к дистрибутиву Linux, см. в разделе [Доступ к последовательной консоли для Linux](#access-serial-console-for-linux).
 
 
-## <a name="open-the-serial-console"></a>Открытие последовательной консоли
+
+## <a name="get-started-with-serial-console"></a>Начало работы с последовательной консолью
 Получить доступ к последовательной консоли для виртуальной машины можно только на [портале Azure](https://portal.azure.com). Ниже приведены шаги для получения доступа к последовательной консоли для виртуальных машин на портале. 
 
   1. Откройте портал Azure.
@@ -65,7 +73,7 @@ ms.locfileid: "40246641"
 Кроме того, можно использовать набор команд в Cloud Shell (команды bash показаны ниже), чтобы отключить, включить и просмотреть отключенное состояние последовательной консоли для подписки. 
 
 * Чтобы получить отключенное состояние последовательной консоли для подписки:
-    ```
+    ```azurecli-interactive
     $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
 
     $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
@@ -73,7 +81,7 @@ ms.locfileid: "40246641"
     $ curl "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s | jq .properties
     ```
 * Чтобы отключить последовательную консоль для подписки:
-    ```
+    ```azurecli-interactive
     $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
 
     $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
@@ -81,7 +89,7 @@ ms.locfileid: "40246641"
     $ curl -X POST "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default/disableConsole?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s -H "Content-Length: 0"
     ```
 * Чтобы включить последовательную консоль для подписки:
-    ```
+    ```azurecli-interactive
     $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
 
     $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
@@ -139,7 +147,7 @@ Oracle Linux        | В образах Oracle Linux, доступных в Azur
 Пользовательские образы Linux     | Чтобы включить последовательную консоль для настраиваемого образа виртуальной машины Linux, включите доступ к консоли в /etc/inittab для запуска терминала на ttyS0. Здесь приведен пример добавления нужного кода в файл inittab: `S0:12345:respawn:/sbin/agetty -L 115200 console vt102`. Дополнительные сведения о правильном создании пользовательских образов см. в [этой статье](https://aka.ms/createuploadvhd).
 
 ## <a name="errors"></a>Errors
-Большинство ошибок носят временный характер, и повторное подключение к последовательной консоли часто устраняет их. В таблице ниже приведен список ошибок и способы устранения неисправностей. 
+Большинство ошибок носят временный характер, и повторное подключение к последовательной консоли часто устраняет их. В таблице ниже приведен список ошибок и способы устранения неисправностей.
 
 Ошибка                            |   Устранение 
 :---------------------------------|:--------------------------------------------|
@@ -154,7 +162,7 @@ Oracle Linux        | В образах Oracle Linux, доступных в Azur
 Проблема                           |   Устранение 
 :---------------------------------|:--------------------------------------------|
 Невозможно получить доступ к последовательной консоли экземпляра масштабируемого набора виртуальных машин |  На этапе предварительной версии доступ к последовательной консоли для экземпляров масштабируемого набора виртуальных машин не поддерживается.
-Нажатие клавиши ВВОД после заголовка соединения не отображает запрос на вход | [Нажатие клавиши ВВОД не приводит ни к каким результатам](https://github.com/Microsoft/azserialconsole/blob/master/Known_Issues/Hitting_enter_does_nothing.md)
+Нажатие клавиши ВВОД после заголовка соединения не отображает запрос на вход | Дополнительные сведения см. на странице, где описывается случай, когда [нажатие клавиши ВВОД не приводит ни к каким результатам](https://github.com/Microsoft/azserialconsole/blob/master/Known_Issues/Hitting_enter_does_nothing.md). Это может произойти, если вы используете пользовательскую виртуальную машину, защищенное устройство или конфигурацию GRUB, из-за чего операционная система Linux не может правильно подключиться к последовательному порту.
 При доступе к учетной записи хранения для диагностики загрузки виртуальной машины обнаружен ответ "Запрещено". | Убедитесь, что в системе диагностики загрузки нет брандмауэра учетной записи. Для функционирования последовательной консоли требуется доступная учетная запись хранения для диагностики загрузки.
 
 

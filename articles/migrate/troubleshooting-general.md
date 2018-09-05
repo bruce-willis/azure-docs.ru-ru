@@ -4,14 +4,14 @@ description: Эта статья содержит обзор известных 
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 06/19/2018
+ms.date: 08/25/2018
 ms.author: raynew
-ms.openlocfilehash: 896e918f6031f3bc6b925a2ecdfa2a5c82f00e0b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ca34f27e1d22c6235ec0d6b965d49ec5266f17f6
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228260"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126370"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -50,6 +50,10 @@ ms.locfileid: "36228260"
 --- | ---
 *.portal.azure.com | Требуется для проверки подключения к службе Azure и проверки с синхронизацией времени.
 *.oneget.org | Необходимо скачать модуль PowerCLI vCenter на основе PowerShell.
+
+**Сборщик не может подключиться к Интернету из-за ошибки при проверке сертификата**
+
+Это может произойти, если вы подключаетесь к Интернету через перехватывающий прокси-сервер и если вы не импортировали сертификат прокси-сервера на виртуальную машину сборщика. Сертификат прокси-сервера можно импортировать с помощью действий, описанных [здесь](https://docs.microsoft.com/azure/migrate/concepts-collector#internet-connectivity).
 
 **Сборщику не удается подключиться к проекту, используя идентификатор и ключ проекта, скопированные на портале.**
 

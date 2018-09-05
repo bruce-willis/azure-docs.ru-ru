@@ -1,27 +1,23 @@
 ---
 title: Создание, редактирование и расширение JSON для определений в Azure Logic Apps | Документация Майкрософт
-description: Создание и настройка определений в формате JSON для приложений логики
-author: ecfan
-manager: jeconnoc
-editor: ''
+description: Создание и расширение JSON для определений приложений логики в Azure Logic Apps.
 services: logic-apps
-documentationcenter: ''
-ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, jehollan, LADocs
+ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 01/01/2018
-ms.author: estfan; LADocs
-ms.openlocfilehash: 9793fdf2bd351bd1f15bcb88ffd25d6b19485303
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 1f2e136810194ad044255f9d129b5c03549221b9
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297858"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128666"
 ---
-# <a name="create-edit-or-customize-json-for-logic-app-definitions"></a>Создание, редактирование и настройка JSON для определений в приложениях логики
+# <a name="create-edit-or-extend-json-for-logic-app-definitions-in-azure-logic-apps"></a>Создание, редактирование и расширение JSON для определений приложений логики в Azure Logic Apps
 
 При создании корпоративных решений по интеграции с автоматизированными рабочими процессами на основе [Azure Logic Apps](../logic-apps/logic-apps-overview.md) для описания и проверки определений используется простой декларативный язык JSON (JavaScript Object Notation) и [схема WDL (языка определения рабочего процесса)](../logic-apps/logic-apps-workflow-definition-language.md). Эти форматы позволяют легко читать и понимать определения приложений логики даже без глубоких знаний о программировании. Если вы хотите автоматизировать создание и развертывание приложений логики, включите определения приложений логики в [шаблоны Azure Resource Manager](../azure-resource-manager/resource-group-overview.md#template-deployment) в качестве [ресурсов Azure](../azure-resource-manager/resource-group-overview.md). Тогда вы сможете создавать приложения логики, управлять ими и развертывать их с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp), [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md) или [интерфейсов API REST для Azure Logic Apps](https://docs.microsoft.com/rest/api/logic/).
 

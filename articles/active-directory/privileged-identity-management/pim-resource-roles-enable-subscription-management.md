@@ -1,6 +1,6 @@
 ---
-title: Управление привилегированными пользователями для ресурсов Azure — включение управления подписками | Документация Майкрософт
-description: Сведения о том, как глобальные администраторы могут управлять подписками в клиенте.
+title: Включение управления подписками в клиенте Azure | Документация Майкрософт
+description: Сведения о включении управления подписками в клиенте при использовании Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,12 +14,12 @@ ms.component: pim
 ms.date: 03/27/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: d7a9c0090d3bfaaf1161b6255c4c0b659c77d692
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 89bb6fd48c58b7672b7a2251a172cc169093d368
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39620286"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190001"
 ---
 # <a name="enable-subscription-management-in-your-tenant"></a>Включение управления подписками в клиенте
 
@@ -79,14 +79,5 @@ ms.locfileid: "39620286"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Обнаружение ресурсов](pim-resource-roles-discover-resources.md)
-
-[Настройка параметров роли](pim-resource-roles-configure-role-settings.md)
-
-
-
-
-
-
-
-
+- [Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями](pim-resource-roles-discover-resources.md)
+- [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)

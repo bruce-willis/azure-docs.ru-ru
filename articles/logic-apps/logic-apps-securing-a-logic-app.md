@@ -1,35 +1,31 @@
 ---
 title: Безопасный доступ в Azure Logic Apps | Документация Майкрософт
-description: Узнайте, как повысить уровень безопасности для защиты доступа к триггерам, входным и выходным данным, параметрам действий и службам, используемым с рабочими процессами в Azure Logic Apps.
+description: Защита доступа к триггерам, входным и выходным данным, параметрам действий и службам в рабочих процессах Azure Logic Apps.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-ms.assetid: 9fab1050-cfbc-4a8b-b1b3-5531bee92856
 ms.service: logic-apps
-ms.devlang: multiple
+ms.suite: integration
+author: kevinlam1
+ms.author: klam
+ms.reviewer: estfan, LADocs
+ms.assetid: 9fab1050-cfbc-4a8b-b1b3-5531bee92856
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
 ms.date: 11/22/2016
-ms.author: LADocs; jehollan
-ms.openlocfilehash: 2052e58dab7241836409fb013778f9702004021c
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: fc4fdff5080e6ebe13850157e8d560a1d31e7719
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299915"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127485"
 ---
-# <a name="secure-access-to-your-logic-apps"></a>Безопасный доступ к приложениям логики
+# <a name="secure-access-in-azure-logic-apps"></a>Безопасный доступ к Azure Logic Apps
 
-Существует множество средств для защиты приложения логики.
+Здесь предоставлены способы безопасного доступа к различным компонентам в приложении логики:
 
-* Защита доступа к активации приложения логики (триггер HTTP-запросов).
-* Защита доступа к управлению приложением логики, а также изменению или считыванию его.
-* Защита доступа к содержимому входных и выходных данных для выполнения.
-* Обеспечение безопасности параметров или входных данных в рамках действий в рабочем процессе.
-* Защита доступа к службам, которые получают запросы от рабочего процесса.
+* Безопасный доступ для активации рабочего процесса приложения логики с помощью триггера HTTP-запроса.
+* Безопасный доступ для редактирования и чтения приложения логики или управления им.
+* Безопасный доступ к содержимому внутри входных и выходных данных для запуска приложения логики.
+* Защита параметров или входных данных для действий в рабочем процессе приложения логики.
+* Безопасный доступ к службам, которые получают запросы от рабочего процесса приложения логики.
 
 ## <a name="secure-access-to-trigger"></a>Защита доступа к активации
 

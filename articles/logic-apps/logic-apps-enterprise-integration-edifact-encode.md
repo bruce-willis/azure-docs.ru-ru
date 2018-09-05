@@ -1,27 +1,23 @@
 ---
 title: Кодирование сообщений EDIFACT в Azure Logic Apps | Документация Майкрософт
-description: Проверка EDI и создание XML-сообщений с помощью кодировщика сообщений EDIFACT в пакете интеграции Enterprise для Azure Logic Apps
+description: Проверка EDI и создание XML-сообщений с помощью кодировщика сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: padmavc
-manager: jeconnoc
-editor: ''
-ms.assetid: 974ac339-d97a-4715-bc92-62d02281e900
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: 974ac339-d97a-4715-bc92-62d02281e900
 ms.date: 01/27/2017
-ms.author: LADocs; padmavc
-ms.openlocfilehash: eaad2561254d858af99f06e576d67c05838e1220
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e1c990030a9fa9ad25950ccb24b36b82a8c69f5c
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299898"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122359"
 ---
-# <a name="encode-edifact-messages-for-azure-logic-apps-with-the-enterprise-integration-pack"></a>Кодирование сообщений EDIFACT для Azure Logic Apps с помощью пакета интеграции Enterprise
+# <a name="encode-edifact-messages-for-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений EDIFACT для Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 С помощью соединителя для кодирования сообщений EDIFACT вы можете проверить EDI и свойства для конкретного партнера, создать XML-документ для каждого набора транзакций и запросить техническое и (или) функциональное подтверждение.
 Чтобы использовать этот соединитель, добавьте его в существующий триггер в приложении логики.

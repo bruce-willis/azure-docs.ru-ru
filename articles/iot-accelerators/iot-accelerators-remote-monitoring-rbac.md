@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8886c08e88c1dd46d2b325b9ba8e9e0b8ae104f9
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 956cb80ddbf96f23585dd52f3dc1013c7a665113
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40007697"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42886316"
 ---
 # <a name="configure-role-based-access-controls-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решений для удаленного мониторинга
 
@@ -51,7 +51,7 @@ ms.locfileid: "40007697"
 
 1. Проверьте, [находится ли пользователь в используемом каталоге](../active-directory/fundamentals/add-users-azure-active-directory.md). Нужный каталог выбирается при входе на сайт [Акселераторы решений Интернета вещей Microsoft Azure](https://www.azureiotsolutions.com/Accelerators). Имя каталога отображается в верхнем правом углу [страницы](https://www.azureiotsolutions.com/Accelerators).
 
-1. Найдите **корпоративное приложение** для своего решения на портале Azure. В качестве имени приложения используется имя вашего решения удаленного мониторинга. На следующем снимке экрана в качестве имен решения и приложения указано **contoso-rm4**.
+1. Найдите **корпоративное приложение** для своего решения на портале Azure. Затем отфильтруйте список, задав для параметра **Тип приложения** значение **Все приложения**. Выполните поиск приложения по его имени. В качестве имени приложения используется имя вашего решения удаленного мониторинга. На следующем снимке экрана в качестве имен решения и приложения указано **contoso-rm4**.
 
     ![Корпоративное приложение](media/iot-accelerators-remote-monitoring-rbac/appregistration.png)
 

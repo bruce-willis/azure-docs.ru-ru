@@ -1,28 +1,23 @@
 ---
-title: Работа с сообщениями XML в рабочих процессах с помощью Azure Logic Apps | Документация Майкрософт
-description: Обработка, проверка, преобразование и обогащение сообщений XML в приложениях логики и сценариях B2B с помощью Пакета интеграции Enterprise.
+title: XML-сообщения для интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
+description: Обработка, проверка, преобразование и добавление возможностей XML-сообщений для решений B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: divyaswarnkar
-manager: jeconnoc
-editor: ''
-ms.assetid: 47672dc4-1caa-44e5-b8cb-68ec3a76b7dc
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.custom: H1Hack27Feb2017
+ms.assetid: 47672dc4-1caa-44e5-b8cb-68ec3a76b7dc
 ms.date: 02/27/2017
-ms.author: LADocs; divswa
-ms.openlocfilehash: 85bdaff5cb88bbadaed778458b66c0cce7bce9de
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 5f804bf656b423d6dbe8f5c2ed73ba54d8361000
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298980"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124541"
 ---
-# <a name="validate-and-transform-xml-encode-and-decode-flat-files-and-enrich-messages-features-in-logic-apps"></a>Проверка и преобразование XML, кодирование и декодирование неструктурированных файлов и обогащение сообщений в приложениях логики
+# <a name="xml-messages-and-flat-files-in-azure-logic-apps-with-enterprise-integration-pack"></a>XML-сообщения и неструктурированные файлы в Azure Logic Apps с Пакетом интеграции Enterprise
 
 С помощью приложений логики можно обрабатывать отправляемые и получаемые сообщения XML. Эта функция в состав Пакета интеграции Enterprise. Для пользователей, работавших с BizTalk Server, Пакет интеграции Enterprise обеспечит аналогичные возможности по преобразованию и проверке сообщений, работе с неструктурированными файлами и даже использованию XPath для обогащения сообщений или извлечения из них свойств. 
 

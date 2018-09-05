@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/22/2018
+ms.date: 08/24/2018
 ms.author: jingwang
-ms.openlocfilehash: a27d90006d31c83b5ebe6cfc4a8d97969743a91e
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 5afb2fccd5c7b8ca306079941837d854c0b21349
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37049864"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43091723"
 ---
 # <a name="copy-data-from-http-endpoint-using-azure-data-factory"></a>Копирование данных из источника HTTP с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -169,6 +169,9 @@ ms.locfileid: "37049864"
 | requestBody | Текст HTTP-запроса. | Нет  |
 | свойства | Если требуется **получить данные из конечной точки HTTP "как есть"**, — без анализа и копирования в хранилище файлов — можно пропустить раздел форматирования в определениях входного и выходного наборов данных.<br/><br/>Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [формате Json](supported-file-formats-and-compression-codecs.md#json-format), [текстовом формате](supported-file-formats-and-compression-codecs.md#text-format), [формате Avro](supported-file-formats-and-compression-codecs.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs.md#orc-format) и [ формате Parquet](supported-file-formats-and-compression-codecs.md#parquet-format). |Нет  |
 | compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs.md#compression-support).<br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни: **Optimal** и **Fastest**. |Нет  |
+
+>[!NOTE]
+>Поддерживаемый размер полезных данных запроса HTTP — около 500 КБ. Если размер полезных данных, которые вы хотите передать в конечную веб-точку, превышает этот размер, разбейте данные на небольшие блоки.
 
 **Пример 1. Использование метода Get (по умолчанию)**
 

@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по производительности для SQL Server в Azure | Документы Майкрософт
+title: Рекомендации по оптимизации производительности SQL Server в Azure | Документация Майкрософт
 description: Содержит рекомендации по оптимизации производительности SQL Server в виртуальных машинах Microsoft Azure.
 services: virtual-machines-windows
 documentationcenter: na
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 04/19/2018
+ms.date: 08/24/2018
 ms.author: jroth
-ms.openlocfilehash: a7a24bde6cc34befee7de3bcbf13b96c8b641af2
-ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
+ms.openlocfilehash: 3a61c20b922b60e3135d9f9e53928462887a602e
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37888914"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42886191"
 ---
-# <a name="performance-best-practices-for-sql-server-in-azure-virtual-machines"></a>Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure
+# <a name="performance-guidelines-for-sql-server-in-azure-virtual-machines"></a>Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure
 
 ## <a name="overview"></a>Обзор
 

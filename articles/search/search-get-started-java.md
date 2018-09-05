@@ -6,14 +6,14 @@ author: jj09
 manager: jlembicz
 ms.service: search
 ms.topic: conceptual
-ms.date: 07/14/2016
+ms.date: 08/26/2018
 ms.author: jjed
-ms.openlocfilehash: 2f52ed0ab302d1c3dad699258287f6edd7197cef
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 6fed5a8afe6030038752d540bfabbc446c57db2c
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39525626"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124157"
 ---
 # <a name="get-started-with-azure-search-in-java"></a>Начало работы с Поиском Azure в Java
 > [!div class="op_single_selector"]
@@ -28,9 +28,9 @@ ms.locfileid: "39525626"
 
 При создании и проверке этого примера мы использовали следующее программное обеспечение:
 
-* [Интегрированная среда разработки Eclipse для разработчиков Java EE](https://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunar). Обязательно загрузите версию EE. На одном из этапов проверки требуется функция, доступная только в этом выпуске.
-* [JDK 8u40](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* [Apache Tomcat 8.0](http://tomcat.apache.org/download-80.cgi)
+* [Интегрированная среда разработки Eclipse для разработчиков Java EE](https://www.eclipse.org/downloads/packages/release/photon/r/eclipse-ide-java-ee-developers). Обязательно загрузите версию EE. На одном из этапов проверки требуется функция, доступная только в этом выпуске.
+* [JDK 8u181](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+* [Apache Tomcat 8.5.33](https://tomcat.apache.org/download-80.cgi#8.5.33).
 
 ## <a name="about-the-data"></a>О данных
 В этом примере приложения используются данные [Геологической службы США (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), отфильтрованные по штату Род-Айленд для сокращения размера набора данных. Мы будем использовать эти данные при создании приложения поиска, возвращающего важные здания, такие как больницы и школы, а также геологические объекты, например реки, озера и вершины.
@@ -51,7 +51,7 @@ ms.locfileid: "39525626"
 * SearchServiceHelper.java: вспомогательный класс, предоставляющий статические методы
 * Document.java: предоставляет модель данных
 * config.properties: устанавливает URL-адрес и ключ API службы поиска
-* Pom.xml: зависимость Maven
+* pom.xml: зависимость Maven.
 
 <a id="sub-2"></a>
 

@@ -1,28 +1,24 @@
 ---
-title: Преобразование данных XML с помощью преобразований в Azure Logic Apps | Документация Майкрософт
-description: Создание преобразования или сопоставления для преобразования данных XML в разные форматы в приложениях логики с помощью пакета SDK для интеграции Enterprise
+title: Преобразование XML из одного формата в другой с помощью Azure Logic Apps | Документация Майкрософт
+description: Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: msftman
-manager: jeconnoc
-editor: cgronlun
-ms.assetid: add01429-21bc-4bab-8b23-bc76ba7d0bde
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: add01429-21bc-4bab-8b23-bc76ba7d0bde
 ms.date: 07/08/2016
-ms.author: LADocs; padmavc
-ms.openlocfilehash: 1621843d58954aa05a572f43fdab0fb16097332e
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 9dd471f70407191734b4c5a3aa84d5365a7beab8
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299459"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125301"
 ---
-# <a name="enterprise-integration-with-xml-transforms"></a>Интеграция Enterprise с преобразованием данных XML
-## <a name="overview"></a>Обзор
+# <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
+
 В интеграции Enterprise используются соединитель преобразования, который позволяет преобразовывать данные из одного формата в другой. Например, вы получили входящее сообщение, содержащее текущую дату в формате "ГодМесяцДень". Вы хотите преобразовать эту дату в формат "МесяцДеньГод" с помощью преобразования.
 
 ## <a name="what-does-a-transform-do"></a>Что делает преобразование?
@@ -36,7 +32,7 @@ ms.locfileid: "35299459"
 
 **Ниже приведены указания по использованию преобразования**.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 * Создание учетной записи интеграции и добавление карты в нее  
 

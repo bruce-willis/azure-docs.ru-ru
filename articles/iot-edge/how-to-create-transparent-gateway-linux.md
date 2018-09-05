@@ -8,12 +8,12 @@ ms.date: 6/20/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f54001c26938ea508111542b930b189342303633
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: f8ac885444c0ba52802024be9a78dfc0737e2673
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186868"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247689"
 ---
 # <a name="create-a-linux-iot-edge-device-that-acts-as-a-transparent-gateway"></a>Создание устройства Linux IoT Edge, выступающего в роли прозрачного шлюза
 
@@ -80,9 +80,9 @@ ms.locfileid: "39186868"
    >[!NOTE]
    > **Не** используйте то же самое имя, что и для узла DNS шлюза. Это приведет к ошибке сертификации клиентов для этих сертификатов.
 
-      ```cmd
-      ./certGen.sh create_edge_device_certificate "<gateway device name>"
-      ```
+   ```cmd
+   ./certGen.sh create_edge_device_certificate "<gateway device name>"
+   ```
 
    Выходные данные выполнения скриптов представляют собой следующие сертификат и ключ:
    * `$WRKDIR/certs/new-edge-device.*`
@@ -101,18 +101,24 @@ ms.locfileid: "39186868"
    * Сертификат ЦС устройства — `$WRKDIR/certs/new-edge-device-full-chain.cert.pem`.
    * Закрытый ключ ЦС устройства — `$WRKDIR/private/new-edge-device.key.pem`.
    * ЦС владельца — `$WRKDIR/certs/azure-iot-test-only.root.ca.cert.pem`.
+   
+2. Откройте файл конфигурации IoT Edge. Это защищенный файл, поэтому для доступа к нему нужно использовать более высокий уровень привилегий.
+   
+   ```bash
+   sudo nano /etc/iotedge/config.yaml
+   ```
 
-2.  В YAML-файле конфигурации управляющей программы безопасности для свойств `certificate` укажите путь к каталогу, в котором размещены файлы сертификатов и ключей.
+3.  В YAML-файле конфигурации управляющей программы Iot Edge для свойств `certificate` укажите путь к каталогу, в котором размещены файлы сертификатов и ключей.
 
-```yaml
-certificates:
-  device_ca_cert: "$CERTDIR/certs/new-edge-device-full-chain.cert.pem"
-  device_ca_pk: "$CERTDIR/private/new-edge-device.key.pem"
-  trusted_ca_certs: "$CERTDIR/certs/azure-iot-test-only.root.ca.cert.pem"
-```
+   ```yaml
+   certificates:
+     device_ca_cert: "$CERTDIR/certs/new-edge-device-full-chain.cert.pem"
+     device_ca_pk: "$CERTDIR/private/new-edge-device.key.pem"
+     trusted_ca_certs: "$CERTDIR/certs/azure-iot-test-only.root.ca.cert.pem"
+   ```
 
 ## <a name="deploy-edgehub-to-the-gateway"></a>Развертывание модуля EdgeHub в шлюзе
-Одной из ключевых возможностей Azure IoT Edge является развертывание модулей на устройствах IoT Edge из облака. В этом разделе описано, как создать пустое на первый взгляд развертывание. Однако центр Edge автоматически добавляется во все развертывания даже при отсутствии других модулей. Центр Edge — единственный модуль, который должен быть установлен на устройстве Edge, чтобы оно работало как прозрачный шлюз, поэтому достаточно просто создать пустое развертывание. 
+Одной из ключевых возможностей Azure IoT Edge является развертывание модулей на устройствах IoT Edge из облака. В этом разделе описано, как создать пустое, на первый взгляд, развертывание. Однако центр Edge автоматически добавляется во все развертывания даже при отсутствии других модулей. Центр Edge — единственный модуль, который должен быть установлен на устройстве Edge, чтобы оно работало как прозрачный шлюз, поэтому достаточно просто создать пустое развертывание. 
 1. Найдите нужный Центр Интернета вещей на портале Azure.
 2. Перейдите к **IoT Edge** и выберите устройство IoT Edge, которое нужно использовать в качестве шлюза.
 3. Щелкните **Set Modules** (Настроить модули).

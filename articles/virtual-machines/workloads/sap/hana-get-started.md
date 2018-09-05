@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
-ms.openlocfilehash: 14cdb2d3e433da38913ffa29b3b150bdb264278b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1948fb927c00e928a46c347bc6f1a01a43e155df
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34658712"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43112145"
 ---
 # <a name="quickstart-manual-installation-of-single-instance-sap-hana-on-azure-vms"></a>Краткое руководство по установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure
 ## <a name="introduction"></a>Введение
@@ -30,7 +30,7 @@ ms.locfileid: "34658712"
 >[!Note]
 >Это руководство описывает развертывание SAP HANA на виртуальных машинах Azure. Сведения о развертывании HANA SAP на крупных экземплярах HANA см. в статье [Использование SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/get-started).
  
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В руководстве предполагается, что вы знакомы с инфраструктурой как услугой (IaaS), т. е. умеете выполнять такие задачи:
  * развертывать виртуальные машины или виртуальные сети на портале Azure или с помощью PowerShell;
  * работать с кроссплатформенным интерфейсом командной строки Azure, в т. ч. использовать шаблоны JavaScript Object Notification (JSON).
@@ -41,7 +41,7 @@ ms.locfileid: "34658712"
 * Основные понятия и процедуры.
    * Планирование развертывания SAP в Azure, в т. ч. планирование виртуальной сети Azure и использование службы хранилища Azure. См. статью [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide).
    * Принципы и способы развертывания виртуальных машин в Azure. См. статью [Развертывание программного обеспечения SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide).
-   * Обеспечение высокого уровня доступности для SAP NetWeaver ASCS (ABAP SAP Central Services), SCS (SAP Central Services) и ERS (расчет оценки поступления) в Azure. См. статью [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide).
+   * Обеспечение высокого уровня доступности для SAP NetWeaver ASCS (ABAP SAP Central Services), SCS (SAP Central Services) и ERS (сервер постановки в очередь) в Azure. См. статью [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide).
    * Повышение эффективности с помощью установки нескольких SID ASCS/SCS в Azure. См. статью [Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-multi-sid). 
    * Принципы работы SAP NetWeaver на виртуальных машинах Linux в Azure. См. статью [Запуск SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/suse-quickstart). В этом руководстве описываются важные настройки Linux на виртуальных машинах Azure, а также приведены сведения о том, как правильно присоединять диски хранилища Azure к виртуальным машинам Linux.
 

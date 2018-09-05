@@ -13,25 +13,28 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/18/2018
+ms.date: 08/28/2018
 ms.author: celested
 ms.reviewer: lenalepa
 ms.custom: aaddev
-ms.openlocfilehash: 9d38f6e6d6b9fa47b1cd1497820f7ff887954ad5
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: bebabad4c7beb27022e12e5d48b77d88fc054fc2
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34156193"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190121"
 ---
 # <a name="app-registration-reference"></a>Справка по регистрации приложений
-Этот документ содержит контекст и описания различных функций, доступных на портале регистрации приложений Майкрософт: [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/).
+Этот документ содержит контекст и описания различных функций, доступных на [портале регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/).
 
-## <a name="my-applications"></a>Мои приложения
+## <a name="my-applications-or-converged-applications"></a>Мои приложения или конвергированные приложения
 Список содержит все приложения, зарегистрированные для использования с конечной точкой Azure AD 2.0. Эти приложения позволяют пользователям с личными учетными записями Майкрософт и рабочими или учебными учетными записями Azure Active Directory выполнять вход. Дополнительные сведения о конечной точке Azure AD 2.0 приведены в [обзоре версии 2.0](active-directory-appmodel-v2-overview.md). Эти приложения можно также интегрировать с конечной точки проверки подлинности учетных записей Microsoft `https://login.live.com`.
 
+## <a name="azure-ad-only-applications"></a>Только приложения Azure AD
+Список содержит все приложения, зарегистрированные для использования с конечной точкой Azure AD версии 1.0. Эти приложения позволяют выполнять вход в приложение только пользователям с рабочими или учебными учетными записями Azure Active Directory. В этот список входят приложения, зарегистрированные с использованием процедуры **регистрации приложений** на [портале Azure](https://portal.azure.com).
+
 ## <a name="live-sdk-applications"></a>Приложения Live SDK
-Список содержит все приложения, зарегистрированные для использования исключительно с учетной записью Майкрософт. Использовать их с Azure Active Directory невозможно. Сюда входят все приложения, которые ранее были зарегистрированы на портале разработчиков MSA по адресу `https://account.live.com/developers/applications`. Все функции, которые раньше вы выполняли в `https://account.live.com/developers/applications`, теперь можно выполнять на новом портале `https://apps.dev.microsoft.com`. Если у вас есть вопросы о приложениях учетной записи Майкрософт, свяжитесь с нами.
+Список содержит все приложения, зарегистрированные для использования исключительно с учетной записью Майкрософт. Использовать их с Azure Active Directory невозможно. Сюда входят все приложения, которые ранее были зарегистрированы на портале разработчиков MSA по адресу `https://account.live.com/developers/applications`. Все функции, которые раньше вы выполняли в `https://account.live.com/developers/applications`, теперь можно выполнять на новом портале `https://apps.dev.microsoft.com`.
 
 ## <a name="application-secrets"></a>Секреты приложений
 Секреты приложений — это учетные данные, позволяющие приложению выполнять надежную [проверку подлинности](http://tools.ietf.org/html/rfc6749#section-2.3) в Azure AD. В OAuth и OpenID Connect секрет приложения обычно называется `client_secret`. В протоколе 2.0 любое приложение, которое получает маркер безопасности в расположении, доступ к которому осуществляется через Интернет (по схеме `https` ), при погашении такого маркера безопасности должно идентифицироваться в Azure AD по соответствующему секрету. Более того, ни один собственный клиент, принимающий маркеры на устройстве, не сможет использовать секрет приложения для выполнения аутентификации клиента. Это сделано для того, чтоб секреты не хранились в незащищенных средах.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
-ms.openlocfilehash: 5ffba386ae6b1e1e5d18f92803bc8cb74b2ff89e
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: fb6a984ff838305b4ce411538465c0b9b5c152da
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37061305"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42886920"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Общие сведения о безопасности при использовании виртуальных машин Azure
 Виртуальные машины Azure позволяют выполнять гибкое развертывание разных вычислительных решений. Служба поддерживает Microsoft Windows, Linux, Microsoft SQL Server, Oracle, IBM, SAP и службы BizTalk Azure. Поэтому можно развернуть любую рабочую нагрузку и любой язык практически в любой операционной системе.
@@ -69,7 +69,7 @@ Azure предлагает антивредоносное ПО таких пос
 
 Хранилище ключей позволяет хранить ключи в аппаратных модулях безопасности (HSM), сертифицированных в соответствии со стандартами FIPS 140-2 (уровень 2). Ваши ключи шифрования SQL Server для резервного копирования или [прозрачного шифрования данных](https://msdn.microsoft.com/library/bb934049.aspx) могут храниться в хранилище ключей вместе с любыми ключами или секретными кодами приложений. Управление разрешениями и доступом к защищенным элементам осуществляется с помощью [Azure Active Directory](https://azure.microsoft.com/documentation/services/active-directory/).
 
-Подробнее.
+Дополнительные сведения
 
 * [Что такое хранилище ключей Azure?](../key-vault/key-vault-whatis.md)
 * [Приступая к работе с хранилищем ключей Azure](../key-vault/key-vault-get-started.md)
@@ -80,16 +80,15 @@ Azure предлагает антивредоносное ПО таких пос
 
 Шифрование дисков Azure интегрировано в Azure Key Vault, что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault и контролировать их. Эта служба также обеспечивает шифрование всех неактивных данных на дисках виртуальных машин в службе хранилища Azure.
 
-Подробнее.
+Дополнительные сведения
 
-* [Дисковое шифрование Azure для виртуальных машин IaaS под управлением Windows и Linux](https://gallery.technet.microsoft.com/Azure-Disk-Encryption-for-a0018eb0)
-* [Azure Disk Encryption for Linux and Windows Virtual Machines (Шифрование дисков Azure для виртуальных машин IaaS под управлением Windows и Linux)](https://blogs.msdn.microsoft.com/azuresecurity/2015/11/16/azure-disk-encryption-for-linux-and-windows-virtual-machines-public-preview-now-available/)
-* [Шифрование виртуальной машины Azure](../security-center/security-center-disk-encryption.md)
+* [Шифрование дисков Azure для виртуальных машин IaaS](../security/azure-security-disk-encryption-overview.md)
+* [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](../security/quick-encrypt-vm-powershell.md)
 
 ## <a name="virtual-machine-backup"></a>Резервное копирование виртуальной машины
 Azure Backup — это масштабируемое решение, которое защищает данные приложения при нулевых капитальных вложениях и минимальных эксплуатационных затратах. Ошибки приложений могут повредить данные, а ошибки пользователей — привести к ошибкам в коде приложений. Служба архивации Azure защитит виртуальные машины Windows и Linux.
 
-Подробнее.
+Дополнительные сведения
 
 * [Что такое служба архивации Azure?](../backup/backup-introduction-to-azure-backup.md)
 * [Схема изучения службы архивации Azure](https://azure.microsoft.com/documentation/learning-paths/backup/)
@@ -106,7 +105,7 @@ Site Recovery выполняет следующие задачи.
 * **Устранение необходимости в дополнительном центре обработки данных**. Вы можете выполнять репликацию на дополнительный локальный сайт или в Azure. Используя Azure в качестве целевого расположения при аварийном восстановлении, можно избежать затрат и сложностей, которыми сопровождается поддержка дополнительного сайта. Реплицированные данные хранятся в службе хранилища Azure.
 * **Интеграция с имеющимися технологиями BCDR**. Служба Site Recovery взаимодействует с другими компонентами приложений в рамках стратегии BCDR. Например, можно использовать службу Site Recovery для защиты серверной части SQL Server для корпоративных рабочих нагрузок. Это подразумевает встроенную поддержку SQL Server Always On для управления отработкой отказа групп доступности.
 
-Подробнее.
+Дополнительные сведения
 
 * [Что собой представляет служба Azure Site Recovery?](../site-recovery/site-recovery-overview.md)
 * [Как работает служба Azure Site Recovery?](../site-recovery/site-recovery-components.md)
@@ -117,7 +116,7 @@ Site Recovery выполняет следующие задачи.
 
 Виртуальная сеть Azure — это логическая конструкция, созданная на основе структуры физических сетей Azure. Каждая логическая виртуальная сеть Azure изолирована от всех прочих виртуальных сетей Azure. Такая изоляция ограничивает доступ других клиентов Microsoft Azure к сетевому трафику в ваших развернутых службах.
 
-Подробнее.
+Дополнительные сведения
 
 * [Обзор сетевой безопасности Azure](security-network-overview.md)
 * [Обзор виртуальной сети](../virtual-network/virtual-networks-overview.md)
@@ -131,7 +130,7 @@ Site Recovery выполняет следующие задачи.
 * Предоставление [рекомендаций по обеспечению безопасности](../security-center/security-center-recommendations.md) для виртуальных машин. Эти рекомендации включают в себя применение обновлений для системы, настройку конечных точек списков управления доступом, защиту от вредоносных программ, использование групп безопасности сети и применение шифрования дисков.
 * Наблюдение за состоянием виртуальных машин.
 
-Подробнее.
+Дополнительные сведения
 
 * [Введение в Центр безопасности Azure](../security-center/security-center-intro.md)
 * [Центр безопасности Azure: часто задаваемые вопросы](../security-center/security-center-faq.md)
@@ -140,7 +139,7 @@ Site Recovery выполняет следующие задачи.
 ## <a name="compliance"></a>Соответствие нормативным требованиям
 Виртуальные машины Azure сертифицированы в соответствии со стандартами FISMA, FedRAMP, HIPAA, PCI DSS (уровень 1), а также другими ключевыми стандартами. Сертификация упрощает обеспечение соответствия для приложений, а также позволяет соблюдать многочисленные местные и международные нормативные требования.
 
-Подробнее.
+Дополнительные сведения
 
 * [Microsoft Trust Center: Compliance (Центр управления безопасностью корпорации Майкрософт: соответствие нормативным требованиям)](https://www.microsoft.com/en-us/trustcenter/compliance)
 * [Доверенное облако: безопасность, конфиденциальность и соответствие требованиям в Microsoft Azure](http://download.microsoft.com/download/1/6/0/160216AA-8445-480B-B60F-5C8EC8067FCA/WindowsAzure-SecurityPrivacyCompliance.pdf)

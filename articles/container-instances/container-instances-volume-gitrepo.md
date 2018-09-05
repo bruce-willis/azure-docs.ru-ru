@@ -6,14 +6,14 @@ author: mmacy
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 04/16/2018
+ms.date: 06/15/2018
 ms.author: marsma
-ms.openlocfilehash: e40d841c07534c9c0074c038d1e3c6e435265564
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 34036c5ec9ccd8c502104ce862e4749c59be62b9
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32166785"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43105193"
 ---
 # <a name="mount-a-gitrepo-volume-in-azure-container-instances"></a>Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"
 
@@ -69,8 +69,7 @@ drwxr-xr-x    2 root     root          4096 Apr 16 16:35 app
 
 Например, следующий шаблон Resource Manager создает группу контейнеров, состоящую из одного контейнера. Контейнер клонирует два репозитория GitHub, указанных блоками тома *gitRepo*. Второй том содержит дополнительные свойства, указывающие каталог для клонирования и зафиксированный хэш определенной версии.
 
-<!-- https://github.com/Azure/azure-docs-json-samples/blob/master/container-instances/aci-deploy-volume-gitrepo.json -->
-[!code-json[volume-gitrepo](~/azure-docs-json-samples/container-instances/aci-deploy-volume-gitrepo.json)]
+<!-- https://github.com/Azure/azure-docs-json-samples/blob/master/container-instances/aci-deploy-volume-gitrepo.json --> [!code-json[volume-gitrepo](~/azure-docs-json-samples/container-instances/aci-deploy-volume-gitrepo.json)]
 
 В результате структура каталогов двух клонированных репозиториев, определенных в предыдущем шаблоне, выглядит следующим образом.
 
@@ -80,6 +79,28 @@ drwxr-xr-x    2 root     root          4096 Apr 16 16:35 app
 ```
 
 Пример развертывания экземпляра контейнера с помощью шаблона Azure Resource Manager см. в статье [Развертывание группы контейнеров](container-instances-multi-container-group.md).
+
+## <a name="private-git-repo-authentication"></a>Проверка подлинности в частном репозитории Git
+
+Чтобы подключить том gitRepo как частный репозиторий Git, укажите учетные данные в URL-адресе репозитория. Как правило, учетные данные представлены в виде имени пользователя и личного маркера доступа (PAT), который предоставляет доступ к репозиторию.
+
+Например, параметр Azure CLI `--gitrepo-url` для частного репозитория GitHub будет похож на следующий (где "gituser" — это имя пользователя GitHub, а "abcdef1234fdsa4321abcdef" — ​​это личный маркер доступа пользователя):
+
+```azurecli
+--gitrepo-url https://gituser:abcdef1234fdsa4321abcdef@github.com/GitUser/some-private-repository
+```
+
+Для репозитория Git VSTS укажите любое имя пользователя (вы можете использовать "vstsuser", как в следующем примере) в сочетании с действительным PAT:
+
+```azurecli
+--gitrepo-url https://vstsuser:abcdef1234fdsa4321abcdef@vstsaccountname.visualstudio.com/_git/some-private-repository
+```
+
+Дополнительные сведения о личных маркерах доступа GitHub и VSTS см. по следующим ссылкам:
+
+GitHub: [создание личных маркеров доступа для командной строки][pat-github]
+
+VSTS: [аутентификация доступа с помощью личных маркеров доступа для VSTS и TFS][pat-vsts]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -91,6 +112,8 @@ drwxr-xr-x    2 root     root          4096 Apr 16 16:35 app
 
 <!-- LINKS - External -->
 [aci-helloworld]: https://github.com/Azure-Samples/aci-helloworld
+[pat-github]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+[pat-vsts]: https://docs.microsoft.com/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate
 
 <!-- LINKS - Internal -->
 [az-container-create]: /cli/azure/container#az-container-create

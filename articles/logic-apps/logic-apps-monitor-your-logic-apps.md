@@ -1,30 +1,25 @@
 ---
 title: Проверка состояния, настройка ведения журнала и получение оповещений в Azure Logic Apps | Документы Майкрософт
-description: Мониторинг состояния и производительности приложений логики, запись ведения журнала диагностики и настройка оповещений
-author: jeffhollan
-manager: jeconnoc
-editor: ''
+description: Мониторинг состояния, ведение журнала диагностических данных и настройка оповещений для Azure Logic Apps.
 services: logic-apps
-documentationcenter: ''
-ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.custom: H1Hack27Feb2017
+ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
-ms.author: LADocs; jehollan
-ms.openlocfilehash: f11db2009328118dda036057918ba853f5032200
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: a08cd6289fc85b79ccec731126a33a9549d60546
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36293529"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123539"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
 
-После [создания и запуска приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) можно проверить его журнал запусков, журнал триггеров, состояние и производительность. Для мониторинга событий в режиме реального времени и отладки можно настроить [ведение журнала диагностики](#azure-diagnostics) для приложения логики. Это позволит [выполнять поиск и просматривать события](#find-events), такие как события триггера, события выполнения и события действия. Также можно [использовать полученные диагностические данные в других службах](#extend-diagnostic-data), таких как служба хранилища Azure и концентраторы событий Azure. 
+После [создания и запуска приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) можно проверить его журнал запусков, журнал триггеров, состояние и производительность. Для мониторинга событий в режиме реального времени и отладки можно настроить [ведение журнала диагностики](#azure-diagnostics) для приложения логики. Это позволит [выполнять поиск и просматривать события](#find-events), такие как события триггера, события выполнения и события действия. Также можно [использовать полученные диагностические данные в других службах](#extend-diagnostic-data), таких как служба хранилища Azure и Центры событий Azure. 
 
 Чтобы получать уведомления о сбоях или других возможных проблемах, настройте [оповещения](#add-azure-alerts). Например, можно создать оповещение, которое обнаруживает "более пяти запусков в течение часа, которые завершились сбоем". Можно также настроить мониторинг, отслеживание и ведение журнала программными средствами с помощью [параметров и свойств событий системы диагностики Azure](#diagnostic-event-properties).
 
@@ -159,11 +154,11 @@ ms.locfileid: "36293529"
 Помимо Azure Log Analytics, можно расширить возможности использования диагностических данных приложения логики в других службах Azure, например: 
 
 * [Архивация журналов диагностики Azure в службе хранилища Azure](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md)
-* [Потоковая передача журналов диагностики в концентраторы событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) 
+* [Потоковая передача журналов диагностики в Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) 
 
 После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../log-analytics/log-analytics-powerbi.md). Например: 
 
-* [Потоковая передача данных из концентраторов событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
+* [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)
 
 В зависимости от вариантов использования, которые нужно настроить, сначала необходимо [создать учетную запись хранения Azure](../storage/common/storage-create-storage-account.md) или [создать концентратор событий Azure](../event-hubs/event-hubs-create.md). Затем выберите варианты отправки данных диагностики:

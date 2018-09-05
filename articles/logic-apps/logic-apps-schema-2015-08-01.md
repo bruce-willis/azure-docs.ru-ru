@@ -1,26 +1,21 @@
 ---
-title: Обновления схемы от 1 августа 2015 г. Azure Logic Apps | Документация Майкрософт
-description: Создание определений JSON для Azure Logic Apps с версией схемы 2015-08-01-preview
-author: stepsic-microsoft-com
-manager: jeconnoc
-editor: ''
+title: Обновления схемы от 1 августа 2015 г. (предварительная версия). Azure Logic Apps | Документация Майкрософт
+description: Обновленная схема от 1 августа 2015 г. (предварительная версия) для определений приложений логики в Azure Logic Apps
 services: logic-apps
-documentationcenter: ''
-ms.assetid: 0d03a4d4-e8a8-4c81-aed5-bfd2a28c7f0c
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: ''
-ms.devlang: ''
+ms.suite: integration
+author: stepsic-microsoft-com
+ms.author: stepsic
+ms.reviewer: klam, estfan, LADocs
+ms.assetid: 0d03a4d4-e8a8-4c81-aed5-bfd2a28c7f0c
 ms.topic: article
-ms.custom: H1Hack27Feb2017
 ms.date: 05/31/2016
-ms.author: stepsic; LADocs
-ms.openlocfilehash: 736a7cf03c7fe1e9fe976c3bcc80393bff2bada5
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: dd05543c2a727f010432ecb54c2dc3e77a245de4
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299874"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122783"
 ---
 # <a name="schema-updates-for-azure-logic-apps---august-1-2015-preview"></a>Обновления схемы для Azure Logic Apps от 1 августа 2015 г. (ознакомительная версия)
 

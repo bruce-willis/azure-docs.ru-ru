@@ -1,6 +1,6 @@
 ---
-title: Развертывание источника OpenShift в Azure | Документация Майкрософт
-description: Разверните источник OpenShift в Azure.
+title: Развертывание OKD в Azure | Документация Майкрософт
+description: Развертывание OKD в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: haroldw
@@ -15,21 +15,21 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: f7a668f30d7acb1ea14fe9fd8921066d40a6669b
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.openlocfilehash: 0d3a9f05802bef7d6dfc99fcfae6668044f214c8
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29123125"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190310"
 ---
-# <a name="deploy-openshift-origin-in-azure"></a>Развертывание источника OpenShift в Azure
+# <a name="deploy-okd-in-azure"></a>Развертывание OKD в Azure
 
-Существует два способа развертывания OpenShift Origin в Azure.
+Существует два способа развертывания OKD (ранее OpenShift Origin) в Azure.
 
-- Можно вручную развернуть все необходимые компоненты инфраструктуры Azure, а затем выполнить инструкции из [документации OpenShift Origin](https://docs.openshift.org/3.6/welcome/index.html).
-- Можно воспользоваться [шаблоном Resource Manager](https://github.com/Microsoft/openshift-origin), который упрощает развертывание кластера OpenShift Origin.
+- Вы можете вручную развернуть все необходимые компоненты инфраструктуры Azure, а затем следовать инструкциям из [документации](https://docs.okd.io/3.10/welcome/index.html) по источнику OKD.
+- Вы можете воспользоваться [шаблоном Resource Manager](https://github.com/Microsoft/openshift-origin), который упрощает развертывание кластера OKD.
 
-## <a name="deploy-by-using-the-openshift-origin-template"></a>Развертывание с помощью шаблона OpenShift Origin
+## <a name="deploy-by-using-the-okd-template"></a>Развертывание с помощью шаблона OKD
 
 Используйте для параметра `aadClientId` значение `appId` из созданного ранее субъекта-службы.
 
@@ -101,7 +101,7 @@ ms.locfileid: "29123125"
 > [!NOTE] 
 > Для выполнения следующей команды необходим интерфейс командной строки версии не ниже 2.0.8. Узнать свою версию CLI можно с помощью команды `az --version`. Чтобы обновить версию CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-В следующем примере кластер OpenShift и все связанные ресурсы развертываются в группу ресурсов myResourceGroup с именем развертывания myOpenShiftCluster. Шаблон хранится в репозитории GitHub, и ссылка на него указывается в локальном файле параметров с именем azuredeploy.parameters.json.
+В следующем примере кластер OKD и все связанные ресурсы развертываются в группу ресурсов myResourceGroup с именем развертывания myOpenShiftCluster. Шаблон хранится в репозитории GitHub, и ссылка на него указывается в локальном файле параметров с именем azuredeploy.parameters.json.
 
 ```azurecli 
 az group deployment create -g myResourceGroup --name myOpenShiftCluster \
@@ -109,7 +109,7 @@ az group deployment create -g myResourceGroup --name myOpenShiftCluster \
       --parameters @./azuredeploy.parameters.json
 ```
 
-Развертывание длится не менее 25 минут в зависимости от общего количества развертываемых узлов. После завершения развертывания в терминале отобразятся URL-адрес консоли OpenShift и DNS-имя главного узла OpenShift.
+Развертывание длится не менее 25 минут в зависимости от общего количества развертываемых узлов. После завершения развертывания в терминале отобразятся URL-адрес консоли OKD и DNS-имя главного узла OpenShift.
 
 ```json
 {
@@ -118,9 +118,9 @@ az group deployment create -g myResourceGroup --name myOpenShiftCluster \
 }
 ```
 
-## <a name="connect-to-the-openshift-cluster"></a>Подключение к кластеру OpenShift
+## <a name="connect-to-the-okd-cluster"></a>Подключение к кластеру OKD
 
-После завершения развертывания подключитесь к консоли OpenShift через браузер, используя `OpenShift Console Uri`. Кроме того, к главному узлу OpenShift можно подключиться с помощью следующей команды:
+После завершения развертывания подключитесь к консоли OKD через браузер, используя `OpenShift Console Uri`. Кроме того, к главному узлу OKD можно подключиться с помощью следующей команды:
 
 ```bash
 $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
@@ -138,4 +138,4 @@ az group delete --name myResourceGroup
 
 - [Задачи, выполняемые после развертывания](./openshift-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift](./openshift-troubleshooting.md)
-- [Приступая к работе с OpenShift Origin](https://docs.openshift.org/latest/getting_started/index.html)
+- [Начало работы с OKD](https://docs.okd.io/latest/getting_started/index.html)

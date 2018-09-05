@@ -1,6 +1,6 @@
 ---
-title: Настройка управления привилегированными пользователями для ресурсов Azure с помощью настраиваемых ролей | Документация Майкрософт
-description: Применение настраиваемых ролей для ресурсов Azure с PIM.
+title: Применение настраиваемых ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как использовать настраиваемые роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.component: pim
 ms.date: 03/30/2018
 ms.author: rolyon
-ms.openlocfilehash: 03091b50eb4fb368ae0277344317b261991c4bd1
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: b01e785ac85c71b2982561e8b5e118775750fc69
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622693"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189879"
 ---
-# <a name="use-custom-roles-to-target-privileged-identity-management-settings"></a>Настройка управления привилегированными пользователями с помощью настраиваемых ролей
+# <a name="use-custom-roles-for-azure-resources-in-pim"></a>Применение настраиваемых ролей ресурсов Azure в PIM
 
 Иногда для некоторых участников роли нужно применить довольно строгие параметры управления привилегированными пользователями (PIM), сохраняя высокий уровень автономности для других участников этой же роли. Предположим, ваша компания привлекла нескольких консультантов для помощи в разработке приложения, которое будет выполняться в подписке Azure.
 
@@ -49,4 +49,5 @@ ms.locfileid: "39622693"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Управление привилегированными пользователями — роли ресурсов — выполнение проверки доступа](pim-resource-roles-perform-access-review.md)
+- [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)
+- [Пользовательские роли в Azure](../../role-based-access-control/custom-roles.md)

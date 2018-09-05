@@ -1,27 +1,23 @@
 ---
 title: Кодирование сообщений X12 в Azure Logic Apps | Документация Майкрософт
-description: Проверка EDI и преобразование XML-сообщений с помощью кодировщика сообщений X12 в пакете интеграции Enterprise для Azure Logic Apps
+description: Проверка EDI и преобразование XML-сообщений с помощью кодировщика сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: padmavc
-manager: jeconnoc
-editor: ''
-ms.assetid: a01e9ca9-816b-479e-ab11-4a984f10f62d
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: a01e9ca9-816b-479e-ab11-4a984f10f62d
 ms.date: 01/27/2017
-ms.author: LADocs; padmavc
-ms.openlocfilehash: ec350560f4aca4e9a0b4f00892b690012c9f08dd
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 3ed5cb61fef5f07913f11c4e4df309d720d5b901
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299021"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123511"
 ---
-# <a name="encode-x12-messages-for-azure-logic-apps-with-the-enterprise-integration-pack"></a>Кодирование сообщений X12 для Azure Logic Apps с помощью пакета интеграции Enterprise
+# <a name="encode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Кодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 С помощью соединителя для кодирования сообщений X12 вы можете проверить EDI и свойства для конкретного партнера, преобразовать XML-кодированные сообщения в наборы транзакций EDI в обмене и запросить техническое и (или) функциональное подтверждение.
 Чтобы использовать этот соединитель, добавьте его в существующий триггер в приложении логики.

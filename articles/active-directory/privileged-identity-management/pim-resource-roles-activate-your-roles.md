@@ -1,6 +1,6 @@
 ---
-title: Активация ролей для ресурсов Azure с помощью управления привилегированными пользователями | Документация Майкрософт
-description: Здесь объясняется, как активировать роли в PIM.
+title: Активация ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как активировать роли ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,20 +11,20 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.component: pim
-ms.date: 04/02/2018
+ms.date: 08/21/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 45a2747a60df4d91c2fe1c5247e1d4ac82ff819f
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 234c1d71f0ec17d15a4dd589e3db92fd9bf68df2
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617155"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189495"
 ---
-# <a name="activate-roles-for-azure-resources-by-using-privileged-identity-management"></a>Активация ролей для ресурсов Azure с помощью управления привилегированными пользователями
+# <a name="activate-my-azure-resource-roles-in-pim"></a>Активация ролей ресурсов Azure в PIM
 Управление привилегированными пользователями (PIM) представляет новые возможности в активации ролей для ресурсов Azure. Соответствующие участники ролей могут назначать активацию на будущую дату и время. Кроме того, они могут выбирать конкретную продолжительность активации в пределах максимума (заданного администраторами). Дополнительные сведения см. в статье [How to activate or deactivate roles in Azure AD Privileged Identity Management](pim-how-to-activate-role.md) (Как активировать и деактивировать роли в Azure Active Directory Privileged Identity Management).
 
-## <a name="activate-roles"></a>Активация ролей
+## <a name="activate-a-role"></a>Активация роли
 Перейдите к разделу **Мои роли** на панели слева. Выберите **Активировать** для роли, которую необходимо активировать.
 
 ![Вкладка "Соответствующие роли" на панели "Мои роли".](media/azure-pim-resource-rbac/rbac-roles.png)
@@ -39,6 +39,19 @@ ms.locfileid: "39617155"
 
 ![Список ожидающих запросов и кнопка "Отмена"](media/azure-pim-resource-rbac/rbac-activate-pending.png)
 
+## <a name="use-a-role-immediately-after-activation"></a>Использование роли сразу после активации
+
+Из-за кэширования активация не происходит на портале Azure сразу, если его не обновить. Если требуется снизить вероятность задержек после активации роли, можно использовать страницу **Доступ к приложениям** на портале. Приложения, доступные на этой странице, немедленно проверяют новые назначения ролей.
+
+1. Откройте страницу Azure AD Privileged Identity Management.
+
+1. Перейдите на страницу **​​Доступ к приложениям**.
+
+    ![Снимок экрана страницы доступа к приложениям PIM](./media/pim-resource-roles-activate-your-roles/pim-application-access.png)
+
+1. Щелкните вкладку **Ресурсы Azure**, чтобы открыть на портале страницу **Все ресурсы**.
+
+    После перехода по этой ссылке страница принудительно обновится и будет выполнена проверка на наличие новых назначений ролей ресурсов Azure.
 
 ## <a name="apply-just-enough-administration-practices"></a>Рекомендации по применению Just Enough Administration (JEA)
 
@@ -51,3 +64,7 @@ ms.locfileid: "39617155"
 Выберите **Мои роли** на панели слева и выберите соответствующую роль для активации. Типом назначения является **Унаследовано**, так как роль была назначена в подписке, а не в группе ресурсов.
 
 ![Список допустимых назначений ролей с выделенным типом назначения](media/azure-pim-resource-rbac/my-roles-02.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Активация ролей каталога Azure AD в PIM](pim-how-to-activate-role.md)

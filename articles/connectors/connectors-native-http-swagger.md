@@ -1,28 +1,24 @@
 ---
-title: Вызов конечных точек REST с помощью соединителя HTTP + Swagger для Azure Logic Apps | Документация Майкрософт
-description: Выполните подключение к конечным точкам REST из приложений логики в Swagger с помощью соединителя HTTP + Swagger
+title: Вызов конечных точек REST из Azure Logic Apps | Документация Майкрософт
+description: Автоматизируйте задачи и рабочие процессы, которые взаимодействуют с конечными точками REST, с помощью соединителя HTTP + Swagger в Azure Logic Apps.
 services: logic-apps
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-tags: connectors
-ms.assetid: eccfd87c-c5fe-4cf7-b564-9752775fd667
 ms.service: logic-apps
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, jehollan, LADocs
+ms.assetid: eccfd87c-c5fe-4cf7-b564-9752775fd667
+tags: connectors
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 07/18/2016
-ms.author: jehollan; LADocs
-ms.openlocfilehash: 4e4421b0dfe0f29c3d50764b9ca04471c73a1450
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e96e271fbb50a2485a22fab061ea160dc00cf3d6
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35296525"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123178"
 ---
-# <a name="get-started-with-the-http--swagger-action"></a>Приступая к работе с действием "HTTP + Swagger"
+# <a name="call-rest-endpoints-with-http--swagger-connector-in-azure-logic-apps"></a>Вызов конечных точек REST с помощью соединителя HTTP + Swagger в Azure Logic Apps
 
 Выполнив действие HTTP + Swagger в рабочем процессе приложения логики, можно создать первоклассный соединитель для любой конечной точки REST с применением [документа Swagger](https://swagger.io). Первоклассный конструктор приложений логики позволяет расширить функциональность приложения логики, обеспечив возможность вызова любой конечной точки REST.
 

@@ -2,19 +2,18 @@
 title: Приступая к работе с удостоверением и двойником модуля Центра Интернета вещей Azure (.NET) | Документация Майкрософт
 description: Сведения о создании удостоверения модуля и обновлении двойника модуля с помощью пакетов SDK для Центра Интернета для .NET.
 author: chrissie926
-manager: ''
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: menchi
-ms.openlocfilehash: 8d5d4ab85d8441998fd384e01f85d1d427d68cc2
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 7ff867bc29e81e47a4bf66173ce3056792f2f445
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42146948"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43091638"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-net-back-end-and-net-device"></a>Приступая к работе с удостоверением Центра Интернета вещей и двойником модуля с использованием серверной части и устройства .NET
 
@@ -24,15 +23,17 @@ ms.locfileid: "42146948"
 По завершении работы с этим руководством у вас будет два консольных приложения .NET:
 
 * **CreateIdentities** — создает удостоверение устройства и модуля, а также соответствующий ключ безопасности для подключения к клиентам устройства и модуля.
+
 * **UpdateModuleTwinReportedProperties** — отправляет обновленные сообщаемые свойства двойника модуля в Центр Интернета вещей.
 
 > [!NOTE]
-> Статья о [пакетах SDK для Центра Интернета вещей Azure][lnk-hub-sdks] содержит сведения о различных пакетах SDK, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения.
+> Сведения о пакетах SDK Azure IoT, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения, см. в [этой статье](iot-hub-devguide-sdks.md).
 
 Для работы с этим учебником требуется:
 
-* Visual Studio 2015 или Visual Studio 2017.
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
+* Visual Studio 2017.
+
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 [!INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
@@ -47,17 +48,19 @@ ms.locfileid: "42146948"
 
 1. **Создайте проект Visual Studio**. В Visual Studio добавьте в имеющееся решение проект классического приложения Windows на языке Visual C#, используя шаблон проекта **Консольное приложение (.NET Framework)**. Убедитесь, что указана версия платформы .NET 4.6.1 или более поздняя. В качестве имени проекта укажите **UpdateModuleTwinReportedProperties**.
 
-    ![Создание проекта Visual Studio][13]
+    ![Создание проекта Visual Studio](./media/iot-hub-csharp-csharp-module-twin-getstarted/update-twins-csharp1.JPG)
 
 2. **Установите последний пакет SDK для .NET для Центра Интернета вещей Azure**. Удостоверение и двойник модуля предоставляются в общедоступной предварительной версии. Они доступны только через пакеты SDK предварительного выпуска для Центра Интернета вещей. В Visual Studio выберите для решения элементы "Сервис > Диспетчер пакетов NuGet > Управление пакетами NuGet". Найдите Microsoft.Azure.Devices.Client. Обязательно установите флажок "Включить предварительные выпуски". Выберите последнюю версию и установите ее. Теперь у вас есть доступ ко всем возможностям этого модуля. 
 
-    ![Установка пакета SDK V1.16.0-preview-005 .NET для Центра Интернета вещей Azure][14]
+    ![Установка пакета SDK V1.16.0-preview-005 .NET для Центра Интернета вещей Azure](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-sdk.png)
 
-3. **Получите строку подключения модуля**. Войдите на [портал Azure][lnk-portal]. Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его, и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
+3. **Получите строку подключения модуля**. Войдите на [портал Azure](https://portal.azure.com/). Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его, и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
 
-    ![Сведения о модуле на портале Azure][15]
+    ![Сведения о модуле на портале Azure](./media/iot-hub-csharp-csharp-module-twin-getstarted/module-detail.JPG)
 
-4. **Создайте консольное приложение UpdateModuleTwinReportedProperties**. В верхнюю часть файла **Program.cs** добавьте следующие инструкции `using`:
+4. **Создайте консольное приложение UpdateModuleTwinReportedProperties**.
+
+    Добавьте следующие инструкции `using` в начало файла **Program.cs** :
 
     ```csharp
     using Microsoft.Azure.Devices.Client;
@@ -69,18 +72,22 @@ ms.locfileid: "42146948"
     Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения модуля.
 
     ```csharp
-    private const string ModuleConnectionString = "<Your module connection string>";
+    private const string ModuleConnectionString = 
+      "<Your module connection string>";
     private static ModuleClient Client = null;
-    static void ConnectionStatusChangeHandler(ConnectionStatus status, ConnectionStatusChangeReason reason)
+    static void ConnectionStatusChangeHandler(ConnectionStatus status, 
+      ConnectionStatusChangeReason reason)
     {
-        Console.WriteLine("Connection Status Changed to {0}; the reason is {1}", status, reason);
+        Console.WriteLine("Connection Status Changed to {0}; the reason is {1}", 
+          status, reason);
     }
     ```
 
     Добавьте метод **OnDesiredPropertyChanged** в класс **Program**:
 
     ```csharp
-    private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
+    private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, 
+      object userContext)
         {
             Console.WriteLine("desired property change:");
             Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
@@ -99,11 +106,13 @@ ms.locfileid: "42146948"
     ```csharp
     static void Main(string[] args)
     {
-        Microsoft.Azure.Devices.Client.TransportType transport = Microsoft.Azure.Devices.Client.TransportType.Amqp;
+        Microsoft.Azure.Devices.Client.TransportType transport = 
+          Microsoft.Azure.Devices.Client.TransportType.Amqp;
 
         try
         {
-            Client = ModuleClient.CreateFromConnectionString(ModuleConnectionString, transport);
+            Client = 
+              ModuleClient.CreateFromConnectionString(ModuleConnectionString, transport);
             Client.SetConnectionStatusChangesHandler(ConnectionStatusChangeHandler);
             Client.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).Wait();
 
@@ -133,6 +142,7 @@ ms.locfileid: "42146948"
     В этом примере кода показано, как извлечь двойник модуля и обновить сообщаемые свойства с помощью протокола AMQP. В общедоступной предварительной версии для операций двойника модуля поддерживается только протокол AMQP.
 
 5. Помимо упомянутого метода **Main** можно добавить приведенный ниже блок кода для отправки событий из модуля в Центр Интернета вещей:
+
     ```csharp
     Byte[] bytes = new Byte[2];
     bytes[0] = 0;
@@ -150,18 +160,5 @@ ms.locfileid: "42146948"
 
 Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
 
-* [How to get started with device management (Node)][lnk-device-management] (Начало работы с управлением устройствами (Node))
-* [Explore Azure IoT Edge architecture on Linux][lnk-iot-edge] (Приступая к работе с архитектурой Azure IoT Edge в Linux)
-
-
-<!-- Images. -->
-[13]: ./media\iot-hub-csharp-csharp-module-twin-getstarted/update-twins-csharp1.JPG
-[14]: ./media\iot-hub-csharp-csharp-module-twin-getstarted/install-sdk.png
-[15]: ./media\iot-hub-csharp-csharp-module-twin-getstarted/module-detail.JPG
-<!-- Links -->
-[lnk-hub-sdks]: iot-hub-devguide-sdks.md
-[lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-[lnk-portal]: https://portal.azure.com/
-
-[lnk-device-management]: iot-hub-node-node-device-management-get-started.md
-[lnk-iot-edge]: ../iot-edge/tutorial-simulate-device-linux.md
+* [Начало работы с управлением устройствами (Node)](iot-hub-node-node-device-management-get-started.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)

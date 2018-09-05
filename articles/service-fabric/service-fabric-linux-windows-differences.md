@@ -14,26 +14,23 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 5e0002437b4fc22d9dfdcdca9a587bf420a7d8fa
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: cb4f738fd63b8b013f674557a0c5f5639c26391e
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207688"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126890"
 ---
 # <a name="differences-between-service-fabric-on-linux-and-windows"></a>Различия между Service Fabric для Linux и для Windows
 
-Некоторые функции Service Fabric поддерживаются в Windows, но пока не поддерживаются в Linux. Со временем наборы функций будут одинаковыми, и с каждом выпуском это различие между функциями будет уменьшаться. Между последними доступными версиями (то есть между версией 6.0 для Windows и версией 6.0 для Linux) существуют различия в следующих компонентах: 
+Некоторые функции Service Fabric поддерживаются в Windows, но пока не поддерживаются в Linux. Со временем наборы функций будут одинаковыми, и с каждом выпуском это различие между функциями будет уменьшаться. Между последними доступными выпусками существуют следующие различия.
 
-* все модели программирования находятся в предварительной версии (Reliable Actors, Reliable Services без отслеживания состояния и Reliable Services с отслеживанием состояния для Java и C#);
-* Envoy (ReverseProxy) для Linux находится в предварительной версии;
+* Envoy (обратный прокси-сервер) для Linux находится в предварительной версии.
 * автономный установщик для Linux пока недоступен в Linux;
 * перенаправление консоли (не поддерживается в рабочих кластерах Linux и Windows);
 * служба анализа сбоев (FAS) в Linux;
 * служба DNS для служб Service Fabric (служба DNS поддерживается для контейнеров в Linux);
 * команды интерфейса командной строки, эквивалентные некоторым командам PowerShell (большинство из перечисленных ниже команд применяются только к изолированным кластерам).
-
-Средства разработки в Windows и Linux также отличаются. В Windows используются Visual Studio, PowerShell, VSTS и трассировка событий Windows, а в Linux — Yeoman, Eclipse, Jenkins и LTTng.
 
 ## <a name="powershell-cmdlets-that-do-not-work-against-a-linux-service-fabric-cluster"></a>Командлеты PowerShell, которые не работают в кластере Service Fabric для Linux
 

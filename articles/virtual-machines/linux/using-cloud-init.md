@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: fbb6fc15663570d9b9470fc7d4de3c8eb30de9d9
-ms.sourcegitcommit: 0b02e180f02ca3acbfb2f91ca3e36989df0f2d9c
+ms.openlocfilehash: 0f7660e8534a74eabe32611c4c01ae5587af7cee
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
-ms.locfileid: "29763151"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188879"
 ---
 # <a name="cloud-init-support-for-virtual-machines-in-azure"></a>Поддержка cloud-init для виртуальных машин в Azure
 Из этой статьи можно узнать об имеющейся поддержке [cloud-init](https://cloudinit.readthedocs.io) для настройки виртуальной машины или масштабируемых наборов виртуальных машин во время подготовки в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы.  
@@ -32,8 +32,10 @@ ms.locfileid: "29763151"
 
  Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин (VMSS). В следующей таблице приведены сведения о текущей доступности образов с поддержкой cloud-init на платформе Azure:
 
-| ИЗДАТЕЛЬ | ПРЕДЛОЖЕНИЕ | SKU | Version (версия) | готовность к использованию cloud-init
-|:--- |:--- |:--- |:--- |:--- |:--- |
+| ИЗДАТЕЛЬ | ПРЕДЛОЖЕНИЕ | SKU | Version (версия) | готовность к использованию cloud-init |
+|:--- |:--- |:--- |:--- |:--- |
+|Canonical |UbuntuServer |18.04-LTS |последняя |Да | 
+|Canonical |UbuntuServer |17.10 |последняя |Да | 
 |Canonical |UbuntuServer |16.04-LTS |последняя |Да | 
 |Canonical |UbuntuServer |14.04.5-LTS |последняя |Да |
 |CoreOS |CoreOS |Stable |последняя |Да |

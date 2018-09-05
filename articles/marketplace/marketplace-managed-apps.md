@@ -14,16 +14,16 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
-ms.openlocfilehash: 674e91a7c1de026a26cf9a3bf1eaead7f5e86144
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: c8ead3dc34faefce0f113dee2074960fddfa11a1
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39059196"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43144597"
 ---
 # <a name="azure-applications-managed-application-offer-publishing-guide"></a>Руководство по публикации предложения "Приложения Azure: управляемое приложение"
 
-Шаблоны решений являются одним из основных способов публикации решения в Azure Marketplace. Сведения в этом руководстве помогут понять требования к этому предложению. 
+Управляемое приложение является одним из основных способов публикации решения в Azure Marketplace. Сведения в этом руководстве помогут понять требования к этому предложению. 
 
 Ниже приведены предложения транзакций с развертыванием и выставлением счетов через Marketplace. Пользователь видит призыв к действию — "Получить сейчас".
 

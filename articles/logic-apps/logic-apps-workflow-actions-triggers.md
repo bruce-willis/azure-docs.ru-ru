@@ -5,17 +5,16 @@ services: logic-apps
 ms.service: logic-apps
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
-ms.topic: reference
-ms.date: 06/22/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 427964a6651dd4ab71d0029f89e40afdd34d162a
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.topic: reference
+ms.date: 06/22/2018
+ms.openlocfilehash: 8adfd0b3d6d87834441ab87af194de141b77af34
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390710"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43093624"
 ---
 # <a name="trigger-and-action-types-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Справочные материалы по типам триггеров и действий для языка определения рабочего процесса в Azure Logic Apps
 
@@ -158,6 +157,7 @@ ms.locfileid: "39390710"
 |---------|------|-------------| 
 | Заголовки | Объект JSON | Заголовки из ответа | 
 | текст | Объект JSON | Текст из ответа | 
+| Код состояния | Целое число  | Код состояния из ответа | 
 |||| 
 
 *Пример*
@@ -330,6 +330,7 @@ ms.locfileid: "39390710"
 |---------|------|-------------| 
 | Заголовки | Объект JSON | Заголовки из ответа | 
 | текст | Объект JSON | Текст из ответа | 
+| Код состояния | Целое число  | Код состояния из ответа | 
 |||| 
 
 *Требования для входящих запросов*
@@ -337,7 +338,7 @@ ms.locfileid: "39390710"
 Для качественной работы с приложением логики конечная точка должна соответствовать определенному шаблону или условию триггера и распознавать следующие свойства.  
   
 | Ответ | Обязательно | ОПИСАНИЕ | 
-|----------|----------|-------------|  
+|----------|----------|-------------| 
 | Код состояния | Yes | Код состояния "200 OK" инициирует запуск. Другие коды состояния — нет. | 
 | Заголовок retry-after | Нет  | Количество секунд перед повторным опросом конечной точки приложением логики. | 
 | Заголовок Location | Нет  | URL-адрес для вызова во время следующего интервала опроса. Если не указан, используется исходный URL-адрес. | 
@@ -424,6 +425,7 @@ ms.locfileid: "39390710"
 |---------|------|-------------| 
 | Заголовки | Объект JSON | Заголовки из ответа | 
 | текст | Объект JSON | Текст из ответа | 
+| Код состояния | Целое число  | Код состояния из ответа | 
 |||| 
 
 *Пример*
@@ -2552,6 +2554,159 @@ ID,Product_Name
    "runAfter": {}
 }
 ```
+
+<a name="connector-authentication"></a>
+
+## <a name="authenticate-triggers-or-actions"></a>Проверка подлинности триггеров или действий
+
+Конечные точки HTTP поддерживают разные типы проверки подлинности. Вы можете настроить проверку подлинности для следующих триггеров и действий HTTP:
+
+* [HTTP](../connectors/connectors-native-http.md)
+* [HTTP + Swagger](../connectors/connectors-native-http-swagger.md)
+* [webhook HTTP](../connectors/connectors-native-webhook.md)
+
+Ниже приведены типы проверки подлинности, которые можно настроить.
+
+* [Обычная аутентификация](#basic-authentication)
+* [Аутентификация на основе сертификата клиента](#client-certificate-authentication)
+* [Аутентификация Azure Active Directory (Azure AD) OAuth](#azure-active-directory-oauth-authentication)
+
+<a name="basic-authentication"></a>
+
+### <a name="basic-authentication"></a>Обычная аутентификация
+
+Для этого типа проверки подлинности определение триггера или действия может содержать объект JSON `authentication`, который имеет следующие свойства:
+
+| Свойство | Обязательно | Значение | ОПИСАНИЕ | 
+|----------|----------|-------|-------------| 
+| **type** | Yes | "Basic" | Здесь используется тип проверки подлинности Basic. | 
+| **username** | Yes | "@parameters('userNameParam')" | Параметр, который передает имя пользователя для проверки подлинности при доступе к целевой конечной точке службы. |
+| **password** | Yes | "@parameters('passwordParam')" | Параметр, который передает пароль для проверки подлинности при доступе к целевой конечной точке службы. |
+||||| 
+
+Например, ниже приведен формат для объекта `authentication` в вашем определении триггера или действия. Дополнительные сведения о параметрах безопасности см. в разделе [Защита конфиденциальной информации](#secure-info). 
+
+```javascript
+"HTTP": {
+   "type": "Http",
+   "inputs": {
+      "method": "GET",
+      "uri": "http://www.microsoft.com",
+      "authentication": {
+         "type": "Basic",
+         "username": "@parameters('userNameParam')",
+         "password": "@parameters('passwordParam')"
+      }
+  },
+  "runAfter": {}
+}
+```
+
+<a name="client-certificate-authentication"></a>
+
+### <a name="client-certificate-authentication"></a>Проверка подлинности на основе сертификата клиента
+
+Для этого типа проверки подлинности определение триггера или действия может содержать объект JSON `authentication`, который имеет следующие свойства:
+
+| Свойство | Обязательно | Значение | ОПИСАНИЕ | 
+|----------|----------|-------|-------------| 
+| **type** | Yes | "ClientCertificate" | Тип проверки подлинности, используемый для сертификатов клиента Secure Sockets Layer (SSL). | 
+| **pfx** | Yes | <*PFX-файл в кодировке base64*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
+| **password** | Yes | "@parameters('passwordParam')" | Параметр с паролем для доступа к PFX-файлу. |
+||||| 
+
+Например, ниже приведен формат для объекта `authentication` в вашем определении триггера или действия. Дополнительные сведения о параметрах безопасности см. в разделе [Защита конфиденциальной информации](#secure-info). 
+
+```javascript
+"authentication": {
+   "password": "@parameters('passwordParam')",
+   "pfx": "aGVsbG8g...d29ybGQ=",
+   "type": "ClientCertificate"
+}
+```
+
+<a name="azure-active-directory-oauth-authentication"></a>
+
+### <a name="azure-active-directory-ad-oauth-authentication"></a>Проверка подлинности Azure Active Directory (AD) OAuth
+
+Для этого типа проверки подлинности определение триггера или действия может содержать объект JSON `authentication`, который имеет следующие свойства:
+
+| Свойство | Обязательно | Значение | ОПИСАНИЕ | 
+|----------|----------|-------|-------------| 
+| **type** | Yes | `ActiveDirectoryOAuth` | Используемый тип проверки подлинности (ActiveDirectoryOAuth) для Azure Active Directory OAuth. | 
+| **authority** | Нет  | <*URL-адрес для поставщика токена*> | URL-адрес центра, предоставляющего токен проверки подлинности. |  
+| **tenant** | Yes | <*ИД клиента*> | Идентификатор клиента Azure Active Directory. | 
+| **audience** | Yes | <*ресурс для авторизации*> | Ресурс, который нужно использовать для авторизации, например `https://management.core.windows.net/`. | 
+| **clientId** | Yes | <*ИД клиента*> | Идентификатор клиента для приложения, запрашивающего авторизацию. | 
+| **credentialType** | Yes | "Secret" или "Certificate" | Тип учетных данных, который клиент использует для запроса авторизации. Это свойство и значение не отображаются в вашем базовом определении, но определяют требуемые параметры для типа учетных данных. | 
+| **password** | Да, только для учетных данных типа Certificate. | "@parameters('passwordParam')" | Параметр с паролем для доступа к PFX-файлу. | 
+| **pfx** | Да, только для учетных данных типа Certificate. | <*PFX-файл в кодировке base64*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. |
+| **secret** | Да, только для учетных данных типа Secret. | <*секрет для проверки подлинности*> | Секрет с кодировкой base64, который клиент использует для запроса авторизации. |
+||||| 
+
+Например, ниже приведен формат для объекта `authentication` в случае, если в вашем определении триггера или действия используется тип учетных данных Secret. Дополнительные сведения о параметрах безопасности см. в разделе [Защита конфиденциальной информации](#secure-info). 
+
+```javascript
+"authentication": {
+   "audience": "https://management.core.windows.net/",
+   "clientId": "34750e0b-72d1-4e4f-bbbe-664f6d04d411",
+   "secret": "hcqgkYc9ebgNLA5c+GDg7xl9ZJMD88TmTJiJBgZ8dFo="
+   "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+   "type": "ActiveDirectoryOAuth"
+}
+```
+
+<a name="secure-info"></a>
+
+## <a name="secure-sensitive-information"></a>Защита конфиденциальной информации
+
+Для защиты конфиденциальной информации, используемой для проверки подлинности, например имен пользователей и паролей, в своих определениях триггеров и действий вы можете использовать параметры и выражение `@parameters()`, чтобы скрыть данные сведения после сохранения приложения логики. 
+
+Например, предположим, что в своем определении триггера или действия вы используете проверку подлинности типа Basic. Ниже приведен пример объекта `authentication`, который указывает имя пользователя и пароль:
+
+```javascript
+"HTTP": {
+   "type": "Http",
+   "inputs": {
+      "method": "GET",
+      "uri": "http://www.microsoft.com",
+      "authentication": {
+         "type": "Basic",
+         "username": "@parameters('userNameParam')",
+         "password": "@parameters('passwordParam')"
+      }
+  },
+  "runAfter": {}
+}
+```
+
+В разделе `parameters` для определения приложения логики определите параметры, используемые в вашем определении триггера или действия:
+
+```javascript
+"definition": {
+   "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+   "actions": {
+      "HTTP": {
+      }
+   },
+   "parameters": {
+      "passwordParam": {
+         "type": "securestring"
+      },
+      "userNameParam": {
+         "type": "securestring"
+      }
+   },
+   "triggers": {
+      "HTTP": {
+      }
+   },
+   "contentVersion": "1.0.0.0",
+   "outputs": {}
+},
+```
+
+Если вы создаете или используете шаблон развертывания Azure Resource Manager, вам также необходимо включить внешний раздел `parameters` для определения шаблона. Дополнительные сведения о параметрах безопасности см. в разделе [Параметры безопасности и входные данные в рабочем процессе](../logic-apps/logic-apps-securing-a-logic-app.md#secure-parameters-and-inputs-within-a-workflow). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

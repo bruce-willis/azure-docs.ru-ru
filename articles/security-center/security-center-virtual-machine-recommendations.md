@@ -1,32 +1,33 @@
 ---
-title: Защита виртуальных машин в центре безопасности Azure | Документация Майкрософт
-description: В этом документе рассматриваются рекомендации из центра безопасности Azure, которые помогают защитить ваши виртуальные машины и обеспечить соответствие политикам безопасности.
+title: Рекомендации по виртуальным машинам в центре безопасности Azure | Документация Майкрософт
+description: В этом документе содержатся сведения о рекомендациях центра безопасности Azure по защите виртуальных машин, компьютеров, а также веб-приложений и сред службы приложений.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
-ms.assetid: 47fa1f76-683d-4230-b4ed-d123fef9a3e8
+ms.assetid: f5ce7f62-7b12-4bc0-b418-4a2f9ec49ca1
 ms.service: security-center
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/04/2018
-ms.author: terrylan
-ms.openlocfilehash: 54375f6f98b4989a7af8bcde649d967f77c6c862
-ms.sourcegitcommit: 719dd33d18cc25c719572cd67e4e6bce29b1d6e7
+ms.date: 07/18/2018
+ms.author: rkarlin
+ms.openlocfilehash: 7e73d6236f76c58307bb552aeee03bafe66addcc
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "27623504"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43132769"
 ---
-# <a name="protecting-your-virtual-machines-in-azure-security-center"></a>Защита виртуальных машин в центре безопасности Azure.
-Центр безопасности Azure анализирует состояние безопасности ресурсов Azure. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления.  Рекомендации относятся к следующим типам ресурсов Azure: виртуальные машины (ВМ), сети, SQL и приложения.
+# <a name="understand-azure-security-center-resource-recommendations"></a>Общие сведения о рекомендациях центра безопасности ресурсов Azure
 
-В этой статье рассматриваются рекомендации, которые касаются виртуальных машин, в частности сбора данных, применения обновлений системы, подготовки антивредоносных программ, шифрования дисков виртуальной машины и т.  д.  В таблице ниже приведены справочные сведения о доступных рекомендациях по виртуальным машинам и по действиям, выполняемым при их применении.
 
-## <a name="available-vm-recommendations"></a>Доступные рекомендации по виртуальным машинам
+## <a name="recommendations"></a>Рекомендации
+В таблице ниже приведены справочные сведения относительно доступных рекомендаций для служб приложений и среды их выполнения, а также о том, что происходит после их применения.
+
+### <a name="computers"></a>Компьютеры
 | Рекомендации | ОПИСАНИЕ |
 | --- | --- |
 | [Включение сбора данных для подписок](security-center-enable-data-collection.md) |Рекомендует включить в политике безопасности сбор данных для каждой вашей подписки и всех виртуальных машин (ВМ) в ваших подписках. |
@@ -42,15 +43,65 @@ ms.locfileid: "27623504"
 | [Оценка уязвимостей не установлена](security-center-vulnerability-assessment-recommendations.md) |Рекомендует установить решение для оценки уязвимостей на виртуальную машину. |
 | [Исправление уязвимостей](security-center-vulnerability-assessment-recommendations.md#review-the-recommendation) |Позволяет просматривать уязвимости системы и приложений, обнаруженные решением для оценки уязвимостей, установленным на виртуальной машине. |
 
-## <a name="see-also"></a>См. также
+### <a name="app-services"></a>Службы приложений
+| Рекомендации | ОПИСАНИЕ |
+| --- | --- |
+| Служба приложений должна быть доступна только по HTTPS | Рекомендуется ограничить доступ Службы приложений только по протоколу HTTPS. |
+| Протокол WebSocket должен быть отключен для веб-приложения| Рекомендуется внимательно проверять использование подключения Web Socket внутри веб-приложений.  Протокол WebSocket уязвим к различным угрозам безопасности. |
+| Используйте личные домены для веб-приложения | Рекомендуется использовать личные домены, чтобы защитить веб-приложение от обычных атак, таких как фишинг и других атак, связанных с DNS. |
+| Настройте ограничения IP-адресов в веб-приложении | Рекомендуется определить список IP-адресов, с которых разрешен доступ к вашему приложению.  Ограничение IP-адресов обеспечивает защиту веб-приложения от обычных атак. |
+| Не разрешайте всем ("*") ресурсам доступ к приложению | Рекомендуется не устанавливать для параметра WEBSITE_LOAD_CERTIFICATES значение "*". Если задать для параметра значение "*", все ваши сертификаты будут загружены в хранилище личных сертификатов веб-приложений.  Это приведет к нарушению принципа предоставления наименьших привилегий, так как маловероятно, что сайту нужен доступ ко всем сертификатам в среде выполнения. |
+| Служба CORS не должна разрешать доступ к вашему приложению всем ресурсам | Рекомендуется разрешить доступ только к обязательным доменам для взаимодействия с веб-приложением. Общий доступ к ресурсам независимо от источника (CORS) не должен разрешать доступ к вашему веб-приложению всем доменам. |
+| Используйте последнюю поддерживаемую версию .NET Framework для веб-приложения | Рекомендуется использовать последнюю версию .NET Framework для доступа к новейшим классам системы безопасности. Более ранние классы и типы могут сделать приложение уязвимым. |
+| Используйте последнюю поддерживаемую версию Java для веб-приложения | Рекомендуется использовать последнюю версию Java для доступа к новейшим классам системы безопасности. Более ранние классы и типы могут сделать приложение уязвимым. |
+| Используйте последнюю поддерживаемую версию PHP для веб-приложения | Рекомендуется использовать последнюю версию PHP для доступа к новейшим классам системы безопасности. Более ранние классы и типы могут сделать приложение уязвимым. |
+| [Добавление брандмауэра веб-приложения](security-center-add-web-application-firewall.md) |Рекомендует выполнить развертывание брандмауэра веб-приложения (WAF) для конечных точек веб-службы. Рекомендация развернуть WAF отображается для любого общедоступного IP-адреса (IP-адреса уровня экземпляра или IP-адреса с балансировкой нагрузки), имеющего связанную группу безопасности сети с открытыми входящими веб-портами (80, 443).</br></br>Центр безопасности рекомендует подготовить WAF для защиты от атак, направленных на веб-приложения на виртуальных машинах и в среде службы приложений. Среда службы приложений (ASE) — это параметр плана обслуживания [Премиум](https://azure.microsoft.com/pricing/details/app-service/) в службе приложений Azure. Она обеспечивает полностью изолированную и выделенную среду для безопасного выполнения приложений службы приложений Azure. Дополнительные сведения об ASE см. в [документации по среде службы приложений](../app-service/environment/intro.md).</br></br>Вы можете защитить несколько веб-приложений в центре обеспечения безопасности, добавив эти приложения в существующие развернутые службы WAF. |
+| [Завершение подготовки защиты приложений](security-center-add-web-application-firewall.md#finalize-application-protection) |Для завершения настройки брандмауэра веб-приложения трафик должен перенаправляться в модуль WAF. В соответствии с этой рекомендацией в установку будут внесены необходимые изменения. |
+| Используйте последнюю поддерживаемую версию Node.js для веб-приложения | Рекомендуется использовать последнюю версию Node.js для доступа к новейшим классам системы безопасности. Более ранние классы и типы могут сделать приложение уязвимым. |
+| Служба CORS не должна разрешать доступ к вашему приложению-функции всем ресурсам | Рекомендуется разрешить доступ только к обязательным доменам для взаимодействия с веб-приложением. Общий доступ к ресурсам независимо от источника (CORS) не должен разрешать доступ к вашему приложению-функции всем доменам. |
+| Используйте личные домены для приложения-функции | Рекомендуется использовать личные домены, чтобы защитить приложение-функцию от обычных атак, таких как фишинг и других атак, связанных с DNS. |
+| Настройте ограничения IP-адресов для приложения-функции | Рекомендуется определить список IP-адресов, с которых разрешен доступ к вашему приложению. Ограничение IP-адресов обеспечивает защиту приложения-функции от обычных атак. |
+| Приложение-функция должно быть доступно только по HTTPS | Рекомендуется ограничить доступ приложений-функций только по протоколу HTTPS. |
+| Удаленная отладка должна быть отключена для приложения-функции | Если вы больше не будете использовать приложение-функцию, рекомендуется включить режим отладки. Для удаленной отладки нужно, чтобы в приложении-функции были открыты входящие порты. |
+| Протокол WebSocket должен быть отключен для приложения-функции | Рекомендуется внимательно проверять использование подключения WebSocket внутри приложения-функции. Протокол WebSocket уязвим к различным угрозам безопасности. |
+
+
+## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
-* [Защита приложений в центре безопасности Azure.](security-center-application-recommendations.md)
+* [Мониторинг идентификации и доступа в центре безопасности Azure (предварительная версия)](security-center-identity-access.md)
 * [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)
 * [Защита службы SQL Azure в центре безопасности Azure.](security-center-sql-service-recommendations.md)
 
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
+* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Настройка политик безопасности в Центре безопасности Azure](security-center-policies.md) — узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
+
+<!--Image references-->
+[1]: ./media/security-center-virtual-machine-recommendations/overview.png
+[2]: ./media/security-center-virtual-machine-recommendations/compute.png
+[3]: ./media/security-center-virtual-machine-recommendations/monitoring-agent-health-issues.png
+[4]: ./media/security-center-virtual-machine-recommendations/compute-recommendations.png
+[5]: ./media/security-center-virtual-machine-recommendations/apply-system-updates.png
+[6]: ./media/security-center-virtual-machine-recommendations/missing-update-details.png
+[7]: ./media/security-center-virtual-machine-recommendations/vm-computers.png
+[8]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon1.png
+[9]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon2.png
+[10]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon3.png
+[11]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-icon4.png
+[12]: ./media/security-center-virtual-machine-recommendations/filter.png
+[13]: ./media/security-center-virtual-machine-recommendations/vm-detail.png
+[14]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-fig1-new006-2017.png
+[15]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-fig8-new3.png
+[16]: ./media/security-center-virtual-machine-recommendations/security-center-monitoring-fig8-new4.png
+[17]: ./media/security-center-virtual-machine-recommendations/app-services.png
+[18]: ./media/security-center-virtual-machine-recommendations/ase.png
+[19]: ./media/security-center-virtual-machine-recommendations/web-app.png
+[20]: ./media/security-center-virtual-machine-recommendations/recommendation.png
+[21]: ./media/security-center-virtual-machine-recommendations/recommendation-desc.png
+[22]: ./media/security-center-virtual-machine-recommendations/passed-assessment.png
+[23]: ./media/security-center-virtual-machine-recommendations/healthy-resources.png
+[24]: ./media/security-center-virtual-machine-recommendations/function-app.png

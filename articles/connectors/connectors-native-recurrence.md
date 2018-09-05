@@ -1,28 +1,24 @@
 ---
-title: Планирование задач и регулярно выполняющихся рабочих процессов — Azure Logic Apps | Документация Майкрософт
-description: Создание и планирование регулярно выполняющихся задач, действий, рабочих процессов, процессов и рабочих нагрузок с помощью приложений логики.
+title: Создание регулярно выполняющихся рабочих процессов и задач с помощью Azure Logic Apps | Документация Майкрософт
+description: Автоматизируйте выполняемые по расписанию задачи и рабочие процессы с помощью соединителя повторения в Azure Logic Apps.
 services: logic-apps
-documentationcenter: ''
-author: ecfan
-manager: jeconnoc
-editor: ''
-tags: connectors
-ms.assetid: 51dd4f22-7dc5-41af-a0a9-e7148378cd50
 ms.service: logic-apps
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, LADocs
+ms.assetid: 51dd4f22-7dc5-41af-a0a9-e7148378cd50
+tags: connectors
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 09/25/2017
-ms.author: LADocs; estfan
-ms.openlocfilehash: 3bd396355681cdde486cfbea7004c9c1aece09da
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 905157ab530ae042318de520f9d6fe24cb9d59ce
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35296793"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127060"
 ---
-# <a name="create-and-schedule-regularly-running-tasks-with-azure-logic-apps"></a>Создание и планирование регулярно выполняющихся задач при помощи Azure Logic Apps
+# <a name="create-and-run-recurring-tasks-and-workflows-with-azure-logic-apps"></a>Создание и выполнение повторяющихся задач и рабочих процессов с помощью Azure Logic Apps
 
 Для планирования регулярно выполняемых задач, действий, рабочих нагрузок или процессов можно создать рабочий процесс приложения логики, который запускается [триггером](../logic-apps/logic-apps-overview.md#logic-app-concepts) **Расписание — повторение**. С помощью этого триггера можно задать дату и время начала повторения и расписание повторов для выполнения следующих задач и многих других.
 
@@ -43,7 +39,7 @@ ms.locfileid: "35296793"
 
 При каждом срабатывании триггера повторения Logic Apps создает и выполняет экземпляр рабочего процесса приложения логики.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). В противном случае вы можете [зарегистрироваться на получение подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
 

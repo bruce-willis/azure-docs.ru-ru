@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/09/2018
+ms.date: 08/27/2018
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: f6a2b3f242e5989d0c72083eef4faad9c4798cfe
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 67e82a4809253123e15305b5f2ecd8cc5f7ee4ed
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "41946574"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43046856"
 ---
 # <a name="deploy-a-kubernetes-cluster-to-azure-stack"></a>Развертывание кластера Kubernetes в Azure Stack
 
@@ -88,9 +88,9 @@ Kubernetes можно использовать для следующих цел�
 
 Предоставьте субъекту-службе доступ к вашей подписке, чтобы субъект мог создать ресурсы.
 
-1.  Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
+1.  Войдите на [портал Azure Stack](https://portal.local.azurestack.external/).
 
-1. Выберите **Больше служб** > **Пользовательские подписки** > **+ Добавить**.
+1. Выберите **Больше служб** > **Подписки**.
 
 1. Выберите созданную подписку.
 

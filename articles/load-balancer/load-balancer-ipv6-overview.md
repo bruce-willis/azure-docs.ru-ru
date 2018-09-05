@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
+ms.date: 08/24/2018
 ms.author: kumud
-ms.openlocfilehash: 9622ad4922aa98efe093e7f809a490a8797eb1fd
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: fc7cda30beaea8a9e15794c9330832e9ca651eb7
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30189670"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918694"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Общие сведения о поддержке IPv6 для Azure Load Balancer
 
@@ -79,6 +79,7 @@ ms.locfileid: "30189670"
 * Изменение параметра IdleTimeout для IPv6 **пока не поддерживается**. Значение по умолчанию — четыре минуты.
 * Изменение параметра loadDistributionMethod для IPv6 **пока не поддерживается**.
 * Зарезервированные IP-адреса IPv6 (где IPAllocationMethod = static) **пока не поддерживаются**.
+* NAT64 (преобразование IPv6 в IPv4) не поддерживается.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

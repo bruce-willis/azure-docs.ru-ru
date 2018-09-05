@@ -1,25 +1,21 @@
 ---
-title: Настройка конвейера CI/CD для Azure Data Lake Analytics | Документация Майкрософт
+title: Настройка конвейера CI/CD для Azure Data Lake Analytics
 description: Узнайте, как настроить непрерывную интеграцию и непрерывное развертывание для Azure Data Lake Analytics.
 services: data-lake-analytics
-documentationcenter: ''
 author: yanancai
-manager: ''
-editor: ''
+ms.author: yanacai
+ms.reviewer: jasonwhowell
 ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
+ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
-ms.author: yanacai
-ms.openlocfilehash: c114f190ae05f5ea4788c3785a713a6365938ded
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 49ac9f9603a1b8043b19c327d5a66015959b9dd1
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39630710"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43045880"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -443,13 +439,13 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
     * Используйте аутентификацию **secret**, чтобы развернуть базу данных U-SQL в учетной записи Azure Data Lake Analytics.
 
         ```
-        PackageDeploymentTool.exe deploycluster -Package <package path> -Database <database name> -Account <account name> -ResourceGroup <resource group name> -SubscriptionId <subscript id> -Tenant <tenant name> -ClientId <client id> -Secret <secret>
+        PackageDeploymentTool.exe deploycluster -Package <package path> -Database <database name> -Account <account name> -ResourceGroup <resource group name> -SubscriptionId <subscript id> -Tenant <tenant name> -ClientId <client id> -Secrete <secrete>
         ```
 
     * Используйте аутентификацию **certFile**, чтобы развернуть базу данных U-SQL в учетной записи Azure Data Lake Analytics.
 
         ```
-        PackageDeploymentTool.exe deploycluster -Package <package path> -Database <database name> -Account <account name> -ResourceGroup <resource group name> -SubscriptionId <subscript id> -Tenant <tenant name> -ClientId <client id> -Secret <secret> -CertFile <certFile>
+        PackageDeploymentTool.exe deploycluster -Package <package path> -Database <database name> -Account <account name> -ResourceGroup <resource group name> -SubscriptionId <subscript id> -Tenant <tenant name> -ClientId <client id> -Secrete <secrete> -CertFile <certFile>
         ```
 
 ### <a name="packagedeploymenttoolexe-parameter-descriptions"></a>Описание параметров файла PackageDeploymentTool.exe.
@@ -480,8 +476,8 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 |AzureSDKPath|Путь для поиска зависимых сборок в пакете Azure SDK.|null|Да|
 |Interactive|Определяет, нужно ли использовать интерактивный режим для аутентификации.|false|false|
 |ClientId|Идентификатор приложения в Azure AD, используемый для неинтерактивной аутентификации.|null|Обязательно, если не используется интерактивная аутентификация.|
-|Секрет|Секрет или пароль для неинтерактивной аутентификации. Следует использовать только в доверенной и защищенной среде.|null|Обязательно для неинтерактивной аутентификации (иначе используется SecretFile).|
-|SecretFile|В этом файле хранится секрет или пароль для неинтерактивной аутентификации. Следите за тем, чтобы права на чтение этого файла были только у текущего пользователя.|null|Обязательно для неинтерактивной аутентификации (иначе используется Secret).|
+|Секрет|Секрет или пароль для неинтерактивной аутентификации. Следует использовать только в доверенной и защищенной среде.|null|Обязательно для неинтерактивной аутентификации (иначе используется SecreteFile).|
+|SecreteFile|В этом файле хранится секрет или пароль для неинтерактивной аутентификации. Следите за тем, чтобы права на чтение этого файла были только у текущего пользователя.|null|Обязательно для неинтерактивной аутентификации (иначе используется Secrete).|
 |CertFile|В этом файле хранится сертификат X.509 для неинтерактивной аутентификации. По умолчанию используется аутентификация с помощью секрета клиента.|null|false|
 | JobPrefix | Префикс для развертывания базы данных в задании DDL U-SQL. | Deploy_ + DateTime.Now | false |
 

@@ -1,27 +1,23 @@
 ---
-title: Проверка XML в Azure Logic Apps | Документация Майкрософт
-description: Проверка XML с помощью схем для Azure Logic Apps и сценариев B2B с использованием пакета интеграции Enterprise
+title: Проверка XML для интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
+description: Проверка XML с помощью схем для решений B2B в Azure Logic Apps и Пакета интеграции Enterprise
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: msftman
-manager: jeconnoc
-editor: cgronlun
-ms.assetid: d700588f-2d8a-4c92-93eb-e1e6e250e760
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: d700588f-2d8a-4c92-93eb-e1e6e250e760
 ms.date: 07/08/2016
-ms.author: LADocs; padmavc
-ms.openlocfilehash: 901f0e576d28ab163fe2c46dff0594a338fbaf73
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e25f4e633b8cf9030bb0ce395f093f630db59f38
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299605"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43121119"
 ---
-# <a name="validate-xml-for-enterprise-integration"></a>Проверка XML для интеграции Enterprise
+# <a name="validate-xml-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Проверка XML для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 Часто в сценариях B2B партнерам, участвующим в соглашении, необходимо убедиться в допустимости сообщений, которыми они обмениваются. И это нужно сделать до начала обработки данных. В пакете интеграции Enterprise можно использовать соединитель проверки XML, чтобы проверять документы на соответствие предопределенной схеме.
 

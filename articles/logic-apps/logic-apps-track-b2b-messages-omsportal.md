@@ -1,25 +1,21 @@
 ---
 title: Отслеживание сообщений B2B с помощью Azure Log Analytics в Azure Logic Apps | Документация Майкрософт
-description: Отслеживание взаимодействия B2B для учетной записи интеграции и приложений логики с помощью Azure Log Analytics
-author: padmavc
-manager: jeconnoc
-editor: ''
+description: Отслеживание взаимодействия B2B для учетных записей интеграции и Azure Logic Apps с помощью Azure Log Analytics
 services: logic-apps
-documentationcenter: ''
-ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.date: 06/19/2018
-ms.author: LADocs; padmavc
-ms.openlocfilehash: 82d1fbc4167d1df4cb2c976395c181e4abd1ba3c
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 5bf5385824eb9b711a2fee547c29d24d7ef5a01d
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36293211"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125774"
 ---
 # <a name="track-b2b-communication-with-azure-log-analytics"></a>Отслеживание взаимодействия B2B с помощью Azure Log Analytics
 

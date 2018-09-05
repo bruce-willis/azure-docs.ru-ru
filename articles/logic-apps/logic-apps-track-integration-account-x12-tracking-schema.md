@@ -1,31 +1,27 @@
 ---
-title: Схемы отслеживания X12 для мониторинга сообщений B2B в Azure Logic Apps | Документация Майкрософт
-description: Используйте схемы отслеживания X12 для мониторинга сообщений из транзакций типа "бизнес — бизнес" (B2B) в учетной записи интеграции Azure.
-author: padmavc
-manager: jeconnoc
-editor: ''
+title: Схемы отслеживания X12 для сообщений B2B в Azure Logic Apps | Документация Майкрософт
+description: Создание схемы отслеживания X12, которая выполняет мониторинг сообщений B2B в учетных записях интеграции Azure Logic Apps с Пакетом интеграции Enterprise
 services: logic-apps
-documentationcenter: ''
-ms.assetid: a5413f80-eaad-4bcf-b371-2ad0ef629c3d
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: a5413f80-eaad-4bcf-b371-2ad0ef629c3d
 ms.date: 01/27/2017
-ms.author: LADocs; padmavc
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 385ff73d780f62f19af2face591cd0b2291ef396
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: cfd195f2f812c8b2e09058d325d0dbb6f7a60d59
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35300979"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125607"
 ---
-# <a name="start-or-enable-tracking-of-x12-messages-to-monitor-success-errors-and-message-properties"></a>Запуск или включение отслеживания сообщений X12 для мониторинга успешно доставленных сообщений, ошибок и свойств сообщений
-Схемы отслеживания X12 можно использовать в учетной записи интеграции Azure для мониторинга транзакций типа "бизнес-бизнес" (B2B):
+# <a name="create-schemas-for-tracking-x12-messages-in-integration-accounts-for-azure-logic-apps"></a>Создание схемы отслеживания сообщений X12 в учетных записях интеграции Azure Logic Apps
 
-* схема отслеживания набора транзакций X12;
+Чтобы помочь вам отслеживать успех, ошибки и свойства сообщений для транзакций "бизнес — бизнес" (B2B), вы можете использовать эти схемы отслеживания X12 в своей учетной записи интеграции:
+
+* Схема отслеживания набора транзакций X12
 * схема отслеживания подтверждения набора транзакций X12;
 * схема отслеживания обмена X12;
 * схема отслеживания подтверждения обмена X12;
@@ -33,33 +29,33 @@ ms.locfileid: "35300979"
 * схема отслеживания подтверждения для функциональной группы X12.
 
 ## <a name="x12-transaction-set-tracking-schema"></a>Схема отслеживания набора транзакций X12
-````java
 
-    {
-            "agreementProperties": {
-                "senderPartnerName": "",
-                "receiverPartnerName": "",
-                "senderQualifier": "",
-                "senderIdentifier": "",
-                "receiverQualifier": "",
-                "receiverIdentifier": "",
-                "agreementName": ""
-            },
-            "messageProperties": {
-                "direction": "",
-                "interchangeControlNumber": "",
-                "functionalGroupControlNumber": "",
-                "transactionSetControlNumber": "",
-                "CorrelationMessageId": "",
-                "messageType": "",
-                "isMessageFailed": "",
-                "isTechnicalAcknowledgmentExpected": "",
-                "isFunctionalAcknowledgmentExpected": "",
-                "needAk2LoopForValidMessages":  "",
-                "segmentsCount": ""
-            }
-    }
-````
+```json
+{
+   "agreementProperties": {
+      "senderPartnerName": "",
+      "receiverPartnerName": "",
+      "senderQualifier": "",
+      "senderIdentifier": "",
+      "receiverQualifier": "",
+      "receiverIdentifier": "",
+      "agreementName": ""
+   },
+   "messageProperties": {
+      "direction": "",
+      "interchangeControlNumber": "",
+      "functionalGroupControlNumber": "",
+      "transactionSetControlNumber": "",
+      "CorrelationMessageId": "",
+      "messageType": "",
+      "isMessageFailed": "",
+      "isTechnicalAcknowledgmentExpected": "",
+      "isFunctionalAcknowledgmentExpected": "",
+      "needAk2LoopForValidMessages":  "",
+      "segmentsCount": ""
+   }
+}
+```
 
 | Свойство | type | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -81,40 +77,41 @@ ms.locfileid: "35300979"
 | isFunctionalAcknowledgmentExpected | Логическое | Указывает, настроено ли в соглашении X12 функциональное подтверждение. (обязательный параметр) |
 | needAk2LoopForValidMessages | Логическое | Указывает, требуется ли цикл AK2 для допустимого сообщения. (обязательный параметр) |
 | segmentsCount | Целое число  | Число сегментов в наборе транзакций X12. (необязательный параметр) |
+||||
 
 ## <a name="x12-transaction-set-acknowledgement-tracking-schema"></a>Схема отслеживания подтверждения набора транзакций X12
-````java
 
-    {
-            "agreementProperties": {
-                "senderPartnerName": "",
-                "receiverPartnerName": "",
-                "senderQualifier": "",
-                "senderIdentifier": "",
-                "receiverQualifier": "",
-                "receiverIdentifier": "",
-                "agreementName": ""
-            },
-            "messageProperties": {
-                "direction": "",
-                "interchangeControlNumber": "",
-                "functionalGroupControlNumber": "",
-                "isaSegment": "",
-                "gsSegment": "",
-                "respondingfunctionalGroupControlNumber": "",
-                "respondingFunctionalGroupId": "",
-                "respondingtransactionSetControlNumber": "",
-                "respondingTransactionSetId": "",
-                "statusCode": "",
-                "processingStatus": "",
-                "CorrelationMessageId": ""
-                "isMessageFailed": "",
-                "ak2Segment": "",
-                "ak3Segment": "",
-                "ak5Segment": ""
-            }
-    }
-````
+```json
+{
+   "agreementProperties": {
+      "senderPartnerName": "",
+      "receiverPartnerName": "",
+      "senderQualifier": "",
+      "senderIdentifier": "",
+      "receiverQualifier": "",
+      "receiverIdentifier": "",
+      "agreementName": ""
+   },
+   "messageProperties": {
+      "direction": "",
+      "interchangeControlNumber": "",
+      "functionalGroupControlNumber": "",
+      "isaSegment": "",
+      "gsSegment": "",
+      "respondingfunctionalGroupControlNumber": "",
+      "respondingFunctionalGroupId": "",
+      "respondingtransactionSetControlNumber": "",
+      "respondingTransactionSetId": "",
+      "statusCode": "",
+      "processingStatus": "",
+      "CorrelationMessageId": "",
+      "isMessageFailed": "",
+      "ak2Segment": "",
+      "ak3Segment": "",
+      "ak5Segment": ""
+   }
+}
+```
 
 | Свойство | type | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -142,36 +139,37 @@ ms.locfileid: "35300979"
 | ak2Segment | Строка | Подтверждение для набора транзакций в пределах полученной функциональной группы. (необязательный параметр) |
 | ak3Segment | Строка | Сообщает об ошибках в сегменте данных. (необязательный параметр) |
 | ak5Segment | Строка | Сообщает о том, принят ли определенный в сегменте AK2 набор транзакций, а также сообщает соответствующую причину. (необязательный параметр) |
+||||
 
 ## <a name="x12-interchange-tracking-schema"></a>Схема отслеживания обмена X12
-````java
 
-    {
-            "agreementProperties": {
-                "senderPartnerName": "",
-                "receiverPartnerName": "",
-                "senderQualifier": "",
-                "senderIdentifier": "",
-                "receiverQualifier": "",
-                "receiverIdentifier": "",
-                "agreementName": ""
-            },
-            "messageProperties": {
-                "direction": "",
-                "interchangeControlNumber": "",
-                "isaSegment": "",
-                "isTechnicalAcknowledgmentExpected": "",
-                "isMessageFailed": "",
-                "isa09": "",
-                "isa10": "",
-                "isa11": "",
-                "isa12": "",
-                "isa14": "",
-                "isa15": "",
-                "isa16": ""
-            }
-    }
-````
+```json
+{
+   "agreementProperties": {
+      "senderPartnerName": "",
+      "receiverPartnerName": "",
+      "senderQualifier": "",
+      "senderIdentifier": "",
+      "receiverQualifier": "",
+      "receiverIdentifier": "",
+      "agreementName": ""
+   },
+   "messageProperties": {
+      "direction": "",
+      "interchangeControlNumber": "",
+      "isaSegment": "",
+      "isTechnicalAcknowledgmentExpected": "",
+      "isMessageFailed": "",
+      "isa09": "",
+      "isa10": "",
+      "isa11": "",
+      "isa12": "",
+      "isa14": "",
+      "isa15": "",
+      "isa16": ""
+   }
+}
+```
 
 | Свойство | type | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -194,33 +192,35 @@ ms.locfileid: "35300979"
 | isa14 | Строка | Запрос подтверждения X12. (необязательный параметр) |
 | isa15 | Строка | Индикатор для тестирования или работы. (необязательный параметр) |
 | isa16 | Строка | Разделитель элементов. (необязательный параметр) |
+||||
 
 ## <a name="x12-interchange-acknowledgement-tracking-schema"></a>Схема отслеживания подтверждения обмена X12
-````java
-    {
-            "agreementProperties": {
-                "senderPartnerName": "",
-                "receiverPartnerName": "",
-                "senderQualifier": "",
-                "senderIdentifier": "",
-                "receiverQualifier": "",
-                "receiverIdentifier": "",
-                "agreementName": ""
-            },
-            "messageProperties": {
-                "direction": "",
-                "interchangeControlNumber": "",
-                "isaSegment": "",
-                "respondingInterchangeControlNumber": "",
-                "isMessageFailed": "",
-                "statusCode": "",
-                "processingStatus": "",
-                "ta102": "",
-                "ta103": "",
-                "ta105": ""
-            }
-    }
-````
+
+```json
+{
+   "agreementProperties": {
+      "senderPartnerName": "",
+      "receiverPartnerName": "",
+      "senderQualifier": "",
+      "senderIdentifier": "",
+      "receiverQualifier": "",
+      "receiverIdentifier": "",
+      "agreementName": ""
+   },
+   "messageProperties": {
+      "direction": "",
+      "interchangeControlNumber": "",
+      "isaSegment": "",
+      "respondingInterchangeControlNumber": "",
+      "isMessageFailed": "",
+      "statusCode": "",
+      "processingStatus": "",
+      "ta102": "",
+      "ta103": "",
+      "ta105": ""
+   }
+}
+```
 
 | Свойство | type | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -241,38 +241,39 @@ ms.locfileid: "35300979"
 | ta102 | Строка | Дата обмена. (необязательный параметр) |
 | ta103 | Строка | Время обмена. (необязательный параметр) |
 | ta105 | Строка | Код примечания обмена. (необязательный параметр) |
+||||
 
 ## <a name="x12-functional-group-tracking-schema"></a>Схема отслеживания функциональной группы X12
-````java
 
-    {
-            "agreementProperties": {
-                "senderPartnerName": "",
-                "receiverPartnerName": "",
-                "senderQualifier": "",
-                "senderIdentifier": "",
-                "receiverQualifier": "",
-                "receiverIdentifier": "",
-                "agreementName": ""
-            },
-            "messageProperties": {
-                "direction": "",
-                "interchangeControlNumber": "",
-                "functionalGroupControlNumber": "",
-                "gsSegment": "",
-                "isTechnicalAcknowledgmentExpected": "",
-                "isFunctionalAcknowledgmentExpected": "",
-                "isMessageFailed": "",
-                "gs01": "",
-                "gs02": "",
-                "gs03": "",
-                "gs04": "",
-                "gs05": "",
-                "gs07": "",
-                "gs08": ""
-            }
-    }
-````
+```json
+{
+   "agreementProperties": {
+      "senderPartnerName": "",
+      "receiverPartnerName": "",
+      "senderQualifier": "",
+      "senderIdentifier": "",
+      "receiverQualifier": "",
+      "receiverIdentifier": "",
+      "agreementName": ""
+   },
+   "messageProperties": {
+      "direction": "",
+      "interchangeControlNumber": "",
+      "functionalGroupControlNumber": "",
+      "gsSegment": "",
+      "isTechnicalAcknowledgmentExpected": "",
+      "isFunctionalAcknowledgmentExpected": "",
+      "isMessageFailed": "",
+      "gs01": "",
+      "gs02": "",
+      "gs03": "",
+      "gs04": "",
+      "gs05": "",
+      "gs07": "",
+      "gs08": ""
+   }
+}
+```
 
 | Свойство | type | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -297,36 +298,38 @@ ms.locfileid: "35300979"
 | gs05 | Строка | Время функциональной группы. (необязательный параметр) |
 | gs07 | Строка | Код ответственного агентства. (необязательный параметр) |
 | gs08 | Строка | Код версии, выпуска и промышленного идентификатора. (необязательный параметр) |
+||||
 
 ## <a name="x12-functional-group-acknowledgement-tracking-schema"></a>схема отслеживания подтверждения для функциональной группы X12.
-````java
-    {
-            "agreementProperties": {
-                "senderPartnerName": "",
-                "receiverPartnerName": "",
-                "senderQualifier": "",
-                "senderIdentifier": "",
-                "receiverQualifier": "",
-                "receiverIdentifier": "",
-                "agreementName": ""
-            },
-            "messageProperties": {
-                "direction": "",
-                "interchangeControlNumber": "",
-                "functionalGroupControlNumber": "",
-                "isaSegment": "",
-                "gsSegment": "",
-                "respondingfunctionalGroupControlNumber": "",
-                "respondingFunctionalGroupId": "",
-                "isMessageFailed": "",
-                "statusCode": "",
-                "processingStatus": "",
-                "ak903": "",
-                "ak904": "",
-                "ak9Segment": ""
-            }
-    }
-````
+
+```json
+{
+   "agreementProperties": {
+      "senderPartnerName": "",
+      "receiverPartnerName": "",
+      "senderQualifier": "",
+      "senderIdentifier": "",
+      "receiverQualifier": "",
+      "receiverIdentifier": "",
+      "agreementName": ""
+   },
+   "messageProperties": {
+      "direction": "",
+      "interchangeControlNumber": "",
+      "functionalGroupControlNumber": "",
+      "isaSegment": "",
+      "gsSegment": "",
+      "respondingfunctionalGroupControlNumber": "",
+      "respondingFunctionalGroupId": "",
+      "isMessageFailed": "",
+      "statusCode": "",
+      "processingStatus": "",
+      "ak903": "",
+      "ak904": "",
+      "ak9Segment": ""
+   }
+}
+```
 
 | Свойство | type | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -350,10 +353,16 @@ ms.locfileid: "35300979"
 | ak903 | Строка | Число полученных наборов транзакций. (необязательный параметр) |
 | ak904 | Строка | Число наборов транзакций, принятых в указанной функциональной группе. (необязательный параметр) |
 | ak9Segment | Строка | Указывает, принята ли определенная в сегменте AK1 функциональная группа, а также сообщает соответствующую причину. (необязательный параметр) |
+|||| 
+
+## <a name="b2b-protocol-tracking-schemas"></a>Схемы отслеживания для протоколов B2B
+
+Сведения о схемах отслеживания для протоколов B2B см. в следующих статьях:
+
+* [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)   
+* [Настраиваемые схемы отслеживания B2B](logic-apps-track-integration-account-custom-tracking-schema.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 * Дополнительные сведения о [мониторинге сообщений B2B](logic-apps-monitor-b2b-message.md).
-* Дополнительные сведения о [схемах отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md).
-* Дополнительные сведения о [настраиваемых схемах отслеживания B2B](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md).
 * Дополнительные сведения об [отслеживании сообщений B2B в Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
-* Дополнительные сведения о [Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).  

@@ -15,18 +15,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: f1ba6a3d3b9e576d513b55beac4e9365102433e9
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.openlocfilehash: a275df4567053149688694315ff24ac1ad7f711f
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29125747"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43186920"
 ---
 # <a name="deploy-openshift-container-platform-in-azure"></a>Развертывание платформы контейнеров OpenShift в Azure
 
 Для развертывания платформы OpenShift Container Platform в Azure можно использовать один из нескольких способов:
 
-- Вы можете вручную развернуть необходимые компоненты инфраструктуры Azure, а затем следовать инструкциям из [документации](https://docs.openshift.com/container-platform/3.6/welcome/index.html) по платформе OpenShift Container Platform.
+- Вы можете вручную развернуть необходимые компоненты инфраструктуры Azure, а затем следовать инструкциям из [документации](https://docs.openshift.com/container-platform/3.10/welcome/index.html) по платформе OpenShift Container Platform.
 - Также можно использовать существующий [шаблон Resource Manager](https://github.com/Microsoft/openshift-container-platform/), упрощающий развертывание кластера платформы OpenShift Container Platform.
 - Другой вариант — использовать [предложение Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
 

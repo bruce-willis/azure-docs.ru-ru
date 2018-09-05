@@ -1,27 +1,23 @@
 ---
 title: Использование сообщений X12 для интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
-description: Обмен сообщениями X12 в формате EDI для интеграции с предприятием B2B с помощью Azure Logic Apps
+description: Обмен сообщениями X12 в формате EDI для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: padmavc
-manager: jeconnoc
-editor: ''
-ms.assetid: 7422d2d5-b1c7-4a11-8c9b-0d8cfa463164
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: 7422d2d5-b1c7-4a11-8c9b-0d8cfa463164
 ms.date: 01/31/2017
-ms.author: LADocs; padmavc
-ms.openlocfilehash: b269a5171dcb8867f7ea40215d6b8a75d5d918bc
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: c4ee56f4ddcccb1fc4ddd84aa1c1b16dea9754d9
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299085"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123963"
 ---
-# <a name="exchange-x12-messages-for-enterprise-integration-with-logic-apps"></a>Обмен сообщениями X12 для интеграции с предприятием с помощью приложений логики
+# <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями X12 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 Прежде чем вы начнете обмениваться сообщениями X12 с помощью Azure Logic Apps, нужно создать соглашение X12 и сохранить его в вашей учетной записи интеграции. Ниже описаны действия по созданию соглашения X12.
 
@@ -65,7 +61,7 @@ ms.locfileid: "35299085"
 
     ![Сведения о соглашении](./media/logic-apps-enterprise-integration-x12/x12-1.png)  
 
-    | Свойство | ОПИСАНИЕ |
+    | Свойство | Описание |
     | --- | --- |
     | ИМЯ |Имя соглашения |
     | Тип соглашения | Здесь должен быть указан тип X12 |

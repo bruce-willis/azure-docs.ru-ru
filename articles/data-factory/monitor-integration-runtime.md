@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: douglasl
-ms.openlocfilehash: 9bcc73d262f4bc455c923fe0eb7c04c7cf090830
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 8ca7ce2586513373c58552bb1f56b94715f15076
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39505367"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128455"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure  
 **Среда выполнения интеграции** — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. В фабрике данных предусмотрено три типа сред выполнения интеграции:

@@ -1,6 +1,6 @@
 ---
-title: Роли в Azure AD Privileged Identity Management | Документация Майкрософт
-description: Узнайте, какие роли можно использовать для привилегированных пользователей с помощью расширения для управления привилегированными пользователями Azure.
+title: Роли каталога Azure AD, которыми можно управлять в PIM | Документация Майкрософт
+description: Сведения о ролях каталога Azure AD, которыми можно управлять в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.component: pim
 ms.date: 07/23/2018
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.openlocfilehash: f8045d70ab4926cdc0e28a9a2290685c4f11205a
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: c8870e4da63dc52d5926bdfd5f7c9b3218e5f53a
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39618569"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188992"
 ---
-# <a name="directory-roles-you-can-manage-using-azure-ad-pim"></a>Роли каталога, которыми можно управлять с помощью Azure AD Privileged Identity Management
+# <a name="azure-ad-directory-roles-you-can-manage-in-pim"></a>Роли каталога Azure AD, которыми можно управлять в PIM
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
 
 В Azure AD пользователям организации можно назначать различные административные роли. Назначения ролей регулируют, какие задачи (например, добавление или удаление пользователей или изменение параметров службы) смогут выполнять пользователи в Azure AD, Office 365 и других службах Microsoft Online Services и подключенных приложениях.  
@@ -86,5 +86,7 @@ ms.locfileid: "39618569"
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дополнительная информация
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]
+
+- [Начало работы с PIM](pim-getting-started.md)
+- [Назначение ролей каталога Azure AD в PIM ](pim-how-to-add-role-to-user.md)
 

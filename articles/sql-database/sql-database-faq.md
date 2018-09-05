@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: reference
 ms.topic: conceptual
-ms.date: 08/21/2018
+ms.date: 08/27/2018
 ms.author: carlrab
-ms.openlocfilehash: 03e24679ea01dabb78a0d7028d49b624b2e3bf64
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 7f784689e8437d92cf4fc4974983d3ae1455f11b
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246781"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43091830"
 ---
 # <a name="sql-database-faq"></a>Часто задаваемые вопросы о базе данных SQL
 
@@ -155,7 +155,7 @@ ms.locfileid: "40246781"
 - Если вы создадите управляемый экземпляр на уровне общего назначения с 8 виртуальными ядрами, а затем сразу же обновите его до 16 ядер, плата за первый час будет взиматься по тарифу за 16 виртуальных ядер.
 
 > [!NOTE]
-> В течение ограниченного периода времени, до 30 июня 2018 года, плата за хранение резервной копии и операции ввода-вывода взиматься не будет.
+> В течение ограниченного периода времени плата за хранение резервной копии и операции ввода-вывода взиматься не будет.
 
 ## <a name="how-does-the-use-of-active-geo-replication-in-an-elastic-pool-show-up-on-my-bill"></a>Как использование активной георепликации в эластичном пуле отражается на счете?
 В отличие от отдельных баз данных, использование [активной георепликации](sql-database-geo-replication-overview.md) с эластичными базами данных не оказывает прямого влияния на выставление счетов.  Плата взимается только за ресурсы, выделенные для каждого пула (основного и вторичного).

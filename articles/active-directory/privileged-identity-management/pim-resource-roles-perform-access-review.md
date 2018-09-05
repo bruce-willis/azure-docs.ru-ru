@@ -1,6 +1,6 @@
 ---
-title: Проверка доступа в приложении "Управление привилегированными пользователями" для ресурсов Azure | Документация Майкрософт
-description: Из этого документа вы узнаете, как выполнить проверку доступа в PIM для ресурсов Azure в соответствии с ролью ресурса.
+title: Выполнение проверки доступа своих ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как выполнить проверку доступа ролей ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.component: pim
 ms.date: 03/30/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 336ad1d7eff8eee0f2370e206eb98f20b4efb45b
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: a96a1de7828797f1124280fca95a3358210b55b7
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617230"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189724"
 ---
-# <a name="perform-an-access-review-in-pim-according-to-resource-role"></a>Проверка доступа в PIM в соответствии с ролью ресурса
+# <a name="perform-an-access-review-of-my-azure-resource-roles-in-pim"></a>Выполнение проверки доступа своих ролей ресурсов Azure в PIM
 Приложение "Управление привилегированными пользователями" (PIM) для ресурсов Azure упрощает управление привилегированным доступом к ресурсам в Azure для предприятий. 
 
 Если вам назначена роль администратора, администратор привилегированных ролей вашей организации может попросить вас регулярно подтверждать, что эта роль по-прежнему требуется вам для работы. Вы можете получить сообщение электронной почты, содержащее ссылку для подтверждения, или перейти непосредственно на [портал Azure](https://portal.azure.com). Следуйте указаниям в этой статье, чтобы выполнить самостоятельную проверку назначенных вам ролей.
@@ -50,3 +50,7 @@ ms.locfileid: "39617230"
 4. Выберите **Утвердить** или **Запретить**. Возможно, в текстовом поле **Указание причины** потребуется ввести причину своего решения.
 
    ![Снимок экрана страницы просмотра подробностей](media/azure-pim-resource-rbac/rbac-access-review-choice.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Проверка доступа ролей каталога Azure AD в PIM](pim-how-to-perform-security-review.md)

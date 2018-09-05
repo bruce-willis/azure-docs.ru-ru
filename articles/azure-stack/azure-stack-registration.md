@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/13/2018
+ms.date: 08/24/2018
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.openlocfilehash: e2411a91174fd0b52227b4cfe8783c8c74c4039e
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 58c8568da0a818f87a5bb3d6966d2d4a6c977fd9
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41947758"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247829"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -78,19 +78,18 @@ $ExecutionContext.SessionState.LanguageMode
 
 Перед регистрацией в Azure удалите все существующие версии средств Azure Stack и [загрузите новейшую версию с сайта GitHub](azure-stack-powershell-download.md).
 
-### <a name="determine-your-registration-scenario"></a>Определение своего сценария регистрации
+### <a name="determine-your-registration-scenario"></a>Определение своего сценария регистрации.
 
 Развертывание Azure Stack может быть *подключено* или *отключено*.
 
  - **Подключено**  
  "Подключено" означает, что вы развернули экземпляр Azure Stack так, что он может подключиться к Интернету и к Azure. Для хранилища удостоверений используется Azure Active Directory (Azure AD) или службы федерации Active Directory (AD FS). Для подключенных развертываний можно выбрать из двух моделей выставления счетов: оплата по мере использования или на основе емкости.
-    - [Регистрация подключенного Azure Stack в Azure с использованием модели выставления счетов **с оплатой по мере использования**](#register-a-connected-azure-stack-with-azure-using-the-pay-as-you-use-billing-model)
-    - [Регистрация подключенного Azure Stack в Azure с использованием модели выставления счетов **с оплатой на основе емкости**](#register-a-connected-azure-stack-with-azure-using-the-capacity-billing-model)
+    - [Регистрация подключенного Azure Stack в Azure с использованием модели выставления счетов **с оплатой по мере использования**](#register-connected-with-pay-as-you-go-billing)
+    - [Регистрация подключенного Azure Stack в Azure с использованием модели выставления счетов **с оплатой на основе емкости**](#register-connected-with-capacity-billing)
 
  - **Отключено**  
  С помощью развертывания Azure без подключения можно развернуть и использовать Azure Stack без подключения к Интернету. Но при этом вы будете ограничены хранилищем удостоверений службы федерации Active Directory (AD FS) и моделью выставления счетов на основе емкости.
-    - [Регистрация подключенного Azure Stack с использованием модели выставления счетов **с оплатой на основе емкости**](#register-a-disconnected-Azure-Stack-using-the-capacity-billing-model
-)
+    - [Регистрация подключенного Azure Stack с использованием модели выставления счетов **с оплатой на основе емкости**](#register-disconnected-with-capacity-billing)
 
 ## <a name="register-connected-with-pay-as-you-go-billing"></a>Регистрация подключенного развертывания с оплатой по мере использования
 
@@ -218,7 +217,7 @@ $ExecutionContext.SessionState.LanguageMode
 
    ```Powershell
    $FilePathForRegistrationToken = $env:SystemDrive\RegistrationToken.txt
-   $RegistrationToken = Get-AzsRegistrationToken -PrivilegedEndpointCredential -EnableUsageReporting False $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel Capacity -AgreementNumber '<EA agreement number>' -TokenOutputFilePath $FilePathForRegistrationToken
+   $RegistrationToken = Get-AzsRegistrationToken -PrivilegedEndpointCredential -UsageReportingEnabled:$False $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel Capacity -AgreementNumber '<EA agreement number>' -TokenOutputFilePath $FilePathForRegistrationToken
    ```
    Дополнительные сведения о командлете Get-AzsRegistrationToken см. в разделе [Справка по регистрации](#registration-reference).
 
@@ -358,7 +357,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 ### <a name="disable-or-enable-usage-reporting"></a>Отключение или включение отчетов о потреблении
 
-Для сред Azure Stack, которые применяют модель выставления счетов с оплатой на основе емкости, отключите отчеты о потреблении с помощью параметра **EnableUsageReporting**, используя командлет **Set-AzsRegistration** либо **Get-AzsRegistrationToken**. Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении.
+Для сред Azure Stack, которые применяют модель выставления счетов с оплатой на основе емкости, отключите отчеты о потреблении с помощью параметра **UsageReportingEnabled**, используя командлет **Set-AzsRegistration** либо **Get-AzsRegistrationToken**. Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении.
 
 #### <a name="with-a-connected-azure-stack"></a>С подключенным Azure Stack
 
@@ -378,7 +377,7 @@ $ExecutionContext.SessionState.LanguageMode
 
    ```Powershell
    $FilePathForRegistrationToken = $env:SystemDrive\RegistrationToken.txt
-   $RegistrationToken = Get-AzsRegistrationToken -PrivilegedEndpointCredential -EnableUsageReporting False
+   $RegistrationToken = Get-AzsRegistrationToken -PrivilegedEndpointCredential -UsageReportingEnabled:$False
    $YourCloudAdminCredential -PrivilegedEndpoint $YourPrivilegedEndpoint -BillingModel Capacity -AgreementNumber '<EA agreement number>' -TokenOutputFilePath $FilePathForRegistrationToken
    ```
 

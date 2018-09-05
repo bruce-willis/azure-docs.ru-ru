@@ -1,6 +1,6 @@
 ---
-title: Продление и проверка ролей для ресурсов Azure с помощью управления привилегированными пользователями | Документация Майкрософт
-description: В этом документе описывается продление и возобновление действия ролей ресурсов Azure для ресурсов управления привилегированными пользователями.
+title: Расширение или возобновление ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как продлить или возобновить роли ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 7eb30f895214ff7d5a1607fc7e477d3d876a6fc1
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 2c85c5bbbd4c152113108e0fdb717d23f85f9fde
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617529"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189656"
 ---
-# <a name="extend-and-review-roles-in-azure-resources-by-using-privileged-identity-management"></a>Продление и проверка ролей для ресурсов Azure с помощью управления привилегированными пользователями
+# <a name="extend-or-renew-azure-resource-roles-in-pim"></a>Расширение или возобновление ролей ресурсов Azure в PIM
 
 Управление привилегированными пользователями (PIM) для ресурсов Azure предоставляет новые элементы управления доступом и жизненным циклом назначения для ресурсов Azure. Администраторы могут назначать членство, используя свойства даты и времени начала и окончания. Перед завершением срока назначения PIM отправляет уведомления по электронной почте всем пользователям или группам, которых оно касается. Также уведомления по электронной почте отправляются администраторам ресурса, чтобы они приняли меры для сохранения требуемого доступа. Назначения нужно возобновить. Для удобства они остаются видимыми в течение 30 дней после истечения срока действия, даже если доступ не продлевается.
 
@@ -131,8 +131,5 @@ PIM отправляет уведомления по электронной по
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Privileged Identity Management - Resource Roles - Approve](pim-resource-roles-approval-workflow.md) (Управление привилегированными пользователями — роли ресурсов — утверждение)
-
-[Privileged Identity Management - Resource Roles - Audit](pim-resource-roles-use-the-audit-log.md) (Управление привилегированными пользователями — роли ресурсов — аудит)
-
-
+- [Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM](pim-resource-roles-approval-workflow.md)
+- [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)

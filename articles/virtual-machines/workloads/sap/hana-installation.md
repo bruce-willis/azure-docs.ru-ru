@@ -11,15 +11,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 06/27/2018
+ms.date: 08/27/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ecef13f0ce97c7cec5a6583479911a08a99b0877
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 1d335e135551b7b6faed8ee566acb14b46fd6c81
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37110734"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43107517"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA (крупные экземпляры) в Azure
 
@@ -41,6 +41,9 @@ ms.locfileid: "37110734"
 > Согласно политике SAP, установку SAP HANA выполняет специалист, имеющий соответствующий сертификат. Это пользователь, сдавший экзамен на установку SAP HANA в рамках сертификации технологического партнера SAP, экзамен по установке SAP HANA, или системный интегратор с сертификатом SAP.
 
 Еще раз прочтите (особенно если вы планируете установить HANA 2.0) документ [SAP Support Note #2235581 - SAP HANA: Supported Operating Systems](https://launchpad.support.sap.com/#/notes/2235581/E) (Примечание по поддержке SAP №2235581. SAP HANA: поддерживаемые операционные системы) и убедитесь, что используемая ОС поддерживается выпуском SAP HANA, который вы собираетесь установить. Вы увидите, что в поддерживаемой ОС для HANA 2.0 больше ограничений, чем в ОС для HANA 1.0. 
+
+> [!IMPORTANT] 
+> В настоящее время для единиц типа II поддерживается только ОС SLES 12 SP2. 
 
 ## <a name="first-steps-after-receiving-the-hana-large-instance-units"></a>Первые шаги после получения единиц крупных экземпляров HANA
 
@@ -82,7 +85,7 @@ ms.locfileid: "37110734"
 
 См. руководство по [поддерживаемым сценариям HLI](hana-supported-scenario.md) для получения сведений об Ethernet для вашей архитектуры.
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>служба хранилища.
 
 Структура хранения для SAP HANA в Azure (крупные экземпляры) настраивается через управление службами SAP HANA в Azure с применением рекомендованных методик, как описано в техническом документе с описанием [требований к хранилищу для SAP HANA](http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). Приблизительные размеры разных томов с различными SKU крупных экземпляров HANA задокументированы в статье [Обзор и описание архитектуры SAP HANA в Azure (крупные экземпляры)](hana-overview-architecture.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
@@ -142,6 +145,9 @@ ms.locfileid: "37110734"
 См. руководство по [поддерживаемым сценариям HLI](hana-supported-scenario.md) для изучения макета хранилища для вашей архитектуры.
 
 ## <a name="operating-system"></a>Операционная система
+
+> [!IMPORTANT] 
+> В настоящее время для единиц типа II поддерживается только ОС SLES 12 SP2. 
 
 Для области буфера доставленного образа ОС выделено 2 ГБ в соответствии с документом [SAP Support Note #1999997 - FAQ: SAP HANA Memory](https://launchpad.support.sap.com/#/notes/1999997/E) (Примечание по поддержке SAP №1999997. Часто задаваемые вопросы: память SAP HANA). Другие необходимые параметры должен устанавливать клиент.
 

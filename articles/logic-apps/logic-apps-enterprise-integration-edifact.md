@@ -1,28 +1,23 @@
 ---
 title: Использование сообщений EDIFACT для интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
-description: Обмен сообщениями EDIFACT в формате EDI для интеграции с предприятием B2B с помощью Azure Logic Apps
+description: Обмен сообщениями EDIFACT в формате EDI для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-ms.assetid: 2257d2c8-1929-4390-b22c-f96ca8b291bc
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.custom: H1Hack27Feb2017
+ms.assetid: 2257d2c8-1929-4390-b22c-f96ca8b291bc
 ms.date: 07/26/2016
-ms.author: LADocs; jonfan
-ms.openlocfilehash: d85db6f5be487578ceab261d2779589439bfad31
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 2da672e1f55af1e38ae0a3fa90b7ecb10d2f17c7
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35300102"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128383"
 ---
-# <a name="exchange-edifact-messages-for-enterprise-integration-with-logic-apps"></a>Обмен сообщениями EDIFACT для интеграции с предприятием с помощью приложений логики
+# <a name="exchange-edifact-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями EDIFACT для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 Прежде чем начать обмен сообщениями EDIFACT с помощью Azure Logic Apps, необходимо создать соглашение EDIFACT и сохранить его в учетной записи интеграции. Ниже описаны действия по созданию соглашения EDIFACT.
 
@@ -68,7 +63,7 @@ ms.locfileid: "35300102"
 
    ![Сведения о соглашении](./media/logic-apps-enterprise-integration-edifact/edifact-1.png)
 
-   | Свойство | ОПИСАНИЕ |
+   | Свойство | Описание |
    | --- | --- |
    | ИМЯ |Имя соглашения |
    | Тип соглашения | Нужно указать EDIFACT |

@@ -1,5 +1,5 @@
 ---
-title: Управление устройствами с помощью портала Azure | Документация Майкрософт
+title: Как управлять устройствами с помощью портала Azure | Документация Майкрософт
 description: Узнайте, как использовать портал Azure для управления устройствами.
 services: active-directory
 documentationcenter: ''
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/01/2018
+ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: bc29fbd0946f0abfe692e2270d145cd2cb292356
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: ff1d51021038909c132bef4cb680589b9951f218
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146981"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43041431"
 ---
-# <a name="managing-devices-using-the-azure-portal"></a>Управление устройствами с помощью портала Azure
+# <a name="how-to-manage-devices-using-the-azure-portal"></a>Как управлять устройствами с помощью портала Azure
 
 
 Благодаря управлению устройствами в Azure Active Directory (Azure AD) ваши пользователи получают доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям. 

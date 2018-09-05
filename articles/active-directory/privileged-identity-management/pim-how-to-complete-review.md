@@ -1,6 +1,6 @@
 ---
-title: Завершение выполнения проверки доступа | Документация Майкрософт
-description: После запуска проверки доступа в управлении привилегированными пользователями Azure AD узнайте, как ее завершить и просмотреть результаты.
+title: Завершение проверки доступа ролей каталога Azure AD в PIM | Документация Майкрософт
+description: Узнайте, как завершить проверку доступа ролей каталога Azure AD в Azure AD Privileged Identity Management (PIM) и просмотреть результаты.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.component: pim
 ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 3b4135368c2222a08b155c851b384244774ce246
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 3955f4bf9b579ae40424c2650f9d3b4c2ac4f030
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622536"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188592"
 ---
-# <a name="how-to-complete-an-access-review-in-azure-ad-privileged-identity-management"></a>Как завершить выполнение проверки доступа в управлении привилегированными пользователями Azure AD
+# <a name="complete-an-access-review-for-azure-ad-directory-roles-in-pim"></a>Завершение проверки доступа ролей каталога Azure AD в PIM
 После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Компонент управления привилегированными пользователями (PIM) Azure AD автоматически отправит пользователям электронное письмо с предложением проверить доступ. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
 
 После окончания периода проверки доступа или после завершения всеми пользователями самостоятельной проверки выполните шаги, описанные в этой статье, для управления проверкой и просмотра результатов.
@@ -53,4 +53,6 @@ ms.locfileid: "39622536"
 > Учтите, что при удалении проверки предупреждение не выдается. Поэтому убедитесь, что выбрана нужная проверка. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]
+
+- [Запуск проверки доступа для ролей каталога Azure AD в PIM](pim-how-to-start-security-review.md)
+- [Проверка доступа ролей каталога Azure AD в PIM](pim-how-to-perform-security-review.md)

@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/21/2018
+ms.date: 08/27/2018
 ms.author: Kumud
-ms.openlocfilehash: 9d5d596254f673b86650e8d9754dacdb70be0666
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 43945dc8810151eb701aa9e1aa1be47d4fbb0491
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32179800"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125650"
 ---
 # <a name="metrics-and-health-diagnostics-for-standard-load-balancer"></a>Диагностика Load Balancer уровня "Стандартный" на основе метрик и сведений о работоспособности
 
@@ -219,5 +219,6 @@ Azure Load Balancer предоставляет новые многомерные
 
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 - Узнайте больше об [исходящих подключениях подсистемы балансировки нагрузки](https://aka.ms/lboutbound).
+- Узнайте больше о [REST API метрик Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metrics/).
 
 

@@ -1,31 +1,27 @@
 ---
-title: Создание решений B2B в Azure Logic Apps | Документация Майкрософт
-description: Получение данных в приложениях логики с использованием функций B2B из пакета интеграции Enterprise
+title: Создание интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
+description: Получение данных B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: msftman
-manager: jeconnoc
-editor: cgronlun
-ms.assetid: 20fc3722-6f8b-402f-b391-b84e9df6fcff
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: 20fc3722-6f8b-402f-b391-b84e9df6fcff
 ms.date: 07/08/2016
-ms.author: LADocs; padmavc
-ms.openlocfilehash: a27a413ba9a0d974cf90fe842d5fc325ab308a56
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: ad7a29f4a554d599b17576921542b1ac6e403911
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298123"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43127770"
 ---
-# <a name="receive-data-in-logic-apps-with-the-b2b-features-in-the-enterprise-integration-pack"></a>Получение данных в приложениях логики с помощью функций B2B из пакета интеграции Enterprise
+# <a name="receive-b2b-data-with-azure-logic-apps-and-enterprise-integration-pack"></a>Получение данных B2B с помощью Azure Logic Apps и Пакета интеграции Enterprise
 
 После создания учетной записи интеграции, для которой определены партнеры и соглашения, вы сможете с помощью [пакета интеграции Enterprise](logic-apps-enterprise-integration-overview.md) создать рабочий процесс "бизнес — бизнес" (B2B) для приложения логики.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать действия AS2 и X12, потребуется учетная запись интеграции Enterprise. Узнайте, [как создать учетную запись интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-accounts.md).
 

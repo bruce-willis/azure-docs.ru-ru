@@ -1,30 +1,25 @@
 ---
-title: Отслеживание транзакций B2B и настройка ведения журнала с помощью Azure Logic Apps | Документы Майкрософт
-description: Мониторинг сообщений AS2, X 12 и EDIFACT, запуск ведения журнала диагностики для учетной записи интеграции
-author: padmavc
-manager: jeconnoc
-editor: ''
+title: Отслеживание сообщений B2B и настройка ведения журнала с помощью Azure Logic Apps | Документация Майкрософт
+description: Выполняйте мониторинг сообщений AS2, X12 и EDIFACT. Настройте ведение журнала диагностики для учетной записи интеграции в Azure Logic Apps.
 services: logic-apps
-documentationcenter: ''
-ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.custom: H1Hack27Feb2017
+ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.date: 07/21/2017
-ms.author: LADocs; padmavc
-ms.openlocfilehash: 399c7b91949a854f3a152e9a3788d9163c565934
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: decc0271ae0e7c359f72648d7c4d0076892285da
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299323"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125181"
 ---
-# <a name="monitor-and-set-up-diagnostics-logging-for-b2b-communication-in-integration-accounts"></a>Мониторинг и настройка ведения журнала диагностики для взаимодействия B2B в учетных записях интеграции
+# <a name="monitor-b2b-messages-and-set-up-logging-for-integration-accounts-in-azure-logic-apps"></a>Отслеживание сообщений B2B и настройка ведения журнала для учетной записи интеграции в Azure Logic Apps
 
-После настройки взаимодействия B2B между двумя выполняющимися бизнес-процессами или приложениями с помощью учетной записи интеграции эти сущности могут обмениваться сообщениями друг с другом. Чтобы убедиться в том, что это взаимодействие осуществляется должным образом, можно настроить мониторинг сообщений AS2, X12 и EDIFACT, а также ведение журналов диагностики для учетной записи интеграции с помощью службы [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Эта служба в отслеживает облачную и локальную среды, помогая обеспечить их доступность и производительность, а также собирает сведения о времени выполнения и событиях для отладки. Также можно [использовать полученные диагностические данные в других службах](#extend-diagnostic-data), таких как служба хранилища Azure и концентраторы событий Azure.
+После настройки взаимодействия B2B между двумя выполняющимися бизнес-процессами или приложениями с помощью учетной записи интеграции эти сущности могут обмениваться сообщениями друг с другом. Чтобы убедиться в том, что это взаимодействие осуществляется должным образом, можно настроить мониторинг сообщений AS2, X12 и EDIFACT, а также ведение журналов диагностики для учетной записи интеграции с помощью службы [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Эта служба в отслеживает облачную и локальную среды, помогая обеспечить их доступность и производительность, а также собирает сведения о времени выполнения и событиях для отладки. Также можно [использовать полученные диагностические данные в других службах](#extend-diagnostic-data), таких как служба хранилища Azure и Центры событий Azure.
 
 ## <a name="requirements"></a>Требования
 
@@ -110,11 +105,11 @@ ms.locfileid: "35299323"
 Помимо Azure Log Analytics, можно расширить возможности использования диагностических данных приложения логики в других службах Azure, например: 
 
 * [Архивация журналов диагностики Azure в службе хранилища Azure](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md)
-* [Потоковая передача журналов диагностики в концентраторы событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) 
+* [Потоковая передача журналов диагностики в Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) 
 
 После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../log-analytics/log-analytics-powerbi.md). Например: 
 
-* [Потоковая передача данных из концентраторов событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
+* [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)
 
 В зависимости от вариантов использования, которые нужно настроить, сначала необходимо [создать учетную запись хранения Azure](../storage/common/storage-create-storage-account.md) или [создать концентратор событий Azure](../event-hubs/event-hubs-create.md). Затем выберите варианты отправки данных диагностики:

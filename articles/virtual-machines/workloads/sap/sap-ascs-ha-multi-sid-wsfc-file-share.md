@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 604179ec856d21dce51101fdafa5d51eed08f89f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1e21357eeb795a26874cddb90b4d3a6303b83ac0
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34657219"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189639"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -216,7 +216,7 @@ ms.locfileid: "34657219"
 
 Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
 
@@ -227,6 +227,7 @@ _**Рис. 1.** Экземпляр SAP ASCS/SCS и SOFS, развернутые 
 > [!IMPORTANT]
 > Установка должна соответствовать двум таким условиям:
 > * Экземпляры SAP ASCS/SCS должны совместно использовать один кластер WSFC.
+> * Другие общие файловые ресурсы глобальных узлов SAP, относящиеся к разным идентификаторам безопасности SAP, должны совместно использовать один кластер SOFS.
 > * Для каждого идентификатора безопасности системы управления базами данных (СУБД) должен быть выделен кластер WSFC.
 > * Серверы приложений SAP, связанные с одним ИД безопасности системы SAP, должны размещаться на выделенных виртуальных машинах.
 

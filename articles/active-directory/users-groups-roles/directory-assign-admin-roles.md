@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 08/21/2018
+ms.date: 08/27/2018
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 6c97d7c2f901110421f9fc5d0a1d4468d832c472
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 9b56f540af2b8d35258a4db79502c9edf83cdb45
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42142523"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128472"
 ---
 # <a name="assigning-administrator-roles-in-azure-active-directory"></a>Назначение ролей администратора в Azure Active Directory
 
@@ -75,6 +75,8 @@ ms.locfileid: "42142523"
 * **[Администратор Information Protection](#information-protection-administrator)**: эта роль предусматривает наличие всех разрешений в службе Azure Information Protection. Эта роль позволяет настраивать метки для политики Azure Information Protection, управлять шаблонами защиты и активировать защиту. Эта роль не предоставляет разрешений в центре защиты идентификации, службе управления привилегированными пользователями, службе отслеживания работоспособности служб Office 365, а также Центре безопасности и соответствия требованиям Office 365.
 
 * **[Администратор службы Intune](#intune-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Intune Online при наличии этой службы. Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
+
+* **[Администратор лицензий](#license-administrator)**. Пользователи с этой ролью могут добавлять, удалять и изменять назначенные лицензии для пользователей и групп (с использованием группового лицензирования), а также управлять расположением использования для пользователей. Роль не предоставляет возможности управления подписками или их приобретения, создания групп или управления ими, или создания и управления пользователями за пределами расположения использования.
 
 * **[Читатель Центра сообщений](#message-center-reader)**: пользователи с этой ролью могут отслеживать уведомления и рекомендации по обновлениям работоспособности в [Центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации в настроенных службах, таких как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. 
 
@@ -610,6 +612,23 @@ ms.locfileid: "42142523"
 | microsoft.aad.directory/User/Update/Manager | Изменение свойства Users.Manager в Azure Active Directory. |
 | microsoft.aad.supporttickets/AllEntities/AllActions | Создание запросов в службу поддержки Office 365 и управление ими. |
 | microsoft.intune/AllEntities/AllActions | Управление всеми аспектами Intune. |
+
+
+### <a name="license-administrator"></a>Администратор лицензий
+Может управлять лицензиями продуктов для пользователей и групп.
+ 
+  > [!NOTE]
+  > Эта роль наследует дополнительные разрешения у роли читателя каталогов.
+  >
+  >
+ 
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/usageLocation/update | Изменение свойства Users.UsageLocation в Azure Active Directory. |
+| microsoft.azure.accessService/allEntities/allTasks | Управление всеми аспектами службы доступа Azure. |
+| microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
+| microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
 ### <a name="lync-service-administrator"></a>Администратор службы Lync
 Может контролировать все аспекты продукта "Skype для бизнеса".

@@ -1,27 +1,23 @@
 ---
-title: Аварийное восстановление учетной записи интеграции B2B в Azure Logic Apps | Документация Майкрософт
-description: Аварийное восстановление B2B в Logic Apps
+title: Аварийное восстановление учетной записи интеграции B2B в Logic Apps | Документация Майкрософт
+description: Подготовка к межрегиональному аварийному восстановлению в Azure Logic Apps
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: padmavc
-manager: jeconnoc
-editor: ''
-ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.date: 04/10/2017
-ms.author: LADocs; padmavc
-ms.openlocfilehash: 1882207207327214ee6519a98715d06a7e32ab93
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 3d465123f814887282bf2b29a5b6e0836601c243
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045608"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123910"
 ---
-# <a name="logic-apps-b2b-cross-region-disaster-recovery"></a>Межрегиональное аварийное восстановление Logic Apps B2B
+# <a name="cross-region-disaster-recovery-for-b2b-integration-accounts-in-azure-logic-apps"></a>Межрегиональное аварийное восстановление учетных записей интеграции B2B в Azure Logic Apps
 
 Рабочие нагрузки B2B включают денежные транзакции, например заказы и счета. Для компаний в случае аварии чрезвычайно важно быстро восстановить систему для соответствия Соглашениям об уровне обслуживания корпоративного уровня по договоренности с партнерами. В этой статье описывается создание плана обеспечения непрерывности бизнес-процессов для рабочих нагрузок B2B. 
 
@@ -49,7 +45,7 @@ ms.locfileid: "37045608"
 
 5. Мы рекомендуем также развернуть все ресурсы основного региона 
 
-   (например, базы данных SQL Azure и Azure Cosmos DB, служебную шину и концентраторы уведомлений Azure, используемые для обмена сообщениями, управление API Azure и компонент Azure Logic Apps в службе приложений Azure) в дополнительном регионе.   
+   (например, Базу данных SQL Azure и Azure Cosmos DB, Служебную шину Azure и Центры событий Azure, используемые для обмена сообщениями, управление API Azure и компонент Azure Logic Apps в Службе приложений Azure) в дополнительном регионе.   
 
 6. Установите подключение между основным и дополнительным регионом. Чтобы получить состояние выполнения из основного региона, создайте приложение логики в дополнительном регионе. 
 

@@ -1,28 +1,23 @@
 ---
 title: Развертывание и вызов веб-интерфейсов API и интерфейсов REST API из приложений логики Azure | Документация Майкрософт
-description: Развертывание и вызов веб-интерфейсов API и интерфейсов REST API в рабочих процессах для интеграции системы с приложениями логики Azure
-keywords: веб-интерфейсы API, интерфейсы REST API, соединители, рабочие процессы, интеграция системы, проверка подлинности
+description: Развертывание и вызов веб-интерфейсов API и интерфейсов REST API в рабочих процессах для интеграции системы в Azure Logic Apps.
 services: logic-apps
-author: stepsic-microsoft-com
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: f113005d-0ba6-496b-8230-c1eadbd6dbb9
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewer: klam, stepsic, LADocs
 ms.topic: article
+ms.assetid: f113005d-0ba6-496b-8230-c1eadbd6dbb9
 ms.date: 05/26/2017
-ms.author: LADocs; stepsic
-ms.openlocfilehash: e808a463beb312df6ee2f8fc4378f72755dcdf33
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 0d53c8355fadf53c81676a1fe3c71f8e0b046630
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299015"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43126574"
 ---
-# <a name="deploy-and-call-custom-apis-from-logic-app-workflows"></a>Развертывание и вызов пользовательских API из рабочих процессов приложения логики
+# <a name="deploy-and-call-custom-apis-from-workflows-in-azure-logic-apps"></a>Развертывание и вызов пользовательских API из рабочих процессов в Azure Logic Apps
 
 После [создания пользовательских API](./logic-apps-create-api-app.md) для использования в рабочих процессах приложений логики необходимо развернуть эти API, прежде чем их вызывать. API-интерфейсы можно развернуть в качестве [веб-приложений](../app-service/app-service-web-overview.md), но лучше их развернуть в качестве [приложений API](../app-service/app-service-web-tutorial-rest-api.md), что облегчит создание, размещение и использование API-интерфейсов как в облаке, так и в локальной среде. Не нужно изменять код в API-интерфейсах, просто разверните свой код в приложении API. API-интерфейсы можно разместить в [службе приложений Azure](../app-service/app-service-web-overview.md). Это служба PaaS (платформа как услуга), предоставляющая удобное размещение API с высоким уровнем масштабирования.
 

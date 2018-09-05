@@ -1,25 +1,19 @@
 ---
-title: "Как создавать заметки к источникам данных | Документация Майкрософт"
-description: "В статье описывается создание заметок к ресурсам данных в каталоге данных Azure, включая добавление понятных имен, тегов, описаний и экспертных мнений."
+title: Как создать заметки к ресурсам данных в Каталоге данных Azure
+description: В статье описывается создание заметок к ресурсам данных в каталоге данных Azure, включая добавление понятных имен, тегов, описаний и экспертных мнений.
 services: data-catalog
-documentationcenter: 
 author: steelanddata
-manager: NA
-editor: 
-tags: 
+ms.author: maroche
 ms.assetid: 5a7e6bb2-863c-4eca-b614-1c814920d9ed
 ms.service: data-catalog
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: data-catalog
+ms.topic: conceptual
 ms.date: 01/18/2018
-ms.author: maroche
-ms.openlocfilehash: f9dd68380773e3cdb93cf1033ccd1b55d9f69305
-ms.sourcegitcommit: be9a42d7b321304d9a33786ed8e2b9b972a5977e
+ms.openlocfilehash: a6751a2cbb2a12d0d0ffe1eb0707ad4e8bc45ed8
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43053051"
 ---
 # <a name="how-to-annotate-data-sources"></a>Создание заметок к источникам данных
 ## <a name="introduction"></a>Введение
@@ -40,7 +34,7 @@ ms.lasthandoff: 01/19/2018
 ## <a name="different-types-of-annotations"></a>Разные типы заметок
 Каталог данных поддерживает следующие типы аннотаций:
 
-| Заметка | Заметки |
+| Заметка | Примечания |
 | --- | --- |
 | Понятное имя |Понятные имена могут присваиваться на уровне данных ресурса, чтобы сделать ресурсы данных более понятными. Понятные имена особенно полезны, если имя базового объекта зашифровано, сокращено или ничего не значит для пользователей. |
 | ОПИСАНИЕ |Описания могут присваиваться на уровне ресурса данных, а также атрибута или столбца. Описания — это краткая текстовая заметка в свободной форме, описывающая точку зрения пользователя на содержание или использование определенного ресурса данных. |

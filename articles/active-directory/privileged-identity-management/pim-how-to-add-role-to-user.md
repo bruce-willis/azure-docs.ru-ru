@@ -1,6 +1,6 @@
 ---
-title: Назначение ролей каталога пользователям с помощью Azure AD PIM | Документация Майкрософт
-description: Узнайте, как назначать пользователям роли каталога с помощью Azure Active Directory Privileged Identity Management и портала Azure.
+title: Назначение ролей каталога Azure AD в PIM | Документация Майкрософт
+description: Сведения о назначении ролей каталога Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -12,18 +12,18 @@ ms.workload: identity
 ms.component: pim
 ms.date: 07/23/2018
 ms.author: rolyon
-ms.openlocfilehash: 1aede38cabba7f9811f2b9320bc1e9a9da857f08
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 33bfe28bf612c47c9f42345dabccc017337c3d45
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621819"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190162"
 ---
-# <a name="assign-directory-roles-to-users-using-azure-ad-pim"></a>Назначение ролей каталога пользователям с помощью Azure AD PIM
+# <a name="assign-azure-ad-directory-roles-in-pim"></a>Назначение ролей каталога Azure AD в PIM
 
 С помощью Azure Active Directory (Azure AD) глобальный администратор может создавать **постоянные** назначения ролей в каталоге. Эти назначения ролей можно создать с помощью [портала Azure](../users-groups-roles/directory-assign-admin-roles.md) или [команд PowerShell](/powershell/module/azuread#directory_roles).
 
-Служба Azure AD Privileged Identity Management также позволяет администраторам привилегированных ролей создавать постоянные назначения ролей каталога. Кроме того, администраторы привилегированных ролей могут предоставлять пользователям **разрешение** на получение ролей каталога. Такой разрешенный администратор может активировать роль при необходимости. Срок действия его разрешений истекает, когда роль больше не требуется ему для работы. Сведения о ролях, которыми можно управлять с помощью PIM, см. в разделе [Роли каталога, которыми можно управлять с помощью Azure AD Privileged Identity Management](pim-roles.md).
+Служба Azure AD Privileged Identity Management также позволяет администраторам привилегированных ролей создавать постоянные назначения ролей каталога. Кроме того, администраторы привилегированных ролей могут предоставлять пользователям **разрешение** на получение ролей каталога. Такой разрешенный администратор может активировать роль при необходимости. Срок действия его разрешений истекает, когда роль больше не требуется ему для работы. Сведения о ролях, которыми можно управлять с помощью PIM, см. в статье [Роли каталога, которыми можно управлять с помощью Azure AD Privileged Identity Management](pim-roles.md).
 
 ## <a name="make-a-user-eligible-for-a-role"></a>Предоставление пользователю разрешения на роль
 
@@ -31,15 +31,15 @@ ms.locfileid: "39621819"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с учетными данными пользователя, который является участником роли [Администратор привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator).
 
-    Сведения о том, как предоставить другому пользователю доступ для управления PIM, см. в разделе [Предоставление доступа к Azure AD Privileged Identity Management](pim-how-to-give-access-to-pim.md).
+    Сведения о том, как предоставлять другим доступ администратора для управления PIM, см. в статье [Предоставление доступа к управлению PIM другим администраторам](pim-how-to-give-access-to-pim.md).
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-    Если компонент PIM еще не включен на портале Azure, обратитесь к статье [Приступая к использованию Azure AD Privileged Identity Management](pim-getting-started.md).
+    Если вы еще не начали использовать PIM на портале Azure, см. статью о [начале работы с PIM](pim-getting-started.md).
 
 1. Щелкните **Роли каталога Azure AD**.
 
-1. Щелкните **Роль (предварительная версия)** или **Участники**.
+1. Щелкните **Роли** или **Участники**.
 
     ![Роли каталога Azure AD](./media/pim-how-to-add-role-to-user/pim-directory-roles.png)
 
@@ -55,11 +55,13 @@ ms.locfileid: "39621819"
 
 1. В диалоговом окне "Добавление управляемых участников" нажмите кнопку **ОК**, добавить пользователя к роли.
 
+1. В списке ролей щелкните роль, которую вы только что назначили, чтобы просмотреть список участников.
+
      После назначения роли выбранный пользователь отобразится в списке участников как **разрешенный** для этой роли.
 
     ![Пользователь, имеющий разрешение на роль](./media/pim-how-to-add-role-to-user/pim-directory-role-eligible.png)
 
-1. Предоставив пользователям разрешение на получение роли, сообщите ему, что он может активировать роль согласно инструкциям в статье [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD](pim-how-to-activate-role.md).
+1. Предоставив пользователю разрешение на получение роли, сообщите ему, что он может активировать роль согласно инструкциям в статье [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD](pim-how-to-activate-role.md).
 
     Во время активации разрешенным администраторам будет предложено зарегистрироваться в службе "Многофакторная идентификация Azure" (MFA). Если пользователь не может зарегистрироваться для использования MFA или использует учетную запись Майкрософт (как правило, @outlook.com), необходимо назначить ему все роли на постоянной основе.
 
@@ -112,4 +114,6 @@ ms.locfileid: "39621819"
     Назначение роли удалено.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]
+
+- [Настройка параметров роли каталога Azure AD в PIM](pim-how-to-change-default-settings.md)
+- [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)

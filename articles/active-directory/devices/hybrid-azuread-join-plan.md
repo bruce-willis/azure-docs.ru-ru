@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: fbc40d0768a7cf1cb83a3e78dd524fac26254bea
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 12d3b358be8bb90b63e5e7310123f8ae7093994c
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143894"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190278"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как планировать гибридную реализацию присоединения к Azure Active Directory
 
@@ -128,9 +128,10 @@ ms.locfileid: "42143894"
 
 - синхронизацию хэша паролей с простым единым входом. 
 
-Начиная с версии 1.1.819.0, Azure AD Connect предоставляет мастер для настройки гибридного присоединения устройств к Azure AD. Этот мастер позволяет значительно упростить настройку. Дополнительные сведения можно найти в разделе 
+Начиная с версии 1.1.819.0 Azure AD Connect предоставляет мастер для настройки гибридного присоединения к Azure AD. Этот мастер позволяет значительно упростить настройку. Дополнительные сведения можно найти в разделе 
 
 - [Настройка гибридного присоединения к Azure Active Directory для федеративных доменов](hybrid-azuread-join-federated-domains.md)
+
 
 - [Настройка гибридного присоединения к Azure Active Directory для управляемых доменов](hybrid-azuread-join-managed-domains.md)
 

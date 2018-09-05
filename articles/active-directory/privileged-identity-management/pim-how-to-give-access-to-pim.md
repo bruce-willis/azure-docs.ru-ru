@@ -1,6 +1,6 @@
 ---
-title: Предоставление доступа к управлению привилегированными пользователями в Azure | Документация Майкрософт
-description: Узнайте, как назначать пользователям роли для управления PIM с помощью расширения для управления привилегированными пользователями Azure Active Directory.
+title: Предоставление доступа к управлению PIM другим администраторам в Azure | Документация Майкрософт
+description: Узнайте, как предоставить доступ к управлению Azure AD Privileged Identity Management (PIM) другим администраторам.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.component: pim
 ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: ade3939057669e7f9979001db4376fe61c2f4ad9
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: d6b2d9f43ce9bb86f4557c92887689c83beb49fa
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39623074"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189561"
 ---
-# <a name="giving-access-to-manage-azure-ad-privileged-identity-management"></a>Предоставление доступа к Azure AD Privileged Identity Management
+# <a name="grant-access-to-other-administrators-to-manage-pim"></a>Предоставление доступа к управлению PIM другим администраторам
 Глобальный администратор, который активирует в организации управление привилегированными пользователями (PIM) Azure AD, автоматически получает доступ к службе PIM и право назначать роли. Никто больше не получает доступ на запись по умолчанию, даже другие глобальные администраторы. Другие глобальные администраторы, администраторы безопасности и читатели безопасности имеют доступ только для чтения к PIM Azure AD. Чтобы предоставить доступ к PIM, первый пользователь может назначить другим пользователям роль **администратора привилегированных ролей** .
 
 > [!NOTE]
@@ -54,4 +54,5 @@ ms.locfileid: "39623074"
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дополнительная информация
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]
+
+- [Включение управления подписками в клиенте](pim-resource-roles-enable-subscription-management.md)

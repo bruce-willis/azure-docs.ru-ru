@@ -1,6 +1,6 @@
 ---
-title: Управление оповещениями безопасности для ресурсов Azure с помощью управления привилегированными пользователями | Документация Майкрософт
-description: Описание оповещений безопасности в PIM.
+title: Настройка оповещений системы безопасности для ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как настроить оповещения системы безопасности для ролей ресурсов Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 46b19866ec3f276c8337cf9501b779701377d0a5
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 33bd13421b0c1574475516da942abe4e8c71ed52
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39620422"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188838"
 ---
-# <a name="manage-security-alerts-for-azure-resources-by-using-privileged-identity-management"></a>Управление оповещениями безопасности для ресурсов Azure с помощью управления привилегированными пользователями
+# <a name="configure-security-alerts-for-azure-resource-roles-in-pim"></a>Настройка оповещений системы безопасности для ролей ресурсов Azure в PIM
 Управление привилегированными пользователями (PIM) для ресурсов Azure создает оповещения при возникновении подозрительных или небезопасных действий в вашей среде. Активированные оповещения отображаются на странице "Оповещения". 
 
 ![Страница оповещений](media/azure-pim-resource-rbac/RBAC-alerts-home.png)
@@ -50,3 +50,8 @@ ms.locfileid: "39620422"
 
 Настройте для оповещений параметры, которые подходят для вашей среды и целей безопасности.
 ![Настройка параметров](media/azure-pim-resource-rbac/rbac-alert-settings.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Требование многофакторной проверки подлинности для ролей ресурсов Azure в PIM](pim-resource-roles-require-mfa.md)
+- [Настройка оповещений системы безопасности для ролей ресурсов Azure в PIM](pim-resource-roles-configure-alerts.md)

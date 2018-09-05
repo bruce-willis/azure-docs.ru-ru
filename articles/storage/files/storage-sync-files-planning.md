@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: a98c8ac65de930eabcedea2a009769ed6d245216
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: a7d62531492695be6ec148c3bf7b9786b2a428cf
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617198"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247401"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -67,18 +67,66 @@ ms.locfileid: "42617198"
 > [!Important]  
 > Распределение по уровням облака не поддерживается для конечных точек сервера на системных томах Windows.
 
-## <a name="azure-file-sync-interoperability"></a>Взаимодействие службы синхронизации файлов Azure 
-В этом разделе описывается взаимодействие службы синхронизации файлов Azure с компонентами и ролями Windows Server, а также с решениями сторонних производителей.
+## <a name="azure-file-sync-system-requirements-and-interoperability"></a>Системные требования к службе "Синхронизация файлов Azure" и ее возможности взаимодействия 
+В этом разделе описываются системные требования к службе "Синхронизация файлов Azure" и ее возможности взаимодействия с компонентами и ролями Windows Server, а также с решениями сторонних производителей.
 
-### <a name="supported-versions-of-windows-server"></a>Поддерживаемые версии Windows Server
-Сейчас служба синхронизации файлов Azure поддерживает такие версии Windows Server:
+### <a name="evaluation-tool"></a>Средство оценки
+Прежде чем развертывать службу "Синхронизация файлов Azure", следует оценить, совместима ли она с вашей системой, с помощью средства оценки этой службы. Это средство является командлетом AzureRM PowerShell, который проверяет наличие потенциальных проблем с файловой системой и набором данных, таких как неподдерживаемые символы или неподдерживаемая версия операционной системы. Обратите внимание, что проверки охватывают большинство, но не все возможности, описанные ниже. Мы рекомендуем прочесть всю оставшуюся часть этого раздела очень внимательно, чтобы осуществить развертывание надлежащим образом. 
 
-| Version (версия) | Поддерживаемые номера SKU | Поддерживаемые варианты развертывания |
-|---------|----------------|------------------------------|
-| Windows Server 2016 | Datacenter и Standard | Полное (сервер с пользовательским интерфейсом) |
-| Windows Server 2012 R2 | Datacenter и Standard | Полное (сервер с пользовательским интерфейсом) |
+#### <a name="download-instructions"></a>Инструкции по загрузке
+1. Убедитесь, что у вас установлена последняя версия PackageManagement и PowerShellGet (это позволяет установить модули, используемые в предварительной версии).
+    
+    ```PowerShell
+        Install-Module -Name PackageManagement -Repository PSGallery -Force
+        Install-Module -Name PowerShellGet -Repository PSGallery -Force
+    ```
+ 
+2. Перезапустите PowerShell.
+3. Установка модулей
+    
+    ```PowerShell
+        Install-Module -Name AzureRM.StorageSync -AllowPrerelease
+    ```
 
-Новые версии Windows Server будут добавляться по мере их выпуска. Более ранние версии Windows могут быть добавлены по запросу пользователей.
+#### <a name="usage"></a>Использование  
+Средство оценки можно вызывать несколькими способами: можно выполнять системные проверки, проверки набора данных или и то, и другое. Выполнение проверки системы и набора данных: 
+
+```PowerShell
+    Invoke-AzureRmStorageSyncCompatibilityCheck -Path <path>
+```
+
+Проверка только набора данных:
+```PowerShell
+    Invoke-AzureRmStorageSyncCompatibilityCheck -Path <path> -SkipSystemChecks
+```
+ 
+Проверка только системных требований:
+```PowerShell
+    Invoke-AzureRmStorageSyncCompatibilityCheck -ComputerName <computer name>
+```
+ 
+Отображение результатов в CSV-файле:
+```PowerShell
+    $errors = Invoke-AzureRmStorageSyncCompatibilityCheck […]
+    $errors | Select-Object -Property Type, Path, Level, Description | Export-Csv -Path <csv path>
+```
+
+### <a name="system-requirements"></a>Требования к системе
+- Сервер под управлением Windows Server 2012 R2 или Windows Server 2016. 
+
+    | Version (версия) | Поддерживаемые номера SKU | Поддерживаемые варианты развертывания |
+    |---------|----------------|------------------------------|
+    | Windows Server 2016 | Datacenter и Standard | Полное (сервер с пользовательским интерфейсом) |
+    | Windows Server 2012 R2 | Datacenter и Standard | Полное (сервер с пользовательским интерфейсом) |
+
+    Новые версии Windows Server будут добавляться по мере их выпуска. Более ранние версии Windows могут быть добавлены по запросу пользователей.
+
+- Сервер с не менее 2 ГБ памяти.
+
+    > [!Important]  
+    > Если сервер выполняется на виртуальной машине с включенной динамической памятью, в виртуальной машине должна быть настроена память объемом не менее 2048 МБ.
+    
+- Локально подключенный том, отформатированный с помощью файловой системы NTFS.
 
 > [!Important]  
 > Мы рекомендуем постоянно обновлять серверы, используемые со службой синхронизации файлов Azure, с помощью последних обновлений из Центра обновления Windows. 

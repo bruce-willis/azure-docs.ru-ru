@@ -1,6 +1,6 @@
 ---
-title: Уведомления по электронной почте в Azure AD PIM | Документы Майкрософт
-description: Описание уведомлений по электронной почте в Azure AD Privileged Identity Management (PIM)
+title: Уведомления по электронной почте в PIM. Azure | Документация Майкрософт
+description: Описание уведомлений по электронной почте в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.date: 07/24/2018
 ms.author: rolyon
 ms.reviewer: hanki
 ms.custom: pim
-ms.openlocfilehash: 7943b4fb8c2027b50ce04c30d21f1b0a58f98ace
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 1a1635e0ba16bdc0fa6dc90aa0e1a417f43e04ac
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621588"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190182"
 ---
-# <a name="email-notifications-in-azure-ad-pim"></a>Уведомления по электронной почте в Azure AD PIM
+# <a name="email-notifications-in-pim"></a>Уведомления по электронной почте в PIM
 
 При возникновении ключевых событий в Azure AD Privileged Identity Management (PIM) соответствующему администратору или пользователю отправляются уведомления по электронной почте. Например, PIM отправляет сообщения о следующих событиях:
 
@@ -74,5 +74,5 @@ ms.locfileid: "39621588"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Управление параметрами активации ролей в Azure AD PIM](pim-how-to-change-default-settings.md)
-- [Утверждения в Azure AD PIM](azure-ad-pim-approval-workflow.md)
+- [Настройка параметров роли каталога Azure AD в PIM](pim-how-to-change-default-settings.md)
+- [Подтверждение или отклонение запросов на роли каталога Azure AD в PIM](azure-ad-pim-approval-workflow.md)

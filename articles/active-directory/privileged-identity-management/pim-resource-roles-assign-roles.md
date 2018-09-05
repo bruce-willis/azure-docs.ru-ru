@@ -1,6 +1,6 @@
 ---
-title: Назначение ролей ресурсам Azure с помощью управления привилегированными пользователями | Документы Майкрософт
-description: Здесь объясняется, как назначать роли в PIM.
+title: Назначение ролей ресурсам Azure в PIM | Документация Майкрософт
+description: Узнайте, как назначать роли ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,25 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 52320fe160fc1df2997dd419b406fce24f43b786
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 7019a6f97a9590d3b652584015f3077f4ed075af
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622982"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43188926"
 ---
-# <a name="assign-roles-for-azure-resources-by-using-privileged-identity-management"></a>Назначение ролей ресурсам Azure с помощью управления привилегированными пользователями
+# <a name="assign-azure-resource-roles-in-pim"></a>Назначение ролей ресурсам Azure в PIM
+
+Azure AD PIM может управлять встроенными ролями ресурсов Azure, а также настраиваемыми ролями, в том числе (но не ограничиваясь ими):
+
+- Владелец.
+- Администратор доступа пользователей
+- участник;
+- администратор безопасности;
+- Диспетчер безопасности и другие.
+
+>[!NOTE]
+Пользователи или члены группы, которым назначены роли владельца или администратора доступа пользователей, и глобальные администраторы, которые поддерживают управление подпиской в ​​Azure AD, являются администраторами ресурсов. Эти администраторы могут назначать роли, настраивать параметры роли и проверять доступ с помощью PIM для ресурсов Azure. Просмотрите список [встроенных ролей ресурсов Azure](../../role-based-access-control/built-in-roles.md).
 
 ## <a name="assign-roles"></a>Назначение ролей
 
@@ -76,3 +87,8 @@ ms.locfileid: "39622982"
 Чтобы изменить существующие назначения из подробного представления пользователя или группы, щелкните **Изменить параметры** на панели действий. Измените тип назначения на **JIT** или **Прямое**.
 
 ![Панель "Сведения о пользователях" с кнопкой "Изменить параметры"](media/azure-pim-resource-rbac/rbac-assign-role-manage.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Настройка параметров роли ресурсов Azure в PIM](pim-resource-roles-configure-role-settings.md)
+- [Назначение ролей каталога Azure AD в PIM ](pim-how-to-add-role-to-user.md)

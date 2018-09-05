@@ -11,17 +11,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/30/2018
+ms.date: 08/29/2018
 ms.author: mstewart
-ms.openlocfilehash: 5421858fd7f31f18c2e6a1e3693b67b3c47a6945
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: d248a97235ead134f29e468aaafcd04211590e02
+ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42143272"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43247496"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure 
- В этой статье объясняются компоненты, которые должны быть установлены до того, как вы сможете использовать шифрование дисков Azure. Наряду с общими требованиями, шифрование дисков Azure интегрировано с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/) и для управления ключами шифрования в хранилище ключей использует приложение Azure AD для проверки подлинности. Вы также можете использовать [Azure PowerShell](/powershell/azure/overview) или [Azure CLI](/cli/azure/) для настройки или конфигурации хранилища ключей и приложения Azure AD.
+ В этой статье объясняются компоненты, которые должны быть установлены до того, как вы сможете использовать шифрование дисков Azure. Шифрование дисков Azure интегрируется с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), обеспечивая управление ключами шифрования. Для настройки шифрования дисков Azure можно использовать [Azure PowerShell](/powershell/azure/overview), [Azure CLI](/cli/azure/) или [портал Azure](https://portal.azure.com).
 
 Ниже перечислены предварительные требования для включения шифрования дисков Azure на виртуальных машинах IaaS Azure в сценариях, которые обсуждались в статье [Azure Disk Encryption for IaaS VMs](azure-security-disk-encryption-overview.md) (Шифрование дисков Azure для виртуальных машин IaaS). Эти требования обязательно должны быть выполнены. 
 
@@ -41,7 +41,7 @@ ms.locfileid: "42143272"
 ## <a name="bkmk_LinuxPrereq"></a> Дополнительные требования для виртуальных машин Linux IaaS 
 
 - Службе шифрования дисков Azure на виртуальной машине Linux требуется 7 ГБ ОЗУ, чтобы выполнять шифрование диска ОС на [поддерживаемых образах](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport). Как только процесс шифрования диска ОС будет завершен, виртуальную машину можно настроить для работы с меньшим объемом памяти.
-- Перед включением шифрования диски данных, которые должны быть зашифрованы, должны быть правильно указаны в /etc/fstab. Используйте постоянное имя устройства для этой записи, так как имена устройств в формате "/dev/sdX" необязательно будут с одним и тем же диском в случае перезагрузок, особенно после применения шифрования. Подробнее об этом поведении см. статье [Устранение неполадок при изменении имени устройства виртуальной машины Linux](../virtual-machines/linux/troubleshoot-device-names-problems.md).
+- Перед включением шифрования диски данных, которые нужно зашифровать, должны быть правильно указаны в /etc/fstab. Используйте постоянное имя устройства для этой записи, так как имена устройств в формате "/dev/sdX" необязательно будут с одним и тем же диском в случае перезагрузок, особенно после применения шифрования. Подробнее об этом поведении см. статье [Устранение неполадок при изменении имени устройства виртуальной машины Linux](../virtual-machines/linux/troubleshoot-device-names-problems.md).
 - Убедитесь, что параметры /etc/fstab для подключения настроены правильно. Чтобы настроить эти параметры, запустите команду mount -a или перезагрузите виртуальную машину и подключите ее заново таким образом. Как только это будет завершено, проверьте выходные данные команды lsblk, чтобы убедиться, что нужный диск все еще подключен. 
     - Если файл /etc/fstab не подключает диск должным образом до включения шифрования, служба шифрования дисков Azure не сможет правильно подключить его.
     - Служба шифрования дисков Azure переместит информацию о подключении из /etc/fstab в собственный файл конфигурации как часть процесса шифрования. Не волнуйтесь, если увидите, что запись отсутствует в /etc/fstab после завершения шифрования диска данных.
@@ -74,20 +74,18 @@ ms.locfileid: "42143272"
         - Установите PowerShellGet, Azure PowerShell и загрузите модуль AzureRM. 
     - [Установка и настройка Azure PowerShell в macOS и Linux](/powershell/azure/install-azurermps-maclinux).
         -  Установите PowerShell Core, Azure PowerShell для .NET Core и загрузите модуль AzureRM.Netcore.
-2. Установите модуль [PowerShell для Azure Active Directory](/powershell/azure/active-directory/install-adv2#installing-the-azure-ad-module). 
+
+2. Проверьте версии установленных модулей AzureRM. При необходимости [обновите модуль Azure PowerShell](/powershell/azure/install-azurerm-ps#update-the-azure-powershell-module).
+    -  Версия модуля AzureRM должна быть не ниже 6.0.0.
+    - Рекомендуется использовать последнюю версию модуля AzureRM.
 
      ```powershell
-     Install-Module AzureAD
+     Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
      ```
 
-3. Проверьте версии установленных модулей.
-      ```powershell
-      Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
-      Get-Module AzureAD -ListAvailable | Select-Object -Property Name,Version,Path
-      ```
-4. Войдите в Azure, используя командлет [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
+3. Войдите в Azure, используя командлет [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
      
-     ```powershell
+     ```azurepowershell-interactive
      Connect-AzureRmAccount
      # For specific instances of Azure, use the -Environment parameter.
      Connect-AzureRmAccount –Environment (Get-AzureRmEnvironment –Name AzureUSGovernment)
@@ -99,15 +97,9 @@ ms.locfileid: "42143272"
      Set-AzureRmContext -SubscriptionId "xxxx-xxxx-xxxx-xxxx"
      ```
 
-5.  Подключитесь к Azure AD [Connect-AzureAD](/powershell/module/azuread/connect-azuread).
-     
-     ```powershell
-     Connect-AzureAD
-     ```
+4.  При необходимости ознакомьтесь со статьей [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
 
-6. При необходимости ознакомьтесь со статьями [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps) и [AzureAD](/powershell/module/azuread).
-
-## <a name="bkmk_CLI"></a> Azure CLI
+## <a name="bkmk_CLI"></a>Установка Azure CLI для использования на вашем локальном компьютере (необязательно)
 
 [Azure CLI 2.0](/cli/azure) — это интерфейс командной строки для управления ресурсами Azure. Этот интерфейс обеспечивает гибкие функции подачи запросов, выполнение длительных операций без блокировки и простое создание скриптов. Его можно использовать в браузере с [Azure Cloud Shell](../cloud-shell/overview.md), а также установить на локальном компьютере и использовать в любом сеансе PowerShell.
 
@@ -132,14 +124,15 @@ ms.locfileid: "42143272"
      az account set --subscription "<subscription name or ID>"
      ```
 
-4. При необходимости см. статью [Начало работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli). 
+4. При необходимости ознакомьтесь со статьей [Начало работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli). 
 
 
-## <a name="prerequisite-workflow-for-key-vault-and-the-azure-ad-app"></a>Необходимый рабочий процесс для Key Vault и приложения Azure AD
-1. Создать хранилище ключей. 
-2. Настройте приложение Azure AD и субъект-службу.
-3. Настройте политику доступа к хранилищу ключей для приложения Azure AD.
-4. Установите политики расширенного доступа к хранилищу ключей.
+## <a name="prerequisite-workflow-for-key-vault"></a>Необходимый рабочий процесс для Key Vault
+Если вы уже знакомы с предварительными требованиями Key Vault и Azure AD для шифрования дисков Azure, можно использовать [скрипт PowerShell предварительных требований к шифрованию дисков Azure](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Дополнительные сведения об использовании скрипта предварительных требований см. в [кратком руководстве по шифрованию виртуальных машин](quick-encrypt-vm-powershell.md) и [приложении шифрования дисков Azure](azure-security-disk-encryption-appendix.md#bkmk_prereq-script). 
+
+1. При необходимости создайте группу ресурсов.
+2. Создать хранилище ключей. 
+3. Установите политики расширенного доступа к хранилищу ключей.
  
 ## <a name="bkmk_KeyVault"></a> Создание хранилища ключей 
 Шифрование дисков Azure интегрировано с [Azure Key Vault](https://azure.microsoft.com/documentation/services/key-vault/), что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault и контролировать их. Вы можете создать хранилище ключей или использовать существующее для шифрования дисков Azure. Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../key-vault/key-vault-secure-your-key-vault.md). Для создания хранилища ключей можно использовать шаблон Resource Manager, Azure PowerShell или Azure CLI. 
@@ -197,91 +190,6 @@ ms.locfileid: "42143272"
 2. Выберите подписку, группу ресурсов, расположение группы ресурсов, имя хранилища ключей, идентификатор объекта, юридические условия и соглашение, а затем щелкните **Приобрести**. 
 
 
-## <a name="bkmk_ADapp"></a> Настройка приложения Azure AD и субъекта-службы 
-Если шифрование нужно включить для виртуальной машины, работающей в Azure, то служба шифрования дисков Azure создает ключи шифрования и записывает их в ваше хранилище ключей. Для управления ключами шифрования в хранилище ключей требуется аутентификация Azure AD. Для этой цели создайте приложение Azure AD. Можно использовать аутентификацию на основе секрета клиента или [на основе сертификата клиента в Azure AD](../active-directory/active-directory-certificate-based-authentication-get-started.md).
-
-
-### <a name="bkmk_ADappPSH"></a> Настройка приложения Azure AD и субъекта-службы с помощью Azure PowerShell 
-Чтобы выполнить приведенные ниже команды, нужно получить и использовать [модуль PowerShell для Azure AD](/powershell/azure/active-directory/install-adv2). 
-
-1. При необходимости [подключитесь к подписке Azure](azure-security-disk-encryption-appendix.md#bkmk_ConnectPSH).
-2. Чтобы создать приложение Azure AD, используйте командлет PowerShell [New-AzureRmADApplication](/powershell/module/azurerm.resources/new-azurermadapplication). Вместо MyApplicationHomePage и MyApplicationUri можно указать любые значения.
-
-     ```azurepowershell-interactive
-     $aadClientSecret = "My AAD client secret"
-     $aadClientSecretSec = ConvertTo-SecureString -String $aadClientSecret -AsPlainText -Force
-     $azureAdApplication = New-AzureRmADApplication -DisplayName "My Application Display Name" -HomePage "https://MyApplicationHomePage" -IdentifierUris "https://MyApplicationUri" -Password $aadClientSecretSec
-     $servicePrincipal = New-AzureRmADServicePrincipal –ApplicationId $azureAdApplication.ApplicationId
-     ```
-
-3. $azureAdApplication.ApplicationId — это идентификатор ClientID Azure AD, а $aadClientSecret — секрет клиента, который потребуется позднее для включения шифрования дисков Azure. Секрет клиента Azure AD следует хранить с соблюдением мер предосторожности. В результате запуска `$azureAdApplication.ApplicationId` вернется значение идентификатора приложения (ApplicationID).
-
-
-### <a name="bkmk_ADappCLI"></a> Настройка приложения Azure AD и субъекта-службы с помощью Azure CLI
-
-Вы можете управлять своими субъектами-службами в Azure CLI с помощью команд [az ad sp](/cli/azure/ad/sp). Дополнительные сведения см. в статье [Создание субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli).
-
-1. При необходимости [подключитесь к подписке Azure](azure-security-disk-encryption-appendix.md#bkmk_ConnectCLI).
-2. Создайте субъект-службу.
-     
-     ```azurecli-interactive
-     az ad sp create-for-rbac --name "ServicePrincipalName" --password "My-AAD-client-secret" --skip-assignment 
-     ```
-3.  Возвращаемый идентификатор приложения — это идентификатор клиента Azure AD, используемый в других командах. Это также имя субъекта-службы, которое будет использоваться для команды az keyvault set-policy. Пароль — это секрет клиента, который понадобится позже, чтобы включить шифрование дисков Azure. Секрет клиента Azure AD следует хранить с соблюдением мер предосторожности.
- 
-### <a name="bkmk_ADappRM"></a> Настройка приложения Azure AD и субъекта-службы на портале Azure
-Выполните шаги, описанные в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md), чтобы создать приложение Azure AD. Каждый шаг, указанный ниже, содержит ссылку непосредственно на раздел статьи. 
-
-1. [Проверьте необходимые разрешения](../azure-resource-manager/resource-group-create-service-principal-portal.md#required-permissions).
-2. [Создайте приложение Azure Active Directory](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). 
-     - При создании приложения можно использовать любое имя и URL-адрес входа.
-3. [Получение идентификатора приложения и ключ проверки подлинности](../azure-resource-manager/resource-group-create-service-principal-portal.md#get-application-id-and-authentication-key). 
-     - Ключ проверки подлинности является секретом клиента и используется как AadClientSecret для Set-AzureRmVMDiskEncryptionExtension. 
-        - Ключ проверки подлинности используется приложением в качестве учетной записи для входа в Azure AD. На портале Azure эти секреты называются ключами, но они не имеют никакого отношения к хранилищам ключей. Защитите этот секрет должным образом. 
-     - Идентификатор приложения будет использоваться позже как AadClientId для Set-AzureRmVMDiskEncryptionExtension и как ServicePrincipalName для Set-AzureRmKeyVaultAccessPolicy. 
-
-## <a name="bkmk_KVAP"></a> Настройка политики доступа к хранилищу ключей для приложения Azure AD
-Для записи секретов шифрования в указанное хранилище ключей, шифрованию дисков Azure требуется идентификатор клиента и секрет клиента приложения Azure Active Directory, которое имеет соответствующие разрешения. 
-
-> [!NOTE]
-> Для шифрования дисков Azure требуется настроить в клиентском приложении Azure AD следующие политики доступа: разрешения _WrapKey_ и _Set_.
-
-### <a name="bkmk_KVAPPSH"></a> Настройка политики доступа к хранилищу ключей для приложения Azure AD с помощью Azure PowerShell
-Приложению Azure AD нужны права на доступ к ключам и секретам, которые размещены в хранилище. Используйте командлет [Set-AzureKeyVaultAccessPolicy](/powershell/module/azurerm.keyvault/set-azurermkeyvaultaccesspolicy), чтобы предоставить приложению необходимые разрешения. Здесь в качестве значения параметра _–ServicePrincipalName_ следует использовать идентификатор клиента, созданный при регистрации приложения. Чтобы узнать больше, ознакомьтесь с записью блога [Azure Key Vault - Step by Ste](http://blogs.technet.com/b/kv/archive/2015/06/02/azure-key-vault-step-by-step.aspx) (Пошаговая инструкция для Azure Key Vault). 
-
-1. При необходимости [подключитесь к подписке Azure](azure-security-disk-encryption-appendix.md#bkmk_ConnectPSH).
-2. Настройте политики доступа к хранилищу ключей для приложения AD с помощью PowerShell.
-
-     ```azurepowershell-interactive
-     $keyVaultName = 'MySecureVault'
-     $aadClientID = 'MyAadAppClientID'
-     $rgname = 'MySecureRG'
-     Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ServicePrincipalName $aadClientID -PermissionsToKeys 'WrapKey' -PermissionsToSecrets 'Set' -ResourceGroupName $rgname
-     ```
-
-### <a name="bkmk_KVAPCLI"></a> Настройка политики доступа к хранилищу ключей для приложения Azure AD с помощью Azure CLI
-Используйте [az keyvault set-policy](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-set-policy), чтобы настроить политику доступа. Дополнительные сведения см. в разделе [Управление Key Vault с помощью интерфейса командной строки 2.0](../key-vault/key-vault-manage-with-cli2.md#authorize-the-application-to-use-the-key-or-secret).
-
-1. При необходимости [подключитесь к подписке Azure](azure-security-disk-encryption-appendix.md#bkmk_ConnectCLI).
-2. Предоставьте субъекту-службе, который вы создали через интерфейс Azure CLI, доступ к секретам и упакуйте ключи с помощью следующей команды:
- 
-     ```azurecli-interactive
-     az keyvault set-policy --name "MySecureVault" --spn "<spn created with CLI/the Azure AD ClientID>" --key-permissions wrapKey --secret-permissions set
-     ```
-
-### <a name="bkmk_KVAPRM"></a> Настройка политики доступа к хранилищу ключей для приложения Azure AD с помощью портала
-
-1. Откройте группу ресурсов, в которой содержится ваше хранилище ключей.
-2. Выберите свое хранилище ключей, перейдите в раздел **Политики доступа**, а затем нажмите кнопку **Добавить новую**.
-3. В разделе **Выбор субъекта** найдите созданное приложение Azure AD и выберите его. 
-4. В колонке **Разрешения ключей** установите флажок **Упаковка ключа** в разделе **Операции шифрования**.
-5. В колонке **Разрешения секретов** установите флажок **Установить** в разделе **Операции управления секретами**.
-6. Нажмите кнопку **ОК**, чтобы сохранить политику доступа. 
-
-![Криптографические операции Azure Key Vault — упаковка ключа](./media/azure-security-disk-encryption/keyvault-portal-fig3.png)
-
-![Разрешения секретов Azure Key Vault — настройка ](./media/azure-security-disk-encryption/keyvault-portal-fig3b.png)
-
 ## <a name="bkmk_KVper"></a> Установка политики расширенного доступа к хранилищу ключей
 Платформа Azure должна иметь доступ к ключам шифрования или секретам, расположенным в вашем хранилище ключей, чтобы предоставлять их виртуальной машине при ее загрузке для расшифровки томов. Включите шифрование диска в хранилище ключей, иначе развертывание завершится сбоем.  
 
@@ -315,7 +223,8 @@ ms.locfileid: "42143272"
      az keyvault update --name "MySecureVault" --resource-group "MySecureRG" --enabled-for-disk-encryption "true"
      ```  
 
- - **Включение хранилища ключей для развертывания (если необходимо):** позволяет виртуальным машинам получать сертификаты, хранимые в виде секретов, из хранилища.
+ - **Включение хранилища ключей для развертывания (если необходимо):** позволяет поставщику ресурсов Microsoft.Compute извлекать секреты из этого хранилища ключей в случае использования ссылки на него при создании ресурса, например, виртуальной машины.
+
      ```azurecli-interactive
      az keyvault update --name "MySecureVault" --resource-group "MySecureRG" --enabled-for-deployment "true"
      ``` 
@@ -367,203 +276,23 @@ ms.locfileid: "42143272"
      $KeyVaultResourceId = (Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname).ResourceId;
      $diskEncryptionKeyVaultUrl = (Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname).VaultUri;
      
- # Step 2: Create the AD application and service principal.
-     # Fill in 'MyAADClientSecret', "<My Application Display Name>", "<https://MyApplicationHomePage>", and "<https://MyApplicationUri>" with your values.
-     # MyApplicationHomePage and the MyApplicationUri can be any values you wish.
-     
-     $aadClientSecret =  'MyAADClientSecret';
-     $aadClientSecretSec = ConvertTo-SecureString -String $aadClientSecret -AsPlainText -Force;
-     $azureAdApplication = New-AzureRmADApplication -DisplayName "<My Application Display Name>" -HomePage "<https://MyApplicationHomePage>" -IdentifierUris "<https://MyApplicationUri>" -Password $aadClientSecretSec
-     $servicePrincipal = New-AzureRmADServicePrincipal –ApplicationId $azureAdApplication.ApplicationId;
-     $aadClientID = $azureAdApplication.ApplicationId;
-     
- #Step 3: Enable the vault for disk encryption and set the access policy for the Azure AD application.
-     
+ #Step 2: Enable the vault for disk encryption.
      Set-AzureRmKeyVaultAccessPolicy -VaultName $KeyVaultName -ResourceGroupName $rgname -EnabledForDiskEncryption;
-     Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ServicePrincipalName $aadClientID -PermissionsToKeys 'WrapKey' -PermissionsToSecrets 'Set' -ResourceGroupName $rgname;
-     
- #Step 4: Create a new key in the key vault with the Add-AzureKeyVaultKey cmdlet.
+      
+ #Step 3: Create a new key in the key vault with the Add-AzureKeyVaultKey cmdlet.
      # Fill in 'MyKeyEncryptionKey' with your value.
      
      $keyEncryptionKeyName = 'MyKeyEncryptionKey';
      Add-AzureKeyVaultKey -VaultName $KeyVaultName -Name $keyEncryptionKeyName -Destination 'Software';
      $keyEncryptionKeyUrl = (Get-AzureKeyVaultKey -VaultName $KeyVaultName -Name $keyEncryptionKeyName).Key.kid;
      
- #Step 5: Encrypt the disks of an existing IaaS VM
+ #Step 4: Encrypt the disks of an existing IaaS VM
      # Fill in 'MySecureVM' with your value. 
      
      $VMName = 'MySecureVM';
-     Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $rgname -VMName $vmName -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId -KeyEncryptionKeyUrl $keyEncryptionKeyUrl -KeyEncryptionKeyVaultId $KeyVaultResourceId;
+     Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $rgname -VMName $vmName -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId -KeyEncryptionKeyUrl $keyEncryptionKeyUrl -KeyEncryptionKeyVaultId $KeyVaultResourceId;
 ```
 
-## <a name="bkmk_Cert"></a> Аутентификация на основе сертификата (необязательно)
-Если вы хотите использовать аутентификацию на основе сертификата, вы можете загрузить его в свое хранилище и развернуть в клиенте. Перед использованием скрипта PowerShell нужно ознакомиться с предварительными требованиями к шифрованию дисков Azure, чтобы понять шаги. Для примера скрипта могут потребоваться изменения в вашей среде.
-
-     
- ```powershell
-
- # Fill in "MySecureRG", "MySecureVault", and 'MyLocation' ('My location' only if needed)
-
-   $rgname = 'MySecureRG'
-   $KeyVaultName= 'MySecureVault'
-
-   # Create a key vault and set enabledForDiskEncryption property on it. 
-   # Comment out the next three lines if you already have an existing key vault enabled for encryption. No need to set 'My location' in this case.
-
-   $Loc = 'MyLocation'
-   New-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname -Location $Loc
-   Set-AzureRmKeyVaultAccessPolicy -VaultName $KeyVaultName -ResourceGroupName $rgname -EnabledForDiskEncryption
-
-   #Setting some variables with the key vault information 
-   $KeyVault = Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname
-   $DiskEncryptionKeyVaultUrl = $KeyVault.VaultUri
-   $KeyVaultResourceId = $KeyVault.ResourceId
-
-   # Create the Azure AD application and associate the certificate with it. 
-   # Fill in "C:\certificates\mycert.pfx", "Password", "<My Application Display Name>", "<https://MyApplicationHomePage>", and "<https://MyApplicationUri>" with your values.
-   # MyApplicationHomePage and the MyApplicationUri can be any values you wish
-
-   $CertPath = "C:\certificates\mycert.pfx"
-   $CertPassword = "Password"
-   $Cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($CertPath, $CertPassword)
-   $CertValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
-
-   $AzureAdApplication = New-AzureRmADApplication -DisplayName "<My Application Display Name>" -HomePage "<https://MyApplicationHomePage>" -IdentifierUris "<https://MyApplicationUri>" -CertValue $CertValue 
-   $ServicePrincipal = New-AzureRmADServicePrincipal -ApplicationId $AzureAdApplication.ApplicationId
-
-   $AADClientID = $AzureAdApplication.ApplicationId
-   $aadClientCertThumbprint= $cert.Thumbprint
-
-   Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ServicePrincipalName $aadClientID -PermissionsToKeys 'WrapKey' -PermissionsToSecrets 'Set' -ResourceGroupName $rgname
-   
-   # Upload the pfx file to the key vault. 
-   # Fill in "MyAADCert".  
-
-   $KeyVaultSecretName = "MyAADCert"
-   $FileContentBytes = get-content $CertPath -Encoding Byte
-   $FileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
-           $JSONObject = @"
-           { 
-               "data" : "$filecontentencoded", 
-               "dataType" : "pfx", 
-               "password" : "$CertPassword" 
-           } 
-"@
-
-   $JSONObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
-   $JSONEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
-
-   #Set the secret and set the key vault policy for -EnabledForDeployment
-
-   $Secret = ConvertTo-SecureString -String $JSONEncoded -AsPlainText -Force
-   Set-AzureKeyVaultSecret -VaultName $KeyVaultName -Name $KeyVaultSecretName -SecretValue $Secret
-   Set-AzureRmKeyVaultAccessPolicy -VaultName $KeyVaultName -ResourceGroupName $rgname -EnabledForDeployment
-
-   # Deploy the certificate to the VM
-   # Fill in 'MySecureVM' with your value.
-
-   $VMName = 'MySecureVM'
-   $CertUrl = (Get-AzureKeyVaultSecret -VaultName $KeyVaultName -Name $KeyVaultSecretName).Id
-   $SourceVaultId = (Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname).ResourceId
-   $VM = Get-AzureRmVM -ResourceGroupName $rgname -Name $VMName 
-   $VM = Add-AzureRmVMSecret -VM $VM -SourceVaultId $SourceVaultId -CertificateStore "My" -CertificateUrl $CertUrl
-   Update-AzureRmVM -VM $VM -ResourceGroupName $rgname 
-
-   #Enable encryption on the VM using Azure AD client ID and the client certificate thumbprint
-
-   Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $rgname -VMName $VMName -AadClientID $AADClientID -AadClientCertThumbprint $AADClientCertThumbprint -DiskEncryptionKeyVaultUrl $DiskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId
- ```
-
-## <a name="bkmk_CertKEK"></a> Аутентификация на основе сертификата и KEK (необязательно)
-
-Если вы хотите использовать аутентификацию на основе сертификата и упаковать ключ шифрования с помощью KEK, вы можете использовать приведенный ниже скрипт в качестве примера. Перед использованием скрипта PowerShell нужно ознакомиться со всеми предыдущими предварительными требованиями к шифрованию дисков Azure, чтобы понять шаги. Для примера скрипта могут потребоваться изменения в вашей среде.
-
-> [!IMPORTANT]
-> В настоящее время аутентификация на основе сертификата Azure AD на виртуальных машинах Linux не поддерживается.
-
-
-
-     
- ```powershell
-# Fill in 'MySecureRG', 'MySecureVault', and 'MyLocation' (if needed)
-
-   $rgname = 'MySecureRG'
-   $KeyVaultName= 'MySecureVault'
-
-   # Create a key vault and set enabledForDiskEncryption property on it. 
-   # Comment out the next three lines if you already have an existing key vault enabled for encryption.
-
-   $Loc = 'MyLocation'
-   New-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname -Location $Loc
-   Set-AzureRmKeyVaultAccessPolicy -VaultName $KeyVaultName -ResourceGroupName $rgname -EnabledForDiskEncryption
-
-   # Create the Azure AD application and associate the certificate with it.  
-   # Fill in "C:\certificates\mycert.pfx", "Password", "<My Application Display Name>", "<https://MyApplicationHomePage>", and "<https://MyApplicationUri>" with your values.
-   # MyApplicationHomePage and the MyApplicationUri can be any values you wish
-
-   $CertPath = "C:\certificates\mycert.pfx"
-   $CertPassword = "Password"
-   $Cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($CertPath, $CertPassword)
-   $CertValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
-
-   $AzureAdApplication = New-AzureRmADApplication -DisplayName "<My Application Display Name>" -HomePage "<https://MyApplicationHomePage>" -IdentifierUris "<https://MyApplicationUri>" -CertValue $CertValue 
-   $ServicePrincipal = New-AzureRmADServicePrincipal -ApplicationId $AzureAdApplication.ApplicationId
-
-   $AADClientID = $AzureAdApplication.ApplicationId
-   $aadClientCertThumbprint= $cert.Thumbprint
-
-   ## Give access for setting secrets and wraping keys
-   Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ServicePrincipalName $aadClientID -PermissionsToKeys 'WrapKey' -PermissionsToSecrets 'Set' -ResourceGroupName $rgname
-
-   # Upload the pfx file to the key vault. 
-   # Fill in "MyAADCert". 
-
-   $KeyVaultSecretName = "MyAADCert"
-   $FileContentBytes = get-content $CertPath -Encoding Byte
-   $FileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
-           $JSONObject = @"
-           { 
-               "data" : "$filecontentencoded", 
-               "dataType" : "pfx", 
-               "password" : "$CertPassword" 
-           } 
-"@
-
-   $JSONObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
-   $JSONEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
-
-   #Set the secret and set the key vault policy for deployment
-
-   $Secret = ConvertTo-SecureString -String $JSONEncoded -AsPlainText -Force
-   Set-AzureKeyVaultSecret -VaultName $KeyVaultName -Name $KeyVaultSecretName -SecretValue $Secret
-   Set-AzureRmKeyVaultAccessPolicy -VaultName $KeyVaultName -ResourceGroupName $rgname -EnabledForDeployment
-
-   #Setting some variables with the key vault information and generating a KEK 
-   # FIll in 'KEKName'
-   
-   $KEKName ='KEKName'
-   $KeyVault = Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname
-   $DiskEncryptionKeyVaultUrl = $KeyVault.VaultUri
-   $KeyVaultResourceId = $KeyVault.ResourceId
-   $KEK = Add-AzureKeyVaultKey -VaultName $KeyVaultName -Name $KEKName -Destination "Software"
-   $KeyEncryptionKeyUrl = $KEK.Key.kid
-
-
-
-   # Deploy the certificate to the VM
-   # Fill in 'MySecureVM' with your value.
-
-   $VMName = 'MySecureVM'
-   $CertUrl = (Get-AzureKeyVaultSecret -VaultName $KeyVaultName -Name $KeyVaultSecretName).Id
-   $SourceVaultId = (Get-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $rgname).ResourceId
-   $VM = Get-AzureRmVM -ResourceGroupName $rgname -Name $VMName 
-   $VM = Add-AzureRmVMSecret -VM $VM -SourceVaultId $SourceVaultId -CertificateStore "My" -CertificateUrl $CertUrl
-   Update-AzureRmVM -VM $VM -ResourceGroupName $rgname 
-
-   #Enable encryption on the VM using Azure AD client ID and the client certificate thumbprint
-
-   Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $rgname -VMName $VMName -AadClientID $AADClientID -AadClientCertThumbprint $AADClientCertThumbprint -DiskEncryptionKeyVaultUrl $DiskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId -KeyEncryptionKeyUrl $keyEncryptionKeyUrl -KeyEncryptionKeyVaultId $KeyVaultResourceId
-```
 
  
 ## <a name="next-steps"></a>Дополнительная информация

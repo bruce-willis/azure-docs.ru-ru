@@ -1,6 +1,6 @@
 ---
-title: Подписки управления привилегированными пользователями (PIM) в Azure | Документация Майкрософт
-description: Требования к подписке и лицензиям для управления Azure AD Privileged Identity Management и варианты использования этой службы в вашем клиенте
+title: Требования к подписке для использования PIM в Azure | Документация Майкрософт
+description: Описываются требования к подписке и лицензиям для использования Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -16,14 +16,14 @@ ms.component: pim
 ms.date: 06/01/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: dbe4efa57a7c4c31b2bdca84665eef8179564a8f
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 1554895dcba0c09a3a2e19c284a1cd6f0416cfe1
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617075"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190616"
 ---
-# <a name="azure-active-directory-privileged-identity-management-subscription-requirements"></a>Требования к подписке для Azure Active Directory Privileged Identity Management
+# <a name="subscription-requirements-to-use-pim"></a>Требования к подписке для использования PIM
 
 Технология Azure AD Privileged Identity Management доступна только в выпуске Azure Active Directory Premium P2. Сведения о других функциях P2 и отличиях этого выпуска от выпуска Premium P1 см. в статье [Выпуски Azure Active Directory](../active-directory-editions.md).
 
@@ -61,5 +61,5 @@ ms.locfileid: "42617075"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Приступая к работе с управлением привилегированными пользователями Azure AD](pim-getting-started.md)
-- [Роли в службе управления привилегированными пользователями Azure AD](pim-roles.md)
+- [Начало работы с PIM](pim-getting-started.md)
+- [Роли каталога Azure AD, которыми можно управлять в PIM](pim-roles.md)

@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 6/28/2018
+ms.date: 8/24/2018
 ms.author: dekapur
-ms.openlocfilehash: 51895731efd466a314877e963a5fd2c6d868ec02
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: a7ba92d871bb440b7b8c8a12c1e90f9aa10df3be
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37110878"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43105347"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -117,7 +117,10 @@ Service Fabric TStore — это компонент, который исполь
 
  Имя счетчика | ОПИСАНИЕ |
 | --- | --- |
-| Число элементов | Число ключей в хранилище.|
+| Число элементов | Число элементов в хранилище.|
+| Размер диска | Общий размер в байтах, занимаемый на диске файлами контрольных точек хранилища.|
+| Запись в файл контрольной точки, байт/с | Число байтов, записываемых в секунду в последний файл контрольной точки.|
+| Передача на диск при копировании (байт/с) | Число байтов, считываемых (с первичной реплики) или записываемых (на вторичную реплику) в секунду при копировании хранилища.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

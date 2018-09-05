@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: glenga
-ms.openlocfilehash: 0715f1723f7bb43b0d11e55e8af01202fc8a92be
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: d408456373c8124e1a385879852d6198caf0813c
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39344466"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43050196"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -36,6 +36,10 @@ ms.locfileid: "39344466"
 >Эта привязка называлась DocumentDB. В Функциях версии 1.x только триггер был переименован в Cosmos DB. Входная и выходная привязка, а также пакет NuGet сохраняют имя DocumentDB.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
+
+## <a name="supported-apis"></a>Поддерживаемые API
+
+[!INCLUDE [SQL API support only](../../includes/functions-cosmosdb-sqlapi-note.md)]
 
 ## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
@@ -216,10 +220,7 @@ namespace CosmosDBSamplesV1
 
 ## <a name="input"></a>Входные данные
 
-Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию. 
-
->[!NOTE]
-> Если вы используете учетную запись Cosmos DB с API MongoDB, не применяйте входные и выходные привязки Azure Cosmos DB. Это может вызвать повреждение данных.
+Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
 ## <a name="input---examples"></a>Примеры входных данных
 
@@ -1185,10 +1186,7 @@ module.exports = function (context, req, toDoItem) {
 
 ## <a name="output"></a>Выходные данные
 
-Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB. 
-
->[!NOTE]
-> Если вы используете учетную запись Cosmos DB с API MongoDB, не применяйте входные и выходные привязки Azure Cosmos DB. Это может вызвать повреждение данных.
+Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL. 
 
 ## <a name="output---examples"></a>Примеры выходных данных
 

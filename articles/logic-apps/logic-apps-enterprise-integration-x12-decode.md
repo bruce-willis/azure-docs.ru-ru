@@ -1,27 +1,23 @@
 ---
 title: Декодирование сообщений X12 в Azure Logic Apps | Документация Майкрософт
-description: Проверка EDI и создание подтверждений с помощью декодера сообщений X12 в пакете интеграции Enterprise для Azure Logic Apps
+description: Проверка EDI и создание подтверждений с помощью декодера сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: padmavc
-manager: jeconnoc
-editor: ''
-ms.assetid: 4fd48d2d-2008-4080-b6a1-8ae183b48131
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: 4fd48d2d-2008-4080-b6a1-8ae183b48131
 ms.date: 01/27/2017
-ms.author: LADocs; padmavc
-ms.openlocfilehash: 14e9f0eefb705eea59a00390494871f5668b0a01
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e3d2a458c2cece5e3f01fdb9e3d403b3fb78dd2b
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298667"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43121651"
 ---
-# <a name="decode-x12-messages-for-azure-logic-apps-with-the-enterprise-integration-pack"></a>Декодирование сообщений X12 для Azure Logic Apps с помощью пакета интеграции Enterprise
+# <a name="decode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Декодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 С помощью соединителя для декодирования сообщений X12 вы можете проверить конверт на соответствие соглашению с торговым партнером, проверить свойства партнера и EDI, а также разделить обмен на наборы транзакций или сохранить целые обмены и создавать подтверждения для обработанных транзакций. Чтобы использовать этот соединитель, добавьте его в существующий триггер в приложении логики.
 

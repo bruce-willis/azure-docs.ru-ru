@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/30/2018
+ms.date: 08/24/2018
 ms.author: mstewart
-ms.openlocfilehash: 98b8883a5ab0096102ab7daf90b5b2791a6f7e41
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: b93ad4d6d4637b3060d92fb5e17747294c7e6211
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39389581"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42885998"
 ---
 # <a name="azure-disk-encryption-faq"></a>Шифрование дисков Azure: часто задаваемые вопросы
 
@@ -34,7 +34,7 @@ ms.locfileid: "39389581"
 
 ## <a name="how-much-does-azure-disk-encryption-cost"></a>Какова стоимость шифрования дисков Azure?
 
-Плата за шифрование дисков виртуальной машины с помощью шифрования дисков Azure не взимается, однако оплачивается использование Azure Key Vault. Дополнительные сведения о ценах на Azure Key Vault см. на [этой странице](https://azure.microsoft.com/pricing/details/key-vault/).
+Плата за шифрование дисков виртуальной машины с помощью шифрования дисков Azure не взимается, но оплачивается использование Azure Key Vault. Дополнительные сведения о ценах на Azure Key Vault см. на [этой странице](https://azure.microsoft.com/pricing/details/key-vault/).
 
 
 ## <a name="which-virtual-machine-tiers-does-azure-disk-encryption-support"></a>Какие уровни виртуальных машин поддерживает шифрование дисков Azure?
@@ -96,11 +96,17 @@ ms.locfileid: "39389581"
 
 ## <a name="what-are-the-prerequisites-to-configure-azure-disk-encryption"></a>Каковы предварительные требования для настройки шифрования дисков Azure?
 
-Для использования шифрования дисков Azure существуют предварительные требования. Чтобы создать приложение Azure Active Directory, создать хранилище ключей или установить имеющееся для доступа к шифрованию диска, чтобы включить шифрование и обеспечить защиту секретов и ключей, перейдите к статье [Предварительные требования для шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md). Дополнительные сведения о сценариях поддержки ключа шифрования ключей см. в статье с [обзором шифрования дисков Azure](azure-security-disk-encryption-overview.md).
+Для использования шифрования дисков Azure существуют предварительные требования. Чтобы создать хранилище ключей или установить имеющееся для доступа к шифрованию диска для включения шифрования и обеспечения защиты секретов и ключей, перейдите к статье [Предварительные требования для шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md). Дополнительные сведения о сценариях поддержки ключа шифрования ключей см. в статье с [обзором шифрования дисков Azure](azure-security-disk-encryption-overview.md).
 
-## <a name="where-can-i-get-more-information-on-how-to-use-powershell-for-configuring-azure-disk-encryption"></a>Где можно получить дополнительные сведения о том, как использовать PowerShell для настройки шифрования дисков Azure?
+## <a name="what-are-the-prerequisites-to-configure-azure-disk-encryption-with-an-azure-ad-app-previous-release"></a>Каковы предварительные требования для настройки шифрования дисков Azure с использованием приложения Azure AD (предыдущий выпуск)?
 
-Есть несколько информативных статей, в которых описывается, как выполнять основные задачи шифрования дисков Azure, а также более сложные сценарии. Описание основных задач см. в записи [Explore Azure Disk Encryption with Azure Powershell](https://blogs.msdn.microsoft.com/azuresecurity/2015/11/16/explore-azure-disk-encryption-with-azure-powershell/) (Изучение возможностей дискового шифрования Azure с помощью Azure PowerShell). Описание более сложных сценариев см. в записи блога [Explore Azure Disk Encryption with Azure PowerShell – Part 2](https://blogs.msdn.microsoft.com/azuresecurity/2015/11/21/explore-azure-disk-encryption-with-azure-powershell-part-2/) (Изучение возможностей дискового шифрования Azure с помощью Azure PowerShell — часть 2).
+Для использования шифрования дисков Azure существуют предварительные требования. Чтобы создать приложение Azure Active Directory, создать хранилище ключей или установить имеющееся для доступа к шифрованию диска, чтобы включить шифрование и обеспечить защиту секретов и ключей, перейдите к статье [Предварительные требования для шифрования дисков Azure](azure-security-disk-encryption-prerequisites-aad.md). Дополнительные сведения о сценариях поддержки ключа шифрования ключей см. в статье с [обзором шифрования дисков Azure](azure-security-disk-encryption-overview.md).
+
+## <a name="is-azure-disk-encryption-using-an-azure-ad-app-previous-release-still-supported"></a>Поддерживается ли по-прежнему шифрование дисков Azure с помощью приложения Azure AD (предыдущий выпуск)?
+Да. Шифрование дисков с помощью приложения Azure AD по-прежнему поддерживается. Тем не менее при шифровании новых виртуальных машин мы рекомендуем использовать новый метод, а не шифрование с помощью приложения Azure AD. 
+
+## <a name="can-i-migrate-vms-that-were-encrypted-with-an-azure-ad-app-to-encryption-without-an-azure-ad-app"></a>Можно ли перевести виртуальные машины, зашифрованные с помощью приложения Azure AD, на шифрование без приложения Azure AD?
+Сейчас для компьютеров, зашифрованных с помощью приложения Azure AD, нет прямого пути миграции к шифрованию без приложения Azure AD. Кроме того, нет прямого пути от шифрования без приложения Azure AD к шифрованию с помощью приложения AD. 
 
 ## <a name="what-version-of-azure-powershell-does-azure-disk-encryption-support"></a>Какую версию Azure PowerShell поддерживает шифрование дисков Azure?
 
@@ -140,6 +146,6 @@ ms.locfileid: "39389581"
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 
+- [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md)
 - [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
-- [Шифрование виртуальной машины Azure](https://docs.microsoft.com/azure/security-center/security-center-disk-encryption)
 - [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)

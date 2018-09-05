@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/22/2018
+ms.date: 08/24/2018
 ms.author: mabrigg
 ms.reviewer: alfredop
-ms.openlocfilehash: 46e46cfea621f99e150446fcc75b71feb468fa49
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: aedaa729ec51d7b60b2c242239935f7b3e41794f
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052704"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918193"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
 Термин *поставщик* обозначает администраторов служб и любых делегированных поставщиков. Операторы Azure Stack и делегированные поставщики с помощью API использования ресурсов для поставщиков могут просматривать данные об использовании ресурсов их непосредственными клиентами. Например, как показано на схеме, с помощью API для поставщиков P0 может получить сведения о прямом использовании ресурсов для P1 и P2, а P1 — для P3 и P4.
@@ -93,6 +93,8 @@ meterID1",
 
 ## <a name="retrieve-usage-information"></a>Получение сведений о потреблении
 
+### <a name="powershell"></a>PowerShell
+
 Чтобы данные об использовании создавались, должны существовать активно работающие ресурсы, например, действующая виртуальная машина или учетная запись хранения, содержащая некоторые данные. Если вы не знаете, есть ли у вас активные ресурсы в Azure Stack Marketplace, разверните виртуальную машину, откройте для нее колонку мониторинга и проверьте, выполняется ли виртуальная машина. Следующие командлеты PowerShell позволяют просмотреть данные о потреблении:
 
 1. [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack);
@@ -101,6 +103,22 @@ meterID1",
 ```powershell
 Get-UsageAggregates -ReportedStartTime "<Start time for usage reporting>" -ReportedEndTime "<end time for usage reporting>" -AggregationGranularity <Hourly or Daily>
 ```
+### <a name="rest-api"></a>REST API
+
+Вы можете собирать сведения об использовании для удаленных подписок путем вызова службы Microsoft.Commerce.Admin. 
+
+**Чтобы вернуть данные об использовании по всем клиентам для удаленных подписок для активных пользователей, сделайте следующее:**
+
+| **Метод** | **URI запроса** |
+| --- | --- |
+| ПОЛУЧЕНИЕ | https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&api-version=2015-06-01-preview |
+
+**Чтобы вернуть данные об использовании по удаленному или активному клиенту, сделайте следующее:**
+
+| **Метод** | **URI запроса** |
+| --- | --- |
+| ПОЛУЧЕНИЕ |https://{armendpoint}/subscriptions/{subId}/providersMicrosoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={start-time}&reportedEndTime={end-endtime}&aggregationGranularity=Hourly&subscriberId={subscriber-id}&api-version=2015-06-01-preview |
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 [API-интерфейс использования для клиентов](azure-stack-tenant-resource-usage-api.md)

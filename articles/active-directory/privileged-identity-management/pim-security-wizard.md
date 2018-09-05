@@ -1,6 +1,6 @@
 ---
-title: Мастер защиты в расширении для управления привилегированными пользователями Azure AD
-description: Когда вы в первый раз запускаете управление привилегированными пользователями Azure Active Directory, открывается мастер защиты. В этой статье описаны этапы работы мастера.
+title: Мастер защиты в Azure PIM | Документация Майкрософт
+description: Сведения о мастере защиты, который отображается при первом использовании Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.component: pim
 ms.date: 02/27/2017
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017
-ms.openlocfilehash: 19eb2b36b217dc67fabcc3c2c4721fb13b2224ec
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 178a4c5e978075f2a59b22a1cccf462138527964
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617012"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189085"
 ---
-# <a name="using-the-security-wizard-in-azure-ad-privileged-identity-management"></a>Использование мастера защиты в Azure AD Privileged Identity Management 
+# <a name="security-wizard-in-pim"></a>Мастер защиты в PIM
 Если вы впервые запускаете компонент управления привилегированными пользователями (PIM) Azure, открывается мастер. Этот мастер поможет вам оценить риски безопасности, связанные с привилегированными пользователями, и понять, как их снизить с помощью компонента PIM. Нет необходимости вносить изменения в существующие назначения ролей в мастере, это можно сделать позже.
 
 ## <a name="what-to-expect"></a>Основные принципы
@@ -40,5 +40,7 @@ ms.locfileid: "39617012"
 * Если вы хотите предоставить доступ к управлению PIM большему количеству пользователей, ознакомьтесь с разделом, посвященным [предоставлению доступа к управлению в PIM](pim-how-to-give-access-to-pim.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]
 
+- [Начало работы с PIM](pim-getting-started.md)
+- [Назначение ролей каталога Azure AD в PIM ](pim-how-to-add-role-to-user.md)
+- [Предоставление доступа к управлению PIM другим администраторам](pim-how-to-give-access-to-pim.md)

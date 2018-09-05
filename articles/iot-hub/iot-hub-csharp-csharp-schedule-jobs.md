@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/06/2018
 ms.author: dobett
-ms.openlocfilehash: 0ac74a5b1a65dc171c6addd30152010965888808
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: eb7b4c4c6228818f78e002f4a06a000e9aa34a3a
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185532"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43109643"
 ---
 # <a name="schedule-and-broadcast-jobs-netnet"></a>Планирование и трансляция заданий (.NET и .NET)
 
@@ -29,14 +29,16 @@ ms.locfileid: "39185532"
 
 Дополнительные сведения об этих возможностях см. в указанных ниже статьях.
 
-* Двойники устройств и свойства: [Приступая к работе с двойниками устройств (предварительная версия)][lnk-get-started-twin] и [Руководство. Настройка устройств с помощью требуемых свойств (предварительная версия)][lnk-twin-props].
-* Прямые методы: [Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей][lnk-dev-methods] и [Использование прямых методов на устройстве Интернета вещей (Node.js)][lnk-c2d-methods].
+* Двойники устройств и свойства: [Начало работы с двойниками устройств](iot-hub-csharp-csharp-twin-getstarted.md) и [Руководство. Настройка устройств из внутренней службы](tutorial-device-twins.md).
+
+* Прямые методы: [Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей](iot-hub-devguide-direct-methods.md) и [Использование прямых методов (Java)](quickstart-control-device-dotnet.md).
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
 В этом учебнике описаны следующие процедуры.
 
 * Создание приложения для устройств, которое реализует прямой метод **LockDoor**, вызываемый внутренним приложением.
+
 * Создание внутреннего приложения, которое создает задание для вызова прямого метода **LockDoor** на нескольких устройствах. Еще одно задание отправляет обновления требуемых свойств на несколько устройств.
 
 По завершении работы с этим руководством у вас будет два консольных приложения .NET (C#):
@@ -47,44 +49,43 @@ ms.locfileid: "39185532"
 
 Для работы с этим учебником требуется:
 
-* Visual Studio 2015 или Visual Studio 2017.
-* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
+* Visual Studio 2017.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](http://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 [!INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
 [!INCLUDE [iot-hub-get-started-create-device-identity-portal](../../includes/iot-hub-get-started-create-device-identity-portal.md)]
 
-
 ## <a name="create-a-simulated-device-app"></a>Создание приложения виртуального устройства
+
 В этом разделе вы создадите консольное приложение .NET, которое отвечает на вызов прямого метода, выполняемый серверной частью решения.
 
 1. В Visual Studio добавьте в текущее решение проект классического приложения Windows на языке Visual C# с помощью шаблона проекта **консольного приложения** . Присвойте проекту имя **SimulatedDeviceMethods**.
    
-    ![Новое классическое приложение устройства Windows на языке Visual C#][img-createdeviceapp]
+    ![Новое классическое приложение устройства Windows на языке Visual C#](./media/iot-hub-csharp-csharp-schedule-jobs/create-device-app.png)
     
-1. В обозревателе решений щелкните правой кнопкой мыши проект **SimulateDeviceMethods** и выберите пункт **Управление пакетами NuGet...**.
+2. В обозревателе решений щелкните правой кнопкой мыши проект **SimulateDeviceMethods** и выберите пункт **Управление пакетами NuGet...**.
 
-1. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите **microsoft.azure.devices.client**. Выберите **Установить**, чтобы установить пакет **Microsoft.Azure.Devices.Client**, и примите условия использования. В результате выполняется скачивание и установка [пакета NuGet SDK для устройств Azure IoT][lnk-nuget-client-sdk] и его зависимостей, а также добавляется соответствующая ссылка.
+3. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите **Microsoft.Azure.Devices.Client**. Выберите **Установить**, чтобы установить пакет **Microsoft.Azure.Devices.Client**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для устройств Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) и его зависимостей, а также добавляется соответствующая ссылка.
    
-    ![Клиентское приложение в окне "Диспетчер пакетов NuGet"][img-clientnuget]
+    ![Клиентское приложение в окне "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-schedule-jobs/device-app-nuget.png)
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+4. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
    
     ```csharp
     using Microsoft.Azure.Devices.Client;
     using Microsoft.Azure.Devices.Shared;
-
     using Newtonsoft.Json;
     ```
 
-1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения устройства, записанной в предыдущем разделе.
+5. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения устройства, записанной в предыдущем разделе.
 
     ```csharp
     static string DeviceConnectionString = "<yourDeviceConnectionString>";
     static DeviceClient Client = null;
     ```
 
-1. Добавьте следующий код, чтобы реализовать прямой метод на устройстве:
+6. Добавьте следующий код, чтобы реализовать прямой метод на устройстве:
 
     ```csharp
     static Task<MethodResponse> LockDoor(MethodRequest methodRequest, object userContext)
@@ -98,23 +99,25 @@ ms.locfileid: "39185532"
     }
     ```
 
-1. Добавьте следующий код, чтобы реализовать прослушиватель двойников устройства на устройстве:
+7. Добавьте следующий код, чтобы реализовать прослушиватель двойников устройства на устройстве:
 
     ```csharp
-    private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
+    private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, 
+      object userContext)
     {
         Console.WriteLine("Desired property change:");
         Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
     }
     ```
 
-1. И наконец, добавьте этот код в метод **Main**, чтобы открыть подключение к Центру Интернета вещей и инициализировать прослушиватель метода:
+8. И наконец, добавьте этот код в метод **Main**, чтобы открыть подключение к Центру Интернета вещей и инициализировать прослушиватель метода:
    
     ```csharp
     try
     {
         Console.WriteLine("Connecting to hub");
-        Client = DeviceClient.CreateFromConnectionString(DeviceConnectionString, TransportType.Mqtt);
+        Client = DeviceClient.CreateFromConnectionString(DeviceConnectionString, 
+          TransportType.Mqtt);
 
         Client.SetMethodHandlerAsync("LockDoor", LockDoor, null);
         Client.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null);
@@ -134,12 +137,11 @@ ms.locfileid: "39185532"
     }
     ```
         
-1. Сохраните результаты работы и создайте решение.         
+9. Сохраните результаты работы и создайте решение.         
 
 > [!NOTE]
-> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повтора (например, повторную попытку подключения), как указано в статье MSDN [Обработка временного сбоя][lnk-transient-faults].
+> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повтора (например, повторную попытку подключения), как указано в статье MSDN [Обработка временных сбоев](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults)
 > 
-
 
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-sending-device-twin-updates"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
 
@@ -147,29 +149,29 @@ ms.locfileid: "39185532"
 
 1. В Visual Studio добавьте в текущее решение проект классического приложения Windows на языке Visual C# с помощью шаблона проекта **консольного приложения** . Назовите проект **ScheduleJob**.
 
-    ![Новый проект классического приложения Windows на языке Visual C#][img-createapp]
+    ![Новый проект классического приложения Windows на языке Visual C#](./media/iot-hub-csharp-csharp-schedule-jobs/createnetapp.png)
 
-1. В обозревателе решений щелкните правой кнопкой мыши проект **ScheduleJob** и выберите **Управление пакетами NuGet…**.
+2. В обозревателе решений щелкните правой кнопкой мыши проект **ScheduleJob** и выберите **Управление пакетами NuGet…**.
 
-1. В окне **Диспетчер пакетов NuGet** нажмите кнопку **Обзор**, найдите **microsoft.azure.devices**, щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для служб Интернета вещей Azure][lnk-nuget-service-sdk] и его зависимостей, а также добавляется соответствующая ссылка.
+3. В окне **Диспетчер пакетов NuGet** нажмите кнопку **Обзор**, найдите **Microsoft.Azure.Devices**, щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для служб Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
 
-    ![Окно "Диспетчер пакетов NuGet"][img-servicenuget]
+    ![Окно "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-schedule-jobs/servicesdknuget.png)
 
-1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+4. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
     
     ```csharp
     using Microsoft.Azure.Devices;
     using Microsoft.Azure.Devices.Shared;
     ```
 
-1. Добавьте следующую инструкцию `using`, если она отсутствует в инструкциях по умолчанию.
+5. Добавьте следующую инструкцию `using`, если она отсутствует в инструкциях по умолчанию.
 
     ```csharp
     using System.Threading;
     using System.Threading.Tasks;
     ```
 
-1. Добавьте следующие поля в класс **Program** . Замените заполнители строкой подключения Центра Интернета вещей, созданной в предыдущем разделе, и именем устройства.
+6. Добавьте следующие поля в класс **Program** . Замените заполнители строкой подключения Центра Интернета вещей, созданной в предыдущем разделе, и именем устройства.
 
     ```csharp
     static JobClient jobClient;
@@ -177,7 +179,7 @@ ms.locfileid: "39185532"
     static string deviceId = "<yourDeviceId>";
     ```
 
-1. Добавьте следующий метод в класс **Program** .
+7. Добавьте следующий метод в класс **Program** .
 
     ```csharp
     public static async Task MonitorJob(string jobId)
@@ -188,16 +190,19 @@ ms.locfileid: "39185532"
             result = await jobClient.GetJobAsync(jobId);
             Console.WriteLine("Job Status : " + result.Status.ToString());
             Thread.Sleep(2000);
-        } while ((result.Status != JobStatus.Completed) && (result.Status != JobStatus.Failed));
+        } while ((result.Status != JobStatus.Completed) && 
+          (result.Status != JobStatus.Failed));
     }
     ```
 
-1. Добавьте следующий метод в класс **Program** .
+8. Добавьте следующий метод в класс **Program** .
 
     ```csharp
     public static async Task StartMethodJob(string jobId)
     {
-        CloudToDeviceMethod directMethod = new CloudToDeviceMethod("LockDoor", TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(5));
+        CloudToDeviceMethod directMethod = 
+          new CloudToDeviceMethod("LockDoor", TimeSpan.FromSeconds(5), 
+          TimeSpan.FromSeconds(5));
        
         JobResponse result = await jobClient.ScheduleDeviceMethodAsync(jobId,
             $"DeviceId IN ['{deviceId}']",
@@ -209,7 +214,7 @@ ms.locfileid: "39185532"
     }
     ```
 
-1. Добавьте другой метод в класс **Program**.
+9. Добавьте другой метод в класс **Program**.
 
     ```csharp
     public static async Task StartTwinUpdateJob(string jobId)
@@ -234,10 +239,10 @@ ms.locfileid: "39185532"
     ```
 
     > [!NOTE]
-    > Дополнительные сведения о синтаксисе запросов см. в статье [Язык запросов Центра Интернета вещей для двойников устройств, заданий и маршрутизации сообщений][lnk-query].
+    > Дополнительные сведения о синтаксисе запросов см. в статье [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language).
     > 
 
-1. Наконец, добавьте следующие строки в метод **Main** :
+10. Наконец, добавьте следующие строки в метод **Main** :
 
     ```csharp
     Console.WriteLine("Press ENTER to start running jobs.");
@@ -260,8 +265,7 @@ ms.locfileid: "39185532"
     Console.ReadLine();
     ```
 
-1. Сохраните результаты работы и создайте решение. 
-
+11. Сохраните результаты работы и создайте решение. 
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
@@ -269,37 +273,16 @@ ms.locfileid: "39185532"
 
 1. В обозревателе решений Visual Studio щелкните решение правой кнопкой мыши и выберите пункт **Сборка**. **Несколько запускаемых проектов**. Убедитесь, что `SimulateDeviceMethods` находится в верхней части списка, за которым следует `ScheduleJob`. Установите значение **Запуск** для действий и щелкните **ОК**.
 
-1. Запустите проекты, щелкнув **Запуск**, или перейдите к меню **Отладка** и щелкните **Начать отладку**.
+2. Запустите проекты, щелкнув **Запуск**, или перейдите к меню **Отладка** и щелкните **Начать отладку**.
 
-1. Отобразятся выходные данные с устройства и серверных приложений.
+3. Отобразятся выходные данные с устройства и серверных приложений.
 
-    ![Выполнение приложений для планирования заданий][img-schedulejobs]
-
+    ![Выполнение приложений для планирования заданий](./media/iot-hub-csharp-csharp-schedule-jobs/schedulejobs.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
-Чтобы продолжить знакомство с Центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного ПО, ознакомьтесь с [этим руководством][lnk-fwupdate].
+Чтобы продолжить знакомство с Центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного ПО, ознакомьтесь с [этим руководством](tutorial-firmware-update.md).
 
-Сведения о развертывании решений на базе искусственного интеллекта на пограничных устройствах с помощью Azure IoT Edge см. в статье [Развертывание Azure IoT Edge на имитированном устройстве в Linux (предварительная версия)][lnk-iot-edge].
-
-<!-- images -->
-[img-createdeviceapp]: ./media/iot-hub-csharp-csharp-schedule-jobs/create-device-app.png
-[img-clientnuget]: ./media/iot-hub-csharp-csharp-schedule-jobs/device-app-nuget.png
-[img-servicenuget]: media/iot-hub-csharp-csharp-schedule-jobs/servicesdknuget.png
-[img-createapp]: media/iot-hub-csharp-csharp-schedule-jobs/createnetapp.png
-[img-schedulejobs]: media/iot-hub-csharp-csharp-schedule-jobs/schedulejobs.png
-
-[lnk-get-started-twin]: iot-hub-csharp-csharp-twin-getstarted.md
-[lnk-twin-props]: tutorial-device-twins.md
-[lnk-c2d-methods]: quickstart-control-device-dotnet.md
-[lnk-dev-methods]: iot-hub-devguide-direct-methods.md
-[lnk-fwupdate]: tutorial-firmware-update.md
-[lnk-iot-edge]: ../iot-edge/tutorial-simulate-device-linux.md
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md
-[lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-[lnk-transient-faults]: https://docs.microsoft.com/azure/architecture/best-practices/transient-faults
-[lnk-nuget-client-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
-[lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
-[lnk-query]: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
+Сведения о развертывании решений на базе искусственного интеллекта на пограничных устройствах с помощью Azure IoT Edge см. в руководстве [Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md).

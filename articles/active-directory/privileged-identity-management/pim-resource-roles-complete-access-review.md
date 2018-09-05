@@ -1,6 +1,6 @@
 ---
-title: Выполнение проверки доступа для ресурсов Azure с помощью управления привилегированными пользователями | Документация Майкрософт
-description: Сведения о том, как завершить проверку доступа для ресурсов Azure.
+title: Выполнение проверки доступа для ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как выполнить проверку доступа ролей ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: f1fc23afb41753bfe358cb05376a5ee9a07e34fd
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: f998c509e9bea65980367690a5e9d03f579b8e98
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39620048"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189133"
 ---
-# <a name="complete-an-access-review-for-azure-resources-by-using-privileged-identity-management"></a>Выполнение проверки доступа для ресурсов Azure с помощью управления привилегированными пользователями
+# <a name="complete-an-access-review-for-azure-resource-roles-in-pim"></a>Выполнение проверки доступа для ролей ресурсов Azure в PIM
 После [запуска проверки доступа](pim-resource-roles-start-access-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Компонент управления привилегированными пользователями (PIM) для ресурсов Azure автоматически отправляет пользователям электронное письмо с предложением проверить доступ. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-resource-roles-perform-access-review.md).
 
 После окончания периода проверки доступа или после завершения всеми пользователями самостоятельной проверки выполните шаги, описанные в этой статье, для управления проверкой и просмотра результатов.
@@ -60,5 +60,7 @@ ms.locfileid: "39620048"
 Просмотрите и добавьте рецензентов в существующие проверки доступа. Напомните рецензентам выполнить проверки.
 ![Добавить рецензентов](media/azure-pim-resource-rbac/rbac-access-review-reviewers.png)
 
+## <a name="next-steps"></a>Дополнительная информация
 
-
+- [Запуск проверки доступа для ролей ресурсов Azure в PIM](pim-resource-roles-start-access-review.md)
+- [Выполнение проверки доступа своих ролей ресурсов Azure в PIM](pim-resource-roles-perform-access-review.md)

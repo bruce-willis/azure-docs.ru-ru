@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 83b3aa1efdde367577a563b477403c313a51d4fe
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: a6f8984086771fea4df4851b2a878d480b2050ea
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40177539"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918523"
 ---
-# <a name="windows-commands---cmd"></a>Команды Windows (CMD) 
+# <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
 
 В этом разделе приведены примеры команд для выполнения общих задач в сценариях, где может потребоваться использовать SAC для доступа к виртуальной машине Windows, например, когда необходимо устранить ошибки RDP-соединения.
 
@@ -91,6 +91,8 @@ SAC позволяет подключаться к вашей операцион
 `netsh interface set interface name="<interface name>" admin=enabled`
 ### <a name="set-nic-to-use-dhcp"></a>Настройка сетевого адаптера для использования DHCP
 `netsh interface ip set address name="<interface name>" source=dhcp`
+
+Дополнительные сведения о `netsh` [см. здесь](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-contexts).
 
 Виртуальные машины Azure всегда должны использовать DHCP в гостевой ОС, чтобы получить IP-адрес. Параметр статического IP-адреса Azure по-прежнему использует DHCP, чтобы предоставить статический IP-адрес виртуальной машине.
 ### <a name="ping"></a>Проверка связи

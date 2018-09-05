@@ -1,28 +1,23 @@
 ---
-title: Сценарий создания панели мониторинга сведений о клиентах с использованием беcсерверных средств в Azure | Документация Майкрософт
-description: Сведения о том, как можно управлять отзывами от клиентов, данными социальных сетей и многим другим, создав панель мониторинга с помощью Функций Azure и Azure Logic Apps.
-keywords: ''
+title: Сценарий создания панели мониторинга сведений о клиентах с использованием беcсерверных средств в службах Azure | Документация Майкрософт
+description: Управление отзывами от клиентов, данными социальных сетей и многим другим путем создания панели мониторинга клиента с помощью Azure Logic Apps и Функций Azure
 services: logic-apps
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: jeffhollan
+ms.author: jehollan
+ms.reviewer: estfan, LADocs
+ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 03/15/2018
-ms.author: jehollan; LADocs
-ms.openlocfilehash: 3ee3ec3107cf8aad834e8201405c9aa833d838af
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 9d6d74c4afb4d1cd62e5946b7e6f8c401e7ef2aa
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299966"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124650"
 ---
-# <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps.
+# <a name="create-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps
 
 Azure предлагает беcсерверные средства для быстрого создания и размещения приложений в облаке, не задумываясь об инфраструктуре. В этом руководстве мы создадим панель мониторинга, которая будет запускаться при получении отзывов от клиентов, анализировать отзывы с помощью машинного обучения и публиковать аналитику в источник, например Power BI или Azure Data Lake.
 

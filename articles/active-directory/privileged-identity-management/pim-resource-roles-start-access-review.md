@@ -1,6 +1,6 @@
 ---
-title: Выполнение проверок доступа в ресурсах Azure с помощью управления привилегированными пользователями | Документация Майкрософт
-description: Сведения о том, как выполнить проверку доступа в компоненте управления привилегированными пользователями для ресурсов Azure
+title: Запуск проверки доступа для ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как запустить проверку доступа ролей ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: f88c4a2f7e6eb569c9c0de33ab86e8b484a923e3
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 9a35d32d89931a03b33f232ba4f79226fc3f57e5
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622887"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189180"
 ---
-# <a name="perform-access-reviews-in-azure-resources-by-using-privileged-identity-management"></a>Выполнение проверок доступа в ресурсах Azure с помощью управления привилегированными пользователями
+# <a name="start-an-access-review-for-azure-resource-roles-in-pim"></a>Запуск проверки доступа для ролей ресурсов Azure в PIM
 Назначения ролей становятся "устаревшими", когда у пользователей имеются права привилегированного доступа, которые им больше не нужны. Чтобы снизить риск, связанный с "устаревшими" назначениями ролей, администраторы привилегированных ролей должны регулярно проверять роли. В этом документе рассматривается процедура запуска проверки доступа в компоненте управления привилегированными пользователями (PIM) для ресурсов Azure.
 
 На главной странице приложения PIM перейдите к:
@@ -71,3 +71,8 @@ ms.locfileid: "39622887"
 
 Пока не истек заданный временной интервал, можно напомнить пользователям о необходимости завершить проверку. Также в разделе "Проверки доступа" можно остановить выполнение проверки досрочно.
 
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Выполнение проверки доступа для ролей ресурсов Azure в PIM](pim-resource-roles-complete-access-review.md)
+- [Выполнение проверки доступа своих ролей ресурсов Azure в PIM](pim-resource-roles-perform-access-review.md)
+- [Запуск проверки доступа для ролей каталога Azure AD в PIM](pim-how-to-start-security-review.md)

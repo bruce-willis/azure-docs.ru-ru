@@ -11,15 +11,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/15/2018
+ms.date: 08/28/2018
 ms.reviewer: lmolkova
 ms.author: mbullwin
-ms.openlocfilehash: b2b5abf3b3b170e60df3aa2d6ec5ce471db74f80
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: 6d161a49b35bbdfedcb27dd91f9f09dcf7ba4133
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42142826"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122032"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 [Application Insights](app-insights-overview.md) позволяет отслеживать доступность, производительность и использование вашего веб-приложения.
@@ -44,7 +44,7 @@ telemetryClient.TrackTrace("Hello World!");
 Вы можете инициализировать и настроить Application Insights с помощью кода или файла `ApplicationInsights.config`. Выполните инициализацию как можно раньше. 
 
 > [!NOTE]
-> Инструкции для **ApplicationInsights.config** применимы только к приложениям, которые нацелены на платформу .NET Standard, и не подходят для платформы .NET Core. 
+> Инструкции для **ApplicationInsights.config** применимы только к приложениям, которые нацелены на платформу .NET Framework, и не подходят для платформы .NET Core.
 
 ### <a name="using-config-file"></a>Использование файла конфигурации
 

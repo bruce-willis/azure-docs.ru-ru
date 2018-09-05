@@ -4,12 +4,12 @@ ms.author: yashar
 ms.service: virtual-machines-windows
 ms.topic: include
 ms.date: 08-07-2018
-ms.openlocfilehash: 19a153a5cdc9d5f878494984313baebd12dbcbb5
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 764470bbf47c18a2ec66dc91d433f8dd14b99a8f
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39631169"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43039284"
 ---
 # <a name="prepay-for-virtual-machines-with-azure-reserved-vm-instances"></a>Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances
 
@@ -30,6 +30,9 @@ Reserved VM Instance можно приобрести на [портале Azure]
 
 Reserved VM Instances доступны почти для всех размеров виртуальных машин за некоторыми исключениями.
 
+- Классические виртуальные машины и облачные службы не получают скидки на резервирование.
+- Виртуальные машины с подавленным ядром не получают скидки на резервирование.
+- Следующие серии виртуальных машин не получают скидки на резервирование: серии A, Av2 или G.
 - Виртуальные машины в предварительной версии. Любая серия виртуальных машин или размеров, которая находится в предварительной версии, недоступна для приобретения резервирования.
 - Облако. Резервирования недоступны для приобретения в государственных организациях США, также в регионах Германия и Китай.
 - Недостаточная квота. Если резервирование привязано к одной конкретной подписке, эта подписка должна иметь свободную квоту виртуальных ЦП для размещения этого зарезервированного экземпляра. Например, если целевая подписка имеет квоту на 10 виртуальных ЦП для серии D, вы не сможете приобрести резервирование для 11 экземпляров Standard_D1. При проверке квоты для резервирования учитываются все виртуальные машины, уже размещенные в подписке. Например, если подписка имеет квоту на 10 виртуальных ЦП для серии D и два развернутых экземпляра Standard_D1, в этой подписке можно приобрести резервирование для 10 экземпляров Standard_D1. 
@@ -69,10 +72,10 @@ Reserved VM Instances доступны почти для всех размеро
 
 Дополнительные сведения о резервировании в Azure см. в следующих статьях.
 
-- [Основные сведения о зарезервированных экземплярах виртуальных машин Azure](../articles/billing/billing-save-compute-costs-reservations.md)
+- [Основные сведения о резервировании в Azure](../articles/billing/billing-save-compute-costs-reservations.md)
 - [Управление зарезервированными экземплярами в Azure](../articles/billing/billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../articles/billing/billing-understand-vm-reservation-charges.md)
-- [Использование зарезервированного экземпляра виртуальной машины для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../articles/billing/billing-understand-reserved-instance-usage-ea.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](../articles/billing/billing-reserved-instance-windows-software-costs.md)
 - [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: c8e740a66271c88b3abb036867d1760cc9e77607
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: e3ab060c1cea28f83c18dc89aeea7716ec86572a
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33944507"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43190349"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
 
@@ -34,16 +34,16 @@ OpenShift включает Kubernetes для оркестрации контей
 
 Существует несколько версий OpenShift.
 
-- Источник OpenShift
+- OKD (прежнее название — OpenShift Origin);
 - Платформа контейнеров OpenShift
 - OpenShift Online
 - OpenShift Dedicated
 
 Пользователи могут использовать две версии (из четырех, описанных в этой статье) для развертывания в Azure решений OpenShift Origin и OpenShift Container Platform.
 
-## <a name="openshift-origin"></a>Источник OpenShift
+## <a name="okd-formerly-openshift-origin"></a>OKD (прежнее название — OpenShift Origin);
 
-OpenShift Origin — это вышестоящий проект OpenShift с [открытым кодом](https://www.openshift.org/), который поддерживается сообществом. OpenShift Origin можно установить в ОС CentOS или Red Hat Enterprise Linux (RHEL).
+OKD — это высокоуровневый проект OpenShift с [открытым кодом](https://www.okd.io/), который поддерживается сообществом. OKD можно установить в ОС CentOS или Red Hat Enterprise Linux (RHEL).
 
 ## <a name="openshift-container-platform"></a>Платформа контейнеров OpenShift
 

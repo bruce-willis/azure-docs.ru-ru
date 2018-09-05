@@ -1,28 +1,23 @@
 ---
-title: Обзор бессерверных компонентов Azure | Документы Майкрософт
-description: Создание эффективных решений в облаке без необходимости развертывания и обслуживания инфраструктуры.
-keywords: ''
+title: Обзор бессерверных приложений Azure | Документация Майкрософт
+description: Сведения о создании эффективных решений в облаке без хлопот с инфраструктурой
 services: logic-apps
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: jeffhollan
+ms.author: jehollan
+ms.reviewer: klam, estfan, LADocs
+ms.custom: vs-azure
 ms.topic: article
 ms.date: 03/30/2017
-ms.author: LADocs; jehollan
-ms.openlocfilehash: 84ff855676215e6b69ec97a1527d14366e763b07
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 97c928c34a18a5d4f3549c348a273df268ee1db0
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299932"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123314"
 ---
-# <a name="overview-of-azure-serverless-with-functions-and-logic-apps"></a>Обзор бессерверных компонентов Azure с функциями и Logic Apps
+# <a name="overview-azure-serverless-with-azure-logic-apps-and-azure-functions"></a>Обзор бессерверных систем Azure с помощью Azure Logic Apps и Функций Azure
 
 Независимые (бессерверные) приложения обеспечивают такие преимущества, как увеличение скорости разработки, сокращение объема кода, простота и масштабируемость.  В этой статье рассматриваются различные атрибуты бессерверных решений и предложения Azure, независимые от сервера.
 

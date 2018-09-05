@@ -1,6 +1,6 @@
 ---
-title: Аудит ролей для ресурсов Azure с помощью управления привилегированными пользователями | Документация Майкрософт
-description: Узнайте, как просмотреть сведения обо всех действиях в роли для определенного ресурса.
+title: Просмотр журнала аудита для ролей ресурсов Azure в PIM | Документация Майкрософт
+description: Узнайте, как просмотреть журнал аудита ролей ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.component: pim
 ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 8f328a609d696886ed452589d3cdfb5f45aec62a
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: c0536423e9640f78149b612ec66b0a07cdcf24bb
+ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621289"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43189317"
 ---
-# <a name="audit-resource-roles-for-azure-resources-by-using-privileged-identity-management"></a>Аудит ролей для ресурсов Azure с помощью управления привилегированными пользователями 
+# <a name="view-audit-history-for-azure-resource-roles-in-pim"></a>Просмотр журнала аудита для ролей ресурсов Azure в PIM
 
 Аудит ресурсов дает вам представление о всей активности роли для этого ресурса. Вы можете отфильтровать информацию с помощью предопределенной даты или настраиваемого диапазона.
 ![Сведения о фильтре](media/azure-pim-resource-rbac/rbac-resource-audit.png)
@@ -31,7 +31,7 @@ ms.locfileid: "39621289"
 
 ![Дополнительные сведения о действии](media/azure-pim-resource-rbac/rbac-audit-activity-details.png)
 
-# <a name="my-audit"></a>Мой аудит
+## <a name="my-audit"></a>Мой аудит
 
 Параметр "Мой аудит" позволяет получить представление действиях в личной роли пользователя. Вы можете отфильтровать информацию с помощью предопределенной даты или настраиваемого диапазона.
 ![Действие в личной роли](media/azure-pim-resource-rbac/my-audit-time.png)
@@ -46,3 +46,6 @@ ms.locfileid: "39621289"
 
 ![Выбор активации роли](media/azure-pim-resource-rbac/rbac-user-resource-activity.png)
 
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Просмотр журнала аудита для ролей каталога Azure AD в PIM](pim-how-to-use-audit-log.md)

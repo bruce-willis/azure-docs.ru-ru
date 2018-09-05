@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5508b5943e116545297d91e85621d2a11a635299
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: b8caeab7f08ffeee81492b01750cbb255e172872
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39058076"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43144528"
 ---
 # <a name="virtual-machine-offer-publishing-guide"></a>Руководство по публикации предложения "Виртуальная машина"
 
@@ -42,7 +42,7 @@ ms.locfileid: "39058076"
 
 Вы развертываете одну или несколько виртуальных машин через приложения "инфраструктура как услуга" (IaaS) или SaaS. Преимущество варианта публикации "Тестовый выпуск" заключается в автоматической подготовке виртуальной машины или всего решения под руководством партнера. Тестовый выпуск позволяет пользователю оценить решение без лишних затрат. Клиенту не обязательно уже быть пользователем Azure, чтобы использовать пробную версию. 
 
-Чтобы приступить к работе, отправьте сообщение по адресу amp-testdrive@microsoft.com. 
+Чтобы приступить к работе, свяжитесь с нами по адресу [amp-testdrive](mailto:amp-testdrive@microsoft.com). 
 
 |Требования  |Сведения |
 |---------|---------|

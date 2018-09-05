@@ -1,25 +1,20 @@
 ---
-title: Мониторинг и анализ запусков приложений логики с помощью Log Analytics (Azure Logic Apps) | Документация Майкрософт
-description: Отслеживайте запуски приложений логики с помощью Log Analytics, чтобы получать аналитические сведения и подробные данные отладки, которые позволят устранять неполадки и диагностировать работу.
-author: divyaswarnkar
-manager: jeconnoc
-editor: ''
+title: Мониторинг состояния выполнения приложения логики с помощью Log Analytics в Azure Logic Apps | Документация Майкрософт
+description: Получите аналитические сведения и данные об отладке при выполнении приложения логики с помощью Log Analytics для устранения неполадок и диагностики
 services: logic-apps
-documentationcenter: ''
-ms.assetid: ''
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 06/19/2018
-ms.author: LADocs; divswa
-ms.openlocfilehash: 0dc7f28ebe3816ba317eb3a4e28fc640c8a12a4e
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 1aa55728b222c2838026cf5b06175736c5c84194
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294580"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43123296"
 ---
 # <a name="monitor-and-get-insights-about-logic-app-runs-with-log-analytics"></a>Мониторинг и анализ запусков приложений логики с помощью Log Analytics
 

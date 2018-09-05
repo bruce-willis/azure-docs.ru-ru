@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2018
 ms.author: damaerte
-ms.openlocfilehash: adae7ea79ada9247382c88e58f1ba5331007985b
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: cb4b7f8851c6c891ca43f6c215ba812a0c784d28
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39324499"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43108144"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell-preview"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)
 
@@ -258,7 +258,6 @@ mywebapp3       Running  MyResourceGroup3   {mywebapp3.azurewebsites.net...   So
 
 ## <a name="ssh"></a>SSH
 
-Пакет [Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH) доступен в PowerShell Cloud Shell.
 Для аутентификации серверов или виртуальных машин с помощью SSH создайте пару открытого и закрытого ключей в Cloud Shell и опубликуйте открытый ключ в расположении `authorized_keys` на удаленном компьютере, например `/home/user/.ssh/authorized_keys`.
 
 > [!NOTE]

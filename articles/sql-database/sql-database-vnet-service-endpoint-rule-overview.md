@@ -8,15 +8,15 @@ author: DhruvMsft
 manager: craigg
 ms.custom: VNet Service endpoints
 ms.topic: conceptual
-ms.date: 07/18/2018
+ms.date: 08/28/2018
 ms.reviewer: carlrab
 ms.author: dmalik
-ms.openlocfilehash: cdf067839c73f9da40d03628ff1c9920764e2219
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 223a8da0c3c940c57dfc58d9cc87a19ae45a64eb
+ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39127501"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43143816"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database-and-sql-data-warehouse"></a>Использование конечных точек службы и правил виртуальной сети для Базы данных SQL Azure и Хранилища данных SQL
 
@@ -181,11 +181,10 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 Если вы решили применить эту функцию к учетной записи хранения, используемой сервером Azure SQL Server, могут возникнуть проблемы. Ниже приведен список и описание функций базы данных SQL Azure, на которых это отразится.
 
 #### <a name="azure-sqldw-polybase"></a>PolyBase хранилища данных SQL Azure
-PolyBase часто используют для загрузки данных в хранилище данных SQL Azure из учетных записей хранения. Если учетная запись хранения, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Существует решение для этой проблемы. Чтобы получить дополнительные сведения, свяжитесь с нами по адресу *dmalik@microsoft.com*.
+PolyBase часто используют для загрузки данных в хранилище данных SQL Azure из учетных записей хранения. Если учетная запись хранения, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Существует решение для этой проблемы. Чтобы получить дополнительные сведения, свяжитесь со службой поддержки Майкрософт.
 
 #### <a name="azure-sqldb-blob-auditing"></a>Аудит больших двоичных объектов базы данных SQL Azure
 При аудите больших двоичных объектов журналы аудита отправляются в вашу учетную запись хранения. Если эта учетная запись хранения использует функцию конечных точек службы виртуальной сети, то подключение из базы данных SQL Azure к учетной записи хранения будет прервано.
-
 
 ## <a name="adding-a-vnet-firewall-rule-to-your-server-without-turning-on-vnet-service-endpoints"></a>Добавление правила брандмауэра виртуальной сети к серверу без включения конечных точек службы виртуальной сети
 

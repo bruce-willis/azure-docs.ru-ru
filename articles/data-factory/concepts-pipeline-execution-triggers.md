@@ -10,15 +10,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 07/05/2018
 ms.author: shlo
-ms.openlocfilehash: 0af6ea05b663f0954785ce966440e3f698ad14a8
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 8dfc2448861ca9b376246ac42f7563e44422d6de
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37867092"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43122439"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Выполнение конвейера и триггеры в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -81,10 +81,10 @@ _Запуск конвейера_ в службе "Фабрика данных A
 Вы можете вручную запустить свой конвейер, используя один из методов ниже:
 - ПАКЕТ SDK .NET
 - модуль Azure PowerShell;
-- ИНТЕРФЕЙС REST API
+- REST API
 - Пакет SDK для Python
 
-### <a name="rest-api"></a>ИНТЕРФЕЙС REST API
+### <a name="rest-api"></a>REST API
 В следующем примере команды показано, как запустить конвейер вручную с помощью REST API:  
 
 ```

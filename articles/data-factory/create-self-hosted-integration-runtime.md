@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: abnarain
-ms.openlocfilehash: 705f2ce674a31d7dda4d87d893078a2ade26e327
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: e708ae741c6835395e8eb35f6835c2d8c7002780
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42443396"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43044736"
 ---
 # <a name="how-to-create-and-configure-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Дополнительные сведения о среде выполнения интеграции см. [в этом обзоре](concepts-integration-runtime.md).
@@ -156,6 +156,8 @@ ms.locfileid: "42443396"
 
    ![](media\create-self-hosted-integration-runtime\grant-permissions-IR-sharing.png)
 
+   ![](media\create-self-hosted-integration-runtime\3_rbac_permissions.png)
+
 2. Запишите **идентификатор ресурса** локальной среды IR, к которой нужно предоставить общий доступ.
 
    ![](media\create-self-hosted-integration-runtime\4_ResourceID_self-hostedIR.png)
@@ -167,6 +169,20 @@ ms.locfileid: "42443396"
    ![](media\create-self-hosted-integration-runtime\6_create-linkedIR_2.png)
 
    ![](media\create-self-hosted-integration-runtime\6_create-linkedIR_3.png)
+
+#### <a name="monitoring"></a>Мониторинг 
+
+- **Общая среда выполнения интеграции**
+
+  ![](media\create-self-hosted-integration-runtime\Contoso-shared-IR.png)
+
+  ![](media\create-self-hosted-integration-runtime\contoso-shared-ir-monitoring.png)
+
+- **Связанная среда выполнения интеграции**
+
+  ![](media\create-self-hosted-integration-runtime\Contoso-linked-ir.png)
+
+  ![](media\create-self-hosted-integration-runtime\Contoso-linked-ir-monitoring.png)
 
 #### <a name="known-limitations-of-self-hosted-ir-sharing"></a>Известные ограничения общего доступа к локальной среде IR
 
@@ -182,6 +198,8 @@ ms.locfileid: "42443396"
 5. Версия пакета .NET SDK для ADF с поддержкой этой функции — >= 1.1.0
 
 6. Версия Azure PowerShell с поддержкой этой функции — >= 6.6.0 (AzureRM.DataFactoryV2 >= 0.5.7)
+
+7. Чтобы предоставить разрешение, пользователю потребуется роль "Владелец" или наследование этой роли в Фабрике данных, где существует общая среда выполнения интеграции. 
 
   > [!NOTE]
   > Эта функция доступна только в Фабрике данных Azure версии 2. 

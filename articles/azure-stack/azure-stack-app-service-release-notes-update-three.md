@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/20/2018
 ms.author: anwestg
 ms.reviewer: brenduns
-ms.openlocfilehash: 88a4bcf018387ac83b485ec9e2efac11f85ba97c
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: f825a2a343d9b5ad8f9802042b7aca2ba1544dfb
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42432295"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42917408"
 ---
 # <a name="app-service-on-azure-stack-update-3-release-notes"></a>Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
 
@@ -178,6 +178,21 @@ ms.locfileid: "42432295"
     ```sql
         SELECT containment FROM sys.databases WHERE NAME LIKE (SELECT DB_NAME())
     ```
+
+### <a name="known-issues-post-installation"></a>Известные проблемы (после установки)
+
+- Рабочим ролям не удается связаться с файловым сервером, если служба приложений развернута в существующей виртуальной сети и файловый сервер доступен только в частной сети.  Это также описано в документации по развертыванию Службы приложений Azure в Azure Stack.
+
+Если вы решили выполнить развертывание в существующей виртуальной сети с использованием внутреннего IP-адреса для подключения к файловому серверу, необходимо добавить правило безопасности для исходящего трафика, разрешающее передачу трафика SMB между подсетью рабочей роли и файловым сервером. Для этого перейдите к группе безопасности сети WorkersNsg на портале администрирования и добавьте правило безопасности для исходящего трафика со следующими свойствами.
+ * Источник: "Любой".
+ * Диапазон исходных портов: *.
+ * Назначение: "IP-адреса".
+ * Диапазон IP-адресов назначения: диапазон IP-адресов вашего файлового сервера.
+ * Диапазон конечных портов: 445.
+ * Протокол: TCP.
+ * Действие: "Разрешить".
+ * Приоритет: 700.
+ * Имя: Outbound_Allow_SMB445.
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Известные проблемы для облачных администраторов, работающих со службой приложений Azure в Azure Stack
 

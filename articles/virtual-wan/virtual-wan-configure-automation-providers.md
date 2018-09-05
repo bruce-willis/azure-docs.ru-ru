@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 07/10/2018
+ms.date: 08/23/2018
 ms.author: cherylmc
 Customer intent: As a Virtual WAN software-defined connectivity provider, I want to set up a provisioning environment.
-ms.openlocfilehash: a1ff4364e394b3807cf767722ee934ae024399b0
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: bac728f286c90550107b27da76a070623577ed82
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39114350"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42918906"
 ---
 # <a name="configure-virtual-wan-automation---for-virtual-wan-partners-preview"></a>Настройка автоматизации Виртуальной глобальной сети для партнеров Виртуальной глобальной сети (предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "39114350"
 
 ##  <a name="access"></a>Контроль доступа
 
-Клиенты должны иметь возможность установить соответствующее управление доступом для Виртуальной глобальной сети в пользовательском интерфейсе устройства. Этот вариант рекомендуется с помощью субъекта-службы Azure. Доступ на основе субъекта-службы обеспечивает правильную аутентификацию контроллера устройства для загрузки информации о филиале.
+Клиенты должны иметь возможность установить соответствующее управление доступом для Виртуальной глобальной сети в пользовательском интерфейсе устройства. Этот вариант рекомендуется с помощью субъекта-службы Azure. Доступ на основе субъекта-службы обеспечивает правильную аутентификацию контроллера устройства для загрузки информации о филиале. Дополнительные сведения о создании субъектов-служб см. в [этом разделе](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application).
 
 ##  <a name="site"></a>Отправка информации о филиале
 

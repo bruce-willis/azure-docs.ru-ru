@@ -1,6 +1,6 @@
 ---
 title: Шифрование диска в центре безопасности Azure | Документация Майкрософт
-description: В этом документе объясняется, как выполнить рекомендацию Центра безопасности Azure **Применение шифрования дисков**.
+description: В этом документе объясняется, как выполнить рекомендацию Центра безопасности Azure по **применению шифрования дисков**.
 services: security-center
 documentationcenter: na
 author: TerryLanfear
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/02/2017
 ms.author: terrylan
-ms.openlocfilehash: 67cff664f3723b2194ecd1519729cca17069d07f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: bcfa6ead0eac4a8a631c0388466534406c7a594b
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23040219"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42887344"
 ---
 # <a name="apply-disk-encryption-in-azure-security-center"></a>Шифрование диска в центре безопасности Azure
 Центр безопасности Azure рекомендует шифровать диски виртуальных машин Windows или Linux, которые не зашифрованы с помощью шифрования дисков Azure. Шифрование дисков позволяет шифровать диски виртуальных машин IaaS Windows и Linux.  Шифровать рекомендуется как том операционной системы, так и том данных на виртуальной машине.
@@ -44,7 +44,7 @@ ms.locfileid: "23040219"
 * Получите и выполните сценарий Azure PowerShell с необходимыми компонентами для шифрования дисков Azure.
 * Зашифруйте свои виртуальные машины.
 
-См. дополнительные сведения о [шифровании виртуальной машины Azure](security-center-disk-encryption.md).  В этом разделе предполагается, что в качестве клиентского компьютера, на котором будет настраиваться шифрование дисков, используется компьютер под управлением Windows 10.
+В кратком руководстве [Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](../security/quick-encrypt-vm-powershell.md) подробно описаны эти шаги. В этом разделе предполагается, что в качестве клиентского компьютера, на котором будет настраиваться шифрование дисков, используется компьютер под управлением Windows.
 
 Есть разные подходы, используемые при работе с виртуальными машинами Azure. Если у вас есть опыт работы с Azure PowerShell или интерфейсом командной строки Azure, вы можете использовать альтернативные подходы. См. дополнительные сведения о [дисковом шифровании Azure](../security/azure-security-disk-encryption.md).
 
@@ -52,8 +52,7 @@ ms.locfileid: "23040219"
 В этом документе объясняется, как выполнить рекомендацию Центра безопасности "Применение шифрования дисков". Дополнительные сведения о шифровании дисков см. по ссылкам ниже.
 
 * [Encryption and key management with Azure Key Vault](https://azure.microsoft.com/documentation/videos/azurecon-2015-encryption-and-key-management-with-azure-key-vault/) (видео, 36 мин 39 с) — узнайте, как использовать управление шифрованием дисков для защиты данных на виртуальных машинах IaaS и в хранилище ключей Azure.
-* [Шифрование виртуальной машины Azure](security-center-disk-encryption.md) (документ) — узнайте, как шифровать виртуальные машины Azure.
-* [Дисковое шифрование Azure для виртуальных машин IaaS под управлением Windows и Linux](../security/azure-security-disk-encryption.md) (документ) — узнайте, как включить шифрование дисков для виртуальных машин Windows и Linux.
+* [Дисковое шифрование Azure для виртуальных машин IaaS под управлением Windows и Linux](../security/azure-security-disk-encryption-overview.md) (документ) — узнайте, как включить шифрование дисков для виртуальных машин Windows и Linux.
 
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 

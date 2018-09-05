@@ -1,27 +1,23 @@
 ---
 title: Использование сообщений AS2 для интеграции с предприятием B2B в Azure Logic Apps | Документация Майкрософт
-description: Обмен сообщениями AS2 для интеграции с предприятием B2B с помощью Azure Logic Apps
+description: Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise.
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: divyaswarnkar
-manager: jeconnoc
-editor: ''
-ms.assetid: c9b7e1a9-4791-474c-855f-988bd7bf4b7f
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: c9b7e1a9-4791-474c-855f-988bd7bf4b7f
 ms.date: 06/08/2017
-ms.author: LADocs; divswa
-ms.openlocfilehash: 8984b76c68ebd562ce9e5af9bded859b38d498da
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 2604cdd6bf758858328c2d30fc4cde535f0a7148
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298245"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43124668"
 ---
-# <a name="exchange-as2-messages-for-enterprise-integration-with-logic-apps"></a>Обмен сообщениями AS2 для интеграции с предприятием с помощью приложений логики
+# <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
 Прежде чем вы начнете обмениваться сообщениями AS2 с помощью Azure Logic Apps, нужно создать соглашение AS2 и сохранить его в вашей учетной записи интеграции. Ниже описаны действия по созданию соглашения AS2.
 
@@ -64,7 +60,7 @@ ms.locfileid: "35298245"
 
     ![Сведения о соглашении](./media/logic-apps-enterprise-integration-as2/agreement-3.png)  
 
-    | Свойство | ОПИСАНИЕ |
+    | Свойство | Описание |
     | --- | --- |
     | ИМЯ |Имя соглашения |
     | Тип соглашения | AS2 |

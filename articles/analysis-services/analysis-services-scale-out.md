@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/03/2018
+ms.date: 08/27/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 4cb7b165311f57fadd63770646907ddfc0378844
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: f89a6bdbe906d490231725cf528396928faebe47
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37445026"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43092100"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Горизонтальное масштабирование служб Azure Analysis Services
 
@@ -37,19 +37,7 @@ ms.locfileid: "37445026"
 
 ## <a name="region-limits"></a>Региональные пределы
 
-Число реплик запросов, которые вы можете настроить, ограничено регионом, в котором находится ваш сервер. Применяются следующие ограничения:
-
-|Регион  |Максимальное число реплик  |
-|---------|---------|
-|Восток США 2    |    7     |
-|Западно-центральная часть США     |    7     |
-|Западная Европа     |    7     |
-|Запад США     |     7    |
-|Центральный регион США     |     3    |
-|Юго-Восточная Азия    |     3    |
-|Все другие регионы  |   1    |
-
-
+Число реплик запросов, которые вы можете настроить, ограничено регионом, в котором находится ваш сервер. Дополнительные сведения см. в разделе [Доступность по регионам](analysis-services-overview.md#availability-by-region).
 
 ## <a name="monitor-qpu-usage"></a>Мониторинг использования QPU
 
@@ -80,7 +68,7 @@ ms.locfileid: "37445026"
 
 ![Ползунок горизонтального масштабирования](media/analysis-services-scale-out/aas-scale-out-sync.png)
 
-### <a name="rest-api"></a>ИНТЕРФЕЙС REST API
+### <a name="rest-api"></a>REST API
 Используйте операцию **sync**.
 
 #### <a name="synchronize-a-model"></a>Синхронизация модели:   

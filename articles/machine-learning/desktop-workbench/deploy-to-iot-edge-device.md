@@ -7,40 +7,40 @@ ms.author: tedway
 manager: mwinkle
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
-ms.date: 2/1/2018
-ms.openlocfilehash: 1dffdee032c5b079aa5b81284cebe8f6471efebd
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.date: 08/24/2018
+ms.openlocfilehash: 24d3cf0c4b1a1283e7a6a7f61f0bb23dae7143d5
+ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34833644"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43113536"
 ---
 # <a name="deploy-an-azure-machine-learning-model-to-an-azure-iot-edge-device"></a>Развертывание модели машинного обучения Azure для устройства Azure IoT Edge
 
-Все модели машинного обучения Azure, помещенные в контейнеры на основе веб-служб Docker, могут также работать на устройствах Azure IoT Edge. Дополнительные скрипты и инструкции можно найти в [наборе средств для работы с искусственным интеллектом для Azure IoT Edge](http://aka.ms/AI-toolkit).
+Модели Машинного обучения Azure можно поместить в контейнеры как веб-службы Docker. Azure IoT Edge позволяет развертывать контейнеры на устройства удаленно. Используйте эти службы вместе для запуска моделей в граничной системе, чтобы обеспечить более быстрое время отклика и уменьшить объем передачи данных. 
+
+Дополнительные скрипты и инструкции можно найти в [наборе средств для работы с искусственным интеллектом для Azure IoT Edge](http://aka.ms/AI-toolkit).
 
 ## <a name="operationalize-the-model"></a>Ввод модели в эксплуатацию
+
+Модули Azure IoT Edge основаны на образах контейнеров. Чтобы развернуть модель машинного обучения на устройство IoT Edge, необходимо создать образ Docker.
+
 Для ввода модели в эксплуатацию необходимо выполнить инструкции из статьи [Развертывание модели машинного обучения в качестве веб-службы](model-management-service-deploy.md), чтобы создать образ Docker с вашей моделью.
 
 ## <a name="deploy-to-azure-iot-edge"></a>Развертывание в Azure IoT Edge
-Azure IoT Edge позволяет перенести аналитику и пользовательскую бизнес-логику из облака на устройства. Все модели машинного обучения могут работать на устройствах Azure IoT Edge. Документацию по настройке устройства IoT Edge и созданию развертывания можно найти на странице [aka.ms/azure-iot-edge-doc](https://aka.ms/azure-iot-edge-doc).
 
-Ниже приведены дополнительные рекомендации.
+После получения образ модели можно развернуть на любое устройство Azure IoT Edge. Все модели машинного обучения могут работать на устройствах Azure IoT Edge. 
 
-### <a name="add-registry-credentials-to-the-edge-runtime-on-your-edge-device"></a>Добавление учетных данных реестра в среду выполнения Edge на пограничном устройстве
-На компьютере, где выполняется IoT Edge, добавьте учетные данные реестра, чтобы среда выполнения могла иметь доступ для извлечения контейнера.
+### <a name="set-up-an-iot-edge-device"></a>Настройка устройства IoT Edge
 
-В ОС Windows выполните следующую команду:
-```cmd/sh
-iotedgectl login --address <docker-registry-address> --username <docker-username> --password <docker-password>
-```
-В ОС Linux выполните следующую команду:
-```cmd/sh
-sudo iotedgectl login --address <docker-registry-address> --username <docker-username> --password <docker-password>
-```
+Подготовьте устройство, следуя инструкциям в документации по Azure IoT Edge. 
+
+1. [Зарегистрируйте устройство в Центре Интернета вещей Azure](../../iot-edge/how-to-register-device-portal.md). Выходные данные этого процесса — это строка подключения, которую можно использовать для настройки физического устройства. 
+2. Установите среду выполнения IoT Edge на физическом устройстве и настройте для нее строку подключения. Установить среду выполнения можно на устройствах [Windows](../../iot-edge/how-to-install-iot-edge-windows-with-windows.md) или [Linux](../../iot-edge/how-to-install-iot-edge-linux.md).  
+
 
 ### <a name="find-the-machine-learning-container-image-location"></a>Поиск расположения образа контейнера машинного обучения
 Вам потребуется расположение образа контейнера машинного обучения. Чтобы найти расположение образа контейнера, выполните следующие действия.
@@ -49,7 +49,17 @@ sudo iotedgectl login --address <docker-registry-address> --username <docker-use
 2. В области **Реестр контейнеров Azure** выберите реестр, который вы хотите проверить.
 3. В этом реестре выберите **Репозитории**, чтобы просмотреть список всех репозиториев и соответствующих образов.
 
+Во время просмотра реестра контейнеров на портале Azure получите учетные данные реестра контейнеров. Эти учетные данные необходимо передать на устройство IoT Edge, чтобы оно могло извлечь образ из частного реестра. 
 
+1. В реестре контейнеров щелкните **Ключи доступа**. 
+2. **Включите** администратора, если это еще не сделано. 
+3. Сохраните значения **Сервер входа**, **Имя пользователя** и **Пароль**. 
+
+### <a name="deploy-the-container-image-to-your-device"></a>Развертывание образа контейнера на устройство
+
+С образом контейнера и учетными данными реестра контейнеров вы будете готовы развернуть модель машинного обучения на вашем устройстве IoT Edge. 
+
+Следуйте инструкциям в статье [Развертывание модулей IoT Edge Azure с помощью портала Azure](../../iot-edge/how-to-deploy-modules-portal.md), чтобы запустить модель на вашем устройстве IoT Edge. 
 
 
 

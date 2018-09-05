@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/07/2018
 ms.author: harijay
-ms.openlocfilehash: 66354db65d5e615780ec49683fbc72f1156ac5e1
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: ddd30729aa2bcb616efab814dc4046d2817c64fa
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42146065"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43128683"
 ---
 # <a name="virtual-machine-serial-console-preview"></a>Последовательная консоль виртуальной машины (предварительная версия) 
 
@@ -37,9 +37,15 @@ ms.locfileid: "42146065"
 
 * Требуется использовать модель развертывания управления ресурсами. Классические развертывания не поддерживаются. 
 * На виртуальной машине ДОЛЖНА быть включена [диагностика загрузки](boot-diagnostics.md). 
-* Учетной записи, использующей последовательную консоль, должна быть присвоена [роль участника](../../role-based-access-control/built-in-roles.md) для виртуальной машины и учетная запись хранения [диагностики загрузки](boot-diagnostics.md). 
 
-## <a name="open-the-serial-console"></a>Открытие последовательной консоли
+    ![](../media/virtual-machines-serial-console/virtual-machine-serial-console-diagnostics-settings.png)
+    
+* Учетной записи, использующей последовательную консоль, должна быть присвоена [роль участника](../../role-based-access-control/built-in-roles.md) для виртуальной машины и учетная запись хранения [диагностики загрузки](boot-diagnostics.md). 
+* Виртуальная машина, для которой вы входите в последовательную консоль, также должна иметь учетную запись с использованием пароля. Вы можете создать ее с функцией [сброса пароля](https://docs.microsoft.com/azure/virtual-machines/extensions/vmaccess#reset-password) расширения для доступа к виртуальной машине (см. снимок экрана ниже).
+
+    ![](../media/virtual-machines-serial-console/virtual-machine-serial-console-reset-password.png)
+
+## <a name="get-started-with-serial-console"></a>Начало работы с последовательной консолью
 Получить доступ к последовательной консоли для виртуальной машины можно только на [портале Azure](https://portal.azure.com). Ниже приведены шаги для получения доступа к последовательной консоли виртуальных машин через портал. 
 
   1. Откройте портал Azure.
@@ -49,66 +55,7 @@ ms.locfileid: "42146065"
 
 ![](../media/virtual-machines-serial-console/virtual-machine-windows-serial-console-connect.gif)
 
-## <a name="disable-serial-console"></a>Отключение последовательной консоли
-По умолчанию доступ к последовательной консоли включен для всех виртуальных машин во всех подписках. Последовательную консоль можно отключить на уровне подписки или на уровне виртуальной машины.
-
-### <a name="subscription-level-disable"></a>Отключение на уровне подписки
-Последовательную консоль можно отключить для всей подписки с помощью [вызова REST API отключения консоли](https://aka.ms/disableserialconsoleapi). Вы можете нажать кнопку "Попробовать", доступную на странице документации по API, чтобы отключить и включить последовательную консоль для подписки. Введите свой `subscriptionId`, "default" в поле `default` и щелкните "Выполнить". Команды Azure CLI еще не доступны и будут внедрены позже. Попробуйте вызвать REST API [с помощью этой ссылки](https://aka.ms/disableserialconsoleapi).
-
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-rest-api-try-it.png)
-
-Кроме того, можно использовать набор команд в Cloud Shell (команды bash показаны ниже), чтобы отключить, включить и просмотреть отключенное состояние последовательной консоли для подписки. 
-
-* Чтобы получить отключенное состояние последовательной консоли для подписки:
-    ```
-    $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
-
-    $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
-
-    $ curl "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s | jq .properties
-    ```
-* Чтобы отключить последовательную консоль для подписки:
-    ```
-    $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
-
-    $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
-
-    $ curl -X POST "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default/disableConsole?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s -H "Content-Length: 0"
-    ```
-* Чтобы включить последовательную консоль для подписки:
-    ```
-    $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
-
-    $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
-
-    $ curl -X POST "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default/enableConsole?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s -H "Content-Length: 0"
-    ```
-
-### <a name="vm-level-disable"></a>Отключение на уровне виртуальной машины
-Последовательную консоль можно отключить для конкретных виртуальных машин, отключив параметр диагностики загрузки этой виртуальной машины. Просто отключите диагностику загрузки на портале Azure, и последовательная консоль будет отключена для виртуальной машины.
-
-## <a name="serial-console-security"></a>Безопасность последовательной консоли 
-
-### <a name="access-security"></a>Безопасность доступа 
-Доступ к последовательной консоли ограничен кругом пользователей, обладающих на виртуальной машине правами [Участник](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) или более широкими полномочиями доступа к ней. Если клиентам AAD нужна многофакторная идентификация, тогда она потребуется и для доступа к последовательной консоли, так как доступ осуществляется через [портал Azure](https://portal.azure.com).
-
-### <a name="channel-security"></a>Безопасность канала
-Все данные, исходящие и поступающие, при пересылке по сети зашифрованы.
-
-### <a name="audit-logs"></a>Журналы аудита
-Все сведения о доступе к последовательной консоли записываются в журналы [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/linux/boot-diagnostics) на виртуальной машине. Права доступа к этим журналам и на работу с ними принадлежат администратору виртуальной машины Azure.  
-
->[!CAUTION] 
-Так как пароли доступа для консоли не записываются в журнал, если команды, выполняемые в консоли, содержат или выводят пароли, секреты, имена пользователей и любые другие формы персональных данных, они должны записываться в журналы диагностики загрузки виртуальной машины вместе с остальными элементами с видимым текстом. Это является частью реализации функциональности последовательной консоли. Эти журналы являются циклическими, и только пользователи с разрешениями на чтение для учетной записи хранения диагностики имеют к ним доступ. Но мы рекомендуем следовать рекомендации использования удаленного рабочего стола для всего, что может содержать секретные или персональные данные. 
-
-### <a name="concurrent-usage"></a>Одновременное использование
-Когда один пользователь подключен к последовательной консоли, а другой пользователь успешно запрашивает доступ к этой же виртуальной машине, первый пользователь будет отключен, а второй пользователь будет подключаться таким способом, как будто первый пользователь вышел из физической консоли, а новый пользователь остался.
-
->[!CAUTION] 
-Это означает, что отключенный пользователь не выходит из системы! Возможность принудительного выхода из системы после отключения (с помощью SIGHUP или похожего механизма) по-прежнему планируется. Для Windows включено автоматическое истечение времени ожидания в SAC, а для Linux можно настроить параметр времени ожидания терминала. 
-
-
-## <a name="access-serial-console-for-windows"></a>Доступ к последовательной консоли в Windows 
+## <a name="configure-serial-console-for-windows"></a>Настройка последовательной консоли в Windows 
 Новые образы Windows Server в Azure по умолчанию будут оснащены [специальной административной консолью](https://technet.microsoft.com/library/cc787940(v=ws.10).aspx) (SAC). SAC поддерживается в серверных версиях Windows, но не поставляется в клиентских версиях (например, в Windows 10, Windows 8 или Windows 7). Включение последовательной консоли в виртуальных машинах Windows, созданных с помощью февральских образов 2018 года или более поздних, происходит следующим образом. 
 
 1. Подключитесь к виртуальной машине через удаленный рабочий стол Windows.
@@ -144,6 +91,64 @@ ms.locfileid: "42146065"
 > [!NOTE] 
 > В этот момент поддержка функциональных клавиш не включена, и если требуются расширенные варианты загрузки, используйте bcdedit /set {current} onetimeadvancedoptions. Дополнительные сведения см. в разделе о [bcdedit](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set).
 
+## <a name="disable-serial-console"></a>Отключение последовательной консоли
+По умолчанию доступ к последовательной консоли включен для всех виртуальных машин во всех подписках. Последовательную консоль можно отключить на уровне подписки или на уровне виртуальной машины.
+
+### <a name="subscription-level-disable"></a>Отключение на уровне подписки
+Последовательную консоль можно отключить для всей подписки с помощью [вызова REST API отключения консоли](https://aka.ms/disableserialconsoleapi). Вы можете нажать кнопку "Попробовать", доступную на странице документации по API, чтобы отключить и включить последовательную консоль для подписки. Введите свой `subscriptionId`, "default" в поле `default` и щелкните "Выполнить". Команды Azure CLI еще не доступны и будут внедрены позже. Попробуйте вызвать REST API [с помощью этой ссылки](https://aka.ms/disableserialconsoleapi).
+
+![](../media/virtual-machines-serial-console/virtual-machine-serial-console-rest-api-try-it.png)
+
+Кроме того, можно использовать набор команд в Cloud Shell (команды bash показаны ниже), чтобы отключить, включить и просмотреть отключенное состояние последовательной консоли для подписки. 
+
+* Чтобы получить отключенное состояние последовательной консоли для подписки:
+    ```azurecli-interactive
+    $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
+
+    $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
+
+    $ curl "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s | jq .properties
+    ```
+* Чтобы отключить последовательную консоль для подписки:
+    ```azurecli-interactive 
+    $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
+
+    $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
+
+    $ curl -X POST "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default/disableConsole?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s -H "Content-Length: 0"
+    ```
+* Чтобы включить последовательную консоль для подписки:
+    ```azurecli-interactive
+    $ export ACCESSTOKEN=($(az account get-access-token --output=json | jq .accessToken | tr -d '"')) 
+
+    $ export SUBSCRIPTION_ID=$(az account show --output=json | jq .id -r)
+
+    $ curl -X POST "https://management.azure.com/subscriptions/$SUBSCRIPTION_ID/providers/Microsoft.SerialConsole/consoleServices/default/enableConsole?api-version=2018-05-01" -H "Authorization: Bearer $ACCESSTOKEN" -H "Content-Type: application/json" -H "Accept: application/json" -s -H "Content-Length: 0"
+    ```
+
+### <a name="vm-level-disable"></a>Отключение на уровне виртуальной машины
+Последовательную консоль можно отключить для конкретных виртуальных машин, отключив параметр диагностики загрузки этой виртуальной машины. Просто отключите диагностику загрузки на портале Azure, и последовательная консоль будет отключена для виртуальной машины.
+
+## <a name="serial-console-security"></a>Безопасность последовательной консоли 
+
+### <a name="access-security"></a>Безопасность доступа 
+Доступ к последовательной консоли ограничен кругом пользователей, обладающих на виртуальной машине правами [Участник](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) или более широкими полномочиями доступа к ней. Если клиентам AAD нужна многофакторная идентификация, тогда она потребуется и для доступа к последовательной консоли, так как доступ осуществляется через [портал Azure](https://portal.azure.com).
+
+### <a name="channel-security"></a>Безопасность канала
+Все данные, исходящие и поступающие, при пересылке по сети зашифрованы.
+
+### <a name="audit-logs"></a>Журналы аудита
+Все сведения о доступе к последовательной консоли записываются в журналы [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/linux/boot-diagnostics) на виртуальной машине. Права доступа к этим журналам и на работу с ними принадлежат администратору виртуальной машины Azure.  
+
+>[!CAUTION] 
+Так как пароли доступа для консоли не записываются в журнал, если команды, выполняемые в консоли, содержат или выводят пароли, секреты, имена пользователей и любые другие формы персональных данных, они должны записываться в журналы диагностики загрузки виртуальной машины вместе с остальными элементами с видимым текстом. Это является частью реализации функциональности последовательной консоли. Эти журналы являются циклическими, и только пользователи с разрешениями на чтение для учетной записи хранения диагностики имеют к ним доступ. Но мы рекомендуем следовать рекомендации использования удаленного рабочего стола для всего, что может содержать секретные или персональные данные. 
+
+### <a name="concurrent-usage"></a>Одновременное использование
+Когда один пользователь подключен к последовательной консоли, а другой пользователь успешно запрашивает доступ к этой же виртуальной машине, первый пользователь будет отключен, а второй пользователь будет подключаться таким способом, как будто первый пользователь вышел из физической консоли, а новый пользователь остался.
+
+>[!CAUTION] 
+Это означает, что отключенный пользователь не выходит из системы! Возможность принудительного выхода из системы после отключения (с помощью SIGHUP или похожего механизма) по-прежнему планируется. Для Windows включено автоматическое истечение времени ожидания в SAC, а для Linux можно настроить параметр времени ожидания терминала. 
+
 ## <a name="using-serial-console-for-nmi-calls-in-windows-vms"></a>Использование последовательной консоли для вызовов NMI на виртуальных машинах Windows
 Немаскируемое прерывание (NMI) предназначено для создания сигнала, который программное обеспечение на виртуальной машине не будет игнорировать. Раньше немаскируемые прерывания использовались для мониторинга аппаратных проблем в системах, требующих определенного времени отклика.  Сегодня программисты и системные администраторы часто используют немаскируемое прерывание в качестве механизма для отладки или устранения неполадок в зависших системах.
 
@@ -155,7 +160,7 @@ ms.locfileid: "42146065"
 
 
 ## <a name="errors"></a>Errors
-Большинство ошибок носят временный характер и устраняются после повторной попытки подключения. В таблице ниже приведен список ошибок и способы устранения неисправностей. 
+Большинство ошибок носят временный характер и устраняются после повторной попытки подключения. В таблице ниже приведен список ошибок и способы устранения неисправностей.
 
 Ошибка                            |   Устранение 
 :---------------------------------|:--------------------------------------------|
@@ -172,8 +177,8 @@ ms.locfileid: "42146065"
 Проблема                             |   Устранение 
 :---------------------------------|:--------------------------------------------|
 Невозможно получить доступ к последовательной консоли экземпляра масштабируемого набора виртуальных машин | На этапе предварительной версии доступ к последовательной консоли для экземпляров масштабируемого набора виртуальных машин не поддерживается.
-Нажатие клавиши ВВОД после заголовка соединения не отображает запрос на вход | [Нажатие клавиши ВВОД не приводит ни к каким результатам](https://github.com/Microsoft/azserialconsole/blob/master/Known_Issues/Hitting_enter_does_nothing.md)
-Отображаются только сведения о работоспособности при подключении к виртуальной машине Windows| [Сигналы работоспособности Windows](https://github.com/Microsoft/azserialconsole/blob/master/Known_Issues/Windows_Health_Info.md)
+Нажатие клавиши ВВОД после заголовка соединения не отображает запрос на вход | Дополнительные сведения см. на странице, где описывается случай, когда [нажатие клавиши ВВОД не приводит ни к каким результатам](https://github.com/Microsoft/azserialconsole/blob/master/Known_Issues/Hitting_enter_does_nothing.md). Это может произойти, если вы используете пользовательскую виртуальную машину, защищенное устройство или конфигурацию GRUB, из-за чего операционная система Windows не может правильно подключиться к последовательному порту.
+Отображаются только сведения о работоспособности при подключении к виртуальной машине Windows| Эта ошибка будет отображаться, если специальная административная консоль не была включена для вашего образа Windows. Инструкции о том, как вручную включить специальную административную консоль на виртуальной машине Windows, см. в разделе [Доступ к последовательной консоли в Windows](#access-serial-console-for-windows). Дополнительные сведения можно найти на странице [сигналов работоспособности Windows](https://github.com/Microsoft/azserialconsole/blob/master/Known_Issues/Windows_Health_Info.md).
 Не удается выполнить ввод в командной строке SAC, если включена отладка ядра | Подключитесь к виртуальной машине по протоколу RDP и выполните `bcdedit /debug {current} off` из командной строки с повышенными привилегиями. Если вы не можете использовать RDP, вместо этого подключите диск ОС к другой виртуальной машине Azure и при подключении сделайте его диском данных с помощью `bcdedit /store <drive letter of data disk>:\boot\bcd /debug <identifier> off`, а затем переключите диск обратно.
 Вставка в PowerShell в SAC приводит к возникновению третьего знака, если исходное содержимое имело повторяющийся знак | Возможным решением является удаление модуля PSReadLine. `Remove-Module PSReadLine` удаляет модуль PSReadLine из текущего сеанса.
 Некоторые введенные с клавиатуры данные создают странные выходные данные SAC (например `[A`, `[3~`) | Еscape-последовательность [VT100](https://aka.ms/vtsequences) не поддерживается в запросе SAC.

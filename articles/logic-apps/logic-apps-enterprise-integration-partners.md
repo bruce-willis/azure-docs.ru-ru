@@ -1,28 +1,23 @@
 ---
-title: Создание партнеров для сообщений B2B с помощью Azure Logic Apps | Документация Майкрософт
-description: Узнайте, как добавить партнеры в учетную запись интеграции с помощью Пакета интеграции Enterprise и Logic Apps.
+title: Добавление торговых партнеров по интеграции B2B в Azure Logic Apps | Документация Майкрософт
+description: Сведения о создании торговых партнеров в учетной записи интеграции в Azure Logic Apps с Пакетом интеграции Enterprise
 services: logic-apps
-documentationcenter: .net,nodejs,java
-author: divyaswarnkar
-manager: jeconnoc
-editor: ''
-ms.assetid: b179325c-a511-4c1b-9796-f7484b4f6873
 ms.service: logic-apps
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.suite: integration
+author: divyaswarnkar
+ms.author: divswa
+ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
+ms.assetid: b179325c-a511-4c1b-9796-f7484b4f6873
 ms.date: 07/08/2016
-ms.author: LADocs; padmavc
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4abfdaa8145f14bc6496e57ebce0da10cdd2c365
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 20ca5e06cd1cd0d0abfe6d31f622cd6b61b4178f
+ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299745"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43125267"
 ---
-# <a name="add-or-update-partners-in-business-to-business-agreements-in-your-workflow"></a>Добавление или обновление партнеров в соглашениях B2B в рабочем процессе
+# <a name="add-trading-partners-for-integration-accounts-in-azure-logic-apps-with-enterprise-integration-pack"></a>Сведения о добавлении торговых партнеров в учетные записи интеграции в Azure Logic Apps с Пакетом интеграции Enterprise
 
 Партнеры — это сущности, которые участвуют в обмене сообщениями и транзакциях "бизнес — бизнес" (B2B). Прежде чем создавать партнеров, которые представляют вас и другую организацию в подобных транзакциях, обе стороны должны обменяться информацией, которая идентифицирует и проверяет сообщения, отправляемые друг другу. Обсудив все необходимое, можно приступать к реализации взаимодействия "бизнес — бизнес". Для этого вы можете создать в своей учетной записи интеграции партнеров, которые будут представлять обе стороны.
 
