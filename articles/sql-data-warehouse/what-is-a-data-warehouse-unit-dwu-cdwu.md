@@ -3,19 +3,19 @@ title: Единицы использования хранилища данных
 description: Рекомендации по выбору идеального количества единиц использования хранилища данных (DWU, cDWU) для оптимизации затрат и производительности, а также по изменению количества единиц.
 services: sql-data-warehouse
 author: ronortloff
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 94791e4dc3d3c841dde4685d34d4e3fdaf7d9af7
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 50e70ab9be87c15816dc6471a2a29afd0f17d907
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32185966"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301251"
 ---
 # <a name="data-warehouse-units-dwus-and-compute-data-warehouse-units-cdwus"></a>Единицы использования хранилища данных (DWU) и вычислительные единицы использования хранилища данных (cDWU)
 Рекомендации по выбору идеального количества единиц использования хранилища данных (DWU, cDWU) для оптимизации затрат и производительности, а также по изменению количества единиц. 

@@ -8,20 +8,20 @@ ms.technology: project-url-preview
 ms.topic: article
 ms.date: 03/16/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: 9041a88a292fb2dabead69195ebc3074e2ecf486
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: dda6f7c105dfbadc3c22f0c008aa8759fe12fa03
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381773"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301358"
 ---
 # <a name="url-preview-in-javascript"></a>Использование службы предварительного просмотра URL-адресов с JavaScript 
 
 В следующем одностраничном приложении с помощью JavaScript создается представление для предварительного просмотра URL-адреса сайта SwiftKey: https://swiftkey.com/en. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://aka.ms/answersearchsubscription).
+Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://labs.cognitive.microsoft.com/en-us/project-url-preview).
 
 ## <a name="code-scenario"></a>Сценарий кода
 В следующем примере JavaScript содержится объект для ввода данных в текстовое поле, куда пользователь вводит URL-адрес для предварительного просмотра.  При нажатии пользователем кнопки **Preview** (Просмотр) метод onclick перенаправляется в `getPreview`, где код формирует веб-запрос к конечной точке **UrlPreview**.
@@ -52,7 +52,7 @@ ms.locfileid: "35381773"
 
 ## <a name="running-the-application"></a>Запуск приложения
 
-Чтобы запустить приложение, сделайте следующее:
+Чтобы запустить приложение, выполните следующие действия:
 
 1. Замените значение `YOUR-SUBSCRIPTION-KEY` действующим ключом доступа для своей подписки.
 2. Сохраните HTML и скрипт в файле с расширением .html.

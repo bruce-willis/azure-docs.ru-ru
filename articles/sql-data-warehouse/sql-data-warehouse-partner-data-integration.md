@@ -3,19 +3,19 @@ title: Партнеры по интеграции данных хранилищ�
 description: Содержит список сторонних партнерских решений для интеграции данных с поддержкой хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: jrowlandjones
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: consume
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: 1329fe4b30070111354adb87b32be6f694f316c5
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: d92d230be1ec0e85894a1e9e4d8635aa71afa514
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42145918"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43307710"
 ---
 # <a name="sql-data-warehouse-data-integration-partners"></a>Партнеры по интеграции данных хранилища данных SQL
 Для создания собственного решения для хранилища данных можно воспользоваться одним из широкого спектра лучших в отрасли инструментов. В данной статье рассматриваются компании-партнеры корпорации Майкрософт, которые предлагают решения интеграции данных для хранилища данных SQL Azure.

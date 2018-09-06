@@ -3,19 +3,19 @@ title: Использование транзакций в хранилище д�
 description: Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
 author: ckarst
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 7fa3d19cc0fca81616969773a40c3d3dbccc4a26
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 121fa87cb295799fdcd3de5e627fb894efc24c49
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31596931"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301271"
 ---
 # <a name="using-transactions-in-sql-data-warehouse"></a>Использование транзакций в хранилище данных Azure SQL
 Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.

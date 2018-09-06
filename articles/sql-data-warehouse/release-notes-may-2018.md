@@ -3,19 +3,19 @@ title: Хранилище данных SQL Azure, заметки о выпуск
 description: Заметки о выпуске для хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: twounder
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
 ms.date: 07/23/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 01b571beba012ae0a1fa27d03f5e0e5454f62aa5
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: d26ae755b658ce39df04788b7edeee6da7e20a47
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39324961"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43288098"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-may-2018"></a>Что нового в Хранилище данных SQL Azure? Май 2018 г. 
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с мая 2018 года. 

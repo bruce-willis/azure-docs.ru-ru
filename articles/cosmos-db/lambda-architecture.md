@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 20fea7f4f4ccf852045d53ba06c3f8fcbdd1d60d
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: c926c67a330648e09c1fd8133164f64582ad9a34
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36959837"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43701081"
 ---
 # <a name="azure-cosmos-db-implement-a-lambda-architecture-on-the-azure-platform"></a>Azure Cosmos DB: реализация лямбда-архитектуры на платформе Azure 
 
@@ -29,11 +29,6 @@ ms.locfileid: "36959837"
 * [Соединитель Spark для Azure Cosmos DB](spark-connector.md).
 
 В этой статье описываются компоненты лямбда-архитектуры, построенной на основе исходной многоуровневой структуры, и преимущества такой архитектуры после изменений, упрощающих работу.  
-
-Обзор лямбда-архитектуры и ресурсов, доступных в ее образце, см. в следующем видео:
-
-> [!VIDEO https:///channel9.msdn.com/Events/Connect/2017/T135/player]
->
 
 ## <a name="what-is-a-lambda-architecture"></a>Что такое лямбда-архитектура
 Лямбда-архитектура — это универсальная масштабируемая отказоустойчивая архитектура обработки данных, предназначенная для пакетных сценариев и сценариев сокращения задержек, как описал [Натан Марз](https://twitter.com/nathanmarz) (Nathan Marz).
@@ -206,7 +201,7 @@ tweets_bytags.write.mode(SaveMode.Overwrite).cosmosDB(writeConfig)
  
 #### <a name="resources"></a>Ресурсы
 
-Целые примеры кода см. по адресу [azure-cosmosdb-spark/lambda/samples](vhttps://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda), в том числе:
+Целые примеры кода см. по адресу [azure-cosmosdb-spark/lambda/samples](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda), в том числе:
 * Lambda Architecture Rearchitected - Batch Layer (Измененная лямбда-архитектура. Пакетный уровень) [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.html) | [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20Layer.ipynb)
 * Lambda Architecture Rearchitected - Batch to Serving Layer (Измененная лямбда-архитектура. Пакетный уровень — уровень обслуживания) [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.html) | [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Lambda%20Architecture%20Re-architected%20-%20Batch%20to%20Serving%20Layer.ipynb)
 

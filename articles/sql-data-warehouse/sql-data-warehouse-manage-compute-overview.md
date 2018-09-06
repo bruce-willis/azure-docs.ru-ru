@@ -3,19 +3,19 @@ title: Управление вычислительными ресурсами в
 description: Узнайте о возможностях горизонтального масштабирования производительности в хранилище данных SQL Azure. Вы можете выполнять горизонтальное масштабирование, настраивая количество единиц использования хранилища данных (DWU), или снижать затраты, приостанавливая работу хранилища данных.
 services: sql-data-warehouse
 author: kevinvngo
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: ca6d34d3b670bfd05a9b65fe9e6b260120e3a5b8
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 53a801a367e6948c3070224b7ff36a013a1faab3
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31528500"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43300856"
 ---
 # <a name="manage-compute-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных SQL Azure
 Узнайте об управлении вычислительными ресурсами в хранилище данных SQL Azure. Сократите затраты, приостанавливая работу хранилища данных, или масштабируйте хранилище данных в соответствии потребностями в производительности. 

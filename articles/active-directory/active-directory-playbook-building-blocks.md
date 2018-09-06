@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: 4618c8a0298afdac28e7511e9521cf1e26238734
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 41d495e38a8360609afe924bb49ccf2f6aea086e
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43189044"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43340045"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -560,7 +560,7 @@ ms.locfileid: "43189044"
 | Шаг | Ресурсы |
 | --- | --- |
 | Включите параметр "Проверка подлинности сертификата" в службах ADFS. | [Настройка политик проверки подлинности: глобальная настройка основной проверки подлинности в Windows Server 2012 R2](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/configure-authentication-policies#to-configure-primary-authentication-globally-in-windows-server-2012-r2) |
-| Необязательно: включите проверку подлинности на основе сертификата в Azure AD для клиентов Exchange Active Sync. | [Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory](active-directory-certificate-based-authentication-get-started.md) |
+| Необязательно: включите проверку подлинности на основе сертификата в Azure AD для клиентов Exchange Active Sync. | [Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory](./authentication/active-directory-certificate-based-authentication-get-started.md) |
 | Перейдите к панели доступа и выполните проверку подлинности с помощью сертификата пользователя. | https://myapps.microsoft.com |
 
 ### <a name="considerations"></a>Рекомендации

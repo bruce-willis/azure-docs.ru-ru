@@ -3,24 +3,26 @@ title: Руководство по проектированию реплицир
 description: Рекомендации по проектированию реплицированных таблиц в схеме хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: ronortloff
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/23/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 1cc796061056ff017e3d778ebb2e50e13d55a4c1
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: dfbfc61b9088535d6b50a9897b908572d88d6676
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32189570"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43302768"
 ---
 # <a name="design-guidance-for-using-replicated-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию для использования реплицированных таблиц в хранилище данных SQL Azure
 В данной статье представлены рекомендации по проектированию реплицированных таблиц в схеме хранилища данных SQL Azure. Данные рекомендации позволяют повысить производительность запросов за счет уменьшения перемещения данных и упрощения запросов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+> [!VIDEO https://www.youtube.com/embed/1VS_F37GI9U]
+
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы знакомы с распределением данных и основными понятиями перемещения данных в хранилище данных SQL.  Дополнительные сведения см. в статье об [архитектуре](massively-parallel-processing-mpp-architecture.md). 
 
 При проектировании таблиц необходимо максимально четко понять, как устроены данные и как выполняются запросы к данным.  Например, для этого можно использовать следующие вопросы:

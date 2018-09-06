@@ -3,7 +3,7 @@ title: Краткое руководство по использованию с�
 description: Краткое руководство по использованию службы Azure SignalR для создания комнаты чата с помощью приложений MVC для ASP.NET Core.
 services: signalr
 documentationcenter: ''
-author: wesmc7777
+author: sffamily
 manager: cfowler
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: quickstart
 ms.tgt_pltfrm: ASP.NET
 ms.workload: tbd
 ms.date: 06/13/2018
-ms.author: wesmc
-ms.openlocfilehash: cf47b2d6bd17fa5a9f7cbe98ab7db2799f6e8287
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.author: zhshang
+ms.openlocfilehash: 398ba001bfe9c8b2dd77b66535f5cb4aaf5f6270
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42916306"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43667354"
 ---
 # <a name="quickstart-create-a-chat-room-with-signalr-service"></a>Краткое руководство по созданию чата с помощью службы SignalR
 

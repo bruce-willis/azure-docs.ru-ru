@@ -1,18 +1,20 @@
 ---
 title: Создание масштабируемого набора виртуальных машин Azure с помощью Terraform
 description: Руководство, объясняющее, как с помощью Terraform настроить масштабируемый набор виртуальных машин Azure, дополненных виртуальной сетью и управляемыми присоединенными дисками, а также управлять их версиями
+services: terraform
+ms.service: terraform
 keywords: terraform, devops, виртуальная машина, Azure, масштабируемый набор, сеть, хранилище, модули
 author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
+ms.topic: tutorial
 ms.date: 06/04/2018
-ms.topic: article
-ms.openlocfilehash: 5922bad24c50a9d315aae42ce11a33801b9dbcaf
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 9b6a7187827622443c3cb29566dfb5eef840d595
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971839"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666201"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set"></a>Создание масштабируемого набора виртуальных машин Azure с помощью Terraform
 
@@ -30,7 +32,7 @@ ms.locfileid: "38971839"
 > [!NOTE]
 > Последнюю версию файлов конфигурации Terraform, используемых в этой статье, можно скачать из [репозитория Awesome Terraform на Github](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 

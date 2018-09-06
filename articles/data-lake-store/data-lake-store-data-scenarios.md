@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: e0c7ed22762ef19c6e68ad69d0cabcfeb8007251
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 19743dcd2866b8fc7b6ad1fdf387b134f7b3ca50
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37031045"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43783082"
 ---
 # <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных
 
@@ -40,7 +40,7 @@ ms.locfileid: "37031045"
 
 | источник данных | Средство для приема |
 | --- | --- |
-| Локальный компьютер |<ul> <li>[портал Azure](/data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[Кроссплатформенный интерфейс командной строки Azure 2.0](data-lake-store-get-started-cli-2.0.md)</li> <li>[Data Lake Tools для Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
+| Локальный компьютер |<ul> <li>[портал Azure](data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[Кроссплатформенный интерфейс командной строки Azure 2.0](data-lake-store-get-started-cli-2.0.md)</li> <li>[Data Lake Tools для Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
 | Большой двоичный объект хранилища Azure |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md)</li> <li>[инструмента AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный на кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
 
 ### <a name="streamed-data"></a>Потоковые данные
@@ -48,9 +48,9 @@ ms.locfileid: "37031045"
 
 Ниже перечислены средства, которые можно использовать:
 
-* [Azure Stream Analytics.](../stream-analytics/stream-analytics-data-lake-output.md) События, принятые в концентраторы событий, могут записываться в Azure Data Lake с помощью выходных данных Azure Data Lake Store.
+* [Azure Stream Analytics](../stream-analytics/stream-analytics-data-lake-output.md). События, принятые в Центры событий, могут записываться в Azure Data Lake с помощью выходных данных Azure Data Lake Store.
 * [Azure HDInsight Storm.](../hdinsight/storm/apache-storm-write-data-lake-store.md) Данные из кластера Storm можно напрямую записывать в Data Lake Store.
-* [EventProcessorHost.](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md) Можно получать события из концентраторов событий, а затем записывать их в Data Lake Store с помощью [пакета SDK для .NET Data Lake Store](data-lake-store-get-started-net-sdk.md).
+* [EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md). Можно получать события из Центров событий и затем записывать их в Data Lake Store с помощью [пакета SDK для .NET Data Lake Store](data-lake-store-get-started-net-sdk.md).
 
 ### <a name="relational-data"></a>Реляционные данные
 Можно также извлекать данные из реляционных баз данных. В течение определенного периода времени реляционные базы данных собирают огромные объемы данных, которые после обработки с помощью конвейера больших данных могут предоставлять ценные сведения. Для перемещения таких данных в хранилище озера данных можно использовать следующие средства.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: 889cedf555c8a9a86cc8a2101f27cafcb48376df
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 0066ec20c68d70fac9a6529f8f5b85855d6c5349
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523161"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666830"
 ---
 # <a name="creating-an-export-job-for-the-azure-importexport-service"></a>Создание задания экспорта для службы импорта и экспорта Azure
 Создание задания экспорта для службы импорта и экспорта Microsoft Azure с помощью интерфейса REST API включает следующие шаги:
@@ -48,7 +48,7 @@ ms.locfileid: "39523161"
  Дополнительные сведения об указании больших двоичных объектов для экспорта см. в разделе об операции [Put Job](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate).
 
 ## <a name="obtaining-your-shipping-location"></a>Получение расположения для отправки
-Перед созданием задания экспорта необходимо получить название и адрес места для отправки, выполнив операцию [Get Location](https://portal.azure.com) или [List Locations](/rest/api/storageimportexport/listlocations). Операция `List Locations` вернет список расположений и почтовых адресов. В полученном списке выберите расположение и отправьте жесткие диски по соответствующему адресу. Также можно использовать операцию `Get Location`, чтобы сразу получить адрес доставки для определенного расположения.
+Перед созданием задания экспорта необходимо получить название и адрес места для отправки, выполнив операцию [Get Location](https://portal.azure.com) или [List Locations](https://docs.microsoft.com/rest/api/storageimportexport/locations/list). Операция `List Locations` вернет список расположений и почтовых адресов. В полученном списке выберите расположение и отправьте жесткие диски по соответствующему адресу. Также можно использовать операцию `Get Location`, чтобы сразу получить адрес доставки для определенного расположения.
 
 Выполните следующие действия, чтобы получить адрес доставки.
 

@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/22/2018
+ms.date: 08/30/2018
 ms.author: jeffgilb
 ms.reviewer: wamota
-ms.openlocfilehash: 48e2f85488adfb776da5f52c154028f8aafb167a
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 9b1eb6878dcafba68c230255f3b3f43e005421ab
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617027"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43340194"
 ---
 # <a name="network-connectivity"></a>Сетевое подключение
 В этой статье приводятся сведения об инфраструктуре сети Azure Stack, которые помогут решить, как лучше всего интегрировать Azure Stack с существующей сетевой средой. 
@@ -45,7 +45,7 @@ ms.locfileid: "42617027"
 | Инфраструктура коммутаторов | IP-адреса типа "точка —точка" для целей маршрутизации, выделенные интерфейсы управления коммутаторами и петлевые адреса, назначенные коммутатору. | /26 | 
 | Инфраструктура | Используется для обмена данными между внутренними компонентами Azure Stack. | /24 |
 | Private | Используется для сети хранения данных и частных виртуальных IP-адресов. | /24 | 
-| Контроллер управления основной платой (BMC) | Используется для обмена данными с BMC на физических узлах. | /27 | 
+| Контроллер управления основной платой (BMC) | Используется для обмена данными с BMC на физических узлах. | /26 | 
 | | | |
 
 ## <a name="network-infrastructure"></a>Сетевая инфраструктура

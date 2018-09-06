@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 04/13/2018
 ms.author: mtillman
-ms.openlocfilehash: 5acb697d5c830db1301fbe7b3ca3d8aebcdb823d
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 7c55ccd1234dfe6454e506cc8e1e06fff415ffa9
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42887958"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43340875"
 ---
 # <a name="azure-active-directory-documentation"></a>Документация Azure Active Directory
 
@@ -84,7 +84,7 @@ Azure Active Directory (Azure AD) — это мультитенантный об
                         <a href="/azure/active-directory/active-directory-passwords-overview">Пароли</a><br/>
                         <a href="/azure/active-directory/authentication/concept-mfa-howitworks">Многофакторная проверка подлинности</a><br/>
                         <a href="/azure/active-directory/active-directory-azureadjoin-passport">Windows Hello</a><br/>
-                        <a href="/azure/active-directory/active-directory-certificate-based-authentication-get-started">Аутентификация на основе сертификата</a>
+                        <a href="/azure/active-directory/authentication/active-directory-certificate-based-authentication-get-started">Аутентификация на основе сертификата</a>
                         </p>
                     </div>
                 </div>

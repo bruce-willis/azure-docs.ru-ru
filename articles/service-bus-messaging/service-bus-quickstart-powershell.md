@@ -2,20 +2,20 @@
 title: Краткое руководство. Отправка сообщений в Служебную шину Azure и получение сообщений из нее | Документация Майкрософт
 description: В этом кратком руководстве описано, как отправлять и получать сообщения Служебной шины Azure с помощью PowerShell и клиента .NET Standard
 services: service-bus-messaging
-author: sethmanheim
+author: spelluru
 manager: timlt
 ms.service: service-bus-messaging
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 05/22/2018
-ms.author: sethm
-ms.openlocfilehash: b22bf2acc83f46eda1aa74981377e66261d13394
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: spelluru
+ms.openlocfilehash: 5652069e7a81f54936a41ddb563b49fe6131e7e0
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660627"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43696842"
 ---
 # <a name="quickstart-send-and-receive-messages-using-azure-powershell-and-net"></a>Краткое руководство. Отправка и получение сообщений Служебной шины Azure с помощью PowerShell и .NET
 
@@ -25,16 +25,16 @@ ms.locfileid: "34660627"
 
 В этом кратком руководстве описано, как отправлять и получать сообщения через очередь служебной шины, создав с помощью PowerShell пространство имен для обмена сообщениями и очередь в этом пространстве имен, а также как получить учетные данные для авторизации в этом пространстве имен. Далее в этой процедуре демонстрируется отправка и получение сообщений через созданную очередь с применением [библиотеки .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus).
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure][], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись][], прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуются:
 
 - [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](http://www.visualstudio.com/vs) или более новая версия.
 - [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
 
-Для работы с этим кратким руководством требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [Установка и настройка Azure PowerShell][].
+Для работы с этим кратким руководством требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [установке и настройке Azure PowerShell][].
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -83,7 +83,7 @@ Get-AzureRmServiceBusKey -ResourceGroupName my-resourcegroup -Namespace namespac
 
 Чтобы выполнить этот код, сделайте следующее:
 
-1. Выполните следующую команду, которая клонирует [репозиторий GitHub для Служебной шины](https://github.com/Azure/azure-service-bus/):
+1. Выполните следующую команду, которая клонирует [репозиторий GitHub для служебной шины](https://github.com/Azure/azure-service-bus/):
 
    ```shell
    git clone https://github.com/Azure/azure-service-bus.git
@@ -263,5 +263,5 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 > [!div class="nextstepaction"]
 > [Update inventory using Azure PowerShell](./service-bus-tutorial-topics-subscriptions-powershell.md) (Обновление информации о запасах с помощью Azure PowerShell)
 
-[бесплатную учетную запись Azure]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
-[Установка и настройка Azure PowerShell]: /powershell/azure/install-azurerm-ps
+[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[установке и настройке Azure PowerShell]: /powershell/azure/install-azurerm-ps

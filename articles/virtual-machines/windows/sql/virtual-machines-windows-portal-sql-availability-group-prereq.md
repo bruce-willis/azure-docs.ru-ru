@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mikeray
-ms.openlocfilehash: f2a0af65af068f3a78a08e46e0e42caefd87d7b1
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: d75bb780a17653aaacbc74413fb4240a8052a983
+ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30322902"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43371491"
 ---
 # <a name="complete-the-prerequisites-for-creating-always-on-availability-groups-on-azure-virtual-machines"></a>Настройка необходимых компонентов для создания групп доступности AlwaysOn на виртуальных машинах Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "30322902"
 
 
 ## <a name="create-an-azure-account"></a>Создание учетной записи Azure
-Вам понадобится учетная запись Azure. Вы можете [создать бесплатную учетную запись Azure](/pricing/free-trial/?WT.mc_id=A261C142F) или [активировать преимущества для подписчиков Visual Studio](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
+Вам понадобится учетная запись Azure. Вы можете [создать бесплатную учетную запись Azure](https://signup.azure.com/signup?offer=ms-azr-0044p&appId=102&ref=azureplat-generic&redirectURL=https:%2F%2Fazure.microsoft.com%2Fget-started%2Fwelcome-to-azure%2F&correlationId=24f9d452-1909-40d7-b609-2245aa7351a6&l=en-US) или [активировать преимущества для подписчиков Visual Studio](https://docs.microsoft.com/visualstudio/subscriptions/subscriber-benefits).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 1. Войдите на [портале Azure](http://portal.azure.com).
@@ -487,7 +487,7 @@ Azure создаст виртуальные машины.
 
    ![Брандмауэр SQL](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/35-tcpports.png)
 
-5. Нажмите кнопку **Далее**.
+5. Щелкните **Далее**.
 6. На странице **Действие** оставьте установленным флажок **Разрешить подключение** и нажмите кнопку **Далее**.
 7. На странице **Профиль** примите параметры по умолчанию и нажмите кнопку **Далее**.
 8. На странице **Имя** в текстовом поле **Имя** укажите имя правила, например **Проба Azure LB**, и нажмите кнопку **Готово**.

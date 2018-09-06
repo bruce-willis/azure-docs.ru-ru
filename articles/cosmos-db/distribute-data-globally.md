@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: sngun
-ms.openlocfilehash: dec981ad750a49646916dbef40a4cc632ab71da2
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 19e47e0dba1a89ea32f42ef0bafc26f8c59b4ad7
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37856646"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43288308"
 ---
 # <a name="how-to-distribute-data-globally-with-azure-cosmos-db"></a>Как работает глобальное распределение данных в Azure с помощью Cosmos DB
 Среда Azure вездесуща: она используется более чем в 50 географических регионах по всему миру и постоянно растет. Благодаря повсеместному присутствию одной из отличительных возможностей, предлагаемых Azure разработчикам, является возможность легко выполнять сборку, развертывание и управление глобально распределенными приложениями. 
@@ -34,11 +34,6 @@ ms.locfileid: "37856646"
 
 ## <a id="EnableGlobalDistribution"></a>Включение готового к использованию глобального распространения
 Azure Cosmos DB предоставляет следующие возможности, позволяющие легко создавать глобально распределенные приложения. Эти возможности доступны через [интерфейсы REST API](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/) поставщика ресурсов Azure Cosmos DB, а также на портале Azure.
-
-Просмотрите следующее видео, чтобы ознакомиться с готовой к использованию функцией глобального распределения в Azure Cosmos DB в действии.
-
-> [!VIDEO https://www.youtube.com/embed/1D06yjTVxt8]
->
 
 ### <a id="RegionalPresence"></a>Повсеместное географическое присутствие 
 Azure постоянно расширяет свое географическое присутствие, добавляя [новые регионы](https://azure.microsoft.com/regions/) в сеть. Azure Cosmos DB относится к *базовым службам* в Azure, она доступна во всех новых регионах Azure по умолчанию. Это позволяет связать географический регион со своей учетной записью базы данных Azure Cosmos DB, как только Azure откроет новый регион для осуществления операций.

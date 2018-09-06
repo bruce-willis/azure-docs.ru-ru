@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: jasonh
-ms.openlocfilehash: b8a177ad2bbd463d2dcb94a01ff2a29a95d86693
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 567bac8a12a841eed2df1467b94a2a91c86ff7b4
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105289"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666157"
 ---
 # <a name="tutorial-create-on-demand-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Руководство. Создание кластеров Hadoop в HDInsight по запросу с помощью фабрики данных Azure
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -37,9 +37,9 @@ ms.locfileid: "43105289"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Установите Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0).
+- Установите Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0).
 
-* Субъект-служба Azure Active Directory. После создания субъект-службы, обязательно получите **идентификатор приложения** и **ключ проверки подлинности** с помощью инструкций в связанной статье. Эти значения вам понадобятся позже (в рамках этого руководства). Кроме того, убедитесь, что субъект-службе должна быть назначена роль *участника* подписки или группы ресурсов, в которой создается кластер. Инструкции по получению требуемых значений и назначению правильных ролей см. в разделе [Создание субъект-службы Azure Active Directory ](../azure-resource-manager/resource-group-create-service-principal-portal.md).
+- Субъект-служба Azure Active Directory. После создания субъект-службы, обязательно получите **идентификатор приложения** и **ключ проверки подлинности** с помощью инструкций в связанной статье. Эти значения вам понадобятся позже (в рамках этого руководства). Кроме того, убедитесь, что субъект-службе должна быть назначена роль *участника* подписки или группы ресурсов, в которой создается кластер. Инструкции по получению требуемых значений и назначению правильных ролей см. в разделе [Создание субъект-службы Azure Active Directory ](../azure-resource-manager/resource-group-create-service-principal-portal.md).
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -148,18 +148,18 @@ Write-host "`nScript completed" -ForegroundColor Green
 
 В фабрике данных Azure фабрика данных может содержать один или несколько конвейеров. Конвейер данных включает одно или несколько действий. Существует два вида действий:
 
-* Для перемещения данных из исходного хранилища данных в целевое используются [действия перемещения данных](../data-factory/copy-activity-overview.md).
-* [Действия по преобразованию данных](../data-factory/transform-data.md). Для перемещения и обработки данных используются действия преобразования данных. Действие Hive HDInsight — одно из действий преобразования, которое поддерживает фабрика данных. В этом руководстве используется действие преобразования Hive.
+- Для перемещения данных из исходного хранилища данных в целевое используются [действия перемещения данных](../data-factory/copy-activity-overview.md).
+- [Действия по преобразованию данных](../data-factory/transform-data.md). Для перемещения и обработки данных используются действия преобразования данных. Действие Hive HDInsight — одно из действий преобразования, которое поддерживает фабрика данных. В этом руководстве используется действие преобразования Hive.
 
 В этой статье идет речь о настройке действия Hive для создания по требованию кластера Hadoop в HDInsight. При выполнении действия по обработке данных, происходит следующее.
 
 1. Автоматически создается кластер Hadoop HDInsight для своевременной обработки среза. 
 
 1. Для обработки входных данных выполняется скрипт HiveQL в кластере. В этом руководстве описываются действия скрипта HiveQL, связанного с действием Hive.
-
-    * Он использует существующую таблицу (*hivesampletable*) для создания другой таблицы **HiveSampleOut**.
-    * Скрипт заполняет таблицу **HiveSampleOut** только определенными столбцами из исходной таблицы *hivesampletable*.
-
+    
+    - Он использует существующую таблицу (*hivesampletable*) для создания другой таблицы **HiveSampleOut**.
+    - Скрипт заполняет таблицу **HiveSampleOut** только определенными столбцами из исходной таблицы *hivesampletable*.
+    
 1. По завершении обработки кластер Hadoop HDInsight удаляется и не используется в течение заданного времени (параметр timeToLive). Если во время простоя (параметр timeToLive) можно обработать следующий срез данных, для этого используется тот же кластер.  
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
@@ -265,16 +265,16 @@ Write-host "`nScript completed" -ForegroundColor Green
     ![Указание сведений о кластере HDInsight для конвейера](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-hive-activity-select-hdinsight-linked-service.png "Указание сведений о кластере HDInsight для конвейера")
 
 1. Выберите вкладку **Скрипт** и затем сделайте следующее:
-
-    a. Для **Связанной службы скрипта**выберите **HDIStorageLinkedService**. Это — связанная служба хранилища, созданная ранее.
-
-    b. Для **Путь к файлу** выберите **Поиск в хранилище** и перейдите в расположение, где находится образец скрипта Hive. Если ранее выполнялся скрипт PowerShell, это расположение должно быть `adfgetstarted/hivescripts/hivescript.hql`.
-
-    ![Указание сведений о скрипте Hive для конвейера](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-provide-script-path.png "Указание сведений о скрипте Hive для конвейера")
-
-    c. В разделе **Расширенный** > **Параметры** выберите **Автозаполнение из скрипта**. Этот параметр ищет любые параметры в сценарии Hive, которым требуются значения во время выполнения. Использованный сценарий (**hivescript.hql**) имеет параметр **Вывод**. Укажите значение в формате `wasb://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/` для указания существующей папки в хранилище Azure. Путь следует вводить с учетом регистра. Это путь, где будут храниться выходные данные сценария.
-
-    ![Укажите параметры для скрипта Hive](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-provide-script-parameters.png "Укажите параметры для скрипта Hive")
+    
+    1. Для **Связанной службы скрипта**выберите **HDIStorageLinkedService**. Это — связанная служба хранилища, созданная ранее.
+    
+    1. Для **Путь к файлу** выберите **Поиск в хранилище** и перейдите в расположение, где находится образец скрипта Hive. Если ранее выполнялся скрипт PowerShell, это расположение должно быть `adfgetstarted/hivescripts/hivescript.hql`.
+    
+        ![Указание сведений о скрипте Hive для конвейера](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-provide-script-path.png "Указание сведений о скрипте Hive для конвейера")
+    
+    1. В разделе **Расширенный** > **Параметры** выберите **Автозаполнение из скрипта**. Этот параметр ищет любые параметры в сценарии Hive, которым требуются значения во время выполнения. Использованный сценарий (**hivescript.hql**) имеет параметр **Вывод**. Укажите значение в формате `wasb://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/` для указания существующей папки в хранилище Azure. Путь следует вводить с учетом регистра. Это путь, где будут храниться выходные данные сценария.
+    
+        ![Укажите параметры для скрипта Hive](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-provide-script-parameters.png "Укажите параметры для скрипта Hive")
 
 1. Чтобы проверить конвейер, выберите **Проверить**. Чтобы закрыть окно проверки, нажмите кнопку **>>** Стрелка вправо.
 

@@ -1,22 +1,18 @@
 ---
 title: Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight
 description: Узнайте, как запрашивать данные из хранилища Azure Data Lake Storage Gen2 (предварительная версия) и сохранять результаты анализа.
-keywords: hdfs,structured data,unstructured data,data lake store,Hadoop input,Hadoop output, hadoop storage, hdfs input,hdfs output,hdfs storage,wasb azure
-services: hdinsight,storage
-tags: azure-portal
 author: jamesbak
 ms.component: data-lake-storage-gen2
 ms.service: storage
-ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: article
 ms.date: 06/27/2018
 ms.author: jamesbak
-ms.openlocfilehash: 4a9f79b292e58331dcd2f7cb656e24b244aa89ba
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 3869d83ada1cbe0b234694b6acae88b6f68fc2dd
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528514"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782283"
 ---
 # <a name="use-azure-data-lake-storage-gen2-preview-with-azure-hdinsight-clusters"></a>Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight
 
@@ -174,7 +170,7 @@ az storage account create \
 
 Схема URI для доступа к файлам в службе хранилища Azure из HDInsight:
 
-    abfs[s]://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.widows.net/<PATH>
+    abfs[s]://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/<PATH>
 
 Эта схема URI предоставляет как незашифрованный доступ с префиксом *abfs:*, так и доступ с использованием SSL-шифрования с *abfss*. Мы рекомендуем использовать *abfss* всегда, когда это возможно, даже при обращении к данным, которые хранятся в том же регионе Azure.
 
@@ -183,7 +179,7 @@ az storage account create \
 
     Если значения для &lt;FILE_SYSTEM_NAME&gt; или &lt;ACCOUNT_NAME&gt; не указаны, используется файловая система по умолчанию. Для файлов в файловой системе по умолчанию можно использовать относительный или абсолютный путь. Например, для ссылки на файл *hadoop-mapreduce-examples.jar*, который поставляется с кластерами HDInsight, можно использовать один из следующих вариантов:
     
-        abfs://myfilesystempath@myaccount.dfs.core.widows.net/example/jars/hadoop-mapreduce-examples.jar
+        abfs://myfilesystempath@myaccount.dfs.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
         abfs:///example/jars/hadoop-mapreduce-examples.jar
         /example/jars/hadoop-mapreduce-examples.jar
 

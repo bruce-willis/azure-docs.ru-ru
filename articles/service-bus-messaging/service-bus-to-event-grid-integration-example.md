@@ -3,7 +3,7 @@ title: Примеры интеграции служебной шины Azure с�
 description: В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
 services: service-bus-messaging
 documentationcenter: .net
-author: ChristianWolf42
+author: spelluru
 manager: timlt
 editor: ''
 ms.assetid: f99766cb-8f4b-4baf-b061-4b1e2ae570e4
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: get-started-article
 ms.date: 02/15/2018
-ms.author: chwolf
-ms.openlocfilehash: 72a9cc905adda5146cf943d8f0ed2789c3088422
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.author: spelluru
+ms.openlocfilehash: ca4a6bfcc0f1041e76c07b3b240d7c641ef8f587
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39447396"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43699875"
 ---
 # <a name="azure-service-bus-to-azure-event-grid-integration-examples"></a>Примеры интеграции служебной шины Azure со службой "Сетка событий Azure"
 

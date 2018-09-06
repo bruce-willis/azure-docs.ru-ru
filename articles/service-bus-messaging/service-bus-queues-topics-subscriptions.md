@@ -3,18 +3,18 @@ title: Обзор очередей сообщений, разделов и по�
 description: Общие сведения о сущностях обмена сообщениями в служебной шине.
 services: service-bus-messaging
 documentationcenter: na
-author: sethmanheim
+author: spelluru
 manager: timlt
 ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 06/18/2018
-ms.author: sethm
-ms.openlocfilehash: 424004a2a39bd0d05bce515dc17685e60f7a0c9b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.author: spelluru
+ms.openlocfilehash: f4b94e210430c20409e9227bbab51ff2ec117291
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231582"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43702176"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Очереди, разделы и подписки служебной шины
 

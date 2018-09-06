@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: 68799fe2755d8c0e811ae217f2cf6ceb84c7d869
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 1e77dfdec902b64f2524c790bda6742eaa1105fc
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39494232"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43669180"
 ---
 # <a name="sfctl-chaos"></a>sfctl chaos
 Запуск и остановка службы хаотического тестирования, а также вывод отчета о ее работе.
@@ -47,9 +47,9 @@ ms.locfileid: "39494232"
 |Аргумент|ОПИСАНИЕ|
 | --- | --- |
 | --continuation-token | Параметр маркера продолжения используется для получения следующего набора результатов. Маркер продолжения с непустым значением добавляется в ответ API, когда результаты из системы не помещаются в один ответ. Когда это значение передается в следующем вызове API, API возвращает следующий набор результатов. Если результаты отсутствуют, маркер продолжения не будет содержать значение. Значение этого параметра не должно быть указано в формате URL-адреса. |
-| --end-time-utc | Время файла Windows, представляющее время окончания периода, за который создается отчет Chaos. Дополнительные сведения см. в описании [метода DateTime.ToFileTimeUtc](https\://msdn.microsoft.com/library/system.datetime.tofiletimeutc(v=vs.110).aspx). |
+| --end-time-utc | Время файла Windows, представляющее время окончания периода, за который создается отчет Chaos. Дополнительные сведения см. в описании [метода DateTime.ToFileTimeUtc](https://docs.microsoft.com/dotnet/api/system.datetime.tofiletimeutc?redirectedfrom=MSDN&view=netframework-4.7.2#System_DateTime_ToFileTimeUtc). |
 | --max-results | Максимальное количество результатов, возвращаемых в результате страничного запроса. Этот параметр определяет максимальное число возвращаемых результатов. Возвращаемых результатов может быть меньше, чем указанное максимальное количество результатов, если они не помещаются в сообщении согласно ограничениям максимального размера сообщения, определенным в конфигурации. Если этот параметр равен нулю или не указан, то результат страничного запроса содержит максимальное число результатов, помещающееся в возвращаемом сообщении. |
-| --start-time-utc | Время файла Windows, представляющее время начала периода, за который создается отчет Chaos. Дополнительные сведения см. в описании [метода DateTime.ToFileTimeUtc](https\://msdn.microsoft.com/library/system.datetime.tofiletimeutc(v=vs.110).aspx). |
+| --start-time-utc | Время файла Windows, представляющее время начала периода, за который создается отчет Chaos. Дополнительные сведения см. в описании [метода DateTime.ToFileTimeUtc](https://docs.microsoft.com/dotnet/api/system.datetime.tofiletimeutc?redirectedfrom=MSDN&view=netframework-4.7.2#System_DateTime_ToFileTimeUtc). |
 | --timeout -t | Время ожидания сервера в секундах.  Значение по умолчанию\: 60. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы

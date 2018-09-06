@@ -11,21 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: govindk
-ms.openlocfilehash: 3c5629dc1ad87456583f5a713f16e696bc9b7b1e
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: e4bc8af7533b3d18f9e04f431d6c9f97e0982ae5
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37858669"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43286675"
 ---
 # <a name="monitoring-and-debugging-with-metrics-in-azure-cosmos-db"></a>Мониторинг и отладка с помощью метрик в Azure Cosmos DB
 
 Azure Cosmos DB предоставляет метрики пропускной способности, хранилища, согласованности, доступности и задержки. На [портале Azure](https://portal.azure.com) можно просмотреть общее представление этих метрик. Более детальные метрики доступны в клиентских пакетах SDK и [журналах диагностики](./logging.md).
-
-Общие сведения о новых метриках и секциях базы данных с высокой нагрузкой см. в следующем видео из цикла "Пятница с Azure":
-
-> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Azure-Cosmos-DB-Get-the-Most-Out-of-Provisioned-Throughput/player]
-> 
 
 В этой статье рассматриваются распространенные варианты использования Azure Cosmos DB, а также представлены сведения об анализе и отладке проблем в этой базе данных на основе метрик. Сбор метрик осуществляется каждые пять минут. Они хранятся в течение семи дней.
 

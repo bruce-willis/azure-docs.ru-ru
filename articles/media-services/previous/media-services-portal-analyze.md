@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/07/2017
 ms.author: juliako
-ms.openlocfilehash: 60da24b5b0bb7d83414539f07936c61a196e0b62
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: d8c3bb07c88dc96b7ca779ca0f4dfe09052ab290
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783693"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666176"
 ---
 # <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure
 > [!NOTE]
@@ -34,8 +34,8 @@ ms.locfileid: "33783693"
 
 ## <a name="choose-an-asset-that-you-want-to-analyze"></a>Выбор ресурса-контейнера для анализа
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
-2. В окне **Параметры** выберите **Ресурсы**.  
-   .
+2. В окне **Параметры** выберите элемент **Ресурсы**.  
+   
     ![Анализ видео](./media/media-services-portal-analyze/media-services-portal-analyze001.png)
 3. Выберите ресурс, который хотите проанализировать и нажмите кнопку **Анализ**.
    

@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 01/05/2018
 ms.author: heidist
-ms.openlocfilehash: 6c3756e721847a8cb746f5dc755ccd90bfebe9f0
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: b518d86d5cb08f85beecd4afe30efc9e4f70e1f7
+ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39008280"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43371474"
 ---
 # <a name="indexing-in-azure-search"></a>Индексация в службе поиска Azure
 > [!div class="op_single_selector"]
@@ -55,7 +55,7 @@ ms.locfileid: "39008280"
 
 ### <a name="how-to-pull-data-into-an-azure-search-index"></a>Как извлечь данные в индекс службы "Поиск Azure"
 
-Индексатор доступен на [портале Azure](search-import-data-portal.md), в интерфейсе [REST API](/rest/api/searchservice/Indexer-operations) и в [пакете SDK для .NET](/dotnet/api/microsoft.azure.search.indexersoperations). 
+Индексатор доступен на [портале Azure](search-import-data-portal.md), в интерфейсе [REST API](/rest/api/searchservice/Indexer-operations) и в [пакете SDK для .NET](/dotnet/api/microsoft.azure.search.indexersoperationsextensions). 
 
 Преимуществом использования портала является то, что служба поиска Azure, как правило, способна автоматически создавать стандартную схему индекса при чтении метаданных из исходного набора данных. Можно изменить создаваемый индекс до его обработки, после чего будут разрешены только те изменения схемы, которые не требуют повторного индексирования. Если вносимые изменения непосредственно влияют на схему, вам потребуется повторно создать индекс. 
 

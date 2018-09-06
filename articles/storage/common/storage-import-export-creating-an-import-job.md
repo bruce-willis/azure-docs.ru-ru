@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: 3c6adc3f27e49facec124401f03a036269b7c7a9
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: e87b791dda03521def32ca7473336d7d37644773
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524453"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666025"
 ---
 # <a name="creating-an-import-job-for-the-azure-importexport-service"></a>Создание задания импорта для службы импорта и экспорта Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "39524453"
 
 ## <a name="obtaining-your-shipping-location"></a>Получение расположения для отправки
 
-Перед созданием задания импорта необходимо получить название и адрес места для отправки, выполнив операцию [вывода списка расположений](/rest/api/storageimportexport/listlocations). Операция `List Locations` вернет список расположений и почтовых адресов. В полученном списке выберите расположение и отправьте жесткие диски по соответствующему адресу. Также можно использовать операцию `Get Location`, чтобы сразу получить адрес доставки для определенного расположения.
+Перед созданием задания импорта необходимо получить название и адрес места для отправки, выполнив операцию [вывода списка расположений](https://docs.microsoft.com/rest/api/storageimportexport/locations/list). Операция `List Locations` вернет список расположений и почтовых адресов. В полученном списке выберите расположение и отправьте жесткие диски по соответствующему адресу. Также можно использовать операцию `Get Location`, чтобы сразу получить адрес доставки для определенного расположения.
 
  Выполните следующие действия, чтобы получить адрес доставки.
 

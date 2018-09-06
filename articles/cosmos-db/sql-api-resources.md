@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: rafats
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 21b1e69573d2ddd31979e6c23dd7f3bd130cadbe
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 3ba02e7760d7400b5168a902415f16c4b276b3a7
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798022"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287959"
 ---
 # <a name="azure-cosmos-db-hierarchical-resource-model-and-core-concepts"></a>Ключевые понятия и иерархическая модель ресурсов в Azure Cosmos DB
 
@@ -30,12 +30,6 @@ ms.locfileid: "34798022"
 * Как получить доступ к ресурсу?
 * Как работать с коллекциями?
 * Как работать с хранимыми процедурами, триггерами и определяемыми пользователем функциями?
-
-В следующем видео руководитель программы Azure Cosmos DB Эндрю Лю (Andrew Liu) расскажет о модели ресурсов Azure Cosmos DB. 
-
-> [!VIDEO https://www.youtube.com/embed/luWFgTP0IL4]
->
->
 
 ## <a name="hierarchical-resource-model"></a>Иерархическая модель ресурсов
 Как показано на следующей схеме, иерархическая **модель ресурсов** Azure Cosmos DB состоит из наборов ресурсов в учетной записи базы данных, каждый из которых имеет логический постоянный универсальный код ресурса (URI). Набор ресурсов в этой статье называется **веб-каналом**. 

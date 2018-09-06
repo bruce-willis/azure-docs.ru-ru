@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 02/12/2018
 ms.author: sclyon
-ms.openlocfilehash: 3a5978603ae57a6975b76a0736dc4e2d1f133d30
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: b0fba3cee298e55702629815da4649d9af315b25
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42023218"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43283032"
 ---
 # <a name="introduction-to-azure-cosmos-db-mongodb-api"></a>Знакомство с Azure Cosmos DB: API MongoDB
 
@@ -49,11 +49,6 @@ ms.locfileid: "42023218"
 **Автоматическая индексация.** По умолчанию Azure Cosmos DB автоматически индексирует все свойства в документах базы данных MongoDB, не ожидая и не требуя наличия схемы и создания дополнительных индексов. Кроме того, использование уникальных индексов позволяет применить ограничение уникальности к любым полям документа, которые уже автоматически проиндексированы в Azure Cosmos DB.
 
 **Корпоративный класс.** Azure Cosmos DB поддерживает несколько локальных реплик, гарантируя высокий уровень доступности (99,99 %) и защиту данных в случае локальных и региональных сбоев. Azure Cosmos DB имеет [сертификаты соответствия требованиям](https://www.microsoft.com/trustcenter) и функции обеспечения безопасности корпоративного класса. 
-
-Дополнительные сведения см. в этом видео со старшим программистом Azure Cosmos DB Алексеем Саватеевым.
-
-> [!VIDEO https://channel9.msdn.com/Events/Connect/2017/T136/player]
-> 
 
 ## <a name="how-to-get-started"></a>Как приступить к работе
 

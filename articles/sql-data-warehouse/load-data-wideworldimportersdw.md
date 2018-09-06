@@ -3,19 +3,19 @@ title: Руководство по загрузке данных в хранил
 description: В руководстве используется портал Azure и SQL Server Management Studio для загрузки хранилища данных WideWorldImportersDW из общедоступного большого двоичного объекта Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ckarst
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 0b28bb07006ed58a82af80afe42fe472d4878971
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 57803d6b83b71e65064c4ec701ed5b7e7607321f
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32195368"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43286939"
 ---
 # <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Руководство по загрузке данных в хранилище данных SQL Azure
 
@@ -150,8 +150,8 @@ ms.locfileid: "32195368"
     | Параметр      | Рекомендуемое значение | ОПИСАНИЕ | 
     | ------------ | --------------- | ----------- | 
     | Тип сервера | Ядро СУБД | Это обязательное значение |
-    | имя сервера; | Полное имя сервера | Например, **sample-svr.database.windows.net** является полным именем сервера. |
-    | Authentication | проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
+    | Имя сервера | Полное имя сервера | Например, **sample-svr.database.windows.net** является полным именем сервера. |
+    | Authentication | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
     | Вход | Учетная запись администратора сервера | Это учетная запись, указанная при создании сервера. |
     | Пароль | Пароль учетной записи администратора сервера | Это пароль, указанный при создании сервера. |
 

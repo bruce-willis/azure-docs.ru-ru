@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 08/29/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e0d92cc52b34e1e04f13e03ec2196d13961fb7de
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 62a7bb9bf63e8ebf97f9aeb5b08bf08ef06da43b
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247942"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782796"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -119,7 +119,7 @@ ms.locfileid: "43247942"
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../log-analytics/log-analytics-om-agents.md).
 
 > [!NOTE]
-> Для полнофункционального управления системами с агентом Operations Manager при помощи решения "Управление обновлениями" агент необходимо обновить до Microsoft Monitoring Agent. Чтобы узнать, как обновить агент, см. [эту статью](/system-center/scom/deploy-upgrade-agents.md).
+> Для полнофункционального управления системами с агентом Operations Manager при помощи решения "Управление обновлениями" агент необходимо обновить до Microsoft Monitoring Agent. Чтобы узнать, как обновить агент, см. [эту статью](https://docs.microsoft.com/system-center/scom/deploy-upgrade-agents).
 
 ### <a name="confirm-that-non-azure-machines-are-onboarded"></a>Подтверждение подключения виртуальных машин, не относящихся к Azure
 

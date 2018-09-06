@@ -3,7 +3,7 @@ title: Управление доступом к служебной шине Azur
 description: Управление доступом к служебной шине Azure на основе ролей
 services: service-bus-messaging
 documentationcenter: na
-author: sethmanheim
+author: spelluru
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2017
-ms.author: sethm
-ms.openlocfilehash: 80c226b4b4295a232a6cefb4da12e1db23adae66
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.author: spelluru
+ms.openlocfilehash: 8d2ef626afb780d9bd1df9bc64f23b3278652aa9
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39505239"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43699572"
 ---
 # <a name="active-directory-role-based-access-control-preview"></a>Управление доступом к служебной шине Azure на основе ролей (предварительная версия)
 
@@ -35,7 +35,7 @@ Microsoft Azure предоставляет интегрированную сис
 
 ## <a name="use-service-bus-with-an-azure-ad-domain-user-account"></a>Использование служебной шины с помощью учетной записи пользователя домена в Azure AD
 
-В следующем разделе описаны шаги, необходимые для создания и запуска примера приложения, которое запрашивает вход в систему интерактивного пользователя Azure AD. В этом разделе также содержатся сведения о том, как предоставить пользователю доступ к служебной шине с помощью учетной записи пользователя и как получить доступ к концентраторам событий с помощью удостоверения. 
+В следующем разделе описаны шаги, необходимые для создания и запуска примера приложения, которое запрашивает вход в систему интерактивного пользователя Azure AD. В этом разделе также содержатся сведения о том, как предоставить пользователю доступ к служебной шине с помощью учетной записи пользователя и как получить доступ к Центрам событий с помощью удостоверения. 
 
 В этом введении описывается простое консольное приложение, [код для которого находится на сайте Github](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/RoleBasedAccessControl).
 

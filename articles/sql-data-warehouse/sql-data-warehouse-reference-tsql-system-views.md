@@ -2,19 +2,20 @@
 title: Системные представления хранилища данных SQL Azure | Документация Майкрософт
 description: Ссылки на документацию по инструкциям системным представлениям, поддерживаемым в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: kevinvngo
-manager: craigg-msft
+author: twounder
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 04/17/2018
-ms.author: kevin
+ms.date: 06/13/2018
+ms.author: twounder
 ms.reviewer: igorstan
-ms.openlocfilehash: a0e75bc9b7cfa6827794f8d4256bddc3807f17d1
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: d76e21e37266a1b17f90fe7ce41438b9361c6e31
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43311401"
 ---
 # <a name="system-views-supported-in-azure-sql-data-warehouse"></a>Системные представления, поддерживаемые в хранилище данных SQL Azure
 Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.

@@ -10,21 +10,16 @@ ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: andrl
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c9c1379cd457dcba37246985058b01e85633f968
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 3cc2794105eff196c3e1db02d664a89c9b37e318
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038474"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43286991"
 ---
 # <a name="partition-and-scale-in-azure-cosmos-db"></a>Секционирование и масштабирование в Azure Cosmos DB
 
 [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) — это глобально распределенная, многомодельная служба базы данных, предназначенная для обеспечения высокой и прогнозируемой производительности. Она легко масштабируется вместе с вашим приложением. В этой статье представлены сведения о работе секционирования для всех моделей данных в Azure Cosmos DB. В ней также описывается, как настраивать контейнеры Azure Cosmos DB для эффективного масштабирования приложений.
-
-В этом видео обсуждается секционирование и ключи секций:
-
-> [!VIDEO https://www.youtube.com/embed/SS6WrQ-HJ30]
-> 
 
 ## <a name="partitioning-in-azure-cosmos-db"></a>Секционирование в базе данных Azure Cosmos DB
 Azure Cosmos DB предоставляет контейнеры для хранения данных, которые называются коллекциями (для документов), графами или таблицами. Контейнеры — это логические ресурсы, они могут включать в себя одну или несколько физических секций или серверов. Число секций определяется Azure Cosmos DB по размеру хранилища и пропускной способности, выделенной для контейнера или набора контейнеров. 

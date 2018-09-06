@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/05/2018
 ms.author: ancav
 ms.component: metrics
-ms.openlocfilehash: 3501c8d35968ecf8e32c806dfb05ccfebc7f4386
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: d61ac48aa7c51bc4b215a7d56b1bbedfdc613f9f
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264227"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287562"
 ---
 # <a name="overview-of-metrics-in-microsoft-azure"></a>Обзор метрик в Microsoft Azure
 Из этой статьи вы узнаете, что такое метрики в Microsoft Azure, какими преимуществами они обладают и как ими пользоваться.  
@@ -84,7 +84,7 @@ Azure Monitor также имеет новые метрики построени
 Подробные инструкции см. в [пошаговом руководстве по REST API Azure Monitor](monitoring-rest-api-walkthrough.md).
 
 ## <a name="export-metrics"></a>Экспорт метрик
-Откройте колонку **Параметры системы диагностики** на вкладке **Монитор** и просмотрите варианты экспорта метрик. Метрики (и журналы диагностики) можно перенаправлять в хранилище BLOB-объектов, концентраторы событий Azure или консоль Log Analytics, где их можно использовать, как описано выше.
+Откройте колонку **Параметры системы диагностики** на вкладке **Монитор** и просмотрите варианты экспорта метрик. Метрики (и журналы диагностики) можно перенаправлять в хранилище BLOB-объектов, Центры событий Azure или консоль Log Analytics, где их можно использовать, как описано выше.
 
  ![Параметры экспорта метрик в Azure Monitor](./media/monitoring-overview-metrics/MetricsOverview3.png)
 
@@ -107,7 +107,7 @@ Azure Monitor также имеет новые метрики построени
 
  ![Метрики и правила генерации оповещений в Azure Monitor](./media/monitoring-overview-metrics/MetricsOverview4.png)
 
-Новые оповещения на основе метрик могут отслеживать несколько метрик и пороговые значения ресурса, а затем отправлять вам уведомления с помощью [группы действий](/monitoring-action-groups.md). Дополнительные сведения см. в статье [Использование новых оповещений метрик для служб Azure на портале Azure](https://aka.ms/azuremonitor/near-real-time-alerts).
+Новые оповещения на основе метрик могут отслеживать несколько метрик и пороговые значения ресурса, а затем отправлять вам уведомления с помощью [группы действий](monitoring-action-groups.md). Дополнительные сведения см. в статье [Использование новых оповещений метрик для служб Azure на портале Azure](https://aka.ms/azuremonitor/near-real-time-alerts).
 
 
 ### <a name="autoscale-your-azure-resources"></a>Автомасштабирование ресурсов Azure

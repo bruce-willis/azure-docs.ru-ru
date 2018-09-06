@@ -2,26 +2,26 @@
 title: Краткое руководство по Azure Stack. Создание виртуальной машины Windows
 description: Краткое руководство по Azure Stack. Создание виртуальной машины Windows с помощью портала
 services: azure-stack
-author: brenduns
+author: mattbriggs
 manager: femila
 ms.service: azure-stack
 ms.topic: quickstart
-ms.date: 04/23/2018
-ms.author: brenduns
+ms.date: 08/15/2018
+ms.author: mabrigg
 ms.reviewer: ''
 ms.custom: mvc
-ms.openlocfilehash: 5776fc472483018eb2c9e4f8962d0b1e8bce8081
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: efe6213e5c0261fb26ac40e74c2b0f6e0c9252dd
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32155587"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "43775054"
 ---
 # <a name="quickstart-create-a-windows-server-virtual-machine-with-the-azure-stack-portal"></a>Краткое руководство. Создание виртуальной машины Windows Server с помощью портала Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете создать виртуальную машину Windows Server 2016 с помощью портала Azure Stack. Выполните описанные в этой статье действия, чтобы создать и использовать виртуальную машину.
+Вы можете создать виртуальную машину Windows Server 2016 с помощью портала Azure Stack. Чтобы создать и использовать виртуальную машину, выполните описанные в этой статье действия.
 
 ## <a name="sign-in-to-the-azure-stack-portal"></a>Вход на портал Azure Stack
 

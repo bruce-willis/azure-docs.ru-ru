@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/23/2018
 ms.author: jeedes
-ms.openlocfilehash: ca5bf7ae49cf120c0566419ccadeff92433c6467
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: ea2b32b43fedacba7b8a60db29762c32fda65aa5
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42819397"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43306348"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>Руководство по интеграции Azure Active Directory с ArcGIS Enterprise
 
@@ -52,7 +52,7 @@ ms.locfileid: "42819397"
 
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. добавление ArcGIS Enterprise из коллекции;
+1. Добавление ArcGIS Enterprise из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-arcgis-enterprise-from-the-gallery"></a>Добавление ArcGIS Enterprise из коллекции
@@ -120,7 +120,7 @@ ms.locfileid: "42819397"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<EXTERNAL_DNS_NAME>/portal/sharing/rest/oauth2/saml/signin`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов ArcGIS Enterprise](mailto:nshampur@esri.com). Вы получите значение идентификатора из раздела **Set Identity Provider** (Назначение поставщика удостоверений), который описан далее в этом руководстве.
+    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов ArcGIS Enterprise](mailto:support@esri.com). Вы получите значение идентификатора из раздела **Set Identity Provider** (Назначение поставщика удостоверений), который описан далее в этом руководстве.
 
 5. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
 
@@ -195,7 +195,7 @@ ms.locfileid: "42819397"
 Цель этого раздела — создать пользователя с именем Britta Simon в ArcGIS Enterprise. ArcGIS Enterprise поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к ArcGIS Enterprise (если он еще не создан).
 
 > [!Note]
-> Чтобы создать пользователя вручную, обратитесь к [группе поддержки ArcGIS Enterprise](mailto:nshampur@esri.com).
+> Чтобы создать пользователя вручную, обратитесь к [группе поддержки ArcGIS Enterprise](mailto:support@esri.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

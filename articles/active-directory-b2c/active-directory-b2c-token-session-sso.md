@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/16/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 35210a8e93b8437ea4d8c3b5f002c81c549d3afe
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 061e2257200b6d660a421a86c540f43597112c5e
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444837"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43337891"
 ---
 # <a name="azure-active-directory-b2c-token-session-and-single-sign-on-configuration"></a>Azure Active Directory B2C: конфигурация маркера, сеанса и единого входа
 
@@ -69,8 +69,8 @@ Azure AD B2C поддерживает [протокол авторизации O
 Мы внесли изменения, касающиеся форматирования, в важные утверждения в маркерах безопасности, создаваемых Azure AD B2C. Это было сделано для того, чтобы улучшить поддержку стандартного протокола, а также расширить возможности взаимодействия со сторонними библиотеками удостоверений. Чтобы не нарушать работу существующих приложений, мы создали следующие свойства, чтобы позволить клиентам подключаться по необходимости.
 
 * **Утверждение издателя (iss)**  — определяет клиент Azure AD B2C, выдавший маркер.
-  * `https://login.microsoftonline.com/{B2C tenant GUID}/v2.0/` — это значение по умолчанию.
-  * `https://login.microsoftonline.com/tfp/{B2C tenant GUID}/{Policy ID}/v2.0/` — это значение включает идентификаторы для клиента B2C и политики, используемых в запросе маркера. Если приложению или библиотеке требуется Azure AD B2C для соответствия [спецификации OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html), используйте это значение.
+  * `https://<domain>/{B2C tenant GUID}/v2.0/` — это значение по умолчанию.
+  * `https://<domain>/tfp/{B2C tenant GUID}/{Policy ID}/v2.0/` — это значение включает идентификаторы для клиента B2C и политики, используемых в запросе маркера. Если приложению или библиотеке требуется Azure AD B2C для соответствия [спецификации OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html), используйте это значение.
 * **Утверждение субъекта (sub)**  — определяет сущность, т. е. пользователя, для которого маркер подтверждает информацию.
   * **ObjectID** — это значение по умолчанию. Добавляет идентификатор объекта пользователя из каталога в утверждение `sub` в маркере.
   * **Не поддерживается** — указывается только для обратной совместимости. Мы рекомендуем переключиться на свойство **ObjectID**, как только это станет возможно.

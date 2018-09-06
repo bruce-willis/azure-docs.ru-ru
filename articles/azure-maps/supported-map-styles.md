@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 33b0f5df57623f0b4433a4a09c7cd15688783485
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 04c8f43e3b484ceeb942ae13ea95baf7f0215b53
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43191339"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43344841"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Azure Maps поддерживает четыре различные встроенные стили карт. Ниже перечислены стили и их описания.
@@ -52,4 +52,4 @@ Azure Maps поддерживает четыре различные встрое
 ![gray_scale](./media/supported-map-styles/grayscale_dark.png)
 
 **Применимые API:**
-* Элементы управления картой JS
+* Элементы управления картой JS 

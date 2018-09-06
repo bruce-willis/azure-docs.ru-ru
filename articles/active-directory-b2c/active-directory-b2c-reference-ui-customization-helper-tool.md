@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 18f921fb718aeb7ae4add2836fbb6ffabd66668f
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 1a37a37dbed3b5ef9733f1105444529b4d255bcf
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37445064"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336787"
 ---
 # <a name="azure-active-directory-b2c-a-helper-tool-used-to-demonstrate-the-page-user-interface-ui-customization-feature"></a>Azure Active Directory B2C: вспомогательное средство, используемое для демонстрации настройки пользовательского интерфейса для страницы пользователя
 Эта статья дополняет [основную статью о настройке пользовательского интерфейса](active-directory-b2c-reference-ui-customization.md) в Azure Active Directory (Azure AD) B2C. Описанные ниже действия показывают, как работать с функцией настройки пользовательского интерфейса страницы на основе предоставленных нами примеров HTML и CSS.
@@ -74,7 +74,7 @@ ms.locfileid: "37445064"
 git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 ```
 
-Этот репозиторий включает в себя каталог `sample_templates\wingtip` , который содержит пример кода HTML и CSS, а также изображения. Для того чтобы эти шаблоны ссылались именно на вашу учетную запись в хранилище больших двоичных объектов Azure, необходимо изменить HTML-файлы. Откройте `unified.html` и `selfasserted.html`, затем замените все экземпляры `https://localhost` URL-адресом вашего контейнера, записанным ранее. Необходимо использовать абсолютный путь к HTML-файлам, так как в этом случае Azure AD будет обслуживать HTML в домене `https://login.microsoftonline.com`.
+Этот репозиторий включает в себя каталог `sample_templates\wingtip` , который содержит пример кода HTML и CSS, а также изображения. Для того чтобы эти шаблоны ссылались именно на вашу учетную запись в хранилище больших двоичных объектов Azure, необходимо изменить HTML-файлы. Откройте `unified.html` и `selfasserted.html`, затем замените все экземпляры `https://localhost` URL-адресом вашего контейнера, записанным ранее. Необходимо использовать абсолютный путь к HTML-файлам, так как в этом случае Azure AD будет обслуживать HTML в домене `tenantname.b2clogin.com`.
 
 ### <a name="upload-the-sample-files"></a>Загрузка образцов файлов
 В том же репозитории распакуйте `B2CAzureStorageClient.zip` и запустите файл `B2CAzureStorageClient.exe` из этого архива. Эта программа просто загружает все файлы в каталог, указанный в вашей учетной записи хранения, и обеспечивает доступ к этим файлам с помощью CORS. Если вы выполнили описанные выше шаги, HTML и CSS-файлы будут указывать на учетную запись хранения. Обратите внимание, что имя вашей учетной записи хранения представляет собой часть, предшествующую `blob.core.windows.net`, например `contoso`. Вы можете проверить, что содержимое отправлено правильно, попробовав получить доступ к `https://{storage-account-name}.blob.core.windows.net/{container-name}/wingtip/unified.html` в браузере. Кроме того, перейдите по адресу [http://test-cors.org/](http://test-cors.org/) и проверьте, включен ли для содержимого доступ CORS. (Ищите "XHR status: 200" в результате проверки.)

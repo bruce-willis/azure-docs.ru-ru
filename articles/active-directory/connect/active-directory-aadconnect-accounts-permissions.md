@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a628e28e9e6bd603fb2a3789c3281bc2181c91fe
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 2283f55be1a17ec95c73878d42d3acf4d0503e07
+ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42143848"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43371378"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: учетные записи и разрешения
 
@@ -42,7 +42,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 - **Учетная запись администратора предприятия AD DS**: используется для установки Azure AD Connect.
 - **Учетная запись глобального администратора Azure AD**: используется для создания учетной записи соединителя Azure AD и настройки Azure AD.
 
-- **Учетная запись SQL SA** (необязательная): используется для создания базы данных ADSync при использовании полной версии SQL Server.  Этот сервер SQL Server может быть локальным или удаленным для установки Azure AD Connect.  Этой учетной записью может быть учетная запись администратора предприятия.  Внешнюю подготовку базы данных может выполнять администратор SQL, а установку — администратор Azure AD Connect с правами владельца базы данных.  Дополнительные сведения см. в статье [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL]().
+- **Учетная запись SQL SA** (необязательная): используется для создания базы данных ADSync при использовании полной версии SQL Server.  Этот сервер SQL Server может быть локальным или удаленным для установки Azure AD Connect.  Этой учетной записью может быть учетная запись администратора предприятия.  Внешнюю подготовку базы данных может выполнять администратор SQL, а установку — администратор Azure AD Connect с правами владельца базы данных.  Дополнительные сведения см. в статье [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL](active-directory-aadconnect-sql-delegation.md).
 
 ## <a name="installing-azure-ad-connect"></a>Установка Azure AD Connect
 Мастер установки Azure AD Connect предлагает два разных варианта.

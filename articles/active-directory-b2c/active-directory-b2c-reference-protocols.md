@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: e6f722afead39c8a0ba940d9e2cb54d1f197d143
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 6cfa3e0cb23f13b50c0fb7cd4f07a8d53c0f3186
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442286"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43340772"
 ---
 # <a name="azure-ad-b2c-authentication-protocols"></a>Azure AD B2C: протоколы проверки подлинности
 Azure Active Directory B2C (Azure AD B2C) предоставляет приложениям "идентификацию как услугу" благодаря поддержке двух стандартных отраслевых протоколов: OpenID Connect и OAuth 2.0. Хотя эта служба соответствует стандартам, любые две реализации этих протоколов могут иметь небольшие различия. 
@@ -34,8 +34,8 @@ Azure Active Directory B2C (Azure AD B2C) предоставляет прило�
 После регистрации приложение взаимодействует с Azure Active Directory (Azure AD), отправляя запросы к конечной точке:
 
 ```
-https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize
-https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
+https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/oauth2/v2.0/authorize
+https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/oauth2/v2.0/token
 ```
 
 Почти во всех потоках обмена данными в OAuth и OpenID Connect участвуют четыре стороны:

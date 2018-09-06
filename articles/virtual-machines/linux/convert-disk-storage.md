@@ -15,18 +15,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
-ms.openlocfilehash: 5c06de6b757da63bb35a4f094e5912e8dcd786f9
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 783dd82041e21242ac4ac136a5d9c91fc9b94e84
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005056"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666783"
 ---
 # <a name="convert-azure-managed-disks-storage-from-standard-to-premium-and-vice-versa"></a>Преобразование хранилища управляемых дисков Azure с уровня "Стандартный" до уровня "Премиум" и наоборот
 
 В службе "Управляемые диски" доступны три варианта хранилища: [диск SSD ценовой категории "Премиум"](../windows/premium-storage.md), диск SSD ценовой категории "Стандартный" (предварительная версия) и [диск HDD ценовой категории "Стандартный"](../windows/standard-storage.md). Это позволяет с легкостью переключаться между вариантами в зависимости от потребностей производительности с минимальным временем простоя. Эта возможность недоступна для неуправляемых дисков. Но вы легко можете выполнить [преобразование в управляемые диски](convert-unmanaged-to-managed-disks.md), чтобы переключаться между типами дисков.
 
-В этой статье рассматривается преобразование хранилища управляемых дисков с уровня "Стандартный" до уровня "Премиум" и наоборот с помощью интерфейса командной строки Azure. Если вам установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](/cli/azure/install-azure-cli.md). 
+В этой статье рассматривается преобразование хранилища управляемых дисков с уровня "Стандартный" до уровня "Премиум" и наоборот с помощью интерфейса командной строки Azure. Если вам установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

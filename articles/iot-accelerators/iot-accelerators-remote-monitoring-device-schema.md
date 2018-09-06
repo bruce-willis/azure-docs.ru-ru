@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: c153153313511640f7969938f63ea9fbe7b0847c
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: f312f29e14c371e7b500f3eee6471151e3544513
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39282657"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43338861"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
 
@@ -24,7 +24,7 @@ ms.locfileid: "39282657"
 В приведенных ниже статьях описаны связанные сведения.
 
 * Статья [Implement the device model behavior](iot-accelerators-remote-monitoring-device-behavior.md) (Реакция модели устройства на событие) содержит сведения о файлах JavaScript, используемых для того, чтобы имитированное устройство реагировало на событие.
-* Статья [Create a new simulated device](iot-accelerators-remote-monitoring-test.md) (Создание имитированного устройства) объединяет все сведения, а также описывает процедуру развертывания нового типа имитированного устройства в решение.
+* Статья [Create a new simulated device](iot-accelerators-remote-monitoring-create-simulated-device.md) (Создание имитированного устройства) объединяет все сведения, а также описывает процедуру развертывания нового типа имитированного устройства в решение.
 
 В этой статье раскрываются следующие темы:
 

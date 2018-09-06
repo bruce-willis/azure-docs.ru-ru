@@ -3,19 +3,19 @@ title: Проектирование таблиц — хранилище данн
 description: Общие сведения о проектировании таблиц в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ronortloff
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: d299ff0d8e719040d503852af6056d9d87738b7d
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: f09b9a93956c9d23e17c742c5f6ec4730591933b
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31527945"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43302319"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -42,7 +42,7 @@ CREATE SCHEMA wwi;
 
 Чтобы показать организацию таблиц в хранилище данных SQL, можно использовать в качестве префиксов имен таблиц значения fact, dim и int. В следующей таблице показаны некоторые имена схем и таблиц для WideWorldImportersDW. В ней сравниваются имена в SQL Server и хранилище данных SQL. 
 
-| Таблица WideWorldImportersDW  | Тип таблицы | SQL Server; | Хранилище данных SQL. |
+| Таблица WideWorldImportersDW  | Тип таблицы | SQL Server; | Хранилище данных SQL |
 |:-----|:-----|:------|:-----|
 | City | Измерение | Dimension.City | wwi.DimCity |
 | Порядок | Факты | Fact.Order | wwi.FactOrder |

@@ -3,19 +3,19 @@ title: Руководство по загрузке данных такси Нь
 description: В этом руководстве используется портал Azure и SQL Server Management Studio для загрузки данных такси Нью-Йорка из общедоступного большого двоичного объекта Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ckarst
-manager: craigg-msft
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: implement
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: acc7d0a031821b8b6e9c110c92597b0307e216fb
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 06d889686c673adc3941ac7303ab52a6fff408a8
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32193239"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43288130"
 ---
 # <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Руководство по загрузке данных такси Нью-Йорка в хранилище данных SQL Azure
 
@@ -149,8 +149,8 @@ ms.locfileid: "32193239"
     | Параметр      | Рекомендуемое значение | ОПИСАНИЕ | 
     | ------------ | --------------- | ----------- | 
     | Тип сервера | Ядро СУБД | Это обязательное значение |
-    | имя сервера; | Полное имя сервера | Имя должно быть в таком формате: **mynewserver-20180430.database.windows.net**. |
-    | Authentication | проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип проверки подлинности — проверку подлинности SQL. |
+    | Имя сервера | Полное имя сервера | Имя должно быть в таком формате: **mynewserver-20180430.database.windows.net**. |
+    | Authentication | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип проверки подлинности — проверку подлинности SQL. |
     | Вход | Учетная запись администратора сервера | Это учетная запись, указанная при создании сервера. |
     | Пароль | Пароль учетной записи администратора сервера | Это пароль, указанный при создании сервера. |
 

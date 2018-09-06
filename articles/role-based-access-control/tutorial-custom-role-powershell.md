@@ -13,18 +13,18 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 06/12/2018
 ms.author: rolyon
-ms.openlocfilehash: 2b3bd55fd2ed9f392611fcb32b0ebd0f5c6b5e09
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 1e3043a6053625f8363e9035e59b53275714a827
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36322531"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43300615"
 ---
 # <a name="tutorial-create-a-custom-role-using-azure-powershell"></a>Руководство. Создание пользовательских ролей с помощью Azure PowerShell
 
 Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](built-in-roles.md). С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание настраиваемой роли
@@ -34,7 +34,7 @@ ms.locfileid: "36322531"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -99,7 +99,7 @@ ms.locfileid: "36322531"
     
 1. Измените файл JSON, добавив операцию `"Microsoft.Support/*"` в свойство `Actions`. Не забудьте включить запятую после операции чтения. Это действие разрешит пользователю создавать запросы в службу поддержки.
 
-1. Получите идентификатор подписки с помощью команды [Get-AzureRmSubscription](/powershell/module/azurerm.resources/get-azurermsubscription).
+1. Получите идентификатор подписки с помощью команды [Get-AzureRmSubscription](/powershell/module/azurerm.profile/get-azurermsubscription).
 
     ```azurepowershell
     Get-AzureRmSubscription

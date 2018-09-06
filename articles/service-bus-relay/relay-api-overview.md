@@ -3,7 +3,7 @@ title: Обзор API ретранслятора Azure | Документаци�
 description: Обзор доступных интерфейсов API ретранслятора Azure.
 services: event-hubs
 documentationcenter: na
-author: sethmanheim
+author: spelluru
 manager: timlt
 editor: ''
 ms.assetid: fdaa1d2b-bd80-4e75-abb9-0c3d0773af2d
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/02/2018
-ms.author: sethm
-ms.openlocfilehash: 00496ca6c0138a840322c053d7d20944df228e9f
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.author: spelluru
+ms.openlocfilehash: 2c7aec700a1077bc1a1b56afb5d8d07f47f4c6e8
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33893450"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43700378"
 ---
 # <a name="available-relay-apis"></a>Доступные интерфейсы API ретранслятора
 

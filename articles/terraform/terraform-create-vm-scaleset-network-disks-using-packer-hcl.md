@@ -1,23 +1,26 @@
 ---
 title: Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 description: Terraform используется для настройки и управления версиями масштабируемого набора виртуальных машин Azure из пользовательского образа, созданного в Packer (с виртуальной сетью и управляемыми подключенными дисками).
+services: terraform
+ms.service: terraform
 keywords: terraform, devops, масштабируемый набор, виртуальная машина, сеть, хранилище, модули, пользовательские образы, packer
-author: VaijanathB
+author: tomarcher
+manager: jeconnoc
 ms.author: tarcher
+ms.topic: tutorial
 ms.date: 10/29/2017
-ms.topic: article
-ms.openlocfilehash: 284eae93de36986e41ba80f98f86495d8f34f57b
-ms.sourcegitcommit: 43c3d0d61c008195a0177ec56bf0795dc103b8fa
+ms.openlocfilehash: 9e999ba8a36edd990bbab4648d9d4d98e3301153
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
-ms.locfileid: "23655396"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43668637"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 
 В этом руководстве [Terraform](https://www.terraform.io/) используется для создания и развертывания [масштабируемого набора виртуальных машин Azure](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview) на основе образа [Packer](https://www.packer.io/intro/index.html) с управляемыми дисками с использованием [HashiCorp Configuration Language](https://www.terraform.io/docs/configuration/syntax.html) (HCL).  
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * настройка развертывания Terraform;

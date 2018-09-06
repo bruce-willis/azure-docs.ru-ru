@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 6e421aa630dc121589dece789e2e0d7f9a56bbe6
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a52ab4ff65312088e65d56006b6f99a7470b88f6
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434845"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287256"
 ---
 # <a name="tutorial-configure-message-routing-with-iot-hub"></a>Руководство. Настройка маршрутизации сообщений с Центром Интернета вещей
 
@@ -184,7 +184,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
 ### <a name="powershell-instructions"></a>Инструкции по работе в среде PowerShell
 
-Самый простой способ использовать этот сценарий — открыть [PowerShell ISE](/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise.md), скопировать сценарий в буфер обмена и вставить весь скрипт в окно сценария. Затем можно изменить значения имен ресурсов (если хотите) и запустить весь сценарий. 
+Самый простой способ использовать этот сценарий — открыть [PowerShell ISE](https://docs.microsoft.com/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise?view=powershell-6), скопировать сценарий в буфер обмена и вставить весь скрипт в окно сценария. Затем можно изменить значения имен ресурсов (если хотите) и запустить весь сценарий. 
 
 ```azurepowershell-interactive
 # Log into Azure account.
@@ -587,14 +587,14 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
 ### <a name="clean-up-resources-using-azure-cli"></a>Очистка ресурсов с помощью Azure CLI
 
-Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name $resourceGroup
 ```
 ### <a name="clean-up-resources-using-powershell"></a>Очистка ресурсов с помощью PowerShell
 
-Чтобы удалить группу ресурсов, используйте команду [Remove-AzureRmResourceGroup](https://docs.microsoft.com/en-us/powershell/module/azurerm.resources/remove-azurermresourcegroup). Значение $resourceGroup было присвоено **ContosoIoTRG1** в начале этого руководства.
+Чтобы удалить группу ресурсов, используйте команду [Remove-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/remove-azurermresourcegroup). Значение $resourceGroup было присвоено **ContosoIoTRG1** в начале этого руководства.
 
 ```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name $resourceGroup

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: abnarain
-ms.openlocfilehash: e708ae741c6835395e8eb35f6835c2d8c7002780
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: af7d4253b4e631295f8c04c96601e932595af9c1
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43044736"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43697770"
 ---
 # <a name="how-to-create-and-configure-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Дополнительные сведения о среде выполнения интеграции см. [в этом обзоре](concepts-integration-runtime.md).
@@ -219,7 +219,7 @@ ms.locfileid: "43044736"
 
 Имена доменов | порты; | ОПИСАНИЕ
 ------------ | ----- | ------------
-*.servicebus.windows.net | 443, 80 | Используется для связи с серверной частью службы перемещения данных.
+*.servicebus.windows.net | 443 | Используется для связи с серверной частью службы перемещения данных.
 *.core.windows.net | 443 | Используется для промежуточного копирования с помощью большого двоичного объекта Azure (если оно настроено).
 *.frontend.clouddatahub.net | 443 | Используется для связи с серверной частью службы перемещения данных.
 download.microsoft.com | 443 | Используется для скачивания обновлений.

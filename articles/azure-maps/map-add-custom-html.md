@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 3ee1f394536061cecaa5d775650149b30098560e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5060839be244f55700b40735e598964a0b7b6709
+ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34600227"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43382051"
 ---
 # <a name="add-custom-html-to-the-map"></a>Добавление настраиваемого элемента HTML на карту
 
@@ -29,13 +29,13 @@ ms.locfileid: "34600227"
 
 Во втором блоке кода из изображения создается элемент HTML.
 
-В последнем блоке кода используется функция [addHtml](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addhtml) класса карты, чтобы добавить изображение в указанную точку на карте.
+В последнем блоке кода используется функция [addHtml](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addhtml) класса карты, чтобы добавить изображение в указанную точку на карте.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о классах и методах, которые используются в этой статье: 
-* класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest);
-    * метод [addHtml](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addhtml).
+* класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+    * метод [addHtml](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addhtml).
     
 Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
 * [Отображение результатов поиска на карте](./map-search-location.md)

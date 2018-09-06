@@ -9,12 +9,12 @@ ms.technology: project-answer-search
 ms.topic: article
 ms.date: 04/13/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: a12761c2d913cd7ffaa2cbc2cd42576c6bc96434
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 28a73918b50d7b13248fe5b6a17f2c95287a1ba4
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37866990"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666294"
 ---
 # <a name="project-answer-search-v7-reference"></a>Справочник по поиску ответов в проектах версии 7
 
@@ -121,11 +121,11 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 |ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |_type|Указание типа.|Строка|  
-|<a name="errors" />errors|Список ошибок, описывающих причины сбоя запроса.|[Ошибка](#error)[]|  
+|<a name="errors" />errors|Список ошибок, описывающих причины сбоя запроса.|[Ошибка](#error)|  
 
   
   
-### <a name="license"></a>License  
+### <a name="license"></a>Лицензия  
 Определяет лицензию, в рамках которой можно использовать текст или фотографию.  
   
 |ИМЯ|Значение|type|  
@@ -272,7 +272,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 |Код состояния|ОПИСАНИЕ|  
 |-----------------|-----------------|  
 |200|Успешно.|  
-|400|Один из параметров запроса отсутствует или является недопустимым.|  
+|400|Один из параметров запроса отсутствует или имеет недопустимое значение.|  
 |401|Ключ подписки отсутствует или является недопустимым.|  
 |403|Пользователь прошел проверку подлинности (например, с допустимым ключом подписки), но не имеет разрешений для обращения к запрошенному ресурсу.<br /><br /> Bing также может вернуть это состояние, если для вызывающего объекта превышены месячные квоты.|  
 |410|В запросе использовался протокол HTTP вместо HTTPS. HTTPS является единственным поддерживаемым протоколом.|  
@@ -312,14 +312,14 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 |Код|SubCode (дополнительный код)|ОПИСАНИЕ
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Код состояния HTTP — 500.
-|InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Заблокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса является недопустимой. Например, отсутствует обязательный параметр или значение параметра является недопустимым.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>Если вместо HTTPS используется протокол HTTP, Bing возвращает HttpNotAllowed и код состояния HTTP 410.
+|InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Заблокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing или ParameterInvalidValue возвращается код состояния HTTP 400.<br/><br/>Если вместо HTTPS используется протокол HTTP, Bing возвращает HttpNotAllowed и код состояния HTTP 410.
 |RateLimitExceeded|Дополнительные коды не используются|Bing возвращает ошибку RateLimitExceeded всякий раз при превышении квоты запросов в секунду (QPS) или запросов в месяц (QPM).<br/><br/>При превышении QPS Bing возвращает код состояния HTTP 429, а если превысить QPM, Bing вернет код 403.
-|InvalidAuthorization|AuthorizationMissing<br/>AuthorizationRedundancy|Bing возвращает InvalidAuthorization, если не может выполнить аутентификацию вызывающего объекта. Например, когда отсутствует заголовок `Ocp-Apim-Subscription-Key` или указан недопустимый ключ подписки.<br/><br/>Избыточность возникает, если указать более одного способа аутентификации.<br/><br/>При ошибке InvalidAuthorization возвращается код состояния HTTP 401.
+|InvalidAuthorization|AuthorizationMissing<br/>AuthorizationRedundancy|Bing возвращает InvalidAuthorization, когда Bing не может проверить подлинность вызывающего объекта. Например, когда заголовок `Ocp-Apim-Subscription-Key` отсутствует или при недопустимом ключе подписки.<br/><br/>Избыточность возникает, если указать более одного способа проверки подлинности.<br/><br/>При ошибке InvalidAuthorization кодом состояния HTTP будет 401.
 |InsufficientAuthorization|AuthorizationDisabled<br/>AuthorizationExpired|Bing возвращает InsufficientAuthorization, когда вызывающая сторона не имеет разрешений на доступ к ресурсу. Это может произойти, если ключ подписки отключен или срок его действия истек. <br/><br/>При ошибке InsufficientAuthorization возвращается код состояния HTTP 403.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](c-sharp-quickstart.md)
-- [Project Answer Search query in Java](java-quickstart.md) (Запрос службы поиска ответов в проекте на языке Java)
-- [Project Answer Search Node quickstart](node-quickstart.md) (Краткое руководство по запросам Node в службе поиска ответов в проекте)
-- [Project Answer Search Python quickstart](python-quickstart.md) (Краткое руководство по запросам Python в службе поиска ответов в проекте)
+- [Краткое руководство для C#](c-sharp-quickstart.md)
+- [Краткое руководство для Java](java-quickstart.md)
+- [Краткое руководство для Node](node-quickstart.md)
+- [Краткое руководство для Python](python-quickstart.md)
 
