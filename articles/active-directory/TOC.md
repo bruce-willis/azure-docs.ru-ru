@@ -84,7 +84,6 @@
 
 ## [Управление группами и членами](fundamentals/active-directory-manage-groups.md)
 ### [Управление группами](fundamentals/active-directory-groups-create-azure-portal.md)
-### [Восстановление удаленной группы Office 365](fundamentals/active-directory-groups-restore-azure-portal.md)
 ### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md)
 ## [Управление отчетами](reports-monitoring/overview-reports.md)
 ### [Действие входа](reports-monitoring/concept-sign-ins.md)

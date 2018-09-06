@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 09/05/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: e057d7a649397083240e9f67080808a3057c7f50
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: d3bfe2c472d48a68bd818ac06874db136528b470
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41946403"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43840275"
 ---
 # <a name="post-asdk-installation-configuration-tasks"></a>Настройка, выполняемая после установки ASDK
 
@@ -140,16 +140,6 @@ Set-PSRepository `
 ![Test-AzureStack](media/asdk-post-deploy/test-azurestack.png)
 
 Если операция закончится сбоем, выполните рекомендации из раздела об устранении неполадок.
-
-## <a name="activate-the-administrator-and-tenant-portals"></a>Активация порталов администрирования и клиента
-После развертывания с использованием Azure Active Directory необходимо активировать порталы администрирования и клиента Azure Stack. Эта активация заключается в предоставлении порталу Azure Stack и Azure Resource Manager требуемых разрешений (перечисленные на странице принятия условий) для всех пользователей каталога.
-
-- На портале администратора найдите https://adminportal.local.azurestack.external/guest/signup, прочтите информацию и подтвердите согласие кнопкой **Accept** (Принять). После этого вы можете добавить администраторов служб, не являющихся также администраторами каталога клиента.
-
-- На портале администратора найдите https://portal.local.azurestack.external/guest/signup, прочтите информацию и подтвердите согласие кнопкой **Accept** (Принять). После этого пользователи в каталоге смогут войти на портал клиента. 
-
-> [!NOTE] 
-> Если порталы не активированы, доступ к ним будут иметь только администраторы. Если на портал войдет другой пользователь, отобразится сообщение о том, что администратор не предоставил другим пользователям необходимые разрешения. Если администратор не принадлежит к каталогу, в котором зарегистрирована инфраструктура Azure Stack, к каталогу Azure Stack необходимо добавить URL-адрес активации. Например, если Azure Stack зарегистрирован на fabrikam.onmicrosoft.com, а полномочия администратора предоставлены пользователю admin@contoso.com, для активации портала нужно открыть адрес https://portal.local.azurestack.external/guest/signup/fabrikam.onmicrosoft.com. 
 
 ## <a name="reset-the-password-expiration-policy"></a>Политика сброса срока действия пароля 
 Чтобы убедиться, что срок действия пароля узла комплекта разработки не завершится до окончания периода ознакомления, выполните следующие действия после развертывания ASDK.

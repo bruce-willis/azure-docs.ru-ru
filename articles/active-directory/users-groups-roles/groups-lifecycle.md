@@ -14,12 +14,12 @@ ms.date: 03/09/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 656577211a992432366033326362c9892f7ba6ef
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 29a53101bff8c384d01f952c4498e09d9d970ee3
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37861472"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43841740"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -43,7 +43,7 @@ ms.locfileid: "37861472"
 Глобальный администратор или администратор учетной записи | Может создавать, читать, обновлять и удалять параметры политики срока действия групп Office 365<br>Может обновить любую группу Office 365
 Пользователь | Может обновлять группу Office 365, которой владеет<br>Может восстанавливать группу Office 365, которой владеет<br>Может считывать параметры политики срока действия
 
-Дополнительные сведения о разрешениях на восстановление удаленных групп см. в статье [Восстановление удаленной группы Office 365 в Azure Active Directory](../fundamentals/active-directory-groups-restore-azure-portal.md).
+Дополнительные сведения о разрешениях на восстановление удаленных групп см. в статье [Восстановление удаленной группы Office 365 в Azure Active Directory](groups-restore-deleted.md).
 
 ## <a name="set-group-expiration"></a>Настройка срока действия группы
 
@@ -71,7 +71,7 @@ ms.locfileid: "37861472"
 
 ![Уведомление по электронной почте об удалении группы](./media/groups-lifecycle/deletion-notification.png)
 
-Группу можно восстановить в течение 30 дней после удаления, выбрав **Восстановить группу** либо используя командлеты PowerShell, как описано в разделе [Восстановление удаленной группы Office 365 в Azure Active Directory](../fundamentals/active-directory-groups-restore-azure-portal.md).
+Группу можно восстановить в течение 30 дней после удаления, выбрав **Восстановить группу** либо используя командлеты PowerShell, как описано в разделе [Восстановление удаленной группы Office 365 в Azure Active Directory](groups-restore-deleted.md).
     
 Если восстанавливаемая группа содержит документы, сайты SharePoint или другие постоянные объекты, полное восстановление группы и ее содержимого может занять до 24 часов.
 

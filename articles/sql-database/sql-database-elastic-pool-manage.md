@@ -11,12 +11,12 @@ ms.date: 08/01/2018
 ms.author: ninarn
 ms.topic: conceptual
 ms.reviewer: carlrab
-ms.openlocfilehash: 96ea965ac383ae449afffa62c5e9950c6fd4e4da
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: cbfbe02926907ca3ca5b6c13932c8b67862c8456
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39411939"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43842029"
 ---
 # <a name="create-and-manage-elastic-pools-in-azure-sql-database"></a>Создание эластичных пулов в базе данных SQL Azure и управление ими
 
@@ -104,17 +104,11 @@ ms.locfileid: "39411939"
 |[Получение эластичных пулов](/rest/api/sql/elasticpools/get)|Получает эластичный пул.|
 |[Список эластичных пулов на сервере](/rest/api/sql/elasticpools/listbyserver)|Возвращает список эластичных пулов на сервере.|
 |[Обновление эластичных пулов](/rest/api/sql/elasticpools/update)|Обновляет имеющийся эластичный пул.|
-|[Получение рекомендуемых эластичных пулов](/rest/api/sql/recommendedelasticpools/get)|Получает рекомендуемый эластичный пул.|
-|[Список рекомендуемых эластичных пулов на сервере](/rest/api/sql/recommendedelasticpools/listbyserver)|Возвращает рекомендуемые эластичные пулы.|
-|[Список метрик рекомендуемых эластичных пулов](/rest/api/sql/recommendedelasticpools/listmetrics)|Возвращает метрики рекомендуемых эластичных пулов.|
 |[Действия эластичного пула](/rest/api/sql/elasticpoolactivities)|Возвращает действия эластичного пула.|
 |[Действия базы данных в эластичном пуле](/rest/api/sql/elasticpooldatabaseactivities)|Возвращает действия баз данных в эластичном пуле.|
 |[Создание или обновление баз данных](/rest/api/sql/databases/createorupdate)|Создает новую базу данных или обновляет имеющуюся.|
 |[Базы данных: получение](/rest/api/sql/databases/get)|Получает базу данных.|
-|[Базы данных: получение по эластичному пулу](/rest/api/sql/databases/getbyelasticpool)|Получает базу данных в эластичном пуле.|
-|[Базы данных: получение по рекомендуемому эластичному пулу](/rest/api/sql/databases/getbyrecommendedelasticpool)|Получает базу данных в рекомендуемом эластичном пуле.|
 |[Базы данных: вывод списка по эластичному пулу](/rest/api/sql/databases/listbyelasticpool)|Возвращает список баз данных в пуле эластичных баз данных.|
-|[Базы данных: вывод списка по рекомендуемому эластичному пулу](/rest/api/sql/databases/listbyrecommendedelasticpool)|Возвращает список баз данных в рекомендуемом эластичном пуле.|
 |[Базы данных: вывод списка по серверу](/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
 |[Базы данных: обновление](/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
 

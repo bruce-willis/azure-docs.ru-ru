@@ -81,7 +81,7 @@ items:
     items:
     - name: Получение и настройка пропускной способности
       href: set-throughput.md
-  - name: Секционирование
+  - name: Распределение данных и секционирование
     href: partition-data.md
   - name: Индексация
     href: indexing-policies.md
@@ -111,12 +111,20 @@ items:
       href: vnet-service-endpoint.md
     - name: Поддержка Key Vault
       href: access-secrets-from-keyvault.md
+  - name: Архивация и восстановление
+    href: online-backup-and-restore.md
+  - name: высокую доступность;
+    href: regional-failover.md
 - name: Многомодельные API-интерфейсы
   items:
   - name: Документация по API SQL
     items:
     - name: Обзор
       href: sql-api-introduction.md
+    - name: Написание SQL-запросов
+      href: sql-api-sql-query.md
+    - name: Данные документов модели
+      href: modeling-data.md
     - name: Учебники
       items:
       - name: 1. Создание учетной записи
@@ -175,14 +183,10 @@ items:
         href: cli-samples.md
     - name: Практические руководства
       items:
-      - name: Массовый исполнитель — библиотека .NET
-        href: bulk-executor-dot-net.md
-      - name: Массовый исполнитель — библиотека Java
-        href: bulk-executor-java.md
-      - name: Написание SQL-запросов
-        href: sql-api-sql-query.md
       - name: Настройка производительности запросов
         href: sql-api-sql-query-metrics.md
+      - name: Хранимые процедуры, триггеры и определяемые пользователем функции
+        href: programming.md
       - name: Типы данных
         items:
         - name: Datetime
@@ -374,36 +378,30 @@ items:
       href: local-emulator-export-ssl-certificates.md
     - name: Расширение Visual Studio Code
       href: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb
-  - name: Настройка производительности
-    items:
-    - name: Советы по повышению производительности при использовании пакета SDK для .NET
-      href: performance-tips.md
-    - name: Советы по повышению производительности при использовании пакета SDK для Java
-      href: performance-tips-java.md
-    - name: Советы по повышению производительности при использовании пакета SDK для Async Java
-      href: performance-tips-async-java.md
-    - name: Тест производительности — пример приложения
-      href: performance-testing.md
+  - name: Настройка конвейера VSTS CI/CD
+    href: tutorial-setup-ci-cd.md
   - name: Рекомендации
     items:
-    - name: Данные документов модели
-      href: modeling-data.md
+    - name: Советы по улучшению производительности
+      items:
+      - name: Советы по повышению производительности при использовании пакета SDK для .NET
+        href: performance-tips.md
+      - name: Советы по повышению производительности при использовании пакета SDK для Java
+        href: performance-tips-java.md
+      - name: Советы по повышению производительности при использовании пакета SDK для Async Java
+        href: performance-tips-async-java.md
+      - name: Тест производительности — пример приложения
+        href: performance-testing.md
+    - name: Экономичные операции чтения и записи
+      href: key-value-store-cost.md
     - name: Секционирование данных SQL
       href: sql-api-partition-data.md
     - name: Секционирование данных графов
       href: graph-partitioning.md
-  - name: Аналитика больших данных
-    items:
-    - name: Лямбда-архитектура
-      href: lambda-architecture.md
-    - name: Соединитель Spark
-      href: spark-connector.md
-    - name: Spark, Kafka и Azure Cosmos DB
-      href: https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json
-    - name: Канал изменений для решения для электронной коммерции
-      href: changefeed-ecommerce-solution.md
   - name: Интеграция с другими службами Azure
     items:
+    - name: Канал изменений для решения для электронной коммерции
+      href: changefeed-ecommerce-solution.md
     - name: Служба приложений Azure
       href: create-website.md
     - name: Индексатор Поиска Azure
@@ -424,22 +422,24 @@ items:
       href: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md
     - name: Использование начального приложения Spring Boot
       href: https://docs.microsoft.com/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?toc=/azure/cosmos-db/toc.json
-  - name: Визуализируйте данные
-    items:
-    - name: Визуализация с помощью соединителя Power BI
+    - name: Лямбда-архитектура
+      href: lambda-architecture.md
+    - name: Azure Databricks (соединитель Spark)
+      href: spark-connector.md
+    - name: Spark и Kafka
+      href: https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json
+    - name: Соединитель Power BI
       href: powerbi-visualize.md
-    - name: Визуализация с помощью драйвера ODBC
+    - name: Драйвер ODBC
       href: odbc-driver.md
-  - name: Архивация и восстановление
-    href: online-backup-and-restore.md
-  - name: высокую доступность;
-    href: regional-failover.md
-  - name: Хранимые процедуры, триггеры и определяемые пользователем функции
-    href: programming.md
-  - name: Общие сведения о библиотеке массового исполнителя
-    href: bulk-executor-overview.md
-  - name: Экономичные операции чтения и записи
-    href: key-value-store-cost.md
+  - name: Библиотека массового исполнителя
+    items:
+    - name: Общие сведения о библиотеке массового исполнителя
+      href: bulk-executor-overview.md
+    - name: Массовый исполнитель — библиотека .NET
+      href: bulk-executor-dot-net.md
+    - name: Массовый исполнитель — библиотека Java
+      href: bulk-executor-java.md
 - name: Ресурсы
   items:
   - name: Краткий справочник запросов
@@ -463,9 +463,9 @@ items:
     href: http://research.microsoft.com/apps/pubs/default.aspx?id=206913
   - name: Приложения социальных сетей
     href: social-media-apps.md
-ms.openlocfilehash: 8837d9bc6cf492a146d96d917d9157e51bffa0f5
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: afa2ccd0998ba78aa0f9e75bb87691ead8b96697
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43695988"
+ms.locfileid: "43783262"
