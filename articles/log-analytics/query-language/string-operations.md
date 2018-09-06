@@ -40,7 +40,7 @@ ms.locfileid: "40190985"
 print "this is a 'string' literal in double \" quotes"
 ```
 
-Чтобы "\\" не действовала как escape-символ, добавьте "@" как префикс в строке:
+Чтобы "\\" не действовала как escape-символ, добавьте \"\@\" как префикс в строке:
 
 ```OQL
 print @"C:\backslash\not\escaped\with @ prefix"
