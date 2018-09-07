@@ -1,41 +1,50 @@
+items:
 - name: Документация по службам Azure Cognitive Services
   href: index.yml
 - name: Обзор
-  expanded: true
   items:
-    - name: Что такое Cognitive Services?
-      href: Welcome.md
+  - name: Что такое Cognitive Services?
+    href: Welcome.md
+  - name: Поддержка языков
+    href: language-support.md
+  expanded: true
 - name: Быстрое начало работы
   items:
-    - name: Создание учетной записи
-      href: cognitive-services-apis-create-account.md
-    - name: Создание классификатора изображений
-      href: ./custom-vision-service/getting-started-build-a-classifier.md
-    - name: Создание приложения для системы домашней автоматики
-      href: ./luis/luis-get-started-create-app.md
-    - name: Создание приложения .NET для текстовой аналитики
-      href: ./text-analytics/quickstarts/csharp.md
+  - name: Создание учетной записи
+    href: cognitive-services-apis-create-account.md
+  - name: Создание классификатора изображений
+    href: ./custom-vision-service/getting-started-build-a-classifier.md
+  - name: Создание приложения для системы домашней автоматики
+    href: ./luis/luis-get-started-create-app.md
+  - name: Создание приложения .NET для текстовой аналитики
+    href: ./text-analytics/quickstarts/csharp.md
 - name: Учебники
   items:
-    - name: Веб-страница для пользовательского поиска
-      href: ./bing-custom-search/tutorials/custom-search-web-page.md
-    - name: Приложение Language Understanding
-      href: ./luis/luis-nodejs-tutorial-build-bot-framework-sample.md
-    - name: Повышение точности намерений для команд
-      href: ./luis/luis-tutorial-batch-testing.md
+  - name: Веб-страница для пользовательского поиска
+    href: ./bing-custom-search/tutorials/custom-search-web-page.md
+  - name: Приложение службы "Распознавание речи"
+    href: ./luis/luis-nodejs-tutorial-build-bot-framework-sample.md
+  - name: Повышение точности намерений для команд
+    href: ./luis/luis-tutorial-batch-testing.md
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=cognitive-services'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=cognitive-services'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Правила поведения
-      href: 'http://go.microsoft.com/fwlink/?LinkId=698895'
-    - name: База знаний
-      href: 'https://cognitive.uservoice.com/knowledgebase'
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=cognitive-services
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/cognitive-services/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=cognitive-services
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=cognitive-services
+  - name: Правила поведения
+    href: http://go.microsoft.com/fwlink/?LinkId=698895
+  - name: База знаний
+    href: https://cognitive.uservoice.com/knowledgebase
+ms.openlocfilehash: 8bd7984fd713a2acbb1ca2cc66e3d64bd49ef5a4
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44023831"

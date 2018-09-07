@@ -49,7 +49,6 @@
 ### [Сброс паролей пользователей](fundamentals/active-directory-users-reset-password-azure-portal.md)
 ### [Совместное использование учетных записей](active-directory-sharing-accounts.md)
 ### [Назначение пользователям ролей администратора](fundamentals/active-directory-users-assign-role-azure-portal.md)
-### [Восстановление удаленного пользователя](fundamentals/active-directory-users-restore.md)
 ### [Добавление гостевых пользователей из другого каталога (B2B)](b2b/what-is-b2b.md)
 #### [Добавление пользователей B2B администраторами](b2b/add-users-administrator.md)
 #### [Добавление пользователей B2B информационными работниками](b2b/add-users-information-worker.md)
@@ -163,7 +162,7 @@
 ##### [Автоматическая установка](manage-apps/application-proxy-register-connector-powershell.md)
 ##### [Пользовательская домашняя страница](manage-apps/application-proxy-configure-custom-home-page.md)
 ##### [Преобразование встроенных ссылок](manage-apps/application-proxy-configure-hard-coded-link-translation.md)
-##### [Подстановочные знаки](active-directory-application-proxy-wildcard.md)
+##### [Подстановочные знаки](manage-apps/application-proxy-wildcard.md)
 ##### [Удаление персональных данных](manage-apps/application-proxy-remove-personal-data.md)
 
 
@@ -172,7 +171,7 @@
 ##### [SharePoint](manage-apps/application-proxy-integrate-with-sharepoint-server.md)
 ##### [Microsoft Teams](manage-apps/application-proxy-integrate-with-teams.md)
 ##### [Tableau](manage-apps/application-proxy-integrate-with-tableau.md)
-##### [Qlik](active-directory-application-proxy-qlik.md)
+##### [Qlik](manage-apps/application-proxy-qlik.md)
 #### [PowerShell](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) 
 
 #### [Устранение неполадок](manage-apps/application-proxy-troubleshoot.md)
