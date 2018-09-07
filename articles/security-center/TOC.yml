@@ -34,7 +34,9 @@ items:
   items:
   - name: Переход к расширенным функциям безопасности
     href: security-center-onboarding.md
-  - name: Настройка политики безопасности
+  - name: Установка политик безопасности
+    href: security-center-azure-policy.md
+  - name: Параметры политики безопасности
     href: security-center-policies-overview.md
     items:
     - name: Сбор данных
@@ -47,8 +49,6 @@ items:
       href: security-center-pricing.md
     - name: Конфигурации системы безопасности
       href: security-center-customize-os-security-config.md
-    - name: Политики безопасности на основе политики Azure
-      href: security-center-azure-policy.md
     - name: Видимость в пределах клиента
       href: security-center-management-groups.md
   - name: Реализация рекомендаций по вопросам безопасности
@@ -145,7 +145,7 @@ items:
       href: security-center-custom-alert.md
     - name: Проверка оповещений
       href: security-center-alert-validation.md
-    - name: Оценка достоверности оповещения
+    - name: Оценка надежности предупреждения
       href: security-center-confidence-score.md
     - name: Карта анализа угроз
       href: security-center-threat-intel.md
@@ -207,9 +207,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=security-center
   - name: Доступ по регионам
     href: https://azure.microsoft.com/regions/services/
-ms.openlocfilehash: 62f713d5e0412eef2cb4dbb176e355371cbc924a
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: dc9c41fa829e26e4f77a9ef8a2baad423f02ffca
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43126408"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44026366"

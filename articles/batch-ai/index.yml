@@ -1,0 +1,67 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 0443553b72d414695ff96a4aeb2a9dd21531f1da
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44058051"
+documentType: LandingData
+title: Документация по Azure Batch AI (предварительная версия)
+metadata:
+  title: Документация по Azure Batch AI (предварительная версия)
+  meta.description: Azure Batch AI is a managed service to help data scientists and AI researchers train and test machine learning and AI models at scale in Azure - without having to manage complex infrastructure. Learn how to use Batch AI with our quickstarts, tutorials, and samples.
+  services: batch-ai
+  author: dlepow
+  manager: jeconnock
+  layout: LandingPage
+  ms.service: batch-ai
+  ms.topic: landing-page
+  ms.date: 08/16/2018
+  ms.author: danlep
+abstract:
+  description: Azure Batch AI — это управляемая служба, с помощью которой специалисты по обработке и анализу данных, а также исследователи искусственного интеллекта (ИИ) могут обучать и тестировать модели машинного обучения и ИИ в нужном масштабе в Azure без необходимости управлять всей инфраструктурой. Узнайте, как использовать службу Batch AI, изучив краткие инструкции, примеры и руководства.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как создать свой первый кластер Batch AI.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_cligeneric.svg
+      text: Инфраструктура CLI Azure
+      href: quickstart-create-cluster-cli.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_portal.svg
+      text: Портал Azure
+      href: quickstart-create-cluster-portal.md
+  - type: paragraph
+    text: Узнайте, как обучить первую модель глубокого обучения.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_cligeneric.svg
+      text: Инфраструктура CLI Azure
+      href: quickstart-tensorflow-training-cli.md
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как обучить модель с помощью Batch AI и различных платформ.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="tutorial-horovod-tensorflow.md">Распределенное обучение с использованием Horovod</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Командная строка
+      html: <p><a href="https://docs.microsoft.com/en-us/cli/azure/batchai?view=azure-cli-latest">интерфейс командной строки Azure</a></p>
+    - title: Языки
+      html: <p><a href="https://docs.microsoft.com/en-us/dotnet/api/overview/azure/batchai?view=azure-dotnet">.NET</a></p><p><a href="https://docs.microsoft.com/en-us/java/api/overview/azure/batchai?view=azure-java-stable">Java</a></p><p><a href="https://docs.microsoft.com/en-us/javascript/api/overview/azure/batchai?view=azure-node-latest">Node.js</a></p><p><a href="https://docs.microsoft.com/en-us/python/api/overview/azure/batchai?view=azure-python">Python</a></p>
+    - title: REST
+      html: <p><a href="https://docs.microsoft.com/en-us/rest/api/batchai/">справочник по API REST</a></p>

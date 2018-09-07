@@ -9,15 +9,27 @@ items:
     href: sql-database-paas-vs-sql-server-iaas.md
 - name: Быстрое начало работы
   items:
-  - name: Создание базы данных с помощью портала
-    href: sql-database-get-started-portal.md
-  - name: Создание базы данных с помощью Azure CLI
-    href: sql-database-get-started-cli.md
-  - name: Создание базы данных с помощью Azure PowerShell
-    href: sql-database-get-started-powershell.md
-  - name: Создание управляемого экземпляра
-    href: sql-database-managed-instance-get-started.md
-  - name: Подключение и запросы
+  - name: Создание
+    items:
+    - name: Отдельная база данных
+      href: sql-database-get-started-portal.md
+    - name: Управляемый экземпляр
+      href: sql-database-managed-instance-get-started.md
+  - name: Настройка
+    items:
+    - name: Правило брандмауэра для логического сервера
+      href: sql-database-get-started-portal-firewall.md
+    - name: Подключение клиентской виртуальной машины к Управляемому экземпляру
+      href: sql-database-managed-instance-configure-vm.md
+    - name: Подключение "точка — сеть" к Управляемому экземпляру
+      href: sql-database-managed-instance-configure-p2s.md
+  - name: Загрузка данных
+    items:
+    - name: Импорт BACPAC-файла в отдельную базу данных
+      href: sql-database-import.md
+    - name: Восстановление резервной копии базы данных в Управляемый экземпляр
+      href: sql-database-managed-instance-get-started-restore.md
+  - name: Запрос
     href: sql-database-connect-query.md
     items:
     - name: SSMS
@@ -59,13 +71,9 @@ items:
     href: sql-database-security-tutorial.md
   - name: 5. Реализация географически распределенной базы данных
     href: sql-database-implement-geo-distributed-database.md
-  - name: 6. Создание управляемого экземпляра
-    href: sql-database-managed-instance-create-tutorial-portal.md
-  - name: 7. Восстановление резервной копии в управляемый экземпляр
-    href: sql-database-managed-instance-restore-from-backup-tutorial.md
-  - name: 8. Перенос в управляемый экземпляр с помощью DMS
+  - name: 6. Миграция в Управляемый экземпляр с помощью DMS
     href: ../dms/tutorial-sql-server-to-managed-instance.md
-  - name: 9. Настройка синхронизации данных SQL Azure
+  - name: 7. Настройка синхронизации данных SQL Azure
     href: sql-database-get-started-sql-data-sync.md
 - name: Примеры
   items:
@@ -606,9 +614,9 @@ items:
     href: /azure/architecture/
   - name: Истории клиентов
     href: http://customers.microsoft.com/en-us/search?sq=%22Azure%20SQL%20Database%22&ff=&p=0&so=story_publish_date%20desc
-ms.openlocfilehash: 1cd65f1f3ee3907324bdb17be61dcfb5d0a747f1
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: e44c2d461f35098e20e50c776ca37b932566c4a0
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43245917"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44050485"
