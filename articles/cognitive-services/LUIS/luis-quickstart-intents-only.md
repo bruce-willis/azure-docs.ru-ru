@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 08/02/2018
 ms.author: diberry
-ms.openlocfilehash: de295a93d395cee4c4dfbea4f2e7f7338036feb8
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 3f23ade2b0256c72c344e2a619227a79e3c79a47
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39494379"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44160121"
 ---
 # <a name="tutorial-1-build-app-with-custom-domain"></a>Руководство: 1. Создание приложения с личным доменом
 В этом руководстве мы создаем приложение, которое демонстрирует, как использовать **намерения** для определения _намерений_ пользователей на основе фраз (текста), которые они отправляют в приложение. В итоге вы получите конечную точку LUIS, работающую в облаке.
@@ -32,7 +32,7 @@ ms.locfileid: "39494379"
 > * Добавление примера фраз в намерение ApplyForJob 
 > * Обучение, публикация и повторный запрос конечной точки 
 
-[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="purpose-of-the-app"></a>Назначение приложения
 Это приложение имеет несколько намерений. Первое намерение, **`GetJobInformation`**, определяет, когда пользователь хочет получить сведения о вакансиях в компании. Второе намерение, **`None`**, определяет все остальные типы фраз. Далее в кратком руководстве будет добавлено третье намерение — `ApplyForJob`. 
@@ -85,15 +85,15 @@ ms.locfileid: "39494379"
 
 ## <a name="train-and-publish-the-app"></a>Обучение и публикация приложения
 
-[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
+[!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="publish-app-to-endpoint"></a>Публикация приложения в конечной точке
 
-[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)] 
+[!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)] 
 
 ## <a name="query-endpoint-for-getjobinformation-intent"></a>Запрос к конечной точке для намерения GetJobInformation
 
-1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
+1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 2. Перейдите в конец URL-адреса и введите `I'm looking for a job with Natual Language Processing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает с фразами из примера в шаге 4, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `GetJobInformation` как самое подходящее. 
 
@@ -147,7 +147,7 @@ ms.locfileid: "39494379"
 
 ## <a name="query-endpoint-for-applyforjob-intent"></a>Запрос к конечной точке для намерения ApplyForJob
 
-1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
+1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 2. В новом окне браузера введите `Can I submit my resume for job 235986` в конце URL-адреса. 
 
@@ -186,7 +186,7 @@ ms.locfileid: "39494379"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+[!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
