@@ -2,11 +2,15 @@
 ## [Обзор](azure-dev-spaces.md)
 
 ## Быстрое начало работы
+### [Java (VS Code и CLI)](quickstart-java.md)
 ### [.NET Core (Visual Studio Code и CLI)](quickstart-netcore.md)
 ### [.NET Core (Visual Studio 2017)](quickstart-netcore-visualstudio.md)
 ### [Node.js (Visual Studio Code и CLI)](quickstart-nodejs.md)
 
 ## Учебники
+### Java (VS Code и CLI)
+#### [1. Начало работы](get-started-java.md)
+#### [2. Коллективная разработка](team-development-java.md)
 ### .NET Core (VS Code и CLI)
 #### [1. Начало работы](get-started-netcore.md)
 #### [2. Коллективная разработка](team-development-netcore.md)

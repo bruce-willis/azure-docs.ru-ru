@@ -16,14 +16,21 @@
 ### [Сетевая архитектура](hana-network-architecture.md)
 ### [Архитектура хранилища](hana-storage-architecture.md)
 ### [Поддерживаемые сценарии HLI](hana-supported-scenario.md)
-## [Инфраструктура и подключение](hana-overview-infrastructure-connectivity.md)
-## [Установка SAP HANA](hana-installation.md)
+## Инфраструктура и возможности подключения
+### [Развертывание крупных экземпляров HANA (HLI)](hana-overview-infrastructure-connectivity.md)
+### [Подключение виртуальных машин Azure к крупным экземплярам HANA](hana-connect-azure-vm-large-instances.md)
+### [Подключение виртуальной сети к каналу ExpressRoute крупных экземпляров HANA](hana-connect-vnet-express-route.md)
+### [Дополнительные требования к сети](hana-additional-network-requirements.md)
+## Установка SAP HANA
+### [Проверка конфигурации](hana-installation.md)
+### [Пример установки HANA](hana-example-installation.md)
 ## [Высокий уровень доступности и аварийное восстановление](hana-overview-high-availability-disaster-recovery.md)
 ## [Устранение неполадок и мониторинг](troubleshooting-monitoring.md)
 ## Практическое руководство
 ### [Организация высокой доступности с помощью STONITH](ha-setup-with-stonith.md)
 ### [Резервное копирование ОС для номеров SKU типа II](os-backup-type-ii-skus.md)
 ### [Обновление ОС для крупных экземпляров HANA](os-upgrade-hana-large-instance.md)
+### [Настройка сервера SMT для SUSE Linux](hana-setup-smt.md)
 # SAP HANA на виртуальных машинах Azure
 ## [Установка SAP HANA с одним экземпляром](hana-get-started.md)
 ## [Руководство по развертыванию S/4 HANA или BW/4 HANA SAP CAL](cal-s4h.md)
