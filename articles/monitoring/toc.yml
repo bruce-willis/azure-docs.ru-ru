@@ -1,116 +1,123 @@
+items:
 - name: Документация по мониторингу в Azure
   href: index.md
 - name: Обзор
   items:
-    - name: Мониторинг в Azure
-      href: monitoring-overview.md
+  - name: Мониторинг в Azure
+    href: monitoring-overview.md
 - name: Общие службы
   items:
-    - name: Оповещение
-      items:
-        - name: Оповещения Azure
-          href: ../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Группы действий
-          href: ../monitoring-and-diagnostics/monitoring-action-groups.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Импорт оповещений Operations Manager
-          href: ../log-analytics/log-analytics-solution-alert-management.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Оповещение
+    items:
+    - name: Оповещения Azure
+      href: ../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Группы действий
+      href: ../monitoring-and-diagnostics/monitoring-action-groups.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Импорт оповещений Operations Manager
+      href: ../log-analytics/log-analytics-solution-alert-management.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Autoscale
+    items:
     - name: Autoscale
-      items:
-        - name: Autoscale
-          href: ../monitoring-and-diagnostics/monitoring-overview-autoscale.md?toc=%2fazure%2fmonitoring%2ftoc.json
+      href: ../monitoring-and-diagnostics/monitoring-overview-autoscale.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Метрики
+    items:
     - name: Метрики
-      items:
-        - name: Метрики
-          href: ../monitoring-and-diagnostics/monitoring-overview-metrics.md?toc=%2fazure%2fmonitoring%2ftoc.json
-    - name: Журналы
-      items:
-        - name: Журналы действий
-          href: ../monitoring-and-diagnostics/monitoring-overview-activity-logs.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Журналы диагностики
-          href: ../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Сбор журналов в подписках Azure
-          href: ../log-analytics/log-analytics-activity-logs-subscriptions.md?toc=%2fazure%2fmonitoring%2ftoc.json
+      href: ../monitoring-and-diagnostics/monitoring-overview-metrics.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Журналы
+    items:
+    - name: Журналы действий
+      href: ../monitoring-and-diagnostics/monitoring-overview-activity-logs.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Журналы диагностики
+      href: ../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Сбор журналов в подписках Azure
+      href: ../log-analytics/log-analytics-activity-logs-subscriptions.md?toc=%2fazure%2fmonitoring%2ftoc.json
 - name: Данные мониторинга
   items:
-    - name: Типы данных и средства анализа
-      href: monitoring-data-collection.md
-    - name: Источники данных мониторинга Azure
-      href: monitoring-data-sources.md
+  - name: Типы данных и средства анализа
+    href: monitoring-data-collection.md
+  - name: Источники данных мониторинга Azure
+    href: monitoring-data-sources.md
 - name: Мониторинг ресурсов
   items:
-    - name: ПРИЛОЖЕНИЯ
+  - name: ПРИЛОЖЕНИЯ
+    items:
+    - name: Application Insights
+      href: ../application-insights/app-insights-overview.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Соединитель Application Insights
+      href: ../log-analytics/log-analytics-app-insights-connector.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: анализ хранилища ключей.
+      href: ../log-analytics/log-analytics-azure-key-vault.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Анализ Service Fabric
+      href: ../service-fabric/service-fabric-diagnostics-oms-setup.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Аналитика веб-приложений Azure
+      href: ../log-analytics/log-analytics-azure-web-apps-analytics.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Контейнеры
+    items:
+    - name: Обзор мониторинга контейнеров
+      href: monitoring-container-overview.md
+    - name: Работоспособность контейнера AKS
+      href: monitoring-container-health.md
+    - name: Мониторинг контейнеров Docker и Windows
+      href: ../log-analytics/log-analytics-containers.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Мониторинг приложений Docker
+      href: ../application-insights/app-insights-docker.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Базы данных
+    items:
+    - name: Azure SQL
+      href: ../log-analytics/log-analytics-azure-sql.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Виртуальные машины
+    items:
+    - name: Работоспособность агента
+      href: ../monitoring/monitoring-solution-agenthealth.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Аналитика в VMWare
+      href: ../log-analytics/log-analytics-vmware.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Схема услуги
       items:
-        - name: Application Insights
-          href: ../application-insights/app-insights-overview.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Соединитель Application Insights
-          href: ../log-analytics/log-analytics-app-insights-connector.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: анализ хранилища ключей.
-          href: ../log-analytics/log-analytics-azure-key-vault.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Анализ Service Fabric
-          href: ../log-analytics/log-analytics-service-fabric.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Аналитика веб-приложений Azure
-          href: ../log-analytics/log-analytics-azure-web-apps-analytics.md?toc=%2fazure%2fmonitoring%2ftoc.json
-    - name: Контейнеры
+      - name: Использование
+        href: monitoring-service-map.md
+      - name: Настройка
+        href: monitoring-service-map-configure.md
+      - name: Интеграция с Operations Manager
+        href: monitoring-service-map-scom.md
+  - name: 'Другие ресурсы:'
+    items:
+    - name: Оценка работоспособности AD
+      href: ../log-analytics/log-analytics-ad-assessment.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Состояние репликации AD
+      href: ../log-analytics/log-analytics-ad-replication-status.md?toc=%2fazure%2fmonitoring%2ftoc.json
+    - name: Office 365
+      href: ../monitoring/monitoring-solution-office-365.md
+    - name: Surface Hub
+      href: ../log-analytics/log-analytics-surface-hubs.md?toc=%2fazure%2fmonitoring%2ftoc.json
+  - name: Решения для управления
+    items:
+    - name: Использование
       items:
-        - name: Обзор мониторинга контейнеров
-          href: monitoring-container-overview.md
-        - name: Работоспособность контейнера AKS
-          href: monitoring-container-health.md
-        - name: Мониторинг контейнеров Docker и Windows
-          href: ../log-analytics/log-analytics-containers.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Мониторинг приложений Docker
-          href: ../application-insights/app-insights-docker.md?toc=%2fazure%2fmonitoring%2ftoc.json
-    - name: Базы данных
+      - name: Установка и использование решений
+        href: monitoring-solutions.md
+      - name: Инвентаризация решений
+        href: monitoring-solutions-inventory.md
+      - name: Целевые решения
+        href: monitoring-solution-targeting.md
+    - name: Создание
       items:
-        - name: Azure SQL
-          href: ../log-analytics/log-analytics-azure-sql.md?toc=%2fazure%2fmonitoring%2ftoc.json
-    - name: Виртуальные машины
-      items:
-        - name: Работоспособность агента
-          href: ../monitoring/monitoring-solution-agenthealth.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Аналитика в VMWare
-          href: ../log-analytics/log-analytics-vmware.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Схема услуги
-          items:
-            - name: Использование
-              href: monitoring-service-map.md
-            - name: Настройка
-              href: monitoring-service-map-configure.md
-            - name: Интеграция с Operations Manager
-              href: monitoring-service-map-scom.md
-    - name: 'Другие ресурсы:'
-      items:
-        - name: Оценка работоспособности AD
-          href: ../log-analytics/log-analytics-ad-assessment.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Состояние репликации AD
-          href: ../log-analytics/log-analytics-ad-replication-status.md?toc=%2fazure%2fmonitoring%2ftoc.json
-        - name: Office 365
-          href: ../monitoring/monitoring-solution-office-365.md
-        - name: Surface Hub
-          href: ../log-analytics/log-analytics-surface-hubs.md?toc=%2fazure%2fmonitoring%2ftoc.json
-    - name: Решения для управления
-      items:
-        - name: Использование
-          items:
-            - name: Установка и использование решений
-              href: monitoring-solutions.md
-            - name: Инвентаризация решений
-              href: monitoring-solutions-inventory.md
-            - name: Целевые решения
-              href: monitoring-solution-targeting.md
-        - name: Создание
-          items:
-            - name: Проектирование и сборка
-              href: monitoring-solutions-creating.md
-            - name: Файл решения
-              href: monitoring-solutions-solution-file.md
-            - name: Ресурсы службы автоматизации
-              href: monitoring-solutions-resources-automation.md
-            - name: Поиск по журналам и оповещения
-              href: monitoring-solutions-resources-searches-alerts.md
-            - name: Views
-              href: monitoring-solutions-resources-views.md
-            - name: Рекомендации
-              href: monitoring-solutions-best-practices.md
-            - name: Сбор данных мониторинга из модуля runbook
-              href: monitoring-runbook-datacollect.md
+      - name: Проектирование и сборка
+        href: monitoring-solutions-creating.md
+      - name: Файл решения
+        href: monitoring-solutions-solution-file.md
+      - name: Ресурсы службы автоматизации
+        href: monitoring-solutions-resources-automation.md
+      - name: Поиск по журналам и оповещения
+        href: monitoring-solutions-resources-searches-alerts.md
+      - name: Views
+        href: monitoring-solutions-resources-views.md
+      - name: Рекомендации
+        href: monitoring-solutions-best-practices.md
+      - name: Сбор данных мониторинга из модуля runbook
+        href: monitoring-runbook-datacollect.md
+ms.openlocfilehash: 190062c30d87628e9aba42c616815313c45b8623
+ms.sourcegitcommit: 465ae78cc22eeafb5dfafe4da4b8b2138daf5082
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44324705"

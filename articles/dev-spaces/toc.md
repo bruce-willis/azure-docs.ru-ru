@@ -1,5 +1,5 @@
 # Рабочие среды Azure для разработчиков
-## [Обзор](azure-dev-spaces.md)
+## [Обзор](index.yml)
 
 ## Быстрое начало работы
 ### [Java (VS Code и CLI)](quickstart-java.md)
