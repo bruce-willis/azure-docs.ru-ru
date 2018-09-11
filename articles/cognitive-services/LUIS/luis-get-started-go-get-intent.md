@@ -9,16 +9,16 @@ ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 08/23/2018
 ms.author: diberry
-ms.openlocfilehash: ca1cba4416f0855a5838e8f3024be87351978ac8
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: b00d815b712d98136b474d1e73afe7e35d1c7ef4
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "43771745"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44160172"
 ---
 # <a name="quickstart-call-a-luis-endpoint-using-go"></a>Краткое руководство по вызову конечной точки LUIS с помощью GO
 
-[!include[Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
+[!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -26,15 +26,15 @@ ms.locfileid: "43771745"
 * [Visual Studio Code](https://code.visualstudio.com/)
 * идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
 
-[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-luis-repo-note.md)]
+[!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-luis-repo-note.md)]
 
 ## <a name="get-luis-key"></a>Получение ключа LUIS
 
-[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
+[!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
 
 ## <a name="analyze-text-with-browser"></a>Анализ текста с помощью браузера
 
-[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
+[!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
 
 ## <a name="analyze-text-with-go"></a>Анализ текста с помощью GO
 
@@ -82,7 +82,7 @@ ms.locfileid: "43771745"
     
 ## <a name="luis-keys"></a>Ключи LUIS
 
-[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-key-usage-para.md)]
+[!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-key-usage-para.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Закройте файл Go и удалите его из файловой системы. 
