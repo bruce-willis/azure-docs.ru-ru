@@ -25,7 +25,9 @@
 ### [Проверка конфигурации](hana-installation.md)
 ### [Пример установки HANA](hana-example-installation.md)
 ## [Высокий уровень доступности и аварийное восстановление](hana-overview-high-availability-disaster-recovery.md)
-## [Устранение неполадок и мониторинг](troubleshooting-monitoring.md)
+## Устранение неполадок и мониторинг
+### [Мониторинг крупных экземпляров HANA](troubleshooting-monitoring.md)
+### [Мониторинг и устранение неполадок со стороны HANA](hana-monitor-troubleshoot.md)
 ## Практическое руководство
 ### [Организация высокой доступности с помощью STONITH](ha-setup-with-stonith.md)
 ### [Резервное копирование ОС для номеров SKU типа II](os-backup-type-ii-skus.md)

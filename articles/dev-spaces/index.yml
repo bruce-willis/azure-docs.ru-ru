@@ -1,0 +1,65 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: b275387e5d884f8ca6484690b7caf5a84759e9e2
+ms.sourcegitcommit: 465ae78cc22eeafb5dfafe4da4b8b2138daf5082
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44326046"
+documentType: LandingData
+title: Рабочие среды Azure для разработчиков
+metadata:
+  title: Azure Dev Spaces | Документация Майкрософт
+  meta.description: Rapid Kubernetes development with containers and microservices on Azure.
+  services: azure-dev-spaces
+  author: ghogen
+  manager: douge
+  ms.service: azure-dev-spaces
+  ms.topic: landing-page
+  ms.date: 08/23/2018
+  ms.author: ghogen
+sections:
+- title: Быстрый итеративный интерфейс разработки Kubernetes для команд
+  items:
+  - type: paragraph
+    text: С минимальной настройкой компьютера разработчика можно итеративно запускать и проводить отладку контейнера непосредственно из службы Azure Kubernetes (AKS).  Кроме того, вы можете работать совместно с другими участниками команды в общем кластере Kubernetes и выполнять сквозное тестирование вместе с другими компонентами без репликации или имитации зависимостей. Используя Azure Dev Spaces, вы можете разрабатывать приложения для Windows, Mac или Linux с помощью таких привычных средств, как Visual Studio и Visual Studio Code, или средства командной строки.
+  - type: markdown
+    text: >-
+      > [!IMPORTANT]
+
+      > Решение Azure Dev Spaces сейчас доступно в режиме предварительной версии и поддерживается только в кластерах AKS в следующих регионах: **восточная часть США**,**центральная часть США**, **западная часть США 2**, **Западная Европа**, **Центральная Канада** и **Восточная Канада**. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+- title: Начало работы в Azure Dev Spaces
+  items:
+  - type: paragraph
+    text: 'Чтобы приступить к работе, выберите руководство по определенному языку:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_java.svg
+      text: Java
+      href: quickstart-java.md
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_NETcore.svg
+      text: .NET и VS Code
+      href: quickstart-netcore.md
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_visual-studio.svg
+      text: .NET и Visual Studio
+      href: quickstart-netcore-visualstudio.md
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_nodejs.svg
+      text: Node.js
+      href: quickstart-nodejs.md
+- title: Как служба Azure Dev Spaces упрощает разработку Kubernetes
+  items:
+  - type: paragraph
+    text: Рабочая среда Azure Dev Spaces помогает командам разработчиков, использующим Kubernetes, стать более продуктивными следующим образом
+  - type: list
+    style: unordered
+    items:
+    - text: Минимизирует настройку локальной машины для каждого члена команды и работает непосредственно в AKS (управляемом кластере Kubernetes в Azure).
+    - text: Быстро выполняет итерацию и отладку кода непосредственно в Kubernetes с помощью Visual Studio 2017 или Visual Studio Code.
+    - text: Создает конфигурационные файлы Docker и Kubernetes, которые можно использовать от разработки до производства.
+    - text: Поделится управляемым кластером Kubernetes с командой для совместной работы. Изолированное написание кода и комплексное тестирование вместе с другими компонентами без репликации или имитации зависимостей.
+  - type: markdown
+    text: '![](media/azure-dev-spaces/vscode-overview.png)'

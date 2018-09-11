@@ -11,18 +11,19 @@ ms.devlang: devops
 ms.topic: landing-page
 ms.date: 06/19/2017
 ms.author: carolz
-ms.openlocfilehash: e34f6bc4de95c72083e67f9e8481a93ea3b6f239
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 9ae73659ee8fbf9099e7e8fab65e020a170126e3
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23069109"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304175"
 ---
 <div class="content">
    <h1>Docker в Azure</h1>   
     <div class="introHolder" style="justify-content: space-between;">
     <div class="intro" style="min-width: 200px">
-     <img src="media/Docker.png" align="right" alt="Docker Logo"> Docker — это популярная платформа управления контейнерами и работы с образами, которая позволяет быстро работать с контейнерами в Linux и Windows.  Узнайте, как использовать Docker в Azure с помощью наших материалов и кратких руководств.
+     <img src="media/Docker.png" align="right" alt="Docker Logo">
+Docker — это популярная платформа управления контейнерами и работы с образами, которая позволяет быстро работать с контейнерами в Linux и Windows.  Узнайте, как использовать Docker в Azure с помощью наших материалов и кратких руководств.
     </div>
     </div>
 <h2>5-минутные руководства по началу работы</h2>
@@ -32,7 +33,7 @@ ms.locfileid: "23069109"
 <p>Дополнительные сведения об использовании Docker в приложении и в качестве части конвейера CI/CD:</p>
 <ol>
   <li><a href="/azure/app-service-web/app-service-web-tutorial-docker-python-postgresql-app">Создание решений Python и PostgreSQL с помощью Docker</a></li>
-  <li><a href="/azure/container-service/container-service-docker-swarm-mode-setup-ci-cd-acs-engine">CI/CD с использованием Docker Swarm и Visual Studio Team Services</a></li>
+  <li><a href="/azure/container-service/container-service-docker-swarm-mode-setup-ci-cd-acs-engine">CI/CD с помощью Docker Swarm и Azure DevOps Services</a></li>
   <li><a href="/azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd">Интеграция Docker, Jenkins и виртуальных машин Linux</a></li>
 </ol>
 <h2>Ресурсы</h2>
