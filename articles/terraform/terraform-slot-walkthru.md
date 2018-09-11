@@ -1,18 +1,20 @@
 ---
 title: Слоты развертывания поставщика Terraform с Azure
 description: Руководство по использованию слотов развертывания поставщика Terraform с Azure
+services: terraform
+ms.service: terraform
 keywords: terraform, devops, virtual machine, Azure, deployment slots
 author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
+ms.topic: tutorial
 ms.date: 4/05/2018
-ms.topic: article
-ms.openlocfilehash: 3a018dbaf90801604b13efcf8bd7afb6dbc68659
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: bbd06ae8927e6c21607ac1c997f1e5cf37f092bf
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31416869"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43667242"
 ---
 # <a name="use-terraform-to-provision-infrastructure-with-azure-deployment-slots"></a>Использование Terraform для подготовки инфраструктуры со слотами развертывания Azure
 
@@ -20,7 +22,7 @@ ms.locfileid: "31416869"
 
 В этой статье показан пример использования слотов развертывания. Мы рассмотрим развертывание двух приложений через GitHub и Azure. Одно из приложений размещается в рабочем слоте, а второе — в промежуточном. (Названия "рабочий" и "промежуточный" произвольны и их можно изменить в зависимости от сценария.) После настройки слотов развертывания для переключения между двумя слотами можно использовать Terraform.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
@@ -217,7 +219,7 @@ ms.locfileid: "31416869"
 
 В предыдущих разделах вы настроили два слота (**slotAppService** и **slotAppServiceSlotOne**), чтобы выполнять развертывание из разных ветвей в GitHub. Чтобы проверить, что веб-приложения были успешно развернуты, их нужно предварительно просмотреть.
 
-Выполните следующие действия два раза. При первом выполнении на шаге 3 выберите **slotAppService**, а при втором выполнении — **slotAppServiceSlotOne**.
+Выполните следующие шаги дважды. При первом выполнении на шаге 3 выберите **slotAppService**, а при втором выполнении — **slotAppServiceSlotOne**.
 
 1. В главном меню на портале Azure выберите **Группы ресурсов**.
 

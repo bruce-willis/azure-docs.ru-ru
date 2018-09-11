@@ -1,20 +1,20 @@
 ---
 title: Создание кластера виртуальных машин с помощью Terraform и HCL
 description: Применение Terraform и настраиваемого языка шаблонов HCL для создания в Azure кластера виртуальных машин Linux с подсистемой балансировки нагрузки
+services: terraform
+ms.service: terraform
 keywords: terraform, devops, виртуальная машина, сеть, модули
 author: tomarcher
-manager: routlaw
-ms.service: virtual-machines-linux
-ms.custom: devops
-ms.topic: article
-ms.date: 11/13/2017
+manager: jeconnoc
 ms.author: tarcher
-ms.openlocfilehash: 2435d694e6a1671a234d02f90860e5cafe98c2df
-ms.sourcegitcommit: 659cc0ace5d3b996e7e8608cfa4991dcac3ea129
+ms.topic: tutorial
+ms.date: 11/13/2017
+ms.openlocfilehash: fffaf275a98791885b87ee8ffdc275e911b26341
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2017
-ms.locfileid: "24518806"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43667606"
 ---
 # <a name="create-a-vm-cluster-with-terraform-and-hcl"></a>Создание кластера виртуальных машин с помощью Terraform и HCL
 
@@ -220,7 +220,7 @@ ms.locfileid: "24518806"
 
 ## <a name="3-initialize-terraform"></a>3. Инициализация Terraform 
 
-Команда [terraform init](https://www.terraform.io/docs/commands/init.html) позволяет инициализировать каталог, содержащий файлы конфигурации Terraform, которые вы создали в предыдущих разделах. Команду `terraform init` нужно выполнять каждый раз после изменения конфигурации Terraform. 
+Команда [terraform init](https://www.terraform.io/docs/commands/init.html) позволяет инициализировать каталог, содержащий файлы конфигурации Terraform, которые вы создали в предыдущих разделах. Команду `terraform init` рекомендуется выполнять после каждого изменения конфигурации Terraform. 
 
 > [!TIP]
 > Команда `terraform init` является идемпотентной, то есть может выполняться несколько раз, возвращая одинаковые результаты. Таким образом, если в вашей среде применяются методы совместной работы и у вас есть основания полагать, что файлы конфигурации могли измениться, вызов команды `terraform init` перед выполнением или применением плана всегда будет полезным и безопасным.

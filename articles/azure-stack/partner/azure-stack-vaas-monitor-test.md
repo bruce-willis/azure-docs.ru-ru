@@ -1,6 +1,6 @@
 ---
 title: Мониторинг теста с помощью проверки как услуги Azure Stack | Документация Майкрософт
-description: Мониторинг теста на определение известных проблем с помощью проверки как услуги Azure Stack.
+description: Мониторинг теста с помощью проверки Azure Stack как услуги
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 07/24/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 0bc45ea23cfb3f9b8cf7b117b5c3427d9945878e
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 553d2a0e4bf6b23f5d8ab200f533d9245bf72d36
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234496"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43286590"
 ---
 # <a name="monitor-a-test-with-azure-stack-validation-as-a-service"></a>Мониторинг теста с помощью проверки как услуги Azure Stack
 
@@ -130,4 +130,4 @@ ms.locfileid: "40234496"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения см. в статье [Документация партнера по Azure Stack](https://docs.microsoft.com/azure/azure-stack/partner).
+- Дополнительные сведения о проверке как услуге Azure Stack см. в [этой статье](https://docs.microsoft.com/azure/azure-stack/partner).

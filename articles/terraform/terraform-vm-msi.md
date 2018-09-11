@@ -1,18 +1,20 @@
 ---
 title: Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением службы
 description: Используйте образ Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением службы и управлением удаленным состоянием, чтобы легко развернуть ресурсы в Azure.
+services: terraform
+ms.service: terraform
 keywords: terraform, devops, MSI, виртуальная машина, удаленное состояние, azure
-author: VaijanathB
-manager: rloutlaw
+author: tomarcher
+manager: jeconnoc
 ms.author: tarcher
+ms.topic: tutorial
 ms.date: 3/12/2018
-ms.topic: article
-ms.openlocfilehash: 5f0ee2904c1072a5ad8c5f7ae1c90e649cc4813c
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 0136966576e3fbb22855d74cc1866e48b4ac24c9
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31413802"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43669393"
 ---
 # <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-service-identity"></a>Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением службы
 
@@ -22,7 +24,7 @@ ms.locfileid: "31413802"
 
 Плата за программное обеспечение для образа виртуальной машины Terraform не взимается. Вы платите только за оборудование Azure в зависимости от размера виртуальной машины, которая подготавливается. Дополнительные сведения об оплате вычислительных ресурсов см. на [странице цен на виртуальные машины Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед созданием виртуальной машины Linux Terraform необходимо убедиться в наличии подписки Azure. Если у вас ее нет, [создайте бесплатную учетную запись в Azure](https://azure.microsoft.com/free/).  
 
 ## <a name="create-your-terraform-virtual-machine"></a>Создание виртуальной машины Terraform 

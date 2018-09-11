@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: fffffbf7ce654c263976378da01f032599145a94
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 4953cb0db428de19268cdd90661f7818b06b6945
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39591573"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43343868"
 ---
 # <a name="tutorial-enable-single-page-app-authentication-with-accounts-using-azure-active-directory-b2c"></a>Руководство. Включение в одностраничном приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C
 
@@ -24,24 +24,24 @@ ms.locfileid: "39591573"
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Зарегистрируйте пример одностраничного приложения в клиенте Azure AD B2C.
+> * Зарегистрируйте пример одностраничного приложения в каталоге Azure AD B2C.
 > * Создавайте политики для регистрации пользователей, входа в систему, изменения профилей и сброса паролей.
-> * Настройте пример приложения для использования клиента Azure AD B2C.
+> * Настройте пример приложения для использования каталога Azure AD B2C.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Создайте свой собственный [клиент Azure AD B2C](active-directory-b2c-get-started.md).
+* Создайте собственный [каталог Azure AD B2C](active-directory-b2c-get-started.md).
 * Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
 * Установите [пакет SDK для NET Core 2.0.0](https://www.microsoft.com/net/core) или более поздней версии.
 * Установите [Node.js](https://nodejs.org/en/download/)
 
 ## <a name="register-single-page-app"></a>Регистрация одностраничного приложения
 
-Приложения должны быть [зарегистрированы](../active-directory/develop/developer-glossary.md#application-registration) в клиенте, чтобы иметь возможность получать [токены доступа](../active-directory/develop/developer-glossary.md#access-token) от Azure Active Directory. При регистрации приложения создается [идентификатор](../active-directory/develop/developer-glossary.md#application-id-client-id) для приложения в клиенте. 
+Приложения должны быть [зарегистрированы](../active-directory/develop/developer-glossary.md#application-registration) в каталоге, чтобы иметь возможность получать [маркеры доступа](../active-directory/develop/developer-glossary.md#access-token) от Azure Active Directory. При регистрации приложения создается [идентификатор](../active-directory/develop/developer-glossary.md#application-id-client-id) для приложения в каталоге. 
 
-Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора каталога Azure AD B2C.
 
 [!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "39591573"
 
 2. В разделе параметров B2C щелкните **Приложения**, а затем — **Добавить**. 
 
-    Чтобы зарегистрировать пример веб-приложения в клиенте, используйте следующие параметры.
+    Чтобы зарегистрировать пример веб-приложения в каталоге, используйте следующие параметры:
     
     ![Добавление нового приложения](media/active-directory-b2c-tutorials-spa/spa-registration.png)
     
@@ -63,7 +63,7 @@ ms.locfileid: "39591573"
     
 3. Чтобы зарегистрировать приложение, щелкните **Создать**.
 
-Зарегистрированные приложения отобразятся в списке приложений для клиента Azure AD B2C. Выберите одностраничное приложение в списке. Откроется панель свойств зарегистрированного одностраничного приложения.
+Зарегистрированные приложения отобразятся в списке приложений для каталога Azure AD B2C. Выберите одностраничное приложение в списке. Откроется панель свойств зарегистрированного одностраничного приложения.
 
 ![Свойства одностраничного приложения](./media/active-directory-b2c-tutorials-spa/b2c-spa-properties.png)
 
@@ -127,25 +127,25 @@ ms.locfileid: "39591573"
 
 ## <a name="update-single-page-app-code"></a>Обновление одностраничного приложения
 
-После регистрации приложения и создания политик необходимо настроить приложение для использования клиента Azure AD B2C. С помощью этого руководства вы настроите пример одностраничного приложения JavaScript, который можно скачать из репозитория GitHub. 
+После регистрации приложения и создания политик необходимо настроить приложение для использования каталога Azure AD B2C. С помощью этого руководства вы настроите пример одностраничного приложения JavaScript, который можно скачать из репозитория GitHub. 
 
 [Загрузите ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) или клонируйте пример приложения с GitHub.
 
 ```
 git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
 ```
-В этом примере показано, как использовать Azure AD B2C в одностраничном приложении для регистрации и входа пользователя, а также вызова защищенного веб-API. Необходимо изменить приложение так, чтобы использовать регистрацию в клиенте и настроить созданные политики. 
+В этом примере показано, как использовать Azure AD B2C в одностраничном приложении для регистрации и входа пользователя, а также вызова защищенного веб-API. Необходимо изменить приложение так, чтобы использовать регистрацию в каталоге и настроить созданные политики. 
 
 Чтобы изменить параметры приложения:
 
 1. Откройте файл `index.html` в примере одностраничного приложения Node.js.
-2. Настройте пример, указав сведения о регистрации клиента Azure AD B2C. Измените следующие строки кода:
+2. Настройте пример, указав сведения о регистрации каталога Azure AD B2C. Измените следующие строки кода (не забудьте заменить значения именами используемого каталога и API):
 
     ```javascript
-    // The current application coordinates were pre-registered in a B2C tenant.
+    // The current application coordinates were pre-registered in a B2C directory.
     var applicationConfig = {
         clientID: '<Application ID for your SPA obtained from portal app registration>',
-        authority: "https://login.microsoftonline.com/tfp/<your-tenant-name>.onmicrosoft.com/B2C_1_SiUpIn",
+        authority: "https://fabrikamb2c.b2clogin.com/tfp/fabrikamb2c.onmicrosoft.com/B2C_1_SiUpIn",
         b2cScopes: ["https://fabrikamb2c.onmicrosoft.com/demoapi/demo.read"],
         webApi: 'https://fabrikamb2chello.azurewebsites.net/hello',
     };
@@ -185,20 +185,20 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     ![Рабочий процесс регистрации](media/active-directory-b2c-tutorials-desktop-app/sign-up-workflow.png)
 
-4. Щелкните **Создать**, чтобы создать локальную учетную запись в клиенте Azure AD B2C.
+4. Щелкните **Создать**, чтобы создать локальную учетную запись в каталоге Azure AD B2C.
 
 Теперь пользователь может использовать свой адрес электронной почты для входа в одностраничное приложение и работы с ним.
 
 > [!NOTE]
-> После входа в систему приложение выдаст ошибку, информирующую о недостаточных разрешениях. Эта ошибка возникает, потому что вы пытаетесь получить доступ к ресурсу из демонстрационного клиента. Так как маркер доступа действителен только для вашего клиента Azure AD, вызов API считается неавторизованным. Перейдите к следующему руководству, чтобы создать защищенный веб-API для своего клиента. 
+> После входа в систему приложение выдаст ошибку, информирующую о недостаточных разрешениях. Эта ошибка возникает, потому что вы пытаетесь получить доступ к ресурсу из демонстрационного каталога. Так как маркер доступа действителен только для вашего каталога Azure AD, вызов API считается неавторизованным. Перейдите к следующему руководству, чтобы создать защищенный веб-API для своего каталога. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете использовать ваш клиент Azure AD B2C при работе с другими руководствами по Azure AD B2C. [Удалите клиент Azure AD B2C](active-directory-b2c-faqs.md#how-do-i-delete-my-azure-ad-b2c-tenant), если он больше не нужен.
+Вы можете использовать свой каталог Azure AD B2C при работе с другими руководствами по Azure AD B2C. [Удалите каталог Azure AD B2C](active-directory-b2c-faqs.md#how-do-i-delete-my-azure-ad-b2c-tenant), если он больше не нужен.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как создать клиент Azure AD B2C, создать политики и обновить пример одностраничного приложения для использования клиента Azure AD B2C. Перейдите к следующему руководству, чтобы узнать, как зарегистрировать, настроить и вызвать защищенный веб-API из классического приложения.
+Из этого руководства вы узнали, как создать каталог Azure AD B2C, создать политики и обновить пример одностраничного приложения для использования каталога Azure AD B2C. Перейдите к следующему руководству, чтобы узнать, как зарегистрировать, настроить и вызвать защищенный веб-API из классического приложения.
 
 > [!div class="nextstepaction"]
 > 

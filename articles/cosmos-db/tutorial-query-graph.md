@@ -13,23 +13,23 @@ ms.topic: tutorial
 ms.date: 01/02/2018
 ms.author: lbosq
 ms.custom: mvc
-ms.openlocfilehash: ad38976f439c399d839d6c5ee9dcd6ade7726c71
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: e3ed90d0b706e742588a5a0966d9ac3bda44ecbd
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37081913"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43697448"
 ---
-# <a name="tutorial-query-azure-cosmos-db-graph-api-by-using-gremlin"></a>Руководство. Выполнение запросов к API Graph в Azure Cosmos DB Graph с использованием Gremlin
+# <a name="tutorial-query-azure-cosmos-db-gremlin-api-by-using-gremlin"></a>Руководство. Выполнение запросов к API Gremlin в Azure Cosmos DB с использованием Gremlin
 
-[API Graph](graph-introduction.md) базы данных Azure Cosmos DB позволяет выполнять запросы [Gremlin](https://github.com/tinkerpop/gremlin/wiki). В этой статье приведены примеры документов и запросов, которые помогут вам начать работу. Подробная справка по Gremlin содержится в [этой статье](gremlin-support.md).
+[API Gremlin](graph-introduction.md) базы данных Azure Cosmos DB позволяет выполнять запросы [Gremlin](https://github.com/tinkerpop/gremlin/wiki). В этой статье приведены примеры документов и запросов, которые помогут вам начать работу. Подробная справка по Gremlin содержится в [этой статье](gremlin-support.md).
 
 В этой статье рассматриваются следующие задачи: 
 
 > [!div class="checklist"]
 > * Выполнение запросов к данным с помощью Gremlin.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы такие запросы работали, у вас должна быть учетная запись базы данных Azure Cosmos DB и данные графа в контейнере. У вас их нет? Завершите [краткое руководство](create-graph-dotnet.md) или [руководство разработчика](tutorial-query-graph.md), чтобы создать учетную запись и заполнить базу данных. Вы можете выполнять следующие запросы с помощью [консоли Gremlin](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) или предпочитаемого драйвера Gremlin.
 

@@ -1,118 +1,81 @@
 ---
-title: Руководство по добавлению фраз в приложение LUIS с использованием PHP | Документация Майкрософт
-description: В этом руководстве вы узнаете, как вызвать приложение LUIS с помощью PHP.
+title: Краткое руководство. Изменение модели и обучение приложения LUIS с помощью PHP — Azure Cognitive Services | Документация Майкрософт
+description: Из этого краткого руководства по PHP вы узнаете, как добавить примеры высказываний в приложение Home Automation и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
-ms.topic: tutorial
-ms.date: 12/13/2017
-ms.author: v-geberr
-ms.openlocfilehash: 59150b7ed6782c28f243041be2ed6aa17e69cc01
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.topic: quickstart
+ms.date: 08/24/2018
+ms.author: diberry
+ms.openlocfilehash: ae2d3624cb3f8314a613af356730fb1d8b5d4b29
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36263786"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43771829"
 ---
-# <a name="tutorial-add-utterances-to-app-using-php"></a>Руководство по добавлению фраз в приложение с использованием PHP 
-В этом руководстве рассматривается, как написать программу, чтобы добавить фразу в намерение, используя программные интерфейсы (API) разработки на языке PHP.
+# <a name="quickstart-change-model-using-php"></a>Краткое руководство. Изменение модели с помощью PHP 
 
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Создание консольного проекта Visual Studio. 
-> * Добавление метода для вызова API LUIS, чтобы добавить фразу и обучить приложение.
-> * Добавление JSON-файла с примерами фраз для намерения "BookFlight".
-> * Запуск консоли и просмотр состояния обучения фразам.
+[!include[Quickstart introduction for change model](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
-Дополнительные сведения см. в разделах технической документации по API-интерфейсам [добавления примера фразы в намерение](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c08), [обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45) и [просмотра состояния обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c46).
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
-
-## <a name="prerequisites"></a>предварительным требованиям
-
+[!include[Quickstart prerequisites for changing model](../../../includes/cognitive-services-luis-qs-change-model-prereq.md)]
 * [**PHP**](http://php.net/) последней версии.
 * Убедитесь, что пакет OpenSSL доступен в качестве зависимости для PHP.  
-* **[Ключ разработки](luis-concept-keys.md#authoring-key)** LUIS. Его можно найти в разделе параметров учетной записи на веб-сайте [LUIS](luis-reference-regions.md).
-* [**Идентификатор существующего приложения LUIS**](./luis-get-started-create-app.md). Идентификатор приложения отображается на панели мониторинга приложения. Приложение LUIS с намерениями и сущностями, используемыми в файле `utterances.json`, должно существовать до выполнения кода в `add-utterances.php`. Код в этой статье не создает намерений и сущностей. Он только добавляет фразы для существующих намерений и сущностей. 
-* **Идентификатор версии** приложения, которое получает фразы. Идентификатор по умолчанию — 0.1.
-* Создайте файл проекта с именем `add-utterances.php` в VSCode.
 
-> [!NOTE] 
-> Полный файл `add-utterances.cs` и пример файла `utterances.json` доступны в [**репозитории GitHub** LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/authoring-api-samples/php/).
+[!include[Code is available in LUIS-Samples Github repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
 
+## <a name="example-utterances-json-file"></a>Файл JSON с примерами высказываний.
 
-## <a name="write-the-php-code"></a>Написание кода PHP
+[!include[Quickstart explanation of example utterance JSON file](../../../includes/cognitive-services-luis-qs-change-model-json-ex-utt.md)]
 
-Добавьте зависимости в файл.
+## <a name="create-quickstart-code"></a>Создание простого примера кода 
 
-   [!code-php[PHP and LUIS Dependencies](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=10-29 "PHP and LUIS Dependencies")]
+Добавьте зависимости в файл с именем `add-utterances.php`.
+
+   [!code-php[PHP and LUIS Dependencies](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=1-22 "PHP and LUIS Dependencies")]
 
 Добавьте запрос GET, получающий состояние обучения.
 
-   [!code-php[SendGet](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=31-50 "SendGet")]
+   [!code-php[SendGet](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=24-43 "SendGet")]
 
 Добавьте запрос POST, который создает фразы или запускает обучение. 
 
-   [!code-php[SendPost](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=52-72 "SendPost")]
+   [!code-php[SendPost](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=45-65 "SendPost")]
 
 Добавьте функцию `AddUtterances`.
 
-   [!code-php[AddUtterances method](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=74-79 "AddUtterances method")]
+   [!code-php[AddUtterances method](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=67-72 "AddUtterances method")]
 
 
 Добавьте функцию `Train`. 
 
-   [!code-php[Train](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=81-88 "Train")]
+   [!code-php[Train](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=74-81 "Train")]
 
 Добавьте функцию `Status`.
 
-   [!code-php[Status](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=90-94 "Status")]
+   [!code-php[Status](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=83-87 "Status")]
 
 Чтобы управлять аргументами командной строки, добавьте блок основного кода.
 
-   [!code-php[Main code](~/samples-luis/documentation-samples/authoring-api-samples/php/add-utterances.php?range=96-120 "Main code")]
+   [!code-php[Main code](~/samples-luis/documentation-samples/quickstarts/change-model/php/add-utterances.php?range=89-93 "Main code")]
 
-## <a name="specify-utterances-to-add"></a>Указание фраз, которые нужно добавить
-Создайте и измените файл `utterances.json`, указав в нем **массив фраз**, которые нужно добавить в приложение LUIS. Намерение и сущности **должны** уже быть добавлены в приложение LUIS.
-
-> [!NOTE]
-> Приложение LUIS с намерениями и сущностями, используемыми в файле `utterances.json`, должно существовать до выполнения кода в `add-utterances.php`. Код в этой статье не создает намерений и сущностей. Он только добавляет фразы для существующих намерений и сущностей.
-
-Поле `text` содержит текст фразы. Поле `intentName` должно соответствовать имени намерения в приложении LUIS. Поле `entityLabels` является обязательным. Если вы не хотите помечать сущности, укажите пустой список, как показано в следующем примере:
-
-Если список entityLabels не пуст, `startCharIndex` и `endCharIndex` должны пометить сущность, указанную в поле `entityName`. Оба индекса отсчитываются с нуля. Это означает, что 6 в примере ссылается на букву "S" в слове Seattle, а не на пробел перед заглавной буквой S.
-
-```json
-[
-    {
-        "text": "go to Seattle",
-        "intentName": "BookFlight",
-        "entityLabels": [
-            {
-                "entityName": "Location::LocationTo",
-                "startCharIndex": 6,
-                "endCharIndex": 12
-            }
-        ]
-    },
-    {
-        "text": "book a flight",
-        "intentName": "BookFlight",
-        "entityLabels": []
-    }
-]
-```
-
-## <a name="add-an-utterance-from-the-command-line"></a>Добавление фразы из командной строки
+## <a name="run-code"></a>Выполнение кода
 
 Запустите приложение из командной строки с помощью PHP.
 
-Если вызвать `add-utterances.php` только с utterance.json в качестве аргумента, новые фразы будут добавлены, но приложение LUIS не обучено на их основе.
-````
-> php add-utterances.php ./utterances.json
-````
+### <a name="add-an-utterance-from-the-command-line"></a>Добавление фразы из командной строки
+
+Запустите приложение из командной строки с помощью PHP.
+
+Вызвав `add-utterances.php`, можно добавить фразы, выполнить обучение и получить состояние обучения.
+
+```CMD
+> php add-utterances.php 
+```
 
 Следующий JSON возвращается в результате вызова API добавления фраз. Поле `response` имеет такой формат для добавленных фраз. Параметр `hasError` имеет значение false, что значит, фраза была добавлена.  
 
@@ -135,17 +98,8 @@ ms.locfileid: "36263786"
     ]
 ```
 
-## <a name="add-an-utterance-and-train-from-the-command-line"></a>Добавление фразы и запуск обучения из командной строки
-Вызовите `add-utterance.php` с аргументом `-train` для отправки запроса на обучение. 
-
-````
-> php add-utterances.php ./utterances.json -train
-````
-
-> [!NOTE]
-> Дублирующиеся фразы не добавляются повторно и не приводят к ошибке. `response` содержит идентификатор исходной фразы.
-
 Ниже показан результат успешного запроса на обучение.
+
 ```json
 {
     "request": null,
@@ -156,16 +110,8 @@ ms.locfileid: "36263786"
 }
 ```
 
-После того как запрос на обучение будет поставлен в очередь, завершение обучения может занять некоторое время.
 
-## <a name="get-training-status-from-the-command-line"></a>Получение состояния обучения из командной строки
-Вызовите приложение с аргументом `-status`, чтобы проверить состояние обучения и отобразить сведения о состоянии.
-
-````
-> php add-utterances.php -status
-````
-
-```
+```JSON
 Requested training status.
 [
    {
@@ -262,10 +208,9 @@ Requested training status.
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Завершив работу с руководством, удалите Visual Studio и консольное приложение, если они вам больше не нужны. 
+
+Когда вы закончите работу с этим руководством, удалите все созданные при работе с ним файлы. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
 > [Создание приложения LUIS программным способом](luis-tutorial-node-import-utterances-csv.md)
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website

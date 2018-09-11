@@ -5,16 +5,16 @@ services: iot-edge
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 08/22/2018
+ms.date: 08/30/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 7e02caf9706a5127d3729256fcc238f467eb2991
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: 2b393a5b60ba534fba8115ab3ef0f35a26ad3ed4
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43143506"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43300359"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по хранению данных в пограничной системе с помощью баз данных SQL Server
 
@@ -176,7 +176,11 @@ ms.locfileid: "43143506"
 
 1. В обозревателе кода Visual Studio откройте файл **deployment.template.json**. 
 2. Найдите раздел **moduleContent. $edgeAgent.properties.desired.modules**. Должно быть перечислено два модуля: **tempSensor**, создающий имитируемые данные, и модуль **sqlFunction**.
-3. Добавьте следующий код для объявления третьего модуля:
+3. Если вы используете контейнеры Windows, измените раздел **sqlFunction.settings.image**.
+    ```json
+    "image": "${MODULES.sqlFunction.windows-amd64}"
+    ```
+4. Добавьте приведенный ниже код для объявления третьего модуля. Добавьте запятую после раздела sqlFunction и вставьте следующий код:
 
    ```json
    "sql": {
@@ -191,16 +195,18 @@ ms.locfileid: "43143506"
    }
    ```
 
-4. В зависимости от операционной системы устройства IoT Edge обновите параметры **sql.settings** с помощью следующего кода:
+   Если не совсем понятно, как добавить элемент JSON, ниже приведен пример. ![Добавление контейнера SQL Server](./media/tutorial-store-data-sql-server/view_json_sql.png)
 
-   * Windows:
+5. В зависимости от типа контейнеров Docker на устройстве IoT Edge обновите параметры **sql.settings**, используя следующий код:
+
+   * Контейнеры Windows:
 
       ```json
       "image": "microsoft/mssql-server-windows-developer",
-      "createOptions": "{\"Env\": [\"ACCEPT_EULA=Y\",\"MSSQL_SA_PASSWORD=Strong!Passw0rd\"],\"HostConfig\": {\"Mounts\": [{\"Target\": \"C:\\\\mssql\",\"Source\": \"sqlVolume\",\"Type\": \"volume\"}],\"PortBindings\": {\"1433/tcp\": [{\"HostPort\": \"1401\"}]}}}"
+      "createOptions": "{\"Env\": [\"ACCEPT_EULA=Y\",\"SA_PASSWORD=Strong!Passw0rd\"],\"HostConfig\": {\"Mounts\": [{\"Target\": \"C:\\\\mssql\",\"Source\": \"sqlVolume\",\"Type\": \"volume\"}],\"PortBindings\": {\"1433/tcp\": [{\"HostPort\": \"1401\"}]}}}"
       ```
 
-   * Linux:
+   * Контейнеры Linux:
 
       ```json
       "image": "microsoft/mssql-server-linux:2017-latest",
@@ -210,28 +216,20 @@ ms.locfileid: "43143506"
    >[!Tip]
    >Каждый раз при создании контейнера SQL Server в рабочей среде нужно [изменять стандартный пароль системного администратора](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker#change-the-sa-password).
 
-5. Сохраните файл **deployment.template.json**. 
+6. Сохраните файл **deployment.template.json**.
 
 ## <a name="build-your-iot-edge-solution"></a>Сборка решения IoT Edge
 
 В предыдущих разделах было создано решение с одним модулем, а затем добавлено другое в шаблон манифеста развертывания. Теперь необходимо собрать решение, создать образы контейнеров для модулей и отправить образы в реестр контейнеров. 
 
-1. В файле deployment.template.json предоставьте среде выполнения IoT Edge учетные данные реестра, чтобы она могла получить доступ к образам модуля. Найдите раздел **moduleContent.$edgeAgent.properties.desired.runtime.settings**. 
-2. Вставьте следующий код JSON после **loggingOptions**:
+1. В ENV-файле предоставьте среде выполнения IoT Edge учетные данные реестра, чтобы она могла получить доступ к образам модулей. Найдите переменные **CONTAINER_REGISTRY_USERNAME** и **CONTAINER_REGISTRY_PASSWORD** и вставьте свои учетные данные после знака равенства: 
 
-   ```JSON
-   "registryCredentials": {
-       "myRegistry": {
-           "username": "",
-           "password": "",
-           "address": ""
-       }
-   }
+   ```env
+   CONTAINER_REGISTRY_USERNAME_yourContainerReg=<username>
+   CONTAINER_REGISTRY_PASSWORD_yourContainerReg=<password>
    ```
-
-3. Вставьте учетные данные реестра в поля **Имя пользователя**, **Пароль** и **Адрес**. Используйте значения, скопированные при создании службы "Реестр контейнеров Azure" в начале этого руководства.
-4. Сохраните файл **deployment.template.json**.
-5. Войдите в реестр в Visual Studio Code, чтобы вы могли отправить свои образы в реестр. Используйте учетные данные, которые были только что добавлены в манифест развертывания. Введите следующую команду в окне интегрированного терминала: 
+2. Сохраните ENV-файл.
+3. Войдите в реестр контейнеров в Visual Studio Code, чтобы вы могли отправить свои образы в реестр. Используйте те же учетные данные, которые вы добавили в ENV-файл. Введите следующую команду в окне интегрированного терминала:
 
     ```csh/sh
     docker login -u <ACR username> <ACR login server>
@@ -243,7 +241,7 @@ ms.locfileid: "43143506"
     Login Succeeded
     ```
 
-6. В обозревателе VS Code щелкните правой кнопкой мыши файл **deployment.template.json** и выберите **Build IoT Edge solution** (Создать решение IoT Edge). 
+4. В обозревателе VS Code щелкните правой кнопкой мыши файл **deployment.template.json** и выберите **Build and Push IoT Edge solution** (Создать и отправить решение IoT Edge). 
 
 ## <a name="deploy-the-solution-to-a-device"></a>Развертывание решения на устройстве
 
@@ -287,7 +285,7 @@ ms.locfileid: "43143506"
    * Контейнер Windows:
 
       ```cmd
-      sqlcmd -S localhost -U SA -P 'Strong!Passw0rd'
+      sqlcmd -S localhost -U SA -P "Strong!Passw0rd"
       ```
 
    * Контейнер Linux: 

@@ -14,12 +14,12 @@ ms.workload: na
 ms.date: 08/10/2018
 ms.author: routlaw, glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: aeb00bf55c578f61e5e1edbaab11c7773b9eab94
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 3840d8d1e18e73c1f08c450859032c07e441cff2
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42022761"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43699181"
 ---
 # <a name="create-your-first-function-with-java-and-maven-preview"></a>Создание первой функции с помощью Java и Maven (предварительная версия)
 
@@ -175,11 +175,37 @@ curl -w '\n' -d AzureFunctionsTest https://fabrikam-functions-20170920120101928.
 Hello, AzureFunctionsTest
 ```
 
+## <a name="make-changes-and-redeploy"></a>Внесение изменений и повторное развертывание
+
+Измените исходный файл `src/main.../Function.java` в созданном проекте, чтобы изменить текст, возвращаемый приложением-функцией. Измените эту строку:
+
+```java
+return request.createResponse(200, "Hello, " + name);
+```
+
+Вместо нее укажите следующую:
+
+```java
+return request.createResponse(200, "Hi, " + name);
+```
+
+Сохраните изменения и выполните повторное развертывание, запустив `azure-functions:deploy` в окне терминала, как и в прошлый раз. Приложение-функция и этот запрос обновятся:
+
+```bash
+curl -w '\n' -d AzureFunctionsTest https://fabrikam-functions-20170920120101928.azurewebsites.net/api/HttpTrigger-Java
+```
+
+Появятся обновленные выходные данные:
+
+```Output
+Hi, AzureFunctionsTest
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Вы создали приложение-функцию Java с помощью простого триггера HTTP и развернули его в Функциях Azure.
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.
-- Проведите отладку функций локально с помощью Visual Studio Code. С помощью установленного [пакета расширения Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) и проекта функций, открытого в Visual Studio Code, [присоедините отладчик](https://code.visualstudio.com/Docs/editor/debugging#_launch-configurations) к порту 5005. Затем установите точку останова в редакторе и активируйте функции во время локального выполнения: ![функции отладки в Visual Studio Code](media/functions-create-java-maven/vscode-debug.png)
-- Проведите отладку функций удаленно с помощью Visual Studio Code. Инструкции см. в документе по [созданию бессерверных приложений Java](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud).
+- Создавайте и отлаживайте функции локально с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) и [Eclipse](functions-create-maven-eclipse.md). 
+- Отлаживайте функции, развернутые в Azure, с помощью Visual Studio Code. Инструкции см. в документации Visual Studio Code по [бессерверным приложениям Java](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud).

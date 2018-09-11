@@ -3,18 +3,18 @@ title: Поиск маршрута с помощью службы "Карты Az
 description: Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 author: dsk-2015
 ms.author: dkshir
-ms.date: 05/07/2018
+ms.date: 09/04/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 09828fade464c3b7b5f6eedaa16513e9eab49467
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 1ef4467862f47a833e0592c94c662170ca2946d8
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989648"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43781455"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -45,8 +45,9 @@ ms.locfileid: "38989648"
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <title>Map Route</title>
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1.0" type="text/css" />
-        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1.0"></script>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1" type="text/css"/> 
+        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script> 
+        <script src="https://atlas.microsoft.com/sdk/js/atlas-service.min.js?api-version=1"></script> 
         <style>
             html,
             body {
@@ -159,42 +160,39 @@ ms.locfileid: "38989648"
     });
     ```
 
-2. Создайте [XMLHttpRequest](https://xhr.spec.whatwg.org/) и добавьте обработчик событий, чтобы проанализировать ответ JSON, отправленный службой построения маршрутов "Карты". Этот код создает массив координат для сегментов линии маршрута, а затем добавляет набор координат на уровень linestrings карты. 
-
+2.  Создайте экземпляр службы клиента, добавив следующий код Javascript в блок скрипта.
     ```JavaScript
-    // Perform a request to the route service and draw the resulting route on the map
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var response = JSON.parse(xhttp.responseText);
-
-            var route = response.routes[0];
-            var routeCoordinates = [];
-            for (var leg of route.legs) {
-                var legCoordinates = leg.points.map((point) => [point.longitude, point.latitude]);
-                routeCoordinates = routeCoordinates.concat(legCoordinates);
-            }
-
-            var routeLinestring = new atlas.data.LineString(routeCoordinates);
-            map.addLinestrings([new atlas.data.Feature(routeLinestring)], { name: routeLinesLayerName });
-        }
-    };
+    var client = new atlas.service.Client(subscriptionKey);
     ```
 
-3. Добавьте следующий код, чтобы создать запрос и отправить XMLHttpRequest в службу построения маршрутов "Карты".
-
+3. Добавьте следующий блок кода, чтобы создать строку запроса на поиск маршрута.
     ```JavaScript
-    var url = "https://atlas.microsoft.com/route/directions/json?";
-    url += "api-version=1.0";
-    url += "&subscription-key=" + MapsAccountKey;
-    url += "&query=" + startPoint.coordinates[1] + "," + startPoint.coordinates[0] + ":" +
-        destinationPoint.coordinates[1] + "," + destinationPoint.coordinates[0];
-
-    xhttp.open("GET", url, true);
-    xhttp.send();
+    // Construct the route query string 
+        var routeQuery = startPoint.coordinates[1] + 
+            "," + 
+            startPoint.coordinates[0] + 
+            ":" + 
+            destinationPoint.coordinates[1] + 
+            "," + 
+            destinationPoint.coordinates[0];     
     ```
 
-3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Для успешного подключения к интерфейсам API службы "Карты Azure" должна использоваться карта следующего вида. 
+4. Чтобы получить маршрут, добавьте в скрипт приведенный ниже блок кода. В этом коде с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/services.route?view=azure-iot-typescript-latest#getroutedirections) создается запрос к службе построения маршрутов Azure Maps, а затем с помощью метода [getGeoJsonRoutes](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.geojson.geojsonroutedirectionsresponse?view=azure-iot-typescript-latest#getgeojsonroutes) анализируется ответ в формате GeoJSON. Затем все эти линии в ответе добавляются на карту для отображения маршрута. Дополнительные сведения см. в разделе по [добавлению линий на карту](./map-add-shape.md#addALine).
+
+    ```JavaScript
+    // Execute the query then add the route to the map once a response is received  
+    client.route.getRouteDirections(routeQuery).then(response => { 
+         // Parse the response into GeoJSON 
+         var geoJsonResponse = new atlas.service.geojson.GeoJsonRouteDirectionsResponse(response); 
+ 
+         // Get the first in the array of routes and add it to the map 
+         map.addLinestrings([geoJsonResponse.getGeoJsonRoutes().features[0]], { 
+             name: routeLinesLayerName 
+         }); 
+    }); 
+    ```
+
+5. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Для успешного подключения к интерфейсам API службы "Карты Azure" должна использоваться карта следующего вида.
 
     ![Azure Map Control и служба построения маршрутов](./media/tutorial-route-location/map-route.png)
 

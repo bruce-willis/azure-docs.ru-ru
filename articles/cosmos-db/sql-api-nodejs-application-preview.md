@@ -11,21 +11,22 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.author: sngun
-ms.openlocfilehash: 43c5b8beef523684a405f1396ad0a9d862c123e8
-ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
+ms.openlocfilehash: 8e788207e99a87e9635fbf668ad99c21ca101ecf
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "41918547"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43697121"
 ---
 # <a name="_Toc395783175"></a>Создание веб-приложения Node.js с помощью Azure Cosmos DB и пакета SDK для Node.js (предварительная версия)
+
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-dotnet-application.md)
-> * [Node.js](sql-api-nodejs-application.md)
-> * [Node.js — предварительная версия 2.0](sql-api-nodejs-application-preview.md)
 > * [Java](sql-api-java-application.md)
+> * [Node.js](sql-api-nodejs-application.md)
+> * [Node.js (версия 2)](sql-api-nodejs-application-preview.md)
 > * [Python](sql-api-python-application.md)
-> 
+> * [Xamarin](mobile-apps-with-xamarin.md)
 > 
 
 В этом руководстве по Node.js показано, как использовать учетную запись API SQL Azure Cosmos DB для хранения данных и обеспечения доступа к ним из приложения Node.js Express, размещенного на веб-сайтах Azure. В этом руководстве вы создадите простое веб-приложение (приложение со списком задач), которое позволит вам создавать, извлекать и выполнять задачи. Задачи будут храниться в виде документов JSON в Azure Cosmos DB. Ниже приведен снимок экрана приложения со списком задач:

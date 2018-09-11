@@ -1,82 +1,74 @@
 ---
-title: Руководство по вызову приложения Language Understanding Intelligent Services (LUIS) с использованием Node.js | Документация Майкрософт
-description: В этом руководстве вы узнаете, как вызвать приложение LUIS с помощью Node.js.
+title: Анализ текста на естественном языке в службе распознавания речи (LUIS) с помощью Node.js — Azure Cognitive Services | Документация Майкрософт
+description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. С помощью Node.js отправьте намерение пользователя в виде текста в конечную точку прогнозирования HTTP общедоступного приложения. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
-ms.topic: tutorial
-ms.date: 12/13/2017
-ms.author: v-geberr
-ms.openlocfilehash: 5e9df272be3c48602d38f551a791376c043bf409
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.topic: quickstart
+ms.date: 08/23/2018
+ms.author: diberry
+ms.openlocfilehash: d7067041ae8e413675de3c95ca4ba0c1b987f47a
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36263658"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "43771698"
 ---
-# <a name="tutorial-call-a-luis-endpoint-using-nodejs"></a>Руководство по вызову конечной точки LUIS с помощью Node.js
-В этой статье вы узнаете, как передать фразы в конечную точку LUIS и получить намерение и сущности.
+# <a name="quickstart-analyze-text-using-nodejs"></a>Краткое руководство по анализу текста с использованием Node.js
 
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Создание подписки LUIS и копирование значения ключа для последующего использования.
-> * Просмотр результатов конечной точки LUIS в браузере, вставив URL-адрес общедоступного примера приложения Интернета вещей.
-> * Создание консольного приложения Visual Studio C#, отправляющего вызов HTTPS к конечной точке LUIS.
+[!include[Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+<a name="create-luis-subscription-key"></a>
 
-## <a name="create-luis-subscription-key"></a>Создание ключа подписки LUIS
-Ключ API Cognitive Services нужен для отправки вызовов к примеру приложения LUIS, используемому в этом пошаговом руководстве. 
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы получить ключ API, сделайте следующее: 
-
-1. Сначала необходимо создать [учетную запись API-интерфейсов Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) на портале Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-
-2. Войдите на портал Azure по адресу https://portal.azure.com. 
-
-3. Получите ключ, следуя указаниям в статье по [созданию ключей подписки с помощью Azure](./luis-how-to-azure-subscription.md).
-
-4. Вернитесь на веб-сайт [LUIS](luis-reference-regions.md) и выполните вход, используя свою учетную запись Azure. 
-
-    [![](media/luis-get-started-node-get-intent/app-list.png "Снимок экрана со списком приложений")](media/luis-get-started-node-get-intent/app-list.png)
-
-## <a name="understand-what-luis-returns"></a>Возвращаемые LUIS результаты
-
-Чтобы понять, что возвращает приложение LUIS, можно вставить URL-адрес примера приложения LUIS в окне браузера. Пример приложения — это приложение Интернета, которое определяет, что хочет сделать пользователь: включить или выключить освещение.
-
-1. Конечная точка примера приложения имеет следующий формат: `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=<YOUR_API_KEY>&verbose=false&q=turn%20on%20the%20bedroom%20light`. Скопируйте URL-адрес и замените значение ключа подписки на значение поля `subscription-key`.
-2. Вставьте URL-адрес в окне браузера и нажмите клавишу ВВОД. В браузере отображается результат JSON, который указывает, что LUIS определяет намерение `HomeAutomation.TurnOn` и сущность `HomeAutomation.Room` со значением `bedroom`.
-
-    ![Результат JSON, указывающий, что определено намерение включить освещение](./media/luis-get-started-node-get-intent/turn-on-bedroom.png)
-3. Измените значение параметра `q=` в URL-адресе на `turn off the living room light` и нажмите клавишу ВВОД. Теперь результат указывает, что приложение LUIS определило намерение `HomeAutomation.TurnOff` и сущность `HomeAutomation.Room` со значением `living room`. 
-
-    ![Результат JSON, указывающий, что определено намерение выключить освещение](./media/luis-get-started-node-get-intent/turn-off-living-room.png)
+* Язык программирования [Node.js](https://nodejs.org/). 
+* [Visual Studio Code](https://code.visualstudio.com/)
+* Идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
 
 
-## <a name="consume-a-luis-result-using-the-endpoint-api-with-nodejs"></a>Получение результата LUIS с помощью API конечной точки с использованием Node.js
+> [!NOTE] 
+> Полное решение Node.js доступно в разделе [**LUIS-Samples** репозитория Github](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/analyze-text/node).
+
+## <a name="get-luis-key"></a>Получение ключа LUIS
+
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
+
+## <a name="analyze-text-with-browser"></a>Анализ текста с помощью браузера
+
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
+
+## <a name="analyze-text-with-nodejs"></a>Анализ текста с помощью Node.js
 
 С помощью Node.js можно получить доступ к тем же результатам, которые вы уже видели в окне браузера на предыдущем шаге.
 
 1. Скопируйте следующий фрагмент кода.
 
-   [!code-nodejs[Console app code that calls a LUIS endpoint for Node.js](~/samples-luis/documentation-samples/endpoint-api-samples/node/call-endpoint.js)]
+   [!code-nodejs[Console app code that calls a LUIS endpoint for Node.js](~/samples-luis/documentation-samples/quickstarts/analyze-text/node/call-endpoint.js)]
 
-2. Задайте переменную среды `LUIS_APP_ID`, как описано в комментариях к коду. 
+2. Создайте файл `.env` со следующим текстом или задайте эти переменные в системной среде:
 
-3. Задайте для переменной среды `LUIS_SUBSCRIPTION_KEY` ключ подписки Cognitive Services.
+    ```CMD
+    LUIS_APP_ID=df67dcdb-c37d-46af-88e1-8b97951ca1c2
+    LUIS_ENDPOINT_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    ```
 
-4. Выполните код. Отобразятся те же значения, которые вы видели ранее в окне браузера.
-<!-- 
-![Console window displays JSON result from LUIS](./media/luis-get-started-Node.js-get-intent/console-turn-on.png)
--->
+3. Укажите свой ключ для переменной среды `LUIS_ENDPOINT_KEY`.
+
+4. Установите зависимости, выполнив следующую команду в командной строке: `npm install`.
+
+5. Выполните код с помощью команды `npm start`. Отобразятся те же значения, которые вы видели ранее в окне браузера.
+
+## <a name="luis-keys"></a>Ключи LUIS
+
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-key-usage-para.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-При работе с этим руководством вы создали два ресурса: ключ подписки LUIS и проект C#. Удалите ключ подписки LUIS на портале Azure. Закройте проект Visual Studio и удалите каталог из файловой системы. 
+
+Удалите файл Node.js.
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
 > [Добавление высказываний](luis-get-started-node-add-utterance.md)
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website

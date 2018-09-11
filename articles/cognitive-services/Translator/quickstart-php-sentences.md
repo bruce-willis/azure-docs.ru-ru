@@ -1,0 +1,132 @@
+---
+title: Получение длины предложения с помощью API перевода текстов и PHP | Документация Майкрософт
+titleSuffix: Microsoft Cognitive Services
+description: В этом кратком руководстве описано, как получать длину предложений в тексте с помощью API перевода текстов и PHP в Cognitive Services.
+services: cognitive-services
+author: noellelacharite
+manager: nolachar
+ms.service: cognitive-services
+ms.component: translator-text
+ms.topic: quickstart
+ms.date: 06/22/2018
+ms.author: nolachar
+ms.openlocfilehash: e93a8e3fa900933bc3a169f4527f898e8431a194
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "43771182"
+---
+# <a name="quickstart-get-sentence-lengths-with-php"></a>Краткое руководство. Получение длины предложения с помощью PHP
+
+В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для выполнения этого кода вам потребуется [PHP 5.6.x](http://php.net/downloads.php).
+
+Чтобы использовать API перевода текстов, вам также потребуется ключ подписки. Сведения об этом см. в статье [Регистрация для использования API перевода текстов](translator-text-how-to-signup.md).
+
+## <a name="breaksentence-request"></a>Запрос метода BreakSentence
+
+Приведенный ниже код позволяет разбить исходный текст на предложения с помощью метода [BreakSentence](./reference/v3-0-break-sentence.md).
+
+1. Создайте проект PHP в любом удобном редакторе кода.
+2. Добавьте указанный ниже код.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
+4. Запустите программу.
+
+```php
+<?php
+
+// NOTE: Be sure to uncomment the following line in your php.ini file.
+// ;extension=php_openssl.dll
+
+// **********************************************
+// *** Update or verify the following values. ***
+// **********************************************
+
+// Replace the subscriptionKey string value with your valid subscription key.
+$key = 'ENTER KEY HERE';
+
+$host = "https://api.cognitive.microsofttranslator.com";
+$path = "/breaksentence?api-version=3.0";
+
+$text = "How are you? I am fine. What did you do today?";
+
+if (!function_exists('com_create_guid')) {
+  function com_create_guid() {
+    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0x0fff ) | 0x4000,
+        mt_rand( 0, 0x3fff ) | 0x8000,
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+    );
+  }
+}
+
+function BreakSentences ($host, $path, $key, $params, $content) {
+
+    $headers = "Content-type: application/json\r\n" .
+        "Content-length: " . strlen($content) . "\r\n" .
+        "Ocp-Apim-Subscription-Key: $key\r\n" .
+        "X-ClientTraceId: " . com_create_guid() . "\r\n";
+
+    // NOTE: Use the key 'http' even if you are making an HTTPS request. See:
+    // http://php.net/manual/en/function.stream-context-create.php
+    $options = array (
+        'http' => array (
+            'header' => $headers,
+            'method' => 'POST',
+            'content' => $content
+        )
+    );
+    $context  = stream_context_create ($options);
+    $result = file_get_contents ($host . $path . $params, false, $context);
+    return $result;
+}
+
+$requestBody = array (
+    array (
+        'Text' => $text,
+    ),
+);
+$content = json_encode($requestBody);
+
+$result = BreakSentences ($host, $path, $key, "", $content);
+
+// Note: We convert result, which is JSON, to and from an object so we can pretty-print it.
+// We want to avoid escaping any Unicode characters that result contains. See:
+// http://php.net/manual/en/function.json-encode.php
+$json = json_encode(json_decode($result), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+echo $json;
+?>
+```
+
+## <a name="breaksentence-response"></a>Ответ метода BreakSentence
+
+В случае успешного выполнения ответ возвращается в формате JSON, как показано в примере ниже:
+
+```json
+[
+  {
+    "detectedLanguage": {
+      "language": "en",
+      "score": 1.0
+    },
+    "sentLen": [
+      13,
+      11,
+      22
+    ]
+  }
+]
+```
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Ознакомьтесь с примерами кода из этого и других кратких руководств, включая перевод и транслитерацию, а также с другими примерами проектов перевода текстов в GitHub.
+
+> [!div class="nextstepaction"]
+> [Примеры для PHP на сайте GitHub](https://aka.ms/TranslatorGitHub?type=&language=php)

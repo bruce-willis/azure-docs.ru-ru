@@ -1,22 +1,24 @@
 ---
 title: Использование Terraform с Azure
 description: Общие сведения об использовании Terraform для управления версиями и развертывания инфраструктуры Azure.
-ms.service: virtual-machines-linux
+services: terraform
+ms.service: terraform
 keywords: terraform, devops, overview, plan, apply, automate
-author: binderjoe
-ms.author: jbinder
-ms.date: 10/19/2017
-ms.topic: article
-ms.openlocfilehash: 5d313bda6a1067e6d023f62fb26704f9aee5c7bf
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+author: tomarcher
+manager: jeconnoc
+ms.author: tarcher
+ms.topic: tutorial
+ms.date: 08/31/2018
+ms.openlocfilehash: dd340238f8a70c1dd0cfc172976bef6b1ad282b1
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37114478"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43665635"
 ---
 # <a name="terraform-with-azure"></a>Terraform с Azure
 
-[Hashicorp Terraform](https://www.terraform.io/) является инструментом с открытым кодом для подготовки облачной инфраструктуры и управления ею. Он фиксирует принципы инфраструктуры в файлах конфигурации, описывающие топологии облачных ресурсов, таких как виртуальные машины, учетные записи хранения и сетевые интерфейсы. Интерфейс командной строки Terraform предоставляет простой механизм развертывания файлов конфигурации в Azure или других поддерживаемых облаках и управления их версиями.
+[Hashicorp Terraform](https://www.terraform.io/) — это средство с открытым кодом для подготовки и администрирования облачной инфраструктуры. Он фиксирует принципы инфраструктуры в файлах конфигурации, описывающие топологии облачных ресурсов, таких как виртуальные машины, учетные записи хранения и сетевые интерфейсы. Интерфейс командной строки Terraform предоставляет простой механизм развертывания файлов конфигурации в Azure или других поддерживаемых облаках и управления их версиями.
 
 В этой статье описываются преимущества использования Terraform при управлении инфраструктурой Azure.
 

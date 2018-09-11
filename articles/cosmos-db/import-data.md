@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/30/2018
 ms.author: dech
 ms.custom: mvc
-ms.openlocfilehash: ea8bb1db53deaa546f4174ddc04d9a270aa96d9a
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 771c4a33603ddf262df3b35992d318d34de6c2dc
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43187789"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43698117"
 ---
 # <a name="use-data-migration-tool-to-migrate-your-data-to-azure-cosmos-db"></a>Использование средства переноса данных для переноса данных в Azure Cosmos DB 
 
@@ -28,7 +28,7 @@ ms.locfileid: "43187789"
 * **[API SQL](documentdb-introduction.md)**. Вы можете импортировать данные, используя любые варианты источников средства переноса данных.
 * **[API таблицы](table-introduction.md)**. Для импорта данных вы можете использовать средство миграции данных или AzCopy. Дополнительные сведения см. в статье [Импорт данных для использования с помощью API таблицы Azure DB Cosmos](table-import.md).
 * **[API MongoDB](mongodb-introduction.md)**. Сейчас средство переноса данных не поддерживает API MongoDB в Azure Cosmos DB в качестве источника или целевого объекта. Инструкции по переносу данных в коллекции API MongoDB в Azure Cosmos DB или из них см. в статье [Azure Cosmos DB: импорт данных MongoDB](mongodb-migrate.md). Вы по-прежнему можете экспортировать данные из MongoDB в коллекции API SQL в Azure Cosmos DB, чтобы использовать их с этим интерфейсом, с помощью средства переноса данных. 
-* **[Graph API](graph-introduction.md)**. В настоящее время средство миграции данных не является поддерживаемым средством импорта для учетных записей Graph API. 
+* **[API Gremlin](graph-introduction.md)**. Сейчас средство миграции данных не поддерживается для импорта учетных записей API Gremlin. 
 
 В рамках этого руководства рассматриваются следующие задачи:
 

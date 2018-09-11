@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 04/08/2018
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: 488ec66eb485761d484e305c298dfb9117745a42
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: b9c4c2595bb7d5347397bff95c90fbdc91902bcd
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145287"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43696454"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Добро пожаловать в базу данных Azure Cosmos DB
 
@@ -40,7 +40,7 @@ Azure Cosmos DB — это глобально распределенная мн
         * [API SQL](sql-api-introduction.md) — ядро СУБД с поддержкой бессхемного формата JSON и широкими возможностями отправки SQL-запросов.
         * [API MongoDB](mongodb-introduction.md) — решение *MongoDB как услуга* с высокой масштабируемостью на базе платформы Azure Cosmos DB. Совместимо с существующими библиотеками, драйверами, средствами и приложениями MongoDB.
         * [API Cassandra](cassandra-introduction.md) — распределенное решение "Cassandra как услуга" на базе платформы Azure Cosmos DB. Совместимо с существующими библиотеками, драйверами, средствами и приложениями [Apache Cassandra](https://cassandra.apache.org/).
-        * [API Gremlin](graph-introduction.md) — полностью управляемая горизонтально масштабируемая служба базы данных графа, которая упрощает создание и запуск приложений, работающих с часто подключаемыми наборами данных, и поддерживает интерфейсы Open Graph API (созданная по [спецификации Apache TinkerPop](http://tinkerpop.apache.org/), Apache Gremlin).
+        * [API Gremlin](graph-introduction.md) — полностью управляемая горизонтально масштабируемая служба базы данных графа. Она упрощает создание и запуск приложений, которые используют часто подключаемые наборы данных, и поддерживает API Open Gremlin (на основе [спецификации Apache TinkerPop](http://tinkerpop.apache.org/), Apache Gremlin).
         * [API таблицы](table-introduction.md) — служба базы данных пар "ключ-значение", созданная для предоставления возможностей уровня "Премиум" (например, автоматического индексирования, гарантировано низкой задержки и глобального распределения) существующим приложениям хранилища таблиц Azure без изменения приложений.
         * В ближайшее время будет реализована поддержка дополнительных моделей данных и интерфейсов API.
 

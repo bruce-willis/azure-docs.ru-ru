@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 06/18/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 5c0aa042f97e10f90787b1cdf8e03cd6d849441e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 30199005db93f9a43a37d2c72bb34dd772265419
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38461645"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43664893"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-web-apps"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "38461645"
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-custom-domain/app-with-custom-dns.png)
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Сопоставление поддомена (например, `www.contoso.com`) с помощью записи CNAME.
@@ -38,9 +38,7 @@ ms.locfileid: "38461645"
 > * Перенаправление URL-адреса по умолчанию к пользовательскому каталогу.
 > * Автоматизация сопоставления доменов с помощью скриптов.
 
-Сведения о том, как перенести активный веб-сайт и его DNS-имя домена в службу приложений, см. в статье [Перенос активного DNS-имени в службу приложений Azure](app-service-custom-domain-name-migrate.md).
-
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -304,6 +302,10 @@ ms.locfileid: "38461645"
 - В кэше клиента браузера сохранен старый IP-адрес вашего домена. Выполните очистку кэша и еще раз проверьте разрешение имен DNS На компьютере Windows кэш можно очистить с помощью команды `ipconfig /flushdns`.
 
 <a name="virtualdir"></a>
+
+## <a name="migrate-an-active-domain"></a>Перенос активного домена
+
+Сведения о том, как перенести активный веб-сайт и его DNS-имя домена в службу приложений без простоев, см. в статье [Перенос активного DNS-имени в службу приложений Azure](app-service-custom-domain-name-migrate.md).
 
 ## <a name="redirect-to-a-custom-directory"></a>Перенаправление к пользовательскому каталогу
 

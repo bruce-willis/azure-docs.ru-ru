@@ -1,53 +1,48 @@
 ---
-title: Руководство по добавлению фраз в приложение LUIS с использованием JavaScript | Документация Майкрософт
-description: В этом руководстве вы узнаете, как вызвать приложение LUIS с помощью JavaScript.
+title: Краткое руководство по добавлению фраз в приложение LUIS с использованием JavaScript — Azure Cognitive Services | Документация Майкрософт
+description: Из этого краткого руководства вы узнаете, как вызвать приложение LUIS с помощью JavaScript.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
-ms.topic: tutorial
-ms.date: 12/18/2017
-ms.author: v-geberr
-ms.openlocfilehash: b6d021dcfdddb5449aa989c6aa06d7faf326befb
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.topic: quickstart
+ms.date: 08/24/2018
+ms.author: diberry
+ms.openlocfilehash: ffc19d12c1d3fbb24c514ac87f298d1a52d23eb8
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265465"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43771885"
 ---
-# <a name="tutorial-add-utterances-to-app-using-javascript"></a>Руководство по добавлению фраз в приложение с использованием JavaScript
-В этом руководстве рассматривается, как написать программу, чтобы добавить фразу в намерение, используя программные интерфейсы (API) разработки на языке JavaScript.
+# <a name="quickstart-change-model-using-javascript"></a>Краткое руководство. Изменение модели с помощью JavaScript
 
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Создание консольного проекта Visual Studio. 
-> * Добавление метода для вызова API LUIS, чтобы добавить фразу и обучить приложение.
-> * Добавление JSON-файла с примерами фраз для намерения "BookFlight".
-> * Запуск консоли и просмотр состояния обучения фразам.
+[!include[Quickstart introduction for change model](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
-Дополнительные сведения см. в разделах технической документации по API-интерфейсам [добавления примера фразы в намерение](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c08), [обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45) и [просмотра состояния обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c46).
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+[!include[Quickstart prerequisites for changing model](../../../includes/cognitive-services-luis-qs-change-model-prereq.md)]
+* [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="prerequisites"></a>предварительным требованиям
-* [**Ключ разработки**](luis-concept-keys.md#authoring-key) LUIS. 
-* **Идентификатор существующего приложения LUIS** и **идентификатор версии**. 
-* Новый файл проекта с именем `add-utterances.html` в VSCode.
+[!include[Code is available in LUIS-Samples Github repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
 
-> [!NOTE] 
-> Полный файл `add-utterances.html` доступен в [**репозитории GitHub** LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/authoring-api-samples/javascript/add-utterance.html).
+## <a name="example-utterances-json-file"></a>Файл JSON с примерами высказываний.
+
+[!include[Quickstart explanation of example utterance JSON file](../../../includes/cognitive-services-luis-qs-change-model-json-ex-utt.md)]
 
 
-## <a name="write-the-code"></a>Написание кода
+## <a name="create-quickstart-code"></a>Создание простого примера кода
+
 Создайте файл `add-utterances.html` и добавьте следующий код:
 
-   [!code-javascript[Java Dependencies](~/samples-luis/documentation-samples/authoring-api-samples/javascript/add-utterance.html "Java Dependencies")]
+   [!code-html[Html code](~/samples-luis/documentation-samples/quickstarts/change-model/javascript/add-utterance.html "Javascript code")]
 
-## <a name="view-in-browser"></a>Просмотр в браузере
+## <a name="run-code"></a>Выполнение кода
+
 1. Откройте файл в браузере.
 
-2. Добавьте идентификатор разработки LUIS, идентификатор приложения LUIS и измените версию, если она отличается от `0.1`.
+2. Добавьте идентификатор разработки LUIS (идентификатор приложения LUIS).
 
 3. Измените **массив фраз**, которые нужно добавить в приложение. Они хранятся в переменной utteranceJSON. Измените эти значения в соответствии со своей областью применения и требованиями к фразам. 
 
@@ -80,13 +75,11 @@ ms.locfileid: "36265465"
 
 6. Нажмите кнопку `Train Status` (Состояние обучения), чтобы увидеть состояние обучения. 
 
-![add-utterances.html](./media/luis-quickstart-javascript-add-utterance/add-utterance.png)
+    ![add-utterances.html](./media/luis-quickstart-javascript-add-utterance/add-utterance.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Завершив работу с руководством, удалите Visual Studio и консольное приложение, если они вам больше не нужны. 
+Когда вы закончите работу с этим руководством, удалите все созданные при работе с ним файлы. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
 > [Интеграция LUIS в программу-робот](luis-csharp-tutorial-build-bot-framework-sample.md)
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website

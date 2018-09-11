@@ -1,75 +1,65 @@
 ---
-title: Вызов приложения Language Understanding (LUIS) с помощью PHP | Документация Майкрософт
-description: В этом руководстве вы узнаете, как вызвать приложение LUIS с помощью PHP.
+title: Краткое руководство по анализу текста на естественном языке в службе распознавания речи (LUIS) с помощью PHP — Azure Cognitive Services | Документация Майкрософт
+description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. Отправляйте намерение пользователя в виде текста в конечную точку прогноза HTTP общедоступного приложения, используя PHP. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
 services: cognitive-services
-author: v-geberr
-manager: kamran.iqbal
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
-ms.topic: tutorial
-ms.date: 12/13/2017
-ms.author: v-geberr
-ms.openlocfilehash: 90aa1fc9d458484bbbaf54d4d838064ced03b257
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.topic: quickstart
+ms.date: 08/23/2018
+ms.author: diberry
+ms.openlocfilehash: 14ac32ffc0f4332d0cbc0da59a55ccc500e216d7
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265132"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "43771689"
 ---
-# <a name="tutorial-call-a-luis-endpoint-using-php"></a>Руководство по вызову конечной точки LUIS с помощью PHP
-В этой статье вы узнаете, как передать фразы в конечную точку LUIS и получить намерение и сущности.
+# <a name="quickstart-analyze-text-using-php"></a>Краткое руководство по анализу текста с использованием PHP
 
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Создание подписки LUIS и копирование значения ключа для последующего использования.
-> * Просмотр результатов конечной точки LUIS в браузере, вставив URL-адрес общедоступного примера приложения Интернета вещей.
-> * Создание консольного приложения Visual Studio C#, отправляющего вызов HTTPS к конечной точке LUIS.
+[!include[Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+<a name="create-luis-subscription-key"></a>
 
-## <a name="create-luis-subscription-key"></a>Создание ключа подписки LUIS
-Ключ API Cognitive Services нужен для отправки вызовов к примеру приложения LUIS, используемому в этом пошаговом руководстве. 
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы получить ключ API, сделайте следующее: 
+* Язык программирования [PHP](http://php.net/).
+* [Visual Studio Code](https://code.visualstudio.com/)
+* Идентификатор общедоступного приложения: df67dcdb-c37d-46af-88e1-8b97951ca1c2.
 
-1. Сначала необходимо создать [учетную запись API-интерфейсов Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) на портале Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-2. Войдите на портал Azure по адресу https://portal.azure.com. 
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-luis-repo-note.md)]
 
-3. Получите ключ, следуя указаниям в статье по [созданию ключей подписки с помощью Azure](./luis-how-to-azure-subscription.md).
+## <a name="get-luis-key"></a>Получение ключа LUIS
 
-4. Вернитесь на веб-сайт [LUIS](luis-reference-regions.md) и выполните вход, используя свою учетную запись Azure. 
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
 
-    [![](media/luis-get-started-node-get-intent/app-list.png "Снимок экрана со списком приложений")](media/luis-get-started-node-get-intent/app-list.png)
+## <a name="analyze-text-with-browser"></a>Анализ текста с помощью браузера
 
-## <a name="understand-what-luis-returns"></a>Возвращаемые LUIS результаты
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
 
-Чтобы понять, что возвращает приложение LUIS, можно вставить URL-адрес примера приложения LUIS в окне браузера. Пример приложения — это приложение Интернета, которое определяет, что хочет сделать пользователь: включить или выключить освещение.
-
-1. Конечная точка примера приложения имеет следующий формат: `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=<YOUR_API_KEY>&verbose=false&q=turn%20on%20the%20bedroom%20light`. Скопируйте URL-адрес и замените значение ключа подписки на значение поля `subscription-key`.
-2. Вставьте URL-адрес в окне браузера и нажмите клавишу ВВОД. В браузере отображается результат JSON, который указывает, что LUIS определяет намерение `HomeAutomation.TurnOn` и сущность `HomeAutomation.Room` со значением `bedroom`.
-
-    ![Результат JSON, указывающий, что определено намерение включить освещение](./media/luis-get-started-node-get-intent/turn-on-bedroom.png)
-3. Измените значение параметра `q=` в URL-адресе на `turn off the living room light` и нажмите клавишу ВВОД. Теперь результат указывает, что приложение LUIS определило намерение `HomeAutomation.TurnOff` и сущность `HomeAutomation.Room` со значением `living room`. 
-
-    ![Результат JSON, указывающий, что определено намерение выключить освещение](./media/luis-get-started-node-get-intent/turn-off-living-room.png)
-
-## <a name="consume-a-luis-result-using-the-endpoint-api-with-php"></a>Получение результата LUIS с помощью API конечной точки с использованием PHP 
+## <a name="analyze-text-with-php"></a>Анализ текста с помощью PHP 
 
 С помощью PHP можно получить доступ к тем же результатам, которые вы уже видели в окне браузера на предыдущем шаге. 
-1. Скопируйте следующий код и сохраните его в HTML-файл:
 
-   [!code-php[PHP code that calls a LUIS endpoint](~/samples-luis/documentation-samples/endpoint-api-samples/php/endpoint-call.php)]
-2. Замените `"YOUR-SUBSCRIPTION-KEY"` на свой ключ подписки в этой строке кода: `$subscriptionKey = "YOUR-SUBSCRIPTION-KEY";`
+1. Скопируйте следующий код и сохраните его в файл с именем `endpoint-call.php`.
 
-3. Запустите приложение PHP. Отобразится тот же результат JSON, который вы видели ранее в окне браузера.
+   [!code-php[PHP code that calls a LUIS endpoint](~/samples-luis/documentation-samples/quickstarts/analyze-text/php/endpoint-call.php)]
+
+2. Замените `"YOUR-KEY"` ключом своей конечной точки.
+
+3. Запустите приложение PHP, используя `php endpoint-call.php`. Отобразится тот же результат JSON, который вы видели ранее в окне браузера.
+
+## <a name="luis-keys"></a>Ключи LUIS
+
+[!include[Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-key-usage-para.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-При работе с этим руководством вы создали два ресурса: ключ подписки LUIS и проект C#. Удалите ключ подписки LUIS на портале Azure. Закройте проект Visual Studio и удалите каталог из файловой системы. 
+
+Удалите файл PHP.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Добавление высказываний](luis-get-started-php-add-utterance.md)
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website

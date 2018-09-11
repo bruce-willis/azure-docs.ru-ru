@@ -11,12 +11,12 @@ ms.reviewer: daviste
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: fd594e65de79844720462996a89477e0a6237ceb
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: e69cf8753fb0cc9326e047ec97cbe08ee6f26610
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38988931"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43668467"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 
@@ -68,9 +68,9 @@ Analytics.trackEvent("Video clicked")
 После того как приложение начнет отправлять пользовательские события в App Center и они будут получены, на портале Azure необходимо создать ресурс Application Insights, подходящий для App Center:
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Последовательно выберите **Создать ресурс** > **Мониторинг и управление** > **Application Insights**.
+2. Последовательно выберите **Создать ресурс** > **Средства управления** > **Application Insights**.
 
-    ![Добавление ресурса Application Insights](./media/app-insights-mobile-center-quickstart/add.png)
+    ![Добавление ресурса Application Insights](./media/app-insights-mobile-center-quickstart/add-b.png)
 
     Появится окно настроек. Используйте таблицу ниже для заполнения полей ввода.
 

@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Использование API Graph с PHP в Azure Cosmos DB | Документация Майкрософт
-description: В этом руководстве показано, как использовать API Graph Azure Cosmos DB для создания консольного приложения с помощью портала Azure и PHP
+title: Краткое руководство. Использование API Gremlin с PHP в Azure Cosmos DB | Документация Майкрософт
+description: В этом руководстве показано, как использовать API Gremlin в Azure Cosmos DB для создания консольного приложения с помощью портала Azure и PHP
 services: cosmos-db
 author: luisbosquez
 manager: kfile
@@ -11,20 +11,29 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 01/05/2018
 ms.author: lbosq
-ms.openlocfilehash: 2dabaf5650619ed2ec8d73c88deec136c25e544e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 06f54429957a84de81e3dfaae00c6126b5340b74
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38310277"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43702499"
 ---
 # <a name="azure-cosmos-db-create-a-graph-database-using-php-and-the-azure-portal"></a>Azure Cosmos DB: создание базы данных графа с помощью PHP и портала Azure
 
-В этом руководстве показано, как использовать PHP и [API Graph](graph-introduction.md) Azure Cosmos DB для сборки консольного приложения путем клонирования примера с сайта GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB с помощью веб-портала Azure.   
+> [!div class="op_single_selector"]
+> * [Консоль Gremlin](create-graph-gremlin-console.md)
+> * [.NET](create-graph-dotnet.md)
+> * [Java](create-graph-java.md)
+> * [Node.js](create-graph-nodejs.md)
+> * [Python](create-graph-python.md)
+> * [PHP](create-graph-php.md)
+>  
+
+В этом руководстве показано, как использовать PHP и [API Gremlin](graph-introduction.md) в Azure Cosmos DB для создания консольного приложения путем клонирования примера с сайта GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB с помощью веб-портала Azure.   
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, таблицы, пары "ключ — значение" и базы данных графов, используя возможности глобального распределения и горизонтального масштабирования Azure Cosmos DB.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
 
@@ -44,7 +53,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Теперь перейдем к работе с кодом. Мы клонируем приложение API Graph из GitHub, зададим строку подключения и выполним ее. Вы узнаете, как можно упростить работу с данными программным способом.  
+Теперь перейдем к работе с кодом. Мы клонируем приложение API Gremlin из GitHub, зададим строку подключения и запустим приложение. Вы узнаете, как можно упростить работу с данными программным способом.  
 
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 
@@ -202,7 +211,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 5. Щелкните **Добавить свойство**, чтобы поочередно добавить каждое из указанных ниже свойств. Обратите внимание, что вы можете создать уникальные свойства для каждого пользователя в графе. Требуется только ключ идентификатора.
 
-    key|value|Заметки
+    key|value|Примечания
     ----|----|----
     id|ashley|Уникальный идентификатор вершины. Если не указать идентификатор, он создастся автоматически.
     gender|Женский| 
@@ -219,7 +228,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 9. Щелкните **Добавить свойство**, чтобы поочередно добавить следующие свойства:
 
-    key|value|Заметки
+    key|value|Примечания
     ----|----|----
     id|rakesh|Уникальный идентификатор вершины. Если не указать идентификатор, он создастся автоматически.
     gender|Мужской| 

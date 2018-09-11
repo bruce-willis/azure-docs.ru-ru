@@ -9,14 +9,23 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/15/2017
 ms.author: sngun
-ms.openlocfilehash: b70a16c2f4c17a8cee008bee342a9c3693d1eb4b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0bd3a00e643965a7bc2e79e1af4712705940ecfd
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34614498"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43698831"
 ---
 # <a name="build-mobile-applications-with-xamarin-and-azure-cosmos-db"></a>Создание мобильных приложений с помощью Xamarin и Azure Cosmos DB
+
+> [!div class="op_single_selector"]
+> * [.NET](sql-api-dotnet-application.md)
+> * [Java](sql-api-java-application.md)
+> * [Node.js](sql-api-nodejs-application.md)
+> * [Node.js (версия 2)](sql-api-nodejs-application-preview.md)
+> * [Python](sql-api-python-application.md)
+> * [Xamarin](mobile-apps-with-xamarin.md)
+> 
 
 Большинство мобильных приложений хранят данные в облаке, а Azure Cosmos DB — одна из облачных баз данных для мобильных приложений. В ней есть все, что необходимо для разработчика мобильных приложений. Это полностью управляемая база данных как услуга, которая масштабируется по запросу. Она может прозрачно передавать ваши данные пользователям, где бы они ни находились, непосредственно в ваше приложение. С помощью [пакета SDK Azure Cosmos DB для .NET Core](sql-api-sdk-dotnet-core.md) можно настроить в мобильных приложениях Xamarin взаимодействие непосредственно с Azure Cosmos DB без служб среднего уровня.
 

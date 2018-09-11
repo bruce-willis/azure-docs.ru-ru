@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Использование API Graph с Python в Azure Cosmos DB | Документация Майкрософт
-description: В этом руководстве показано, как использовать API Graph Azure Cosmos DB для создания консольного приложения с помощью портала Azure и Python
+title: Краткое руководство. Использование API Gremlin с Python в Azure Cosmos DB | Документация Майкрософт
+description: В этом руководстве показано, как использовать API Gremlin в Azure Cosmos DB для создания консольного приложения с помощью портала Azure и Python
 services: cosmos-db
 author: luisbosquez
 manager: kfile
@@ -11,23 +11,32 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.author: lbosq
-ms.openlocfilehash: a29a27ec633f5f67bb8cac4b9a4823c5f0966f8e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: d01ee78c4e3fdf0eab694deaeed03e0f61989851
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38485467"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43699453"
 ---
 # <a name="azure-cosmos-db-create-a-graph-database-using-python-and-the-azure-portal"></a>Azure Cosmos DB: создание базы данных графа с помощью Python и портала Azure
 
-В этом руководстве показано, как использовать Python и [API Graph](graph-introduction.md) Azure Cosmos DB для сборки консольного приложения путем клонирования примера из репозитория GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB с помощью веб-портала Azure.   
+> [!div class="op_single_selector"]
+> * [Консоль Gremlin](create-graph-gremlin-console.md)
+> * [.NET](create-graph-dotnet.md)
+> * [Java](create-graph-java.md)
+> * [Node.js](create-graph-nodejs.md)
+> * [Python](create-graph-python.md)
+> * [PHP](create-graph-php.md)
+>  
+
+В этом руководстве показано, как использовать Python и [API Gremlin](graph-introduction.md) в Azure Cosmos DB для сборки консольного приложения путем клонирования примера из репозитория GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB с помощью веб-портала Azure.   
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, таблицы, пары "ключ — значение" и базы данных графов, используя возможности глобального распределения и горизонтального масштабирования Azure Cosmos DB.  
 
 > [!NOTE]
 > Для работы с этим кратким руководством требуется учетная запись базы данных графа, созданной после 20 декабря 2017 г. Существующие учетные записи будут поддерживать Python после переноса в общедоступную версию.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
 
@@ -49,7 +58,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Теперь перейдем к работе с кодом. Мы клонируем приложение API Graph из GitHub, зададим строку подключения и выполним ее. Вы узнаете, как можно упростить работу с данными программным способом.  
+Теперь перейдем к работе с кодом. Мы клонируем приложение API Gremlin из GitHub, зададим строку подключения и запустим приложение. Вы узнаете, как можно упростить работу с данными программным способом.  
 
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 
@@ -185,7 +194,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 5. Щелкните **Добавить свойство**, чтобы поочередно добавить каждое из указанных ниже свойств. Обратите внимание, что вы можете создать уникальные свойства для каждого пользователя в графе. Требуется только ключ идентификатора.
 
-    key|value|Заметки
+    key|value|Примечания
     ----|----|----
     id|ashley|Уникальный идентификатор вершины. Если не указать идентификатор, он создастся автоматически.
     gender|Женский| 
@@ -202,7 +211,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 9. Щелкните **Добавить свойство**, чтобы поочередно добавить следующие свойства:
 
-    key|value|Заметки
+    key|value|Примечания
     ----|----|----
     id|rakesh|Уникальный идентификатор вершины. Если не указать идентификатор, он создастся автоматически.
     gender|Мужской| 
