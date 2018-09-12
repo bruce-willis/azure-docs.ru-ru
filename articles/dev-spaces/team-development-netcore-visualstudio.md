@@ -13,12 +13,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 1b603db552edd14dab2c86e6b005184eb88e74bb
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: 97b052833946b373e2333491c4b516b3a088130b
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42154821"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44158472"
 ---
 # <a name="team-development-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces
 
@@ -163,6 +163,6 @@ ms.locfileid: "42154821"
 
 Теперь добавьте часть "scott.s" в URL-адрес, чтобы получилось http://scott.s.webfrontend.123456abcdef.eastus.aksapp.io, и обновите браузер. Должна сработать точка останова, заданная в проекте `mywebapi`. Нажмите клавишу F5, чтобы продолжить. В браузере вы должны увидеть новое сообщение "Hello from webfrontend and mywebapi now says something new". Это происходит, так как путь к обновленному коду в `mywebapi` используется в пространстве `default/scott`.
 
-[!INCLUDE[](includes/well-done.md)]
+[!INCLUDE [](includes/well-done.md)]
 
-[!INCLUDE[](includes/clean-up.md)]
+[!INCLUDE [](includes/clean-up.md)]

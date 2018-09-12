@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
 ms.service: security-center
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/23/2018
 ms.author: rkarlin
-ms.openlocfilehash: 92e0b485f51ebeb2b743c8c01372e9056af4b6eb
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 9043c6583a15d3be9d0d468e83a4bf79b3121794
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124873"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304124"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Сбор данных в центре безопасности Azure
 Центр безопасности собирает данные c виртуальных машин Azure и c компьютеров, не относящихся к Azure, чтобы отслеживать уязвимости и угрозы безопасности. Для сбора данных используется агент Microsoft Monitoring Agent, который считывает различные конфигурации, связанные с безопасностью, и журналы событий с компьютера, а также копирует данные в рабочую область для анализа. К примерам таких данных относятся тип и версия операционной системы, журналы операционной системы (журналы событий Windows), выполняющиеся процессы, имя компьютера, IP-адреса и имя вошедшего пользователя. Этот агент также копирует файлы аварийных дампов в рабочую область.

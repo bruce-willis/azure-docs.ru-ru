@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: 41d495e38a8360609afe924bb49ccf2f6aea086e
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 4c8f2966df9c33ec227b14c00996f84f39043cdb
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43340045"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44349234"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -340,7 +340,7 @@ ms.locfileid: "43340045"
 | Шаг | Ресурсы |
 | --- | --- |
 | Удалите пользователя из группы, которой назначено приложение. | [Управление участниками групп в клиенте Azure Active Directory](fundamentals/active-directory-groups-members-azure-portal.md) |
-| Подождите несколько минут, пока отзыв закончится. | [Автоматическая подготовка пользователей для приложения SaaS в Azure AD: как работает автоматическая подготовка](active-directory-saas-app-provisioning.md#how-does-automatic-provisioning-work) |
+| Подождите несколько минут, пока отзыв закончится. | [Автоматическая подготовка пользователей для приложения SaaS в Azure AD: как работает автоматическая подготовка](manage-apps/user-provisioning.md#how-does-automatic-provisioning-work) |
 | В отдельном сеансе браузера войдите в качестве информационного работника на портал "Мои приложения" и убедитесь, что элемент отсутствует. | http://myapps.microsoft.com |
 
 

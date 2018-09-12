@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: rogarana
-ms.openlocfilehash: 7fc5b164792907644a0a41615436806f998a8b1e
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 2f5396826da88fd2efdd3588babdbdfdeb42252a
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398715"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44026149"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-java-sdk-v7"></a>Краткое руководство. Отправка, скачивание и отображение больших двоичных объектов с помощью пакета SDK для Java версии 7
 
@@ -208,7 +208,7 @@ sourceFile.deleteOnExit();
 
 > [!div class="nextstepaction"]
 > [Пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java) 
-> [Справочник по API](https://docs.microsoft.com/en-us/java/api/storage/client?view=azure-java-stable)
+> [Справочник по API](https://docs.microsoft.com/java/azure/?view=azure-java-stable)
 > [Примеры кода для Java](../common/storage-samples-java.md)
 
 * Дополнительные сведения об обозревателе объектов и BLOB-объектах см. в статье [Управление ресурсами хранилища BLOB-объектов Azure с помощью обозревателя хранилищ](../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).

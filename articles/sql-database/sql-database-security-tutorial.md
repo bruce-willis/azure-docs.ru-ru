@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: mvc,security
 ms.topic: tutorial
-ms.date: 04/24/2018
+ms.date: 09/07/2018
 ms.author: daredis
-ms.openlocfilehash: 54ec3c1386d6ce2023106367a6af1915e754948f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 6d805a39831ce2eea204689a4daa069d10b757e8
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32193467"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054076"
 ---
 # <a name="secure-your-azure-sql-database"></a>Защита базы данных SQL Azure
 
@@ -40,17 +40,17 @@ ms.locfileid: "32193467"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее.
 
 - Установите последнюю версию [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). 
 - Установите Microsoft Excel.
-- Создайте сервер и базу данных SQL Azure. Для этого ознакомьтесь с разделами [Создание базы данных SQL Azure на портале Azure](sql-database-get-started-portal.md), [Создание отдельной базы данных SQL Azure с помощью Azure CLI](sql-database-get-started-cli.md) и [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-get-started-powershell.md). 
+- Создайте сервер и базу данных SQL Azure. Для этого ознакомьтесь с разделами [Создание базы данных SQL Azure на портале Azure](sql-database-get-started-portal.md), [Создание отдельной базы данных SQL Azure с помощью Azure CLI](sql-database-cli-samples.md) и [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-powershell-samples.md). 
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
-Войдите на [портал Azure](https://portal.azure.com/).
+Войдите на [портале Azure](https://portal.azure.com/).
 
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Создание правила брандмауэра на уровне сервера с помощью портала Azure
 

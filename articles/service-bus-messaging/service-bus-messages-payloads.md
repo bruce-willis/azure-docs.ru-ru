@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: spelluru
-ms.openlocfilehash: 100559f86a72cd5a5148d1db99764e5b04f3e3b1
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 44c25aa589b757ec29dad6863ff1969e76aed872
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43702482"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44346242"
 ---
 # <a name="messages-payloads-and-serialization"></a>Сообщения, полезные данные и сериализация
 
@@ -36,7 +36,7 @@ ms.locfileid: "43702482"
 |---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  [ContentType](/dotnet/api/microsoft.azure.servicebus.message.contenttype) (content-type)           | При необходимости описывает полезные данные сообщения с помощью дескриптора, используя формат RFC2045 раздела 5, например `application/json`.                                                                                                                                                                                                                                                                                             |
 |  [CorrelationId](/dotnet/api/microsoft.azure.servicebus.message.correlationid#Microsoft_Azure_ServiceBus_Message_CorrelationId) (correlation-id)       | Позволяет приложению указать контекст сообщения для корреляции, например **MessageId** сообщения, для которого предоставляется ответ.                                                                                                                                                                                                                                                                  |
-| [DeadLetterSource](/dotnet/api/microsoft.azure.servicebus.message.deadlettersource)                      | Задается только в сообщениях, которые не были доставлены и впоследствии были автоматически пересланы из очереди недоставленных сообщений в другую сущность. Указывает сущность, в которой сообщения перешли в состояние недоставленных. Это свойство доступно только для чтения.                                                                                                                                                                                                                                  |
+| [DeadLetterSource](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deadlettersource)                      | Задается только в сообщениях, которые не были доставлены и впоследствии были автоматически пересланы из очереди недоставленных сообщений в другую сущность. Указывает сущность, в которой сообщения перешли в состояние недоставленных. Это свойство доступно только для чтения.                                                                                                                                                                                                                                  |
 | [DeliveryCount](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deliverycount)                         | Количество попыток доставки этого сообщения. Значение счетчика увеличивается, когда заканчивается период блокировки сообщения или сообщение явно отклоняется получателем. Это свойство доступно только для чтения.                                                                                                                                                                                                                                                  |
 | [EnqueuedSequenceNumber](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedsequencenumber)                | Для автоматически пересланных сообщений это свойство отражает порядковый номер, который был присвоен сообщению в исходной точке отправки. Это свойство доступно только для чтения.                                                                                                                                                                                                                                                                |
 | [EnqueuedTimeUtc](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc)                       | Время в формате UTC, когда сообщение было принято и сохранено в сущности. Это значение может использоваться в качестве достоверного и нейтрального индикатора времени прихода сообщения, если получатель не доверяет времени на стороне отправителя. Это свойство доступно только для чтения.                                                                                                                                                                                                   |

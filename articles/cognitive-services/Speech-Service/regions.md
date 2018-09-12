@@ -8,12 +8,12 @@ ms.technology: speech
 ms.topic: article
 ms.date: 06/28/2018
 ms.author: mahilleb
-ms.openlocfilehash: 082002b25b02e1e496221f4686d0e636630dd438
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 1cb00035dc8f1cdeabd1beb22ca69f47bf4bd89e
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39324397"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44379576"
 ---
 # <a name="regions-of-the-speech-service"></a>Регионы и конечные точки службы "Речь"
 
@@ -35,11 +35,16 @@ ms.locfileid: "39324397"
 
 В следующей таблице перечислены доступные регионы для служб **распознавания речи** и **перевода**.
 
-Регион| Значение параметра региона в пакете SDK для службы "Речь"
+Регион| Значение параметра региона в пакете SDK для службы "Речь"| Microsoft Azure
 -|-
-Запад США| `westus`
-Восточная Азия| `eastasia`
-Северная Европа| `northeurope`
+Запад США| `westus`| https://westus.cris.ai
+Западная часть США 2| `westus2`| https://westus2.cris.ai
+Восточная часть США| `eastus`| https://eastus.cris.ai
+Восток США 2| `eastus2`| https://eastus2.cris.ai
+Восточная Азия| `eastasia`| https://eastasia.cris.ai
+Юго-Восточная Азия| `southeastasia`| https://southeastasia.cris.ai
+Северная Европа| `northeurope`| https://northeurope.cris.ai
+Западная Европа|  `westeurope`| https://westeurope.cris.ai
 
 ### <a name="regions-for-intent-recognition"></a>Регионы для распознавания намерений
 

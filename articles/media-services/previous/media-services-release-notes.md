@@ -120,8 +120,8 @@ ms.locfileid: "42146993"
  С помощью служб мультимедиа теперь можно получить доступ к данным телеметрии и метрик для служб. Текущая версия служб мультимедиа позволяет собирать данные телеметрии для динамического канала, конечной точки потоковой передачи и архивированных сущностей. Дополнительные сведения см. в статье [Телеметрия служб мультимедиа Azure](media-services-telemetry-overview.md).
 
 ## <a name="a-idjulychanges16july-2016-release"></a><a id="july_changes16"/>Выпуск: июль 2016 г.
-### <a name="updates-to-the-manifest-file-ism-generated-by-encoding-tasks"></a>Обновления файла манифеста (ISM-файла), созданного задачами кодирования
-Когда вы отправляете задачу кодирования в Media Encoder Standard или в Media Encoder Premium, задача кодирования создает [файл манифеста потоковой передачи](media-services-deliver-content-overview.md) (ISM-файл) в выходном ресурсе. В последнем выпуске службы обновлен синтаксис этого файла манифеста потоковой передачи.
+### <a name="updates-to-the-manifest-file-ism-generated-by-encoding-tasks"></a>Обновления файла манифеста (\*.ISM), созданного задачами кодирования
+Когда вы отправляете задачу кодирования в Media Encoder Standard или в Media Encoder Premium, задача кодирования создает [файл манифеста потоковой передачи](media-services-deliver-content-overview.md) (\*.ISM) в выходном ресурсе. В последнем выпуске службы обновлен синтаксис этого файла манифеста потоковой передачи.
 
 > [!NOTE]
 > Синтаксис файла манифеста потоковой передачи (ISM-файл) зарезервирован для внутреннего использования. Он может измениться в будущих выпусках. Не изменяйте содержимое этого файла.
@@ -370,7 +370,7 @@ REST API служб мультимедиа обновлены до версии 
 
 ## <a id="may_changes_14"></a>Выпуск: май 2014 г.
 ### <a id="may_14_changes"></a>Общие обновления служб мультимедиа
-Теперь можно использовать [Динамическая упаковка] для потоковой передачи HLS версии 3. Для потоковой передачи HLS версии 3 добавьте следующий формат в исходный путь указателя: *.ism/manifest(format=v3-aapl-m3u8). Дополнительные сведения см. в [этой теме форума](https://social.msdn.microsoft.com/Forums/en-US/13b8a776-9519-4145-b9ed-d2b632861fde/dynamic-packaging-to-hls-v3).
+Теперь можно использовать [динамическую упаковку] для потоковой передачи HLS версии 3. Для потоковой передачи HLS версии 3 добавьте следующий формат в исходный путь указателя: *.ism/manifest(format=v3-aapl-m3u8). Дополнительные сведения см. в [этой теме форума](https://social.msdn.microsoft.com/Forums/en-US/13b8a776-9519-4145-b9ed-d2b632861fde/dynamic-packaging-to-hls-v3).
 
 Динамическая упаковка теперь также поддерживает доставку потоков HLS (версии 3 и 4), зашифрованных с помощью PlayReady на основе Smooth Streaming со статическим шифрованием с использованием PlayReady. Дополнительные сведения о шифровании Smooth Streaming с помощью PlayReady см. в статье [Динамическая упаковка](http://msdn.microsoft.com/library/azure/dn189154.aspx).
 
@@ -560,7 +560,7 @@ REST API служб мультимедиа обновлены до версии 
 [Обзор шаблонов лицензий PlayReady служб мультимедиа]: http://msdn.microsoft.com/library/azure/dn783459.aspx
 [Stream storage-encrypted content]: http://msdn.microsoft.com/library/azure/dn783451.aspx
 [Azure portal]: https://portal.azure.com
-[Динамическая упаковка]: http://msdn.microsoft.com/library/azure/jj889436.aspx
+[динамическую упаковку]: http://msdn.microsoft.com/library/azure/jj889436.aspx
 [Nick Drouin's blog]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [Protect Smooth Streaming with PlayReady]: http://msdn.microsoft.com/library/azure/dn189154.aspx
 [Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET]: http://msdn.microsoft.com/library/azure/dn745650.aspx

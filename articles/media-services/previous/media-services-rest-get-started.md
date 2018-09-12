@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/13/2018
 ms.author: juliako
-ms.openlocfilehash: 757ba9e999bfbb46be96e653e7939d91bdf67679
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 015b8570e9cbb06a33107de7a8cb9ae00d60cacb
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287131"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44053994"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-rest"></a>Начало работы с доставкой содержимого по запросу с помощью REST
 [!INCLUDE [media-services-selector-get-started](../../../includes/media-services-selector-get-started.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "43287131"
 >[!NOTE]
 >Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Указывайте один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д., например политики для указателей, которые должны оставаться на месте в течение длительного времени (политики запрета передачи). Дополнительные сведения см. в [этой статье](media-services-dotnet-manage-entities.md#limit-access-policies).
 
-Дополнительные сведения о сущностях AMS REST, используемых в этой статье, см. в [справочнике по REST API служб мультимедиа Azure](https://docs.microsoft.com/en-us/rest/api/media/services/azure-media-services-rest-api-reference). См. также статью [Основные понятия служб мультимедиа Azure](media-services-concepts.md).
+Дополнительные сведения о сущностях AMS REST, используемых в этой статье, см. в [справочнике по REST API служб мультимедиа Azure](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference). См. также статью [Основные понятия служб мультимедиа Azure](media-services-concepts.md).
 
 >[!NOTE]
 >При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Дополнительную информацию см. в статье [Обзор интерфейса REST API служб мультимедиа](media-services-rest-how-to-use.md).
@@ -405,7 +405,7 @@ ms.locfileid: "43287131"
 
 ## <a id="encode"></a>Кодирование исходного файла в набор MP4-файлов с адаптивным битрейтом
 
-После приема активов в службы мультимедиа файлы мультимедиа можно кодировать, менять их формат, добавлять водяные знаки и т. д. до их доставки клиентам. Эти действия запланированы и выполняются в нескольких экземплярах фоновых ролей для обеспечения высокой производительности и доступности. Эти действия называются заданиями, и каждое задание состоит из атомарных задач, которые выполняют фактическую работу с файлом ресурса-контейнера (дополнительные сведения см. в описаниях [заданий](https://docs.microsoft.com/en-us/rest/api/media/operations/job) и [задач](https://docs.microsoft.com/en-us/rest/api/media/operations/task)).
+После приема активов в службы мультимедиа файлы мультимедиа можно кодировать, менять их формат, добавлять водяные знаки и т. д. до их доставки клиентам. Эти действия запланированы и выполняются в нескольких экземплярах фоновых ролей для обеспечения высокой производительности и доступности. Эти действия называются заданиями, и каждое задание состоит из атомарных задач, которые выполняют фактическую работу с файлом ресурса-контейнера (дополнительные сведения см. в описаниях [заданий](https://docs.microsoft.com/rest/api/media/operations/job) и [задач](https://docs.microsoft.com/rest/api/media/operations/task)).
 
 Как было упомянуто ранее, при работе со службами мультимедиа Azure один из наиболее распространенных сценариев — доставка потоковой передачи с адаптивным битрейтом клиентам. Службы мультимедиа могут динамически упаковывать набор MP4-файлов с переменной скоростью в один из следующих форматов: HTTP Live Streaming (HLS), Smooth Streaming и MPEG-DASH.
 

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 07/09/2018
 ms.author: aliceku
 monikerRange: = azuresqldb-current || = azure-sqldw-latest || = sqlallproducts-allversions
-ms.openlocfilehash: 0ed05fd2d55f1c4c80bec9f64925be2eddddc067
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: afc53fc1abce74b247ec2e25bc3e4845bc870860
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "40043573"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44380205"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Прозрачное шифрование данных для хранилища данных и Базы данных SQL
 
@@ -128,7 +128,7 @@ Transact-SQL не позволяет переключиться с предох�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь с общими сведениями о прозрачном шифровании данных ((https://docs.microsoft.com/sql/relational-databases/security/transparent-data-encryption).
+- Общие сведения о прозрачном шифровании данных см. в [этой статье](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption).
 - Дополнительные сведения о TDE с поддержкой создания собственных ключей для Базы данных SQL и хранилища данных, можно найти в [этой статье](transparent-data-encryption-byok-azure-sql.md).
 - Чтобы реализовать TDE с созданием собственных ключей из Key Vault с помощью PowerShell, изучите [это практическое руководство](transparent-data-encryption-byok-azure-sql-configure.md).
 - Чтобы больше узнать о Key Vault, перейдите к [странице документации по Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault).

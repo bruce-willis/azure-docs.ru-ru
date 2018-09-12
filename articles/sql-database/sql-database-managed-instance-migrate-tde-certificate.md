@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 08/09/2018
 ms.author: mlandzic
 manager: craigg
-ms.openlocfilehash: afecd69cdf9832e1c6dc294ca01968ee50a3eabd
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 73990d6feeed56114bc3c66164bbb53c093bbe21
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41920893"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44050617"
 ---
 # <a name="migrate-certificate-of-tde-protected-database-to-azure-sql-managed-instance"></a>Миграция сертификата защищенной TDE базы данных в Управляемый экземпляр базы данных SQL Azure
 
@@ -141,4 +141,4 @@ ms.locfileid: "41920893"
 
 В этой статье описано как перенести сертификат, защищающий ключ шифрования базы данных с помощью прозрачного шифрования данных, из локального или IaaS SQL Server в Управляемый экземпляр SQL Azure.
 
-Дополнительные сведения о восстановлении резервной копии базы данных в Управляемом экземпляре базы данных SQL Azure см. в разделе [Восстановление резервной копии базы данных в Управляемый экземпляр базы данных SQL Azure](sql-database-managed-instance-restore-from-backup-tutorial.md).
+Дополнительные сведения о восстановлении резервной копии базы данных в Управляемом экземпляре базы данных SQL Azure см. в разделе [Восстановление резервной копии базы данных в Управляемый экземпляр базы данных SQL Azure](sql-database-managed-instance-get-started-restore.md).

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: cde70518164c386697127b079979b5b3b76ae088
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: cd95a1f1e0631340fa9844fd31c3d8c0af1168dd
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143736"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44347058"
 ---
 # <a name="article-index-for-application-management-in-azure-active-directory"></a>Указатель статей по управлению приложениями в Azure Active Directory
 В этой статье представлен полный список всех статей о различных функциях приложений в Azure Active Directory (Azure AD).
@@ -42,7 +42,7 @@ ms.locfileid: "42143736"
 | Область функций |  |
 |:---:| --- |
 | Федеративный единый вход |[Отладка единого входа на основе SAML в приложения в Azure Active Directory](develop/howto-v1-debug-saml-sso-issues.md) |
-| Единый вход на основе пароля |[Устранение неполадок, связанных с расширением панели доступа для Internet Explorer](active-directory-saas-ie-troubleshooting.md) |
+| Единый вход на основе пароля |[Устранение неполадок, связанных с расширением панели доступа для Internet Explorer](manage-apps/manage-access-panel-browser-extension.md) |
 | Прокси приложения |[Устранение неполадок прокси-сервера приложений](manage-apps/application-proxy-troubleshoot.md) |
 | Единый вход между локальным AD и Azure AD |[Устранение неполадок при синхронизации хэшированных паролей](connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md#troubleshoot-password-hash-synchronization)<br /><br />[Устранение неполадок обратной записи паролей](authentication/active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) |
 | Динамическое членство в группах |[Устранение неполадок динамического членства в группах](users-groups-roles/groups-troubleshooting.md) |
@@ -56,7 +56,7 @@ ms.locfileid: "42143736"
 | Общие сведения о федеративном и других способах входа |[Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](manage-apps/what-is-single-sign-on.md) |
 | Тысячи приложений SaaS, предварительно интегрированных с Azure AD, для которых можно с легкостью настроить единый вход |[Начало работы с коллекцией приложений Azure AD](manage-apps/what-is-single-sign-on.md#get-started-with-the-azure-ad-application-gallery)<br /><br />[Полный список предварительно интегрированных приложений, поддерживающих федерацию](saas-apps/tutorial-list.md)<br /><br />[Добавление приложения в коллекцию приложений Azure Active Directory](develop/howto-app-gallery-listing.md) |
 | Более 150 руководств по настройке единого входа для таких приложений, как [Salesforce](saas-apps/salesforce-tutorial.md), [ServiceNow](saas-apps/servicenow-tutorial.md), [Google Apps](saas-apps/google-apps-tutorial.md), [Workday](saas-apps/workday-tutorial.md) и многих других |[Список учебников по интеграции приложений SaaS с Azure Active Directory](saas-apps/tutorial-list.md) |
-| Настройка конфигурации единого входа вручную |[Настройка федеративного единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](application-config-sso-how-to-configure-federated-sso-non-gallery.md)<br /><br />[Настройка утверждений, выпущенных в маркере SAML для предварительно интегрированных приложений](active-directory-saml-claims-customization.md) |
+| Настройка конфигурации единого входа вручную |[Настройка федеративного единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)<br /><br />[Настройка утверждений, выпущенных в маркере SAML для предварительно интегрированных приложений](active-directory-saml-claims-customization.md) |
 | Руководство по устранению неполадок для федеративных приложений, использующих протокол SAML |[Отладка единого входа на основе SAML в приложения в Azure Active Directory](develop/howto-v1-debug-saml-sso-issues.md) |
 | Настройка срока действия сертификата приложения и способы обновления сертификатов |[Управление сертификатами для федеративного единого входа в Azure Active Directory](manage-apps/manage-certificates-for-federated-single-sign-on.md) |
 
@@ -70,7 +70,7 @@ ms.locfileid: "42143736"
 | Общие сведения о принципах работы единого входа на основе паролей и краткий технический обзор |[Единый вход на основе пароля](manage-apps/what-is-single-sign-on.md#password-based-single-sign-on) |
 | Сводка сценариев совместного использования учетных записей и способов решения этих проблем с помощью Azure AD |[Совместное использование учетных записей в Azure AD](active-directory-sharing-accounts.md) |
 | Автоматическое изменение пароля для определенных приложений с определенной периодичностью |[Automated Password Rollover (preview) (Автоматическая смена пароля (предварительная версия))](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview/) |
-| Руководства по развертыванию и устранению неполадок для расширения управления паролями Azure AD с использованием Internet Explorer |[Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики](active-directory-saas-ie-group-policy.md)<br /><br />[Устранение неполадок, связанных с расширением панели доступа для Internet Explorer](active-directory-saas-ie-troubleshooting.md) |
+| Руководства по развертыванию и устранению неполадок для расширения управления паролями Azure AD с использованием Internet Explorer |[Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики](manage-apps/deploy-access-panel-browser-extension.md)<br /><br />[Устранение неполадок, связанных с расширением панели доступа для Internet Explorer](manage-apps/manage-access-panel-browser-extension.md) |
 
 Функция единого входа на основе паролей доступна для всех выпусков Azure AD, и ее можно использовать для 10 приложений на пользователя. [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) поддерживает неограниченное количество приложений. Если ваша организация использует [Azure AD уровня "Базовый"](https://azure.microsoft.com/pricing/details/active-directory/) или [Azure AD уровня "Премиум"](https://azure.microsoft.com/pricing/details/active-directory/), то вы можете [использовать группы для предоставления доступа к приложениям](#managing-access-to-applications). Автоматическая смена пароля — это функция [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) .
 
@@ -130,11 +130,11 @@ Cloud Discovery анализирует журналы трафика на осн
 
 | Путеводитель по статьям |  |
 |:---:| --- |
-| Дополнительные сведения о принципах работы и ответы на часто задаваемые вопросы |[Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](active-directory-saas-app-provisioning.md) |
-| Настройка способов сопоставления сведений между Azure AD и приложением SaaS |[Настройка сопоставлений атрибутов](active-directory-saas-customizing-attribute-mappings.md)<br><br>[Запись выражений для сопоставления атрибутов](active-directory-saas-writing-expressions-for-attribute-mappings.md) |
+| Дополнительные сведения о принципах работы и ответы на часто задаваемые вопросы |[Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](manage-apps/user-provisioning.md) |
+| Настройка способов сопоставления сведений между Azure AD и приложением SaaS |[Настройка сопоставлений атрибутов](manage-apps/customize-application-attributes.md)<br><br>[Запись выражений для сопоставления атрибутов](manage-apps/functions-for-customizing-application-data.md) |
 | Включение автоматической подготовки в любом приложении, которое поддерживает протокол SCIM |[Автоматическая подготовка пользователей и групп из Azure Active Directory в приложениях с использованием SCIM](manage-apps/use-scim-to-provision-users-and-groups.md) |
-| Составление отчетов о подготовке пользователей и устранение неполадок |[Отчеты об автоматической подготовке пользователей](active-directory-saas-provisioning-reporting.md)<br><br>[Устранение неполадок при подготовке пользователей](active-directory-application-provisioning-content-map.md) |
-| Ограничение количества пользователей, которые будут подготовлены для работы с приложением, на основе значений их атрибутов |[Подготовка приложений на основе атрибутов с использованием фильтров области](active-directory-saas-scoping-filters.md) |
+| Составление отчетов о подготовке пользователей и устранение неполадок |[Отчеты об автоматической подготовке пользователей](manage-apps/check-status-user-account-provisioning.md)<br><br>[Устранение неполадок при подготовке пользователей](active-directory-application-provisioning-content-map.md) |
+| Ограничение количества пользователей, которые будут подготовлены для работы с приложением, на основе значений их атрибутов |[Подготовка приложений на основе атрибутов с использованием фильтров области](manage-apps/define-conditional-rules-for-provisioning-user-accounts.md) |
 
 Автоматическая подготовка пользователей доступна для всех выпусков Azure AD, и ее можно использовать для 10 приложений на пользователя. [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) поддерживает неограниченное количество приложений. Если ваша организация использует [Azure AD уровня "Базовый"](https://azure.microsoft.com/pricing/details/active-directory/) или [Azure AD уровня "Премиум"](https://azure.microsoft.com/pricing/details/active-directory/), вы можете [использовать группы для управления отбором пользователей для подготовки](#managing-access-to-applications).
 

@@ -15,12 +15,12 @@ ms.date: 06/15/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: hirsin, dastrock, smalser
-ms.openlocfilehash: 5895e918fbd3b67074069ccc81bd794a75725c9a
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 388337fa80d174cb17dae12fa9d5f2fbdfe7e737
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39620942"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44347789"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
@@ -96,11 +96,11 @@ ms.locfileid: "39620942"
     - Утверждения, выданные в маркере
     - Сертификат, использованный для подписи маркера. Сведения о том, как получить ответ SAML, см. в статье [Протокол единого входа SAML](single-sign-on-saml-protocol.md).
 4. Дополнительные сведения об ответе SAM см. в статье [Протокол единого входа SAML](single-sign-on-saml-protocol.md).
-5. Получив ответ SAML, перейдите в раздел [Ошибка на странице приложения после входа](../application-sign-in-problem-application-error.md) и ознакомьтесь с инструкциями по решению проблемы. 
+5. Получив ответ SAML, перейдите в раздел [Ошибка на странице приложения после входа](../manage-apps/application-sign-in-problem-application-error.md) и ознакомьтесь с инструкциями по решению проблемы. 
 6. Если вы по-прежнему не можете выполнить вход, обратитесь к поставщику приложения и узнайте, чего не хватает в ответе SAML.
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Теперь, когда единый вход в приложение работает, перейдите к следующим разделам — [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](../active-directory-saas-app-provisioning.md) или [Начало работы с условным доступом](../conditional-access/app-based-conditional-access.md).
+Теперь, когда единый вход в приложение работает, перейдите к следующим разделам — [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](../manage-apps/user-provisioning.md) или [Начало работы с условным доступом](../conditional-access/app-based-conditional-access.md).
 
 

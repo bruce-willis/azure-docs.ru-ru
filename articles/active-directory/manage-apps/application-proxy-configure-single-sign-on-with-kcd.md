@@ -15,12 +15,12 @@ ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017, it-pro
-ms.openlocfilehash: 4ce76f1156d4d8d85f5e10bb750b012f93ba7afb
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 1178d85f295c6ac01f367db8adc2c9b855cdc829
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39366686"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44347839"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -135,12 +135,12 @@ Sharepointserviceaccount может содержать учетную запис
    * имя локальной учетной записи SAM (в зависимости от локальной конфигурации контроллера домена).
 
 ### <a name="troubleshooting-sso-for-different-identities"></a>Устранение неполадок единого входа для различных удостоверений
-Когда в процессе единого входа возникает ошибка, она заносится в журнал событий на компьютере соединителя, как описано в разделе [Устранение неполадок](../application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
+Когда в процессе единого входа возникает ошибка, она заносится в журнал событий на компьютере соединителя, как описано в разделе [Устранение неполадок](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
 Но в некоторых случаях запрос успешно отправляется внутреннему приложению, пока оно обрабатывает другие HTTP-ответы. Устранение подобных неполадок следует начинать с проверки события с номером 24029 в журнале событий сеанса прокси приложения на компьютере соединителя. Удостоверение пользователя, которое использовалось для делегирования, отображается в поле "Пользователь" в сведениях о событии. Чтобы включить журнал сеанса, выберите пункт **Отобразить аналитический и отладочный журналы** в меню "Вид" средства просмотра событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Настройка приложения прокси приложения для использования ограниченного делегирования Kerberos](../application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
+* [Настройка приложения прокси приложения для использования ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
 
 

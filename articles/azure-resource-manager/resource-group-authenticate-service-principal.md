@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: df1cf093a154b4f7adf59fae93f90fbc70459788
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 57cfa44a0eb114503b89733b2c3e309b65d5b7e5
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038594"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44023330"
 ---
 # <a name="use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Использование Azure PowerShell для создания субъекта-службы с сертификатом
 
@@ -29,7 +29,7 @@ ms.locfileid: "40038594"
 * Использовать сертификат для аутентификации при выполнении автоматического сценария.
 
 > [!IMPORTANT]
-> Вместо создания субъекта-службы вы можете применить управляемое удостоверение службы (MSI) Azure AD в качестве удостоверения приложения. MSI Azure AD используется в режиме общедоступной предварительной версии. Эта функция Azure Active Directory упрощает создание удостоверения для кода. Если код выполняется в службе, которая поддерживает MSI Azure AD и обращается к ресурсам, которые поддерживают аутентификацию Azure Active Directory, то MSI Azure AD будет оптимальным выбором. Дополнительные сведения об удостоверении MSI Azure AD, в том числе список поддерживаемых служб, см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/managed-service-identity/overview.md).
+> Вместо создания субъекта-службы вы можете применить управляемое удостоверение службы (MSI) Azure AD в качестве удостоверения приложения. MSI Azure AD используется в режиме общедоступной предварительной версии. Эта функция Azure Active Directory упрощает создание удостоверения для кода. Если код выполняется в службе, которая поддерживает MSI Azure AD и обращается к ресурсам, которые поддерживают аутентификацию Azure Active Directory, то MSI Azure AD будет оптимальным выбором. Дополнительные сведения об удостоверении MSI Azure AD, в том числе список поддерживаемых служб, см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
 В этой статье показано, как создать субъект-службу, который выполняет аутентификацию с помощью сертификата. Настройка субъекта-службы с паролем описана в статье [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).
 

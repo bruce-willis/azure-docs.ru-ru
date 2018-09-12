@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: 26b5dcb4-ce3f-4f22-8d56-d2bf743cfc90
 ms.service: security-center
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/20/2018
 ms.author: terrylan
-ms.openlocfilehash: c268538cf401b29f68210c6d017c2eac55e88939
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 87ae5e4999b586d431882615ec8a603413f168ed
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42146729"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44296417"
 ---
 # <a name="provide-security-contact-details-in-azure-security-center"></a>Предоставление сведений о контактных лицах по вопросам безопасности в центре безопасности Azure
 Центр безопасности Azure порекомендует вам предоставить сведения о контактных лицах по вопросам безопасности для подписки Azure, если это еще не сделано. Корпорация Майкрософт будет использовать эту информацию для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ. Центр Microsoft Security Response Center (MSRC) осуществляет выборочный мониторинг безопасности сети и инфраструктуры Azure, а также получает аналитические данные об угрозах и жалобы о нарушениях от третьих лиц.

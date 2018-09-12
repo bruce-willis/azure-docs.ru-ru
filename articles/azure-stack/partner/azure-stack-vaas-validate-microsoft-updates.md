@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.date: 07/24/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: a9e1bb2f134e0e51803266f5e7f94c05ab6966f2
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 6ef8c0486a694ac44c53375b24893812b10343e4
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234490"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44158489"
 ---
 # <a name="validate-software-updates-from-microsoft"></a>Проверка обновлений программного обеспечения от корпорации Майкрософт
 
-[!INCLUDE[Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
+[!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 Корпорация Майкрософт периодически выпускает обновления для программного обеспечения Azure Stack. Эти обновления предоставляются партнерам по совместной разработке Azure Stack до того, как они станут общедоступными, чтобы партнеры могли проверить свои решения на основе обновлений и отправить в корпорацию Майкрософт свои отзывы.
 
@@ -60,4 +60,4 @@ ms.locfileid: "40234490"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения см. в статье [Документация партнера по Azure Stack](https://docs.microsoft.com/azure/azure-stack/partner).
+- Дополнительные сведения о проверке как услуге Azure Stack см. в [этой статье](https://docs.microsoft.com/azure/azure-stack/partner).

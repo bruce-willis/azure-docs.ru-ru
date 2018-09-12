@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 03/02/2018
 ms.author: barbkess
-ms.openlocfilehash: d22b86ad33db600eb5273e3ab09e71a1b1fd527b
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: cdce0ae223a637ac30ed472d2bf711aa36958414
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39577502"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44346769"
 ---
 # <a name="migrate-ad-fs-on-premises-apps-to-azure"></a>Перемещение локальных приложений AD FS в Azure 
 
@@ -55,7 +55,7 @@ ms.locfileid: "39577502"
 - Как поставщик удостоверений для приложений SaaS, Azure AD поддерживает следующие дополнительные возможности:
   - Сертификаты для подписи маркера для каждого приложения.
   - [Настраиваемые даты истечения срока действия сертификатов](manage-certificates-for-federated-single-sign-on.md).
-  - [Автоматическая подготовка](../active-directory-saas-app-provisioning.md) учетных записей пользователя (в основных приложениях Azure Marketplace) на основе удостоверений Azure AD.
+  - [Автоматическая подготовка](user-provisioning.md) учетных записей пользователя (в основных приложениях Azure Marketplace) на основе удостоверений Azure AD.
 
 **Использование возможностей локального поставщика удостоверений**
 - Преимущества Azure AD позволяют использовать локальное решение проверки подлинности. Это дает возможность использовать локальные решения многофакторной идентификации, ведение журналов и аудит. 
@@ -232,7 +232,7 @@ ms.locfileid: "39577502"
 ![Выбор Azure AD в качестве службы проверки подлинности](media/migrate-adfs-apps-to-azure/migrate10.png)
 
 ### <a name="optional-configure-user-provisioning-in-azure-ad"></a>Необязательно. Настройка подготовки пользователей в Azure AD
-Если вы хотите, чтобы в Azure AD напрямую выполнялась обработка подготовки пользователей для приложения SaaS, ознакомьтесь со статьей [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
+Если вы хотите, чтобы в Azure AD напрямую выполнялась обработка подготовки пользователей для приложения SaaS, ознакомьтесь со статьей [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

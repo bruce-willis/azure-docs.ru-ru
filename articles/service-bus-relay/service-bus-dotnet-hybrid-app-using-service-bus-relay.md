@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 11/02/2017
 ms.author: spelluru
-ms.openlocfilehash: 23e0e487914b6e8810d8db00462c353c99955665
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: fa8c4b07f79564a1e9aa4e78b2323789283d4e73
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697474"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054627"
 ---
 # <a name="net-on-premisescloud-hybrid-application-using-azure-wcf-relay"></a>Создание локального или облачного гибридного приложения .NET с использованием ретранслятора WCF Azure
 
@@ -232,7 +232,7 @@ ms.locfileid: "43697474"
     ![][18]
 
 7. Вернувшись к диалоговому окну **Создание веб-приложения ASP.NET**, нажмите кнопку **ОК**, чтобы создать приложение MVC.
-8. Теперь необходимо настроить ресурсы Azure для нового веб-приложения. Следуйте указаниям в разделе [Публикация в Azure](../app-service/app-service-web-get-started-dotnet-framework.md#publish-to-azure). Затем вернитесь к этому учебнику и перейдите к следующему шагу.
+8. Теперь необходимо настроить ресурсы Azure для нового веб-приложения. Следуйте указаниям в разделе [Публикация в Azure](../app-service/app-service-web-get-started-dotnet-framework.md#launch-the-publish-wizard). Затем вернитесь к этому учебнику и перейдите к следующему шагу.
 10. В обозревателе решений щелкните правой кнопкой мыши **Модели**, а затем выберите **Добавить** и **Класс**. В поле **Имя** введите **Product.cs**. Нажмите кнопку **Добавить**.
 
     ![][17]

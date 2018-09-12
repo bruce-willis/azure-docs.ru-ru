@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: wielriac
 ms.component: blobs
-ms.openlocfilehash: a215771b0126e9048b7d9da4ed1d6073c8e960a4
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: dc15dcb9f7b342d2d5140199ecf34c1a4781fa25
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267358"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44022694"
 ---
 # <a name="unique-features-of-azure-page-blobs"></a>Уникальные возможности страничных BLOB-объектов Azure
 
@@ -71,7 +71,7 @@ pageBlob.Resize(32 * OneGigabyteAsBytes);
 ```
 
 #### <a name="writing-pages-to-a-page-blob"></a>Запись страниц в страничный BLOB-объект
-Для записи страниц используйте метод [CloudPageBlob.WritePages](/library/microsoft.windowsazure.storageclient.cloudpageblob.writepages.aspx).  Это позволит записать последовательный набор страниц размером до 4 МБ. Записываемое смещение должно начинаться на границе 512 байт (startingOffset % 512 == 0), а заканчиваться на границе 512 — 1.  В следующем примере кода показано, как вызвать метод **WritePages** для большого двоичного объекта:
+Для записи страниц используйте метод [CloudPageBlob.WritePages](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudpageblob.beginwritepages?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_BeginWritePages_System_IO_Stream_System_Int64_System_String_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_System_AsyncCallback_System_Object_).  Это позволит записать последовательный набор страниц размером до 4 МБ. Записываемое смещение должно начинаться на границе 512 байт (startingOffset % 512 == 0), а заканчиваться на границе 512 — 1.  В следующем примере кода показано, как вызвать метод **WritePages** для большого двоичного объекта:
 
 ```csharp
 pageBlob.WritePages(dataStream, startingOffset); 
@@ -116,8 +116,6 @@ foreach (PageRange range in pageRanges)
 
 #### <a name="leasing-a-page-blob"></a>Сдача страничного BLOB-объекта в аренду
 Операция сдачи большого двоичного объекта в аренду устанавливает блокировку на большом двоичном объекте для операций записи и удаления, а также управляет ею. Эта операция полезна, если к страничному BLOB-объекту осуществляется доступ из нескольких клиентов. При ее применении запись в большой двоичный объект в текущий момент может осуществляться только одним клиентом. К примеру, в дисках Azure этот механизм сдачи в аренду используется, чтобы управление диском осуществлялось только с одной виртуальной машины. Длительность блокировки может составлять 15–60 секунд либо быть бесконечной. Дополнительные сведения см. в [этой документации](/rest/api/storageservices/lease-blob).
-
-> Воспользуйтесь следующей ссылкой, чтобы получить [примеры кода](/resources/samples/?service=storage&term=blob&sort=0 ) для многих других сценариев приложений. 
 
 Помимо разнообразных интерфейсов REST API, страничные BLOB-объекты обеспечивают общий доступ, устойчивость и повышенную безопасность. Далее мы рассмотрим эти преимущества подробнее. 
 

@@ -11,15 +11,15 @@ ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 08/31/2018
 ms.author: ambapat
-ms.openlocfilehash: 9b8b0da6e1572ab79ffb369497f64aad2cd249b9
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: d8c5e660b460e763fb4a500463543316c8c914ed
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43343468"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44159414"
 ---
 # <a name="secure-your-key-vault"></a>Защита хранилища ключей
 Хранилище ключей Azure — это облачная служба, которая обеспечивает защиту ключей шифрования и секретов (например, сертификатов, строк подключения и паролей) для облачных приложений. Так как это критически важные для бизнеса конфиденциальные данные, необходимо обеспечить защиту доступа к хранилищу ключей, чтобы только авторизованные приложения и пользователи могли получить к нему доступ. В этой статье приводится обзор модели доступа к хранилищу ключей, объясняется процесс проверки подлинности и авторизации и описывается, как обеспечить защиту доступа к хранилищу ключей для облачных приложений, а также рассматривается соответствующий пример.

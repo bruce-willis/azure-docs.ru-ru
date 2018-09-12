@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2017
 ms.author: jeedes
-ms.openlocfilehash: 510bf383848725f3864c40af02c2b309370237f0
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 855f147b0622ecc0831f2bc464e83d245af9e574
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438092"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44158677"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство. Интеграция Azure Active Directory с Clarizen
 
@@ -188,7 +188,7 @@ ms.locfileid: "39438092"
 
 ### <a name="create-a-clarizen-test-user"></a>Создание тестового пользователя Clarizen
 
-В рамках этого раздела создается пользователь с именем Britta Simon в приложении Clarizen. Clarizen поддерживает автоматическую подготовку пользователей, которая по умолчанию включена. Дополнительные сведения о настройке автоматической подготовки пользователей можно найти [здесь](clarizen-provisioning-tutorial.md).
+В рамках этого раздела создается пользователь с именем Britta Simon в приложении Clarizen.
 
 **Если необходимо создать пользователя вручную, выполните следующие действия:**
 
@@ -196,11 +196,11 @@ ms.locfileid: "39438092"
 
 1. Войдите на корпоративный сайт Clarizen в качестве администратора.
 
-1. Выберите параметр **Пользователи**.
+2. Выберите параметр **Пользователи**.
 
     ![Выберите пункт People (Пользователи)](./media/clarizen-tutorial/create_aaduser_001.png "Пользователи")
 
-1. Нажмите кнопку **Пригласить пользователя**.
+3. Нажмите кнопку **Пригласить пользователя**.
 
     ![Кнопка Invite User](./media/clarizen-tutorial/create_aaduser_002.png "Пригласить пользователя")
 
@@ -251,7 +251,6 @@ ms.locfileid: "39438092"
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Руководство по настройке Google Apps для автоматической подготовки пользователей](clarizen-provisioning-tutorial.md)
 
 <!--Image references-->
 

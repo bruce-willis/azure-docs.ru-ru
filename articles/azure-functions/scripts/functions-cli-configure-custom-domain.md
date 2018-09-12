@@ -4,24 +4,20 @@ description: Пример сценария Azure CLI для сопоставле
 services: functions
 documentationcenter: ''
 author: ggailey777
-manager: cfowler
-editor: ''
-tags: azure-service-management
+manager: jeconnoc
 ms.assetid: d127e347-7581-47d7-b289-e0f51f2fbfbc
-ms.service: functions
-ms.workload: na
+ms.service: azure-functions
 ms.devlang: azurecli
-ms.tgt_pltfrm: na
 ms.topic: sample
 ms.date: 07/04/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 0650fffeb54ebc4390c82fb2711d7c89e0ac4572
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: c5ae5ef52d60fd96a9398835b109475c08549f52
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989424"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44157250"
 ---
 # <a name="map-a-custom-domain-to-a-function-app"></a>Сопоставление личного домена с приложением-функцией
 
@@ -51,7 +47,7 @@ ms.locfileid: "38989424"
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения, необходимую для приложения-функции. |
 | [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan#az-appservice-plan-create) | Создает план службы приложений, необходимый для сопоставления личного домена. |
-| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az-functionapp-create) | Развертывает приложение-функцию в плане службы приложений |
+| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в плане службы приложений. |
 | [az functionapp config hostname add](https://docs.microsoft.com/cli/azure/functionapp/config/hostname#az-functionapp-config-hostname-add) | Сопоставляет личный домен с приложением-функцией. |
 
 ## <a name="next-steps"></a>Дополнительная информация

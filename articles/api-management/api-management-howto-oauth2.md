@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: 1b52c64db29e17a0c52eb63721be81844e856b64
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: cd022677da59588eca910a508b2596aa513eff4b
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42146658"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302815"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
@@ -63,9 +63,9 @@ ms.locfileid: "42146658"
 
     ![Новый сервер OAuth 2.0](./media/api-management-howto-oauth2/oauth-03.png)
 
-    Для сервера OAuth 2.0 Azure Active Directory параметр**Token endpoint URL** будет иметь следующий формат, где `<APPID>` имеет вид `yourapp.onmicrosoft.com`.
+    Для сервера OAuth 2.0 Azure Active Directory параметр**Token endpoint URL** будет иметь следующий формат, где `<TenantID>` имеет вид `yourapp.onmicrosoft.com`.
 
-    `https://login.microsoftonline.com/<APPID>/oauth2/token`
+    `https://login.microsoftonline.com/<TenantID>/oauth2/token`
 
     Параметр **Client authentication methods** по умолчанию имеет значение **Basic** (Обычная), а параметр **Access token sending method** — значение **Authorization header** (Заголовок авторизации). Эти значения можно настроить в данном разделе формы вместе с параметром **Default scope**.
 

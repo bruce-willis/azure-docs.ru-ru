@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: e87b791dda03521def32ca7473336d7d37644773
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: c1effeba7e4b0750d5af3a5a82b755704379af68
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43666025"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44021852"
 ---
 # <a name="creating-an-import-job-for-the-azure-importexport-service"></a>Создание задания импорта для службы импорта и экспорта Azure
 
@@ -97,7 +97,7 @@ ms.locfileid: "43666025"
 >  Диски необходимо отправить через поддерживаемого перевозчика, который предоставит номер для отслеживания посылки.
 
 ## <a name="updating-the-import-job-with-your-shipping-information"></a>Внесение сведений о доставке в задание импорта
-Когда вы получите номер для отслеживания посылки, вызовите операцию [обновления свойств задания](/api/storageimportexport/jobs#Jobs_Update) и предоставьте название компании перевозчика, номер для отслеживания по этому заданию и номер счета перевозчика для возврата дисков. Можно также указать количество дисков и дату отправки.
+Когда вы получите номер для отслеживания посылки, вызовите операцию [обновления свойств задания](https://docs.microsoft.com/rest/api/storageimportexport/Jobs/Update) и предоставьте название компании перевозчика, номер для отслеживания по этому заданию и номер счета перевозчика для возврата дисков. Можно также указать количество дисков и дату отправки.
 
 [!INCLUDE [storage-import-export-delete-personal-info.md](../../../includes/storage-import-export-delete-personal-info.md)]
 

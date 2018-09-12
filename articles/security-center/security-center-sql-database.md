@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: f109adfd-daed-4257-9692-2042a1399480
 ms.service: security-center
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/02/2017
 ms.author: terrylan
-ms.openlocfilehash: b507a62db9a80866005cb63d2008fb14612b516f
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: d8be831469659993da4f9f392e23b9408eb283e3
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31415951"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302226"
 ---
 # <a name="azure-security-center-and-azure-sql-database-service"></a>Центр безопасности Azure и служба базы данных SQL Azure
 [Центр безопасности Azure](https://azure.microsoft.com/documentation/services/security-center/) позволяет предотвращать, обнаруживать угрозы и реагировать на них. Она включает встроенные функции мониторинга безопасности и управления политиками для подписок Azure, помогает выявлять угрозы, которые в противном случае могли бы оказаться незамеченными, и взаимодействует с широким комплексом решений по обеспечению безопасности.
@@ -36,7 +36,7 @@ ms.locfileid: "31415951"
 
 Помимо защиты ресурсов базы данных SQL, центр безопасности предоставляет средства мониторинга и управления безопасностью виртуальных машин Azure, облачных служб, служб приложений, виртуальных сетей, а также многие другие возможности. Дополнительные сведения о центре безопасности можно получить [здесь](security-center-intro.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Уровень "Бесплатный" центра безопасности включен в вашей подписке. Дополнительные сведения об уровнях "Бесплатный" и "Стандартный" центра безопасности см. в разделе [Центр безопасности — цены](https://azure.microsoft.com/pricing/details/security-center/).
 
 Центр безопасности поддерживает доступ на основе ролей. Дополнительные сведения об управлении доступом на основе ролей (RBAC) в Azure см. в статье [Контроль доступа на основе ролей в Azure Active Directory](../role-based-access-control/role-assignments-portal.md). Вопросы и ответы по центру безопасности позволят узнать об [управлении разрешениями в центре безопасности](security-center-faq.md#permissions).

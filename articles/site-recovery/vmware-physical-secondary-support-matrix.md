@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: 2ea1c337b4193997039876a05e71fb0088d455b1
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 4df929e8a185a04aef5cb13f30c19b0db707e765
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37923412"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44021999"
 ---
 # <a name="support-matrix-for-replication-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Таблица поддержки для репликации виртуальных машин VMware или физических серверов в дополнительное расположение
 
@@ -68,7 +68,7 @@ Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentO
 Гостевая виртуальная машина — несколько сетевых адаптеров | Yes
 
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>служба хранилища.
 
 ### <a name="host-storage"></a>Хранилище узла
 
@@ -112,7 +112,7 @@ RDM | Yes
 
 **Обновление**. | **Дополнительные сведения** 
 --- | --- 
-Обновления Scout | Последние обновления Scout: [сведения и файлы для скачивания](/vmware-physical-secondary-disaster-recovery.md#updates) | Обновления Scout являются накопительными.
+Обновления Scout | Последние обновления Scout: [сведения и файлы для скачивания](vmware-physical-secondary-disaster-recovery.md#updates) | Обновления Scout являются накопительными.
 Обновления компонентов | В пакет обновлений Scout входят обновления для всех компонентов, включая сервер RX, сервер конфигурации, главный целевой сервер и целевой сервер обработки, серверы vContinuum и исходные серверы, которые нужно защитить.<br/><br/> [Узнайте больше](vmware-physical-secondary-disaster-recovery.md#download-and-install-component-updates).
 
 

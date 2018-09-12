@@ -1,24 +1,18 @@
 ---
 title: Устранение неполадок шифрования дисков Azure | Документация Майкрософт
 description: В этой статье приведены советы по устранению неполадок в шифровании дисков Microsoft Azure для виртуальных машин IaaS под управлением Windows и Linux.
-services: security
-documentationcenter: na
 author: mestew
-manager: MBaldwin
-ms.assetid: ce0e23bd-07eb-43af-a56c-aa1a73bdb747
 ms.service: security
-ms.devlang: na
+ms.subservice: Azure Disk Encryption
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/24/2018
 ms.author: mstewart
-ms.openlocfilehash: e63d798c24159777711c9cdd765e40b44826a530
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.date: 09/10/2018
+ms.openlocfilehash: 3d52e031d6c3266ba9d15a2283adcdbce7a6b929
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888735"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44347687"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 

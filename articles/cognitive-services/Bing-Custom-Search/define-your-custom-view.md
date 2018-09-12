@@ -9,12 +9,12 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 09/28/2017
 ms.author: v-brapel
-ms.openlocfilehash: 8ffe3087df398d6310828e41d0c6992199fafbed
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 8ef8aabc7363db88317a6428301512b0a0d4c055
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381028"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44158778"
 ---
 # <a name="configure-your-custom-search-experience"></a>Настройка режима пользовательского поиска
 Пользовательский экземпляр службы поиска позволяет настраивать процесс поиска для добавления содержимого только с веб-сайтов, необходимых пользователям. Вместо поиска по всему Интернету, Bing выполняет поиск только в срезах Интернета, интересующих пользователя.
@@ -113,7 +113,7 @@ ms.locfileid: "35381028"
 5.  Щелкните **Add site** (Добавить сайт) рядом с результатом, который необходимо добавить.
 6.  Нажмите кнопку **ОК** .
 
-[!INCLUDE[publish or revert](./includes/publish-revert.md)]
+[!INCLUDE [publish or revert](./includes/publish-revert.md)]
 
 ## <a name="view-statistics"></a>Просмотр статистики
 При наличии подписки Пользовательского поиска соответствующего уровня (см. [страницы расценок](https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/)), вкладка **Статистика** добавляется к экземплярам рабочей среды. На вкладке статистики содержатся подробные сведения об используемых конечных точках Пользовательского поиска, включая количество вызовов, наиболее ресурсоемкие запросы, географическое распределение, коды отклика и безопасный поиск. Вы можете отфильтровать подробные сведения с помощью предоставленных элементов управления.
@@ -126,7 +126,7 @@ ms.locfileid: "35381028"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Вызов пользовательского поиска](./search-your-custom-view.md)
+- [Вызов API пользовательского поиска](./search-your-custom-view.md)
 - [Настройка размещенного на серверах пользовательского интерфейса](./hosted-ui.md)
-- [Использование маркеров оформления для выделения текста](./hit-highlighting.md)
+- [Use decoration markers to highlight text](./hit-highlighting.md) (Использование маркеров оформления для выделения текста)
 - [Разбивка веб-страниц на страницы](./page-webpages.md)

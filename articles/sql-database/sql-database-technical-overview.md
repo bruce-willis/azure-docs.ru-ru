@@ -7,14 +7,14 @@ author: CarlRabeler
 manager: craigg
 ms.service: sql-database
 ms.topic: overview
-ms.date: 08/01/2018
+ms.date: 09/07/2018
 ms.author: carlrab
-ms.openlocfilehash: f7a314b3de112ad1fa7a5a356c2325846e9371b1
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 6e793c0227300b836c0a14b4252eeaf63c1bc949
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413388"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44054586"
 ---
 # <a name="what-is-the-azure-sql-database-service"></a>Функции службы базы данных SQL Azure 
 
@@ -27,7 +27,7 @@ ms.locfileid: "39413388"
 
 Эти варианты развертывания показаны на рисунке ниже.
 
-![deployment-options](./media/sql-database-technical-overview/deployment-options.png) 
+![Варианты развертывания](./media/sql-database-technical-overview/deployment-options.png) 
 
 База данных SQL использует свою базу кода совместно с [ядром СУБД Microsoft SQL Server](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation). С облачной стратегией Майкрософт новейшие возможности SQL Server сначала выпускаются для базы данных SQL, а затем для самой платформы SQL Server. Такой подход позволяет использовать новейшие возможности SQL Server без лишних расходов на внесение исправлений или обновлений. При этом эти функции проверены на миллионах баз данных. Дополнительные сведения о новых возможностях вы можете узнать с помощью следующих источников:
 
@@ -177,8 +177,8 @@ ms.locfileid: "39413388"
 - См. эти краткие руководства по быстрому запуску:
 
   - [Create and query a single Azure SQL database in the Azure portal](sql-database-get-started-portal.md) (Создание отдельной базы данных SQL с помощью портала Azure)  
-  - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-get-started-cli.md)
-  - [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-get-started-powershell.md)
+  - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-cli-samples.md)
+  - [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-powershell-samples.md)
 
 - Примеры использования Azure CLI и PowerShell:
   - [Примеры Azure CLI для базы данных SQL Azure](sql-database-cli-samples.md)

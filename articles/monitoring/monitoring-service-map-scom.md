@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2017
 ms.author: bwren;dairwin
-ms.openlocfilehash: 6fbc49584b040f952fdff147207864d2d1f6377e
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 5aca1400ddfe1522cd9dc8d68d8cba8a222e4d21
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33887444"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44095204"
 ---
 # <a name="service-map-integration-with-system-center-operations-manager"></a>Интеграция схемы услуги с System Center Operations Manager
   > [!NOTE]
@@ -30,11 +30,11 @@ ms.locfileid: "33887444"
 
 С помощью этой интеграции схемы услуги и System Center Operations Manager можно автоматически создавать схемы распределенных приложений в Operations Manager, которые основаны на динамических сопоставлениях зависимостей в схеме услуги.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Группа управления Operations Manager 2012 R2 или более поздней версии, управляющая набором серверов.
 * Рабочая область Log Analytics с включенным решением "Сопоставление служб".
 * Набор серверов (по крайней мере один), которые находятся под управлением Operations Manager и отправляют данные в схему услуги. Поддерживаются серверы Windows и Linux.
-* Субъект-служба с доступом к подписке Azure, связанной с рабочей областью Log Analytics. Дополнительные сведения см. в руководстве по [созданию субъекта-службы](#creating-a-service-principal).
+* Субъект-служба с доступом к подписке Azure, связанной с рабочей областью Log Analytics. Дополнительные сведения см. в руководстве по [созданию субъекта-службы](#create-a-service-principal).
 
 ## <a name="install-the-service-map-management-pack"></a>Установка пакета управления схемы услуги
 Интеграция Operations Manager и схемы услуг обеспечивается путем импорта набора пакетов управления Microsoft.SystemCenter.ServiceMap (Microsoft.SystemCenter.ServiceMap.mpb). Скачать пакет управления можно в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=55763). Этот набор содержит следующие пакеты управления:

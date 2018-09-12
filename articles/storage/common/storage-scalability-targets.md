@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: rogarana
 ms.component: common
-ms.openlocfilehash: 1db7219beead4d7ee228baff4c802c105419ba1c
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 248ec73b09c25c162c5bdc77ceb18e610d604b77
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524609"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44052179"
 ---
 # <a name="azure-storage-scalability-and-performance-targets"></a>Целевые показатели масштабируемости и производительности службы хранилища Azure
 ## <a name="overview"></a>Обзор
@@ -46,6 +46,8 @@ ms.locfileid: "39524609"
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
 
 ### <a name="azure-file-sync-scale-targets"></a>Целевые показатели масштабируемости службы "Синхронизация файлов Azure"
+Мы пытались максимально расширить границы использования службы "Синхронизация файлов Azure", но это удалось не во всех случаях. В таблице ниже указаны ограничения производительности во время нашего тестирования и жесткие ограничения целевых показателей:
+
 [!INCLUDE [storage-sync-files-scale-targets](../../../includes/storage-sync-files-scale-targets.md)]
 
 ## <a name="azure-queue-storage-scale-targets"></a>Целевые показатели масштабируемости хранилища очередей Azure

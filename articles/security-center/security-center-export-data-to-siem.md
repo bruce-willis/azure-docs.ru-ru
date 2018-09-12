@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: security-center
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/01/2018
 ms.author: barclayn
-ms.openlocfilehash: 7a0a72a25010952f13eb190f0e0a1a65cc6d42d3
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.openlocfilehash: aede60a729fe9c0594ded485e189c0b467e34271
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29124839"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44298239"
 ---
 # <a name="azure-security-data-export-to-siem--pipeline-configuration-preview"></a>Экспорт данных безопасности Azure в SIEM. Конфигурация конвейера [предварительная версия]
 
@@ -43,11 +43,11 @@ ms.locfileid: "29124839"
 
 ### <a name="create-an-event-hub"></a>Создание концентратора событий 
 
-Вначале следует [создать пространство имен концентраторов событий](../event-hubs/event-hubs-create.md). Это пространство имен и концентратор событий — место назначения всех ваших данных мониторинга.
+Вначале следует [создать пространство имен Центров событий](../event-hubs/event-hubs-create.md). Это пространство имен и концентратор событий — место назначения всех ваших данных мониторинга.
 
-### <a name="stream-the-azure-activity-log-to-event-hubs"></a>Потоковая передача журнала действий Azure в концентраторы событий
+### <a name="stream-the-azure-activity-log-to-event-hubs"></a>Потоковая передача журнала действий Azure в Центры событий
 
-Ознакомьтесь со статьей [Потоковая передача журналов действий в концентраторы событий](../monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md).
+Ознакомьтесь со статьей [Потоковая передача журналов действий в Центры событий](../monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md).
 
 ### <a name="install-a-partner-siem-connector"></a>Установка соединителя SIEM партнера 
 
@@ -69,5 +69,5 @@ ms.locfileid: "29124839"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Поддерживаемые решения SIEM](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md#what-can-i-do-with-the-monitoring-data-being-sent-to-my-event-hub)
-- [Потоковая передача журналов действий в концентраторы событий](../monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md)
+- [Потоковая передача журналов действий в Центры событий](../monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md)
 - [Оповещения безопасности](../security-center/security-center-managing-and-responding-alerts.md)

@@ -5,21 +5,17 @@ services: functions
 documentationcenter: na
 author: ggailey777
 manager: jeconnoc
-editor: ''
-tags: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.tgt_pltfrm: multiple
-ms.workload: na
 ms.date: 08/12/2018
 ms.author: glenga
-ms.openlocfilehash: 06124a0a0db47d76552ddf2172a7f656c6d869cf
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: d7396ddb94017048247050726f83b0302e946633
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42818473"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44347126"
 ---
 # <a name="zip-deployment-for-azure-functions"></a>Развертывание Функций Azure из ZIP-файла
 
@@ -97,7 +93,7 @@ az functionapp deployment source config-zip  -g myResourceGroup -n \
 > [!NOTE]
 > Возможность запуска приложения-функции из пакета развертывания находится на этапе предварительной версии.
 
-Развертывание из ZIP-файла интегрируется с этой возможностью. Ее можно включить, задав для параметра приложения-функции `WEBSITE_RUN_FROM_ZIP` значение `1`. Дополнительные сведения см. в разделе [Run your Azure Functions from a package file](run-functions-from-deployment-package.md) (Запуск Функций Azure из файла пакета).
+Развертывание из ZIP-файла интегрируется с этой возможностью. Ее можно включить, задав для параметра приложения-функции `WEBSITE_RUN_FROM_PACKAGE` значение `1`. Дополнительные сведения см. в разделе [Run your Azure Functions from a package file](run-functions-from-deployment-package.md) (Запуск Функций Azure из файла пакета).
 
 [!INCLUDE [app-service-deploy-zip-push-custom](../../includes/app-service-deploy-zip-push-custom.md)]
 

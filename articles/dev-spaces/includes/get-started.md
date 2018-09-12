@@ -10,16 +10,19 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: 31d515aa8256cd360671502d10aea5b7f04d42c5
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: 498cf211adaf1a9e127878786b1851603c0839fb
+ms.sourcegitcommit: 465ae78cc22eeafb5dfafe4da4b8b2138daf5082
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "40129165"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44325786"
 ---
 ## <a name="get-started-on-azure-dev-spaces"></a>Начало работы в Azure Dev Spaces
 
 Чтобы приступить к работе, выберите **руководство по определенному языку**:
+
+> [!div class="nextstepaction"]
+> [Java (VS Code и CLI)](../quickstart-java.md)
 
 > [!div class="nextstepaction"]
 > [.NET Core (Visual Studio Code и CLI)](../quickstart-netcore.md)

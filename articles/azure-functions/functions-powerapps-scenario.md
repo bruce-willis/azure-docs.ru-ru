@@ -3,26 +3,21 @@ title: Вызов функции из PowerApps | Документация Ма�
 description: Создание пользовательского соединителя и вызов функции с его помощью.
 services: functions
 keywords: облачные приложения, облачные службы, PowerApps, бизнес-процессы, бизнес-приложение
-documentationcenter: ''
 author: ggailey777
-manager: cfowler
-editor: ''
+manager: jeconnoc
 ms.assetid: ''
-ms.service: functions
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.service: azure-functions
+ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: 3693b167f196b82c520703fa50ffabb27b555050
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 55de3cd8830834a2af512661d5389952d927ef9f
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38586982"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44094321"
 ---
 # <a name="call-a-function-from-powerapps"></a>Вызов функции из PowerApps
 Платформа [PowerApps](https://powerapps.microsoft.com) позволяет бизнес-экспертами создавать приложения без традиционного кода. Профессиональные разработчики могут расширить возможности PowerApps с помощью функций Azure, избавляя при этом разработчиков приложений PowerApps от технических деталей.
@@ -44,7 +39,7 @@ ms.locfileid: "38586982"
 > * Добавление элементов управления для вызова функции и отображения данных.
 > * запустили приложения для определения экономичности аварийного ремонта ветроэлектрической установки.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 + Активная [учетная запись PowerApps](https://docs.microsoft.com/en-us/powerapps/maker/signup-for-powerapps) с такими же учетными данными, что и в учетной записи Azure. 
 + Excel и [пример файла Excel](https://procsi.blob.core.windows.net/docs/turbine-data.xlsx), который будет использоваться как источник данных для вашего приложения.

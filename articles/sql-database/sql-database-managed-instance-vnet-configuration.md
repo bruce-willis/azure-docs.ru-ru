@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: srbozovi
 ms.reviewer: bonova, carlrab
-ms.openlocfilehash: b17749999f7903746651403c5948933332dbee5d
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 748489785241c0eab6022e3585164974f330d6f9
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047938"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44049679"
 ---
 # <a name="configure-a-vnet-for-azure-sql-database-managed-instance"></a>Настройка виртуальной сети для Управляемого экземпляра Базы данных SQL Azure
 
@@ -149,5 +149,5 @@ Invoke-Command -ScriptBlock ([Scriptblock]::Create((iwr ($scriptUrlBase+'/prepar
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в статье [Общие сведения об Управляемом экземпляре Базы данных SQL Azure (предварительная версия)](sql-database-managed-instance.md).
-- Чтобы узнать как создать виртуальную сеть и управляемый экземпляр, а также восстановить базу данных из резервной копии базы данных см. статью [Создание Управляемого экземпляра Базы данных SQL Azure на портале Azure](sql-database-managed-instance-create-tutorial-portal.md).
+- Чтобы узнать как создать виртуальную сеть и управляемый экземпляр, а также восстановить базу данных из резервной копии базы данных см. статью [Создание Управляемого экземпляра Базы данных SQL Azure на портале Azure](sql-database-managed-instance-get-started.md).
 - Во избежание проблем при настройке DNS см. статью [Configuring a Custom DNS for Azure SQL Database Managed Instance](sql-database-managed-instance-custom-dns.md) (Настройка пользовательской DNS для Управляемого экземпляра Базы данных SQL Azure)

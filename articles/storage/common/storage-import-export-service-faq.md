@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/22/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 6a2d067625e96aefdcb0197e1abb13b0c41fbe7f
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: edaff86531a9c40064d25a046bbbb70f48b75c84
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521444"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44027135"
 ---
 # <a name="azure-importexport-service-frequently-asked-questions"></a>Служба "Импорт и экспорт Azure". Часто задаваемые вопросы 
 Ниже приведены вопросы, которые могут возникнуть при использовании службы "Импорт и экспорт Azure" для передачи данных в хранилище Azure, и ответы на них. Вопросы и ответы упорядочены по следующим категориям:
@@ -119,7 +119,7 @@ ms.locfileid: "39521444"
 Это зависит от обстоятельств. При подготовке диска можно указать, нужно ли перезаписать целевые файлы или игнорировать совпадения. Для этого в CSV-файле набора данных укажите соответствующее значение параметра Disposition (rename, no-overwrite, overwrite). По умолчанию служба переименовывает новые файлы, а не перезаписывает имеющиеся большие двоичные объекты или файлы.
 
 ### <a name="is-the-waimportexport-tool-compatible-with-32-bit-operating-systems"></a>Совместимо ли средство WAImportExport с 32-разрядной операционной системой?
-Нет. Средство WAImportExport совместимо только с 64-разрядной операционной системой Windows. Полный список поддерживаемых операционных систем см. в [этой статье](). 
+Нет. Средство WAImportExport совместимо только с 64-разрядной операционной системой Windows. Полный список поддерживаемых операционных систем см. в [этой статье](https://docs.microsoft.com/azure/storage/common/storage-import-export-requirements). 
 
 
 ### <a name="what-is-the-maximum-block-blob-and-page-blob-size-supported-by-azure-importexport"></a>Какой максимальный размер блочного и страничного BLOB-объектов, поддерживаемый службой "Импорт и экспорт Azure"?

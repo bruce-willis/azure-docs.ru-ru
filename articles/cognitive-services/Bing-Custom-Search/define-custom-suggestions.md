@@ -9,12 +9,12 @@ ms.technology: bing-custom-search
 ms.topic: article
 ms.date: 09/28/2017
 ms.author: v-brapel
-ms.openlocfilehash: a41b4e5b6c268ec68488c6764d4192cf8d2345a4
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e7a62a79bdc2e486fb6bfca34eb4addeba2bde0e
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380989"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44158319"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Настройка пользовательского автозаполнения
 Если у вас есть соответствующий уровень подписки на службу пользовательского поиска (см. [страницу расценок](https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/)), вы можете настроить предложения поиска, которые будут отображаться поисковой системой. Функция пользовательского автозаполнения возвращает список предлагаемых запросов на основе частично введенной пользователем строки запроса. Пользовательское автозаполнение предоставляет наиболее релевантные предложения поиска. Вы можете указать, возвращать ли только пользовательские предложения или также включать предложения Bing. Если включить предложения Bing, то пользовательские предложения будут предшествовать предложениям Bing. Предложения Bing ограничены контекстом экземпляра службы Пользовательского поиска.
@@ -38,7 +38,7 @@ ms.locfileid: "35380989"
 ## <a name="remove-suggestions"></a>Удаление предложений
 Чтобы удалить предложение, щелкните значок удаления рядом с предложением, которое требуется удалить.
 
-[!INCLUDE[publish or revert](./includes/publish-revert.md)]
+[!INCLUDE [publish or revert](./includes/publish-revert.md)]
 
   >[!NOTE]  
   >Вступление в силу изменений конфигурации пользовательского автозаполнения может занять до 24 часов.

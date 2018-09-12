@@ -11,16 +11,16 @@ ms.component: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 56d207dc47b9e055782568f1c4a4cedc4d19a288
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: e527a0eaec433b96b5c37c5ec22f392a7166dfe8
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39348211"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44162450"
 ---
 # <a name="manage-app-passwords-using-security-info-preview"></a>Управление паролями приложений с использованием сведений для защиты (предварительная версия)
 
-[!INCLUDE[preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
+[!INCLUDE [preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
 
 Некоторые внебраузерные приложения, например Outlook 2010, не поддерживают двухфакторную проверку подлинности. Это означает, что при использовании двухфакторной проверки подлинности приложение не будет работать. Чтобы избежать этой проблемы, помимо обычного пароля, создайте автоматически сгенерированный пароль для использования с каждым внебраузерным приложением.
 
@@ -81,6 +81,6 @@ ms.locfileid: "39348211"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вам необходимо обновить сведения для защиты, выполните инструкции в статье об [управлении сведениями для защиты](security-info-manage-settings.md).
+- Если вам необходимо обновить сведения для защиты, выполните инструкции в разделе [Управление сведениями для защиты (предварительная версия)](security-info-manage-settings.md).
 
 - Дополнительную информацию о сведениях для защиты и возможных действиях см. в разделе [Обзор сведений для защиты (предварительная версия)](user-help-security-info-overview.md). 

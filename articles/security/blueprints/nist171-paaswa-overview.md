@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/31/2018
 ms.author: jomolesk
-ms.openlocfilehash: 8411e9d2d4118c4e1f656b5bc6e9dafb311aeb26
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: 8212788eb775e86918c7111265f3276c7bd99d91
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39392591"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44304226"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-nist-special-publication-800-171"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для специальной публикации NIST 800-171
 
@@ -83,7 +83,7 @@ ms.locfileid: "39392591"
 -   [политика автоматического завершения работы](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/) для уменьшения степени использования ресурсов виртуальной машины во время простоя.
 -   функция [Credential Guard в Защитнике Windows](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard) должна быть включена, чтобы учетные данные и другие секретные сведения обрабатывались в защищенной среде, изолированной от работающей операционной системы.
 
-**Веб-приложение Azure**. [Служба веб-приложений Azure](https://docs.microsoft.com/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой. Эта служба поддерживает Windows и Linux, а также обеспечивает автоматическое масштабирование, высокий уровень доступности и автоматическое развертывание из GitHub, Visual Studio Team Services или любого репозитория Git.
+**Веб-приложение Azure**. [Служба веб-приложений Azure](https://docs.microsoft.com/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git.
 
 **Среда службы приложений версии 2**. [Среда службы приложений Azure](https://docs.microsoft.com/azure/app-service/environment/intro) — это компонент службы приложений, предоставляющий полностью изолированную выделенную среду для безопасного выполнения приложений службы приложений Azure в большом масштабе.
 

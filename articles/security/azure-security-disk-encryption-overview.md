@@ -1,24 +1,18 @@
 ---
 title: Общие сведения о шифровании дисков Azure для виртуальных машин IaaS под управлением Linux | Документация Майкрософт
 description: В этой статье приведен обзор шифрования дисков Microsoft Azure для виртуальных машин IaaS.
-services: security
-documentationcenter: na
 author: mestew
-manager: MBaldwin
-ms.assetid: 30324adb-e24c-433a-9214-2d1465cbdf45
 ms.service: security
-ms.devlang: na
+ms.subservice: Azure Disk Encryption
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/24/2018
 ms.author: mstewart
-ms.openlocfilehash: 88500be4bae83049e8a7060719f4f85e7622c645
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.date: 09/10/2018
+ms.openlocfilehash: ea72e4ac778e52d4f6e4f5597d38a1de59ba43fc
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42886997"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44348945"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms"></a>Шифрование дисков Azure для виртуальных машин IaaS 
 Microsoft Azure обеспечивает конфиденциальность и независимость ваших данных всеми возможными способами. К данным, размещенным в Azure, можно применять целый ряд современных технологий для шифрования данных, контроля ключей шифрования и управления ими, а также контроля и аудита доступа к данным. Благодаря этому клиенты Azure получают гибкость в выборе решения, которое лучше всего соответствует потребностям их компании. В этой статье описывается технологическое решение "Шифрование дисков Azure для виртуальных машин IaaS под управлением Windows и Linux", которое защитит ваши данные в соответствии с корпоративными критериями безопасности и соответствия. 

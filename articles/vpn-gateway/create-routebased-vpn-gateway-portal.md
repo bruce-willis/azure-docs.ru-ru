@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/04/2018
 ms.author: cherylmc
-ms.openlocfilehash: 550f655f6eac5a114636978255578eb3753e0d4b
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: fe05ab36f971105cf72342b8df5e2a82de7fc2b8
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30918138"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391799"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-the-azure-portal"></a>Создание VPN-шлюза на основе маршрутов с помощью портала Azure
 
@@ -54,12 +54,12 @@ ms.locfileid: "30918138"
 2. На странице виртуальной сети щелкните **Подсети**, чтобы развернуть страницу **VNet1 — подсети**.
 3. Щелкните **+ Подсеть шлюза** в верхней части страницы. Откроется страница **Добавление подсети**.
 
-  ![Добавить подсеть шлюза](./media/create-routebased-vpn-gateway-portal/add-gateway-subnet.png "Add the gateway subnet")
+  ![Добавить подсеть шлюза](./media/create-routebased-vpn-gateway-portal/gateway-subnet.png "Add the gateway subnet")
 4. В обязательное поле **Имя** автоматически добавляется значение GatewaySubnet. Замените автоматически предложенные значения в поле **Диапазон адресов** следующими данными.
 
   **Диапазон адресов (блок CIDR)**: 10.1.255.0/27
 
-  ![Добавление подсети шлюза](./media/create-routebased-vpn-gateway-portal/gateway-subnet.png "Adding the gateway subnet")
+  ![Добавление подсети шлюза](./media/create-routebased-vpn-gateway-portal/add-gateway-subnet.png "Adding the gateway subnet")
 5. Чтобы создать подсеть шлюза, в нижней части страницы щелкните **ОК**.
 
 ## <a name="gwvalues"></a>Настройка параметров шлюза

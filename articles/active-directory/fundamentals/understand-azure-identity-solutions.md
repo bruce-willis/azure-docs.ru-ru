@@ -14,12 +14,12 @@ ms.component: fundamentals
 ms.technology: ''
 ms.assetid: ''
 ms.custom: it-pro
-ms.openlocfilehash: 118f8258673c8a19d5f06e5fc62ff56d0fb44ea1
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: ec84cdb4e226eea4d16d28d63acd7be59241b973
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398370"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44346922"
 ---
 # <a name="understand-azure-identity-solutions"></a>Общие сведения о решениях идентификации Azure
 Microsoft Azure Active Directory (Azure AD) — это облачное решение по управлению идентификацией и доступом, предоставляющее службы каталогов, функции контроля удостоверений и управления доступом к приложениям. Azure AD позволяет быстро [выполнять единый вход](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-sso) в 1000 предварительно интегрированных пользовательских и коммерческих приложений в [коллекции приложений Azure AD](https://azure.microsoft.com/marketplace/active-directory/all/). Вы наверняка уже используете многие из этих приложений, например Office 365, Salesforce.com, Box, ServiceNow и Workday.
@@ -110,10 +110,10 @@ Microsoft Azure предоставляет несколько вариантов
 
 * [Обеспечение гибридного управления для каталога с помощью Azure AD Connect](../connect/active-directory-aadconnect.md)
 * [Повышенная безопасность для постоянного подключения к Интернету](../authentication/multi-factor-authentication.md)
-* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md)
+* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md)
 * [Управление паролями из любой точки мира](../user-help/active-directory-passwords-update-your-own-password.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md)
+* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md)
 * [Как обеспечить безопасный удаленный доступ к локальным приложениям](../manage-apps/application-proxy.md)
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md)
 * [Что такое лицензирование Microsoft Azure Active?](active-directory-licensing-whatis-azure-portal.md)

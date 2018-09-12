@@ -11,12 +11,12 @@ ms.assetid: e11c6b4d-65a5-4d2d-8e13-38150db09c0b
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: e1561e3be95847efccf487c96bd9c9a8104f161b
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 95a039c990dc9b6c852a69518f0a71c51a4747b7
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106454"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302628"
 ---
 # <a name="call-http-or-https-endpoints-with-azure-logic-apps"></a>Вызов конечных точек HTTP или HTTPS с помощью Azure Logic Apps
 

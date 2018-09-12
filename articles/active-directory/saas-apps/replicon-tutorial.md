@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2018
 ms.author: jeedes
-ms.openlocfilehash: 10f4749524c4d4b35b83e5637d35f4ef9a8f9ab6
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 7edfe5a115caf4ee6e4677e5fd7f324b8f3873ee
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39041336"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44159050"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-replicon"></a>Учебник. Интеграция Azure Active Directory с Replicon
 
@@ -177,7 +177,7 @@ ms.locfileid: "39041336"
 
 ### <a name="create-a-replicon-test-user"></a>Создание тестового пользователя Replicon
 
-Цель этого раздела — создать пользователя с именем Britta Simon в Replicon. Replicon поддерживает автоматическую подготовку пользователей, которая по умолчанию включена. Дополнительные сведения о настройке автоматической подготовки пользователей можно найти [здесь](replicon-provisioning-tutorial.md).
+Цель этого раздела — создать пользователя с именем Britta Simon в Replicon.
 
 **Если необходимо создать пользователя вручную, выполните следующие действия:**
 
@@ -249,7 +249,6 @@ ms.locfileid: "39041336"
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Руководство по настройке Google Apps для автоматической подготовки пользователей](replicon-provisioning-tutorial.md)
 
 <!--Image references-->
 

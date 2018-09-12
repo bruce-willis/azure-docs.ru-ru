@@ -2,19 +2,19 @@
 title: 'Azure Backup: восстановление виртуальных машин с помощью портала Azure'
 description: Восстановление виртуальной машины Azure из точки восстановления с помощью портала Azure
 services: backup
-author: markgalioto
-manager: carmonm
+author: geethalakshmig
+manager: vijayts
 keywords: восстановление резервной копии; восстановление; точка восстановления;
 ms.service: backup
 ms.topic: conceptual
 ms.date: 09/04/2017
-ms.author: markgal
-ms.openlocfilehash: 872bfc0027fd5b69bb42f391c036f7116789f529
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.author: geg
+ms.openlocfilehash: eb47b1d8d3f2859b2b5c0b79633b2d37e5a40756
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39431153"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44380171"
 ---
 # <a name="use-the-azure-portal-to-restore-virtual-machines"></a>Восстановление виртуальных машин с помощью портала Azure
 Защитите свои данные, создавая моментальные снимки данных через определенные интервалы времени. Эти моментальные снимки называются точками восстановления. Они хранятся в хранилищах служб восстановления. Если вам нужно исправить или повторно создать виртуальную машину, вы можете восстановить ее из любой сохраненной точки восстановления. При восстановлении из точки восстановления можно:

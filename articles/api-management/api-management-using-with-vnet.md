@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
 ms.author: apimpm
-ms.openlocfilehash: deba3ad8a283b111dc94a5361f3fa4e73d95c0b8
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: a74d91ad986b606a36a8040ac849e7fcbec03f16
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39187389"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44093198"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Обзор виртуальной сети](../virtual-network/virtual-networks-overview.md).
@@ -109,7 +109,7 @@ ms.locfileid: "39187389"
 | Исходные и конечные порты | Направление | Транспортный протокол | Ресурс и назначение | Назначение (*) | Тип виртуальной сети |
 | --- | --- | --- | --- | --- | --- |
 | * / 80, 443 |Входящий трафик |TCP |INTERNET — VIRTUAL_NETWORK|Подключения клиентов к службе управления API|Внешний |
-| * / 3443 |Входящий трафик |TCP |INTERNET — VIRTUAL_NETWORK|Конечная точка управления для портала Azure и PowerShell |Внутренний |
+| * / 3443 |Входящий трафик |TCP |INTERNET — VIRTUAL_NETWORK|Конечная точка управления для портала Azure и PowerShell |Внешний и внутренний |
 | * / 80, 443 |Исходящие |TCP |VIRTUAL_NETWORK — INTERNET|**Зависимость от службы хранилища Azure**, службы "Служебная шина Azure" и Azure Active Directory (если это применимо).|Внешний и внутренний |
 | * / 1433 |Исходящие |TCP |VIRTUAL_NETWORK / SQL|**Доступ к конечным точкам службы SQL Azure** |Внешний и внутренний |
 | * / 5672 |Исходящие |TCP |VIRTUAL_NETWORK — INTERNET|Зависимость для политики ведения журнала концентратора событий и агента мониторинга |Внешний и внутренний |

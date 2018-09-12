@@ -13,16 +13,16 @@ ms.topic: tutorial
 ms.date: 07/24/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: a08f439780e0080d8da2cde1531e1580dbdad14f
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: cefa32c35df4e87d4d2b983ee8c4a16dc065e774
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234482"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44160461"
 ---
 # <a name="validate-oem-packages"></a>Проверка пакетов OEM
 
-[!INCLUDE[Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
+[!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 Вы можете протестировать новый пакет OEM при изменение встроенного ПО или драйверов для проверки завершенного решения. Пакет подписывается корпорацией Майкрософт после прохождения теста. В проверке должен содержаться обновленный пакет расширений OEM с драйверами и встроенным ПО, которые прошли проверки по логотипу и PCS Windows Server.
 
@@ -54,4 +54,4 @@ ms.locfileid: "40234482"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения см. в статье [Документация партнера по Azure Stack](https://docs.microsoft.com/azure/azure-stack/partner).
+- Дополнительные сведения о проверке как услуге Azure Stack см. в [этой статье](https://docs.microsoft.com/azure/azure-stack/partner).

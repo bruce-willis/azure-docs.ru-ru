@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 050e8efed38c40d8c7da292c0d6865869a07c9f9
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 2a4bae196e956d92548944637509b23f78ceb5d2
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43121715"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44348010"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lessonlycom"></a>Руководство. Интеграция Azure Active Directory с Lessonly.com
 
@@ -51,7 +51,7 @@ ms.locfileid: "43121715"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. добавление Lessonly.com из коллекции;
+1. Добавление Lessonly.com из коллекции
 1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-lessonlycom-from-the-gallery"></a>Добавление Lessonly.com из коллекции
@@ -126,7 +126,7 @@ ms.locfileid: "43121715"
     | `https://<companyname>.lessonly.com/auth/saml/metadata`|
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Lessonly.com](mailto:dev@lessonly.com). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Lessonly.com](mailto:support@lessonly.com). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -165,7 +165,7 @@ ms.locfileid: "43121715"
 
     ![Настройка единого входа](./media/lessonly-tutorial/tutorial_lessonly.com_configure.png)
 
-1. Чтобы настроить единый вход на стороне **Lessonly.com**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Lessonly.com](mailto:dev@lessonly.com).
+1. Чтобы настроить единый вход на стороне **Lessonly.com**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Lessonly.com](mailto:support@lessonly.com).
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -208,7 +208,7 @@ ms.locfileid: "43121715"
 В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к приложению Lessonly.com (если он еще не создан).
 
 > [!NOTE]
-> Если вам нужно вручную создать пользователя, необходимо обратиться в [службу поддержки Lessonly.com](mailto:dev@lessonly.com).
+> Если вам нужно вручную создать пользователя, необходимо обратиться в [службу поддержки Lessonly.com](mailto:support@lessonly.com).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/21/2018
 ms.author: tomfitz
-ms.openlocfilehash: 57d017e2320e5cfea15f1716bc3b6518606e2ea4
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: fc0ccd84f493fd69c84515331386592ec11a887e
+ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39282255"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44025299"
 ---
 # <a name="use-portal-to-create-an-azure-active-directory-application-and-service-principal-that-can-access-resources"></a>Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -27,7 +27,7 @@ ms.locfileid: "39282255"
 В этой статье рассказывается, как это сделать с помощью портала Azure. Здесь рассматривается однотенантное приложение — решение, используемое в пределах одной организации. Обычно однотенантная архитектура используется для создания бизнес-приложений в рамках организации.
 
 > [!IMPORTANT]
-> Вместо создания субъекта-службы вы можете применить управляемое удостоверение службы (MSI) Azure AD в качестве удостоверения приложения. MSI Azure AD используется в режиме общедоступной предварительной версии. Эта функция Azure Active Directory упрощает создание удостоверения для кода. Если код выполняется в службе, которая поддерживает MSI Azure AD и обращается к ресурсам, которые поддерживают аутентификацию Azure Active Directory, то MSI Azure AD будет оптимальным выбором. Дополнительные сведения об удостоверении MSI Azure AD, в том числе список поддерживаемых служб, см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/managed-service-identity/overview.md).
+> Вместо создания субъекта-службы вы можете применить управляемое удостоверение службы (MSI) Azure AD в качестве удостоверения приложения. MSI Azure AD используется в режиме общедоступной предварительной версии. Эта функция Azure Active Directory упрощает создание удостоверения для кода. Если код выполняется в службе, которая поддерживает MSI Azure AD и обращается к ресурсам, которые поддерживают аутентификацию Azure Active Directory, то MSI Azure AD будет оптимальным выбором. Дополнительные сведения об удостоверении MSI Azure AD, в том числе список поддерживаемых служб, см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 

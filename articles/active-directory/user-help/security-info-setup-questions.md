@@ -11,16 +11,16 @@ ms.component: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: f1905e66bbe823f6c7c9c35d6540f3c8ca1d6ccd
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: b4913d55ee3d254f197512d9251ae750d8896f53
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39389639"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44160444"
 ---
 # <a name="set-up-security-info-to-use-pre-defined-security-questions-preview"></a>Настройка сведений для защиты для использования предварительно заданных контрольных вопросов (предварительная версия)
 
-[!INCLUDE[preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
+[!INCLUDE [preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
 
 Чтобы настроить сведения для защиты, необходимо войти в рабочую или учебную учетную запись, а затем выполнить процесс регистрации. Если вы никогда не настраивали сведения для защиты, вам будет предложено сделать это сейчас.
 

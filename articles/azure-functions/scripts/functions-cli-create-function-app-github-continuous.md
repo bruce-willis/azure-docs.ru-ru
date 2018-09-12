@@ -2,20 +2,20 @@
 title: Создание в Azure приложения-функции, которое развертывается из GitHub | Документация Майкрософт
 description: Создайте приложение-функцию и разверните код функции из репозитория GitHub с помощью решения "Функции Azure".
 services: functions
-ms.service: functions
+ms.service: azure-functions
 keywords: ''
 ms.devlang: azurecli
-author: syntaxc4
+author: ggailey777
 ms.author: glenga
 ms.date: 07/03/2018
 ms.topic: sample
 ms.custom: mvc
-ms.openlocfilehash: 3090058236212d1baca17e2886a76f31ee1b2718
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f2d2eb20f3b609fce164bc1cbd33162b5afbe6c8
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39424475"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44163062"
 ---
 # <a name="create-a-function-app-in-azure-that-is-deployed-from-github"></a>Создание в Azure приложения-функции, которое развертывается из GitHub
 

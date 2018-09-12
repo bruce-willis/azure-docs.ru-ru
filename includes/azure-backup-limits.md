@@ -5,15 +5,15 @@ services: backup
 author: markgalioto
 ms.service: backup
 ms.topic: include
-ms.date: 2/7/2018
+ms.date: 9/10/2018
 ms.author: trinadhk;sogup
 ms.custom: include file
-ms.openlocfilehash: 1f41567f7d5dcc9b6536b47ef639ba53abff8ec4
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 64101ea5a3bbaac4a6b2e349a04d06ea84a87081
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38756016"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44381106"
 ---
 Для службы архивации Azure применяются указанные ниже ограничения.
 
@@ -24,7 +24,7 @@ ms.locfileid: "38756016"
 | Количество хранилищ архивации, которые можно создать для каждой подписки Azure |500 хранилищ служб восстановления на регион |
 | Количество операций архивации, которые можно запланировать на один день |3 операции в день для Windows Server или рабочей станции Windows  <br/> 2 операции в день для SCDPM <br/> одна операция в день для виртуальных машин IaaS |
 | Диски с данными, подключенные к виртуальной машине Azure для архивации |16 |
-| Размер отдельного диска данных, подключенного к виртуальной машине Azure для резервного копирования| 4095 ГБ <sup>2</sup>|
+| Размер отдельного диска данных, подключенного к виртуальной машине Azure для резервного копирования| 4095 ГБ|
 
 * <sup>1</sup>Ограничение в 54 400 ГБ не применяется при архивации виртуальных машин IaaS.
  

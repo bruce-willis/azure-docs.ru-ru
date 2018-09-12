@@ -13,16 +13,16 @@ ms.topic: quickstart
 ms.date: 07/24/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 0f681070df4b4b3384171c05edb3851abec2ab5c
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 8ff78f46283d3ee4baa7310aa56bcdabde85f2cc
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234164"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44159628"
 ---
 # <a name="quickstart-use-the-validation-as-a-service-portal-to-schedule-your-first-test"></a>Краткое руководство. Планирование первого теста с помощью портала проверки как услуги
 
-[!INCLUDE[Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
+[!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 Узнайте, как запланировать первый тест с помощью портала проверки как услуги (VaaS) для проверки оборудования. Локальный агент необходимо развернуть в решении Azure Stack, которое проверяется до выполнения проверочных тестов.
 
@@ -74,9 +74,9 @@ ms.locfileid: "40234164"
 | Сборка Azure Stack | Обязательно | Номер сборки Azure Stack (например, 20170501.1). Число должно быть действительной версией или номером сборки Azure Stack, например 1.0.170330.9 |
 | Tenant ID | Обязательно | Идентификатор клиента Azure Active Directory. Это должен быть GUID (например, ECA23256-6BA0-4F27-8E4D-AFB02F088363) |
 | Регион | Обязательно | Регион развертывания Azure Stack |
-| Конечная точка клиента Resource Manager | Обязательно | Конечная точка для операций клиента Azure Resource Manager (например, https://management.loc-ext.domain.com) |
-| Конечная точка администратора Resource Manager | Не требуется | Конечная точка для операций клиента Azure Resource Manager (например, https://management.loc-ext.domain.com) |
-| Внешнее FQDN | Не требуется | Внешнее полное доменное имя используется в качестве суффикса для конечных точек (например, local.azurestack.external или redmond.contoso.com) |
+| Конечная точка Resource Manager для клиента | Обязательно | Конечная точка для операций клиента Azure Resource Manager (например, https://management.loc-ext.domain.com) |
+| Конечная точка Resource Manager для администратора | Не требуется | Конечная точка для операций клиента Azure Resource Manager (например, https://management.loc-ext.domain.com) |
+| Внешнее полное доменное имя | Не требуется | Внешнее полное доменное имя, используемое в качестве суффикса для конечных точек (например, local.azurestack.external или redmond.contoso.com) |
 | Количество узлов | Обязательно | Количество узлов в решении. |
 
 ## <a name="add-common-test-parameters"></a>Добавление общих параметров теста
@@ -98,4 +98,4 @@ ms.locfileid: "40234164"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Проверка нового решения Azure Stack](azure-stack-vaas-validate-solution-new.md)  
-- Дополнительные сведения см. в статье [Документация партнера по Azure Stack](https://docs.microsoft.com/azure/azure-stack/partner).
+- Дополнительные сведения о проверке как услуге Azure Stack см. в [этой статье](https://docs.microsoft.com/azure/azure-stack/partner).

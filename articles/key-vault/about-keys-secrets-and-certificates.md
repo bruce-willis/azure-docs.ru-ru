@@ -11,15 +11,15 @@ ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/14/2018
 ms.author: bryanla
-ms.openlocfilehash: f36e0e3ddc605d960ed764252308cbf09578832c
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 60b8689e602f0716cdd1a383ab6568979a37e7c0
+ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43126148"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44302951"
 ---
 # <a name="about-keys-secrets-and-certificates"></a>Сведения о ключах, секретах и сертификатах
 С помощью Azure Key Vault пользователи могут хранить и использовать криптографические ключи в среде Microsoft Azure. Key Vault поддерживает несколько типов ключей и алгоритмов и позволяет использовать аппаратные модули безопасности (HSM) для важных ключей. Кроме того, в этом хранилище ключей пользователи могут безопасно хранить секреты. Секреты — это состоящие из октетов объекты ограниченного размера без определенной семантики. Хранилище ключей также поддерживает сертификаты, которые создаются поверх ключей и секретов и добавляют функцию автоматического обновления.

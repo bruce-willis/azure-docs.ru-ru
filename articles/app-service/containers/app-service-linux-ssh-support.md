@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: wesmc
-ms.openlocfilehash: 63fdf2cc82438fe55792b12244dd697721adda15
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 049ae78efee0b5ebdf6bfbe207f8c85d94e9238f
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39579584"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44050074"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
@@ -93,7 +93,7 @@ https://<app_name>.scm.azurewebsites.net/webssh/host
 Dockerfile использует инструкцию [`ENTRYPOINT` ](https://docs.docker.com/engine/reference/builder/#entrypoint)для выполнения этого сценария.
 
     ```docker
-    COPY startup /opt/startup
+    COPY init_container.sh /opt/startup
     ...
     RUN chmod 755 /opt/startup/init_container.sh
     ...

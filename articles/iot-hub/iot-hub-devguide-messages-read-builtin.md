@@ -8,16 +8,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 912bb0dd3e48e53134ad848119ae7428b380b88d
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 767c91e4926e553b63b8331ac99edcd7823d2c13
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39124942"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44055021"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
-По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы (**/messages/events**), которая совместима с [концентраторами событий][lnk-event-hubs]. Сейчас эта конечная точка предоставляется только по протоколу [AMQP][lnk-amqp] на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
+По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы (**/messages/events**), которая совместима с [Центрами событий][lnk-event-hubs]. Сейчас эта конечная точка предоставляется только по протоколу [AMQP][lnk-amqp] на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
 
 | Свойство            | ОПИСАНИЕ |
 | ------------------- | ----------- |
@@ -30,11 +30,11 @@ ms.locfileid: "39124942"
 
 Вы можете изменить период хранения на [портале Azure][lnk-management-portal] или программно (с помощью [интерфейсов REST API поставщика ресурсов Центра Интернета вещей][lnk-resource-provider-apis]).
 
-Центр Интернета вещей предоставляет встроенную конечную точку **messages/events**, с помощью которой внутренние службы считывают сообщения, отправляемые в Центр с устройства в облако. Эта конечная точка совместима с концентраторами событий, поэтому можно использовать любой из механизмов для чтения сообщений, который поддерживает служба концентраторов событий.
+Центр Интернета вещей предоставляет встроенную конечную точку **messages/events**, с помощью которой внутренние службы считывают сообщения, отправляемые в Центр с устройства в облако. Эта конечная точка совместима с концентраторами событий, поэтому можно использовать любой из механизмов для чтения сообщений, который поддерживает служба "Центры событий".
 
 ## <a name="read-from-the-built-in-endpoint"></a>Считывание данных из встроенной конечной точки
 
-При использовании [пакета SDK служебной шины Azure для .NET][lnk-servicebus-sdk] или [концентраторов событий и узла обработчика событий][lnk-eventprocessorhost] вы можете использовать любые строки подключения к Центру Интернета вещей с нужными разрешениями. А затем использовать **messages/events** в качестве имени концентратора событий.
+При использовании [пакета SDK служебной шины Azure для .NET][lnk-servicebus-sdk] или [Центров событий и узла обработчика событий][lnk-eventprocessorhost] вы можете использовать любые строки подключения к Центру Интернета вещей с нужными разрешениями. А затем использовать **messages/events** в качестве имени концентратора событий.
 
 При использовании пакетов SDK (или интеграции продуктов), которые не поддерживают Центр Интернета вещей, следует получить совместимые с концентраторами событий конечную точку и имя:
 
@@ -57,7 +57,7 @@ ms.locfileid: "39124942"
 
 Ниже приведен список пакетов SDK и интеграций, которые можно применять к совместимым с концентраторами событий конечным точкам, которые предоставляет Центр Интернета вещей:
 
-* [клиент концентраторов событий Java;](https://github.com/Azure/azure-event-hubs-java)
+* [клиент Центров событий Java;](https://github.com/Azure/azure-event-hubs-java)
 * [Воронка Apache Storm](../hdinsight/storm/apache-storm-develop-csharp-event-hub-topology.md). Вы можете просмотреть [источник воронки](https://github.com/apache/storm/tree/master/external/storm-eventhubs) на портале GitHub.
 * [интеграция Apache Spark.](../hdinsight/spark/apache-spark-eventhub-streaming.md)
 
@@ -80,5 +80,5 @@ ms.locfileid: "39124942"
 [lnk-d2c-tutorial]: tutorial-routing.md
 [lnk-event-hub-partitions]: ../event-hubs/event-hubs-features.md#partitions
 [lnk-servicebus-sdk]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
-[lnk-eventprocessorhost]: http://blogs.msdn.com/b/servicebus/archive/2015/01/16/event-processor-host-best-practices-part-1.aspx
+[lnk-eventprocessorhost]: https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph
 [lnk-amqp]: https://www.amqp.org/

@@ -9,12 +9,12 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 10/16/2017
 ms.author: v-brapel
-ms.openlocfilehash: c1431ec852cab943e00d3933ef4f0500a4fdb151
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 1f9b689ac6127bc2f7d1e810356ae9a23b8e0996
+ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381021"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44162399"
 ---
 # <a name="build-a-custom-search-web-page"></a>Создание веб-страницы пользовательского поиска
 Служба "Пользовательский поиск Bing" позволяет создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас. Например, если веб-сайт боевых искусств предоставляет функцию поиска, то вы можете указать домены, веб-сайты и веб-страницы, по которым Bing будет выполнять поиск. Пользователи увидят результаты поиска, адаптированные к интересующей их информации, вместо того, чтобы пролистывать страницы результатов поиска с несоответствующим содержимым. 
@@ -30,8 +30,8 @@ ms.locfileid: "35381021"
 > - Добавление закрепленных записей.
 > - Интеграция экземпляра пользовательского поиска в веб-страницу
 
-## <a name="prerequisites"></a>предварительным требованиям
-- Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API пользовательского поиска Bing.  Сведения о получении ключа см. на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search).
+## <a name="prerequisites"></a>Предварительные требования
+- Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API пользовательского поиска Bing.  Для получения ключа см. статью [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search).
 - Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Community для Visual Studio 2017](https://www.visualstudio.com/downloads/).
 
 ## <a name="create-a-custom-search-instance"></a>Создание экземпляра пользовательского поиска
@@ -96,7 +96,7 @@ ms.locfileid: "35381021"
 
     ![Снимок экрана: дополнительные параметры конфигурации на вкладке Hosted UI (Размещенный пользовательский интерфейс)](./media/custom-search-hosted-ui-subscription-key.png)
 
-[!INCLUDE[publish or revert](../includes/publish-revert.md)]
+[!INCLUDE [publish or revert](../includes/publish-revert.md)]
 
 <a name="consuminghostedui"></a>
 ## <a name="consuming-hosted-ui"></a>Использование размещенного пользовательского интерфейса

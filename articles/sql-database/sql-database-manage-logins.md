@@ -9,14 +9,14 @@ ms.service: sql-database
 ms.prod_service: sql-database, sql-data-warehouse
 ms.custom: security
 ms.topic: conceptual
-ms.date: 08/15/2018
+ms.date: 09/07/2018
 ms.author: carlrab
-ms.openlocfilehash: 7dbd2585628c64f5baf7df6083e38217d00953be
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 4abdbac44f4730d15c36d587190db1f95ea54d19
+ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42146554"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44050739"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -49,7 +49,7 @@ ms.locfileid: "42146554"
 - Могут просматривать системную таблицу `sys.sql_logins`.
 
 ### <a name="configuring-the-firewall"></a>Настройка брандмауэра
-Если брандмауэр на уровне сервера настроен для отдельного IP-адреса или диапазона IP-адресов, то **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться к базе данных master и всем пользовательским базам данных. Первоначальный брандмауэр уровня сервера можно настроить на [портале Azure](sql-database-get-started-portal.md), с помощью [PowerShell](sql-database-get-started-powershell.md) или [REST API](https://msdn.microsoft.com/library/azure/dn505712.aspx). После подключения также можно настроить дополнительные правила брандмауэра уровня сервера с помощью инструкции [Transact-SQL](sql-database-configure-firewall-settings.md).
+Если брандмауэр на уровне сервера настроен для отдельного IP-адреса или диапазона IP-адресов, то **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться к базе данных master и всем пользовательским базам данных. Первоначальный брандмауэр уровня сервера можно настроить на [портале Azure](sql-database-get-started-portal.md), с помощью [PowerShell](sql-database-powershell-samples.md) или [REST API](https://msdn.microsoft.com/library/azure/dn505712.aspx). После подключения также можно настроить дополнительные правила брандмауэра уровня сервера с помощью инструкции [Transact-SQL](sql-database-configure-firewall-settings.md).
 
 ### <a name="administrator-access-path"></a>Путь доступа администратора
 При правильной настройке брандмауэра на уровне сервера **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться с помощью таких клиентских средств, как SQL Server Management Studio или SQL Server Data Tools. Все функции и возможности доступны только в последних версиях средств. На схеме ниже показана типичная конфигурация для двух учетных записей администраторов.

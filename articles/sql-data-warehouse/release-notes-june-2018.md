@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 07/23/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 6dff2d1886a560e3a7e2758816a884782e33787f
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 12023216575b08732f3ef2d04bac9e825621f720
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43287976"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44376975"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-june-2018"></a>Что нового в Хранилище данных SQL Azure? Июнь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с июня 2018 г. 
@@ -23,7 +23,7 @@ ms.locfileid: "43287976"
 ## <a name="user-defined-restore-points"></a>Определяемые пользователем точки восстановления
 Хранилище данных SQL автоматически создает моментальные снимки хранилища данных каждые 8 часов, чтобы гарантировать 8-часовое значение целевой точки восстановления. Автоматизированное создание моментальных снимков упрощает ваши задачи по управлению хранилищем данных, но иногда нужно создавать дополнительные моментальные снимки в критические моменты в зависимости от потребностей вашего бизнеса. Например, моментальные снимки следует создавать перед загрузкой значительного объема данных или развертыванием новых скриптов в хранилище данных, чтобы получить точку восстановления непосредственно перед выполнением такой операции. 
 
-Теперь Хранилище данных SQL поддерживает создание [определяемых пользователем точек восстановления](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) с помощью командлета [New-AzureRmSqlDatabaseRestorePoint](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqldatabaserestorepoin).
+Теперь Хранилище данных SQL поддерживает создание [определяемых пользователем точек восстановления](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) с помощью командлета [New-AzureRmSqlDatabaseRestorePoint](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqldatabaserestorepoint).
 
 ```PowerShell
 New-AzureRmSqlDatabaseRestorePoint
@@ -50,7 +50,7 @@ The SELECT permission was denied on the column 'SSN' of the object 'Membership',
 ```
 
 ## <a name="objectschemaname"></a>OBJECT_SCHEMA_NAME
-Функция [OBJECT_SCHEMA_NAME()]() возвращает имя схемы базы данных для объектов в схеме. Эта функция стала стандартной в средствах извлечения, преобразования и загрузки при проверке схемы объектов. 
+Функция [OBJECT_SCHEMA_NAME()](https://docs.microsoft.com/sql/t-sql/functions/object-schema-name-transact-sql) возвращает имя схемы базы данных для объектов в схеме. Эта функция стала стандартной в средствах извлечения, преобразования и загрузки при проверке схемы объектов. 
 
 ```sql
 SELECT
