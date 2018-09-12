@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: f8dcee53aecfcb7468d87c480c68f14715dea035
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391578"
 documentType: LandingData
 title: Документация по Azure IoT Central (предварительная версия)
 metadata:
@@ -11,15 +17,13 @@ metadata:
   ms.service: iot-central
   services: iot-central
   manager: timlt
-  ms.openlocfilehash: df6acc821183e7336d8079895c7494eed397eea1
-  ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/01/2018
-  ms.locfileid: "34628578"
 abstract:
   description: Azure IoT Central — это полностью управляемое SaaS-решение (модели "программное обеспечение как услуга"), которое облегчает подключение и мониторинг ресурсов Интернета вещей, а также управление ими в любом масштабе. Azure IoT Central упрощает начальную настройку вашего решения Интернета вещей и снижает расходы на управление, эксплуатационные расходы и дополнительные временные затраты для стандартных проектов Интернета вещей. Узнайте, как создать, настроить, администрировать и использовать приложение Azure IoT Central, из наших кратких руководств и других материалов.
 sections:
+- title: Предстоящие изменения
+  items:
+  - type: paragraph
+    text: В ближайшие недели Azure IoT Central перейдет на использование службы подготовки устройств к добавлению в Центр Интернета вещей (DPS) для всех подключений устройств. Когда это изменение вступит в силу, вы должны будете обновить коды устройств для использования пакета SDK службы DPS, чтобы зарегистрировать и подключить устройства. Для всех приложений, использующих функцию непрерывного экспорта данных и (или) шаблоны решений Power BI, нужно будет изменить целевой контейнер хранилища и создать новый шаблон решения. <a href="https://aka.ms/iotcentral-create-technical-support-ticket">Чтобы получить дополнительные сведения, обратитесь в службу технической поддержки.</a>
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph

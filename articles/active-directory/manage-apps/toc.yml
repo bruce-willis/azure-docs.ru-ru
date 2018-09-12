@@ -1,0 +1,126 @@
+items:
+- name: Документация по управлению приложениями в Azure AD
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Сведения об управлении приложениями
+    href: what-is-application-management.md
+- name: Быстрое начало работы
+  items:
+  - name: Добавление приложения (портал)
+    href: add-application-portal.md
+  - name: Просмотр приложений клиента (портал)
+    href: view-applications-portal.md
+  expanded: true
+- name: Учебники
+  items:
+  - name: Настройка единого входа (портал)
+    href: configure-single-sign-on-portal.md
+- name: Основные понятия
+  items:
+  - name: Планирование интеграции облачных приложений
+    items:
+    - name: Что происходит при добавлении приложения
+      href: plan-an-application-integration.md
+  - name: Планирование интеграции локальных приложений
+    items:
+    - name: Прокси приложения
+      href: application-proxy.md
+    - name: Соединители
+      href: application-proxy-connectors.md
+    - name: Группы соединителей
+      href: application-proxy-connector-groups.md
+    - name: Безопасность
+      href: application-proxy-security.md
+    - name: Топология сети
+      href: application-proxy-network-topology.md
+    - name: Сравнение решений для удаленного доступа
+      href: application-proxy-migration.md
+  - name: Подготовка пользователей и групп
+    items:
+    - name: Автоматическая подготовка пользователей
+      href: configure-automatic-user-provisioning-portal.md
+    - name: Приложения с поддержкой SCIM
+      href: use-scim-to-provision-users-and-groups.md
+  - name: Безопасность приложения
+    items:
+    - name: Параметры доступа к приложениям
+      href: what-is-access-management.md
+    - name: Параметры подписи сертификата
+      href: certificate-signing-options.md
+    - name: Управление сертификатами
+      href: manage-certificates-for-federated-single-sign-on.md
+  - name: Единый вход
+    items:
+    - name: Методы единого входа
+      href: application-proxy-single-sign-on.md
+    - name: Обнаружение домашней области
+      href: configure-authentication-for-federated-users-portal.md
+    - name: Ограниченное делегирование Kerberos
+      href: application-proxy-configure-single-sign-on-with-kcd.md
+    - name: Хранение паролей
+      href: application-proxy-configure-single-sign-on-password-vaulting.md
+    - name: PingAccess
+      href: application-proxy-configure-single-sign-on-with-ping-access.md
+- name: Практические руководства
+  items:
+  - name: Интеграция облачных приложений
+    items:
+    - name: Изменение имени или логотипа
+      href: change-name-or-logo-portal.md
+  - name: Интеграция локальных приложений
+    items:
+    - name: Включение прокси приложения
+      href: application-proxy-enable.md
+    - name: Публикация приложения для удаленного доступа
+      href: application-proxy-publish-azure-portal.md
+    - name: Настройка соединителей
+      href: application-proxy-configure-connectors-with-proxy-servers.md
+    - name: Настройка приложений с поддержкой утверждений
+      href: application-proxy-configure-for-claims-aware-applications.md
+    - name: 'Регистрация соединителя: автоматическая установка'
+      href: application-proxy-register-connector-powershell.md
+    - name: Настройка собственных клиентских приложений
+      href: application-proxy-configure-native-client-application.md
+    - name: Настройка пользовательской домашней страницы
+      href: application-proxy-configure-custom-home-page.md
+    - name: Преобразование встроенных ссылок
+      href: application-proxy-configure-hard-coded-link-translation.md
+    - name: Публикация с использованием подстановочных знаков
+      href: application-proxy-wildcard.md
+    - name: Удаление персональных данных
+      href: application-proxy-remove-personal-data.md
+    - name: Настройка личного домена
+      href: application-proxy-configure-custom-domain.md
+    - name: Интеграция с удаленным рабочим столом
+      href: application-proxy-integrate-with-remote-desktop-services.md
+    - name: Интеграция с SharePoint
+      href: application-proxy-integrate-with-sharepoint-server.md
+    - name: Интеграция с Teams
+      href: application-proxy-integrate-with-teams.md
+    - name: Интеграция с Tableau
+      href: application-proxy-integrate-with-tableau.md
+    - name: Интеграция с Qlik
+      href: application-proxy-qlik.md
+    - name: Ошибки конфигурации
+      href: application-proxy-troubleshoot.md
+  - name: Доступ к приложениям
+    items:
+    - name: Назначение приложения пользователю
+      href: assign-user-or-group-access-portal.md
+    - name: Отмена доступа для пользователя или группы
+      href: remove-user-or-group-access-portal.md
+    - name: Скрытие приложения от пользователя
+      href: hide-application-from-user-portal.md
+    - name: Отключение входа для пользователя
+      href: disable-user-sign-in-portal.md
+  - name: Миграция
+    items:
+    - name: Перенос приложения ADFS в Azure
+      href: migrate-adfs-apps-to-azure.md
+ms.openlocfilehash: 57a377c56764272b70814bc78b31f718d3d902b7
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44381822"

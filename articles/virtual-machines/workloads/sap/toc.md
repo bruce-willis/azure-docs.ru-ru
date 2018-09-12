@@ -24,7 +24,11 @@
 ## Установка SAP HANA
 ### [Проверка конфигурации](hana-installation.md)
 ### [Пример установки HANA](hana-example-installation.md)
-## [Высокий уровень доступности и аварийное восстановление](hana-overview-high-availability-disaster-recovery.md)
+## Высокий уровень доступности и аварийное восстановление
+### [Параметры и рекомендации](hana-overview-high-availability-disaster-recovery.md)
+### [Резервное копирование и восстановление](hana-backup-restore.md)
+### [Принципы и подготовка](hana-concept-preparation.md)
+### [Процедура отработки отказа при аварийном восстановлении](hana-failover-procedure.md)
 ## Устранение неполадок и мониторинг
 ### [Мониторинг крупных экземпляров HANA](troubleshooting-monitoring.md)
 ### [Мониторинг и устранение неполадок со стороны HANA](hana-monitor-troubleshoot.md)

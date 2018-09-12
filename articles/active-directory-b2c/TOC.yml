@@ -238,12 +238,79 @@ items:
       items:
       - name: Заметки о выпуске
         href: active-directory-b2c-developer-notes-custom.md
-      - name: Поставщики сеансов единого входа
-        href: active-directory-b2c-reference-sso-custom.md
-      - name: Настройка языка
-        href: active-directory-b2c-language-customization-custom.md
       - name: Определение инфраструктуры доверия
         href: active-directory-b2c-reference-trustframeworks-defined-ief-custom.md
+      - name: Схема инфраструктуры процедур идентификации
+        items:
+        - name: TrustFrameworkPolicy
+          href: trustframeworkpolicy.md
+        - name: BuildingBlocks
+          href: buildingblocks.md
+          items:
+          - name: ClaimsSchema
+            href: claimsschema.md
+          - name: ClaimsTransformations
+            href: claimstransformations.md
+            items:
+            - name: Логическое
+              href: boolean-transformations.md
+            - name: Дата
+              href: date-transformations.md
+            - name: Общие сведения
+              href: general-transformations.md
+            - name: 'Целое число '
+              href: integer-transformations.md
+            - name: JSON
+              href: json-transformations.md
+            - name: Учетные записи социальных сетей
+              href: social-transformations.md
+            - name: StringCollection
+              href: stringcollection-transformations.md
+            - name: Строка
+              href: string-transformations.md
+          - name: Предикаты
+            href: predicates.md
+          - name: ContentDefinitions
+            href: contentdefinitions.md
+          - name: Локализация
+            href: localization.md
+            items:
+            - name: Идентификаторы строк локализации
+              href: localization-string-ids.md
+        - name: ClaimsProviders
+          href: claimsproviders.md
+          items:
+          - name: TechnicalProfiles
+            href: technicalprofiles.md
+            items:
+            - name: Сведения о технических профилях
+              href: technical-profiles-overview.md
+            - name: Azure Active Directory
+              href: active-directory-technical-profile.md
+            - name: Преобразование утверждений
+              href: claims-transformation-technical-profile.md
+            - name: Поставщик токенов JWT
+              href: jwt-issuer-technical-profile.md
+            - name: OAuth1
+              href: oauth1-technical-profile.md
+            - name: OAuth2
+              href: oauth2-technical-profile.md
+            - name: OpenID Connect
+              href: openid-connect-technical-profile.md
+            - name: REST
+              href: restful-technical-profile.md
+            - name: SAML
+              href: saml-technical-profile.md
+            - name: Профиль с самостоятельным подтверждением
+              href: self-asserted-technical-profile.md
+            - name: Сеанс единого входа
+              href: active-directory-b2c-reference-sso-custom.md
+            - name: Проверка
+              href: validation-technical-profile.md
+        - name: UserJourneys
+          href: userjourneys.md
+        - name: RelyingParty
+          href: relyingparty.md
   - name: Справочные материалы
     items:
     - name: Примеры кода
@@ -280,9 +347,9 @@ items:
     href: active-directory-b2c-support.md
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c
-ms.openlocfilehash: 485e7c5bbcfb1bde0b6626cab45eb2ad533f229d
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 322272a48d228e102981b4e7f194704f39443953
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44090631"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44378692"

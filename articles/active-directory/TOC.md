@@ -197,6 +197,7 @@
 #### [Ограничения клиента](manage-apps/tenant-restrictions.md)
 #### [Использование SCIM подготовки пользователей](manage-apps/use-scim-to-provision-users-and-groups.md)
 
+### [Основные сведения о процедуре предоставления согласия для приложений Azure AD](application-consent-experience.md)
 
 ### Устранение неполадок
 

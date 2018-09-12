@@ -1,0 +1,47 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: d7df652a5549f3cea1b3d5bd5652c6e39fbd456a
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44381817"
+documentType: LandingData
+title: Документация по управлению приложениями в Azure AD
+metadata:
+  title: Документация по управлению приложениями в Azure Active Directory
+  meta.description: Learn how to manage and deploy applications with Azure Active Directory.
+  services: active-directory
+  author: barbkess
+  manager: mtillman
+  layout: LandingPage
+  ms.assetid: 
+  ms.service: active-directory
+  ms.topic: landing-page
+  ms.date: 09/06/2018
+  ms.author: barbkess
+abstract:
+  description: Узнайте, как администрировать и развертывать приложения с помощью Azure Active Directory.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как добавить приложения, чтобы пользователи могли получить к ним доступ через Azure Active Directory.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_protect.svg
+      text: Добавление приложения
+      href: https://docs.microsoft.com/azure/active-directory/manage-apps/add-application-portal
+    - image:
+        src: https://docs.microsoft.com/media/common/i_protect.svg
+      text: Просмотр приложений
+      href: https://docs.microsoft.com/azure/active-directory/manage-apps/view-applications-portal
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как включить простой и безопасный вход в систему для ваших приложений.
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/azure/active-directory/manage-apps/configure-single-sign-on-portal">Настройка единого входа</a>
