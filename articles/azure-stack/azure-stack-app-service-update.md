@@ -6,36 +6,34 @@ documentationcenter: ''
 author: apwestgarth
 manager: stefsch
 editor: ''
-ms.assetid: ''
 ms.service: azure-stack
 ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 09/10/2018
 ms.author: anwestg
-ms.openlocfilehash: f12eb7d74d9c47567c72cddda8d2813f394fb1de
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 0e2b5b9902dbd3e9716801941663667bfa2b9da8
+ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41947946"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44379016"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Обновление Службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Прежде чем развертывать службу приложений Azure, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.3.
 >
 >
 
 Выполнив инструкции в этой статье, вы обновите [поставщик ресурсов Службы приложений](azure-stack-app-service-overview.md), развернутый в среде Azure Stack с подключением к Интернету.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Перед обновлением [разверните службу приложений Azure для поставщика ресурсов Azure Stack](azure-stack-app-service-deploy.md).
->
->
+
 
 ## <a name="run-the-app-service-resource-provider-installer"></a>Запуск установщика поставщика ресурсов службы приложений
 
