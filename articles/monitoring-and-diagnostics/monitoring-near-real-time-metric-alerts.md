@@ -55,7 +55,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Logic/workflows     |     Недоступно    |[Logic Apps](monitoring-supported-metrics.md#microsoftlogicworkflows) |
 |Microsoft.Network/applicationGateways     |    Недоступно     | [Шлюзы приложений](monitoring-supported-metrics.md#microsoftnetworkapplicationgateways) |
 |Microsoft.Network/expressRouteCircuits | Недоступно |  [Цепи Express Route](monitoring-supported-metrics.md#microsoftnetworkexpressroutecircuits) |
-|Microsoft.Network/dnsZones/* | Недоступно| [Зоны DNS](monitoring-supported-metrics.md#microsoftnetworkdnszones) |
+|Microsoft.Network/dnsZones | Недоступно| [Зоны DNS](monitoring-supported-metrics.md#microsoftnetworkdnszones) |
 |Microsoft.Network/loadBalancers (только для SKU "Стандартный")| Yes| [Подсистемы балансировки нагрузки.](monitoring-supported-metrics.md#microsoftnetworkloadbalancers) |
 |Microsoft.Network/publicipaddresses;     |  Недоступно       |[Общедоступные IP-адреса](monitoring-supported-metrics.md#microsoftnetworkpublicipaddresses)|
 |Microsoft.PowerBIDedicated/capacities | Недоступно | [Емкости](monitoring-supported-metrics.md#microsoftpowerbidedicatedcapacities)|
