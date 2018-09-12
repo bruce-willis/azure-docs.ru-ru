@@ -3,23 +3,19 @@ title: Контрольные точки и воспроизведение в у
 description: Сведения о работе контрольных точек и воспроизведении в расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
-manager: cfowler
-editor: ''
-tags: ''
+manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: na
+ms.topic: conceptual
 ms.date: 09/29/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 39cdb9b2c6eae9a3176aedc64b8d187e298fdfdd
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 90860759e8a20bca03d3eb74e4859d0b26d14da1
+ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33764576"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44091872"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)
 
@@ -155,7 +151,7 @@ module.exports = df(function*(context) {
 
 Управление этими *устойчивыми задачами* выполняется внутренне с помощью списка объектов `TaskCompletionSource`. Во время воспроизведения эти задачи создаются как часть выполнения кода оркестратора и завершаются, когда диспетчер перечисляет соответствующие события журнала. Это все выполняется синхронно с помощью одного потока до тех пор, пока весь журнал не будет воспроизведен. Для всех устойчивых задач, не завершенных до конца воспроизведения журнала, выполняются соответствующие действия. Например, сообщение может быть поставлено в очередь для вызова функции действия.
 
-Описанное здесь поведение выполнения должно помочь вам понять, почему код функции оркестратора никогда не должен ожидать неустойчивые задачи. Поток диспетчера не может ожидать их завершения, а любой обратный вызов этой задачи может повредить состояние отслеживания функции оркестратора. Чтобы этого избежать, выполняются некоторые проверки среды выполнения.
+Описанное здесь поведение выполнения должно помочь вам понять, почему код функции оркестратора никогда не должен ожидать `await` неустойчивые задачи. Поток диспетчера не может ожидать их завершения, а любой обратный вызов этой задачи может повредить состояние отслеживания функции оркестратора. Чтобы этого избежать, выполняются некоторые проверки среды выполнения.
 
 Чтобы получить дополнительные сведения о том, как платформа устойчивых задач выполняет функции оркестратора, ознакомьтесь с [исходным кодом устойчивых задач на сайте GitHub](https://github.com/Azure/durabletask). В частности, просмотрите сведения о [TaskOrchestrationExecutor.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) и [TaskOrchestrationContext.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs)
 
