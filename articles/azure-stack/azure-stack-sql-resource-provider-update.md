@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 09/04/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: 017ac3214046b812ce003ab7a190f2f2b3f4f2e2
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 3517114d5bc267aa32cea49161d0d34156a2ed1e
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697947"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44390915"
 ---
 # <a name="update-the-sql-resource-provider"></a>Обновление поставщика ресурсов SQL
 
@@ -49,7 +49,9 @@ ms.locfileid: "43697947"
 
 ### <a name="update-script-powershell-example"></a>Пример скрипта обновления на PowerShell
 
-Вы можете изменить и выполнить следующий скрипт в интегрированной среде сценариев Windows PowerShell с повышенными правами. Не забудьте изменить данные учетной записи и пароли, если это требуется для вашей среды.
+<a name="you-can-edit-and-run-the-following-script-from-an-elevated-powershell-ise"></a>Вы можете изменить и выполнить следующий скрипт в интегрированной среде сценариев Windows PowerShell с повышенными правами. 
+-  
+- Не забудьте изменить данные учетной записи и пароли, если это требуется для вашей среды.
 
 > [!NOTE]
 > Этот процесс обновления применим только к интегрированным системам Azure Stack.

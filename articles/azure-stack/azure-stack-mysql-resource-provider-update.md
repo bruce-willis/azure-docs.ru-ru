@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 09/04/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: 86e72787347cddd399fbdde4cd943b86ba48375f
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: fb9f022f0af821d81e5b61b99ecb52b7f7151b5f
+ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697838"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44391561"
 ---
 # <a name="update-the-mysql-resource-provider"></a>Обновление поставщика ресурсов MySQL 
 
@@ -40,6 +40,9 @@ ms.locfileid: "43697838"
 
 >[!NOTE]
 >Мы рекомендуем загрузить последний образ основных компонентов Windows Server 2016 из служб управления Marketplace. Если необходимо установить обновление, **один** MSU-пакет можно поместить в локальный каталог зависимого элемента. Если поместить несколько MSU-файлов в этом расположении, выполнение скрипта завершится ошибкой.
+
+>[!NOTE]  
+> 
 
 Этот сценарий необходимо использовать с аргументами, описанными для сценария DeployMySqlProvider.ps1. Также укажите сертификат.  
 

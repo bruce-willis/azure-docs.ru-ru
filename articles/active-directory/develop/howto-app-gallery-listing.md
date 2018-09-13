@@ -17,12 +17,12 @@ ms.date: 08/31/2018
 ms.author: celested
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev
-ms.openlocfilehash: e5db7b9bed674011c2922f026c301172f347f53f
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: d5c00e9df9c1bfee0c665cafc763c52a36f98052
+ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43666314"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44345851"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -69,7 +69,7 @@ Azure Active Directory (Azure AD) — это облачная служба ид�
 
     * Если у вас возникнут проблемы с доступом к порталу, свяжитесь с [командой интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). 
 
-*   **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../active-directory-saas-custom-apps.md).
+*   **SAML 2.0** или **WS-Fed**. Если ваше приложение поддерживает SAML 2.0, его можно интегрировать непосредственно из клиента Azure AD, используя [инструкции по добавлению настраиваемого приложения](../manage-apps/configure-single-sign-on-non-gallery-applications.md).
 
     ![Временная шкала включения в коллекцию приложения SAML 2.0 или WS-Fed](./media/howto-app-gallery-listing/saml.png)
 
