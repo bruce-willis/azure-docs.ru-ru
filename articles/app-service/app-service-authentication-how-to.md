@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: cephalin
-ms.openlocfilehash: 191d42f43e500c7f8041a02aeba2fbcb7dfd5379
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 629a76ab5610625e14780d7b5c57d3979c2224c9
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226532"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43344176"
 ---
 # <a name="customize-authentication-and-authorization-in-azure-app-service"></a>Настройка проверки подлинности и авторизации в службе приложений Azure
 
@@ -34,9 +34,9 @@ ms.locfileid: "39226532"
 * [Настройка приложения для использования входа по учетной записи Майкрософт](app-service-mobile-how-to-configure-microsoft-authentication.md)
 * [Настройка приложения для использования имени входа Twitter](app-service-mobile-how-to-configure-twitter-authentication.md)
 
-## <a name="configure-multiple-sign-in-options"></a>Настройка нескольких вариантов входа
+## <a name="use-multiple-sign-in-providers"></a>Использование нескольких поставщиков входа
 
-На портале нельзя напрямую настроить несколько вариантов входа для пользователей (например, через Facebook и Twitter). Однако эту функцию можно легко добавить к функциональным возможностям вашего веб-приложения. Для этого необходимо сделать следующее:
+На портале нельзя напрямую настроить несколько поставщиков входа для пользователей (например, через Facebook и Twitter). Однако эту функцию можно легко добавить к функциональным возможностям вашего веб-приложения. Для этого необходимо сделать следующее:
 
 Во-первых, на странице **Authentication / Authorization** (Проверка подлинности и авторизация) на портале Azure настройте все поставщики удостоверений, которые нужно включить.
 
@@ -58,6 +58,50 @@ ms.locfileid: "39226532"
 
 ```HTML
 <a href="/.auth/login/<provider>?post_login_redirect_url=/Home/Index">Log in</a>
+```
+
+## <a name="sign-out-of-a-session"></a>Выход из сеанса
+
+Пользователи могут сделать выход, отправив запрос `GET` в конечную точку `/.auth/logout` приложения. Запрос `GET` выполняет следующие действия:
+
+- Очищает файлы cookie проверки подлинности в текущем сеансе.
+- Удаляет текущие маркеры пользователя из хранилища маркеров.
+- Выполняет выход в поставщике удостоверений на стороне сервера для Azure Active Directory и Google.
+
+Здесь представлена ссылка для простого выхода на веб-странице:
+
+```HTML
+<a href="/.auth/logout">Sign out</a>
+```
+
+После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Например: 
+
+```
+GET /.auth/logout?post_logout_redirect_uri=/index.html
+```
+
+Рекомендуется [закодировать](https://wikipedia.org/wiki/Percent-encoding) значение `post_logout_redirect_uri`.
+
+При использовании полного URL-адреса он должен размещаться в одном и том же домене или быть настроенным в качестве разрешенного URL-адреса внешнего перенаправления для приложения. В следующем примере показано перенаправление на адрес `https://myexternalurl.com`, который не размещен в одном и том же домене:
+
+```
+GET /.auth/logout?post_logout_redirect_uri=https%3A%2F%2Fmyexternalurl.com
+```
+
+Необходимо выполнить следующую команду в [Azure Cloud Shell](../cloud-shell/quickstart.md):
+
+```azurecli-interactive
+az webapp auth update --name <app_name> --resource-group <group_name> --allowed-external-redirect-urls "https://myexternalurl.com"
+```
+
+## <a name="preserve-url-fragments"></a>Сохранение фрагментов URL-адреса
+
+После входа в приложение пользователи обычно желают быть перенаправленными в один и тот же раздел той же страницы, например `/wiki/Main_Page#SectionZ`. Но так как [фрагменты URL-адреса](https://wikipedia.org/wiki/Fragment_identifier) (например, `#SectionZ`) никогда не отправляются на сервер, они не сохраняются по умолчанию после завершения входа OAuth и перенаправления обратно в приложение. Это неудобно для пользователей, когда им снова нужно перейти в требуемую закладку. Это ограничение распространяется на все решения аутентификации на стороне сервера.
+
+При использовании аутентификации службы приложений можно сохранять фрагменты URL-адресов во время входа OAuth. Чтобы сделать это, установите для параметра приложения `WEBSITE_AUTH_PRESERVE_URL_FRAGMENT` значение `true`. Это можно сделать на [портале Azure](https://portal.azure.com) или просто выполнив следующую команду в [Azure Cloud Shell](../cloud-shell/quickstart.md):
+
+```azurecli-interactive
+az webapp config appsettings set --name <app_name> --resource-group <group_name> --settings WEBSITE_AUTH_PRESERVE_URL_FRAGMENT="true"
 ```
 
 ## <a name="access-user-claims"></a>Доступ к утверждениям пользователей

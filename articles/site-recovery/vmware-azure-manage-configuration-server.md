@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: df5b2ecce2a5c9d7c263ee0acc3a49b859b93f7f
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 0935867e835fe88568f1cdce1ea8dfcea14a451a
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39346126"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43669321"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vms"></a>Управление сервером конфигурации для виртуальных машин VMware
 
@@ -24,7 +24,7 @@ ms.locfileid: "39346126"
 Доступ к серверу конфигурации можно получить следующими способами:
     - Войдя на виртуальную машину, на которой он развернут, и запустив диспетчер конфигурации Azure Site Recovery, щелкнув соответствующий ярлык на рабочем столе.
     - Кроме того, к нему можно получить доступ по адресу **https://*ConfigurationServerName*/:44315/**. Для входа необходимы учетные данные администратора.
-   
+
 ### <a name="modify-vmware-server-settings"></a>Изменение параметров сервера VMware
 
 1. Чтобы привязать другой сервер VMware к серверу конфигурации, выберите **Добавление сервера vCenter Server или ESXi vSphere** после входа.
@@ -80,103 +80,114 @@ ms.locfileid: "39346126"
       Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumber – ProxyUserName domain\username -ProxyPassword $pwd
    ```
 
-      >[!NOTE] 
+      >[!NOTE]
       >Чтобы **извлечь новейшие сертификаты** с сервера конфигурации для горизонтального масштабирования сервера обработки, выполните команду *“<Installation Drive\Microsoft Azure Site Recovery\agent\cdpcli.exe>" --registermt*.
 
   8. И, наконец, перезапустите службу OBEngine, выполнив приведенную ниже команду.
   ```
           net stop obengine
           net start obengine
+  ```
+  
+## <a name="upgrade-the-configuration-server"></a>Обновление сервера конфигурации
 
-## Upgrade the configuration server
+Для обновления сервера конфигурации запускаются накопительные пакеты обновления. Обновления применимы к версиям вплоть до N-4. Например: 
 
-You run update rollups to update the configuration server. Updates can be applied for up to N-4 versions. For example:
+- Если вы используете версии 9.7, 9.8, 9.9 или 9.10, можно обновить их непосредственно до версии 9.11.
+- Если вы используете версию 9.6 или ниже и хотите обновить ее до версии 9.11, сначала выполните обновление до версии 9.7, а затем — до версии 9.11.
 
-- If you run 9.7, 9.8, 9.9, or 9.10, you can upgrade directly to 9.11.
-- If you run 9.6 or earlier and you want to upgrade to 9.11, you must first upgrade to version 9.7. before 9.11.
+Ссылки на накопительные пакеты обновления для всех версий сервера конфигурации доступны на [вики-странице обновлений](https://social.technet.microsoft.com/wiki/contents/articles/38544.azure-site-recovery-service-updates.aspx).
 
-Links to update rollups for upgrading to all versions of the configuration server are available in the [wiki updates page](https://social.technet.microsoft.com/wiki/contents/articles/38544.azure-site-recovery-service-updates.aspx).
+Инструкции по обновлению сервера:
 
-Upgrade the server as follows:
+1. В хранилище перейдите в **Управление** > **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Серверы конфигурации**.
+2. Если обновление доступно, то в строке **Версия агента** > появится ссылка.
+    ![Обновление](./media/vmware-azure-manage-configuration-server/update2.png).
+3. Скачайте файл установщика обновлений на сервер конфигурации.
 
-1. In the vault, go to **Manage** > **Site Recovery Infrastructure** > **Configuration Servers**.
-2. If an update is available, a link appears in the **Agent Version** > column.
-    ![Update](./media/vmware-azure-manage-configuration-server/update2.png)
-3. Download the update installer file to the configuration server.
+    ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update1.png)
 
-    ![Update](./media/vmware-azure-manage-configuration-server/update1.png)
+4. Дважды щелкните, чтобы запустить установщик.
+5. Установщик определит текущую версию на компьютере. Чтобы начать обновление, нажмите кнопку **Да**.
+6. После завершения обновления будет выполнена проверка сервера конфигурации.
 
-4. Double-click to run the installer.
-5. The installer detects the current version running on the machine. Click **Yes** to start the upgrade.
-6. When the upgrade completes the server configuration validates.
+    ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update3.png)
 
-    ![Update](./media/vmware-azure-manage-configuration-server/update3.png)
-    
-7. Click **Finish** to close the installer.
+7. Чтобы закрыть установщик, нажмите кнопку **Готово**.
 
-## Delete or unregister a configuration server
+## <a name="delete-or-unregister-a-configuration-server"></a>Отмена регистрации или удаление сервера конфигурации
 
-1. [Disable protection](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure) for all VMs under the configuration server.
-2. [Disassociate](vmware-azure-set-up-replication.md#disassociate-or-delete-a-replication-policy) and [delete](vmware-azure-set-up-replication.md#disassociate-or-delete-a-replication-policy) all replication policies from the configuration server.
-3. [Delete](vmware-azure-manage-vcenter.md#delete-a-vcenter-server) all vCenter servers/vSphere hosts that are associated with the configuration server.
-4. In the vault, open **Site Recovery Infrastructure** > **Configuration Servers**.
-5. Select the configuration server that you want to remove. Then, on the **Details** page, select **Delete**.
+1. [Отключите защиту](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-vmware-vm-or-physical-server-vmware-to-azure) для всех виртуальных машин на сервере конфигурации.
+2. [Отмените связь](vmware-azure-set-up-replication.md#disassociate-or-delete-a-replication-policy) всех политик репликации с сервером конфигурации и [удалите](vmware-azure-set-up-replication.md#disassociate-or-delete-a-replication-policy) их.
+3. [Удалите](vmware-azure-manage-vcenter.md#delete-a-vcenter-server) все узлы vSphere и серверы vCenter Server, связанные с сервером конфигурации.
+4. В хранилище выберите **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Серверы конфигурации**.
+5. Выберите сервер конфигурации, который должен быть удален. На странице **Сведения** выберите **Удалить**.
 
-    ![Delete configuration server](./media/vmware-azure-manage-configuration-server/delete-configuration-server.png)
-   
+    ![Удаление сервера конфигурации](./media/vmware-azure-manage-configuration-server/delete-configuration-server.png)
 
-### Delete with PowerShell
 
-You can optionally delete the configuration server by using PowerShell.
+### <a name="delete-with-powershell"></a>Удаление с помощью PowerShell
 
-1. [Install](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.4.0) the Azure PowerShell module.
-2. Sign in to your Azure account by using this command:
-    
+При необходимости можно удалить сервер конфигурации с помощью PowerShell.
+
+1. [Установите](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.4.0) модуль Azure PowerShell.
+2. Войдите в учетную запись Azure с помощью следующей команды:
+
     `Connect-AzureRmAccount`
-3. Select the vault subscription.
+3. Выберите подписку хранилища.
 
      `Get-AzureRmSubscription –SubscriptionName <your subscription name> | Select-AzureRmSubscription`
-3.  Set the vault context.
-    
+3.  Задание контекста хранилища.
+
     ```
-    $vault = Get-AzureRmRecoveryServicesVault -Name <name of your vault> Set-AzureRmSiteRecoveryVaultSettings -ARSVault $vault
+    $vault = Get-AzureRmRecoveryServicesVault -Name <name of your vault>
+    Set-AzureRmSiteRecoveryVaultSettings -ARSVault $vault
     ```
-4. Retrieve the configuration server.
+4. Получите сервер конфигурации.
 
     `$fabric = Get-AzureRmSiteRecoveryFabric -FriendlyName <name of your configuration server>`
-6. Delete the configuration server.
+6. Удалите сервер конфигурации.
 
     `Remove-AzureRmSiteRecoveryFabric -Fabric $fabric [-Force] `
 
 > [!NOTE]
-> You can use the **-Force** option in Remove-AzureRmSiteRecoveryFabric for forced deletion of the configuration server.
- 
-## Generate configuration server Passphrase
+> Параметр **-Force** в командлете Remove-AzureRmSiteRecoveryFabric можно использовать для принудительного удаления сервера конфигурации.
 
-1. Sign in to your configuration server, and then open a command prompt window as an administrator.
-2. To change the directory to the bin folder, execute the command **cd %ProgramData%\ASR\home\svsystems\bin**
-3. To generate the passphrase file, execute **genpassphrase.exe -v > MobSvc.passphrase**.
-4. Your passphrase will be stored in the file located at **%ProgramData%\ASR\home\svsystems\bin\MobSvc.passphrase**.
+## <a name="generate-configuration-server-passphrase"></a>Создание парольной фразы сервера конфигурации.
 
-## Renew SSL certificates
+1. Войдите на сервер конфигурации и откройте окно командной строки с правами администратора.
+2. Чтобы изменить каталог на папку корзины, выполните команду **cd %ProgramData%\ASR\home\svsystems\bin**
+3. Чтобы создать файл с парольной фразой, выполните команду **genpassphrase.exe -v > MobSvc.passphrase**.
+4. Парольная фраза будет храниться в файле, расположенном по адресу **%ProgramData%\ASR\home\svsystems\bin\MobSvc.passphrase**.
 
-The configuration server has an inbuilt web server, which orchestrates activities of the Mobility Service, process servers, and master target servers connected to it. The web server uses an SSL certificate to authenticate clients. The certificate expires after three years and can be renewed at any time.
+## <a name="renew-ssl-certificates"></a>Обновление SSL-сертификатов
 
-### Check expiry
+На сервере конфигурации есть встроенный веб-сервер, который координирует действия службы Mobility Service, серверов обработки и главных целевых серверов, подключенных к этому серверу конфигурации. Веб-сервер использует SSL-сертификат для аутентификации клиентов. Срок действия этого сертификата составляет три года, его можно обновить в любое время.
 
-For configuration server deployments before May 2016, certificate expiry was set to one year. If you have a certificate that is going to expire, the following occurs:
+### <a name="check-expiry"></a>Проверка срока действия
 
-- When the expiry date is two months or less, the service starts sending notifications in the portal, and by email (if you subscribed to Site Recovery notifications).
-- A notification banner appears on the vault resource page. For more information, select the banner.
-- If you see an **Upgrade Now** button, it indicates that some components in your environment haven't been upgraded to 9.4.xxxx.x or higher versions. Upgrade the components before you renew the certificate. You can't renew on older versions.
+Для серверов конфигурации, развернутых до мая 2016 года, срока действия сертификата составлял один год. При наличии сертификата, срок действия которого истекает, происходит следующее.
 
-### Renew the certificate
+- Когда до даты истечения срока действия остается не больше двух месяцев, служба начинает отправлять уведомления на портале и по электронной почте (если вы подписаны на уведомления Site Recovery).
+- Баннер уведомления отображается на странице ресурсов хранилища. Для получения дополнительных сведений выберите баннер.
+- Если вы видите кнопку **Обновить**, это указывает, что некоторые компоненты в вашей среде не обновлены до версии 9.4.xxxx.x или более поздней. Обновите компоненты, прежде чем обновлять сертификат. При наличии более ранних версий обновление сертификата будет невозможно.
 
-1. In the vault, open **Site Recovery Infrastructure** > **Configuration Server**. Select the required configuration server.
-2. The expiry date appears under **Configuration Server health**.
-3. Select **Renew Certificates**. 
+### <a name="renew-the-certificate"></a>Обновление сертификата
 
+1. В хранилище выберите **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Сервер конфигурации**. Выберите нужный сервер конфигурации.
+2. Дата окончания срока действия отображается в разделе **Работоспособность сервера конфигурации**.
+3. Выберите **Обновить сертификаты**.
 
-## Next steps
+## <a name="update-windows-licence"></a>Обновление лицензии Windows
 
-Review the tutorials for setting up disaster recovery of [VMware VMs](vmware-azure-tutorial.md) to Azure.
+Вместе с шаблоном OVF предоставляется пробная лицензия сроком на 180 дней. Для бесперебойной работы необходимо активировать Windows с использованием приобретенной лицензии.
+
+## <a name="failback-requirements"></a>Требования к восстановлению размещения
+
+Во время повторной защиты и восстановления размещения локальный сервер конфигурации должен быть запущен и подключен. Для успешного восстановления размещения виртуальная машина должна существовать в базе данных сервера конфигурации.
+
+Не забывайте регулярно создавать плановые резервные копии конфигурации сервера. Если происходит авария и сервер конфигурации утерян, необходимо сначала восстановить сервер конфигурации из резервной копии и убедиться, что он имеет тот же IP-адрес, с которым он был зарегистрирован в хранилище. Восстановление размещения не будет работать, если для восстановленного сервера конфигурации используется другой IP-адрес.
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Ознакомьтесь с руководствами по настройке аварийного восстановления [виртуальных машин VMware](vmware-azure-tutorial.md) в Azure.

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 7/25/2018
 ms.author: saurse
-ms.openlocfilehash: e7a63167285c06fdfe632e7d45d9fddd3cca7842
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: 2c8978cfba8fc56d4dbc565cb3a91c75d9d54679
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39248528"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43700201"
 ---
 # <a name="troubleshoot-microsoft-azure-recovery-services-mars-agent-issues"></a>Устранение неполадок с агентом Служб восстановления Microsoft Azure (MARS)
 ## <a name="recommended-steps"></a>Рекомендуемые действия
@@ -66,7 +66,10 @@ ms.locfileid: "39248528"
 <li>Дважды щелкните задачу "Microsoft-OnlineBackup" и перейдите на вкладку "Триггеры".
 <li>Убедитесь, что состояние задачи имеет значение "Включено". В противном случае щелкните "Изменить" и установите флажок "Включено".
 <li>На вкладке *Общие* перейдите в раздел *Параметры безопасности*.
-<li>Убедитесь, что для выполнения задачи выбрана учетная запись пользователя *SYSTEM* или группы локальных администраторов на сервере > [!TIP] Рекомендуется перезагрузить сервер после выполнения приведенных выше шагов, чтобы убедиться, что эти изменения применяются последовательно.
+<li>Убедитесь, что для выполнения задачи выбрана учетная запись *SYSTEM* или группы локальных администраторов на сервере.
+
+> [!TIP]
+> Рекомендуется перезагрузить сервер после выполнения приведенных выше шагов, чтобы убедиться, что эти изменения применяются последовательно.
 
 
 ## <a name="troubleshooting-restore-issues"></a>Устранение проблем восстановления

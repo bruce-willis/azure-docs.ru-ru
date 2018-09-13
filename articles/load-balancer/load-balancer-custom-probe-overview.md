@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/28/2018
+ms.date: 09/04/2018
 ms.author: kumud
-ms.openlocfilehash: 5ceddb1bcd6ce89f7014e034b56c873f02cc2007
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: ecc33fc6078dac4affe3942f1be7e039ae9e9e70
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43190739"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43695431"
 ---
 # <a name="load-balancer-health-probes"></a>Пробы работоспособности Load Balancer
 
@@ -36,7 +36,7 @@ Azure Load Balancer использует пробы работоспособно
 > [!IMPORTANT]
 > Пробы работоспособности Load Balancer поступают с IP-адреса 168.63.129.16 и не должны блокироваться, чтобы они отметили экземпляр как работоспособный.  Дополнительные сведения см. в разделе [IP-адрес источника пробы](#probesource).
 
-## <a name="types"></a>Типы проб работоспособности
+## <a name="types"></a>
 
 Пробы работоспособности могут наблюдать за любым портом во внутреннем экземпляре, включая порт, на котором предоставляется фактическое обслуживание. Протокол пробы работоспособности можно настроить для трех различных типов проб работоспособности:
 

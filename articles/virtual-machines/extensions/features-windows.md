@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e23d3c39c6fd4e69f03ab0f2c11c9b523307b788
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: fc2433b8ac12bc1d485b6f23b56f356041e5128e
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715147"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43783106"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -43,7 +43,7 @@ ms.locfileid: "39715147"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы расширения работали на виртуальной машине, на ней нужно установить агент Linux для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
+Чтобы расширения работали на виртуальной машине, необходимо установить агент Windows для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
 
 ### <a name="azure-vm-agent"></a>Агент виртуальной машины Azure
 

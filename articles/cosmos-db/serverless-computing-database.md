@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: sngun
-ms.openlocfilehash: dfca26f36287cfd856beb98edeb2b2362f36bc4b
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: b54a302c022a8af84c1964c13ffadc52b45c4ca4
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37858812"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43696825"
 ---
 # <a name="azure-cosmos-db-serverless-database-computing-using-azure-functions"></a>Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"
 
@@ -31,7 +31,7 @@ ms.locfileid: "37858812"
 * Можно привязать функцию к контейнеру Azure Cosmos DB с помощью **выходной привязки**. Выходные привязки записывают данные в контейнер после завершения выполнения функции.
 
 > [!NOTE]
-> Сейчас триггер, входные и выходные привязки Azure Cosmos DB работают только с учетными записями API SQL и API Graph.
+> Сейчас триггер, входные и выходные привязки Azure Cosmos DB работают только с учетными записями API SQL и API Gremlin.
 
 На следующей схеме показаны все три способа интеграции. 
 
@@ -82,7 +82,7 @@ ms.locfileid: "37858812"
 
 ### <a name="gaming-use-case---azure-cosmos-db-trigger-and-output-binding"></a>Вариант использования в сфере игр. Триггер и выходная привязка Azure Cosmos DB
 
-В играх при создании пользователя можно выполнить поиск других пользователей, которые могут быть знакомы с ним, с помощью [API Graph Azure Cosmos DB](graph-introduction.md). Затем можно записать результаты в [базу данных SQL Azure Cosmos DB] для удобного поиска.
+В играх при создании пользователя можно выполнить поиск других пользователей, которые могут быть знакомы с ним, с помощью [API Gremlin Azure Cosmos DB](graph-introduction.md). Затем можно записать результаты в [базу данных SQL Azure Cosmos DB] для удобного поиска.
 
 **Реализация:** использование триггера и выходной привязки Azure Cosmos DB
 

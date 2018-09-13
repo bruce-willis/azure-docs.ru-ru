@@ -11,12 +11,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 04/15/2018
 ms.author: ghogen
-ms.openlocfilehash: 5b3cea87e7762e492432722c54a1a8aaa342b84a
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: d2ab34b3737ec00e4adc464f6d2255203fb6ae08
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42146712"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43840625"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -74,6 +74,10 @@ ms.locfileid: "42146712"
 
 ## <a name="access-your-secrets-in-code-aspnet-core-projects"></a>Обращение к секретам в коде (для проектов ASP.NET Core)
 
+Подключение к Key Vault устанавливается при запуске класса, который реализует [Microsoft.AspNetCore.Hosting.IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup?view=aspnetcore-2.1), используя способ расширения поведения запуска, описанный в статье [Усовершенствование приложения из внешней сборки в ASP.NET Core с IHostingStartup](/aspnet/core/fundamentals/host/platform-specific-configuration). Класс startup использует две переменные среды, которые содержат сведения о подключении к Key Vault: ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED со значением true и ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT с URL-адресом Key Vault. Они добавляются в файл launchsettings.json при запуске процесса **добавления подключенной службы**.
+
+Чтобы получить доступ к секретам:
+
 1. Теперь вы можете указывать созданные секреты в проекте ASP.NET Core в Visual Studio, используя следующие выражения в коде.
  
    ```csharp
@@ -99,6 +103,10 @@ ms.locfileid: "42146712"
 1. Выполните сборку веб-приложения и запустите его. Затем перейдите на страницу About.cshtml и просмотрите значение секрета.
 
 ## <a name="access-your-secrets-in-code-aspnet-471-projects"></a>Обращение к секретам в коде (для проектов ASP.NET 4.7.1)
+
+Подключение к Key Vault выполняется с помощью класса ConfigurationBuilder, использующего информацию, которая была добавлена в файл web.config при выполнении процесса **добавления подключенной службы**.
+
+Чтобы получить доступ к секретам:
 
 1. Измените файл web.config следующим образом. Ключи представляют собой заполнители, которые AzureKeyVault ConfigurationBuilder заменит значениями секретов из хранилища ключей.
 

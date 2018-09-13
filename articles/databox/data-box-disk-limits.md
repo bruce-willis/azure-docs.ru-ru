@@ -12,15 +12,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 07/12/2018
+ms.date: 09/04/2018
 ms.author: alkohli
 ms.custom: ''
-ms.openlocfilehash: 358f81498d8caad7c0a67519bbb776efa153249f
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 3b26c5f9a6d75725fb102d89192e77988b295dea
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42142473"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782031"
 ---
 # <a name="azure-data-box-disk-limits-preview"></a>Ограничения для диска Azure Data Box (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "42142473"
 
 ## <a name="data-box-service-limits"></a>Ограничения службы Data Box
 
- - Служба Data Box доступна только в США и ЕС во всех регионах Azure для общедоступного облака Azure.
+ - Служба Data Box доступна только в США, ЕС, Канаде и Австралии во всех регионах Azure для общедоступного облака Azure.
  - Диск Data Box поддерживается одну учетную запись хранения.
 
 ## <a name="data-box-disk-performance"></a>Производительность диска Data Box

@@ -4,14 +4,14 @@ description: В этой статье рассматриваются часто 
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 07/10/2018
+ms.date: 09/03/2018
 ms.author: snehaa
-ms.openlocfilehash: 3f035f38b1ad68e9e39d151ffad3fc650a0a1d80
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: ce9dc4aab26b99bbb1e9f24f018354b8c91f66f4
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952755"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43699970"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -78,7 +78,7 @@ ms.locfileid: "37952755"
 - Загрузка ЦП.
 - Использование памяти
 - Для каждого диска, подключенного к виртуальной машине:
-  - скорость чтения с диска;
+  - пропускная способность чтения с диска;
   - скорость записи на диск;
   - число операций чтения с диска в секунду;
   - число операций записи на диск в секунду.
@@ -123,6 +123,12 @@ ms.locfileid: "37952755"
 ### <a name="how-many-virtual-machines-can-be-discovered-in-a-single-migration-project"></a>Сколько виртуальных машин можно обнаружить в одном проекте миграции?
 
 В одном проекте миграции можно обнаружить 1500 виртуальных машин. Если количество машин в локальной среде превышает это число, [см. дополнительные сведения](how-to-scale-assessment.md) о возможностях обнаружения крупномасштабной среды в службе "Миграция Azure".
+
+### <a name="does-azure-migrate-support-enterprise-agreement-ea-based-cost-estimation"></a>Поддерживает ли служба "Миграция Azure" оценку затрат на основе Соглашения Enterprise (EA)?
+
+Служба "Миграция Azure" сейчас не поддерживает оценку затрат для [Соглашение Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support/). В качестве решения укажите предложение с оплатой по мере использования и вручную введите процент скидки (применяемой к подписке) в поле скидки свойств оценки.
+
+  ![Скидка](./media/resources-faq/discount.png)
 
 ## <a name="dependency-visualization"></a>Визуализация зависимостей
 

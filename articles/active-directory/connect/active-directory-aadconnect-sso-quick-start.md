@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/01/2018
+ms.date: 09/05/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4710e30ad38485f47c115ac2e0e914e91c96d582
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 8cab491a874094ee195f12ba6fe7f19a87f09ef2
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522187"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43841957"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory — быстрый запуск
 
@@ -42,6 +42,9 @@ ms.locfileid: "39522187"
     >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ собираетесь использовать синхронизацию хэшей паролей в сочетании со сквозной аутентификацией, прочитайте [заметки о выпуске Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history#116470).
 
 * **Использование поддерживаемой топологии Azure AD Connect**. Убедитесь, что вы используете одну из поддерживаемых топологий Azure AD Connect, описанных [здесь](active-directory-aadconnect-topologies.md).
+
+    >[!NOTE]
+    >Простой единый вход поддерживает несколько лесов AD, вне зависимости от того, существуют ли между ними отношения доверия AD.
 
 * **Настройка учетных данных администратора домена**. Необходимы учетные данные администратора домена для каждого леса Active Directory, который:
     * синхронизируется с Azure AD через Azure AD Connect;
@@ -180,7 +183,7 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 
 #### <a name="safari-macos"></a>Safari (macOS)
 
-Убедитесь, что компьютер под управлением macOS присоединен к Active Directory. Инструкции по присоединению к Active Directory см. в документе [Best Practices for Integrating OS X with Active Directory](http://www.isaca.org/Groups/Professional-English/identity-management/GroupDocuments/Integrating-OS-X-with-Active-Directory.pdf) (Рекомендации по интеграции OS X с Active Directory).
+Убедитесь, что компьютер под управлением macOS присоединен к Active Directory. Инструкции по присоединению устройства macOS к AD выходят за рамки данной статьи.
 
 #### <a name="google-chrome-all-platforms"></a>Google Chrome (все платформы)
 

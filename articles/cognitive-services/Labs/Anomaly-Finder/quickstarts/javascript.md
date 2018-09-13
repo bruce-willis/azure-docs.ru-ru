@@ -9,18 +9,18 @@ ms.technology: anomaly-detection
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: 105da0219efd7bf7c9a105a018dda7ea5b084cfd
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 048647f1657a5674bcb508b20b7c57a8a6ed5ed9
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381317"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43665028"
 ---
 # <a name="use-the-anomaly-finder-api-with-javascript"></a>Использование API средства для поиска аномалий с Javascript
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API обнаружения аномалий и Javascript для получения результатов обнаружения аномалий в данных временных рядов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
@@ -30,7 +30,9 @@ ms.locfileid: "35381317"
 
 ### <a name="example-of-time-series-data"></a>Пример данных временных рядов
 
-Вот пример точек данных по временным рядам: [!INCLUDE [Request](../includes/request.md)]
+Ниже приведен пример точек данных по временным рядам:
+
+[!INCLUDE [Request](../includes/request.md)]
 
 ### <a name="analyze-data-and-get-anomaly-points-javascript-example"></a>Пример анализа данных и получения точек аномалий с помощью Javascript
 

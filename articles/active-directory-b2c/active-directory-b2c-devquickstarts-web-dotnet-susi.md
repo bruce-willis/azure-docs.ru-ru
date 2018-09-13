@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/17/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 66cd3644611c1d837de717661a3515a0c0d3956f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 838717aa8f426ea54f4736453aac8c6fcf9a0099
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38308037"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43344503"
 ---
 # <a name="create-an-aspnet-web-app-with-azure-active-directory-b2c-sign-up-sign-in-profile-edit-and-password-reset"></a>Создание веб-приложения ASP.NET с возможностями регистрации, входа, редактирования профиля и сброса пароля Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "38308037"
 > * Регистрация веб-приложения в каталоге Azure AD B2C
 > * Создание политики регистрации, входа, изменения профиля и сброса пароля пользователя для веб-приложения
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подключите клиент B2C к учетной записи Azure. Вы можете создать бесплатную учетную запись Azure [здесь](https://azure.microsoft.com/).
 - Вам требуется [Microsoft Visual Studio](https://www.visualstudio.com/) или аналогичная программа для просмотра и изменения примера кода.
@@ -95,7 +95,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 * `ida:ResetPasswordPolicyId` именем политики "Сброс профиля".
 
 ## <a name="launch-the-app"></a>Запуск приложения
-Из среды Visual Studio запустите приложение. Перейдите на вкладку To-Do List (Список задач) и обратите внимание на URL-адрес: https://login.microsoftonline.com/*YourTenantName*/oauth2/v2.0/authorize?p=*YourSignUpPolicyName*&client_id=*YourclientID*.
+Из среды Visual Studio запустите приложение. Перейдите на вкладку To-Do List (Список задач) и обратите внимание на URL-адрес: https://*имя вашего клиента*.b2clogin.com/*имя вашего клиента*/oauth2/v2.0/authorize?p=*имя политики регистрации*&client_id=*ИД вашего клиента*.
 
 Зарегистрируйтесь в приложении с использованием адреса электронной почты или имени пользователя. Выйдите из системы, а затем войдите и измените профиль или сбросьте пароль. Выйдите и зарегистрируйтесь от имени другого пользователя. 
 

@@ -8,12 +8,12 @@ ms.service: sql-database
 ms.topic: article
 ms.date: 06/14/2018
 ms.author: jaredmoo
-ms.openlocfilehash: ca21355c836a58591bbbd09874d0c5d0b5c17435
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: ae5dafcebd50ecd22309a7771b0edf01a97fd7a7
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126431"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43842629"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -184,7 +184,13 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 
 ## <a name="monitor-database-performance"></a>Мониторинг производительности базы данных
 
-Приведенный ниже пример создает задание для сбора данных производительности из нескольких баз данных.  
+Приведенный ниже пример создает задание для сбора данных производительности из нескольких баз данных.
+
+По умолчанию агент заданий будет пытаться создать таблицу для хранения возвращаемых результатов. В результате вход, связанный с учетными данными, которые используются для выходных данных, должен будет иметь достаточные разрешения для выполнения этого. Если необходимо заранее вручную создать таблицу, тогда она должна иметь такие свойства:
+1. Столбцы с правильными именами и типами данных для результирующего набора.
+2. Дополнительный столбец для internal_execution_id с типом данных uniqueidentifier.
+3. Некластеризованный индекс с именем "IX_<TableName>_Internal_Execution_ID" в столбце internal_execution_id.
+
 Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команды, приведенные ниже.
 
 ```sql

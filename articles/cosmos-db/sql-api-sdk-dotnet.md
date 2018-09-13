@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 03/09/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cd460d92430f8ab011e90b969495972b744162df
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: d25f46804c3320b7d941a945f3c4d9a5dfb6970c
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798718"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43702135"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK для Azure Cosmos DB .NET: скачивание и заметки о выпуске для API SQL
 > [!div class="op_single_selector"]
@@ -50,6 +50,18 @@ ms.locfileid: "34798718"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+### <a name="a-name200-preview2200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
+
+* Добавлена поддержка отмены запроса.
+* Для ConnectionPolicy добавлено свойство SetCurrentLocation, которое автоматически заполняет предпочтительные расположения в зависимости от региона.
+* В запросах между секциями исправлена ошибка, связанная с минимальным и максимальным значениями и фильтром, который не находил соответствия документов в отдельной секции.
+
+### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
+
+* Методы DocumentClient теперь соответствуют IDocumentClient.
+* Обновлен прямой транспортный стек TCP для сокращения числа установленных подключений.
+* Добавлена поддержка TCP в режиме прямого подключения для клиентов, отличных от Windows.
+
 ### <a name="a-name12201220"></a><a name="1.22.0"/>1.22.0
 
 * Добавлено свойство ConsistencyLevel в FeedOptions.
@@ -297,6 +309,8 @@ ms.locfileid: "34798718"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.0.0-preview2](#2.0.0-preview2) |26 июля 2018 г. |--- |
+| [2.0.0-preview](#2.0.0-preview) |11 мая 2018 г. |--- |
 | [1.22.0](#1.22.0) |19 апреля 2018 г. |--- |
 | [1.21.1](#1.20.1) |9 марта 2018 г. |--- |
 | [1.20.2](#1.20.1) |21 февраля 2018 г. |--- |

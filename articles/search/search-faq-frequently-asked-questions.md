@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 08/03/2017
 ms.author: heidist
-ms.openlocfilehash: d731faffe1b2448670a5fafa0278ff8c7fb21722
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 1491fdb0f208100619e569f9a74d5e697a0065a6
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31792738"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43841683"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Поиск Azure"
 
@@ -46,6 +46,12 @@ ms.locfileid: "31792738"
 Несмотря на то, что вы можете [получить определение индекса](https://docs.microsoft.com/rest/api/searchservice/get-index) в любое время, какая-либо функция извлечения индекса, создания его моментального снимка или архивации и восстановления для скачивания *заполненного* индекса, выполняемого в облаке, в локальную систему либо для его перемещения в другую службу "Поиск Azure", отсутствует.
 
 Индексы создаются и заполняются посредством вашего кода, и они выполняются только в службе "Поиск Azure" в облаке. Как правило, пользователи, которым нужно переместить индекс в другую службу, изменяют свой код, указав новую конечную точку, а затем повторяют индексирование. Если вам требуется возможность создавать моментальный снимок или резервную копию индекса, проголосуйте за эту функцию на сайте [User Voice](https://feedback.azure.com/forums/263029-azure-search/suggestions/8021610-backup-snapshot-of-index).
+
+### <a name="can-i-restore-my-index-or-service-once-it-is-deleted"></a>Можно ли восстановить индекс или службу после удаления?
+
+Нет, индексы и службы не восстанавливаются. Удаление индекса службы "Поиск Azure" является окончательным, и индекс невозможно восстановить. При удалении службы "Поиск Azure" все индексы в службе будут удалены без возможности восстановления. Кроме того, если удалить группу ресурсов Azure, содержащую одну или несколько служб "Поиск Azure", эти службы удаляются без возможности восстановления.  
+
+Для восстановления ресурсов, таких как индексы, индексаторы, источники данных и наборы навыков, потребуется повторно создать их из кода. В случае с индексами вам необходимо повторно индексировать данные из внешних источников. По этой причине настоятельно рекомендуется сохранить мастер-копию или резервную копию исходных данных в другое хранилище данных, такое как База данных SQL Azure или Cosmos DB.
 
 ### <a name="can-i-index-from-sql-database-replicas-applies-to-azure-sql-database-indexershttpsdocsmicrosoftcomazuresearchsearch-howto-connecting-azure-sql-database-to-azure-search-using-indexers"></a>Можно ли индексировать реплики баз данных SQL (относится к [индексаторам Базы данных SQL Azure](https://docs.microsoft.com/azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers))?
 

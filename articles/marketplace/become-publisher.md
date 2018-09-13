@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 4d37aba665fd9b6de89f683ce2785a14b1b6f60b
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: c6f074b84b099f6ea5023967fdae7e44d5e9d545
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412021"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666390"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
@@ -29,7 +29,7 @@ ms.locfileid: "39412021"
 |  | Шаг регистрации | Duration | Сведения |  
 |:--- |:--- |:--- |:--- |  
 | 1 | Регистрация в партнерской сети Microsoft Partner Network | 15 мин. | [Регистрация в партнерской сети Microsoft Partner Network](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher#1-register-in-microsoft-partner-network) |  
-| 2 | Создание учетной записи Майкрософт <ul>(требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других)</ul> | 15 минут | [Создание идентификатора Майкрософт](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher#2-create-a-microsoft-account) |  
+| 2 | Создание учетной записи Майкрософт <ul>(требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других)</ul> | 15 мин. | [Создание идентификатора Майкрософт](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher#2-create-a-microsoft-account) |  
 | 3 | Подача формы регистрации Marketplace | 15 мин. | [Подача формы предварительного утверждения Marketplace](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher#3-submit-the-marketplace-registration-form) |  
 | 4. |  Вход на Портал Cloud Partner | От 1 до 3 дней | [Вход на Портал Cloud Partner](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher#4-sign-into-cloud-partner-portal) |  
 | 5 | Регистрация в Центре разработчиков Майкрософт (Центр разработки) (для предложений типа "Транзакция" Microsoft Azure Marketplace) | От 5 до 10 дней | [Регистрация в центре разработчиков](https://docs.microsoft.com/en-us/azure/marketplace/become-publisher#5-register-in-dev-center-for-transact-publishing-option-only) |  
@@ -48,7 +48,7 @@ ms.locfileid: "39412021"
 ---  
 
 ## <a name="2-create-a-microsoft-account"></a>2. Создание учетной записи Майкрософт  
-| 15 минут |  
+| 15 мин |  
 Учетная запись Майкрософт, например *@outlook.com или @live.com*, используется для доступа ко многим устройствам и службам Майкрософт. Это необходимо для предложений типа "Транзакция" Microsoft Azure Marketplace, и мы рекомендуем использовать ее для всех издателей в облаке. Дополнительные сведения о преимуществах и использовании учетной записи Майкрософт см. на [этой странице](https://account.microsoft.com/account/). Вы будете использовать личную учетную запись Майкрософт для доступа к Порталу Cloud Partner, платформе публикации, которую будете использовать для создания предложений в Marketplace и управления ими. 
 
 [ВАЖНО!] Обратите внимание, что учетная запись Майкрософт, связанная с вашей рабочей электронной почтой, не позволяет получить доступ к порталу.
@@ -74,7 +74,8 @@ ms.locfileid: "39412021"
 
 ---  
 ## <a name="4-sign-into-cloud-partner-portal"></a>4. Вход на Портал Cloud Partner
-| От 1 до 3 дней | Наши сотрудники из группы подключения к Marketplace рассмотрят и проверят сведения регистрации в Marketplace, указанные на шаге 3. После утверждения вы получите приветственное сообщение электронной почты с учетными данными учетной записи и руководство по входу на [Портал Cloud Partner](https://cloudpartner.azure.com).
+| От 1 до 3 дней | <br>
+Наши сотрудники из группы подключения к Marketplace рассмотрят и проверят сведения регистрации в Marketplace, указанные на шаге 3. После утверждения вы получите приветственное сообщение электронной почты с учетными данными учетной записи и руководство по входу на [Портал Cloud Partner](https://cloudpartner.azure.com).
 
 Вы будете использовать [Портал Cloud Partner](https://cloudpartner.azure.com) для создания, публикации предложений Marketplace и управления ими. Получив приветственное сообщение электронной почты с утверждением, вы сразу же можете войти на [Портал Cloud Partner](https://cloudpartner.azure.com) с помощью учетной записи Майкрософт, чтобы получить доступ к дополнительным техническим сведениям о публикации в Marketplace и создании вашего предложения. 
 *   Дополнительные сведения об использовании Портала Cloud Partner [см. в статье о начале работы в разделе ознакомления](https://cloudpartner.azure.com/#documentation/getting-started-with-the-cloud-partner-portal). Для доступа к этим сведениям необходимо войти на портал Cloud Partner.

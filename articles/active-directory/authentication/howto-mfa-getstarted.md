@@ -5,17 +5,17 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 09/01/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: c2d0f14bca2b9ab062c61407479ab45a0104ff0a
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 0408b26e687dd31c408dbccc68f56e8198016c8f
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39716269"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43664794"
 ---
 # <a name="deploy-cloud-based-azure-multi-factor-authentication"></a>Развертывание облачной службы Многофакторной идентификации Azure
 
@@ -32,11 +32,11 @@ ms.locfileid: "39716269"
 
 Включение с помощью службы "Защита идентификации Azure AD". Этот метод использует политику риска защиты идентификации Azure AD, чтобы требовать двухфакторную проверку подлинности только на основе риска входа для всех облачных приложений. Этот метод требует лицензирования Azure Active Directory P2. Дополнительные сведения об этом методе см. в статье [Защита идентификации Azure Active Directory](../identity-protection/overview.md#risky-sign-ins).
 
-Включение путем изменения состояния пользователя. Это традиционный метод применения двухфакторной проверки подлинности. Он подходит и для Azure MFA в облаке, и для сервера Azure MFA. Использование этого метода требует, чтобы пользователи выполняли двухфакторную проверку подлинности **каждый раз**, когда входят в учетную запись. Он переопределяет политику условного доступа. Дополнительные сведения об этом методе можно найти в разделе [Как настроить требование двухфакторной проверки подлинности пользователя](howto-mfa-userstates.md).
+Включение путем изменения состояния пользователя. Это традиционный метод применения двухфакторной проверки подлинности. Он подходит и для Azure MFA в облаке, и для сервера Azure MFA. Использование этого метода требует, чтобы пользователи выполняли двухфакторную проверку подлинности при **каждом** входе в учетную запись, и переопределяет политики условного доступа. Дополнительные сведения об этом методе можно найти в разделе [Включение двухфакторной проверки подлинности пользователя](howto-mfa-userstates.md).
 
 > [!Note]
-> Дополнительные сведения о лицензиях и ценах можно найти на страницах цен на [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/
-) и службу [Многофакторная идентификация](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
+> Дополнительные сведения о лицензиях и ценах можно найти на страницах цен для [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/
+) и [Многофакторной идентификации](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
 
 ## <a name="choose-authentication-methods"></a>Выбор методов проверки подлинности
 

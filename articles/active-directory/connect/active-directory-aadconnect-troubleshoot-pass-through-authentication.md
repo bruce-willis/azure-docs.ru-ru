@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 09/24/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 99f877a0002e9a631bcfdabdbea51fcf2ca1a2c1
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 890c28601315a63e34c286289cd7378830afa9ba
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626598"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782061"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -97,7 +97,7 @@ ms.locfileid: "39626598"
 
 Если вы включили сквозную аутентификацию на клиенте и пытаетесь удалить Azure AD Connect, то появится следующее предупреждение: "Пользователи не смогут войти в Azure AD, если на других серверах не установлены другие агенты сквозной аутентификации".
 
-Убедитесь, что у вас [высокодоступная](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability) конфигурация, прежде чем удалять Azure AD Connect, чтобы избежать нарушения входа пользователей.
+Прежде чем удалять Azure AD Connect, убедитесь, что у вас [высокодоступная](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability) конфигурация, чтобы избежать нарушения входа пользователей.
 
 ## <a name="issues-with-enabling-the-feature"></a>Проблемы с включением функции
 
@@ -129,7 +129,7 @@ ms.locfileid: "39626598"
 
 ### <a name="detailed-trace-logs"></a>Подробные журналы трассировки
 
-Для диагностики и устранения неполадок при входе пользователей найдите журналы трассировки в папке **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\**. В этих журналах содержатся причины сбоев, возникших при входе пользователей с помощью сквозной аутентификации. Эти ошибки также сопоставляются с причинами ошибок входа, показанными в предыдущей [таблице](#sign-in-failure-reasons-on-the-Azure-portal). Ниже приведен пример записи в журнале.
+Для диагностики и устранения неполадок при входе пользователей найдите журналы трассировки в папке **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\**. В этих журналах содержатся причины сбоев, возникших при входе пользователей с помощью сквозной аутентификации. Эти ошибки также сопоставляются с причинами ошибок входа, показанными в предыдущей таблице причин ошибок входа. Ниже приведен пример записи в журнале.
 
 ```
     AzureADConnectAuthenticationAgentService.exe Error: 0 : Passthrough Authentication request failed. RequestId: 'df63f4a4-68b9-44ae-8d81-6ad2d844d84e'. Reason: '1328'.

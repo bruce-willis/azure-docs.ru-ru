@@ -13,12 +13,12 @@ ms.component: pim
 ms.date: 07/23/2018
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.openlocfilehash: c8870e4da63dc52d5926bdfd5f7c9b3218e5f53a
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: fc45cde1a5f0f287274302541ac0115569e2239d
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43188992"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666342"
 ---
 # <a name="azure-ad-directory-roles-you-can-manage-in-pim"></a>Роли каталога Azure AD, которыми можно управлять в PIM
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
@@ -76,13 +76,36 @@ ms.locfileid: "43188992"
 Для доступа к службам Microsoft Online Services может также потребоваться назначение пользователю лицензии для открытия портала службы или выполнения административных задач.
 
 ## <a name="assign-a-license-to-a-user-in-azure-ad"></a>Назначение лицензии пользователю в Azure AD
+
 1. Войдите на [портал Azure](http://portal.azure.com) с учетной записью глобального администратора или соадминистратора.
-3. Выберите Azure AD и каталог, с которым необходимо работать и с которым сопоставлены соответствующие лицензии.
-4. В левой части экрана выберите **Лицензии**. Отобразится список доступных лицензий.
-5. Выберите план лицензирования, содержащий лицензии, которые необходимо распределить.
-6. Выберите **Назначить пользователей**.
-7. Выберите пользователя, которому необходимо назначить лицензию.
-8. Нажмите кнопку **Назначить** .  Теперь этот пользователь может войти в Azure.
+
+1. Выберите каталог Azure AD, с которым необходимо работать и с которым сопоставлены соответствующие лицензии.
+
+1. В области навигации слева щелкните **Azure Active Directory**.
+
+1. Щелкните **Лицензии**. Отобразится список доступных лицензий.
+
+    ![Лицензии Azure Active Directory](./media/pim-roles/licenses-overview.png)
+
+1. Щелкните свой **продукт**.
+
+1. Выберите план лицензирования, содержащий лицензии, которые необходимо распределить.
+
+    ![Лицензии и продукты](./media/pim-roles/licenses-products.png)
+
+1. Щелкните **Назначить**, чтобы открыть область "Назначение лицензий".
+
+    ![Лицензированные пользователи](./media/pim-roles/licenses-licensed-users.png)
+
+1. Выберите пользователя или группу, которой необходимо назначить лицензию.
+
+    ![Назначение лицензии](./media/pim-roles/licenses-assign-license.png)
+
+1. Щелкните **Параметры назначения**, чтобы настроить параметры назначения.
+
+    ![Параметры назначения](./media/pim-roles/licenses-assignment-options.png)
+
+1. Щелкните **Назначить**, чтобы назначить лицензию. Теперь пользователь имеет лицензию.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дополнительная информация

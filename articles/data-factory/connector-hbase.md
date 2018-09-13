@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/19/2018
 ms.author: jingwang
-ms.openlocfilehash: 9b4cbc7224c29d97f235fcc409ce27ee6eea9f01
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: f47e85b47f262e30e9160f11604220aa8055be5d
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37049202"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43701723"
 ---
 # <a name="copy-data-from-hbase-using-azure-data-factory"></a>Копирование данных из HBase с помощью фабрики данных Azure 
 
@@ -43,9 +43,9 @@ ms.locfileid: "37049202"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **HBase**. | Yes |
-| host | IP-адрес или имя узла сервера HBase. (Например, 192.168.222.160, [имя_кластера].azurehdinsight.net.)  | Yes |
+| host | IP-адрес или имя узла сервера HBase. (Например, `[clustername].azurehdinsight.net` или 192.168.222.160.)  | Yes |
 | порт | TCP-порт, используемый экземпляром HBase для прослушивания клиентских подключений. По умолчанию используется значение 9090. При подключении к Azure HDInsights укажите порт 443. | Нет  |
-| httpPath | Частичный URL-адрес, соответствующий серверу HBase (например, /gateway/sandbox/hbase/version).  | Нет  |
+| httpPath | Частичный URL-адрес, соответствующий серверу HBase (Например, `/hbaserest0`.)  | Нет  |
 | authenticationType | Механизм аутентификации, используемый для подключения к серверу HBase. <br/>Допустимые значения — **Anonymous** или **Basic**. | Yes |
 | Имя пользователя | Имя пользователя, используемое для подключения к сущности HBase.  | Нет  |
 | password | Пароль, соответствующий имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет  |
@@ -54,6 +54,9 @@ ms.locfileid: "37049202"
 | allowHostNameCNMismatch | Указывает, следует ли требовать, чтобы имя SSL-сертификата, выданного ЦС, совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию для этого параметра используется значение false.  | Нет  |
 | allowSelfSignedServerCert | Указывает, следует ли разрешить использование самозаверяющих сертификатов с сервера. По умолчанию для этого параметра используется значение false.  | Нет  |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+>[!NOTE]
+>Если кластер не поддерживает прикрепление сеанса, как HDInsight, явным образом добавьте индекс узла в конце параметра пути httpPath, например, укажите `/hbaserest0` вместо `/hbaserest`.
 
 **Пример для HDInsights HBase:**
 
@@ -65,7 +68,7 @@ ms.locfileid: "37049202"
         "typeProperties": {
             "host" : "<cluster name>.azurehdinsight.net",
             "port" : "443",
-            "httpPath" : "<e.g. hbaserest>",
+            "httpPath" : "/hbaserest0",
             "authenticationType" : "Basic",
             "username" : "<username>",
             "password": {

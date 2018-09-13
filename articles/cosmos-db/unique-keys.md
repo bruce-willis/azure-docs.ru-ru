@@ -11,19 +11,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/08/2018
 ms.author: rafats
-ms.openlocfilehash: 796971ff541b62a22a70df4022ab78817e7158e9
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 5811cb1e08ed5d02038da2a4460ae4b63580833b
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40003323"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43696145"
 ---
 # <a name="unique-keys-in-azure-cosmos-db"></a>Уникальные ключи в Azure Cosmos DB
 
 Уникальные ключи предоставляют разработчикам возможность добавить слой целостности данных в базу данных. Создавая политику уникальных ключей при создании контейнера, вы гарантируете уникальность одного или нескольких значений [ключа секции](partition-data.md). После создания контейнера с политикой уникальных ключей он предотвращает создание любых новых или обновленных элементов со значениями, которые дублируют значения, заданные с помощью уникального ограничения ключа.   
 
 > [!NOTE]
-> Уникальные ключи поддерживаются последними версиями пакетов SDK SQL для [.NET](sql-api-sdk-dotnet.md) и [.NET Core](sql-api-sdk-dotnet-core.md), а также [API MongoDB](mongodb-feature-support.md#unique-indexes). API таблицы и API Graph в текущее время не поддерживают уникальные ключи. 
+> Уникальные ключи поддерживаются последними версиями пакетов SDK SQL для [.NET](sql-api-sdk-dotnet.md) и [.NET Core](sql-api-sdk-dotnet-core.md), а также [API MongoDB](mongodb-feature-support.md#unique-indexes). API таблиц и API Gremlin в текущее время не поддерживают уникальные ключи. 
 > 
 >
 

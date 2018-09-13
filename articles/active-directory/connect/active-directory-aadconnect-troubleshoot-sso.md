@@ -9,15 +9,15 @@ ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
-ms.date: 07/26/2018
+ms.date: 09/04/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: def1bbd52e05666f380ab9d5a9295366798d5ae0
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 029ba1c936862ef5c5f774dc683c4746e157c4aa
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626929"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43781950"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -34,7 +34,7 @@ ms.locfileid: "39626929"
 - Простой единый вход не работает в Internet Explorer с включенным режимом повышенной защиты.
 - Простой единый вход не работает в браузерах на мобильных устройствах с iOS и Android.
 - Если пользователь входит в состав слишком большого количества групп в Active Directory, скорее всего, билет Kerberos этого пользователя будет слишком большим для обработки, что приведет к сбою простого единого входа. HTTPS-запросы Azure AD могут включать в себя заголовки, максимальный размер которых составляет 50 КБ. Размер билетов Kerberos должен быть меньше, чтобы вместить другие артефакты Azure AD (как правило, он равен 2–5 КБ), такие как файлы cookie. Рекомендуем сократить количество членов в группах и повторить попытку.
-- При синхронизации 30 лесов Active Directory или больше простой единый вход через Azure AD Connect включить невозможно. Чтобы избежать этого, можно [вручную включить](#manual-reset-of-azure-ad-seamless-sso) эту функцию на своем клиенте.
+- При синхронизации 30 лесов Active Directory или больше простой единый вход через Azure AD Connect включить невозможно. Чтобы избежать этого, можно [вручную включить](#manual-reset-of-the-feature) эту функцию на своем клиенте.
 - Добавление URL-адреса службы Azure AD (https://autologon.microsoftazuread-sso.com) в зону "Надежные сайты" вместо зоны "Местная интрасеть" *блокирует вход пользователей*.
 - Отключение типа шифрования **RC4_HMAC_MD5** для протокола Kerberos в параметрах Active Directory нарушит работу простого единого входа. В редакторе "Управление групповыми политиками" убедитесь, что для параметра политики **RC4_HMAC_MD5** (щелкните **"Конфигурация компьютера" > "Параметры Windows" > "Параметры безопасности" > "Локальные политики" > "Параметры безопасности" > "Network Security: Configure encryption types allowed for Kerberos" (Сетевая безопасность: настройка типов шифрования, разрешенных для Kerberos)**) задано значению "Включено".
 
@@ -106,10 +106,9 @@ ms.locfileid: "39626929"
 
 ### <a name="step-1-import-the-seamless-sso-powershell-module"></a>Шаг 1. Импортируйте модуль PowerShell для простого единого входа
 
-1. Скачайте и установите [помощник по входу в Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkID=286152).
-2. Скачайте и установите [64-разрядную версию модуля Azure Active Directory для Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297).
-3. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
-4. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
+1. Сначала скачайте и установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
+2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
+3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
 
 ### <a name="step-2-get-the-list-of-active-directory-forests-on-which-seamless-sso-has-been-enabled"></a>Шаг 2. Получение списка лесов Active Directory, для которых включен простой единый вход
 
@@ -129,8 +128,10 @@ ms.locfileid: "39626929"
 ### <a name="step-4-enable-seamless-sso-for-each-active-directory-forest"></a>Шаг 4. Включение простого единого входа для каждого леса Active Directory
 
 1. Вызовите `Enable-AzureADSSOForest`. При запросе введите свои учетные данные администратора домена для нужного леса Active Directory.
+
    >[!NOTE]
    >Мы используем имя пользователя администратора домена, указанное в формате имени участника-пользователя (johndoe@contoso.com) или формате полного доменного имени учетной записи SAM (contoso\johndoe или contoso.com\johndoe), чтобы найти предполагаемый лес AD. Если вы используете полное доменное имя учетной записи SAM, то мы используем доменную часть имени пользователя, чтобы [найти контроллер домена администратора домена с помощью DNS](https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx). Если же вы используете имя участника-пользователя, то мы [преобразуем его в полное доменное имя учетной записи SAM](https://docs.microsoft.com/windows/desktop/api/ntdsapi/nf-ntdsapi-dscracknamesa), прежде чем найти соответствующий контроллер домена.
+
 2. Повторите предыдущие шаги для каждого леса Active Directory, в котором должна быть настроена эта функция.
 
 ### <a name="step-5-enable-the-feature-on-your-tenant"></a>Шаг 5. Включить функцию в своем клиенте

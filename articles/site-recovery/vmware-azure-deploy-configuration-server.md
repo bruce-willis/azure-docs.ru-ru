@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: 7bbcaa82b1072b8cbdea015195a8da03ceb3a25f
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: bd456e0f881f606f36f2b4d80e704ce138f7db0f
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056765"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43666438"
 ---
 # <a name="deploy-a-configuration-server"></a>Развертывание сервера конфигурации.
 
@@ -42,7 +42,7 @@ ms.locfileid: "39056765"
 | 12 виртуальных ЦП (2 сокета по 6 ядер с частотой \@ 2,5 ГГц) |18 ГБ |600 ГБ |От 500 ГБ до 1 ТБ |Репликация 100–150 компьютеров |
 | 16 виртуальных ЦП (2 сокета по 8 ядер с частотой \@ 2,5 ГГц) |32 ГБ |1 TБ |От 1 ТБ до 2 ТБ |Репликация 150–200 компьютеров |
 
-В случае репликации более чем одной виртуальной машины VMware изучите [рекомендации по планированию емкости](/site-recovery-plan-capacity-vmware.md). Запустите [Планировщик развертывания](site-recovery-deployment-planner.md) для репликации VMware.
+В случае репликации более чем одной виртуальной машины VMware изучите [рекомендации по планированию емкости](https://docs.microsoft.com/azure/site-recovery/site-recovery-plan-capacity-vmware). Запустите [Планировщик развертывания](site-recovery-deployment-planner.md) для репликации VMware.
 
 ## <a name="download-the-template"></a>Скачивание шаблона
 
@@ -81,7 +81,7 @@ ms.locfileid: "39056765"
 
 1. В списке клиента vSphere щелкните виртуальную машину правой кнопкой мыши и выберите **Edit Settings** (Изменить параметры).
 2. В разделе **Hardware** (Оборудование) выберите **Add** > **Ethernet Adapter** (Добавить > Адаптер Ethernet). Затем нажмите кнопку **Далее**.
-3. Выберите тип адаптера и сеть. 
+3. Выберите тип адаптера и сеть.
 4. Чтобы подключить виртуальный сетевой адаптер на включенной виртуальной машине, выберите **Connect at power on** (Подключиться, когда включено). Затем выберите **Next** > **Finish** > **OK** (Далее > Готово > ОК).
 
 ## <a name="register-the-configuration-server-with-azure-site-recovery-services"></a>Регистрация сервера конфигурации с помощью служб Azure Site Recovery
@@ -102,7 +102,7 @@ ms.locfileid: "39056765"
 
     > [!NOTE]
     > После регистрации возможности изменить хранилище служб восстановления не предусмотрено.
-    
+
 3. На экране **Install third-party software** (Установка программного обеспечения стороннего производителя) выполните следующее.
 
     |Сценарий   |Инструкции  |
@@ -144,6 +144,10 @@ ms.locfileid: "39056765"
 ## <a name="upgrade-the-configuration-server"></a>Обновление сервера конфигурации
 
 Чтобы обновить сервер конфигурации до последней версии, прочитайте инструкции, приведенные [здесь](vmware-azure-manage-configuration-server.md#upgrade-the-configuration-server).
+
+## <a name="manage-the-configuration-server"></a>Управление сервером конфигурации
+
+Чтобы избежать перерывов в текущей репликации, убедитесь, что IP-адрес сервера конфигурации не изменился после того, как сервер конфигурации был зарегистрирован в хранилище. Дополнительные сведения о распространенных задачах управления сервером конфигурации см. [здесь](vmware-azure-manage-configuration-server.md).
 
 ## <a name="troubleshoot-deployment-issues"></a>Устранение неполадок развертывания
 

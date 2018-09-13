@@ -10,12 +10,12 @@ ms.component: QnAMaker
 ms.topic: article
 ms.date: 04/21/2018
 ms.author: saneppal
-ms.openlocfilehash: 0a0eeb3815b793ed81f60b2b239bc459e5574788
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 18eae69867dc9774f63b11c762b22df4595bdce6
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381832"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43781753"
 ---
 # <a name="integrate-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Интеграция QnA Maker и API распознавания речи для распределения базы знаний
 По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор, поэтому базу знаний необходимо разделить на маленькие логические блоки.
@@ -28,12 +28,12 @@ ms.locfileid: "35381832"
 
 В вышеприведенном сценарии показано, что из модели API распознавания речи (LUIS) сначала QnA Maker получает намерение входящего вопроса, а затем использует его, чтобы направить в правильную базу знаний QnA Maker.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - Войдите на портал[LUIS](https://www.luis.ai/) и [создайте приложение](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/create-new-app).
 - [Добавьте намерения](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/add-intents) в сценарий.
 - [Обучите](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-train) и [опубликуйте](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp) ваше приложение API распознавания речи.
-- Войдите в [QnA Maker](https://qnamaker.ai) и [создайте базы знаний]() согласно сценарию.
-- [Проверьте]() и [опубликуйте]() базы знаний.
+- Войдите в [QnA Maker](https://qnamaker.ai) и [создайте базы знаний](https://www.qnamaker.ai/Create) согласно сценарию.
+- Проверьте и опубликуйте базы знаний.
 
 ## <a name="qna-maker--luis-bot"></a>QnA Maker и бот API распознавания речи
 1. Сначала создайте бот веб-приложения с помощью шаблона API распознавания речи, свяжите его с созданным ранее приложением API распознавания речи и измените намерения. Подробные шаги описаны [здесь](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-csharp-tutorial-build-bot-framework-sample).

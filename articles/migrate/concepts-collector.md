@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/25/2018
 ms.author: ruturajd
 services: azure-migrate
-ms.openlocfilehash: 551276f88f5c27cd860a400a5769c95f4d94cbbb
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 74caf0ab052e1f6558dc20d15d84c01177b3f9cb
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43122893"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43665586"
 ---
 # <a name="collector-appliance"></a>Модуль сборщика
 
@@ -212,17 +212,27 @@ ms.locfileid: "43122893"
 
 Сборщик можно обновить до последней версии, не скачивая OVA-файл повторно.
 
-1. Скачайте [пакет обновления](https://aka.ms/migrate/col/upgrade_9_13) последней версии (1.0.9.13).
+1. Скачайте [пакет обновления](https://aka.ms/migrate/col/upgrade_9_14) последней версии (1.0.9.14).
 2. Чтобы обеспечить защиту скачиваемых исправлений, откройте командное окно от имени администратора и выполните указанную ниже команду для создания хэша ZIP-файла. Созданный хэш должен совпадать с хэшем, предусмотренным для определенной версии:
 
     ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
 
-    (Пример использования: C:\>CertUtil -HashFile C:\AzureMigrate\CollectorUpdate_release_1.0.9.7.zip SHA256.)
+    (Пример использования: C:\>CertUtil -HashFile C:\AzureMigrate\CollectorUpdate_release_1.0.9.14.zip SHA256.)
 3. Скопируйте ZIP-файл на виртуальную машину сборщика службы "Миграция Azure" (модуль сборщика).
 4. Щелкните ZIP-файл правой кнопкой мыши и выберите "Извлечь все".
 5. Щелкните файл Setup.ps1 правой кнопкой мыши и выберите Run with PowerShell (Запуск с помощью PowerShell), а затем следуйте инструкциям на экране, чтобы установить обновление.
 
 ### <a name="list-of-updates"></a>Список обновлений
+
+#### <a name="upgrade-to-version-10914"></a>Обновление до версии 1.0.9.14
+
+Значения хэша для обновления [пакета 1.0.9.14](https://aka.ms/migrate/col/upgrade_9_14)
+
+**Алгоритм** | **Значение хэша**
+--- | ---
+MD5 | c5bf029e9fac682c6b85078a61c5c79c
+SHA1 | af66656951105e42680dfcc3ec3abd3f4da8fdec
+SHA256 | 58b685b2707f273aa76f2e1d45f97b0543a8c4d017cd27f0bdb220e6984cc90e
 
 #### <a name="upgrade-to-version-10913"></a>Обновление до версии 1.0.9.13
 

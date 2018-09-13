@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 8396db3a45c2b6f2c88a9fd6bbf0b8e5a7df4efb
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 8ec0947d041dc0d4f5423a48a443ab2dd86949e2
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39162054"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782541"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -80,7 +80,7 @@ ms.locfileid: "39162054"
 
 | Свойство | Требования UserPrincipalName |
 | --- | --- |
-| Допустимые символы |<ul> <li>A–Z</li> <li>a–z</li><li>0–9</li> <li> . - \_ ! \# ^ \~</li></ul> |
+| Допустимые символы |<ul> <li>A–Z</li> <li>a–z</li><li>0–9</li> <li> \. - \_ ! \# ^ \~</li></ul> |
 | Недопустимые символы |<ul> <li>Любой знак \@\", который не отделяет имя пользователя от домена.</li> <li>Не может содержать знак точки "." непосредственно перед знаком \@\".</li></ul> |
 | Ограничения длины |<ul> <li>Общая длина не должна превышать 113 знаков.</li><li>Перед знаком \@\" может быть до 64 знаков.</li><li>После знака \@\" может быть до 48 знаков.</li></ul> |
 

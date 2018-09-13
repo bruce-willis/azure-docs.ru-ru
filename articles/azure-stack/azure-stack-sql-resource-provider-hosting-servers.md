@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/10/2018
+ms.date: 09/05/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: de2e1defeff9ab2dd78bdf019009b62955f73b88
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 4dfeff0e22a541a39a59c37c869af41a7e444fa6
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970557"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43842504"
 ---
 # <a name="add-hosting-servers-for-the-sql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов SQL
 
@@ -78,15 +78,15 @@ ms.locfileid: "38970557"
 
 1. Войдите на портал оператора Azure Stack в качестве администратора служб.
 
-2. Выберите **Browse** (Обзор) &gt; **Ресурсы администрирования** &gt; **SQL Hosting Servers** (Серверы размещения SQL).
+2. Выберите **Все службы**&gt; **Ресурсы администрирования** &gt; **Серверы размещения SQL**.
 
    ![Серверы размещения SQL](./media/azure-stack-sql-rp-deploy/sqlhostingservers.png)
 
-   В разделе **SQL Hosting Servers** (Серверы размещения SQL) можно подключить поставщик ресурсов SQL к экземплярам SQL Server, которые выступают в качестве серверной части поставщика ресурсов.
+   В разделе **Серверы размещения SQL** можно подключить поставщик ресурсов SQL к экземплярам SQL Server, которые выступят в качестве серверной части поставщика ресурсов.
 
-   ![Панель мониторинга адаптера SQL](./media/azure-stack-sql-rp-deploy/sqladapterdashboard.png)
+   ![Панель мониторинга адаптера SQL](./media/azure-stack-sql-rp-deploy/sqlrp-hostingserver.png)
 
-3. Укажите сведения о соединении для экземпляра SQL Server в разделе **Добавление сервера размещения SQL**.
+3. Щелкните**Добавить**, а затем предоставьте сведения о подключении для экземпляра SQL Server в колонку **Добавление сервера размещения SQL**.
 
    ![Добавление сервера размещения SQL](./media/azure-stack-sql-rp-deploy/sqlrp-newhostingserver.png)
 

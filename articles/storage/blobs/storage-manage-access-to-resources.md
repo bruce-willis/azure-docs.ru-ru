@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 04/26/2017
 ms.author: tamram
-ms.openlocfilehash: 7270ec7c5129352b0e801808e5c7720e5021ac9d
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: bf7dabc1c3765d86e7a0f87acaa6f06a68d3d530
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398824"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782014"
 ---
 # <a name="manage-anonymous-read-access-to-containers-and-blobs"></a>Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам
 Можно включить анонимный открытый доступ на чтение к контейнеру и его большим двоичным объектам в хранилище BLOB-объектов Azure. Таким образом можно предоставить доступ только для чтения к этим ресурсам, не передавая ключ учетной записи и не требуя подписанного URL-адреса (SAS).
@@ -30,7 +30,7 @@ ms.locfileid: "39398824"
 
 Чтобы установить разрешения для контейнера, можно использовать:
 
-* [портал Azure](https://portal.azure.com)
+* [портала Azure](https://portal.azure.com)
 * [Azure PowerShell](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 * [Azure CLI 2.0](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-and-manage-blobs)
 * программный метод с помощью одной из клиентских библиотек службы хранилища или REST API.
@@ -39,7 +39,7 @@ ms.locfileid: "39398824"
 Чтобы задать разрешения контейнера на [портале Azure](https://portal.azure.com), выполните следующее.
 
 1. Откройте колонку **Учетная запись хранения** на портале. Чтобы найти свою учетную запись хранения, выберите **Учетные записи хранения** в основной колонке меню портала.
-1. В разделе **Служба BLOB-объектов** колонки меню выберите **Контейнеры**.
+1. В разделе **Служба BLOB-объектов** колонки меню выберите **Большие двоичные объекты**.
 1. Щелкните правой кнопкой мыши строку контейнера или щелкните многоточие, чтобы открыть **контекстное меню** контейнера.
 1. Выберите **Политика доступа** в контекстном меню.
 1. Из раскрывающегося списка выберите **Тип доступа**.

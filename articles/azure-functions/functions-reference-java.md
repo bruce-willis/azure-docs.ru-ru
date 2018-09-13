@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 08/10/2018
 ms.author: routlaw
-ms.openlocfilehash: d895258a4c8a38d00932d81600dc8633d7d70112
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: bbc1c3426b52e71db84a988b39a1d76ac24b6168
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42142161"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43697017"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -93,7 +93,7 @@ public class MyClass {
 
 Служба "Функции Azure" поддерживает использование сторонних библиотек. По умолчанию все зависимости, указанные в файле `pom.xml` проекта, будут автоматически связаны во время выполнения `mvn package`. Зависимости библиотек, не указанных как зависимости в файле `pom.xml`, поместите в каталог `lib` в корневой папке функции. Зависимости, размещенные в каталоге `lib`, будут добавлены в загрузчик системного класса во время выполнения.
 
-## <a name="data-types"></a>Типы данных
+## <a name="data-type-support"></a>Поддержка типов данных
 
 Для входных и выходных данных вы можете использовать любые типы данных в Java, в том числе стандартные, пользовательские типы Java или специализированные типы Azure, которые определяются в пакете `azure-functions-java-library`. Среда выполнения Функций Azure попытается преобразовывать полученные входные данные в тот тип, который указан в вашем коде.
 
@@ -243,7 +243,7 @@ public class MyClass {
 
 Взаимодействие со средой выполнения Функций Azure выполняется с помощью объекта `ExecutionContext`, который определен в пакете `azure-functions-java-library`. Используйте объект `ExecutionContext`, чтобы в коде программы получить сведения о вызове и среде выполнения функции.
 
-### <a name="logging"></a>Ведение журналов
+### <a name="custom-logging"></a>Настраиваемое ведение журналов
 
 Доступ к средству ведения журнала среды выполнения функций выполняется с помощью объекта `ExecutionContext`. Это средство привязано к Azure Monitor и позволяет вам сохранять предупреждения и ошибки, возникшие во время выполнения функции.
 
@@ -263,6 +263,29 @@ public class Function {
     }
 }
 ```
+
+## <a name="view-logs-and-trace"></a>Просмотр журналов и трассировки
+
+Вы можете использовать интерфейс Azure CLI для потоковой передачи журналов со стандартными данными и журналов ошибок в формате Java, а также ведения других журналов приложений. Сначала настройте приложение-функцию, чтобы записывать журнал приложений с помощью Azure CLI:
+
+```azurecli-interactive
+az webapp log config --name functionname --resource-group myResourceGroup --application-logging true
+```
+
+Чтобы передать выходные данные журналов в приложение-функцию с помощью Azure CLI, откройте новое окно командной строки, Bash или сеанс терминала и введите следующую команду:
+
+```azurecli-interactive
+az webapp log tail --name webappname --resource-group myResourceGroup
+```
+Команда [az webapp log tail](/cli/azure/webapp/log) позволяет отфильтровать выходные данные с помощью параметра `--provider`. 
+
+Чтобы скачать файлы журналов как отдельный ZIP-файл с использованием интерфейса командной строки Azure, откройте командную строку, Bash или сеанс терминала и введите следующую команду:
+
+```azurecli-interactive
+az webapp log download --resource-group resourcegroupname --name functionappname
+```
+
+Перед выполнением этой команды необходимо включить ведение журнала файловой системы на портале Azure или в Azure CLI.
 
 ## <a name="environment-variables"></a>Переменные среды
 
@@ -288,9 +311,12 @@ public class Function {
 Так как ваш код теперь зависит от этих переменных среды, можно войти на портал Azure, чтобы задать те же пары "ключ — значение" в настройках приложения-функции. В таком случае код будет функционировать одинаково как при локальном тестировании, так и при развертывании в Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Для получения дополнительных сведений см. следующие ресурсы:
+
+Дополнительные сведения о разработке функций Azure на Java см. в следующих статьях.
 
 * [Рекомендации по функциям Azure](functions-best-practices.md)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
 * [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
+- Разработка и отладка в локальной среде с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) и [Eclipse](functions-create-maven-eclipse.md). 
 * [Remote Debug Java Azure Functions with Visual Studio Code (Удаленная отладка функций Azure на языке Java с помощью Visual Studio Code)](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud)
+* [Подключаемый модуль Maven для функций Azure](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-functions-maven-plugin/README.md). Упрощает создание функций благодаря использованию цели `azure-functions:add` и позволяет подготовить промежуточный каталог для [развертывания ZIP-файла](deployment-zip-push.md).

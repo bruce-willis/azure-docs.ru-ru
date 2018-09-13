@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/10/2017
 ms.author: harijayms
-ms.openlocfilehash: e57470e108faf68cecca703b2200acf357d2f721
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.openlocfilehash: 8a7a58581133d98738403bee2e659fae056e1a7f
+ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34057909"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43782487"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -37,10 +37,10 @@ ms.locfileid: "34057909"
 
 регионы                                        | Доступность?                                 | Поддерживаемые версии
 -----------------------------------------------|-----------------------------------------------|-----------------
-[Все общедоступные глобальные регионы Azure](https://azure.microsoft.com/regions/)     | Общедоступная версия   | 2017-04-02, 2017-08-01, 2017-12-01, 2018-02-01
-[Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/)              | Общедоступная версия | 2017-04-02, 2017-08-01
-[Azure для Китая](https://www.azure.cn/)                                                           | Общедоступная версия | 2017-04-02, 2017-08-01
-[Azure для Германии](https://azure.microsoft.com/overview/clouds/germany/)                    | Общедоступная версия | 2017-04-02, 2017-08-01
+[Все общедоступные глобальные регионы Azure](https://azure.microsoft.com/regions/)     | Общедоступная версия   | 2017-04-02, 2017-08-01, 2017-12-01, 2018-02-01, 2018-04-02
+[Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/)              | Общедоступная версия | 2017-04-02, 2017-08-01, 2017-12-01, 2018-02-01
+[Azure для Китая](https://www.azure.cn/)                                                           | Общедоступная версия | 2017-04-02, 2017-08-01, 2017-12-01, 2018-02-01
+[Azure для Германии](https://azure.microsoft.com/overview/clouds/germany/)                    | Общедоступная версия | 2017-04-02, 2017-08-01, 2017-12-01, 2018-02-01
 
 Эта таблица обновляется при наличии обновлений службы, или когда доступны новые поддерживаемые версии.
 
@@ -49,7 +49,7 @@ ms.locfileid: "34057909"
 ## <a name="usage"></a>Использование
 
 ### <a name="versioning"></a>Управление версиями
-Для службы метаданных экземпляров включено управление версиями. Версии являются обязательными. На данный момент используется версия Global Azure `2017-12-01`. Сейчас поддерживаются версии 2017-04-02, 2017-08-01 и 2017-12-01.
+Для службы метаданных экземпляров включено управление версиями. Версии являются обязательными. На данный момент используется версия Global Azure `2018-04-02`. Версии, которые поддерживаются сейчас: 2017-04-02, 2017-08-01, 2017-12-01, 2018-02-01, 2018-04-02.
 
 > [!NOTE] 
 > В предыдущих выпусках предварительной версии в качестве api-version поддерживалось значение {latest}. Этот формат больше не поддерживается и в дальнейшем будет считаться устаревшим.
@@ -299,6 +299,8 @@ subscriptionId | Подписка Azure для виртуальной машин
 tags | [Теги](../../azure-resource-manager/resource-group-using-tags.md) для виртуальной машины  | 2017-08-01
 имя_группы_ресурсов | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) для виртуальной машины | 2017-08-01
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
+План | [План] (https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate#plan) образ Azure Marketplace для виртуальной машины содержит имя, продукт и издатель | 2017-04-02
+publicKeys | Коллекция открытых ключей [https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate#sshpublickey], назначенная виртуальной машине и путям | 2017-04-02
 vmScaleSetName | [Имя масштабируемого набора виртуальных машин] (../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01 
 ipv4/privateIpAddress | Локальный IPv4-адрес виртуальной машины | 2017-04-02
@@ -378,6 +380,36 @@ curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute?api-vers
 }
 ```
 
+### <a name="getting-azure-environment-where-the-vm-is-running"></a>Начало работы среды Azure, где запущена виртуальная машина 
+
+Azure имеет различные суверенные облака, такие как [Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/), чтобы иногда среда Azure принимала некоторые решения во время исполнения. В следующем примере показано, как можно это сделать.
+
+**Запрос**
+
+> [!NOTE] 
+> Необходимо установить jq. 
+
+```bash
+  metadata=$(curl "http://169.254.169.254/metadata/instance/compute?api-version=2018-02-01" -H "Metadata:true")
+  endpoints=$(curl "https://management.azure.com/metadata/endpoints?api-version=2017-12-01")
+ 
+  location=$(echo $metadata | jq .location -r)
+ 
+  is_ww=$(echo $endpoints | jq '.cloudEndpoint.public.locations[]' -r | grep -w $location)
+  is_us=$(echo $endpoints | jq '.cloudEndpoint.usGovCloud.locations[]' -r | grep -w $location)
+  is_cn=$(echo $endpoints | jq '.cloudEndpoint.chinaCloud.locations[]' -r | grep -w $location)
+  is_de=$(echo $endpoints | jq '.cloudEndpoint.germanCloud.locations[]' -r | grep -w $location)
+ 
+  environment="Unknown"
+  if [ ! -z $is_ww ]; then environment="AzureCloud"; fi
+  if [ ! -z $is_us ]; then environment="AzureUSGovernment"; fi
+  if [ ! -z $is_cn ]; then environment="AzureChinaCloud"; fi
+  if [ ! -z $is_de ]; then environment="AzureGermanCloud"; fi
+ 
+  echo $environment
+```
+
+
 ### <a name="examples-of-calling-metadata-service-using-different-languages-inside-the-vm"></a>Примеры вызова службы метаданных с использованием различных языков в виртуальной машине 
 
 Язык | Пример 
@@ -403,7 +435,7 @@ Puppet | https://github.com/keirans/azuremetadata
    * Сейчас служба метаданных экземпляров поддерживает только экземпляры, созданные с помощью Azure Resource Manager. В будущем мы можем добавить поддержку виртуальных машин облачной службы.
 3. Виртуальная машина была недавно создана с помощью Azure Resource Manager. Почему не отображаются сведения о метаданных вычислений?
    * Чтобы отобразить метаданные вычислений для любой виртуальной машины, созданной после сентября 2016 года, необходимо добавить [тег](../../azure-resource-manager/resource-group-using-tags.md). Для обновления метаданных более старых виртуальных машин (созданных до сентября 2016 г.) удалите расширения или диски данных или добавьте их к виртуальной машине.
-4. Отображаются не все данные новой версии 2017-08-01
+4. Отображаются не все данные для новой версии.
    * Чтобы отобразить метаданные вычислений для любой виртуальной машины, созданной после сентября 2016 года, необходимо добавить [тег](../../azure-resource-manager/resource-group-using-tags.md). Для обновления метаданных более старых виртуальных машин (созданных до сентября 2016 г.) удалите расширения или диски данных или добавьте их к виртуальной машине.
 5. Почему я получаю ошибку `500 Internal Server Error`?
    * Повторите запрос в зависимости от экспоненциальной системы. Если проблема не исчезла, обратитесь в службу поддержки Azure.
@@ -413,6 +445,10 @@ Puppet | https://github.com/keirans/azuremetadata
    * Да, служба метаданных доступна для экземпляров масштабируемого набора. 
 8. Как можно получить поддержку для службы?
    * Чтобы получить поддержку для службы, зарегистрируйте проблему на портале Azure для виртуальной машины, в которой вы не можете получить ответ метаданных после нескольких долгих попыток 
+9. Почему я получаю запрос о превышении интервала ожидания вызова службы?
+   * Вызовы метаданных должны быть сделаны с основного IP-адреса, назначенного сетевой карте виртуальной машины. Кроме того, если вы изменили маршруты, то должен быть маршрут для адреса 169.254.0.0/16 из вашей сетевой карты.
+10. Я обновил теги в наборе масштабирования виртуальной машины. Почему они не отображаются в экземплярах, в отличие от виртуальных машин?
+   * В настоящее время теги ScaleSets отображаются только в виртуальной машине при перезагрузке, переименовании или замене диска экземпляра. 
 
    ![Поддержка метаданных экземпляров](./media/instance-metadata-service/InstanceMetadata-support.png)
     

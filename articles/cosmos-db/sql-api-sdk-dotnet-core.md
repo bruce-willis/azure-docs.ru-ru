@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 03/22/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c62869d1ec0dca1859972e817fe1e5e2c1f4c1eb
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: b8004500df2e29ab865a8eb78adf278ef61d5ee8
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34797868"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43702441"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -52,6 +52,18 @@ ms.locfileid: "34797868"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 Пакет SDK .NET Core для Azure Cosmos DB функционально полностью эквивалентен последней версии [пакета SDK .NET для Azure Cosmos DB](sql-api-sdk-dotnet.md).
+
+### <a name="a-name200-preview2200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
+
+* Добавлена поддержка отмены запроса.
+* Для ConnectionPolicy добавлено свойство SetCurrentLocation, которое автоматически заполняет предпочтительные расположения в зависимости от региона.
+* В запросах между секциями исправлена ошибка, связанная с минимальным и максимальным значениями и фильтром, который не находил соответствия документов в отдельной секции.
+
+### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
+
+* Методы DocumentClient теперь соответствуют IDocumentClient.
+* Обновлен прямой транспортный стек TCP для сокращения числа установленных подключений.
+* Добавлена поддержка TCP в режиме прямого подключения для клиентов, отличных от Windows.
 
 ### <a name="a-name11001100"></a><a name="1.10.0"/>1.10.0
 
@@ -174,6 +186,8 @@ ms.locfileid: "34797868"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.0.0-preview2](#2.0.0-preview2) |26 июля 2018 г. |--- |
+| [2.0.0-preview](#2.0.0-preview) |11 мая 2018 г. |--- |
 | [1.9.1](#1.9.1) |9 марта 2018 г. |--- |
 | [1.8.2](#1.8.2) |21 февраля 2018 г. |--- |
 | [1.8.1](#1.8.1) |5 февраля 2018 г. |--- |

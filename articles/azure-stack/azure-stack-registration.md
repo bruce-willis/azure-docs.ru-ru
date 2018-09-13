@@ -12,19 +12,21 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/24/2018
+ms.date: 09/05/2018
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.openlocfilehash: 58c8568da0a818f87a5bb3d6966d2d4a6c977fd9
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 5a6dcddce3337989a7a34515570ac3277aa1edd5
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247829"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43841936"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
 Регистрация Azure Stack в Azure позволяет скачивать элементы marketplace из Azure и настраивать передачу коммерческих данных в корпорацию Майкрософт. После регистрации Azure Stack данные об использовании отсылаются в отдел коммерческих предложений Azure и их можно просматривать в подписке, используемой для регистрации.
+
+В этой статье описывается регистрация интегрированных систем Azure Stack с помощью Azure. Сведения о регистрации ASDK с помощью Azure см. в статье [Регистрация Azure Stack](.\asdk\asdk-register.md).
 
 > [!IMPORTANT]  
 > Регистрация требуется для поддержки полной функциональности Azure Stack, включая предложение элементов в marketplace. Кроме того, вы нарушите условия лицензии на Azure Stack, если не выполните регистрацию при применении модели выставления счетов с оплатой по мере использования. Дополнительные сведения о лицензировании Azure Stack см. на странице [Как купить](https://azure.microsoft.com/overview/azure-stack/how-to-buy/).
@@ -386,6 +388,8 @@ $ExecutionContext.SessionState.LanguageMode
 
 2. Сохраните этот маркер, чтобы использовать его на компьютере, подключенном к Azure. Файл или текст можно скопировать из $FilePathForRegistrationToken.
 
+## <a name="move-a-registration-resource"></a>Перемещение ресурса регистрации
+Перемещение ресурса регистрации между группами ресурсов в одной подписке **поддерживается** для всех сред. Однако перемещение ресурса регистрации между подписками поддерживается только для CSP, когда обе подписки разрешают один и тот же идентификатор партнера. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
 
 ## <a name="registration-reference"></a>Справка по регистрации
 

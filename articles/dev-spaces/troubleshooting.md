@@ -11,16 +11,24 @@ ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 001d58aa22d4fc52acebfc88ba07d2467c1be08e
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: b66e43c0f40f184bfb2c62327f5742346ff8b187
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42144413"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43841615"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
 Это руководство содержит сведения о распространенных проблемах, которые могут возникнуть при использовании Azure Dev Spaces.
+
+## <a name="enabling-detailed-logging"></a>Включение подробного ведения журнала
+
+Чтобы более эффективно устранять неполадки, можно создать более подробные журналы для проверки.
+
+Для расширения Visual Studio это можно сделать, задав для переменной среды `MS_VS_AZUREDEVSPACES_TOOLS_LOGGING_ENABLED` значение 1. Обязательно перезапустите Visual Studio, чтобы изменения переменной среды вступили в силу. После включения подробные журналы будут записаны в каталог `%TEMP%\Microsoft.VisualStudio.Azure.DevSpaces.Tools`.
+
+В CLI вы можете выводить больше сведений во время выполнения команды, используя параметр `--verbose`.
 
 ## <a name="error-failed-to-create-azure-dev-spaces-controller"></a>Ошибка создания контроллера Azure Dev Spaces
 
@@ -106,6 +114,16 @@ kubectl delete pod -n kube-system -l app=addon-http-application-routing-nginx-in
     ```cmd
     az aks use-dev-spaces -n <cluster-name> -g <resource-group>
     ```
+
+## <a name="warning-dockerfile-could-not-be-generated-due-to-unsupported-language"></a>Предупреждение о невозможности создания файла Docker из-за неподдерживаемого языка
+Azure Dev Spaces предоставляет встроенную поддержку C# и Node.js. При запуске команды *azds prep* в каталоге, содержащем код, написанный на одном из этих языков, Azure Dev Spaces автоматически создает для вас соответствующий файл Docker.
+
+Вы все еще можете использовать Azure Dev Spaces с кодом, написанным на других языках, но вам нужно будет самостоятельно создать файл Docker перед первым запуском *azds up*.
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+Если ваше приложение написано на языке, который изначально не поддерживается в Azure Dev Spaces, вам необходимо предоставить соответствующий файл Docker для создания образа контейнера, в котором выполняется ваш код. Необходимые сведения см. в статье с [рекомендациями по написанию файлов Docker](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) и справочнике по [файлам Docker](https://docs.docker.com/engine/reference/builder/).
+
+После создания соответствующего файла Docker вы можете продолжить выполнение команды *azds up* для запуска приложения в Azure Dev Spaces.
 
 ## <a name="error-upstream-connect-error-or-disconnectreset-before-headers"></a>Ошибка "upstream connect error or disconnect/reset before headers" (ошибка вышестоящего подключения или отключение либо сброс до прохождения заголовков)
 Вы можете увидеть эту ошибку при попытке получить доступ к службе. Например, при переходе по URL-адресу службы в браузере. 

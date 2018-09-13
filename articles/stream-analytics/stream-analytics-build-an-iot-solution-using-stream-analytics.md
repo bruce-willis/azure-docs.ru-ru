@@ -9,12 +9,12 @@ ms.reviewer: jasonh, sngun
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/21/2018
-ms.openlocfilehash: 80e287d09fdc5ab7157b9ee46bc830fd2db4d501
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 1610e8173d90be3c0b50f05e64d0e84e1c21ad0e
+ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30912277"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43698049"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Создание решения IoT с помощью Stream Analytics
 
@@ -29,11 +29,11 @@ ms.locfileid: "30912277"
 * Уверенно разрабатывать решения потоковой передачи для клиентов с помощью Stream Analytics.
 * Использовать процедуры мониторинга и ведения журнала для устранения неполадок.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для создания описанного здесь решения вам потребуется:
 * [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/)
 
-## <a name="scenario-introduction-hello-toll"></a>Введение в сценарий "Hello, Toll!"
+## <a name="scenario-introduction-hello-toll"></a>Общие сведения о сценарии "Hello, Toll!"
 Станции сбора дорожной платы представляют собой распространенное явление. Они встречаются на многих скоростных дорогах, мостах и туннелях по всему миру. Каждая станция имеет несколько пунктов сбора платы. В пунктах, работающих в ручном режиме, водитель останавливается и передает деньги служащему. В пунктах, работающих в автоматическом режиме, размещенный на крыше пункта датчик сканирует RFID-карту, прикрепленную на ветровом стекле автомобиля, во время его проезда через пункт. Проезд автомобилей через станции сбора платы можно легко представить в виде потока событий, в котором выполняются интересные операции.
 
 ![Изображение автомобилей в пунктах сбора платы](media/stream-analytics-build-an-iot-solution-using-stream-analytics/image1.jpg)

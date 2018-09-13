@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 7/31/2018
+ms.date: 08/31/2018
 ms.author: rithorn
-ms.openlocfilehash: edc57d146ccb034ac3fd627386000a1953b0e558
-ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
+ms.openlocfilehash: b95dba65a7ab89306844e48641aba584e3d6b175
+ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39480328"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43371522"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Упорядочение ресурсов с помощью групп управления Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "39480328"
 
 ### <a name="important-facts-about-management-groups"></a>Важные сведения о группах управления
 
-- Один каталог может поддерживать 10 000 групп управления.
+- Один каталог может поддерживать 10 000 групп управления (клиент Azure Active Directory).
 - Дерево группы управления может поддерживать до шести уровней глубины.
   - Это ограничение не включает уровень корня или подписки.
 - Каждая группа управления и подписка может поддерживать только одну родительскую группу.

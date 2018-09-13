@@ -6,16 +6,16 @@ ms.service: automation
 ms.component: change-inventory-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 08/27/2018
+ms.date: 08/31/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8066612db20d1569920835a67d84b27d1b852e6e
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 0707726ec86b0a0c69d1ec752ebd6761327f3f0f
+ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128132"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43669489"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -27,8 +27,7 @@ ms.locfileid: "43128132"
 
 Для агента Windows официально поддерживаются следующие версии операционной системы Windows:
 
-* Windows Server 2008 с пакетом обновления 1 (SP1) или более поздней версии;
-* Windows 7 с пакетом обновления 1 и более поздней версии.
+* Windows Server 2008 R2 или более поздней версии
 
 ## <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
 
@@ -47,8 +46,8 @@ ms.locfileid: "43128132"
 Чтобы начать отслеживание изменений, включите решение отслеживания изменений и инвентаризации для учетной записи службы автоматизации.
 
 1. На портале Azure перейдите к учетной записи службы автоматизации.
-1. Выберите **Отслеживание изменений** в разделе **Конфигурация**.
-1. Выберите имеющуюся рабочую область Log Analytics или **создайте новую** и нажмите кнопку **Включить**.
+2. Выберите **Отслеживание изменений** в разделе **Конфигурация**.
+3. Выберите имеющуюся рабочую область Log Analytics или **создайте новую** и нажмите кнопку **Включить**.
 
 Таким образом вы включите решение для вашей учетной записи службы автоматизации. Этот процесс может занять до 15 минут. После включения решения появится синий баннер. Чтобы управлять решением, вернитесь к странице **Отслеживание изменений**.
 

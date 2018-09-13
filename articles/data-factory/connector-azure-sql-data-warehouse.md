@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 3c447a37b1dfbdac2c6e2a4eaa61d0e0e08a2176
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: ef1bd613943543f78d358064f4abefc6fa31b63e
+ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42442245"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43842341"
 ---
 #  <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -163,9 +163,9 @@ ms.locfileid: "42442245"
 
 1. **Создайте группу в Azure AD.** Сделайте MSI фабрики членом группы.
 
-    a. Найдите удостоверение службы фабрики данных на портале Azure. Перейдите к **свойствам** фабрики данных. Скопируйте идентификатор удостоверения службы.
+    1. Найдите удостоверение службы фабрики данных на портале Azure. Перейдите к **свойствам** фабрики данных. Скопируйте идентификатор удостоверения службы.
 
-    b. Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Войдите с помощью команды `Connect-AzureAD`. Выполните следующие команды для создания группы и добавления MSI фабрики данных в качестве члена группы.
+    1. Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2). Войдите с помощью команды `Connect-AzureAD`. Выполните следующие команды для создания группы и добавления MSI фабрики данных в качестве члена группы.
     ```powershell
     $Group = New-AzureADGroup -DisplayName "<your group name>" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId "<your data factory service identity ID>"
@@ -401,13 +401,14 @@ PolyBase хранилища данных SQL напрямую поддержив
 Если требования не выполняются, фабрика данных Azure проверяет параметры и автоматически возвращается к механизму перемещения данных BULKINSERT.
 
 1. Тип **Связанной службы источника** — хранилище BLOB-объектов Azure (**AzureBLobStorage**/**AzureStorage**) с ключом проверки подлинности учетной записи или хранилище Azure Data Lake 1-го поколения (**AzureDataLakeStore**) с проверкой подлинности субъекта-службы.
-1. Тип **входного набора данных** — **AzureBlob** или **AzureDataLakeStoreFile**. Тип формата в свойствах типа `type` — **OrcFormat**, **ParquetFormat** или **TextFormat** со следующими конфигурациями:
+2. Тип **входного набора данных** — **AzureBlob** или **AzureDataLakeStoreFile**. Тип формата в свойствах типа `type` — **OrcFormat**, **ParquetFormat** или **TextFormat** со следующими конфигурациями:
 
-   1. Параметр `rowDelimiter` должен иметь значение **\n**.
-   1. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчание, а параметру `treatEmptyAsNull` не задается значение false.
-   1. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
-   1. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
-   1. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
+   1. `fileName` не содержит фильтр подстановочных знаков.
+   2. Параметр `rowDelimiter` должен иметь значение **\n**.
+   3. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчание, а параметру `treatEmptyAsNull` не задается значение false.
+   4. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
+   5. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
+   6. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
 
     ```json
     "typeProperties": {
