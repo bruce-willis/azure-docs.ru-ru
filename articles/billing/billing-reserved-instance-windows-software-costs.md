@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
 ms.author: manshuk
-ms.openlocfilehash: 8ff2d126fd491ddc40f6223b6d4ec1fc4505b8fb
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: ec4869ed5c4d823a8144ba430ebb29c65c2abc13
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39630117"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43302072"
 ---
-# <a name="windows-software-costs-not-included-with-azure-reservations"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость резервирования в Azure
+# <a name="windows-software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances.
 
 Если не применяется преимущество гибридного использования Azure для зарезервированных экземпляров виртуальных машин, плата будет взиматься за единицы измерения программного обеспечения Windows (см. раздел ниже).
 
@@ -53,13 +53,13 @@ ms.locfileid: "39630117"
 Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](https://msdn.microsoft.com/library/azure/mt219004) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о резервировании в Azure см. в следующих статьях.
+Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
 - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Управление зарезервированными экземплярами в Azure](billing-manage-reserved-vm-instance.md)
+- [Управление Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
-- [Использование зарезервированного экземпляра виртуальной машины для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.

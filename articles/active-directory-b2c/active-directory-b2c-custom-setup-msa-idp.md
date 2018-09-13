@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 7a83ace83176d75abdac03b354c4c4ac71eb4238
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 6a981f112c97ee35b476c92f6f698e68a12a1363
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449380"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336827"
 ---
 # <a name="azure-active-directory-b2c-add-microsoft-account-msa-as-an-identity-provider-using-custom-policies"></a>Azure Active Directory B2C. Добавление учетной записи Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик
 
@@ -23,7 +23,7 @@ ms.locfileid: "37449380"
 
 В этой статье описывается, как включить возможность входа для пользователей из учетной записи Майкрософт (MSA) с помощью [пользовательских политик](active-directory-b2c-overview-custom.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 
 А именно:
@@ -58,7 +58,7 @@ ms.locfileid: "37449380"
 
     ![Учетная запись Майкрософт, выбор "Интернет" из списка платформ](media/active-directory-b2c-custom-setup-ms-account-idp/msa-web.png)
 
-7.  Введите `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` в поле **URI перенаправления** . Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com).
+7.  Введите `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` в поле **URI перенаправления** . Замените **{tenant}** именем своего клиента (например, contosob2c).
 
     ![Учетная запись Майкрософт, установка URL-адресов перенаправления](media/active-directory-b2c-custom-setup-ms-account-idp/msa-redirect-url.png)
 

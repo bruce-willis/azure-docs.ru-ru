@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2018
 ms.author: manshuk
-ms.openlocfilehash: 5ce0103315f297996ed3f3bd88b5e53558e22e14
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 334271139b791ab60f2bc89ae695ba9bf06b7d12
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39628238"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301026"
 ---
 # <a name="understand-azure-reservation-usage-for-your-enterprise-enrollment"></a>Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise
 
@@ -81,12 +81,12 @@ ms.locfileid: "39628238"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о резервировании в Azure см. в следующих статьях:
+Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
 - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md) 
-- [Управление резервированиями Azure](billing-manage-reserved-vm-instance.md)
+- [Управление Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/17/2018
 ms.author: nberdy
-ms.openlocfilehash: 0b84d7b0e7bbd2021ea4d3e3e804c739be59b48a
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 4d55c152bdc938d943c90a3e51af37b45f6a8eb5
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186885"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301402"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 Центр Интернета вещей дает возможность вызова прямых методов на устройствах из облака. Прямые методы представляют собой взаимодействие типа "запрос — ответ" с устройством, подобное вызову HTTP тем, что об успешном завершении или сбое становится известно немедленно (после указанного пользователем времени ожидания). Этот подход полезен для сценариев, в которых предпринимаемые немедленно действия различаются в зависимости от того, удалось ли устройству ответить.
@@ -105,7 +105,7 @@ curl -X POST \
     Значения `status` и `body` предоставляются устройством и используются для ответа, который содержит код состояния устройства и/или описание.
 
 ### <a name="method-invocation-for-iot-edge-modules"></a>Вызов метода для модулей IoT Edge
-Вызов прямых методов с помощью идентификатора модуля поддерживается предварительной версии пакета SDK для C# (доступен [здесь](https://www.nuget.org/packages/Microsoft.Azure.Devices/1.16.0-preview-004)).
+Вызов прямых методов с помощью идентификатора модуля поддерживается в пакете SDK для C# (доступен [здесь](https://www.nuget.org/packages/Microsoft.Azure.Devices/)).
 
 Для этой цели используйте метод `ServiceClient.InvokeDeviceMethodAsync()`, а затем передайте его в `deviceId` и `moduleId` в качестве параметров.
 

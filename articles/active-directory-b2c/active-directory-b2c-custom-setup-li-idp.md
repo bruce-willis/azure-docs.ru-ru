@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 334f696d79cf801facf7c5301b2240b69f7134f7
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 58a595c697b6e1a70089a6683493835e0d3a9780
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444384"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43344324"
 ---
 # <a name="azure-active-directory-b2c-add-linkedin-as-an-identity-provider-by-using-custom-policies"></a>Azure Active Directory B2C. Добавление LinkedIn в качестве поставщика удостоверений с помощью пользовательских политик
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
 В этой статье описывается выполнение входа для обладателей учетной записи LinkedIn с помощью [пользовательских политик](active-directory-b2c-overview-custom.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Выполните шаги, описанные в статье [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 
 ## <a name="step-1-create-a-linkedin-account-application"></a>Шаг 1. Создание приложения учетной записи LinkedIn
@@ -36,21 +36,21 @@ ms.locfileid: "37444384"
 
     a. Введите значение в поле **Company Name** (Название компании), укажите описательные значения **Name** (Имя) для компании и **Description** (Описание) для нового приложения.
 
-    Б. Отправьте файл в разделе **Application logo** (Логотип приложения).
+    b. Отправьте файл в разделе **Application logo** (Логотип приложения).
 
     c. Выберите значение для **Application Use** (Использование приложения).
 
-    d. В поле **URL-адрес веб-сайта** вставьте **https://login.microsoftonline.com**.
+    d. В поле **Website URL** (URL-адрес веб-сайта) вставьте **https://{tenant}.b2clogin.com**,  где {*tenant*} — это имя вашего клиента (например, contoso.b2clogin.com).
 
     д. Введите значения в поля **Business email** (Рабочий адрес электронной почты) и **Business Phone** (Рабочий телефон).
 
-    f. В нижней части страницы прочтите условия использования и примите их, а затем щелкните **Submit** (Отправить).
+    Е. В нижней части страницы прочтите условия использования и примите их, а затем щелкните **Submit** (Отправить).
 
     ![Учетная запись LinkedIn — настройка свойств приложения](media/active-directory-b2c-custom-setup-li-idp/adb2c-ief-setup-li-idp-new-app2.png)
 
 3. Выберите значение для параметра **Authentication** (Аутентификация) и запишите значения **Client ID** (Идентификатор клиента) и **Client Secret** (Секрет клиента).
 
-4. В поле **Авторизованные URL-адреса перенаправления** вставьте **https://login.microsoftonline.com/te/{tenant}.onmicrosoft.com/oauth2/authresp**. Замените заполнитель {*клиент*} именем своего клиента (например, contosob2c.onmicrosoft.com). Убедитесь, что используете схему HTTPS. 
+4. В поле **Authorized Redirect URLs** (Авторизованные URL-адреса перенаправления) вставьте значение **https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp**. Замените заполнитель {*клиент*} именем своего клиента (например, contosob2c.onmicrosoft.com). Убедитесь, что используете схему HTTPS. 
 
     ![Учетная запись LinkedIn — настройка авторизованных URL-адресов перенаправления](media/active-directory-b2c-custom-setup-li-idp/adb2c-ief-setup-li-idp-new-app3.png)
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2018
 ms.author: jeedes
-ms.openlocfilehash: f860036f1a69b2d1ab6ac8de763a49380f8fe4bf
-ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
+ms.openlocfilehash: 3a394c13092547991bf7f8ae98e5c69e92077701
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42144398"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43344790"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-youearnedit"></a>Руководство. Интеграция Azure Active Directory с YouEarnedIt
 
@@ -139,7 +139,7 @@ ms.locfileid: "42144398"
 
     ![Конфигурация YouEarnedIt](./media/youearnedit-tutorial/tutorial_youearnedit_configure.png) 
 
-7. Чтобы настроить единый вход на стороне **YouEarnedIt**, отправьте загруженный **сертификат в кодировке Base64** и **URL-адрес службы единого входа SAML** назначенному менеджеру по работе с клиентами YouEarnedIt. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+7. Чтобы настроить единый вход на стороне **YouEarnedIt**, отправьте загруженный ***сертификат в кодировке Base64*** и ***URL-адрес службы единого входа SAML*** назначенному менеджеру по работе с клиентами **YouEarnedIt**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: iainfou
-ms.openlocfilehash: ea77244d4b2e078c5eda716e94a97291350228f5
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: dfc9171f54effe3da7a0f13695ab233d561357d4
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146979"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43285691"
 ---
 # <a name="persistent-volumes-with-azure-files"></a>Использование постоянных томов со службой файлов Azure
 
@@ -71,9 +71,9 @@ kubectl apply -f azure-file-sc.yaml
 
 ## <a name="create-a-cluster-role-and-binding"></a>Создание роли кластера и привязки
 
-Чтобы ограничить действия, которые могут быть выполнены, кластеры AKS используют управление доступом на основе ролей (RBAC) Kubernetes. *Роли* определяют разрешения для предоставления, а *привязки* применяют их к желаемым пользователям. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в статье об [использовании авторизации RBAC][kubernetes-rbac].
+Чтобы ограничить действия, которые могут быть выполнены, кластеры AKS используют управление доступом на основе ролей (RBAC) Kubernetes. *Роли* определяют разрешения для предоставления, а *привязки* применяют их к желаемым пользователям. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в статье об [Использовании авторизации RBAC][kubernetes-rbac].
 
-Чтобы разрешить платформе Azure создавать необходимые ресурсы хранения, создайте *clusterrole* и *clusterrolebinding*. Создайте файл `azure-pvc-roles.yaml` и скопируйте в него следующий код YAML:
+Чтобы разрешить платформе Azure создавать необходимые ресурсы хранения, создайте *ClusterRole* и *ClusterRoleBinding*. Создайте файл `azure-pvc-roles.yaml` и скопируйте в него следующий код YAML:
 
 ```yaml
 ---

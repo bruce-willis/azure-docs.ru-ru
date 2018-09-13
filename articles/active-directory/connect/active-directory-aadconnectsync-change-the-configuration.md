@@ -12,18 +12,23 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/16/2018
+ms.date: 08/30/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: bad1cbe0b142e146ada28f2af5d152973100e919
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4795e21c4279b6d313ba56296bafc49daf7bbb48
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34595110"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43288178"
 ---
 # <a name="azure-ad-connect-sync-make-a-change-to-the-default-configuration"></a>Службы синхронизации Azure AD Connect: изменение конфигурации по умолчанию
 В этой статье предоставлены сведения об изменении конфигурации по умолчанию в службах синхронизации Azure Active Directory (Azure AD) Connect. Здесь также описываются действия для некоторых стандартных сценариев. Ознакомившись с этими сведениями, вы сможете вносить изменения в конфигурацию в соответствии с собственными бизнес-правилами.
+
+> [!WARNING]
+> Изменения, внесенные в правила синхронизации по умолчанию, будут перезаписаны при следующем обновлении Azure AD Connect. Это приведет к непредвиденным и, вероятно, нежелательным результатам синхронизации.
+>
+> Стандартные правила синхронизации имеют отпечаток. Если внести в правила изменения, отпечаток также изменится. Тогда при следующей попытке установить новый выпуск Azure AD Connect могут возникнуть проблемы. Выполняйте изменения только так, как описано в этой статье.
 
 ## <a name="synchronization-rules-editor"></a>Редактор правил синхронизации
 Редактор правил синхронизации используется для просмотра и изменения конфигурации по умолчанию. Его можно найти в меню **Пуск** в группе **Azure AD Connect**.  

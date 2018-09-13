@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 08/24/2018
 ms.author: mahender,cephalin
-ms.openlocfilehash: 9b4e86e719998c5f19a70734480356bcb98b8d2f
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 46f8602583329a0516edb9af59e53754ca349555
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888106"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336810"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service"></a>Проверка подлинности и авторизация в службе приложений Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "42888106"
 
 Параметр — **Разрешить анонимные запросы**. Этот параметр включает проверку подлинности и авторизацию в службе приложений, но отменяет решения авторизации для кода приложения. Для запросов, прошедших проверку подлинности, служба приложений также передает сведения о проверке подлинности в заголовках HTTP. 
 
-Такой вариант обеспечивает большую гибкость в обработке анонимных запросов. Например, он позволяет [предоставлять несколько вариантов входа](app-service-authentication-how-to.md#configure-multiple-sign-in-options) пользователям. Однако необходимо написать код. 
+Такой вариант обеспечивает большую гибкость в обработке анонимных запросов. Например, он позволяет [предоставлять пользователям несколько поставщиков входа](app-service-authentication-how-to.md#use-multiple-sign-in-providers). Тем не менее необходимо написать код. 
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 

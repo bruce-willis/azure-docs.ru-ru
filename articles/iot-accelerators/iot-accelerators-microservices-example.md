@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 04/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: de42e68116c147d81ed0211426bfa813d070b121
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e15e17a499ad33a270b220fa7483d96c2945f6bb
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34628000"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43338083"
 ---
 # <a name="customize-and-redeploy-a-microservice"></a>Настройка и повторное развертывание микрослужбы
 
@@ -21,7 +21,7 @@ ms.locfileid: "34628000"
 
 Решение удаленного мониторинга использует микрослужбы, созданные с помощью образов Docker, которые извлечены из центра Docker. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 >[!div class="checklist"]
 > * Изменение и создание микрослужбы в решении удаленного мониторинга.
@@ -30,7 +30,7 @@ ms.locfileid: "34628000"
 > * Извлечение нового образа Docker.
 > * Визуализация изменений. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить это руководство, требуется:
 
@@ -187,7 +187,7 @@ ms.locfileid: "34628000"
 > * Извлечение нового образа Docker.
 > * Визуализация изменений. 
 
-Далее можно попытаться [настроить микрослужбу моделирования устройств в решении удаленного мониторинга](iot-accelerators-remote-monitoring-test.md).
+Далее можно попытаться [настроить микрослужбу моделирования устройств в решении удаленного мониторинга](iot-accelerators-microservices-example.md).
 
 Дополнительные сведения для разработчиков о решении удаленного мониторинга см. в следующих источниках:
 

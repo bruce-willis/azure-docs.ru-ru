@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: de059e3875b5f15526cb176d43a019fd2d9ee9b9
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 985285b463d66770f97a431705d5b9198b632592
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901387"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43344612"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C
 
@@ -30,13 +30,13 @@ ms.locfileid: "37901387"
 5. Нажмите кнопку **Создайте ID приложения**. Для этого может потребоваться принять условия политики платформы Facebook и пройти проверку безопасности в сети.
 6. Выберите **Параметры** > **Основные**.
 7. В нижней части страницы, выберите **Добавить платформу**, а затем выберите **Веб-сайт**.
-8. Введите значение `https://login.microsoftonline.com/` в поле **URL-адрес сайта**. Введите **URL-адрес политики конфиденциальности**, например `http://www.contoso.com`.
+8. Введите значение `https://{tenantname}.b2clogin.com/` в поле **URL-адрес сайта**. Введите **URL-адрес политики конфиденциальности**, например `http://www.contoso.com`.
 9. Щелкните **Save changes** (Сохранить изменения).
 11. В верхней части страницы скопируйте значение **APP ID** (Идентификатор приложения). 
 12. Нажмите кнопку **Show** (Показать) и скопируйте значение **App Secret** (Секрет приложения). Оба значения потребуются вам для настройки Facebook в качестве поставщика удостоверений для вашего клиента. **Секрет приложения** — это важные учетные данные безопасности.
 13. Выберите **Продукты**, а затем **Настройка** в разделе **Вход в Facebook**.
 14. Выберите **Параметры** в разделе **Вход в Facebook**.
-15. Введите `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` в поле **Valid OAuth redirect URIs** (Допустимые URI перенаправления OAuth). Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com). Нажмите кнопку **Save Changes** (Сохранить изменения) в нижней части страницы.
+15. Введите `https://{tenantname}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` в поле **Valid OAuth redirect URIs** (Допустимые URI перенаправления OAuth). Замените **{tenant}** именем своего клиента (например, contosob2c). Нажмите кнопку **Save Changes** (Сохранить изменения) в нижней части страницы.
 16. Чтобы приложение Facebook стало доступным в Azure AD B2C, выберите **Проверка приложения**, установите в поле **Make My Application public?** (Сделать мое приложение общедоступным) значение **Да**, выберите категорию (например, `Business and Pages`) и щелкните **Подтвердить**.
 
 ## <a name="configure-a-facebook-account-as-an-identity-provider"></a>Настройка учетной записи Facebook в качестве поставщика удостоверений

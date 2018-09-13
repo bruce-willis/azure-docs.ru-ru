@@ -4,12 +4,12 @@ ms.author: yashar
 ms.service: virtual-machines-windows
 ms.topic: include
 ms.date: 08-07-2018
-ms.openlocfilehash: 764470bbf47c18a2ec66dc91d433f8dd14b99a8f
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 6be00937a6645fbdd266ac0b1aa1ce95ecc6c3d9
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43039284"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301914"
 ---
 # <a name="prepay-for-virtual-machines-with-azure-reserved-vm-instances"></a>Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances
 
@@ -34,7 +34,7 @@ Reserved VM Instances доступны почти для всех размеро
 - Виртуальные машины с подавленным ядром не получают скидки на резервирование.
 - Следующие серии виртуальных машин не получают скидки на резервирование: серии A, Av2 или G.
 - Виртуальные машины в предварительной версии. Любая серия виртуальных машин или размеров, которая находится в предварительной версии, недоступна для приобретения резервирования.
-- Облако. Резервирования недоступны для приобретения в государственных организациях США, также в регионах Германия и Китай.
+- Облако. Резервирования недоступны для приобретения государственными организациями США, а также в регионах Германия и Китай.
 - Недостаточная квота. Если резервирование привязано к одной конкретной подписке, эта подписка должна иметь свободную квоту виртуальных ЦП для размещения этого зарезервированного экземпляра. Например, если целевая подписка имеет квоту на 10 виртуальных ЦП для серии D, вы не сможете приобрести резервирование для 11 экземпляров Standard_D1. При проверке квоты для резервирования учитываются все виртуальные машины, уже размещенные в подписке. Например, если подписка имеет квоту на 10 виртуальных ЦП для серии D и два развернутых экземпляра Standard_D1, в этой подписке можно приобрести резервирование для 10 экземпляров Standard_D1. 
 - Ограничения емкости. В редких случаях Azure может ограничить приобретение новых резервирований для некоторых размеров виртуальных машин из-за нехватки емкости в соответствующем регионе.
 
@@ -68,17 +68,17 @@ Reserved VM Instances доступны почти для всех размеро
 
 Скидка на резервирование автоматически применяется к количеству работающих виртуальных машин, которые соответствуют области и атрибутам резервирования. Можно обновить область резервирования с помощью [портала Azure](https://portal.azure.com), PowerShell, CLI или API.
 
-Сведения об управлении резервированием см. в разделе [Управление зарезервированными экземплярами в Azure](../articles/billing/billing-manage-reserved-vm-instance.md).
+Сведения об управлении резервированием см. в разделе [Управление резервированиями в Azure](../articles/billing/billing-manage-reserved-vm-instance.md).
 
 Дополнительные сведения о резервировании в Azure см. в следующих статьях.
 
 - [Основные сведения о резервировании в Azure](../articles/billing/billing-save-compute-costs-reservations.md)
-- [Управление зарезервированными экземплярами в Azure](../articles/billing/billing-manage-reserved-vm-instance.md)
+- [Управление резервированиями в Azure](../articles/billing/billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../articles/billing/billing-understand-vm-reservation-charges.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../articles/billing/billing-understand-reserved-instance-usage-ea.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](../articles/billing/billing-reserved-instance-windows-software-costs.md)
-- [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)
+- [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 

@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 786f0dfd0cf3cf2e9ab0d16e26811fabd6bfc17c
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 28679ef07c2625908f7b08f808ff49c48ddb625b
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37440961"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43339874"
 ---
 # <a name="azure-active-directory-b2c-add-twitter-as-an-oauth1-identity-provider-by-using-custom-policies"></a>Azure Active Directory B2C. Добавление Twitter в качестве поставщика удостоверений OAuth1 с помощью пользовательских политик
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
 В этой статье описывается выполнение входа для обладателя учетной записи Twitter с помощью [пользовательских политик](active-directory-b2c-overview-custom.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Выполните шаги, описанные в статье [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 
 ## <a name="step-1-create-a-twitter-account-application"></a>Шаг 1. Создание приложения учетной записи Twitter
@@ -36,9 +36,9 @@ ms.locfileid: "37440961"
  
     a. Введите **имя** и **описание** для нового приложения в соответствующих полях. 
 
-    Б. В поле **Веб-сайт** вставьте **https://login.microsoftonline.com**. 
+    b. В поле **Website** (Веб-сайт) вставьте **https://{tenant}.b2clogin.com**, где **{tenant}** — это имя вашего клиента (например, https://contosob2c.b2clogin.com).
 
-    c. 4. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://login.microsoftonline.com/te/{tenant}/{policyId}/oauth1/authresp`. Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com), а **{policyId}** — идентификатором политики (например, b2c_1_policy).  **URL-адрес обратного вызова должен содержать только строчные символы.** Добавьте URL-адрес обратного вызова для всех политик, использующих данные для входа в Twitter. Если в приложении используется адрес ` login.microsoftonline.com`, замените его на `b2clogin.com`.
+    c. 4. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/{policyId}/oauth1/authresp`. Замените **{tenant}** именем своего клиента (например, contosob2c), а **{policyId}** — идентификатором политики (например, b2c_1_policy).  **URL-адрес обратного вызова должен содержать только строчные символы.** Добавьте URL-адрес обратного вызова для всех политик, использующих данные для входа в Twitter. Если в приложении используется адрес ` login.microsoftonline.com`, замените его на `b2clogin.com`.
 
     d. В нижней части страницы прочитайте и примите условия соглашения, а затем выберите **Create your Twitter application** (Создать приложение Twitter).
 

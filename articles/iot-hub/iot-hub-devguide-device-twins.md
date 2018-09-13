@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.author: elioda
-ms.openlocfilehash: e94b023275f3992bea9595195688eebf42f0f229
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: b5e0a0caacab2413b640c58575673e555eeb76a4
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186794"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43288284"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Общие сведения о двойниках устройств и их использование в Центре Интернета вещей
 
@@ -254,7 +254,7 @@ ms.locfileid: "39186794"
     }
     ```
 
-* Все строковые значения могут быть длиной не более 4 КБ.
+* Все строковые значения могут быть длиной не более 512 байт.
 
 ## <a name="device-twin-size"></a>Размер двойника устройства
 Центр Интернета вещей ограничивает размер каждого из соответствующих итоговых значений `tags`, `properties/desired` и `properties/reported` до 8 КБ. Это ограничение не относится к элементам только для чтения.
@@ -354,6 +354,7 @@ ms.locfileid: "39186794"
 
 * [Приступая к работе с двойниками устройств (предварительная версия)][lnk-twin-tutorial]
 * [Руководство. Настройка устройств с помощью требуемых свойств (предварительная версия)][lnk-twin-properties]
+* [Управление устройствами Интернета вещей Azure с помощью расширения "Набор средств Интернета вещей Azure" для Visual Studio Code][lnk-twin-vscode]
 
 <!-- links and images -->
 
@@ -377,6 +378,7 @@ ms.locfileid: "39186794"
 [lnk-devguide-jobs]: iot-hub-devguide-jobs.md
 [lnk-twin-tutorial]: iot-hub-node-node-twin-getstarted.md
 [lnk-twin-properties]: tutorial-device-twins.md
+[lnk-twin-vscode]: iot-hub-device-management-iot-toolkit.md
 [lnk-twin-metadata]: iot-hub-devguide-device-twins.md#device-twin-metadata
 [lnk-concurrency]: iot-hub-devguide-device-twins.md#optimistic-concurrency
 [lnk-reconnection]: iot-hub-devguide-device-twins.md#device-reconnection-flow

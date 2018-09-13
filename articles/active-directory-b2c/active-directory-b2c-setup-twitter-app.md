@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/09/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: bf5ae39d83fd021775fbd18cf23d2e6b9078e748
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 6d8e9245e95c08aad69cd05f338b6260e554469b
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37927902"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43337796"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Twitter через Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "37927902"
 1. Перейдите на веб-сайт [Приложения Twitter](https://apps.twitter.com/) и выполните вход с учетными данными Twitter.
 2. Выберите **Create New App** (Создать приложение).
 3. Введите значения **Имя**, **Описание** и **Веб-сайт**.
-4. Введите `https://login.microsoftonline.com/te/{tenant}/{policyId}/oauth1/authresp` в поле **URL-адрес обратного вызова**. Замените **{tenant}** именем клиента (например, contosob2c.onmicrosoft.com), а **{policyId}** — идентификатором политики (например, b2c_1_policy). Добавьте URL-адрес обратного вызова для всех политик, использующих учетную запись Twitter. Если в приложении используется адрес ` login.microsoftonline.com`, замените его на `b2clogin.com`.
+4. Введите `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/{policyId}/oauth1/authresp` в поле **URL-адрес обратного вызова**. Замените **{tenant}** именем своего клиента (например, contosob2c), а **{policyId}** — идентификатором политики (например, b2c_1_policy). Добавьте URL-адрес обратного вызова для всех политик, использующих учетную запись Twitter. 
 5. Подтвердите **Соглашение с разработчиком** и щелкните **Create your Twitter application** (Создать приложение Twitter).
 7. Откройте вкладку **Ключи и токены доступа** .
 8. Скопируйте значения **Consumer Key** (Ключ потребителя) и **Consumer Secret** (Секрет потребителя). Оба значения потребуются для настройки учетной записи Twitter в качестве поставщика удостоверений в вашем клиенте.

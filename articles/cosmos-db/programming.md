@@ -10,24 +10,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: andrl
-ms.openlocfilehash: 6296eb423f24762ed32a21ef40852dc1a9dd8f36
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: 8377b13014e2f97518bbc779ee809aaa10d6eb45
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144600"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287450"
 ---
 # <a name="azure-cosmos-db-server-side-programming-stored-procedures-database-triggers-and-udfs"></a>Программирование Azure Cosmos DB на стороне сервера: хранимые процедуры, триггеры баз данных и определяемые пользователем функции
 
 Узнайте, каким образом интегрированное транзакционное выполнение JavaScript в Azure Cosmos DB позволяет разработчикам создавать **хранимые процедуры**, **триггеры** и **определяемые пользователем функции (UDF)** непосредственно на платформе JavaScript [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/). Интеграция с JavaScript позволяет писать логику приложения, которую можно отправить и выполнить непосредственно в разделе хранения базы данных. 
 
-Прежде чем приступить к работе, просмотрите следующий видеоролик, в котором Эндрю Лю (Andrew Liu) описывает модель программирования баз данных на стороне сервера Azure Cosmos DB. 
-
-> [!VIDEO https://www.youtube.com/embed/s0cXdHNlVI0]
->
-> 
-
-Затем вернитесь в эту статью, из которой вы узнаете ответы на следующие вопросы:  
+В этой статье вы узнаете ответы на следующие вопросы:  
 
 * Как написать хранимую процедуру, триггер или определяемую пользователем функцию на JavaScript?
 * Каким образом Cosmos DB предоставляет гарантию выполнения принципа ACID?

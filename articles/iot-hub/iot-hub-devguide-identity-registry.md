@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 01/29/2018
+ms.date: 08/29/2018
 ms.author: dobett
-ms.openlocfilehash: 4e23b70c8dc5fdacfd609fb4664a78293b9e2362
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 78956c8e9d9248708ec326fc07d46f48e51e0f83
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247651"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43341266"
 ---
 # <a name="understand-the-identity-registry-in-your-iot-hub"></a>Общие сведения о реестре удостоверений в Центре Интернета вещей
 
@@ -85,12 +85,12 @@ ms.locfileid: "43247651"
 
 ## <a name="device-heartbeat"></a>Пульс устройства
 
-Реестр удостоверений Центра Интернета вещей содержит поле **connectionState**. Поле **connectionState** используется только во время разработки и отладки. Во время выполнения решения Интернета вещей не должны запрашивать это поле. Например, не запрашивайте поле **connectionState**, чтобы проверить подключение устройства, прежде чем отправить сообщение из облака на устройство или SMS. Мы рекомендуем подписаться на [событие **device disconnected**](https://docs.microsoft.com/azure/iot-hub/iot-hub-event-grid#event-types) в службе "Сетка событий", чтобы получать оповещения и отслеживать состояние подключения устройства. Сведения о том, как интегрировать события из Центра Интернета вещей в решение Интернета вещей , см. в этом [руководстве](https://docs.microsoft.com/azure/event-grid/publish-iot-hub-events-to-logic-apps).
+Реестр удостоверений Центра Интернета вещей содержит поле **connectionState**. Поле **connectionState** используется только во время разработки и отладки. Во время выполнения решения Интернета вещей не должны запрашивать это поле. Например, не запрашивайте поле **connectionState**, чтобы проверить подключение устройства, прежде чем отправить сообщение из облака на устройство или SMS. Мы рекомендуем подписаться на [событие **device disconnected**][lnk-devguide-evgrid-evtype] в службе "Сетка событий", чтобы получать оповещения и отслеживать состояние подключения устройства. Используйте это [руководство][lnk-howto-evgrid-connstate], чтобы узнать, как интегрировать события подключения и отключения устройства из Центра Интернета вещей в решение Интернета вещей.
 
 Если решению Интернета вещей необходимо определять, подключено ли устройство, в него необходимо внедрить *шаблон пульса*.
 При использовании шаблона пульса устройство отправляет сообщения с устройства в облака с заданной периодичностью (например не реже, чем каждый час). Если отправка данных при этом не требуется, устройство отправляет с устройства в облака пустое сообщение (обычно содержащее свойство, идентифицирующее его как пульс). На стороне службы решение хранит карту последнего пульса, полученного по каждому устройству, и если решение не получает от устройства сообщение пульса в ожидаемое время, то оно сообщает о проблеме.
 
-Более сложные варианты могут включать в себя данные [мониторинга операций][lnk-devguide-opmon], позволяющие определять, какие устройства пытаются, но не могут установить подключение. Внедряя в решение шаблон пульса, учитывайте [квоты и ограничения Центра Интернета вещей][lnk-quotas].
+Более сложные варианты могут включать в себя информацию из [Azure Monitor][lnk-AM] и [Службы работоспособности ресурсов Azure][lnk-ARH], позволяющую определять, какие устройства пытаются, но не могут установить подключение. См. сведения в руководстве [Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок][lnk-devguide-mon]. Внедряя в решение шаблон пульса, учитывайте [квоты и ограничения Центра Интернета вещей][lnk-quotas].
 
 > [!NOTE]
 > Если решение Интернета вещей использует состояние подключения исключительно для того, чтобы определить, отправлять ли сообщения из облака на устройство, и сообщения не вещаются на большие наборы устройств, то следует рассмотреть более простой способ — использовать *небольшой срок действия*. Это позволяет добиться того же результата, что и при обслуживании реестра состояний подключения устройств, действующего по принципу пульса, но с большей эффективностью. При запросе подтверждения сообщений Центр Интернета вещей может сообщить о том, какие устройства могут получать сообщения, а какие не могут.
@@ -256,7 +256,7 @@ iothub-message-schema | moduleLifecycleNotification |
 [lnk-rfc7232]: https://tools.ietf.org/html/rfc7232
 [lnk-bulk-identity]: iot-hub-bulk-identity-mgmt.md
 [lnk-export]: iot-hub-devguide-identity-registry.md#import-and-export-device-identities
-[lnk-devguide-opmon]: iot-hub-operations-monitoring.md
+[lnk-devguide-mon]: iot-hub-monitor-resource-health.md
 
 [lnk-devguide-security]: iot-hub-devguide-security.md
 [lnk-devguide-device-twins]: iot-hub-devguide-device-twins.md
@@ -265,3 +265,8 @@ iothub-message-schema | moduleLifecycleNotification |
 
 [lnk-getstarted-tutorial]: quickstart-send-telemetry-dotnet.md
 [lnk-dps]: https://azure.microsoft.com/documentation/services/iot-dps
+
+[lnk-AM]: ../monitoring-and-diagnostics/index.yml
+[lnk-ARH]: ../service-health/resource-health-overview.md
+[lnk-devguide-evgrid-evtype]: iot-hub-event-grid.md#event-types
+[lnk-howto-evgrid-connstate]: iot-hub-how-to-order-connection-state-events.md

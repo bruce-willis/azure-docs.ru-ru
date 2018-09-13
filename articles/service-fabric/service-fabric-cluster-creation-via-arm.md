@@ -14,17 +14,17 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/16/2018
 ms.author: aljo
-ms.openlocfilehash: 29d04781d166abdd1fc1fc506077e6257f6551a6
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: aab985270cf17b94d6353536c96a3825b5e3b73f
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144447"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287348"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Azure Resource Manager](service-fabric-cluster-creation-via-arm.md)
-> * [портал Azure](service-fabric-cluster-creation-via-portal.md)
+> * [портала Azure](service-fabric-cluster-creation-via-portal.md)
 >
 >
 
@@ -259,7 +259,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 ### <a name="use-a-pointer-to-a-secret-uploaded-into-a-key-vault"></a>Использование указателя на секрет, переданный в хранилище ключей
 
-Чтобы использовать имеющееся хранилище ключей, [необходимо включить его для развернутой службы](../key-vault/key-vault-manage-with-cli2.md#bkmk_KVperCLI), благодаря чему поставщик вычислительных ресурсов сможет получить из него сертификаты и установить его на узлах кластера:
+Чтобы использовать имеющееся хранилище ключей, [необходимо включить его для развернутой службы](../key-vault/key-vault-manage-with-cli2.md#bkmk_KVperCLI), благодаря чему поставщик вычислительных ресурсов сможет получить из него сертификаты и установить его на узлах кластера.
 
 Развертывание кластера с помощью PowerShell:
 

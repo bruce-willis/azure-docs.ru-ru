@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2017
+ms.date: 08/29/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 2c2fc3bcba4b685fba36683f89c0b6ad877dbb1d
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0668eb33fe33b062c941ec4f2bff47c5ed77fb51
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34595144"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287890"
 ---
 # <a name="azure-ad-connect-sync-best-practices-for-changing-the-default-configuration"></a>Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию
 В этой статье описываются поддерживаемые и неподдерживаемые изменения в службах синхронизации Azure AD Connect.
@@ -37,6 +37,9 @@ ms.locfileid: "34595144"
 
 ## <a name="changes-to-synchronization-rules"></a>Изменения в правилах синхронизации
 Мастер установки создает конфигурацию, которая должна работать для наиболее распространенных сценариев. Если необходимо внести изменения в конфигурацию, чтобы она по-прежнему была поддерживаемой, необходимо следовать этим правилам.
+
+> [!WARNING]
+> Изменения, внесенные в правила синхронизации по умолчанию, будут перезаписаны при следующем обновлении Azure AD Connect. Это приведет к непредвиденным и, вероятно, нежелательным результатам синхронизации.
 
 * Вы можете [изменить потоки атрибутов](active-directory-aadconnectsync-change-the-configuration.md#other-common-attribute-flow-changes) , если прямые потоки атрибутов по умолчанию не подходят для вашей организации.
 * Если вы не хотите [отправлять атрибут в потоке](active-directory-aadconnectsync-change-the-configuration.md#do-not-flow-an-attribute) и вам требуется удалить существующие значения атрибута в Azure AD, для этого необходимо создать правило.

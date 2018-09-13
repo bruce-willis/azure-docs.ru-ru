@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/09/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 88fffd28319101c112f848eebc6e8ee27f7f863e
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 11f3f190c0f55e45c549a8bd1de35f78eb7b752d
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952024"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43337435"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью GitHub через Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "37952024"
 1. Войдите на сайт [разработчика GitHub](https://github.com/settings/developers), используя учетные данные GitHub.
 2. Выберите **Приложения OAuth**, а затем щелкните **Зарегистрировать новое приложение**.
 3. Заполните поля **Application name** (Имя приложения) и **Homepage URL** (URL-адрес домашней страницы).
-4. Введите значение `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` в поле **Authorization callback URL** (URL-адрес обратного вызова авторизации). Замените **{tenant}** именем своего клиента Azure AD B2C (например, contosob2c.onmicrosoft.com).
+4. Введите значение `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` в поле **Authorization callback URL** (URL-адрес обратного вызова авторизации). Замените **{tenant}** именем своего клиента Azure AD B2C (например, contosob2c).
 5. Щелкните **Register application** (Зарегистрировать приложение).
 6. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Оба этих значения потребуются при добавлении поставщика удостоверений для вашего клиента.
 

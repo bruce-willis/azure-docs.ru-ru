@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 08/15/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 78e991fcac87d59ed7b84180192899ddbdf330f2
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 8a2e06d2e6cf3e470d4e0909e5559ac0411292fd
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105645"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43307119"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps
 
@@ -80,7 +80,7 @@ ms.locfileid: "43105645"
 | [endsWith](../logic-apps/workflow-definition-language-functions-reference.md#endswith) | Проверяет, заканчивается ли строка определенной подстрокой. | 
 | [guid](../logic-apps/workflow-definition-language-functions-reference.md#guid) | Создает глобально уникальный идентификатор (GUID) в виде строки. | 
 | [indexOf](../logic-apps/workflow-definition-language-functions-reference.md#indexof) | Возвращает начальную позицию подстроки. | 
-| [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает конечную позицию подстроки. | 
+| [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает начальную позицию последнего вхождения подстроки. | 
 | [replace](../logic-apps/workflow-definition-language-functions-reference.md#replace) | Заменяет подстроку указанной строкой и возвращает обновленную строку. | 
 | [split](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, который содержит все символы из строки, отделенные разделителем. | 
 | [startsWith](../logic-apps/workflow-definition-language-functions-reference.md#startswith) | Проверяет, начинается ли строка с определенной подстроки. | 
@@ -2123,7 +2123,7 @@ indexOf('<text>', '<searchText>')
 
 | Возвращаемое значение | type | ОПИСАНИЕ | 
 | ------------ | ---- | ----------- | 
-| <*значение индекса*>| Целое число  | Начальное положение или значение индекса указанной подстроки. <p>Если строка не найдена, возвращается -1. </br>Если строка пуста, возвращается 0. | 
+| <*значение индекса*>| Целое число  | Начальное положение или значение индекса указанной подстроки. <p>Если строка не найдена, возвращается -1. | 
 |||| 
 
 *Пример* 
@@ -2387,7 +2387,7 @@ last([0, 1, 2, 3])
 
 ### <a name="lastindexof"></a>lastIndexOf
 
-Возвращает конечную позицию или значение индекса подстроки. Эта функция не учитывает регистр, и индексы начинаются с числа 0.
+Возвращает начальную позицию или значение индекса последнего вхождения подстроки. Эта функция не учитывает регистр, и индексы начинаются с числа 0.
 
 ```
 lastIndexOf('<text>', '<searchText>')
@@ -2401,18 +2401,18 @@ lastIndexOf('<text>', '<searchText>')
 
 | Возвращаемое значение | type | ОПИСАНИЕ | 
 | ------------ | ---- | ----------- | 
-| <*конечное значение индекса*> | Целое число  | Конечная позиция или значение индекса указанной подстроки. <p>Если строка не найдена, возвращается -1. </br>Если строка пуста, возвращается 0. | 
+| <*конечное значение индекса*> | Целое число  | Начальная позиция или значение индекса последнего вхождения указанной подстроки. <p>Если строка не найдена, возвращается -1. | 
 |||| 
 
 *Пример* 
 
-Этот пример находит конечное значение индекса для подстроки "world" в строке "hello world":
+Этот пример находит начальное значение индекса для последнего вхождения подстроки "world" в строке "hello world":
 
 ```
 lastIndexOf('hello world', 'world')
 ```
 
-Возвращается такой результат: `10`
+Возвращается такой результат: `6`
 
 <a name="length"></a>
 

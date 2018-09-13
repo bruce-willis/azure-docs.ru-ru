@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2018
 ms.author: yashar
-ms.openlocfilehash: 3a5339200309a50eace5b48dfbd9127b7eb1dae6
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 923337291d297832e03892b505f4efa8d3bb3f36
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39632972"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43300720"
 ---
 # <a name="understand-how-an-azure-reservation-discount-is-applied-to-sql-databases"></a>Сведения о применении скидки на резервирование к Базам данных SQL
 
@@ -40,18 +40,18 @@ ms.locfileid: "39632972"
 - Сценарий 3. Одна База данных SQL с 16 ядрами работает с 13:00 до 13:30. Вы запускаете еще одну Базу данных SQL с 16 ядрами, которая будет работать с 13:30 до 14:00. Для обеих Баз данных будет применяться скидка на резервирование.
 - Сценарий 4. Одна База данных SQL с 16 ядрами работает с 13:00 до 13:45. Вы запускаете еще одну Базу данных SQL с 16 ядрами, которая будет работать с 13:30 до 14:00. За превышение работы на 15 минут с вас взимается оплата по мере использования. Скидка на резервирование применяется к использованию вычислительных ресурсов за остальное время.
 
-Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании резервирования Azure с Соглашением о регистрации Enterprise](https://go.microsoft.com/fwlink/?linkid=862757).
+Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://go.microsoft.com/fwlink/?linkid=862757).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о резервировании в Azure см. в следующих статьях:
+Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
 - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md)
-- [Управление резервированиями Azure](billing-manage-reserved-vm-instance.md)
+- [Управление Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании резервирования Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 - [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)
 
 

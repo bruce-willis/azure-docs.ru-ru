@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
-ms.openlocfilehash: 614930fb11e65404416e604c94351e2754b8e941
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 9f082c5f198ebd7123058bd250d3fef55494d553
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40190984"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287545"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 При создании кластеров AKS или управлении ими иногда вы можете сталкиваться с проблемами. В этой статье описаны некоторые распространенные проблемы и действия по устранению неполадок.
@@ -31,7 +31,7 @@ ms.locfileid: "40190984"
 Если вы развертываете кластер AKS на портале Azure, максимальное число модулей pod на узел по умолчанию составляет 30.
 Если вы развертываете кластер AKS с помощью Azure CLI, максимальное число модулей pod на узел по умолчанию составляет 110. (Убедитесь, что вы используете последнюю версию Azure CLI.) Это значение по умолчанию можно изменить с помощью параметра –max-nodes-per-pod в команде az aks create.
 
-### <a name="i-am-getting--insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку "insufficientSubnetSize" при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что делать?
+### <a name="i-am-getting-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку "insufficientSubnetSize" при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что делать?
 
 В варианте пользовательской конфигурации виртуальной сети, выбранном для сетей во время создания AKS, для IPAM используется Azure CNI. В кластере AKS может быть любое число узлов в диапазоне от 1 до 100. Исходя из вышесказанного, размер подсети должен быть больше количества узлов и максимального числа модулей pod на узел: размер подсети > количества узлов в кластере * максимальное число модулей на узел.
 

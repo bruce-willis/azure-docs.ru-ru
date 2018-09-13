@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/08/2018
 ms.author: carlrab
-ms.openlocfilehash: 1d1cad4b614eb35be9235a721368db8048be050a
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: fcb7f2c1bb3e1653b9f8112abc0effaddc45fa54
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39632796"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43306475"
 ---
 # <a name="prepay-for-sql-database-compute-resources-with-azure-sql-database-reserved-capacity"></a>Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности
 
@@ -65,13 +65,14 @@ ms.locfileid: "39632796"
 
 Сведения о том, как управлять резервированием Базы данных SQL с получением резервной мощности, см. в статье [Управление зарезервированными экземплярами в Azure](../billing/billing-manage-reserved-vm-instance.md).
 
-Дополнительные сведения о резервировании в Azure см. в следующих статьях:
+Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
 - [Основные сведения о резервировании в Azure](../billing/billing-save-compute-costs-reservations.md)
-- [Управление резервированиями Azure](../billing/billing-manage-reserved-vm-instance.md)
+- [Управление Azure Reserved VM Instances](../billing/billing-manage-reserved-vm-instance.md)
+- [Сведения о скидках на резервирование Azure](../billing/billing-understand-reservation-charges.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../billing/billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md)
-- [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)
+- [Sell Microsoft Azure Reserved Instances](https://docs.microsoft.com/partner-center/azure-reservations) (Продажа зарезервированных экземпляров Microsoft Azure)
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 

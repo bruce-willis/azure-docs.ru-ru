@@ -1,25 +1,18 @@
 ---
-title: Процедуры настройки канала ExpressRoute | Документация Майкрософт
+title: Процедуры настройки канала Azure ExpressRoute | Документация Майкрософт
 description: На этой странице описана процедура настройки канала ExpressRoute и пирингов
-documentationcenter: na
 services: expressroute
 author: cherylmc
-manager: carmonm
-editor: ''
-ms.assetid: 55e0418c-e0bf-44a7-9aa1-720076df9297
 ms.service: expressroute
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 05/12/2017
+ms.topic: conceptual
+ms.date: 08/29/2018
 ms.author: cherylmc
-ms.openlocfilehash: cba1b2cfee379e7d2b079bcb3089981ef1044d66
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 765050c9c21c7ba752535fc391cc9bb7d8ac4083
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23013129"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43301044"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
 На этой странице описаны процедуры подготовки служб и настройки маршрутизации на высоком уровне.
@@ -34,8 +27,8 @@ ms.locfileid: "23013129"
 4. Настройте домены маршрутизации. Если ваш поставщик услуг подключения выполняет для вас управление третьего уровня, он настроит и маршрутизацию для вашего канала. Если поставщик услуг подключения предлагает только услуги второго уровня, настройте маршрутизацию согласно инструкциям на страницах [Требования к маршрутизации](expressroute-routing.md) и [Настройка маршрутизации](expressroute-howto-routing-classic.md).
    
    * Включите частный пиринг Azure — он требуется для подключения к виртуальным машинам и (или) облачным службам, развернутым в виртуальных сетях.
-   * Включите общедоступный пиринг Azure — он нужен в случае, если вы захотите подключиться к службам Azure, размещенным по общедоступным IP-адресам. Включение этого пиринга требуется для доступа к ресурсам Azure, если для частного пиринга Azure вы выбрали маршрутизацию по умолчанию.
-   * Включите пиринг Майкрософт — он требуется для доступа к Office 365 и Dynamics 365. 
+
+   * Включите пиринг Майкрософт — он требуется для доступа к Office 365 и Dynamics 365. Кроме того, все службы Azure PaaS доступны через пиринг Майкрософт.
      
      > [!IMPORTANT]
      > Для подключения к Майкрософт нельзя использовать прокси-сервер или ресурс, который используется для подключения к Интернету. Подключение к ExpressRoute и к Интернету через один и тот же ресурс приведет к асимметричной маршрутизации и вызовет проблемы подключения в вашей сети.

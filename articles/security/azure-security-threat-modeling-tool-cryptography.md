@@ -3,23 +3,23 @@ title: Шифрование. Средство моделирования угр�
 description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
 services: security
 documentationcenter: na
-author: RodSan
-manager: RodSan
-editor: RodSan
+author: jegeib
+manager: jegeib
+editor: jegeib
 ms.assetid: na
 ms.service: security
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/17/2017
-ms.author: rodsan
-ms.openlocfilehash: 5e5d487c4c793a49ce1d4ac17f6fcd672e09bb90
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.date: 02/07/2017
+ms.author: jegeib
+ms.openlocfilehash: 4128d113535c67c0b440dc3fb275af05b5c1c1ae
+ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30911664"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43306151"
 ---
 # <a name="security-frame-cryptography--mitigations"></a>Механизм безопасности. Шифрование | Устранение угроз 
 | Продукт или служба | Статья |

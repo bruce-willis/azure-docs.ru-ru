@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: dd0bf50d73b70e37195e8e5e45336b68e4e883e7
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 477bd6047da639dcf21592a7ec0c1b80844e031e
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37915645"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43337740"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "37915645"
 4. Выберите **Настроить экран согласия**.
 5. Выберите или укажите допустимый **электронный адрес**, заполните поле **Product name shown to users** (Отображаемое для пользователей название продукта) и щелкните **Сохранить**.
 6. Из списка **Application type** (Тип приложения) выберите **Web application** (Веб-приложение).
-7. В поле **Name** (Имя) введите имя приложения, затем введите `https://login.microsoftonline.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com).
+7. В поле **Name** (Имя) введите имя приложения, затем введите `https://{tenant}.b2clogin.com` в поле **Authorized JavaScript origins** (Авторизованные источники JavaScript) и `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` — в поле **Authorized redirect URIs** (Авторизованные URI перенаправления). Замените **{tenant}** именем своего клиента (например, contosob2c).
 8. Нажмите кнопку **Создать**.
 9. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Оба значения потребуются для настройки Google в качестве поставщика удостоверений в вашем клиенте. **Секрет клиента** — это важные учетные данные безопасности.
 

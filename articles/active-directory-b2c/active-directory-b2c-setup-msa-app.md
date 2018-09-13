@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/05/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 16e4dbac4c8146b048d4d9b76544677a6111e2a5
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 338c2a197cb50091c3b272e0ce590341ffda1d7f
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37900835"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43341089"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "37900835"
 3. Укажите **имя** приложения и щелкните **Создать**.
 4. На странице регистрации скопируйте значение **Идентификатор приложения**. Оно потребуется для настройки учетной записи Майкрософт в качестве поставщика удостоверений в вашем клиенте.
 5. Щелкните **Add platform** (Добавить платформу) и выберите вариант **Веб**.
-6. Введите значение `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` в поле **Redirect URLs** (URI перенаправления). Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com).
+6. Введите значение `https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp` в поле **Redirect URLs** (URI перенаправления). Замените **{tenant}** именем своего клиента (например, contosob2c).
 7. Выберите **Generate New Password** (Создать новый пароль) в разделе **Application Secrets** (Секреты приложения) Скопируйте новый пароль с экрана. Он необходим для настройки учетной записи Майкрософт в качестве поставщика удостоверений в вашем клиенте. Данный пароль — важный элемент обеспечения безопасности.
 
 ## <a name="configure-a-microsoft-account-as-an-identity-provider"></a>Настройка учетной записи Microsoft в качестве поставщика удостоверений

@@ -3,7 +3,7 @@ title: Управление потреблением и оплатой для Az
 description: Подробные процессы регистрации Azure Stack в роли поставщика облачных служб (CSP) и добавления клиентов для выставления счетов.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: brenduns
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2018
+ms.date: 08/30/2018
 ms.author: brenduns
 ms.reviewer: alfredo
-ms.openlocfilehash: 66bab9f4b5099099039aa0f60cd86ef23e73cd1f
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 9bb4a4ea81f2dc0fb11e2f7cae1b9d02b0edfdde
+ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715691"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43341441"
 ---
 # <a name="manage-usage-and-billing-for-azure-stack-as-a-cloud-service-provider"></a>Управление потреблением и оплатой для Azure Stack в роли поставщика облачных служб 
 
@@ -58,7 +58,7 @@ ms.locfileid: "39715691"
 
 ## <a name="register-azure-stack"></a>Регистрация Azure Stack
 
-Чтобы зарегистрировать Azure Stack, воспользуйтесь статьей [Регистрация Azure Stack в Azure](azure-stack-registration.md).
+Используйте CSPSS подписку, созданную следуя сведениям, приведенным в предыдущем разделе для регистрации Azure Stack в Azure. Дополнительные сведения см. в разделе [Регистрация Azure Stack в подписке Azure](azure-stack-registration.md).
 
 ## <a name="add-end-customer"></a>Добавление клиента
 

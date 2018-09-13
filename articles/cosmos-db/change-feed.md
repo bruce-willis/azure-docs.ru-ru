@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: rafats
-ms.openlocfilehash: e53f1e62b9265d2eec2f49537cc05c865e1436f3
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 3170ee1b48aa332a8730ba835396761ca5ef44c7
+ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902968"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43287331"
 ---
 # <a name="working-with-the-change-feed-support-in-azure-cosmos-db"></a>Работа с поддержкой веб-канала изменений в Azure Cosmos DB
 
@@ -31,12 +31,6 @@ ms.locfileid: "37902968"
 
 > [!NOTE]
 > Поддержка канала изменений предоставляется для всех моделей данных и контейнеров в Azure Cosmos DB. Однако канал изменений считывается с помощью клиента SQL и сериализует элементы в формат JSON. Из-за форматирования в JSON клиенты MongoDB будут сталкиваться с несоответствием между документами в формате BSON и каналом изменений в формате JSON.
-
-В следующем видео руководитель программы Azure Cosmos DB Эндрю Лю (Andrew Liu) покажет вам, как работает канал изменений Azure Cosmos DB.
-
-> [!VIDEO https://www.youtube.com/embed/mFnxoxeXlaU]
->
->
 
 ## <a name="how-does-change-feed-work"></a>Как работает канал изменений?
 
