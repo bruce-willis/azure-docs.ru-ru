@@ -232,11 +232,11 @@
 
 
 #### Регистрация приложения
-##### [Заполнение полей для объекта приложения](application-dev-registration-config-specific-application-property-how-to.md)
-##### [Изменение значений по умолчанию для времени существования маркера](application-dev-registration-config-change-token-lifetime-how-to.md)
+##### [Заполнение полей для объекта приложения](develop/registration-config-specific-application-property-how-to.md)
+##### [Изменение значений по умолчанию для времени существования маркера](develop/registration-config-change-token-lifetime-how-to.md)
 
 #### Authentication
-##### [Настройка конечных точек](application-dev-registration-config-how-to.md)
+##### [Настройка конечных точек](develop/registration-config-how-to.md)
 
 #### условный доступ;
 ##### [Клиент не соответствует предварительным требованиям для регистрации устройства](active-directory-conditional-access.md)
@@ -248,7 +248,7 @@
 ##### [Какие приложения поддерживают условный доступ?](active-directory-conditional-access-supported-apps.md)
 
 #### Поиск API
-##### [Поиск API](application-dev-api-find-an-api-how-to.md)
+##### [Поиск API](develop/api-find-an-api-how-to.md)
 
 #### Управление доступом
 ##### [Назначение приложения пользователям и группам](manage-apps/methods-for-assigning-users-and-groups.md)
@@ -258,14 +258,14 @@
 ##### [Непредусмотренное приложение в списке приложений](manage-apps/application-types.md)
 
 #### Мультитенантные приложения
-##### [Настройка нового приложения](application-dev-setup-multi-tenant-app.md)
-##### [Добавление приложения в коллекцию](application-dev-registration-config-multi-tenant-application-add-to-gallery-how-to.md)
+##### [Настройка нового приложения](develop/setup-multi-tenant-app.md)
+##### [Добавление приложения в коллекцию](develop/registration-config-multi-tenant-application-add-to-gallery-how-to.md)
 
 #### Разрешения
-##### [Выбор разрешений для API](application-dev-perms-for-given-api.md)
-##### [Предоставление разрешений приложению](application-dev-registration-config-grant-permissions-how-to.md)
-##### [Делегированные разрешения и разрешения, предоставляемые приложениям](application-dev-delegated-and-app-perms.md)
-##### [Согласие для приложения](application-dev-consent-framework.md)
+##### [Выбор разрешений для API](develop/perms-for-given-api.md)
+##### [Предоставление разрешений приложению](develop/registration-config-grant-permissions-how-to.md)
+##### [Делегированные разрешения и разрешения, предоставляемые приложениям](develop/delegated-and-app-perms.md)
+##### [Согласие для приложения](develop/consent-framework.md)
 
 #### Подготовка
 ##### [Сколько времени это занимает](manage-apps/application-provisioning-when-will-provisioning-finish-specific-user.md)
@@ -278,7 +278,7 @@
 
 #### Единый вход
 ##### [Выбор метода](manage-apps/single-sign-on-modes.md)
-##### [Настройка](application-dev-registration-config-sso-how-to.md)
+##### [Настройка](develop/registration-config-sso-how-to.md)
 ##### [Настройка федеративного единого входа в приложения из коллекции](manage-apps/configure-federated-single-sign-on-gallery-applications.md)
 ##### [Настройка федеративного единого входа в приложения из коллекции. Распространенные проблемы](manage-apps/configure-federated-single-sign-on-gallery-applications-problems.md)
 ##### [Настройка федеративного единого входа в приложения не из коллекции](manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
@@ -303,7 +303,7 @@
 ##### [Проблема с локальным приложением — Application Proxy](manage-apps/application-sign-in-problem-on-premises-application-proxy.md)
 
 ### [Разработка приложений](active-directory-applications-guiding-developers-for-lob-applications.md)
-### [Библиотека документов](active-directory-apps-index.md)
+
 
 ## Управление каталогом
 ### [Azure AD Connect](./connect/active-directory-aadconnect.md)
