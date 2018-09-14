@@ -40,8 +40,20 @@ items:
     items:
     - name: Автоматическая подготовка пользователей
       href: configure-automatic-user-provisioning-portal.md
+    - name: Приложения SaaS
+      href: user-provisioning.md
     - name: Приложения с поддержкой SCIM
       href: use-scim-to-provision-users-and-groups.md
+    - name: Настройка атрибутов приложения
+      href: Customize-application-attributes.md
+    - name: Написание выражений для сопоставления атрибутов
+      href: functions-for-customizing-application-data.md
+    - name: Фильтры области
+      href: define-conditional-rules-for-provisioning-user-accounts.md
+    - name: Отчеты об автоматической подготовке пользователей
+      href: check-status-user-account-provisioning.md
+    - name: Устранение неполадок с подготовкой пользователей
+      href: application-provisioning-config-problem.md
   - name: Безопасность приложения
     items:
     - name: Параметры доступа к приложениям
@@ -50,24 +62,40 @@ items:
       href: certificate-signing-options.md
     - name: Управление сертификатами
       href: manage-certificates-for-federated-single-sign-on.md
+    - name: Ограничения клиента
+      href: tenant-restrictions.md
   - name: Единый вход
     items:
+    - name: Обзор
+      href: what-is-single-sign-on.md
     - name: Методы единого входа
       href: application-proxy-single-sign-on.md
+    - name: Выбор метода
+      href: single-sign-on-modes.md
     - name: Обнаружение домашней области
       href: configure-authentication-for-federated-users-portal.md
     - name: Ограниченное делегирование Kerberos
       href: application-proxy-configure-single-sign-on-with-kcd.md
     - name: Хранение паролей
       href: application-proxy-configure-single-sign-on-password-vaulting.md
-    - name: PingAccess
+    - name: Заголовки
       href: application-proxy-configure-single-sign-on-with-ping-access.md
 - name: Практические руководства
   items:
   - name: Интеграция облачных приложений
     items:
+    - name: Добавление приложения
+      items:
+      - name: Выбор типа приложения
+        href: choose-application-type.md
+      - name: Распространенные проблемы — приложения из коллекции
+        href: adding-gallery-app-common-problems.md
+      - name: Распространенные проблемы — приложения не из коллекции
+        href: adding-non-gallery-app-common-problems.md
     - name: Изменение имени или логотипа
       href: change-name-or-logo-portal.md
+    - name: Руководства по приложениям SaaS
+      href: ../saas-apps/tutorial-list.md
   - name: Интеграция локальных приложений
     items:
     - name: Включение прокси приложения
@@ -92,35 +120,171 @@ items:
       href: application-proxy-remove-personal-data.md
     - name: Настройка личного домена
       href: application-proxy-configure-custom-domain.md
-    - name: Интеграция с удаленным рабочим столом
-      href: application-proxy-integrate-with-remote-desktop-services.md
-    - name: Интеграция с SharePoint
-      href: application-proxy-integrate-with-sharepoint-server.md
-    - name: Интеграция с Teams
-      href: application-proxy-integrate-with-teams.md
-    - name: Интеграция с Tableau
-      href: application-proxy-integrate-with-tableau.md
-    - name: Интеграция с Qlik
-      href: application-proxy-qlik.md
     - name: Ошибки конфигурации
       href: application-proxy-troubleshoot.md
+    - name: Пошаговые руководства по публикации
+      items:
+      - name: Интеграция с удаленным рабочим столом
+        href: application-proxy-integrate-with-remote-desktop-services.md
+      - name: Интеграция с SharePoint
+        href: application-proxy-integrate-with-sharepoint-server.md
+      - name: Интеграция с Teams
+        href: application-proxy-integrate-with-teams.md
+      - name: Интеграция с Tableau
+        href: application-proxy-integrate-with-tableau.md
+      - name: Интеграция с Qlik
+        href: application-proxy-qlik.md
+    - name: Устранение неполадок прокси приложения
+      items:
+      - name: Проблемы при отображении страницы приложения
+        href: application-proxy-page-appearance-broken-problem.md
+      - name: Слишком долгая загрузка приложения
+        href: application-proxy-page-load-speed-problem.md
+      - name: Ссылки на странице приложения не работают
+        href: application-proxy-page-links-broken-problem.md
+      - name: Порты, которые необходимо открыть для приложения
+        href: application-proxy-connectivity-ports-how-to.md
+      - name: Не удается найти рабочий соединитель в группе соединителей для приложения
+        href: application-proxy-connectivity-no-working-connector.md
+      - name: Настройка на портале администрирования
+        href: application-proxy-config-how-to.md
+      - name: Настройка единого входа в приложение
+        href: application-proxy-config-sso-how-to.md
+      - name: Проблема при создании приложения на портале администрирования
+        href: application-proxy-config-problem.md
+      - name: Настройка ограниченного делегирования Kerberos
+        href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
+      - name: Настройка для использования PingAccess
+        href: application-proxy-back-end-ping-access-how-to.md
+      - name: Ошибка "Can't Access this Corporate Application" (Нет доступа к этому корпоративному приложению)
+        href: application-proxy-sign-in-bad-gateway-timeout-error.md
+      - name: Проблема при установке соединителя агента прокси приложения
+        href: application-proxy-connector-installation-problem.md
+      - name: Проблемы со входом
+        href: application-sign-in-problem-on-premises-application-proxy.md
+  - name: Подготовка пользователей
+    items:
+    - name: Сколько времени это занимает
+      href: application-provisioning-when-will-provisioning-finish-specific-user.md
+    - name: Подготовка в течение нескольких часов для приложения из коллекции
+      href: application-provisioning-when-will-provisioning-finish.md
+    - name: Настройка подготовки пользователей для приложения из коллекции
+      href: application-provisioning-config-how-to.md
+    - name: Проблема при настройке подготовки пользователей для приложения из коллекции
+      href: application-provisioning-config-problem.md
+    - name: Проблема при сохранении учетных данных администратора во время настройки подготовки пользователей для приложения из коллекции
+      href: application-provisioning-config-problem-storage-limit.md
+    - name: Не удается подготовить пользователей для приложения из коллекции
+      href: application-provisioning-config-problem-no-users-provisioned.md
+    - name: Для приложения из коллекции подготовлены не те пользователи
+      href: application-provisioning-config-problem-wrong-users-provisioned.md
   - name: Доступ к приложениям
     items:
+    - name: Типы приложений
+      href: application-types.md
+    - name: Способы назначения пользователей и групп для приложения
+      href: methods-for-assigning-users-and-groups.md
     - name: Назначение приложения пользователю
       href: assign-user-or-group-access-portal.md
+    - name: Способы удаления доступа пользователя к приложению
+      href: methods-for-removing-user-access.md
+    - name: Непредусмотренное назначение пользователю
+      href: ways-users-get-assigned-to-applications.md
     - name: Отмена доступа для пользователя или группы
       href: remove-user-or-group-access-portal.md
     - name: Скрытие приложения от пользователя
       href: hide-application-from-user-portal.md
     - name: Отключение входа для пользователя
       href: disable-user-sign-in-portal.md
+    - name: Настройка самостоятельного назначения приложения
+      href: manage-self-service-access.md
+  - name: Единый вход
+    items:
+    - name: Настройка приложений не из коллекции
+      href: configure-single-sign-on-non-gallery-applications.md
+    - name: Настройка федеративного единого входа в приложения из коллекции
+      href: configure-federated-single-sign-on-gallery-applications.md
+    - name: 'Настройка федеративного единого входа в приложения из коллекции: распространенные проблемы'
+      href: configure-federated-single-sign-on-gallery-applications-problems.md
+    - name: Настройка федеративного единого входа в приложения не из коллекции
+      href: configure-federated-single-sign-on-non-gallery-applications.md
+    - name: 'Настройка федеративного единого входа в приложения не из коллекции: распространенные проблемы'
+      href: configure-federated-single-sign-on-non-gallery-applications-problems.md
+    - name: Настройка входа по паролю для приложений из коллекции
+      href: configure-password-single-sign-on-gallery-applications.md
+    - name: 'Настройка входа по паролю для приложений из коллекции: распространенные проблемы'
+      href: configure-password-single-sign-on-gallery-applications-problems.md
+    - name: Настройка входа по паролю для приложений не из коллекции
+      href: configure-password-single-sign-on-non-gallery-applications.md
+    - name: 'Настройка входа по паролю для приложений не из коллекции: распространенные проблемы'
+      href: configure-password-single-sign-on-non-gallery-applications-problems.md
+  - name: Панель доступа
+    items:
+    - name: Управление расширением браузера
+      href: manage-access-panel-browser-extension.md
+    - name: Приложение не отображается
+      href: access-panel-troubleshoot-application-not-appearing.md
+    - name: Непредусмотренное отображение приложения
+      href: access-panel-troubleshoot-unexpected-application.md
+    - name: Не удается войти
+      href: access-panel-troubleshoot-web-sign-in-problem.md
+    - name: Ошибка при установке расширения браузера
+      href: access-panel-extension-problem-installing.md
+    - name: Использование самостоятельного доступа к приложению
+      href: access-panel-manage-self-service-access.md
+    - name: Ошибка при использовании самостоятельного доступа к приложению
+      href: access-panel-troubleshoot-self-service-access.md
   - name: Миграция
     items:
     - name: Перенос приложения ADFS в Azure
       href: migrate-adfs-apps-to-azure.md
-ms.openlocfilehash: 57a377c56764272b70814bc78b31f718d3d902b7
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+  - name: Устранение неполадок при входе пользователей
+    items:
+    - name: Непредусмотренный запрос на продолжение
+      href: application-sign-in-unexpected-user-consent-prompt.md
+    - name: Ошибка при предоставлении согласия пользователем
+      href: application-sign-in-unexpected-user-consent-error.md
+    - name: Проблемы при входе с пользовательского портала
+      href: application-sign-in-other-problem-deeplink.md
+    - name: Проблемы при входе с панели доступа
+      href: application-sign-in-other-problem-access-panel.md
+    - name: Ошибка на странице входа в приложение
+      href: application-sign-in-problem-application-error.md
+    - name: Проблема при едином входе с помощью пароля — приложение не из коллекции
+      href: application-sign-in-problem-password-sso-non-gallery.md
+    - name: Проблема при едином входе с помощью пароля — приложение из коллекции
+      href: application-sign-in-problem-password-sso-gallery.md
+    - name: Проблема при входе в приложение Майкрософт
+      href: application-sign-in-problem-first-party-microsoft.md
+    - name: Проблема при федеративном едином входе в приложение не из коллекции
+      href: application-sign-in-problem-federated-sso-non-gallery.md
+    - name: Проблема при федеративном едином входе в приложение из коллекции
+      href: application-sign-in-problem-federated-sso-gallery.md
+    - name: Проблемы со специально разработанным приложением
+      href: application-sign-in-problem-custom-dev.md
+- name: Ресурсы
+  items:
+  - name: Планы развертывания Azure Active Directory
+    href: ../fundamentals/active-directory-deployment-plans.md
+  - name: Форум отзывов и предложений по Azure
+    href: https://feedback.azure.com/forums/169401-azure-active-directory
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=security-identity
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/active-directory
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=active-directory
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-active-directory
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+ms.openlocfilehash: de8f961b5f39751aac95c7fcde47a73c848ef96e
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44381822"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44721795"

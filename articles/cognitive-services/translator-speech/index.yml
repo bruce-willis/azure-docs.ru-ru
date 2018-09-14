@@ -1,0 +1,63 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 879dd4e9b20a57257dd7b93fddb54168d6bceb33
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35624395"
+documentType: LandingData
+title: Документация по API перевода речи
+metadata:
+  title: Документация по службе "Перевод речи". Руководства и справочник по API
+  titleSuffix: Cognitive Services
+  description: Узнайте, как с помощью API перевода речи перевести речь в речь и речь в текст на несколько языков. В руководствах описано, как написать код для использования службы "Перевод речи".
+  services: cognitive-services
+  author: Jann-Skotdal
+  manager: Chris.Wendt
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 3/5/2018
+  ms.author: v-jansko
+abstract:
+  description: API перевода речи от Майкрософт, входящий в коллекцию API-интерфейсов Microsoft Cognitive Services, — это облачная служба автоматического перевода, которая позволяет переводить речь в речь и речь в текст. В его основе лежит технология REST, поэтому интерфейс можно использовать для добавления перевода непрерывной речи в режиме реального времени, для перевода речи в приложения, средства или решения, работа которых предусматривает перевод речи на несколько языков независимо от языка перевода операционной системы или разработки. Список поддерживаемых языков см. в статье <a href="languages.md">Языки, поддерживаемые в API перевода речи Microsoft Translator</a>.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Начните работу с API перевода речи, составив запрос на перевод и просмотрев ответ.
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: media/index/logo_csharp.svg
+    - image:
+        src: media/index/logo_java.svg
+    - image:
+        src: media/index/logo_nodejs.svg
+    - image:
+        src: media/index/logo_python.svg
+    rows:
+    - title: Перевод речи с помощью API
+      values:
+      - href: quickstarts/csharp
+      - href: quickstarts/java
+      - href: quickstarts/nodejs
+      - href: quickstarts/python
+      - href: quickstarts/php
+      - href: quickstarts/ruby
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Инструкции по разработке приложений с использованием API перевода речи.
+  - type: paragraph
+    text: <a href="tutorial-translator-speech-csharp.md">Приложение с поддержкой перевода речи</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: API
+      html: <p><a href="https://aka.ms/translator-speech-api">Справочник по API</a></p>

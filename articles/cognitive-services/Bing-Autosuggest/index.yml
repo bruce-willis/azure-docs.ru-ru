@@ -1,0 +1,70 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 88413db5556e20632112444e3779bb5eee0ecf8e
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35624428"
+documentType: LandingData
+title: Документация по API автозаполнения Bing
+metadata:
+  document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
+  title: Документация по API автозаполнения Bing. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
+  description: Узнайте, как с помощью API автозаполнения Bing получать предлагаемые запросы на основе частичного запроса. В руководствах описано, как создавать приложения, использующие эту службу.
+  services: cognitive-services
+  author: v-jaswel
+  manager: kamrani
+  ms.service: autosuggest
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 10/10/2017
+  ms.author: v-jaswel
+abstract:
+  description: API автозаполнения Bing позволяет отправить частичный поисковый запрос и получить список предложений по запросам, которые другие пользователи вводили для поиска.  Например, по мере того, как пользователь вводит каждый символ слова для поиска, вызывается этот API и раскрывающийся список в поле поиска заполняется строками предложенных запросов. Узнайте, как использовать API автозаполнения Bing, изучив краткие инструкции, примеры и руководства.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Начните работу с API автозаполнения Bing, составив запрос и просмотрев ответ в формате JSON.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/index/logo_csharp.svg
+      href: quickstarts/csharp
+      text: C&#35;
+    - image:
+        src: media/index/logo_java.svg
+      href: quickstarts/java
+      text: Java
+    - image:
+        src: media/index/logo_nodejs.svg
+      href: quickstarts/nodejs
+      text: Node.js
+    - image:
+        src: media/index/logo_php.svg
+      href: quickstarts/php
+      text: PHP
+    - image:
+        src: media/index/logo_python.svg
+      href: quickstarts/python
+      text: Python
+    - image:
+        src: media/index/logo_ruby.svg
+      href: quickstarts/ruby
+      text: Ruby
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Инструкции по разработке приложений с использованием API автозаполнения Bing.
+  - type: paragraph
+    text: <a href="tutorials/autosuggest.md">Одностраничное веб-приложение</a> | <a href="tutorials/autosuggest-source.md">Исходный код</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API
+      html: <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference">API автозаполнения Bing версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference">API автозаполнения Bing версии 5</p>

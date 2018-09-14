@@ -1,0 +1,75 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 94663fc33c172497c0ff1b129dd557eda0f4344a
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35624518"
+documentType: LandingData
+title: Документация по API Bing для поиска изображений
+metadata:
+  document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
+  title: Документация по API Bing для поиска изображений. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
+  description: Узнайте, как с помощью API Bing для поиска изображений получить изображения из Интернета, соответствующие запросам пользователя. В руководствах описано, как создавать приложения, использующие эту службу.
+  services: cognitive-services
+  author: v-jerkin
+  manager: carolz
+  ms.service: bing-image-search
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 10/10/2017
+  ms.author: v-jerkin
+abstract:
+  description: API Bing для поиска изображений работает по тому же принципу, что и страница Bing.com/images, которая возвращает изображения, определенные как соответствующие запросу пользователя.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Начните работу с API Bing для поиска изображений, составив запрос и просмотрев ответ в формате JSON.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/index/logo_csharp.svg
+      href: quickstarts/csharp
+      text: C&#35;
+    - image:
+        src: media/index/logo_java.svg
+      href: quickstarts/java
+      text: Java
+    - image:
+        src: media/index/logo_nodejs.svg
+      href: quickstarts/nodejs
+      text: Node.js
+    - image:
+        src: media/index/logo_php.svg
+      href: quickstarts/php
+      text: PHP
+    - image:
+        src: media/index/logo_python.svg
+      href: quickstarts/python
+      text: Python
+    - image:
+        src: media/index/logo_ruby.svg
+      href: quickstarts/ruby
+      text: Ruby
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Инструкции по разработке приложений с использованием API Bing для поиска изображений.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="tutorial-bing-image-search-single-page-app">Одностраничное веб-приложение</a> | <a href="tutorial-bing-image-search-single-page-app-source">Исходный код</a>
+    - html: <a href="tutorial-image-post">Отправка изображений Bing для аналитики</a> <a href="tutorial-image-post-source">(исходный код)</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API
+      html: <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference">API Bing для поиска изображений версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v5-reference/">API Bing для поиска изображений версии 5</p>
+    - title: Пакеты SDK
+      html: <p><a href="sdk.md">Пакет SDK для Поиска Bing</a></p>

@@ -1,0 +1,54 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 3314df7dc932553f56e0c937c8065f55f9dc50a3
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35624322"
+documentType: LandingData
+title: Документация по Пользовательской службе принятия решений
+metadata:
+  title: Пользовательская служба принятия решений. Руководства и справочник по API — Azure Cognitive Services | Документация Майкрософт
+  meta.description: Learn how to create a contextual, decision-making API that improves with experience
+  services: cognitive-services
+  author: noellelacharite
+  manager: nolachar
+  ms.service: cognitive-services
+  ms.component: custom-decision-service
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05/01/2018
+  ms.author: nolachar
+abstract:
+  description: Пользовательская служба принятия решений Azure позволяет создавать интеллектуальные системы с помощью облачного API-интерфейса, поддерживающего принятие решений на основе контекста. Эта служба использует возможности обучения с подкреплением и адаптирует содержимое в приложении, чтобы повысить общую вовлеченность пользователей. Система объединяет отзывы пользователей в решения в режиме реального времени и реагирует на возникающие тенденции и последние новости за считаные минут. Из этих кратких руководств вы узнаете, как зарегистрировать свое приложение и вызывать API из браузера или приложения. Также вы узнаете, как персонализировать статьи и представить содержимое в виде готовых "признаков" для машинного обучения.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Зарегистрируйте свое приложение и вызовите API Пользовательской службы принятия решений прямо из браузера или приложения для смартфона.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-get-started-register">Регистрация приложения</a>
+    - html: <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-get-started-browser">Вызов API из браузера</a>
+    - html: <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-get-started-app">Вызов API из приложения</a>
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Персонализируйте статьи на первой странице веб-сайта и определите содержимое как готовые "признаки" для машинного обучения с помощью API-интерфейсов Пользовательской службы принятия решений.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-tutorial-news">Персонализация статей</a>
+    - html: <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-tutorial-ml">Машинное обучение</a>
+- title: Справочные материалы
+  items:
+  - type: paragraph
+    text: Эти API-интерфейсы работают вместе. В справочнике приводится описание трех API, участвующих в процессе пользовательского принятия решений. API службы "Экспериментирование" использует файлы журналов, созданные при помощи API LogDownloader. Подробные сценарии доступны в статьях.
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API
+      html: <p><a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-api-reference">API</a></p><p><a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-experimentation-reference">Экспериментирование</a></p><p><a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-log-downloader-reference">LogDownloader</a><p>

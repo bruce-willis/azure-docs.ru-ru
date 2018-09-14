@@ -1,0 +1,64 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 85613f24d7bfed03a94733509aa5cb91e59f4333
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35624453"
+documentType: LandingData
+title: Документация по Пользовательскому поиску Bing
+metadata:
+  title: Документация по API пользовательского поиска Bing. Руководства и справочник по API — Microsoft Cognitive Services | Документация Майкрософт
+  description: Узнайте, как с помощью портала службы "Пользовательский поиск Bing" создавать пользовательские экземпляры службы поиска
+  services: cognitive-services
+  author: v-deken
+  manager: cgronlun
+  layout: LandingPage
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05/07/2018
+  ms.author: v-deken
+abstract:
+  description: Узнайте, как с помощью службы "Пользовательский поиск Bing" создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас. Например, если веб-сайт по продаже велосипедов предоставляет функцию поиска, то вы можете указать домены, дочерние сайты и веб-страницы, по которым Bing будет выполнять поиск. Инструкции см. в учебных материалах, кратких руководствах и справочниках по API.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: 'Реализация поиска в пользовательском представлении веб-сайта с помощью следующих языков:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/logo_Csharp.svg
+      href: call-endpoint-csharp
+      text: C&#35;
+    - image:
+        src: media/logo_java.svg
+      href: call-endpoint-java
+      text: Java
+    - image:
+        src: media/logo_nodejs.svg
+      href: call-endpoint-nodejs
+      text: Node.js
+    - image:
+        src: media/logo_python.svg
+      href: call-endpoint-python
+      text: Python
+- title: Пошаговое руководство
+  items:
+  - type: paragraph
+    text: Инструкции по разработке приложений с использованием API пользовательского поиска Bing.
+  - type: paragraph
+    text: <a href="tutorials/custom-search-web-page">Создание веб-страницы пользовательского поиска</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API
+      html: <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference">API пользовательского поиска Bing версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-autosuggest-api-v7-reference">API пользовательского автозаполнения Bing версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference">API Bing для пользовательского поиска изображений версии 7</a></p>
+    - title: Пакеты SDK
+      html: <p><a href="sdk.md">Пакет SDK для Поиска Bing</a></p>
