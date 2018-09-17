@@ -323,34 +323,8 @@
 
 ### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
 
-## Проверки доступа
-### [Обзор проверки доступа](active-directory-azure-ad-controls-access-reviews-overview.md)
-### [Выполнение проверки доступа](active-directory-azure-ad-controls-complete-access-review.md)
-### [Создание проверки доступа](active-directory-azure-ad-controls-create-access-review.md)
-### [Как выполнить проверку доступа](active-directory-azure-ad-controls-perform-access-review.md)
-### [Как проверить доступ](active-directory-azure-ad-controls-how-to-review-your-access.md)
-### [Гостевой доступ с использованием проверок доступа](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md)
-### [Управление доступом пользователей с помощью проверок](active-directory-azure-ad-controls-manage-user-access-with-access-reviews.md)
-### [Управление программами и элементами управления](active-directory-azure-ad-controls-manage-programs-controls.md)
-### [Получение результатов проверок доступа](active-directory-azure-ad-controls-retrieve-access-review.md)
-
-## [Условия использования](active-directory-tou.md)
-
 ## Защита удостоверений
 
-### защиту идентификации Azure AD
-#### [Обзор](identity-protection/overview.md)
-#### [Включение](identity-protection/enable.md)
-#### [Обнаружение уязвимостей](identity-protection/vulnerabilities.md)
-#### [События риска](active-directory-identity-protection-risk-events.md)
-#### [Уведомления](identity-protection/notifications.md)
-#### [Процедура входа](identity-protection/flows.md)
-#### [Моделирование событий риска](identity-protection/playbook.md)
-#### [Разблокирование пользователей](identity-protection/howto-unblock-user.md)
-#### [Блокировка доступа при обнаружении риска безопасности сеанса](identity-protection/quickstart-sign-in-risk-policy.md)
-#### [Часто задаваемые вопросы](identity-protection/faqs.md)
-#### [Глоссарий](identity-protection/glossary.md)
-#### [Microsoft Graph](identity-protection/graph-get-started.md)
 ### [управление привилегированными пользователями;](privileged-identity-management/pim-configure.md?toc=%2fazure%2factive-directory%2ftoc.json)
 
 ## [Развертывание AD FS в Azure](active-directory-aadconnect-azure-adfs.md)
