@@ -3,14 +3,14 @@
 
 # Обзор
 ## [Обзор Data Lake Storage Gen1](data-lake-store-overview.md)
-## [Сравнение Data Lake Storage Gen1 со службой хранилища Azure](data-lake-store-comparison-with-blob-storage.md)
-## [Data Lake Storage Gen1 для обработки больших данных](data-lake-store-data-scenarios.md)
-## [Приложения с открытым кодом, совместимые с Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)
+## [Сравнение со Службой хранилища Azure](data-lake-store-comparison-with-blob-storage.md)
+## [Обработка больших данных](data-lake-store-data-scenarios.md)
+## [Работа с приложениями с открытым исходным кодом](data-lake-store-compatible-oss-other-applications.md)
 ## [Рекомендации по использованию хранилища данных SQL Azure](data-lake-store-best-practices.md)
 
 # Начало работы
-## [Использование портала](data-lake-store-get-started-portal.md)
-## [PowerShell](data-lake-store-get-started-powershell.md)
+## [Использование портала Azure](data-lake-store-get-started-portal.md)
+## [Использование Azure PowerShell](data-lake-store-get-started-powershell.md)
 ## [Использование Azure CLI 2.0](data-lake-store-get-started-cli-2.0.md)
 
 

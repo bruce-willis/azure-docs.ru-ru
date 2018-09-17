@@ -83,6 +83,7 @@
 
 ## [Управление группами и членами](fundamentals/active-directory-manage-groups.md)
 ### [Управление группами](fundamentals/active-directory-groups-create-azure-portal.md)
+### [Удаление группы и ее участников](fundamentals/active-directory-groups-delete-group.md)
 ### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md)
 ## [Управление отчетами](reports-monitoring/overview-reports.md)
 ### [Действие входа](reports-monitoring/concept-sign-ins.md)
@@ -346,6 +347,7 @@
 #### [Процедура входа](identity-protection/flows.md)
 #### [Моделирование событий риска](identity-protection/playbook.md)
 #### [Разблокирование пользователей](identity-protection/howto-unblock-user.md)
+#### [Блокировка доступа при обнаружении риска безопасности сеанса](identity-protection/quickstart-sign-in-risk-policy.md)
 #### [Часто задаваемые вопросы](identity-protection/faqs.md)
 #### [Глоссарий](identity-protection/glossary.md)
 #### [Microsoft Graph](identity-protection/graph-get-started.md)

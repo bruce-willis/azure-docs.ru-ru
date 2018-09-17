@@ -21,8 +21,8 @@ ms.locfileid: "44305620"
 
 | Среда выполнения | Файлы в корневом каталоге |
 |-|-|
-| ASP.NET (только для Windows) | _SLN_-файлы, _CSPROJ_-файлы или _default.aspx_ |
-| ASP.NET Core; | _SLN_-файлы или _CSPROJ_-файлы |
+| ASP.NET (только для Windows) | _\*.SLN_-файлы, _\*.CSPROJ_-файлы или _default.aspx_ |
+| ASP.NET Core; | _\*.SLN_-файлы или _\*.CSPROJ_-файлы |
 | PHP | _index.php_ |
 | Ruby (только для Linux) | _Gemfile_ |
 | Node.js | _server.js_, _app.js_ или _package.json_ со сценарием запуска |

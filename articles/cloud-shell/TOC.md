@@ -7,16 +7,19 @@
 # Функции и средства
 ## [Функции и средства](features.md)
 
-# Инструкции
+# Учебники
+## Ansible
+### [Запуск сборника схем Ansible](/azure/ansible/ansible-run-playbook-in-cloudshell?toc=/azure/cloud-shell/toc.json&bc=/azure/bread/toc.json)
+### [Управление динамическими списками Azure](/azure/ansible/ansible-manage-azure-dynamic-inventories?toc=/azure/cloud-shell/toc.json&bc=/azure/bread/toc.json)
+## Terraform
+### [Создание плана выполнения](example-terraform-bash.md)
+
+# Практические руководства
 ## [Использование Cloud Shell для пользователей Windows](cloud-shell-windows-users.md)
 ## [Сохранение файлов в хранилище](persisting-shell-storage.md)
 ## [Использование окна](using-the-shell-window.md)
 ## [Использование MSI в Cloud Shell](msi-authorization.md)
 ## [Внедрение Cloud Shell](embed-cloud-shell.md)
-
-# Примеры
-## [Bash: создание ресурсов с помощью Terraform](example-terraform-bash.md)
-## [Bash: запуск модулей playbook Ansible](../ansible/ansible-run-playbook-in-cloudshell.md)
 
 # [Использование редактора Cloud Shell](using-cloud-shell-editor.md)
 

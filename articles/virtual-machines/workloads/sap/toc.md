@@ -54,6 +54,19 @@
 ## [Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
 ## [SAP NetWeaver на виртуальных машинах Azure под управлением Linux](suse-quickstart.md)
 ## [SAP NetWeaver в Azure: планирование и реализация](planning-guide.md)
+## [Руководство по развертыванию SAP NetWeaver](deployment-guide.md)
+## [Соединитель SAP LaMa для Azure](lama-installation.md)
+## Руководства по развертыванию СУБД для рабочих нагрузок SAP
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Общие сведения о развертывании СУБД](dbms_guide_general.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](dbms_guide_sqlserver.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](dbms_guide_oracle.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](dbms_guide_ibm.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](dbms_guide_sapase.md)
+### [Развертывание SAP MaxDB, liveCache и сервера содержимого в Azure](dbms_guide_maxdb.md)
+### Доступность SAP HANA в Виртуальных машинах Azure
+### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
+### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
+### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
 ## Высокий уровень доступности в Windows и Linux
 ### [Обзор](sap-high-availability-guide-start.md)
 ### Архитектура высокого уровня доступности
@@ -74,21 +87,7 @@
 ### Использование нескольких SID в SAP
 #### [В Windows с общим диском для экземпляра (A)SCS](sap-ascs-ha-multi-sid-wsfc-shared-disk.md)
 #### [В Windows с общей папкой SOFS для экземпляра (A)SCS](sap-ascs-ha-multi-sid-wsfc-file-share.md)
-## [Руководство по развертыванию SAP NetWeaver](deployment-guide.md)
-## Руководства по развертыванию СУБД для рабочих нагрузок SAP
-### [Рабочие нагрузки SAP на виртуальных машинах Azure. Общие сведения о развертывании СУБД](dbms_guide_general.md)
-### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](dbms_guide_sqlserver.md)
-### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](dbms_guide_oracle.md)
-### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](dbms_guide_ibm.md)
-### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](dbms_guide_sapase.md)
-### [Развертывание SAP MaxDB, liveCache и сервера содержимого в Azure](dbms_guide_maxdb.md)
-### [Руководство по использованию SAP HANA в Azure](hana-vm-operations.md)
-#### Доступность SAP HANA в Виртуальных машинах Azure
-##### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
-##### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
-##### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
-## [Azure Site Recovery для аварийного восстановления SAP](../../../site-recovery/site-recovery-workload.md#protect-sap)
-## [Соединитель SAP LaMa для Azure](lama-installation.md)
+##  [Azure Site Recovery для аварийного восстановления SAP](../../../site-recovery/site-recovery-workload.md#protect-sap)
 # Интеграция AAD с приложением для управления удостоверениями SAP и единый вход
 ## [Интеграция с облаком SAP](../../../active-directory/saas-apps/sap-customer-cloud-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 ## [Интеграция AAD с приложением SAP Cloud Platform Identity Authentication](../../../active-directory/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
@@ -97,5 +96,10 @@
 ## [Интеграция AAD с SAP Business ByDesign](../../../active-directory/saas-apps/sapbusinessbydesign-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 ## [Интеграция AAD с СУБД SAP HANA](../../../active-directory/saas-apps/saphana-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 ##[Единый вход SAML с панели запуска SAP Fiori при помощи Azure AD](https://blogs.sap.com/2017/02/20/your-s4hana-environment-part-7-fiori-launchpad-saml-single-sing-on-with-azure-ad)
+# Интеграция служб Azure с SAP
+## [Использование SAP HANA в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-sap-hana)
+## [DirectQuery и SAP HANA](https://docs.microsoft.com/power-bi/desktop-directquery-sap-hana)
+## [Использование соединителя SAP BW в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-sap-bw-connector)
+## [Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure](https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration)
 # Ресурсы
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)

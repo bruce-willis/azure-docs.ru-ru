@@ -80,7 +80,7 @@ ms.locfileid: "43042541"
 >
 > (*) Версии Cisco ASA 8.4+ с поддержкой IKEv2 могут подключаться к VPN-шлюзу Azure при помощи настраиваемой политики IPsec/IKE с параметром UsePolicyBasedTrafficSelectors. Дополнительные сведения см. в этой [статье](vpn-gateway-connect-multiple-policybased-rm-ps.md).
 >
-> (\**) Маршрутизаторы ISR серии 7200 поддерживают только VPN типа PolicyBased.
+> (\*\*) Маршрутизаторы ISR серии 7200 поддерживают только VPN типа PolicyBased.
 
 ## <a name="configscripts"></a>Загрузка сценариев конфигурации VPN-устройства из Azure
 
