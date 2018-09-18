@@ -40,14 +40,18 @@ items:
     items:
     - name: Установка расширения Visual Studio Code для Terraform
       href: terraform-vscode-extension.md
-- name: Основные понятия
-  items:
-  - name: Интеграция Azure Cloud Shell
-    href: terraform-cloud-shell.md
 - name: Примеры
   items:
   - name: Шаблоны конфигурации
     href: https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples
+- name: Основные понятия
+  items:
+  - name: Интеграция Azure Cloud Shell
+    href: terraform-cloud-shell.md
+- name: Практические руководства
+  items:
+  - name: Хранение состояния в Службе хранилища Azure
+    href: terraform-backend.md
 - name: Справочные материалы
   items:
   - name: Реестр модулей Azure
@@ -60,9 +64,9 @@ items:
     href: https://azure.microsoft.com/solutions/devops/terraform/
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/
-ms.openlocfilehash: e6c4637618d794f96db8ed9ca8eb063a62f704a1
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 6378b8e647afa95666e0a996b546c8d4147e038e
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43663542"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45604032"

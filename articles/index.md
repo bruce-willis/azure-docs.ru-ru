@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: beb993150dca5d6a5b0d4701af8149cf9000e79e
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.openlocfilehash: 9b9bbb9f584cf5fb071e75ea731c2325e334d10d
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391969"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605969"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -995,7 +995,7 @@ Azure DevOps </a>
                                         <li>
                                             <a href="/azure/storage/">
                                                 <img src="media/index/Storage.svg" alt="" />
-                                                <p>служба хранилища.</p>
+                                                <p>Хранилище</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1403,6 +1403,12 @@ Azure DevOps </a>
                                             <a href="/azure/app-service-api/">
                                                 <img src="media/index/app-service-api.svg" alt="" />
                                                 <p>Приложения API</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/azure/azure-signalr/">
+                                                <img src="media/index/azure-signalr.svg" alt="" />
+                                                <p>Служба SignalR Azure</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -2553,6 +2559,25 @@ Azure DevOps </a>
                                                 <div class="cardText">
                                                     <h3>Приложения API</h3>
                                                     <p>Простое создание и использование облачных API</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/azure/azure-signalr">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/azure-signalr.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Служба SignalR Azure</h3>
+                                                    <p>Быстрая разработка веб-приложений, работающих в режиме реального времени</p>
                                                 </div>
                                             </div>
                                         </div>

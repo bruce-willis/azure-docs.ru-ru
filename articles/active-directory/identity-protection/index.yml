@@ -1,0 +1,46 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 04de34624a7902849d42ad62ed4e6a813157ddd9
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45606683"
+documentType: LandingData
+title: Защита идентификации Azure AD
+metadata:
+  document_id: 
+  title: 'Документация по службе "Защита идентификации Azure Active Directory": краткие руководства, основные понятия, справочные материалы | Документация Майкрософт'
+  description: Узнайте, как настроить и протестировать службу "Защита идентификации Azure Active Directory".
+  services: active-directory
+  ms.component: identity-protection
+  author: MarkusVi
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/14/2018
+  ms.author: markvi
+abstract:
+  description: Узнайте, как работает обнаружение потенциально скомпрометированных удостоверений и как реализовать автоматическое реагирование на такие события. Защита идентификации Azure Active Directory — это функция выпуска Azure AD Premium P2, которая позволяет выполнять следующие действия:<ul><li>обнаруживать потенциальные уязвимости, которые могут повлиять на удостоверения организации;</li><li>настраивать политики условного доступа для автоматического реагирования на подозрительные действия, связанные с удостоверениями в организации;</li><li>анализировать подозрительные инциденты и выполнять соответствующие действия для их устранения.</li></ul><br> Перечисленные ниже ресурсы помогут вам быстро приступить к работе.
+  aside:
+    image:
+      alt: 
+      height: 110
+      src: ./media/index/video.png
+      width: 246
+    title: Основные сведения о службе "Защита идентификации Azure AD"
+    href: https://www.youtube.com/watch?v=zI3jn_G0_Ns
+    width: 246
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как настроить политики условного доступа для распространенных сценариев, чтобы минимизировать риски при входе в систему.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: ./media/index/i_security-management.png
+      text: Блокировка доступа при обнаружении риска безопасности сеанса
+      href: quickstart-sign-in-risk-policy.md

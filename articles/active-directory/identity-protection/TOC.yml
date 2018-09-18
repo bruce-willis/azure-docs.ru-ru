@@ -1,0 +1,63 @@
+items:
+- name: Документация по службе "Защита идентификации"
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Сведения о службе "Защита идентификации Azure AD"
+    href: overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Блокировка доступа при обнаружении риска безопасности сеанса
+    href: quickstart-sign-in-risk-policy.md
+- name: Основные понятия
+  items:
+  - name: Сведения об уязвимостях
+    href: vulnerabilities.md
+  - name: Сведения об уведомлениях
+    href: notifications.md
+  - name: Сведения о вариантах входа в систему
+    href: flows.md
+  expanded: false
+- name: Практические руководства
+  items:
+  - name: Включение Защиты идентификации Azure AD
+    href: enable.md
+  - name: Настройка политики регистрации многофакторной идентификации
+    href: howto-mfa-policy.md
+  - name: Настройка политики минимизации рисков при входе
+    href: howto-sign-in-risk-policy.md
+  - name: Настройка политики минимизации рисков для пользователей
+    href: howto-user-risk-policy.md
+  - name: Разблокировка пользователей
+    href: howto-unblock-user.md
+  - name: Моделирование событий риска
+    href: playbook.md
+  - name: Использование API Microsoft Graph
+    href: graph-get-started.md
+  - name: Часто задаваемые вопросы
+    href: faqs.md
+  expanded: true
+- name: Справочные материалы
+  items:
+  - name: Глоссарий
+    href: glossary.md
+- name: Ресурсы
+  items:
+  - name: Форум отзывов и предложений по Azure
+    href: https://feedback.azure.com/forums/169401-azure-active-directory
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/active-directory/
+  - name: Обновления службы
+    href: ../fundamentals/whats-new.md
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-active-directory
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+ms.openlocfilehash: 651ac43690180fadad6eef7f83d2a58b531752ed
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45606717"

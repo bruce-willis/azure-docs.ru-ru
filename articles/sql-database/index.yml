@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0439f35a8ad7daab780bde301a2ec5fee8aaf1d6
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 8c56b4d0bbd4b2726b9673ca537084376ee40d94
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44718296"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45629329"
 documentType: LandingData
 title: Документация по Базе данных SQL Azure
 metadata:
@@ -107,7 +107,7 @@ sections:
       values:
       - href: /azure/sql-database/sql-database-get-started-portal
       - href: /azure/sql-database/scripts/sql-database-create-and-configure-database-cli
-      - href: /azure/sql-database//scripts/sql-database-create-and-configure-database-powershell
+      - href: /azure/sql-database/scripts/sql-database-create-and-configure-database-powershell
       - href: 
     - title: Создание Управляемого экземпляра
       values:
@@ -135,7 +135,7 @@ sections:
     - title: Масштабирование Управляемого экземпляра
       values:
       - href: 
-      - href: 
+      - href: https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44
       - href: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/05/31/change-size-azure-sql-managed-instance-using-powershell/
       - href: 
     - title: Настройка сети Azure для Управляемого экземпляра
@@ -152,9 +152,9 @@ sections:
     style: ordered
     items:
     - html: Создание и проектирование схемы для новой базы данных SQL с помощью <a href="/azure/sql-database/sql-database-design-first-database">SSMS</a> или <a href="/azure/sql-database/sql-database-design-first-database-csharp">.NET</a>
-    - html: <a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">Migrate your SQL Server database to Azure SQL Database</a> (Перенос базы данных SQL Server в базу данных SQL Azure)
+    - html: Перенос существующей базы данных в Azure с помощью <a href="/azure/sql-database/sql-database-managed-instance-get-started-restore">функции восстановления базы данных</a>, <a href="/azure/sql-database/sql-database-migrate-your-sql-server-database">помощника по миграции баз данных</a> или <a href="/azure/sql-database/sql-database-import">импорта файла BACPAC</a>
     - html: <a href="/azure/sql-database/sql-database-security-tutorial">Secure your Azure SQL Database</a> (Безопасность базы данных SQL Azure)
-    - html: <a href="/azure/sql-database/sql-database-implement-geo-distributed-database">Реализация географически распределенной базы данных</a>
+    - html: Глобальное распределение данных с помощью <a href="/azure/sql-database/sql-database-implement-geo-distributed-database">географически распределенной базы данных</a>
 - title: Бесплатные видеоуроки PluralSight
   items:
   - type: list

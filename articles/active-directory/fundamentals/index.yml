@@ -1,0 +1,53 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 4c9f26c36b0cf79c8bd28e57fc7bdec5dda22764
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45636331"
+documentType: LandingData
+title: Базовая документация по Azure Active Directory
+metadata:
+  document_id: 
+  title: Базовая документация по Azure Active Directory
+  description: Ознакомьтесь с основными понятиями и процессами, которые используются при работе с Azure Active Directory.
+  services: active-directory
+  ms.component: fundamentals
+  author: eross-msft
+  manager: mtillman
+  ms.service: active-directory
+  ms.topic: landing-page
+  ms.date: 09/07/2018
+  ms.author: lizross
+abstract:
+  description: Изучите основные понятия и процессы Azure Active Directory (Azure AD), а также узнайте, как создать обычных пользователей, группы и простую среду. Эта информация поможет вам приступить к работе.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как приступить к работе с порталом Azure Active Directory.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: ./media/index/i_portal.png
+      text: Вход на портал Azure AD для создания клиента
+      href: active-directory-access-create-new-tenant.md
+    - image:
+        src: ./media/index/i_tasks.png
+      text: Просмотр групп и участников
+      href: active-directory-groups-view-azure-portal.md
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как выполнять основные задачи по настройке среды в Azure Active Directory.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/fundamentals/active-directory-get-started-premium">Регистрация в Azure AD Premium</a>
+    - html: <a href="/azure/active-directory/fundamentals/add-custom-domain">Как добавить имя личного домена</a>
+    - html: <a href="/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal">Как создать простую группу и добавить в нее участников</a>
+    - html: <a href="/azure/active-directory/fundamentals/active-directory-accessmanagement-managing-group-owners">Как добавить владельцев группы</a>
+    - html: <a href="/azure/active-directory/fundamentals/add-users-azure-active-directory">Как добавить нового пользователя</a>
+    - html: <a href="/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal">Как назначить роли пользователям</a>
+    - html: <a href="/azure/active-directory/fundamentals/license-users-groups">Как назначить лицензии пользователям</a>
