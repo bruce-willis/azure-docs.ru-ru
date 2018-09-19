@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d7df652a5549f3cea1b3d5bd5652c6e39fbd456a
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: b0e825bde863563877eb82f8e4514ae95e0247cd
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44381817"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45730456"
 documentType: LandingData
-title: Документация по управлению приложениями в Azure AD
+title: Документация по управлению приложениями
 metadata:
   title: Документация по управлению приложениями в Azure Active Directory
   meta.description: Learn how to manage and deploy applications with Azure Active Directory.
@@ -17,7 +17,7 @@ metadata:
   ms.assetid: 
   ms.service: active-directory
   ms.topic: landing-page
-  ms.date: 09/06/2018
+  ms.date: 09/14/2018
   ms.author: barbkess
 abstract:
   description: Узнайте, как администрировать и развертывать приложения с помощью Azure Active Directory.
@@ -42,6 +42,6 @@ sections:
   - type: paragraph
     text: Узнайте, как включить простой и безопасный вход в систему для ваших приложений.
   - type: list
-    style: ordered
+    style: unordered
     items:
     - html: <a href="/azure/active-directory/manage-apps/configure-single-sign-on-portal">Настройка единого входа</a>

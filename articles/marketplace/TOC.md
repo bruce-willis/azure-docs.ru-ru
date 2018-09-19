@@ -20,7 +20,7 @@
 #### [Контейнеры](./marketplace-containers.md)
 #### [Консультационная услуга](./consulting-services.md)  
 #### [Руководство по публикации в Office 365, Dynamics 365 и Power BI](./appsource-offer-publishing-guide.md)
-#### [Предоставление пробной версии в Marketplace с помощью Azure Active Directory](./enable-trial-using-azure-ad.md)
+#### [Включение описания в Microsoft AppSource и Azure Marketplace с помощью Azure Active Directory](./enable-appsource-marketplace-using-azure-ad.md)
 
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 

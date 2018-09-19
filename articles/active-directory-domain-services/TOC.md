@@ -43,6 +43,7 @@
 ### [Создание подразделения на управляемом домене](active-directory-ds-admin-guide-create-ou.md)
 ### [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)
 ### [Администрирование групповой политики в управляемом домене](active-directory-ds-admin-guide-administer-group-policy.md)
+### [Настройка политик паролей в управляемом домене](active-directory-ds-password-policy.md)
 ## [Выбор виртуальной сети](active-directory-ds-networking.md)
 ## Развертывание приложений
 ### [Настройка поддержки синхронизации профилей для сервера SharePoint](active-directory-ds-enable-sharepoint-profile-sync.md)

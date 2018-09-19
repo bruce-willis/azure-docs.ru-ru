@@ -1,0 +1,54 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 2217adbbb9e5222e6c33bfcdce41c30396c7f231
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45740326"
+documentType: LandingData
+title: Отчеты и мониторинг Azure AD
+metadata:
+  document_id: 
+  title: 'Документация по отчетам и мониторингу Azure Active Directory B2B: руководства, краткие инструкции, основные понятия | Документация Майкрософт'
+  description: Узнайте, как настроить и протестировать решения Azure Active Directory для создания отчетов и мониторинга
+  services: active-directory
+  ms.component: report-monitor
+  author: priyamohanram
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 08/14/2018
+  ms.author: priyamo
+abstract:
+  description: Узнайте, как просматривать отчеты о безопасности и аудите для своей среды или выполнять мониторинг в динамике, чтобы получать ценные сведения об особенностях использования ресурсов. Отчеты Azure AD содержат ценные сведения о безопасности и особенностях использования ресурсов в вашей среде. Например, вы можете получить ответы на следующие вопросы:<ul><li>Как именно пользователи используют приложения или службы?</li><li>Каковы потенциальные риски, которые могут повлиять на работоспособность среды?</li><li>Как устранить неполадки, влияющие на работу пользователей?</li>
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как скачать отчеты о действиях и передать журналы в учетную запись хранения Azure
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-sign-in-report">Скачивание отчета о действиях входа</a>
+    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-audit-report">Скачивание отчета об аудите</a>
+    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-install-power-bi-content-pack">Установка пакета содержимого Power BI для отчетов</a>
+    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account">Передача журналов в учетную запись хранения</a>
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как получить доступ к отчетам и выполнять потоковую передачу журналов действий в систему мониторинга по своему усмотрению
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/reports-monitoring/tutorial-access-api-with-certificates">Программный доступ к API отчетов с использованием сертификатов</a>
+    - html: <a href="/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub">Потоковая передача журналов действий в концентратор событий</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes">Коды ошибок входа</a>
+    - html: <a href="/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema">Схема журналов аудита Azure AD в Azure Monitor</a>
+    - html: <a href="/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema">Схема журналов входа Azure AD в Azure Monitor</a>

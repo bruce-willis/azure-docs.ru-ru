@@ -652,6 +652,12 @@ items:
     - name: Правила брандмауэра
       href: /azure/templates/Microsoft.DBforMySQL/servers/firewallRules
       maintainContext: true
+    - name: Политики оповещения системы безопасности
+      href: /azure/templates/Microsoft.DBforMySQL/servers/securityAlertPolicies
+      maintainContext: true
+    - name: Правила для виртуальной сети
+      href: /azure/templates/Microsoft.DBforMySQL/servers/virtualNetworkRules
+      maintainContext: true
     maintainContext: true
 - name: Сеть
   items:
@@ -661,8 +667,14 @@ items:
   - name: Группы безопасности приложений
     href: /azure/templates/Microsoft.Network/applicationSecurityGroups
     maintainContext: true
+  - name: Брандмауэры Azure
+    href: /azure/templates/Microsoft.Network/azureFirewalls
+    maintainContext: true
   - name: Подключения
     href: /azure/templates/Microsoft.Network/connections
+    maintainContext: true
+  - name: Планы защиты от атак DDoS
+    href: /azure/templates/Microsoft.Network/ddosProtectionPlans
     maintainContext: true
   - name: Зоны DNS
     href: /azure/templates/Microsoft.Network/dnsZones
@@ -706,6 +718,17 @@ items:
       maintainContext: true
     - name: Пиринг
       href: /azure/templates/Microsoft.Network/expressRouteCircuits/peerings
+      items:
+      - name: Подключения
+        href: /azure/templates/Microsoft.Network/expressRouteCircuits/peerings/connections
+        maintainContext: true
+      maintainContext: true
+    maintainContext: true
+  - name: Перекрестные подключения ExpressRoute
+    href: /azure/templates/Microsoft.Network/expressRouteCircuits
+    items:
+    - name: Пиринг
+      href: /azure/templates/Microsoft.Network/expressRouteCircuits/peerings
       maintainContext: true
     maintainContext: true
   - name: Балансировщики нагрузки
@@ -731,12 +754,18 @@ items:
   - name: Наблюдатели за сетями
     href: /azure/templates/Microsoft.Network/networkWatchers
     items:
+    - name: Мониторы подключения
+      href: /azure/templates/Microsoft.Network/networkWatchers/connectionMonitors
+      maintainContext: true
     - name: Записи пакетов
       href: /azure/templates/Microsoft.Network/networkWatchers/packetCaptures
       maintainContext: true
     maintainContext: true
   - name: Общедоступные IP-адреса
     href: /azure/templates/Microsoft.Network/publicIPAddresses
+    maintainContext: true
+  - name: Префиксы общедоступных IP-адресов
+    href: /azure/templates/Microsoft.Network/publicIPPrefixes
     maintainContext: true
   - name: Фильтры маршрутов
     href: /azure/templates/Microsoft.Network/routeFilters
@@ -752,8 +781,18 @@ items:
       href: /azure/templates/Microsoft.Network/routeTables/routes
       maintainContext: true
     maintainContext: true
+  - name: Политики конечной точки службы
+    href: /azure/templates/Microsoft.Network/serviceEndpointPolicies
+    items:
+    - name: Определения политики конечной точки службы
+      href: /azure/templates/microsoft.Network/serviceendpointpolicies/serviceendpointpolicydefinitions
+      maintainContext: true
+    maintainContext: true
   - name: Профили диспетчера трафика
     href: /azure/templates/Microsoft.Network/trafficmanagerprofiles
+    maintainContext: true
+  - name: Виртуальные концентраторы
+    href: /azure/templates/Microsoft.Network/virtualHubs
     maintainContext: true
   - name: Шлюзы виртуальной сети
     href: /azure/templates/Microsoft.Network/virtualNetworkGateways
@@ -767,6 +806,19 @@ items:
     - name: Пиринг виртуальных сетей
       href: /azure/templates/Microsoft.Network/virtualNetworks/virtualNetworkPeerings
       maintainContext: true
+    maintainContext: true
+  - name: Виртуальные глобальные сети
+    href: /azure/templates/Microsoft.Network/virtualWans
+    maintainContext: true
+  - name: VPN-шлюзы;
+    href: /azure/templates/Microsoft.Network/vpnGateways
+    items:
+    - name: VPN-подключения
+      href: /azure/templates/Microsoft.Network/vpnGateways/vpnconnections
+      maintainContext: true
+    maintainContext: true
+  - name: Сайты VPN
+    href: /azure/templates/Microsoft.Network/vpnSites
     maintainContext: true
 - name: Центры уведомлений
   items:
@@ -818,6 +870,12 @@ items:
       maintainContext: true
     - name: Правила брандмауэра
       href: /azure/templates/Microsoft.DBforPostgreSQL/servers/firewallRules
+      maintainContext: true
+    - name: Политики оповещения системы безопасности
+      href: /azure/templates/Microsoft.DBforPostgreSQL/servers/securityAlertPolicies
+      maintainContext: true
+    - name: Правила для виртуальной сети
+      href: /azure/templates/Microsoft.DBforPostgreSQL/servers/virtualNetworkRules
       maintainContext: true
     maintainContext: true
 - name: Power BI
@@ -1174,9 +1232,9 @@ items:
         maintainContext: true
       maintainContext: true
     maintainContext: true
-ms.openlocfilehash: d4d1828eff777d27fe750906c1bee0d436d89ce5
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: f54d4b1a72752571605a894a3be94025e8fce451
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41927380"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45984430"

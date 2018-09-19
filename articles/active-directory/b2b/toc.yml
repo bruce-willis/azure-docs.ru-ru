@@ -1,0 +1,124 @@
+items:
+- name: Документация по Azure Active Directory B2B
+  href: index.yml
+  items:
+  - name: Обзор
+    items:
+    - name: Что собой представляет доступ гостевых пользователей B2B
+      href: what-is-b2b.md
+    - name: Сравнение B2B с B2C
+      href: compare-with-b2c.md
+  - name: Быстрое начало работы
+    items:
+    - name: Добавление гостевых пользователей на портале
+      href: b2b-quickstart-add-guest-users-portal.md
+    - name: Добавление гостевых пользователей с помощью PowerShell
+      href: b2b-quickstart-invite-powershell.md
+  - name: Учебники
+    items:
+    - name: Массовое приглашение гостевых пользователей B2B
+      href: b2b-tutorial-bulk-invite.md
+    - name: применение Multi-Factor Authentication;
+      href: b2b-tutorial-require-mfa.md
+  - name: Примеры
+    items:
+    - name: Пример самостоятельной регистрации на портале
+      href: self-service-portal.md
+    - name: Примеры кода и сценариев Azure PowerShell
+      href: code-samples.md
+  - name: Основные понятия
+    items:
+    - name: Лицензирование B2B
+      href: licensing-guidance.md
+    - name: Доступ внешних пользователей к B2B и Office 365
+      href: o365-external-user.md
+    - name: Активация приглашения
+      href: redemption-experience.md
+    - name: Сообщение электронной почты с приглашением
+      href: invitation-email-elements.md
+    - name: Общие сведения о B2B-пользователе
+      href: user-properties.md
+    - name: Сопоставление утверждений пользователя B2B
+      href: claims-mapping.md
+    - name: Маркер B2B-пользователя
+      href: user-token.md
+    - name: Условный доступ для B2B
+      href: conditional-access.md
+    - name: B2B для гибридных организаций
+      href: hybrid-organizations.md
+    - name: Текущие ограничения
+      href: current-limitations.md
+    expanded: false
+  - name: Практические руководства
+    items:
+    - name: Управление приглашениями
+      items:
+      - name: Добавление пользователей B2B администраторами
+        href: add-users-administrator.md
+      - name: Добавление пользователей B2B информационными работниками
+        href: add-users-information-worker.md
+      - name: Федерация Google
+        href: google-federation.md
+      - name: Политики общего доступа к B2B
+        href: delegate-invitations.md
+      - name: Предоставление или отзыв приглашений
+        href: allow-deny-list.md
+      - name: Добавление пользователей B2B без приглашения
+        href: add-user-without-invite.md
+      - name: API и настройка
+        href: customize-invitation-api.md
+    - name: Управление гостевыми учетными записями
+      items:
+      - name: Добавление в роль B2B-пользователя
+        href: add-guest-to-role.md
+      - name: Динамические группы и B2B-пользователи
+        href: use-dynamic-groups.md
+      - name: Общие сведения о B2B-пользователе
+        href: user-properties.md
+      - name: B2B для интегрированных приложений Azure AD
+        href: configure-saas-apps.md
+    - name: Управление доступом в гибридной организации
+      items:
+      - name: Предоставление локальным пользователям доступа к облачным приложениям
+        href: hybrid-on-premises-to-cloud.md
+      - name: Предоставление пользователям B2B доступа к локальным приложениям
+        href: hybrid-cloud-to-on-premises.md
+    - name: Выход из организации
+      href: leave-the-organization.md
+    - name: Аудит и отчеты
+      href: auditing-and-reporting.md
+    - name: Устранение неполадок B2B
+      href: troubleshoot.md
+    expanded: true
+  - name: Справочные материалы
+    items:
+    - name: API диспетчера приглашений
+      href: customize-invitation-api.md
+  - name: Ресурсы
+    items:
+    - name: Часто задаваемые вопросы
+      href: faq.md
+    - name: Получение технической поддержки для B2B
+      href: get-support.md
+    - name: Форум отзывов и предложений по Azure
+      href: https://feedback.azure.com/forums/169401-azure-active-directory
+    - name: Стратегия развития Azure
+      href: https://azure.microsoft.com/roadmap/?category=security-identity
+    - name: Форум MSDN
+      href: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD
+    - name: Цены
+      href: https://azure.microsoft.com/pricing/details/active-directory/
+    - name: Калькулятор цен
+      href: https://azure.microsoft.com/pricing/calculator/
+    - name: Обновления службы
+      href: https://azure.microsoft.com/updates/?product=active-directory
+    - name: Переполнение стека
+      href: http://stackoverflow.com/questions/tagged/azure-active-directory
+    - name: Видеоролики
+      href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
+ms.openlocfilehash: e3517af7c8cf84834a7487089f426c5c5ff4a80f
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45986704"
