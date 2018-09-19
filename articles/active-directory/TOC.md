@@ -26,22 +26,22 @@
 ## Планирование и проектирование
 ### [Основы архитектуры Azure AD](fundamentals/active-directory-architecture.md)
 ### [Сопоставление утверждений в Azure Active Directory](active-directory-claims-mapping.md)
-### [Развертывание решения для гибридной идентификации](active-directory-hybrid-identity-design-considerations-overview.md)
+### [Развертывание решения для гибридной идентификации](hybrid/plan-hybrid-identity-design-considerations-overview.md)
 #### Определение требований
-##### [Удостоверение](active-directory-hybrid-identity-design-considerations-business-needs.md)
-##### [Синхронизация каталогов](active-directory-hybrid-identity-design-considerations-directory-sync-requirements.md)
-##### [Многофакторная проверка подлинности](active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements.md)
-##### [Стратегия жизненного цикла удостоверений](active-directory-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md)
-#### [Планирование безопасности данных](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md)
-##### [Защита данных](active-directory-hybrid-identity-design-considerations-dataprotection-requirements.md)
-##### [Управление содержимым](active-directory-hybrid-identity-design-considerations-contentmgt-requirements.md)
-##### [Контроль доступа](active-directory-hybrid-identity-design-considerations-accesscontrol-requirements.md)
-##### [Реагирование на инциденты](active-directory-hybrid-identity-design-considerations-incident-response-requirements.md)
+##### [Удостоверение](hybrid/plan-hybrid-identity-design-considerations-business-needs.md)
+##### [Синхронизация каталогов](hybrid/plan-hybrid-identity-design-considerations-directory-sync-requirements.md)
+##### [Многофакторная проверка подлинности](hybrid/plan-hybrid-identity-design-considerations-multifactor-auth-requirements.md)
+##### [Стратегия жизненного цикла удостоверений](hybrid/plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md)
+#### [Планирование безопасности данных](hybrid/plan-hybrid-identity-design-considerations-data-protection-strategy.md)
+##### [Защита данных](hybrid/plan-hybrid-identity-design-considerations-dataprotection-requirements.md)
+##### [Управление содержимым](hybrid/plan-hybrid-identity-design-considerations-contentmgt-requirements.md)
+##### [Контроль доступа](hybrid/plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)
+##### [Реагирование на инциденты](hybrid/plan-hybrid-identity-design-considerations-incident-response-requirements.md)
 #### Планирование жизненного цикла удостоверений
-##### [Задачи](active-directory-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)
-##### [Стратегия внедрения](active-directory-hybrid-identity-design-considerations-identity-adoption-strategy.md)
-#### [Дальнейшие действия](active-directory-hybrid-identity-design-considerations-nextsteps.md)
-#### [Сравнение инструментов](active-directory-hybrid-identity-design-considerations-tools-comparison.md)
+##### [Задачи](hybrid/plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)
+##### [Стратегия внедрения](hybrid/plan-hybrid-identity-design-considerations-identity-adoption-strategy.md)
+#### [Дальнейшие действия](hybrid/plan-hybrid-identity-design-considerations-nextsteps.md)
+#### [Сравнение инструментов](hybrid/plan-hybrid-identity-design-considerations-tools-comparison.md)
 
 ## Управление пользователями
 ### [Добавление новых пользователей в Azure AD](fundamentals/add-users-azure-active-directory.md)
@@ -95,7 +95,7 @@
 ### [Часто задаваемые вопросы](reports-monitoring/reports-faq.md)
 
 ### Задачи
-#### [Скачивание отчета об операциях входа в систему](reports-monitoring/quickstart-download-sign-in-report.md)
+#### [Скачивание отчета о действиях входа](reports-monitoring/quickstart-download-sign-in-report.md)
 #### [Скачивание отчета об аудите](reports-monitoring/quickstart-download-audit-report.md)
 #### [Настройка именованных расположений](reports-monitoring/quickstart-configure-named-locations.md)
 #### [Поиск отчетов об активности](reports-monitoring/howto-find-activity-reports.md)
@@ -309,7 +309,7 @@
 
 
 ## Управление каталогом
-### [Azure AD Connect](./connect/active-directory-aadconnect.md)
+### [Azure AD Connect](hybrid/whatis-hybrid-identity.md)
 ### Имена пользовательских доменов
 #### [Краткое руководство](fundamentals/add-custom-domain.md)
 ### [Администрирование каталога](fundamentals/active-directory-administer.md)
@@ -321,7 +321,7 @@
 #### [Устранение неполадок](active-directory-windows-enterprise-state-roaming-troubleshooting.md)
 
 
-### [Интеграция локальных удостоверений с помощью Azure AD Connect](./connect/active-directory-aadconnect.md)
+### [Интеграция локальных удостоверений с помощью Azure AD Connect](hybrid/whatis-hybrid-identity.md)
 
 ### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
 
@@ -329,7 +329,7 @@
 
 ### [управление привилегированными пользователями;](privileged-identity-management/pim-configure.md?toc=%2fazure%2factive-directory%2ftoc.json)
 
-## [Развертывание AD FS в Azure](active-directory-aadconnect-azure-adfs.md)
+## [Развертывание AD FS в Azure](hybrid/how-to-connect-fed-azure-adfs.md)
 ### [Высокая доступность](active-directory-adfs-in-azure-with-azure-traffic-manager.md)
 ### [Изменение хэш-алгоритма подписи](active-directory-federation-sha256-guidance.md)
 
@@ -349,8 +349,8 @@
 
 # Сопутствующие материалы
 ## [Многофакторная идентификация](/azure/multi-factor-authentication/)
-## [Azure AD Connect](./connect/active-directory-aadconnect.md)
-## [Azure AD Connect Health](./connect-health/active-directory-aadconnect-health.md)
+## [Azure AD Connect](hybrid/whatis-hybrid-identity.md)
+## [Azure AD Connect Health](hybrid/whatis-hybrid-identity-health.md)
 ## [Информация для разработчиков об Azure AD](./develop/active-directory-how-to-integrate.md)
 ## [Управление привилегированными пользователями Azure AD](./privileged-identity-management/pim-configure.md)
 
