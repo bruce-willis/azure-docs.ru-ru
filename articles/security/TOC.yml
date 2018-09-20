@@ -16,8 +16,6 @@ items:
     href: abstract-container-security-microsoft-azure.md
   - name: Включение функций операционной безопасности
     href: abstract-azure-operational-security.md
-  - name: Система управления в Azure
-    href: governance-in-azure.md
   - name: Изоляция в облаке Azure
     href: azure-isolation.md
   - name: Архитектура защищенной гибридной сети
@@ -38,6 +36,7 @@ items:
   - name: Шифрование дисков
     items:
     - name: Рекомендации
+      displayName: transit
       href: azure-security-data-encryption-best-practices.md
     - name: Шифрование неактивных данных
       href: azure-security-encryption-atrest.md
@@ -64,12 +63,16 @@ items:
       - name: Устранение неполадок
         href: azure-security-disk-encryption-tsg.md
       - name: Шифрование дисков Azure с использованием приложения Azure AD (предыдущий выпуск)
+        displayName: active directory
         items:
         - name: Предварительные требования для шифрования дисков с использованием приложения Azure AD
+          displayName: active directory
           href: azure-security-disk-encryption-prerequisites-aad.md
         - name: Шифрование дисков виртуальных машин Windows с использованием приложения Azure AD
+          displayName: active directory
           href: azure-security-disk-encryption-windows-aad.md
         - name: Шифрование дисков виртуальных машин Linux с использованием приложения Azure AD
+          displayName: active directory
           href: azure-security-disk-encryption-linux-aad.md
   - name: Безопасность службы хранилища Azure
     href: security-storage-overview.md
@@ -113,12 +116,16 @@ items:
     href: security-identity-management-overview.md
     items:
     - name: Выбор аутентификации Azure AD
+      displayName: identity, active directory
       href: azure-ad-choose-authn.md
     - name: Контрольный список безопасности
+      displayName: identity, active directory, password
       href: azure-ad-secure-steps.md
     - name: Рекомендации
+      displayName: password, identity, active directory
       href: azure-security-identity-management-best-practices.md
     - name: Применение MFA для администраторов подписки
+      displayName: identity
       href: azure-security-global-admin.md
   - name: Безопасность сети
     href: security-network-overview.md
@@ -172,10 +179,12 @@ items:
       - name: Начало работы
         href: security-azure-log-integration-get-started.md
       - name: Интеграция журналов аудита Azure AD
+        displayName: active directory
         href: security-azure-log-integration-ad.md
       - name: Интеграция оповещений центра безопасности
         href: security-azure-log-integration-security-center.md
       - name: Интеграция журналов из Key Vault
+        displayName: keyvault
         href: security-azure-log-integration-keyvault-eventhub.md
       - name: Часто задаваемые вопросы
         href: security-azure-log-integration-faq.md
@@ -187,14 +196,17 @@ items:
     - name: Контрольный список безопасности
       href: azure-operational-security-checklist.md
 - name: Система управления и соответствие требованиям
+  displayName: blueprint
   items:
   - name: AU PROTECTED
+    displayName: blueprint
     items:
     - name: Веб-приложение IaaS
       href: ./blueprints/au-protected-iaaswa-overview.md
     - name: Веб-приложение PaaS
       href: ./blueprints/au-protected-paaswa-overview.md
   - name: FedRAMP
+    displayName: blueprint
     items:
     - name: Аналитика данных
       href: ./blueprints/fedramp-analytics-overview.md
@@ -205,6 +217,7 @@ items:
     - name: Веб-приложение PaaS
       href: ./blueprints/fedramp-paaswa-overview.md
   - name: FFIEC
+    displayName: blueprint
     items:
     - name: Аналитика данных
       href: ./blueprints/ffiec-analytics-overview.md
@@ -215,6 +228,7 @@ items:
     - name: Веб-приложение PaaS
       href: ./blueprints/ffiec-paaswa-overview.md
   - name: GDPR
+    displayName: blueprint
     items:
     - name: Аналитика данных
       href: ./blueprints/gdpr-analytics-overview.md
@@ -225,10 +239,12 @@ items:
     - name: Веб-приложение PaaS
       href: ./blueprints/gdpr-paaswa-overview.md
   - name: HIPAA/HITRUST
+    displayName: blueprint
     items:
     - name: Искусственный интеллект и данные о работоспособности
       href: ./blueprints/azure-health.md
   - name: NIST SP 800-171
+    displayName: blueprint
     items:
     - name: Аналитика данных
       href: ./blueprints/nist171-analytics-overview.md
@@ -239,6 +255,7 @@ items:
     - name: Веб-приложение PaaS
       href: ./blueprints/nist171-paaswa-overview.md
   - name: PCI DSS
+    displayName: blueprint
     items:
     - name: Аналитика данных
       href: ./blueprints/pcidss-analytics-overview.md
@@ -249,10 +266,12 @@ items:
     - name: Веб-приложение PaaS
       href: ./blueprints/pcidss-paaswa-overview.md
   - name: Доверительное интернет-соединение
+    displayName: blueprint
     items:
     - name: Доверительное интернет-соединение с Azure
       href: ./compliance/compliance-tic.md
   - name: UK NHS
+    displayName: blueprint
     items:
     - name: Аналитика данных
       href: ./blueprints/uknhs-analytics-overview.md
@@ -263,6 +282,7 @@ items:
     - name: Веб-приложение PaaS
       href: ./blueprints/uknhs-paaswa-overview.md
   - name: UK OFFICIAL
+    displayName: blueprint
     items:
     - name: Веб-приложение IaaS
       href: ./blueprints/ukofficial-iaaswa-overview.md
@@ -318,9 +338,9 @@ items:
         href: azure-security-threat-modeling-tool-sensitive-data.md
       - name: Управление сеансом
         href: azure-security-threat-modeling-tool-session-management.md
-ms.openlocfilehash: 2e0bdab31a721c5b55488ac21579f0cb9ac45151
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 99ff7a6ba5a2289855739ce8b269c4b3aae10e61
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841570"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46364862"
