@@ -34,14 +34,10 @@ items:
       href: image-sdk-java-quickstart.md
 - name: Учебники
   items:
-  - name: Одностраничные веб-приложения
+  - name: Создание веб-приложения для поиска изображений
     href: tutorial-bing-image-search-single-page-app.md
-  - name: Одностраничные веб-приложения (исходный код)
-    href: tutorial-bing-image-search-single-page-app-source.md
-  - name: Отправка изображений Bing для аналитики
+  - name: Извлечение сведений об изображении
     href: tutorial-image-post.md
-  - name: Отправка изображений Bing для аналитики (исходный код)
-    href: tutorial-image-post-source.md
 - name: Примеры
   items:
   - name: Примеры кода
@@ -104,9 +100,9 @@ items:
     href: UseAndDisplayRequirements.md
   - name: Аналитика для API Bing для поиска изображений
     href: bing-image-stats.md
-ms.openlocfilehash: 452891c553ba69ba30ab74925ddd19289f8dbee6
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 74cc9f56aa4d559c7e2644fc6866ae3d97f158f6
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576720"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46296300"

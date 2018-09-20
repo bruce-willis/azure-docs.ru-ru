@@ -1,0 +1,68 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: ab917279244d9b15da3b246b05a94fcd55e6d733
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46300516"
+documentType: LandingData
+title: Документация по гибридной идентификации
+metadata:
+  document_id: 44409b3f-ab8c-053d-cdf4-5d7e823a275e
+  title: Документация по гибридной идентификации
+  meta.description: Azure AD Connect will integrate your on-premises directories with Azure Active Directory. This allows you to provide a common identity for your users for Office 365, Azure, and SaaS applications integrated with Azure AD.
+  services: active-directory
+  author: billmath
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05/18/2018
+  ms.author: billmath
+abstract:
+  description: Решения для идентификации Майкрософт обладают локальными и облачными возможностями, создавая единое удостоверение пользователя для проверки подлинности и авторизации для всех ресурсов, независимо от их расположения. Мы называем это гибридной идентификацией.</br></br></br>Azure AD Connect интегрирует локальные каталоги с Azure Active Directory. Таким образом вы сможете предоставить пользователям возможность получать доступ с использованием одного удостоверения для приложений Office 365, Azure и программного обеспечения как услуги (SaaS), интегрированных с Azure AD. В этом разделе описаны шаги планирования, развертывания и использования. Здесь представлена коллекция ссылок на статьи, относящиеся к этой области.
+  aside:
+    image:
+      alt: 
+      height: 110
+      src: media/index/video2.png
+      width: 250
+    title: Расширение локальных каталогов в облако (1:11:12)
+    href: https://channel9.msdn.com/Events/Ignite/2015/BRK3862/player
+    width: 250
+sections:
+- title: Пошаговые руководства
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/active-directory/hybrid/tutorial-password-hash-sync
+      html: <p>Узнайте, как приступить к расширению удостоверений в облаке с помощью синхронизации хэша паролей</p>
+      image:
+        src: media/index/azuread2.png
+      title: Интеграция одного леса AD с помощью синхронизации хэша паролей (PHS)
+    - href: /azure/active-directory/hybrid/tutorial-passthrough-authentication
+      html: <p>Узнайте, как приступить к расширению удостоверений в облаке с помощью сквозной аутентификации.</p>
+      image:
+        src: media/index/manage2.png
+      title: Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
+    - href: /azure/active-directory/hybrid/tutorial-federation
+      html: <p>Узнайте, как создать федерацию Azure Active Directory (Azure AD) Connect с локальными службами федерации Active Directory (AD FS) и Azure AD.</p>
+      image:
+        src: media/index/federate2.png
+      title: Интеграция одного леса AD с помощью федерации
+- title: Практические руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как выполнять различные задачи для гибридной идентификации
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/hybrid/how-to-connect-install-custom">Установка Azure AD Connect в среде гибридной идентификации</a>
+    - html: <a href="/azure/active-directory/hybrid/how-to-connect-sso">Простой единый вход с использованием Azure AD Connect</a>
+    - html: <a href="/azure/active-directory/hybrid/how-to-connect-install-prerequisites">Предварительные требования для Azure AD Connect</a>
+    - html: <a href="/azure/active-directory/hybrid/reference-connect-version-history">Журнал выпуска версий Azure AD Connect</a>
+    - html: <a href="/azure/active-directory/hybrid/how-to-connect-sync-feature-scheduler">Управление планировщиком в службе синхронизация Azure AD Connect</a>

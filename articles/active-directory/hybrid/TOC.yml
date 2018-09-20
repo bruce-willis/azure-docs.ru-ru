@@ -1,0 +1,291 @@
+items:
+- name: Документация по гибридной идентификации
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Что собой представляет гибридная идентификация
+    href: whatis-hybrid-identity.md
+    maintainContext: true
+- name: Учебники
+  items:
+  - name: Интеграция среды одного леса AD в облако с использованием PHS
+    href: tutorial-password-hash-sync.md
+  - name: Интеграция среды одного леса AD в облако с использованием PTA
+    href: tutorial-passthrough-authentication.md
+  - name: Создание федерации среды одного леса AD в облаке с использованием PHS
+    href: tutorial-federation.md
+  expanded: true
+- name: Основные понятия
+  items:
+  - name: Синхронизация Azure AD Connect
+    items:
+    - name: Технические понятия службы синхронизации Azure AD Connect
+      href: how-to-connect-sync-technical-concepts.md
+    - name: Общие сведения об архитектуре службы синхронизации Azure AD Connect
+      href: concept-azure-ad-connect-sync-architecture.md
+    - name: Общие сведения о декларативной подготовке
+      href: concept-azure-ad-connect-sync-declarative-provisioning.md
+    - name: Знакомство с выражениями декларативной подготовки.
+      href: concept-azure-ad-connect-sync-declarative-provisioning-expressions.md
+    - name: Общие сведения о конфигурации по умолчанию
+      href: concept-azure-ad-connect-sync-default-configuration.md
+    - name: Общее представление о пользователях и контактах
+      href: concept-azure-ad-connect-sync-user-and-contacts.md
+    - name: Общие сведения о теневых атрибутах
+      href: how-to-connect-syncservice-shadow-attributes.md
+  - name: Синхронизация удостоверений и устойчивость повторяющихся атрибутов
+    href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
+- name: Практические руководства
+  items:
+  - name: Установка и обновление
+    items:
+    - name: Стратегия установки
+      href: how-to-connect-install-roadmap.md
+    - name: Предварительные требования для установки
+      href: how-to-connect-install-prerequisites.md
+    - name: Выбор типа установки
+      href: how-to-connect-install-select-installation.md
+    - name: Установка Azure AD Connect с помощью стандартных параметров (синхронизация хэша паролей)
+      href: how-to-connect-install-express.md
+    - name: Установка федерации Azure AD Connect или других настраиваемых параметров
+      href: how-to-connect-install-custom.md
+    - name: Установка Azure AD Connect с использованием сквозной аутентификации (PTA)
+      href: how-to-connect-pta-quick-start.md
+    - name: Установка Azure AD Connect Health
+      href: how-to-connect-health-agent-install.md
+    - name: Автоматическое обновление
+      href: how-to-connect-install-automatic-upgrade.md
+    - name: Повторный запуск мастера установки
+      href: how-to-connect-installation-wizard.md
+    - name: Обновление до новой версии Azure AD Connect
+      href: how-to-upgrade-previous-version.md
+    - name: Обновление с DirSync или Azure AD Sync
+      href: how-to-dirsync-upgrade-get-started.md
+    - name: Установка с помощью существующей базы данных ADSync
+      href: how-to-connect-install-existing-database.md
+    - name: Установка с помощью разрешений делегированного администратора SQL
+      href: how-to-connect-install-sql-delegation.md
+    - name: Обновление предварительной версии агентов для PTA
+      href: how-to-connect-pta-upgrade-preview-authentication-agents.md
+    - name: Перемещение базы данных Azure AD Connect из SQL Express в SQL Server
+      href: how-to-connect-install-move-db.md
+    - name: Если у вас уже есть клиент Azure AD
+      href: how-to-connect-install-existing-tenant.md
+    - name: Действия после установки
+      href: how-to-connect-post-installation.md
+  - name: Планирование и проектирование
+    items:
+    - name: Принципы проектирования
+      href: plan-connect-design-concepts.md
+    - name: Топологии Azure AD Connect.
+      href: plan-connect-topologies.md
+    - name: Как пользователи будут входить в систему
+      href: plan-connect-user-signin.md
+    - name: Специальные рекомендации для экземпляров
+      href: reference-connect-instances.md
+    - name: Рекомендации по разработке архитектуры гибридной идентификации
+      items:
+      - name: Обзор рекомендаций по разработке архитектуры гибридной идентификации
+        href: plan-hybrid-identity-design-considerations-overview.md
+      - name: Определение требований к идентификации
+        href: plan-hybrid-identity-design-considerations-business-needs.md
+      - name: Определение требований к синхронизации
+        href: plan-hybrid-identity-design-considerations-directory-sync-requirements.md
+      - name: Определение требований к многофакторной идентификации
+        href: plan-hybrid-identity-design-considerations-multifactor-auth-requirements.md
+      - name: Определение стратегии внедрения жизненного цикла
+        href: plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md
+      - name: Определение стратегии защиты данных
+        href: plan-hybrid-identity-design-considerations-data-protection-strategy.md
+      - name: Планирование требований к защите данных
+        href: plan-hybrid-identity-design-considerations-dataprotection-requirements.md
+      - name: Определение требований к управлению содержимым
+        href: plan-hybrid-identity-design-considerations-contentmgt-requirements.md
+      - name: Определение требований к контролю доступа
+        href: plan-hybrid-identity-design-considerations-accesscontrol-requirements.md
+      - name: Определение требований по реагированию на инциденты
+        href: plan-hybrid-identity-design-considerations-incident-response-requirements.md
+      - name: Планирование жизненного цикла гибридной идентификации
+        href: plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md
+      - name: Определение стратегии внедрения
+        href: plan-hybrid-identity-design-considerations-identity-adoption-strategy.md
+      - name: Рекомендации по разработке архитектуры гибридной идентификации — дальнейшие действия
+        href: plan-hybrid-identity-design-considerations-nextsteps.md
+      - name: Сравнение средств гибридной идентификации
+        href: plan-hybrid-identity-design-considerations-tools-comparison.md
+  - name: Управление Azure AD Connect
+    items:
+    - name: Что такое синхронизация хэша паролей
+      href: how-to-connect-password-hash-synchronization.md
+    - name: Включение обратной записи устройства
+      href: how-to-connect-device-writeback.md
+    - name: Параметры устройств
+      href: how-to-connect-device-options.md
+    - name: Дополнительные функции в Azure AD Connect
+      href: how-to-connect-preview.md
+    - name: предотвращения случайного удаления
+      href: how-to-connect-sync-feature-prevent-accidental-deletes.md
+    - name: Включение корзины AD
+      href: how-to-connect-sync-recycle-bin.md
+    - name: Изменение пароля учетной записи службы Azure AD Sync
+      href: how-to-connect-sync-change-serviceacct-pass.md
+    - name: Изменение учетной записи соединителя Azure AD
+      href: how-to-connect-azureadaccount.md
+    - name: Изменение пароля учетной записи AD DS
+      href: how-to-connect-sync-change-addsacct-pass.md
+  - name: Управление службами федерации
+    items:
+    - name: Что собой представляет федерация с Azure AD Connect
+      href: how-to-connect-fed-whatis.md
+    - name: Управление федерацией с Azure AD Connect
+      href: how-to-connect-fed-management.md
+    - name: Поддержка нескольких доменов для федерации
+      href: how-to-connect-install-multiple-domains.md
+    - name: Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
+      href: how-to-connect-fed-single-adfs-multitenant-federation.md
+    - name: Обновление сертификатов федерации для Office 365 и Azure AD
+      href: how-to-connect-fed-o365-certs.md
+    - name: Обновление сертификата SSL для AD FS
+      href: how-to-connect-fed-ssl-update.md
+    - name: Управление отношением доверия между AD FS и Azure AD
+      href: how-to-connect-azure-ad-trust.md
+    - name: Список совместимости с федерацией Azure AD
+      href: how-to-connect-fed-compatibility.md
+    - name: Использование сервера SAML 2.0 в качестве поставщика удостоверений
+      href: how-to-connect-fed-saml-idp.md
+    - name: Задачи постконфигурации для гибридного присоединения устройств к Azure AD
+      href: how-to-connect-fed-hybrid-azure-ad-join-post-config-tasks.md
+  - name: Управление сквозной аутентификацией
+    items:
+    - name: Что собой представляет сквозная аутентификация
+      href: how-to-connect-pta.md
+    - name: Начало работы со сквозной аутентификацией
+      href: how-to-connect-pta-quick-start.md
+    - name: Принцип работы сквозной аутентификации
+      href: how-to-connect-pta-how-it-works.md
+    - name: Подробный анализ возможностей защиты, предоставляемых сквозной аутентификацией
+      href: how-to-connect-pta-security-deep-dive.md
+    - name: Сквозная аутентификация и конфиденциальность пользователей
+      href: how-to-connect-pta-user-privacy.md
+    - name: Текущие ограничения сквозной аутентификации
+      href: how-to-connect-pta-security-deep-dive.md
+    - name: Часто задаваемые вопросы о сквозной аутентификации
+      href: how-to-connect-pta-faq.md
+  - name: Управление единым входом
+    items:
+    - name: Что собой представляет единый вход
+      href: how-to-connect-sso.md
+    - name: Начало работы с единым входом
+      href: how-to-connect-sso-quick-start.md
+    - name: Принцип работы единого входа
+      href: how-to-connect-sso-how-it-works.md
+    - name: Единый вход и конфиденциальность пользователей
+      href: how-to-connect-sso-user-privacy.md
+    - name: Часто задаваемые вопросы о едином входе
+      href: how-to-connect-sso-faq.md
+  - name: Управление Azure AD Connect Health
+    items:
+    - name: Операции Azure AD Connect Health
+      href: how-to-connect-health-operations.md
+    - name: Использование Azure AD Connect Health с AD FS
+      href: how-to-connect-health-adfs.md
+    - name: Использование Azure AD Connect Health для синхронизации
+      href: how-to-connect-health-sync.md
+    - name: Использование Azure AD Connect Health с AD DS
+      href: how-to-connect-health-adds.md
+    - name: Данные службы работоспособности устарели
+      href: how-to-connect-health-data-freshness.md
+    - name: Диагностика ошибок синхронизации, связанных с повторяющимися атрибутами
+      href: how-to-connect-health-diagnose-sync-errors.md
+    - name: Каталог оповещений Azure AD Connect Health
+      href: how-to-connect-health-alert-catalog.md
+  - name: Управление синхронизацией Azure AD Connect
+    items:
+    - name: Что такое синхронизация Azure AD Connect?
+      href: how-to-connect-sync-whatis.md
+    - name: Функции синхронизации Azure AD Connect
+      href: how-to-connect-syncservice-features.md
+    - name: Управление операционной задачей
+      href: how-to-connect-sync-operations.md
+    - name: Рекомендации по изменению конфигурации по умолчанию
+      href: how-to-connect-sync-best-practices-changing-default-configuration.md
+    - name: Изменение конфигурации по умолчанию
+      href: how-to-connect-sync-change-the-configuration.md
+    - name: Настройка расширений каталога
+      href: how-to-connect-sync-feature-directory-extensions.md
+    - name: Настройка предпочитаемого расположения данных
+      href: how-to-connect-sync-feature-preferreddatalocation.md
+    - name: Настройка фильтрации
+      href: how-to-connect-sync-configure-filtering.md
+    - name: Управление планировщиком
+      href: how-to-connect-sync-feature-scheduler.md
+    - name: Диспетчер службы синхронизации Azure AD Connect
+      items:
+      - name: Что собой представляет диспетчер службы синхронизации Azure AD Connect
+        href: how-to-connect-sync-service-manager-ui.md
+      - name: Управление вкладкой операций в диспетчере служб
+        href: how-to-connect-sync-service-manager-ui-operations.md
+      - name: Использование соединителей с помощью диспетчера служб
+        href: how-to-connect-sync-service-manager-ui-connectors.md
+      - name: Конструктор метавселенной
+        href: how-to-connect-sync-service-manager-ui-mvdesigner.md
+      - name: Поиск в метавселенной
+        href: how-to-connect-sync-service-manager-ui-mvsearch.md
+  - name: Устранение неполадок
+    items:
+    - name: Соединение
+      href: tshoot-connect-connectivity.md
+    - name: Ошибки при синхронизации
+      href: tshoot-connect-sync-errors.md
+    - name: Объект не синхронизирован
+      href: tshoot-connect-object-not-syncing.md
+    - name: Синхронизация объектов с помощью задачи устранения неполадок
+      href: tshoot-connect-objectsync.md
+    - name: Синхронизация хэша паролей
+      href: tshoot-connect-password-hash-synchronization.md
+    - name: Сквозная аутентификация
+      href: tshoot-connect-pass-through-authentication.md
+    - name: Единый вход
+      href: tshoot-connect-sso.md
+    - name: Ошибка LargeObject, вызванная userCertificate
+      href: tshoot-connect-largeobjecterror-usercertificate.md
+    - name: Восстановление из LocalDB с ограничением в 10 ГБ
+      href: tshoot-connect-recover-from-localdb-10gb-limit.md
+    - name: Подключение SQL
+      href: tshoot-connect-tshoot-sql-connectivity.md
+- name: Справочные материалы
+  items:
+  - name: Порты и протоколы, необходимые для гибридной идентификации
+    href: reference-connect-ports.md
+  - name: Журнал версий Azure AD Connect
+    href: reference-connect-version-history.md
+  - name: Журнал версий Azure AD Connect Health
+    href: reference-connect-health-version-history.md
+  - name: Журнал версий соединителей
+    href: reference-connect-sync-connector-version-history.md
+  - name: Учетные записи и разрешения
+    href: reference-connect-accounts-permissions.md
+  - name: 'Azure AD Connect: вопросы и ответы'
+    href: reference-connect-faq.md
+  - name: Часто задаваемые вопросы об Azure AD Connect Health
+    href: reference-connect-health-faq.md
+  - name: Конфиденциальность пользователей в Azure AD Connect
+    href: reference-connect-user-privacy.md
+  - name: Конфиденциальность пользователей в Azure AD Connect Health
+    href: reference-connect-health-user-privacy.md
+  - name: Azure AD Connect в Германии
+    href: reference-connect-germany.md
+  - name: Нерекомендуемая версия DirSync
+    href: reference-connect-dirsync-deprecated.md
+  - name: Синхронизированные атрибуты
+    href: reference-connect-sync-attributes-synchronized.md
+  - name: Справочник по функциям
+    href: reference-connect-sync-functions-reference.md
+  - name: Список совместимости с федерацией Azure AD
+    href: how-to-connect-fed-compatibility.md
+ms.openlocfilehash: e0485c86f365c93362fed792a41ec835680a1ee7
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46300482"
