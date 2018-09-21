@@ -22,6 +22,10 @@ items:
   expanded: true
 - name: Учебники
   items:
+  - name: Создание высокодоступных баз данных SQL
+    href: azure-stack-tutorial-sql.md
+  - name: Создание высокодоступных баз данных MySQL
+    href: azure-stack-tutorial-mysql.md
   - name: Развертывание приложений в Azure и Azure Stack
     href: azure-stack-solution-pipeline.md
   - name: Настройка удостоверения гибридного облака
@@ -66,7 +70,7 @@ items:
         href: azure-stack-manage-vm-protect.md
       - name: Рекомендации по работе с виртуальными машинами SQL Server
         href: azure-stack-sql-server-vm-considerations.md
-    - name: Хранилище
+    - name: служба хранилища.
       items:
       - name: Обзор
         href: azure-stack-storage-overview.md
@@ -192,9 +196,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-stack
   - name: Обучение и сертификация
     href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert
-ms.openlocfilehash: a86b36d3734898d80e40e43f7c7f8a24ce87eb0f
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 56bcdb6606c09c7d81d52a44e6e36f7900ec82e9
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44717705"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46366902"

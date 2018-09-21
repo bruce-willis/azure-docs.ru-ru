@@ -56,6 +56,8 @@ items:
       href: howto-set-up-template.md
     - name: управление устройствами.
       href: howto-manage-devices.md
+    - name: Выполнение задания
+      href: howto-run-a-job.md
     - name: Использование наборов устройств
       href: howto-use-device-sets.md
     - name: Создание версии шаблона устройства
@@ -66,7 +68,7 @@ items:
       href: howto-create-telemetry-rules.md
     - name: Создание правила события
       href: howto-create-event-rules.md
-    - name: Создание настраиваемой функции аналитики
+    - name: Анализ данных устройства
       href: howto-create-analytics.md
   - name: Действия и расширяемость
     items:
@@ -82,14 +84,12 @@ items:
       href: howto-connect-powerbi.md
   - name: Администрирование
     items:
-    - name: Администрирование приложения
-      href: howto-administer.md
+    - name: Управление IoT Central на портале управления
+      href: howto-manage-iot-central-from-portal.md
     - name: Создание и администрирование приложения на правах поставщика облачных решений
       href: howto-create-and-manage-applications-as-CSP.md
     - name: Настройка домашней страницы
       href: howto-configure-homepage.md
-    - name: Подготовка и передача изображений
-      href: howto-prepare-images.md
 - name: Сопутствующие материалы
   items:
   - name: Решения
@@ -122,9 +122,9 @@ items:
     href: iot-central-customer-data-requests.md
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-iot-central
-ms.openlocfilehash: 103bbb59a20194447d49e11327df1d984ccb0a8a
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 3e8292ce6780381f4e8ead009002959fe42a9d02
+ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983124"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46465680"

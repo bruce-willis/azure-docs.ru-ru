@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 4c7dddcb5e39eb1f72fb59af753ab167bc44d3e3
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 2c00e42284783439b0a01f6ba6bab31be053b1c9
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246764"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45736416"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -109,7 +109,7 @@ ms.locfileid: "40246764"
 
    ![AzureStorageLinkedService](./media/data-factory-build-your-first-pipeline-using-editor/azure-storage-linked-service.png)
 
-1. Замените **имя учетной записи** и **ключ учетной записи** значениями имени и ключа учетной записи хранения. Сведения о получении, просмотре, копировании и повторном создании ключей доступа к хранилищу см. в разделе [Управление учетной записью хранения](../../storage/common/storage-create-storage-account.md#manage-your-storage-account).
+1. Замените **имя учетной записи** и **ключ учетной записи** значениями имени и ключа учетной записи хранения. Сведения о получении, просмотре, копировании и повторном создании ключей доступа к хранилищу см. в разделе [Управление учетной записью хранения](../../storage/common/storage-account-manage.md#access-keys).
 
 1. Чтобы развернуть связанную службу, выберите **Развертывание** на панели команд. После успешного развертывания связанной службы окно Draft-1 исчезнет. Экземпляр **AzureStorageLinkedService** отобразится в представлении в виде дерева слева.
 

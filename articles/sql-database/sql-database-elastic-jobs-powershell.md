@@ -7,20 +7,24 @@ author: stevestein
 ms.service: sql-database
 ms.custom: scale out apps
 ms.topic: conceptual
-ms.date: 04/01/2018
+ms.date: 06/14/2018
 ms.author: sstein
-ms.openlocfilehash: d1869dd689ef090978c3835e0a16fec82dfb5c05
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3efee2f9a4b205b87a65eb473271b0ab5e58046d
+ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34648692"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46498425"
 ---
 # <a name="create-and-manage-sql-database-elastic-jobs-using-powershell-preview"></a>Создание заданий обработки эластичных баз данных базы данных SQL и управление ими с помощью PowerShell (предварительная версия)
 
+
+[!INCLUDE [elastic-database-jobs-deprecation](../../includes/sql-database-elastic-jobs-deprecate.md)]
+
+
 С помощью API-интерфейсов PowerShell для **заданий обработки эластичных баз данных** (в предварительной версии) вы можете определить группу баз данных, для которых будут выполняться скрипты. В этой статье рассказывается, как создавать **задания обработки эластичных баз данных** и управлять ими с помощью командлетов PowerShell. См. статью [Управление масштабируемыми облачными базами данных](sql-database-elastic-jobs-overview.md). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure. Зарегистрироваться в пробной версии, которая доступна бесплатно в течение одного месяца, можно [здесь](https://azure.microsoft.com/pricing/free-trial/).
 * Набор баз данных, созданных с помощью инструментов эластичных баз данных. См. статью [Приступая к работе с инструментами эластичных баз данных](sql-database-elastic-scale-get-started.md).
 * Azure PowerShell. Дополнительные сведения можно узнать в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
@@ -209,7 +213,7 @@ ms.locfileid: "34648692"
 * Учетные данные должны иметь только те права, которые необходимы для выполнения задания.  Дополнительные сведения см. на сайте MSDN в статье [Проверка прав доступа и разрешений в SQL Server](https://msdn.microsoft.com/library/bb669084.aspx).
 
 ### <a name="to-create-an-encrypted-credential-for-job-execution-across-databases"></a>Создание зашифрованных учетных данных для выполнения заданий в нескольких базах данных
-Чтобы создать новые зашифрованные учетные данные, командлет [**Get-Credential**](https://technet.microsoft.com/library/hh849815.aspx) запрашивает имя пользователя и пароль, которые можно передать в командлет [**New-AzureSqlJobCredential**](/powershell/module/elasticdatabasejobs/new-azuresqljobcredential).
+Чтобы создать новые зашифрованные учетные данные, командлет [**Get-Credential**](/powershell/module/microsoft.powershell.security/get-credential) запрашивает имя пользователя и пароль, которые можно передать в командлет [**New-AzureSqlJobCredential**](/powershell/module/elasticdatabasejobs/new-azuresqljobcredential).
 
     $credentialName = "{Credential Name}"
     $databaseCredential = Get-Credential

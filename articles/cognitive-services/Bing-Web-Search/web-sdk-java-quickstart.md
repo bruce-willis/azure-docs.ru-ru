@@ -1,6 +1,7 @@
 ---
 title: Краткое руководство. Использование пакета SDK Bing для поиска в Интернете для Java
-description: Узнайте, как использовать пакет SDK Bing для поиска в Интернете для Java.
+titleSuffix: Azure Cognitive Services
+description: Пакет SDK Bing для поиска в Интернете позволяет интегрировать API Bing для поиска в Интернете в Java-приложение. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
@@ -9,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/22/2018
 ms.author: erhopf
-ms.openlocfilehash: cc7335b9f8b5596edef895ff5a42a1018b06a381
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 8db2f6a67f64216276ccdb0b16bbeb48565f6bc6
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43186733"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127607"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-java"></a>Краткое руководство. Использование пакета SDK Bing для поиска в Интернете для Java
 
@@ -173,7 +174,7 @@ public static boolean runSample(BingWebSearchAPI client) {
 
 ## <a name="handle-the-response"></a>Обработка ответа
 
-Теперь добавим код, чтобы проанализировать ответ и вывести результаты. Выводятся `name` и `url` для первой веб-страницы, образа, новостной статьи и видео, если они включены в объект ответа.
+Теперь мы добавим код, который анализирует ответ и выводит результаты. Выводятся `name` и `url` для первой веб-страницы, образа, новостной статьи и видео, если они включены в объект ответа.
 
 ```java
 /*

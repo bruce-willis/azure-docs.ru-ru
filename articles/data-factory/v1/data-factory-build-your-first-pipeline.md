@@ -15,17 +15,17 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 8f86bcf5ecf38f0f1054fce82b66e63f0509f1c8
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 63ae8699af5213634eeac7dfc5045a3fc888b6c0
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246684"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45734258"
 ---
 # <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Учебник. Создание первого конвейера для преобразования данных с помощью кластера Hadoop
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
-> * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
+> * [портала Azure](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
@@ -85,7 +85,7 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 Для работы с этим учебником необходимо следующее:
 
 1. **Подписка Azure**. Если ее нет, можно за пару минут создать бесплатную пробную учетную запись. Сведения о том, как получить такую учетную запись, см. на странице [бесплатного ознакомительного периода](https://azure.microsoft.com/pricing/free-trial/).
-2. **Служба хранилища Azure**. В данном учебнике предполагается, что для хранения данных используется учетная запись хранения Azure. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения запишите **ее имя** и **ключ доступа**. См. разделы о [просмотре, копировании и повторном создании ключей доступа к хранилищу](../../storage/common/storage-create-storage-account.md#view-and-copy-storage-access-keys).
+2. **Служба хранилища Azure**. В данном учебнике предполагается, что для хранения данных используется учетная запись хранения Azure. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения запишите **ее имя** и **ключ доступа**. См. разделы о [просмотре, копировании и повторном создании ключей доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
 3. Скачайте и просмотрите файл запроса Hive (**HQL**) по адресу: [https://adftutorialfiles.blob.core.windows.net/hivetutorial/partitionweblogs.hql](https://adftutorialfiles.blob.core.windows.net/hivetutorial/partitionweblogs.hql). Этот запрос преобразовывает входные данные в выходные. 
 4. Скачайте и просмотрите файл примера входных данных (**input.log**) по адресу: [https://adftutorialfiles.blob.core.windows.net/hivetutorial/input.log](https://adftutorialfiles.blob.core.windows.net/hivetutorial/input.log).
 5. Создайте контейнер больших двоичных объектов с именем **adfgetstarted** в хранилище BLOB-объектов Azure. 
@@ -94,7 +94,7 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 
 Обеспечив наличие всех необходимых компонентов, выберите одно из следующих средств или пакетов SDK для прохождения этого учебника: 
 
-- [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
+- [портала Azure](data-factory-build-your-first-pipeline-using-editor.md)
 - [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 - [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)

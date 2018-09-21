@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 02/27/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: e8989cadd331021a3e35fc559421bbdd08f0b4fb
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 949d96bb1b5ffdc948737d4a47ffa14b2e344b5e
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521200"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45574737"
 ---
 # <a name="manage-azure-file-shares-with-azure-storage-explorer"></a>Управление файловыми ресурсами Azure с помощью Обозревателя службы хранилища Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. В статье рассматриваются основы работы с файловыми ресурсами Azure с помощью [Обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/). Обозреватель службы хранилища является популярным клиентским инструментом, доступным для Windows, macOS и Linux. Его можно использовать для управления файловыми ресурсами Azure и другими ресурсами хранения.
@@ -91,7 +91,7 @@ ms.locfileid: "39521200"
 
 ## <a name="create-and-modify-share-snapshots"></a>Создание и изменение моментальных снимков общего ресурса
 Моментальный снимок сохраняет состояние общего файлового ресурса Azure на момент определенной точки во времени. Моментальные снимки файловых ресурсов аналогичны создаваемым с помощью технологий, с которыми вы уже можете быть знакомы.
-- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/en-us/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
+- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
 - [диспетчер логических томов (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)#Basic_functionality) для систем Linux;
 - [файловая система Apple (APFS)](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Features/Features.html) для macOS;
 

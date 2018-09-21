@@ -15,15 +15,15 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: anandy;billmath
-ms.openlocfilehash: e984d3d590021e3dd9e46d0f12493889b2acc229
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 2ed0b551faba68c0956be89277348eeee60d759c
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
-ms.locfileid: "26604785"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46298223"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>Развертывание AD FS высокого уровня доступности в нескольких регионах Azure с помощью диспетчера трафика Azure
-[развертыванию AD FS в Azure](active-directory-aadconnect-azure-adfs.md) , содержит пошаговые инструкции, с помощью которых вы можете развернуть в Azure простую инфраструктуру AD FS для вашей организации. В этой статье описаны дальнейшие действия по развертыванию AD FS в нескольких регионах Azure с помощью [диспетчера трафика Azure](../traffic-manager/traffic-manager-overview.md). С помощью диспетчера трафика Azure вы можете создать для своей организации географически распространенную и высокопроизводительную инфраструктуру AD FS с высоким уровнем доступности, применяя различные методы маршрутизации в соответствии с требованиями инфраструктуры.
+[развертыванию AD FS в Azure](hybrid/how-to-connect-fed-azure-adfs.md) , содержит пошаговые инструкции, с помощью которых вы можете развернуть в Azure простую инфраструктуру AD FS для вашей организации. В этой статье описаны дальнейшие действия по развертыванию AD FS в нескольких регионах Azure с помощью [диспетчера трафика Azure](../traffic-manager/traffic-manager-overview.md). С помощью диспетчера трафика Azure вы можете создать для своей организации географически распространенную и высокопроизводительную инфраструктуру AD FS с высоким уровнем доступности, применяя различные методы маршрутизации в соответствии с требованиями инфраструктуры.
 
 Инфраструктура AD FS высокого уровня доступности, развернутая в нескольких регионах, дает ряд преимуществ.
 
@@ -45,7 +45,7 @@ ms.locfileid: "26604785"
 
 ## <a name="steps-to-integrate-azure-traffic-manager"></a>Действия по интеграции диспетчера трафика Azure
 ### <a name="deploy-ad-fs-in-the-new-geographical-region"></a>Развертывание AD FS в новом географическом регионе
-Выполните шаги и рекомендации, описанные в статье, посвященной [развертыванию AD FS в Azure](active-directory-aadconnect-azure-adfs.md) , чтобы развернуть аналогичную топологию в новом географическом регионе.
+Выполните шаги и рекомендации, описанные в статье, посвященной [развертыванию AD FS в Azure](hybrid/how-to-connect-fed-azure-adfs.md) , чтобы развернуть аналогичную топологию в новом географическом регионе.
 
 ### <a name="dns-labels-for-public-ip-addresses-of-the-internet-facing-public-load-balancers"></a>Имена DNS для общедоступных IP-адресов балансировщиков нагрузки, подключенных к Интернету
 Как упоминалось выше, диспетчер трафика Azure может ссылаться на конечные точки только по именам DNS, поэтому необходимо создать имена DNS для общедоступных IP-адресов всех внешних балансировщиков нагрузки. Ниже на снимке экрана показано, как настроить DNS-имя для общедоступного IP-адреса. 
@@ -116,7 +116,7 @@ ms.locfileid: "26604785"
     ![Тестирование ADFS — успешная проверка подлинности](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/adfstest2.png)
 
 ## <a name="related-links"></a>Связанные ссылки
-* [Развертывание AD FS в Azure](active-directory-aadconnect-azure-adfs.md)
+* [Развертывание AD FS в Azure](hybrid/how-to-connect-fed-azure-adfs.md)
 * [Microsoft Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md)
 * [Методы маршрутизации трафика средствами диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md)
 

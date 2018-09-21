@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: f3c68fefc5cff2eafc969d11353e78eac8980e7f
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 3972dd7031e25f20a2ef6bfb66b63fe3f3b0290b
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43096354"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45732488"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-azure-powershell"></a>Руководство. Создание первой фабрики данных Azure с помощью Azure PowerShell
 > [!div class="op_single_selector"]
@@ -119,7 +119,7 @@ ms.locfileid: "43096354"
         }
     }
     ```
-    Замените **account name** именем своей учетной записи хранения Azure, а **account key** — ключом доступа к ней. Сведения о получении, просмотре, копировании и повторном создании ключей доступа к хранилищу см. в разделе [Управление учетной записью хранения](../../storage/common/storage-create-storage-account.md#manage-your-storage-account).
+    Замените **account name** именем своей учетной записи хранения Azure, а **account key** — ключом доступа к ней. Сведения о получении, просмотре, копировании и повторном создании ключей доступа к хранилищу см. в разделе [Управление учетной записью хранения](../../storage/common/storage-account-manage.md#access-keys).
 2. В Azure PowerShell перейдите в папку ADFGetStarted.
 3. Создать связанную службу можно с помощью командлета **New-AzureRmDataFactoryLinkedService** . В этом командлете и в других командлетах фабрики данных, которые используются в этом руководстве, требуется передача значений для параметров *ResourceGroupName* и *DataFactoryName*. Кроме того, можно использовать командлет **Get-AzureRmDataFactory**, чтобы получить объект **DataFactory** и передать этот объект без необходимости ввода параметров *ResourceGroupName* и *DataFactoryName* при каждом запуске командлета. Выполните следующую команду, чтобы назначить выходные данные командлета **Get-AzureRmDataFactory** переменной **$df**.
 

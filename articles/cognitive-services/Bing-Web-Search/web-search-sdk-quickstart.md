@@ -1,6 +1,7 @@
 ---
 title: Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для C#
-description: Сведения об использовании пакета SDK Поиска в Интернете Bing для C#.
+titleSuffix: Azure Cognitive Services
+description: Пакет SDK Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение C#. Из этого краткого руководства вы узнаете, как создать экземпляр клиента, отправить запрос и вывести ответ.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
@@ -9,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/16/2018
 ms.author: erhopf
-ms.openlocfilehash: ed958f4a691b878cfa7ff9766a0fb72857cce5db
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: cebeab562a54ec68b69eb6422685cc4b596ac223
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43186802"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127890"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-c"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для C#
 
@@ -26,7 +27,7 @@ ms.locfileid: "43186802"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить это руководство, вам потребуется следующее:
+Для работы с этим кратким руководством вам потребуется следующее:
 
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) или
 * [Visual Studio Code 2017](https://code.visualstudio.com/download);

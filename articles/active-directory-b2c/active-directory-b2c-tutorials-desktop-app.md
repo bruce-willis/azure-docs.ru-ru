@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: 18db911782e03d17f0b2e2ace3f8b00ddfdebf70
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 40adcc7280a279e066c9e22f3252972cf07d070d
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39599939"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45604082"
 ---
 # <a name="tutorial-enable-desktop-app-authentication-with-accounts-using-azure-active-directory-b2c"></a>Руководство. Включение в классическом приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "39599939"
 
 Приложения должны быть [зарегистрированы](../active-directory/develop/developer-glossary.md#application-registration) в клиенте, чтобы иметь возможность получать [токены доступа](../active-directory/develop/developer-glossary.md#access-token) от Azure Active Directory. При регистрации приложения создается [идентификатор](../active-directory/develop/developer-glossary.md#application-id-client-id) для приложения в клиенте. 
 
-Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 
 [!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
 

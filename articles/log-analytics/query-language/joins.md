@@ -15,22 +15,24 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 823e8694b574acdde122f8d5224b04d3872b6820
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: c24d79d6983f7c32f5c563192bcfe412da586ef2
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40191195"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45603494"
 ---
 # <a name="joins-in-log-analytics-queries"></a>Объединения в запросах Log Analytics
 
 > [!NOTE]
 > Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-analytics-portal.md) и [Начало работы с запросами](get-started-queries.md).
 
+[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
+
 Объединения позволяют анализировать данные из нескольких таблиц в одном запросе. Они объединяют строки двух наборов данных, сопоставляя значения из указанных столбцов.
 
 
-```OQL
+```KQL
 SecurityEvent 
 | where EventID == 4624     // sign-in events
 | project Computer, Account, TargetLogonId, LogonTime=TimeGenerated
@@ -62,7 +64,7 @@ on $left.key1 == $right.key2
 ## <a name="lookup-tables"></a>Таблицы подстановки
 Обычно для объединения применяется статическое сопоставление значений с использованием `datatable`, что может помочь в преобразовании результатов в удобный вид. Например, для добавления к данным событий безопасности имени события для каждого идентификатора.
 
-```OQL
+```KQL
 let DimTable = datatable(EventID:int, eventName:string)
   [
     4625, "Account activity",

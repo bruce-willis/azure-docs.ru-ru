@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 11/03/2017
+ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 7f513a7d3fe44cbbf06855059c87c10ddceef7c9
-ms.sourcegitcommit: 3df3fcec9ac9e56a3f5282f6c65e5a9bc1b5ba22
+ms.openlocfilehash: 20b98fa9656c9c66a81ff98a70fcdbfb29d4dad6
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2017
-ms.locfileid: "23984292"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35774804"
 ---
 # <a name="common-issues-that-cause-roles-to-recycle"></a>Распространенные проблемы, вызывающие перезапуск ролей
 В этой статье рассматриваются некоторые распространенные причины проблем с развертыванием, а также советы по их устранению. На наличие проблем с приложением указывает то, что экземпляр роли не запускается или циклически переключается между состояниями "Инициализация", "Занято" и "Остановлено".

@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: c5621d5e16e31104ee28cc521386a5c0ca290a8b
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 66494ca6bd9b4d8276469e85f4c6bb435ae245f7
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39187705"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44716406"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -73,10 +73,6 @@ ms.locfileid: "39187705"
 > Microsoft Azure для DreamSpark теперь называется Microsoft Imagine для учащихся.
 
 Сейчас вы не можете создать акселератор решений с использованием учетной записи [Microsoft Azure для DreamSpark](https://azure.microsoft.com/pricing/member-offers/imagine/). Но вы можете всего за пару минут создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/), которая позволит создать акселератор решений.
-
-### <a name="can-i-create-a-solution-accelerator-if-i-have-cloud-solution-provider-csp-subscription"></a>Можно ли создать акселератор решений с подпиской поставщика облачных решений (CSP)?
-
-Сейчас создание акселераторов решений с подпиской CSP недоступно. Но вы можете всего за пару минут создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/), которая позволит создать акселератор решений.
 
 ### <a name="how-do-i-delete-an-aad-tenant"></a>Как удалить клиент AAD?
 

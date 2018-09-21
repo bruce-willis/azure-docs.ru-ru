@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 6ad3b4c1f59f5c46fd31aa24d6d2ceb4d7411abd
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 511a0122b37f5f34097da38a645790d99212ad18
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42142865"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45737419"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -556,7 +556,7 @@ test custom activity Microsoft test custom activity Microsoft
 
    ![Новое хранилище данных](./media/data-factory-data-processing-using-batch/image7.png)
 
-1. Замените **account name** именем своей учетной записи хранения. Замените **account key** ключом своей учетной записи хранения. Сведения о получении ключа доступа к хранилищу см. в разделах о [просмотре, копировании и повторном создании ключей доступа к хранилищу](../../storage/common/storage-create-storage-account.md#manage-your-storage-account).
+1. Замените **account name** именем своей учетной записи хранения. Замените **account key** ключом своей учетной записи хранения. Сведения о получении ключа доступа к хранилищу см. в разделах о [просмотре, копировании и повторном создании ключей доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
 
 1. Чтобы развернуть связанную службу, выберите **Развернуть** на панели команд.
 

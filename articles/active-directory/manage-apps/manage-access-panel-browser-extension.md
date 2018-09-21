@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/30/2018
+ms.date: 09/11/2018
 ms.author: barbkess
 ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b13b5a7d5366a0bce97d8e735dbf3822186d21cb
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 9ebd949460f826c9529b9f392bc4a7f4918ee170
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355803"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44715046"
 ---
 # <a name="troubleshooting-the-access-panel-extension-for-internet-explorer"></a>Устранение неполадок, связанных с расширением панели доступа для Internet Explorer
 Эта статья поможет устранить следующие проблемы.
@@ -91,7 +91,6 @@ ms.locfileid: "44355803"
 Если при удалении расширения возникнут проблемы, удалите его с помощью инструмента [Microsoft Fix It](https://go.microsoft.com/?linkid=9779673) .
 
 ## <a name="related-articles"></a>Связанные статьи
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
 * [Доступ к приложениям и единый вход с помощью Azure Active Directory](what-is-single-sign-on.md)
 * [Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики](deploy-access-panel-browser-extension.md)
 

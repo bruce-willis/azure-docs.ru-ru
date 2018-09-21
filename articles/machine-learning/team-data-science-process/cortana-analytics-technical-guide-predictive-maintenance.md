@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/15/2017
 ms.author: fboylu
-ms.openlocfilehash: 3715dcceb4330f6eaab01f49aee9d4d19663b62e
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 985010457413c15622f85e8ce8c6955a64ae40e9
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37099673"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45985904"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-predictive-maintenance-in-aerospace-and-other-businesses"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозируемого обслуживания в аэрокосмических и других компаниях
 
@@ -154,7 +154,7 @@ ms.locfileid: "37099673"
 1. Одно из заданий Stream Analytics записывает необработанные входные данные в хранилище BLOB-объектов. Если щелкнуть компонент "Хранилище BLOB-объектов" решения на экране, где успешно развернуто решение, и нажать кнопку "Открыть" на правой панели, откроется [портал Azure](https://portal.azure.com/). На портале щелкните "BLOB-объекты". На следующей панели появится список контейнеров. Щелкните **maintenancesadata**. На следующей панели появится папка **rawdata**. В папке rawdata находятся папки с именами, например hour=17 и hour=18. Наличие этих папок означает, что на вашем компьютере формируются необработанные данные, которые затем сохраняются в хранилище BLOB-объектов. В папках вы должны увидеть CSV-файлы с ограниченным размером (в МБ).
 2. На последнем шаге конвейера выполняется запись данных (например, прогнозов из системы машинного обучения) в базу данных SQL. Появление данных в базе данных SQL может занять не более трех часов. Одним из способов мониторинга объема данных, доступных в базе данных SQL, является использование [портала Azure](https://portal.azure.com/). На левой панели найдите компонент "Базы данных SQL" ![значок SQL](./media/cortana-analytics-technical-guide-predictive-maintenance/icon-SQL-databases.png) и щелкните его. Затем найдите базу данных **pmaintenancedb** и щелкните ее. На следующей странице в нижней части щелкните "УПРАВЛЕНИЕ"
    
-    ![Значок "Управление"](./media/cortana-analytics-technical-guide-predictive-maintenance/icon-manage.png).
+    ![Значок "Управление"](./media/cortana-analytics-technical-guide-predictive-maintenance/icon-manage.png)
    
     Здесь можно щелкнуть "Создать запрос" и создать запрос на количество строк (например, select count(*) из PMResult). По мере роста базы данных количество строк в таблице должно увеличиваться.
 

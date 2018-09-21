@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 07/06/2017
 ms.author: cynthn
-ms.openlocfilehash: fc3d72ace6398b69a5efa5543c590bba166baaf0
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 3fb6957cf6af5c09a355b61c7c2440a929d1b837
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30918580"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45736681"
 ---
 # <a name="create-a-linux-vm-from-custom-disk-with-the-azure-cli-20"></a>Создание виртуальной машины Linux на основе настраиваемого диска с помощью Azure CLI 2.0
 
@@ -97,7 +97,7 @@ az group create \
     --location eastus
 ```
 
-### <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Создайте учетную запись хранения для пользовательского диска и виртуальных машин с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create). 
 
@@ -113,7 +113,7 @@ az storage account create \
 ```
 
 ### <a name="list-storage-account-keys"></a>Вывод списка ключей учетной записи хранения
-Azure создает два 512-разрядных ключа доступа для каждой учетной записи хранения. Эти ключи используются при проверке подлинности в учетной записи хранения, например, для выполнения операций записи. Узнайте больше об управлении доступом к хранилищу [здесь](../../storage/common/storage-create-storage-account.md#manage-your-storage-account). Просмотрите список ключей доступа с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list).
+Azure создает два 512-разрядных ключа доступа для каждой учетной записи хранения. Эти ключи используются при проверке подлинности в учетной записи хранения, например, для выполнения операций записи. Узнайте больше об управлении доступом к хранилищу [здесь](../../storage/common/storage-account-manage.md#access-keys). Просмотрите список ключей доступа с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list).
 
 Просмотрите ключи доступа для созданной учетной записи хранения.
 

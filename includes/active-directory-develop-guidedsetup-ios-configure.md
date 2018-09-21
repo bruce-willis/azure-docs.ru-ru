@@ -1,3 +1,17 @@
+---
+title: включение файла
+description: включение файла
+services: active-directory
+documentationcenter: dev-center-name
+author: brandwe
+manager: mtillman
+ms.openlocfilehash: ca7a47fbe2c5ee2a4eb10abf3b9b50a2d28c252e
+ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46466205"
+---
 ## <a name="register-your-application"></a>Регистрация приложения
 Приложение можно зарегистрировать одним из двух способов, которые описаны в следующих двух разделах.
 
@@ -11,7 +25,7 @@
 ### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
 
 1.  Перейдите на [портал регистрации приложений](https://apps.dev.microsoft.com/portal/register-app)
-2.  Введите имя для приложения и адрес электронной почты.
+2.  Введите имя приложения.
 3.  Убедитесь, что параметр Guided Setup (Пошаговая настройка) не выбран.
 4.  Щелкните `Add Platform`, затем выберите `Native Application` и щелкните `Save`.
 5.  Вернитесь в Xcode. В `ViewController.swift` замените строку, начинающуюся с '`let kClientID`', на зарегистрированный идентификатор приложения:
@@ -41,7 +55,6 @@ let kClientID = "Your_Application_Id_Here"
         <key>CFBundleURLSchemes</key>
         <array>
             <string>msal[Your_Application_Id_Here]</string>
-            <string>auth</string>
         </array>
     </dict>
 </array>

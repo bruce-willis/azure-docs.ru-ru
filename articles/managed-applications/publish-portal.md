@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 11/02/2017
 ms.author: tomfitz
-ms.openlocfilehash: 69d31a7199347574e8866b275ec17ba3997d80c2
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: e52acd8587203c4729ac2bcd6e4bbc09620ead86
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34305129"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35773634"
 ---
 # <a name="publish-a-service-catalog-application-through-azure-portal"></a>Публикация приложения каталога службы на портале Azure
 
 С помощью портала Azure вы можете публиковать [управляемые приложения Azure](overview.md), предназначенные для членов вашей организации. Например, отдел ИТ может публиковать управляемые приложения, которые обеспечивают соответствие стандартам организации. Эти управляемые приложения доступны в каталоге служб, а не в Azure Marketplace.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-При публикации управляемого приложения необходимо указать удостоверение для управления ресурсами. Мы рекомендуем указать группу пользователей Azure Active Directory См. дополнительные сведения о [создании группы пользователей и добавлении в нее пользователей в Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md). 
+При публикации управляемого приложения необходимо указать удостоверение для управления ресурсами. Мы рекомендуем указать группу пользователей Azure Active Directory См. дополнительные сведения о [создании группы пользователей и добавлении в нее пользователей в Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). 
 
 ZIP-файл, содержащий определение управляемого приложения, должен быть доступным при использовании URI. Мы рекомендуем отправить ZIP-файл в хранилище BLOB-объектов. 
 

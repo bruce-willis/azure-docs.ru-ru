@@ -15,12 +15,12 @@ ms.topic: overview
 ms.date: 01/19/2018
 ms.author: mscurrell
 ms.custom: mvc
-ms.openlocfilehash: b784e64962569f22cba3bc52b6a4e9443a4587d5
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 36d37c2d18823273b5c0f82ecae0f9420e35768c
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30311997"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35621285"
 ---
 # <a name="what-is-azure-batch"></a>Что такое пакетная служба Azure?
 
@@ -61,7 +61,7 @@ ms.locfileid: "30311997"
 * Пакетная служба поддерживает крупномасштабные [рабочие нагрузки рендеринга](batch-rendering-service.md) с использованием средств отрисовки, которые включают Autodesk Maya, 3ds Max, Arnold и V-Ray. 
 * Пользователи R могут установить [пакет R doAzureParallel](https://github.com/Azure/doAzureParallel), чтобы легко развертывать выполнение алгоритмов R в пулах пакетной службы.
 
-Кроме того, задания пакетной службы можно использовать как часть более крупного рабочего процесса Azure для преобразования данных, управляемых такими средствами, как [фабрика данных Azure](../data-factory/v1/data-factory-data-processing-using-batch.md).
+Кроме того, задания пакетной службы можно использовать как часть более крупного рабочего процесса Azure для преобразования данных, управляемых такими средствами, как [фабрика данных Azure](../data-factory/transform-data-using-dotnet-custom-activity.md).
 
 
 ## <a name="how-it-works"></a>Принцип работы

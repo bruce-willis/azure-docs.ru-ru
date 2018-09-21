@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 52582a6fe3f6c8ccc22c57268e20a94139be9e6f
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 669a436293ddf6f13760db5e6802aaae82ddd74b
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44094864"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45577519"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Производительность и масштабирование в устойчивых функциях (Функции Azure)
 
@@ -27,13 +27,13 @@ ms.locfileid: "44094864"
 
 Таблица **журнала** — это таблица службы хранилища Azure, содержащая события журнала для всех экземпляров оркестрации внутри центра задач. Имя этой таблицы — указывается в формате журнала *TaskHubName*. При выполнении экземпляров в таблицу добавляются новые строки. Ключ раздела этой таблицы является производным от идентификатора экземпляра оркестрации. В большинстве случаев экземпляр идентификатора является случайным, что обеспечивает оптимальное распределение внутренних разделов в службе хранилища Azure.
 
-Когда необходимо выполнить экземпляр оркестрации, в память загружаются нужные строки таблицы журнала. Затем эти *события журнала* воспроизводятся в коде функции оркестратора, чтобы вернуть их в предыдущее состояние из контрольной точки. Использование журнала выполнения для перестройки состояния, является путем, обусловленным [шаблоном источников событий](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing).
+Когда необходимо выполнить экземпляр оркестрации, в память загружаются нужные строки таблицы журнала. Затем эти *события журнала* воспроизводятся в коде функции оркестратора, чтобы вернуть их в предыдущее состояние из контрольной точки. Использование журнала выполнения для перестройки состояния, является путем, обусловленным [шаблоном источников событий](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
 ## <a name="instances-table"></a>Экземпляры таблицы
 
 Таблица **Экземпляров** — является другой таблицей службы хранилища Azure, содержащей состояния для всех экземпляров оркестрации внутри центра задач. При создании экземпляров в таблицу добавляются новые строки. Ключ раздела является идентификатором экземпляра оркестрации этой таблицы, а ключ строки — фиксированной константой. На экземпляр оркестрации приходится одна строка.
 
-Эта таблица используется для удовлетворения как запросов экземпляра от API [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_GetStatusAsync_System_String_), так и [API HTTP-запросов](https://docs.microsoft.com/en-us/azure/azure-functions/durable-functions-http-api#get-instance-status). В конечном итоге она поддерживается в соответствии с содержанием таблицы **Журнала**, упомянутой ранее. Использование отдельных таблиц хранилища Azure для эффективного удовлетворения операций запроса экземпляров, является путем, обусловленным [шаблоном CQRS](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs).
+Эта таблица используется для удовлетворения как запросов экземпляра от API [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_GetStatusAsync_System_String_), так и [API HTTP-запросов](https://docs.microsoft.com/azure/azure-functions/durable-functions-http-api#get-instance-status). В конечном итоге она поддерживается в соответствии с содержанием таблицы **Журнала**, упомянутой ранее. Использование отдельных таблиц хранилища Azure для эффективного удовлетворения операций запроса экземпляров, является путем, обусловленным [шаблоном CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs).
 
 ## <a name="internal-queue-triggers"></a>Триггеры внутренней очереди
 

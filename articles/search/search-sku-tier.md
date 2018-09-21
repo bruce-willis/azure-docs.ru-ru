@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 06/19/2018
 ms.author: heidist
-ms.openlocfilehash: f7cf471a69395cef0aef7d5dd2e3c77218bf97a3
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 140daf4903c64d734182545cd4dc58db60274852
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715286"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576126"
 ---
 # <a name="choose-a-pricing-tier-for-azure-search"></a>Выбор ценовой категории службы "Поиск Azure"
 
@@ -104,7 +104,7 @@ ms.locfileid: "39715286"
 
 Некоторые клиенты предпочитают начинать с выделенных ресурсов, которые могут вместить большую выборку и обеспечить более быструю обработку, а затем рассчитать реалистичное количество, объем и объем запросов в ходе разработки. Первоначально служба подготавливается на основе предполагаемой оценки, а затем, когда проект развивается, разработчики обычно знают, может ли имеющаяся служба обрабатывать прогнозируемые рабочие нагрузки. 
 
-1. [Просмотрите ограничения служб на каждом уровне](https://docs.microsoft.com/en-us/azure/search/search-limits-quotas-capacity#index-limits), чтобы определить, могут ли нижние уровни поддерживать количество необходимых индексов. На уровнях **Базовый**-**S1**- **S2** индексы ограничиваются 15, 50 и 200 соответственно.
+1. [Просмотрите ограничения служб на каждом уровне](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#index-limits), чтобы определить, могут ли нижние уровни поддерживать количество необходимых индексов. На уровнях **Базовый**-**S1**- **S2** индексы ограничиваются 15, 50 и 200 соответственно.
 
 1. [Создайте службу на платном уровне](search-create-service-portal.md):
 

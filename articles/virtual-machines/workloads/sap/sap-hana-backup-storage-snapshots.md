@@ -13,12 +13,12 @@ ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: rclaus
-ms.openlocfilehash: c5066d23705ca84febaa0ba527a01259134146c0
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: 031cb10e476ba068f7e3d7baf3b19f7703caf170
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358987"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45580054"
 ---
 # <a name="sap-hana-backup-based-on-storage-snapshots"></a>Резервное копирование SAP HANA на основе моментальных снимков хранилища
 
@@ -88,8 +88,8 @@ _&quot;Мы настоятельно советуем как можно скор
 
 Сведения о том, где можно скопировать эти сценарии и как именно работает Azure Backup, см. в следующих статьях:
 
-- [Планирование инфраструктуры резервного копирования виртуальных машин в Azure](https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction)
-- [Согласованное с приложениями резервное копирование виртуальных машин Linux в Azure](https://docs.microsoft.com/en-us/azure/backup/backup-azure-linux-app-consistent)
+- [Планирование инфраструктуры резервного копирования виртуальных машин в Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction)
+- [Согласованное с приложениями резервное копирование виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/backup/backup-azure-linux-app-consistent)
 
 
 

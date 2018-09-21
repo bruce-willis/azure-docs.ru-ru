@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 9512c800a35ad4a819c657b07227d781c63c6399
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: e91ca2ff438e3ae9e9b3f46e5a8db89f17fb1c8e
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39163400"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295127"
 ---
 # <a name="tutorial-enabling-password-writeback"></a>Руководство. Включение компонента обратной записи паролей
 
@@ -29,7 +29,7 @@ ms.locfileid: "39163400"
 
 * Доступ к рабочему клиенту Azure AD с активированной по крайней мере пробной лицензией.
 * Учетная запись с правами глобального администратора в клиенте Azure AD.
-* Существующий сервер, настроенный на работу с текущей версией [Azure AD Connect](../connect/active-directory-aadconnect-get-started-express.md).
+* Существующий сервер, настроенный на работу с текущей версией [Azure AD Connect](../hybrid/how-to-connect-install-express.md).
 * Изучены предыдущие руководства по самостоятельному сбросу пароля (SSPR).
 
 ## <a name="enable-password-writeback-option-in-azure-ad-connect"></a>Включение компонента обратной записи паролей в Azure AD Connect
