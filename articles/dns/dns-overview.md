@@ -7,18 +7,18 @@ ms.service: dns
 ms.topic: overview
 ms.date: 6/7/2018
 ms.author: victorh
-ms.openlocfilehash: e95617664ee30f1b9253f1892176fd39649ee2c2
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 0812f5e3e23fbf49afec91524b4de2ff0eb7cd9a
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39174638"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45574187"
 ---
 # <a name="what-is-azure-dns"></a>Что такое Azure DNS?
 
 Azure DNS является службой размещения для доменов DNS, предоставляющей разрешение имен с помощью инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 
-Невозможно использовать Azure DNS для приобретения имени домена. Уплатив ежегодный сбор, можно приобрести имя домена, используя [Веб-приложения Azure](https://docs.microsoft.com/en-us/azure/app-service/custom-dns-web-site-buydomains-web-app#buy-the-domain) или регистратор сторонних доменных имен. Затем можно разместить домены в Azure DNS, чтобы управлять записями. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](dns-domain-delegation.md).
+Невозможно использовать Azure DNS для приобретения имени домена. Уплатив ежегодный сбор, можно приобрести имя домена, используя [Веб-приложения Azure](https://docs.microsoft.com/azure/app-service/custom-dns-web-site-buydomains-web-app#buy-the-domain) или регистратор сторонних доменных имен. Затем можно разместить домены в Azure DNS, чтобы управлять записями. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](dns-domain-delegation.md).
 
 Azure DNS включает следующие функции.
 
@@ -30,11 +30,11 @@ Azure DNS включает следующие функции.
 
 Служба Azure DNS работает на основе Azure Resource Manager. Таким образом, диспетчер ресурсов получает следующие возможности.
 
-* [Управление доступом на основе ролей.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#access-control) Позволяет управлять доступом к определенным действиям для организации.
+* [Управление доступом на основе ролей.](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#access-control) Позволяет управлять доступом к определенным действиям для организации.
 
-* [Журналы действий.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#activity-logs) Используются для наблюдения за тем, как пользователь организации изменяет ресурс, а также для поиска ошибки при устранении неполадок.
+* [Журналы действий.](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#activity-logs) Используются для наблюдения за тем, как пользователь организации изменяет ресурс, а также для поиска ошибки при устранении неполадок.
 
-* [Блокировка ресурсов.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-lock-resources) Позволяет заблокировать подписку, ресурс или группу ресурсов, чтобы другие пользователи в организации не могли случайно удалить или изменить критически важные ресурсы.
+* [Блокировка ресурсов.](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-lock-resources) Позволяет заблокировать подписку, ресурс или группу ресурсов, чтобы другие пользователи в организации не могли случайно удалить или изменить критически важные ресурсы.
 
 Дополнительные сведения см. в разделе [Как защитить зоны и записи DNS](dns-protect-zones-recordsets.md). 
 

@@ -7,17 +7,17 @@ ms.author: jehrling
 manager: jhubbard
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.custom: mvc
 ms.date: 10/05/2017
-ms.openlocfilehash: f3f24a9b269205dd77ec3301b2650ee7a03f435b
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: a5531ae256a263f1c34496819ac435ce67156b49
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832702"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35640676"
 ---
 # <a name="predictive-maintenance-for-real-world-scenarios"></a>Прогнозное обслуживание в реальных сценариях
 
@@ -38,7 +38,7 @@ ms.locfileid: "34832702"
 
 При использовании смоделированных данных компании сталкиваются с такой сложностью, как прогнозирование проблем, вызванных сбоем компонентов. В сфере бизнеса вопрос звучит так: *Какова вероятность сбоя компьютера из-за сбоя компонента*? Эта проблема форматируется как проблема многоклассовой классификации (несколько компонентов на каждом компьютере). Для создания прогнозной модели используется алгоритм машинного обучения. Эта модель обучается на основе данных журнала, собранных с компьютеров. В этом сценарии пользователь выполнит несколько шагов для реализации модели в среде Machine Learning Workbench.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
 * Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md).

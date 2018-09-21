@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: cherylmc
-ms.openlocfilehash: e61e41c41888d8d2ca65961dd5bea73fd9b6bd21
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: d23ed383bee3346cfbb20c6935dd3630e137c179
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37927695"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45573912"
 ---
 # <a name="reset-a-vpn-gateway"></a>Сброс VPN-шлюза
 
@@ -75,7 +75,7 @@ Reset-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw
 
 ### <a name="resetclassic"></a>Классическая модель развертывания
 
-Командлет сброса шлюза — **Reset-AzureVNetGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для управления службами](https://docs.microsoft.com/en-us/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). В следующем примере выполняется сброс шлюза для виртуальной сети с именем ContosoVNet:
+Командлет сброса шлюза — **Reset-AzureVNetGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для управления службами](https://docs.microsoft.com/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). В следующем примере выполняется сброс шлюза для виртуальной сети с именем ContosoVNet:
 
 ```powershell
 Reset-AzureVNetGateway –VnetName “ContosoVNet”

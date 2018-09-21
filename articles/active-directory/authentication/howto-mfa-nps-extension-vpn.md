@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: c1247dfca6dea638da2113fef940b97ad3348b9a
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 0754b13704810816b1650010a00185031ca41f5d
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39160286"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297577"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -122,7 +122,7 @@ ms.locfileid: "39160286"
 
 Для использования расширения NPS локальные пользователи должны быть синхронизированы с Azure Active Directory и настроены для использования MFA. В этом руководстве предполагается, что синхронизация локальных пользователей с Azure Active Directory выполнена с помощью Azure AD Connect. Ниже приведены инструкции по включению Многофакторной идентификации для пользователей.
 
-Дополнительные сведения об Azure AD Connect см. в статье [История выпусков версий соединителей](../connect/active-directory-aadconnect.md). 
+Дополнительные сведения об Azure AD Connect см. в статье [История выпусков версий соединителей](../hybrid/whatis-hybrid-identity.md). 
 
 ### <a name="azure-active-directory-guid-id"></a>идентификатор GUID Azure Active Directory. 
 
@@ -453,5 +453,5 @@ ms.locfileid: "39160286"
 
 [Шлюз удаленных рабочих столов и сервер Многофакторной идентификации Azure, использующие проверку подлинности RADIUS](howto-mfaserver-nps-rdg.md)
 
-[Интеграция локальных каталогов с Azure Active Directory](../connect/active-directory-aadconnect.md)
+[Интеграция локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)
 

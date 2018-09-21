@@ -15,16 +15,16 @@ ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 6fa0bab5d2b402c85ea3ee70e7356f8c8c989ab9
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 1d54d914edb306b89dc6f2604aa5af3d17cb535d
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446788"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576788"
 ---
 # <a name="create-a-multi-container-preview-app-using-web-app-for-containers"></a>Создание многоконтейнерного приложения (предварительная версия) с помощью платформы "Веб-приложение для контейнеров"
 
-Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом кратком руководстве показано, как в [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview) развернуть многоконтейнерное приложение на платформе "Веб-приложение для контейнеров", используя конфигурацию Docker Compose. Для получения дополнительных сведений о Kubernetes и комплексном решении с базой данных Azure для MySQL см. [руководство по многоконтейнерным приложениям](tutorial-multi-container-app.md).
+Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом кратком руководстве показано, как в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) развернуть многоконтейнерное приложение на платформе "Веб-приложение для контейнеров", используя конфигурацию Docker Compose. Для получения дополнительных сведений о Kubernetes и комплексном решении с базой данных Azure для MySQL см. [руководство по многоконтейнерным приложениям](tutorial-multi-container-app.md).
 
 Действия, описанные в этом руководстве, выполняются в Cloud Shell, но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli) (2.0.32 или более поздней версии). 
 

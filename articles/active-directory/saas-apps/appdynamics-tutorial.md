@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/09/2018
+ms.date: 09/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 3600e83d18f8cabd03c46af2ef47445c588cbdb5
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 7f24dad3cfefd5ecb0b1c78f4a2b242c99a01239
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38548290"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605833"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство. Интеграция Azure Active Directory с AppDynamics
 
@@ -32,7 +32,7 @@ ms.locfileid: "38548290"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с AppDynamics, вам потребуется:
 
@@ -112,9 +112,9 @@ ms.locfileid: "38548290"
 
     ![Настройка единого входа](./media/appdynamics-tutorial/tutorial_appdynamics_url.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com?accountName=<companyname>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com/controller`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com/controller`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки AppDynamics](https://www.appdynamics.com/support/).
@@ -147,7 +147,7 @@ ms.locfileid: "38548290"
 
     a. Для параметра **Authentication Provider** (Поставщик проверки подлинности) выберите значение **SAML**.
 
-    Б. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     c. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -180,7 +180,7 @@ ms.locfileid: "38548290"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -189,6 +189,7 @@ ms.locfileid: "38548290"
 ### <a name="creating-an-appdynamics-test-user"></a>Создание тестового пользователя AppDynamics
 
 Цель этого раздела — создать в приложении AppDynamics пользователя с именем Britta Simon. Приложение AppDynamics поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к AppDynamics (если он еще не создан).
+
 >[!Note]
 >Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки AppDynamics](https://www.appdynamics.com/support/).
 

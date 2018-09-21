@@ -1,6 +1,6 @@
 ---
-title: "Azure Application Insights для рабочих ролей и служб Windows | Документация Майкрософт"
-description: "Добавьте вручную пакет SDK Application Insights в приложение ASP.NET для анализа использования, доступности и производительности."
+title: Azure Application Insights для рабочих ролей и служб Windows | Документация Майкрософт
+description: Добавьте вручную пакет SDK Application Insights в приложение ASP.NET для анализа использования, доступности и производительности.
 services: application-insights
 documentationcenter: .net
 author: mrbullwinkle
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
-ms.openlocfilehash: bf7921926c69fff214e94a2d0edc22b28fb8eac0
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 3f2f0925cf6ec612b84765e42217723d8c8729c6
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "35638437"
 ---
 # <a name="manually-configure-application-insights-for-net-applications"></a>Настройка Application Insights вручную для приложений .NET
 

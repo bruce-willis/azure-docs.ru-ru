@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: b9f0571c88b6ec4aa9e3851d5bf618e5104b0652
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: c39b78995aaa7e6754b180142c03cf3aa25199a5
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39716252"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45574283"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 
@@ -30,7 +30,7 @@ ms.locfileid: "39716252"
 
 Включить с помощью политики условного доступа. Это наиболее гибкий способ включить двухфакторную проверку подлинности для пользователей. Включение с помощью политики условного доступа работает только для Azure MFA в облаке и является компонентом уровня "Премиум" в Azure AD. Дополнительные сведения об этом методе можно найти в статье [Приступая к работе с многофакторной идентификацией Azure в облаке](howto-mfa-getstarted.md).
 
-Включить с помощью защиты идентификации Azure AD. Этот метод использует политику рисков защиты идентификации Azure AD, чтобы требовать двухфакторную проверку подлинности только на основе риска входа для всех облачных приложений. Этот метод требует лицензирования Azure Active Directory P2. Дополнительные сведения об этом методе см. в статье [Защита идентификации Azure Active Directory](../identity-protection/overview.md#risky-sign-ins).
+Включить с помощью защиты идентификации Azure AD. Этот метод использует политику рисков защиты идентификации Azure AD, чтобы требовать двухфакторную проверку подлинности только на основе риска входа для всех облачных приложений. Этот метод требует лицензирования Azure Active Directory P2. Дополнительные сведения об этом методе см. в статье [Защита идентификации Azure Active Directory](../identity-protection/howto-sign-in-risk-policy.md).
 
 > [!Note]
 > Дополнительные сведения о лицензиях и ценах можно найти на страницах цен для [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/

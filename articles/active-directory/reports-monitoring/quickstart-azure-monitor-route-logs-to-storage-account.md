@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 07/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 061a4f2d1b6a1661e341166ec0a1541af073c1f5
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 08e4525e7dcf8edafc8819416b9d77e76fd78a65
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "41918100"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46363434"
 ---
 # <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account-preview"></a>Руководство: архивация журналов Azure AD в учетную запись хранения Azure (предварительная версия)
 
@@ -77,4 +77,4 @@ ms.locfileid: "41918100"
 
 * [Интерпретация схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
 * [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))
-* [Часто задаваемые вопросы и известные проблемы](overview-activity-logs-in-azure-monitor.md#frequently-asked-questions)
+* [Часто задаваемые вопросы и известные проблемы](concept-activity-logs-in-azure-monitor.md#frequently-asked-questions)

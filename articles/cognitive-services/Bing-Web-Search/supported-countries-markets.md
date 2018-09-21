@@ -1,20 +1,21 @@
 ---
 title: Страны, регионы и языки, которые поддерживаются в API Bing для поиска в Интернете.
+titleSuffix: Azure Cognitive Services
 description: Узнайте, какие страны, регионы и языки поддерживаются в API Bing для поиска в Интернете.
 services: cognitive-services
 author: v-jerkin
-manager: jhubbard
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: article
 ms.date: 8/16/2018
 ms.author: erhopf
-ms.openlocfilehash: 87384a8aeabfe0c4a178344235debcc586cdf3de
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: b954814d1c26e8afd24e0bb13e74c493f0fd2c55
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888477"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46125125"
 ---
 # <a name="countries-regions-and-languages-supported-by-the-bing-web-search-api"></a>Страны, регионы и языки, которые поддерживаются в API Bing для поиска в Интернете.
 

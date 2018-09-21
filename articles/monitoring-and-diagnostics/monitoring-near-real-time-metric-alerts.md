@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 4d51b099532d3052acc190231ec4be17765a427e
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 019f245a7cc1feedcbd520c336f53a60ed1e9ddc
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971029"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45579095"
 ---
-# <a name="introduction"></a>Введение
+# <a name="supported-resources-for-newer-azure-monitor-metric-alerts"></a>Поддерживаемые ресурсы для новой версии оповещений о метриках Azure Monitor
 Azure Monitor теперь поддерживает [новый тип оповещений о метриках](monitoring-overview-unified-alerts.md), который имеет ряд преимуществ перед [классическими оповещениями](insights-alerts-portal.md). Метрики доступны для [большого числа служб Azure](monitoring-supported-metrics.md). Список типов ресурсов, поддерживаемых новыми оповещениями, постоянно расширяется. В этой статье рассматриваются новые возможности. 
 
 Новые оповещения на основе метрик можно применять для популярных журналов Log Analytics, извлекаемых в виде метрик из журналов (предварительная версия)  
@@ -50,7 +50,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.DataFactory/factories;     |   Yes     |[Фабрики данных V2](monitoring-supported-metrics.md#microsoftdatafactoryfactories)|
 |Microsoft.DBforMySQL/servers     |   Недоступно      |[База данных для MySQL](monitoring-supported-metrics.md#microsoftdbformysqlservers)|
 |Microsoft.DBforPostgreSQL/servers     |    Недоступно     | [База данных для PostgreSQL](monitoring-supported-metrics.md#microsoftdbforpostgresqlservers)|
-|Microsoft.EventHub/namespaces     |  Yes      |[Концентраторы событий](monitoring-supported-metrics.md#microsofteventhubnamespaces)|
+|Microsoft.EventHub/namespaces     |  Yes      |[Центры событий](monitoring-supported-metrics.md#microsofteventhubnamespaces)|
 |Microsoft.KeyVault/vaults| Нет  | [Хранилища](monitoring-supported-metrics.md#microsoftkeyvaultvaults)|
 |Microsoft.Logic/workflows     |     Недоступно    |[Logic Apps](monitoring-supported-metrics.md#microsoftlogicworkflows) |
 |Microsoft.Network/applicationGateways     |    Недоступно     | [Шлюзы приложений](monitoring-supported-metrics.md#microsoftnetworkapplicationgateways) |

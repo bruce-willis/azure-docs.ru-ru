@@ -7,22 +7,22 @@ ms.author: roastala
 manager: haining
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/09/2017
-ms.openlocfilehash: 07076a1d551d4dfb513deabaedb650a3262bbeab
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 712cdaa65487620b2f8af4a0ad57c01c24b9a965
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34830995"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35641500"
 ---
 # <a name="use-jupyter-notebooks-in-azure-machine-learning-workbench"></a>Использование записных книжек Jupyter в Azure Machine Learning Workbench
 
 Azure Machine Learning Workbench поддерживает интерактивные эксперименты по обработке и анализу данных путем интеграции записной книжки Jupyter. В данной статье описывается, как эффективно использовать этот компонент, чтобы ускорить проведение интерактивных экспериментов по обработке и анализу данных и повысить их качество.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - [Создайте учетную запись для службы "Машинное обучение Azure" и установите Azure Machine Learning Workbench](../service/quickstart-installation.md).
 - Ознакомьтесь со сведениями о [записной книжке Jupyter](http://jupyter.org/). В данной статье нет сведений о том, как ее использовать.
 

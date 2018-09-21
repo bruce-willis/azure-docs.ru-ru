@@ -11,15 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/09/2018
+ms.date: 09/11/2018
 ms.author: barbkess
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 17e9616b39491aac01427ee34fb23db556c5c9b9
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: b62679332a45127d7c1a45593c162182886a7150
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355871"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44719364"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Подготовка приложений на основе атрибутов с использованием фильтров области
 В этой статье объясняется, как с помощью фильтров области задать правила на основе атрибутов, которые управляют подготовкой пользователей для работы с приложением.
@@ -111,7 +111,6 @@ ms.locfileid: "44355871"
 
 
 ## <a name="related-articles"></a>Связанные статьи
-* [Указатель статей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)
 * [Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](customize-application-attributes.md)
 * [Запись выражений для сопоставления атрибутов в Azure Active Directory](functions-for-customizing-application-data.md)
