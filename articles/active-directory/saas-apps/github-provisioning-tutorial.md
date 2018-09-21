@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
-ms.openlocfilehash: f069134c0665769316b794122cc077b05941f635
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: c645b0a99493c71a9fa1416c16876da30bcff891
+ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346174"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46367664"
 ---
 # <a name="tutorial-configure-github-for-automatic-user-provisioning"></a>Руководство по настройке GitHub для автоматической подготовки пользователей
 
@@ -80,7 +80,7 @@ ms.locfileid: "44346174"
 
     ![Диалоговое окно авторизации](./media/github-provisioning-tutorial/GitHub2.png)
 
-7. На портале Azure введите **URL-адрес клиента** и щелкните **Проверить подключение**, чтобы убедиться в том, что Azure AD может подключиться к вашему приложению GitHub. Если установить подключение не удалось, убедитесь, что у вашей учетной записи GitHub имеются разрешения администратора и **URL-адрес клиента** введен правильно, а затем повторите авторизацию (**URL-адрес клиента** можно указать в формате `https://api.github.com/scim/v2/<Organizations_name>`, а свои организации можно найти в учетной записи GitHub, выбрав **Параметры** > **Организации**).
+7. На портале Azure введите **URL-адрес клиента** и щелкните **Проверить подключение**, чтобы убедиться в том, что Azure AD может подключиться к вашему приложению GitHub. Если установить подключение не удалось, убедитесь, что у вашей учетной записи GitHub имеются разрешения администратора и **URL-адрес клиента** введен правильно, а затем повторите авторизацию (**URL-адрес клиента** можно указать в формате `https://api.github.com/scim/v2/organizations/<Organization_name>`, а свои организации можно найти в учетной записи GitHub, выбрав **Параметры** > **Организации**).
 
     ![Диалоговое окно авторизации](./media/github-provisioning-tutorial/GitHub3.png)
 

@@ -7,17 +7,17 @@ ms.author: ranku
 manager: mwinkle
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.custom: mvc, reference
 ms.topic: article
 ms.date: 09/14/2017
-ms.openlocfilehash: fa2a8710f4dc12fab1efe34aa11398b937878692
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: dbda4b7b6d82e8cf1e89dc78ce82efbac08b9933
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831757"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35642004"
 ---
 # <a name="expand-json-transformation"></a>Преобразование Expand JSON (Развертывание текста JSON)
 Преобразование **Expand JSON** (Развертывание текста JSON) позволяет развернуть имеющий столбец, содержащий допустимый текст JSON в нескольких столбцах.

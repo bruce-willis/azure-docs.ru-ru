@@ -15,24 +15,26 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 359e5e671287c4d330deeb2d3573877d9ee5d1c5
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: acf51056a084abc08bda2d7f73b561f442f57784
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40190955"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605540"
 ---
 # <a name="creating-charts-and-diagrams-from-log-analytics-queries"></a>Создание графиков и диаграмм из запросов Log Analytics
 
 > [!NOTE]
 > Следует изучить статью [Advanced aggregations in Log Analytics queries](advanced-aggregations.md) (Расширенный статистический анализ в запросах Log Analytics), перед тем как приступать к этому уроку.
 
+[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
+
 В этой статье описаны различные визуализации в Azure Log Analytics для разных способов отображения данных.
 
 ## <a name="charting-the-results"></a>Отображение результатов
 Начните с изучения того, сколько компьютеров работают в операционной системе за последний час.
 
-```OQL
+```KQL
 Heartbeat
 | where TimeGenerated > ago(1h)
 | summarize count(Computer) by OSType  
@@ -50,7 +52,7 @@ Heartbeat
 ## <a name="timecharts"></a>Временные диаграммы
 Показать среднее количество 50- и 95-процентильной загруженности процессора в ячейках за 1 час. Запрос создает несколько рядов, а затем можно выбрать, какие ряды отображать на диаграмме времени.
 
-```OQL
+```KQL
 Perf
 | where TimeGenerated > ago(1d) 
 | where CounterName == "% Processor Time" 
@@ -65,7 +67,7 @@ Perf
 
 Справочные данные помогут легко определить, превышает ли метрика указанный порог. Чтобы добавить строку в диаграмму, расширьте набор данных столбцом константы.
 
-```OQL
+```KQL
 Perf
 | where TimeGenerated > ago(1d) 
 | where CounterName == "% Processor Time" 
@@ -78,7 +80,7 @@ Perf
 ## <a name="multiple-dimensions"></a>Несколько измерений
 Несколько выражений в значении `by` из `summarize` в результате создают несколько строк, по одному для каждой комбинации значений.
 
-```OQL
+```KQL
 SecurityEvent
 | where TimeGenerated > ago(1d)
 | summarize count() by tostring(EventID), AccountType, bin(TimeGenerated, 1h)

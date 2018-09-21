@@ -10,12 +10,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: luisca
-ms.openlocfilehash: 3c3f9a0d0dc40de6c62c21dab0f11a501829ef11
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3d0d468674a2284e9925c1410f2bb8bcbde8f73f
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34640971"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575322"
 ---
 # <a name="troubleshooting-tips-for-cognitive-search"></a>Советы по устранению неполадок с когнитивным поиском
 
@@ -33,7 +33,7 @@ ms.locfileid: "34640971"
 ## <a name="tip-2-make-sure-your-data-source-credentials-are-correct"></a>Совет 2. Убедитесь в правильности учетных данных источника данных
 Подключение к источнику данных не проверяется до определения индексатора, который его использует. При обнаружении ошибок, сообщающих о том, что индексатору не удается получить доступ к данным, убедитесь в следующем:
 - Строка подключения должна быть указана правильно. В частности, при создании маркеров SAS следите за тем, чтобы использовался формат, ожидаемый службой "Поиск Azure". Сведения о разных поддерживаемых форматах см. в руководстве по [определению учетных данных](
-https://docs.microsoft.com/en-us/azure/search/search-howto-indexing-azure-blob-storage#how-to-specify-credentials).
+https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage#how-to-specify-credentials).
 - Имя контейнера в индексаторе указано правильно.
 
 ## <a name="tip-3-see-what-works-even-if-there-are-some-failures"></a>Совет 3. Проверьте, какие компоненты работают даже при сбоях

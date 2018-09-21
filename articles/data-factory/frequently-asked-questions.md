@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: shlo
-ms.openlocfilehash: ebe8745db06113d0508d86554bf031a4235c8e44
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 73bc8b6954470d11d6369bc733bb7c6f794ce892
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045955"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45577138"
 ---
 # <a name="azure-data-factory-faq"></a>Часто задаваемые вопросы о фабрике данных Azure
 Эта статья содержит ответы на часто задаваемые вопросы о фабрике данных Azure.  
@@ -82,7 +82,7 @@ ms.locfileid: "37045955"
 -   База данных SQL Azure с конечными точками службы виртуальной сети.
 -   Управляемый экземпляр (MI).
 -   Эластичный пул
--   Поддержка виртуальной сети Azure Resource Manager поверх классической виртуальной сети (будет прекращена). Благодаря этому вы можете присоединять среду выполнения интеграции Azure SSIS к виртуальной сети, настроенной для базы данных SQL Azure с конечными точками службы виртуальной сети, управляемым экземпляром и доступом к локальным данным. (См. страницу https://docs.microsoft.com/en-us/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network.) 
+-   Поддержка виртуальной сети Azure Resource Manager поверх классической виртуальной сети (будет прекращена). Благодаря этому вы можете присоединять среду выполнения интеграции Azure SSIS к виртуальной сети, настроенной для базы данных SQL Azure с конечными точками службы виртуальной сети, управляемым экземпляром и доступом к локальным данным. (См. страницу https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network.) 
 -   Поддержка проверки подлинности Azure Active Directory (AAD) поверх проверки подлинности SQL для подключения к SSISDB. Таким образом, можно использовать проверку подлинности AAD с управляемым удостоверением службы (MSI).
 -   Поддержка использования собственной лицензии на локальную версию SQL Server для существенной экономии благодаря программе "Преимущество гибридного Azure" (AHB).
 -   Поддержка выпуска Enterprise среды выполнения интеграции Azure SSIS, позволяющего использовать расширенные возможности и премиум-возможности, выборочную установку для установки дополнительных компонентов или расширений и экосистему решений сторонних производителей. (См. страницу https://blogs.msdn.microsoft.com/ssis/2018/04/27/enterprise-edition-custom-setup-and-3rd-party-extensibility-for-ssis-in-adf/.) 

@@ -15,12 +15,12 @@ ms.date: 05/04/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 618df9b4bcc4a1b6f44d9cabc29c797a2cabcc80
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 0d139437a069406db2ae0f189480072f8063a327
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39366798"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45982278"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD
 
@@ -109,7 +109,7 @@ Intune Managed Browser можно использовать для обеспеч
 2. Перейдите в **Azure Active Directory** > **Корпоративные приложения** > **Приложения** > приложение, которым необходимо управлять > **Прокси приложения**.
 3. Переведите переключатель **Translate URLs in application body** (Преобразовывать URL-адреса в коде приложения) в состояние **Да**.
 
-   ![Выберите "Да" для преобразования URL-адресов в коде приложения](./media/application-proxy-configure-hard-coded-link-translation/select_yes.png).
+   ![Выберите "Да" для преобразования URL-адресов в коде приложения](./media/application-proxy-configure-hard-coded-link-translation/select_yes.png)
 4. Щелкните **Сохранить**, чтобы применить изменения.
 
 Теперь, когда пользователи получают доступ к этому приложению, прокси будет автоматически проверять внутренние ссылки, которые были опубликованы через прокси приложения на вашем клиенте.

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 6/5/2018
 ms.author: adigan
-ms.openlocfilehash: a9eca3c3aeaa8d9d0d3d7728f8aebd63543cb604
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: acbd1bb98fd9a3eb24b7b3262c3fe9fe47200385
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39617121"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45579211"
 ---
 # <a name="back-up-files-on-azure-stack"></a>Архивация файлов в Azure Stack
 Службу Azure Backup можно использовать для защиты (или резервного копирования) файлов и приложений в Azure Stack. Чтобы создать резервные копии файлов и приложений, установите Microsoft Azure Backup Server в качестве виртуальной машины, выполняющейся в Azure Stack. Вы можете защитить файлы на любом сервере Azure Stack в той же виртуальной сети. Установив Azure Backup Server, добавьте диски Azure, чтобы увеличить локальное хранилище, доступное для краткосрочного резервного копирования данных. Azure Backup Server использует хранилища Azure для долгосрочного хранения.
@@ -49,7 +49,7 @@ ms.locfileid: "39617121"
 
     ![Открытое окно мастера создания группы защиты](./media/backup-mabs-files-applications-azure-stack/5-select-group-members.png)
 
-    Корпорация Майкрософт рекомендует поместить в одну группу защиты все данные, для которых применяется одинаковая политика защиты. Полные сведения о планировании и развертывании групп защиты см. в статье System Center DPM [Развертывание групп защиты](https://docs.microsoft.com/en-us/system-center/dpm/create-dpm-protection-groups?view=sc-dpm-1801).
+    Корпорация Майкрософт рекомендует поместить в одну группу защиты все данные, для которых применяется одинаковая политика защиты. Полные сведения о планировании и развертывании групп защиты см. в статье System Center DPM [Развертывание групп защиты](https://docs.microsoft.com/system-center/dpm/create-dpm-protection-groups?view=sc-dpm-1801).
 
 4. На экране **Выбор метода защиты данных** введите имя группы защиты. Установите флажок рядом с параметром **I want short-term protection using:** (Краткосрочная защита с использованием:) и **I want online protection** (Мне нужна оперативная защита). Щелкните **Далее**.
 
@@ -135,5 +135,5 @@ ms.locfileid: "39617121"
 
 ## <a name="see-also"></a>См. также
 Сведения об использовании Azure Backup Server для защиты других рабочих нагрузок см. в следующих статьях:
-- [Резервное копирование фермы SharePoint](https://docs.microsoft.com/en-us/azure/backup/backup-mabs-sharepoint-azure-stack)
-- [Резервное копирование SQL Server](https://docs.microsoft.com/en-us/azure/backup/backup-mabs-sql-azure-stack)
+- [Резервное копирование фермы SharePoint](https://docs.microsoft.com/azure/backup/backup-mabs-sharepoint-azure-stack)
+- [Резервное копирование SQL Server](https://docs.microsoft.com/azure/backup/backup-mabs-sql-azure-stack)

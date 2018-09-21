@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 5e67c60828467cce7c3b40ba17f15f44ad045920
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: fec075a744b5f47a4be7f1b960cceedfea7b9a2c
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34735676"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35639682"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Развертывание ресурсов Azure в нескольких подписках или группах ресурсов
 
@@ -126,8 +126,6 @@ ms.locfileid: "34735676"
 ```
 
 Если в качестве значения параметра `resourceGroup` задать имя несуществующей группы ресурсов, развертывание завершится сбоем.
-
-Чтобы развернуть пример шаблона, используйте Azure PowerShell 4.0.0 или более поздней версии либо Azure CLI 2.0.0 или более поздней версии.
 
 ## <a name="use-the-resourcegroup-and-subscription-functions"></a>Использование функций resourceGroup() и subscription()
 

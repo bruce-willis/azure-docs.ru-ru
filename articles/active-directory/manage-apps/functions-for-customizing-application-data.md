@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/09/2018
+ms.date: 09/11/2018
 ms.author: barbkess
-ms.openlocfilehash: fd42d2d7f3a277f9ea568e255ab5ba5eb76476ae
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: cf0e94b859b49eddb8e2471d5319b3cc4a2c17ba
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44356210"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44720299"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -264,7 +264,6 @@ NormalizeDiacritics([givenName])
 * **ВЫВОД**: "Australia/Brisbane"
 
 ## <a name="related-articles"></a>Связанные статьи
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](user-provisioning.md)
 * [Настройка сопоставления атрибутов для подготовки пользователей](customize-application-attributes.md)
 * [Фильтры области для подготовки пользователей](define-conditional-rules-for-provisioning-user-accounts.md)

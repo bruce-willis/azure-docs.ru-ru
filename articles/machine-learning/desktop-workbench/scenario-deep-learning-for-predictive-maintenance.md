@@ -7,18 +7,18 @@ ms.author: jehrling
 manager: ireiter
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.custom: mvc
 ms.devlang: ''
 ms.topic: article
 ms.date: 11/22/2017
-ms.openlocfilehash: 26b061c6bd6ff3ec9d1edbb7d99053d17db9b773
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 83e1f14db317f59ab2063a9d020adbdb6fe78e5f
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832607"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35642151"
 ---
 # <a name="deep-learning-for-predictive-maintenance-real-world-scenarios"></a>Глубокое обучение реальным сценариям прогнозного обслуживания
 
@@ -46,7 +46,7 @@ ms.locfileid: "34832607"
 
 Этот сценарий создает сеть LSTM для прогнозирования оставшегося срока полезного использования (RUL) двигателей самолета с применением исторических значений датчика. Используя библиотеку [Keras](https://keras.io/) с платформой глубокого обучения [Tensorflow](https://www.tensorflow.org/) в качестве системы вычислений, этот сценарии обучает сеть LSTM, применяя один набор двигателей, и тестирует сети на многих неучитываемых двигателях.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
 - Azure Machine Learning Workbench с созданной рабочей областью.
 - Для ввода модели в эксплуатацию: компонент Azure Machine Learning Operationalization с настроенной средой для локального развертывания и [учетной записью Управления моделями машинного обучения Azure](model-management-overview.md).

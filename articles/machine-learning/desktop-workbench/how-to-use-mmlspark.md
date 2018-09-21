@@ -7,16 +7,16 @@ ms.author: roastala
 manager: jhubbard
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 01/12/2018
-ms.openlocfilehash: 3c9bcce67bb802a8596416b55ef61a51ab2900bd
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 654b2559518cd52978153310fbb1e89a91838a8a
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831536"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35640783"
 ---
 # <a name="how-to-use-microsoft-machine-learning-library-for-apache-spark"></a>Как использовать библиотеку службы "Машинное обучение Microsoft" для Apache Spark
 
@@ -27,7 +27,7 @@ ms.locfileid: "34831536"
  * Создание признаков изображений и текста с помощью предварительно обученных моделей глубокого обучения.
  * Обучение и оценка моделей классификации и регрессии с помощью неявного создания признаков.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, вам понадобится сделать следующее:
 - [Установить Azure Machine Learning Workbench](../service/quickstart-installation.md).

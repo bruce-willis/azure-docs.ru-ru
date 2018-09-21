@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
 ms.author: gokuma
-ms.openlocfilehash: 8486b0be1fb5e1385da3c7ad55f6410a1059df93
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: ea8d53ee71e9272167a045e2ea1780828f974d30
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309254"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45573597"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 [Виртуальная машина для обработки и анализа данных](overview.md) (DSVM) предоставляет среду с широкими возможностями на платформе Azure с предварительно созданным программным обеспечением для задач искусственного интеллекта и аналитики. 
@@ -51,4 +51,4 @@ ms.locfileid: "36309254"
 * [Шифрование](https://docs.microsoft.com/azure/virtual-machines/windows/encrypt-disks)
 * [Обнаружение данных и управление ими](https://docs.microsoft.com/azure/data-catalog/)
 
-[Центр архитектуры Azure](https://docs.microsoft.com/en-us/azure/architecture/) предоставляет комплексную архитектуру и шаблоны для создания и администрирования инфраструктуры облачной аналитики. 
+[Центр архитектуры Azure](https://docs.microsoft.com/azure/architecture/) предоставляет комплексную архитектуру и шаблоны для создания и администрирования инфраструктуры облачной аналитики. 

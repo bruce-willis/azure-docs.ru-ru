@@ -17,12 +17,12 @@ ms.date: 07/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
 ms.custom: seohack1
-ms.openlocfilehash: 38d024de0fd2490d33f7c06498d3ff8d0d06e503
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 3b4c9de16c7248cbd3087689544d70fe22c858fd
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143072"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46296419"
 ---
 # <a name="setting-up-on-premises-conditional-access-by-using-azure-active-directory-device-registration"></a>Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory
 Когда требуется, чтобы пользователи присоединяли свои личные устройства к рабочей области в службе регистрации устройств Azure Active Directory (Azure AD), эти устройства можно помечать как известные организации. Ниже приведено пошаговое руководство по включению условного доступа к локальным приложениям с помощью служб федерации Active Directory (AD FS) в Windows Server 2012 R2.
@@ -88,7 +88,7 @@ ms.locfileid: "42143072"
 ## <a name="part-3-enable-device-writeback-in-azure-ad"></a>Часть 3. Включение обратной записи устройств в Azure AD
 | Задача | Справочные материалы |
 | --- | --- |
-| Выполните часть 2 включения обратной записи устройств в службе Azure AD Connect. Выполнив это, вернитесь к данному руководству. |[Включение обратной записи устройств в службе Azure AD Connect](./connect/active-directory-aadconnect-feature-device-writeback.md) |
+| Выполните часть 2 включения обратной записи устройств в службе Azure AD Connect. Выполнив это, вернитесь к данному руководству. |[Включение обратной записи устройств в службе Azure AD Connect](hybrid/how-to-connect-device-writeback.md) |
 
 ## <a name="optional-part-4-enable-multi-factor-authentication"></a>[Необязательно.] Часть 4. Включение Многофакторной идентификации
 Мы настоятельно рекомендуем настроить один из нескольких вариантов Многофакторной идентификации. Если вы хотите требовать прохождение многофакторной проверки подлинности, ознакомьтесь с разделом [Выберите для себя решение "Многофакторная идентификация Azure](authentication/concept-mfa-whichversion.md). Она содержит описание каждого решения, а также ссылки, которые помогут вам настроить выбранное решение.
@@ -107,9 +107,9 @@ ms.locfileid: "42143072"
 
 **См. следующие документы.**
 
-- Статья [Интеграция локальных каталогов с Azure Active Directory](./connect/active-directory-aadconnect.md) содержит дополнительные понятийные сведения.
+- Статья [Интеграция локальных каталогов с Azure Active Directory](hybrid/whatis-hybrid-identity.md) содержит дополнительные понятийные сведения.
 
-- Статья [Выборочная установка Azure AD Connect](./connect/active-directory-aadconnect-get-started-custom.md) содержит инструкции по установке.
+- Статья [Выборочная установка Azure AD Connect](hybrid/how-to-connect-install-custom.md) содержит инструкции по установке.
 
 
 ## <a name="upgrade-your-active-directory-domain-services-schema"></a>Обновление схемы доменных служб Active Directory

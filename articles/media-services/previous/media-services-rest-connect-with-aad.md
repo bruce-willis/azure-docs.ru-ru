@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/26/2017
 ms.author: willzhan;juliako;johndeu
-ms.openlocfilehash: ed78d6c6d4c695b841dbfbf917cd1681adc44ee7
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: b44c5b29f41f08ac5c1d5e6aa3c37f8c15ae7c54
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785993"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45984663"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-azure-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST
 
@@ -32,7 +32,7 @@ ms.locfileid: "33785993"
     > [!NOTE]
     > **Субъект-служба** — это лучшая методика для большинства приложений, подключающихся к службам мультимедиа Azure. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Получение сведений об аутентификации с портала Azure
@@ -43,7 +43,7 @@ ms.locfileid: "33785993"
 > [!IMPORTANT]
 > Службы мультимедиа в настоящее время поддерживают модель аутентификации с помощью службы контроля доступа Azure. Тем не менее авторизация посредством службы контроля доступа будет объявлена устаревшей 1 июня 2018 года. Мы рекомендуем как можно быстрее перейти на использование модели аутентификации Azure AD.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -97,7 +97,7 @@ ms.locfileid: "33785993"
     1. Выберите приложение.
     2. В окне справа находится **идентификатор клиента**. 
 
-    ![Доступ через API](./media/connect-with-rest/existing-client-id.png).
+    ![Доступ через API](./media/connect-with-rest/existing-client-id.png)
 
 7.  Получите **ключ** приложения (секрет клиента). 
 

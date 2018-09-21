@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/01/2018
 ms.author: hrushib
-ms.openlocfilehash: 8cfa0e2a5aa1d7f560fe84f4eda18349f5d1d8b4
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 4aeb37d656dcb5ebca1a48253c418186dfca0a7a
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992590"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575428"
 ---
 # <a name="understanding-periodic-backup-configuration-in-azure-service-fabric"></a>Основные сведения о настройке периодического резервного копирования в Azure Service Fabric
 
@@ -182,19 +182,19 @@ ms.locfileid: "38992590"
 ## <a name="suspend--resume-backup"></a>Приостановка и возобновление резервного копирования
 В некоторых ситуациях может понадобится временная приостановка периодического резервного копирования данных. В такой ситуации в зависимости от требований API приостановки резервного копирования может использоваться в _приложении_, _службе_ или _разделе_. Приостановка периодического резервного копирования переходит на поддерево иерархии приложения с точки, к которой она применяется. 
 
-* Если применить приостановку в _приложении_ с помощью API [Suspend Application Backup](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-suspendapplicationbackup) (Приостановка резервного копирования приложения), то во всех службах и разделах этого приложения периодическое резервное копирование данных будет приостановлено.
+* Если применить приостановку в _приложении_ с помощью API [Suspend Application Backup](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-suspendapplicationbackup) (Приостановка резервного копирования приложения), то во всех службах и разделах этого приложения периодическое резервное копирование данных будет приостановлено.
 
-* Если применить приостановку в _службе_ с помощью API [Suspend Service Backup](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-suspendservicebackup) (Приостановка резервного копирования службы), то во всех разделах этой службы периодическое резервное копирование данных будет приостановлено.
+* Если применить приостановку в _службе_ с помощью API [Suspend Service Backup](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-suspendservicebackup) (Приостановка резервного копирования службы), то во всех разделах этой службы периодическое резервное копирование данных будет приостановлено.
 
-* Если применить приостановку в _разделе_ с помощью API [Suspend Partition Backup](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-suspendpartitionbackup) (Приостановка резервного копирования раздела), то во всех разделах этой службы периодическое резервное копирование данных будет приостановлено.
+* Если применить приостановку в _разделе_ с помощью API [Suspend Partition Backup](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-suspendpartitionbackup) (Приостановка резервного копирования раздела), то во всех разделах этой службы периодическое резервное копирование данных будет приостановлено.
 
 После того как необходимость в приостановке отпадет, периодическое резервное копирование данных можно восстановить с помощью соответствующего API возобновления резервного копирования. Периодическое резервное копирование должно быть возобновлено в том же самом _приложении_, _службе_ или _разделе_, в котором оно было приостановлено.
 
-* Если приостановка применена в _приложении_, резервное копирование следует возобновить с помощью API [Resume Application Backup](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-resumeapplicationbackup) (Возобновление резервного копирования приложения). 
+* Если приостановка применена в _приложении_, резервное копирование следует возобновить с помощью API [Resume Application Backup](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-resumeapplicationbackup) (Возобновление резервного копирования приложения). 
 
-* Если приостановка применена в _службе_, резервное копирование следует возобновить с помощью API [Resume Service Backup](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-resumeservicebackup) (Возобновление резервного копирования службы).
+* Если приостановка применена в _службе_, резервное копирование следует возобновить с помощью API [Resume Service Backup](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-resumeservicebackup) (Возобновление резервного копирования службы).
 
-* Если приостановка применена в _разделе_, резервное копирование следует возобновить с помощью API [Resume Partition Backup](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-resumepartitionbackup) (Возобновление резервного копирования раздела).
+* Если приостановка применена в _разделе_, резервное копирование следует возобновить с помощью API [Resume Partition Backup](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-resumepartitionbackup) (Возобновление резервного копирования раздела).
 
 ## <a name="auto-restore-on-data-loss"></a>Автоматическое восстановление в случае потери данных
 В разделе службы может произойти потеря данных из-за непредвиденных сбоев. Например, диск для двух из трех реплик для раздела (включая первичную реплику) поврежден или очищен.
@@ -202,7 +202,7 @@ ms.locfileid: "38992590"
 Когда Service Fabric обнаруживает, что в разделе произошла потеря данных, она вызывает метод интерфейса `OnDataLossAsync` в раздел и ожидает, пока в разделе не будут предприняты необходимые действия по устранению потери данных. В этом случае, если в действующей политике резервного копирования в разделе для флага `AutoRestoreOnDataLoss` задано значение `true`, то восстановление автоматически активируется с использованием последней доступной резервной копии для этого раздела.
 
 ## <a name="get-backup-configuration"></a>Получение конфигурации резервного копирования
-Для получения сведений о конфигурации резервного копирования на уровне _приложения_, _службы_ и _раздела_ теперь доступны отдельные API. [Get Application Backup Configuration Info](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-getapplicationbackupconfigurationinfo) (Получение сведений о конфигурации резервного копирования приложения), [Get Service Backup Configuration Info](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-getservicebackupconfigurationinfo) (Получение сведений о конфигурации резервного копирования службы) и [Get Partition Backup Configuration Info](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-getpartitionbackupconfigurationinfo) (Получение сведений о конфигурации резервного копирования раздела) — эти API соответственно. Главным образом эти API возвращают сведения о применимой политике резервного копирования, уровне, на котором применена политика резервного копирования, и приостановке резервного копирования. Ниже приводится краткое описание возвращаемых результатов этих API.
+Для получения сведений о конфигурации резервного копирования на уровне _приложения_, _службы_ и _раздела_ теперь доступны отдельные API. [Get Application Backup Configuration Info](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getapplicationbackupconfigurationinfo) (Получение сведений о конфигурации резервного копирования приложения), [Get Service Backup Configuration Info](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getservicebackupconfigurationinfo) (Получение сведений о конфигурации резервного копирования службы) и [Get Partition Backup Configuration Info](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackupconfigurationinfo) (Получение сведений о конфигурации резервного копирования раздела) — эти API соответственно. Главным образом эти API возвращают сведения о применимой политике резервного копирования, уровне, на котором применена политика резервного копирования, и приостановке резервного копирования. Ниже приводится краткое описание возвращаемых результатов этих API.
 
 - Сведения о конфигурации резервного копирования приложения: предоставляет сведения о политике резервного копирования, примененной в приложении, и всех переопределенных политиках в службах и разделах, относящихся к приложению. Сюда также входят сведения о приостановке приложения и его служб и разделов.
 
@@ -218,11 +218,11 @@ ms.locfileid: "38992590"
 
 Ниже приведены краткие сведения о поддерживаемых вариантах.
 
-- [Get Application Backup List](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-getapplicationbackuplist) (Получение списка резервного копирования приложения). Возвращает список резервных копий, доступных для каждого раздела, относящегося к данному приложению Service Fabric.
+- [Get Application Backup List](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getapplicationbackuplist) (Получение списка резервного копирования приложения). Возвращает список резервных копий, доступных для каждого раздела, относящегося к данному приложению Service Fabric.
 
-- [Get Service Backup List](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-getservicebackuplist) (Получение списка резервного копирования службы). Возвращает список резервных копий, доступных для каждого раздела, относящегося к данной службе Service Fabric.
+- [Get Service Backup List](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getservicebackuplist) (Получение списка резервного копирования службы). Возвращает список резервных копий, доступных для каждого раздела, относящегося к данной службе Service Fabric.
  
-- [Get Partition Backup List](https://docs.microsoft.com/en-us/rest/api/servicefabric/sfclient-api-getpartitionbackuplist) (Получение списка резервного копирования раздела). Возвращает список резервных копий, доступных для данного раздела.
+- [Get Partition Backup List](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackuplist) (Получение списка резервного копирования раздела). Возвращает список резервных копий, доступных для данного раздела.
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)

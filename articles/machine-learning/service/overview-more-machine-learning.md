@@ -11,12 +11,12 @@ ms.component: core
 ms.workload: data-services
 ms.topic: overview
 ms.date: 04/11/2018
-ms.openlocfilehash: 3e36d9202c578294609b01eaf2731b1551ae67af
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 138fbb64ca2d157059c952d9e82541cfac3ff597
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39282336"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45579060"
 ---
 # <a name="other-machine-learning-products-and-services-from-microsoft"></a>Другие продукты и службы для машинного обучения от корпорации Майкрософт
 
@@ -36,7 +36,7 @@ ms.locfileid: "39282336"
 Службы машинного обучения Майкрософт удобно использовать, когда модели нужно обучать или развертывать локально или в Microsoft SQL Server. Для развертывания моделей, построенных с помощью служб машинного обучения, можно применить службу "Управление моделями Машинного обучения". 
 
 ## <a name="microsoft-machine-learning-server"></a>Сервер машинного обучения Майкрософт. 
-[Сервер машинного обучения Майкрософт](https://docs.microsoft.com/en-us/machine-learning-server/what-is-machine-learning-server) представляет собой корпоративный сервер для размещения параллельных и распределенных рабочих нагрузок, создаваемых процессами R и Python, и управления ими. Сервер машинного обучения Майкрософт выполняется в Apache Spark, Hadoop, Linux или Windows. Также он доступен в [HDInsight](https://azure.microsoft.com/services/hdinsight/r-server/). Он предоставляет механизм выполнения для решений, созданных с помощью [пакетов машинного обучения Майкрософт](https://docs.microsoft.com/r-server/r/concept-what-is-the-microsoftml-package), и позволяет сценариям R и Python с открытым кодом работать в следующих областях:
+[Сервер машинного обучения Майкрософт](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server) представляет собой корпоративный сервер для размещения параллельных и распределенных рабочих нагрузок, создаваемых процессами R и Python, и управления ими. Сервер машинного обучения Майкрософт выполняется в Apache Spark, Hadoop, Linux или Windows. Также он доступен в [HDInsight](https://azure.microsoft.com/services/hdinsight/r-server/). Он предоставляет механизм выполнения для решений, созданных с помощью [пакетов машинного обучения Майкрософт](https://docs.microsoft.com/r-server/r/concept-what-is-the-microsoftml-package), и позволяет сценариям R и Python с открытым кодом работать в следующих областях:
 
 - высокопроизводительная аналитика;
 - статистический анализ;
@@ -82,7 +82,7 @@ ms.locfileid: "39282336"
 
 - определение эмоций и тональности;
 - распознавание речи и визуальных объектов;
-- распознавание языка (LUIS);
+- Распознавание речи (LUIS);
 - приобретение знаний и поиск.
 
 Службы Cognitive Services могут использоваться для разработки приложений на разных устройствах и платформах. Эти API-интерфейсы постоянно совершенствуются и очень просто настраиваются. 

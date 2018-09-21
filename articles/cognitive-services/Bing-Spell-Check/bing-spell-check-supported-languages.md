@@ -9,18 +9,18 @@ ms.component: bing-spell-check
 ms.topic: conceptual
 ms.date: 05/08/2018
 ms.author: nolachar
-ms.openlocfilehash: 7cab8e0471151cd2ae7c2e31406f2460fdff6a0b
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: a62980f563c8fad525696aca73f8c036382fa820
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37050392"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45573796"
 ---
 # <a name="supported-language-list-and-status"></a>Список и состояние поддерживаемых языков
 
 В API проверки орфографии Bing поддерживаются перечисленные ниже языки (только в режиме `spell`). 
 
-Учтите, что для работы с любым языком, кроме `en-US`, необходимо задать `mkt`, а также `Accept-Language` или `setLang`, как описано в [справочнике по API проверки орфографии версии 7](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-spell-check-api-v7-reference).
+Учтите, что для работы с любым языком, кроме `en-US`, необходимо задать `mkt`, а также `Accept-Language` или `setLang`, как описано в [справочнике по API проверки орфографии версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference).
 
 | Язык    | Код языка |
 |:----------- |:-------------:|
@@ -40,7 +40,7 @@ ms.locfileid: "37050392"
 | Английский (Филиппины)     | `en-PH`          |
 | Английский (Южная Африка)    | `en-ZA`          |
 | Английский (Соединенное Королевство)    | `en-GB`          |
-| Английский (США)    | `en-US`          |
+| английский (США)    | `en-US`          |
 | Финский     | `fi`          |
 | Французский (Бельгия)     | `fr-BE`          |
 | Французский (Канада)     | `fr-CA`          |
@@ -60,7 +60,7 @@ ms.locfileid: "37050392"
 | Испанский (Аргентина)    | `es-AR`          |
 | Испанский (Чили)     | `es-CL`          |
 | Испанский (Мексика)    | `es-MX`          |
-| Испанский (Испания)    | `es-ES`          |
+| испанский (Испания)    | `es-ES`          |
 | Испанский (США)    | `es-US`          |
 | Шведский     | `sv`          |
 | Турецкий     | `tr`          |

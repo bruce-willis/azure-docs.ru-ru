@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: a7aeecc84a3629b43f2c1eb40030866a941d0d3b
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 2b06dcfd4bdeb68d114c0c6dd57134fadfef57b5
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627990"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605850"
 ---
 # <a name="quickstart-require-terms-of-use-to-be-accepted-before-accessing-cloud-apps"></a>Краткое руководство. Требование принятия условий использования перед доступом к облачным приложениям 
 
@@ -45,7 +45,7 @@ ms.locfileid: "39627990"
 
 - **доступ к Azure AD Premium** — условный доступ Azure AD является возможностью Azure AD Premium; 
 
-- **тестовая учетная запись Isabella Simonsen** — сведения о создании тестовой учетной записи см. в разделе о [добавлении облачных пользователей](../fundamentals/add-users-azure-active-directory.md#add-cloud-based-users).
+- **тестовая учетная запись Isabella Simonsen** — сведения о создании тестовой учетной записи см. в разделе о [добавлении облачных пользователей](../fundamentals/add-users-azure-active-directory.md#add-a-new-user).
 
 
 ## <a name="test-your-sign-in"></a>Проверка входа
@@ -250,7 +250,7 @@ ms.locfileid: "39627990"
 
 Если тестовый пользователь и политика условного доступа больше не нужны, удалите их.
 
-- Сведения об удалении пользователя Azure AD см. в разделе об [удалении пользователей из Azure AD](../fundamentals/add-users-azure-active-directory.md#delete-users-from-azure-ad).
+- Сведения об удалении пользователя Azure AD см. в разделе об [удалении пользователей из Azure AD](../fundamentals/add-users-azure-active-directory.md#delete-a-user).
 
 - Чтобы удалить политику, выберите ее и нажмите кнопку **Удалить** на панели инструментов быстрого доступа.
 

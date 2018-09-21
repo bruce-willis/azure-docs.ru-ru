@@ -4,18 +4,18 @@ description: Предоставление локально управляемы�
 services: active-directory
 ms.service: active-directory
 ms.component: B2B
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/24/2018
-ms.author: twooley
-author: twooley
+ms.author: mimart
+author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: 71d5ce8728d876740d6ef00b55ecdc9232a06f80
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 722ab51d0f591b8f16924d1d5661385267b7f0e6
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34267226"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295161"
 ---
 # <a name="grant-locally-managed-partner-accounts-access-to-cloud-resources-using-azure-ad-b2b-collaboration"></a>Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы Azure Active Directory B2B
 
@@ -32,17 +32,17 @@ ms.locfileid: "34267226"
 - Назначьте неиспользуемый локальный атрибут Active Directory (например, extensionAttribute1) в качестве исходного атрибута. 
 - Кроме того, можно получить значение атрибута UserType из других свойств. Например, требуется синхронизировать всех пользователей в качестве гостевых, если их локальный атрибут Active Directory UserPrincipalName заканчивается доменном *@partners.contoso.com*.
  
-Подробные требования к атрибутам приведены в разделе [Включение синхронизации атрибута UserType](../connect/active-directory-aadconnectsync-change-the-configuration.md#enable-synchronization-of-usertype). 
+Подробные требования к атрибутам приведены в разделе [Включение синхронизации атрибута UserType](../hybrid/how-to-connect-sync-change-the-configuration.md#enable-synchronization-of-usertype). 
 
 ## <a name="configure-azure-ad-connect-to-sync-users-to-the-cloud"></a>Настройка Azure AD Connect для синхронизации пользователей с облаком
 
 После определения уникального атрибута можно настроить Azure AD Connect для синхронизации этих пользователей с облаком в качестве пользователей Azure AD B2B (то есть пользователей, у которых атрибут UserType имеет значение Guest). С точки зрения процесса авторизации эти пользователи будут неотличимы от пользователей B2B, созданных с помощью процесса приглашения в службу совместной работы Azure AD B2B.
 
-Инструкции по реализации приведены в разделе [Включение синхронизации атрибута UserType](../connect/active-directory-aadconnectsync-change-the-configuration.md#enable-synchronization-of-usertype).
+Инструкции по реализации приведены в разделе [Включение синхронизации атрибута UserType](../hybrid/how-to-connect-sync-change-the-configuration.md#enable-synchronization-of-usertype).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Служба совместной работы Azure Active Directory B2B для гибридных организаций](hybrid-organizations.md)
 - [Предоставление пользователям B2B в Azure AD доступа к локальным приложениям](hybrid-cloud-to-on-premises.md)
-- Общие сведения об Azure AD Connect см. в статье [Интеграция локальных каталогов с Azure Active Directory](../connect/active-directory-aadconnect.md).
+- Общие сведения об Azure AD Connect см. в статье [Интеграция локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md).
 

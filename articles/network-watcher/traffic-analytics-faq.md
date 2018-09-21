@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: 9f7fb5009468dccae50190ee40a53d11040d0348
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: debefb329304235818b7b441122b90ae9a2834a9
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903753"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45578316"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Вопросы и ответы об Аналитике трафика Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "37903753"
 
 3. Чтобы получить список всех ролей, назначенных соответствующему пользователю, используйте команду **Get-AzureRmRoleAssignment -SignInName [адрес электронной почты пользователя] -IncludeClassicAdministrators**. 
 
-Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-powershell).
+Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
 
 ## <a name="in-which-azure-regions-are-traffic-analytics-available"></a>В каких регионах Azure доступна Аналитика трафика?
@@ -196,7 +196,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 
 Использование решения "Аналитика трафика" измеряется на основе обработки данных журнала потоков службой и сохранении полученных расширенных журналов в рабочей области Log Analytics. 
 
-Например, согласно [тарифному плану](https://azure.microsoft.com/en-us/pricing/details/network-watcher/) для региона "Центрально-западная часть США", если объем данных в журналах потоков, хранящихся в учетной записи хранения и обрабатываемых решением "Аналитика трафика", составляет 10 ГБ, а объем улучшенных журналов, принятых в рабочей области Log Analytics, — 1 ГБ, то применимый тариф рассчитывается так: 10 x 2,3 долл. США + 1 x 2,76 долл. США = 25,76 долл. США.
+Например, согласно [тарифному плану](https://azure.microsoft.com/pricing/details/network-watcher/) для региона "Центрально-западная часть США", если объем данных в журналах потоков, хранящихся в учетной записи хранения и обрабатываемых решением "Аналитика трафика", составляет 10 ГБ, а объем улучшенных журналов, принятых в рабочей области Log Analytics, — 1 ГБ, то применимый тариф рассчитывается так: 10 x 2,3 долл. США + 1 x 2,76 долл. США = 25,76 долл. США.
 
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Как перемещаться в представлении географической карты с помощью клавиатуры?
 

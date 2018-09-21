@@ -7,16 +7,16 @@ ms.author: roastala
 manager: haining
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/07/2017
-ms.openlocfilehash: df29117235e890a9b20619744df6320f298a73b2
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 34fe72087a3de133d65ea4a4737ab5dba45242f4
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831875"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35638890"
 ---
 # <a name="how-to-use-run-history-and-model-metrics-in-azure-machine-learning-workbench"></a>Как использовать компоненты "Журнал выполнения" и "Метрики модели" в Azure Machine Learning Workbench
 
@@ -25,7 +25,7 @@ Azure Machine Learning Workbench поддерживает выполнение �
 **Метрики модели** можно регистрировать на любом этапе выполнения скриптов. При этом отслеживаются самые важные значения эксперимента по обработке и анализу данных.
 В этой статье описывается, как эффективно использовать эти компоненты, чтобы ускорить проведение экспериментов по обработке и анализу данных и повысить их качество.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, вам понадобится сделать следующее:
 * [Создать и установить службу "Машинное обучение Azure"](../service/quickstart-installation.md).
 - [Создать проект](../service/quickstart-installation.md).

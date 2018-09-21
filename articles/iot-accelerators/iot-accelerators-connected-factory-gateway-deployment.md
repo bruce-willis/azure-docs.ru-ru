@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: dobett
-ms.openlocfilehash: c2805ddf7627ad520f6cc6585baedc7f5194aad6
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3a68a4a132302051b04b69cc794f5327a82f7639
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34626910"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45604057"
 ---
 # <a name="deploy-an-edge-gateway-for-the-connected-factory-solution-accelerator-on-windows-or-linux"></a>Развертывание шлюза Edge для акселератора решения подключенной фабрики в ОС Windows или Linux
 
@@ -93,13 +93,13 @@ ms.locfileid: "34626910"
 Чтобы запустить модуль "Издатель OPC", выполните в командной строке следующую команду:
 
 ```cmd/sh
-docker run --rm -it -v <SharedFolder>:/docker -v x509certstores:/root/.dotnet/corefx/cryptography/x509stores --network iot_edge --name publisher -h publisher -p 62222:62222 --add-host <OpcServerHostname>:<IpAddressOfOpcServerHostname> microsoft/iot-edge-opc-publisher:2.1.3 publisher "<IoTHubOwnerConnectionString>" --lf /docker/publisher.log.txt --as true --si 1 --ms 0 --tm true --vc true --di 30
+docker run --rm -it -v <SharedFolder>:/docker -v x509certstores:/root/.dotnet/corefx/cryptography/x509stores --network iot_edge --name publisher -h publisher -p 62222:62222 --add-host <OpcServerHostname>:<IpAddressOfOpcServerHostname> microsoft/iot-edge-opc-publisher:2.1.4 publisher "<IoTHubOwnerConnectionString>" --lf /docker/publisher.log.txt --as true --si 1 --ms 0 --tm true --vc true --di 30
 ```
 
 - На странице [об издателе OPC на GitHub](https://github.com/Azure/iot-edge-opc-publisher) и в [справочнике по выполнению Docker](https://docs.docker.com/engine/reference/run/) содержится дополнительная информация о:
 
-  - параметрах командной строки Docker, указываемых перед именем контейнера (`microsoft/iot-edge-opc-publisher:2.1.3`);
-  - значении параметров командной строки "Издатель OPC", указываемых после имени контейнера (`microsoft/iot-edge-opc-publisher:2.1.3`).
+  - параметрах командной строки Docker, указываемых перед именем контейнера (`microsoft/iot-edge-opc-publisher:2.1.4`);
+  - значении параметров командной строки "Издатель OPC", указываемых после имени контейнера (`microsoft/iot-edge-opc-publisher:2.1.4`).
 
 - `<IoTHubOwnerConnectionString>` является строкой подключения политики общего доступа **iothubowner** на портале Azure. Эта строка подключения была скопирована на предыдущем шаге. Строка подключения нужна только для первого запуска издателя OPC. При последующих запусках желательно обходиться без нее, поскольку может возникнуть угроза безопасности.
 
@@ -123,7 +123,7 @@ docker run --rm -it -v <SharedFolder>:/docker -v x509certstores:/root/.dotnet/co
 Чтобы установить прокси-сервер OPC, выполните в командной строке следующую команду:
 
 ```cmd/sh
-docker run -it --rm -v <SharedFolder>:/mapped --network iot_edge --name proxy --add-host <OpcServerHostname>:<IpAddressOfOpcServerHostname> microsoft/iot-edge-opc-proxy:1.0.2 -i -c "<IoTHubOwnerConnectionString>" -D /mapped/cs.db
+docker run -it --rm -v <SharedFolder>:/mapped --network iot_edge --name proxy --add-host <OpcServerHostname>:<IpAddressOfOpcServerHostname> microsoft/iot-edge-opc-proxy:1.0.4 -i -c "<IoTHubOwnerConnectionString>" -D /mapped/cs.db
 ```
 
 Установку в системе необходимо выполнить только один раз.
@@ -131,7 +131,7 @@ docker run -it --rm -v <SharedFolder>:/mapped --network iot_edge --name proxy --
 Выполните следующую команду для запуска прокси-сервера OPC:
 
 ```cmd/sh
-docker run -it --rm -v <SharedFolder>:/mapped --network iot_edge --name proxy --add-host <OpcServerHostname>:<IpAddressOfOpcServerHostname> microsoft/iot-edge-opc-proxy:1.0.2 -D /mapped/cs.db
+docker run -it --rm -v <SharedFolder>:/mapped --network iot_edge --name proxy --add-host <OpcServerHostname>:<IpAddressOfOpcServerHostname> microsoft/iot-edge-opc-proxy:1.0.4 -D /mapped/cs.db
 ```
 
 Прокси-сервер OPC сохраняет строку соединения во время установки. При последующих запусках желательно обходиться без строки подключения, так как это создает угрозу безопасности.

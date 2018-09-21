@@ -3,7 +3,7 @@ title: Что делать, если прерывание работы служ�
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на хранилище ключей Azure.
 services: key-vault
 documentationcenter: ''
-author: adamglick
+author: barclayn
 manager: mbaldwin
 editor: ''
 ms.assetid: 19a9af63-3032-447b-9d1a-b0125f384edb
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/07/2017
-ms.author: aglick
-ms.openlocfilehash: 1e3da7bee0211380b31e1c8ae2f1de45ade8a5f6
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.author: barclayn
+ms.openlocfilehash: 5ab6fc207d8a7732062a51a6215c25a4a0fac006
+ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44296845"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46465849"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Доступность и избыточность хранилища ключей Azure
 Хранилище ключей Azure имеет несколько уровней избыточности, благодаря которым ключи и секреты остаются доступными для приложения даже при сбое отдельных компонентов службы.

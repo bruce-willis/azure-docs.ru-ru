@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 36e63d26bf7ada2d23fa3cd9fddbb5ba90494527
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 7971a5aeadd2b2edaa43da8bacae9743937ce30e
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43126028"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46127352"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решений для удаленного мониторинга
 
@@ -35,7 +35,7 @@ ms.locfileid: "43126028"
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
     ```
 
-    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить при первой возможности](../security/azure-security-network-security-best-practices.md#disable-rdpssh-access-to-azure-virtual-machines).
+    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить при первой возможности](../security/azure-security-network-security-best-practices.md#disable-rdpssh-access-to-virtual-machines).
 
 1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Например: 
 
@@ -454,8 +454,8 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 
 Для дополнительного изменения уровня представления и визуализации в решении для удаленного мониторинга можно изменить код. Соответствующие репозитории GitHub:
 
-* [Микрослужба конфигурации для решений Интернета вещей Azure (.NET)](https://github.com/Azure/pcs-ui-config-dotnet/)
-* [Микрослужба конфигурации для решений Интернета вещей Azure (Java)](https://github.com/Azure/pcs-ui-config-java/)
+* [Микрослужба конфигурации для решений Интернета вещей Azure (.NET)](https://github.com/Azure/remote-monitoring-services-dotnet/tree/master/config)
+* [Микрослужба конфигурации для решений Интернета вещей Azure (Java)](https://github.com/Azure/remote-monitoring-services-java/tree/master/config)
 * [Веб-интерфейс для удаленного мониторинга Интернета вещей Azure PCS](https://github.com/Azure/pcs-remote-monitoring-webui)
 
 ## <a name="next-steps"></a>Дополнительная информация

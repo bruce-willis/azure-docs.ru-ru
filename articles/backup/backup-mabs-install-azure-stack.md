@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 6/5/2018
 ms.author: markgal
-ms.openlocfilehash: eda3e95c1bd8fb7eef97ee9db10c217c2885198f
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 5092a677bcbeac179e26fa0591b6a1cfbc3263d4
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970889"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576703"
 ---
 # <a name="install-azure-backup-server-on-azure-stack"></a>Установка Azure Backup Server в Azure Stack
 
@@ -218,7 +218,7 @@ Azure Backup Server предоставляет Data Protection Manager общи�
 
     ![Azure Backup Server — приветствие и проверка готовности](./media/backup-mabs-install-azure-stack/mabs-install-wizard-pre-check-7.png)
 
-    Если в вашей среде выполнены все обязательные условия, появится соответствующее сообщение. Нажмите кнопку **Далее**.  
+    Если в вашей среде выполнены все обязательные условия, появится соответствующее сообщение. Щелкните **Далее**.  
 
     ![Azure Backup Server — проверка готовности пройдена](./media/backup-mabs-install-azure-stack/mabs-install-wizard-pre-check-passed-8.png)
 
@@ -310,7 +310,7 @@ Azure Backup Server предоставляет Data Protection Manager общи�
 
 ## <a name="add-backup-storage"></a>Добавление хранилища службы архивации
 
-Первая резервная копия хранится в хранилище, подключенном к компьютеру Azure Backup Server. Дополнительные сведения о добавлении дисков см. в разделе [Добавление современных хранилищ службы архивации](https://docs.microsoft.com/en-us/system-center/dpm/add-storage?view=sc-dpm-1801).
+Первая резервная копия хранится в хранилище, подключенном к компьютеру Azure Backup Server. Дополнительные сведения о добавлении дисков см. в разделе [Добавление современных хранилищ службы архивации](https://docs.microsoft.com/system-center/dpm/add-storage?view=sc-dpm-1801).
 
 > [!NOTE]
 > Хранилище службы архивации необходимо добавить, даже если вы планируете отправлять данные в Azure. В текущей архитектуре Azure Backup Server хранилище служб восстановления содержит *вторую* копию данных, а локальное хранилище — первую (и обязательную) резервную копию.
@@ -360,10 +360,10 @@ Azure Backup Server предоставляет Data Protection Manager общи�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Статья [Подготовка среды для System Center 2012 R2 Data Protection Manager (DPM)](https://docs.microsoft.com/en-us/system-center/dpm/prepare-environment-for-dpm?view=sc-dpm-1801) содержит сведения о поддерживаемых конфигурациях Azure Backup Server.
+Статья [Подготовка среды для System Center 2012 R2 Data Protection Manager (DPM)](https://docs.microsoft.com/system-center/dpm/prepare-environment-for-dpm?view=sc-dpm-1801) содержит сведения о поддерживаемых конфигурациях Azure Backup Server.
 
 Вы можете использовать указанные ниже статьи, чтобы глубже изучить варианты защиты рабочих нагрузок с помощью Microsoft Azure Backup Server.
 
-- [Резервное копирование сервера SQL Server](https://docs.microsoft.com/en-us/azure/backup/backup-mabs-sql-azure-stack)
-- [Резервное копирование сервера SharePoint](https://docs.microsoft.com/en-us/azure/backup/backup-mabs-sharepoint-azure-stack)
+- [Резервное копирование сервера SQL Server](https://docs.microsoft.com/azure/backup/backup-mabs-sql-azure-stack)
+- [Резервное копирование сервера SharePoint](https://docs.microsoft.com/azure/backup/backup-mabs-sharepoint-azure-stack)
 - [Резервное копирование альтернативного сервера](backup-azure-alternate-dpm-server.md)

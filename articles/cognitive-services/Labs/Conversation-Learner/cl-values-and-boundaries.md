@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: c0ad9f71665e503fe794c68200b90a8474750823
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: b048509f38356b19d52507f4dfb5bfa61122f9f6
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173631"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576431"
 ---
 # <a name="default-values-and-boundaries"></a>Значения и границы по умолчанию
 
@@ -35,8 +35,8 @@ API разработки, максимальное число вызовов HTT
 API разработки, максимальное число вызовов HTTP в секунду | 25
 API сеансов, максимальное число вызовов HTTP в месяц | 500K
 API сеансов, максимальное число вызовов HTTP в секунду | 10
-Максимальное количество настраиваемых (не программных) сущностей на модель | См. [документацию по границам LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-boundaries). На практике реальное количество может быть немного меньше.
-Максимальное количество предварительно созданных сущностей на модель | См. [документацию по границам LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-boundaries).
+Максимальное количество настраиваемых (не программных) сущностей на модель | См. [документацию по границам LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-boundaries). На практике реальное количество может быть немного меньше.
+Максимальное количество предварительно созданных сущностей на модель | См. [документацию по границам LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/luis-boundaries).
 Максимальное (общее) количество сущностей на модель | 100
 Максимальное количество действий на модель | 32
 Максимальное количество обучений на модель | 1000

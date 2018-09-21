@@ -10,22 +10,22 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 4f4c2ada08c69b6602ff5a300a15c4ca57090a8e
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 8440d8a492105365417190ad286798e0bdf47a0c
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42816059"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295841"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
-Наличие облачной служебной программы для сброса пароля — это превосходно, однако в большинстве компаний по-прежнему используется локальный каталог пользователей. Каким образом корпорация Майкрософт обеспечивает синхронизацию паролей, измененных в облаке, с традиционными локальными каталогами Active Directory (AD)? Обратная запись паролей — это функция на основе [Azure AD Connect](./../connect/active-directory-aadconnect.md), позволяющая записывать изменения паролей, внесенные в облаке, в существующий локальный каталог в режиме реального времени.
+Наличие облачной служебной программы для сброса пароля — это превосходно, однако в большинстве компаний по-прежнему используется локальный каталог пользователей. Каким образом корпорация Майкрософт обеспечивает синхронизацию паролей, измененных в облаке, с традиционными локальными каталогами Active Directory (AD)? Обратная запись паролей — это функция на основе [Azure AD Connect](../hybrid/whatis-hybrid-identity.md), позволяющая записывать изменения паролей, внесенные в облаке, в существующий локальный каталог в режиме реального времени.
 
 Обратная запись паролей поддерживается в средах, использующих:
 
-* [Active Directory Federation Services](../connect/active-directory-aadconnect-federation-management.md) (Службы федерации Active Directory)
-* [Синхронизации хэша паролей](../connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md)
-* [Сквозная проверка подлинности](../connect/active-directory-aadconnect-pass-through-authentication.md)
+* [Active Directory Federation Services](../hybrid/how-to-connect-fed-management.md) (Службы федерации Active Directory)
+* [Синхронизации хэша паролей](../hybrid/how-to-connect-password-hash-synchronization.md)
+* [Сквозная проверка подлинности](../hybrid/how-to-connect-pta.md)
 
 Возможности обратной записи паролей.
 

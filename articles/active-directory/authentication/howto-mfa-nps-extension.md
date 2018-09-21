@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: a24988bb9866dde72769107f1c45fc461c039f9a
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 9873347683fdfabd93083b44d034a8d9d5bcaeef
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39161063"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46297543"
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure
 
@@ -105,7 +105,7 @@ NPS-сервер подключается к Azure Active Directory и ауте�
 2. Щелкните **Azure Active Directory** > **Azure AD Connect**.
 3. Убедитесь в том, что синхронизация находится в состоянии **Включена** и последняя синхронизация была выполнена менее часа назад.
 
-Если требуется начать новый цикл синхронизации, следуйте инструкциям в разделе [Синхронизация Azure AD Connect: планировщик](../connect/active-directory-aadconnectsync-feature-scheduler.md#start-the-scheduler).
+Если требуется начать новый цикл синхронизации, следуйте инструкциям в разделе [Синхронизация Azure AD Connect: планировщик](../hybrid/how-to-connect-sync-feature-scheduler.md#start-the-scheduler).
 
 ### <a name="determine-which-authentication-methods-your-users-can-use"></a>Определение методов проверки подлинности, которые смогут использовать пользователи
 

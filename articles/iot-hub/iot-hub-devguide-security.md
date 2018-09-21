@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 227723ecea1401247f0df87bccfe058fb2273647
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: 4e9a5808a718909b21698b551f516a238e3934b0
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145355"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45605782"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -109,7 +109,7 @@ ms.locfileid: "39145355"
 
 Чтобы определить область действия для политик безопасности на уровне Центра Интернета вещей, создайте маркеры с помощью универсального кода (URI) ограниченного ресурса. Например, конечная точка для отправки сообщений с устройства в облако — **/devices/{deviceId}/messages/events**. Кроме того, вы можете использовать политику общего доступа на уровне Центра Интернета вещей с разрешениями **DeviceConnect**. С ее помощью можно подписать маркер, значение resourceURI которого — **/devices/{deviceId}**. В результате такого подхода создается маркер, который можно использовать только для отправки сообщений от имени устройства с кодом **deviceId**.
 
-Этот механизм похож на [политику издателя концентраторов событий][lnk-event-hubs-publisher-policy]. Он позволяет реализовывать методы настраиваемой проверки подлинности.
+Этот механизм похож на [политику издателя Центров событий][lnk-event-hubs-publisher-policy]. Он позволяет реализовывать методы настраиваемой проверки подлинности.
 
 ## <a name="security-tokens"></a>Маркеры безопасности Центра Интернета вещей
 
@@ -328,7 +328,7 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 
 ```nodejs
 var endpoint ="myhub.azure-devices.net/devices";
-var policyName = 'device';
+var policyName = 'registryRead';
 var policyKey = '...';
 
 var token = generateSasToken(endpoint, policyKey, policyName, 60);

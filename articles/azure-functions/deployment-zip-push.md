@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 08/12/2018
 ms.author: glenga
-ms.openlocfilehash: d7396ddb94017048247050726f83b0302e946633
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 03cb9384beba1afcb97a765824e63e79ca34aa62
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44347126"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44717224"
 ---
 # <a name="zip-deployment-for-azure-functions"></a>Развертывание Функций Azure из ZIP-файла
 
@@ -89,9 +89,6 @@ az functionapp deployment source config-zip  -g myResourceGroup -n \
 ## <a name="run-functions-from-the-deployment-package"></a>Выполнение функций из пакета развертывания
 
 Выполнять функции можно также непосредственно из файла пакета развертывания. Этот метод не предусматривает шаг развертывания, на котором файлы копируются из пакета в каталог `wwwroot` приложения-функции. Вместо этого файл пакета подключается с помощью среды выполнения Функций, а содержимое каталога `wwwroot` становится доступным только для чтения.  
-
-> [!NOTE]
-> Возможность запуска приложения-функции из пакета развертывания находится на этапе предварительной версии.
 
 Развертывание из ZIP-файла интегрируется с этой возможностью. Ее можно включить, задав для параметра приложения-функции `WEBSITE_RUN_FROM_PACKAGE` значение `1`. Дополнительные сведения см. в разделе [Run your Azure Functions from a package file](run-functions-from-deployment-package.md) (Запуск Функций Azure из файла пакета).
 

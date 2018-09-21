@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: 4c8f2966df9c33ec227b14c00996f84f39043cdb
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: c8517114f51b5aed8f8e31a19b672721b109775e
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44349234"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46298308"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -46,7 +46,7 @@ ms.locfileid: "44349234"
 | Включена пробная версия EMS или Azure AD Premium | [Бесплатная пробная версия Azure Active Directory Premium на один месяц](https://azure.microsoft.com/trial/get-started-active-directory/) |
 | Вы назначили лицензии Azure AD Premium или EMS пользователям подтверждения концепции | [Самостоятельное лицензирование и лицензирование пользователей в Azure Active Directory](active-directory-licensing-get-started-azure-portal.md) |
 | Учетные данные глобального администратора Azure AD | [Назначение ролей администратора в Azure Active Directory](users-groups-roles/directory-assign-admin-roles.md) |
-| Необязательно, но настоятельно рекомендуется: параллельная лабораторная среда в качестве резерва | [Необходимые условия для Azure AD Connect](./connect/active-directory-aadconnect-prerequisites.md) |
+| Необязательно, но настоятельно рекомендуется: параллельная лабораторная среда в качестве резерва | [Необходимые условия для Azure AD Connect](hybrid/how-to-connect-install-prerequisites.md) |
 
 ## <a name="directory-synchronization---password-hash-sync-phs---new-installation"></a>Синхронизация каталога. Синхронизация хэша паролей (PHS): новая установка
 
@@ -56,23 +56,23 @@ ms.locfileid: "44349234"
 
 | Предварительные требования | Ресурсы |
 | --- | --- |
-| Сервер для запуска Run Azure AD Connect | [Необходимые условия для Azure AD Connect](./connect/active-directory-aadconnect-prerequisites.md) |
-| Целевые пользователи подтверждения концепции в одном домене, одной группе безопасности и одном подразделении | [Выборочная установка Azure AD Connect](./connect/active-directory-aadconnect-get-started-custom.md#domain-and-ou-filtering) |
-| Определяются функции Azure AD Connect, необходимые для подтверждения концепции | [Подключение Active Directory к Azure Active Directory — настройка функций синхронизации](./connect/active-directory-aadconnect.md#configure-sync-features) |
-| Наличие необходимых учетных данных для локальных и облачных сред  | [Azure AD Connect: учетные записи и разрешения](./connect/active-directory-aadconnect-accounts-permissions.md) |
+| Сервер для запуска Run Azure AD Connect | [Необходимые условия для Azure AD Connect](hybrid/how-to-connect-install-prerequisites.md) |
+| Целевые пользователи подтверждения концепции в одном домене, одной группе безопасности и одном подразделении | [Выборочная установка Azure AD Connect](hybrid/how-to-connect-install-custom.md#domain-and-ou-filtering) |
+| Определяются функции Azure AD Connect, необходимые для подтверждения концепции | [Подключение Active Directory к Azure Active Directory — настройка функций синхронизации](hybrid/how-to-connect-install-roadmap.md#configure-sync-features) |
+| Наличие необходимых учетных данных для локальных и облачных сред  | [Azure AD Connect: учетные записи и разрешения](hybrid/reference-connect-accounts-permissions.md) |
 
 ### <a name="steps"></a>Действия
 
 | Шаг | Ресурсы |
 | --- | --- |
 | Скачайте новейшую версию Azure AD Connect. | [Скачивание Microsoft Azure Active Directory Connect](https://www.microsoft.com/download/details.aspx?id=47594) |
-| Установите Azure AD Connect самым простым способом: быстрая установка. <br/>1. Отфильтруйте до целевого подразделения, чтобы минимизировать время цикла синхронизации.<br/>2. Выберите целевой набор пользователей в локальной группе.<br/>3. Развертывание компонентов, необходимых для других тем подтверждения концепции. | [Azure AD Connect: выборочная установка. Фильтрация домена и подразделения](./connect/active-directory-aadconnect-get-started-custom.md#domain-and-ou-filtering) <br/>[Azure AD Connect: выборочная установка. Фильтрация на основе групп](./connect/active-directory-aadconnect-get-started-custom.md#sync-filtering-based-on-groups)<br/>[Azure AD Connect: интеграция локальных удостоверений с Azure Active Directory. Настройка функции синхронизации](./connect/active-directory-aadconnect.md#configure-sync-features) |
-| Откройте пользовательский интерфейс Azure AD Connect и просмотрите запущенные профили (импорт, синхронизация и экспорт). | [Синхронизация Azure AD Connect: планировщик](./connect/active-directory-aadconnectsync-feature-scheduler.md) |
+| Установите Azure AD Connect самым простым способом: быстрая установка. <br/>1. Отфильтруйте до целевого подразделения, чтобы минимизировать время цикла синхронизации.<br/>2. Выберите целевой набор пользователей в локальной группе.<br/>3. Развертывание компонентов, необходимых для других тем подтверждения концепции. | [Azure AD Connect: выборочная установка. Фильтрация домена и подразделения](hybrid/how-to-connect-install-custom.md#domain-and-ou-filtering) <br/>[Azure AD Connect: выборочная установка. Фильтрация на основе групп](hybrid/how-to-connect-install-custom.md#sync-filtering-based-on-groups)<br/>[Azure AD Connect: интеграция локальных удостоверений с Azure Active Directory. Настройка функции синхронизации](hybrid/how-to-connect-install-roadmap.md#configure-sync-features) |
+| Откройте пользовательский интерфейс Azure AD Connect и просмотрите запущенные профили (импорт, синхронизация и экспорт). | [Синхронизация Azure AD Connect: планировщик](hybrid/how-to-connect-sync-feature-scheduler.md) |
 | Откройте [портал управления Azure AD](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/), перейдите в колонку "Все пользователи", добавьте столбец "Главный источник" и наблюдайте, как появляются пользователи, помеченные как поступившие из "Windows Server AD". | [Портал управления Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) |
 
 ### <a name="considerations"></a>Рекомендации
 
-1. Ознакомьтесь с замечаниями по безопасности для синхронизации хэша паролей [здесь](./connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md).  Если синхронизация хэша паролей для пользователей пилотной рабочей среды совершенно неприемлема, рассмотрите следующие альтернативы:
+1. Ознакомьтесь с замечаниями по безопасности для синхронизации хэша паролей [здесь](hybrid/how-to-connect-password-hash-synchronization.md).  Если синхронизация хэша паролей для пользователей пилотной рабочей среды совершенно неприемлема, рассмотрите следующие альтернативы:
    * Создайте тестовых пользователей в рабочем домене. Следите за тем, чтобы не синхронизировать никакие другие учетные записи.
    * Перейдите в среду UAT.
 2.  Если вы хотите сохранить федерацию, следует понимать, с какими затратами сопряжено использование федеративного решения с локальным поставщиком удостоверений за пределами подтверждения концепции, и сопоставлять их с потенциальной выгодой:
@@ -277,7 +277,7 @@ ms.locfileid: "44349234"
 | --- | --- |
 | Установленная и настроенная среда Azure AD Connect. | Стандартный блок: [Синхронизация каталога. Синхронизация хэша паролей](#directory-synchronization--password-hash-sync-phs--new-installation) |
 | Соответствующий требованиям экземпляр ADLDS. | [Технический справочник по универсальному соединителю LDAP: общие сведения об универсальном соединителе LDAP](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap#overview-of-the-generic-ldap-connector) |
-| Список рабочих нагрузок, используемых пользователями, а также связанные с этими нагрузками атрибуты. | [Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory](./connect/active-directory-aadconnectsync-attributes-synchronized.md) |
+| Список рабочих нагрузок, используемых пользователями, а также связанные с этими нагрузками атрибуты. | [Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory](hybrid/reference-connect-sync-attributes-synchronized.md) |
 
 
 ### <a name="steps"></a>Действия
@@ -285,11 +285,11 @@ ms.locfileid: "44349234"
 | Шаг | Ресурсы |
 | --- | --- |
 | Добавьте универсальный соединитель LDAP. | [Технический справочник по универсальному соединителю LDAP: создание нового соединителя](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap#create-a-new-connector) |
-| Создайте профили выполнения для созданного соединителя (полный импорт, разностный импорт, полная синхронизация, разностная синхронизация, экспорт). | [Создание профиля выполнения для агента управления](https://technet.microsoft.com/library/jj590219(v=ws.10).aspx)<br/> [Использование соединителей с Synchronization Service Manager Azure AD Connect](./connect/active-directory-aadconnectsync-service-manager-ui-connectors.md)|
-| Запустите профиль полного импорта и убедитесь, что в пространстве соединителя есть объекты. | [Поиск объекта пространства соединителя](https://technet.microsoft.com/library/jj590287(v=ws.10).aspx)<br/>[Использование соединителей с Synchronization Service Manager Azure AD Connect: пространство поиска соединителя](./connect/active-directory-aadconnectsync-service-manager-ui-connectors.md#search-connector-space) |
-| Создайте правила синхронизации, чтобы объекты в метавселенной имели подходящие атрибуты для рабочих нагрузок. | [Синхронизация Azure AD Connect. Рекомендации по изменению конфигурации по умолчанию: изменения в правилах синхронизации](./connect/active-directory-aadconnectsync-best-practices-changing-default-configuration.md#changes-to-synchronization-rules)<br/>[Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке](./connect/active-directory-aadconnectsync-understanding-declarative-provisioning.md)<br/>[Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки](./connect/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions.md) |
-| Запустите полный цикл синхронизации. | [Синхронизация Azure AD Connect. Планировщик: запуск планировщика](./connect/active-directory-aadconnectsync-feature-scheduler.md#start-the-scheduler) |
-| При возникновении проблем выполните устранение неполадок. | [Устранение неполадок синхронизации объекта с Azure AD](./connect/active-directory-aadconnectsync-troubleshoot-object-not-syncing.md) |
+| Создайте профили выполнения для созданного соединителя (полный импорт, разностный импорт, полная синхронизация, разностная синхронизация, экспорт). | [Создание профиля выполнения для агента управления](https://technet.microsoft.com/library/jj590219(v=ws.10).aspx)<br/> [Использование соединителей с Synchronization Service Manager Azure AD Connect](hybrid/how-to-connect-sync-service-manager-ui-connectors.md)|
+| Запустите профиль полного импорта и убедитесь, что в пространстве соединителя есть объекты. | [Поиск объекта пространства соединителя](https://technet.microsoft.com/library/jj590287(v=ws.10).aspx)<br/>[Использование соединителей с Synchronization Service Manager Azure AD Connect: пространство поиска соединителя](hybrid/how-to-connect-sync-service-manager-ui-connectors.md#search-connector-space) |
+| Создайте правила синхронизации, чтобы объекты в метавселенной имели подходящие атрибуты для рабочих нагрузок. | [Синхронизация Azure AD Connect. Рекомендации по изменению конфигурации по умолчанию: изменения в правилах синхронизации](hybrid/how-to-connect-sync-best-practices-changing-default-configuration.md#changes-to-synchronization-rules)<br/>[Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке](hybrid/concept-azure-ad-connect-sync-declarative-provisioning.md)<br/>[Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки](hybrid/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md) |
+| Запустите полный цикл синхронизации. | [Синхронизация Azure AD Connect. Планировщик: запуск планировщика](hybrid/how-to-connect-sync-feature-scheduler.md#start-the-scheduler) |
+| При возникновении проблем выполните устранение неполадок. | [Устранение неполадок синхронизации объекта с Azure AD](hybrid/tshoot-connect-object-not-syncing.md) |
 | Убедитесь, что пользователь LDAP может войти и обратиться к приложению. | https://myapps.microsoft.com |
 
 ### <a name="considerations"></a>Рекомендации
@@ -552,7 +552,7 @@ ms.locfileid: "44349234"
 | Предварительные требования | Ресурсы |
 | --- | --- |
 | Устройство с подготовленным сертификатом пользователя (Windows, iOS или Android) из корпоративной PKI. | [Развертывание сертификатов пользователей](https://msdn.microsoft.com/library/cc770857.aspx) |
-| Домен Azure AD в федерации с ADFS. | [Azure AD Connect и федерация](./connect/active-directory-aadconnectfed-whatis.md)<br/>[Обзор служб сертификатов Active Directory](https://technet.microsoft.com/library/hh831740.aspx)|
+| Домен Azure AD в федерации с ADFS. | [Azure AD Connect и федерация](hybrid/how-to-connect-fed-whatis.md)<br/>[Обзор служб сертификатов Active Directory](https://technet.microsoft.com/library/hh831740.aspx)|
 | Для устройств iOS требуется установленное приложение Microsoft Authenticator. | [Начало работы с приложением Microsoft Authenticator](user-help/microsoft-authenticator-app-how-to.md) |
 
 ### <a name="steps"></a>Действия

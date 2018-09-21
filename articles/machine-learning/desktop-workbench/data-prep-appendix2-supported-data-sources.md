@@ -7,18 +7,18 @@ ms.author: euang
 manager: lanceo
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.custom: ''
 ms.devlang: ''
 ms.topic: article
 ms.date: 02/01/2018
-ms.openlocfilehash: 1a6ef0b928bd9a2d21db68a0d5476357b1d32dd1
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 88ed4fa43e5724cfe1d6f1555db947d77045cd2e
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831553"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35642148"
 ---
 # <a name="supported-data-sources-for-azure-machine-learning-data-preparation"></a>Поддерживаемые источники данных в инструменте подготовки данных службы "Машинное обучение Azure" 
 В этой статье приведены источники данных, поддерживаемые инструментом подготовки данных службы "Машинное обучение Azure".
@@ -39,7 +39,7 @@ ms.locfileid: "34831553"
 - база данных для подключения;
 - Запросы SQL
 
-#### <a name="notes"></a>Заметки
+#### <a name="notes"></a>Примечания
 - Столбцы sql-variant не поддерживаются.
 - Столбец времени преобразуется в тип datetime. Для этого время из базы данных добавляется к дате 01.01.1970.
 - При выполнении в кластере Spark во всех столбцах, связанных с датами (date, datetime, datetime2, datetimeoffset), будут вычислены неправильные значения для дат до значения 1583.

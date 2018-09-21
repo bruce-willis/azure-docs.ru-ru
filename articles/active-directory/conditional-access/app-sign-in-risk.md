@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 07/17/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 2bd52486a78ca103e0070d94ea423c069f845587
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 65f740e23b68727bdffa4a966518b1581fb5b0a6
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627514"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45604371"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса при помощи условного доступа Azure Active Directory  
 
@@ -46,7 +46,7 @@ ms.locfileid: "39627514"
 
 - **Обозреватель Tor**. [Обозреватель Tor](https://www.torproject.org/projects/torbrowser.html.en) предназначен для сохранения конфиденциальности в Интернете. Служба защиты идентификации воспринимает вход в систему с помощью обозревателя Tor как **входы с анонимных IP-адресов**, которые имеют средний уровень риска. Дополнительные сведения см. в статье [События риска Azure Active Directory](../reports-monitoring/concept-risk-events.md).  
 
-- **Тестовая учетная запись Alain Charon**. Сведения о создании тестовой учетной записи см. в разделе о [Add new users to Azure Active Directory](../fundamentals/add-users-azure-active-directory.md#add-cloud-based-users) (Добавление новых пользователей в Azure Active Directory).
+- **Тестовая учетная запись Alain Charon**. Сведения о создании тестовой учетной записи см. в разделе о [Add new users to Azure Active Directory](../fundamentals/add-users-azure-active-directory.md#add-a-new-user) (Добавление новых пользователей в Azure Active Directory).
 
 
 ## <a name="test-your-sign-in"></a>Проверка входа 
@@ -206,7 +206,7 @@ ms.locfileid: "39627514"
 
 Если тестовый пользователь, обозреватель Tor и политика условного доступа больше не нужны, удалите их.
 
-- Сведения об удалении пользователя Azure AD см. в разделе об [удалении пользователей из Azure AD](../fundamentals/add-users-azure-active-directory.md#delete-users-from-azure-ad).
+- Сведения об удалении пользователя Azure AD см. в разделе об [удалении пользователей из Azure AD](../fundamentals/add-users-azure-active-directory.md#delete-a-user).
 
 - Чтобы удалить политику, выберите ее и нажмите кнопку **Удалить** на панели инструментов быстрого доступа.
 

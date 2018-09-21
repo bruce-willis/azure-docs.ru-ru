@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/31/2018
 ms.author: mabrigg
 ms.reviewer: anajod
-ms.openlocfilehash: 00c67503f5b9e0027cbb62520e392f56420a75e6
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 5b10ff3574259fcad329dfb5c7a5bc86861258c5
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34701637"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575870"
 ---
 # <a name="optimize-sql-server-performance"></a>Оптимизация производительности SQL Server
 
@@ -43,7 +43,7 @@ ms.locfileid: "34701637"
 |Область|Оптимизация|
 |-----|-----|
 |размер виртуальной машины; |[DS3](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes) или выше для выпуска SQL Server Enterprise.<br><br>[DS2](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes) или выше для выпусков SQL Server Standard и Web.|
-|Служба хранилища |Используйте семейство виртуальных машин, поддерживающее [хранилище класса Premium](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-acs-differences).|
+|служба хранилища. |Используйте семейство виртуальных машин, поддерживающее [хранилище класса Premium](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-acs-differences).|
 |диски; |Используйте по крайней мере два диска с данными (один для файлов журнала и один для файла данных и TempDB) и выберите размер диска в соответствии с потребностями в емкости. Задайте стандартные расположения файлов данных для этих дисков во время установки SQL Server.<br><br>Избегайте использования дисков операционной системы или временных дисков для хранения базы данных или журналов.<br>Обеспечьте чередование нескольких дисков данных Azure для увеличения пропускной способности ввода-вывода, используя дисковые пространства.<br><br>Выполняйте форматирование с использованием задокументированных размеров кластеров.|
 |ВВОД-ВЫВОД|Включите быструю инициализацию для файлов данных.<br><br>Ограничьте автоматическое увеличение в базах данных с фиксированным небольшим шагом приращения (64–256 МБ).<br><br>Отключите автосжатие базы данных.<br><br>Настройте расположения по умолчанию для резервного копирования и файлов базы данных на дисках с данными, а не на диске операционной системы.<br><br>Включите заблокированные страницы.<br><br>Применяйте накопительные обновления и пакеты обновления SQL Server.|
 |Характерные особенности|Выполняйте резервное копирование непосредственно в хранилище BLOB-объектов (если поддерживается используемой версией SQL Server).|
@@ -145,7 +145,7 @@ TempDB рекомендуется хранить на диске с данным
 
 - **Создание резервной копии** **в хранилище Azure**. При выполнении резервного копирования данных SQL Server, запущенного на виртуальных машинах Azure Stack, можно использовать резервное копирование SQL Server на URL-адрес. Эта функция доступна, начиная с накопительного пакета обновления 2 для пакета обновления 1 SQL Server 2012, и рекомендуется к применению при архивации на подключенные диски данных.
 
-    При выполнении резервного копирования или восстановления с использованием службы хранилища Azure следуйте рекомендациям из статьи [Резервное копирование SQL Server на URL-адрес — рекомендации и устранение неполадок](https://msdn.microsoft.com/library/jj919149.aspx) и [Восстановление из резервных копий в Microsoft Azure](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/restoring-from-backups-stored-in-microsoft-azure?view=sql-server-2017). Кроме того, можно автоматизировать эти процессы архивации с помощью [автоматической архивации SQL Server на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-automated-backup).
+    При выполнении резервного копирования или восстановления с использованием службы хранилища Azure следуйте рекомендациям из статьи [Резервное копирование SQL Server на URL-адрес — рекомендации и устранение неполадок](https://msdn.microsoft.com/library/jj919149.aspx) и [Восстановление из резервных копий в Microsoft Azure](https://docs.microsoft.com/sql/relational-databases/backup-restore/restoring-from-backups-stored-in-microsoft-azure?view=sql-server-2017). Кроме того, можно автоматизировать эти процессы архивации с помощью [автоматической архивации SQL Server на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-automated-backup).
 
 -   **Резервное копирование в хранилище Azure Stack.** Вы можете выполнять резервное копирование в хранилище Azure Stack таким же образом, как и в службу хранилища Azure. При создании резервной копии в SQL Server Management Studio (SSMS) необходимо вручную ввести сведения о конфигурации. SSMS нельзя использовать для создания контейнера хранилища или подписанного URL-адреса. SSMS позволяет подключаться только к подпискам Azure, а не Azure Stack. Вместо этого необходимо создать учетную запись хранения, контейнер и подписанный URL-адрес на портале Azure Stack или с помощью PowerShell.
 

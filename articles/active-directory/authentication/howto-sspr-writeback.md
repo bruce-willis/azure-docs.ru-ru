@@ -10,18 +10,18 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: e613ff742096077fe1765d4b855b6c7d409cc228
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 1ae74f7c43e763962224683954b28e5941136c08
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39158953"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46295824"
 ---
 # <a name="how-to-configure-password-writeback"></a>Сведения о настройке компонента обратной записи паролей
 
-Мы советуем применять функцию автоматического обновления [Azure AD Connect](./../connect/active-directory-aadconnect-get-started-express.md), если вы хотите использовать компонент обратной записи паролей.
+Мы советуем применять функцию автоматического обновления [Azure AD Connect](../hybrid/how-to-connect-install-express.md), если вы хотите использовать компонент обратной записи паролей.
 
-В инструкциях ниже предполагается, что вы уже настроили Azure AD Connect в своей среде с помощью параметров [Экспресс](./../connect/active-directory-aadconnect-get-started-express.md) или [Пользовательский](./../connect/active-directory-aadconnect-get-started-custom.md).
+В инструкциях ниже предполагается, что вы уже настроили Azure AD Connect в своей среде с помощью параметров [Экспресс](../hybrid/how-to-connect-install-express.md) или [Пользовательский](../hybrid/how-to-connect-install-custom.md).
 
 1. Чтобы настроить и включить компонент обратной записи паролей, войдите на сервер Azure AD Connect и запустите мастер настройки **Azure AD Connect**.
 2. На странице **Приветствие** нажмите кнопку **Настроить**.

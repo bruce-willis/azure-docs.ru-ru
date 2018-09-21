@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2018
 ms.author: spelluru
-ms.openlocfilehash: d4f387d484fe895d8b6c5196c3a5527947ee3925
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: de3f23f58ef34bdd5f9769f820d64ed7e00ca7d8
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43702067"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44715080"
 ---
 # <a name="message-transfers-locks-and-settlement"></a>Передача, блокировка и согласование сообщений
 
@@ -62,7 +62,7 @@ for (int i = 0; i < 100; i++)
 {
   tasks.Add(client.SendAsync(…));
 }
-await Task.WhenAll(tasks.ToArray());
+await Task.WhenAll(tasks);
 ```
 
 Важно отметить, что все асинхронные модели программирования используют разновидности скрытых рабочих очередей в памяти, в которых хранятся ожидающие операции. При возвращении результата [SendAsync](/dotnet/api/microsoft.azure.servicebus.queueclient.sendasync#Microsoft_Azure_ServiceBus_QueueClient_SendAsync_Microsoft_Azure_ServiceBus_Message_) (C#) или **Send** (Java) задача отправки перемещается в эту рабочую очередь, но операция протокола начнется только после того, как наступит очередь выполнения этой задачи. В ситуациях, когда код отправляет пакеты сообщений и важна надежность, следует соблюдать осторожность, чтобы не оказалось, что слишком много сообщений одновременно находится в состоянии "на лету", так как все отправленные сообщения занимают место в памяти, пока не будут переданы по сети.
@@ -79,7 +79,7 @@ for (int i = 0; i < 100; i++)
 
   tasks.Add(client.SendAsync(…).ContinueWith((t)=>semaphore.Release()));
 }
-await Task.WhenAll(tasks.ToArray());
+await Task.WhenAll(tasks);
 ```
 
 Приложения **никогда** не должны инициировать операцию асинхронной передачи по принципу "отправить и забыть", то есть без получения результата операции. В противном случае это может привести к тому, что внутренняя невидимая очередь задач займет всю память, и приложение не сможет обнаруживать ошибки отправки.

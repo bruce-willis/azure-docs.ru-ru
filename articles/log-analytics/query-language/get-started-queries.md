@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 71d50a55d9c584b61a1412bb03a03ad99f1bb96c
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 548c94ce502da8c6a8d208daafb5b0fb624de1e1
+ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39632916"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45603944"
 ---
 # <a name="get-started-with-queries-in-log-analytics"></a>Начало работы с запросами в Log Analytics
 
@@ -28,6 +28,7 @@ ms.locfileid: "39632916"
 > [!NOTE]
 > Прежде чем приступать к этому руководству, необходимо ознакомиться со статьей [Начало работы с порталом аналитики](get-started-analytics-portal.md).
 
+[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
 В этом руководстве рассматривается написание запросов в Azure Log Analytics. Вы научитесь:
 
@@ -49,7 +50,7 @@ ms.locfileid: "39632916"
 ### <a name="table-based-queries"></a>Запросы на основе таблиц
 Azure Log Analytics упорядочивает данные в таблицы, каждая из которых состоит из нескольких столбцов. На портале аналитики в области схемы отображаются все таблицы и столбцы. Определите интересующую вас таблицу, а затем взгляните на часть данных:
 
-```OQL
+```KQL
 SecurityEvent
 | take 10
 ```
@@ -65,7 +66,7 @@ SecurityEvent
 ### <a name="search-queries"></a>Поисковые запросы
 Поисковые запросы менее структурированы и, как правило, более подходят для поиска записей, которые содержат указанное значение в любом из столбцов:
 
-```OQL
+```KQL
 search in (SecurityEvent) "Cryptographic"
 | take 10
 ```
@@ -87,7 +88,7 @@ SecurityEvent
 
 Лучшим способом получить только последние 10 записей является использование оператора **top**, который сортирует таблицу целиком на стороне сервера, а затем возвращает первые записи:
 
-```OQL
+```KQL
 SecurityEvent
 | top 10 by TimeGenerated
 ```
@@ -102,7 +103,7 @@ SecurityEvent
 
 Чтобы добавить фильтр к запросу, используйте оператор **where**, за которым следует одно или несколько условий. Например, следующий запрос возвращает только записи *SecurityEvent*, где _Level_ равняется _8_:
 
-```OQL
+```KQL
 SecurityEvent
 | where Level == 8
 ```
@@ -118,14 +119,14 @@ SecurityEvent
 
 Чтобы отфильтровать по нескольким условиям, можно использовать оператор **and**:
 
-```OQL
+```KQL
 SecurityEvent
 | where Level == 8 and EventID == 4672
 ```
 
 Для этого также можно включить несколько элементов **where**, разделенных вертикальной чертой:
 
-```OQL
+```KQL
 SecurityEvent
 | where Level == 8 
 | where EventID == 4672
@@ -145,7 +146,7 @@ SecurityEvent
 ### <a name="time-filter-in-query"></a>Фильтр времени в запросе
 Вы также можете определить ваш собственный диапазон времени, добавив фильтр времени к запросу. Лучше всего поместить фильтр времени сразу после имени таблицы: 
 
-```OQL
+```KQL
 SecurityEvent
 | where TimeGenerated > ago(30m) 
 | where toint(Level) >= 10
@@ -157,7 +158,7 @@ SecurityEvent
 ## <a name="project-and-extend-select-and-compute-columns"></a>Операторы project и extend. Выбор и вычисление столбцов
 Используйте оператор **project**, чтобы выбрать конкретные столбцы, которые нужно включить в результаты:
 
-```OQL
+```KQL
 SecurityEvent 
 | top 10 by TimeGenerated 
 | project TimeGenerated, Computer, Activity
@@ -174,7 +175,7 @@ SecurityEvent
 * Создание столбца *EventCode*. Функция **substring()** используется для получения только первых четырех символов из поля Activity.
 
 
-```OQL
+```KQL
 SecurityEvent
 | top 10 by TimeGenerated 
 | project Computer, TimeGenerated, EventDetails=Activity, EventCode=substring(Activity, 0, 4)
@@ -182,7 +183,7 @@ SecurityEvent
 
 **extend** отслеживает все исходные столбцы в результирующем наборе, а также определяет дополнительные. В следующем запросе **extend** используется для добавления столбца *localtime*, содержащего локализованное значение TimeGenerated.
 
-```OQL
+```KQL
 SecurityEvent
 | top 10 by TimeGenerated
 | extend localtime = TimeGenerated-8h
@@ -192,7 +193,7 @@ SecurityEvent
 С помощью оператора **summarize** можно определить группы записей в соответствии с одним или несколькими столбцами и применить к ним статистические вычисления. Поэтому с **summarize** чаще всего применяется функция *count*, которая возвращает число результатов в каждой группе.
 
 Следующий запрос проверяет все записи в таблице *Perf* за последний час, группирует их по столбцу *ObjectName* и подсчитывает количество записей в каждой группе: 
-```OQL
+```KQL
 Perf
 | where TimeGenerated > ago(1h)
 | summarize count() by ObjectName
@@ -200,7 +201,7 @@ Perf
 
 Иногда имеет смысл определить группы по нескольким измерениям. Каждое уникальное сочетание этих значений определяет отдельную группу:
 
-```OQL
+```KQL
 Perf
 | where TimeGenerated > ago(1h)
 | summarize count() by ObjectName, CounterName
@@ -208,7 +209,7 @@ Perf
 
 Другое распространенное использование — выполнять математические или статистические вычисления в каждой группе. Например, следующий фрагмент вычисляет среднее значение *CounterValue* для каждого компьютера:
 
-```OQL
+```KQL
 Perf
 | where TimeGenerated > ago(1h)
 | summarize avg(CounterValue) by Computer
@@ -216,7 +217,7 @@ Perf
 
 К сожалению, результаты этого запроса бессмысленны, так как мы смешали разные счетчики производительности. Чтобы это имело смысл, следует рассчитывать среднее значение отдельно для каждого сочетания *CounterName* и *Computer*:
 
-```OQL
+```KQL
 Perf
 | where TimeGenerated > ago(1h)
 | summarize avg(CounterValue) by Computer, CounterName
@@ -227,7 +228,7 @@ Perf
 
 Чтобы создать группы на основании непрерывных значений, рекомендуется разбить диапазон на управляемые единицы с помощью **bin**. Следующий запрос анализирует записи *Perf* с данными об измерении свободной памяти (*доступная память в МБ*) на указанном компьютере. Вычисляется среднее значение для каждого периода в 1 час за последние 2 дня:
 
-```OQL
+```KQL
 Perf 
 | where TimeGenerated > ago(2d)
 | where Computer == "ContosoAzADDS2" 

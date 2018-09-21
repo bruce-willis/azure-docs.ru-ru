@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 9d6bf29909393846ec17a1bcc210fb989efd7f99
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 106e8f082d148ed9a8c58313177be81ee074a2c3
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36939929"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45578469"
 ---
 # <a name="manage-budgets"></a>Управление бюджетами
 
@@ -83,5 +83,5 @@ ms.locfileid: "36939929"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вы еще не завершили первое руководство по службе "Управление затратами", ознакомьтесь с ним в статье [Просмотр сведений об использовании и затратах](https://docs.microsoft.com/en-us/azure/cost-management/tutorial-review-usage).
+- Если вы еще не завершили первое руководство по службе "Управление затратами", ознакомьтесь с ним в статье [Просмотр сведений об использовании и затратах](https://docs.microsoft.com/azure/cost-management/tutorial-review-usage).
 - Узнайте больше об [отчетах, доступных в службе "Управление затратами"](use-reports.md).

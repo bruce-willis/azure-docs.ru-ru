@@ -1,8 +1,8 @@
 ---
-title: "Изучение метрик в Azure Application Insights | Документация Майкрософт"
-description: "Способ интерпретации диаграмм в обозревателе метрик и настройки колонок обозревателя метрик."
+title: Изучение метрик в Azure Application Insights | Документация Майкрософт
+description: Способ интерпретации диаграмм в обозревателе метрик и настройки колонок обозревателя метрик.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: 1f471176-38f3-40b3-bc6d-3f47d0cbaaa2
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/08/2017
 ms.author: mbullwin
-ms.openlocfilehash: 01b45323b74b54da157f4e9f1af783759c121be1
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 66ef3330a435574405dbfb8b8c82d984bb877efe
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35641055"
 ---
 # <a name="exploring-metrics-in-application-insights"></a>Исследование метрик в Application Insights
 Метрики в [Application Insights][start] — это измеренные значения и счетчики событий, которые передаются как данные телеметрии из приложения. Они помогают обнаруживать проблемы производительности и отслеживать тенденции в использовании приложения. Существует широкий спектр стандартных метрик, и можно также создавать собственные пользовательские метрики и события.
@@ -181,7 +182,7 @@ ms.lasthandoff: 11/01/2017
 ### <a name="power-bi"></a>Power BI
 Если вам нужны представления данных с еще большими возможностями, данные можно [экспортировать в Power BI](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx).
 
-## <a name="analytics"></a>Аналитика
+## <a name="analytics"></a>Analytics
 [Аналитика](app-insights-analytics.md) является более гибким способом анализа телеметрии с помощью мощного языка запросов. Используйте ее, если требуется объединить или вычислить результаты метрик либо тщательно изучить последние данные производительности приложения. 
 
 На диаграмме с метриками можно щелкнуть значок "Аналитика", чтобы перейти непосредственно к эквивалентному запросу "Аналитика".

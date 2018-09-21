@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jingwang
-ms.openlocfilehash: e4ebddc35b402d7a8997d899ce97577e93a27b84
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: e8e106bc71b87af8cd36f7edb0fe64fcddd6133e
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42444866"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45574680"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -279,7 +279,7 @@ ms.locfileid: "42444866"
 >[!NOTE]
 >Значение по умолчанию для приемника "**writeBatchSize**" и операция копирования "**[parallelCopies](copy-activity-performance.md#parallel-copy)**" для приемника Dynamics равны 10. Таким образом в Dynamics одновременно отправляются 100 записей.
 
-Для Dynamics 365 в сети существует ограничение на [2 одновременных пакетных вызова на организацию](https://msdn.microsoft.com/en-us/library/jj863631.aspx#Run-time%20limitations). Если этот предел превышен, возникает ошибка "сервер занят" до того, как будет выполнен первый запрос. Поддержание "writeBatchSize", меньшее или равное 10, позволит избежать такого регулирования количества одновременных вызовов.
+Для Dynamics 365 в сети существует ограничение на [2 одновременных пакетных вызова на организацию](https://msdn.microsoft.com/library/jj863631.aspx#Run-time%20limitations). Если этот предел превышен, возникает ошибка "сервер занят" до того, как будет выполнен первый запрос. Поддержание "writeBatchSize", меньшее или равное 10, позволит избежать такого регулирования количества одновременных вызовов.
 
 Оптимальное сочетание "**writeBatchSize**" и "**parallelCopies**" зависит от схемы вашего объекта, например количество столбцов, размер строки, количество подключаемых модулей/рабочих процессов/рабочих процессов, подключенных к этим вызовам и т. д. Значение по умолчанию 10 writeBatchSize * 10 parallelCopies — это рекомендация в соответствии с сервисом Dynamics, которая будет работать для большинства объектов Dynamics, но может иметь не самую лучшую производительность. Вы можете настроить производительность путем корректировки комбинации в настройках активности копирования.
 

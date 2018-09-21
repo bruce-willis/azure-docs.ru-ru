@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: mabrigg
-ms.openlocfilehash: 4d8a79862dac53429acda14f81818f92a96df529
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 5b0dbf5ad78ff345d386024ff873618a781917ac
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44376856"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45579043"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Общие сведения об управлении обновлениями в Azure Stack
 
@@ -34,7 +34,7 @@ ms.locfileid: "44376856"
 Для обеспечения поддержки системы необходимо всегда использовать обновленную версию Azure Stack. Обязательно ознакомьтесь с [политикой обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
 > [!NOTE]
-> Пакеты обновления Azure Stack нельзя применить к Пакету средств разработки Azure Stack. Пакеты обновления предназначены для интегрированных систем. Сведения см. в разделе [Повторное развертывание ASDK](https://docs.microsoft.com/en-us/azure/azure-stack/asdk).
+> Пакеты обновления Azure Stack нельзя применить к Пакету средств разработки Azure Stack. Пакеты обновления предназначены для интегрированных систем. Сведения см. в разделе [Повторное развертывание ASDK](https://docs.microsoft.com/azure/azure-stack/asdk).
 
 ## <a name="the-update-resource-provider"></a>Поставщик ресурсов "Обновление"
 

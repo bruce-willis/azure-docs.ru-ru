@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.author: v-deasim
 ms.custom: ''
-ms.openlocfilehash: b52cad1f32cc3d16cf70bb81640dcb1d9f8614bf
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 88739cb299e453e32c69f5d0d0189da849b345a7
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37133515"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45573881"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "37133515"
 
     В пункте **Метод маршрутизации** выберите **Приоритет**.
 
-2. Добавьте в профиль диспетчера трафика конечные точки CDN, следуя пошаговому руководству в разделе [Добавление конечных точек диспетчера трафика Azure](https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-create-profile#add-traffic-manager-endpoints)
+2. Добавьте в профиль диспетчера трафика конечные точки CDN, следуя пошаговому руководству в разделе [Добавление конечных точек диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-create-profile#add-traffic-manager-endpoints)
 
     В пункте **Тип** выберите **Внешние конечные точки**. В пункте **Приоритет** введите число.
 
@@ -66,7 +66,7 @@ ms.locfileid: "37133515"
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
-    Б. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
+    b. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
 
       Например:  
       
@@ -92,7 +92,7 @@ ms.locfileid: "37133515"
 По завершении этих действий служба с несколькими сетями CDN с возможностью отработки отказа будет настроена с помощью диспетчера трафика Azure. У вас будет доступ с пользовательского домена к тестовым URL-адресам. Чтобы проверить функции, отключите основную конечную точку CDN и убедитесь, что запрос правильно перенесен на вспомогательную конечную точку CDN. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Можно также настроить другие методы маршрутизации, например географические, чтобы сбалансировать нагрузку между разными конечными точками CDN. Дополнительные сведения см. в разделе [Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure](https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-configure-geographic-routing-method).
+Можно также настроить другие методы маршрутизации, например географические, чтобы сбалансировать нагрузку между разными конечными точками CDN. Дополнительные сведения см. в разделе [Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-configure-geographic-routing-method).
 
 
 

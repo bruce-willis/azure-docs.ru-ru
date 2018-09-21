@@ -1,19 +1,21 @@
 ---
-title: Что такое API Bing для поиска в Интернете? | Документация Майкрософт
-description: API Bing для поиска в Интернете — это служба RESTful, которая позволяет вашему приложению использовать возможности веб-поиска Bing, включая веб-страницы, изображения, видео, новости, сущности, связанные поисковые запросы, исправления орфографических ошибок, преобразование единиц, переводы и вычисления.
+title: Что такое API Bing для поиска в Интернете?
+titleSuffix: Azure Cognitive Services
+description: API Bing для поиска в Интернете — это служба RESTful, которая мгновенно отвечает на запросы пользователей. Результаты поиска можно легко настроить таким образом, чтобы они содержали веб-страницы, изображения, видео, новости, переводы и прочее. Результаты предоставляются в формате JSON и основаны на релевантности поиска и подписках API Bing для поиска в Интернете.
 services: cognitive-services
 author: erhopf
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-web-search
 ms.topic: overview
 ms.date: 08/14/2018
 ms.author: erhopf
-ms.openlocfilehash: ad1069a836a3ff9291ca8094fe86e19979bf7e32
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 8482afae2889ccf2153e1864e4a65b635b6ab4c7
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42889309"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46125244"
 ---
 # <a name="what-is-bing-web-search"></a>Что такое API Bing для поиска в Интернете?
 

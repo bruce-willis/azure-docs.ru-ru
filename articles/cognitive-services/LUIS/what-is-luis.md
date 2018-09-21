@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: overview
 ms.date: 08/15/2018
 ms.author: diberry
-ms.openlocfilehash: e74abb30709f186d3c1139793cf34d3e033ff967
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: aadf80df388a25e07051f6dd0a83cd4da7c2ef83
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40191645"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45629803"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -179,7 +179,7 @@ Author LUIS from the [authoring](https://aka.ms/luis-authoring-apis) APIs or fro
 * [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/). Узнайте больше с помощью этого курса о [смешанной реальности](https://docs.microsoft.com/windows/mixed-reality/mr-azure-303) с LUIS. 
 
 Средства корпорации Майкрософт для использования LUIS с чат-ботом:
-* [Диспетчеризация](https://github.com/Microsoft/botbuilder-tools/tree/master/Dispatch). Позволяет использовать несколько приложений LUIS и QnA Maker из родительского приложения с помощью модели диспетчера.
+* [Диспетчеризация](https://aka.ms/dispatch-tool). Позволяет использовать несколько приложений LUIS и QnA Maker из родительского приложения с помощью модели диспетчера.
 * [Средство для обучения ведению диалога](https://docs.microsoft.com/azure/cognitive-services/labs/conversation-learner/overview). Позволяет создавать диалоги с чат-ботом быстрее с помощью LUIS.
 * [Индивидуальный чат в проекте](https://docs.microsoft.com/azure/cognitive-services/project-personality-chat/overview), позволяющий чат-боту обрабатывать непринужденные разговоры на общие темы.
 

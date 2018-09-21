@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2018
 ms.author: msjuergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0960f569f2a582d9712473081f66205272cfe31a
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: ca089672cf645af58952205dada66aa96ba0b65d
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39116964"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45578249"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Использование SAP Business One на виртуальных машинах Azure
 Этот документ содержит руководство для развертывания SAP Business One на виртуальных машинах Azure. Эта документация не заменяет документацию по установке Business One для SAP. Документация должна содержать основные принципы планирования и развертывания инфраструктуры Azure для запуска приложений Business One.
@@ -30,7 +30,7 @@ Business One поддерживает две разных базы данных.
 - SQL Server – см. статью [SAP Note #928839 - Release Planning for Microsoft SQL Server](https://launchpad.support.sap.com/#/notes/928839) (Примечание к SAP № 928839. Планирование выпуска для Microsoft SQL Server)
 - SAP HANA: SAP Business One для SAP HANA для четкой поддержки и извлечения [матрицы доступности продуктов SAP](https://support.sap.com/pam)
 
-Что касается SQL Server, применяются основные соображения развертывания, описанные в разделе [Развертывание СУБД виртуальных машин Azure для SAP NetWeaver ](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/dbms-guide). для SAP HANA соображения упоминаются в этом документе.
+Что касается SQL Server, применяются основные соображения развертывания, описанные в разделе [Развертывание СУБД виртуальных машин Azure для SAP NetWeaver ](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms-guide). для SAP HANA соображения упоминаются в этом документе.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы воспользоваться приведенными в этом руководстве сведениями, необходимо иметь базовые знания об использовании следующих компонентов Azure:
@@ -41,7 +41,7 @@ Business One поддерживает две разных базы данных.
 - [Управление сетями Azure и виртуальными сетями с помощью интерфейса командной строки](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
 - [Управление дисками Azure с помощью Azure CLI 2.0](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-disks)
 
-Даже если вы интересуетесь только Business One, документ [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/planning-guide) может быть полезным источником информации.
+Даже если вы интересуетесь только Business One, документ [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) может быть полезным источником информации.
 
 Предполагается, что вы, как и экземпляр развертывания SAP Business One:
 
@@ -89,23 +89,23 @@ Business One — это двухуровневое приложение.
 В следующих нескольких разделах рассматриваются фрагменты инфраструктуры, которые важны для развертывания SAP.
 
 ### <a name="azure-network-infrastructure"></a>Сетевая инфраструктура Azure
-Сетевая инфраструктура, которую необходимо развернуть в Azure, зависит от того, развертываете ли вы одну систему Business One для себя. Или вы являетесь поставщиком услуг, который размещает десятки систем Business One для клиентов. Также могут возникнуть небольшие отличия в схеме подключения к Azure. Среди различных возможностей есть одна схема, в которой создается VPN-подключение в Azure, и вы расширяете Active Directory через [VPN](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-plan-design) или [ExpressRoute](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction) в Azure.
+Сетевая инфраструктура, которую необходимо развернуть в Azure, зависит от того, развертываете ли вы одну систему Business One для себя. Или вы являетесь поставщиком услуг, который размещает десятки систем Business One для клиентов. Также могут возникнуть небольшие отличия в схеме подключения к Azure. Среди различных возможностей есть одна схема, в которой создается VPN-подключение в Azure, и вы расширяете Active Directory через [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-plan-design) или [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) в Azure.
 
 ![Простая конфигурация сети с Business One](./media/business-one-azure/simple-network-with-VPN.PNG)
 
 Представленная упрощенная конфигурация включает несколько экземпляров безопасности, которые позволяют контролировать и ограничивать маршрутизацию. Начинается с 
 
 - Маршрутизатор или брандмауэр на локальных серверах клиента.
-- Следующий экземпляр – [группа безопасности сети Azure](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview), которую можно использовать для введения правил маршрутизации и безопасности для виртуальной сети Azure, в которой запускается конфигурация системы SAP Business One.
+- Следующий экземпляр – [группа безопасности сети Azure](https://docs.microsoft.com/azure/virtual-network/security-overview), которую можно использовать для введения правил маршрутизации и безопасности для виртуальной сети Azure, в которой запускается конфигурация системы SAP Business One.
 - Чтобы избежать того, что пользователи клиента Business One могут также видеть сервер, на котором запущен сервер Business One, запускающий базу данных, необходимо отделить виртуальную машину, на которой размещен клиент и сервер Business One, в двух разных подсетях виртуальной сети.
 - Используйте группу безопасности сети Azure, назначенную для двух разных подсетей, чтобы ограничить доступ к серверу Business One.
 
-Более сложные версии конфигурации сети Azure основаны на [,описанных в рекомендациях по звездообразной архитектуре](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) Azure. Шаблон звездообразной архитектуры изменит первую упрощенную конфигурацию, показанную ниже.
+Более сложные версии конфигурации сети Azure основаны на [,описанных в рекомендациях по звездообразной архитектуре](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) Azure. Шаблон звездообразной архитектуры изменит первую упрощенную конфигурацию, показанную ниже.
 
 
 ![Настройка звездообразной архитектуры сети с помощью Business One](./media/business-one-azure/hub-spoke-network-with-VPN.PNG)
 
-В случаях, когда пользователи подключаются через Интернет без какого-либо частного подключения к Azure, разработка сети в Azure должена соответствовать принципам, описанным в справочной архитектуре Azure для [сети периметра между Azure и Интернетом](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-dmz).
+В случаях, когда пользователи подключаются через Интернет без какого-либо частного подключения к Azure, разработка сети в Azure должена соответствовать принципам, описанным в справочной архитектуре Azure для [сети периметра между Azure и Интернетом](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-dmz).
 
 ### <a name="business-one-database-server"></a>Сервер базы данных Business One
 Для типа базы данных доступны SQL Server и SAP HANA. Независимо от СУБД, необходимо ознакомиться с документом [Соображения для развертывания СУБД виртуальных машин Azure для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general), чтобы получить общее представление о развертываниях СУБД в виртуальных машинах Azure и связанных с ними вопросах сетевого взаимодействия и хранения.
@@ -151,7 +151,7 @@ Business One — это двухуровневое приложение.
 ### <a name="business-one-client-server"></a>Клиентский сервер Business One
 Для этих компонентов рекомендации по хранению не являются основной проблемой. Тем не менее, необходимо иметь надежную платформу. Таким образом, следует использовать хранилище Azure класса Premium для этой виртуальной машины даже для базового виртуального жесткого диска. Изменение размера виртуальной машины на основе данных, указанных в [Руководстве по требованиям к оборудованию SAP Business One](https://help.sap.com/http.svc/rc/011000358700000244612011e/9.3/en-US/B1_Hardware_Requirements_Guide.pdf). Для Azure необходимо сосредоточиться и вычислить требования, перечисленные в разделе документа 2.4. При расчете требований, нужно сравнить их со следующими документами, чтобы найти идеальную виртуальную машину.
 
-- [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes)
+- [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)
 - [Примечание к SAP №1928533](https://launchpad.support.sap.com/#/notes/1928533)
 
 Сравните количество процессоров и памяти, необходимых для документирования Microsoft. Также при выборе виртуальной машины помните о пропускной способности сети.

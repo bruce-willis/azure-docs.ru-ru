@@ -1,6 +1,7 @@
 ---
 title: Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Node.js
-description: Узнайте, как использовать пакет SDK Поиска в Интернете Bing для Node.js.
+titleSuffix: Azure Cognitive Services
+description: Пакет SDK Поиска в Интернете Bing позволяет интегрировать Поиск в Интернете Bing в любое приложение Node.js. Из этого краткого руководства вы узнаете, как создать экземпляр клиента, отправить запрос и вывести ответ.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
@@ -9,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 08/16/2018
 ms.author: erhopf
-ms.openlocfilehash: 7c3003ab4ba40a9d0212e7c94b6dd3bfbc8f0ca2
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: b27c11a69c7d16f38c2448d380b611940078c501
+ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43186637"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46121929"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-nodejs"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Node.js
 
@@ -26,7 +27,7 @@ ms.locfileid: "43186637"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить это руководство, вам потребуется следующее:
+Для работы с этим кратким руководством вам потребуется следующее:
 
 * [Node.js 6](https://nodejs.org/en/download/) или более поздней версии;
 * ключ подписки;  
@@ -100,7 +101,7 @@ webSearchApiClient.web.search('seahawks').then((result) => {
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите ключ подписки из кода программы, когда завершите работу с этим проектом.
+Удалите ключ подписки из кода программы после завершения проекта.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

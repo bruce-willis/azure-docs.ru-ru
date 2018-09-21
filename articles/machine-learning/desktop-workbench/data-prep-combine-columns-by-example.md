@@ -7,17 +7,17 @@ ms.author: ranku
 manager: mwinkle
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.custom: mvc, reference
 ms.topic: article
 ms.date: 09/14/2017
-ms.openlocfilehash: ecd2232dcf77715fdccd4e5518674500231f67ca
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 621601ad3576aad13f2f71062ee2351cf1a394c8
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34830277"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35640075"
 ---
 # <a name="combine-columns-by-example-transformation"></a>Преобразование Combine Columns by Example (Объедение столбцов по образцу).
 Это преобразование позволяет добавить новый столбец, объединив значения из нескольких столбцов. Пользователь может указать разделитель или предоставить примеры объединенных значений, чтобы выполнить это преобразование. Когда пользователь предоставляет примеры сочетания, преобразование обрабатывается на основе подхода **По образцу**, который используется в преобразовании **Derive Column by Example** (Получение столбцов по образцу).

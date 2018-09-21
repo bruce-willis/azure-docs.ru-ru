@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: mattcon
 author: matthewconners
 ms.date: 07/13/2018
-ms.openlocfilehash: 60eecf134f067d68326fc23ade8ed2a5a7ae7ac4
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 9bdda67f08b9fbee20bdcc11186b97a3d942b778
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39070350"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45580673"
 ---
 # <a name="build-and-deploy-forecasting-models-with-azure-machine-learning"></a>Создание и развертывание моделей прогнозирования с помощью Машинного обучения Azure
 
@@ -106,7 +106,7 @@ print('imports done')
 
 ## <a name="load-data-and-explore"></a>Загрузка и просмотр данных
 
-Этот фрагмент кода показывает типичный процесс начала работы с необработанным набором данных (в этом случае данных [Dominick's Finer Foods](https://research.chicagobooth.edu/kilts/marketing-databases/dominicks)).  Вы также можете использовать вспомогательную функцию [load_dominicks_oj_data](https://docs.microsoft.com/en-us/python/api/ftk.data.dominicks_oj.load_dominicks_oj_data).
+Этот фрагмент кода показывает типичный процесс начала работы с необработанным набором данных (в этом случае данных [Dominick's Finer Foods](https://research.chicagobooth.edu/kilts/marketing-databases/dominicks)).  Вы также можете использовать вспомогательную функцию [load_dominicks_oj_data](https://docs.microsoft.com/python/api/ftk.data.dominicks_oj.load_dominicks_oj_data).
 
 
 ```python
@@ -337,7 +337,7 @@ print('{} time series in the data frame.'.format(nseries))
 
 Данные содержат около 250 различных комбинаций магазинов и торговых марок в кадре данных. Каждая комбинация определяет собственные временные ряды продаж. 
 
-Вы можете использовать класс [TimeSeriesDataFrame](https://docs.microsoft.com/en-us/python/api/ftk.dataframe_ts.timeseriesdataframe?view=azure-ml-py-latest) для удобства моделирования нескольких рядов в одной структуре данных, используя _интервал_. Интервал задается в столбцах `store` и `brand`.
+Вы можете использовать класс [TimeSeriesDataFrame](https://docs.microsoft.com/python/api/ftk.dataframe_ts.timeseriesdataframe?view=azure-ml-py-latest) для удобства моделирования нескольких рядов в одной структуре данных, используя _интервал_. Интервал задается в столбцах `store` и `brand`.
 
 Разница между _интервалом_ и _группой_ заключается в том, что интервал всегда физически значим в реальном мире, в то время как группа не обязательно. Внутренние функции пакета используют группу для создания единой модели из нескольких временных рядов, если пользователь считает, что такое группирование помогает улучшить производительность модели. По умолчанию группа устанавливается равной интервалу, а для каждого интервала создается одна модель. 
 
@@ -499,7 +499,7 @@ whole_tsdf.loc[pd.IndexSlice['1990-06':'1990-09', 2, 'dominicks'], ['Quantity']]
 
 
 
-Функция [TimeSeriesDataFrame.ts_report](https://docs.microsoft.com/en-us/python/api/ftk.dataframe_ts.timeseriesdataframe?view=azure-ml-py-latest#ts-report) создает полный отчет о кадре данных временного ряда. Отчет содержит как общее описание данных, так и статистику, относящуюся к данным временных рядов. 
+Функция [TimeSeriesDataFrame.ts_report](https://docs.microsoft.com/python/api/ftk.dataframe_ts.timeseriesdataframe?view=azure-ml-py-latest#ts-report) создает полный отчет о кадре данных временного ряда. Отчет содержит как общее описание данных, так и статистику, относящуюся к данным временных рядов. 
 
 
 ```python
@@ -886,14 +886,14 @@ whole_tsdf.head()
 
 ## <a name="preprocess-data-and-impute-missing-values"></a>Предварительная обработка данных и передача отсутствующих значений
 
-Начните с разделения данных на обучающий набор и тестирующий набор с помощью служебной функции [last_n_periods_split](https://docs.microsoft.com/en-us/python/api/ftk.ts_utils?view=azure-ml-py-latest). Полученный тестирующий набор содержит последние 40 наблюдений за каждым временным рядом. 
+Начните с разделения данных на обучающий набор и тестирующий набор с помощью служебной функции [last_n_periods_split](https://docs.microsoft.com/python/api/ftk.ts_utils?view=azure-ml-py-latest). Полученный тестирующий набор содержит последние 40 наблюдений за каждым временным рядом. 
 
 
 ```python
 train_tsdf, test_tsdf = last_n_periods_split(whole_tsdf, 40)
 ```
 
-Основным моделям временных рядов требуются смежные временные ряды. Проверьте, являются ли ряды регулярными (что означает, что они имеют временный индекс в выборке с регулярными интервалами), используя функцию [check_regularity_by_grain](https://docs.microsoft.com/en-us/python/api/ftk.dataframe_ts.timeseriesdataframe?view=azure-ml-py-latest#check-regularity-by-grain).
+Основным моделям временных рядов требуются смежные временные ряды. Проверьте, являются ли ряды регулярными (что означает, что они имеют временный индекс в выборке с регулярными интервалами), используя функцию [check_regularity_by_grain](https://docs.microsoft.com/python/api/ftk.dataframe_ts.timeseriesdataframe?view=azure-ml-py-latest#check-regularity-by-grain).
 
 
 ```python
@@ -968,7 +968,7 @@ print(ts_regularity[ts_regularity['regular'] == False])
     [213 rows x 2 columns]
     
 
-Вы можете видеть, что большая часть рядов (213 из 249) нерегулярна. Требуется [преобразование подстановки](https://docs.microsoft.com/en-us/python/api/ftk.transforms.ts_imputer.timeseriesimputer?view=azure-ml-py-latest) для заполнения отсутствующих значений количества продаж. Хотя существует множество вариантов подстановки, следующий пример кода использует линейную интерполяцию.
+Вы можете видеть, что большая часть рядов (213 из 249) нерегулярна. Требуется [преобразование подстановки](https://docs.microsoft.com/python/api/ftk.transforms.ts_imputer.timeseriesimputer?view=azure-ml-py-latest) для заполнения отсутствующих значений количества продаж. Хотя существует множество вариантов подстановки, следующий пример кода использует линейную интерполяцию.
 
 
 ```python
@@ -1034,7 +1034,7 @@ arima_model = Arima(oj_series_freq, arima_order)
 
 ### <a name="combine-multiple-models"></a>Объединение нескольких моделей
 
-Инструмент оценки [ForecasterUnion](https://docs.microsoft.com/en-us/python/api/ftk.models.forecaster_union?view=azure-ml-py-latest) позволяет комбинировать несколько оценок и подбирать или прогнозировать их с помощью одной строки кода.
+Инструмент оценки [ForecasterUnion](https://docs.microsoft.com/python/api/ftk.models.forecaster_union?view=azure-ml-py-latest) позволяет комбинировать несколько оценок и подбирать или прогнозировать их с помощью одной строки кода.
 
 
 ```python
@@ -1248,7 +1248,7 @@ print(train_feature_tsdf.head())
 
  **RegressionForecaster**
 
-Функция [RegressionForecaster](https://docs.microsoft.com/en-us/python/api/ftk.models.regression_forecaster.regressionforecaster?view=azure-ml-py-latest) помещает инструменты оценки регрессии sklearn в оболочку, чтобы их можно было обучить в TimeSeriesDataFrame. Упакованный инструмент прогнозирования также помещает каждую группу (в этом случае магазин) в одну модель. Инструмент прогнозирования может обучить одну модель для группы рядов данных, которые считаются схожими и могут объединяться. Одна модель для группы рядов данных часто использует данные из более длинных рядов, чтобы улучшить прогнозы для коротких. Вы можете заменить эти модели любыми другими моделями, поддерживающими регрессию, в библиотеке. 
+Функция [RegressionForecaster](https://docs.microsoft.com/python/api/ftk.models.regression_forecaster.regressionforecaster?view=azure-ml-py-latest) помещает инструменты оценки регрессии sklearn в оболочку, чтобы их можно было обучить в TimeSeriesDataFrame. Упакованный инструмент прогнозирования также помещает каждую группу (в этом случае магазин) в одну модель. Инструмент прогнозирования может обучить одну модель для группы рядов данных, которые считаются схожими и могут объединяться. Одна модель для группы рядов данных часто использует данные из более длинных рядов, чтобы улучшить прогнозы для коротких. Вы можете заменить эти модели любыми другими моделями, поддерживающими регрессию, в библиотеке. 
 
 
 ```python
@@ -1372,7 +1372,7 @@ all_errors.sort_values('MedianAPE')
 ![png](./media/how-to-build-deploy-forecast-models/cv_figure.PNG)
 
 **Перебор параметров**  
-Класс [TSGridSearchCV](https://docs.microsoft.com/en-us/python/api/ftk.model_selection.search.tsgridsearchcv?view=azure-ml-py-latest) выполняет поиск по указанным значениям параметров и использует `RollingOriginValidator` для оценки производительности параметров для выбора оптимальных параметров.
+Класс [TSGridSearchCV](https://docs.microsoft.com/python/api/ftk.model_selection.search.tsgridsearchcv?view=azure-ml-py-latest) выполняет поиск по указанным значениям параметров и использует `RollingOriginValidator` для оценки производительности параметров для выбора оптимальных параметров.
 
 
 ```python

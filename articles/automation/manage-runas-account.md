@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 08/16/2018
+ms.date: 09/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2d6b58c95b918d820e207e801e62e7897c2ee366
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 32a7b7026df1522abe2ca3dc7b212b06e08ff905
+ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246274"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45544283"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -349,9 +349,8 @@ ms.locfileid: "40246274"
 
     ![Обновление сертификата для учетной записи запуска от имени](media/manage-runas-account/automation-account-renew-runas-certificate.png)
 
-1. Ход обновления сертификата можно отслеживать в разделе **Уведомления** в меню.
+1. Ход обновления сертификата можно отслеживать в разделе **Уведомления** в меню. 
 
-В следующих разделах описываются причины, из-за которых невозможно обновить сертификат запуска от имени.
 ## <a name="limiting-run-as-account-permissions"></a>Ограничение разрешений учетной записи запуска от имени
 
 Чтобы управлять автоматическими действиями с ресурсами в службе автоматизации Azure, по умолчанию в подписке учетной записи запуска от имени предоставляются права участника. Если нужно ограничить функции субъекта-службы RunAs, можно удалить учетную запись из роли участника для подписки и добавить ее в качестве участника в нужную группу ресурсов.

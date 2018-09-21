@@ -3,7 +3,7 @@ title: Использование набора средств Marketplace для
 description: Узнайте, как быстро создать элементы Marketplace с помощью набора средств для публикации
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: sethmanheim
 manager: femila
 editor: ''
 ms.assetid: ''
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 7/14/2017
-ms.author: brenduns
+ms.author: sethm
 ms.reviewer: jeffgo
-ms.openlocfilehash: 61ee3296429f9641643f1c9268ae89e3691fcfa1
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 0ade78dd992e8d1d2eda2cf27d44e52c4030563f
+ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29386883"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45630934"
 ---
 #  <a name="add-marketplace-items-using-publishing-tool"></a>Добавление элементов Marketplace с помощью средства публикации
 Добавляя содержимое в [Azure Stack Marketplace](azure-stack-marketplace.md), вы предоставляете себе и своим клиентам возможность развертывать ваши решения.  Набор средств Marketplace создает файлы пакетов Azure Marketplace (AZPKG), основанные на шаблонах IaaS Azure Resource Manager или расширениях виртуальных машин.  Также набор средств Marketplace позволяет публиковать AZPKG-файлы, созданные с помощью этого средства или [вручную](azure-stack-create-and-publish-marketplace-item.md).  Из этой статьи вы узнаете, как скачать это средство, как создать элемент Marketplace на основе шаблона виртуальной машины и как опубликовать этот элемент в Azure Stack Marketplace.     
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
  - Для запуска набора средств следует использовать узел Azure Stack или создать [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn)-подключение к нему с того компьютера, где будет выполняться набор средств.
 
  - Скачайте [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/archive/master.zip) и извлеките их содержимое.

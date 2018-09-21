@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: 9ebc3a8cb01d93fc6cec5d208c5a10020413cec2
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: d825ddd75bfc829aa82bab4cede0381dda2d36da
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39631101"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45575304"
 ---
 # <a name="enable-automatic-tuning"></a>Включение автоматической настройки
 
@@ -86,7 +86,7 @@ ms.locfileid: "39631101"
    
 Если задать для отдельного параметра настройки значение ON, это переопределит наследуемое значение базы данных и включит параметр настройки. Если задать значение OFF, это также переопределит наследуемое значение базы данных и отключит параметр настройки. Параметр автоматической настройки, для которого задано значение DEFAULT, будет наследовать конфигурацию от параметра автоматической настройки уровня базы данных.  
 
-Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-set-options?view=sql-server-2017&tabs=sqldbls#arguments-1).
+Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=sql-server-2017&tabs=sqldbls#arguments-1).
 
 ## <a name="disabled-by-the-system"></a>Отключено системой
 Автоматическая настройка контролирует все действия, которые она выполняет в базе данных, и в некоторых случаях может определить, что автоматическая настройка в базе данных работает не должным образом. В этом случае параметр настройки будет отключен системой. В большинстве случаев это происходит потому, что хранилище запросов отключено или доступно только для чтения в определенной базе данных.

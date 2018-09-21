@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 05/14/2018
 ms.author: jomolesk
-ms.openlocfilehash: 02c8d5b40315f5612564b6ae11bd9cf1861708a9
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 26227e1a6766a80bbcef3cfda3f2faee82396fe3
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44297883"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45577060"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-gdpr"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для GDPR
 
@@ -63,9 +63,9 @@ ms.locfileid: "44297883"
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 В следующем разделе подробно описываются компоненты развертывания и реализации.
 
-**Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview) позволяет клиентам работать с ресурсами решения как с группой. Клиенты могут развертывать, обновлять или удалять все ресурсы решения в рамках одной скоординированной операции. Клиенты выполняют развертывание на основе шаблона, используемого в разных средах, в том числе тестовой, промежуточной и рабочей. Resource Manager предоставляет функции безопасности, аудита и добавления тегов, помогающие клиентам управлять ресурсами после развертывания.
+**Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) позволяет клиентам работать с ресурсами решения как с группой. Клиенты могут развертывать, обновлять или удалять все ресурсы решения в рамках одной скоординированной операции. Клиенты выполняют развертывание на основе шаблона, используемого в разных средах, в том числе тестовой, промежуточной и рабочей. Resource Manager предоставляет функции безопасности, аудита и добавления тегов, помогающие клиентам управлять ресурсами после развертывания.
 
-**Среда службы приложений версии 2**. [Среда службы приложений Azure](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) — это компонент службы приложений, предоставляющий полностью изолированную выделенную среду для безопасного выполнения приложений службы приложений Azure в большом масштабе.
+**Среда службы приложений версии 2**. [Среда службы приложений Azure](https://docs.microsoft.com/azure/app-service/environment/intro) — это компонент службы приложений, предоставляющий полностью изолированную выделенную среду для безопасного выполнения приложений службы приложений Azure в большом масштабе.
 
 Среды ASE изолированы, позволяют запускать приложения только одного клиента и всегда развернуты в виртуальной сети. Клиенты могут детально управлять входящим и исходящим сетевым трафиком приложений, а приложения могут создавать высокоскоростные безопасные подключения к локальным корпоративным ресурсам через виртуальные сети.
 
@@ -73,14 +73,14 @@ ms.locfileid: "44297883"
 
 - размещение внутри защищенной виртуальной сети Azure и использование правил безопасности сети;
 - настройка ASE с самозаверяющимся сертификатом ILB для подключений HTTPS;
-- [внутренняя балансировка нагрузки](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-environment-with-internal-load-balancer) (режим 3);
-- отключение [TLS 1.0](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-custom-settings);
-- изменение [шифров TLS](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-custom-settings);
-- управление [портами N/W для входящего трафика](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-control-inbound-traffic);
-- [WAF — ограничения доступа к данным](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-web-application-firewall);
-- разрешение [трафика Базы данных SQL Azure](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-app-service-environment-network-architecture-overview).
+- [внутренняя балансировка нагрузки](https://docs.microsoft.com/azure/app-service-web/app-service-environment-with-internal-load-balancer) (режим 3);
+- отключение [TLS 1.0](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings);
+- изменение [шифров TLS](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings);
+- управление [портами N/W для входящего трафика](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-control-inbound-traffic);
+- [WAF — ограничения доступа к данным](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-web-application-firewall);
+- разрешение [трафика Базы данных SQL Azure](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-network-architecture-overview).
 
-**Веб-приложение Azure**. [Служба веб-приложений Azure](https://docs.microsoft.com/en-us/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git.
+**Веб-приложение Azure**. [Служба веб-приложений Azure](https://docs.microsoft.com/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git.
 
 ### <a name="virtual-network"></a>Виртуальная сеть
 Архитектура определяет частную виртуальную сеть с пространством адресов 10.200.0.0/16.
@@ -91,14 +91,14 @@ ms.locfileid: "44297883"
 - 1 NSG для Базы данных SQL Azure.
 
 В каждой NSG открыты определенные порты и протоколы, чтобы решение могло работать безопасно и правильно. Кроме того, для каждой NSG настроены следующие конфигурации:
-  - включены [журналы диагностики и события](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-nsg-manage-log), которые хранятся в учетной записи хранения;
+  - включены [журналы диагностики и события](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log), которые хранятся в учетной записи хранения;
   - служба OMS Log Analytics подключена к [диагностике групп безопасности сети](https://github.com/krnese/AzureDeploy/blob/master/AzureMgmt/AzureMonitor/nsgWithDiagnostics.json).
 
 **Подсети**. Каждая подсеть связана с соответствующей группой NSG.
 
-**Azure DNS**. Служба доменных имен (DNS) отвечает за преобразование (разрешение) имени веб-сайта или службы в IP-адрес. [Azure DNS](https://docs.microsoft.com/en-us/azure/dns/dns-overview) является службой размещения доменов DNS, которая осуществляет разрешение имен на базе инфраструктуры Azure. Размещая домены в Azure, пользователи могут управлять записями DNS, используя те же учетные данные, API, инструменты и средства выставления счетов, что и для других служб Azure. Azure DNS также поддерживает частные домены DNS.
+**Azure DNS**. Служба доменных имен (DNS) отвечает за преобразование (разрешение) имени веб-сайта или службы в IP-адрес. [Azure DNS](https://docs.microsoft.com/azure/dns/dns-overview) является службой размещения доменов DNS, которая осуществляет разрешение имен на базе инфраструктуры Azure. Размещая домены в Azure, пользователи могут управлять записями DNS, используя те же учетные данные, API, инструменты и средства выставления счетов, что и для других служб Azure. Azure DNS также поддерживает частные домены DNS.
 
-**Azure Load Balancer**. [Azure Load Balancer](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview) позволяет клиентам масштабировать приложения и обеспечивать высокий уровень доступности служб. Load Balancer поддерживает как входящие, так и исходящие сценарии, обеспечивает низкую задержку и высокую пропускную способность, а также увеличивает масштаб до миллионов потоков для всех приложений, которые используют протоколы TCP и UDP.
+**Azure Load Balancer**. [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) позволяет клиентам масштабировать приложения и обеспечивать высокий уровень доступности служб. Load Balancer поддерживает как входящие, так и исходящие сценарии, обеспечивает низкую задержку и высокую пропускную способность, а также увеличивает масштаб до миллионов потоков для всех приложений, которые используют протоколы TCP и UDP.
 
 ### <a name="data-in-transit"></a>Передаваемые данные
 Azure по умолчанию шифрует весь обмен данными в центрах обработки данных в обоих направлениях. Все транзакции, направляемые в службу хранилища Azure через портал Azure, проходят по протоколу HTTPS.
@@ -141,7 +141,7 @@ Azure по умолчанию шифрует весь обмен данными 
 - Для журналов диагностики хранилища ключей включен срок хранения не менее 365 дней.
 - Допустимые операции шифрования для ключей доступны только тем пользователям, которым они нужны.
 
-**Оповещения системы безопасности**. [Центр безопасности Azure](https://docs.microsoft.com/en-us/azure/security-center/security-center-intro) позволяет клиентам отслеживать трафик, собирать журналы и анализировать источники данных на предмет угроз. Кроме того, центр безопасности Azure обращается к существующей конфигурации служб Azure и предоставляет конфигурацию и рекомендации по службам для повышения уровня безопасности и защиты персональных данных. В центре безопасности Azure хранится [отчет об исследовании угроз](https://docs.microsoft.com/en-us/azure/security-center/security-center-threat-report) для каждой обнаруженной угрозы. Это позволяет командам реагирования на инциденты расследовать и устранять угрозы.
+**Оповещения системы безопасности**. [Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) позволяет клиентам отслеживать трафик, собирать журналы и анализировать источники данных на предмет угроз. Кроме того, центр безопасности Azure обращается к существующей конфигурации служб Azure и предоставляет конфигурацию и рекомендации по службам для повышения уровня безопасности и защиты персональных данных. В центре безопасности Azure хранится [отчет об исследовании угроз](https://docs.microsoft.com/azure/security-center/security-center-threat-report) для каждой обнаруженной угрозы. Это позволяет командам реагирования на инциденты расследовать и устранять угрозы.
 
 **Шлюз приложений**. Архитектура снижает риск возникновения уязвимостей с помощью шлюза приложений с брандмауэром веб-приложения (WAF) и включенным набором правил OWASP. Доступны следующие дополнительные возможности:
 
@@ -150,9 +150,9 @@ Azure по умолчанию шифрует весь обмен данными 
 - отключение [TLS версий 1.0 и 1.1](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell);
 - [брандмауэр веб-приложения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-overview) (режим WAF);
 - [режим предотвращения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-portal) с набором правил OWASP 3.0.
-- включение [ведения журналов диагностики](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics);
-- [пользовательские пробы работоспособности](https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-create-gateway-portal);
-- [Центр безопасности Azure](https://azure.microsoft.com/services/security-center) и [Помощник Azure](https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations) обеспечивают дополнительную защиту и уведомления. Центр безопасности Azure также предоставляет систему репутации.
+- включение [ведения журналов диагностики](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics);
+- [пользовательские пробы работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-gateway-portal);
+- [Центр безопасности Azure](https://azure.microsoft.com/services/security-center) и [Помощник Azure](https://docs.microsoft.com/azure/advisor/advisor-security-recommendations) обеспечивают дополнительную защиту и уведомления. Центр безопасности Azure также предоставляет систему репутации.
 
 ### <a name="logging-and-auditing"></a>Ведение журналов и аудит
 
@@ -170,13 +170,13 @@ OMS обеспечивает детальную запись системных 
 -   [Управление обновлениями](https://docs.microsoft.com/azure/operations-management-suite/oms-solution-update-management). Решение "Управление обновлениями" позволяет клиенту управлять обновлениями безопасности операционной системы, включая состояние доступных обновлений, а также процесс установки необходимых обновлений.
 -   [Работоспособность агентов](https://docs.microsoft.com/azure/operations-management-suite/oms-solution-agenthealth). Решение "Работоспособность агентов" сообщает о количестве развернутых агентов, их географическом распределении, а также количестве агентов, которые перестают отвечать на запросы, и количестве агентов, которые отправляют операционные данные.
 -   [Журналы действий Azure.](https://docs.microsoft.com/azure/log-analytics/log-analytics-activity) Решение "Аналитика журнала действий" помогает анализировать журналы действий Azure во всех подписках Azure для заказчика.
--   [Отслеживание изменений](https://docs.microsoft.com/en-us/azure/automation/automation-change-tracking). Решение "Отслеживание изменений" позволяет клиентам легко определять изменения в среде.
+-   [Отслеживание изменений](https://docs.microsoft.com/azure/automation/automation-change-tracking). Решение "Отслеживание изменений" позволяет клиентам легко определять изменения в среде.
 
 **Azure Monitor**
-[Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/) помогает пользователям отслеживать производительность, поддерживать безопасность и выявлять тенденции, предоставляя организациям возможность аудита, создания оповещений и архивации данных, включая отслеживание вызовов API в принадлежащих клиентам ресурсах Azure.
+[Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) помогает пользователям отслеживать производительность, поддерживать безопасность и выявлять тенденции, предоставляя организациям возможность аудита, создания оповещений и архивации данных, включая отслеживание вызовов API в принадлежащих клиентам ресурсах Azure.
 
 **Application Insights**
-[Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview) — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков с поддержкой нескольких платформ. Application Insights обнаруживает аномалии производительности и может использоваться клиентами для мониторинга динамического веб-приложения. Эта служба содержит мощные аналитические средства, которые помогают клиентам диагностировать проблемы и понять, что пользователи фактически делают в их приложении. Эта служба помогает клиентам постоянно улучшать производительность и удобство использования.
+[Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков с поддержкой нескольких платформ. Application Insights обнаруживает аномалии производительности и может использоваться клиентами для мониторинга динамического веб-приложения. Эта служба содержит мощные аналитические средства, которые помогают клиентам диагностировать проблемы и понять, что пользователи фактически делают в их приложении. Эта служба помогает клиентам постоянно улучшать производительность и удобство использования.
 
 ## <a name="threat-model"></a>Модель рисков
 
@@ -194,11 +194,11 @@ OMS обеспечивает детальную запись системных 
 ### <a name="vpn-and-expressroute"></a>VPN и ExpressRoute
 Чтобы установить защищенное подключение к ресурсам, которые развертываются в рамках этой эталонной архитектуры веб-приложений PaaS, необходимо настроить защищенный VPN-туннель или [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction). Правильно настроив VPN-подключение или ExpressRoute, клиенты могут добавить уровень защиты передаваемых данных.
 
-При реализации защищенного VPN-туннеля с помощью Azure можно создать виртуальное частное подключение между локальной сетью и виртуальной сетью Azure. Это подключение осуществляется через Интернет и позволяет клиентам безопасно передавать данные по "туннелю" внутри зашифрованного канала между сетью клиента и Azure. VPN типа "сеть-сеть" — это безопасная проверенная технология, которая десятилетиями применяется на предприятиях всех размеров. [Режим туннеля IPsec](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc786385(v=ws.10)) используется в этом решении как механизм шифрования.
+При реализации защищенного VPN-туннеля с помощью Azure можно создать виртуальное частное подключение между локальной сетью и виртуальной сетью Azure. Это подключение осуществляется через Интернет и позволяет клиентам безопасно передавать данные по "туннелю" внутри зашифрованного канала между сетью клиента и Azure. VPN типа "сеть-сеть" — это безопасная проверенная технология, которая десятилетиями применяется на предприятиях всех размеров. [Режим туннеля IPsec](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786385(v=ws.10)) используется в этом решении как механизм шифрования.
 
 Так как трафик в VPN-туннеле проходит через Интернет с VPN типа "сеть-сеть", Майкрософт предлагает другой, еще более защищенный вариант подключения. Azure ExpressRoute — это выделенный канал связи в глобальной сети между Azure и локальной средой или поставщиком услуг размещения Exchange. Подключения ExpressRoute не осуществляются через Интернет и обеспечивают повышенный уровень безопасности, надежности и скорости соединения с низким уровнем задержки по сравнению со стандартными подключениями через Интернет. Более того, так как это прямое подключение поставщика телекоммуникационных услуг клиента, данные не передаются через Интернет и поэтому недоступны в нем.
 
-См. [рекомендации](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) по реализации защищенной гибридной сети, расширяющей локальную сеть в Azure.
+См. [рекомендации](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) по реализации защищенной гибридной сети, расширяющей локальную сеть в Azure.
 
 ## <a name="disclaimer"></a>Отказ от ответственности
 

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/08/2018
 ms.reviewer: mbullwin
 ms.author: Evgeny.Ternovsky
-ms.openlocfilehash: 31e37efc1aad3d355bdd8391535f317ec137f5d7
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 6d19c64c74a01a012bac3d867e2d65393ae21cd3
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40161848"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45577777"
 ---
 # <a name="correlating-application-insights-data-with-custom-data-sources"></a>Корреляция данных Application Insights с пользовательскими источниками данных
 
@@ -51,7 +51,7 @@ Application Insights собирает несколько разных типов
 
 ## <a name="correlating-data"></a>Корреляция данных
 
-Служба Application Insights основана на платформе данных Log Analytics. Поэтому можно использовать [межресурсные соединения](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-cross-workspace-search), чтобы сопоставить любые данные, которые были внесены в Log Analytics с ваших данных Application Insights.
+Служба Application Insights основана на платформе данных Log Analytics. Поэтому можно использовать [межресурсные соединения](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search), чтобы сопоставить любые данные, которые были внесены в Log Analytics с ваших данных Application Insights.
 
 Например, можно принимать реестр заданий и местоположения в таблице под названием LabLocations_CL в рабочем пространстве Log Analytics под названием myLA. Чтобы просмотреть запросы, отслеживаемые в приложении Application Insights, называемое myAI, и сопоставить имена машин, которые обслуживали запросы в местах расположения этих машин, хранящиеся в ранее упомянутой пользовательской таблице, нужно запустить следующий запрос из Application Insights или контекста Log Analytics.
 
@@ -66,4 +66,4 @@ app('myAI').requests
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. по ссылке [​​API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api).
-- Дополнительные сведения о [межресурсном соединении](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-cross-workspace-search).
+- Дополнительные сведения о [межресурсном соединении](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search).

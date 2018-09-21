@@ -10,15 +10,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 09/17/2018
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: db60aaacfb2ba60dbe73663cb415e2a3baea5400
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 270587f484216d130848ee3c7bdc8ae1c1df0afc
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42745805"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45982159"
 ---
 # <a name="manage-api-version-profiles-in-azure-stack"></a>Управление профилями версий API в Azure Stack
 
@@ -46,7 +46,7 @@ ms.locfileid: "42745805"
     Этот выпуск (выходит два раза в год) обеспечивает согласованность и стабильность в нескольких облаках. Этот профиль предназначен для оптимальной совместимости с Azure Stack.
     - **гггг-мм-дд-profile** обеспечивает разумное соотношение между оптимальной стабильностью и новейшими функциями.
 
-### <a name="azure-api-profiles-and-azure-stack-compatibility"></a>Профили API Azure и совместимость с Azure Stack
+## <a name="azure-api-profiles-and-azure-stack-compatibility"></a>Профили API Azure и совместимость с Azure Stack
 
 Новейшие профили API Azure несовместимы с Azure Stack. Можно использовать следующие соглашения об именовании для идентификации профилей, которые необходимо использовать для своих решений Azure Stack.
 

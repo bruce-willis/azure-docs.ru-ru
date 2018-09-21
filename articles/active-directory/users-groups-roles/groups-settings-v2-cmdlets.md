@@ -15,16 +15,16 @@ ms.date: 06/07/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 2ecd65bab478c37f1d3daa3ff86fdfadc788b301
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: d6fb5a97ef573a35f335875beddc7752f580bec1
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449204"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46296652"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 > [!div class="op_single_selector"]
-> * [портал Azure](../fundamentals/active-directory-groups-create-azure-portal.md)
+> * [портала Azure](../fundamentals/active-directory-groups-create-azure-portal.md)
 > * [PowerShell](groups-settings-v2-cmdlets.md)
 >
 >
@@ -268,4 +268,4 @@ ms.locfileid: "37449204"
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
-* [Интеграция локальных удостоверений с Azure Active Directory](../connect/active-directory-aadconnect.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

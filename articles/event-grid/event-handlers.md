@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: tomfitz
-ms.openlocfilehash: 08658c42687626779dea0de7dd724d9431a296da
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 12cc5a918044e3bc74e34f2e05adc9773dee5421
+ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617147"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46498663"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Обработчики событий в службе "Сетка событий Azure"
 
@@ -50,6 +50,7 @@ ms.locfileid: "42617147"
 |Название  |ОПИСАНИЕ  |
 |---------|---------|
 | [Краткое руководство. Перенаправление пользовательских событий в концентраторы событий Azure с помощью Azure CLI и службы "Сетка событий"](custom-event-to-eventhub.md) | Отправляет пользовательское событие в концентратор событий для обработки приложением. |
+| [Шаблон Resource Manager для создания пользовательского раздела и конечной точки Центров событий](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-event-hubs-handler)| Шаблон Resource Manager, который создает подписку для пользовательского раздела. Он отправляет события в Центры событий Azure. |
 
 Примеры Центров событий в качестве источника, см. в [источнике Центров событий](event-sources.md#event-hubs).
 

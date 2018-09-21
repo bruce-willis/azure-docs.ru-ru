@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: netahw
 author: nhaiby
 ms.date: 04/23/2018
-ms.openlocfilehash: 6b7f73573cb1465b89e54e30894b3549153e4acb
-ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
+ms.openlocfilehash: 1188ff040c12fd431cfcef5eea982647df6b9a71
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37888438"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576397"
 ---
 # <a name="build-and-deploy-image-classification-models-with-azure-machine-learning"></a>Построение и развертывание моделей классификации изображений с помощью Машинного обучения Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "37888438"
 
 Ознакомьтесь со [справочной документацией](https://aka.ms/aml-packages/vision) с подробным описанием каждого модуля и класса.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -174,7 +174,7 @@ display(annotation_ui.ui)
 
 ## <a name="augment-images"></a>Дополнение изображений
 
-Модуль [`augmentation`](https://docs.microsoft.com/en-us/python/api/cvtk.augmentation) предоставляет функциональные возможности для расширения объекта набора данных с использованием всех преобразований, описанных в библиотеке [imgaug](https://github.com/aleju/imgaug). Преобразования изображений могут быть сгруппированы в одном конвейере, и в этом случае все преобразования одновременно применяются к каждому изображению. 
+Модуль [`augmentation`](https://docs.microsoft.com/python/api/cvtk.augmentation) предоставляет функциональные возможности для расширения объекта набора данных с использованием всех преобразований, описанных в библиотеке [imgaug](https://github.com/aleju/imgaug). Преобразования изображений могут быть сгруппированы в одном конвейере, и в этом случае все преобразования одновременно применяются к каждому изображению. 
 
 Если вы хотите применить различные шаги дополнения отдельно или любым другим способом, вы можете определить несколько конвейеров и передать их в функцию *augment_dataset*. Дополнительные сведения и примеры дополнения изображений см. в документации [imgaug](https://github.com/aleju/imgaug).
 

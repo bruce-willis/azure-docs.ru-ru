@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 02/28/2017
 ms.author: seguler
 ms.component: common
-ms.openlocfilehash: c076ae96f8aba648196dc5222db3da3da68673ff
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 86a14d12f6621524ef26e2a869d4be532105dc77
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528397"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45732357"
 ---
 # <a name="using-azure-storage-with-a-hudson-continuous-integration-solution"></a>Использование хранилища Azure с решением непрерывной интеграции Hudson
 ## <a name="overview"></a>Обзор
@@ -53,7 +53,7 @@ Hudson обеспечивает непрерывную интеграцию пр
      
       Хотя обычно решение Hudson настраивается на запуск в качестве службы, в рамках данного учебника будет достаточно запуска WAR-файла Hudson в командной строке.
 * Учетная запись Azure. Вы можете зарегистрировать учетную запись Azure по адресу <http://www.azure.com>.
-* Учетная запись хранения Azure. Если у вас еще нет учетной записи хранения, ее можно создать с помощью процедуры [Создание учетной записи хранения](../common/storage-create-storage-account.md#create-a-storage-account).
+* Учетная запись хранения Azure. Если у вас еще нет учетной записи хранения, ее можно создать с помощью процедуры [Создание учетной записи хранения](../common/storage-quickstart-create-account.md).
 * Знакомство с решением Hudson CI рекомендуется, но не является обязательным, поскольку ниже будет приведен простой пример, показывающий этапы использования службы BLOB-объектов в качестве репозитория для артефактов построения решения Hudson CI.
 
 ## <a name="how-to-use-the-blob-service-with-hudson-ci"></a>Использование службы BLOB-объектов с решением непрерывной интеграции Hudson

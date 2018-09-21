@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: rogoya
-ms.openlocfilehash: b0fded9f5543d151091955c0b0d645bf9db16b7d
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 9ea91f70a72b812803a20244bb4445b76b133b0c
+ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39158589"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46296165"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "39158589"
 
 Смарт-блокировку можно интегрировать в гибридные среды, используя синхронизацию хэшей паролей или сквозную проверку подлинности для защиты локальных учетных записей Active Directory от блокировки злоумышленниками. Если правильно установить политики смарт-блокировки в Azure AD, то прежде, чем атаки смогут достичь локальной среды Active Directory, они будут отфильтрованы.
 
-При использовании [сквозной аутентификации](../connect/active-directory-aadconnect-pass-through-authentication.md) необходимо убедиться, что:
+При использовании [сквозной аутентификации](../hybrid/how-to-connect-pta.md) необходимо убедиться, что:
 
    * Пороговое значение блокировки Azure AD должно быть **меньше**, чем пороговое значение блокировки учетных записей Active Directory. Необходимо, чтобы пороговое значение блокировки учетных записей Active Directory как минимум в два-три раза превышало пороговое значение блокировки Azure AD. 
    * Продолжительность блокировки Azure AD, **в секундах**, должна **быть больше**, чем время до сброса счетчика блокировки учетных записей Active Directory, **в минутах**.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
-ms.openlocfilehash: d5c1cb22fdfe59bd8409f9595b2fa4c3a0df771e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 41e422d0808cafb45b182c5f0a6bb7176a35516f
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34641243"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35758626"
 ---
 # <a name="internet-of-things-security-overview"></a>Общие сведения по обеспечению безопасности в "Интернете вещей"
 Службы "Интернета вещей" (IoT) Azure предлагают широкий спектр возможностей. Это службы корпоративного уровня, которые обеспечивают:
@@ -39,32 +39,32 @@ ms.locfileid: "34641243"
 ## <a name="security-architecture"></a>Архитектура безопасности
 При разработке системы важно знать угрозы, которым она может подвергаться, а по завершении разработки и создания архитектуры предусмотреть надлежащие средства ее защиты. Важно спланировать стратегию безопасности в самом начале разработки продукта, ведь зная, как злоумышленники могут скомпрометировать систему, можно изначально устранить соответствующие риски.
 
-Сведения об архитектуре безопасности IoT представлены в статье [Архитектура безопасности "Интернета вещей"](../iot-accelerators/iot-security-architecture.md).
+Сведения об архитектуре безопасности IoT представлены в статье [Архитектура безопасности "Интернета вещей"](/azure/iot-fundamentals/iot-security-architecture).
 
 В этой статье рассматриваются следующие темы.
 
-* [Обеспечение безопасности начинается с рассмотрения модели рисков](../iot-accelerators/iot-security-architecture.md#security-starts-with-a-threat-model)
-* [Безопасность в IoT](../iot-accelerators/iot-security-architecture.md#security-in-iot)
-* [Моделирование рисков эталонной архитектуры Azure IoT](../iot-accelerators/iot-security-architecture.md#threat-modeling-the-azure-iot-reference-architecture)
+* [Обеспечение безопасности начинается с рассмотрения модели рисков](/azure/iot-fundamentals/iot-security-architecture#security-starts-with-a-threat-model)
+* [Безопасность в IoT](/azure/iot-fundamentals/iot-security-architecture#security-in-iot)
+* [Моделирование рисков эталонной архитектуры Azure IoT](/azure/iot-fundamentals/iot-security-architecture#threat-modeling-the-azure-iot-reference-architecture)
 
 ## <a name="security-from-the-ground-up"></a>Все аспекты безопасности
 В результате использования "Интернета вещей" предприятия во всем мире сталкиваются с уникальными проблемами, связанными с обеспечением безопасности, конфиденциальности и соответствия требованиям. В традиционных виртуальных технологиях эти вопросы связаны с использованием программного обеспечения и способами его внедрения. IoT имеет дело с проблемами, которые возникают на стыке виртуального и физического миров. Чтобы защитить решения IoT, нужно обеспечить безопасность подготовки устройств и их подключения к облаку, а также конфиденциальность данных в облаке во время обработки и хранения. Этому препятствует наличие устройств с ограниченными ресурсами, географическое распределение развертываний и большое количество используемых в решении устройств.
 
-Сведения о том, как обеспечить безопасность в данных областях, представлены в статье [Полная безопасность в Интернете вещей](../iot-accelerators/securing-iot-ground-up.md).
+Сведения о том, как обеспечить безопасность в данных областях, представлены в статье [Полная безопасность в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up).
 
 В этой статье рассматриваются следующие темы.
 
-* [Безопасная инфраструктура на всех уровнях](../iot-accelerators/securing-iot-ground-up.md#secure-infrastructure-from-the-ground-up)
-* [Microsoft Azure — защищенная инфраструктура IoT для вашего бизнеса](../iot-accelerators/securing-iot-ground-up.md#microsoft-azure---secure-iot-infrastructure-for-your-business)
+* [Безопасная инфраструктура на всех уровнях](/azure/iot-fundamentals/iot-security-ground-up#secure-infrastructure-from-the-ground-up)
+* [Microsoft Azure — защищенная инфраструктура IoT для вашего бизнеса](/azure/iot-fundamentals/iot-security-ground-up#microsoft-azure---secure-iot-infrastructure-for-your-business)
 
 ## <a name="best-practices"></a>Рекомендации
 Обеспечение безопасности инфраструктуры "Интернета вещей" (IoT) требует тщательно продуманной стратегии. С каждым уровнем общая безопасность инфраструктуры становится надежнее — от защиты данных в облаке и до защиты целостности данных при передаче через общедоступный Интернет, а также обеспечения безопасной подготовки устройств к работе.
 
-Рекомендации по обеспечению безопасности "Интернета вещей" представлены в статье [Рекомендации по обеспечению безопасности "Интернета вещей"](../iot-accelerators/iot-security-best-practices.md).
+Рекомендации по обеспечению безопасности "Интернета вещей" представлены в статье [Рекомендации по обеспечению безопасности "Интернета вещей"](/azure/iot-fundamentals/iot-security-best-practices).
 
 В этой статье рассматриваются следующие темы.
 
-* [Производитель или интегратор оборудования IoT](../iot-accelerators/iot-security-best-practices.md#iot-hardware-manufacturerintegrator)
-* [Разработчик решений IoT](../iot-accelerators/iot-security-best-practices.md#iot-solution-developer)
-* [Специалист по развертыванию решений IoT](../iot-accelerators/iot-security-best-practices.md#iot-solution-deployer)
-* [Оператор решений IoT](../iot-accelerators/iot-security-best-practices.md#iot-solution-operator)
+* [Производитель или интегратор оборудования IoT](/azure/iot-fundamentals/iot-security-best-practices#iot-hardware-manufacturerintegrator)
+* [Разработчик решений IoT](/azure/iot-fundamentals/iot-security-best-practices#iot-solution-developer)
+* [Специалист по развертыванию решений IoT](/azure/iot-fundamentals/iot-security-best-practices#iot-solution-deployer)
+* [Оператор решений IoT](/azure/iot-fundamentals/iot-security-best-practices#iot-solution-operator)

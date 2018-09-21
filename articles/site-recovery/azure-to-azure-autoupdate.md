@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: rajanaki
-ms.openlocfilehash: 81dbb61d696da84febc89563f946581315fdf527
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 9f0a299fb8221554a3b0c9a19a616d5ba7613a67
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37922752"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45574409"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Автоматическое обновление службы мобильности в Azure при репликации Azure
 
@@ -79,8 +79,8 @@ ms.locfileid: "37922752"
 
  - **Ошибка**: учетная запись запуска от имени не имеет разрешения на доступ к ресурсу служб восстановления.
 
-    **Рекомендуемое действие**: удалите и затем [повторно создайте учетную запись запуска от имени](https://docs.microsoft.com/en-us/azure/automation/automation-create-runas-account) или убедитесь, что приложение Azure Active Directory учетной записи запуска от имени, относящейся к службе автоматизации, имеет доступ к ресурсу служб восстановления.
+    **Рекомендуемое действие**: удалите и затем [повторно создайте учетную запись запуска от имени](https://docs.microsoft.com/azure/automation/automation-create-runas-account) или убедитесь, что приложение Azure Active Directory учетной записи запуска от имени, относящейся к службе автоматизации, имеет доступ к ресурсу служб восстановления.
 
 - **Ошибка**: учетная запись запуска от имени не найдена. Не был создан или был удален один из следующих объектов: приложение Azure Active Directory, субъект-служба, роль, ресурс сертификата службы автоматизации, ресурс подключения службы автоматизации. Либо не совпадает отпечаток у сертификата и подключения. 
 
-    **Рекомендуемое действие**: удалите и [повторно создайте учетную запись запуска от имени](https://docs.microsoft.com/en-us/azure/automation/automation-create-runas-account).
+    **Рекомендуемое действие**: удалите и [повторно создайте учетную запись запуска от имени](https://docs.microsoft.com/azure/automation/automation-create-runas-account).

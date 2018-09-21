@@ -9,12 +9,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 08/29/2017
 ms.author: yizhon
-ms.openlocfilehash: 15541c8719e89080ba7685781cedf36fb4335e70
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4ff4e8b9c6121366bf06eb8613b6d53667eeaca9
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34633100"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35756453"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-iothubclient"></a>Пакет SDK для устройств Azure IoT для C — дополнительные сведения о библиотеке IoTHubClient
 В [первой статье](iot-hub-device-sdk-c-intro.md) этого курса вы познакомились с **пакетом SDK для устройств Azure IoT для C**. В ней объяснялось, что в пакете SDK есть два архитектурных уровня. В основе лежит библиотека **IoTHubClient**, которая непосредственно управляет связью с Центром Интернета вещей. На втором уровне находится библиотека **serializer** , которая реализована поверх упомянутой выше и предоставляет службы сериализации. В данной статье мы раскроем дополнительные подробности о библиотеке **IoTHubClient** .
@@ -91,7 +91,7 @@ IoTHubClient_LL_SendEventAsync(iotHubClientHandle, message.messageHandle, SendCo
 while (1)
 {
     IoTHubClient_LL_DoWork(iotHubClientHandle);
-    ThreadAPI_Sleep(1000);
+    ThreadAPI_Sleep(100);
 }
 ```
 
@@ -109,7 +109,7 @@ IOTHUB_CLIENT_STATUS status;
 while ((IoTHubClient_LL_GetSendStatus(iotHubClientHandle, &status) == IOTHUB_CLIENT_OK) && (status == IOTHUB_CLIENT_SEND_STATUS_BUSY))
 {
     IoTHubClient_LL_DoWork(iotHubClientHandle);
-    ThreadAPI_Sleep(1000);
+    ThreadAPI_Sleep(100);
 }
 ```
 
@@ -154,7 +154,7 @@ Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 
 Сначала мы вызываем функцию **IoTHubMessage\_Properties** и передаем ей дескриптор сообщения. Обратно мы получаем ссылку **MAP\_HANDLE**, которая позволяет добавлять свойства. Для добавления свойств мы вызываем метод **Map\_AddOrUpdate**, который принимает ссылку на MAP\_HANDLE, имя свойства и значение свойства. С помощью этого API мы можем добавить сколько угодно свойств.
 
-Когда событие считывается из **концентраторов событий**, получатель может перечислить свойства и извлечь их соответствующие значения. Например, в среде .NET это можно реализовать путем обращения к [коллекции свойств в объекте EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx).
+Когда событие считывается из **Центров событий**, получатель может перечислить свойства и извлечь их соответствующие значения. Например, в среде .NET это можно реализовать путем обращения к [коллекции свойств в объекте EventData](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx).
 
 В предыдущем примере мы прикрепляем свойства к событию, которое отправляем в Центр Интернета вещей. Свойства можно также прикреплять к сообщениям, получаемым из Центра Интернета вещей. Чтобы извлечь свойства из сообщения, в функции обратного вызова сообщения используйте код, подобный указанному ниже.
 

@@ -9,16 +9,16 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.date: 07/11/2018
 ms.author: mcarter
-ms.openlocfilehash: 7120080bfdc188c150c7065e1c0639ab8c04f173
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 63f4d9f72b9bf81ea772123d65db0659fd3ffa5c
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989692"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45578180"
 ---
 # <a name="tutorial-add-auto-complete-to-your-search-box-using-azure-search"></a>Руководство. Добавление автозаполнения в поле поиска с помощью Поиска Azure
 
-В этом руководстве вы узнаете, как использовать [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions), [автозаполнение](https://docs.microsoft.com/en-us/rest/api/searchservice/autocomplete) и [аспекты](search-faceted-navigation.md) в [REST API Поиска Azure](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions?view=azure-dotnet), чтобы создать эффективное поле поиска. *Предложения* дают рекомендации по результатам по мере ввода поискового запроса. *Автоматическое заполнение*, [новая функция предварительного просмотра](search-api-preview.md) в Поиске Azure, предоставляет термины из индекса, чтобы завершить текст, который вводит пользователь. Мы сравним несколько способов повысить производительность и легко и быстро находить желаемое, применяя широкие возможности функций поиска в процессе набора текста.
+В этом руководстве вы узнаете, как использовать [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions), [автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) и [аспекты](search-faceted-navigation.md) в [REST API Поиска Azure](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions?view=azure-dotnet), чтобы создать эффективное поле поиска. *Предложения* дают рекомендации по результатам по мере ввода поискового запроса. *Автоматическое заполнение*, [новая функция предварительного просмотра](search-api-preview.md) в Поиске Azure, предоставляет термины из индекса, чтобы завершить текст, который вводит пользователь. Мы сравним несколько способов повысить производительность и легко и быстро находить желаемое, применяя широкие возможности функций поиска в процессе набора текста.
 
 В этом руководстве мы рассмотрим приложение на основе ASP.NET MVC, в котором используется C# для вызова [клиентских библиотек .NET Поиска Azure](https://aka.ms/search-sdk) и JavaScript для прямого вызова REST API Поиска Azure. Приложение в этом руководстве нацелено на индекс, заполняющий демонстрационные данные [NYCJobs](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs). Можно использовать индекс, который уже настроен в демонстрации NYCJobs, или заполнить свой индекс с помощью загрузчика данных в примере решения NYCJobs. В примере используются [пользовательский интерфейс jQuery](https://jqueryui.com/autocomplete/) и библиотеки JavaScript [XDSoft](https://xdsoft.net/jqplugins/autocomplete/) для создания поля поиска, которое поддерживает автозаполнение. Используя эти компоненты, а также Поиск Azure, вы увидите несколько примеров того, как поддержать автозаполнение с упреждением ввода в поле поиска.
 
@@ -214,7 +214,7 @@ $(function () {
 Интегрируйте возможности предложений и автозаполнения в функцию поиска.  Подумайте, как использовать широкие возможности поиска Azure через пакет SDK для .NET или REST API напрямую, чтобы повысить эффективность ввода поисковых запросов.
 
 > [!div class="nextstepaction"]
-> [REST API автозаполнения](https://docs.microsoft.com/en-us/rest/api/searchservice/autocomplete)
-> [REST API предложений](https://docs.microsoft.com/en-us/rest/api/searchservice/suggestions)
-> [Атрибут индекса аспектов в REST API создания индекса](https://docs.microsoft.com/en-us/rest/api/searchservice/create-index)
+> [REST API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete)
+> [REST API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions)
+> [Атрибут индекса аспектов в REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index)
 

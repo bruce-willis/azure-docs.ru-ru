@@ -14,12 +14,12 @@ ms.topic: overview
 ms.date: 04/19/2018
 ms.author: ccompy
 ms.custom: mvc
-ms.openlocfilehash: c6ae2aa46ae17c4ef995211b02112e1c05e2ec2f
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 34c041bf96ecc8ce7f4440d7afaa64de775baef7
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39344483"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576942"
 ---
 # <a name="introduction-to-the-app-service-environments"></a>Общие сведения о средах службы приложений #
  
@@ -73,7 +73,7 @@ ASE состоит из внешних интерфейсов и рабочих 
 
 [Группы безопасности сети][NSGs] ограничивают входящие сетевые подключения для подсети, где находится среда ASE. Это позволяет запускать приложения за вышестоящими устройствами и службами, например брандмауэрами веб-приложений и поставщиками SaaS сети.
 
-Приложениям также часто требуется доступ к корпоративным ресурсам, таким как внутренние базы данных и веб-службы. При развертывании ASE в виртуальной сети с VPN-подключением к локальной сети приложения в ASE смогут получить доступ к локальным ресурсам. При этом не играет роли тип VPN-подключения (["сеть — сеть"](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-multi-site) или [Azure ExpressRoute](http://azure.microsoft.com/services/expressroute/)).
+Приложениям также часто требуется доступ к корпоративным ресурсам, таким как внутренние базы данных и веб-службы. При развертывании ASE в виртуальной сети с VPN-подключением к локальной сети приложения в ASE смогут получить доступ к локальным ресурсам. При этом не играет роли тип VPN-подключения (["сеть — сеть"](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-multi-site) или [Azure ExpressRoute](http://azure.microsoft.com/services/expressroute/)).
 
 Дополнительные сведения о работе сред ASE с виртуальными сетями и локальными сетями см. в статье [Рекомендации по работе с сетями в среде службы приложений][ASENetwork].
 

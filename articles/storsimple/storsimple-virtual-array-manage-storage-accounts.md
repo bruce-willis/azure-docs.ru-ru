@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
-ms.openlocfilehash: a4ce2d329d0e1399cffaf886adf2b95e34b9cd7b
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d2b6b7a5d2baf9e46cca18aec97f31beda1e2a38
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23111712"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45736739"
 ---
 # <a name="use-storsimple-device-manager-to-manage-storage-account-credentials-for-storsimple-virtual-array"></a>Управление учетными данными учетной записи хранения для виртуального массива StorSimple с помощью диспетчера устройств StorSimple
 
@@ -110,7 +110,7 @@ ms.locfileid: "23111712"
 4. В колонке **Свойства** для учетных данных учетной записи хранения выполните следующие действия.
    
    1. При необходимости можно изменить параметр **Включить режим SSL**.
-   2. Ключи доступа для учетных данных учетной записи хранения можно создать повторно. Дополнительные сведения см. в разделе [Повторное создание ключей доступа к хранилищу](../storage/common/storage-create-storage-account.md#manage-your-storage-access-keys). Укажите новый ключ для учетных данных учетной записи хранения. Для учетной записи хранения Azure это первичный ключ доступа.
+   2. Ключи доступа для учетных данных учетной записи хранения можно создать повторно. Дополнительные сведения см. в разделе [Повторное создание ключей доступа к хранилищу](../storage/common/storage-account-manage.md#access-keys). Укажите новый ключ для учетных данных учетной записи хранения. Для учетной записи хранения Azure это первичный ключ доступа.
    3. Нажмите кнопку **Сохранить** в верхней части колонки **Свойства**, чтобы сохранить изменения. Параметры будут обновлены в колонке **Учетные данные учетной записи хранения**.
       
       ![Редактирование учетных данных учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-edit-storageacct.png)

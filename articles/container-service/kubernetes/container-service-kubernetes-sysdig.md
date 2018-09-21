@@ -9,17 +9,18 @@ ms.topic: article
 ms.date: 12/09/2016
 ms.author: bburns
 ms.custom: mvc
-ms.openlocfilehash: 275e71ce054b83c16b9f9cbfe621c6a7e31f79c6
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: bbf59a35f420b5bbf292fbdaa5a8bbc173e4ee24
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35640788"
 ---
 # <a name="monitor-an-azure-container-service-kubernetes-cluster-using-sysdig"></a>Мониторинг кластера Kubernetes в Службе контейнеров Azure с помощью Sysdig
 
 [!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).
 
 Также предполагается, что у вас установлен интерфейс командной строки Azure и средство kubectl.
@@ -57,7 +58,7 @@ Sysdig является компанией, предоставляющей вн�
 Наборы DaemonSet являются объектами API Kubernetes, которые выполняют отдельный экземпляр контейнера на каждом компьютере.
 Они идеально подходят для установки инструментов, например агента мониторинга Sysdig.
 
-Чтобы установить DaemonSet Sysdig, следует сначала скачать [шаблон](https://raw.githubusercontent.com/draios/sysdig-cloud-scripts/master/agent_deploy/kubernetes/sysdig-daemonset.yaml) с сайта Sysdig. Сохраните этот файл как `sysdig-daemonset.yaml`.
+Чтобы установить DaemonSet Sysdig, следует сначала скачать [шаблон](https://github.com/draios/sysdig-cloud-scripts/tree/master/agent_deploy/kubernetes) с сайта Sysdig. Сохраните этот файл как `sysdig-daemonset.yaml`.
 
 В Linux и OS X можно выполнить команду:
 

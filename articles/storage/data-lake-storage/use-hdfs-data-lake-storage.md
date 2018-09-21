@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: artek
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: ef28468c7aa420c145f5e6d79e2b079bd1d094f4
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: c59331c772e140fccfefb89eef086a35837171e1
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523688"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576981"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
@@ -37,7 +37,7 @@ HDInsight предоставляет доступ к распределенно�
     hdfs dfs -rm [-skipTrash] URI [URI ...]
 
 
-Теперь, в качестве примера, рассмотрим кластер HDInsight Hadoop в ОС Linux. Перед тем, как использовать HDFS CLI, необходимо установить [удаленный доступ к службам](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-linux-information#remote-access-to-services). Если выбрать параметр [SSH](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix), образец кода PowerShell будет выглядеть следующим образом.
+Теперь, в качестве примера, рассмотрим кластер HDInsight Hadoop в ОС Linux. Перед тем, как использовать HDFS CLI, необходимо установить [удаленный доступ к службам](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-information#remote-access-to-services). Если выбрать параметр [SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix), образец кода PowerShell будет выглядеть следующим образом.
 ```PowerShell
 #Connect to the cluster via SSH.
 ssh sshuser@clustername-ssh.azurehdinsight.net

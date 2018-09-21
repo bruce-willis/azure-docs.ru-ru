@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/17/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 2484d01c268757ef612ba7b397b80b8ea4c4e76a
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 39287e4d90e4f6f42dd1f79d5457853e253bd736
+ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39528145"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45737062"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "39528145"
 
 - Активная подписка Azure, которую можно использовать для службы "Импорт и экспорт".
 - Хотя бы одна учетная запись хранения Azure с контейнером хранилища. Просмотрите список [поддерживаемых типов хранилища и учетных записей хранения для службы "Импорт и экспорт"](storage-import-export-requirements.md). 
-    - Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-create-storage-account.md#create-a-storage-account). 
+    - Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-quickstart-create-account.md). 
     - Сведения о контейнере хранилища см. в статье [о создании контейнера хранилища](../blobs/storage-quickstart-blobs-portal.md#create-a-container).
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks). 
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems). 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 588a0686eda1966582b82a4673a8b6805453c94c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6096833381db7ef0d2f011d517aaad4ae63ce4d6
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441448"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45576873"
 ---
 # <a name="create-a-log-alert-with-a-resource-manager-template"></a>Создание оповещения журнала с помощью шаблона Resource Manager
 В этой статье показано, как программно управлять [оповещениями журнала](monitor-alerts-unified-log.md) в соответствующем масштабе в Azure с помощью [шаблона Azure Resource Manager](..//azure-resource-manager/resource-group-authoring-templates.md) и [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) или [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md). Сейчас функция "Оповещения Azure" поддерживает оповещения журнала в запросах из [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) и [Azure Application Insights](../application-insights/app-insights-analytics-tour.md).
@@ -35,12 +35,12 @@ ms.locfileid: "39441448"
 Ознакомьтесь с разделом [Создание правил генерации оповещений и управление ими в Log Analytics с помощью REST API](../log-analytics/log-analytics-api-alerts.md), включая примеры доступа к API из PowerShell.
 
 ## <a name="managing-log-alert-on-application-insights"></a>Управление оповещением журнала в Application Insights
-Оповещения журнала для Azure Application Insights были представлены как часть новых оповещений Azure в Azure Monitor. Таким образом, они выполняются в API Azure Monitor как группа операций REST для [правил запланированных запросов](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules/).
+Оповещения журнала для Azure Application Insights были представлены как часть новых оповещений Azure в Azure Monitor. Таким образом, они выполняются в API Azure Monitor как группа операций REST для [правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/).
 
 ### <a name="using-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
-Оповещение журнала для ресурсов Application Insights имеет тип `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов).
+Оповещение журнала для ресурсов Application Insights имеет тип `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов).
 
-Ниже приведена структура для [создания правил запланированных запросов](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules/createorupdate) на основе шаблона ресурсов, содержащего пример набора данных в качестве переменных.
+Ниже приведена структура для [создания правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate) на основе шаблона ресурсов, содержащего пример набора данных в качестве переменных.
 
 ```json
 {
@@ -113,7 +113,7 @@ ms.locfileid: "39441448"
 }
 ```
 > [!IMPORTANT]
-> Поле тега со скрытой ссылкой на целевой ресурс является обязательным при вызове API [правил запланированных запросов](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules/) или использовании шаблона ресурсов. 
+> Поле тега со скрытой ссылкой на целевой ресурс является обязательным при вызове API [правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) или использовании шаблона ресурсов. 
 
 В приведенном выше примере JSON можно сохранить как sampleScheduledQueryRule.json, чтобы использовать его в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 

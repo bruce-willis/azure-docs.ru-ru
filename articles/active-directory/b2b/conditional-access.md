@@ -4,18 +4,18 @@ description: Служба совместной работы Azure Active Directo
 services: active-directory
 ms.service: active-directory
 ms.component: B2B
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/11/2017
-ms.author: twooley
-author: twooley
+ms.author: mimart
+author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: 196fa9e4b6e3ac805f9ae7ce7d53a3d12b250142
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 47d41884a50450399df6273502096e0e630dbcf3
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34267202"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45981768"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Условный доступ пользователей в службе совместной работы B2B
 

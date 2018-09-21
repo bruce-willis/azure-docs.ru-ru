@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/14/2018
 ms.author: kgremban
-ms.openlocfilehash: 068e9a3379bd2762455aade1761592fa70a09a20
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: 3c12e98137f44ac094adaae282b5d56d30061e60
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43144384"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44719857"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -34,12 +34,11 @@ ms.locfileid: "43144384"
 | Тип события | ОПИСАНИЕ |
 | ---------- | ----------- |
 | Microsoft.Devices.DeviceCreated | Публикуется при регистрации устройства в Центре Интернета вещей. |
-| Microsoft.Devices.DeviceDeleted | Публикуется при удалении устройства из Центра Интернета вещей. | 
-| Microsoft.Devices.DeviceConnected | Публикуется при подключении устройства к Центру Интернета вещей. | 
-| Microsoft.Devices.DeviceDisconnected | Публикуется при отключении устройства от Центра Интернета вещей. | 
-Обратите внимание, события отключения и подключения устройств будут доступны для регионов "Восточная Канада" и "Восточная часть США" в ближайшее время.
+| Microsoft.Devices.DeviceDeleted | Публикуется при удалении устройства из Центра Интернета вещей. |
+| Microsoft.Devices.DeviceConnected | Публикуется при подключении устройства к Центру Интернета вещей. |
+| Microsoft.Devices.DeviceDisconnected | Публикуется при отключении устройства от Центра Интернета вещей. |
 
-Чтобы настроить события, которые будут публиковаться в каждом Центре Интернета вещей, используйте портал Azure или Azure CLI. Например, ознакомьтесь со статьей [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps). 
+Чтобы настроить события, которые будут публиковаться в каждом Центре Интернета вещей, используйте портал Azure или Azure CLI. Например, ознакомьтесь со статьей [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps).
 
 ## <a name="event-schema"></a>Схема событий
 
@@ -146,7 +145,7 @@ devices/{deviceId}
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Send email notifications about Azure IoT Hub events using Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) (Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps)
-* [Order device connection events from Azure IoT Hub using Azure Cosmos DB](../iot-hub/iot-hub-how-to-order-connection-state-events.md) (Упорядочение событий подключения устройств из Центра Интернета вещей с помощью Azure Cosmos DB)
+* См. дополнительные сведения об [упорядочении событий подключения и отключения устройств](../iot-hub/iot-hub-how-to-order-connection-state-events.md).
 * [An introduction to Azure Event Grid][lnk-eg-overview] (Общие сведения о службе "Сетка событий Azure")
 * [Сравнение маршрутизации сообщений со службой "Сетка событий" и без нее для Центра Интернета вещей][lnk-eg-compare]
 

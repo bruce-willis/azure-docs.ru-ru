@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 06/25/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: c8cff54c67ab2c9c3d09f9261617b6312cc4434a
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: a3f2021a1a1e0a0ff97c5966e151894fd7b6743b
+ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37025564"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45574647"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -116,7 +116,7 @@ availabilityResults
     * SendGridAPI = ключ API SendGrid
 
     > [!NOTE]
-    > Если у вас нет учетной записи SendGrid, вы можете ее создать. Документация относительно функций Azure SendGrid находится [здесь](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-sendgrid). В конце статьи приведено сокращенное объяснение о том, как установить SendGrid и создать ключ API. 
+    > Если у вас нет учетной записи SendGrid, вы можете ее создать. Документация относительно функций Azure SendGrid находится [здесь](https://docs.microsoft.com/azure/azure-functions/functions-bindings-sendgrid). В конце статьи приведено сокращенное объяснение о том, как установить SendGrid и создать ключ API. 
 
 9. Выберите **Интегрировать** и в разделе "Выходные данные" щелкните **SendGrid ($return)**.
 

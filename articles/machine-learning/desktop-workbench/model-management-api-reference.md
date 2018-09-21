@@ -8,17 +8,17 @@ manager: hjerez
 editor: jasonwhowell
 ms.reviewer: jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.devlang: na
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: 233ae50246619c3e503e42081c3b4de88090f411
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: c0f51e47038737d6aa743be718ad6b28c161c766
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835038"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35640751"
 ---
 # <a name="azure-machine-learning-model-management-account-api-reference"></a>Справочная информация по API-интерфейсу службы Azure "Управление моделями Машинного обучения"
 
@@ -33,7 +33,7 @@ API-интерфейс учетной записи службы Azure "Упра�
 
 Этот образ можно использовать для создания веб-службы локально, на удаленном кластере Службы контейнеров Azure или в среде с поддержкой Docker на ваш выбор.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Убедитесь, что вы выполнили установку в соответствии с инструкциями в [кратком руководстве по установке службы и созданию учетной записи](../service/quickstart-installation.md).
 
 Предварительно обеспечьте наличие следующих компонентов:

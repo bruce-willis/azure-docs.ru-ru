@@ -6,14 +6,14 @@ ms.service: automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 04/17/2018
-ms.topic: article
+ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 65894e40b192c6a5a226fa7a1dfb5cb0cfabb972
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 8c7dc256b92252793545336ffc45a987054a5509
+ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33936194"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "35640078"
 ---
 # <a name="azure-automation-scenario---automation-source-control-integration-with-github-enterprise"></a>Сценарий службы автоматизации Azure: интеграция системы управления версиями службы автоматизации с GitHub Enterprise
 
@@ -42,7 +42,7 @@ GitHRWCredential | Создаваемый ресурс учетных данны
 
 ## <a name="installing-and-configuring-this-scenario"></a>Установка и настройка данного сценария
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 1. Модуль Runbook Sync-LocalGitFolderToAutomationAccount выполняет проверку подлинности с использованием [учетной записи запуска от имени Azure](automation-sec-configure-azure-runas-account.md).
 
@@ -59,7 +59,7 @@ GitHRWCredential | Создаваемый ресурс учетных данны
 
 ### <a name="deploy-and-configure-hybrid-runbook-worker"></a>Развертывание и настройка гибридной рабочей роли Runbook
 
-Если у вас нет гибридной рабочей роли Runbook, развернутой в центре обработки данных, ознакомьтесь с требованиями и выполните действия по автоматической установке, используя процедуру в гибридных рабочих ролях Runbook службы автоматизации Azure (автоматизация установки и настройки) для [Windows](automation-windows-hrw-install.md#automated-deployment) или [Linux](automation-linux-hrw-install.md#installing-linux-hybrid-runbook-worker). Установив гибридную рабочую роль на компьютере, выполните следующие действия, чтобы завершить настройку для поддержки этого сценария.
+Если у вас нет гибридной рабочей роли Runbook, развернутой в центре обработки данных, ознакомьтесь с требованиями и выполните действия по автоматической установке, используя процедуру в гибридных рабочих ролях Runbook службы автоматизации Azure (автоматизация установки и настройки) для [Windows](automation-windows-hrw-install.md#automated-deployment) или [Linux](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker). Установив гибридную рабочую роль на компьютере, выполните следующие действия, чтобы завершить настройку для поддержки этого сценария.
 
 1. Войдите на компьютер, на котором размещена гибридная рабочая роль Runbook, используя учетную запись с правами локального администратора, и создайте каталог для хранения файлов runbook Git. Клонируйте внутренний репозиторий Git в этот каталог.
 1. Если вы еще не создали учетную запись запуска от имени или хотите создать новую (специально предназначенную для этой цели), на портале Azure перейдите к учетным записям службы автоматизации, выберите свою учетную запись и создайте [ресурс учетных данных](automation-credentials.md). Этот ресурс должен содержать имя пользователя и пароль для пользователя с разрешениями на доступ к гибридной рабочей роли.

@@ -10,18 +10,18 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 80f20e438b1d923e688aeef9e6b353642bd74c27
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: ff2c6a2d9b2aec7abc684a4b189ccf31c454aaeb
+ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34158941"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "35638737"
 ---
 # <a name="manage-users-in-azure-blockchain-workbench"></a>Управление пользователями в Azure Blockchain Workbench
 
 Azure Blockchain Workbench позволяет управлять пользователями как для отдельных сотрудников, так и для организаций, которые являются частью консорциума.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимо развертывание Blockchain Workbench. Дополнительные сведения о развертывании Azure Blockchain Workbench см. в [этой статье](blockchain-workbench-deploy.md).
 
@@ -40,7 +40,7 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 
 5.  Заполните обязательные поля для нового пользователя. Нажмите кнопку **Создать**.
 
-Дополнительные сведения о том, как управлять пользователями в Azure AD, см. в документации по [Azure AD](../active-directory/add-users-azure-active-directory.md).
+Дополнительные сведения о том, как управлять пользователями в Azure AD, см. в документации по [Azure AD](../active-directory/fundamentals/add-users-azure-active-directory.md).
 
 ## <a name="manage-blockchain-workbench-administrators"></a>Управление администраторами Blockchain Workbench
 
