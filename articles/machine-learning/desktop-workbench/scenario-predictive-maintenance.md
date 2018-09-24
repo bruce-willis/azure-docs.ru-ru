@@ -12,14 +12,19 @@ ms.workload: data-services
 ms.topic: article
 ms.custom: mvc
 ms.date: 10/05/2017
-ms.openlocfilehash: a5531ae256a263f1c34496819ac435ce67156b49
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: c154b0124acb5bee93211adb611356555526d2c0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35640676"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996219"
 ---
 # <a name="predictive-maintenance-for-real-world-scenarios"></a>Прогнозное обслуживание в реальных сценариях
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 Незапланированный простой оборудования может оказывать неблагоприятное влияние на предприятие. Важно поддерживать рабочее состояние используемого оборудования, чтобы обеспечить максимально эффективное использование ресурсов, добиться максимальной производительности и минимизировать время затратных незапланированных простоев. Раннее определение проблем позволяет выделить ограниченные ресурсы обслуживания с наименьшими затратами, а также повысить качество и эффективность выполнения процессов логистической цепочки. 
 
@@ -41,10 +46,10 @@ ms.locfileid: "35640676"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
-* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md).
+* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](quickstart-installation.md).
 * Для практического применения Машинного обучения Azure требуется локальная среда развертывания и [учетная запись службы "Управление моделями Машинного обучения Azure"](model-management-overview.md).
 
-Этот пример можно выполнить в любом контексте вычислений Machine Learning Workbench. Но мы рекомендуем использовать не менее 16 ГБ памяти. Этот сценарий был разработан и протестирован на компьютере под управлением Windows 10 с удаленным доступом к [виртуальной машине Linux (Ubuntu) для обработки и анализа данных (DSVM)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu) категории DS4_V2 Standard.
+Этот пример можно выполнить в любом контексте вычислений Machine Learning Workbench. Но мы рекомендуем использовать не менее 16 ГБ памяти. Этот сценарий был разработан и протестирован на компьютере под управлением Windows 10 с удаленным доступом к [виртуальной машине Linux (Ubuntu) для обработки и анализа данных (DSVM)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu) категории DS4_V2 Standard.
 
 Ввод модели в эксплуатацию был выполнен с помощью версии 0.1.0a22 интерфейса командной строки Машинного обучения Azure.
 
@@ -71,7 +76,7 @@ az login
 az ml experiment prepare --target docker --run-configuration docker
 ```
 
-Мы советуем выполнять эту задачу на [DSVM под управлением Linux (Ubuntu)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu) с учетом требований к памяти и диску. После настройки DSVM подготовьте удаленную среду Docker с помощью следующих двух команд:
+Мы советуем выполнять эту задачу на [DSVM под управлением Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu) с учетом требований к памяти и диску. После настройки DSVM подготовьте удаленную среду Docker с помощью следующих двух команд:
 
 ```
 az ml computetarget attach remotedocker --name [Connection_Name] --address [VM_IP_Address] --username [VM_Username] --password [VM_UserPassword]

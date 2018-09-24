@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 661ff7c07ba2bb17eb5830b38bb39e1c3e80bb55
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 288af0eae50634f44d6af8c787b56112bb3119ff
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45602914"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998599"
 ---
 # <a name="advanced-aggregations-in-log-analytics-queries"></a>Расширенные статистические функции в запросах Log Analytics
 
@@ -34,7 +34,7 @@ ms.locfileid: "45602914"
 ## <a name="generating-lists-and-sets"></a>Создание списков и наборов
 Вы можете использовать `makelist`, чтобы свести данные по порядку значений в отдельном столбце. Например, вы можете изучить наиболее распространенные события на компьютерах по порядку. Вы можете сводить данные по порядку идентификаторов событий на каждом компьютере. 
 
-```KQL
+```Kusto
 Event
 | where TimeGenerated > ago(12h)
 | order by TimeGenerated desc
@@ -50,7 +50,7 @@ Event
 
 Также эффективно создавать список только уникальных значений. Такой список называется _набором_, и его можно создать с помощью `makeset`:
 
-```KQL
+```Kusto
 Event
 | where TimeGenerated > ago(12h)
 | order by TimeGenerated desc
@@ -67,11 +67,12 @@ Event
 ## <a name="expanding-lists"></a>Развертывание списков
 Обратной операцией `makelist` или `makeset` является инструкция `mvexpand`, которая расширяет список значений для разделения строк. Ее можно развернуть в любом количестве динамических столбцов — в формате JSON и массива. Например, вы можете просканировать таблицу *пульса* для определения решений, отправляющих данные с компьютеров, которые отправили пакет пульса за последний час:
 
-```KQL
+```Kusto
 Heartbeat
 | where TimeGenerated > ago(1h)
 | project Computer, Solutions
 ```
+
 | Компьютер | Решения | 
 |--------------|----------------------|
 | computer1 | "security", "updates", "changeTracking" |
@@ -81,9 +82,14 @@ Heartbeat
 
 Используйте `mvexpand`, чтобы показать каждое значение в отдельной строке вместо списка, разделенного запятыми:
 
-Heartbeat | where TimeGenerated > ago(1h) | project Computer, split(Solutions, ",") | mvexpand Solutions
+```Kusto
+Heartbeat
+| where TimeGenerated > ago(1h)
+| project Computer, split(Solutions, ",")
+| mvexpand Solutions
 ```
-| Computer | Solutions | 
+
+| Компьютер | Решения | 
 |--------------|----------------------|
 | computer1 | "security" |
 | computer1 | "updates" |
@@ -93,11 +99,11 @@ Heartbeat | where TimeGenerated > ago(1h) | project Computer, split(Solutions, "
 | computer3 | "antiMalware" |
 | computer3 | "changeTracking" |
 | ... | ... | ... |
-```
+
 
 Затем вы можете использовать `makelist` снова, чтобы сгруппировать элементы. Теперь вы можете просмотреть список компьютеров для каждого решения:
 
-```KQL
+```Kusto
 Heartbeat
 | where TimeGenerated > ago(1h)
 | project Computer, split(Solutions, ",")
@@ -115,7 +121,7 @@ Heartbeat
 ## <a name="handling-missing-bins"></a>Обработка отсутствующих ячеек
 `mvexpand` полезно применять, если требуется заполнить значения по умолчанию для отсутствующих ячеек. Предположим, что вам нужно определить время доступности определенного компьютера с помощью анализа пульса. Также вы хотите просмотреть источник пульса, который находится в столбце _категории_. Как правило, мы используем простой оператор суммирования следующим образом:
 
-```KQL
+```Kusto
 Heartbeat
 | where TimeGenerated > ago(12h)
 | summarize count() by Category, bin(TimeGenerated, 1h)
@@ -131,7 +137,7 @@ Heartbeat
 
 Однако, в этих результатах контейнер, связанный с "2017-06-06T19:00:00Z", отсутствует, так как отсутствуют данные пульса для этого времени. Используйте функцию `make-series`, чтобы присвоить значение по умолчанию пустым контейнерам. Это приведет к созданию строки для каждой категории с двумя дополнительными столбцами массива, одним для значений и одним для сопоставления контейнеров по времени:
 
-```KQL
+```Kusto
 Heartbeat
 | make-series count() default=0 on TimeGenerated in range(ago(1d), now(), 1h) by Category 
 ```
@@ -143,7 +149,7 @@ Heartbeat
 
 Третий элемент массива *count_*, как и ожидалось, равен 0, и есть соответствующая метка времени "2017-06-06T19:00:00.0000000Z" в массиве _TimeGenerated_. Однако этот формат массива трудно прочитать. Используйте `mvexpand`, чтобы развернуть массивы и создать выходные данные того же формата, что и сгенерированные `summarize`:
 
-```KQL
+```Kusto
 Heartbeat
 | make-series count() default=0 on TimeGenerated in range(ago(1d), now(), 1h) by Category 
 | mvexpand TimeGenerated, count_
@@ -165,7 +171,7 @@ Heartbeat
 Распространенным сценарием является выбор имен некоторых конкретных сущностей на основе набора критериев, а затем фильтрация другого набора данных до этого набора сущностей. Например, вы можете найти компьютеры, у которых отсутствуют обновления, и определить IP-адреса, для которых вызываются эти компьютеры:
 
 
-```KQL
+```Kusto
 let ComputersNeedingUpdate = toscalar(
     Update
     | summarize makeset(Computer)

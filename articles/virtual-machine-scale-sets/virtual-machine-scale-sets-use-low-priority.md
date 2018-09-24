@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/01/2018
 ms.author: memccror
-ms.openlocfilehash: 5c0726ea0da288d5306e28b101e4d3b59605b443
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: c0b4e3e0a924c1353f7732737670dee7ed45a62a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33894913"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46953878"
 ---
 # <a name="low-priority-vms-on-scale-sets-preview"></a>Виртуальные машины низкого приоритета в масштабируемых наборах (предварительная версия)
 
@@ -42,8 +42,8 @@ ms.locfileid: "33894913"
 ## <a name="deploying-low-priority-vms-on-scale-sets"></a>Развертывание виртуальных машин низкого приоритета в масштабируемых наборах
 
 Чтобы развернуть виртуальные машины низкого приоритета в масштабируемых наборах, можно установить для нового параметра *Priority* значение *Low*. Все виртуальные машины в масштабируемом наборе будут настроены как низкоприоритетные. Чтобы создать масштабируемый набор с виртуальными машинами низкого приоритета, используйте один из следующих способов.
-- [портал Azure](#use-the-azure-portal)
-- [Azure CLI 2.0](#use-the-azure-cli-20)
+- [портала Azure](#use-the-azure-portal)
+- [интерфейс командной строки Azure](#use-the-azure-cli-20)
 - [Azure PowerShell](#use-azure-powershell)
 - [Шаблоны диспетчера ресурсов Azure](#use-azure-resource-manager-templates)
 
@@ -51,7 +51,7 @@ ms.locfileid: "33894913"
 
 Процесс создания масштабируемого набора с низкоприоритетными виртуальными машинами такой же, как описано в [статье о начале работы](quick-create-portal.md). При развертывании масштабируемого набора можно задать флаг низкого приоритета и политику вытеснения: ![Виртуальные машины низкого приоритета в масштабируемых наборах (предварительная версия)](media/virtual-machine-scale-sets-use-low-priority/vmss-low-priority-portal.png).
 
-## <a name="use-the-azure-cli-20"></a>Использование Azure CLI 2.0
+## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
 Процесс создания масштабируемого набора с низкоприоритетными виртуальными машинами такой же, как описано в [статье о начале работы](quick-create-cli.md). Просто добавьте параметр "--Priority" при вызове CLI и установите для него значение *Low*, как показано в примере ниже.
 

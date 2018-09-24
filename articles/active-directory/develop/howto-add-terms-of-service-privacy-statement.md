@@ -9,19 +9,19 @@ editor: ''
 ms.service: active-directory
 ms.component: develop
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/23/2018
+ms.date: 09/24/2018
 ms.author: celested
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: cb05139241f92eb930a99c387e2f06cabac35caf
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 21cd4990e2117cef2d36fa2607a601afd1a4c4e4
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39580897"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46990507"
 ---
 # <a name="terms-of-service-and-privacy-statement-for-registered-azure-active-directory-apps"></a>Условия обслуживания и заявление о конфиденциальности для зарегистрированных приложений Azure Active Directory
 
@@ -54,12 +54,14 @@ ms.locfileid: "39580897"
 ## <a name="adding-links-to-the-terms-of-service-and-privacy-statement"></a>Добавление ссылок на условия обслуживания и заявление о конфиденциальности
 
 Подготовив условия обслуживания и заявление о конфиденциальности, можно добавить ссылки на эти документы в приложение с помощью одного из следующих методов:
+
 * [с помощью портала Azure](#registered-in-azure-portal);
 * [на портале регистрации приложений или в Центре разработки](#registered-in-app-reg-portal);
 * [с помощью JSON объекта приложения](#app-object-json);
 * [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
 
 ### <a name="registered-in-azure-portal"></a>Если приложение зарегистрировано на портале Azure
+
 Если приложение зарегистрировано на портале Azure, выполните следующие действия.
 
 1. Войдите на  [портал Azure](https://portal.azure.com/).
@@ -68,9 +70,10 @@ ms.locfileid: "39580897"
 4. Заполните поля  **Terms of Service URL**  (URL-адрес условий обслуживания) и  **URL-адрес заявления о конфиденциальности** .
 5. Сохраните изменения.
 
-![Раздел свойств приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
+    ![Раздел свойств приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
 
 ### <a name="registered-in-app-reg-portal"></a>Если приложение зарегистрировано на портале регистрации приложений
+
 Если приложение зарегистрировано на портале регистрации приложений или в Центре разработки, выполните следующие действия.
 
 1. Войдите на  [портал регистрации приложений](https://apps.dev.microsoft.com/).
@@ -78,9 +81,10 @@ ms.locfileid: "39580897"
 3. Заполните поля  **Terms of Service URL**  (URL-адрес условий обслуживания) и  **URL-адрес заявления о конфиденциальности** .
 4. Сохраните изменения.
 
-![Раздел профиля приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/app-registration-portal-profile-terms-service-privacy-statement-urls.png)
+    ![Раздел профиля приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/app-registration-portal-profile-terms-service-privacy-statement-urls.png)
 
 ### <a name="app-object-json"></a>Использование JSON объекта приложения
+
 Если вы предпочитаете непосредственно изменить объект JSON приложения, то можно использовать редактор манифестов на портале Azure или портале регистрации приложений, чтобы добавить ссылки на условия обслуживания и заявление о конфиденциальности для приложения.
 
 ```json
@@ -91,6 +95,7 @@ ms.locfileid: "39580897"
 ```
 
 ### <a name="msgraph-beta-rest-api"></a>Использование бета-версии REST API MSGraph
+
 Чтобы программно обновить все приложения, можно воспользоваться бета-версией REST API MSGraph и добавить в них ссылки на условия обслуживания и заявление о конфиденциальности.
 
 ```

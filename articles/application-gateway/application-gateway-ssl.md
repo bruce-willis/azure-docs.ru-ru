@@ -14,20 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: victorh
-ms.openlocfilehash: e620730b86d648c1ac9db7a9e6faa7a2d206b46e
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 782e5c4b33cc62ab5af80e823dc63b3e79a707b3
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33205386"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46980531"
 ---
 # <a name="configure-an-application-gateway-for-ssl-offload-by-using-the-classic-deployment-model"></a>Настройка шлюза приложений для разгрузки SSL с помощью классической модели развертывания
 
 > [!div class="op_single_selector"]
-> * [портал Azure](application-gateway-ssl-portal.md)
+> * [портала Azure](application-gateway-ssl-portal.md)
 > * [PowerShell и диспетчер ресурсов Azure](application-gateway-ssl-arm.md)
 > * [Классическая модель — Azure PowerShell](application-gateway-ssl.md)
-> * [Azure CLI 2.0](application-gateway-ssl-cli.md)
+> * [интерфейс командной строки Azure](application-gateway-ssl-cli.md)
 
 Шлюз приложений Azure можно настроить на завершение сеанса SSL в шлюзе, что позволит избежать выполнения дорогостоящей задачи SSL-шифрования на веб-ферме. Кроме того, разгрузка SSL упрощает процесс установки внешнего сервера и управления веб-приложением.
 

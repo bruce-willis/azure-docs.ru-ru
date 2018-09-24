@@ -9,14 +9,17 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/14/2017
-ms.openlocfilehash: 7938eaa0e06c9a33034a7388d02845d60967774e
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ROBOTS: NOINDEX
+ms.openlocfilehash: 24ed164f4a1dfdb9a3913efa78fe58fab2b53696
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42144596"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991969"
 ---
 # <a name="configure-the-azure-machine-learning-experimentation-service"></a>Настройка службы "Экспериментирование в Машинном обучении Azure"
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
 
 ## <a name="overview"></a>Обзор
 Учетная запись, рабочая область и проект службы "Экспериментирование в Машинном обучении Azure" являются ресурсами Azure. Таким образом, их можно развернуть с помощью шаблонов Resource Manager. Шаблоны Resource Manager — это JSON-файлы, которые определяют ресурсы, необходимые для развертывания решения. Основные понятия, связанные с развертыванием и управлением решений Azure, см. в [обзоре Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
@@ -158,4 +161,4 @@ az group deployment create -n testdeploy -g <resource group name> --template-fil
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Create Azure Machine Learning preview accounts and install Azure Machine Learning Workbench](../service/quickstart-installation.md) (Создание учетных записей для предварительной версии Машинного обучения Azure и установка Azure Machine Learning Workbench).
+* [Create Azure Machine Learning preview accounts and install Azure Machine Learning Workbench](quickstart-installation.md) (Создание учетных записей для предварительной версии Машинного обучения Azure и установка Azure Machine Learning Workbench).

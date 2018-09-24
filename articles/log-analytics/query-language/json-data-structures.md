@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 1b9a8e4a8706dea43e33331cd196fbe2ad877a3a
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: ff0514a3432ed74baa6df2574157066daff895bb
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605561"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46961269"
 ---
 # <a name="working-with-json-and-data-structures-in-log-analytics-queries"></a>Работа с JSON и структурой данных в запросах Log Analytics
 
@@ -40,7 +40,7 @@ ms.locfileid: "45605561"
 
 Использование скобок для индексов и точек для разделения элементов:
 
-```KQL
+```Kusto
 let hosts_report='{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"location":"South_DC", "status":"stopped", "rate":3}]}';
 print hosts_report
 | extend status = extractjson("$.hosts[0].status", hosts_report)
@@ -48,7 +48,7 @@ print hosts_report
 
 Тот же пример с использованием только скобочной нотации:
 
-```KQL
+```Kusto
 let hosts_report='{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"location":"South_DC", "status":"stopped", "rate":3}]}';
 print hosts_report 
 | extend status = extractjson("$['hosts'][0]['status']", hosts_report)
@@ -56,7 +56,7 @@ print hosts_report
 
 Если имеется только один элемент, можно использовать только точечную нотацию:
 
-```KQL
+```Kusto
 let hosts_report='{"location":"North_DC", "status":"running", "rate":5}';
 print hosts_report 
 | extend status = hosts_report.status
@@ -68,7 +68,7 @@ print hosts_report
 ### <a name="parsejson"></a>parsejson
 Чтобы получить доступ к нескольким элементам в структуре json, проще открыть его как динамический объект. Используйте `parsejson` для приведения текстовых данных к динамическому объекту. После преобразования в динамический тип для анализа данных могут использоваться дополнительные функции.
 
-```KQL
+```Kusto
 let hosts_object = parsejson('{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"location":"South_DC", "status":"stopped", "rate":3}]}');
 print hosts_object 
 | extend status0=hosts_object.hosts[0].status, rate1=hosts_object.hosts[1].rate
@@ -79,7 +79,7 @@ print hosts_object
 ### <a name="arraylength"></a>arraylength
 Используйте `arraylength` для подсчета числа элементов в массиве:
 
-```KQL
+```Kusto
 let hosts_object = parsejson('{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"location":"South_DC", "status":"stopped", "rate":3}]}');
 print hosts_object 
 | extend hosts_num=arraylength(hosts_object.hosts)
@@ -88,7 +88,7 @@ print hosts_object
 ### <a name="mvexpand"></a>mvexpand
 Используйте `mvexpand`, чтобы разбить свойства объекта на отдельные строки.
 
-```KQL
+```Kusto
 let hosts_object = parsejson('{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"location":"South_DC", "status":"stopped", "rate":3}]}');
 print hosts_object 
 | mvexpand hosts_object.hosts[0]
@@ -99,7 +99,7 @@ print hosts_object
 ### <a name="buildschema"></a>buildschema
 Используйте `buildschema` для получения схемы, которая учитывает все значения объекта:
 
-```KQL
+```Kusto
 let hosts_object = parsejson('{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"location":"South_DC", "status":"stopped", "rate":3}]}');
 print hosts_object 
 | summarize buildschema(hosts_object)
@@ -123,7 +123,7 @@ print hosts_object
 
 Вложенные объекты могут иметь разные схемы, такие как в следующем примере:
 
-```KQL
+```Kusto
 let hosts_object = parsejson('{"hosts": [{"location":"North_DC", "status":"running", "rate":5},{"status":"stopped", "rate":"3", "range":100}]}');
 print hosts_object 
 | summarize buildschema(hosts_object)

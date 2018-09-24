@@ -3,22 +3,26 @@ title: Руководство по средствам Visual Studio Code для 
 description: В этом руководстве описано, как приступить к работе со средствами Visual Studio Code для машинного обучения для создания эксперимента, обучения модели и эксплуатации веб-службы.
 services: machine-learning
 author: chris-lauren
-ms.author: chris.lauren
+ms.author: clauren
 ms.service: machine-learning
 ms.component: core
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 11/15/2017
-ms.openlocfilehash: a215c562ad15b69dcec20c1951fe8bc3fe80c6ff
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ROBOTS: NOINDEX
+ms.openlocfilehash: a2c4455735523b6b726dedb13151627d8ce70f22
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42022779"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991765"
 ---
 # <a name="visual-studio-code-tools-for-ai"></a>Средства Visual Studio Code для искусственного интеллекта
-Средства Visual Studio Code для искусственного интеллекта — это расширение разработки, тестирования и развертывания решений с использованием глубокого обучения и искусственного интеллекта. Они обеспечивают простую интеграцию со службой "Машинного обучения Azure", в частности, просмотр журнала выполнения, в котором подробно описываются результаты предыдущего обучения и пользовательские метрики. Они предоставляют обозреватель примеров, позволяющий просматривать и загружать новые проекты с помощью [Microsoft Cognitive Toolkit (ранее — CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit), [Google TensorFlow](https://www.tensorflow.org) и других платформ глубокого обучения. И, наконец они предоставляют обозреватель для целевых объектов вычислений, что дает возможность отправлять задания для обучения моделей в удаленных средах, например, на виртуальных машин Azure или серверах Linux с графическими процессорами. 
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+Средства Visual Studio Code для искусственного интеллекта — это расширение разработки, тестирования и развертывания решений с использованием глубокого обучения и искусственного интеллекта. Они обеспечивают простую интеграцию со службой "Машинного обучения Azure", в частности, просмотр журнала выполнения, в котором подробно описываются результаты предыдущего обучения и пользовательские метрики. Они предоставляют обозреватель примеров, позволяющий просматривать и загружать новые проекты с помощью [Microsoft Cognitive Toolkit (ранее — CNTK)](http://www.microsoft.com/cognitive-toolkit), [Google TensorFlow](https://www.tensorflow.org) и других платформ глубокого обучения. И, наконец они предоставляют обозреватель для целевых объектов вычислений, что дает возможность отправлять задания для обучения моделей в удаленных средах, например, на виртуальных машин Azure или серверах Linux с графическими процессорами. 
  
 ## <a name="getting-started"></a>Приступая к работе 
 Чтобы начать работу, сначала необходимо скачать и установить [Visual Studio Code](https://code.visualstudio.com/Download). Открыв Visual Studio Code, сделайте следующее:

@@ -15,12 +15,12 @@ ms.date: 08/07/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 002eb9b70c2f3f9d0f6633b2d81425c688495d19
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: d3856a50be0c3f7bdfb947d55b09a3de2512698e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39714059"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46968138"
 ---
 # <a name="custom-roles-in-azure"></a>Пользовательские роли в Azure
 
@@ -100,7 +100,7 @@ ms.locfileid: "39714059"
 | `NotActions` | Нет  | String[] | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. Дополнительные сведения см. в разделе [NotActions](role-definitions.md#notactions). |
 | `DataActions` | Нет  | String[] | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Дополнительные сведения см. в разделе [DataActions (предварительная версия)](role-definitions.md#dataactions-preview). |
 | `NotDataActions` | Нет  | String[] | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. Дополнительные сведения см. в разделе [NotDataActions (предварительная версия)](role-definitions.md#notdataactions-preview). |
-| `AssignableScopes` | Yes | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. Сейчас для него нельзя задать корневую область (`"/"`) или область группы управления. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes) и [Пользовательское определение и назначение роли RBAC](../azure-resource-manager/management-groups-overview.md#custom-rbac-role-definition-and-assignment). |
+| `AssignableScopes` | Yes | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. Сейчас для него нельзя задать корневую область (`"/"`) или область группы управления. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes) и [Пользовательское определение и назначение роли RBAC](../governance/management-groups/overview.md#custom-rbac-role-definition-and-assignment). |
 
 ## <a name="who-can-create-delete-update-or-view-a-custom-role"></a>Кто может создавать, удалять, обновлять или просматривать пользовательскую роль
 

@@ -11,14 +11,19 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/06/2017
-ms.openlocfilehash: 4a49ccff68003cf7b81a7d945176992a2893d1ac
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ROBOTS: NOINDEX
+ms.openlocfilehash: c01198a78a32c460bd147e1e160358271b80eef5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38973176"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950638"
 ---
 # <a name="consuming-web-services"></a>Использование веб-служб
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 После развертывания модели в качестве веб-службы в реальном времени вы можете отправлять ее данные и получать прогнозы из различных платформ и приложений. Веб-служба в реальном времени предоставляет REST API для получения прогнозов. Можно отправлять данные в веб-службу в однострочном или многострочном формате, чтобы получить один или несколько прогнозов за один раз.
 
 С помощью [веб-службы Машинного обучения Azure](model-management-service-deploy.md) внешнее приложение синхронно обменивается данными с прогнозной моделью с помощью вызова HTTP POST к URL-адресу службы. Чтобы вызвать веб-службу, клиентскому приложению необходимо указать ключ API, который создается при развертывании прогноза, и поместить данные запроса в тело запроса POST.

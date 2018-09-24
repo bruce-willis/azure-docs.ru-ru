@@ -8,22 +8,18 @@ ms.service: firewall
 ms.topic: article
 ms.date: 7/11/2018
 ms.author: victorh
-ms.openlocfilehash: 1a732e22d72c36afe11030e42bae529baa35df1a
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: d32e6e29c287d140c28206743e36dc025b26158b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992605"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991340"
 ---
 # <a name="deploy-azure-firewall-using-a-template"></a>Развертывание Брандмауэра Azure с помощью шаблона
 
-[!INCLUDE [firewall-preview-notice](../../includes/firewall-preview-notice.md)]
-
-В примерах из статей о брандмауэре Azure предполагается, что вы уже включили общедоступную предварительную версию брандмауэра Azure. Дополнительные сведения см. в статье [Enable the Azure Firewall public preview](public-preview.md) (Включение общедоступной предварительная версии брандмауэра Azure).
-
 Этот шаблон создает брандмауэр и тестовую сетевую среду. Эта сеть содержит одну виртуальную сеть с тремя подсетями: *AzureFirewallSubnet*, *ServersSubnet* и *JumpboxSubnet*. ServersSubnet и JumpboxSubnet содержат по одному 2-ядерному серверу Windows Server.
 
-В AzureFirewallSubnet размещен брандмауэр, которому присваивается коллекция правил приложения, единственное правило в которой разрешает доступ к www.microsoft.com.
+В AzureFirewallSubnet размещен брандмауэр, которому присваивается коллекция правил приложения, единственное правило которой разрешает доступ к www.microsoft.com.
 
 Создается пользовательский маршрут, направляющий сетевой трафик из ServersSubnet через брандмауэр, где к нему применяются правила брандмауэра.
 

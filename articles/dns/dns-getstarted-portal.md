@@ -8,12 +8,12 @@ ms.service: dns
 ms.topic: quickstart
 ms.date: 6/13/2018
 ms.author: victorh
-ms.openlocfilehash: 421c4e0464eac22a7feba01e2e84660b02a32455
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 3ec2c44c168b47fd66d1ffa9a0c8d0069600ecb0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39174655"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46958107"
 ---
 # <a name="quickstart-configure-azure-dns-for-name-resolution-using-the-azure-portal"></a>Краткое руководство. Настройка Azure DNS для разрешения имен с помощью портала Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "39174655"
 Важно знать, что все имена и IP-адреса в этом кратком руководстве приведены только для примера и не соответствуют никаким сценариям из реальной жизни. Тем не менее там, где необходимо, также описаны сценарии из реальной жизни.
 
 <!---
-You can also perform these steps using [Azure PowerShell](dns-getstarted-powershell.md) or the cross-platform [Azure CLI 2.0](dns-getstarted-cli.md).
+You can also perform these steps using [Azure PowerShell](dns-getstarted-powershell.md) or the cross-platform [Azure CLI](dns-getstarted-cli.md).
 --->
 
 Зона DNS используется для сохранения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS (или запись) для домена создается внутри этой зоны DNS. Следующие действия демонстрируют, как это сделать.

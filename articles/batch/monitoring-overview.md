@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
 ms.author: danlep
-ms.openlocfilehash: 5a321ef7dca86993a913a283fe7b9b076c127d94
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 885deca5efbd72b3d641c8c94837851340d752b9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171261"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46957835"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
 
@@ -34,7 +34,7 @@ Azure и пакетная служба предоставляют широкий
 
 ## <a name="batch-account-level-monitoring"></a>Мониторинг на уровне учетной записи пакетной службы
 
-Для мониторинга отдельных учетных записей пакетной службы можно применить [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-azure-monitor.md). Azure Monitor собирает [метрики](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и (если настроено) [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов, относящихся к уровню учетной записи пакетной службы, таких как пулы, задания и задачи. Эти данные можно собирать и использовать вручную или программными средствами, чтобы отслеживать действия в учетной записи пакетной службы и диагностировать проблемы. Дополнительные сведения см. в статье [События журнала для диагностики и мониторинга решений пакетной службы](batch-diagnostics.md).
+Для мониторинга отдельных учетных записей пакетной службы можно применить [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../monitoring/monitoring-data-collection.md#metrics) и (если настроено) [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов, относящихся к уровню учетной записи пакетной службы, таких как пулы, задания и задачи. Эти данные можно собирать и использовать вручную или программными средствами, чтобы отслеживать действия в учетной записи пакетной службы и диагностировать проблемы. Дополнительные сведения см. в статье [События журнала для диагностики и мониторинга решений пакетной службы](batch-diagnostics.md).
  
 > [!NOTE]
 > По умолчанию метрики доступны в учетной записи пакетной службы за 30-дневный период со скользящей ротацией. Для сбора данных об учетной записи пакетной службы необходимо включить ведение журнала диагностики, хранение и (или) обработка которого может повлечь некоторые расходы на использование ресурсов. 

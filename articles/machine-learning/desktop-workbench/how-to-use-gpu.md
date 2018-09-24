@@ -11,18 +11,22 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/14/2017
-ms.openlocfilehash: 09d8e3da543cdf4433d986b321697abcad88eb22
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ROBOTS: NOINDEX
+ms.openlocfilehash: 8e8944a9bdfa2b75f6442e03d45dfb6977c2a122
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44157996"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974363"
 ---
 # <a name="how-to-use-gpu-in-azure-machine-learning"></a>Как использовать GPU в службе "Машинное обучение Azure"
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
+
 Графический процессор (GPU) широко используется для обработки ресурсоемких задач, которые обычно выполняются при обучении определенных моделей глубокой нейронной сети. С помощью GPU можно значительно сократить время обучения моделей. Из этого документа вы узнаете, как настроить в Azure ML Workbench использование [DSVM (виртуальная машина для обработки и анализа данных)](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/overview), оснащенную GPU, в качестве целевой среды выполнения. 
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Чтобы поработать с этим пошаговым руководством, сначала необходимо установить [Azure ML Workbench](../service/quickstart-installation.md).
+- Чтобы поработать с этим пошаговым руководством, сначала необходимо установить [Azure ML Workbench](quickstart-installation.md).
 - Необходимо иметь доступ к компьютерам, оснащенным графическими процессорами NVidia.
     - Скрипты можно выполнять напрямую на локальных компьютерах (Windows или macOS) с графическими процессорами,
     - а также в контейнере Docker на компьютере Linux с графическими процессорами.

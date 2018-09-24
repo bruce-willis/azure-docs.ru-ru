@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 04/20/2017
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: aa25c0e636c36422cb6b576d0ca8ebc899b2a2dc
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: deddfe16e4ad3eeee099ce1d7b53b9f15cbf85d2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44163079"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46956699"
 ---
 # <a name="create-a-function-app-that-connects-to-an-azure-storage-account"></a>Создание приложения-функции, которое подключается к учетной записи хранения Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "44163079"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы используете интерфейс командной строки локально, убедитесь, что у вас установлена версия не ниже Azure CLI 2.0. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
+Если вы используете интерфейс командной строки локально, убедитесь, что у вас установлена версия не ниже Azure CLI 2.0. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 ## <a name="sample-script"></a>Пример скрипта
 

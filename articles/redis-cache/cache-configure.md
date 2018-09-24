@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
 ms.date: 08/22/2017
 ms.author: wesmc
-ms.openlocfilehash: 0cd21c0367a95d3e866137797ac32fc5bdd196c0
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 58e913aa2b4a89a573f6d901803979e662c27af2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31420737"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46954047"
 ---
 # <a name="how-to-configure-azure-redis-cache"></a>Настройка кэша Redis для Azure
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Redis для Azure. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Redis для Azure.
@@ -353,10 +353,10 @@ ms.locfileid: "31420737"
 
 ### <a name="diagnostics"></a>Диагностика
 
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../monitoring-and-diagnostics/monitoring-overview-azure-monitor.md#store-and-archive), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../monitoring/monitoring-data-collection.md#metrics), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
 
 >[!NOTE]
->В дополнение к архивированию метрик кэша в хранилище вы можете настроить для них [потоковую передачу в концентратор событий или отправку в журнал Log Analytics](../monitoring-and-diagnostics/monitoring-overview-metrics.md#export-metrics).
+>В дополнение к архивированию метрик кэша в хранилище вы можете настроить для них [потоковую передачу в концентратор событий или отправку в журнал Log Analytics](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md).
 >
 >
 

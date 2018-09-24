@@ -16,14 +16,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2018
 ms.author: miprasad
-ms.openlocfilehash: 97e3a621e291935db2e0c70eb2b596e77c7bffb7
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: e2fbb0b7b0dede198be0e57ffcd2b58a7da7fce7
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35641927"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46947777"
 ---
 # <a name="sentiment-analysis-using-deep-learning-with-azure-machine-learning"></a>Анализ тональности с помощью глубокого обучения в службе "Машинное обучение Azure"
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 Анализ тональности — это хорошо известное задание в сфере обработки естественного языка, основной целью которого является определение тональности в заданном наборе текстов. Целью этого решения является использование глубинного обучения для прогнозирования тональности на основе обзоров фильмов.
 
@@ -45,7 +50,7 @@ ms.locfileid: "35641927"
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
 
-* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md).
+* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](quickstart-installation.md).
 
 * Для ввода в эксплуатацию модели лучше всего, чтобы модуль Docker был установлен и работал локально. Если нет, можно воспользоваться вариантом с кластером. Однако запуск Службы контейнера Azure (ACS) может быть затратным.
 

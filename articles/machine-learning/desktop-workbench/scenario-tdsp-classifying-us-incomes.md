@@ -16,14 +16,19 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2017
-ms.openlocfilehash: edc3fc5e2a625a14bcb48b03f32cd99069a0ad53
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ROBOTS: NOINDEX
+ms.openlocfilehash: 8533023a16cb350828127d0603e6add0876b37a8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42145950"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948855"
 ---
 # <a name="income-classification-with-team-data-science-process-tdsp-project"></a>Проект по классификации доходов с использованием командного процесса обработки и анализа данных (TDSP)
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 ## <a name="introduction"></a>Введение
 
@@ -55,7 +60,7 @@ ms.locfileid: "42145950"
 1. [Подписка](https://azure.microsoft.com) Azure. Для выполнения этого примера вы можете получить [бесплатную подписку](https://azure.microsoft.com/free/?v=17.16&WT.srch=1&WT.mc_id=AID559320_SEM_cZGgGOIg).
 2. [Виртуальная машина Azure для обработки и анализа данных под управлением Windows Server 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.windows-data-science-vm) (размер виртуальной машины: [DS3_V2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), 4 виртуальных процессора и 14 ГБ ОЗУ). Решение тестировалось на виртуальной машине Azure для обработки и анализа данных, но, вероятнее всего, будет успешно работать на любом компьютере под управлением Windows 10.
 3. Просмотрите документацию по службе "Машинное обучение Microsoft Azure" и связанным с ней службам (см. ссылки ниже).
-4. Установите службу "Машинное обучение Microsoft Azure" в точном соответствии с инструкциями в [кратком руководстве по установке](../service/quickstart-installation.md).
+4. Установите службу "Машинное обучение Microsoft Azure" в точном соответствии с инструкциями в [кратком руководстве по установке](quickstart-installation.md).
 
 Набор данных для этого примера взят из репозитория ML UCI [[ссылка]](https://archive.ics.uci.edu/ml/datasets/adult). Это фрагмент базы данных для переписи населения США за 1994 год. Он содержит демографические сведения и суммы дохода примерно для 50 000 физических лиц. Это структурированный набор данных с числовыми и категориальными компонентами и категориальным целевым объектом, содержащим две категории дохода ("более 50 тысяч" или "не более 50 тысяч"). 
 
@@ -65,7 +70,7 @@ ms.locfileid: "42145950"
 ### <a name="informational-about-azure-machine-learning"></a>Сведения о службе "Машинное обучение Microsoft Azure"
 * [Часто задаваемые вопросы: как приступить к работе](frequently-asked-questions.md).
 * [Обзор](../service/overview-what-is-azure-ml.md)
-* [Установка](../service/quickstart-installation.md)
+* [Установка](quickstart-installation.md)
 * [Выполнение](experimentation-service-configuration.md).
 * [Использование TDSP](https://aka.ms/how-to-use-tdsp-in-aml).
 * [Чтение и запись файлов](how-to-read-write-files.md).

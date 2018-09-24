@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 03/24/2017
 ms.reviewer: vitalyg
 ms.author: mbullwin
-ms.openlocfilehash: b1dd37c07f3c887005d87e3231f62a4bca2f4a3d
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 893495a5c37495438d9620595719ca6e733df012
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43093121"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46958124"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -35,7 +35,7 @@ ms.locfileid: "43093121"
 * Вы также можете выполнять выборку вручную, чтобы сократить сетевой трафик. Это можно настроить на портале на странице "Usage and estimated costs" (Данные об использовании и предполагаемые расходы), в пакете SDK для ASP.NET посредством CONFIG-файла, или в пакете SDK для Java посредством файла ApplicationInsights.xml.
 * Если при регистрации пользовательских событий необходимо убедиться, что набор событий сохранен или отклонен полностью, проверьте, одинаковое ли у них значение идентификатора операции.
 * Делитель выборки *n* указывается в каждой записи в свойстве `itemCount`, которая при поиске отображается как число запросов или счетчик событий. Если выборка не выполняется, `itemCount==1`.
-* При написании запросов аналитики необходимо [учитывать выборку](app-insights-analytics-tour.md#counting-sampled-data). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
+* При написании запросов аналитики необходимо [учитывать выборку](../log-analytics/query-language/aggregations.md). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
 
 ## <a name="types-of-sampling"></a>Типы выборки
 Существует три альтернативных метода выборки.

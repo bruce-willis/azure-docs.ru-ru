@@ -9,12 +9,13 @@ ms.component: custom-speech
 ms.topic: article
 ms.date: 02/08/2017
 ms.author: panosper
-ms.openlocfilehash: fe7a140f5ba2d712014f03663a88d516958d188e
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: bf674261a58aab4fee37920d12ce6a2ac54b58b8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380253"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46975789"
 ---
 # <a name="get-started-with-custom-speech-service"></a>Приступая к работе с Пользовательской службой распознавания речи
 
@@ -23,7 +24,7 @@ ms.locfileid: "35380253"
 ## <a name="samples"></a>Примеры  
 Мы предоставляем хороший пример, с которого можно начать работу. Его можно найти [здесь](https://github.com/Microsoft/Cognitive-Custom-Speech-Service).
 
-## <a name="prerequisites"></a>предварительным требованиям  
+## <a name="prerequisites"></a>Предварительные требования  
 
 ### <a name="subscribe-to-custom-speech-service-and-get-a-subscription-key"></a>Подписка на Пользовательскую службу распознавания речи и получение ключа подписки
 Прежде чем экспериментировать с приведенным выше примером, вам необходимо подписаться на Пользовательскую службу распознавания речи и получить ключ подписки. Перейдите к [подпискам](https://portal.azure.com/#create/Microsoft.CognitiveServices/apitype/CustomSpeech) или следуйте инструкциям, приведенным [здесь](CustomSpeech-How-to-Topics/cognitive-services-custom-speech-subscribe.md). В этом руководстве можно использовать как первичный, так и вторичный ключ. Обязательно следуйте рекомендациям по обеспечению секретности и безопасности вашего ключа API.

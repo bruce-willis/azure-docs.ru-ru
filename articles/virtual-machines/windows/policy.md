@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/02/2017
 ms.author: kasing
-ms.openlocfilehash: b6a42e1a0b0256a6b19220958f98940764273a2d
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 42b62c819fd3d26c6ea944f968e0d5956a7f055e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37114390"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46987464"
 ---
 # <a name="apply-policies-to-windows-vms-with-azure-resource-manager"></a>Применение политик к виртуальным машинам Windows с помощью Azure Resource Manager
 С помощью политик организация может обеспечить выполнение различных норм и правил во всей организации. Обязательные для выполнения стандарты поведения помогают снизить риск, что способствует успешной деятельности организации. В этой статье описано, как определить требуемое поведение для виртуальных машин вашей организации с помощью политик Azure Resource Manager.
@@ -106,7 +106,7 @@ ms.locfileid: "37114390"
 }
 ```
 
-Сведения о полях политики см. в разделе [Псевдонимы](../../azure-policy/policy-definition.md#aliases).
+Сведения о полях политики см. в разделе [Псевдонимы](../../governance/policy/concepts/definition-structure.md#aliases).
 
 ## <a name="managed-disks"></a>Управляемые диски
 

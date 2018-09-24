@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: f72fb6f654b4699214a22a7f96431c605af52f2d
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 764c43a382442096a5d130334e54afdc135ba419
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45603679"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966691"
 ---
 # <a name="aggregations-in-log-analytics-queries"></a>Агрегирование в запросах Log Analytics
 
@@ -37,13 +37,13 @@ ms.locfileid: "45603679"
 Выполните подсчет количества строк в результирующем наборе после применения фильтров. Следующий пример возвращает общее количество строк в таблице _Perf_ за последние 30 минут. Результат возвращается в столбец под именем *count_*, если присвоено конкретное имя:
 
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(30m) 
 | summarize count()
 ```
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(30m) 
 | summarize num_of_records=count() 
@@ -51,7 +51,7 @@ Perf
 
 Чтобы просмотреть тенденцию по времени, можно использовать визуализацию временной диаграммы:
 
-```KQL
+```Kusto
 Perf 
 | where TimeGenerated > ago(30m) 
 | summarize count() by bin(TimeGenerated, 5m)
@@ -66,7 +66,7 @@ Perf
 ### <a name="dcount-dcountif"></a>dcount, dcountif
 Используйте `dcount` и `dcountif`, чтобы подсчитать уникальные значения в определенном столбце. Следующий запрос вычисляет, сколько отдельных компьютеров отправили пакеты пульса за последний час:
 
-```KQL
+```Kusto
 Heartbeat 
 | where TimeGenerated > ago(1h) 
 | summarize dcount(Computer)
@@ -74,7 +74,7 @@ Heartbeat
 
 Чтобы подсчитать только компьютеры Linux, отправлявшие пакеты пульса, используйте `dcountif`:
 
-```KQL
+```Kusto
 Heartbeat 
 | where TimeGenerated > ago(1h) 
 | summarize dcountif(Computer, OSType=="Linux")
@@ -83,7 +83,7 @@ Heartbeat
 ### <a name="evaluating-subgroups"></a>Оценка подгрупп
 Чтобы выполнить подсчет или другие агрегирования с подгруппами в данных, используйте ключевое слово `by`. Например, чтобы подсчитать количество отдельных компьютеров Linux, которые отправляли пакеты пульса в каждой стране, используйте следующее:
 
-```KQL
+```Kusto
 Heartbeat 
 | where TimeGenerated > ago(1h) 
 | summarize distinct_computers=dcountif(Computer, OSType=="Linux") by RemoteIPCountry
@@ -100,7 +100,7 @@ Heartbeat
 
 Чтобы проанализировать меньшие подгруппы данных, добавьте имена дополнительных столбцов в раздел `by`. Например, может потребоваться подсчитать количество отдельных компьютеров из каждой страны на OSType:
 
-```KQL
+```Kusto
 Heartbeat 
 | where TimeGenerated > ago(1h) 
 | summarize distinct_computers=dcountif(Computer, OSType=="Linux") by RemoteIPCountry, OSType
@@ -112,7 +112,7 @@ Heartbeat
 ### <a name="percentile"></a>Процентиль
 Чтобы найти медиану, используйте функцию `percentile` со значением, чтобы указать процентиль:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(30m) 
 | where CounterName == "% Processor Time" and InstanceName == "_Total" 
@@ -121,7 +121,7 @@ Perf
 
 Вы также можете указать различные процентили, чтобы получить агрегированный результат для каждого из них:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(30m) 
 | where CounterName == "% Processor Time" and InstanceName == "_Total" 
@@ -133,7 +133,7 @@ Perf
 ### <a name="variance"></a>Variance
 Чтобы напрямую рассчитать дисперсию значения, используйте стандартное отклонение и методы дисперсии:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(30m) 
 | where CounterName == "% Processor Time" and InstanceName == "_Total" 
@@ -142,7 +142,7 @@ Perf
 
 Хороший способ проанализировать стабильность загрузки ЦП — объединить значение stdev с вычислением медианы:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(130m) 
 | where CounterName == "% Processor Time" and InstanceName == "_Total" 

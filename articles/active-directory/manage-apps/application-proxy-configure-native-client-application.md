@@ -15,12 +15,12 @@ ms.date: 01/31/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 85a7b133655a3b1e4ca60c28e695e3057b293fdc
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 91f75fdbe7bc7c66bbe581e9d4b295467acd4cd5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39504521"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46989674"
 ---
 # <a name="how-to-enable-native-client-apps-to-interact-with-proxy-applications"></a>Включение собственных клиентских приложений для взаимодействия с приложениями прокси
 
@@ -30,7 +30,7 @@ ms.locfileid: "39504521"
 
 ![Связь между конечными пользователями, Azure Active Directory и опубликованными приложениями](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-Используйте библиотеку аутентификации Azure AD, которая отвечает за аутентификацию и поддерживает многие клиентские среды, для публикации собственных приложений. Прокси приложения вписывается в [сценарий вызова веб-API собственным приложением](../develop/authentication-scenarios.md#native-application-to-web-api). 
+Используйте библиотеку аутентификации Azure AD, которая отвечает за аутентификацию и поддерживает многие клиентские среды, для публикации собственных приложений. Прокси приложения вписывается в [сценарий вызова веб-API собственным приложением](../develop/native-app.md). 
 
 В этой статье рассматриваются четыре действия, которые нужно выполнить, чтобы опубликовать собственное приложение с помощью прокси приложения и библиотеки аутентификации Azure AD. 
 
@@ -96,6 +96,6 @@ HttpResponseMessage response = await httpClient.GetAsync("< Proxy App API Url >"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о блок-схеме собственного приложения см. в разделе [Из нативного приложения к веб-интерфейсу API](../develop/authentication-scenarios.md#native-application-to-web-api).
+Дополнительные сведения о блок-схеме собственного приложения см. в разделе [Из нативного приложения к веб-интерфейсу API](../develop/native-app.md).
 
 Дополнительные сведения о настройке см. в статье [Как прокси приложения Azure AD предоставляет единый вход?](application-proxy-single-sign-on.md)

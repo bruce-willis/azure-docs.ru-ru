@@ -13,18 +13,18 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 10/11/2017
 ms.author: routlaw
-ms.openlocfilehash: eeb1b8b9105e055339cb31fa4b9d4b411cb06c54
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 86461ea5840ec4f2ea70facd642de9e7e5c05fa5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38719558"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981020"
 ---
 # <a name="install-the-elastic-stack-on-an-azure-vm"></a>Установка Elastic Stack на виртуальной машине в Azure
 
 В этой статье рассматриваются способы развертывания [Elasticsearch](https://www.elastic.co/products/elasticsearch), [Logstash](https://www.elastic.co/products/logstash) и [Kibana](https://www.elastic.co/products/kibana) на виртуальной машине Ubuntu в Azure. Чтобы увидеть Elastic Stack в действии, вы можете подключиться к Kibana и работать с несколькими примерами данных журнала. 
 
-Из этого руководства вы узнали, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Ubuntu в группе ресурсов Azure.
@@ -37,7 +37,7 @@ ms.locfileid: "38719558"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

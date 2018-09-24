@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: db22b8ddeaa7fc8fd4d8f7a8b3b3d8b4bc143974
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: ddc5adbb5b6bc7f04a893b05df3601714ed85eec
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746405"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991459"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -46,7 +46,7 @@ ms.locfileid: "42746405"
 Облачные ресурсы.
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure. 
-* Учетная запись Студии машинного обучения Azure. Выполните инструкции из статьи [Create Azure Machine Learning accounts and install Azure Machine Learning Workbench](../machine-learning/service/quickstart-installation.md#create-azure-machine-learning-services-accounts) (Создание учетной записи для службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench). Для этого руководства не нужно устанавливать приложение рабочего места (Workbench). 
+* Учетная запись Студии машинного обучения Azure. Выполните инструкции из статьи [Create Azure Machine Learning accounts and install Azure Machine Learning Workbench](../machine-learning/desktop-workbench/quickstart-installation.md) (Создание учетной записи для службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench). Для этого руководства не нужно устанавливать приложение рабочего места (Workbench). 
 
 Ресурсы разработки.
 
