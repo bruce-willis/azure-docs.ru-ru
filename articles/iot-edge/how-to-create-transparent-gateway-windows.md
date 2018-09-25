@@ -8,12 +8,12 @@ ms.date: 6/20/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 5ffb1b5c9889e2325eab32306b61899b37d22488
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: e9de037f886db7a48411959ef62e1e6687e54beb
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39187474"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46984302"
 ---
 # <a name="create-a-windows-iot-edge-device-that-acts-as-a-transparent-gateway"></a>Создание устройства Windows IoT Edge, выступающего в роли прозрачного шлюза
 
@@ -206,6 +206,8 @@ certificates:
    ```
 
 Подробные сведения о маршрутизации сообщений см. в [статье о составлении модулей][lnk-module-composition].
+
+[!INCLUDE [](../../includes/iot-edge-extended-offline-preview.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Understand the requirements and tools for developing IoT Edge modules - preview][lnk-module-dev] (Сведения о требованиях и средствах разработки модулей IoT Edge (предварительная версия)).

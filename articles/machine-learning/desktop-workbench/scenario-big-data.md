@@ -16,14 +16,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: daden
-ms.openlocfilehash: 7a13cafd3dcfb4637a5deae2c678c518019ad168
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ROBOTS: NOINDEX
+ms.openlocfilehash: 8f3bd4e62aa85c69a0bfafeacf13bc3e472136d5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39450674"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964707"
 ---
 # <a name="server-workload-forecasting-on-terabytes-of-data"></a>Прогнозирование рабочей нагрузки сервера на основе терабайтов данных
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
 
 В этой статье рассказывается, как специалисты по обработке и анализу данных могут применять Azure Machine Learning Workbench для разработки решений, которые требуют использования больших данных. Взяв выборку из большого набора данных, вы можете подготовить данные, спроектировать признаки, применить модели машинного обучения, а затем выполнить все это для полного большого набора данных. 
 
@@ -49,11 +52,11 @@ ms.locfileid: "39450674"
 Предварительные требования для выполнения этого сценария:
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
-* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md). Если у вас несколько подписок, вы можете [указать нужную подписку в качестве текущей активной подписки](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set).
+* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](quickstart-installation.md). Если у вас несколько подписок, вы можете [указать нужную подписку в качестве текущей активной подписки](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az_account_set).
 * Windows 10 (если вы используете macOS, большинство инструкций будут аналогичными).
 * Виртуальная машина для обработки и анализа данных для Linux (Ubuntu), желательно в регионе "Восточная часть США", где расположены данные. Вы можете подготовить виртуальную машину для обработки и анализа данных Ubuntu, выполнив эти [инструкции](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro). Просмотрите также это [краткое руководство](https://ms.portal.azure.com/#create/microsoft-ads.linux-data-science-vm-ubuntulinuxdsvmubuntu). Рекомендуем использовать виртуальную машину с как минимум 8 ядрами и 32 ГБ памяти. 
 
-Выполните [инструкции](../service/known-issues-and-troubleshooting-guide.md#remove-vm-execution-error-no-tty-present), чтобы включить доступ без пароля для пользователя с правами sudo на виртуальной машине для AML Workbench.  Вы также можете использовать [аутентификацию на основе ключей SSH для создания и использования виртуальной машины в AML Workbench](experimentation-service-configuration.md#using-ssh-key-based-authentication-for-creating-and-using-compute-targets). В этом примере для доступа к виртуальной машине мы используем пароль.  Сохраните таблицу ниже с данными виртуальной машины для обработки и анализа данных для выполнения дальнейших действий:
+Выполните [инструкции](../desktop-workbench/known-issues-and-troubleshooting-guide.md#remove-vm-execution-error-no-tty-present), чтобы включить доступ без пароля для пользователя с правами sudo на виртуальной машине для AML Workbench.  Вы также можете использовать [аутентификацию на основе ключей SSH для создания и использования виртуальной машины в AML Workbench](experimentation-service-configuration.md#using-ssh-key-based-authentication-for-creating-and-using-compute-targets). В этом примере для доступа к виртуальной машине мы используем пароль.  Сохраните таблицу ниже с данными виртуальной машины для обработки и анализа данных для выполнения дальнейших действий:
 
  Имя поля| Значение |  
  |------------|------|

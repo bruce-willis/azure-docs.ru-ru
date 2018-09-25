@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: mbullwin
-ms.openlocfilehash: 73bb1e3d06066c422614bc9d6d3431b49be9c6de
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 86c0343a3492bf91eedda9303e3c6ac9cf86c4c3
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992372"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46947325"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -105,7 +105,7 @@ ms.locfileid: "38992372"
 ## <a name="step-4-publish-your-app"></a>Шах 4. Публикация приложения
 Опубликуйте приложение на сервере IIS или в Azure. Просмотрите [динамический поток метрик](app-insights-metrics-explorer.md#live-metrics-stream), чтобы убедиться в бесперебойной работе приложения.
 
-Телеметрия создается на портале Application Insights, где можно отслеживать метрики, выполнять поиск данных телеметрии и настраивать [панели мониторинга](app-insights-dashboards.md). Можно также использовать эффективный [язык запросов Log Analytics](https://docs.loganalytics.io/) для анализа использования и производительности или поиска определенных событий.
+Телеметрия создается на портале Application Insights, где можно отслеживать метрики, выполнять поиск данных телеметрии и настраивать [панели мониторинга](app-insights-dashboards.md). Можно также использовать эффективный [язык запросов Log Analytics](https://aka.ms/LogAnalyticsLanguage) для анализа использования и производительности или поиска определенных событий.
 
 Кроме того, можно продолжить анализировать телеметрию в [Visual Studio](app-insights-visual-studio.md) с помощью таких средств, как поиск по журналу диагностики и [тренды](app-insights-visual-studio-trends.md).
 

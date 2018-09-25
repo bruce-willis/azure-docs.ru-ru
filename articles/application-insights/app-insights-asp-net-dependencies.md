@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: mbullwin
-ms.openlocfilehash: f2ebd2a021d3803b6e3f7d805b9253d181cb16c3
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: f1a1c0bd759a88b2e84584f1d52458ac6f56d97f
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35293645"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46999709"
 ---
 # <a name="set-up-application-insights-dependency-tracking"></a>Настройка Application Insights: отслеживание зависимостей
 *Зависимость* – это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](app-insights-overview.md) измеряет время, в течение которого приложение ожидает зависимости, и определяет, как часто происходит сбой вызова зависимости. Можно изучить определенные вызовы и установить их взаимосвязь с теми или иными запросами и исключениями.
@@ -133,7 +133,7 @@ ms.locfileid: "35293645"
 ![Щелкните тип запроса, а затем его экземпляр, чтобы открыть этот же экземпляр в другом представлении. Щелкните его еще раз, чтобы просмотреть подробную информацию об исключении.](./media/app-insights-asp-net-dependencies/07-faildetail.png)
 
 ## <a name="analytics"></a>Analytics
-Вы можете отслеживать зависимости, используя [язык запросов Log Analytics](https://docs.loganalytics.io/). Ниже приведены некоторые примеры.
+Вы можете отслеживать зависимости, используя [язык запросов Log Analytics](https://aka.ms/LogAnalyticsLanguage). Ниже приведены некоторые примеры.
 
 * Поиск неудачно завершенных вызовов зависимостей:
 
@@ -201,7 +201,7 @@ ms.locfileid: "35293645"
 ## <a name="troubleshooting"></a>Устранение неполадок
 *Флаг успешной зависимости всегда показывает значение true или false.*
 
-*SQL-запрос отображается неполностью.*
+*SQL-запрос отображается не полностью.*
 
 Просмотрите таблицу ниже и проверьте, правильную ли конфигурацию вы выбрали для мониторинга зависимостей своего приложения.
 

@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: 72859f68fc1bb76a6c71bbd7b98cd713f1f0fe02
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 8161fda80b5fa498f9321371c9ad2c8a2d97441a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35296406"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46962425"
 ---
 # <a name="navigation-and-dashboards-in-the-application-insights-portal"></a>Навигация и панели мониторинга на портале Application Insights
 После [настройки Application Insights для проекта](app-insights-overview.md) данные телеметрии о производительности и использовании вашего приложения будут отображаться в ресурсе Application Insights на [портале Azure](https://portal.azure.com).
@@ -63,7 +63,7 @@ ms.locfileid: "35296406"
 * диапазон времени более 24 часов: (диапазон времени)/60.
 
 ### <a name="pin-any-query-in-analytics"></a>Закрепление любого запроса в аналитике
-Вы также можете [закрепить диаграммы аналитики](app-insights-analytics-using.md#pin-to-dashboard) на [общей](#share-dashboards-with-your-team) панели мониторинга. Это позволяет добавлять диаграммы из любого произвольного запроса вместе со стандартными метриками. 
+Вы также можете [закрепить диаграммы аналитики](../log-analytics/query-language/get-started-analytics-portal.md) на [общей](#share-dashboards-with-your-team) панели мониторинга. Это позволяет добавлять диаграммы из любого произвольного запроса вместе со стандартными метриками. 
 
 Результаты пересчитываются автоматически каждый час. Чтобы пересчитать результаты немедленно, щелкните значок "Обновить" на диаграмме. (При обновлении окна браузера результаты не пересчитываются.)
 

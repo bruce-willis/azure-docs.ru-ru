@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: acf51056a084abc08bda2d7f73b561f442f57784
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: e63345c0265d52fdd80fe4542efb7f13324926cf
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605540"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46989624"
 ---
 # <a name="creating-charts-and-diagrams-from-log-analytics-queries"></a>Создание графиков и диаграмм из запросов Log Analytics
 
@@ -34,7 +34,7 @@ ms.locfileid: "45605540"
 ## <a name="charting-the-results"></a>Отображение результатов
 Начните с изучения того, сколько компьютеров работают в операционной системе за последний час.
 
-```KQL
+```Kusto
 Heartbeat
 | where TimeGenerated > ago(1h)
 | summarize count(Computer) by OSType  
@@ -52,7 +52,7 @@ Heartbeat
 ## <a name="timecharts"></a>Временные диаграммы
 Показать среднее количество 50- и 95-процентильной загруженности процессора в ячейках за 1 час. Запрос создает несколько рядов, а затем можно выбрать, какие ряды отображать на диаграмме времени.
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(1d) 
 | where CounterName == "% Processor Time" 
@@ -67,7 +67,7 @@ Perf
 
 Справочные данные помогут легко определить, превышает ли метрика указанный порог. Чтобы добавить строку в диаграмму, расширьте набор данных столбцом константы.
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(1d) 
 | where CounterName == "% Processor Time" 
@@ -80,7 +80,7 @@ Perf
 ## <a name="multiple-dimensions"></a>Несколько измерений
 Несколько выражений в значении `by` из `summarize` в результате создают несколько строк, по одному для каждой комбинации значений.
 
-```KQL
+```Kusto
 SecurityEvent
 | where TimeGenerated > ago(1d)
 | summarize count() by tostring(EventID), AccountType, bin(TimeGenerated, 1h)

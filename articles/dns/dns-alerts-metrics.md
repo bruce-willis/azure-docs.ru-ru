@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
 ms.author: victorh
-ms.openlocfilehash: 17541cdc0fd017cf762c4af55e0a6be25dead9f1
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: de29c24556522abeaff8d942edc027c7444c3ed3
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171870"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46965035"
 ---
 # <a name="azure-dns-metrics-and-alerts"></a>Метрики и оповещения Azure DNS
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. В этой статье описываются метрики и оповещения службы Azure DNS.
 
 ## <a name="azure-dns-metrics"></a>Метрики Azure DNS
 
-Azure DNS предоставляет клиентские метрики, позволяющие им вести подробное наблюдение за работой компонентов службы DNS. Кроме того, с помощью метрик Azure DNS можно настроить и получать оповещения на основе интересующих условий. Метрики предоставляются через [службу Azure Monitor](../monitoring-and-diagnostics/index.yml). Azure DNS предоставляет следующие метрики через Azure Monitor для зон DNS.
+Azure DNS предоставляет клиентские метрики, позволяющие им вести подробное наблюдение за работой компонентов службы DNS. Кроме того, с помощью метрик Azure DNS можно настроить и получать оповещения на основе интересующих условий. Метрики предоставляются через [службу Azure Monitor](../azure-monitor/index.yml). Azure DNS предоставляет следующие метрики через Azure Monitor для зон DNS.
 
 -   QueryVolume
 -   RecordSetCount

@@ -12,14 +12,19 @@ ms.workload: data-services
 ms.custom: mvc, reference
 ms.topic: article
 ms.date: 09/14/2017
-ms.openlocfilehash: 026ffed925606e2fdf31461035c9a0d73ad609e9
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ROBOTS: NOINDEX
+ms.openlocfilehash: 311fd39792274ef01b1b03fdf8252eb7ac93c922
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39059226"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978868"
 ---
 # <a name="derive-column-by-example-transformation"></a>Преобразование "Получение столбца по образцу"
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 Преобразование **Получение столбца по образцу** позволяет создать столбец, производный от одного или нескольких существующих столбцов, на основе предоставляемого пользователем образца результата. Для получения столбца может использоваться любое сочетание поддерживаемых преобразований для строк, дат и чисел. 
 

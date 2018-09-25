@@ -13,14 +13,19 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: article
 ms.date: 02/01/2018
-ms.openlocfilehash: ef5f6f3dc7ae0c555b2afe000b54c443313800f1
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: e6af524d7f80104a34831f576a14d2dbf15e384f
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35640695"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46987209"
 ---
 # <a name="supported-inspectors-for-the-azure-machine-learning-data-preparation-preview"></a>Поддерживаемые инспекторы в средстве подготовки данных службы "Машинное обучение Azure" (предварительная версия)
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 В этой статье приведен набор инспекторов, доступных в этой предварительной версии.
 
 ## <a name="the-halo-effect"></a>Эффект нимба 

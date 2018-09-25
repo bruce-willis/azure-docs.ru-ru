@@ -9,19 +9,19 @@ ms.service: storage
 ms.author: cshoe
 ms.date: 04/06/2018
 ms.topic: quickstart
-ms.openlocfilehash: c4af99055753a11a8258a4347a885e0d60e3d286
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: b7230b5fdc519809463e3ee176aa14fa1553a48d
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39399113"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46960317"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
 # <a name="quickstart-upload-list-and-delete-blobs-using-javascripthtml-in-the-browser"></a>Краткое руководство. Отправка, получение списка и удаление больших двоичных объектов с помощью JavaScript и HTML в браузере
 В этом кратком руководстве описано, как управлять BLOB-объектами из кода, выполняемого в браузере. Этот подход позволяет реализовать требуемые меры безопасности, чтобы обеспечить безопасный доступ к вашей учетной записи хранилища больших двоичных объектов. Для работы с этим кратким руководством вам потребуется [подписка Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-[!INCLUDE [storage-quickstart-tutorial-create-account-portal](../../../includes/storage-quickstart-tutorial-create-account-portal.md)]
+[!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
 
 ## <a name="setting-up-storage-account-cors-rules"></a>Настройка учетных записей хранения CORS 
 Прежде чем веб-приложение сможет получить доступ к хранилищу BLOB-объектов из клиента, в учетной записи следует включить [совместное использование ресурсов между серверами](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) или CORS. 

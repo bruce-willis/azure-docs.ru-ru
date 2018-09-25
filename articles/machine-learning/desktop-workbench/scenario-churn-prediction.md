@@ -16,14 +16,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2017
 ms.author: miprasad
-ms.openlocfilehash: 7c7b50098cfd1bcac534156dd905b37affab80bd
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0210e65c0859b00caac0fe66baa1c73063f644c8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35639613"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46947947"
 ---
 # <a name="customer-churn-prediction-using-azure-machine-learning"></a>Прогнозирование оттока клиентов с помощью Машинного обучения Azure
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 В среднем сохранение имеющихся клиентов обходится в пять раз дешевле, чем поиск новых. В результате менеджеры по маркетингу часто пытаются оценить вероятность оттока клиентов и найти необходимые меры для минимизации оттока.
 
@@ -61,7 +66,7 @@ ms.locfileid: "35639613"
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
 
-* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md).
+* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](quickstart-installation.md).
 
 * Для ввода в эксплуатацию модели лучше всего, чтобы модуль Docker был установлен и работал локально. Если нет, то можно использовать вариант с кластером. Имейте в виду, что запуск службы контейнеров Azure (ACS) может быть затратным.
 

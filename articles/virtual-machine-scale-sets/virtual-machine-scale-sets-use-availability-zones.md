@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: cynthn
-ms.openlocfilehash: 7297633b5a8954eb39e0a40bfd45b02d3838a734
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 18d9a2dade271e61fa3db423da610a7f982aa47b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42142949"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46949678"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
 
@@ -64,8 +64,8 @@ ms.locfileid: "42142949"
 
 Чтобы использовать зоны доступности, масштабируемый набор должен быть создан в [поддерживаемом регионе Azure](../availability-zones/az-overview.md#regions-that-support-availability-zones). Вы можете создать масштабируемый набор, использующий зоны доступности, с помощью одного из следующих методов:
 
-- [портал Azure](#use-the-azure-portal)
-- [Azure CLI 2.0](#use-the-azure-cli-20)
+- [портала Azure](#use-the-azure-portal)
+- [интерфейс командной строки Azure](#use-the-azure-cli-20)
 - [Azure PowerShell](#use-azure-powershell)
 - [Шаблоны диспетчера ресурсов Azure](#use-azure-resource-manager-templates)
 
@@ -77,7 +77,7 @@ ms.locfileid: "42142949"
 
 Масштабируемый набор и вспомогательные ресурсы, такие как подсистема балансировки нагрузки Azure и общедоступный IP-адрес, создаются в одной зоне, указанной вами.
 
-## <a name="use-the-azure-cli-20"></a>Использование Azure CLI 2.0
+## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
 Процесс создания масштабируемого набора, использующего зону доступности, описан в статье [Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell](quick-create-cli.md). Чтобы использовать зоны доступности, необходимо создать масштабируемый набор в поддерживаемом регионе Azure.
 

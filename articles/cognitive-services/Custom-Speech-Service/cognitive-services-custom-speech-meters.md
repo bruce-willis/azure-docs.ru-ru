@@ -9,12 +9,13 @@ ms.component: custom-speech
 ms.topic: article
 ms.date: 07/08/2017
 ms.author: panosper
-ms.openlocfilehash: d2225dec818c600febfad2f9ebc42594f6ac09ac
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0ddd6274051fed5de86a88270a0dcc2e8288d885
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380072"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974533"
 ---
 # <a name="custom-speech-service-meters-and-quotas"></a>Единицы измерения и квоты Пользовательской службы распознавания речи
 
@@ -48,7 +49,7 @@ Scale Out — это новая функция, которая представ�
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о том, как использовать Пользовательскую службу распознавания речи, доступны на [портале Пользовательской службы распознавания речи](https://cris.ai).
 
-* [Приступая к работе](cognitive-services-custom-speech-get-started.md)
+* [Начало работы](cognitive-services-custom-speech-get-started.md)
 * [Часто задаваемые вопросы](cognitive-services-custom-speech-faq.md)
 * [Глоссарий](cognitive-services-custom-speech-glossary.md)
  

@@ -11,14 +11,19 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: 29f493449d48df26919a98452fa7f832d653d45e
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ROBOTS: NOINDEX
+ms.openlocfilehash: 762955103aeb48eb8a9b62f4e3ffe193bba71a38
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37861488"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46947223"
 ---
 # <a name="document-collection-analysis"></a>Анализ коллекции документов
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 В этом сценарии показано, как обобщать и анализировать большие коллекции документов, используя такие методы, как изучение фраз, тематическое моделирование и анализ тематических моделей с помощью Azure Machine Learning Workbench. Azure Machine Learning Workbench позволяет легко увеличивать масштаб для очень большой коллекции документов и предоставляет механизмы обучения и настройки моделей в различных контекстах вычислений: от локальных вычислений до виртуальных машин для обработки и анализа данных в кластере Spark. Записные книжки Jupyter в Azure Machine Learning Workbench позволяют упростить процесс разработки.
 
@@ -56,11 +61,11 @@ ms.locfileid: "37861488"
 
 1. Обнаружение тематических тенденций и аномалий.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Предварительные требования для выполнения этого сценария:
 
-* Правильно установите [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md), следуя [краткому руководству по установке и созданию](../service/quickstart-installation.md).
+* Правильно установите [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md), следуя [краткому руководству по установке и созданию](quickstart-installation.md).
 
 * Этот пример можно выполнить в любом контексте вычислений. Но мы рекомендуем использовать компьютер с несколькими ядрами, как минимум с 16 ГБ памяти и 5 ГБ дискового пространства.
 

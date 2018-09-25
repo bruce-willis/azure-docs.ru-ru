@@ -13,14 +13,19 @@ ms.custom: mvc
 ms.devlang: ''
 ms.topic: article
 ms.date: 11/22/2017
-ms.openlocfilehash: 83e1f14db317f59ab2063a9d020adbdb6fe78e5f
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5d52433a32d8dc764c7535dacf5872e55f0082ac
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35642151"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46995522"
 ---
 # <a name="deep-learning-for-predictive-maintenance-real-world-scenarios"></a>Глубокое обучение реальным сценариям прогнозного обслуживания
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 Глубокое обучение является одной из самых популярных тенденций в машинном обучении и применяется для множества областей, включая:
 - беспилотные автомобили и робототехнику;
@@ -75,7 +80,7 @@ az login
 az ml experiment prepare --target docker --run-configuration docker
 ```
 
-Выполнять эту задачу рекомендуется на [виртуальной машине для обработки и анализа данных (DSVM) для Linux (Ubuntu)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu) с учетом требований к памяти и диску. После настройки DSVM подготовьте удаленную среду Docker с помощью следующих двух команд:
+Выполнять эту задачу рекомендуется на [виртуальной машине для обработки и анализа данных (DSVM) для Linux (Ubuntu)](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.linux-data-science-vm-ubuntu) с учетом требований к памяти и диску. После настройки DSVM подготовьте удаленную среду Docker с помощью следующих двух команд:
 
 ```
 az ml computetarget attach remotedocker --name [Connection_Name] --address [VM_IP_Address] --username [VM_Username] --password [VM_UserPassword]

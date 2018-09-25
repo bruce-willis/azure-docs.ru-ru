@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 04/05/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 17398a9f74e40a7d513912d654fa609d9837d805
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 6d178fe3caa121c51ef081708ca440113871938e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32165414"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996916"
 ---
 # <a name="monitor-a-kubernetes-cluster-with-log-analytics"></a>Мониторинг кластера Kubernetes с помощью Log Analytics
 
@@ -153,7 +153,7 @@ omsagent   3         3         3         0            3           <none>        
 
 На портале Azure перейдите к **Log Analytics** и выберите имя рабочей области. Чтобы увидеть плитку сводки **Контейнеры**, щелкните **Решения** > **Контейнеры**. Чтобы просмотреть сведения, щелкните плитку.
 
-Подробные сведения о создании запросов и анализе данных мониторинга см. в [документации по Log Analytics](../../log-analytics/index.yml).
+Подробные сведения о создании запросов и анализе данных мониторинга см. в [документации по Log Analytics](../../log-analytics/log-analytics-queries.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

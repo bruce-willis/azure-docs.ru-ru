@@ -9,12 +9,13 @@ ms.component: custom-speech
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: panosper
-ms.openlocfilehash: 6d92459deb3464cd97c215cbf9a8320628b6da80
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 44411e0c92f4e24e274761821dd99efbe60c5f5d
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380709"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964979"
 ---
 # <a name="migrate-deployments-to-the-new-pricing-model"></a>Перенос развертываний на новую модель ценообразования
 Начиная с июля 2017 г. для Пользовательской службы распознавания речи предлагается [новая модель ценообразования](https://azure.microsoft.com/pricing/details/cognitive-services/custom-speech-service/). Новая модель *более понятна*, *упрощает расчет затрат* и *дает больше гибкости* с точки зрения масштабирования. Для масштабирования корпорация Майкрософт ввела новую концепцию единиц масштабирования. Каждая единица масштабирования может обрабатывать пять параллельных запросов. В старой модели для параллельных запросов предлагались лишь фиксированные варианты — 5 одновременных запросов для уровня S0 или 12 одновременных запросов для уровня S1. Мы сняли эти ограничения, предоставляя вам больше гибкости в выборе параметров в соответствии с конкретными требованиями.
@@ -67,7 +68,7 @@ ms.locfileid: "35380709"
 >
 
 ## <a name="next-steps"></a>Дополнительная информация
-Другие руководства см. по следующим ссылкам:
+Другие руководства доступны по следующим ссылкам:
 * [Создание пользовательской акустической модели](cognitive-services-custom-speech-create-acoustic-model.md)
 * [Создание пользовательской языковой модели](cognitive-services-custom-speech-create-language-model.md)
 * [Создание пользовательской конечной точки преобразования речи в текст](cognitive-services-custom-speech-create-endpoint.md)

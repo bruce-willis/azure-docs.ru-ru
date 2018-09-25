@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: quickstart
 ms.date: 08/22/2018
-ms.openlocfilehash: ff9929d8f2da66b8aa24160c321c9158c832dbc0
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: bf2116d7fc143e66309e3bbbdefc50bfa33f1521
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42815191"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974567"
 ---
 # <a name="use-ansible-to-create-a-linux-virtual-machine-in-azure"></a>Создание виртуальной машины Linux в Azure с помощью Ansible
 Используя декларативный язык, Ansible позволяет автоматизировать создание, конфигурацию и развертывание ресурсов Azure с помощью *сборников схем*. В каждом разделе этой статьи описано, как может выглядеть сборник схем Ansible для создания и конфигурации различных аспектов виртуальной машины Linux. [Полный сборник схем Ansible](#complete-sample-ansible-playbook) указан в конце этой статьи.

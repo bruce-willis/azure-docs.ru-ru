@@ -15,12 +15,12 @@ ms.date: 05/23/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 10e0df78d75763dfcf8636983c9f9092b78b9c3b
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: d5a67cdcef7f39830b747dec5f2c980483e1ab91
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437655"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978341"
 ---
 # <a name="view-activity-logs-for-rbac-changes"></a>Просмотр журналов действий на предмет изменений в RBAC
 
@@ -125,7 +125,7 @@ az monitor activity-log list --resource-provider "Microsoft.Authorization" --sta
 
    ![Кнопка "Log Analytics" на портале](./media/change-history-report/azure-log-analytics-option.png)
 
-1. При необходимости используйте страницу [Поиска по журналам](../log-analytics/log-analytics-log-search.md) или [портал расширенной аналитики](https://docs.loganalytics.io/docs/Learn) для формирования запросов и просмотра журналов. Дополнительные сведения об этих двух вариантах см. в разделах о [странице "Поиск по журналам" или портале расширенной аналитики](../log-analytics/log-analytics-log-search-portals.md).
+1. При необходимости используйте страницу [Поиска по журналам](../log-analytics/log-analytics-log-search.md) или [портал расширенной аналитики](../log-analytics/query-language/get-started-analytics-portal.md) для формирования запросов и просмотра журналов. Дополнительные сведения об этих двух вариантах см. в разделах о [странице "Поиск по журналам" или портале расширенной аналитики](../log-analytics/log-analytics-log-search-portals.md).
 
 Ниже приведен запрос, возвращающий новые назначения ролей, упорядоченные по целевому поставщику ресурсов.
 

@@ -13,14 +13,19 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: article
 ms.date: 02/01/2018
-ms.openlocfilehash: 07b9ac8389a2bf06e0356f65d816d75d49cc0cf5
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9168ac1d26432ca3eee5a59b63aa0cec3ae72856
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35642071"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46989062"
 ---
 # <a name="supported-matrix-for-this-release"></a>Поддерживаемая матрица для этого выпуска 
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 Когда в коде выполняется загрузка данных с помощью источников данных службы "Машинное обучение Azure" или средств подготовки данных в этой службе, при получении таблицы данных Spark или Pandas поддерживаются следующие сочетания экспериментальных вычислительных сред и расположений данных:
 
 |     |Локальные файлы  |Хранилище больших двоичных объектов Azure  |База данных SQL Server***  |

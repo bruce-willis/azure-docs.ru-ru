@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 03/26/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: ebf8605a0f4686a69f89adf0c36d072f12d3c750
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 07d1d1f7050437306d5c2737b9f62b5615753869
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39525262"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46980429"
 ---
 # <a name="manage-azure-file-shares-using-azure-cli"></a>Управление файловыми ресурсами Azure с помощью Azure CLI
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В статье рассматриваются основы работы с файловыми ресурсами Azure с помощью Azure CLI. Вы узнаете, как выполнять следующие задачи: 
@@ -30,7 +30,7 @@ ms.locfileid: "39525262"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы хотите установить и использовать Azure CLI локально, для выполнения всех действий из данной статьи требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, как версия Azure CLI установлена, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
+Если вы хотите установить и использовать Azure CLI локально, для выполнения всех действий из данной статьи требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, как версия Azure CLI установлена, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 По умолчанию команды Azure CLI возвращают ответ в формате JSON. Это стандартный способ отправки и получения сообщений из REST API. Для облегчения работы с ответами в формате JSON в некоторых примерах в этой статье с командами Azure CLI используется параметр *запроса*. Этот параметр использует [язык запросов JMESPath](http://jmespath.org/) для синтаксического анализа JSON. Дополнительные сведения о том, как обрабатывать результаты выполнения команд Azure CLI с применением языка запросов JMESPath, см. в [руководстве по JMESPath](http://jmespath.org/tutorial.html).
 

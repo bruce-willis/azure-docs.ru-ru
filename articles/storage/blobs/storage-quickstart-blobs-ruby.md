@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: seguler
-ms.openlocfilehash: 9b0a7047cf7e5eab55c8a56acae42dd95fd61d94
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 88394d7da1aab52b752aee68de60e638d0c7e7f0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398076"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46992768"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-ruby"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью аннотации
 
@@ -31,7 +31,7 @@ gem install azure-storage-blob
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [storage-quickstart-tutorial-create-account-portal](../../../includes/storage-quickstart-tutorial-create-account-portal.md)]
+[!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
 
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
 [Пример приложения](https://github.com/Azure-Samples/storage-blobs-ruby-quickstart.git), используемый в этом кратком руководстве, представляет собой простое приложение Ruby.  

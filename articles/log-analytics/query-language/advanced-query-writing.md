@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: f7594b7d1eb7d41508be435cdd0a6203433727c1
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 2f9868abd0eb8bf96928aeba6f96c10bcb91c4e2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45603062"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46958564"
 ---
 # <a name="writing-advanced-queries-in-log-analytics"></a>Составление расширенных запросов в Log Analytics
 
@@ -32,7 +32,7 @@ ms.locfileid: "45603062"
 ## <a name="reusing-code-with-let"></a>Повторное использование кода с помощью оператора let
 С помощью оператора `let` можно присвоить результаты переменной и ссылаться на нее позже в запросе:
 
-```KQL
+```Kusto
 // get all events that have level 2 (indicates warning level)
 let warning_events=
 Event
@@ -44,7 +44,7 @@ warning_events
 
 Переменным также можно назначить постоянные значения. При этом можно настроить параметры для полей, которые необходимо менять каждый раз, когда вы выполняете запрос. Измените параметры нужным образом. Например, чтобы вычислить свободное дисковое пространство и объем доступной памяти (в процентилях) в заданный период времени:
 
-```KQL
+```Kusto
 let startDate = datetime(2018-08-01T12:55:02);
 let endDate = datetime(2018-08-02T13:21:35);
 let FreeDiskSpace =
@@ -65,7 +65,7 @@ union FreeDiskSpace, FreeMemory
 ### <a name="local-functions-and-parameters"></a>Локальные функции и параметры
 С помощью оператора `let` можно создать функции, которые могут использоваться в одном запросе. Например, определите функцию, которая принимает поле datetime (в формате UTC) и преобразует его в стандартный формат США. 
 
-```KQL
+```Kusto
 let utc_to_us_date_format = (t:datetime)
 {
   strcat(getmonth(t), "/", dayofmonth(t),"/", getyear(t), " ",
@@ -80,7 +80,7 @@ Event
 ## <a name="functions"></a>Функции Azure
 Вы можете сохранить запрос с псевдонимом функции, чтобы на него могли ссылаться другие запросы. Например, следующий стандартный запрос возвращает все отсутствующие обновления безопасности, о которых сообщалось в последний день:
 
-```KQL
+```Kusto
 Update
 | where TimeGenerated > ago(1d) 
 | where Classification == "Security Updates" 
@@ -89,7 +89,7 @@ Update
 
 Вы можете сохранить этот запрос как функцию и присвоить ему псевдоним, например _security_updates_last_day_. Затем вы можете использовать его в другом запросе для поиска необходимых обновлений безопасности SQL:
 
-```KQL
+```Kusto
 security_updates_last_day | where Title contains "SQL"
 ```
 
@@ -102,7 +102,7 @@ security_updates_last_day | where Title contains "SQL"
 ## <a name="print"></a>Оператор print
 `print` возвращает таблицу с одним столбцом и одной строкой, содержащей результаты вычисления. Это часто используется в тех случаях, когда нужно простое вычисление. Например, чтобы найти текущее время в формате PST и добавить столбец с временем в формате EST.
 
-```KQL
+```Kusto
 print nowPst = now()-8h
 | extend nowEst = nowPst+3h
 ```
@@ -110,7 +110,7 @@ print nowPst = now()-8h
 ## <a name="datatable"></a>Оператор datatable
 `datatable` позволяет определить набор данных. Укажите схему и набор значений, а затем передайте таблицу в любые другие элементы запроса. Например, чтобы создать таблицу использования ОЗУ и вычислить среднее значение в час:
 
-```KQL
+```Kusto
 datatable (TimeGenerated: datetime, usage_percent: double)
 [
   "2018-06-02T15:15:46.3418323Z", 15.5,
@@ -127,7 +127,7 @@ datatable (TimeGenerated: datetime, usage_percent: double)
 
 Конструкции datatable также очень полезны при создании таблицы подстановки. Например, чтобы сопоставить данные таблицы, такие как идентификаторы событий из таблицы _SecurityEvent_, с типами событий, перечисленными в другом месте, создайте таблицу подстановки с типами событий, используя оператор `datatable`, и соедините эту таблицу с данными _SecurityEvent_:
 
-```KQL
+```Kusto
 let eventCodes = datatable (EventID: int, EventType:string)
 [
     4625, "Account activity",

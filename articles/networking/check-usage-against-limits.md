@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/05/2018
 ms.author: jdial
-ms.openlocfilehash: 30b0c1bdd23858b5cc6224deb2698b5f180359eb
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 124653f95dedbb1606e85cbfcd8229c026cf7341
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43288236"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46960657"
 ---
 # <a name="check-resource-usage-against-limits"></a>Проверка использования ресурсов в соответствии с ограничениями
 
@@ -72,7 +72,7 @@ Network Watchers                   1     1
 
 ## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этой статьи требуется Azure CLI 2.0.32 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI запущена локально, необходимо также выполнить командлет `az login`, чтобы войти в Azure.
+При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этой статьи требуется Azure CLI 2.0.32 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Если Azure CLI запущена локально, необходимо также выполнить командлет `az login`, чтобы войти в Azure.
 
 Просмотрите использование ваших ресурсов относительно установленных ограничений с помощью команды [az network list-usages](/cli/azure/network?view=azure-cli-latest#az-network-list-usages). В следующем примере показано использование ресурсов в регионе "Восточная часть США":
 

@@ -12,14 +12,19 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
-ms.openlocfilehash: 33d95e0c17e8b9b18313cb0854532337ec76cfd1
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ROBOTS: NOINDEX
+ms.openlocfilehash: e0f6148e1fb28838bf99c63fbfbfbfe8cd127c8c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42142740"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46973214"
 ---
 #  <a name="q--a-matching-using-azure-machine-learning-workbench"></a>Сопоставление вопросов и ответов с помощью Azure Machine Learning Workbench
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 На открытые вопросы часто трудно найти ответ, и для этого требуются ручные действия профильных специалистов. Чтобы сократить нагрузку на внутренних специалистов, компании часто создают списки часто задаваемых вопросов (FAQ) для помощи пользователям. В этом примере показаны различные действующие методы машинного обучения, которые сопоставляют открытые запросы и уже существующие пары часто задаваемых вопросов и ответов на них. В этом примере показан несложный процесс разработки, позволяющий создать такое решение с использованием Azure Machine Learning Workbench. 
 
 ## <a name="link-to-the-gallery-github-repository"></a>Ссылка на репозиторий коллекции на GitHub
@@ -42,7 +47,7 @@ ms.locfileid: "42142740"
 Предварительные требования для выполнения этого сценария:
 
 1. [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
-2. Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md).
+2. Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](quickstart-installation.md).
 3. Этот пример можно выполнить в любом контексте вычислений. Но мы рекомендуем использовать компьютер с несколькими ядрами, как минимум с 16 ГБ памяти и 5 ГБ дискового пространства.
 
 ## <a name="create-a-new-workbench-project"></a>Создание проекта в Workbench

@@ -4,16 +4,16 @@
 ## [Что такое Data Lake Analytics?](data-lake-analytics-overview.md)
 
 # Начало работы
-## [портал Azure](data-lake-analytics-get-started-portal.md)
+## [портала Azure](data-lake-analytics-get-started-portal.md)
 ## [Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 ## [Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 ## [Azure PowerShell](data-lake-analytics-get-started-powershell.md)
-## [интерфейс командной строки Azure](data-lake-analytics-get-started-cli2.md)
+## [Интерфейс командной строки Azure](data-lake-analytics-get-started-cli.md)
 
 # Практическое руководство
 
 ## Управление службой Data Lake Analytics
-### [портал Azure](data-lake-analytics-manage-use-portal.md)
+### [портала Azure](data-lake-analytics-manage-use-portal.md)
 ### Команда
 #### [Интерфейс командной строки Azure](data-lake-analytics-manage-use-cli.md)
 #### [Azure PowerShell](data-lake-analytics-manage-use-powershell.md)

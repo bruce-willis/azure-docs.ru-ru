@@ -12,14 +12,18 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 09/21/2017
-ms.openlocfilehash: 2a50350b9ba49d82a20b92804ffb92ec6906186d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ROBOTS: NOINDEX
+ms.openlocfilehash: cae80408a7440136b504647596c84a459a0d679c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39439906"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46971711"
 ---
 # <a name="tutorial-use-azure-machine-learning-workbench-for-advanced-data-preparation-bike-share-data"></a>Руководство. Использование Azure Machine Learning Workbench для расширенной подготовки данных (система совместного использования велосипедов)
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
+
 Машинное обучение Azure (предварительная версия) — это полнофункциональное интегрированное аналитическое решение для специалистов по обработке данных. Оно помогает подготавливать данные, разрабатывать эксперименты и развертывать модели в масштабе облака.
 
 В этом руководстве вы будете использовать машинное обучение (предварительная версия), чтобы научиться выполнять следующие задачи:
@@ -36,7 +40,7 @@ ms.locfileid: "39439906"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Локально установленное приложение Azure Machine Learning Workbench. Дополнительные сведения см. в [кратком руководстве по установке](../service/quickstart-installation.md).
+* Локально установленное приложение Azure Machine Learning Workbench. Дополнительные сведения см. в [кратком руководстве по установке](quickstart-installation.md).
 * Если у вас не установлен Azure CLI, следуйте инструкциям по [установке последней версии Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * [Кластер HDInsight Spark](how-to-create-dsvm-hdi.md#create-an-apache-spark-for-azure-hdinsight-cluster-in-azure-portal), созданный в Azure.
 * Учетная запись хранения Azure.

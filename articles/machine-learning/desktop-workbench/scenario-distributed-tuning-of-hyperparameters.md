@@ -11,14 +11,19 @@ ms.author: dmpechyo
 manager: mwinkle
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.date: 09/20/2017
-ms.openlocfilehash: 920b019640df9d2da174101e2b1b90dfd4da6f56
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ROBOTS: NOINDEX
+ms.openlocfilehash: f74889cdf727bc132723d16df295849769001ce9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45578741"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46951973"
 ---
 # <a name="distributed-tuning-of-hyperparameters-using-azure-machine-learning-workbench"></a>Распределенная настройка гиперпараметров с помощью Azure Machine Learning Workbench
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
+
 
 В этом сценарии показано, как с помощью Azure Machine Learning Workbench масштабировать настройку гиперпараметров алгоритмов машинного обучения, реализующих API scikit-learn. Мы покажем, как настроить и использовать удаленный контейнер Docker и кластер Spark в качестве серверной части для выполнения настройки гиперпараметров.
 
@@ -38,7 +43,7 @@ ms.locfileid: "45578741"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
-* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать учетные записи, выполните инструкции из [краткого руководства по установке и созданию](../service/quickstart-installation.md).
+* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать учетные записи, выполните инструкции из [краткого руководства по установке и созданию](quickstart-installation.md).
 * В этом сценарии предполагается, что Azure ML Workbench работает в Windows 10 или MacOS с подсистемой Docker, установленной на локальном компьютере. 
 * Чтобы выполнить сценарий в удаленном контейнере Docker, подготовьте виртуальную машину для обработки и анализа данных под управлением Ubuntu, следуя этим [инструкциям](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm). Рекомендуем использовать виртуальную машину с как минимум 8 ядрами и 28 ГБ памяти. Такими характеристиками обладают экземпляры виртуальных машин D4. 
 * Чтобы выполнить этот сценарий в кластере Spark, подготовьте кластер Spark HDInsight, следуя этим [инструкциям](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters). Мы рекомендуем использовать кластер с такими конфигурациями на головном и рабочем узлах:

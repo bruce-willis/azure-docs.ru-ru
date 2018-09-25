@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: marsma
-ms.openlocfilehash: d2f7769469c9f3ebdbef5fc6ee1f09b1acd573ef
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: c9ade4d61a1b95d5041a13f9436f0d02a7951758
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715835"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981674"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -21,7 +21,7 @@ ms.locfileid: "39715835"
 
 ## <a name="grant-aks-access-to-acr"></a>Предоставление AKS доступа к ACR
 
-Когда вы создаете кластер AKS, Azure также создает субъект-службу для взаимодействия кластера с другими ресурсами Azure. Автоматически созданный субъект-службу можно использовать для аутентификации в реестре ACR. Для этого в Azure AD нужно [назначить субъекту-службе кластера роль](../role-based-access-control/overview.md#role-assignment), у которой есть доступ к реестру контейнеров.
+Когда вы создаете кластер AKS, Azure также создает субъект-службу для взаимодействия кластера с другими ресурсами Azure. Автоматически созданный субъект-службу можно использовать для аутентификации в реестре ACR. Для этого в Azure AD нужно [назначить субъекту-службе кластера роль](../role-based-access-control/overview.md#role-assignments), у которой есть доступ к реестру контейнеров.
 
 Используйте следующий скрипт для предоставления субъекту-службе, созданному службой AKS, доступа к реестру контейнеров Azure. Прежде чем выполнять этот скрипт, измените переменные `AKS_*` и `ACR_*` в соответствии с условиями своей среды.
 

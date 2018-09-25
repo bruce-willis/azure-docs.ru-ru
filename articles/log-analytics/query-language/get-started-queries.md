@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 548c94ce502da8c6a8d208daafb5b0fb624de1e1
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: b56a75074af239f60b82edbe1d074c6384c4aef1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45603944"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46982990"
 ---
 # <a name="get-started-with-queries-in-log-analytics"></a>Начало работы с запросами в Log Analytics
 
@@ -50,7 +50,7 @@ ms.locfileid: "45603944"
 ### <a name="table-based-queries"></a>Запросы на основе таблиц
 Azure Log Analytics упорядочивает данные в таблицы, каждая из которых состоит из нескольких столбцов. На портале аналитики в области схемы отображаются все таблицы и столбцы. Определите интересующую вас таблицу, а затем взгляните на часть данных:
 
-```KQL
+```Kusto
 SecurityEvent
 | take 10
 ```
@@ -66,7 +66,7 @@ SecurityEvent
 ### <a name="search-queries"></a>Поисковые запросы
 Поисковые запросы менее структурированы и, как правило, более подходят для поиска записей, которые содержат указанное значение в любом из столбцов:
 
-```KQL
+```Kusto
 search in (SecurityEvent) "Cryptographic"
 | take 10
 ```
@@ -79,7 +79,7 @@ search in (SecurityEvent) "Cryptographic"
 ## <a name="sort-and-top"></a>Операторы sort и top
 Хотя команда **take** и полезна для получения нескольких записей, но результаты выбираются и отображаются в произвольном порядке. Чтобы получить упорядоченное представление, можно выполнить **сортировку** по предпочтительному столбцу:
 
-```
+```Kusto
 SecurityEvent   
 | sort by TimeGenerated desc
 ```
@@ -88,7 +88,7 @@ SecurityEvent
 
 Лучшим способом получить только последние 10 записей является использование оператора **top**, который сортирует таблицу целиком на стороне сервера, а затем возвращает первые записи:
 
-```KQL
+```Kusto
 SecurityEvent
 | top 10 by TimeGenerated
 ```
@@ -103,7 +103,7 @@ SecurityEvent
 
 Чтобы добавить фильтр к запросу, используйте оператор **where**, за которым следует одно или несколько условий. Например, следующий запрос возвращает только записи *SecurityEvent*, где _Level_ равняется _8_:
 
-```KQL
+```Kusto
 SecurityEvent
 | where Level == 8
 ```
@@ -119,14 +119,14 @@ SecurityEvent
 
 Чтобы отфильтровать по нескольким условиям, можно использовать оператор **and**:
 
-```KQL
+```Kusto
 SecurityEvent
 | where Level == 8 and EventID == 4672
 ```
 
 Для этого также можно включить несколько элементов **where**, разделенных вертикальной чертой:
 
-```KQL
+```Kusto
 SecurityEvent
 | where Level == 8 
 | where EventID == 4672
@@ -146,7 +146,7 @@ SecurityEvent
 ### <a name="time-filter-in-query"></a>Фильтр времени в запросе
 Вы также можете определить ваш собственный диапазон времени, добавив фильтр времени к запросу. Лучше всего поместить фильтр времени сразу после имени таблицы: 
 
-```KQL
+```Kusto
 SecurityEvent
 | where TimeGenerated > ago(30m) 
 | where toint(Level) >= 10
@@ -158,7 +158,7 @@ SecurityEvent
 ## <a name="project-and-extend-select-and-compute-columns"></a>Операторы project и extend. Выбор и вычисление столбцов
 Используйте оператор **project**, чтобы выбрать конкретные столбцы, которые нужно включить в результаты:
 
-```KQL
+```Kusto
 SecurityEvent 
 | top 10 by TimeGenerated 
 | project TimeGenerated, Computer, Activity
@@ -175,7 +175,7 @@ SecurityEvent
 * Создание столбца *EventCode*. Функция **substring()** используется для получения только первых четырех символов из поля Activity.
 
 
-```KQL
+```Kusto
 SecurityEvent
 | top 10 by TimeGenerated 
 | project Computer, TimeGenerated, EventDetails=Activity, EventCode=substring(Activity, 0, 4)
@@ -183,7 +183,7 @@ SecurityEvent
 
 **extend** отслеживает все исходные столбцы в результирующем наборе, а также определяет дополнительные. В следующем запросе **extend** используется для добавления столбца *localtime*, содержащего локализованное значение TimeGenerated.
 
-```KQL
+```Kusto
 SecurityEvent
 | top 10 by TimeGenerated
 | extend localtime = TimeGenerated-8h
@@ -193,7 +193,7 @@ SecurityEvent
 С помощью оператора **summarize** можно определить группы записей в соответствии с одним или несколькими столбцами и применить к ним статистические вычисления. Поэтому с **summarize** чаще всего применяется функция *count*, которая возвращает число результатов в каждой группе.
 
 Следующий запрос проверяет все записи в таблице *Perf* за последний час, группирует их по столбцу *ObjectName* и подсчитывает количество записей в каждой группе: 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(1h)
 | summarize count() by ObjectName
@@ -201,7 +201,7 @@ Perf
 
 Иногда имеет смысл определить группы по нескольким измерениям. Каждое уникальное сочетание этих значений определяет отдельную группу:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(1h)
 | summarize count() by ObjectName, CounterName
@@ -209,7 +209,7 @@ Perf
 
 Другое распространенное использование — выполнять математические или статистические вычисления в каждой группе. Например, следующий фрагмент вычисляет среднее значение *CounterValue* для каждого компьютера:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(1h)
 | summarize avg(CounterValue) by Computer
@@ -217,7 +217,7 @@ Perf
 
 К сожалению, результаты этого запроса бессмысленны, так как мы смешали разные счетчики производительности. Чтобы это имело смысл, следует рассчитывать среднее значение отдельно для каждого сочетания *CounterName* и *Computer*:
 
-```KQL
+```Kusto
 Perf
 | where TimeGenerated > ago(1h)
 | summarize avg(CounterValue) by Computer, CounterName
@@ -228,7 +228,7 @@ Perf
 
 Чтобы создать группы на основании непрерывных значений, рекомендуется разбить диапазон на управляемые единицы с помощью **bin**. Следующий запрос анализирует записи *Perf* с данными об измерении свободной памяти (*доступная память в МБ*) на указанном компьютере. Вычисляется среднее значение для каждого периода в 1 час за последние 2 дня:
 
-```KQL
+```Kusto
 Perf 
 | where TimeGenerated > ago(2d)
 | where Computer == "ContosoAzADDS2" 

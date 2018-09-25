@@ -11,14 +11,17 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/28/2017
-ms.openlocfilehash: e79817ffad139e0a3bcb0ba32b9bc6e5666319d0
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3c5084e548bbb72fa38aae8b60aa46fb4d462dca
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35638389"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46990354"
 ---
 # <a name="configuring-azure-machine-learning-experimentation-service"></a>Настройка службы "Экспериментирование в Машинном обучении Azure"
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
 
 ## <a name="overview"></a>Обзор
 Служба "Экспериментирование в Машинном обучении Azure" позволяет специалистам по обработке и анализу данных проводить эксперименты, управляя их выполнением и запусками при помощи функций службы "Машинное обучение Azure". Она предоставляет платформу для гибкого экспериментирования и быстрых итераций. Приложение Azure Machine Learning Workbench позволяет начать выполнение эксперимента на локальном компьютере, а затем легко увеличить его масштаб путем развертывая в других окружениях. Например, на удаленных виртуальных машинах для обработки и анализа данных с поддержкой графических процессоров или в кластерах HDInsight под управлением Spark.
@@ -325,5 +328,5 @@ az ml experiment prepare -c remotevm
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Create Azure Machine Learning preview accounts and install Azure Machine Learning Workbench](../service/quickstart-installation.md) (Создание учетных записей для предварительной версии Машинного обучения Azure и установка Azure Machine Learning Workbench).
+* [Create Azure Machine Learning preview accounts and install Azure Machine Learning Workbench](quickstart-installation.md) (Создание учетных записей для предварительной версии Машинного обучения Azure и установка Azure Machine Learning Workbench).
 * [Управление моделями](model-management-overview.md)
