@@ -1,177 +1,188 @@
+items:
 - name: Документация по шлюзу приложений
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о шлюзах приложений
-      href: overview.md
+  - name: Сведения о шлюзах приложений
+    href: overview.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Управление веб-трафиком с помощью портала
-      href: quick-create-portal.md
-    - name: Управление веб-трафиком с помощью PowerShell
-      href: quick-create-powershell.md
-    - name: Управление веб-трафиком с помощью Azure CLI
-      href: quick-create-cli.md
+  - name: Управление веб-трафиком с помощью портала
+    href: quick-create-portal.md
+  - name: Управление веб-трафиком с помощью PowerShell
+    href: quick-create-powershell.md
+  - name: Управление веб-трафиком с помощью Azure CLI
+    href: quick-create-cli.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Управление веб-трафиком
-      href: tutorial-manage-web-traffic-cli.md
-    - name: Включение брандмауэра веб-приложения Azure
-      href: tutorial-restrict-web-traffic-cli.md
-    - name: Защита с помощью SSL
-      href: tutorial-ssl-cli.md
-    - name: Размещение нескольких сайтов
-      href: tutorial-multiple-sites-cli.md
-    - name: Маршрутизация на основе URL-адреса
-      href: tutorial-url-route-cli.md
-    - name: Перенаправление веб-трафика
-      href: tutorial-url-redirect-cli.md
+  - name: Управление веб-трафиком
+    href: tutorial-manage-web-traffic-cli.md
+  - name: Включение брандмауэра веб-приложения Azure
+    href: tutorial-restrict-web-traffic-cli.md
+  - name: Защита с помощью SSL
+    href: tutorial-ssl-cli.md
+  - name: Размещение нескольких сайтов
+    href: tutorial-multiple-sites-cli.md
+  - name: Маршрутизация на основе URL-адреса
+    href: tutorial-url-route-cli.md
+  - name: Перенаправление веб-трафика
+    href: tutorial-url-redirect-cli.md
 - name: Примеры
   items:
-    - name: Azure PowerShell
-      href: powershell-samples.md
-    - name: Инфраструктура CLI Azure
-      href: cli-samples.md
+  - name: Azure PowerShell
+    href: powershell-samples.md
+  - name: Инфраструктура CLI Azure
+    href: cli-samples.md
 - name: Основные понятия
   items:
-    - name: завершение SSL-запросов;
-      href: ssl-overview.md
-    - name: Общие сведения о политике SSL
-      href: application-gateway-ssl-policy-overview.md
-    - name: Брандмауэр веб-приложения
-      href: waf-overview.md
-    - name: Маршрутизация URL-адресов
-      href: url-route-overview.md
-    - name: Размещение нескольких сайтов
-      href: multiple-site-overview.md
-    - name: Поддержка перенаправления
-      href: redirect-overview.md
-    - name: Поддержка мультитенантного режима
-      href: application-gateway-web-app-overview.md
-    - name: Мониторинг работоспособности
-      href: application-gateway-probe-overview.md
-    - name: Поддержка WebSocket
-      href: application-gateway-websocket.md
+  - name: завершение SSL-запросов;
+    href: ssl-overview.md
+  - name: Общие сведения о политике SSL
+    href: application-gateway-ssl-policy-overview.md
+  - name: Брандмауэр веб-приложения
+    href: waf-overview.md
+  - name: Конфигурация WAF
+    href: application-gateway-waf-configuration.md
+  - name: Маршрутизация URL-адресов
+    href: url-route-overview.md
+  - name: Размещение нескольких сайтов
+    href: multiple-site-overview.md
+  - name: Автомасштабирование и избыточность в пределах зоны
+    href: application-gateway-autoscaling-zone-redundant.md
+  - name: Поддержка перенаправления
+    href: redirect-overview.md
+  - name: Поддержка мультитенантного режима
+    href: application-gateway-web-app-overview.md
+  - name: Мониторинг работоспособности
+    href: application-gateway-probe-overview.md
+  - name: Поддержка WebSocket
+    href: application-gateway-websocket.md
 - name: Практические руководства
   items:
-    - name: Управление веб-трафиком
+  - name: Управление веб-трафиком
+    items:
+    - name: Azure PowerShell
+      href: tutorial-manage-web-traffic-powershell.md
+    - name: Шаблон
+      href: create-vmss-template.md
+  - name: Настройка внутреннего балансировщика нагрузки
+    items:
+    - name: Azure PowerShell
+      href: application-gateway-ilb-arm.md
+  - name: Настройка завершения SSL-запросов
+    items:
+    - name: Завершение SSL-запросов с помощью портала Azure
+      href: create-ssl-portal.md
+    - name: Завершение SSL-запросов с помощью Azure PowerShell
+      href: tutorial-ssl-powershell.md
+    - name: Сквозное завершение SSL-запросов с помощью Azure PowerShell
+      href: application-gateway-end-to-end-ssl-powershell.md
+    - name: Обновление сертификатов
+      href: renew-certificates.md
+    - name: Настройка политики SSL
+      href: application-gateway-configure-ssl-policy-powershell.md
+  - name: Настройка брандмауэра веб-приложения
+    items:
+    - name: Портал Azure
+      href: application-gateway-web-application-firewall-portal.md
+    - name: Azure PowerShell
+      href: tutorial-restrict-web-traffic-powershell.md
+  - name: Настройка правил WAF
+    items:
+    - name: Портал Azure
+      href: application-gateway-customize-waf-rules-portal.md
+    - name: Azure PowerShell
+      href: application-gateway-customize-waf-rules-powershell.md
+    - name: Инфраструктура CLI Azure
+      href: application-gateway-customize-waf-rules-cli.md
+  - name: Маршрутизация на основе URL-адреса
+    items:
+    - name: Портал Azure
+      href: create-url-route-portal.md
+    - name: Azure PowerShell
+      href: tutorial-url-route-powershell.md
+  - name: Размещение нескольких сайтов
+    items:
+    - name: Портал Azure
+      href: create-multiple-sites-portal.md
+    - name: Azure PowerShell
+      href: tutorial-multiple-sites-powershell.md
+  - name: Перенаправление трафика
+    items:
+    - name: Перенаправление с HTTP на HTTPS
       items:
-        - name: Azure PowerShell
-          href: tutorial-manage-web-traffic-powershell.md
-        - name: Шаблон
-          href: create-vmss-template.md
-    - name: Настройка внутреннего балансировщика нагрузки
+      - name: Azure PowerShell
+        href: redirect-http-to-https-powershell.md
+      - name: Инфраструктура CLI Azure
+        href: redirect-http-to-https-cli.md
+    - name: Перенаправление внутреннего трафика
       items:
-        - name: Azure PowerShell
-          href: application-gateway-ilb-arm.md
-    - name: Настройка завершения SSL-запросов
-      items:
-        - name: Завершение SSL-запросов с помощью портала Azure
-          href: create-ssl-portal.md
-        - name: Завершение SSL-запросов с помощью Azure PowerShell
-          href: tutorial-ssl-powershell.md
-        - name: Сквозное завершение SSL-запросов с помощью Azure PowerShell
-          href: application-gateway-end-to-end-ssl-powershell.md
-        - name: Обновление сертификатов
-          href: renew-certificates.md
-        - name: Настройка политики SSL
-          href: application-gateway-configure-ssl-policy-powershell.md
-    - name: Настройка брандмауэра веб-приложения
-      items:
-        - name: Портал Azure
-          href: application-gateway-web-application-firewall-portal.md
-        - name: Azure PowerShell
-          href: tutorial-restrict-web-traffic-powershell.md
-    - name: Настройка правил WAF
-      items:
-        - name: Портал Azure
-          href: application-gateway-customize-waf-rules-portal.md
-        - name: Azure PowerShell
-          href: application-gateway-customize-waf-rules-powershell.md
-        - name: Инфраструктура CLI Azure
-          href: application-gateway-customize-waf-rules-cli.md
-    - name: Маршрутизация на основе URL-адреса
-      items:
-        - name: Портал Azure
-          href: create-url-route-portal.md
-        - name: Azure PowerShell
-          href: tutorial-url-route-powershell.md
-    - name: Размещение нескольких сайтов
-      items:
-        - name: Портал Azure
-          href: create-multiple-sites-portal.md
-        - name: Azure PowerShell
-          href: tutorial-multiple-sites-powershell.md
-    - name: Перенаправление трафика
-      items:
-        - name: Перенаправление с HTTP на HTTPS
-          items:
-            - name: Azure PowerShell
-              href: redirect-http-to-https-powershell.md
-            - name: Инфраструктура CLI Azure
-              href: redirect-http-to-https-cli.md
-        - name: Перенаправление внутреннего трафика
-          items:
-            - name: Azure PowerShell
-              href: redirect-internal-site-powershell.md
-            - name: Инфраструктура CLI Azure
-              href: redirect-internal-site-cli.md
-    - name: Поддержка мультитенантного режима
-      items:
-        - name: Настройка поддержки нескольких клиентов
-          href: create-web-app.md
-    - name: Перенаправление веб-трафика с помощью Azure PowerShell
-      href: tutorial-url-redirect-powershell.md
-    - name: 'Создание шлюза приложений, избыточного в пределах зоны'
-      href: create-zone-redundant.md
-    - name: Пользовательские проверки работоспособности
-      items:
-        - name: Microsoft Azure
-          href: application-gateway-create-probe-portal.md
-        - name: Классическая модель и PowerShell
-          href: application-gateway-create-probe-classic-ps.md
-        - name: PowerShell для Resource Manager
-          href: application-gateway-create-probe-ps.md
-    - name: Устранение неполадок
-      items:
-        - name: Устранение ошибок "Недопустимый шлюз (502)"
-          href: application-gateway-troubleshooting-502.md
-        - name: Диагностика
-          href: application-gateway-diagnostics.md
+      - name: Azure PowerShell
+        href: redirect-internal-site-powershell.md
+      - name: Инфраструктура CLI Azure
+        href: redirect-internal-site-cli.md
+  - name: Поддержка мультитенантного режима
+    items:
+    - name: Настройка поддержки нескольких клиентов
+      href: create-web-app.md
+  - name: Перенаправление веб-трафика с помощью Azure PowerShell
+    href: tutorial-url-redirect-powershell.md
+  - name: Создание шлюза приложений, избыточного в пределах зоны
+    href: create-zone-redundant.md
+  - name: Пользовательские проверки работоспособности
+    items:
+    - name: Microsoft Azure
+      href: application-gateway-create-probe-portal.md
+    - name: Классическая модель и PowerShell
+      href: application-gateway-create-probe-classic-ps.md
+    - name: PowerShell для Resource Manager
+      href: application-gateway-create-probe-ps.md
+  - name: Устранение неполадок
+    items:
+    - name: Устранение ошибок "Недопустимый шлюз (502)"
+      href: application-gateway-troubleshooting-502.md
+    - name: Диагностика
+      href: application-gateway-diagnostics.md
 - name: Справочные материалы
   items:
-    - name: Правила CRS
-      href: application-gateway-crs-rulegroups-rules.md
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/network/application-gateway
-    - name: Azure PowerShell
-      href: /powershell/azure/overview
-    - name: .NET
-      href: /dotnet/api
-    - name: Java
-      href: /java/api
-    - name: Node.js
-      href: 'https://azure.microsoft.com/develop/nodejs/#azure-sdk'
-    - name: Python
-      href: 'https://azure.microsoft.com/develop/python/'
-    - name: REST
-      href: /rest/api/applicationgateway
-    - name: Azure Resource Manager
-      href: ../azure-resource-manager/resource-group-overview.md
+  - name: Правила CRS
+    href: application-gateway-crs-rulegroups-rules.md
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/network/application-gateway
+  - name: Azure PowerShell
+    href: /powershell/azure/overview
+  - name: .NET
+    href: /dotnet/api
+  - name: Java
+    href: /java/api
+  - name: Node.js
+    href: https://azure.microsoft.com/develop/nodejs/#azure-sdk
+  - name: Python
+    href: https://azure.microsoft.com/develop/python/
+  - name: REST
+    href: /rest/api/applicationgateway
+  - name: Azure Resource Manager
+    href: ../azure-resource-manager/resource-group-overview.md
 - name: Ресурсы
   items:
-    - name: Создание шаблонов
-      href: ../azure-resource-manager/resource-group-authoring-templates.md
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Шаблоны сообщества
-      href: 'https://azure.microsoft.com/documentation/templates'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/#Linux'
-    - name: Доступ по регионам
-      href: 'https://azure.microsoft.com/regions/services/'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-application-gateway'
-    - name: Часто задаваемые вопросы
-      href: application-gateway-faq.md
+  - name: Создание шаблонов
+    href: ../azure-resource-manager/resource-group-authoring-templates.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Шаблоны сообщества
+    href: https://azure.microsoft.com/documentation/templates
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/#Linux
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-application-gateway
+  - name: Часто задаваемые вопросы
+    href: application-gateway-faq.md
+ms.openlocfilehash: ae7eb1ff103326cfd1b5e24a3918e6b02666aaac
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964051"

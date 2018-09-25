@@ -1,27 +1,57 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 9c0e5c668210ec7fff5c7e2bb37afb123db8c5c4
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46983316"
 documentType: LandingData
-title: Language Understanding Intelligent Service (LUIS)
+title: Документация по Распознаванию речи (LUIS)
 metadata:
   document_id: 
-  title: Language Understanding (LUIS). Краткие руководства, справочники по API и другие материалы
-  description: Сведения об использовании службы Language Understanding, которая позволяет приложению распознавать желания людей на основе их собственных слов.
-  author: Kaiqb
-  manager: carolz
+  title: Распознавание речи (LUIS). Краткие руководства, справочники по API и другие материалы
+  description: Сведения об использовании службы "Распознавание речи", которая позволяет приложению распознавать желания людей на основе их собственных слов.
+  author: nitinme
+  manager: cgronlun
   ms.service: cognitive-services
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 06/28/2018
-  ms.author: kamrani
-  ms.openlocfilehash: f3ccbb033354afc01fa840b3129d305f04942ffd
-  ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/29/2018
-  ms.locfileid: "37095576"
+  ms.date: 09/24/2018
+  ms.author: nitinme
 abstract:
-  description: Служба Language Understanding (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
+  description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
+  aside:
+    image:
+      alt: 
+      height: 110
+      src: ../media/index/luis-landing-page-video.png
+      width: 250
+    title: Новые возможности LUIS (18:28)
+    href: https://azure.microsoft.com/resources/videos/whats-new-with-language-understanding-service-luis
+    width: 250
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/cognitive-services/luis/what-is-luis
+      html: <p>Узнайте об Интеллектуальной службе распознавания речи (LUIS).</p>
+      image:
+        src: ../media/index/i_overview.svg
+      title: Что такое LUIS?
+    - href: /azure/cognitive-services/luis/luis-how-plan-your-app
+      html: <p>Подготовьте структуру намерений и сущностей, соответствующих вашему приложению.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Планирование приложения LUIS
+    - href: /azure/cognitive-services/luis/luis-concept-best-practices
+      html: <p>Следуйте этим рекомендациям при создании приложения LUIS.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Рекомендации по приложению LUIS
 - title: 5-минутные руководства по началу работы
   items:
   - type: table
@@ -73,13 +103,18 @@ sections:
     - html: <a href="luis-quickstart-primary-and-secondary-data">Добавление простой сущности и списка фраз</a>
     - html: <a href="luis-quickstart-intent-and-key-phrase">Добавление сущности keyPhrase</a>
     - html: <a href="luis-quickstart-intent-and-sentiment-analysis">Добавление анализа тональности</a>
+- title: Примеры
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="https://aka.ms/luis-code-samples">Примеры на GitHub</a><br/>
 - title: Видеоролики
   items:
   - type: list
     style: unordered
     items:
     - html: '<a href="https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player" > Build 2018: серия "Пятница с Azure". Cognitive Services и Language Understanding (LUIS)</a>'
-    - html: '<a href="https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player" > Build 2018: канал об искусственном интеллекте. Новые возможности Language Understanding Service (LUIS)</a>'
     - html: <a href="https://channel9.msdn.com/events/Build/2018/BRK3208" >Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU</a>
 - title: Справочные материалы
   items:
@@ -91,5 +126,7 @@ sections:
       html: <p><a href="https://aka.ms/luis-endpoint-apis"> API конечной точки</a></p><p><a href="https://aka.ms/luis-authoring-apis"> Разработка API</a></p>
     - title: Пакеты SDK
       html: <p><a href="https://aka.ms/luis-endpoint-sdk"> Пакет SDK для .NET (конечная точка)</a></p><p><a href="https://aka.ms/luis-authoring-sdk"> Пакет SDK для .NET (создание)</a></p>
-    - title: Примеры кода
-      html: <p><a href="https://aka.ms/luis-code-samples"> Примеры кода</a></p>
+    - title: PowerShell
+      html: <p><a href=https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services">Azure PowerShell</a></p>
+    - title: Интерфейс командной строки
+      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list">интерфейс командной строки Azure</a></p>

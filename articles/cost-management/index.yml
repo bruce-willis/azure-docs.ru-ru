@@ -1,47 +1,57 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: cad92cb36f3e5e038186e9b97f30bed9525e2fea
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978749"
 documentType: LandingData
 title: Документация по Azure Cost Management
 metadata:
   title: Документация по управлению затратами на Azure. Руководства и справочник по API | Документация Майкрософт
-  description: "\"Управление затратами Azure\" — это решение по управлению затратами на несколько облачных служб, которое помогает в работе с Azure и другими облачными ресурсами. Узнайте, как просматривать данные об использовании и затратах, активно управлять затратами, прогнозировать расходы и оптимизировать затраты, изучив наши краткие руководства и руководства."
+  description: Управление затратами Azure — это решение по управлению затратами, которое помогает отслеживать и контролировать расходы на Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с помощью наших кратких руководств и руководств.
   services: cost-management
   author: bandersmsft
-  manager: carmonm
+  manager: dougeby
   ms.service: cost-management
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 02/27/2018
+  ms.date: 09/14/2019
   ms.author: banders
-  ms.openlocfilehash: d6fa2486944fdecab67996bd7a8c7f656ffb2e72
-  ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/16/2018
-  ms.locfileid: "29935338"
 abstract:
-  description: "\"Управление затратами Azure\" с лицензией Cloudyn, дочернего подразделения компании Майкрософт, — это решение по управлению затратами на несколько облачных служб, которое помогает оптимально использовать ресурсы Azure и другие облачные ресурсы, а также управлять ими. Узнайте, как просматривать данные об использовании и затратах, активно управлять затратами, прогнозировать расходы и оптимизировать затраты, изучив наши краткие руководства и руководства."
+  description: Управление затратами Azure — это решение по управлению затратами, которое помогает отслеживать и контролировать расходы на Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с помощью наших кратких руководств и руководств.
 sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Узнайте, как зарегистрировать сведения о соглашении или подписке Azure в Cost Management и начать просматривать данные о затратах.
+    text: Узнайте, как приступить к работе со Управлением затратами Azure для анализа затрат в организации.
   - type: list
     style: icon48
     items:
     - image:
         src: https://docs.microsoft.com/media/common/i_portal.svg
-      text: Просмотр данных о затратах
-      href: quick-register-azure-sub
+      text: Анализ затрат
+      href: quick-acm-cost-analysis
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как просматривать данные об использовании и затратах, активно управлять затратами, прогнозировать расходы и оптимизировать затраты с помощью Cost Management.
+    text: Узнайте, как создавать бюджеты, экспортировать данные, а также просматривать рекомендации Управления затратами и реагировать на них.
   - type: list
     style: ordered
     items:
-    - html: <a href="tutorial-review-usage">Просмотр данных об использовании и затратах для поиска аномалий и возможностей повышения эффективности</a>
-    - html: <a href="tutorial-forecast-spending">Прогнозирование будущих затрат</a>
-    - html: <a href="tutorial-manage-costs">Управление затратами с использованием отчетов по распределению затрат и расчетам между подразделениями</a>
-    - html: <a href="tutorial-optimize-reserved-instances">Оптимизация зарезервированных экземпляров</a>
-    - html: <a href="tutorial-user-access">Назначение доступа к данным Cost Management</a>
+    - html: <a href="tutorial-acm-create-budgets">Создание бюджетов и управление ими</a>
+    - html: <a href="tutorial-export-acm-data">Экспорт данных</a>
+    - html: <a href="tutorial-acm-opt-recommendations">Просмотр рекомендаций по оптимизации и реагирование на них</a>
+- title: Развитие навыков с помощью Microsoft Learn
+  items:
+  - type: list
+    style: cards
+    className: cardsFTitle
+    items:
+    - title: Прогнозирование затрат и оптимизация расходов на Azure
+      href: /learn/modules/predict-costs-and-optimize-spending/
+      image:
+        src: /learn/achievements/predict-costs-and-optimize-spending.svg
+  - type: paragraph
+    text: <a href="/learn/browse/?products=azure-cost-management">Дополнительные интерактивные руководства…</a>

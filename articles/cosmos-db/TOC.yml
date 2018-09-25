@@ -15,8 +15,6 @@ items:
       href: create-sql-api-java.md
     - name: Node.js
       href: create-sql-api-nodejs.md
-    - name: Node.js — предварительная версия 2
-      href: create-sql-api-nodejs-preview.md
     - name: Python
       href: create-sql-api-python.md
     - name: Xamarin
@@ -76,6 +74,17 @@ items:
     href: sql-api-resources.md
   - name: Глобальное распределение
     href: distribute-data-globally.md
+    items:
+    - name: Основные преимущества
+      href: distribute-data-globally-benefits.md
+    - name: Включение глобального распределения
+      href: distribute-data-globally-turnkey.md
+    - name: Включение поддержки нескольких источников
+      href: enable-multi-master.md
+    - name: Использование нескольких источников с базами данных NoSQL с открытым кодом
+      href: multi-master-oss-nosql.md
+    - name: Разрешение конфликтов
+      href: multi-master-conflict-resolution.md
   - name: Пропускная способность
     href: request-units.md
     items:
@@ -87,11 +96,6 @@ items:
     href: indexing-policies.md
   - name: Модели согласованности
     href: consistency-levels.md
-  - name: Подход с несколькими источниками
-    href: multi-region-writers.md
-    items:
-    - name: Архитектура с несколькими источниками
-      href: multi-master-workaround.md
   - name: Веб-канал изменений
     href: change-feed.md
   - name: Срок жизни
@@ -111,6 +115,8 @@ items:
       href: vnet-service-endpoint.md
     - name: Поддержка Key Vault
       href: access-secrets-from-keyvault.md
+  - name: Предварительная оплата резервной мощности
+    href: cosmos-db-reserved-capacity.md
   - name: Архивация и восстановление
     href: online-backup-and-restore.md
   - name: высокую доступность;
@@ -141,8 +147,6 @@ items:
             href: sql-api-async-java-get-started.md
           - name: Node.js
             href: sql-api-nodejs-get-started.md
-          - name: Node.js — предварительная версия 2
-            href: sql-api-nodejs-get-started-preview.md
         - name: Создание веб-приложения
           items:
           - name: .NET
@@ -151,8 +155,6 @@ items:
             href: sql-api-java-application.md
           - name: Node.js
             href: sql-api-nodejs-application.md
-          - name: Node.js — предварительная версия 2
-            href: sql-api-nodejs-application-preview.md
           - name: Python
             href: sql-api-python-application.md
           - name: Xamarin
@@ -173,8 +175,6 @@ items:
         href: sql-api-async-java-samples.md
       - name: Примеры для Node.js
         href: sql-api-nodejs-samples.md
-      - name: Примеры кода для Node.js (предварительная версия 2)
-        href: sql-api-nodejs-samples-preview.md
       - name: Примеры для Python
         href: sql-api-python-samples.md
       - name: PowerShell
@@ -287,12 +287,40 @@ items:
     items:
     - name: Введение
       href: cassandra-introduction.md
+    - name: Поддержка Cassandra
+      href: cassandra-support.md
     - name: Учебники
       items:
-      - name: 1. Создание учетной записи
-        href: tutorial-develop-cassandra-java.md
-      - name: 2. Перенос данных
+      - name: 1. Создание учетной записи и базы данных
+        href: create-cassandra-api-account-java.md
+      - name: 2. Загрузка данных
+        href: cassandra-api-load-data.md
+      - name: 3. Запрос данных
+        href: cassandra-api-query-data.md
+      - name: 4. Перенос данных
         href: cassandra-import-data.md
+    - name: Cassandra и Spark
+      items:
+      - name: Введение
+        href: cassandra-spark-generic.md
+      - name: Подключение с помощью Databricks
+        href: cassandra-spark-databricks.md
+      - name: Подключение с помощью HDInsight
+        href: cassandra-spark-hdinsight.md
+      - name: Создание пространства ключей и таблицы
+        href: cassandra-spark-ddl-ops.md
+      - name: Добавление данных
+        href: cassandra-spark-create-ops.md
+      - name: Считывание данных
+        href: cassandra-spark-read-ops.md
+      - name: Операция upsert с данными
+        href: cassandra-spark-upsert-ops.md
+      - name: Удаление данных
+        href: cassandra-spark-delete-ops.md
+      - name: Операции статистического вычисления
+        href: cassandra-spark-aggregation-ops.md
+      - name: Копирование данных таблицы
+        href: cassandra-spark-table-copy-ops.md
   - name: Документация по API таблиц
     items:
     - name: Введение
@@ -438,6 +466,8 @@ items:
       href: bulk-executor-java.md
 - name: Ресурсы
   items:
+  - name: Развитие навыков с помощью Microsoft Learn
+    href: /learn/browse/?products=azure-cosmos-db
   - name: Краткий справочник запросов
     href: query-cheat-sheet.md
   - name: SQL Playground
@@ -460,9 +490,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: 2bc1fcfab7399cc52500b832721e7ca7509758fd
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: bdb4419b2af399ab28b71e11112e38cfd7a21389
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45737283"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46956858"

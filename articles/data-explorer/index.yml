@@ -1,0 +1,77 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 8985bfa71532cc73dbfeef8d63109476d6893c7f
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46975978"
+documentType: LandingData
+title: Документация по обозревателю данных Azure
+metadata:
+  title: Документация по обозревателю данных Azure. Краткие руководства, учебные материалы и справочник по языку и API | Документация Майкрософт
+  description: Обозреватель данных Azure — это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных.
+  author: mgblythe
+  manager: kfile
+  ms.service: data-explorer
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/24/2018
+  ms.author: mblythe
+abstract:
+  description: <p>Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Она позволяет обрабатывать множество потоков данных, создаваемых современным программным обеспечением, позволяя собирать, хранить и анализировать данные. Обозреватель данных Azure идеально подходит для анализа больших объемов разнообразных данных, поступающих из любых источников данных, таких как веб-сайты, приложения, устройства Интернета вещей и др.</p><p>Узнайте, как использовать обозреватель данных Azure, ознакомившись с нашими краткими руководствами и справочными материалами.</p>
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: 'Узнайте, как подготовить к работе и использовать обозреватель данных Azure:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: /azure/data-explorer/media/index/portal.svg
+      text: Создание кластера и базы данных
+      href: /azure/data-explorer/create-cluster-database-portal
+    - image:
+        src: /azure/data-explorer/media/index/portal.svg
+      text: Прием данных потоковой передачи из Центров событий
+      href: /azure/data-explorer/ingest-data-event-hub
+    - image:
+        src: /azure/data-explorer/media/index/portal.svg
+      text: Запрашивание данных с помощью пользовательского веб-интерфейса
+      href: /azure/data-explorer/web-query-data
+    - image:
+        src: /azure/data-explorer/media/index/logo-python.svg
+      text: Прием запрашиваемых данных с помощью Python
+      href: /azure/data-explorer/python-ingest-data
+    - image:
+        src: /azure/data-explorer/media/index/logo-python.svg
+      text: Запрашивание данных с помощью Python
+      href: /azure/data-explorer/python-query-data
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: 'Узнайте, как создавать комплексные решения:'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/data-explorer/visualize-power-bi">Визуализация данных из обозревателя данных Azure в Power BI</a>
+- title: Бесплатные видеоуроки PluralSight
+  items:
+  - type: list
+    style: cards
+    className: cardsFTitle
+    items:
+    - title: Язык запросов для обозревателя данных Azure
+      href: https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch
+      image:
+        src: /azure/data-explorer/media/index/logo-pluralsight.svg
+        href: https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Языки и API
+      html: <p><a href="https://aka.ms/kustolangref">Язык запросов, команды управления и API</a>

@@ -1,211 +1,222 @@
+items:
 - name: Документация по базе данных Azure для MySQL
   href: index.yml
 - name: Обзор
   items:
-    - name: База данных Azure для MySQL
-      href: overview.md
+  - name: База данных Azure для MySQL
+    href: overview.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Создание базы данных с помощью портала
-      href: quickstart-create-mysql-server-database-using-azure-portal.md
-    - name: Создание базы данных с помощью Azure CLI
-      href: quickstart-create-mysql-server-database-using-azure-cli.md
-    - name: Подключение и запросы
-      items:
-        - name: PHP
-          href: connect-php.md
-        - name: Java
-          href: connect-java.md
-        - name: .Net
-          href: connect-csharp.md
-        - name: Python
-          href: connect-python.md
-        - name: Node.js
-          href: connect-nodejs.md
-        - name: Ruby
-          href: connect-ruby.md
-        - name: C++
-          href: connect-cpp.md
-        - name: Go
-          href: connect-go.md
-        - name: MySQL Workbench
-          href: connect-workbench.md
+  - name: Создание базы данных с помощью портала
+    href: quickstart-create-mysql-server-database-using-azure-portal.md
+  - name: Создание базы данных с помощью Azure CLI
+    href: quickstart-create-mysql-server-database-using-azure-cli.md
+  - name: Подключение и запросы
+    items:
+    - name: PHP
+      href: connect-php.md
+    - name: Java
+      href: connect-java.md
+    - name: .Net
+      href: connect-csharp.md
+    - name: Python
+      href: connect-python.md
+    - name: Node.js
+      href: connect-nodejs.md
+    - name: Ruby
+      href: connect-ruby.md
+    - name: C++
+      href: connect-cpp.md
+    - name: Go
+      href: connect-go.md
+    - name: MySQL Workbench
+      href: connect-workbench.md
+  expanded: true
 - name: Учебники
   items:
-    - name: "1.\_Проектирование базы данных"
-      items:
-        - name: Портал Azure
-          href: tutorial-design-database-using-portal.md
-        - name: Инфраструктура CLI Azure
-          href: tutorial-design-database-using-cli.md
-    - name: "2.\_Создание веб-приложения"
-      items:
-        - name: 'WordPress: портал'
-          href: 'https://portal.azure.com/#create/WordPress.WordPress'
-        - name: PHP с MySQL
-          href: ../app-service/app-service-web-tutorial-php-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
-        - name: Java с MySQL
-          href: ../app-service/app-service-web-tutorial-java-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
+  - name: 1. Проектирование базы данных
+    items:
+    - name: Портал Azure
+      href: tutorial-design-database-using-portal.md
+    - name: Инфраструктура CLI Azure
+      href: tutorial-design-database-using-cli.md
+  - name: 2. Создание веб-приложения
+    items:
+    - name: 'WordPress: портал'
+      href: https://portal.azure.com/#create/WordPress.WordPress
+    - name: PHP с MySQL
+      href: ../app-service/app-service-web-tutorial-php-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
+    - name: Java с MySQL
+      href: ../app-service/app-service-web-tutorial-java-mysql.md?toc=%2fazure%2fmysql%2ftoc.json
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
-      href: sample-scripts-azure-cli.md
+  - name: Инфраструктура CLI Azure
+    href: sample-scripts-azure-cli.md
 - name: Основные понятия
   items:
-    - name: Серверы и базы данных
-      items:
-        - name: Серверы
-          href: concepts-servers.md
-        - name: Поддерживаемые версии
-          href: concepts-supported-versions.md
-        - name: Журналы сервера
-          href: concepts-server-logs.md
-        - name: высокую доступность;
-          href: concepts-high-availability.md
-    - name: Ресурсы
-      items:
-        - name: Ценовые категории
-          href: concepts-pricing-tiers.md
-        - name: Ограничения
-          href: concepts-limits.md
-    - name: Доступ к данным и безопасность
-      items:
-        - name: Правила файрволла
-          href: concepts-firewall-rules.md
-        - name: Настройка SSL
-          href: concepts-ssl-connection-security.md
-        - name: Виртуальная сеть
-          href: concepts-data-access-and-security-vnet.md
-    - name: Непрерывность бизнес-процессов
-      items:
-        - name: Обзор
-          href: concepts-business-continuity.md
-        - name: Архивация и восстановление
-          href: concepts-backup.md
-    - name: Мониторинг
-      href: concepts-monitoring.md
-    - name: Разработка
-      items:
-        - name: Совместимость драйверов и инструментов
-          href: concepts-compatibility.md
-        - name: Разработка приложений
-          href: concepts-database-application-development.md
-    - name: Репликация
-      items:
-        - name: Репликация входных данных
-          href: concepts-data-in-replication.md
+  - name: Серверы и базы данных
+    items:
+    - name: Серверы
+      href: concepts-servers.md
+    - name: Поддерживаемые версии
+      href: concepts-supported-versions.md
+    - name: Журналы сервера
+      href: concepts-server-logs.md
+    - name: высокую доступность;
+      href: concepts-high-availability.md
+  - name: Ресурсы
+    items:
+    - name: Ценовые категории
+      href: concepts-pricing-tiers.md
+    - name: Ограничения
+      href: concepts-limits.md
+  - name: Доступ к данным и безопасность
+    items:
+    - name: Правила файрволла
+      href: concepts-firewall-rules.md
+    - name: Настройка SSL
+      href: concepts-ssl-connection-security.md
+    - name: Виртуальная сеть
+      href: concepts-data-access-and-security-vnet.md
+  - name: Непрерывность бизнес-процессов
+    items:
+    - name: Обзор
+      href: concepts-business-continuity.md
+    - name: Архивация и восстановление
+      href: concepts-backup.md
+  - name: Мониторинг
+    href: concepts-monitoring.md
+  - name: Разработка
+    items:
+    - name: Совместимость драйверов и инструментов
+      href: concepts-compatibility.md
+    - name: Разработка приложений
+      href: concepts-database-application-development.md
+  - name: Репликация
+    items:
+    - name: Репликация входных данных
+      href: concepts-data-in-replication.md
+    - name: Реплики чтения
+      href: concepts-read-replicas.md
 - name: Практические руководства
   items:
-    - name: Управление сервером
-      items:
-        - name: Портал Azure
-          href: howto-create-manage-server-portal.md
-    - name: Правила файрволла
-      items:
-        - name: Портал Azure
-          href: howto-manage-firewall-using-portal.md
-        - name: Инфраструктура CLI Azure
-          href: howto-manage-firewall-using-cli.md
-    - name: Восстановление сервера
-      items:
-        - name: Портал Azure
-          href: howto-restore-server-portal.md
-        - name: Инфраструктура CLI Azure
-          href: howto-restore-server-cli.md
-    - name: Перенос базы данных
-      items:
-        - name: Дамп и восстановление
-          href: concepts-migrate-dump-restore.md
-        - name: Импорт и экспорт
-          href: concepts-migrate-import-export.md
-        - name: Миграция с минимальным временем простоя
-          href: howto-migrate-online.md
-    - name: Подключение приложений
-      items:
-        - name: Создание пользователей
-          href: howto-create-users.md
-        - name: Строки подключения
-          href: howto-connection-string.md
-        - name: Настройка SSL
-          href: howto-configure-ssl.md
-        - name: 'веб-приложений:'
-          href: howto-connect-webapp.md
-    - name: Настройка параметров сервера
-      items:
-        - name: Портал Azure
-          href: howto-server-parameters.md
-        - name: Инфраструктура CLI Azure
-          href: howto-configure-server-parameters-using-cli.md
-    - name: Доступ к журналам сервера
-      items:
-        - name: Портал Azure
-          href: howto-configure-server-logs-in-portal.md
-        - name: Инфраструктура CLI Azure
-          href: howto-configure-server-logs-in-cli.md
-    - name: Мониторинг
-      items:
-        - name: Создание оповещений на основе метрик
-          href: howto-alert-on-metric.md
-    - name: Репликация
-      items:
-        - name: Настройка репликации входных данных
-          href: howto-data-in-replication.md
-    - name: Устранение неполадок
-      items:
-        - name: Решение проблем с производительностью запросов
-          href: howto-troubleshoot-query-performance.md
-        - name: Как использовать представления в схеме sys
-          href: howto-troubleshoot-sys-schema.md
-    - name: Виртуальная сеть
-      items:
-        - name: Портал Azure
-          href: howto-manage-vnet-using-portal.md
-        - name: Инфраструктура CLI Azure
-          href: howto-manage-vnet-using-cli.md
+  - name: Управление сервером
+    items:
+    - name: Портал Azure
+      href: howto-create-manage-server-portal.md
+  - name: Правила файрволла
+    items:
+    - name: Портал Azure
+      href: howto-manage-firewall-using-portal.md
+    - name: Инфраструктура CLI Azure
+      href: howto-manage-firewall-using-cli.md
+  - name: Восстановление сервера
+    items:
+    - name: Портал Azure
+      href: howto-restore-server-portal.md
+    - name: Инфраструктура CLI Azure
+      href: howto-restore-server-cli.md
+  - name: Перенос базы данных
+    items:
+    - name: Дамп и восстановление
+      href: concepts-migrate-dump-restore.md
+    - name: Импорт и экспорт
+      href: concepts-migrate-import-export.md
+    - name: Миграция с минимальным временем простоя
+      href: howto-migrate-online.md
+  - name: Подключение приложений
+    items:
+    - name: Создание пользователей
+      href: howto-create-users.md
+    - name: Строки подключения
+      href: howto-connection-string.md
+    - name: Настройка SSL
+      href: howto-configure-ssl.md
+    - name: 'веб-приложений:'
+      href: howto-connect-webapp.md
+  - name: Настройка параметров сервера
+    items:
+    - name: Портал Azure
+      href: howto-server-parameters.md
+    - name: Инфраструктура CLI Azure
+      href: howto-configure-server-parameters-using-cli.md
+  - name: Доступ к журналам сервера
+    items:
+    - name: Портал Azure
+      href: howto-configure-server-logs-in-portal.md
+    - name: Инфраструктура CLI Azure
+      href: howto-configure-server-logs-in-cli.md
+  - name: Мониторинг
+    items:
+    - name: Создание оповещений на основе метрик
+      href: howto-alert-on-metric.md
+  - name: Репликация
+    items:
+    - name: Настройка репликации входных данных
+      href: howto-data-in-replication.md
+    - name: Создание реплик чтения с помощью портала Azure
+      href: howto-read-replicas-portal.md
+  - name: Устранение неполадок
+    items:
+    - name: Решение проблем с производительностью запросов
+      href: howto-troubleshoot-query-performance.md
+    - name: Как использовать представления в схеме sys
+      href: howto-troubleshoot-sys-schema.md
+  - name: Виртуальная сеть
+    items:
+    - name: Портал Azure
+      href: howto-manage-vnet-using-portal.md
+    - name: Инфраструктура CLI Azure
+      href: howto-manage-vnet-using-cli.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/mysql
-    - name: ИНТЕРФЕЙС REST API
-      href: /rest/api/mysql
-    - name: Хранимые процедуры репликации входных данных
-      href: reference-data-in-stored-procedures.md
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/mysql
+  - name: REST API
+    href: /rest/api/mysql
+  - name: Хранимые процедуры репликации входных данных
+    href: reference-data-in-stored-procedures.md
 - name: Ресурсы
   items:
-    - name: Шаблоны развертывания
-      href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Dbformysql'
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=databases'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/mysql/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-database-mysql'
-    - name: Видеоролики
+  - name: Шаблоны развертывания
+    href: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Dbformysql
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=databases
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/mysql/
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-database-mysql
+  - name: Видеоролики
+    items:
+    - name: Видеоролики о продукте
+      href: videos.md
+    - name: Серия видеоинструкций
       items:
-        - name: Видеоролики о продукте
-          href: videos.md
-        - name: Серия видеоинструкций
-          items:
-            - name: Возможности и преимущества продукта
-              href: 'https://aka.ms/mysql-intro-vid'
-            - name: Перенос приложения MySQL в Azure
-              href: 'https://aka.ms/mysql-migrate-vid'
-            - name: Создание и развертывание веб-приложений
-              href: 'https://aka.ms/mysql-webapps-vid'
-            - name: Подключение контейнеров с помощью OSBA
-              href: 'https://aka.ms/mysql-osba-vid'
-    - name: Запрос функции
-      href: 'https://feedback.azure.com/forums/597982-azure-database-for-mysql'
-    - name: Регионы доступности
-      href: 'https://azure.microsoft.com/regions/services/'
-    - name: Варианты поддержки
-      href: 'https://azure.microsoft.com/support/options/'
-    - name: Истории клиентов
-      href: 'https://customers.microsoft.com/en-us/search?sq="Azure%20Database%20for%20MySQL%20"'
-    - name: Партнеры
-      href: partners-migration-mysql.md
-    - name: Руководство по переносу баз данных
-      href: 'https://datamigration.microsoft.com/'
+      - name: Возможности и преимущества продукта
+        href: https://aka.ms/mysql-intro-vid
+      - name: Перенос приложения MySQL в Azure
+        href: https://aka.ms/mysql-migrate-vid
+      - name: Создание и развертывание веб-приложений
+        href: https://aka.ms/mysql-webapps-vid
+      - name: Подключение контейнеров с помощью OSBA
+        href: https://aka.ms/mysql-osba-vid
+  - name: Запрос функции
+    href: https://feedback.azure.com/forums/597982-azure-database-for-mysql
+  - name: Регионы доступности
+    href: https://azure.microsoft.com/regions/services/
+  - name: Варианты поддержки
+    href: https://azure.microsoft.com/support/options/
+  - name: Истории клиентов
+    href: https://customers.microsoft.com/en-us/search?sq="Azure%20Database%20for%20MySQL%20"
+  - name: Партнеры
+    href: partners-migration-mysql.md
+  - name: Руководство по переносу баз данных
+    href: https://datamigration.microsoft.com/
+ms.openlocfilehash: 7c2ba8eecdf39d1e00abe91d9918fdaf2f1cec88
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46980803"

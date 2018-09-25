@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 64d2ad6990b41c7c9ff28a667b4fd51729877670
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46986937"
 documentType: LandingData
 title: Документация по службе контейнеров
 metadata:
@@ -14,12 +20,6 @@ metadata:
   ms.topic: landing-page
   ms.date: 07-21-2017
   ms.author: carolz
-  ms.openlocfilehash: 7625fbb02a1ede91c01c35cddd286f4c26ad77be
-  ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/11/2017
-  ms.locfileid: "23068378"
 abstract:
   description: Служба контейнера Azure позволяет быстро развертывать готовые к работе кластеры Kubernetes, DC/OS или Docker Swarm. Узнайте, как использовать службы контейнеров Azure с помощью наших шаблонов быстрого запуска, руководств и примеров.
 sections:
@@ -39,3 +39,26 @@ sections:
       image:
         src: media/index/get-started.svg
         href: /azure/container-service/dcos-swarm
+- title: Развитие навыков с помощью Microsoft Learn
+  items:
+  - type: list
+    style: cards
+    className: cardsFTitle
+    items:
+    - title: Общие сведения о контейнерах в Azure
+      href: /learn/modules/intro-to-containers/
+      image:
+        src: /learn/achievements/intro-to-containers.svg
+        href: /learn/modules/intro-to-containers/
+    - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
+      href: /learn/modules/run-docker-with-azure-container-instances/
+      image:
+        src: /learn/achievements/run-docker-with-azure-container-instances.svg
+        href: /learn/modules/run-docker-with-azure-container-instances/
+    - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
+      href: /learn/modules/build-and-store-container-images/
+      image:
+        src: /learn/achievements/build-and-store-container-images.svg
+        href: /learn/modules/build-and-store-container-images/
+  - type: paragraph
+    text: <a href="/learn/browse/?products=azure-container-registry%2Cazure-container-instances">Дополнительные интерактивные руководства…</a>

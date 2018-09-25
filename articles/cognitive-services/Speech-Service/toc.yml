@@ -1,5 +1,5 @@
 items:
-- name: Служба "Речь" и пакет SDK
+- name: Документация по пакету SDK для службы "Речь"
   href: index.yml
 - name: Обзор
   items:
@@ -34,14 +34,16 @@ items:
     - name: Использование Java (Windows или Linux)
       displayName: recognize speech, speech recognition, speech to text, stt, jre, jvm
       href: quickstart-java-jre.md
+    - name: Использование JavaScript (браузер)
+      displayName: recognize speech, speech recognition, speech to text, stt
+      href: quickstart-js-browser.md
+    - name: Использование Objective-C (iOS)
+      displayName: recognize speech, speech recognition, speech to text, stt, xcode
+      href: quickstart-objectivec-ios.md
   - name: Начало работы с пакетом SDK для речевых устройств
     displayName: roobo, speech devices sdk
     href: speech-devices-sdk-qsg.md
 - name: Учебники
-  items:
-  - name: Распознавание намерений из речи (C#)
-    href: how-to-recognize-intents-from-speech-csharp.md
-- name: Практические руководства
   items:
   - name: Распознавание речи
     displayName: recognize speech, speech recognition, speech to text, stt
@@ -54,12 +56,11 @@ items:
       href: how-to-recognize-speech-java.md
     - name: REST
       href: how-to-recognize-speech-rest.md
-  - name: Синтезирование речи (REST)
-    displayName: synthesize speech, speech synthesis, text to speech, tts
-    href: how-to-text-to-speech.md
   - name: Распознавание намерений из речи
     displayName: recognize intent, intent recognition, language understanding service, luis
     items:
+    - name: C#
+      href: how-to-recognize-intents-from-speech-csharp.md
     - name: C++
       href: how-to-recognize-intents-from-speech-cpp.md
     - name: Java
@@ -73,29 +74,36 @@ items:
       href: how-to-translate-speech-cpp.md
     - name: Java
       href: how-to-translate-speech-java.md
+- name: Практические руководства
+  items:
+  - name: Синтезирование речи (REST)
+    displayName: synthesize speech, speech synthesis, text to speech, tts
+    href: how-to-text-to-speech.md
   - name: Транскрибирование с помощью Пакетной службы (REST)
     displayName: recognize speech, speech recognition, speech to text, stt
     href: batch-transcription.md
   - name: Получение пакета SDK для речевых устройств
     displayName: roobo, speech devices sdk, download
     href: get-speech-devices-sdk.md
-  - name: Настройка акустических моделей
-    href: how-to-customize-acoustic-models.md
-  - name: Настройка языковых моделей
-    href: how-to-customize-language-model.md
-  - name: Настройка произношения
-    href: how-to-customize-pronunciation.md
-  - name: Настройка голосов (уникальный голос)
-    href: how-to-customize-voice-font.md
+  - name: Настроить
+    items:
+    - name: Настройка акустических моделей
+      href: how-to-customize-acoustic-models.md
+    - name: Настройка языковых моделей
+      href: how-to-customize-language-model.md
+    - name: Настройка произношения
+      href: how-to-customize-pronunciation.md
+    - name: Настройка голосов (уникальный голос)
+      href: how-to-customize-voice-font.md
+    - name: Настройка слова для активации устройства (пакет SDK для устройств)
+      displayName: roobo, speech devices sdk, wake word, keyword spotting, kws
+      href: speech-devices-sdk-create-kws.md
   - name: Запись образцов голосов
     href: record-custom-voice-samples.md
   - name: Подготовка расшифровок
     href: prepare-transcription.md
   - name: Использование пользовательских аудиопотоков
     href: how-to-use-audio-input-streams.md
-  - name: Настройка слова для активации устройства (пакет SDK для устройств)
-    displayName: roobo, speech devices sdk, wake word, keyword spotting, kws
-    href: speech-devices-sdk-create-kws.md
 - name: Основные понятия
   items:
   - name: Преобразование речи в текст
@@ -180,9 +188,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
   - name: Конфиденциальность и файлы cookie
     href: https://privacy.microsoft.com/privacystatement
-ms.openlocfilehash: fd6df22b2d96dd72d6a3da0c6946a461420b3153
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 7b8b81afa5090144f1be7d747d4af1f4a319a0f1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605584"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46985880"

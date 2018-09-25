@@ -1,11 +1,17 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 19bb8a72e6455010477805a78bc15de554a2eb83
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46987481"
 documentType: LandingData
 title: Документация по API текстовой аналитики
 metadata:
   title: Документация по API анализа текста. Руководства и справочник по API — Azure Cognitive Services | Документация Майкрософт
   description: Узнайте, как использовать API анализа текста для выполнения расширенной обработки естественных языков в тексте. В руководствах описано, как написать код для использования службы Анализа текста.
   services: cognitive-services
-  author: HeidiSteen
+  author: nitinme
   manager: cgronlun
   layout: LandingPage
   ms.service: cognitive-services
@@ -13,21 +19,36 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 03/07/2018
-  ms.author: heidist
-  ms.openlocfilehash: aee5b1c47d3db4f630c528707f03d175e52c2c4f
-  ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/11/2018
-  ms.locfileid: "38398638"
+  ms.date: 09/24/2018
+  ms.author: nitinme
 abstract:
   description: 'API анализа текста — это облачная служба, которая предоставляет расширенную обработку необработанного текста на естественных языках и включает в себя три основные функции: анализ тональности, извлечение ключевых фраз и определение языка. Узнайте, как анализировать содержимое разными способами, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.'
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/cognitive-services/text-analytics/overview
+      html: <p>Узнайте об API анализа текста.</p>
+      image:
+        src: ../media/index/i_overview.svg
+      title: Что такое API анализа текста?
+    - href: /azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-signup
+      html: <p>Узнайте, как зарегистрироваться для использования API анализа текста.</p>
+      image:
+        src: ../media/index/i_get-started.svg
+      title: Регистрация для использования API анализа текста
+    - href: /azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-access-key
+      html: <p>Узнайте, как получить ключи доступа и конечные точки для API анализа текста.</p>
+      image:
+        src: ../media/index/i_tasks.svg
+      title: Ключи доступа для API анализа текста
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Начните работу с API анализа текста с использования функций обнаружения языка, анализа тональности и извлечения ключевых фраз:'
+    text: 'Приступите к работе с API анализа текста с использования функций обнаружения языка, анализа тональности и извлечения ключевых фраз:'
   - type: list
     style: icon48
     items:
@@ -68,3 +89,7 @@ sections:
     items:
     - title: REST
       html: <p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7">Справочник по API</a></p>
+    - title: PowerShell
+      html: <p><a href=https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services">Azure PowerShell</a></p>
+    - title: Интерфейс командной строки
+      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list">интерфейс командной строки Azure</a></p>

@@ -1,0 +1,70 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 1c25ae1acb112221047876ea6dd360c6d3bb2817
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46946244"
+documentType: LandingData
+title: Управление Azure. Система управления
+metadata:
+  title: Управление Azure. Система управления
+  description: Узнайте о компонентах и службах Azure, доступных для согласованного управления средами с помощью архитектуры и правил, а также о выполнении аудита для обеспечения соответствия.
+  services: governance
+  author: DCtheGeek
+  manager: carmonm
+  ms.service: governance
+  ms.topic: landing-page
+  ms.date: 09/18/2018
+  ms.author: dacoulte
+abstract:
+  description: Система управления Azure — это набор компонентов и служб, которые предназначены для управления ресурсами Azure по мере необходимости. Эти службы позволяют возможность логически упорядочивать и структурировать подписки, создавать и развертывать повторно используемые или собственные пакеты ресурсов Azure для определения, аудита и оптимизации ресурсов. Эта страница содержит подробные сведения о компонентах и службах, а также о том, как включить и использовать их в вашей среде уже сегодня.
+sections:
+- title: Компоненты и службы
+- items:
+  - type: list
+    style: cards
+    className: cardsD
+    columns: 2
+    items:
+    - href: ./management-groups/overview
+      html: <p>Узнайте о группировании и организации подписок в логическую иерархию с поддержкой структурированного развертывания других служб управления.<br /></p>
+      image:
+        src: ./media/management-groups-illustration.svg
+      title: Группы управления
+    - href: ./resource-graph/
+      html: <p>Используйте мощное средство командной строки (поддерживает Azure CLI и Azure PowerShell) для быстрого получения комплексных сведений о ресурсах Azure. Находите и предоставляйте сведения, для получения которых раньше требовались сложные итеративные скрипты, чтобы определять эти ресурсы по мере необходимости.</p>
+      image:
+        src: ./media/resource-graph-illustration.svg
+      title: Resource Graph
+    - href: ./policy/
+      html: <p>Определяйте и применяйте стандарты к ресурсам в вашей среде. Предотвращайте создание нежелательных ресурсов, улучшайте новые ресурсы с помощью дополнительных элементов, а также выполняйте аудит и оптимизируйте ресурсы в своей среде.</p>
+      image:
+        src: ./media/policy-illustration.svg
+      title: Политика
+    - href: ./blueprints/
+      html: <p>Создайте собственный пакет <i>артефактов</i> Azure (группы ресурсов, политики, назначения ролей, шаблоны Resource Manager и многое другое), которые можно развертывать динамически в подписках для создания согласованных и воспроизводимых сред.</p>
+      image:
+        src: ./media/blueprints-illustration.svg
+      title: Схемы
+- title: Варианты реализации решения
+- items:
+  - type: list
+    style: cards
+    className: cardsZ
+    columns: 3
+    items:
+    - href: /azure/architecture/cloud-adoption/governance/what-is-governance?toc=/azure/governance/toc.json
+      html: '<p>В прошлом технологии любого уровня — от инфраструктуры до программного обеспечения — находились в собственности и рамках ответственности организаций. Теперь облако позволяет изменить способ использования технологий: ресурсы подготавливаются и потребляются по мере необходимости.</p>'
+      title: Внедрение облачных решений в организации
+    - href: /azure/architecture/cloud-adoption/appendix/azure-scaffold?toc=/azure/governance/toc.json
+      html: <p>Теперь администраторы могут гарантировать, что рабочие нагрузки соответствуют минимальным требованиям управления организации, не мешая бизнес-группам и разработчикам быстро достигать своих целей.<br /><br /></p>
+      title: Шаблон для предприятий
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Политика
+      html: <p>Командная строка<ul><li><a href="/cli/azure/policy">интерфейс командной строки Azure</a></li></ul></p><p>PowerShell<ul><li><a href="/powershell/module/azurerm.resources/#policies">Azure PowerShell</a></li></ul></p><p>REST API<ul><li><a href="/rest/api/policy-insights/policyevents">События</a></li><li><a href="/rest/api/policy-insights/policystates">Состояния</a></li><li><a href="/rest/api/resources/policyassignments">Назначения</a></li><li><a href="/rest/api/resources/policydefinitions">Определения политик</a></li><li><a href="/rest/api/resources/policysetdefinitions">Определения инициатив</a></li></ul></p>

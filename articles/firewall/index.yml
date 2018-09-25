@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 13146f48acb13e1bd4c7247902e3e8abcc0a84f1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948763"
 documentType: LandingData
 title: Документации по брандмауэру Azure
 metadata:
@@ -8,14 +14,8 @@ metadata:
   author: vhorne
   ms.service: firewall
   ms.topic: landing-page
-  ms.date: 7/11/2018
+  ms.date: 9/24/2018
   ms.author: victorh
-  ms.openlocfilehash: 979ce06a38e397a42b9f34c7eb82aa9c8a2e141e
-  ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/12/2018
-  ms.locfileid: "38991793"
 abstract:
   description: Сведения о развертывании брандмауэра Azure — облачной службы безопасности сети. В руководствах, справочниках по API и другой документации показано, как настроить политики уровня приложений и сети для защиты ресурсов виртуальной сети Azure.
 sections:
@@ -27,6 +27,8 @@ sections:
     style: unordered
     items:
     - html: <a href="/azure/firewall/tutorial-firewall-deploy-portal">Развертывание и настройка брандмауэра Azure с помощью портала Azure</a>
+    - html: <a href="/azure/firewall/tutorial-hybrid-ps">Развертывание в гибридной сети</a>
+    - html: <a href="/azure/firewall/tutorial-firewall-dnat">Фильтрация входящего трафика с помощью DNAT</a>
     - html: <a href="/azure/firewall/tutorial-diagnostics">Мониторинг журналов брандмауэра Azure</a>
 - title: Примеры
   items:

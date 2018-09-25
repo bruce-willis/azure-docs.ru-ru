@@ -1,115 +1,124 @@
+items:
 - name: Экземпляры контейнеров
   href: index.yml
 - name: Обзор
   items:
-    - name: Об экземплярах контейнеров Azure
-      href: container-instances-overview.md
+  - name: Об экземплярах контейнеров Azure
+    href: container-instances-overview.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Создание контейнера с помощью интерфейса командной строки
-      href: container-instances-quickstart.md
-    - name: Создание контейнера с помощью портала
-      href: container-instances-quickstart-portal.md
-    - name: Создание контейнера с помощью PowerShell
-      href: container-instances-quickstart-powershell.md
+  - name: Создание контейнера с помощью интерфейса командной строки
+    href: container-instances-quickstart.md
+  - name: Создание контейнера с помощью портала
+    href: container-instances-quickstart-portal.md
+  - name: Создание контейнера с помощью PowerShell
+    href: container-instances-quickstart-powershell.md
+  expanded: true
 - name: Учебники
   items:
-    - name: 1. Создание образа контейнера
-      href: container-instances-tutorial-prepare-app.md
-    - name: 2. Создание реестра контейнеров
-      href: container-instances-tutorial-prepare-acr.md
-    - name: 3. Развертывание приложения
-      href: container-instances-tutorial-deploy-app.md
+  - name: 1. Создание образа контейнера
+    href: container-instances-tutorial-prepare-app.md
+  - name: 2. Создание реестра контейнеров
+    href: container-instances-tutorial-prepare-acr.md
+  - name: 3. Развертывание приложения
+    href: container-instances-tutorial-deploy-app.md
 - name: Примеры
   items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?sort=0&term=aci'
-    - name: Шаблоны диспетчера ресурсов
-      href: container-instances-samples-rm.md
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?sort=0&term=aci
+  - name: Шаблоны диспетчера ресурсов
+    href: container-instances-samples-rm.md
 - name: Основные понятия
   items:
-    - name: Квоты и региональные ограничения
-      href: container-instances-quotas.md
-    - name: Связь с оркестраторами
-      href: container-instances-orchestrator-relationship.md
-    - name: Группы контейнеров
-      href: container-instances-container-groups.md
+  - name: Квоты и региональные ограничения
+    href: container-instances-quotas.md
+  - name: Связь с оркестраторами
+    href: container-instances-orchestrator-relationship.md
+  - name: Группы контейнеров
+    href: container-instances-container-groups.md
 - name: Практические руководства
   items:
-    - name: Развертывание
-      items:
-        - name: "Многоконтейнерная группа\_— YAML"
-          href: container-instances-multi-container-yaml.md
-        - name: "Многоконтейнерная группа\_— Azure Resource Manager"
-          href: container-instances-multi-container-group.md
-        - name: Развертывание из реестра контейнеров Azure
-          href: container-instances-using-azure-container-registry.md
-        - name: Настройка переменных среды (env)
-          href: container-instances-environment-variables.md
-        - name: Настройка проб активности
-          href: container-instances-liveness-probe.md
-    - name: управление
-      items:
-        - name: Обновление работающих контейнеров
-          href: container-instances-update.md
-        - name: Выполнение команды (exec)
-          href: container-instances-exec.md
-        - name: Мониторинг использования ЦП и памяти
-          href: container-instances-monitor.md
-        - name: Ведение журнала с помощью Azure Log Analytics
-          href: container-instances-log-analytics.md
-    - name: Выполнение рабочих нагрузок
-      items:
-        - name: Выполнение задач с помощью политик перезапуска
-          href: container-instances-restart-policy.md
-        - name: Агенты сборки Jenkins в ACI
-          href: container-instances-jenkins.md
-    - name: Конфигурирование томов данных
-      items:
-        - name: Файлы Azure
-          href: container-instances-volume-azure-files.md
-        - name: emptyDir
-          href: container-instances-volume-emptydir.md
-        - name: gitRepo
-          href: container-instances-volume-gitrepo.md
-        - name: secret
-          href: container-instances-volume-secret.md
-    - name: Устранение неполадок
-      items:
-        - name: Получение журналов и событий контейнера
-          href: container-instances-get-logs.md
-        - name: Устранение распространенных неполадок
-          href: container-instances-troubleshooting.md
+  - name: Развертывание
+    items:
+    - name: Многоконтейнерная группа — YAML
+      href: container-instances-multi-container-yaml.md
+    - name: Многоконтейнерная группа — Azure Resource Manager
+      href: container-instances-multi-container-group.md
+    - name: Развертывание из реестра контейнеров Azure
+      href: container-instances-using-azure-container-registry.md
+    - name: Настройка переменных среды (env)
+      href: container-instances-environment-variables.md
+    - name: Настройка проб активности
+      href: container-instances-liveness-probe.md
+  - name: управление
+    items:
+    - name: Обновление работающих контейнеров
+      href: container-instances-update.md
+    - name: Выполнение команды (exec)
+      href: container-instances-exec.md
+    - name: Мониторинг использования ЦП и памяти
+      href: container-instances-monitor.md
+    - name: Ведение журнала с помощью Azure Log Analytics
+      href: container-instances-log-analytics.md
+  - name: Выполнение рабочих нагрузок
+    items:
+    - name: Выполнение задач с помощью политик перезапуска
+      href: container-instances-restart-policy.md
+    - name: Агенты сборки Jenkins в ACI
+      href: container-instances-jenkins.md
+  - name: Конфигурирование томов данных
+    items:
+    - name: Файлы Azure
+      href: container-instances-volume-azure-files.md
+    - name: emptyDir
+      href: container-instances-volume-emptydir.md
+    - name: gitRepo
+      href: container-instances-volume-gitrepo.md
+    - name: secret
+      href: container-instances-volume-secret.md
+  - name: Устранение неполадок
+    items:
+    - name: Получение журналов и событий контейнера
+      href: container-instances-get-logs.md
+    - name: Устранение распространенных неполадок
+      href: container-instances-troubleshooting.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/container
-    - name: REST
-      href: /rest/api/container-instances
-    - name: PowerShell
-      href: '/powershell/module/azurerm.containerinstance#container_instances'
-    - name: .NET
-      href: /dotnet/api/overview/azure/containerinstance
-    - name: Python
-      href: /python/api/overview/azure/containerinstance
-    - name: Java
-      href: /java/api/overview/azure/containerinstance
-    - name: Node.js
-      href: /javascript/api/overview/azure/containerinstances
-    - name: Шаблон Resource Manager
-      href: /azure/templates/microsoft.containerinstance/containergroups
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/container
+  - name: REST
+    href: /rest/api/container-instances
+  - name: PowerShell
+    href: /powershell/module/azurerm.containerinstance#container_instances
+  - name: .NET
+    href: /dotnet/api/overview/azure/containerinstance
+  - name: Python
+    href: /python/api/overview/azure/containerinstance
+  - name: Java
+    href: /java/api/overview/azure/containerinstance
+  - name: Node.js
+    href: /javascript/api/overview/azure/containerinstances
+  - name: Шаблон Resource Manager
+    href: /azure/templates/microsoft.containerinstance/containergroups
 - name: Ресурсы
   items:
-    - name: Регионы доступности
-      href: 'https://azure.microsoft.com/regions/services/'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/container-instances/'
-    - name: Стратегия
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Отзыв о продукте
-      href: 'https://feedback.azure.com/forums/602224-azure-container-instances'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-container-instances'
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=container-instances&sort=newest'
+  - name: Развитие навыков с помощью Microsoft Learn
+    href: /learn/browse/?products=azure-container-instances
+  - name: Регионы доступности
+    href: https://azure.microsoft.com/regions/services/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/container-instances/
+  - name: Стратегия
+    href: https://azure.microsoft.com/roadmap/
+  - name: Отзыв о продукте
+    href: https://feedback.azure.com/forums/602224-azure-container-instances
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-container-instances
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=container-instances&sort=newest
+ms.openlocfilehash: 25214a5bc5ec99b6569ee833f23a167d8e301d29
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996593"

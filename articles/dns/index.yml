@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 2ee8284861d62d4405d0f949ee74b1992440b66e
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 701bf7db8304189b9348cad1c920f3e5ec1fecf1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43184566"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991136"
 documentType: LandingData
 title: Документация по Azure DNS
 metadata:
@@ -48,11 +48,14 @@ sections:
   - type: paragraph
     text: Инструкции по размещению домена в Azure DNS, созданию пользовательских записей DNS для веб-приложения с помощью Azure DNS, а также частной зоны и записей DNS.
   - type: list
-    style: ordered
+    style: unordered
     items:
     - html: <a href="/azure/dns/dns-delegate-domain-azure-dns">Размещение домена в Azure DNS</a>
     - html: <a href="/azure/dns/dns-web-sites-custom-domain">Создание пользовательских записей DNS для веб-приложения</a>
     - html: <a href="/azure/dns/private-dns-getstarted-powershell">Создание частной зоны и записи DNS</a>
+    - html: <a href="/azure/dns/tutorial-alias-pip">Настройка записи псевдонима для ссылки на общедоступный IP-адрес Azure</a>
+    - html: <a href="/azure/dns/tutorial-alias-tm">Настройка записи псевдонима для поддержки доменных имен Apex с помощью диспетчера трафика</a>
+    - html: <a href="/azure/dns/tutorial-alias-rr">Настройка записи псевдонима для записей зоны</a>
 - title: Бесплатные видеоуроки PluralSight
   items:
   - type: list

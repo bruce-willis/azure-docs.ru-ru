@@ -1,51 +1,65 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 15863679b42962d414493804f234c9fde46172ea
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: c3120d4fb8fb9377d43cdd2df780810bb4634e52
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43781164"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46985036"
 documentType: LandingData
-title: Документация по службам машинного обучения Azure (предварительная версия)
+title: Документация по службе "Машинное обучение Azure" (предварительная версия)
 metadata:
-  title: Документация по службам машинного обучения Azure (предварительная версия)
-  meta.description: Learn how to use Azure Machine Learning services (preview).
+  title: Документация по службе "Машинное обучение Azure". Руководства и справочник по API | Документация Майкрософт
+  meta.description: Learn how to build intelligent algorithms into apps and websites. Use Scikit-learn, Tensorflow, Pytorch or any other Python-based framework to build your machine learning model and train it locally or in the cloud. Tutorials, quickstarts, API references, and examples show you how.
   services: machine-learning
-  author: garyericson
+  author: j-martens
   manager: jhubbard
   ms.service: machine-learning
   ms.component: core
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 01/18/2018
-  ms.author: garye
+  ms.date: 09/24/2018
+  ms.author: jmartens
 abstract:
-  description: Службы машинного обучения Azure (предварительная версия) позволяют создавать и развертывать модели машинного обучения и искусственного интеллекта с помощью любых средств и библиотек Python, а также управлять ими. Для хранения и обработки данных можно использовать широкий набор служб данных и вычислений в Azure.
+  description: Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты. Используйте scikit-learn, Tensorflow, Pytorch или любую другую платформу на базе Python для создания моделей машинного обучения и ее обучения локально или в облаке. Руководства, краткие инструкции, справочники по API и примеры использования.
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsB
+    columns: 1
+    items:
+    - html: <p>Обучайте и развертывайте модели машинного обучения в облачной службе Azure. <a href="overview-what-is-azure-ml.md">Подробнее о службе</a></p>
+      image:
+        src: /azure/machine-learning/media/index/i_machine-learning.svg
+      title: Служба "Машинное обучение Azure"
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Создание первого проекта машинного обучения
+    text: Настройте ресурсы для службы "Машинное обучение Azure".
   - type: list
     style: unordered
     items:
-    - html: <a href="quickstart-installation.md">Установка и создание</a>
+    - html: <a href="quickstart-get-started.md">Начало работы на портале Azure </a>
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как подготовить данные, настроить эксперимент и ввести в эксплуатацию модели
+    text: Узнайте, как настроить эксперимент подготовить модели у использованию.
   - type: list
-    style: ordered
+    style: unordered
     items:
-    - html: <a href="../desktop-workbench/tutorial-classifying-iris-part-1">Пошаговый обзор основных сведений о службах машинного обучения (предварительная версия)</a>
-    - html: <a href="../desktop-workbench/tutorial-classifying-iris-part-2">Использование Machine Learning Workbench для построения модели с помощью Ирисов Фишера</a>
-    - html: <a href="../desktop-workbench/tutorial-classifying-iris-part-3">Руководство по развертыванию модели машинного обучения</a>
-    - html: <a href="../desktop-workbench/tutorial-bikeshare-dataprep">Расширенная подготовка данных с помощью Azure Machine Learning Workbench</a>
-- title: Другие технологии машинного обучения Azure
+    - html: <a href="tutorial-train-models-with-aml">Обучение собственных моделей машинного обучения</a>
+    - html: <a href="tutorial-auto-train-models">Автоматическое создание и настройка моделей</a>
+    - html: <a href="tutorial-deploy-models-with-aml">Развертывание модели в качестве веб-службы</a>
+- title: Справочные материалы
   items:
-  - type: paragraph
-    text: 'Другие технологии, доступные в службе "Машинное обучение Microsoft Azure":'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="http://aka.ms/aml-sdk">Пакет SDK службы "Машинное обучение Azure" для Python (основной пакет SDK)</a>
+    - html: <a href="https://docs.microsoft.com/python/api/overview/azure/dataprep?view=azure-dataprep-py">Пакет SDK azureml-dataprep службы "Машинное обучение Azure"</a>
+- title: Другие технологии службы "Машинное обучение Azure"
+  items:
   - type: list
     style: cards
     className: cardsFTitle
@@ -60,15 +74,3 @@ sections:
       image:
         src: media/index/virtual-machines.svg
         href: /azure/machine-learning/data-science-virtual-machine/
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
-    items:
-    - title: Пакеты
-      html: <p><a href="reference-python-package-overview#amlpcv">Компьютерное зрение</a></p><p><a href="reference-python-package-overview#amlpf">Прогнозирование</a></p><p><a href="reference-python-package-overview#amlrealtimeai">Ускорение FPGA</a></p><p><a href="reference-python-package-overview#amlpta">Текстовая аналитика</a></p>
-    - title: Языки
-      html: <p><a href="https://azure.microsoft.com/develop/python/">Python</a></p>
-    - title: REST
-      html: <p><a href="https://docs.microsoft.com/rest/api/machinelearning/">API-интерфейсы управления REST</a></p>

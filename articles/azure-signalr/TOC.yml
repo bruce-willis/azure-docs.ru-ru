@@ -1,32 +1,55 @@
+items:
 - name: Сервисная документация по Azure SignalR
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о службе Azure SignalR
-      href: signalr-overview.md
+  - name: Сведения о службе Azure SignalR
+    href: signalr-overview.md
 - name: Быстрое начало работы
   items:
-    - name: Создание комнаты чата
-      href: signalr-quickstart-dotnet-core.md
+  - name: ASP.NET Core;
+    href: signalr-quickstart-dotnet-core.md
+  - name: Функции Azure — JavaScript
+    href: signalr-quickstart-azure-functions-javascript.md
+  - name: Функции Azure — C#
+    href: signalr-quickstart-azure-functions-csharp.md
+  - name: REST API
+    href: signalr-quickstart-rest-api.md
 - name: Учебники
   items:
-    - name: Аутентификация с помощью OAuth
-      href: signalr-authenticate-oauth.md
+  - name: Интеграция с ASP.NET Core Identity
+    href: signalr-authenticate-oauth.md
+  - name: Создание бессерверного приложения в реальном времени с аутентификацией
+    href: signalr-authenticate-azure-functions.md
 - name: Примеры
   items:
-    - name: Примеры кода
-      href: 'https://github.com/aspnet/AzureSignalR-samples'
-    - name: Инфраструктура CLI Azure
-      href: signalr-cli-samples.md
+  - name: Примеры кода
+    href: https://github.com/aspnet/AzureSignalR-samples
+  - name: Инфраструктура CLI Azure
+    href: signalr-cli-samples.md
+- name: Основные понятия
+  items:
+  - name: Масштабирование SignalR для ASP.NET Core
+    href: signalr-overview-scale-aspnet-core.md
+  - name: Создание приложений в реальном времени с помощью решения "Функции Azure"
+    href: signalr-overview-azure-functions.md
 - name: Ресурсы
   items:
-    - name: Стратегия развития SignalR
-      href: 'https://github.com/aspnet/Home/wiki/Roadmap'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/signalr-service/'
-    - name: Видеоролики
-      href: 'https://www.youtube.com/results?search_query=Azure+SignalR+Core'
-    - name: Форумы ASP.NET
-      href: 'https://forums.asp.net/search?q=title%3A%28SignalR%20Core%29+OR+body%3A%28SignalR%20Core%29+AND+forumid%3A%281255%29'
-    - name: Twitter
-      href: 'https://twitter.com/SignalR'
+  - name: Стратегия развития SignalR
+    href: https://github.com/aspnet/Home/wiki/Roadmap
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/signalr-service/
+  - name: Видеоролики
+    href: https://www.youtube.com/results?search_query=Azure+SignalR+Core
+  - name: StackOverflow
+    href: https://stackoverflow.com/search?q=signalr+service
+  - name: Форумы ASP.NET
+    href: https://forums.asp.net/1254.aspx
+  - name: Twitter
+    href: https://twitter.com/SignalR
+ms.openlocfilehash: e67749dfa19999658cbb3f63fcd6653d37a1a5f7
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46946363"

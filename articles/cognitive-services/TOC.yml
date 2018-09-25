@@ -1,6 +1,6 @@
 items:
 - name: Документация по службам Azure Cognitive Services
-  href: index.yml
+  href: index.md
 - name: Обзор
   items:
   - name: Что такое Cognitive Services?
@@ -12,20 +12,20 @@ items:
   items:
   - name: Создание учетной записи
     href: cognitive-services-apis-create-account.md
-  - name: Создание классификатора изображений
-    href: ./custom-vision-service/getting-started-build-a-classifier.md
-  - name: Создание приложения для системы домашней автоматики
-    href: ./luis/luis-get-started-create-app.md
-  - name: Создание приложения .NET для текстовой аналитики
-    href: ./text-analytics/quickstarts/csharp.md
 - name: Учебники
   items:
-  - name: Веб-страница для пользовательского поиска
-    href: ./bing-custom-search/tutorials/custom-search-web-page.md
-  - name: Приложение службы "Распознавание речи"
-    href: ./luis/luis-nodejs-tutorial-build-bot-framework-sample.md
-  - name: Повышение точности намерений для команд
-    href: ./luis/luis-tutorial-batch-testing.md
+  - name: Создание приложения с помощью Компьютерного зрения
+    href: ./Computer-vision/tutorials/csharptutorial.md
+  - name: Распознавание намерений с помощью пакета SDK для распознавания речи и LUIS
+    href: ./speech-service/how-to-recognize-intents-from-speech-csharp.md
+  - name: Создание приложения LUIS
+    href: ./luis/luis-quickstart-intents-only.md
+  - name: Использование API анализа текста с Power BI
+    href: ./Text-Analytics/tutorials/tutorial-power-bi-key-phrases.md
+  - name: Создание приложения для Поиска в Интернете Bing
+    href: ./bing-web-search/tutorial-bing-web-search-single-page-app.md
+  - name: Создание приложения для Поиска изображений Bing
+    href: ./bing-image-search/tutorial-bing-image-search-single-page-app.md
 - name: Ресурсы
   items:
   - name: Стратегия развития Azure
@@ -42,9 +42,9 @@ items:
     href: http://go.microsoft.com/fwlink/?LinkId=698895
   - name: База знаний
     href: https://cognitive.uservoice.com/knowledgebase
-ms.openlocfilehash: 8bd7984fd713a2acbb1ca2cc66e3d64bd49ef5a4
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: 233a9bb508c8e6d02fd3e95cb8176f56bc9726b9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44023831"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46972635"

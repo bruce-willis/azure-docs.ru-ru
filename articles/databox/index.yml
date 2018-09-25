@@ -1,9 +1,15 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: f4ef48157896d7cf4947fbc8ef6eba8b59ec414b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46986526"
 documentType: LandingData
-title: Документация по Azure Data Box
+title: Azure Data Box для автономной передачи данных
 metadata:
-  title: Документация по Azure Data Box
-  description: Служба Azure Data Box позволяет передавать терабайты данных в Azure быстрым, недорогим и надежным способом. Корпорация Майкрософт ускоряет безопасную передачу данных, организовывая доставку ваших дисков и выполняя все логистические операции.
+  title: Документация по Azure Data Box для автономной передачи данных
+  description: Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для автономной передачи данных, когда вы ограничены во времени, сетевых ресурсах или средствах.
   services: databox
   author: alkohli
   manager: twooley
@@ -11,36 +17,35 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 07/10/2018
+  ms.date: 09/24/2018
   ms.author: alkohli
-  ms.openlocfilehash: 5077d0ba77b6bdce99f1dfdf258182980a367b6c
-  ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/13/2018
-  ms.locfileid: "39010146"
 abstract:
-  description: 'Служба Azure Data Box позволяет передавать терабайты данных в Azure быстрым, недорогим и надежным способом. Корпорация Майкрософт ускоряет безопасную передачу данных, организовывая доставку ваших дисков и выполняя все логистические операции.<p>Чтобы передать большие объемы данных в Azure, нужно выполнить четыре простых шага: заказать диски, получить заказ, скопировать данные на эти диски и вернуть их в Azure. После получения дисков данные импортируются в Azure, а сами диски очищаются.<p><a href="/azure/databox/data-box-disk-overview">Дополнительные сведения о Data Box Disk</a>.</p>'
+  description: 'Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для автономной передачи данных, когда вы ограничены во времени, сетевых ресурсах или средствах.<p>В зависимости от размера данных выберите Диск Data Box, Data Box<SUP>Предварительная версия</SUP> или Data Box Heavy<SUP>Предварительная версия</SUP>. Для каждого из устройств передача в Azure осуществляется за 4 простых шага: заказ, получение, копирование данных на устройство и возвращение устройства в Azure. Данные передаются в центр обработки данных Azure, а затем удаляются с носителя.</p><p>Узнайте, как использовать Data Box для автономной передачи данных, ознакомившись с нашими руководствами и краткими руководствами.</p>'
 sections:
 - title: Быстрый запуск
   items:
-  - type: paragraph
-    text: Сведения об использовании Data Box Disk для передачи данных в Azure.
   - type: list
     style: icon48
     items:
     - image:
-        src: https://docs.microsoft.com/media/common/i_portal.svg
-      text: Портал Azure
+        src: https://docs.microsoft.com/media/common/i_quick-start.svg
+      text: Настройка Data Box на портале Azure
+      href: /azure/databox/data-box-quickstart-portal
+    - image:
+        src: https://docs.microsoft.com/media/common/i_quick-start.svg
+      text: Настройка Диска Data Box<SUP>Предварительная версия</SUP> на портале Azure
       href: /azure/databox/data-box-disk-quickstart-portal
-- title: Пошаговое руководство
+    - image:
+        src: https://docs.microsoft.com/media/common/i_quick-start.svg
+      text: Регистрация для использования Data Box Heavy<SUP>Предварительная версия</SUP>
+      href: /azure/databox/data-box-heavy-overview#sign-up
+- title: Учебники
   items:
-  - type: paragraph
-    text: Сведения об использовании Data Box Disk для импорта данных в Azure.
   - type: list
-    style: ordered
+    style: cards
+    className: cardsD
     items:
-    - html: <a href="data-box-disk-deploy-ordered">Упорядочивание Data Box Disk</a>
-    - html: <a href="data-box-disk-deploy-set-up">Настройка Data Box Disk</a>
-    - html: <a href="data-box-disk-deploy-copy-data">Копирование данных в Data Box Disk</a>
-    - html: <a href="data-box-disk-deploy-picked-up">Возврат Data Box Disk и отправка данных в Azure</a>
+    - title: Для Data Box
+      html: <p><a href="/azure/databox/data-box-deploy-ordered">Заказ Azure Data Box</a></p><p><a href="/azure/databox/data-box-deploy-set-up">Присоединение кабелей и подключение Azure Data Box</a></p><p><a href="/azure/databox/data-box-deploy-copy-data">Копирование данных на Azure Data Box</a></p><p><a href="/azure/databox/data-box-deploy-picked-up">Возврат Azure Data Box и проверка переданных данных</a></p>
+    - title: Для Диска Data Box<SUP>Предварительная версия</SUP>
+      html: <p><a href="/azure/databox/data-box-disk-deploy-ordered">Заказ Диска Azure Data Box</a></p><p><a href="/azure/databox/data-box-disk-deploy-set-up">Распаковка, подключение и разблокирование Диска Azure Data Box</a></p><p><a href="/azure/databox/data-box-disk-deploy-copy-data">Копирование данных на Диск Azure Data Box</a></p><p><a href="/azure/databox/data-box-disk-deploy-picked-up">Возвращение Диска Azure Data Box и проверка переданных данных</a></p>

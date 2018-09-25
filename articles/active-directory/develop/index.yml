@@ -1,0 +1,262 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 845fb826d18949c30663c829e65537156bd2f865
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46986070"
+documentType: LandingData
+title: Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)
+metadata:
+  title: Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)
+  description: Узнайте, как можно использовать платформу удостоверений Майкрософт для создания приложений, которые обеспечивают безопасный вход пользователей с любыми удостоверениями Майкрософт, получают маркеры для вызова Microsoft Graph, других интерфейсов API Майкрософт или интерфейсов API, которые создали разработчики.
+  services: active-directory
+  author: CelesteDG
+  manager: mtillman
+  ms.service: active-directory
+  ms.component: develop
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 09/24/2018
+  ms.author: celested
+abstract:
+  description: Платформа удостоверений Майкрософт является результатом эволюционного развития платформы для разработчиков и службы идентификации Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с помощью любых удостоверений Майкрософт, получают маркеры для вызова Microsoft Graph, других интерфейсов API Майкрософт или интерфейсов API, созданных разработчиками. Это полнофункциональная платформа, включающая в себя службу аутентификации, библиотеки с открытым кодом, службу регистрации приложений и конфигурацию, полную документацию по разработке, примеры кода и другое содержимое, предназначенное для разработчиков. Платформа удостоверений Майкрософт поддерживает стандартные отраслевые протоколы, такие как OAuth 2.0 и OpenID Connect.
+  aside:
+    image:
+      alt: 
+      height: 110
+      src: ./media/index/video-featured.png
+      width: 250
+    title: Создание веб-приложений с аутентификацией (9:31)
+    href: https://www.youtube.com/watch?v=QWh5HZK9vRA
+    width: 250
+sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/active-directory/develop/about-microsoft-identity-platform
+      html: <p>Узнайте больше о платформе удостоверений Майкрософт, а также о ее компонентах и возможностях.</p>
+      image:
+        src: ./media/index/i_get-started.svg
+      title: Общие сведения о платформе удостоверений Майкрософт
+    - href: /azure/active-directory/develop/azure-ad-developers-guide/
+      html: <p>Аутентификация удостоверений Azure AD (рабочие и учебные учетные записи) путем запроса маркеров у конечной точки Azure AD версии 1.0 с помощью библиотеки аутентификации Azure AD (ADAL), портала Azure и API Graph Azure AD.</p>
+      image:
+        src: ./media/index/i_advanced.svg
+      title: Версия 1.0
+    - href: /azure/active-directory/develop/v2-overview
+      html: <p>Аутентификация более широкого набора удостоверений Майкрософт через известную конечную точку Azure AD версии 2.0 с помощью библиотеки аутентификации Майкрософт (MSAL), портала Azure и Microsoft Graph API.</p>
+      image:
+        src: ./media/index/i_investigate.svg
+      title: Версия 2.0
+- title: Быстрое начало работы
+  items:
+  - type: paragraph
+    text: Следуя этим кратким руководствам, можно быстро создать приложение и добавить в него такие функциональные возможности, как получение маркеров, обновление маркеров, выполнение входа пользователя, отображение некоторых сведений о пользователе и многое другое.
+  - type: paragraph
+    text: <b>Одностраничные приложения</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/angularjs-shield.svg
+      title: AngularJS
+    - image:
+        src: ./media/index/logo_js.svg
+      title: JavaScript
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: quickstart-v1-angularjs-spa.md
+      - href: https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi
+    - title: Версия 2.0
+      values:
+      - href: 
+      - href: quickstart-v2-javascript.md
+  - type: paragraph
+    text: <b>Веб-приложения</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_NET.svg
+      title: ASP.NET
+    - image:
+        src: ./media/index/logo_NETcore.svg
+      title: ASP.NET Core
+    - image:
+        src: ./media/index/logo_java.svg
+      title: Java
+    - image:
+        src: ./media/index/logo_nodejs.svg
+      title: NodeJS
+    - image:
+        src: ./media/index/logo_python.svg
+      title: Python
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: quickstart-v1-aspnet-webapp.md
+      - href: 
+      - href: https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect
+      - href: quickstart-v1-openid-connect-code.md
+      - href: https://github.com/Azure-Samples/active-directory-python-webapp-graphapi
+    - title: Версия 2.0
+      values:
+      - href: quickstart-v2-aspnet-webapp.md
+      - href: quickstart-v2-aspnet-core-webapp.md
+      - href: 
+      - href: https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs
+      - href: 
+  - type: paragraph
+    text: <b>Интерфейсы веб-API</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_NET.svg
+      title: ASP.NET
+    - image:
+        src: ./media/index/logo_NETcore.svg
+      title: ASP.NET Core
+    - image:
+        src: ./media/index/logo_nodejs.svg
+      title: NodeJS
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: quickstart-v1-dotnet-webapi.md
+      - href: 
+      - href: quickstart-v1-nodejs-webapi.md
+    - title: Версия 2.0
+      values:
+      - href: https://github.com/azureadquickstarts/appmodelv2-nativeclient-dotnet
+      - href: https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2
+      - href: 
+  - type: paragraph
+    text: <b>Классические и мобильные приложения</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_android.svg
+      title: Android
+    - image:
+        src: ./media/index/logo_ios.svg
+      title: iOS
+    - image:
+        src: ./media/index/logo_Windows.svg
+      title: Универсальные приложения Windows
+    - image:
+        src: ./media/index/logo_Windows.svg
+      title: Платформа .NET для классических приложений Windows
+    - image:
+        src: ./media/index/logo_xamarin.svg
+      title: Xamarin
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: quickstart-v1-android.md
+      - href: quickstart-v1-ios.md
+      - href: 
+      - href: quickstart-v1-dotnet.md
+      - href: quickstart-v1-xamarin.md
+    - title: Версия 2.0
+      values:
+      - href: quickstart-v2-android.md
+      - href: quickstart-v2-ios.md
+      - href: quickstart-v2-uwp.md
+      - href: quickstart-v2-windows-desktop.md
+      - href: 
+  - type: paragraph
+    text: <b>Обмен между службами</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_NET.svg
+      title: .NET
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: sample-v1-code.md#server-or-daemon-application-to-web-api
+    - title: Версия 2.0
+      values:
+      - href: https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Используйте платформу удостоверений Майкрософт и следуйте подробным процедурам на основе сценариев для выполнения таких основных задач разработчика, как получение маркеров доступа, реализация входа с помощью удостоверений Майкрософт и многое другое.
+  - type: paragraph
+    text: <b>Одностраничные приложения</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_js.svg
+      title: JavaScript
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: 
+    - title: Версия 2.0
+      values:
+      - href: tutorial-v2-javascript-spa.md
+  - type: paragraph
+    text: <b>Веб-приложения</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_NET.svg
+      title: ASP.NET
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: 
+    - title: Версия 2.0
+      values:
+      - href: tutorial-v2-asp-webapp.md
+  - type: paragraph
+    text: <b>Классические и мобильные приложения</b>
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: ./media/index/logo_android.svg
+      title: Android
+    - image:
+        src: ./media/index/logo_ios.svg
+      title: iOS
+    - image:
+        src: ./media/index/logo_Windows.svg
+      title: Универсальные приложения Windows
+    - image:
+        src: ./media/index/logo_Windows.svg
+      title: Платформа .NET для классических приложений Windows
+    rows:
+    - title: Версия 1.0
+      values:
+      - href: 
+      - href: 
+      - href: 
+      - href: 
+    - title: Версия 2.0
+      values:
+      - href: tutorial-v2-android.md
+      - href: tutorial-v2-ios.md
+      - href: tutorial-v2-windows-uwp.md
+      - href: tutorial-v2-windows-desktop.md
+- title: Примеры
+  items:
+  - type: paragraph
+    text: Ознакомьтесь с примерами кода, соответствующими типу приложения, которое вы разрабатываете, а также используемым платформе и интерфейсам API.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/develop/sample-v1-code">Примеры кода версии 1.0 для сценариев</a>
+    - html: <a href="/azure/active-directory/develop/sample-v2-code">Примеры кода версии 2.0 для сценариев</a>

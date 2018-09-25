@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 59274dd042c136770d0f4bab5ab69854dbfb3896
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: f4f0c3e21f755dbf431be72ebf7568155ab1bc89
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43663773"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46949440"
 documentType: LandingData
 title: Документация по Stream Analytics
 metadata:
@@ -58,6 +58,8 @@ sections:
     - html: <a href="stream-analytics-manage-job">Создание задания Stream Analytics для анализа данных телефонных звонков и визуализации результатов на панели мониторинга Power BI</a>
     - html: <a href="stream-analytics-with-azure-functions">Запуск решения "Функции Azure" из заданий Azure Stream Analytics</a>
     - html: <a href="stream-analytics-javascript-user-defined-functions">Запуск определяемых пользователем функций JavaScript в заданиях Azure Stream Analytics</a>
+    - html: <a href="stream-analytics-tools-visual-studio-cicd-vsts">Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines</a>
+    - html: <a href="stream-analytics-edge-csharp-udf">Написание определяемой пользователем функции C# для задания Azure Stream Analytics Edge (предварительная версия)</a>
 - title: Справочные материалы
   items:
   - type: list

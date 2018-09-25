@@ -1,0 +1,62 @@
+items:
+- name: Документация по обозревателю данных Azure
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Что такое обозреватель данных?
+    href: data-explorer-overview.md
+- name: Быстрое начало работы
+  items:
+  - name: Создание кластера — портал Azure
+    href: create-cluster-database-portal.md
+  - name: Прием данных
+    items:
+    - name: Потоковая передача данных — концентратор событий
+      href: ingest-data-event-hub.md
+    - name: Пакетная обработка данных — Python
+      href: python-ingest-data.md
+    expanded: true
+  - name: Запрос данных
+    items:
+    - name: Веб-интерфейс
+      href: web-query-data.md
+    - name: Python
+      href: python-query-data.md
+    expanded: true
+  expanded: true
+- name: Учебники
+  items:
+  - name: Визуализация данных — Power BI
+    href: visualize-power-bi.md
+- name: Основные понятия
+  items:
+  - name: Общие сведения о приеме данных
+    href: ingest-data-overview.md
+- name: Практические руководства
+  items:
+  - name: Написание запросов
+    href: write-queries.md
+  - name: Принятие демонстрационных данных
+    href: ingest-sample-data.md
+  - name: Управление разрешениями базы данных
+    href: manage-database-permissions.md
+  - name: Проверка работоспособности кластера
+    href: check-cluster-health.md
+  - name: Устранение неполадок
+    items:
+    - name: Создание кластера
+      href: troubleshoot-create-cluster.md
+    - name: Подключение к кластеру
+      href: troubleshoot-connect-cluster.md
+    - name: Работа с базами данных и таблицами
+      href: troubleshoot-database-table.md
+- name: Справочные материалы
+  items:
+  - name: Справочник по языку
+    href: https://aka.ms/kustolangref
+ms.openlocfilehash: 6373afdadf9d3916cb8e10be976d141ba55177cf
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964945"

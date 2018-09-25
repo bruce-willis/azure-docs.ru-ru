@@ -1,0 +1,37 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 739d46e900b51e93c0d232e57a54a9b05cfe49ce
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46965081"
+documentType: LandingData
+title: Документация по Azure Resource Graph
+metadata:
+  title: Документация по Azure Resource Graph. Руководства и справочник по API
+  description: Azure Resource Graph — это служба в Azure, которая позволяет выполнять сложные запросы ресурсов в нужном масштабе.
+  services: resource-graph
+  author: DCtheGeek
+  manager: carmonm
+  ms.service: resource-graph
+  ms.topic: landing-page
+  ms.date: 09/18/2018
+  ms.author: dacoulte
+abstract:
+  description: Документация по Azure Resource Graph поможет вам настроить Azure Resource Graph и изучить язык запросов, чтобы обнаруживать и изучать ресурсы в нужном масштабе.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Настройте Resource Graph и выполните свой первый запрос.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: ./media/cli.svg
+      text: Инфраструктура CLI Azure
+      href: first-query-azurecli.md
+    - image:
+        src: ./media/powershell.svg
+      text: Azure PowerShell
+      href: first-query-powershell.md

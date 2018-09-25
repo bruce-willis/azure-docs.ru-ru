@@ -28,6 +28,8 @@ items:
     href: logic-apps-serverless-overview.md
   - name: Интеграция B2B и обработка EDI
     href: logic-apps-enterprise-integration-overview.md
+  - name: Доступ к виртуальным сетям Azure
+    href: connect-virtual-network-vnet-isolated-environment-overview.md
 - name: Практические руководства
   items:
   - name: Разработка
@@ -36,6 +38,8 @@ items:
       href: logic-apps-create-logic-apps-from-templates.md
     - name: Миграция из служб BizTalk
       href: logic-apps-move-from-mabs.md
+    - name: Создание приложений логики в Visual Studio Code
+      href: create-logic-apps-visual-studio-code.md
     - name: Управление выполнением рабочих процессов
       items:
       - name: Условные операторы
@@ -68,8 +72,12 @@ items:
       href: logic-apps-exception-handling.md
     - name: Обработка больших сообщений
       href: logic-apps-handle-large-messages.md
-    - name: Защита приложений логики
-      href: logic-apps-securing-a-logic-app.md
+    - name: Безопасность
+      items:
+      - name: Защита приложений логики
+        href: logic-apps-securing-a-logic-app.md
+      - name: Аутентификация на основе управляемых удостоверений
+        href: create-managed-service-identity.md
     - name: Разработка настраиваемых соединителей
       href: custom-connector-overview.md
     - name: Разработка настраиваемых интерфейсов API
@@ -139,6 +147,8 @@ items:
       href: logic-apps-enterprise-integration-b2b-list-errors-solutions.md
     - name: Планирование аварийного восстановления
       href: logic-apps-enterprise-integration-b2b-business-continuity.md
+  - name: Подключение к виртуальным сетям с изолированными средами
+    href: connect-virtual-network-vnet-isolated-environment.md
   - name: Доступ к локальным данным
     items:
     - name: Установка шлюза данных
@@ -357,9 +367,9 @@ items:
     href: https://customers.microsoft.com/en-us/search?sq=%22Azure%20Logic%20Apps%20%22&ff=story_product_categories%26%3EAzure&p=0&so=story_publish_date%20desc
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=logic-apps&sort=newest
-ms.openlocfilehash: 2b3670c807d02531e5b868f554eb3b80f65250f2
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 60dc7f5fe39310bad47fa526fe3d755b164b225a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124007"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46999789"

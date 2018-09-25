@@ -1,132 +1,141 @@
+items:
 - name: Документация по кэшу Redis
   href: index.md
 - name: Обзор
   items:
-    - name: Сведения о кэше Redis для Azure
-      href: cache-overview.md
+  - name: Сведения о кэше Redis для Azure
+    href: cache-overview.md
 - name: Быстрое начало работы
   items:
-    - name: Создание приложения ASP.NET
-      href: cache-web-app-howto.md
-    - name: Создание приложения NET
-      href: cache-dotnet-how-to-use-azure-redis-cache.md
-    - name: Создание приложения .NET Core
-      href: cache-dotnet-core-quickstart.md
-    - name: Создание приложения Node.js
-      href: cache-nodejs-get-started.md
-    - name: Создание приложения Java
-      href: cache-java-get-started.md
-    - name: Создание приложения Python
-      href: cache-python-get-started.md
+  - name: Создание приложения ASP.NET
+    href: cache-web-app-howto.md
+  - name: Создание приложения NET
+    href: cache-dotnet-how-to-use-azure-redis-cache.md
+  - name: Создание приложения .NET Core
+    href: cache-dotnet-core-quickstart.md
+  - name: Создание приложения Node.js
+    href: cache-nodejs-get-started.md
+  - name: Создание приложения Java
+    href: cache-java-get-started.md
+  - name: Создание приложения Python
+    href: cache-python-get-started.md
 - name: Учебники
   items:
-    - name: Использование кэширования со списками лидеров
-      href: cache-web-app-cache-aside-leaderboard.md
+  - name: Использование кэширования со списками лидеров
+    href: cache-web-app-cache-aside-leaderboard.md
 - name: Примеры
   items:
-    - name: Примеры кэша Redis
-      href: cache-redis-samples.md
-    - name: Azure PowerShell
-      href: cache-howto-manage-redis-cache-powershell.md
-    - name: Инфраструктура CLI Azure
-      href: cli-samples.md
+  - name: Примеры кэша Redis
+    href: cache-redis-samples.md
+  - name: Azure PowerShell
+    href: cache-howto-manage-redis-cache-powershell.md
+  - name: Инфраструктура CLI Azure
+    href: cli-samples.md
 - name: Основные понятия
   items:
-    - name: Рекомендации
-      items:
-        - name: Рекомендации по использованию кэша Redis для Azure
-          href: 'https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f'
-        - name: Архитектура Azure. Рекомендации по кэшированию
-          href: 'https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json'
+  - name: Рекомендации
+    items:
+    - name: Рекомендации по использованию кэша Redis для Azure
+      href: https://gist.github.com/JonCole/925630df72be1351b21440625ff2671f
+    - name: Архитектура Azure. Рекомендации по кэшированию
+      href: https://docs.microsoft.com/azure/architecture/best-practices/caching?toc=%2Fazure%2Fredis-cache%2Ftoc.json
 - name: Практические руководства
   items:
-    - name: План
-      items:
-        - name: Выбор уровня кэша
-          href: 'cache-faq.md#what-redis-cache-offering-and-size-should-i-use'
-        - name: Сохраняйте кэш с помощью функции сохраняемости данных Redis
-          href: cache-how-to-premium-persistence.md
-        - name: Защита кэша с помощью виртуальной сети
-          href: cache-how-to-premium-vnet.md
-        - name: Распределение кэша с помощью кластеризации
-          href: cache-how-to-premium-clustering.md
-        - name: Перенос из управляемой службы кэша
-          href: cache-migrate-to-redis.md
-    - name: Автоматизация
-      items:
-        - name: Развертывание и управление с помощью Azure PowerShell
-          href: cache-howto-manage-redis-cache-powershell.md
-        - name: Развертывание и управление с помощью интерфейса командной строки Azure
-          href: cli-samples.md
-        - name: Подготовьте кэш Redis
-          href: cache-redis-cache-arm-provision.md
-        - name: Подготовка веб-приложения с кэшем Redis
-          href: cache-web-app-arm-with-redis-cache-provision.md
-    - name: Интеграция с ASP.NET
-      items:
-        - name: Поставщик состояния сеанса
-          href: cache-aspnet-session-state-provider.md
-        - name: Поставщик кэша вывода
-          href: cache-aspnet-output-cache-provider.md
-    - name: управление
-      items:
-        - name: Настройка на портале Azure
-          href: cache-configure.md
-        - name: Настройка георепликации
-          href: cache-how-to-geo-replication.md
-        - name: Импорт и экспорт данных
-          href: cache-how-to-import-export-data.md
-        - name: Reboot
-          href: 'cache-administration.md#reboot'
-        - name: запланировать обновления
-          href: 'cache-administration.md#schedule-updates'
-        - name: Настройка доступа redis cli.exe
-          href: cache-how-to-redis-cli-tool.md
-    - name: Мониторинг и устранение неполадок
-      items:
-        - name: Мониторинг на портале Azure
-          href: cache-how-to-monitor.md
-        - name: Устранение неполадок с кэшем
-          href: cache-how-to-troubleshoot.md
-        - name: Задать оповещения для исключений
-          href: 'cache-how-to-monitor.md#operations-and-alerts'
-    - name: Масштаб
-      items:
-        - name: Обновление до другого размера и уровня
-          href: cache-how-to-scale.md
-        - name: Использование кластера Redis для горизонтального масштабирования
-          href: cache-how-to-premium-clustering.md
-    - name: Интеграция со Spring Boot
-      items:
-        - name: Использование приложения Spring Boot Initializer с кэшем Redis
-          href: cache-java-spring-boot-initializer-with-redis-cache.md
+  - name: План
+    items:
+    - name: Выбор уровня кэша
+      href: cache-faq.md#what-redis-cache-offering-and-size-should-i-use
+    - name: Сохраняйте кэш с помощью функции сохраняемости данных Redis
+      href: cache-how-to-premium-persistence.md
+    - name: Защита кэша с помощью виртуальной сети
+      href: cache-how-to-premium-vnet.md
+    - name: Распределение кэша с помощью кластеризации
+      href: cache-how-to-premium-clustering.md
+    - name: Перенос из управляемой службы кэша
+      href: cache-migrate-to-redis.md
+  - name: Автоматизация
+    items:
+    - name: Развертывание и управление с помощью Azure PowerShell
+      href: cache-howto-manage-redis-cache-powershell.md
+    - name: Развертывание и управление с помощью интерфейса командной строки Azure
+      href: cli-samples.md
+    - name: Подготовьте кэш Redis
+      href: cache-redis-cache-arm-provision.md
+    - name: Подготовка веб-приложения с кэшем Redis
+      href: cache-web-app-arm-with-redis-cache-provision.md
+  - name: Интеграция с ASP.NET
+    items:
+    - name: Поставщик состояния сеанса
+      href: cache-aspnet-session-state-provider.md
+    - name: Поставщик кэша вывода
+      href: cache-aspnet-output-cache-provider.md
+  - name: управление
+    items:
+    - name: Настройка на портале Azure
+      href: cache-configure.md
+    - name: Настройка георепликации
+      href: cache-how-to-geo-replication.md
+    - name: Импорт и экспорт данных
+      href: cache-how-to-import-export-data.md
+    - name: Reboot
+      href: cache-administration.md#reboot
+    - name: запланировать обновления
+      href: cache-administration.md#schedule-updates
+    - name: Настройка доступа redis cli.exe
+      href: cache-how-to-redis-cli-tool.md
+  - name: Мониторинг и устранение неполадок
+    items:
+    - name: Мониторинг на портале Azure
+      href: cache-how-to-monitor.md
+    - name: Устранение неполадок с кэшем
+      href: cache-how-to-troubleshoot.md
+    - name: Задать оповещения для исключений
+      href: cache-how-to-monitor.md#operations-and-alerts
+  - name: Масштаб
+    items:
+    - name: Обновление до другого размера и уровня
+      href: cache-how-to-scale.md
+    - name: Использование кластера Redis для горизонтального масштабирования
+      href: cache-how-to-premium-clustering.md
+  - name: Интеграция со Spring Boot
+    items:
+    - name: Использование приложения Spring Boot Initializer с кэшем Redis
+      href: cache-java-spring-boot-initializer-with-redis-cache.md
 - name: Справочные материалы
   items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?service=redis-cache'
-    - name: Azure PowerShell
-      href: /powershell/module/azurerm.rediscache
-    - name: Azure CLI (предварительная версия)
-      href: /cli/azure/redis
-    - name: .NET
-      href: /dotnet/api/microsoft.azure.management.redis
-    - name: Java
-      href: /java/api/com.microsoft.azure.management.redis._redis_cache
-    - name: Клиенты Redis
-      href: 'http://redis.io/clients'
-    - name: Команды Redis
-      href: 'http://redis.io/commands#'
-    - name: REST
-      href: 'https://docs.microsoft.com/rest/api/redis/'
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?service=redis-cache
+  - name: Azure PowerShell
+    href: /powershell/module/azurerm.rediscache
+  - name: Azure CLI (предварительная версия)
+    href: /cli/azure/redis
+  - name: .NET
+    href: /dotnet/api/microsoft.azure.management.redis
+  - name: Java
+    href: /java/api/com.microsoft.azure.management.redis._redis_cache
+  - name: Клиенты Redis
+    href: http://redis.io/clients
+  - name: Команды Redis
+    href: http://redis.io/commands#
+  - name: REST
+    href: https://docs.microsoft.com/rest/api/redis/
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=databases'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/cache/'
-    - name: Кэш Redis для Azure. Вопросы и ответы
-      href: cache-faq.md
-    - name: Видеоролики
-      href: 'https://www.youtube.com/results?search_query=azure+redis+cache'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurecache&filter=alltypes&sort=lastpostdesc'
+  - name: Развитие навыков с помощью Microsoft Learn
+    href: /learn/browse/?products=azure-redis-cache
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=databases
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/cache/
+  - name: Кэш Redis для Azure. Вопросы и ответы
+    href: cache-faq.md
+  - name: Видеоролики
+    href: https://www.youtube.com/results?search_query=azure+redis+cache
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurecache&filter=alltypes&sort=lastpostdesc
+ms.openlocfilehash: 8f4a4b37bd3b864cbf6d60060fecfd5033f14729
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998412"
