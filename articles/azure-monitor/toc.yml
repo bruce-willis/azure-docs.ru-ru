@@ -65,7 +65,7 @@ items:
 - name: Основные понятия
   items:
   - name: Управление Azure
-    href: ../monitoring/index.md?toc=/azure/azure-monitor/toc.json
+    href: azure-management.md?toc=/azure/azure-monitor/toc.json
   - name: Данные мониторинга
     items:
     - name: Метрики и журналы
@@ -103,9 +103,9 @@ items:
       - name: Метрики на основе журналов и предварительно агрегированные метрики
         href: ../application-insights/pre-aggregated-metrics-log-metrics.md?toc=/azure/azure-monitor/toc.json
     - name: Контейнеры
-      href: https://aka.ms/AzureMonitorContainers
+      href: ../monitoring/monitoring-container-insights-overview.md?toc=/azure/azure-monitor/toc.json
     - name: Виртуальные машины
-      href: https://aka.ms/AzureMonitorVirtualMachines
+      href: ../monitoring/monitoring-vminsights-overview.md?toc=/azure/azure-monitor/toc.json
     - name: Решения для мониторинга
       href: ../monitoring/monitoring-solutions-inventory.md?toc=/azure/azure-monitor/toc.json
   - name: Анализ данных
@@ -504,8 +504,16 @@ items:
         href: ../log-analytics/log-analytics-azure-web-apps-analytics.md?toc=/azure/azure-monitor/toc.json
     - name: Мониторинг контейнеров
       items:
-      - name: Обзор мониторинга контейнеров
-        href: ../monitoring/monitoring-container-overview.md?toc=/azure/azure-monitor/toc.json
+      - name: Azure Monitor для контейнеров
+        items:
+        - name: Подключение
+          href: ../monitoring/monitoring-container-insights-onboard.md?toc=%2fazure%2fmonitoring%2ftoc.json
+        - name: Анализ
+          href: ../monitoring/monitoring-container-insights-analyze.md?toc=%2fazure%2fmonitoring%2ftoc.json
+        - name: Остановка мониторинга
+          href: ../monitoring/monitoring-container-insights-optout.md?toc=%2fazure%2fmonitoring%2ftoc.json
+        - name: Устранение неполадок
+          href: ../monitoring/monitoring-container-insights-troubleshoot.md
       - name: Работоспособность контейнера AKS
         href: ../monitoring/monitoring-container-health.md?toc=/azure/azure-monitor/toc.json
       - name: Мониторинг контейнеров Docker и Windows
@@ -518,7 +526,7 @@ items:
       items:
       - name: Azure SQL
         href: ../log-analytics/log-analytics-azure-sql.md?toc=/azure/monitoring/toc.json
-      - name: SQL Server
+      - name: SQL Server;
         href: ../log-analytics/log-analytics-sql-assessment.md?toc=/azure/monitoring/toc.json
     - name: Мониторинг сетей
       items:
@@ -538,6 +546,22 @@ items:
           href: ../log-analytics/log-analytics-network-performance-monitor-pricing-faq.md?toc=/azure/azure-monitor/toc.json
     - name: Мониторинг работоспособности виртуальных машин
       items:
+      - name: Azure Monitor для виртуальных машин
+        items:
+        - name: Известные проблемы
+          href: ../monitoring/monitoring-vminsights-known-issues.md?toc=/azure/azure-monitor/toc.json
+        - name: Часто задаваемые вопросы
+          href: ../monitoring/monitoring-vminsights-faq.md?toc=/azure/azure-monitor/toc.json
+        - name: Подключение
+          href: ../monitoring/monitoring-vminsights-onboard.md?toc=/azure/azure-monitor/toc.json
+        - name: Мониторинг работоспособности
+          href: ../monitoring/monitoring-vminsights-health.md?toc=/azure/azure-monitor/toc.json
+        - name: Сопоставление зависимостей
+          href: ../monitoring/monitoring-vminsights-maps.md?toc=/azure/azure-monitor/toc.json
+        - name: Мониторинг производительности
+          href: ../monitoring/monitoring-vminsights-performance.md?toc=/azure/azure-monitor/toc.json
+        - name: Запрашивание данных с помощью Log Analytics
+          href: ../monitoring/monitoring-vminsights-log-search.md?toc=/azure/azure-monitor/toc.json
       - name: Работоспособность агента
         href: ../monitoring/monitoring-solution-agenthealth.md?toc=/azure/azure-monitor/toc.json
       - name: Емкость и производительность
@@ -651,8 +675,18 @@ items:
           href: ../log-analytics/query-language/sql-cheatsheet.md?toc=/azure/azure-monitor/toc.json
         - name: Splunk
           href: ../log-analytics/query-language/splunk-cheatsheet.md?toc=/azure/azure-monitor/toc.json
+      - name: Справочник по языку
+        items:
+        - name: Справочник по языку
+          href: https://aka.ms/LogAnalyticsLanguageReference
+        - name: Выражение app
+          href: ../log-analytics/query-language/app-expression.md?toc=/azure/azure-monitor/toc.json
+        - name: Выражение workspace
+          href: ../log-analytics/query-language/workspace-expression.md?toc=/azure/azure-monitor/toc.json
       - name: Данные приложения
         href: ../application-insights/app-insights-analytics.md?toc=/azure/azure-monitor/toc.json
+      - name: Стандартные свойства
+        href: ../log-analytics/log-analytics-standard-properties.md?toc=/azure/azure-monitor/toc.json
       - name: Перекрестный поиск по ресурсам
         href: ../log-analytics/log-analytics-cross-workspace-search.md?toc=/azure/azure-monitor/toc.json
       - name: Выполнение действий на основе результатов поиска
@@ -946,9 +980,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: c5f69264c293cb5e10c016fc79bc86dd091da533
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c0706842080ab163e74e0eb085c8e80bd01800e7
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46981820"
+ms.locfileid: "47056732"
