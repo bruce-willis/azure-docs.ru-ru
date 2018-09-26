@@ -1,233 +1,242 @@
+items:
 - name: Документация по службе приложений на платформе Linux
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о веб-приложениях
-      href: ../app-service-web-overview.md
-    - name: Сведения о службе приложений в Linux
-      href: app-service-linux-intro.md
-    - name: Сравнение вариантов размещения
-      href: ../choose-web-site-cloud-service-vm.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Сведения о веб-приложениях
+    href: ../app-service-web-overview.md
+  - name: Сведения о службе приложений в Linux
+    href: app-service-linux-intro.md
+  - name: Сравнение вариантов размещения
+    href: ../choose-web-site-cloud-service-vm.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Создание приложения .NET Core
-      href: quickstart-dotnetcore.md
-    - name: Создание приложения PHP
-      href: quickstart-php.md
-    - name: Создание приложения Node.js
-      href: quickstart-nodejs.md
-    - name: Создание приложения Java
-      href: quickstart-java.md
-    - name: Создание приложения Python
-      href: quickstart-python.md
-    - name: Создание приложения Ruby
-      href: quickstart-ruby.md
-    - name: Создание приложения Docker или Go
-      href: quickstart-docker-go.md
-    - name: Создание многоконтейнерного приложения
-      href: quickstart-multi-container.md
+  - name: Создание приложения .NET Core
+    href: quickstart-dotnetcore.md
+  - name: Создание приложения PHP
+    href: quickstart-php.md
+  - name: Создание приложения Node.js
+    href: quickstart-nodejs.md
+  - name: Создание приложения Java
+    href: quickstart-java.md
+  - name: Создание приложения Python
+    href: quickstart-python.md
+  - name: Создание приложения Ruby
+    href: quickstart-ruby.md
+  - name: Создание приложения Docker или Go
+    href: quickstart-docker-go.md
+  - name: Создание многоконтейнерного приложения
+    href: quickstart-multi-container.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Использование приложения с базой данных
-      items:
-        - name: .NET Core с базой данных SQL
-          href: tutorial-dotnetcore-sqldb-app.md
-        - name: Ruby и Postgres
-          href: tutorial-ruby-postgres-app.md
-        - name: PHP с MySQL
-          href: tutorial-php-mysql-app.md
-        - name: Приложение Node.js с MongoDB
-          href: tutorial-nodejs-mongodb-app.md
-        - name: Пользовательский контейнер Python с Postgres
-          href: tutorial-docker-python-postgresql-app.md
-    - name: Многоконтейнерное приложение
-      href: tutorial-multi-container-app.md
-    - name: Пользовательский образ Docker
-      href: tutorial-custom-docker-image.md
-    - name: Сопоставление личного домена
-      href: ../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Привязка SSL-сертификата
-      href: ../app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Добавление CDN
-      href: ../../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Проверка подлинности пользователей
-      href: tutorial-auth-aad.md
+  - name: Использование приложения с базой данных
+    items:
+    - name: .NET Core с базой данных SQL
+      href: tutorial-dotnetcore-sqldb-app.md
+    - name: Ruby и Postgres
+      href: tutorial-ruby-postgres-app.md
+    - name: PHP с MySQL
+      href: tutorial-php-mysql-app.md
+    - name: Приложение Node.js с MongoDB
+      href: tutorial-nodejs-mongodb-app.md
+    - name: Пользовательский контейнер Python с Postgres
+      href: tutorial-docker-python-postgresql-app.md
+  - name: Многоконтейнерное приложение
+    href: tutorial-multi-container-app.md
+  - name: Пользовательский образ Docker
+    href: tutorial-custom-docker-image.md
+  - name: Сопоставление личного домена
+    href: ../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Привязка SSL-сертификата
+    href: ../app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Добавление CDN
+    href: ../../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Проверка подлинности пользователей
+    href: tutorial-auth-aad.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
-      href: ../app-service-cli-samples.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Azure PowerShell
-      href: ../app-service-powershell-samples.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Инфраструктура CLI Azure
+    href: ../app-service-cli-samples.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Azure PowerShell
+    href: ../app-service-powershell-samples.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
 - name: Основные понятия
   items:
-    - name: Принцип работы службы приложений
-      href: ../app-service-how-works-readme.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Планы службы приложений
-      href: ../azure-web-sites-web-hosting-plans-in-depth-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Среда службы приложений
-      href: ../environment/intro.md
-    - name: Входящие и исходящие IP-адреса
-      href: ../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Аутентификация и авторизация
-      href: ../app-service-authentication-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Выбор типа развертывания
-      href: choose-deployment-type.md
-    - name: Диагностика
-      href: ../app-service-diagnostics.md
+  - name: Принцип работы службы приложений
+    href: ../app-service-how-works-readme.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Планы службы приложений
+    href: ../azure-web-sites-web-hosting-plans-in-depth-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Среда службы приложений
+    href: ../environment/intro.md
+  - name: Руководство для разработчиков Java
+    href: app-service-linux-java.md
+  - name: Входящие и исходящие IP-адреса
+    href: ../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Аутентификация и авторизация
+    href: ../app-service-authentication-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Выбор типа развертывания
+    href: choose-deployment-type.md
+  - name: Диагностика
+    href: ../app-service-diagnostics.md
 - name: Практические руководства
   items:
-    - name: Настройка приложения
+  - name: Настройка приложения
+    items:
+    - name: Использование параметров приложения
+      href: ../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Развернуть в Azure
+    items:
+    - name: Развертывание приложения
       items:
-        - name: Использование параметров приложения
-          href: ../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Развернуть в Azure
+      - name: Развертывание через FTP
+        href: ../app-service-deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Развертывание через синхронизацию с облаком
+        href: ../app-service-deploy-content-sync.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Непрерывное развертывание
+        href: ../containers/app-service-linux-ci-cd.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Развертывание из локального репозитория Git
+        href: ../app-service-deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Развертывание с помощью шаблона
+        href: ../app-service-deploy-complex-application-predictably.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Сброс учетных данных развертывания
+      href: ../app-service-deployment-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Создание промежуточных сред
+      href: ../web-sites-staged-publishing.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Сопоставление пользовательского домена
+    items:
+    - name: Приобретение домена
+      href: ../custom-dns-web-site-buydomains-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Сопоставление доменов с помощью диспетчера трафика
+      href: ../web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Перенос активного домена
+      href: ../app-service-custom-domain-name-migrate.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Безопасность приложения
+    items:
+    - name: Приобретение SSL-сертификата
+      href: ../web-sites-purchase-ssl-web-site.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Проверка подлинности пользователей
       items:
-        - name: Развертывание приложения
-          items:
-            - name: Развертывание через FTP
-              href: ../app-service-deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Развертывание через синхронизацию с облаком
-              href: ../app-service-deploy-content-sync.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Непрерывное развертывание
-              href: ../containers/app-service-linux-ci-cd.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Развертывание из локального репозитория Git
-              href: ../app-service-deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Развертывание с помощью шаблона
-              href: ../app-service-deploy-complex-application-predictably.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Сброс учетных данных развертывания
-          href: ../app-service-deployment-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Создание промежуточных сред
-          href: ../web-sites-staged-publishing.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Сопоставление пользовательского домена
-      items:
-        - name: Приобретение домена
-          href: ../custom-dns-web-site-buydomains-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Сопоставление доменов с помощью диспетчера трафика
-          href: ../web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Перенос активного домена
-          href: ../app-service-custom-domain-name-migrate.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Безопасность приложения
-      items:
-        - name: Приобретение SSL-сертификата
-          href: ../web-sites-purchase-ssl-web-site.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Проверка подлинности пользователей
-          items:
-            - name: "Проверка подлинности с помощью Azure\_AD"
-              href: ../app-service-mobile-how-to-configure-active-directory-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Проверка подлинности с помощью Facebook
-              href: ../app-service-mobile-how-to-configure-facebook-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Проверка подлинности с помощью Google
-              href: ../app-service-mobile-how-to-configure-google-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Проверка подлинности с помощью учетной записи Майкрософт
-              href: ../app-service-mobile-how-to-configure-microsoft-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Проверка подлинности с помощью Twitter
-              href: ../app-service-mobile-how-to-configure-twitter-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Настройка аутентификации
-          href: ../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Настройка взаимной проверки подлинности TLS
-          href: ../app-service-web-configure-tls-mutual-auth.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Масштабирование приложения
-      items:
-        - name: Увеличение емкости сервера
-          href: ../web-sites-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Масштабирование на несколько экземпляров
-          href: ../../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Высокая плотность размещения
-          href: ../app-service-high-density-hosting.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Мониторинг приложения
-      items:
-        - name: Подключение к приложению по протоколу SSH
-          href: app-service-linux-ssh-support.md
-        - name: Квоты и оповещения
-          href: ../web-sites-monitor.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Включение журналов
-          href: ../web-sites-enable-diagnostic-log.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Управление приложением
-      items:
-        - name: Резервное копирование приложения
-          href: ../web-sites-backup.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Восстановление из резервной копии
-          href: ../web-sites-restore.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Клонирование приложения
-          href: ../app-service-web-app-cloning.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Перемещение ресурсов
-          href: '../../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-service-limitations'
+      - name: Проверка подлинности с помощью Azure AD
+        href: ../app-service-mobile-how-to-configure-active-directory-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Проверка подлинности с помощью Facebook
+        href: ../app-service-mobile-how-to-configure-facebook-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Проверка подлинности с помощью Google
+        href: ../app-service-mobile-how-to-configure-google-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Проверка подлинности с помощью учетной записи Майкрософт
+        href: ../app-service-mobile-how-to-configure-microsoft-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Проверка подлинности с помощью Twitter
+        href: ../app-service-mobile-how-to-configure-twitter-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Настройка аутентификации
+      href: ../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Настройка взаимной проверки подлинности TLS
+      href: ../app-service-web-configure-tls-mutual-auth.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Масштабирование приложения
+    items:
+    - name: Увеличение емкости сервера
+      href: ../web-sites-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Масштабирование на несколько экземпляров
+      href: ../../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Высокая плотность размещения
+      href: ../app-service-high-density-hosting.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Мониторинг приложения
+    items:
+    - name: Подключение к приложению по протоколу SSH
+      href: app-service-linux-ssh-support.md
+    - name: Квоты и оповещения
+      href: ../web-sites-monitor.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Включение журналов
+      href: ../web-sites-enable-diagnostic-log.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Управление приложением
+    items:
+    - name: Резервное копирование приложения
+      href: ../web-sites-backup.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Восстановление из резервной копии
+      href: ../web-sites-restore.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Клонирование приложения
+      href: ../app-service-web-app-cloning.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Перемещение ресурсов
+      href: ../../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-service-limitations
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/appservice
-    - name: Azure PowerShell
-      href: /powershell
-    - name: REST API
-      href: /rest/api/appservice/
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/appservice
+  - name: Azure PowerShell
+    href: /powershell
+  - name: REST API
+    href: /rest/api/appservice/
 - name: Ресурсы
   items:
-    - name: 'Служба приложений под управлением Linux: вопросы и ответы'
-      href: app-service-linux-faq.md
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/app-service/'
-    - name: Сведения о квотах
-      href: '../../azure-subscription-service-limits.md#app-service-limits'
-    - name: Обновления службы и заметки о выпуске
+  - name: 'Служба приложений под управлением Linux: вопросы и ответы'
+    href: app-service-linux-faq.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/app-service/
+  - name: Сведения о квотах
+    href: ../../azure-subscription-service-limits.md#app-service-limits
+  - name: Обновления службы и заметки о выпуске
+    items:
+    - name: Обновления Azure
+      href: https://azure.microsoft.com/updates/?product=app-service
+    - name: Пакет Azure SDK для .NET 3.0
+      href: ../azure-sdk-dotnet-release-notes-3-0.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Пакет Azure SDK для .NET 2.9
+      href: ../azure-sdk-dotnet-release-notes-2-9.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Пакет SDK Azure для .NET 2.8
+      href: ../azure-sdk-dotnet-release-notes-2-8.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Пакет SDK для Azure для .NET 2.7
+      href: ../azure-sdk-dotnet-release-notes-2-7.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Пакет Azure SDK для .NET 2.6
+      href: ../azure-sdk-dotnet-release-notes-2-6.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Пакет Azure SDK для .NET 2.5.1
+      href: ../app-service-release-notes.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Пакет Azure SDK для .NET 2.5
+      href: https://msdn.microsoft.com/library/azure/dn873976.aspx
+    - name: Пакет Azure SDK для .NET 2.4
+      href: https://msdn.microsoft.com/library/azure/dn794167.aspx
+    - name: Пакет Azure SDK для .NET 2.3
+      href: https://msdn.microsoft.com/library/azure/dn655054.aspx
+    - name: Пакет Azure SDK для .NET 2.2
+      href: https://msdn.microsoft.com/library/azure/dn459835.aspx
+    - name: Пакет Azure SDK для .NET 2.1
+      href: https://msdn.microsoft.com/library/azure/dn407359.aspx
+    - name: Пакет Azure SDK для .NET 2.0
+      href: https://msdn.microsoft.com/library/azure/dn169556.aspx
+  - name: Рекомендации
+    href: ../app-service-best-practices.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - name: Примеры
+    href: https://azure.microsoft.com/resources/samples/?service=app-service
+  - name: Видеоролики
+    href: https://azure.microsoft.com/resources/videos/index/?services=app-service
+  - name: Учебники
+    items:
+    - name: Эталонные образцы архитектуры
+      href: /azure/architecture/reference-architectures/app-service-web-app/
+    - name: Скрипты развертывания
+      href: https://azure.microsoft.com/documentation/scripts/
+  - name: Устранение неполадок
+    items:
+    - name: Устранение неполадок с помощью Visual Studio
+      href: ../web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Устранение неполадок с приложением Node.js
+      href: ../app-service-web-nodejs-best-practices-and-troubleshoot-guide.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Устранение неполадок в HTTP 502 и 503
+      href: ../app-service-web-troubleshoot-http-502-http-503.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Устранение проблем с производительностью
+      href: ../app-service-web-troubleshoot-performance-degradation.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Часто задаваемые вопросы
       items:
-        - name: Обновления Azure
-          href: 'https://azure.microsoft.com/updates/?product=app-service'
-        - name: Пакет Azure SDK для .NET 3.0
-          href: ../azure-sdk-dotnet-release-notes-3-0.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Пакет Azure SDK для .NET 2.9
-          href: ../azure-sdk-dotnet-release-notes-2-9.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Пакет SDK Azure для .NET 2.8
-          href: ../azure-sdk-dotnet-release-notes-2-8.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Пакет SDK для Azure для .NET 2.7
-          href: ../azure-sdk-dotnet-release-notes-2-7.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Пакет Azure SDK для .NET 2.6
-          href: ../azure-sdk-dotnet-release-notes-2-6.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Пакет Azure SDK для .NET 2.5.1
-          href: ../app-service-release-notes.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Пакет Azure SDK для .NET 2.5
-          href: 'https://msdn.microsoft.com/library/azure/dn873976.aspx'
-        - name: Пакет Azure SDK для .NET 2.4
-          href: 'https://msdn.microsoft.com/library/azure/dn794167.aspx'
-        - name: Пакет Azure SDK для .NET 2.3
-          href: 'https://msdn.microsoft.com/library/azure/dn655054.aspx'
-        - name: Пакет Azure SDK для .NET 2.2
-          href: 'https://msdn.microsoft.com/library/azure/dn459835.aspx'
-        - name: Пакет Azure SDK для .NET 2.1
-          href: 'https://msdn.microsoft.com/library/azure/dn407359.aspx'
-        - name: Пакет Azure SDK для .NET 2.0
-          href: 'https://msdn.microsoft.com/library/azure/dn169556.aspx'
-    - name: Рекомендации
-      href: ../app-service-best-practices.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Примеры
-      href: 'https://azure.microsoft.com/resources/samples/?service=app-service'
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=app-service'
-    - name: Учебники
-      items:
-        - name: Эталонные образцы архитектуры
-          href: /azure/architecture/reference-architectures/app-service-web-app/
-        - name: Скрипты развертывания
-          href: 'https://azure.microsoft.com/documentation/scripts/'
-    - name: Устранение неполадок
-      items:
-        - name: Устранение неполадок с помощью Visual Studio
-          href: ../web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Устранение неполадок с приложением Node.js
-          href: ../app-service-web-nodejs-best-practices-and-troubleshoot-guide.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: "Устранение неполадок в HTTP\_502 и\_503"
-          href: ../app-service-web-troubleshoot-http-502-http-503.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Устранение проблем с производительностью
-          href: ../app-service-web-troubleshoot-performance-degradation.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-        - name: Часто задаваемые вопросы
-          items:
-            - name: 'Часто задаваемые вопросы о доступности, производительности и приложениях'
-              href: ../app-service-web-availability-performance-application-issues-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Часто задаваемые вопросы о развертывании
-              href: ../app-service-web-deployment-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Часто задаваемые вопросы о технологиях с открытым кодом
-              href: ../app-service-web-open-source-technologies-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-            - name: Часто задаваемые вопросы о настройке и управлении
-              href: ../app-service-web-configuration-and-management-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Часто задаваемые вопросы о доступности, производительности и приложениях
+        href: ../app-service-web-availability-performance-application-issues-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Часто задаваемые вопросы о развертывании
+        href: ../app-service-web-deployment-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Часто задаваемые вопросы о технологиях с открытым кодом
+        href: ../app-service-web-open-source-technologies-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      - name: Часто задаваемые вопросы о настройке и управлении
+        href: ../app-service-web-configuration-and-management-faq.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+ms.openlocfilehash: 91086dcfd6f786fd49fc5f8864da292831999286
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063988"

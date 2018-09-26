@@ -1,73 +1,81 @@
+items:
 - name: Документация по виртуальной машине для обработки и анализа данных
   href: index.yml
-  items: null
 - name: Обзор
-  expanded: true
   items:
-    - name: Что такое виртуальная машина для обработки и анализа данных?
-      href: overview.md
-    - name: Что такое виртуальная машина для глубокого обучения?
-      href: deep-learning-dsvm-overview.md
-    - name: Что такое Geo AI Data Science VM?
-      href: geo-ai-dsvm-overview.md
+  - name: Что такое виртуальная машина для обработки и анализа данных?
+    href: overview.md
+  - name: Что такое виртуальная машина для глубокого обучения?
+    href: deep-learning-dsvm-overview.md
+  - name: Что такое Geo AI Data Science VM?
+    href: geo-ai-dsvm-overview.md
+  expanded: true
 - name: Начало работы
   items:
-    - name: Создание виртуальной машины Windows для обработки и анализа данных
-      href: provision-vm.md
-    - name: Создание виртуальной машины Ubuntu для обработки и анализа данных
-      href: dsvm-ubuntu-intro.md
-    - name: Создание виртуальной машины CentOS для обработки и анализа данных
-      href: linux-dsvm-intro.md
-    - name: Создание виртуальной машины для глубокого обучения
-      href: provision-deep-learning-dsvm.md
-    - name: Создание Geo AI Data Science VM
-      href: provision-geo-ai-dsvm.md
+  - name: Создание виртуальной машины Windows для обработки и анализа данных
+    href: provision-vm.md
+  - name: Создание виртуальной машины Ubuntu для обработки и анализа данных
+    href: dsvm-ubuntu-intro.md
+  - name: Создание виртуальной машины CentOS для обработки и анализа данных
+    href: linux-dsvm-intro.md
+  - name: Создание виртуальной машины для глубокого обучения
+    href: provision-deep-learning-dsvm.md
+  - name: Создание Geo AI Data Science VM
+    href: provision-geo-ai-dsvm.md
 - name: Практическое руководство
   items:
-    - name: Использование виртуальной машины Windows для обработки и анализа данных
-      href: vm-do-ten-things.md
-    - name: Использование виртуальной машины Linux для обработки и анализа данных
-      href: linux-dsvm-walkthrough.md
-    - name: Использование виртуальной машины для глубокого обучения
-      href: use-deep-learning-dsvm.md
-    - name: Использование Geo AI Data Science VM
-      href: use-geo-ai-dsvm.md
+  - name: Использование виртуальной машины Windows для обработки и анализа данных
+    href: vm-do-ten-things.md
+  - name: Использование виртуальной машины Linux для обработки и анализа данных
+    href: linux-dsvm-walkthrough.md
+  - name: Использование виртуальной машины для глубокого обучения
+    href: use-deep-learning-dsvm.md
+  - name: Использование Geo AI Data Science VM
+    href: use-geo-ai-dsvm.md
 - name: Руководство для предприятий
   items:
-    - name: Обзор
-      href: dsvm-enterprise-overview.md
-    - name: Масштабирование
-      href: dsvm-pools.md
-    - name: Интеграция с Active Directory
-      href: dsvm-common-identity.md
-    - name: Защита учетных данных для доступа к ресурсам
-      href: dsvm-secure-access-keys.md
+  - name: Обзор
+    href: dsvm-enterprise-overview.md
+  - name: Масштабирование
+    href: dsvm-pools.md
+  - name: Интеграция с Active Directory
+    href: dsvm-common-identity.md
+  - name: Защита учетных данных для доступа к ресурсам
+    href: dsvm-secure-access-keys.md
 - name: Справочные материалы
-  expanded: true
   items:
-    - name: Обнаружение виртуальной машины для обработки и анализа данных
-      href: dsvm-tools-overview.md
-    - name: Платформы глубокого обучения и искусственного интеллекта
-      href: dsvm-deep-learning-ai-frameworks.md
-    - name: Машинное обучение и инструменты обработки и анализа данных
-      href: dsvm-ml-data-science-tools.md
-    - name: Языки
-      href: dsvm-languages.md
-    - name: Инструменты разработки
-      href: dsvm-tools-development.md
-    - name: Инструменты приема данных
-      href: dsvm-tools-ingestion.md
-    - name: Инструменты исследования и визуализации данных
-      href: dsvm-tools-explore-and-visualize.md
-    - name: Платформы данных
-      href: dsvm-data-platforms.md
-    - name: Примеры и пошаговые руководства
-      href: dsvm-samples-and-walkthroughs.md
+  - name: Обнаружение виртуальной машины для обработки и анализа данных
+    href: dsvm-tools-overview.md
+  - name: Платформы глубокого обучения и искусственного интеллекта
+    href: dsvm-deep-learning-ai-frameworks.md
+  - name: Машинное обучение и инструменты обработки и анализа данных
+    href: dsvm-ml-data-science-tools.md
+  - name: Языки
+    href: dsvm-languages.md
+  - name: Инструменты разработки
+    href: dsvm-tools-development.md
+  - name: Инструменты приема данных
+    href: dsvm-tools-ingestion.md
+  - name: Инструменты исследования и визуализации данных
+    href: dsvm-tools-explore-and-visualize.md
+  - name: Платформы данных
+    href: dsvm-data-platforms.md
+  - name: Примеры и пошаговые руководства
+    href: dsvm-samples-and-walkthroughs.md
+  expanded: true
 - name: Ресурсы
   items:
-    - name: Блог
-      href: 'https://blogs.technet.microsoft.com/machinelearning/tag/dsvm/'
-    - name: Форум MSDN
-      href: 'https://social.microsoft.com/Forums/en-US/home?forum=dsvm'
-    - name: Переполнение стека
-      href: 'https://stackoverflow.com/search?q=dsvm'
+  - name: Руководство для разработчиков R
+    href: ../r-developers-guide.md
+  - name: Блог
+    href: https://blogs.technet.microsoft.com/machinelearning/tag/dsvm/
+  - name: Форум MSDN
+    href: https://social.microsoft.com/Forums/en-US/home?forum=dsvm
+  - name: Переполнение стека
+    href: https://stackoverflow.com/search?q=dsvm
+ms.openlocfilehash: e1617f3f5c36a5b006003e2f375dfac4143af7cd
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47032570"

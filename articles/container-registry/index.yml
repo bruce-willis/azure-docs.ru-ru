@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 02c604489d8db48a50598f99f6722d555e357f67
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f18334996e82d83046fa663af08d69dee21a3127
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46951072"
+ms.locfileid: "47039604"
 documentType: LandingData
 title: Документация по реестру контейнеров Azure
 metadata:
@@ -49,7 +49,7 @@ sections:
     style: unordered
     className: spaced noBullet
     items:
-    - html: <a href="/azure/container-registry/container-registry-tutorial-quick-build">Создание образов контейнеров с помощью сборки ACR (предварительная версия)</a>
+    - html: <a href="/azure/container-registry/container-registry-tutorial-quick-build">Создание образов контейнеров с помощью задач ACR</a>
     - html: <a href="/azure/container-registry/container-registry-tutorial-prepare-registry">Георепликация реестра контейнеров</a>
     - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Использование реестра контейнеров со службой "Экземпляры контейнеров Azure"</a>
     - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Использование реестра контейнеров со Службой Azure Kubernetes (AKS)</a>
@@ -66,7 +66,7 @@ sections:
         src: /learn/achievements/build-and-store-container-images.svg
         href: /learn/modules/build-and-store-container-images/
   - type: paragraph
-    text: <a href="/learn/browse/?products=azure-container-registry">Другие интерактивные руководства</a>
+    text: <a href="/learn/browse/?products=azure-container-registry">Дополнительные интерактивные руководства…</a>
 - title: Справочные материалы
   items:
   - type: list

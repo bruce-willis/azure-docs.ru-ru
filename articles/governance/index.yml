@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 1c25ae1acb112221047876ea6dd360c6d3bb2817
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: b2ee21b77fc3bb26a1ca449ede198f8873a090c0
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46946244"
+ms.locfileid: "47036853"
 documentType: LandingData
 title: Управление Azure. Система управления
 metadata:
@@ -19,6 +19,15 @@ metadata:
   ms.author: dacoulte
 abstract:
   description: Система управления Azure — это набор компонентов и служб, которые предназначены для управления ресурсами Azure по мере необходимости. Эти службы позволяют возможность логически упорядочивать и структурировать подписки, создавать и развертывать повторно используемые или собственные пакеты ресурсов Azure для определения, аудита и оптимизации ресурсов. Эта страница содержит подробные сведения о компонентах и службах, а также о том, как включить и использовать их в вашей среде уже сегодня.
+  aside:
+    image:
+      alt: 
+      height: 225
+      src: ./media/video.png
+      width: 250
+    title: Get speed and control over resources with Azure Governance (Воспользуйтесь преимуществами быстрой работы и управлением ресурсами с помощью системы управления Azure) (1:47)
+    href: https://www.youtube.com/watch?v=MhGbKjlmuRs
+    width: 250
 sections:
 - title: Компоненты и службы
 - items:

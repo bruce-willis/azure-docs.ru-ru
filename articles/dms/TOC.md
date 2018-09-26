@@ -19,7 +19,7 @@
 # Ресурсы
 ## [Известные проблемы при миграции в базу данных SQL Azure через Интернет](known-issues-azure-sql-online.md)
 ## [Известные проблемы при миграции в базу данных Azure для MySQL через Интернет](known-issues-azure-mysql-online.md)
-## [Известные проблемы при миграции в базу данных Azure для PosgreSQL через Интернет](known-issues-azure-postgresql-online.md)
+## [Известные проблемы при миграции в базу данных Azure для PostgreSQL](known-issues-azure-postgresql-online.md)
 ## [Отзывы на User Voice](https://feedback.azure.com/forums/906100-azure-database-migration-service)
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)
 ## [Руководство по переносу баз данных](https://aka.ms/datamigration)

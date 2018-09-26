@@ -18,21 +18,15 @@ items:
   expanded: true
 - name: Учебники
   items:
-  - name: Экземпляры контейнеров Azure
-    href: ../container-instances/container-instances-tutorial-prepare-app.md
-  - name: Служба Azure Kubernetes (AKS)
-    href: ../aks/tutorial-kubernetes-prepare-app.md
-  - name: Service Fabric
-    href: ../service-fabric/service-fabric-tutorial-create-container-images.md
-  - name: Создание образов контейнеров (предварительная версия)
+  - name: Создание образов контейнеров
     items:
     - name: 1. Создание образов в Azure
-      href: container-registry-tutorial-quick-build.md
+      href: container-registry-tutorial-quick-task.md
     - name: 2. Автоматизация создания образов
       href: container-registry-tutorial-build-task.md
     - name: 3. Создание обновлений базовых образов
       href: container-registry-tutorial-base-image-update.md
-  - name: Георепликация
+  - name: Георепликация реестра
     items:
     - name: 1. Подготовка реестра контейнеров
       href: container-registry-tutorial-prepare-registry.md
@@ -46,26 +40,28 @@ items:
     href: container-registry-skus.md
   - name: Хранилище изображений
     href: container-registry-storage.md
-  - name: Компилирование и применение исправлений с помощью сборки ACR
-    href: container-registry-build-overview.md
   - name: Георепликация
     href: container-registry-geo-replication.md
   - name: Рекомендации по использованию реестра
     href: container-registry-best-practices.md
 - name: Практические руководства
   items:
-  - name: Передача и получение образа
-    href: container-registry-get-started-docker-cli.md
-  - name: Просмотр списка репозиториев
-    href: container-registry-repositories.md
-  - name: Удаление образов контейнеров
-    href: container-registry-delete.md
-  - name: Доверие к содержимому (предварительная версия)
-    href: container-registry-content-trust.md
-  - name: Обновление классического реестра
-    href: container-registry-upgrade.md
-  - name: Использование веб-перехватчиков ACR
-    href: container-registry-webhook.md
+  - name: Операции с реестром
+    items:
+    - name: Передача и получение образа
+      href: container-registry-get-started-docker-cli.md
+    - name: Просмотр списка репозиториев
+      href: container-registry-repositories.md
+    - name: Удаление образов контейнеров
+      href: container-registry-delete.md
+    - name: Доверие к содержимому (предварительная версия)
+      href: container-registry-content-trust.md
+    - name: Обновление классического реестра
+      href: container-registry-upgrade.md
+    - name: Использование веб-перехватчиков ACR
+      href: container-registry-webhook.md
+    - name: Репозитории с чартами Helm (предварительная версия)
+      href: container-registry-helm-repos.md
   - name: Authentication
     items:
     - name: Общие сведения об аутентификации
@@ -76,6 +72,22 @@ items:
       href: container-registry-auth-aci.md
     - name: Служба Azure Kubernetes (AKS)
       href: container-registry-auth-aks.md
+  - name: Сборка и применение исправлений
+    items:
+    - name: Задачи ACR
+      href: container-registry-tasks-overview.md
+    - name: Многошаговые задачи (предварительная версия)
+      href: container-registry-tasks-multi-step.md
+    - name: Справочник по многошаговым задачам (предварительная версия)
+      href: container-registry-tasks-reference-yaml.md
+  - name: Реестры и другие службы Azure
+    items:
+    - name: Экземпляры контейнеров Azure
+      href: ../container-instances/container-instances-tutorial-prepare-app.md
+    - name: Служба Azure Kubernetes (AKS)
+      href: ../aks/tutorial-kubernetes-prepare-app.md
+    - name: Service Fabric
+      href: ../service-fabric/service-fabric-tutorial-create-container-images.md
 - name: Справочные материалы
   items:
   - name: Инфраструктура CLI Azure
@@ -115,9 +127,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-container-registry
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=container-registry&sort=newest
-ms.openlocfilehash: 979c2864481b25df6534d9f5858d65d02fe498f0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6ea059f7c534b760b0db0c406edb7c34ac73c0dc
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957747"
+ms.locfileid: "47031175"
