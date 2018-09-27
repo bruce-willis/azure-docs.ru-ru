@@ -19,12 +19,14 @@
 #### [Приложения Azure: управляемые приложения](./marketplace-managed-apps.md)
 #### [Приложения SaaS](./marketplace-saas-applications-technical-publishing-guide.md) 
 #### [Контейнеры](./marketplace-containers.md)
+#### [Модули IoT Edge](./iot-edge-module.md) 
 #### [Консультационная услуга](./consulting-services.md)  
 #### [Руководство по публикации в Office 365, Dynamics 365 и Power BI](./appsource-offer-publishing-guide.md)
 #### [Включение описания в Microsoft AppSource и Azure Marketplace с помощью Azure Active Directory](./enable-appsource-marketplace-using-azure-ad.md)
 
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 
+#### [Проверка содержимого Marketplace](./marketplace-criteria-content-validation.md)
 
 ### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 

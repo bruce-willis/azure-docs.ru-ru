@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 9fd163db5b727c5284756e2d24a35c6c6e57a794
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47181387"
 documentType: LandingData
 title: Документация по Azure Active Directory B2C
 metadata:
@@ -12,24 +18,39 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2018
   ms.author: davidmu
-  ms.openlocfilehash: a70e3fe60291a0ee50dbaa4bd3caa460ff12ffef
-  ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/20/2018
-  ms.locfileid: "36284271"
 abstract:
   description: Azure Active Directory (Azure AD) B2C — это служба управления идентификацией, которая позволяет настраивать и администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений. Среди прочего, сюда входят приложения, разработанные для iOS, Android и .NET. Azure AD B2C включает эти действия, обеспечивая безопасность пользовательских удостоверений. Узнайте, как использовать Azure AD B2C, с помощью наших примеров и руководств.
   aside:
     image:
       alt: 
       height: 110
-      src: https://docs.microsoft.com/azure/active-directory-b2c/media/index/active-directory-b2c-video.PNG
+      src: ./media/index/active-directory-b2c-video.PNG
       width: 250
-    title: Управление удостоверениями B2C с помощью Azure Active Directory B2C (12:56)
-    href: https://azure.microsoft.com/resources/videos/build-2016-business-to-consumer-identity-management-with-azure-active-directory-b2c/
+    title: Управление удостоверениями клиентов с использованием Azure AD B2C (20:56)
+    href: https://channel9.msdn.com/Shows/On-NET/Customer-Identity-Management-with-Azure-AD-B2C
     width: 250
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/active-directory-b2c/active-directory-b2c-overview
+      html: <p>Ознакомьтесь с дополнительными сведениями о службе Azure AD B2C, ее функциями и возможностями.</p>
+      image:
+        src: ./media/index/i_get-started.svg
+      title: Общие сведения об Azure AD B2C
+    - href: /azure/active-directory-b2c/solution-articles
+      html: <p>Изучите решение и возможности обучения с использованием Azure AD B2C.</p>
+      image:
+        src: ./media/index/i_advanced.svg
+      title: Обучение по решениям
+    - href: /azure/active-directory-b2c/trustframeworkpolicy
+      html: <p>Создавайте расширенные сценарии регистрации и входа в систему с помощью настраиваемых политик в Azure AD B2C.</p>
+      image:
+        src: ./media/index/i_investigate.svg
+      title: Инфраструктура процедур идентификации
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
@@ -58,11 +79,11 @@ sections:
     className: cardsD
     items:
     - title: 'ASP.NET:'
-      html: <p>1. <a href="/azure/active-directory-b2c/tutorial-register-applications">Регистрация приложения</a></p><p>2. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-web-app">Аутентификация пользователей</a></p><p>3. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-web-api">Предоставление доступа через API</a></p>
+      html: <p>1. <a href="/azure/active-directory-b2c/tutorial-create-tenant">Создание клиента</a></p><p>2. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-web-app">Аутентификация пользователей</a></p><p>3. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-web-api">Предоставление доступа через API</a></p>
     - title: Классические приложения
-      html: <p>1. <a href="/azure/active-directory-b2c/tutorial-register-applications">Регистрация приложения</a></p><p>2. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-desktop-app">Аутентификация пользователей</a></p><p>3. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-desktop-app-webapi">Предоставление доступа через API</a></p>
+      html: <p>1. <a href="/azure/active-directory-b2c/tutorial-create-tenant">Создание клиента</a></p><p>2. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-desktop-app">Аутентификация пользователей</a></p><p>3. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-desktop-app-webapi">Предоставление доступа через API</a></p>
     - title: Одностраничное приложение
-      html: <p>1. <a href="/azure/active-directory-b2c/tutorial-register-applications">Регистрация приложения</a></p><p>2. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-spa">Аутентификация пользователей</a></p><p>3. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-spa-webapi">Предоставление доступа через API</a></p>
+      html: <p>1. <a href="/azure/active-directory-b2c/tutorial-create-tenant">Создание клиента</a></p><p>2. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-spa">Аутентификация пользователей</a></p><p>3. <a href="/azure/active-directory-b2c/active-directory-b2c-tutorials-spa-webapi">Предоставление доступа через API</a></p>
 - title: Примеры
   items:
   - type: paragraph

@@ -514,8 +514,6 @@ items:
           href: ../monitoring/monitoring-container-insights-optout.md?toc=%2fazure%2fmonitoring%2ftoc.json
         - name: Устранение неполадок
           href: ../monitoring/monitoring-container-insights-troubleshoot.md
-      - name: Работоспособность контейнера AKS
-        href: ../monitoring/monitoring-container-health.md?toc=/azure/azure-monitor/toc.json
       - name: Мониторинг контейнеров Docker и Windows
         href: ../log-analytics/log-analytics-containers.md?toc=/azure/azure-monitor/toc.json
       - name: Мониторинг приложений Docker
@@ -677,6 +675,8 @@ items:
         items:
         - name: Справочник по языку
           href: /azure/kusto/query
+        - name: Отличия от Kusto
+          href: ../log-analytics/query-language/kusto.md
         - name: Выражение app
           href: ../log-analytics/query-language/app-expression.md?toc=/azure/azure-monitor/toc.json
         - name: Выражение workspace
@@ -978,9 +978,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 4ff5c0f814430d8e8e1e160a491881940602dde4
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: ef2057d55903d3fdc4d2fc7f914f29e84cffc638
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47165131"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47181971"

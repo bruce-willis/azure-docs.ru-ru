@@ -7,32 +7,30 @@ items:
     href: overview-what-is-azure-ml.md
   - name: Что произошло с Workbench?
     href: overview-what-happened-to-workbench.md
-  - name: Как осуществить перенос
-    href: how-to-migrate.md
   - name: Сравнение продуктов Машинного обучения от корпорации Майкрософт
     href: overview-more-machine-learning.md
   expanded: true
 - name: Быстрое начало работы
   items:
-  - name: Приступая к работе с помощью портала
+  - name: Начало работы
     href: quickstart-get-started.md
 - name: Учебники
   items:
-  - name: 1. Обучение моделей
+  - name: Обучение моделей. Часть 1
     href: tutorial-train-models-with-aml.md
-  - name: 2. Развертывание моделей
+  - name: Развертывание моделей. Часть 2
     href: tutorial-deploy-models-with-aml.md
   - name: Обучение автоматизированных моделей Машинного обучения
     href: tutorial-auto-train-models.md
 - name: Основные понятия
   items:
-  - name: Архитектура и термины
+  - name: Как работает служба
     href: concept-azure-machine-learning-architecture.md
   - name: Управление моделями
     href: concept-model-management-and-deployment.md
-  - name: Ускорение FPGA
+  - name: Ускорение с использованием FPGA
     href: concept-accelerate-with-fpgas.md
-  - name: Конвейеры Машинного обучения
+  - name: Конвейеры машинного обучения
     href: concept-ml-pipelines.md
 - name: Практические руководства
   items:
@@ -122,6 +120,8 @@ items:
     href: support-for-aml-services.md
   - name: Нерекомендуемая документация
     items:
+    - name: Как осуществить перенос
+      href: how-to-migrate.md
     - name: Краткое руководство по Workbench
       href: ../desktop-workbench/quickstart-installation.md
     - name: Руководство 1. Подготовка данных
@@ -322,9 +322,9 @@ items:
       href: ../desktop-workbench/known-issues-and-troubleshooting-guide.md
     - name: Поддержка
       href: support-for-aml-services.md
-ms.openlocfilehash: 963961d43bf455d735bc46e01c919a932a06a6ca
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 0e069ce7bb04a4aef2e631488ec807a1539c32e5
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47036666"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162157"

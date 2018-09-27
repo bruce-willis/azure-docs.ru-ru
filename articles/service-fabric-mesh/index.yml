@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 3425a7b65ce81ca3d45a0ccdfe613ffdfef4f90f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 14938e25cc41ea11baef94b6a9e01e070ffac654
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953622"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47158196"
 documentType: LandingData
 title: Документация по Сетке Azure Service Fabric
 metadata:
@@ -40,11 +40,12 @@ sections:
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как создать и развернуть приложение для Сетки в Visual Studio.
+    text: Узнайте, как создать и развернуть приложение для Сетки с помощью Visual Studio или Azure CLI.
   - type: list
     style: unordered
     items:
-    - html: <a href="/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore">Создание, отладка, развертывание и обновление веб-приложения на базе нескольких служб в Сетке Service Fabric</a>
+    - html: <a href="/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore">Создание, отладка, развертывание и обновление приложения на базе нескольких служб в Сетке Service Fabric с помощью Visual Studio.</a>
+    - html: <a href="/azure/service-fabric-mesh/service-fabric-mesh-tutorial-template-deploy-app">Развертывание, масштабирование и обновление приложения для Сетки Service Fabric с помощью шаблона.</a>
 - title: Справочные материалы
   items:
   - type: list

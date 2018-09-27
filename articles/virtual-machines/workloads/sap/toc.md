@@ -45,8 +45,9 @@
 ### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
 ### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
 ### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
-## [Настройка репликации системы SAP HANA в SLES](sap-hana-high-availability.md)
-## [Настройка репликации системы SAP HANA в RHEL](sap-hana-high-availability-rhel.md)
+### [Настройка репликации системы SAP HANA в SLES](sap-hana-high-availability.md)
+### [Настройка репликации системы SAP HANA в RHEL](sap-hana-high-availability-rhel.md)
+### [Устранение неполадок горизонтального масштабирования SAP HANA и Pacemaker в SLES](hana-vm-troubleshoot-scale-out-ha-on-sles.md)
 ## [Обзор резервного копирования SAP HANA](sap-hana-backup-guide.md)
 ## [Резервное копирование SAP HANA на уровне файлов](sap-hana-backup-file-level.md)
 ## [Резервные копии моментальных снимков хранилища SAP HANA](sap-hana-backup-storage-snapshots.md)
@@ -107,3 +108,4 @@
 ## [Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure](https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration)
 # Ресурсы
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)
+

@@ -1,0 +1,45 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 8246ad22fa343cebc276a1cb6d73d5e86421e792
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47167502"
+documentType: LandingData
+title: Документация по Azure AD Identity Governance
+metadata:
+  document_id: 
+  title: Документация по Azure Active Directory Identity Governance | Документация Майкрософт
+  description: Узнайте о системе управления жизненным циклом удостоверений и доступа, а также о том, как обеспечить безопасное администрирование для сотрудников и партнеров.
+  services: active-directory
+  author: rolyon
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 08/16/2018
+  ms.author: rolyon
+abstract:
+  description: С помощью Azure Active Directory (Azure AD) Identity Governance организации могут управлять жизненным циклом удостоверений и доступа, а также обеспечить безопасное администрирование для сотрудников и партнеров.
+sections:
+- title: Identity Governance
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/governance/identity-governance-overview">Что собой представляет Identity Governance</a>
+- title: Проверки доступа
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/governance/access-reviews-overview">Сведения о проверке доступа</a>
+    - html: <a href="/azure/active-directory/governance/manage-user-access-with-access-reviews">Управление пользовательским доступом с помощью проверок доступа</a>
+    - html: <a href="/azure/active-directory/governance/manage-guest-access-with-access-reviews">Управление гостевым доступом с помощью проверок доступа</a>
+- title: Условия использования
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/governance/active-directory-tou">Для чего нужна функции "Условия использования"</a>

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 09/20/2018
 ms.author: mtillman
-ms.openlocfilehash: 8b28ca8d0aef745600539ab2785e67e3d67e95f9
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: bf72b8fbe437971e6d621208c93c239c3c557f55
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063818"
+ms.locfileid: "47165064"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -77,7 +77,7 @@ ms.locfileid: "47063818"
                                                                     <h3><a href="">Развитие навыков с помощью Microsoft Learn</a></h3> 
                                                                     <p>
                                                                         <a href="/learn/modules/secure-azure-resources-with-conditional-access/">Защита ресурсов Azure с помощью условного доступа</a><br>
-                                                                        <a href="/learn/browse/?products=azure-active-directory">Дополнительные интерактивные руководства…</a><br>
+                                                                        <a href="/learn/browse/?products=azure-active-directory">Другие интерактивные руководства</a><br>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -180,10 +180,10 @@ ms.locfileid: "47063818"
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardText">
-                                                        <h3><a href="governance/access-reviews-overview.md">Проверки доступа</a></h3>
+                                                        <h3><a href="governance/index.yml">Identity Governance</a></h3>
                                                         <p>
-                                                            <a href="governance/create-access-review.md">Создание проверки доступа</a><br>
-                                                            <a href="governance/perform-access-review.md">Выполнение проверки доступа</a><br>
+                                                            <a href="governance/manage-user-access-with-access-reviews.md">Управление доступом пользователей</a><br>
+                                                            <a href="governance/manage-guest-access-with-access-reviews.md">Управление гостевым доступом</a><br>
                                                             <a href="governance/active-directory-tou.md">Условия использования</a><br>
                                                         </p>
                                                         <br><br>

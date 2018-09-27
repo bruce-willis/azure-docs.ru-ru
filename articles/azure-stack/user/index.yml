@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: e10dbc5ef0899134a1d629a058412b1eb36df335
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47163415"
 documentType: LandingData
 title: Документация пользователя по Azure Stack
 metadata:
@@ -12,14 +18,8 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 04/13/2018
+  ms.date: 09/25/2018
   ms.author: jeffgilb
-  ms.openlocfilehash: 4b258290b197ff4fdee9490012a36519b041622c
-  ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/04/2018
-  ms.locfileid: "33205437"
 abstract:
   description: Azure Stack ― это гибридная облачная платформа, позволяющая использовать службы Azure из центра обработки данных вашей компании или поставщика услуг. Разработчик может создавать приложения, используя Azure Stack. Затем их можно развернуть в Azure Stack или в Azure, либо можно создать действительно гибридные приложения, использующие подключение между облаком Azure Stack и Azure. Узнайте, как создавать ресурсы и развертывать приложения, изучив наши краткие руководства и руководства.<br/><br/>Если вы оператор Azure Stack, который управляет инфраструктурой и предлагает службы, ознакомьтесь с нашей <a href="/azure/azure-stack/">документацией для операторов</a>.<br/><br/>Если вы — оператор Azure Stack и хотите использовать Пакет средств разработки Azure Stack (ASDK), развертывание Azure Stack с использованием одного узла, см. <a href="/azure/azure-stack/asdk">документацию по скачиванию и бесплатному использованию ASDK</a>.
 sections:
@@ -69,6 +69,12 @@ sections:
     - html: <a href="/azure/azure-stack/user/azure-stack-solution-pipeline">Развертывание приложений в Azure Stack и Azure</a>
     - html: <a href="/azure/azure-stack/user/azure-stack-solution-hybrid-identity">Настройка удостоверения гибридного облака в приложениях Azure и Azure Stack</a>
     - html: <a href="/azure/azure-stack/user/azure-stack-solution-hybrid-connectivity">Настройка подключения к гибридному облаку в Azure и Azure Stack</a>
+    - html: <a href="/azure/azure-stack/user/azure-stack-solution-machine-learning">Создание решения машинного обучения для пограничных устройств с помощью Azure и Azure Stack</a>
+    - html: <a href="/azure/azure-stack/user/azure-stack-solution-staged-data-analytics">Создание решения аналитики промежуточных данных с помощью Azure и Azure Stack</a>
+    - html: <a href="/azure/azure-stack/user/azure-stack-solution-cloud-burst">Создание решений для масштабирования в нескольких облаках в Azure</a>
+    - html: <a href="/azure/azure-stack/user/azure-stack-solution-geo-distributed">Создание решения для географически распределенного приложения с помощью Azure и Azure Stack</a>
+    - html: <a href="/azure/azure-stack/user/azure-stack-tutorial-sql">Создание высокодоступных баз данных SQL</a>
+    - html: <a href="/azure/azure-stack/user/azure-stack-tutorial-mysql">Создание высокодоступных баз данных MySQL</a>
 - title: Справочные материалы
   items:
   - type: list
