@@ -5,7 +5,7 @@
 # Основные понятия
 ## [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
 ## [Сочетания клавиш](azure-portal-keyboard-shortcuts.md)
-## [Поддерживаемые браузеры и устройства](../azure-preview-portal-supported-browsers-devices.md)
+## [Поддерживаемые браузеры и устройства](azure-portal-supported-browsers-devices.md)
 ## [Структура панелей мониторинга Azure](azure-portal-dashboards-structure.md)
 # Практические руководства
 ## Развертывание
