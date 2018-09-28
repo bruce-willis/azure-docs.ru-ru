@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 3/9/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 1b0588e25c0d156080a2e879185b76714d8691b2
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 61909c7f6858c7411e01019edda22d7676b44943
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37113380"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46955050"
 ---
 # <a name="tutorial-integrate-api-management-with-service-fabric-in-azure"></a>Руководство. Развертывание управления API с помощью Service Fabric в Azure
 
-Это руководство представляет собой четвертую часть цикла.  Расширенный сценарий развертывания для службы управления API Azure в Service Fabric.  Управление API позволяет публиковать API-интерфейсы с широким набором правил маршрутизации для служб серверной части Service Fabric. Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. В Service Fabric шлюзом может быть любая служба без отслеживания состояния, предназначенная для обработки входящего трафика, например приложение ASP.NET Core, концентраторы событий, Центр Интернета вещей или служба управления API Azure.
+Это руководство представляет собой четвертую часть цикла.  Расширенный сценарий развертывания для службы управления API Azure в Service Fabric.  Управление API позволяет публиковать API-интерфейсы с широким набором правил маршрутизации для служб серверной части Service Fabric. Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. В Service Fabric шлюзом может быть любая служба без отслеживания состояния, предназначенная для обработки входящего трафика, например приложение ASP.NET Core, Центры событий, Центр Интернета вещей или служба управления API Azure.
 
 В нем показано, как настроить [службу управления API Azure](../api-management/api-management-key-concepts.md) с помощью Service Fabric для перенаправления трафика во внутреннюю службу в Service Fabric.  Выполнив инструкции из этого руководства, вы развернете службу управления API в виртуальной сети и настроите API для отправки трафика во внутренние службы без отслеживания состояния. Дополнительные сведения о сценариях службы управления API Azure и Service Fabric см. в [обзорной статье](service-fabric-api-management-overview.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "37113380"
 > [!div class="checklist"]
 > * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
-> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * развертывание службы управления API с помощью Service Fabric.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -49,7 +49,7 @@ ms.locfileid: "37113380"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) либо [Azure CLI 2.0](/cli/azure/install-azure-cli).
+* Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) либо [Azure CLI](/cli/azure/install-azure-cli).
 * Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure.
 * Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2017](http://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
 * Если вы развертываете кластер Linux, настройте среду разработки Java в [Linux](service-fabric-get-started-linux.md) или [MacOS](service-fabric-get-started-mac.md).  Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
@@ -347,7 +347,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

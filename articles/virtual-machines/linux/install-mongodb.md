@@ -1,6 +1,6 @@
 ---
 title: Установка MongoDB на виртуальную машину Linux с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как установить и настроить MongoDB на виртуальной машине Linux с помощью Azure CLI 2.0.
+description: Узнайте, как установить и настроить MongoDB на виртуальной машине Linux с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -14,15 +14,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: d066b412fb722318824a408861fe7d9595c71537
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: a6228290eb5f35d687c26042c87551471462ab85
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37928239"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46987838"
 ---
 # <a name="how-to-install-and-configure-mongodb-on-a-linux-vm"></a>Как установить и настроить MongoDB на виртуальной машине Linux
-[MongoDB](http://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье показано, как установить и настроить MongoDB на виртуальной машине Linux с помощью Azure CLI 2.0. Изучив представленные примеры, вы узнаете, как:
+
+[MongoDB](http://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье показано, как установить и настроить MongoDB на виртуальной машине Linux с помощью Azure CLI. Изучив представленные примеры, вы узнаете, как:
 
 * [установить и настроить базовый экземпляр MongoDB вручную](#manually-install-and-configure-mongodb-on-a-vm);
 * [создать базовый экземпляр MongoDB на основе шаблона Resource Manager](#create-basic-mongodb-instance-on-centos-using-a-template);
@@ -30,7 +31,7 @@ ms.locfileid: "37928239"
 
 
 ## <a name="manually-install-and-configure-mongodb-on-a-vm"></a>Установка и настройка MongoDB на виртуальной машине вручную
-База данных MongoDB [содержит инструкции по установке](https://docs.mongodb.com/manual/administration/install-on-linux/) для дистрибутивов Linux, в том числе Red Hat, CentOS, SUSE, Ubuntu и Debian. В следующем примере создается виртуальная машина *CentOS*. Для создания этой среды необходимо установить последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+База данных MongoDB [содержит инструкции по установке](https://docs.mongodb.com/manual/administration/install-on-linux/) для дистрибутивов Linux, в том числе Red Hat, CentOS, SUSE, Ubuntu и Debian. В следующем примере создается виртуальная машина *CentOS*. Для создания этой среды необходимо установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
@@ -120,7 +121,7 @@ sudo chkconfig mongod on
 
 * [Базовый экземпляр MongoDB на базе CentOS](https://github.com/Azure/azure-quickstart-templates/tree/master/mongodb-on-centos) - https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-on-centos/azuredeploy.json
 
-Для создания этой среды необходимо установить последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Для создания этой среды необходимо установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -171,7 +172,7 @@ test
 > [!WARNING]
 > Для развертывания сложного сегментированного кластера MongoDB требуется более 20 ядер. Обычно 20 ядер — это количество по умолчанию для региона, выделяемое на одну подписку. Отправьте запрос в службу поддержки Azure, чтобы увеличить количество ядер.
 
-Для создания этой среды необходимо установить последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Для создания этой среды необходимо установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus

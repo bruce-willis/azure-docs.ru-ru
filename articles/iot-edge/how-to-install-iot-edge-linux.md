@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: kgremban
-ms.openlocfilehash: 56223b2ed8e9d9b1a08f5313940920113a650bfe
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: f515ddc58a9f9b434e40f44ca7cc50d738ed69f0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128338"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993125"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -202,6 +202,8 @@ sudo iotedge list
 Для запуска команд `iotedge` требуется более высокий уровень привилегий. После установки среды выполнения выйдите из системы компьютера, а затем снова войдите для автоматического обновления разрешений. До тех пор используйте перед любой командой `iotedge` префикс **sudo**.
 
 В устройствах с ограниченными ресурсами настоятельно рекомендуется присвоить переменной среды *OptimizeForPerformance* значение *false* согласно инструкциям в [руководстве по устранению неполадок][lnk-trouble].
+
+Если в вашей сети используется прокси-сервер, выполните действия, описанные в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

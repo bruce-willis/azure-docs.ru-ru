@@ -1,9 +1,9 @@
 ---
-title: Краткое руководство по API Graph Azure AD | Документация Майкрософт
-description: API Graph Azure Active Directory обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов.
+title: Использование API Graph Azure AD
+description: API Graph Azure Active Directory (Azure AD) обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов.
 services: active-directory
 documentationcenter: n/a
-author: mtillman
+author: CelesteDG
 manager: mtillman
 editor: ''
 tags: ''
@@ -11,28 +11,29 @@ ms.assetid: 9dc268a9-32e8-402c-a43f-02b183c295c5
 ms.service: active-directory
 ms.component: develop
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/02/2018
-ms.author: mtillman
+ms.date: 09/24/2018
+ms.author: celested
+ms.reviewer: sureshja
 ms.custom: aaddev
-ms.openlocfilehash: 3298b39fc92f6e5867900ed151149ff936e2733c
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 7b7f2133634a91b828d7e978c9041b12873fa3a1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39492635"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46997222"
 ---
-# <a name="quickstart-for-the-azure-ad-graph-api"></a>Краткое руководство по API Graph Azure AD
-API Graph Azure Active Directory обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях API Azure AD Graph и сценариях приложений см. в статьях [Azure AD Graph API reference](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) (Справочник по API Azure AD Graph) и [API Graph Azure Active Directory](https://msdn.microsoft.com/library/hh974476.aspx). 
+# <a name="how-to-use-the-azure-ad-graph-api"></a>Использование API Graph Azure AD
+
+API Graph Azure Active Directory (Azure AD) обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях API Azure AD Graph и сценариях приложений см. в статьях [Azure AD Graph API reference](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) (Справочник по API Azure AD Graph) и [API Graph Azure Active Directory](https://msdn.microsoft.com/library/hh974476.aspx).
 
 > [!IMPORTANT]
 > Мы настоятельно рекомендуем использовать для доступа к ресурсам Azure Active Directory [Microsoft Graph](https://developer.microsoft.com/graph) вместо API Azure AD Graph. В настоящее время усилия наших разработчиков направлены на Microsoft Graph, и дальнейшие усовершенствования API Azure AD Graph не планируются. Существует совсем немного сценариев, в которых по-прежнему можно использовать API Azure AD Graph. Дополнительные сведения см. в записи блога [Microsoft Graph or the Azure AD Graph](https://dev.office.com/blogs/microsoft-graph-or-azure-ad-graph) (Microsoft Graph или Azure AD Graph) в Центре разработчика Office.
-> 
-> 
 
 ## <a name="how-to-construct-a-graph-api-url"></a>Как составить URL-адрес Graph API
+
 В API Graph для доступа к данным и объектам каталога (другими словами, к ресурсам и сущностям), с которыми требуется выполнять операции CRUD, можно использовать URL-адреса на основе протокола OData. URL-адреса, используемые в API Graph, состоят из четырех основных частей — корня службы, идентификатора клиента, пути к ресурсу и строки параметров запроса: `https://graph.windows.net/{tenant-identifier}/{resource-path}?[query-parameters]`. Возьмем, к примеру, следующий URL-адрес: `https://graph.windows.net/contoso.com/groups?api-version=1.6`.
 
 * **Корень службы**. В API Azure AD Graph корнем службы всегда является https://graph.windows.net.
@@ -41,12 +42,15 @@ API Graph Azure Active Directory обеспечивает программный
 * **Параметры запроса**. Знак вопроса (?) отделяет раздел пути ресурса от раздела параметров запроса. Параметр запроса api-version необходим для всех запросов в API Azure AD Graph. API Azure AD Graph также поддерживает следующие параметры запроса OData: **$filter**, **$orderby**, **$expand**, **$top** и **$format**. В настоящее время не поддерживаются следующие параметры запроса: **$count**, **$inlinecount** и **$skip**. Дополнительные сведения см. в статье [Поддерживаемые запросы, фильтры и операции разбиения на страницы в Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-supported-queries-filters-and-paging-options).
 
 ## <a name="graph-api-versions"></a>Версии API Graph
+
 Версия для запроса API Graph указывается в параметре запроса api-version. Для версии 1.5 и более поздних используется числовое значение версии: api-version=1.6. Для предыдущих версий используйте строку даты, соответствующую формату ГГГГ-ММ-ДД. Пример: api-version=2013-11-08. Для компонентов предварительной версии используйте строку beta. Пример: api-version=beta. Дополнительные сведения о различиях между версиями API Graph см. в статье об [управлении версиями API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-versioning).
 
 ## <a name="graph-api-metadata"></a>Метаданные API Graph
+
 Чтобы получить файл метаданных API Azure AD Graph, добавьте сегмент $metadata после идентификатора клиента в URL-адресе. Например, следующий URL-адрес возвращает метаданные для демонстрационной компании: `https://graph.windows.net/GraphDir1.OnMicrosoft.com/$metadata?api-version=1.6`. Можно ввести этот URL-адрес в адресной строке веб-браузера для просмотра метаданных. Возвращаемый документ метаданных с расширением CSDL описывает сущности и сложные типы, их свойства, а также функции и действия, представляемые запрошенной версией API Graph. Если параметр api-version не задан, то возвращаются метаданные для самой последней версии.
 
 ## <a name="common-queries"></a>Стандартные запросы
+
 [Стандартные запросы Azure AD Graph API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-supported-queries-filters-and-paging-options#CommonQueries) представлены стандартные запросы, которые могут использоваться с Graph Azure AD, включая запросы для доступа к ресурсам верхнего уровня в каталоге и запросы для выполнения операций в каталоге.
 
 Например, `https://graph.windows.net/contoso.com/tenantDetails?api-version=1.6` возвращает сведения об организации для каталога contoso.com.
@@ -75,6 +79,7 @@ API Graph Azure Active Directory обеспечивает программный
 * Отображение или передача эскизов фотографий не поддерживается.
 
 ## <a name="using-fiddler-to-write-to-the-directory"></a>Использование Fiddler для записи в каталог
+
 При работе с этим кратким руководством можно использовать веб-отладчик Fiddler, чтобы попрактиковаться в выполнении операций записи в каталоге Azure AD. Например, можно получить и передать фотографию профиля пользователя (что не поддерживается в Azure AD Graph Explorer). Дополнительные сведения о Fiddler и его установке см. по адресу [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler).
 
 В следующем примере веб-отладчик Fiddler используется для создания новой группы безопасности MyTestGroup в каталоге Azure AD.
@@ -89,8 +94,7 @@ API Graph Azure Active Directory обеспечивает программный
    
    > [!NOTE]
    > Необходимо заменить {mytenantdomain} доменным именем собственного каталога Azure AD.
-   > 
-   > 
+
 4. В поле непосредственно под методом Post введите приведенный ниже заголовок HTTP.
    
     ```
@@ -101,8 +105,7 @@ API Graph Azure Active Directory обеспечивает программный
    
    > [!NOTE]
    > Замените &lt;your access token&gt; маркером доступа для своего каталога Azure AD.
-   > 
-   > 
+
 5. В поле **Request body** (Текст запроса) введите следующий код JSON.
    
     ```
@@ -119,6 +122,6 @@ API Graph Azure Active Directory обеспечивает программный
 Дополнительные сведения о сущностях и типах Azure AD, доступ к которым можно получить с помощью Graph, а также сведения об операциях, которые можно с ними выполнять с помощью Graph, см. в [справочнике по Azure AD Graph REST API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 * Узнайте больше о [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 * Дополнительная информация: [Azure AD Graph API Permission Scopes](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)
-

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: glenga
-ms.openlocfilehash: dff0aace6c46340f07ff6fb4fd7f92ee93b7fa8c
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 31fe0f85b258524b4ac0af03ec19a91a93e1463b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44091760"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46968886"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "44091760"
 
 * Установите [Microsoft.Azure.WebJobs.Extensions.DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) 1.3.0-rc или более поздней версии в проекте устойчивых функций.
 * Установите [эмулятор хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-use-emulator).
-* Установите [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) или используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+* Установите [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) или используйте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 ## <a name="create-a-custom-event-grid-topic"></a>Создание пользовательского раздела сетки событий
 

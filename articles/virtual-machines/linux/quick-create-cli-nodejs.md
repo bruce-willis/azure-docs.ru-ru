@@ -1,6 +1,6 @@
 ---
-title: Создание виртуальной машины Linux с помощью Azure CLI 1.0 | Документация Майкрософт
-description: Создание виртуальной машины Linux в Azure с помощью Azure CLI 1.0
+title: Создание виртуальной машины Linux с помощью классического интерфейса командной строки Azure | Документация Майкрософт
+description: Создание виртуальной машины Linux в Azure с помощью классического Azure CLI.
 services: virtual-machines-linux
 documentationcenter: ''
 author: vlivech
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/15/2016
 ms.author: v-livech
-ms.openlocfilehash: ea9eab1a02a29005917848ed54ab8ba160b89b63
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 94362256dfb5b8deff233f7c575d0720f29eec5c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30901815"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46987859"
 ---
-# <a name="create-a-linux-vm-using-the-azure-cli-10"></a>Создание виртуальной машины Linux с помощью Azure CLI 1.0
+# <a name="create-a-linux-vm-using-the-azure-classic-cli"></a>Создание виртуальной машины Linux с помощью классического интерфейса командной строки Azure
 
 В этой статье мы расскажем, как быстро развернуть в Azure виртуальную машину Linux с помощью команды `azure vm quick-create` в интерфейсе командной строки Azure. Команда `quick-create` развертывает виртуальную машину в надежной базовой инфраструктуре, которую вы можете использовать для быстрой проверки или создания прототипа решения.
 
 > [!NOTE]
-Чтобы создать виртуальную машину с использованием Azure CLI 2.0, изучите раздел [Создание виртуальной машины с помощью Azure CLI](../windows/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Чтобы создать виртуальную машину с использованием Azure CLI, изучите статью [Краткое руководство. Создание виртуальной машины Windows с помощью Azure CLI 2.0](../windows/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Вы также можете быстро развернуть виртуальную машину Linux с помощью [портала Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 

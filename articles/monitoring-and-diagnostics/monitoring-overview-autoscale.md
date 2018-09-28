@@ -5,20 +5,20 @@ author: rboucher
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 03/02/2016
+ms.date: 09/24/2018
 ms.author: robb
 ms.component: autoscale
-ms.openlocfilehash: 4eeca81e08a0ecae9ba41ccdd2bf8a2f395f579c
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: fe63ce931da9fbe94b47d00805820affddfb1bc1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264676"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46946992"
 ---
 # <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Обзор автомасштабирования в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
 В этой статье объясняется, что такое автомасштабирование Microsoft Azure, каковы преимущества этой функции и как начать ее использовать.  
 
-Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/) и [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/).
+Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).
 
 > [!NOTE]
 > В Azure доступно два способа автомасштабирования. Более старый способ работает с виртуальными машинами (группами доступности). Для него предлагается ограниченная поддержка, поэтому мы рекомендуем перейти к масштабируемым наборам виртуальных машин, чтобы обеспечить более быстрое и надежное автомасштабирование. В этой статье есть ссылка на сведения об использовании более старой технологии.  
@@ -41,7 +41,7 @@ ms.locfileid: "35264676"
 В масштабируемых наборах виртуальных машин используются данные телеметрии из агентов диагностики Azure, а телеметрия для веб-приложений и облачных служб поступает непосредственно из инфраструктуры Azure. К некоторым часто используемым статистическим сведениям относятся загрузка ЦП, использование памяти, число потоков, длина очереди и использование диска. Список данных телеметрии, которые можно использовать, см. в статье об [общих метриках автомасштабирования в Azure Monitor](insights-autoscale-common-metrics.md).
 
 ## <a name="custom-metrics"></a>Пользовательские метрики
-Вы также можете использовать собственные пользовательские метрики, выдаваемые приложениями. Если вы настроили приложения для отправки метрик в Application Insights, вы сможете использовать эти метрики для принятия решений о том, нужно ли выполнять масштабирование. 
+Вы также можете использовать собственные пользовательские метрики, выдаваемые приложениями. Если вы настроили приложения для отправки метрик в Application Insights, вы сможете использовать эти метрики для принятия решений о том, нужно ли выполнять масштабирование.
 
 ## <a name="time"></a>Время
 В правилах на основе расписания используется формат UTC. При настройке правил необходимо правильно задать свой часовой пояс.  
@@ -96,7 +96,7 @@ ms.locfileid: "35264676"
 ## <a name="methods-of-access"></a>Варианты доступа
 Автомасштабирование можно настроить с помощью следующих инструментов:
 
-* [портал Azure](insights-how-to-scale.md)
+* [портала Azure](insights-how-to-scale.md)
 * [PowerShell](insights-powershell-samples.md#create-and-manage-autoscale-settings)
 * [Кроссплатформенный интерфейс командной строки](insights-cli-samples.md#autoscale)
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931953.aspx)
@@ -110,6 +110,7 @@ ms.locfileid: "35264676"
 | Виртуальные машины: масштабируемые наборы Windows |[Масштабирование и масштабируемые наборы виртуальных машин в Windows](../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md) |
 | Виртуальные машины: масштабируемые наборы Linux |[Масштабирование и масштабируемые наборы виртуальных машин в Linux](../virtual-machine-scale-sets/virtual-machine-scale-sets-linux-autoscale.md) |
 | Виртуальные машины: пример с Windows |[Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин](insights-advanced-autoscale-virtual-machine-scale-sets.md) |
+| Служба управления API|[Автоматическое масштабирование экземпляра службы управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-autoscale)
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об автомасштабировании см. в пошаговых руководствах по автомасштабированию выше, а также в следующих статьях:

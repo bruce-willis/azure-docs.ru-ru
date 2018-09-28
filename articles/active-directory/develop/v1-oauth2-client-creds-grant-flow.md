@@ -17,12 +17,12 @@ ms.date: 02/08/2017
 ms.author: celested
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 8f7c6c2bef747d00188cac2c3601fdad739b92a8
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: eb43589b04be8b2b9c3be45d33c94592e97d308e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39580974"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948270"
 ---
 # <a name="service-to-service-calls-using-client-credentials-shared-secret-or-certificate"></a>Вызовы между службами с помощью учетных данных клиента (общий секрет или сертификат)
 Процесс предоставления учетных данных клиента OAuth 2.0 позволяет веб-службе (*конфиденциальный клиент*) вместо олицетворения пользователя использовать свои собственные учетные данные для аутентификации при вызове другой веб-службы. В этом сценарии клиент обычно является службой среднего уровня, веб-службой, службой управляющей программы или веб-сайтом. Для большей надежности Azure AD также позволяет вызывающей службе использовать в качестве учетных данных сертификат (вместо общего секрета).
@@ -61,7 +61,7 @@ https://login.microsoftonline.com/<tenant id>/oauth2/token
 | resource |обязательно |Введите URI идентификатора приложения принимающей вызов веб-службы. Чтобы найти URI кода приложения, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение службы, затем последовательно выберите **Параметры** и **Свойства**. |
 
 #### <a name="example"></a>Пример
-Ниже приведен запрос HTTP POST на маркер доступа для веб-службы https://service.contoso.com/. Параметр `client_id` определяет веб-службу, которая запрашивает маркер доступа.
+Ниже приведен запрос HTTP POST на [маркер доступа](access-tokens.md) для веб-службы https://service.contoso.com/. Параметр `client_id` определяет веб-службу, которая запрашивает маркер доступа.
 
 ```
 POST /contoso.com/oauth2/token HTTP/1.1

@@ -5,36 +5,36 @@ services: hdinsight
 ms.service: hdinsight
 author: ashishthaps
 ms.author: ashishth
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 08/19/2018
-ms.openlocfilehash: 7e002a43c774bd1a6df9cfe46207ddebd02284b3
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.date: 09/24/2018
+ms.openlocfilehash: b63f2566220d556f9695687dc743a7d47e27acf1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43104229"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46984319"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
-[Кластеры HDInsight, присоединенные к домену](hdinsight-domain-joined-introduction.md), могут использовать строгую аутентификацию пользователей через Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в Azure AD вы можете синхронизировать пользователей, которым необходим доступ к кластеру.
+[Кластеры HDInsight с Корпоративным пакетом безопасности (ESP)](hdinsight-domain-joined-introduction.md) могут использовать строгую аутентификацию пользователей Azure Active Directory (Azure AD), а также политики *управления доступом на основе ролей* (RBAC). При добавлении пользователей и групп в Azure AD вы можете синхронизировать пользователей, которым необходим доступ к кластеру.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[Создайте кластер HDInsight, присоединенный к домену](hdinsight-domain-joined-configure.md), если такого не имеется.
+Если вы еще этого не сделали, [создайте кластер HDInsight с Корпоративным пакетом безопасности](hdinsight-domain-joined-configure.md).
 
 ## <a name="add-new-azure-ad-users"></a>Добавление новых пользователей Azure AD
 
 Чтобы просмотреть узлы, откройте веб-интерфейс Ambari. Для каждого узла будут заданы новые параметры автоматического обновления.
 
-1. На [портале Azure](https://portal.azure.com) перейдите в каталог Azure AD, связанный с кластером, присоединенным к домену.
+1. На [портале Azure](https://portal.azure.com) перейдите в каталог Azure AD, связанный с кластером ESP.
 
 2. Выберите **All users** (Все пользователи) в левом меню, а затем щелкните **New user** (Новый пользователь).
 
     ![Панель All users (Все пользователи)](./media/hdinsight-sync-aad-users-to-cluster/aad-users.png)
 
-3. Заполните форму нового пользователя. Выберите группы, созданные для назначения разрешений на основе кластеров. В этом примере создайте группу с именем HiveUsers, которой можно назначить новых пользователей. [Примеры инструкций](hdinsight-domain-joined-configure.md) для создания кластера, присоединенного к домену, включают в себя добавление двух групп: `HiveUsers` и `AAD DC Administrators`.
+3. Заполните форму нового пользователя. Выберите группы, созданные для назначения разрешений на основе кластеров. В этом примере создайте группу с именем HiveUsers, которой можно назначить новых пользователей. [Примеры инструкций](hdinsight-domain-joined-configure.md) для создания кластера ESP включают в себя добавление двух групп: `HiveUsers` и `AAD DC Administrators`.
 
     ![Панель New user (Новый пользователь)](./media/hdinsight-sync-aad-users-to-cluster/aad-new-user.png)
 
@@ -148,6 +148,6 @@ ms.locfileid: "43104229"
 
 ## <a name="see-also"></a>См. также
 
-* [Настройка политик Hive в присоединенном к домену кластере HDInsight](hdinsight-domain-joined-run-hive.md)
-* [Управление присоединенными к домену кластерами HDInsight](hdinsight-domain-joined-manage.md)
+* [Настройка политик Hive в кластере HDInsight с ESP](hdinsight-domain-joined-run-hive.md)
+* [Настройка кластеров HDInsight с помощью ESP](hdinsight-domain-joined-manage.md)
 * [Разрешение пользователям доступа к Ambari Views](hdinsight-authorize-users-to-ambari.md)

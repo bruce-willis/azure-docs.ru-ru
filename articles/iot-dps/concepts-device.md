@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: briz
-ms.openlocfilehash: bd77a56acee948995bb2fcbb5beea60f69cda9ee
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 354ef48f7935536864cde9dc0d9a130fa5aeb865
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34630159"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46972867"
 ---
 # <a name="iot-hub-device-provisioning-service-device-concepts"></a>Понятия устройства в контексте подготовки устройств в Центре Интернета вещей
 
@@ -28,9 +28,10 @@ ms.locfileid: "34630159"
 > [!NOTE]
 > Для применения аналогичной концепции Центр Интернета вещей использует схему проверки подлинности.
 
-Служба подготовки устройств поддерживает две формы аттестации:
+Служба подготовки устройств поддерживает следующие формы аттестации:
 * **Сертификаты X.509** на основе стандартного потока проверки подлинности сертификата X.509.
 * **Доверенный платформенный модуль (TPM)** на основе задачи nonce с использованием стандарта TPM для представления в ключах подписанного URL-адреса (SAS). На устройстве не должен присутствовать физический доверенный платформенный модуль (TPM), но для каждой [спецификации TPM](https://trustedcomputinggroup.org/work-groups/trusted-platform-module/) требуется подтверждение с помощью ключа подтверждения.
+* **Симметричный ключ** на основе [маркеров безопасности](../iot-hub/iot-hub-devguide-security.md#security-tokens) подписанного URL-адреса (SAS), который включает в себя хэшированную подпись и встроенный срок действия. Дополнительные сведения см. в разделе [Аттестация симметричного ключа](concepts-symmetric-key-attestation.md).
 
 ## <a name="hardware-security-module"></a>Аппаратный модуль безопасности
 

@@ -1,6 +1,6 @@
 ---
-title: Приступая к работе с веб-API Node.js для Azure AD | Документация Майкрософт
-description: Практическое руководство по созданию на основе Node.js веб-интерфейса REST API, который интегрируется с Azure AD для аутентификации.
+title: Защита веб-API с помощью Azure AD | Документация Майкрософт
+description: Узнайте, как создать веб-интерфейс REST API на основе Node.js, который интегрируется с Azure AD для аутентификации.
 services: active-directory
 documentationcenter: nodejs
 author: CelesteDG
@@ -11,27 +11,34 @@ ms.component: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: javascript
-ms.topic: article
-ms.date: 11/30/2017
+ms.topic: quickstart
+ms.date: 09/24/2018
 ms.author: celested
 ms.custom: aaddev
-ms.openlocfilehash: 3b203e5be82c01e7d586c90bae454aca23ebd630
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: f6f804ea9121d1728e31f1e694280e841f4b7f4e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39580885"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46946550"
 ---
-# <a name="azure-ad-nodejs-web-api-getting-started"></a>Приступая к работе с веб-API Node.js для Azure AD
+# <a name="quickstart-secure-a-web-api-with-azure-active-directory"></a>Краткое руководство. Защита веб-API с помощью Azure Active Directory
 
-В этой статье показано, как защитить конечную точку API [Restify](http://restify.com/) с [Passport](http://passportjs.org/) с помощью модуля [passport azure ad](https://github.com/AzureAD/passport-azure-ad) для обработки взаимодействия с Azure Active Directory (AAD). 
+[!INCLUDE [active-directory-develop-applies-v1](../../../includes/active-directory-develop-applies-v1.md)]
 
-В рамках данного руководства рассматриваются вопросы защиты конечных точек API. Здесь не рассматриваются вопросы входа в систему и сохранения маркеров проверки подлинности. За это отвечает приложение клиента. Дополнительные сведения о реализации клиента см. в статье [Вход в веб-приложение Node.js и выход из него с помощью Azure AD](quickstart-v1-openid-connect-code.md).
+В этом руководстве показано, как защитить конечную точку API [Restify](http://restify.com/) с [Passport](http://passportjs.org/) с помощью модуля [passport azure ad](https://github.com/AzureAD/passport-azure-ad) для реализации обмена данными с Azure Active Directory (AAD).
+
+В рамках этого краткого руководства рассматриваются вопросы защиты конечных точек API. Здесь не рассматриваются вопросы входа в систему и сохранения маркеров проверки подлинности. За это отвечает приложение клиента. Дополнительные сведения о реализации клиента см. в статье [Вход в веб-приложение Node.js и выход из него с помощью Azure AD](quickstart-v1-openid-connect-code.md).
 
 Полный образец кода, используемого в этой статье, можно найти в [GitHub](https://github.com/Azure-Samples/active-directory-node-webapi-basic).
 
-## <a name="create-the-sample-project"></a>Создание примера проекта
-Это серверное приложение требует несколько зависимостей пакета для поддержки Restify и Passport, а также данные учетной записи, передаваемые в AAD.
+## <a name="prerequisites"></a>Предварительные требования
+
+Чтобы начать работу, выполните следующие предварительные требования.
+
+### <a name="create-the-sample-project"></a>Создание примера проекта
+
+Для работы этого серверного приложения требуется несколько зависимостей пакета для поддержки Restify и Passport, а также данные учетной записи, передаваемые в AAD.
 
 Чтобы начать, добавьте следующий код в файл с именем `package.json`:
 
@@ -53,13 +60,13 @@ ms.locfileid: "39580885"
 
 После создания `package.json` запустите `npm install` в командной строке, чтобы установить зависимости пакета. 
 
-### <a name="configure-the-project-to-use-active-directory"></a>Настройка проекта для использования Active Directory
+#### <a name="configure-the-project-to-use-active-directory"></a>Настройка проекта для использования Active Directory
 
 Чтобы приступить к настройке приложения, необходимо получить несколько значений, связанных с учетной записью, с помощью Azure CLI. Чтобы приступить к работе с CLI, проще всего использовать Azure Cloud Shell.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-В Cloud Shell введите следующую команду: 
+В Cloud Shell введите следующую команду:
 
 ```azurecli-interactive
 az ad app create --display-name node-aad-demo --homepage http://localhost --identifier-uris http://node-aad-demo
@@ -94,12 +101,15 @@ module.exports.credentials = {
   clientID: clientID
 };
 ```
+
 Дополнительные сведения об отдельных параметрах конфигурации см. в документации модуля [passport azure ad](https://github.com/AzureAD/passport-azure-ad#5-usage).
 
-## <a name="implement-the-server"></a>Реализация сервера
+### <a name="implement-the-server"></a>Реализация сервера
+
 Модуль [passport-azure-ad](https://github.com/AzureAD/passport-azure-ad#5-usage) имеет две стратегии проверки подлинности: [OIDC](https://github.com/AzureAD/passport-azure-ad#51-oidcstrategy) и [Носитель](https://github.com/AzureAD/passport-azure-ad#52-bearerstrategy). Сервер, реализованный в этой статье, использует стратегию на основе носителя для защиты конечной точки API.
 
 ### <a name="step-1-import-dependencies"></a>Шаг 1. Импорт зависимостей
+
 Создайте файл с именем `app.js` и вставьте в него следующий текст:
 
 ```JavaScript
@@ -117,16 +127,13 @@ const
 В этом разделе кода:
 
 - Модули `restify` и `restify-plugins` указываются для настойки сервера Restify.
-
-- Модули `passport` и `passport-azure-ad` отвечают за связь с AAD.
-
+- Модули `passport` и `passport-azure-ad` отвечают за обмен данными с AAD.
 - Переменная `config` инициализируется с использованием значений файла `config.js`, созданного на предыдущем шаге.
-
 - Для `authenticatedUserTokens` создается массив, в котором сохраняются маркеры пользователей, когда они передаются в защищенные конечные точки.
-
 - `serverPort` определяется на основе порта среды обработки или из файла конфигурации.
 
 ### <a name="step-2-instantiate-an-authentication-strategy"></a>Шаг 2. Создание экземпляра стратегии проверки подлинности
+
 При защите конечной точки нужно предоставить стратегию для определения того, исходит ли текущий запрос от пользователя, прошедшего проверку подлинности. Переменная `authenticatonStrategy` является экземпляром класса `BearerStrategy` `passport-azure-ad`. Добавьте приведенный ниже код после инструкций `require`.
 
 ```JavaScript
@@ -145,6 +152,7 @@ const authenticationStrategy = new BearerStrategy(config.credentials, (token, do
     return done(null, currentUser, token);
 });
 ```
+
 Эта реализация использует автоматическую регистрацию, добавляя маркеры проверки подлинности в массив `authenticatedUserTokens`, если они еще не созданы.
 
 После создания экземпляра стратегии необходимо передать его в Passport через метод `use`. Добавьте следующий код в `app.js`, чтобы использовать стратегию в службе Passport.
@@ -154,6 +162,7 @@ passport.use(authenticationStrategy);
 ```
 
 ### <a name="step-3-server-configuration"></a>Шаг 3. Настройка сервера
+
 Определив стратегию проверки подлинности, можно настроить сервер Restify с основными параметрами и настроить использование Passport для обеспечения безопасности.
 
 ```JavaScript
@@ -164,9 +173,9 @@ server.use(passport.session());
 ```
 Этот сервер инициализирован и настроен для анализа заголовков авторизации и настройки использования Passport.
 
-
 ### <a name="step-4-define-routes"></a>Шаг 4. Определение маршрутов
-Теперь можно определить маршруты и решить, какие из них необходимо защищать с помощью AAD. Этот проект включает два маршрута, где корневой уровень является открытым, а для маршрута `/api` установлено требование проверки подлинности.
+
+Теперь вы можете определить маршруты и решить, какие из них необходимо защитить с помощью AAD. Этот проект включает два маршрута, где корневой уровень является открытым, а для маршрута `/api` установлено требование проверки подлинности.
 
 В `app.js` добавьте следующий код для маршрута корневого уровня:
 
@@ -198,19 +207,19 @@ server.listen(serverPort);
 
 Теперь, когда сервер реализован, его можно запустить, открыв командную строку и введя следующее:
 
-```Shell
+```shell
 npm start
 ```
 
 При запущенном сервере можно отправить запрос на сервер для проверки результатов. Для демонстрации ответа из корневого маршрута откройте оболочку Bash и введите следующий код:
 
-```Shell 
+```shell
 curl -isS -X GET http://127.0.0.1:3000/
 ```
 
 Если ваш сервер настроен правильно, ответ будет выглядеть так:
 
-```Shell
+```shell
 HTTP/1.1 200 OK
 Server: Azure Active Directroy with Node.js Demo
 Content-Type: application/json
@@ -223,13 +232,13 @@ Try: curl -isS -X GET http://127.0.0.1:3000/api
 
 Затем можно проверить маршрут, который требует проверки подлинности, введя в оболочке Bash следующую команду:
 
-```Shell 
+```shell
 curl -isS -X GET http://127.0.0.1:3000/api
 ```
 
 Если сервер настроен правильно, то он должен отвечать с состоянием `Unauthorized`.
 
-```Shell
+```shell
 HTTP/1.1 401 Unauthorized
 Server: Azure Active Directroy with Node.js Demo
 WWW-Authenticate: token is not found
@@ -239,10 +248,10 @@ Content-Length: 12
 
 Unauthorized
 ```
+
 После создания безопасного API можно реализовать клиент, который может передавать маркеры проверки подлинности в API.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Как указано во введении, нужно реализовать аналог клиента для подключения к серверу, который обрабатывает вход, выход и управление маркерами. Для получения примеров, основанных на коде, можно просмотреть клиентские приложения в [iOS](https://github.com/MSOpenTech/azure-activedirectory-library-for-ios) и [Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android). Пошаговое руководство см. в следующей статье:
 
-> [!div class="nextstepaction"]
-> [Вход в веб-приложение Node.js и выход из него с помощью Azure AD](quickstart-v1-openid-connect-code.md)
+* Вам нужно реализовать аналог клиента для подключения к серверу, который обрабатывает операции входа, выхода и управления маркерами. См. примеры клиентских приложений [iOS](https://github.com/MSOpenTech/azure-activedirectory-library-for-ios) и [Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android).
+* См. дополнительные сведения о [входе в веб-приложение Node.js и выходе из него с помощью Azure AD](quickstart-v1-openid-connect-code.md).

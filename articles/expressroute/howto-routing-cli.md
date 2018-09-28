@@ -15,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/11/2017
 ms.author: cherylmc
-ms.openlocfilehash: f4ad959de1425e828ce11fb658f8b5304e9d8775
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: cd7a6c43cb791ed607a763f10e781794ef513500
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30316432"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950409"
 ---
 # <a name="create-and-modify-routing-for-an-expressroute-circuit-using-cli"></a>Создание и изменение маршрутизации для канала ExpressRoute с помощью CLI
 
 Эта статья поможет вам создать конфигурацию для канала ExpressRoute и управлять ею в модели развертывания с помощью Azure Resource Manager, используя интерфейс командной строки. Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [портала Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
 > * [интерфейс командной строки Azure](howto-routing-cli.md)
 > * [Видео — частный пиринг](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
@@ -38,7 +38,7 @@ ms.locfileid: "30316432"
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
-* Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд интерфейса командной строки см. в статье [Install Azure CLI 2.0](/cli/azure/install-azure-cli) (Установка Azure CLI 2.0).
+* Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure CLI 2.0](/cli/azure/install-azure-cli).
 * Не забудьте изучить страницы с описанием [предварительных требований](expressroute-prerequisites.md), [требований к маршрутизации](expressroute-routing.md) и [рабочих процессов](expressroute-workflows.md), прежде чем приступать к настройке.
 * Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](howto-circuit-cli.md) ; он должен быть затем включен на стороне поставщика услуг подключения. Для выполнения команд, описанных в статье, должен быть подготовлен и включен канал ExpressRoute.
 
