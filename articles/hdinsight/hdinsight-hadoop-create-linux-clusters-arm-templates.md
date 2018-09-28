@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: jasonh
-ms.openlocfilehash: 9a48b3ff9769e2757ac7930feb14d6537d96fae3
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 4cf516550e9f9852ec50981932c2df8f236d0358
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43109244"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46961320"
 ---
 # <a name="create-hadoop-clusters-in-hdinsight-by-using-resource-manager-templates"></a>Создание кластеров Hadoop в HDInsight с помощью шаблонов Resource Manager
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "43109244"
 Для выполнения инструкций из этой статьи понадобится следующее:
 
 * [Подписка Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-* Azure PowerShell и (или) Azure CLI.
+* Azure PowerShell и классический Azure CLI.
 
 ### <a name="resource-manager-templates"></a>Шаблоны диспетчера ресурсов
 Шаблон Resource Manager упрощает создание ресурсов для приложений, приведенных ниже, с помощью отдельной скоординированной операции:
@@ -49,7 +49,7 @@ Resource Manager позволяет экспортировать шаблон Re
 
 - Портал Azure: см. статью [Экспорт шаблона Azure Resource Manager из существующих ресурсов](../azure-resource-manager/resource-manager-export-template.md).
 - Azure PowerShell: см. статью [Экспорт шаблона Azure Resource Manager с помощью PowerShell](../azure-resource-manager/resource-manager-export-template-powershell.md).
-- Azure CLI: см. статью [Экспорт шаблонов Azure Resource Manager с помощью Azure CLI](../azure-resource-manager/resource-manager-export-template-cli.md).
+- Классический Azure CLI: см. статью [Экспорт шаблонов Azure Resource Manager с помощью классического Azure CLI](../azure-resource-manager/resource-manager-export-template-cli.md).
 
 
 ## <a name="deploy-using-the-portal"></a>Развертывание с помощью портала
@@ -60,9 +60,9 @@ Resource Manager позволяет экспортировать шаблон Re
 
 Шаблон Resource Manager можно развернуть с помощью Azure PowerShell. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](../azure-resource-manager/resource-manager-powershell-sas-token.md).
 
-## <a name="deploy-using-cli"></a>Развертывание с помощью интерфейса командной строки
+## <a name="deploy-using-azure-cli"></a>Развертывание с помощью Azure CLI
 
-Шаблон Resource Manager можно развернуть с помощью Azure CLI. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/resource-manager-cli-sas-token.md).
+Шаблон Resource Manager можно развернуть с помощью классического CLI. Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/resource-manager-cli-sas-token.md).
 
 ## <a name="deploy-using-the-rest-api"></a>Развертывание с помощью REST API
 Шаблон Resource Manager можно развернуть с помощью REST API. Дополнительные сведения см. в статье [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/resource-group-template-deploy-rest.md).

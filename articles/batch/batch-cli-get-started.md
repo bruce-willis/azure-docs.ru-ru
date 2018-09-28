@@ -15,18 +15,18 @@ ms.workload: big-compute
 ms.date: 07/24/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2360c5a672975cec48f5c17b098125b8287799c3
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 9b5c1df8776b63fc8ceecfa0377e74c757ba503c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39493702"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950154"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
-Azure CLI 2.0 — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Azure CLI 2.0 оптимизирован для администрирования ресурсов Azure и управления ими из командной строки. При помощи этого интерфейса вы можете управлять учетными записями пакетной службы Azure, а также такими ресурсами, как пулы, задания и задачи. Кроме того, Azure CLI позволяет создавать и выполнять скрипты для многих однотипных задач, выполняемых с помощью API-интерфейсов пакетной службы, портала Azure и командлетов PowerShell пакетной службы.
+Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Интерфейс командной строки Azure (Azure CLI) оптимизирован для администрирования ресурсов Azure и управления ими из командной строки. При помощи этого интерфейса вы можете управлять учетными записями пакетной службы Azure, а также такими ресурсами, как пулы, задания и задачи. Кроме того, Azure CLI позволяет создавать и выполнять скрипты для многих однотипных задач, выполняемых с помощью API-интерфейсов пакетной службы, портала Azure и командлетов PowerShell пакетной службы.
 
-В этой статье содержатся общие сведения об использовании [Azure CLI версии 2.0](https://docs.microsoft.com/cli/azure) с пакетной службой. Общие сведения об использовании интерфейса командной строки с Azure см. в статье [Начало работы с Azure CLI 2.0](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
+В этой статье содержатся общие сведения об использовании [Azure CLI версии 2.0](https://docs.microsoft.com/cli/azure) с пакетной службой. Общие сведения об использовании интерфейса командной строки с Azure см. в статье [Начало работы с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
 
 ## <a name="set-up-the-azure-cli"></a>Настройка Azure CLI
 
@@ -47,12 +47,9 @@ Azure CLI 2.0 — это интерфейс командной строки Azur
 
 Если у вас возникнут сомнения, с помощью параметра командной строки `-h` вы сможете получить справку по любой из команд интерфейса командной строки Azure.
 
-> [!NOTE]
-> В предыдущих версиях Azure CLI к командам добавлялся префикс `azure`. В версии 2.0 все команды теперь начинаются с приставки `az`. Не забудьте обновить скрипты, чтобы использовать новый синтаксис версии 2.0.
->
->  
 
-Дополнительные сведения о командах Azure CLI для пакетной службы см. в [справочной документации по Azure CLI](https://docs.microsoft.com/cli/azure/batch). 
+
+Дополнительные сведения о командах Azure CLI для пакетной службы см. в [справочной документации по Azure CLI](/cli/azure/batch). 
 
 ## <a name="log-in-and-authenticate"></a>Вход в систему и проверки подлинности
 
@@ -63,7 +60,7 @@ Azure CLI 2.0 — это интерфейс командной строки Azur
 
 ### <a name="log-in-to-azure"></a>Вход в Azure
 
-В Azure можно войти разными способами, описанными в статье [Вход с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli):
+В Azure можно войти разными способами, описанными в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli):
 
 1. [Интерактивный вход.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-interactive-log-in) Используйте этот способ, если вы самостоятельно выполняете команды Azure CLI из командной строки.
 2. [Вход с использованием субъекта-службы.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-logging-in-with-a-service-principal) Используйте этот способ, если вы выполняете команды Azure CLI из скрипта или приложения.
@@ -87,7 +84,7 @@ az login
 
 Проверку подлинности в учетной записи пакетной службы можно пройти двумя способами:
 
-- **Проверка подлинности Azure Active Directory (Azure AD).** 
+- **Проверка подлинности через Azure Active Directory (Azure AD)**. 
 
     При использовании Azure CLI с пакетной службой этот метод проверки подлинности реализован по умолчанию. Мы советуем использовать его в большинстве сценариев. 
     
@@ -101,9 +98,9 @@ az login
     az batch account login -g myresource group -n mybatchaccount
     ```
 
-- **Проверка подлинности на основе общего ключа.**
+- **Проверка подлинности на основе общего ключа**.
 
-    При использовании метода [проверки подлинности на основе общего ключа](https://docs.microsoft.com/rest/api/batchservice/authenticate-requests-to-the-azure-batch-service#authentication-via-shared-key) проверка подлинности команд Azure CLI для пакетной службы выполняется на основе ключей доступа к учетной записи.
+    При использовании метода [проверки подлинности на основе общего ключа](/rest/api/batchservice/authenticate-requests-to-the-azure-batch-service#authentication-via-shared-key) проверка подлинности команд Azure CLI для пакетной службы выполняется на основе ключей доступа к учетной записи.
 
     Если вы используете скрипты Azure CLI для автоматического вызова команд пакетной службы, вы можете реализовать проверку подлинности на основе общего ключа или проверку подлинности Azure AD с использованием субъекта-службы. В некоторых случаях проверку подлинности на основе общего ключа реализовать проще, чем создать субъект-службу.  
 
@@ -173,7 +170,6 @@ az batch task list --job-id job001
 * Чтобы отобразить выходные данные команды **verbose**, используйте `-v` и `-vv`. Когда флаг `-vv` включен, Azure CLI отображает текущие REST-запросы и ответы. Эти параметры удобно использовать для просмотра полного вывода ошибок.
 * Вы можете просмотреть **выходные данные команды в виде JSON** с помощью параметра `--json`. Например, параметр `az batch pool show pool001 --json` отображает свойства элемента pool001 в формате JSON. Затем вы можете скопировать и изменить эти выходные данные для использования в параметре `--json-file` (см. выше раздел, посвященный [JSON-файлам](#json-files)).
 <!---Loc Comment: Please, check link [JSON files] since it's not redirecting to any location.--->
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 

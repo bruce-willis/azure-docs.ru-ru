@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 04/11/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: b0ded0fb274f6b64935ddaba75abf23a94063120
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: c84470936dfc9610f23dacb55d8d8643a2651f71
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38452657"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948406"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Linux в Service Fabric
 
@@ -65,7 +65,7 @@ cd service-fabric-containers/Linux/container-tutorial/Voting
 Service Fabric предоставляет ряд средств, которые можно использовать для управления кластером и его приложениями:
 
 - средство Service Fabric Explorer на основе браузера;
-- интерфейс командной строки (CLI) Service Fabric, который работает на базе Azure CLI 2.0;
+- интерфейс командной строки (CLI) Service Fabric, который работает поверх Azure CLI; 
 - команды PowerShell.
 
 При работе с этим кратким руководством используются интерфейс командной строки Service Fabric в Cloud Shell и Service Fabric Explorer. Ниже показано, как установить сертификат, необходимый для подключения к безопасному кластеру с помощью этих средств.

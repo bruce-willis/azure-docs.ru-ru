@@ -12,12 +12,12 @@ ms.date: 12/15/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: f2f4e7d96c4d8725d9d34314854665440d86ce8d
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: a085d7e25854a928778802d2b4ef50cf9e57eff9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44095085"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46960929"
 ---
 # <a name="create-an-openapi-definition-for-a-function"></a>Создание определения OpenAPI функции
 Интерфейсы REST API часто описываются с помощью определения OpenAPI (ранее известное как файл [Swagger](http://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API.
@@ -31,6 +31,9 @@ ms.locfileid: "44095085"
 > * создавать определения OpenAPI с помощью инструментов OpenAPI;
 > * изменять определение, чтобы иметь возможность предоставить дополнительные метаданные;
 > * проверять определения путем вызова функции.
+
+> [!IMPORTANT]
+> Предварительная версия OpenAPI доступна сейчас только в среде выполнения версии 1.x. Сведения о том, как создать приложение-функцию 1.x, см. [здесь](./functions-versions.md#creating-1x-apps).
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 

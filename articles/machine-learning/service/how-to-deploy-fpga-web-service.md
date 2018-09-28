@@ -8,119 +8,165 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: tedway
 author: tedway
-ms.date: 05/07/2018
-ms.openlocfilehash: f3237980a1ad1969b5cf8d42d547ddf96608dd97
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.date: 09/24/2018
+ms.openlocfilehash: ee67585a523ab96b1442d9eee3e9dfd55a758d32
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33784473"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46971490"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning"></a>Как развернуть модель как веб-службу в FPGA с помощью Машинного обучения Azure
 
-В этом документе вы узнаете, как настроить среду рабочей станции и развернуть модель в виде веб-службы в [программируемых пользователем вентильных матрицах (FPGA)](concept-accelerate-with-fpgas.md). Веб-служба использует Project Brainwave для запуска модели в FPGA.
+Вы можете развернуть модель как веб-службу в [матрицах FPGA](concept-accelerate-with-fpgas.md).  При использовании FPGA обеспечивается сверхнизкая задержка даже в случае пакетов одного размера.   
 
-При использовании FPGA обеспечивается сверхнизкая задержка даже в случае пакетов одного размера.
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="create-an-azure-machine-learning-model-management-account"></a>Создание учетной записи Управления моделями Машинного обучения Azure
+- Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
-1. Перейдите на страницу создания учетной записи Управления моделями на [портале Azure](https://aka.ms/aml-create-mma).
+- Должны быть установлены рабочая область машинного обучения Azure и пакет SDK машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
+ 
+  - Ваша рабочая область должна находиться в регионе *Восточная часть США 2*.
 
-2. На портале создайте учетную запись Управления моделями в регионе **восточная часть США 2**.
+  - Установите дополнительные компоненты.
 
-   ![Снимок экрана создания учетной записи Управления моделями](media/how-to-deploy-fpga-web-service/azure-portal-create-mma.PNG)
+    ```shell
+    pip install --upgrade azureml-sdk[contrib]
+    ```  
 
-3. Дайте вашей учетной записи Управления моделями имя, выберите подписку и группу ресурсов.
+## <a name="create-and-deploy-your-model"></a>Создание и развертывание модели
+Создайте конвейер для предварительной обработки входного изображения, определите для него признаки, используя модель ResNet 50 в FPGA, а затем пропустите признаки через классификатор, обученный с помощью набора данных ImageNet.
 
-   >[!IMPORTANT]
-   >Для местоположения следует выбрать регион **восточная часть США 2**.  В настоящее время другие регионы не поддерживаются.
+Следуйте инструкциям по выполнению следующих процедур:
 
-4. Выберите ценовую категорию (S1 достаточно, но S2 и S3 также доступны).  Ценовая категория DevTest не поддерживается.  
-
-5. Щелкните **Выбрать**, чтобы подтвердить ценовую категорию.
-
-6. Нажмите кнопку**Создать** в разделе "Управление моделями Машинного обучения" слева.
-
-## <a name="get-model-management-account-information"></a>Получение сведений об учетной записи Управления моделями
-
-Чтобы получить сведения об учетной записи Управления моделями (MMA), щелкните __Model Management Account__ (Учетная запись Управления моделями) на портале Azure.
-
-Скопируйте значения следующих параметров:
-
-+ Имя учетной записи Управления моделями (в верхнем левом углу).
-+ Имя группы ресурсов
-+ Идентификатор подписки
-+ Расположение (используйте eastus2).
-
-![Сведения об учетной записи управления моделями](media/how-to-deploy-fpga-web-service/azure-portal-mma-info.PNG)
-
-## <a name="set-up-your-machine"></a>Настройка компьютера
-
-Чтобы настроить рабочую станцию ​​для развертывания FPGA, выполните следующие действия:
-
-1. Скачайте и установите последнюю версию [Git](https://git-scm.com/downloads).
-
-2. Установите [Anaconda (Python 3.6)](https://conda.io/miniconda.html).
-
-3. Чтобы скачать среду Anaconda, используйте следующую команду из командной строки Git:
-
-    ```
-    git clone https://aka.ms/aml-real-time-ai
-    ```
-
-4. Чтобы создать среду, откройте **командную строку Anaconda** (а не командную строку Azure Machine Learning Workbench) и выполните следующую команду:
-
-    > [!IMPORTANT]
-    > Файл `environment.yml` находится в репозитории git, который вы клонировали в предыдущем шаге. При необходимости измените путь, чтобы указать на файл на рабочей станции.
-
-    ```
-    conda env create -f environment.yml
-    ```
-
-5. Включите среду, выполнив следующую команду:
-
-    ```
-    conda activate amlrealtimeai
-    ```
-
-6. Чтобы запустить сервер Jupyter Notebook, используйте следующую команду:
-
-    ```
-    jupyter notebook
-    ```
-
-    После выполнения этой команды вы должны увидеть текст, аналогичный приведенному ниже.
-
-    ```text
-    Copy/paste this URL into your browser when you connect for the first time, to login with a token:
-        http://localhost:8888/?token=bb2ce89cc8ae931f5df50f96e3a6badfc826ff4100e78075
-    ```
-
-    > [!TIP]
-    > При каждом выполнении команды вы будете получать другой токен.
-
-    Если в вашем браузере не открывается автоматически страница Jupyter Notebook, используйте HTTP-адрес, возвращенный предыдущей командой, чтобы открыть страницу.
-
-    ![Изображение веб-страницы Jupyter Notebook](./media/how-to-deploy-fpga-web-service/jupyter-notebook.png)
-
-## <a name="deploy-your-model"></a>Развертывание модели
-
-Из Jupyter Notebook откройте записную книжку `00_QuickStart.ipynb` из каталога `notebooks/resnet50`. Следуйте указаниям в блокноте, чтобы:
-
-* Определить службу.
+* Определение конвейера модели
 * Развертывание модели
 * Использовать развернутую модель.
 * Удалить развернутые службы.
 
 > [!IMPORTANT]
-> Чтобы оптимизировать задержку и пропускную способность, ваша рабочая станция должна находиться в том же регионе Azure, что и конечная точка.  В настоящее время API создаются в регионе Azure "Восточная часть США".
+> Чтобы оптимизировать задержку и пропускную способность, ваш клиент должен находиться в том же регионе Azure, что и конечная точка.  В настоящее время API создаются в регионе Azure "Восточная часть США".
 
-## <a name="ssltls-and-authentication"></a>SSL/TLS и аутентификация
+### <a name="get-the-notebook"></a>Получение записной книжки
 
-Машинное обучение Azure обеспечивает поддержку SSL и аутентификацию на основе ключей. Это позволит вам ограничивать доступ к вашей службе и защищать данные, предоставляемые клиентами.
+Для удобства это руководство доступно в виде Jupyter Notebook. Используйте любой из приведенных далее методов для запуска записной книжки `project-brainwave/project-brainwave-quickstart.ipynb`.
 
-> [!NOTE]
-> Шаги в этом разделе применимы только к моделям Машинного обучения Azure с поддержкой аппаратного ускорения. Сведения о стандартных службах Машинного обучения Azure см. в статье [Включение SSL в кластере Azure Machine Learning Compute (MLC)](https://docs.microsoft.com/azure/machine-learning/preview/how-to-setup-ssl-on-mlc).
+[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
+
+### <a name="preprocess-image"></a>Предварительная обработка изображения
+Первый этап конвейера — предварительная обработка изображений.
+
+```python
+import os
+import tensorflow as tf
+
+# Input images as a two-dimensional tensor containing an arbitrary number of images represented a strings
+import azureml.contrib.brainwave.models.utils as utils
+in_images = tf.placeholder(tf.string)
+image_tensors = utils.preprocess_array(in_images)
+print(image_tensors.shape)
+```
+### <a name="add-featurizer"></a>Добавление характеризатора
+Инициализируйте модель и загрузите контрольную точку TensorFlow квантованной версии ResNet50 для использования в качестве характеризатора.
+
+```python
+from azureml.contrib.brainwave.models import QuantizedResnet50, Resnet50
+model_path = os.path.expanduser('~/models')
+model = QuantizedResnet50(model_path, is_frozen = True)
+feature_tensor = model.import_graph_def(image_tensors)
+print(model.version)
+print(feature_tensor.name)
+print(feature_tensor.shape)
+```
+
+### <a name="add-classifier"></a>Добавление классификатора
+Этот классификатор обучен с помощью набора данных ImageNet.
+
+```python
+classifier_input, classifier_output = Resnet50.get_default_classifier(feature_tensor, model_path)
+```
+
+### <a name="create-service-definition"></a>Создание определения службы
+Определив предварительную обработку изображений, характеризатор и классификатор, который выполняется в службе, можно создать определение службы. Определение службы — это набор файлов, созданных на основе модели, которая развертывается в службе FPGA. Определение службы состоит из конвейера. Конвейер — это последовательность этапов, которые выполняются по порядку.  Поддерживаются этапы TensorFlow, Keras и BrainWave.  Этапы выполняются в службе по порядку: выходные данные каждого этапа используются как входные данные для следующего этапа.
+
+Для создания этапа TensorFlow укажите сеанс, содержащий граф (в данном случае используется граф по умолчанию), и входные и выходные тензоры для этого этапа.  Эти данные используются для сохранения графа, чтобы его можно было выполнить в службе.
+
+```python
+from azureml.contrib.brainwave.pipeline import ModelDefinition, TensorflowStage, BrainWaveStage
+
+save_path = os.path.expanduser('~/models/save')
+model_def_path = os.path.join(save_path, 'service_def.zip')
+
+model_def = ModelDefinition()
+with tf.Session() as sess:
+    model_def.pipeline.append(TensorflowStage(sess, in_images, image_tensors))
+    model_def.pipeline.append(BrainWaveStage(sess, model))
+    model_def.pipeline.append(TensorflowStage(sess, classifier_input, classifier_output))
+    model_def.save(model_def_path)
+    print(model_def_path)
+```
+
+### <a name="deploy-model"></a>Развертывание модели
+Создайте службу на основе определения службы.  Ваша рабочая область должна находиться в регионе "Восточная часть США 2".
+
+```python
+from azureml.core import Workspace
+
+ws = Workspace.from_config()
+print(ws.name, ws.resource_group, ws.location, ws.subscription_id, sep = '\n')
+
+from azureml.core.model import Model
+model_name = "resnet-50-rtai"
+registered_model = Model.register(ws, model_def_path, model_name)
+
+from azureml.core.webservice import Webservice
+from azureml.exceptions import WebserviceException
+from azureml.contrib.brainwave import BrainwaveWebservice, BrainwaveImage
+service_name = "imagenet-infer"
+service = None
+try:
+    service = Webservice(ws, service_name)
+except WebserviceException:
+    image_config = BrainwaveImage.image_configuration()
+    deployment_config = BrainwaveWebservice.deploy_configuration()
+    service = Webservice.deploy_from_model(ws, service_name, [registered_model], image_config, deployment_config)
+    service.wait_for_deployment(true)
+```
+
+### <a name="test-the-service"></a>Тестирование службы
+Чтобы отправить изображение в API и проверить ответ, добавьте сопоставление из идентификатора выходного класса в имя класса ImageNet.
+
+```python
+import requests
+classes_entries = requests.get("https://raw.githubusercontent.com/Lasagne/Recipes/master/examples/resnet50/imagenet_classes.txt").text.splitlines()
+```
+
+Вызовите службу и замените имя файла your-image.jpg ниже изображением с компьютера. 
+
+```python
+with open('your-image.jpg') as f:
+    results = service.run(f)
+# map results [class_id] => [confidence]
+results = enumerate(results)
+# sort results by confidence
+sorted_results = sorted(results, key=lambda x: x[1], reverse=True)
+# print top 5 results
+for top in sorted_results[:5]:
+    print(classes_entries[top[0]], 'confidence:', top[1])
+``` 
+
+### <a name="clean-up-service"></a>Удаление службы
+Удалите службу.
+
+```python
+service.delete()
+    
+registered_model.delete()
+```
+
+## <a name="secure-fpga-web-services"></a>Защита веб-служб FPGA
+
+Модели машинного обучения Azure, выполняющиеся в FPGA, обеспечивают поддержку SSL и аутентификацию на основе ключей. Это позволит вам ограничивать доступ к вашей службе и защищать данные, предоставляемые клиентами.
 
 > [!IMPORTANT]
 > Аутентификация разрешена только для служб, которые предоставили SSL-сертификат и ключ. 
@@ -200,7 +246,7 @@ with open('cert.pem','r') as cert_file:
 > [!NOTE]
 > В зависимости от регистратора и срока жизни, настроенного для имени домена, может потребоваться от нескольких минут до нескольких часов, прежде чем клиенты смогут разрешить имя домена.
 
-### <a name="consuming-authenticated-services"></a>Использование аутентифицированных служб
+### <a name="consume-authenticated-services"></a>Использование аутентифицированных служб
 
 В следующих примерах показано, как использовать аутентифицированную службу с помощью Python и C #:
 
@@ -270,4 +316,4 @@ func (c *authCreds) RequireTransportSecurity() bool {
 Использование любого из методов приведет к тому, что gRPC будет использовать сертификат в качестве корневого сертификата.
 
 > [!IMPORTANT]
-> gRPC не будет принимать ненадежные сертификаты. Использование ненадежного сертификата завершится ошибкой с кодом состояния `Unavailable`. Подробные сведения об ошибке будут содержать сообщение `Connection Failed`.
+> gRPC не принимает ненадежные сертификаты. Использование ненадежного сертификата завершится ошибкой с кодом состояния `Unavailable`. Подробные сведения об ошибке будут содержать сообщение `Connection Failed`.

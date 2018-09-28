@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/08/2017
 ms.author: glenga
-ms.openlocfilehash: ef7eae503eaf8194b287b9f080d8f635d9b3a485
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 2c78e1d39227153dd65f145512fab4769b09e5c0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44094788"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966577"
 ---
 # <a name="azure-event-hubs-bindings-for-azure-functions"></a>Привязки Центров событий Azure для службы "Функции Azure"
 
@@ -129,14 +129,15 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
+
 
 ```json
 {
   "type": "eventHubTrigger",
   "name": "myEventHubMessage",
   "direction": "in",
-  "path": "MyEventHub",
+  "eventHubName": "MyEventHub",
   "connection": "myEventHubReadConnectionAppSetting"
 }
 ```
@@ -145,7 +146,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
   "type": "eventHubTrigger",
   "name": "myEventHubMessage",
   "direction": "in",
-  "eventHubName": "MyEventHub",
+  "path": "MyEventHub",
   "connection": "myEventHubReadConnectionAppSetting"
 }
 ```
@@ -203,14 +204,15 @@ public static void Run(string[] eventHubMessages, TraceWriter log)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция F#](functions-reference-fsharp.md), которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
+
 
 ```json
 {
   "type": "eventHubTrigger",
   "name": "myEventHubMessage",
   "direction": "in",
-  "path": "MyEventHub",
+  "eventHubName": "MyEventHub",
   "connection": "myEventHubReadConnectionAppSetting"
 }
 ```
@@ -219,7 +221,7 @@ public static void Run(string[] eventHubMessages, TraceWriter log)
   "type": "eventHubTrigger",
   "name": "myEventHubMessage",
   "direction": "in",
-  "eventHubName": "MyEventHub",
+  "path": "MyEventHub",
   "connection": "myEventHubReadConnectionAppSetting"
 }
 ```
@@ -235,14 +237,15 @@ let Run(myEventHubMessage: string, log: TraceWriter) =
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция считывает [метаданные события](#trigger---event-metadata) и записывает сообщение в журнал.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
+
 
 ```json
 {
   "type": "eventHubTrigger",
   "name": "myEventHubMessage",
   "direction": "in",
-  "path": "MyEventHub",
+  "eventHubName": "MyEventHub",
   "connection": "myEventHubReadConnectionAppSetting"
 }
 ```
@@ -251,7 +254,7 @@ let Run(myEventHubMessage: string, log: TraceWriter) =
   "type": "eventHubTrigger",
   "name": "myEventHubMessage",
   "direction": "in",
-  "eventHubName": "MyEventHub",
+  "path": "MyEventHub",
   "connection": "myEventHubReadConnectionAppSetting"
 }
 ```
@@ -269,14 +272,14 @@ module.exports = function (context, eventHubMessage) {
 };
 ```
 
-Чтобы получить события в пакете, задайте для параметра `cardinality` в файле *function.json* значение `many`, как показано в приведенных ниже примерах. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+Чтобы получить события в пакете, задайте для параметра `cardinality` в файле *function.json* значение `many`, как показано в приведенных ниже примерах. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
 
 ```json
 {
   "type": "eventHubTrigger",
   "name": "eventHubMessages",
   "direction": "in",
-  "path": "MyEventHub",
+  "eventHubName": "MyEventHub",
   "cardinality": "many",
   "connection": "myEventHubReadConnectionAppSetting"
 }
@@ -286,7 +289,7 @@ module.exports = function (context, eventHubMessage) {
   "type": "eventHubTrigger",
   "name": "eventHubMessages",
   "direction": "in",
-  "eventHubName": "MyEventHub",
+  "path": "MyEventHub",
   "cardinality": "many",
   "connection": "myEventHubReadConnectionAppSetting"
 }
@@ -426,13 +429,13 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, Trac
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
 
 ```json
 {
     "type": "eventHub",
     "name": "outputEventHubMessage",
-    "path": "myeventhub",
+    "eventHubName": "myeventhub",
     "connection": "MyEventHubSendAppSetting",
     "direction": "out"
 }
@@ -441,7 +444,7 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, Trac
 {
     "type": "eventHub",
     "name": "outputEventHubMessage",
-    "eventHubName": "myeventhub",
+    "path": "myeventhub",
     "connection": "MyEventHubSendAppSetting",
     "direction": "out"
 }
@@ -476,13 +479,13 @@ public static void Run(TimerInfo myTimer, ICollector<string> outputEventHubMessa
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция F#](functions-reference-fsharp.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
 
 ```json
 {
     "type": "eventHub",
     "name": "outputEventHubMessage",
-    "path": "myeventhub",
+    "eventHubName": "myeventhub",
     "connection": "MyEventHubSendAppSetting",
     "direction": "out"
 }
@@ -491,7 +494,7 @@ public static void Run(TimerInfo myTimer, ICollector<string> outputEventHubMessa
 {
     "type": "eventHub",
     "name": "outputEventHubMessage",
-    "eventHubName": "myeventhub",
+    "path": "myeventhub",
     "connection": "MyEventHubSendAppSetting",
     "direction": "out"
 }
@@ -510,13 +513,13 @@ let Run(myTimer: TimerInfo, outputEventHubMessage: byref<string>, log: TraceWrit
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные службы "Функции" версии 1.x, а во втором — версии 2.x. 
+В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. В первом примере приведены данные для службы "Функции" версии 2.x, а во втором — для версии 1.x. 
 
 ```json
 {
     "type": "eventHub",
     "name": "outputEventHubMessage",
-    "path": "myeventhub",
+    "eventHubName": "myeventhub",
     "connection": "MyEventHubSendAppSetting",
     "direction": "out"
 }
@@ -525,7 +528,7 @@ let Run(myTimer: TimerInfo, outputEventHubMessage: byref<string>, log: TraceWrit
 {
     "type": "eventHub",
     "name": "outputEventHubMessage",
-    "eventHubName": "myeventhub",
+    "path": "myeventhub",
     "connection": "MyEventHubSendAppSetting",
     "direction": "out"
 }

@@ -9,12 +9,12 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: 32644fe0cf0a6e1666d2d1ee6efb826bf753f001
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: ed00b75fa956d0197d3672d84b097f99ec3c35ec
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42814869"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46956392"
 ---
 # <a name="call-bing-custom-search-endpoint-c"></a>Конечная точка службы "Пользовательский поиск Bing" (C#)
 
@@ -22,31 +22,32 @@ ms.locfileid: "42814869"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
--  Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
--  Установлена среда [.NET Core](https://www.microsoft.com/net/download/core).
-- [Учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для этого краткого руководства достаточно иметь [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.  
+Для работы с этим кратким руководством вам понадобится:
 
-  >[!NOTE]  
-  >Существующие клиенты службы "Пользовательский поиск Bing", у которых есть ключи предварительной версии, подготовленные не позднее 15 октября 2017 г., смогут использовать эти ключи до 30 ноября 2017 г. или до исчерпания максимально допустимого числа запросов. После этого им необходимо перейти на общедоступную версию Azure. 
- 
+- Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
+- Установлена среда [.NET Core](https://www.microsoft.com/net/download/core).
+- ключ подписки; Ключ подписки можно получить при активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Кроме того, вы можете использовать ключ платной подписки из панели мониторинга Azure (см. раздел об [учетной записи API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)).    
+
+
 ## <a name="run-the-code"></a>Выполнение кода
 
 Чтобы запустить этот пример, выполните следующее.
 
-1. Создайте папку для своего кода.
-2. Из командной строки или терминала перейдите в эту папку.
+1. Создайте папку для своего кода.  
+  
+2. Из командной строки или терминала перейдите в эту папку.  
+  
 3. Выполните следующие команды:
     ```
     dotnet new console -o BingCustomSearch
     cd BingCustomSearch
     dotnet add package Newtonsoft.Json
     dotnet restore
-   ```
+    ```
+  
+4. Скопируйте приведенный ниже код в файл Program.cs. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом подписки и идентификатором конфигурации.
 
-4. Скопируйте приведенный ниже код в файл Program.cs.
-5. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом и идентификатором конфигурации.
-
-    ``` CSharp
+    ```csharp
     using System;
     using System.Net.Http;
     using System.Web;
@@ -124,7 +125,7 @@ ms.locfileid: "42814869"
     dotnet build 
     </pre>
     
-7. Запустите приложение с помощью следующей команды, заменив **PATH TO OUTPUT** значением пути, записанным на шаге сборки.
+7. Запустите приложение с помощью следующей команды, заменив **PATH TO OUTPUT** значением пути к DLL, записанным на шаге 6.
 
     <pre>    
     dotnet **PATH TO OUTPUT**

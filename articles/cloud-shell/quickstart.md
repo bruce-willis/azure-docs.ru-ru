@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: juluk
-ms.openlocfilehash: 4b7e4302bba2efed12e19043da1f592bed12a2fd
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0b3616a723e793ab1ce8d7bcca1f53ca10ec4f96
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34608888"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46970671"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -36,7 +36,7 @@ ms.locfileid: "34608888"
 3. Нажмите кнопку "Создать хранилище".
 
 > [!TIP]
-> Вы автоматически проходите проверку подлинности для Azure CLI 2.0 в каждом сеансе.
+> Вы автоматически проходите проверку подлинности для Azure CLI в каждом сеансе.
 
 ### <a name="select-the-bash-environment"></a>Выбор среды Bash
 Убедитесь, что в раскрывающемся списке сред в левой части окна оболочки отображается пункт `Bash`. <br>
@@ -63,14 +63,14 @@ az group create --location westus --name MyRG
 ```
 
 ### <a name="create-a-linux-vm"></a>Создание виртуальной машины Linux
-Создайте виртуальную машину Ubuntu в новой группе ресурсов. Azure CLI 2.0 создаст ключи SSH и настроит с их помощью виртуальную машину. <br>
+Создайте виртуальную машину Ubuntu в новой группе ресурсов. Azure CLI создаст ключи SSH и настроит с их помощью виртуальную машину. <br>
 
 ```azurecli-interactive
 az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
 ```
 
 > [!NOTE]
-> Инструкция `--generate-ssh-keys` указывает Azure CLI 2.0 создать и настроить открытый и закрытый ключи на виртуальной машине и в каталоге `$Home`. По умолчанию ключи размещаются в Cloud Shell в папках `/home/<user>/.ssh/id_rsa` и `/home/<user>/.ssh/id_rsa.pub`. Папка `.ssh` сохраняется в образе размером 5 ГБ, размещенном в подключенной общей папке, который используется для хранения `$Home`.
+> Инструкция `--generate-ssh-keys` указывает Azure CLI создать и настроить открытый и закрытый ключи на виртуальной машине и в каталоге `$Home`. По умолчанию ключи размещаются в Cloud Shell в папках `/home/<user>/.ssh/id_rsa` и `/home/<user>/.ssh/id_rsa.pub`. Папка `.ssh` сохраняется в образе размером 5 ГБ, размещенном в подключенной общей папке, который используется для хранения `$Home`.
 
 Имя пользователя на этой виртуальной машине будет использоваться в Cloud Shell ($User@Azure:).
 
@@ -100,5 +100,5 @@ az group delete -n MyRG
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
-[Справочник команд Azure CLI 2.0](https://docs.microsoft.com/cli/azure/) <br>
+[Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

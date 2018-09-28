@@ -1,5 +1,6 @@
 ---
-title: Использование C# для интеграции LUIS с ботом с помощью пакета SDK для Bot Builder в Azure Cognitive Services | Документация Майкрософт
+title: Бот LUIS с C# — Бот веб-приложения — Bot Framework SDK 3.0
+titleSuffix: Azure Cognitive Services
 description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation.
 services: cognitive-services
 author: diberry
@@ -7,18 +8,18 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 08/13/2018
+ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: d0010ccf51fc688fa66e1be82c735ae38455509b
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 2779c4109201cf40a8771f9e339d60680cb3ef31
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41931339"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46951010"
 ---
-# <a name="web-app-bot-using-the-luis-template-for-c"></a>Создание бота веб-приложения с помощью шаблона LUIS для C#
+# <a name="luis-bot-in-c"></a>Бот LUIS на C#
 
-Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. 
+Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -46,7 +47,10 @@ ms.locfileid: "41931339"
 4. В окне **Служба Bot Service** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](luis-resources-faq.md#what-luis-regions-support-bot-framework-speech-priming). 
     * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
     * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
-    * В поле **Шаблон бота** выберите шаблон **Распознавание речи (C#)**.
+    * В поле **Шаблон бота** выберите:
+        * **SDK v3**
+        * **C#**
+        * **Распознавание речи**
     * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
     * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 

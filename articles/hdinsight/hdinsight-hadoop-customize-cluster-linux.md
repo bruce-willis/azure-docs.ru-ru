@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: jasonh
-ms.openlocfilehash: e12379dbb63e57ee12e1cebb1761f0b103d50ef1
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: e9662a0a0def91fa2cace1eb47dceffed5ff1ae6
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43110533"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978035"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -89,7 +89,7 @@ ms.locfileid: "43110533"
 
 * Они выполняются с помощью **прав привилегированного пользователя** на узлах кластера.
 
-* Действия сценария могут выполняться с помощью **портала Azure**, **Azure PowerShell**, **интерфейса командной строки Azure версии 1.0** или **пакета SDK HDInsight для .NET**.
+* Действия скрипта могут выполняться с помощью **портала Azure**, **Azure PowerShell**, **классического интерфейса командной строки Azure** или **пакета SDK HDInsight для .NET**.
 
 В кластере ведется журнал всех скриптов, которые в нем выполнялись. Это позволяет определить идентификатор скрипта для операции изменения типа.
 
@@ -147,7 +147,7 @@ ms.locfileid: "43110533"
 
 * Портал Azure
 * Azure PowerShell
-* Интерфейс командной строки Azure версии 1.0
+* Классический Azure CLI
 * Пакет SDK для HDInsight .NET
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
@@ -292,10 +292,9 @@ ms.locfileid: "43110533"
 
 ### <a name="apply-a-script-action-to-a-running-cluster-from-the-azure-cli"></a>Применение действия сценария в работающем кластере с помощью Azure CLI
 
-Прежде чем продолжить, убедитесь, что вы установили и настроили Azure CLI. Дополнительные сведения см. в статье [Установка Azure CLI 1.0](../cli-install-nodejs.md).
+Прежде чем продолжить, убедитесь, что вы установили и настроили Azure CLI. Дополнительные сведения см. в статье [Установка классического Azure CLI](../cli-install-nodejs.md).
 
-> [!IMPORTANT]
-> Для HDInsight требуется Azure CLI версии 1.0. В настоящее время Azure CLI версии 2.0 не предоставляет команды для работы с HDInsight.
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
 
 1. Чтобы переключиться в режим Azure Resource Manager, выполните в командной строке следующую команду:
 
@@ -380,7 +379,7 @@ ms.locfileid: "43110533"
 
 [!code-powershell[main](../../powershell_scripts/hdinsight/use-script-action/use-script-action.ps1?range=123-140)]
 
-### <a name="using-the-azure-cli"></a>Использование Azure CLI
+### <a name="using-the-azure-classic-cli"></a>Использование классического Azure CLI
 
 | Командлет | Действие |
 | --- | --- |

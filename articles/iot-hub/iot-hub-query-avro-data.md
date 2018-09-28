@@ -7,57 +7,62 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: asrastog
-ms.openlocfilehash: a17df39c55b5c02c83e3f0b74a91d7109ddb4d3d
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: a5b8ce8cd753ee294a8d61ba8a3dfed872f0f31a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43188950"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46956337"
 ---
 # <a name="query-avro-data-by-using-azure-data-lake-analytics"></a>Запрос данных Avro с помощью Azure Data Lake Analytics
 
-В этой статье показано, как запросить данные Avro, чтобы повысить эффективность маршрутизации сообщений из Центра Интернета вещей Azure в службы Azure. Как указано в записи блога [Azure IoT Hub message routing: now with routing on message body], Центр Интернета вещей поддерживает маршрутизацию по свойствам или тексту сообщения. Дополнительные сведения см. в разделе [Маршрутизация по тексту сообщений][Routing on message bodies]. 
+В этой статье показано, как запросить данные Avro, чтобы повысить эффективность маршрутизации сообщений из Центра Интернета вещей Azure в службы Azure. [Маршрутизация сообщений](iot-hub-devguide-messages-d2c.md) позволяет фильтровать данные с помощью сложных запросов на основе свойства сообщения, текста сообщения, тегов двойников устройств и свойств двойников устройств. Дополнительные сведения о возможностях выполнения запросов в маршрутизации сообщений см. в статье о синтаксисе запросов маршрутизации сообщения. 
+<!--[Message Routing Query Syntax](iot-hub-devguide-routing-query-syntax.md). I don't have this article yet. -->
 
-Проблема заключается в том, что при маршрутизации сообщений в хранилище BLOB-объектов Azure Центр Интернета вещей Azure записывает содержимое в формате Avro, который включает свойство текста сообщения и свойство сообщения. Центр Интернета вещей поддерживает запись данных в хранилище BLOB-объектов только в формате Avro, и этот формат не используется на каких-либо других конечных точках. Дополнительные сведения см. в разделе [Использование контейнеров службы хранилища Azure][When using Azure storage containers]. Хотя формат Avro прекрасно подходит для хранения данных и сообщений, использовать его для опроса данных сложно. в отличие от формата JSON или CSV.
+Проблема заключается в том, что при маршрутизации сообщений в хранилище BLOB-объектов Azure Центр Интернета вещей Azure записывает содержимое в формате Avro, который включает свойство текста сообщения и свойство сообщения. Центр Интернета вещей поддерживает запись данных в хранилище BLOB-объектов только в формате Avro, и этот формат не используется на каких-либо других конечных точках. Дополнительные сведения см. в статье об использовании контейнеров службы хранилища Azure. Хотя формат Avro прекрасно подходит для хранения данных и сообщений, использовать его для опроса данных сложно. в отличие от формата JSON или CSV.
 
-Чтобы устранить проблемы, связанные с требованиями и форматами нереляционных больших данных, и преодолеть эти сложности, вы можете применить шаблоны больших данных к данным масштабирования и преобразования. Один из шаблонов ("оплата за запрос") — это служба Azure Data Lake Analytics, которой посвящена эта статья. Вы можете легко выполнить этот запрос в Hadoop или другом решении, но зачастую Azure Data Lake Analytics лучше подходит при использовании подхода с оплатой за запрос. 
+<!-- https://review.docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c?branch=pr-en-us-51566#azure-blob-storage  NEW LINK FOR 'WHEN USING STORAGE CONTAINERS' -->
 
-В U-SQL есть средство извлечения данных в формате Avro. Дополнительные сведения см. в [Пример U-SQL Avro].
+Чтобы устранить проблемы, связанные с требованиями и форматами нереляционных больших данных, и преодолеть эти сложности, вы можете применить шаблоны больших данных к данным масштабирования и преобразования. Один из шаблонов ("оплата за запрос") — это служба Azure Data Lake Analytics, которой посвящена эта статья. Вы можете легко выполнить этот запрос в Hadoop или другом решении, но зачастую Azure Data Lake Analytics лучше подходит при использовании подхода с оплатой за запрос. 
+
+В U-SQL есть средство извлечения данных в формате Avro. Дополнительные сведения см. в [примере U-SQL Avro](https://github.com/Azure/usql/tree/master/Examples/AvroExamples).
 
 ## <a name="query-and-export-avro-data-to-a-csv-file"></a>Запрос данных Avro и их экспорт в файл CSV
 В этом разделе описано, как запросить данные Avro и экспортировать их в CSV-файл в хранилище BLOB-объектов Azure. При этом эти данные можно легко поместить в другие хранилища или репозитории.
 
 1. Настройте маршрутизацию данных на конечную точку хранилища BLOB-объектов Azure в Центре Интернета вещей, используя свойство в тексте сообщения для выбора сообщений.
 
-    ![Раздел "Пользовательские конечные точки"][img-query-avro-data-1a]
+   ![Раздел "Пользовательские конечные точки"](./media/iot-hub-query-avro-data/query-avro-data-1a.png)
 
-    ![Команда "Маршруты"][img-query-avro-data-1b]
+   ![Правила маршрутизации](./media/iot-hub-query-avro-data/query-avro-data-1b.png)
+
+   Дополнительные сведения о настройке маршрутов и пользовательских конечных точек см. в разделе о [маршрутизации сообщений для центра Интернета вещей](iot-hub-create-through-portal.md#message-routing-for-an-iot-hub).
 
 2. Убедитесь, что в свойствах или тексте сообщения на устройстве настроены кодировка, тип содержимого и необходимые данные в соответствии с документацией по продукту. При просмотре этих атрибутов в средстве Device Explorer, как показано ниже, можно убедиться, что они установлены правильно.
 
-    ![Область данных концентратора событий][img-query-avro-data-2]
+   ![Область данных концентратора событий](./media/iot-hub-query-avro-data/query-avro-data-2.png)
 
 3. Настройте экземпляр Azure Data Lake Store и экземпляр Data Lake Analytics. Центр Интернета вещей не выполняет маршрутизацию в экземпляр Data Lake Store, но эта маршрутизация необходима для экземпляра Data Lake Analytics.
 
-    ![Экземпляры Data Lake Store и Data Lake Analytics][img-query-avro-data-3]
+   ![Экземпляры Data Lake Store и Data Lake Analytics](./media/iot-hub-query-avro-data/query-avro-data-3.png)
 
 4. В Azure Data Lake Analytics настройте хранилище BLOB-объектов Azure как дополнительное хранилище. Это то же хранилище BLOB-объектов, в которое Центр Интернета вещей Azure маршрутизирует данные.
 
-    ![Область "Источники данных"][img-query-avro-data-4]
+   ![Область "Источники данных"](./media/iot-hub-query-avro-data/query-avro-data-4.png)
  
-5. Как было описано в разделе [Пример U-SQL Avro], вам потребуется четыре файла DLL. Отправьте эти файлы в расположение в экземпляре Data Lake Store.
+5. Как было описано в разделе [Пример U-SQL Avro](https://github.com/Azure/usql/tree/master/Examples/AvroExamples), вам потребуется четыре файла DLL. Отправьте эти файлы в расположение в экземпляре Data Lake Store.
 
-    ![Четыре отправляемых файла DLL][img-query-avro-data-5] 
+   ![Четыре отправляемых файла DLL](./media/iot-hub-query-avro-data/query-avro-data-5.png)
 
 6. В Visual Studio создайте проект U-SQL.
  
-    ![Создание проекта U-SQL][img-query-avro-data-6]
+   !Создание проекта U-SQL](./media/iot-hub-query-avro-data/query-avro-data-6.png)
 
 7. Вставьте содержимое приведенного ниже сценария и в созданный файл. Измените три выделенных раздела: учетная запись Data Lake Analytics, связанные пути к файлам DLL и путь к учетной записи хранения.
     
-    ![Три раздела, которые необходимо изменить][img-query-avro-data-7a]
+   ![Три раздела, которые необходимо изменить](./media/iot-hub-query-avro-data/query-avro-data-7a.png)
 
-    Фактический сценарий U-SQL, который выводит данные в файл CSV, приведен ниже:
+   Фактический сценарий U-SQL, который выводит данные в файл CSV, приведен ниже:
     
     ```sql
         DROP ASSEMBLY IF EXISTS [Avro];
@@ -86,33 +91,36 @@ ms.locfileid: "43188950"
 
         USING new Microsoft.Analytics.Samples.Formats.ApacheAvro.AvroExtractor(@"
         {
-        ""type"":""record"",
-        ""name"":""Message"",
-        ""namespace"":""Microsoft.Azure.Devices"",
-        ""fields"":[{
-        ""name"":""EnqueuedTimeUtc"",
-        ""type"":""string""
-        },
-        {
-        ""name"":""Properties"",
-        ""type"":{
-        ""type"":""map"",
-        ""values"":""string""
-        }
-        },
-        {
-        ""name"":""SystemProperties"",
-        ""type"":{
-        ""type"":""map"",
-        ""values"":""string""
-        }
-        },
-        {
-        ""name"":""Body"",
-        ""type"":[""null"",""bytes""]
-        }
-        ]
-        }");
+            ""type"":""record"",
+            ""name"":""Message"",
+            ""namespace"":""Microsoft.Azure.Devices"",
+            ""fields"":
+           [{
+                ""name"":""EnqueuedTimeUtc"",
+                ""type"":""string""
+            },
+            {
+                ""name"":""Properties"",
+                ""type"":
+                {
+                    ""type"":""map"",
+                    ""values"":""string""
+                }
+            },
+            {
+                ""name"":""SystemProperties"",
+                ""type"":
+                {
+                    ""type"":""map"",
+                    ""values"":""string""
+                }
+            },
+            {
+                ""name"":""Body"",
+                ""type"":[""null"",""bytes""]
+            }]
+        }"
+        );
 
         @cnt =
         SELECT EnqueuedTimeUtc AS time, Encoding.UTF8.GetString(Body) AS jsonmessage
@@ -123,16 +131,18 @@ ms.locfileid: "43188950"
 
     Для запуска этого сценария в Data Lake Analytics потребовалось пять минут. Сценарий был ограничен 10 аналитическими единицами и обработал 177 файлов. Результат в виде файла CSV показан на следующем рисунке:
     
-    ![Результаты вывода в файл CSV][img-query-avro-data-7b]
+    ![Результаты вывода в файл CSV](./media/iot-hub-query-avro-data/query-avro-data-7b.png)
 
-    ![Выходные данные, преобразованные в файл CSV][img-query-avro-data-7c]
+    ![Выходные данные, преобразованные в файл CSV](./media/iot-hub-query-avro-data/query-avro-data-7c.png)
 
     Для анализа JSON перейдите к шагу 8.
     
 8. Большинство сообщений Центра Интернета вещей находятся в формате файла JSON. Добавив следующие строки, вы сможете проанализировать сообщение в файле JSON. Это позволит добавить предложения WHERE и выводить только необходимые данные.
 
     ```sql
-       @jsonify = SELECT Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(Encoding.UTF8.GetString(Body)) AS message FROM @rs;
+       @jsonify = 
+         SELECT Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(Encoding.UTF8.GetString(Body)) 
+           AS message FROM @rs;
     
         /*
         @cnt =
@@ -155,38 +165,14 @@ ms.locfileid: "43188950"
 
     В выводе отображается столбец для каждого элемента в команде `SELECT`. 
     
-    ![Вывод со столбцами для каждого элемента][img-query-avro-data-8]
+    ![Вывод со столбцами для каждого элемента](./media/iot-hub-query-avro-data/query-avro-data-8.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Из этого руководства вы узнали, как запросить данные Avro, чтобы повысить эффективность маршрутизации сообщений из Центра Интернета вещей Azure в службы Azure.
 
-Примеры комплексных решений, в которых используется Центр Интернета вещей, см. в [документации по акселераторам решений для удаленного мониторинга Интернета вещей Azure][lnk-iot-sa-land].
+Примеры комплексных решений, в которых используется центр Интернета вещей, см. в [документации по акселераторам решений для Интернета вещей Azure](../iot-accelerators/index.yml).
 
-Дополнительные сведения о разработке решений с помощью Центра Интернета вещей см. в [Руководство разработчика для Центра Интернета вещей].
+Дополнительные сведения о разработке решений с помощью Центра Интернета вещей см. в [руководстве разработчика для Центра Интернета вещей](iot-hub-devguide.md).
 
-Дополнительные сведения о маршрутизации сообщений в Центре Интернета вещей см. в статье [Отправка и получение сообщений в Центре Интернета вещей][lnk-devguide-messaging].
-
-<!-- Images -->
-[img-query-avro-data-1a]: ./media/iot-hub-query-avro-data/query-avro-data-1a.png
-[img-query-avro-data-1b]: ./media/iot-hub-query-avro-data/query-avro-data-1b.png
-[img-query-avro-data-2]: ./media/iot-hub-query-avro-data/query-avro-data-2.png
-[img-query-avro-data-3]: ./media/iot-hub-query-avro-data/query-avro-data-3.png
-[img-query-avro-data-4]: ./media/iot-hub-query-avro-data/query-avro-data-4.png
-[img-query-avro-data-5]: ./media/iot-hub-query-avro-data/query-avro-data-5.png
-[img-query-avro-data-6]: ./media/iot-hub-query-avro-data/query-avro-data-6.png
-[img-query-avro-data-7a]: ./media/iot-hub-query-avro-data/query-avro-data-7a.png
-[img-query-avro-data-7b]: ./media/iot-hub-query-avro-data/query-avro-data-7b.png
-[img-query-avro-data-7c]: ./media/iot-hub-query-avro-data/query-avro-data-7c.png
-[img-query-avro-data-8]: ./media/iot-hub-query-avro-data/query-avro-data-8.png
-
-<!-- Links -->
-[Azure IoT Hub message routing: now with routing on message body]: https://azure.microsoft.com/blog/iot-hub-message-routing-now-with-routing-on-message-body/ (Маршрутизация сообщений с помощью Центра Интернета вещей: маршрутизация по тексту сообщений)
-
-[Routing on message bodies]: iot-hub-devguide-query-language.md#routing-on-message-bodies
-[When using Azure storage containers]:iot-hub-devguide-endpoints.md#when-using-azure-storage-containers
-
-[Пример U-SQL Avro]:https://github.com/Azure/usql/tree/master/Examples/AvroExamples
-
-[lnk-iot-sa-land]: ../iot-accelerators/index.yml
-[Руководство разработчика для Центра Интернета вещей]: iot-hub-devguide.md
-[lnk-devguide-messaging]: iot-hub-devguide-messaging.md
+Дополнительные сведения о маршрутизации сообщений в центре Интернета вещей см. в статье об [отправке и получении сообщений в центре Интернета вещей](iot-hub-devguide-messaging.md).

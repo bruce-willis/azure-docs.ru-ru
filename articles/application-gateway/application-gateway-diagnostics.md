@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 6/20/2018
 ms.author: amitsriva
-ms.openlocfilehash: 256eac99feacc18a51e45c3f07cdceb7d687cacf
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 563194ea0b3e4bda2021c75c544d068f00d74ba7
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36293627"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46963838"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений
 
@@ -58,7 +58,7 @@ ms.locfileid: "36293627"
 Get-AzureRmApplicationGatewayBackendHealth -Name ApplicationGateway1 -ResourceGroupName Contoso
 ```
 
-### <a name="view-back-end-health-through-azure-cli-20"></a>Просмотр данных о работоспособности серверной части с помощью Azure CLI 2.0
+### <a name="view-back-end-health-through-azure-cli"></a>Просмотр данных о работоспособности серверной части с помощью Azure CLI
 
 ```azurecli
 az network application-gateway show-backend-health --resource-group AdatumAppGatewayRG --name AdatumAppGateway
@@ -108,7 +108,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Существует три способа хранения журналов:
 
 * **Учетная запись хранения** лучше всего подходит для длительного хранения журналов и их просмотра по мере необходимости.
-* **Концентраторы событий** — это отличный вариант для интеграции с другими инструментами управления событиями и сведениями о безопасности (SEIM), позволяющий получать оповещения о ваших ресурсах.
+* **Центры событий** — это отличный вариант для интеграции с другими инструментами управления событиями и сведениями о безопасности (SEIM), позволяющий получать оповещения о ваших ресурсах.
 * **Log Analytics** лучше всего подходит для общего мониторинга приложения в реальном времени и изучения тенденций.
 
 ### <a name="enable-logging-through-powershell"></a>Включение ведения журнала с помощью PowerShell
@@ -311,6 +311,10 @@ Azure [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.
 > Если вы знакомы с Visual Studio и основными понятиями изменения значений констант и переменных в C#, можно использовать [инструменты преобразования журналов](https://github.com/Azure-Samples/networking-dotnet-log-converter), доступные на сайте GitHub.
 > 
 > 
+
+#### <a name="analyzing-access-logs-through-goaccess"></a>Анализ журналов доступа через GoAccess
+
+Мы опубликовали шаблон Resource Manager, который устанавливает и запускает популярный анализатор журналов [GoAccess](https://goaccess.io/) для журналов доступа шлюза приложений. GoAccess предоставляет ценную статистику трафика HTTP, такую как уникальные посетители, запрошенные файлы, узлы, операционные системы, браузеры, коды состояния HTTP и многое другое. Дополнительные сведения см. в [файле сведений в папке шаблона Resource Manager на GitHub](https://aka.ms/appgwgoaccessreadme).
 
 ## <a name="metrics"></a>Метрики
 

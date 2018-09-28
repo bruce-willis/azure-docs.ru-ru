@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: jasonh
-ms.openlocfilehash: 0e584343e568c5cd0d91a1e6ff51dc899c5434d7
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: b00c88e526bf72f51df0d2a3d6a87fbd5bc1f991
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106535"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991986"
 ---
 # <a name="manage-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Hadoop в HDInsight с помощью портала Azure
 
@@ -207,7 +207,7 @@ HDInsight работает со множеством компонентов Hado
 
 * С помощью фабрики данных Azure. Дополнительные сведения о создании связанных служб HDInsight по запросу см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight по запросу с помощью фабрики данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md).
 * С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](hdinsight-analyze-flight-delay-data.md).
-* С помощью интерфейса командной строки Azure. См. статью [Управление кластерами Hadoop в HDInsight с помощью интерфейса командной строки (CLI) Azure](hdinsight-administer-use-command-line.md).
+* Используйте классический интерфейс командной строки Azure. См. раздел [Управление кластерами HDInsight с помощью классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md).
 * С помощью пакета SDK для HDInsight .NET. См. статью [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 Сведения о ценах см. на странице [цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Удаление кластера на портале описано в разделе [Удаление кластеров](#delete-clusters).
@@ -291,7 +291,7 @@ Ambari изменит пароль на всех узлах в кластере.
 * Oozie
 * Templeton
 
-По умолчанию эти службы предоставляются для доступа. Вы можете отменить или предоставить доступ с помощью [Azure CLI](hdinsight-administer-use-command-line.md#enabledisable-http-access-for-a-cluster) и [Azure PowerShell](hdinsight-administer-use-powershell.md#grantrevoke-access).
+По умолчанию эти службы предоставляются для доступа. Вы можете отменить или предоставить доступ с помощью [классического Azure CLI](hdinsight-administer-use-command-line.md#enabledisable-http-access-for-a-cluster) и [Azure PowerShell](hdinsight-administer-use-powershell.md#grantrevoke-access).
 
 ## <a name="find-the-subscription-id"></a>Поиск идентификатора подписки
 
@@ -363,7 +363,7 @@ Ambari изменит пароль на всех узлах в кластере.
 Из этой статьи вы узнали о некоторых основных функциях администрирования. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Администрирование HDInsight с помощью Azure PowerShell](hdinsight-administer-use-powershell.md)
-* [Администрирование HDInsight с помощью CLI Azure](hdinsight-administer-use-command-line.md)
+* [Администрирование HDInsight с помощью классического интерфейса командной строки Azure CLI](hdinsight-administer-use-command-line.md)
 * [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)

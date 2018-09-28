@@ -1,60 +1,74 @@
 ---
-title: Исходящая проверка подлинности планировщика
-description: Исходящая проверка подлинности планировщика
+title: Исходящая проверка подлинности планировщика Azure
+description: Сведения о настройке или удалении исходящей проверки подлинности для планировщика Azure
 services: scheduler
-documentationcenter: .NET
-author: derek1ee
-manager: kevinlam1
-editor: ''
-ms.assetid: 6707f82b-7e32-401b-a960-02aae7bb59cc
 ms.service: scheduler
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: na
-ms.devlang: dotnet
+author: derek1ee
+ms.author: deli
+ms.reviewer: klam
+ms.assetid: 6707f82b-7e32-401b-a960-02aae7bb59cc
 ms.topic: article
 ms.date: 08/15/2016
-ms.author: deli
-ms.openlocfilehash: e345b2e22daae5b24c23645f7d2636f66df630ff
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 88f2fe0781bad4b652826b6a8d1961dd39b063e1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23040339"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993343"
 ---
-# <a name="scheduler-outbound-authentication"></a>Исходящая проверка подлинности планировщика
-Задания планировщика могут вызывать службы, требующие проверки подлинности. В этом случае вызванная служба определяет, может ли задание планировщика получить доступ к ее ресурсам. В число таких служб входят другие службы Azure, Salesforce.com, Facebook и защищенные пользовательские веб-сайты.
+# <a name="outbound-authentication-for-azure-scheduler"></a>Исходящая проверка подлинности планировщика Azure
 
-## <a name="adding-and-removing-authentication"></a>Добавление и удаление проверки подлинности
-Добавить в задание планировщика проверку подлинности очень просто: при создании или обновлении задания добавьте в элемент `request` дочерний элемент JSON `authentication`. Секретные данные, передаваемые службе планировщика запросами PUT, POST или PATCH в составе объекта `authentication` , в ответах не отображаются. В ответах секретная информация обнуляется или получает открытый маркер, который представляет сущность, прошедшую проверку подлинности.
+> [!IMPORTANT]
+> Служба [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из эксплуатации. Для планирования заданий [попробуйте использовать Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
 
-Чтобы удалить проверку подлинности, примените непосредственно к заданию запрос PUT или PATCH, установив для объекта `authentication` нулевое значение. Никакие свойства проверки подлинности в ответе показаны не будут.
+Задания планировщика Azure могут вызывать службы, требующие проверки подлинности. В число таких служб входят другие службы Azure, Salesforce.com, Facebook и защищенные пользовательские веб-сайты. Вызванная служба определяет, может ли задание планировщика получить доступ к запрашиваемым ресурсам. 
 
-В настоящее время поддерживаются только следующие типы проверки подлинности: модель `ClientCertificate` (для использования клиентских SSL/TLS-сертификатов), модель `Basic` (для обычной проверки подлинности) и модель `ActiveDirectoryOAuth` (для проверки подлинности Active Directory OAuth.)
+Планировщик поддерживает следующие модели проверки подлинности: 
 
-## <a name="request-body-for-clientcertificate-authentication"></a>Текст запроса для проверки подлинности ClientCertificate
+* Проверка с помощью *сертификата клиента* при использовании SSL- или TLS-сертификатов клиента
+* *Обычная* проверка подлинности
+* Проверка подлинности *Azure Active Directory (AD) OAuth*
+
+## <a name="add-or-remove-authentication"></a>Добавление или удаление проверки подлинности
+
+* Чтобы добавить проверку подлинности в задание планировщика, при создании или обновлении задания добавьте дочерний элемент `authentication` JavaScript Object Notation (JSON) в элемент `request`. 
+
+  В ответах никогда не отображаются секретные данные, передаваемые службе планировщика запросами PUT, POST или PATCH в составе объекта `authentication`. 
+  Ответы обнуляют секретную информацию или могут использовать открытый маркер, который представляет сущность, прошедшую проверку подлинности. 
+
+* Чтобы удалить проверку подлинности из задания планировщика, явным образом выполните запрос PUT или PATCH к заданию и установите для объекта `authentication` нулевое значение. Никакие свойства проверки подлинности в ответе показаны не будут.
+
+## <a name="client-certificate"></a>Сертификат клиента
+
+### <a name="request-body---client-certificate"></a>Текст запроса для проверки подлинности с помощью сертификата клиента
+
 При добавлении проверки подлинности с использованием модели `ClientCertificate` укажите в тексте запроса следующие дополнительные элементы.  
 
-| Элемент | ОПИСАНИЕ |
-|:--- |:--- |
-| *authentication (родительский элемент)* |Объект проверки подлинности для использования клиентского SSL-сертификата. |
-| *type* |Обязательный элемент. Тип проверки подлинности. Для клиентских SSL-сертификатов используйте значение `ClientCertificate`. |
-| *pfx* |Обязательный элемент. Содержимое PFX-файла с кодировкой Base64. |
-| *password* |Обязательный элемент. Пароль для доступа к PFX-файлу. |
+| Элемент | Обязательно | ОПИСАНИЕ |
+|---------|----------|-------------|
+| **authentication** (родительский элемент) | Объект проверки подлинности для использования SSL-сертификата клиента |
+| **type** | Yes | Тип проверки подлинности. Для клиентских SSL-сертификатов это значение равно `ClientCertificate`. |
+| **pfx** | Yes | Содержимое PFX-файла в кодировке Base64 |
+| **password** | Yes | Пароль для доступа к PFX-файлу |
+||| 
 
-## <a name="response-body-for-clientcertificate-authentication"></a>Текст ответа при проверке подлинности ClientCertificate
-При отправке запроса со сведениями о проверке подлинности в ответ включаются следующие элементы.
+### <a name="response-body---client-certificate"></a>Текст ответа при проверке подлинности с помощью сертификата клиента 
 
-| Элемент | ОПИСАНИЕ |
-|:--- |:--- |
-| *authentication (родительский элемент)* |Объект проверки подлинности для использования клиентского SSL-сертификата. |
-| *type* |Тип проверки подлинности. Для клиентских SSL-сертификатов это значение равно `ClientCertificate`. |
-| *certificateThumbprint* |Отпечаток сертификата. |
-| *certificateSubjectName* |Различающееся имя субъекта сертификата. |
-| *certificateExpiration* |Срок действия сертификата. |
+При отправке запроса со сведениями о проверке подлинности в ответ включаются следующие элементы проверки подлинности.
 
-## <a name="sample-rest-request-for-clientcertificate-authentication"></a>Пример запроса REST для аутентификации ClientCertificate
-```
-PUT https://management.azure.com/subscriptions/1fe0abdf-581e-4dfe-9ec7-e5cb8e7b205e/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobcollections/southeastasiajc/jobs/httpjob?api-version=2016-01-01 HTTP/1.1
+| Элемент | ОПИСАНИЕ | 
+|---------|-------------| 
+| **authentication** (родительский элемент) | Объект проверки подлинности для использования SSL-сертификата клиента |
+| **type** | Тип проверки подлинности. Для клиентских SSL-сертификатов это значение равно `ClientCertificate`. |
+| **certificateThumbprint** |Отпечаток сертификата |
+| **certificateSubjectName** |Различающееся имя субъекта сертификата |
+| **certificateExpiration** | Дата окончания срока действия сертификата |
+||| 
+
+### <a name="sample-rest-request---client-certificate"></a>Пример запроса REST для проверки подлинности с помощью сертификата клиента
+
+```json
+PUT https://management.azure.com/subscriptions/<Azure-subscription-ID>/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobcollections/southeastasiajc/jobs/httpjob?api-version=2016-01-01 HTTP/1.1
 User-Agent: Fiddler
 Host: management.azure.com
 Authorization: Bearer sometoken
@@ -83,15 +97,15 @@ Content-Type: application/json; charset=utf-8
       "endTime": "2016-04-10T08:00:00Z",
       "interval": 1
     },
-    "state": "enabled",
+    "state": "enabled"
   }
 }
 ```
 
-## <a name="sample-rest-response-for-clientcertificate-authentication"></a>Пример ответа REST для аутентификации ClientCertificate
-```
-HTTP/1.1 200 OK
-Cache-Control: no-cache
+### <a name="sample-rest-response---client-certificate"></a>Пример ответа REST при проверке подлинности с помощью сертификата клиента
+
+```json
+HTTP/1.1 200 OKCache-Control: no-cache
 Pragma: no-cache
 Content-Length: 858
 Content-Type: application/json; charset=utf-8
@@ -107,7 +121,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 Date: Wed, 16 Mar 2016 19:04:23 GMT
 
 {
-  "id": "/subscriptions/1fe0abdf-581e-4dfe-9ec7-e5cb8e7b205e/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobCollections/southeastasiajc/jobs/httpjob",
+  "id": "/subscriptions/<Azure-subscription-ID>/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobCollections/southeastasiajc/jobs/httpjob",
   "type": "Microsoft.Scheduler/jobCollections/jobs",
   "name": "southeastasiajc/httpjob",
   "properties": {
@@ -144,28 +158,35 @@ Date: Wed, 16 Mar 2016 19:04:23 GMT
 }
 ```
 
-## <a name="request-body-for-basic-authentication"></a>Текст запроса для обычной проверки подлинности
+## <a name="basic"></a>базовая;
+
+### <a name="request-body---basic"></a>Текст запроса для обычной проверки подлинности
+
 При добавлении проверки подлинности с использованием модели `Basic` укажите в тексте запроса следующие дополнительные элементы.
 
-| Элемент | ОПИСАНИЕ |
-|:--- |:--- |
-| *authentication (родительский элемент)* |Объект проверки подлинности для использования обычной проверки подлинности. |
-| *type* |Обязательный элемент. Тип проверки подлинности. Для обычной проверки подлинности используйте значение `Basic`. |
-| *username* |Обязательный элемент. Имя пользователя для проверки подлинности. |
-| *password* |Обязательный элемент. Пароль для проверки подлинности. |
+| Элемент | Обязательно | ОПИСАНИЕ |
+|---------|----------|-------------|
+| **authentication** (родительский элемент) | Объект проверки подлинности для использования обычной проверки подлинности | 
+| **type** | Yes | Тип проверки подлинности. Для обычной проверки подлинности это значение равно `Basic`. | 
+| **username** | Yes | Имя пользователя для проверки подлинности | 
+| **password** | Yes | Пароль для проверки подлинности |
+|||| 
 
-## <a name="response-body-for-basic-authentication"></a>Текст ответа при обычной проверке подлинности
-При отправке запроса со сведениями о проверке подлинности в ответ включаются следующие элементы.
+### <a name="response-body---basic"></a>Текст ответа при обычной проверке подлинности
 
-| Элемент | ОПИСАНИЕ |
-|:--- |:--- |
-| *authentication (родительский элемент)* |Объект проверки подлинности для использования обычной проверки подлинности. |
-| *type* |Тип проверки подлинности. Для обычной проверки подлинности это значение равно `Basic`. |
-| *username* |Имя пользователя, прошедшего проверку подлинности. |
+При отправке запроса со сведениями о проверке подлинности в ответ включаются следующие элементы проверки подлинности.
 
-## <a name="sample-rest-request-for-basic-authentication"></a>Пример запроса REST для обычной проверки подлинности
-```
-PUT https://management.azure.com/subscriptions/1d908808-e491-4fe5-b97e-29886e18efd4/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobcollections/southeastasiajc/jobs/httpjob?api-version=2016-01-01 HTTP/1.1
+| Элемент | ОПИСАНИЕ | 
+|---------|-------------|
+| **authentication** (родительский элемент) | Объект проверки подлинности для использования обычной проверки подлинности |
+| **type** | Тип проверки подлинности. Для обычной проверки подлинности это значение равно `Basic`. |
+| **username** | Имя пользователя, прошедшего проверку подлинности |
+||| 
+
+### <a name="sample-rest-request---basic"></a>Пример запроса REST для обычной проверки подлинности
+
+```json
+PUT https://management.azure.com/subscriptions/<Azure-subscription-ID>/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobcollections/southeastasiajc/jobs/httpjob?api-version=2016-01-01 HTTP/1.1
 User-Agent: Fiddler
 Host: management.azure.com
 Authorization: Bearer sometoken
@@ -195,13 +216,14 @@ Content-Type: application/json; charset=utf-8
       "endTime": "2016-04-10T08:00:00Z",
       "interval": 1
     },
-    "state": "enabled",
+    "state": "enabled"
   }
 }
 ```
 
-## <a name="sample-rest-response-for-basic-authentication"></a>Пример ответа REST для обычной проверки подлинности
-```
+### <a name="sample-rest-response---basic"></a>Пример ответа REST для обычной проверки подлинности
+
+```json
 HTTP/1.1 200 OK
 Cache-Control: no-cache
 Pragma: no-cache
@@ -219,7 +241,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 Date: Wed, 16 Mar 2016 19:05:06 GMT
 
 {  
-   "id":"/subscriptions/1d908808-e491-4fe5-b97e-29886e18efd4/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobCollections/southeastasiajc/jobs/httpjob",
+   "id":"/subscriptions/<Azure-subscription-ID>/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobCollections/southeastasiajc/jobs/httpjob",
    "type":"Microsoft.Scheduler/jobCollections/jobs",
    "name":"southeastasiajc/httpjob",
    "properties":{  
@@ -236,14 +258,14 @@ Date: Wed, 16 Mar 2016 19:05:06 GMT
                "type":"Basic"
             }
          },
-         "type":"http"
+         "type":"Http"
       },
       "recurrence":{  
-         "frequency":"minute",
+         "frequency":"Minute",
          "endTime":"2016-04-10T08:00:00Z",
          "interval":1
       },
-      "state":"enabled",
+      "state":"Enabled",
       "status":{  
          "nextExecutionTime":"2016-03-16T19:06:00Z",
          "executionCount":0,
@@ -254,35 +276,39 @@ Date: Wed, 16 Mar 2016 19:05:06 GMT
 }
 ```
 
-## <a name="request-body-for-activedirectoryoauth-authentication"></a>Текст запроса для проверки подлинности ActiveDirectoryOAuth
+## <a name="active-directory-oauth"></a>Active Directory OAuth
+
+### <a name="request-body---active-directory-oauth"></a>Текст запроса для проверки подлинности Active Directory OAuth 
+
 При добавлении проверки подлинности с использованием модели `ActiveDirectoryOAuth` укажите в тексте запроса следующие дополнительные элементы.
 
+| Элемент | Обязательно | ОПИСАНИЕ |
+|---------|----------|-------------|
+| **authentication** (родительский элемент) | Yes | Объект проверки подлинности для использования проверки подлинности ActiveDirectoryOAuth. |
+| **type** | Yes | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. |
+| **tenant** | Yes | Идентификатор клиента Azure AD. Идентификатор клиента Azure AD можно узнать, выполнив команду `Get-AzureAccount` в Azure PowerShell. |
+| **audience** | Yes | Этот параметр имеет значение `https://management.core.windows.net/`. | 
+| **clientId** | Yes | Идентификатор клиента для приложения Azure AD | 
+| **secret** | Yes | Секретные данные клиента, запрашивающего маркер. | 
+|||| 
+
+### <a name="response-body---active-directory-oauth"></a>Текст ответа при проверке подлинности Active Directory OAuth
+
+При отправке запроса со сведениями о проверке подлинности в ответ включаются следующие элементы проверки подлинности.
+
 | Элемент | ОПИСАНИЕ |
-|:--- |:--- |
-| *authentication (родительский элемент)* |Объект проверки подлинности для использования проверки подлинности ActiveDirectoryOAuth. |
-| *type* |Обязательный элемент. Тип проверки подлинности. Для проверки подлинности ActiveDirectoryOAuth используйте значение `ActiveDirectoryOAuth`. |
-| *tenant* |Обязательный элемент. Идентификатор клиента Azure AD. |
-| *audience* |Обязательный параметр. Имеет значение https://management.core.windows.net/. |
-| *clientId* |Обязательный элемент. Укажите идентификатор клиента для приложения Azure AD. |
-| *secret* |Обязательный элемент. Секретные данные клиента, запрашивающего маркер. |
+|---------|-------------|
+| **authentication** (родительский элемент) | Объект проверки подлинности для использования проверки подлинности ActiveDirectoryOAuth. |
+| **type** | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
+| **tenant** | Идентификатор клиента Azure AD. |
+| **audience** | Этот параметр имеет значение `https://management.core.windows.net/`. |
+| **clientId** | Идентификатор клиента для приложения Azure AD |
+||| 
 
-### <a name="determining-your-tenant-identifier"></a>Определение идентификатора клиента
-Идентификатор клиента Azure AD можно узнать, выполнив команду `Get-AzureAccount` в Azure PowerShell.
+### <a name="sample-rest-request---active-directory-oauth"></a>Пример запроса REST для проверки подлинности Active Directory OAuth
 
-## <a name="response-body-for-activedirectoryoauth-authentication"></a>Текст ответа при проверке подлинности ActiveDirectoryOAuth
-При отправке запроса со сведениями о проверке подлинности в ответ включаются следующие элементы.
-
-| Элемент | ОПИСАНИЕ |
-|:--- |:--- |
-| *authentication (родительский элемент)* |Объект проверки подлинности для использования проверки подлинности ActiveDirectoryOAuth. |
-| *type* |Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. |
-| *tenant* |Идентификатор клиента Azure AD. |
-| *audience* |Имеет значение https://management.core.windows.net/. |
-| *clientId* |Идентификатор клиента для приложения Azure AD. |
-
-## <a name="sample-rest-request-for-activedirectoryoauth-authentication"></a>Пример запроса REST для аутентификации ActiveDirectoryOAuth
-```
-PUT https://management.azure.com/subscriptions/1d908808-e491-4fe5-b97e-29886e18efd4/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobcollections/southeastasiajc/jobs/httpjob?api-version=2016-01-01 HTTP/1.1
+```json
+PUT https://management.azure.com/subscriptions/<Azure-subscription-ID>/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobcollections/southeastasiajc/jobs/httpjob?api-version=2016-01-01 HTTP/1.1
 User-Agent: Fiddler
 Host: management.azure.com
 Authorization: Bearer sometoken
@@ -307,20 +333,21 @@ Content-Type: application/json; charset=utf-8
           "type":"ActiveDirectoryOAuth"
         }
       },
-      "type": "http"
+      "type": "Http"
     },
     "recurrence": {
-      "frequency": "minute",
+      "frequency": "Minute",
       "endTime": "2016-04-10T08:00:00Z",
       "interval": 1
     },
-    "state": "enabled",
+    "state": "Enabled"
   }
 }
 ```
 
-## <a name="sample-rest-response-for-activedirectoryoauth-authentication"></a>Пример ответа REST для аутентификации ActiveDirectoryOAuth
-```
+### <a name="sample-rest-response---active-directory-oauth"></a>Пример ответа REST при проверке подлинности Active Directory OAuth
+
+```json
 HTTP/1.1 200 OK
 Cache-Control: no-cache
 Pragma: no-cache
@@ -337,59 +364,49 @@ x-ms-routing-request-id: WESTUS:20160316T191003Z:5183bbf4-9fa1-44bb-98c6-6872e3f
 Strict-Transport-Security: max-age=31536000; includeSubDomains
 Date: Wed, 16 Mar 2016 19:10:02 GMT
 
-{  
-   "id":"/subscriptions/1d908808-e491-4fe5-b97e-29886e18efd4/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobCollections/southeastasiajc/jobs/httpjob",
-   "type":"Microsoft.Scheduler/jobCollections/jobs",
-   "name":"southeastasiajc/httpjob",
-   "properties":{  
-      "startTime":"2015-05-14T14:10:00Z",
-      "action":{  
-         "request":{  
-            "uri":"https://mywebserviceendpoint.com",
-            "method":"GET",
-            "headers":{  
-               "x-ms-version":"2013-03-01"
+{
+   "id": "/subscriptions/<Azure-subscription-ID>/resourceGroups/CS-SoutheastAsia-scheduler/providers/Microsoft.Scheduler/jobCollections/southeastasiajc/jobs/httpjob",
+   "type": "Microsoft.Scheduler/jobCollections/jobs",
+   "name": "southeastasiajc/httpjob",
+   "properties": {
+      "startTime": "2015-05-14T14:10:00Z",
+      "action": {  
+         "request": {
+            "uri": "https://mywebserviceendpoint.com",
+            "method": "GET",
+            "headers": {  
+               "x-ms-version": "2013-03-01"
             },
-            "authentication":{  
-               "tenant":"microsoft.onmicrosoft.com",
-               "audience":"https://management.core.windows.net/",
-               "clientId":"dc23e764-9be6-4a33-9b9a-c46e36f0c137",
-               "type":"ActiveDirectoryOAuth"
+            "authentication": {  
+               "tenant": "microsoft.onmicrosoft.com",
+               "audience": "https://management.core.windows.net/",
+               "clientId": "dc23e764-9be6-4a33-9b9a-c46e36f0c137",
+               "type": "ActiveDirectoryOAuth"
             }
          },
-         "type":"http"
+         "type": "Http"
       },
-      "recurrence":{  
-         "frequency":"minute",
-         "endTime":"2016-04-10T08:00:00Z",
-         "interval":1
+      "recurrence": {  
+         "frequency": "minute",
+         "endTime": "2016-04-10T08:00:00Z",
+         "interval": 1
       },
-      "state":"enabled",
-      "status":{  
-         "lastExecutionTime":"2016-03-16T19:10:00.3762123Z",
-         "nextExecutionTime":"2016-03-16T19:11:00Z",
-         "executionCount":5,
-         "failureCount":5,
-         "faultedCount":1
+      "state": "Enabled",
+      "status": {  
+         "lastExecutionTime": "2016-03-16T19:10:00.3762123Z",
+         "nextExecutionTime": "2016-03-16T19:11:00Z",
+         "executionCount": 5,
+         "failureCount": 5,
+         "faultedCount": 1
       }
    }
 }
 ```
 
 ## <a name="see-also"></a>См. также
- [Что такое планировщик?](scheduler-intro.md)
 
- [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
-
- [Приступая к работе с планировщиком Azure на портале Azure](scheduler-get-started-portal.md)
-
- [Планы и выставление счетов в планировщике Azure](scheduler-plans-billing.md)
-
- [Справочник по API REST планировщика Azure](https://msdn.microsoft.com/library/mt629143)
-
- [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)
-
- [Высокая доступность и надежность планировщика Azure](scheduler-high-availability-reliability.md)
-
- [Ограничения, значения по умолчанию и коды ошибок планировщика Azure](scheduler-limits-defaults-errors.md)
-
+* [Что такое планировщик Azure?](scheduler-intro.md)
+* [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
+* [Ограничения, значения по умолчанию и коды ошибок планировщика Azure](scheduler-limits-defaults-errors.md)
+* [REST API планировщика Azure](https://msdn.microsoft.com/library/mt629143)
+* [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)

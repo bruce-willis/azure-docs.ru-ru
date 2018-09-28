@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/16/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9fe8b2cc09c7a08ab6d897a0fe1f1204d1903eca
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: dbb21e63a25d6e357287f2f91181f2326850a898
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44090869"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46952857"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Оптимизация производительности и надежности Функций Azure
 
@@ -73,6 +73,10 @@ ms.locfileid: "44090869"
 ## <a name="scalability-best-practices"></a>Рекомендации по масштабируемости
 
 То, как выполняется масштабирование экземпляров приложения-функции, зависит от нескольких факторов. Дополнительные сведения см. в документации по [масштабированию функций](functions-scale.md).  Ниже приведены рекомендации по оптимальному масштабированию приложения-функции.
+
+### <a name="share-and-manage-connections"></a>Управление подключениями и общий доступ к ним
+
+Повторно используйте подключения к внешним ресурсам, когда это возможно.  См. раздел [Способы управления подключениями в службе "Функции Azure"](./manage-connections.md).
 
 ### <a name="dont-mix-test-and-production-code-in-the-same-function-app"></a>Не используйте тестовый и рабочий код в одном приложении-функции
 

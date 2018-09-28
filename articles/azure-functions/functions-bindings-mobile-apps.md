@@ -11,14 +11,17 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: glenga
-ms.openlocfilehash: a68e7cfe2966592861f3fb58c99327c5849a6004
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 6b5a45bfcfc02c6b313e868fb3ba037ce3ba48c9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44721608"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46967580"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Привязки мобильных приложений для службы "Функции Azure" 
+
+> [!NOTE]
+> Привязки мобильных приложений Azure доступны только для функций Azure версии 1.x. Они не поддерживаются в функциях версии 2.x.
 
 В этой статье описывается использование привязок [мобильных приложений Azure](../app-service-mobile/app-service-mobile-value-prop.md) в "Функциях Azure". Функции Azure поддерживают входные и выходные привязки для мобильных приложений.
 
@@ -31,12 +34,6 @@ ms.locfileid: "44721608"
 Привязки мобильных приложений доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.MobileApps](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.MobileApps) версии 1.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.MobileApps/).
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
-
-## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
-
-Привязки мобильных приложений доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.MobileApps](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.MobileApps) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/).
-
-[!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
 ## <a name="input"></a>Входные данные
 
@@ -151,7 +148,7 @@ module.exports = function (context, myQueueItem) {
 |**tableName** |**TableName**|Имя таблицы данных мобильного приложения|
 | **id**| **Id** | Идентификатор извлекаемой записи. Может быть статическим или определяться по триггеру, который вызывает функцию. Например, если вы используете триггер очереди для функции, то `"id": "{queueTrigger}"` использует строковое значение сообщения очереди в качестве идентификатора записи, который нужно получить.|
 |**подключение**|**Connection**|Имя параметра приложения, в котором содержится URL-адрес мобильного приложения. Функция использует этот URL-адрес для создания необходимых операций REST с мобильным приложением. Создайте параметр приложения в приложении-функции, содержащем URL-адрес мобильного приложения, а затем укажите имя параметра приложения в свойстве `connection` во входной привязке. URL-адрес выглядит следующим образом: `http://<appname>.azurewebsites.net`.
-|**apiKey**|**apiKey**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При ](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key)внедрении ключа API в мобильное приложение Node.js[ или ](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key).NET[ предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
+|**apiKey**|**apiKey**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в мобильное приложение Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) [или](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key) .NET предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -308,7 +305,7 @@ public static object Run(
 | **name**|| Имя выходного параметра в сигнатуре функции.|
 |**tableName** |**TableName**|Имя таблицы данных мобильного приложения|
 |**подключение**|**MobileAppUriSetting**|Имя параметра приложения, в котором содержится URL-адрес мобильного приложения. Функция использует этот URL-адрес для создания необходимых операций REST с мобильным приложением. Создайте параметр приложения в приложении-функции, содержащем URL-адрес мобильного приложения, а затем укажите имя параметра приложения в свойстве `connection` во входной привязке. URL-адрес выглядит следующим образом: `http://<appname>.azurewebsites.net`.
-|**apiKey**|**ApiKeySetting**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При ](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key)внедрении ключа API в серверную часть мобильного приложения Node.js[ или ](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key).NET[ предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
+|**apiKey**|**ApiKeySetting**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в серверную часть мобильного приложения Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) или [.NET предоставьте ключ API](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key). Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/20/2017
 ms.author: kyliel
-ms.openlocfilehash: 42312522381529075f544a6c277f66a4ef1982d2
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 8400fa12e8776834f71740f809df18753291601f
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30904259"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46992315"
 ---
 # <a name="how-to-use-freebsds-packet-filter-to-create-a-secure-firewall-in-azure"></a>Создание защищенного брандмауэра в Azure с использованием PF FreeBSD
 В этой статье рассматривается использование фильтра пакетов FreeBSD для развертывания брандмауэра для NAT с помощью шаблона Azure Resource Manager для общего сценария веб-сервера.
@@ -35,7 +35,7 @@ PF — это лицензированный (по лицензии BSD) фил�
 ![pf_topology](./media/freebsd-pf-nat/pf_topology.jpg)
     
 ### <a name="deploy-through-azure-cli"></a>Развертывание с помощью Azure CLI
-Вам нужно установить последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В примере ниже создается имя группы ресурсов `myResourceGroup` в расположении `West US`.
+Нужно установить последнюю версию [ Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В примере ниже создается имя группы ресурсов `myResourceGroup` в расположении `West US`.
 
 ```azurecli
 az group create --name myResourceGroup --location westus

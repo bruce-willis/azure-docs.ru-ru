@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jasonh
-ms.openlocfilehash: 79ab8ad9d827b3d2dda8138260b9857f241afc45
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 6d2e0b06f0402ae26212be45a00b4c9a5394a117
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43094073"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46983707"
 ---
 # <a name="create-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Hadoop с помощью Azure REST API
 
@@ -218,7 +218,7 @@ Azure REST API позволяет управлять службами, разм�
 
 ## <a name="log-in-to-your-azure-subscription"></a>Вход в подписку Azure
 
-Выполните действия, описанные в статье [Get started with Azure CLI 2.0 (Preview)](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2) (Приступая к работе с Azure CLI 2.0 (предварительная версия)) и подключитесь к подписке, используя команду `az login`.
+Выполните действия, описанные в статье [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2), и подключитесь к подписке, используя команду `az login`.
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 

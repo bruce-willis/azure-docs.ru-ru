@@ -1,6 +1,6 @@
 ---
 title: Сброс параметров доступа к виртуальным машинам Linux в Azure | Документация Майкрософт
-description: В этой статье показано, как управлять пользователями с правами администратора и сбрасывать параметры доступа на виртуальных машинах Linux, используя расширение VMAccess и Azure CLI 2.0.
+description: В этой статье показано, как управлять пользователями с правами администратора и сбрасывать параметры доступа на виртуальных машинах Linux, используя расширение VMAccess и Azure CLI.
 services: virtual-machines-linux
 documentationcenter: ''
 author: zroiy
@@ -15,14 +15,14 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: roiyz
-ms.openlocfilehash: 51c203c746a5256924033ebe48d9ddfdc3823b16
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: e878f5c9f923b55a1eb94cefb1ecf021c81e884e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39415897"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998633"
 ---
-# <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli-20"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI 2.0
+# <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
 На диске в виртуальной машине Linux имеются ошибки. Вы каким-то образом сбросили пароль пользователя root для виртуальной машины Linux или случайно удалили закрытый ключ SSH. Если бы такое случилось раньше, вам пришлось бы ехать в центр данных и открывать KVM-консоль для доступа к серверу. Расширение Azure VMAccess можно представить как KVM-коммутатор, который позволяет открывать консоль для сброса разрешений на доступ к Linux или обслуживания дисков.
 
@@ -47,10 +47,10 @@ ms.locfileid: "39415897"
 ## <a name="ways-to-use-the-vmaccess-extension"></a>Использование расширения VMAccess
 Расширение VMAccess для виртуальных машин Linux можно использовать двумя способами:
 
-* С помощью Azure CLI 2.0 и необходимых параметров.
+* с помощью командной строки Azure и необходимых параметров;
 * [с помощью необработанных файлов JSON, которые расширение VMAccess обрабатывает](#use-json-files-and-the-vmaccess-extension) для выполнения операций.
 
-В следующих примерах используются команды [az vm user](/cli/azure/vm/user). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+В следующих примерах используются команды [az vm user](/cli/azure/vm/user). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
 
 ## <a name="update-ssh-key"></a>Обновление ключа SSH
 В следующем примере обновляется ключ SSH для пользователя `azureuser` на виртуальной машине `myVM`:

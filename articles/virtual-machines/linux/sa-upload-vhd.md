@@ -1,6 +1,6 @@
 ---
-title: Передача пользовательского диска Linux с помощью Azure CLI 2.0 | Документация Майкрософт
-description: Создание и передача в Azure виртуального жесткого диска (VHD) на основе модели развертывания с помощью Resource Manager посредством Azure CLI 2.0.
+title: Передача пользовательского диска Linux с помощью Azure CLI | Документы Майкрософт
+description: Создание и передача в Azure виртуального жесткого диска (VHD) с использованием модели развертывания с помощью Resource Manager и Azure CLI
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -15,22 +15,23 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: cynthn
-ms.openlocfilehash: 4b05c4c7db1e1c1953af2466d2c6a277baa07082
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 1926f0bcf7efca786e97bd973601888e5a8d4463
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45737351"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966509"
 ---
-# <a name="upload-and-create-a-linux-vm-from-custom-disk-with-the-azure-cli-20"></a>Передача пользовательского диска и создание на его основе виртуальной машины Linux с помощью Azure CLI 2.0
-В этой статье показано, как передать виртуальный жесткий диск (VHD) в учетную запись хранения Azure с помощью Azure CLI 2.0 и создать на основе этого пользовательского диска виртуальные машины Linux. Эта функциональная возможность позволяет установить и настроить дистрибутив Linux в соответствии с требованиями, а затем использовать этот VHD для быстрого создания виртуальных машин Azure.
+# <a name="upload-and-create-a-linux-vm-from-custom-disk-with-the-azure-cli"></a>Передача пользовательского диска и создание на его основе виртуальной машины Linux с помощью Azure CLI
+
+В этой статье показано, как передать виртуальный жесткий диск (VHD) в учетную запись хранения Azure с помощью Azure CLI и создать на основе этого пользовательского диска виртуальные машины Linux. Эта функциональная возможность позволяет установить и настроить дистрибутив Linux в соответствии с требованиями, а затем использовать этот VHD для быстрого создания виртуальных машин Azure.
 
 В этой статье используются учетные записи хранения для готовых виртуальных жестких дисков, но вы также можете выполнить эти действия с помощью [управляемых дисков](upload-vhd.md). 
 
 ## <a name="quick-commands"></a>Быстрые команды
 Если вам необходимо быстро выполнить задачу, в следующем разделе описаны основные команды для отправки виртуального жесткого диска в Azure. Более подробные сведения и контекст для каждого этапа можно найти в остальной части документа [начиная отсюда](#requirements).
 
-Обязательно установите последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
 
 В следующих примерах замените имена параметров собственными значениями. Используемые имена параметров — `myResourceGroup`, `mystorageaccount`, и `mydisks`.
 
@@ -96,7 +97,7 @@ az vm create --resource-group myResourceGroup --location westus \
   * Создайте учетную запись хранения и контейнер для хранения пользовательского диска и созданных виртуальных машин.
   * Когда вы закончите создание всех виртуальных машин, диск можно спокойно удалить.
 
-Обязательно установите последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
 
 В следующих примерах замените имена параметров собственными значениями. Используемые имена параметров — `myResourceGroup`, `mystorageaccount`, и `mydisks`.
 
