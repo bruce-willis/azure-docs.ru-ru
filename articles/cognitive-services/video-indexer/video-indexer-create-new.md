@@ -1,26 +1,27 @@
 ---
-title: Создание аналитических сведений о видео из существующих видео с помощью Индексатора видео Azure | Документация Майкрософт
-description: В этом разделе показано, как создавать и публиковать аналитические сведения о видео на основе некоторых других видео.
+title: Руководство. Создание аналитических сведений о видео на основе существующих видеофайлов
+titlesuffix: Azure Cognitive Services
+description: В этой статье показано, как создать и опубликовать аналитические сведения о видео на основе существующих видеофайлов.
 services: cognitive services
-documentationcenter: ''
 author: juliako
-manager: erikre
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 07/25/2018
+ms.component: video-indexer
+ms.topic: tutorial
+ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: 161a47f72a0f8038a515c09f25ec2a8e8a520547
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: 3a3e5c62d9eb96563d395106db62cc91a8307658
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390846"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45983922"
 ---
-# <a name="create-highlights-from-existing-videos"></a>Создание аналитических сведений из существующих видео
+# <a name="tutorial-create-highlights-from-existing-videos"></a>Руководство. Создание аналитических сведений на основе существующих видеофайлов
 
 В этом разделе показано, как создавать и публиковать аналитические сведения о видео на основе некоторых других видео.
 
-1. Войдите в учетную запись [Индексатора видео](https://api-portal.videoindexer.ai/).
+1. Откройте веб-сайт [Индексатора видео](https://www.videoindexer.ai/) и выполните вход.
 2. Найдите видео, для которого вы хотите создать аналитические сведения.
 3. Нажмите кнопку **Воспроизвести**.
 

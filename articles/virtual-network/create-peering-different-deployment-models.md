@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: bec02b3f3bde9f9cfab615d75cc6f05976ce981a
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 44cc582bfa0a6940de7eeea9b54e3979735c07e2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34726226"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998252"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -81,64 +81,66 @@ ms.locfileid: "34726226"
 
 ## <a name="cli"></a>Создание пиринга с помощью Azure CLI
 
-1. [Установите](../cli-install-nodejs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure CLI 1.0 для создания классической виртуальной сети.
-2. Запустите сеанс командной строки и войдите в Azure с помощью команды `azure login`.
-3. Запустите интерфейс командной строки в режиме управления службами, введя команду `azure config mode asm`.
-4. Чтобы создать классическую виртуальную сеть, введите приведенную ниже команду.
- 
-    ```azurecli
-    azure network vnet create --vnet myVnet2 --address-space 10.1.0.0 --cidr 16 --location "East US"
-    ```
+Выполните следующие действия с помощью классического интерфейса командной строки Azure и Azure CLI. Действия из Azure Cloud Shell можно выполнить, только выбрав кнопку **Попробовать** в любом из следующих действий или установив [классический интерфейс командной строки](/cli/azure/install-cli-version-1.0.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [CLI](/cli/azure/install-azure-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и выполнив команды на локальном компьютере.
 
-5. Создайте группу ресурсов и виртуальную сеть Resource Manager. Можно использовать Azure CLI 1.0 или 2.0 ([установить](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json)). В этом руководстве для создания виртуальной сети Resource Manager используется Azure CLI 2.0, так как для создания пиринга должна использоваться версия 2.0. Выполните следующий сценарий Bash для интерфейса командной строки на локальном компьютере, на котором установлен Azure CLI 2.0.4 или более поздней версии. Сведения о вариантах выполнения скриптов Bash CLI в клиенте Windows см. в статье [Установка Azure CLI 2.0 в Windows](/cli/azure/install-azure-cli-windows). Можно также запустить сценарий с помощью Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующем сценарии, чтобы запустить службу Cloud Shell, с помощью которой можно войти в свою учетную запись Azure. Чтобы выполнить сценарий, нажмите кнопку **Скопировать** и вставьте содержимое в Cloud Shell. Нажмите клавишу `Enter`.
+1. При использовании Cloud Shell перейдите к шагу 2, так как Cloud Shell выполняет автоматический вход Azure. Запустите сеанс командной строки и войдите в Azure с помощью команды `azure login`.
+2. Запустите интерфейс командной строки в режиме управления службами, введя команду `azure config mode asm`.
+3. Чтобы создать классическую виртуальную сеть, введите приведенную ниже команду.
 
-    ```azurecli-interactive
-    #!/bin/bash
+   ```azurecli-interactive
+   azure network vnet create --vnet myVnet2 --address-space 10.1.0.0 --cidr 16 --location "East US"
+   ```
 
-    # Create a resource group.
-    az group create \
-      --name myResourceGroup \
-      --location eastus
+4. Выполните следующий сценарий bash CLI с помощью CLI, а не классический интерфейс командной строки. Сведения о вариантах выполнения скриптов Bash CLI в клиенте Windows см. в статье [Установка Azure CLI в Windows](/cli/azure/install-azure-cli-windows).
 
-    # Create the virtual network (Resource Manager).
-    az network vnet create \
-      --name myVnet1 \
-      --resource-group myResourceGroup \
-      --location eastus \
-      --address-prefix 10.0.0.0/16
-    ```
+   ```azurecli-interactive
+   #!/bin/bash
 
-6. Создайте пиринг между двумя виртуальными сетями, созданными с помощью разных моделей развертывания. Скопируйте следующий сценарий в текстовый редактор на своем компьютере. Замените `<subscription id>` идентификатором своей подписки. Если вам неизвестен идентификатор подписки, введите команду `az account show`. Значение **id** (Идентификатор) в выходных данных является идентификатором вашей подписки. Вставьте измененный сценарий в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`.
+   # Create a resource group.
+   az group create \
+     --name myResourceGroup \
+     --location eastus
 
-    ```azurecli-interactive
-    # Get the id for VNet1.
-    vnet1Id=$(az network vnet show \
-      --resource-group myResourceGroup \
-      --name myVnet1 \
-      --query id --out tsv)
+   # Create the virtual network (Resource Manager).
+   az network vnet create \
+     --name myVnet1 \
+     --resource-group myResourceGroup \
+     --location eastus \
+     --address-prefix 10.0.0.0/16
+   ```
 
-    # Peer VNet1 to VNet2.
-    az network vnet peering create \
-      --name myVnet1ToMyVnet2 \
-      --resource-group myResourceGroup \
-      --vnet-name myVnet1 \
-      --remote-vnet-id /subscriptions/<subscription id>/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnet2 \
-      --allow-vnet-access
-    ```
-7. После выполнения сценария просмотрите сведения о пиринге виртуальной сети Resource Manager. Скопируйте следующую команду, вставьте ее в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`.
+5. Создайте пиринг между двумя виртуальными сетями, созданными с помощью разных моделей развертывания, используя CLI. Скопируйте следующий сценарий в текстовый редактор на своем компьютере. Замените `<subscription id>` идентификатором своей подписки. Если вам неизвестен идентификатор подписки, введите команду `az account show`. Значение **id** (Идентификатор) в выходных данных является идентификатором вашей подписки. Вставьте измененный сценарий в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`.
 
-    ```azurecli-interactive
-    az network vnet peering list \
-      --resource-group myResourceGroup \
-      --vnet-name myVnet1 \
-      --output table
-    ```
-    
-    В выходных данных в столбце **PeeringState** (Состояние пиринга) указано состояние **Connected** (Подключен). 
+   ```azurecli-interactive
+   # Get the id for VNet1.
+   vnet1Id=$(az network vnet show \
+     --resource-group myResourceGroup \
+     --name myVnet1 \
+     --query id --out tsv)
 
-    Теперь все ресурсы Azure, созданные в любой из виртуальных сетей, могут взаимодействовать друг с другом, используя свои IP-адреса. Если вы используете разрешение имен Azure по умолчанию для виртуальных сетей, то ресурсы в этих виртуальных сетях не смогут разрешать имена между виртуальными сетями. Если требуется разрешение имен между виртуальными сетями в пиринге, необходимо создать собственный DNS-сервер. Узнайте, как настроить [разрешение имен с помощью собственного DNS-сервера](virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server).
-8. **Необязательно**. Хотя в этом руководстве не рассматривается создание виртуальных машин, можно создать по виртуальной машине в каждой виртуальной сети и подключить их между собой, чтобы проверить связь.
-9. **Необязательно**. Чтобы удалить ресурсы, созданные в этом руководстве, выполните инструкции, описанные в разделе [Удаление ресурсов](#delete-cli) этой статьи.
+   # Peer VNet1 to VNet2.
+   az network vnet peering create \
+     --name myVnet1ToMyVnet2 \
+     --resource-group myResourceGroup \
+     --vnet-name myVnet1 \
+     --remote-vnet-id /subscriptions/<subscription id>/resourceGroups/Default-Networking/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnet2 \
+     --allow-vnet-access
+   ```
+
+6. После выполнения сценария просмотрите сведения о пиринге виртуальной сети Resource Manager. Скопируйте следующую команду, вставьте ее в окно сеанса интерфейса командной строки и нажмите клавишу `Enter`.
+
+   ```azurecli-interactive
+   az network vnet peering list \
+     --resource-group myResourceGroup \
+     --vnet-name myVnet1 \
+     --output table
+   ```
+
+   В выходных данных в столбце **PeeringState** (Состояние пиринга) указано состояние **Connected** (Подключен).
+
+   Теперь все ресурсы Azure, созданные в любой из виртуальных сетей, могут взаимодействовать друг с другом, используя свои IP-адреса. Если вы используете разрешение имен Azure по умолчанию для виртуальных сетей, то ресурсы в этих виртуальных сетях не смогут разрешать имена между виртуальными сетями. Если требуется разрешение имен между виртуальными сетями в пиринге, необходимо создать собственный DNS-сервер. Узнайте, как настроить [разрешение имен с помощью собственного DNS-сервера](virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server).
+7. **Необязательно**. Хотя в этом руководстве не рассматривается создание виртуальных машин, можно создать по виртуальной машине в каждой виртуальной сети и подключить их между собой, чтобы проверить связь.
+8. **Необязательно**. Чтобы удалить ресурсы, созданные в этом руководстве, выполните инструкции, описанные в разделе [Удаление ресурсов](#delete-cli) этой статьи.
 
 ## <a name="powershell"></a>Создание пиринга с помощью PowerShell
 
@@ -214,15 +216,15 @@ ms.locfileid: "34726226"
 
 ### <a name="delete-cli"></a>Интерфейс командной строки Azure
 
-1. Используйте Azure CLI 2.0, чтобы удалить виртуальную сеть Resource Manager с помощью приведенной ниже команды.
+1. Используйте Azure CLI, чтобы удалить виртуальную сеть Resource Manager с помощью приведенной ниже команды:
 
     ```azurecli-interactive
     az group delete --name myResourceGroup --yes
     ```
 
-2. Используйте Azure CLI 1.0, чтобы удалить классическую виртуальную сеть с помощью приведенных ниже команд.
+2. Используйте классический интерфейс командной строки Azure CLI, чтобы удалить классическую виртуальную сеть с помощью приведенных ниже команд:
 
-    ```azurecli
+    ```azurecli-interactive
     azure config mode asm
 
     azure network vnet delete --vnet myVnet2 --quiet

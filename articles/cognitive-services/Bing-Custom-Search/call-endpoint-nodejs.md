@@ -9,43 +9,40 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: 5d9391cc486dc868a1a291ccc7095291cddd3e4c
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 73c31c7175bd4dfcb182fb76784937c176ac7702
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37858465"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46977882"
 ---
 # <a name="call-bing-custom-search-endpoint-nodejs"></a>Конечная точка службы пользовательского поиска Bing (Node.js)
 
-В этом кратком руководстве показано, как для запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Node.js для вызова конечной точки службы пользовательского поиска Bing. 
+В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Node.js для вызова конечной точки службы пользовательского запроса Bing. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим кратким руководством вам понадобится:
 
-- Экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы пользовательского поиска Bing).
-
+- Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
 - Установленный компонент [Node.js](https://www.nodejs.org/).
-
--  [Учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для данного краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+- ключ подписки; Ключ подписки можно получить при активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Кроме того, вы можете использовать ключ платной подписки из панели мониторинга Azure (см. раздел об [учетной записи API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)).    
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-Чтобы вызвать конечную точку службы пользовательского поиска Bing, выполните следующие действия.
+Чтобы запустить этот пример, выполните следующее.
 
-1. Создайте каталог для своего кода.
-
-2. Из командной строки или терминала перейдите в эту папку.
-
+1. Создайте папку для своего кода.  
+  
+2. Из командной строки или терминала перейдите в эту папку.  
+  
 3. Установите модуль Node **request**.
     <pre>
     npm install request
-    </pre>
+    </pre>  
     
-4. Создайте файл BingCustomSearch.js и скопируйте в него приведенный ниже код.
-
-5. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом и идентификатором конфигурации (см. шаг 1).
-
+4. Создайте файл с именем BingCustomSearch.js в созданной папке и скопируйте в него следующий код. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом подписки и идентификатором конфигурации.  
+  
     ``` javascript
     var request = require("request");
     
@@ -74,13 +71,15 @@ ms.locfileid: "37858465"
             console.log();
         }
     })
-    ```
-6. Выполните код с помощью приведенной ниже команды.
+    ```  
+  
+6. Выполните код с помощью приведенной ниже команды:  
+  
     ```    
     node BingCustomSearch.js
-   ``` 
+    ``` 
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Настройка размещенного на серверах пользовательского интерфейса](./hosted-ui.md)
-- [Использование маркеров оформления для выделения текста](./hit-highlighting.md)
+- [Настройка размещенного пользовательского интерфейса](./hosted-ui.md)
+- [Use decoration markers to highlight text](./hit-highlighting.md) (Использование маркеров оформления для выделения текста)
 - [Разбивка веб-страниц на страницы](./page-webpages.md)

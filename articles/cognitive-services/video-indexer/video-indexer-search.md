@@ -1,26 +1,27 @@
 ---
-title: Использование Индексатора видео Azure для поиска определенных кадров в видео | Документация Майкрософт
-description: В этом разделе описано, как выполнять поиск конкретных кадров в видео.
+title: Поиск точных моментов на видео — Индексатор видео
+titlesuffix: Azure Cognitive Services
+description: В этой статье показано, как найти точные моменты на видео с помощью Индексатора видео.
 services: cognitive services
-documentationcenter: ''
 author: juliako
-manager: erikre
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 07/31/2018
+ms.component: video-indexer
+ms.topic: conceptual
+ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: 1cffa067d8028adab4dbcc82c529f77d980ce6be
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 9806f9c3f22429d61ac765773e4b6971d683a6b1
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39397549"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45984513"
 ---
 # <a name="find-exact-moments-within-videos"></a>Поиск конкретных кадров в видео
 
 В этом разделе описываются параметры поиска, с помощью которых можно находить нужные кадры в видео.
 
-1. Войдите в учетную запись [Индексатора видео](https://api-portal.videoindexer.ai/).
+1. Откройте веб-сайт [Индексатора видео](https://www.videoindexer.ai/) и выполните вход.
 2. Выполните поиск среди всех видео в учетной записи.
 
     В следующем примере мы выполнили поиск всех видео со Скоттом Хансельманом (Scott Hanselman), созданных на веб-сайте Channel9.

@@ -13,12 +13,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 07/11/2018
 ms.author: cynthn
-ms.openlocfilehash: 224f017decc3f48a23cb3fbf14f9a4e744bfaded
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 9fbbbb4f73b5295b648008878c8145fe926fbaad
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39007011"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974397"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка 
 
@@ -26,7 +26,7 @@ ms.locfileid: "39007011"
 
 ## <a name="use-azure-cli"></a>Использование интерфейса командной строки Azure 
 
-В следующем примере необходимо использовать [Cloud Shell](https://shell.azure.com/bash) или установить Azure CLI 2.0. Чтобы узнать версию, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
+В следующем примере необходимо использовать [Cloud Shell](https://shell.azure.com/bash) или установить Azure CLI.
 
 Ниже показано, как создать моментальный снимок, выполнив команду **az snapshot create** с параметром **--source-disk**. В приведенном ниже примере предполагается, что в группе ресурсов *myResourceGroup* существует виртуальная машина *myVM*.
 

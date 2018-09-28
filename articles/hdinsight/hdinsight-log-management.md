@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/11/2018
 ms.author: ashishth
-ms.openlocfilehash: aab5be7f98f5fdf6e7304485c3d1fc5ddb7afdba
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 339d5d39c637369420e197acf65df802cefd5cb9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106923"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46988499"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -43,12 +43,13 @@ ms.locfileid: "43106923"
 * Состояние кластера, включая сведения о последнем изменении состояния
 * Тип и количество экземпляров HDInsight для головного узла, узлов ядра и задач
 
-Вы можете получить большую часть этих сведений верхнего уровня, используя портал Azure.  Кроме того, можно использовать Azure CLI для получения сведений о кластерах HDInsight:
+Вы можете получить большую часть этих сведений верхнего уровня, используя портал Azure.  Кроме того, можно использовать классический Azure CLI для получения сведений о кластерах HDInsight:
 
 ```
     azure hdinsight cluster list
     azure hdinsight cluster show <ClusterName>
 ```
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
 
 Чтобы просмотреть эти сведения, можно также использовать PowerShell.  Инструкции см. в статье [Manage Hadoop clusters in HDInsight by using Azure PowerShell](hdinsight-administer-use-powershell.md) (Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell).
 

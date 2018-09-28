@@ -3,8 +3,8 @@ title: Разрешенные центры сертификации для вк�
 description: Если вы используете свой собственный сертификат для включения HTTPS в личном домене, вам нужен разрешенный центр сертификации (CA) для его создания.
 services: cdn
 documentationcenter: ''
-author: KumudD
-manager: jeconnoc
+author: mdgattuso
+manager: danielgi
 editor: ''
 ms.assetid: ''
 ms.service: cdn
@@ -12,15 +12,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2018
-ms.author: kumud
+ms.date: 09/17/2018
+ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 28d6d24266c11b1295c57c8ec46c2bd5ec690b28
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: e9d9f5b053537b3d6881763bcb39d7894ba78869
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005923"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46969516"
 ---
 # <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-cdn"></a>Разрешенные центры сертификации для включения настраиваемого HTTPS в Azure CDN
 
@@ -33,6 +33,10 @@ ms.locfileid: "39005923"
 При создании собственного сертификата разрешены следующие ЦС:
 
 - AddTrust External CA Root
+- Корневой ЦС AlphaSSL
+- ЦС 01 AME Infra
+- ЦС 02 AME Infra
+- Ameroot
 - AP Root CA
 - AP Root Certificate Authority 2013
 - AP Root Certificate Authority 2014
@@ -47,16 +51,25 @@ ms.locfileid: "39005923"
 - DigiCert Global Root CA
 - DigiCert High Assurance CA-3
 - DigiCert High Assurance EV Root CA
+- ЦС расширенной проверки сервера DigiCert SHA2
 - DigiCert SHA2 High Assurance Server CA
 - DigiCert SHA2 Secure Server CA
+- Корневой ЦС X3 DST
+- Корневой ЦС 2 класса 3 D-trust 2009
+- ЦС Encryption Everywhere DV TLS
+- Корневой ЦС Entrust
+- Корневой ЦС Entrust — G2
+- ЦС Entrust.net (2048)
 - Глобальный ЦС GeoTrust
 - Основной ЦС GeoTrust
 - Основной ЦС GeoTrust — G2
+- ЦС Geotrust RSA 2018
 - GlobalSign;
 - GlobalSign Extended Validation CA - SHA256 - G2
 - GlobalSign Organization Validation CA - G2
 - GlobalSign Root CA
 - Корневой ЦС Go Daddy — G2
+- Защищенный ЦС Go Daddy — G2
 - Microsoft Authenticode(tm) Root Authority
 - Microsoft Exchange Services CA 2015
 - Microsoft Internal Corporate Root
@@ -78,6 +91,7 @@ ms.locfileid: "39005923"
 - MSIT CA Z2
 - MSIT Enterprise CA 1
 - MSIT Enterprise CA 3
+- ЦС RSA RapidSSL 2018
 - Root Agency
 - Symantec Class 3 EV SSL CA - G3
 - Symantec Class 3 Secure Server CA - G4
@@ -85,7 +99,9 @@ ms.locfileid: "39005923"
 - Основной корневой ЦС Thawte
 - Основной корневой ЦС Thawte — G2
 - Основной корневой ЦС Thawte — G3
+- ЦС Thawte RSA 2018
 - Thawte Timestamping CA
+- ЦС TrustAsia TLS RSA
 - UTN-USERFirst-Object
 - VeriSign Class 3 Extended Validation SSL CA
 - VeriSign Class 3 Extended Validation SSL SGC CA

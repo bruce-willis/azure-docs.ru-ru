@@ -2,22 +2,21 @@
 title: Интерфейсы API, пакет SDK и ресурсы для SQL Node.js (Azure Cosmos DB) | Документация Майкрософт
 description: Сведения об API и пакете SDK для SQL Node.js, включая даты выхода, даты выбытия и изменения, внесенные в каждую версию пакета SDK для Node.js для Azure Cosmos DB.
 services: cosmos-db
-author: rnagpal
-manager: kfile
+author: deborahc
 editor: cgronlun
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: nodejs
 ms.topic: reference
-ms.date: 5/3/2018
+ms.date: 09/24/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e19c1cb7b297d2537e969e0dd632dae3e1c3d211
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: b6983b49135b5a8adbef1d0cfc5a407cb7b0c7ac
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39594368"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46960555"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -40,12 +39,16 @@ ms.locfileid: "39594368"
 |Документация по API  |  [Справочная документация по пакету SDK для JavaScript](https://docs.microsoft.com/javascript/api/%40azure/cosmos/?view=azure-node-latest)
 |Инструкции по установке пакета SDK  |  [Инструкции по установке](https://github.com/Azure/azure-cosmos-js#installation)
 |Участие в разработке пакета SDK | [GitHub](https://github.com/Azure/azure-cosmos-js/tree/master)
-| Примеры | [Примеры кода Node.js](sql-api-nodejs-samples-preview.md)
-| Руководство по началу работы | [Приступая к работе с пакетом SDK для JavaScript](sql-api-nodejs-get-started-preview.md)
-| Руководство по веб-приложениям | [Создание веб-приложения Node.js с использованием Azure Cosmos DB](sql-api-nodejs-application-preview.md)
+| Примеры | [Примеры кода Node.js](sql-api-nodejs-samples.md)
+| Руководство по началу работы | [Приступая к работе с пакетом SDK для JavaScript](sql-api-nodejs-get-started.md)
+| Руководство по веб-приложениям | [Создание веб-приложения Node.js с использованием Azure Cosmos DB](sql-api-nodejs-application.md)
 | Текущая поддерживаемая платформа | [Node.js версии 6.x](https://nodejs.org/en/blog/release/v6.10.3/) — является обязательной для пакета SDK версии 2.0.0 и более поздних версий.<br/>[Node.js версии 4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)<br/> [Node.js версии 0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/> [Node.js версии 0.10](https://nodejs.org/en/blog/release/v0.10.0/) 
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="2.0.0"/>2.0.0</a>
+* Общедоступная версия 2.0.0 пакета SDK для JavaScript
+* Добавлена поддержка для операций записи в нескольких регионах.
 
 ### <a name="2.0.0-3"/>2.0.0 — 3</a>
 * Версия-кандидат 1 общедоступной предварительной версии пакета SDK 2.0.0 для JavaScript.

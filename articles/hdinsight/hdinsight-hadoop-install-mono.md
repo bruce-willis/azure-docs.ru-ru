@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: jasonh
 ms.custom: hdinsightactive
-ms.openlocfilehash: db460c6ebe934fa9ca9b6b42d517f39acbecf0c9
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 54e5a5b72627dc9cd2d842ccb24d10e2f9ab9dce
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105319"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46957182"
 ---
 # <a name="install-or-update-mono-on-hdinsight"></a>Установка или обновление Mono в HDInsight
 
@@ -44,7 +44,7 @@ __Требования__
 
 ## <a name="to-use-the-script"></a>Использование скрипта
 
-Сведения об использовании этого скрипта с HDInsight см. в документе [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster). Вы можете использовать скрипт с помощью портала Azure, Azure PowerShell или интерфейса командной строки Azure.
+Сведения об использовании этого скрипта с HDInsight см. в документе [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster). Вы можете использовать скрипт с помощью портала Azure, Azure PowerShell или классического интерфейса командной строки Azure.
 
 При выполнении документа со сведениями о действиях скрипта используйте следующий универсальный код ресурса (URI):
 

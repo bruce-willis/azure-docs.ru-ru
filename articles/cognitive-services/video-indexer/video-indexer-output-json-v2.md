@@ -1,20 +1,21 @@
 ---
-title: Анализ выходных данных Индексатора видео Azure, полученных с помощью API версии 2 | Документация Майкрософт
+title: Анализ выходных данных Индексатора видео, полученных с помощью API версии 2
+titlesuffix: Azure Cognitive Services
 description: В этом разделе рассматриваются выходные данные Индексатора видео, полученные с помощью API версии 2.
 services: cognitive services
-documentationcenter: ''
 author: juliako
-manager: cfowler
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 07/25/2018
+ms.component: video-indexer
+ms.topic: conceptual
+ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: 43cc02417fad8a2fa46bd309235951393cd55b8a
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: 76f83e7ad70e3e1906bc1aa90c74d600053aeb6f
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40187380"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45985649"
 ---
 # <a name="examine-the-video-indexer-output-produced-by-v2-api"></a>Анализ выходных данных Индексатора видео, полученных с помощью API версии 2
 
@@ -23,7 +24,7 @@ ms.locfileid: "40187380"
 
 Если при вызове API **Get Video Index** отображается состояние ответа "OK", вы получите подробные выходные данные в формате JSON в виде содержимого ответа. В содержимом JSON представлены данные по выбранным аналитическим сведениям из видео. Аналитические сведения включают такие измерения: transcripts, ocrs, faces, topics, blocks и т. д. Измерения содержат экземпляры диапазонов времени, которые указывают, когда каждое измерение появляется на видео.  
 
-Можете также просмотреть сводные аналитические сведения о видео, нажав в этом видео кнопку **воспроизведения** на портале Индексатора видео. Дополнительные сведения см. в руководстве по [просмотру и анализу аналитических сведений в Индексаторе видео](video-indexer-view-edit.md).
+Также можно просмотреть сводные аналитические сведения о видео, нажав кнопку **воспроизведения** на видео, размещенном на веб-сайте [Индексатора видео](https://www.videoindexer.ai/). Дополнительные сведения см. в руководстве по [просмотру и анализу аналитических сведений в Индексаторе видео](video-indexer-view-edit.md).
 
 ![Аналитика](./media/video-indexer-output-json/video-indexer-summarized-insights.png)
 
@@ -90,6 +91,8 @@ ms.locfileid: "40187380"
 |метки;| Может содержать или не содержать метки. Дополнительные сведения см. в разделе [labels](#labels).|
 |brands| Может содержать или не содержать сведения о торговых марках. Дополнительные сведения см. в разделе [brands](#brands).|
 |statistics | Дополнительные сведения см. в разделе [statistics](#statistics).|
+|emotions| Может содержать или не содержать значения эмоций. Дополнительные сведения см. в разделе [emotions](#emotions).|
+|topics|Может содержать или не содержать значения тем. Измерение [topics](#topics).|
 
 ## <a name="videos"></a>videos
 
@@ -165,6 +168,8 @@ ms.locfileid: "40187380"
 |sentiments|Измерение [sentiments](#sentiments).|
 |visualContentModeration|Измерение [VisualContentModeration](#visualcontentmoderation).|
 |textualConentModeration|Измерение [textualConentModeration](#textualconentmoderation).|
+|emotions| Измерение [emotions](#emotions).|
+|topics|Измерение [topics](#topics).|
 
 Пример:
 
@@ -320,7 +325,6 @@ instances|Список диапазонов времени этого блока
     ]
 }
 ] 
-
 ```
 
 #### <a name="faces"></a>faces
@@ -444,7 +448,7 @@ instances|Список диапазонов времени этого блока
           "id": 0,
           "instances": [
             {
-          "thumbnailId": "00000000-0000-0000-0000-000000000000",
+                "thumbnailId": "00000000-0000-0000-0000-000000000000",
               "start": "00: 00: 00.1670000",
               "end": "00: 00: 00.2000000"
             }
@@ -453,7 +457,7 @@ instances|Список диапазонов времени этого блока
       ],
       "instances": [
         {
-       "thumbnailId": "00000000-0000-0000-0000-000000000000",   
+            "thumbnailId": "00000000-0000-0000-0000-000000000000",  
           "start": "00: 00: 00.2000000",
           "end": "00: 00: 05.0330000"
         }
@@ -466,7 +470,7 @@ instances|Список диапазонов времени этого блока
           "id": 1,
           "instances": [
             {
-          "thumbnailId": "00000000-0000-0000-0000-000000000000",        
+                "thumbnailId": "00000000-0000-0000-0000-000000000000",      
               "start": "00: 00: 05.2670000",
               "end": "00: 00: 05.3000000"
             }
@@ -667,10 +671,144 @@ instances|Список диапазонов времени этого блока
 |bannedWordsCount |Число запрещенных слов.|
 |bannedWordsRatio |Соотношение к общему числу слов.|
 
+#### <a name="emotions"></a>emotions
+
+Индексатор видео определяет эмоции на основе речевых и звуковых признаков. Определяются следующие эмоции: радость, грусть, гнев или страх.
+
+|ИМЯ|ОПИСАНИЕ|
+|---|---|
+|id|Идентификатор эмоции.|
+|Тип|Момент проявления эмоции, определенный на основе речевых и звуковых признаков. Возможные эмоции: радость, грусть, гнев или страх.|
+|instances|Список диапазонов времени, когда проявлялась эта эмоция.|
+
+```json
+"emotions": [{
+    "id": 0,
+    "type": "Fear",
+    "instances": [{
+      "adjustedStart": "0:00:39.47",
+      "adjustedEnd": "0:00:45.56",
+      "start": "0:00:39.47",
+      "end": "0:00:45.56"
+    },
+    {
+      "adjustedStart": "0:07:19.57",
+      "adjustedEnd": "0:07:23.25",
+      "start": "0:07:19.57",
+      "end": "0:07:23.25"
+    }]
+  },
+  {
+    "id": 1,
+    "type": "Anger",
+    "instances": [{
+      "adjustedStart": "0:03:55.99",
+      "adjustedEnd": "0:04:05.06",
+      "start": "0:03:55.99",
+      "end": "0:04:05.06"
+    },
+    {
+      "adjustedStart": "0:04:56.5",
+      "adjustedEnd": "0:05:04.35",
+      "start": "0:04:56.5",
+      "end": "0:05:04.35"
+    }]
+  },
+  {
+    "id": 2,
+    "type": "Joy",
+    "instances": [{
+      "adjustedStart": "0:12:23.68",
+      "adjustedEnd": "0:12:34.76",
+      "start": "0:12:23.68",
+      "end": "0:12:34.76"
+    },
+    {
+      "adjustedStart": "0:12:46.73",
+      "adjustedEnd": "0:12:52.8",
+      "start": "0:12:46.73",
+      "end": "0:12:52.8"
+    },
+    {
+      "adjustedStart": "0:30:11.29",
+      "adjustedEnd": "0:30:16.43",
+      "start": "0:30:11.29",
+      "end": "0:30:16.43"
+    },
+    {
+      "adjustedStart": "0:41:37.23",
+      "adjustedEnd": "0:41:39.85",
+      "start": "0:41:37.23",
+      "end": "0:41:39.85"
+    }]
+  },
+  {
+    "id": 3,
+    "type": "Sad",
+    "instances": [{
+      "adjustedStart": "0:13:38.67",
+      "adjustedEnd": "0:13:41.3",
+      "start": "0:13:38.67",
+      "end": "0:13:41.3"
+    },
+    {
+      "adjustedStart": "0:28:08.88",
+      "adjustedEnd": "0:28:18.16",
+      "start": "0:28:08.88",
+      "end": "0:28:18.16"
+    }]
+  }
+],
+```
+
+#### <a name="topics"></a>topics
+
+Индексатор видео делает выводы о главных темах в расшифровке речи. При возможности включается 1-й уровень классификации [IPTC](https://iptc.org/standards/media-topics/). 
+
+|ИМЯ|ОПИСАНИЕ|
+|---|---|
+|id|Идентификатор темы.|
+|name|Название темы, например "Фармацевтика".|
+|referenceId|Подсказки, отражающие иерархию темы. Например: "Здоровый образ жизни / Медицина и здравоохранение / Фармацевтика".|
+|confidence|Степень уверенности в диапазоне [0,1]. Чем больше значение, тем выше степень уверенности.|
+|Язык|Язык темы.|
+|iptcName|Название кода мультимедиа IPTC, если таковой обнаружен.|
+|instances |Сейчас Индексатор видео не выполняет индексацию темы по интервалам времени, поэтому в качестве интервала используется все видео.|
+
+```json
+"topics": [{
+    "id": 0,
+    "name": "INTERNATIONAL RELATIONS",
+    "referenceId": "POLITICS AND GOVERNMENT/FOREIGN POLICY/INTERNATIONAL RELATIONS",
+    "referenceType": "VideoIndexer",
+    "confidence": 1,
+    "language": "en-US",
+    "instances": [{
+        "adjustedStart": "0:00:00",
+        "adjustedEnd": "0:03:36.25",
+        "start": "0:00:00",
+        "end": "0:03:36.25"
+    }]
+}, {
+    "id": 1,
+    "name": "Politics and Government",
+    "referenceType": "VideoIndexer",
+    "iptcName": "Politics",
+    "confidence": 0.9041,
+    "language": "en-US",
+    "instances": [{
+        "adjustedStart": "0:00:00",
+        "adjustedEnd": "0:03:36.25",
+        "start": "0:00:00",
+        "end": "0:03:36.25"
+    }]
+}]
+. . .
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[API Индексатора видео](https://api-portal.videoindexer.ai)
+[Портал разработчика Индексатора видео](https://api-portal.videoindexer.ai)
 
 См. дополнительные сведения о том, как [внедрить мини-приложения Индексатора видео в свое приложение](video-indexer-embed-widgets.md). 
 

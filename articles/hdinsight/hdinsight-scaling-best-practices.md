@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/02/2018
 ms.author: ashish
-ms.openlocfilehash: d554cdf5e89898874811ea113985fac4b332fac6
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 93eb6fb0da86909dfc880db2a9bb2331abe4418a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43109937"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948136"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
@@ -28,11 +28,13 @@ HDInsight обеспечивает гибкость, предоставляя в
     Set-AzureRmHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <NewSize>
     ```
     
-* Чтобы масштабировать кластер с помощью [Azure CLI](hdinsight-administer-use-command-line.md), выполните команду ниже:
+* Чтобы масштабировать кластер с помощью [классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md), выполните команду ниже:
 
     ```
     azure hdinsight cluster resize [options] <clusterName> <Target Instance Count>
     ```
+
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
     
 * Чтобы масштабировать кластер с помощью [портала Azure](https://portal.azure.com), откройте панель кластера HDInsight, выберите **Изменить масштаб кластера** в меню слева, а затем на панели изменения масштаба кластера введите количество рабочих узлов и нажмите кнопку "Сохранить".
 

@@ -1,6 +1,6 @@
 ---
-title: Импорт и экспорт файла доменной зоны в Azure DNS с помощью Azure CLI 2.0 | Документация Майкрософт
-description: Узнайте, как импортировать файл зоны DNS в Azure DNS и экспортировать его оттуда с помощью интерфейса командной строки Azure CLI 2.0
+title: Импорт и экспорт файла доменной зоны в Azure DNS с помощью Azure CLI | Документы Майкрософт
+description: Узнайте, как импортировать файл зоны DNS в Azure DNS и экспортировать его оттуда с помощью интерфейса командной строки Azure.
 services: dns
 documentationcenter: na
 author: vhorne
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: victorh
-ms.openlocfilehash: 7578d078b147b5c4bf42f5343d3fdfdf6f0bc42e
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 5afb607f0410b428d8e67fdff043a4e376dd60a5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39171611"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46956359"
 ---
-# <a name="import-and-export-a-dns-zone-file-using-the-azure-cli-20"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI 2.0 
+# <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI 
 
-В этой статье приводятся пошаговые инструкции по импорту и экспорту файлов зоны DNS для Azure DNS с помощью Azure CLI 2.0.
+В этой статье приводятся пошаговые инструкции по импорту и экспорту файлов зоны DNS для Azure DNS с помощью Azure CLI.
 
 ## <a name="introduction-to-dns-zone-migration"></a>Общие сведения о миграции зоны DNS
 
@@ -30,7 +30,7 @@ ms.locfileid: "39171611"
 
 Azure DNS поддерживает импорт и экспорт файлов зоны с помощью интерфейса командной строки Azure (CLI). Импорт файла зоны с помощью Azure PowerShell или портала Azure в настоящее время **не** поддерживается.
 
-Azure CLI 2.0 — это кроссплатформенная программа командной строки для управления службами Azure. Для платформ Windows, Mac и Linux ее можно скачать на [странице скачивания Azure](https://azure.microsoft.com/downloads/). Поддержка разных платформ важна при экспорте и импорте файлов зоны, так как наиболее распространенное программное обеспечение сервера доменных имен ([BIND](https://www.isc.org/downloads/bind/)) обычно выполняется в системе Linux.
+Интерфейс командной строки Azure — это кроссплатформенная программа командной строки для управления службами Azure. Для платформ Windows, Mac и Linux ее можно скачать на [странице скачивания Azure](https://azure.microsoft.com/downloads/). Поддержка разных платформ важна при экспорте и импорте файлов зоны, так как наиболее распространенное программное обеспечение сервера доменных имен ([BIND](https://www.isc.org/downloads/bind/)) обычно выполняется в системе Linux.
 
 
 ## <a name="obtain-your-existing-dns-zone-file"></a>Получение существующего файла зоны DNS

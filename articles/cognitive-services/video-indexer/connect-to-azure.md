@@ -1,20 +1,21 @@
 ---
-title: Создание учетной записи Индексатора видео, подключенной к Azure | Документация Майкрософт
-description: В этой статье объясняется, как создать учетную запись Индексатора видео, подключенную к Azure.
+title: Создание учетной записи Индексатора видео на портале Azure
+titlesuffix: Azure Cognitive Services
+description: В этой статье показано, как создать учетную запись Индексатора видео на портале Azure.
 services: cognitive services
-documentationcenter: ''
 author: juliako
-manager: erikre
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
+ms.component: video-indexer
+ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: juliako
-ms.openlocfilehash: c598fdae40b4552e1d4dc29b8558d82d0830160a
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 8b8aa3e2f7a461c13cc73270863498283f02f740
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841848"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45983158"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -52,16 +53,18 @@ ms.locfileid: "43841848"
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
 
-1. Выполните вход в [https://www.videoindexer.ai/](https://www.videoindexer.ai/), а затем нажмите кнопку **Подключение к Azure**:
+1. Откройте веб-сайт [Индексатора видео](https://www.videoindexer.ai/) и выполните вход.
+
+2. Нажмите кнопку **Connect to Azure** (Подключиться к Azure):
 
     ![Подключение к Azure](./media/create-account/connect-to-azure.png)
 
-2. В открывшемся списке подписок выберите подписку, которую нужно использовать. 
+3. В открывшемся списке подписок выберите подписку, которую нужно использовать. 
 
     ![Подключение Индексатора видео к Azure](./media/create-account/connect-vi-to-azure-subscription.png)
 
-3. Выберите регион Azure в поддерживаемых расположениях: "Западная часть США 2", "Северная Европа" или "Восточная Азия".
-4. В разделе **Учетная запись Служб мультимедиа Azure** выберите один из следующих вариантов:
+4. Выберите регион Azure в поддерживаемых расположениях: "Западная часть США 2", "Северная Европа" или "Восточная Азия".
+5. В разделе **Учетная запись Служб мультимедиа Azure** выберите один из следующих вариантов:
 
     * Чтобы создать учетную запись Служб мультимедиа, щелкните **Создать группу ресурсов**. Укажите имя для группы ресурсов.
 
@@ -85,13 +88,13 @@ ms.locfileid: "43841848"
         |Идентификатор приложения|Идентификатор приложения Azure AD с разрешениями для указанной учетной записи Cлужб мультимедиа. Дополнительные сведения см. в разделе [Проверка подлинности субъекта-службы](../../media-services/previous/media-services-portal-get-started-with-aad.md#service-principal-authentication).|
         |Ключ приложения|Дополнительные сведения см. в разделе [Проверка подлинности субъекта-службы](../../media-services/previous/media-services-portal-get-started-with-aad.md#service-principal-authentication).|
 
-5. Когда все будет готово, щелкните **Подключиться**. Эта операция может занять несколько минут. 
+6. Когда все будет готово, щелкните **Подключиться**. Эта операция может занять несколько минут. 
 
     Когда подключение к Azure будет установлено, учетная запись Индексатора видео появится в списке учетных записей:
 
     ![Новая учетная запись](./media/create-account/new-account.png)
 
-6. Перейдите к новой учетной записи. 
+7. Перейдите к новой учетной записи. 
 
     ![Учетная запись Индексатора видео](./media/create-account/vi-account.png)
 

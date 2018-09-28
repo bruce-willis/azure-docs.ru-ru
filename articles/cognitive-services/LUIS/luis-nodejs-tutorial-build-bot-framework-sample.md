@@ -1,5 +1,6 @@
 ---
-title: Интеграция LUIS с ботом с помощью пакета SDK для построителя ботов для Node.js в Azure | Документы Майкрософт
+title: Бот LUIS с Node.js — бот веб-приложения — Bot Framework SDK 3.0
+titleSuffix: Azure Cognitive Services
 description: Создайте бот, интегрированный с приложением LUIS, на основе платформы Bot Framework.
 services: cognitive-services
 author: diberry
@@ -7,18 +8,18 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/06/2018
+ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 6d6937105b11d94138b51660dc9f3c5e682e19bc
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 4967c6c8eb9f849006beb78cfd2e41eba53b6867
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224081"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46952976"
 ---
-# <a name="integrate-luis-with-a-bot-using-the-bot-builder-sdk-for-nodejs"></a>Интеграция LUIS с ботом с помощью пакета SDK для построителя ботов для Node.js
+# <a name="luis-bot-in-nodejs"></a>Бот LUIS в Node.js
 
-В этом руководстве мы создадим бот, интегрированный с приложением LUIS, на основе платформы [Bot Framework][BotFramework].
+Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя Node.js. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -32,7 +33,7 @@ ms.locfileid: "39224081"
 | HomeAutomation.TurnOff | Turn off the bedroom lights (Выключить свет в спальне). | Бот вызывает `TurnOffDialog` при обнаружении `HomeAutomation.TurnOff`. В этом диалоговом окне вы вызываете службу IoT для выключения устройства и сообщаете пользователю, что устройство выключено. |
 
 
-## <a name="create-a-language-understanding-bot-with-bot-service"></a>Создание бота с распознаванием речи с помощью службы Bot Service
+## <a name="create-a-language-understanding-bot-with-bot-service"></a>Создание бота для распознавания речи с помощью службы Azure Bot
 
 1. На [портале Azure](https://portal.azure.com) в колонке меню выберите **Создать ресурс**, а затем выберите **Показать все**.
 
@@ -45,7 +46,10 @@ ms.locfileid: "39224081"
 3. В колонке **Служба ботов** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будут созданы и развернуты служба ботов и приложение LUIS. Чтобы использовать функцию [подготовки речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming), перед созданием бота ознакомьтесь с [требованиями к региону](luis-resources-faq.md#what-luis-regions-support-bot-framework-speech-priming). 
     * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
     * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
-    * В поле **Шаблон бота** выберите шаблон **Распознавание речи (Node.js)**.
+    * В поле **Шаблон бота** выберите:
+        * **SDK v3**
+        * **Node.js**
+        * **Распознавание речи**
     * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион][LUIS] разработки, в котором создано приложение.
     * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 

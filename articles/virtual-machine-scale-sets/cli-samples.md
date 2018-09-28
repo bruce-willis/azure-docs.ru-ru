@@ -1,6 +1,6 @@
 ---
-title: Примеры для Azure CLI 2.0 | Документация Майкрософт
-description: Примеры для Azure CLI 2.0
+title: Примеры Azure CLI | Документация Майкрософт
+description: Примеры Azure CLI
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: cynthn
@@ -16,16 +16,16 @@ ms.workload: na
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: ca362f79ff45a886ed570cfdf68b731064d1c17f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: d563afc6545cd84654ef1bfa0fac3931e2b80152
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38597372"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46970368"
 ---
-# <a name="azure-cli-20-samples-for-virtual-machine-scale-sets"></a>Примеры для Azure CLI 2.0 для масштабируемых наборов виртуальных машин
+# <a name="azure-cli-samples-for-virtual-machine-scale-sets"></a>Примеры Azure CLI для масштабируемых наборов виртуальных машин
 
-В следующей таблице содержатся ссылки на скрипты Bash, созданные с помощью Azure CLI 2.0.
+В следующей таблице содержатся ссылки на скрипты Bash, созданные с помощью Azure CLI.
 
 | | |
 |---|---|

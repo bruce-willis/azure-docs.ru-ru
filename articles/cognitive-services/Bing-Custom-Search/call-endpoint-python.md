@@ -9,45 +9,43 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: 88bf82805ba46abf79b7899e0428a83485062302
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 3666e92372e9bed80e5c0c7991dcac730cebb588
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39504973"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46967598"
 ---
 # <a name="call-bing-custom-search-endpoint-python"></a>Конечная точка службы пользовательского поиска Bing (Python)
 
-В этом кратком руководстве показано, как для запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Python для вызова конечной точки службы пользовательского поиска Bing. 
+В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Python для вызова конечной точки службы пользовательского поиска Bing. 
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим кратким руководством вам понадобится:
 
-- Экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы пользовательского поиска Bing).
+- Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
+- Установленный компонент [Python](https://www.python.org/).
+- ключ подписки; Ключ подписки можно получить при активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Кроме того, вы можете использовать ключ платной подписки из панели мониторинга Azure (см. раздел об [учетной записи API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)).    
 
--  Установленный компонент [Python](https://www.python.org/).
-
-- [Учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для этого краткого руководства достаточно иметь [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure. 
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-Чтобы вызвать конечную точку службы пользовательского поиска Bing, выполните следующие действия.
+Чтобы запустить этот пример, выполните следующее.
 
-1. Создайте каталог для своего кода.
-
-2. Из командной строки или терминала с правами администратора перейдите в эту папку.
-
-3. Установите модуль Python **requests**.
-
+1. Создайте папку для своего кода.  
+  
+2. Из командной строки или терминала с правами администратора перейдите в эту папку.  
+  
+3. Установите модуль Python **requests**.  
+  
     <pre>
     pip install pipenv
     pipenv install requests
-    </pre>
-    
-7. Создайте файл BingCustomSearch.py и скопируйте в него приведенный ниже код.
-
-8. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом и идентификатором конфигурации (см. шаг 1).
-
+    </pre>  
+      
+4. Создайте файл с именем BingCustomSearch.py в созданной папке и скопируйте в него следующий код. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом подписки и идентификатором конфигурации.  
+  
     ``` Python
     import json
     import requests
@@ -59,8 +57,10 @@ ms.locfileid: "39504973"
     url = 'https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?q=' + searchTerm + '&customconfig=' + customConfigId
     r = requests.get(url, headers={'Ocp-Apim-Subscription-Key': subscriptionKey})
     print(r.text)
-    ```
-9. Выполните код с помощью приведенной ниже команды.
+    ```  
+  
+7. Выполните код с помощью приведенной ниже команды.  
+  
     ```
     python BingCustomSearch.py
     ```

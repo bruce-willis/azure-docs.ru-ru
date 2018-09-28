@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/14/2017
 ms.author: hermannd
-ms.openlocfilehash: cc4438a770a8092275373ccf8da9cc9951a1f906
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 8a16fa9f639a6a4a17d6904d6bc9a0e31f774e0c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37858618"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950052"
 ---
 # <a name="running-sap-netweaver-on-microsoft-azure-suse-linux-vms"></a>Запуск SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure
 В этой статье описываются различные моменты, которые следует учитывать при запуске SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure. По состоянию на 19 мая 2016 года SAP NetWeaver официально поддерживается на виртуальных машинах SUSE Linux в Azure. Все сведения о версиях Linux, версиях ядра SAP и других необходимых компонентах можно найти в примечании SAP 1928533 "Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure".
@@ -119,7 +119,7 @@ ms.locfileid: "37858618"
    ```
 Дополнительные сведения о JSON-файлах шаблонов см. в статьях [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../../../resource-group-authoring-templates.md) и [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/).
 
-Дополнительные сведения об интерфейсе командной строки и Azure Resource Manager см. в статье [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../../../xplat-cli-azure-resource-manager.md).
+Дополнительные сведения о классическом интерфейсе командной строки Azure и Azure Resource Manager см. в статье [Использование классического интерфейса командной строки Azure для Mac, Linux и Windows при работе с Azure Resource Manager](../../../xplat-cli-azure-resource-manager.md).
 
 ## <a name="sap-license-and-hardware-key"></a>Ключ оборудования и лицензия SAP
 Для официальной сертификации SAP-Azure был представлен новый механизм для вычисления ключа оборудования SAP, который используется для лицензии SAP. Ядро SAP было адаптировано для использования нового алгоритма. В предыдущих версиях ядра SAP для Linux такое изменение кода отсутствует. Поэтому в определенных ситуациях (например, при изменении размера виртуальной машины Azure) ключ оборудования SAP изменяется, что делает лицензию SAP недействительной. Решение предоставлено с более поздними версиями ядра SAP Linux.  Подробные исправления ядра SAP задокументированы в примечании SAP 1928533.

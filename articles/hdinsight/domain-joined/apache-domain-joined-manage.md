@@ -1,23 +1,23 @@
 ---
-title: Управление присоединенными к домену кластерами HDInsight в Azure
-description: Узнайте, как управлять присоединенными к домену кластерами HDInsight
+title: Управление кластерами HDInsight с помощью корпоративного пакета безопасности — Azure
+description: Дополнительные сведения об управлении кластерами HDInsight с помощью корпоративного пакета безопасности.
 services: hdinsight
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/17/2018
-ms.openlocfilehash: 494049cffe77e23c33528747e04bf96065fac2e2
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.date: 08/24/2018
+ms.openlocfilehash: 02a77ef9589a42a6f33087ba7e22efc3144a8f2c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43051610"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46973564"
 ---
-# <a name="manage-domain-joined-hdinsight-clusters"></a>Управление присоединенными к домену кластерами HDInsight
-Узнайте, что такое пользователи и роли в кластерах HDInsight, присоединенных к домену, и как управлять присоединенными к домену кластерами HDInsight.
+# <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
+Познакомьтесь с пользователями и ролями в корпоративном пакете безопасности (ESP) HDInsight, а также с тем, как управлять кластерами ESP.
 
 ## <a name="use-vscode-to-link-to-domain-joined-cluster"></a>Использование Visual Studio Code для связывания присоединенного к домену кластера
 
@@ -140,12 +140,12 @@ ms.locfileid: "43051610"
 
 
 
-## <a name="users-of-domain-joined-hdinsight-clusters"></a>Пользователи в присоединенном к домену кластере HDInsight.
-Кластер HDInsight, который находится вне домена, имеет две учетные записи пользователя, которые создаются вместе с кластером.
+## <a name="users-of-hdinsight-clusters-with-esp"></a>Пользователи кластеров HDInsight с корпоративным пакетом безопасности
+При создании кластера HDInsight без ESP в нем создаются две учетные записи пользователя:
 
 * **Администратор Ambari**: эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эта учетная запись используется для входа на Ambari по адресу https://&lt;имя_кластера >.azurehdinsight.net. Ее также можно использовать для выполнения запросов по представлениям Ambari, выполнения заданий с помощью внешних средств (PowerShell, Templeton, Visual Studio и т. п.) и для проверки подлинности с помощью драйвера Hive ODBC и средств бизнес-аналитики (Excel, PowerBI или Tableau).
 
-Для кластера HDInsight, присоединенного к домену, в дополнение к администратору Ambari создаются еще три пользователя.
+В кластере HDInsight с корпоративным пакетом безопасности, кроме администратора Ambari, создаются еще три пользователя.
 
 * **Администратор Ranger**: это локальная учетная запись администратора Apache Ranger. Она не является пользователем домена Active Directory. Эту учетную запись можно использовать для настройки политик, создания других пользователей-администраторов или делегированных администраторов (чтобы они могли управлять политиками). По умолчанию используется имя пользователя *admin* и такой же пароль, как для администратора Ambari. Этот пароль можно изменить на странице настроек в Ranger.
 * **Пользователь домена и администратор кластера**: это пользователь домена Active Directory, который является администратором кластера Hadoop, а также служб Ambari и Ranger. Учетные данные этого пользователя нужно предоставить во время создания кластера. Этот пользователь имеет следующие права.
@@ -159,8 +159,8 @@ ms.locfileid: "43051610"
     В пределах кластера существуют некоторые конечные точки (например, Templeton), которые не управляются службой Ranger, и следовательно не являются безопасными. Такие конечные точки закрываются для всех пользователей, за исключением пользователя домена и администратора кластера.
 * **Обычный**: во время создания кластера можно указать несколько групп Active Directory. Пользователи в эти группах будут синхронизированы с Ranger и Ambari. Эти пользователи являются пользователями домена и будут иметь доступ только к конечным точкам, которые управляются службой Ranger (например, Hiveserver2). Для этих пользователей применяются все политики RBAC и правила аудита.
 
-## <a name="roles-of-domain-joined-hdinsight-clusters"></a>Роли в присоединенном к домену кластере HDInsight
-В домене HDInsight существуют следующие роли:
+## <a name="roles-of-hdinsight-clusters-with-esp"></a>Роли кластеров HDInsight с корпоративным пакетом безопасности
+Корпоративный пакет безопасности HDInsight предоставляет следующие роли:
 
 * администратор кластера;
 * оператор кластера;
@@ -174,7 +174,7 @@ ms.locfileid: "43051610"
 2. В меню слева щелкните **Роли**.
 3. Щелкните синий вопросительный знак, чтобы просмотреть разрешения.
 
-    ![Роли в присоединенном к домену кластере HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-roles-permissions.png)
+    ![Разрешения роли HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-roles-permissions.png)
 
 ## <a name="open-the-ambari-management-ui"></a>Вход в пользовательский интерфейс управления Ambari
 
@@ -184,43 +184,43 @@ ms.locfileid: "43051610"
 4. Войдите в Ambari, используя имя пользователя и пароль пользователя домена и администратора кластера.
 5. Щелкните раскрывающееся меню **Администратор** в правом верхнем углу, затем нажмите кнопку **Управление Ambari**.
 
-    ![Управление Ambari для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-manage-ambari.png)
+    ![Управление Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-manage-ambari.png)
 
     Пользовательский интерфейс выглядит примерно так:
 
-    ![Интерфейс управления Ambari для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui.png)
+    ![Пользовательский интерфейс управления Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui.png)
 
 ## <a name="list-the-domain-users-synchronized-from-your-active-directory"></a>Список пользователей домена, синхронизированных из Active Directory
 1. Откройте пользовательский интерфейс управления Ambari.  См. раздел [Вход в пользовательский интерфейс управления Ambari](#open-the-ambari-management-ui).
 2. В меню слева щелкните **Users**(Пользователи). Вы увидите всех пользователей, синхронизированных в кластер HDInsight из Active Directory.
 
-    ![Список пользователей в интерфейсе управления Ambari для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-users.png)
+    ![Список пользователей интерфейса управления Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-users.png)
 
 ## <a name="list-the-domain-groups-synchronized-from-your-active-directory"></a>Список групп домена, синхронизированных из Active Directory
 1. Откройте пользовательский интерфейс управления Ambari.  См. раздел [Вход в пользовательский интерфейс управления Ambari](#open-the-ambari-management-ui).
 2. В меню слева щелкните **Группы**. Вы увидите все группы, синхронизированные в кластер HDInsight из Active Directory.
 
-    ![Список групп в интерфейсе управления Ambari для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-groups.png)
+    ![Список групп интерфейса управления Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-groups.png)
 
 ## <a name="configure-hive-views-permissions"></a>Настройка разрешений для представлений Hive
 1. Откройте пользовательский интерфейс управления Ambari.  См. раздел [Вход в пользовательский интерфейс управления Ambari](#open-the-ambari-management-ui).
 2. В меню слева щелкните **Представления**.
 3. Щелкните **HIVE**, чтобы открыть подробную информацию.
 
-    ![Представления Hive в интерфейсе управления Ambari для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views.png)
+    ![Представления Hive в интерфейсе управления Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views.png)
 4. Щелкните ссылку **Представление Hive**, чтобы настроить представления Hive.
 5. Выполните прокрутку вниз до раздела **Разрешения**.
 
-    ![Настройка разрешений для представлений Hive в интерфейсе управления Ambari для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views-permissions.png)
+    ![Настройка разрешений для представлений Hive в интерфейсе управления Ambari для HDInsight с ESP](./media/apache-domain-joined-manage/hdinsight-domain-joined-ambari-management-ui-hive-views-permissions.png)
 6. Щелкните **Добавить пользователя** или **Добавить группу**, а затем укажите пользователей или группы, которые могут использовать представления Hive.
 
 ## <a name="configure-users-for-the-roles"></a>Настройка ролей для пользователей
- Список ролей и разрешений см. в разделе [Роли в присоединенном к домену кластере HDInsight](#roles-of-domain---joined-hdinsight-clusters).
+ Список ролей и соответствующих разрешений см. в разделе [Роли кластеров HDInsight с корпоративным пакетом безопасности](#roles-of-domain---joined-hdinsight-clusters).
 
 1. Откройте пользовательский интерфейс управления Ambari.  См. раздел [Вход в пользовательский интерфейс управления Ambari](#open-the-ambari-management-ui).
 2. В меню слева щелкните **Роли**.
 3. Щелкните **Добавить пользователя** или **Добавить группу**, чтобы назначить роли для пользователей и групп.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Сведения о настройке присоединенного к домену кластера HDInsight см. в [этой статье](apache-domain-joined-configure.md).
-* Сведения о настройке политик Hive и выполнении запросов Hive для присоединенного к домену кластера HDInsight см. [здесь](apache-domain-joined-run-hive.md).
+* Описание настройки кластера HDInsight с корпоративным пакетом безопасности см. в разделе [Настройка кластеров HDInsight с корпоративным пакетом безопасности](apache-domain-joined-configure.md).
+* Описание настройки политик Hive и выполнения запросов Hive см. в разделе [Настройка политик Hive в кластерах HDInsight с корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).

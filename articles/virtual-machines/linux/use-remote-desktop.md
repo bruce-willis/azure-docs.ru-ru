@@ -14,21 +14,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2018
 ms.author: cynthn
-ms.openlocfilehash: 5e79cfa2c428323d8531bec7eab875a2dace4ff2
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: aa1891ecec139746d6051dcabdb3c9db4f6062c6
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37934216"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996355"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
 Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](http://www.xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этой статьей требуется существующая виртуальная машина Ubuntu 16.04 LTS в Azure. Если требуется создать виртуальную машину, используйте один из следующих методов:
 
-- [Azure CLI 2.0](quick-create-cli.md);
+- [Интерфейс командной строки Azure](quick-create-cli.md)
 - [портал Azure](quick-create-portal.md).
 
 
@@ -86,7 +86,7 @@ sudo passwd azureuser
 ## <a name="create-a-network-security-group-rule-for-remote-desktop-traffic"></a>Создание правила группы безопасности сети, разрешающего трафик с удаленного рабочего стола
 Чтобы трафик с удаленного рабочего стола мог поступать на виртуальную машину Linux, необходимо создать правило группы безопасности сети, разрешающее использовать протокол TCP на порту 3389 для доступа к виртуальной машине. Дополнительные сведения о правилах групп безопасности сети см. в статье [Безопасность сети](../../virtual-network/security-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Вы также можете [создать правило группы безопасности сети с помощью портала Azure](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-В следующем примере создается правило группы безопасности сети с именем [az vm open-port](/cli/azure/vm#az-vm-open-port) на порту *3389*. Из Azure CLI 2.0, а не сеанса SSH с виртуальной машиной, откройте следующее правило группы безопасности сети:
+В следующем примере создается правило группы безопасности сети с именем [az vm open-port](/cli/azure/vm#az-vm-open-port) на порту *3389*. Из Azure CLI, а не сеанса SSH с виртуальной машиной, откройте следующее правило группы безопасности сети:
 
 ```azurecli
 az vm open-port --resource-group myResourceGroup --name myVM --port 3389

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: juluk
-ms.openlocfilehash: 1321645d97e7f6ff2faed1e61ddb608afcb7b413
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 5087b8a1d675fb6fb2bbfb2b46a09c215bf5e9ae
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038359"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998769"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -31,7 +31,7 @@ Azure Cloud Shell выполняется в `Ubuntu 16.04 LTS`.
 
 ### <a name="secure-automatic-authentication"></a>Безопасная автоматическая аутентификация
 
-Cloud Shell безопасно и автоматически выполняет аутентификацию доступа к учетным записям для Azure CLI 2.0 и Azure PowerShell.
+Cloud Shell безопасно и автоматически выполняет проверку подлинности при доступе к учетным записям для Azure CLI и Azure PowerShell.
 
 ### <a name="home-persistence-across-sessions"></a>Сохранение каталога $Home между сеансами
 
@@ -60,7 +60,7 @@ PowerShell в Cloud Shell (предварительная версия) запу
 |Категория   |ИМЯ   |
 |---|---|
 |Средства Linux            |bash<br> zsh<br> sh<br> tmux<br> dig<br>               |
-|Инструменты Azure            |[Azure CLI 2.0](https://github.com/Azure/azure-cli) и [1.0](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy)<br> [Интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli) |
+|Инструменты Azure            |[Azure CLI](https://github.com/Azure/azure-cli) и [классический интерфейс командной строки Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy)<br> [Интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli) |
 |Текстовые редакторы           |vim<br> nano<br> emacs       |
 |Система управления версиями         |git                    |
 |Инструменты сборки            |make<br> maven<br> npm<br> pip         |
@@ -82,5 +82,5 @@ PowerShell в Cloud Shell (предварительная версия) запу
 ## <a name="next-steps"></a>Дополнительная информация
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
-[Справочник команд Azure CLI 2.0](https://docs.microsoft.com/cli/azure/) <br>
+[Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Дополнительные сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/) <br>

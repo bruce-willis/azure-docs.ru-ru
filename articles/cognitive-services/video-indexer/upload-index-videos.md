@@ -1,22 +1,23 @@
 ---
-title: Отправка и индексирование видео с помощью Индексатора видео Azure | Документация Майкрософт
-description: В этом разделе показано, как использовать API для отправки и индексирования видео с помощью Индексатора видео Azure
+title: Пример. Отправка и индексирование видео с помощью Индексатора видео
+titlesuffix: Azure Cognitive Services
+description: В этой статье показано, как использовать API для отправки и индексирования видео с помощью Индексатора видео.
 services: cognitive services
-documentationcenter: ''
 author: juliako
-manager: erikre
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 08/17/2018
+ms.component: video-indexer
+ms.topic: sample
+ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: ac9d3f8fd10a3b65a2af2999b8c7ade7965de912
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: e84411535b82b3e4861b529f490bdde0eb25fd42
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43664450"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45983890"
 ---
-# <a name="upload-and-index-your-videos"></a>Отправка и индексирование видео  
+# <a name="example-upload-and-index-your-videos"></a>Пример. Отправка и индексирование видео  
 
 В этой статье показано, как отправить видео с помощью Индексатора видео Azure. API Индексатора видео предоставляет два варианта загрузки: 
 
@@ -33,7 +34,7 @@ ms.locfileid: "43664450"
 ## <a name="uploading-considerations"></a>Рекомендации по отправке
     
 - При загрузке видео на основе URL-адреса (предпочтительно) конечная точка должна быть защищена с использованием протокола TLS версии 1.2 (или выше).
-- Размер байтового массива ограничен 4 ГБ, а время ожидания истекает через 30 минут.
+- Размер байтового массива ограничен 2 ГБ, а время ожидания истекает через 30 минут.
 - URL-адрес, указанный в параметре `videoURL`, нужно закодировать.
 
 ## <a name="configurations-and-params"></a>Конфигурации и параметры

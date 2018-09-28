@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: jasonh
-ms.openlocfilehash: 5fbc325e0b0b0e3cdf0d9156ab115d3cbf77f6dd
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: f5d7a5587d47f7601f8dc3f65318a6b7d486f58e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43104811"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46953299"
 ---
 # <a name="install-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>Установка Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов
 
@@ -58,7 +58,7 @@ ms.locfileid: "43104811"
 > [!NOTE]
 > Действие сценария может применяться следующими способами:
 > * Azure PowerShell
-> * Интерфейс командной строки Azure
+> * Классический интерфейс командной строки Azure
 > * Пакет SDK для HDInsight .NET
 > * Шаблоны Azure Resource Manager
 > 

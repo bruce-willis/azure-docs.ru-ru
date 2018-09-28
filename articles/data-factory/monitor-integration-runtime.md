@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: douglasl
-ms.openlocfilehash: 59c2f865ae5e056b0fabb360712f6eb622943145
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 4f1e6e7e61cdfd72251120f3c03df7a689aecafe
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45574629"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46997460"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure  
 **Среда выполнения интеграции** — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. В фабрике данных предусмотрено три типа сред выполнения интеграции:
@@ -168,10 +168,10 @@ Get-AzureRmDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -
 | NodeSize | Размер каждого узла среды выполнения интеграции SSIS Azure. |
 | NodeCount | Количество узлов в среде выполнения интеграции SSIS Azure. |
 | MaxParallelExecutionsPerNode | Число параллельных выполнений на каждом узле в среде выполнения интеграции SSIS Azure. |
-| CatalogServerEndpoint | Конечная точка имеющегося сервера базы данных или Управляемого экземпляра SQL Azure (предварительная версия) для размещения SSISDB. |
-| CatalogAdminUserName | Имя пользователя администратора имеющегося сервера базы данных или Управляемого экземпляра SQL Azure (предварительная версия). Служба фабрики данных использует эти сведения для подготовки SSISDB и управления ею от вашего имени. |
-| CatalogAdminPassword | Пароль администратора имеющегося сервера базы данных или Управляемого экземпляра SQL Azure (предварительная версия). |
-| CatalogPricingTier | Ценовая категория для SSISDB, размещенной на имеющемся сервере базы данных SQL Azure.  Неприменимо к Управляемому экземпляру Базы данных SQL Azure (предварительная версия), на котором размещена SSISDB. |
+| CatalogServerEndpoint | Конечная точка имеющегося сервера базы данных или управляемого экземпляра SQL Azure для размещения SSISDB. |
+| CatalogAdminUserName | Имя пользователя администратора имеющегося сервера базы данных или управляемого экземпляра SQL Azure. Служба фабрики данных использует эти сведения для подготовки SSISDB и управления ею от вашего имени. |
+| CatalogAdminPassword | Пароль администратора имеющегося сервера базы данных или управляемого экземпляра SQL Azure. |
+| CatalogPricingTier | Ценовая категория для SSISDB, размещенной на имеющемся сервере базы данных SQL Azure.  Неприменимо к Управляемому экземпляру базы данных SQL Azure, на котором размещена SSISDB. |
 | VNetId | Идентификатор ресурса виртуальной сети, к которой нужно присоединить среду выполнения интеграции SQL Server Integration Services Azure. |
 | Подсеть | Имя подсети, к которой нужно присоединить среду выполнения интеграции SSIS Azure. |
 | ИД | Идентификатор ресурса среды выполнения интеграции SSIS Azure. |
@@ -223,7 +223,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Na
 
 - [Среда выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR. 
 - [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). Эта статья содержит пошаговые инструкции для создания Azure SSIS IR и использует базу данных SQL Azure для размещения каталога SSIS. 
-- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также предоставляет инструкции по использованию Управляемого экземпляра Базы данных SQL Azure (предварительная версия) и присоединению среды выполнения интеграции к виртуальной сети. 
+- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также предоставляет инструкции по использованию Управляемого экземпляра базы данных SQL Azure и присоединению среды выполнения интеграции к виртуальной сети. 
 - [Manage an Azure-SSIS integration runtime](manage-azure-ssis-integration-runtime.md) (Управление средой выполнения интеграции Azure SSIS). В этой статье показано, как остановить, запустить или удалить Azure SSIS IR. В ней также показано, как развернуть Azure SSIS IR путем добавления дополнительных узлов в среду выполнения интеграции. 
 - [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся общие сведения о присоединении среды выполнения интеграции SQL Server Integration Services Azure к виртуальной сети Azure. Из статьи вы также узнаете, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции SQL Server Integration Services Azure к виртуальной сети с помощью портала Azure. 
 

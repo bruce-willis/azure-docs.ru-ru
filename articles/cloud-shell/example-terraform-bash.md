@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: tarcher
-ms.openlocfilehash: 6df6a3a5242e0a5fc5c03136e1cd20967a93487a
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 8512c04cb0efc698ca688724c3806291bb02d200
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29386526"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46947660"
 ---
 # <a name="deploy-with-terraform-from-bash-in-azure-cloud-shell"></a>Развертывание с помощью Terraform и Bash в Azure Cloud Shell
 В этой статье описывается создание группы ресурсов с помощью [поставщика Terraform AzureRM](https://www.terraform.io/docs/providers/azurerm/index.html). 
@@ -26,9 +26,9 @@ ms.locfileid: "29386526"
 [Hashicorp Terraform](https://www.terraform.io/) — это средство с открытым кодом, которое кодифицирует API в декларативные файлы конфигурации, которые участники команды могут совместно использовать для редактирования, просмотра и управления версиями. Поставщик Microsoft AzureRM позволяет взаимодействовать с ресурсами, поддерживаемыми Azure Resource Manager через AzureRM API. 
 
 ## <a name="automatic-authentication"></a>Автоматическая проверка подлинности
-Средство Terraform установлено в Bash в Cloud Shell по умолчанию. Кроме того, Cloud Shell автоматически выполняет проверку подлинности вашей стандартной подписки Azure CLI 2.0 для развертывания ресурсов с помощью модулей Terraform Azure.
+Средство Terraform установлено в Bash в Cloud Shell по умолчанию. Кроме того, Cloud Shell автоматически выполняет проверку подлинности вашей стандартной подписки Azure CLI для развертывания ресурсов с помощью модулей Terraform Azure.
 
-Terraform использует стандартную настроенную подписку Azure CLI 2.0. Чтобы обновить стандартную подписку, выполните следующую команду:
+Terraform использует стандартную настроенную подписку Azure CLI. Чтобы обновить стандартную подписку, выполните следующую команду:
 
 ```azurecli-interactive
 az account set --subscription mySubscriptionName
@@ -144,7 +144,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 [Команда terraform apply](https://www.terraform.io/docs/commands/apply.html) используется для применения изменений, необходимых для достижения требуемого состояния конфигурации.
 
-### <a name="verify-deployment-with-azure-cli-20"></a>Проверка развертывания с помощью Azure CLI 2.0
+### <a name="verify-deployment-with-azure-cli"></a>Проверка развертывания с помощью Azure CLI
 Выполните `az group show -n myRgName`, чтобы проверить, что ресурс был успешно подготовлен.
 
 ```azcliinteractive

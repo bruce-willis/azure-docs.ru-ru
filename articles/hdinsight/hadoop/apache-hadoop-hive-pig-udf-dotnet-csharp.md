@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: jasonh
-ms.openlocfilehash: 9a214aa51bcd4b7aab7a65cf2989edd9e9dd3dc6
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: ebc4c918745e273700a0efb54db4408bb702c75e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43044897"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991374"
 ---
 # <a name="use-c-user-defined-functions-with-hive-and-pig-streaming-on-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Hive и Pig в Hadoop HDInsight.
 
@@ -31,7 +31,7 @@ Hive и Pig могут передавать данные во внешние п�
 
     * Используйте любую интегрированную среду разработки. Мы рекомендуем использовать [Visual Studio](https://www.visualstudio.com/vs) 2015, Visual Studio 2017 или [Visual Studio Code](https://code.visualstudio.com/). В этом руководстве используется Visual Studio 2017.
 
-* Способ передачи EXE-файлов в кластер и выполнения заданий Pig и Hive. Мы рекомендуем использовать средства Data Lake для Visual Studio, Azure PowerShell и Azure CLI. В этом документе для передачи файлов и выполнения примера запроса Hive используются средства Data Lake для Visual Studio.
+* Способ передачи EXE-файлов в кластер и выполнения заданий Pig и Hive. Рекомендуется использовать средства Data Lake для Visual Studio, Azure PowerShell и Azure CLI. В этом документе для передачи файлов и выполнения примера запроса Hive используются средства Data Lake для Visual Studio.
 
     Сведения о других способах выполнения запросов Hive и заданий Pig см. в следующих документах:
 

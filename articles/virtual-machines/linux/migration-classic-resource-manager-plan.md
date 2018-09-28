@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: 19dd6a693daf0b54c7df448f21bdb098d9bbdcac
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1efe5a12da665901cdf1d09d45c36a1e3272c367
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34653507"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948678"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов. 
@@ -122,7 +122,7 @@ ms.locfileid: "34653507"
     - группы сетевой безопасности;
     - таблицы маршрутов;
 
-    Используйте команды, приведенные ниже, в последней версии Azure CLI 2.0, чтобы проверить текущие квоты Azure Resource Manager.
+    Используйте команды, приведенные ниже, в последней версии Azure CLI, чтобы проверить текущие квоты Azure Resource Manager.
 
     **Вычисления** *(ядра, группы доступности)*
 

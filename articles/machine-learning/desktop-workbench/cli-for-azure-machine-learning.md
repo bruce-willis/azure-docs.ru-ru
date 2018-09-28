@@ -11,16 +11,19 @@ ms.component: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/10/2018
-ms.openlocfilehash: 0e37e1839d2248507a30de08e2ac4c975bd3b859
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 06e85845d41b240638a5b5b4d75d64fd460a99bf
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35639658"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46953333"
 ---
 # <a name="install-and-use-the-machine-learning-cli-for-top-tasks-in-azure-machine-learning"></a>Установка и использование интерфейса командной строки для важнейших задач службы "Машинное обучение Azure"
 
-Служба "Машинное обучение Microsoft Azure" — это полнофункциональное интегрированное решение для расширенной аналитики, обработки и анализа данных. Она позволяет специалистам по обработке и анализу данных подготавливать данные, разрабатывать эксперименты и развертывать модели в облачном масштабе. 
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
+
+Служба "Машинное обучение Microsoft Azure" — это полнофункциональное интегрированное решение для расширенной аналитики, обработки и анализа данных. Она позволяет специалистам по обработке и анализу данных подготавливать данные, разрабатывать эксперименты и развертывать модели в облачном масштабе. 
 
 Служба "Машинное обучение Azure" предоставляет интерфейс командной строки (CLI), с помощью которого вы можете:
 + управлять рабочей областью и проектами;
@@ -201,7 +204,7 @@ az ml env set -n <environment name> -g <resource group name>
 ## <a name="next-steps"></a>Дополнительная информация
 
 Используйте одну из этих статей, чтобы приступить к работе: 
-+ [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../service/quickstart-installation.md)
++ [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](quickstart-installation.md)
 + [Руководство. Часть 1. Классификация цветков ириса: подготовка данных](tutorial-classifying-iris-part-1.md)
 
 Более подробная информация содержится в этой статье:

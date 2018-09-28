@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: aa031b87df51bd9f7dec40a6c3e56023e2d82d96
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 55274b08695bacf0b63b937f9e8e21c8565f1715
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579502"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46967393"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure 
 База данных SQL Azure может выдавать журналы диагностики и метрик для упрощения мониторинга. Вы можете настроить Базу данных SQL для хранения сведений об использовании ресурсов, о рабочих ролях и сеансах, а также настроить подключение к одному из этих ресурсов Azure:
 
 * **Служба хранилища Azure**. Используется для архивации больших объемов данных телеметрии по оптимальной стоимости.
 * **Центры событий Azure**. Используются для интеграции телеметрии Базы данных SQL с настраиваемым решением для мониторинга или горячими конвейерами.
-* **Azure Log Analytics**. Используется для встроенного решения для мониторинга с возможностями предоставления отчетов, предупреждений и выполнения исправлений. Этот компонент входит в пакет [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).
+* **Azure Log Analytics**. Используется для встроенного решения для мониторинга с возможностями предоставления отчетов, предупреждений и выполнения исправлений. Azure Log Analytics входит в пакет [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).
 
     ![Архитектура](./media/sql-database-metrics-diag-logging/architecture.png)
 

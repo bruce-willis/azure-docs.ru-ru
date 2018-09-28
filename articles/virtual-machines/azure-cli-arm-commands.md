@@ -15,18 +15,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: danlep
-ms.openlocfilehash: 8a2bae12fae6a1bf8f5ecbdb2ae01dea5260f3cb
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 5aecb218b66c06c87446e35e5c7c9ca8108b956c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30839150"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46995556"
 ---
 # <a name="azure-cli-commands-in-resource-manager-mode"></a>Команды Azure CLI в режиме Resource Manager
 В этой статье приводится синтаксис и параметры команд интерфейса командной строки (CLI) Azure, которые обычно используется для создания ресурсов Azure и управления ими в модели развертывания с помощью Azure Resource Manager. Для доступа к этим командам следует запустить CLI в режиме Resource Manager (ARM). Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. Общие сведения о ресурсах и группах ресурсов Azure см. в статье [Общие сведения о диспетчере ресурсов Azure](../azure-resource-manager/resource-group-overview.md).  
 
 > [!NOTE]
-> В этой статье представлены команды, используемые в режиме Resource Manager в Azure CLI (он иногда называется Azure CLI 1.0). Для работы в модели Resource Manager можно также использовать [Azure CLI 2.0](/cli/azure/install-az-cli2), интерфейс командной строки нового поколения, поддерживающий различные платформы.
+> В этой статье представлены команды, используемые в режиме Resource Manager в Azure CLI (он иногда называется классический Azure CLI). Для работы в модели Resource Manager можно также использовать [Azure CLI](/cli/azure/install-az-cli2), интерфейс командной строки нового поколения, поддерживающий различные платформы.
 >Узнайте больше о [старом и новом Azure CLI](/cli/azure/old-and-new-clis).
 >
 

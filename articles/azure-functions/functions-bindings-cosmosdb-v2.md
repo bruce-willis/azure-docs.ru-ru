@@ -1,5 +1,5 @@
 ---
-title: Привязки Azure Cosmos DB для службы "Функций Azure" версии 2.х (предварительная версия)
+title: Привязки Azure Cosmos DB для службы "Функции" версии 2.х
 description: Узнайте, как использовать триггеры и привязки Azure Cosmos DB в службе "Функции Azure".
 services: functions
 documentationcenter: na
@@ -11,14 +11,14 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: glenga
-ms.openlocfilehash: ea1403ed8afe6e84a3118d891e8c2d34b390d158
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: d39c27614fd4d534db36df1af61b2d419493c4d3
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44093436"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46953486"
 ---
-# <a name="azure-cosmos-db-bindings-for-azure-functions-2x-preview"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х (предварительная версия)
+# <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
 > [!div class="op_single_selector" title1="Select the version of the Azure Functions runtime you are using: "]
 > * [Версия 1 — общедоступная](functions-bindings-cosmosdb.md)
@@ -27,7 +27,7 @@ ms.locfileid: "44093436"
 В этой статье описано, как использовать привязки [Azure Cosmos DB](..\cosmos-db\serverless-computing-database.md) в службе "Функции Azure" версии 2.x. Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для Azure Cosmos DB.
 
 > [!NOTE]
-> Эта статья применима к службе [Функции Azure версии 2.x](functions-versions.md), которая доступна в предварительной версии.  Для получения дополнительных сведений об использовании Функций версии 1.x см. раздел [Функции 1.х](functions-bindings-cosmosdb.md).
+> Эта статья предназначена для службы ["Функции Azure" версии 2.x](functions-versions.md).  Для получения дополнительных сведений об использовании Функций версии 1.x см. раздел [Функции 1.х](functions-bindings-cosmosdb.md).
 >
 > Эта привязка называлась DocumentDB. В Функциях версии 2.x триггер, привязки и пакет вместе называются Cosmos DB.
 

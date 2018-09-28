@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: jasonh
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7b39724c3d382637a048dc4fb9a3436ac1dbeae8
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 130f684b69a9cfa1936c2a9aa5175f3d5a7631ac
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108030"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46970283"
 ---
 # <a name="manage-windows-based-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Hadoop на платформе Windows в HDInsight с помощью портала Azure
 
@@ -207,7 +207,7 @@ HDInsight работает со множеством компонентов Hado
 
 * С помощью фабрики данных Azure. Выполняемые по запросу и самоопределяющиеся связанные службы HDInsight описаны в статьях [Связанные службы вычислений](../data-factory/compute-linked-services.md) и [Преобразование данных в фабрике данных Azure](../data-factory/transform-data.md).
 * С помощью Azure PowerShell.  См. статью [Анализ данных о задержке рейсов с помощью Hive в HDInsight](hdinsight-analyze-flight-delay-data.md).
-* С помощью интерфейса командной строки Azure. См. статью [Управление кластерами Hadoop в HDInsight с помощью интерфейса командной строки (CLI) Azure](hdinsight-administer-use-command-line.md).
+* Используйте классический интерфейс командной строки Azure. См. раздел [Управление кластерами HDInsight с помощью классического интерфейса командной строки Azure](hdinsight-administer-use-command-line.md).
 * С помощью пакета SDK для HDInsight .NET. См. статью [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 
 Сведения о ценах см. на странице [цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/). Удаление кластера на портале описано в разделе [Удаление кластеров](#delete-clusters).
@@ -364,7 +364,7 @@ HDInsight работает со множеством компонентов Hado
 Из этой статьи вы узнали, как создать кластер HDInsight с помощью портала и как открыть программу командной строки Hadoop. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Администрирование HDInsight с помощью Azure PowerShell](hdinsight-administer-use-powershell.md)
-* [Администрирование HDInsight с помощью CLI Azure](hdinsight-administer-use-command-line.md)
+* [Администрирование HDInsight с помощью классического интерфейса командной строки Azure CLI](hdinsight-administer-use-command-line.md)
 * [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md)
 * [Отправка заданий Hadoop в HDInsight](hadoop/submit-apache-hadoop-jobs-programmatically.md)
 * [Начало работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
-ms.openlocfilehash: 0f77b46be0207b0ce96e6dc2562fb5298afbe36b
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 11d9f5efb452d46e5ca30169861582f6f2bbbd1b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37928188"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46969399"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
 
@@ -141,9 +141,9 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об Azure REST API или других средствах управления (например, Azure CLI 2.0 или Azure PowerShell) см. в статьях:
+Дополнительные сведения об Azure REST API или других средствах управления (например, Azure CLI или Azure PowerShell) см. в статьях:
 
 - [Azure Compute](/rest/api/compute/) (Служба вычислений Azure)
 - [Начало работы с Azure REST API](/rest/api/azure/)
-- [Azure CLI 2.0](/cli/azure/)
+- [интерфейс командной строки Azure](/cli/azure/)
 - [Overview of Azure PowerShell](/powershell/azure/overview) (Общие сведения об Azure PowerShell)

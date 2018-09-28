@@ -1,23 +1,23 @@
 ---
-title: Создание запроса в группу поддержки службы "Управление затратами Azure" | Документация Майкрософт
-description: В этой статье описано, как создать запрос в группу поддержки службы "Управление затратами Azure".
+title: Создание запроса в группу поддержки для Cloudyn в Azure | Документы Майкрософт
+description: В этой статье описаны действия для создания запроса в группу поддержки для Cloudyn.
 services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 06/07/2018
+ms.date: 09/18/2018
 ms.topic: troubleshooting
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 35d3153cb485f11fe17689f1ff1d3d88961878d3
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: d074b263d11c6b12a4283d2ff479a5b3dc1d6908
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35296697"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46952449"
 ---
-# <a name="create-a-support-request-for-cost-management"></a>Создание запроса в группу поддержки службы "Управление затратами Azure"
+# <a name="create-a-support-request-for-cloudyn"></a>Создание запроса в группу поддержки для Cloudyn
 
 Если не удается найти необходимые сведения, вы можете подать запрос в группу поддержки. Это также можно сделать в случае перебоев или ошибок в работе службы. Запрос в службу поддержки нужно подавать относительно одной проблемы. Это поможет быстро направить сведения о проблеме в нужный отдел.
 
@@ -48,4 +48,4 @@ ms.locfileid: "35296697"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- См. дополнительные сведения о [просмотре данных об использовании и затратах с помощью службы "Управление затратами Azure"](tutorial-review-usage.md).
+- Дополнительные сведения о Cloudyn см. в руководстве для Cloudyn [Просмотр сведений об использовании и затратах](tutorial-review-usage.md).

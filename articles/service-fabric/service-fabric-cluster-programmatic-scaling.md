@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2018
 ms.author: mikerou
-ms.openlocfilehash: dcf4721012fb8ec39bcd1de02c294747357b3539
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: ff02f79321823e42c25897e9de30dfbb6fac46b0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34213067"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46949625"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
 
 В основе кластеров Service Fabric кластеры, запущенных в Azure, лежат масштабируемые наборы виртуальных машин.  Вы можете узнать, как выполнять [масштабирование кластеров](./service-fabric-cluster-scale-up-down.md) вручную или с помощью правил автомасштабирования. В этой статье описывается, как управлять учетными данными и масштабировать кластер с помощью свободного пакета SDK для вычислений Azure, что является более сложным сценарием. См. дополнительные сведения о [программных методах выполнения операций](service-fabric-cluster-scaling.md#programmatic-scaling). 
 
 ## <a name="manage-credentials"></a>Управление учетными данными
-Одна из проблем написания службы для обработки масштабирования заключается в том, что служба должна иметь возможность доступа к ресурсам масштабируемого набора виртуальных машин без интерактивного входа в систему. Доступ к кластеру Service Fabric прост, если служба масштабирования изменяет собственное приложение Service Fabric, но для доступа к масштабируемому набору нужны учетные данные. Для входа в систему можно использовать [субъект-службу](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli), созданный с помощью [Azure CLI 2.0](https://github.com/azure/azure-cli).
+Одна из проблем написания службы для обработки масштабирования заключается в том, что служба должна иметь возможность доступа к ресурсам масштабируемого набора виртуальных машин без интерактивного входа в систему. Доступ к кластеру Service Fabric прост, если служба масштабирования изменяет собственное приложение Service Fabric, но для доступа к масштабируемому набору нужны учетные данные. Для входа в систему можно использовать [субъект-службу](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli), созданный с помощью [Azure CLI](https://github.com/azure/azure-cli).
 
 Чтобы создать субъект-службу, необходимо выполнить следующие действия:
 

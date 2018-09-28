@@ -1,0 +1,2 @@
+>[!Note]
+>**Эта статья считается устаревшей.** Поддержка более ранних версий этой службы будет прекращаться постепенно. [Просмотрите сроки поддержки](../articles/machine-learning/service/overview-what-happened-to-workbench.md#timeline). Приступите к работе с последней версией с помощью этого [краткого руководства](../articles/machine-learning/service/index.yml).

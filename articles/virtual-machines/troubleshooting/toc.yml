@@ -1,0 +1,120 @@
+items:
+- name: Устранение неполадок с виртуальными машинами Azure
+  href: index.md
+- name: Ошибки выделения ресурсов
+  items:
+  - name: Ошибки выделения ресурсов
+    href: allocation-failure.md
+  - name: Ошибки распределения для классических развертываний
+    href: allocation-failure-classic.md
+- name: Диагностика загрузки
+  href: boot-diagnostics.md
+- name: RDP
+  items:
+  - name: Сброс RDP
+    href: reset-rdp.md
+  - name: Устранение неполадок с RDP
+    href: troubleshoot-rdp-connection.md
+  - name: Подробные сведения об устранении неполадок с RDP
+    href: detailed-troubleshoot-rdp.md
+  - name: Устранение определенных ошибок
+    href: troubleshoot-specific-rdp-errors.md
+- name: SSH
+  items:
+  - name: Устранение неполадок с SSH
+    href: troubleshoot-ssh-connection.md
+  - name: Подробные сведения об устранении неполадок с SSH
+    href: detailed-troubleshoot-ssh-connection.md
+- name: Распространенные сообщения об ошибках
+  href: error-messages.md
+- name: Проблемы с производительностью виртуальных машин Windows
+  href: performance-diagnostics.md
+  items:
+  - name: Как использовать PerfInsights
+    href: how-to-use-perfInsights.md
+  - name: Расширение для диагностики производительности
+    href: performance-diagnostics-vm-extension.md
+- name: Установка агента виртуальной машины Windows в автономном режиме
+  href: install-vm-agent-offline.md
+- name: Повторное развертывание виртуальной машины
+  items:
+  - name: Linux
+    href: redeploy-to-new-node-linux.md
+  - name: Windows
+    href: redeploy-to-new-node-windows.md
+- name: Сброс пароля к виртуальной машине
+  items:
+  - name: Windows
+    href: reset-local-password-without-agent.md
+  - name: Linux
+    href: reset-password.md
+- name: Сброс сетевой карты
+  href: reset-network-interface.md
+- name: Перезапуск или изменение размера виртуальной машины
+  href: restart-resize-error-troubleshooting.md
+- name: Использование последовательной консоли
+  items:
+  - name: Виртуальная машина Linux
+    href: serial-console-linux.md
+    items:
+    - name: Загрузчик GRUB в последовательной консоли / Однопользовательский режим
+      href: serial-console-grub-single-user-mode.md
+    - name: Немаскируемое прерывание в последовательной консоли / SysRq
+      href: serial-console-nmi-sysrq.md
+  - name: Виртуальная машина Windows
+    href: serial-console-windows.md
+    items:
+    - name: CMD и команды PowerShell
+      href: serial-console-cmd-ps-commands.md
+- name: Ошибки при удалении ресурсов хранилища
+  href: storage-resource-deletion-errors.md
+- name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
+  href: unexpected-reboots-attached-vhds.md
+- name: Проблемы с активацией Windows
+  href: troubleshoot-activation-problems.md
+- name: Ошибки доступа к приложению
+  href: troubleshoot-app-connection.md
+- name: Новые развертывания виртуальных машин
+  items:
+  - name: Linux
+    href: troubleshoot-deployment-new-vm-linux.md
+  - name: Windows
+    href: troubleshoot-deployment-new-vm-windows.md
+- name: Устранение неполадок развертываний
+  items:
+  - name: Linux
+    href: troubleshoot-deploy-vm-linux.md
+  - name: Windows
+    href: troubleshoot-deploy-vm-windows.md
+- name: Изменение имен устройств
+  href: troubleshoot-device-names-problems.md
+- name: Доступ к виртуальной машине восстановления
+  items:
+  - name: Windows
+    items:
+    - name: PowerShell
+      href: troubleshoot-recovery-disks-windows.md
+    - name: Портал Azure
+      href: troubleshoot-recovery-disks-portal-windows.md
+  - name: Linux
+    items:
+    - name: Интерфейс командной строки
+      href: troubleshoot-recovery-disks-linux.md
+    - name: Портал Azure
+      href: troubleshoot-recovery-disks-portal-linux.md
+- name: Ошибки BitLocker
+  href: troubleshoot-bitlocker-boot-error.md
+- name: Проверка ошибок файловой системы
+  href: troubleshoot-check-disk-boot-error.md
+- name: Ошибки регулирования
+  href: troubleshooting-throttling-errors.md
+- name: Использование вложенной виртуализации
+  href: troubleshoot-vm-by-use-nested-virtualization.md
+- name: Общие сведения о перезагрузке системы
+  href: understand-vm-reboot.md
+ms.openlocfilehash: b00e785c3ae31171ce3189edd9cffe094bc71024
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47410757"

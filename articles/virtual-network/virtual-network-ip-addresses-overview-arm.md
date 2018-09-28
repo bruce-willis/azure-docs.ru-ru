@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/02/2017
+ms.date: 09/24/2018
 ms.author: jdial
-ms.openlocfilehash: f55dfa8ffadc4ddee1ff3861682e5596b675f0d0
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 65dc420b6832b7b0a4cf14d63203d4c66e2a4254
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325291"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993601"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -28,6 +28,8 @@ ms.locfileid: "39325291"
 
 * **Общедоступные IP-адреса** используются для доступа в Интернет, включая общедоступные службы Azure.
 * **Частные IP-адреса** используются для обмена данными в виртуальной сети Azure или в локальной сети (если для расширения сети до масштабов Azure используется VPN-шлюз или канал ExpressRoute).
+
+Можно также создать непрерывный диапазон статических общедоступных IP-адресов через префикс общедоступного IP-адреса. [Дополнительные сведения о префиксе общедоступного IP-адреса](public-ip-address-prefix.md).
 
 > [!NOTE]
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  В этой статье описывается использование модели развертывания c помощью Resource Manager. Для большинства новых развертываний мы рекомендуем использовать эту модель вместо [классической](virtual-network-ip-addresses-overview-classic.md).

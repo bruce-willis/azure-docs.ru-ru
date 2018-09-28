@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: jasonh
-ms.openlocfilehash: cb2ca9ac3be0034f5a90add58249a2c2043975d0
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: ee97d2005752c9e0cd40de238d1f4a946bb9ee3d
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43094090"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948423"
 ---
 # <a name="migrate-from-a-windows-based-hdinsight-cluster-to-a-linux-based-cluster"></a>Миграция из кластера HDInsight под управлением Windows на кластер под управлением Linux
 
@@ -97,7 +97,7 @@ ms.locfileid: "43094090"
 
 ## <a name="client-side-technologies"></a>Технологии на стороне клиента
 
-Клиентские технологии, в том числе [командлеты Azure PowerShell](/powershell/azureps-cmdlets-docs), [Azure CLI](../cli-install-nodejs.md) или [пакет SDK .NET для Hadoop](https://hadoopsdk.codeplex.com/), продолжают работать в кластерах Linux. Эти технологии основаны на интерфейсах REST API, которые одинаковы для обоих типов ОС кластера.
+Клиентские технологии, в том числе [командлеты Azure PowerShell](/powershell/azureps-cmdlets-docs), [классический интерфейс командной строки Azure ](../cli-install-nodejs.md) или [пакет SDK .NET для Hadoop](https://hadoopsdk.codeplex.com/), продолжают работать в кластерах Linux. Эти технологии основаны на интерфейсах REST API, которые одинаковы для обоих типов ОС кластера.
 
 ## <a name="server-side-technologies"></a>Технологии на стороне сервера
 
@@ -106,7 +106,7 @@ ms.locfileid: "43094090"
 | Если вы используете эту технологию... | Выполните это действие... |
 | --- | --- |
 | **PowerShell** (сценарии на стороне сервера, включая действия сценариев, используемые во время создания кластера) |Перепишите эти сценарии как скрипты Bash. Сведения о действиях сценариев см. в разделах [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) и [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md). |
-| **Azure CLI** (сценарии на стороне сервера) |Хотя интерфейс командной строки Azure доступен в Linux, он не предустановлен на головных узлах кластера HDInsight. Дополнительные сведения об установке Azure CLI см. в статье [Get started with Azure CLI 2.0](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) (Приступая к работе с Azure CLI 2.0). |
+| **Классический интерфейс командной строки Azure** (сценарии на стороне сервера) |Хотя классический интерфейс командной строки Azure доступен в Linux, он не предустановлен на головных узлах кластера HDInsight. Дополнительные сведения о том, как установить классический интерфейс командной строки Azure, см. в статье [Приступая к работе с классическим интерфейсом командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli). |
 | **Компоненты .NET** |.NET поддерживается в кластерах HDInsight под управлением Linux посредством [Mono](https://mono-project.com). Дополнительные сведения см. в разделе [Перенос решений .NET из HDInsight под управлением Windows в HDInsight под управлением Linux](hdinsight-hadoop-migrate-dotnet-to-linux.md). |
 | **Компоненты Win32 или другая технология, которая существует только для Windows** |Точные действия зависят от компонента или технологии. Возможно, вы сможете найти версию, совместимую с Linux. В противном случае необходимо найти альтернативное решение или повторно создать этот компонент. |
 

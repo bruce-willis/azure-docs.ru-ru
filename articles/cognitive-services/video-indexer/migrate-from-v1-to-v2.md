@@ -1,20 +1,21 @@
 ---
-title: Переход с API Индексатора видео Azure версии 1 на версию 2 | Документация Майкрософт
+title: Миграция с API Индексатора видео Azure версии 1 на версию 2
+titlesuffix: Azure Cognitive Services
 description: В этом разделе описывается переход с API Индексатора видео Azure версии 1 на версию 2.
 services: cognitive services
-documentationcenter: ''
 author: juliako
-manager: erikre
+manager: cgronlun
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 07/25/2018
+ms.component: video-indexer
+ms.topic: conceptual
+ms.date: 09/15/2018
 ms.author: juliako
-ms.openlocfilehash: b1737960a4142f5c0d949ce8c2524c34fe9cd79e
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 3c70bbe11d94e6b03d615b8d1394ccdca6bd3790
+ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40187377"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45985634"
 ---
 # <a name="migrate-from-the-video-indexer-api-v1-to-v2"></a>Переход с API индексатора видео версии 1 на версию 2
 
@@ -65,7 +66,7 @@ API **авторизации** используется для получени�
 
 ### <a name="swagger"></a>Swagger
 
-Определения API Индексатора видео обновлены соответствующим образом и доступны для скачивания на [портале API](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token).
+Определения API Индексатора видео обновлены соответствующим образом. Теперь они доступны для скачивания на [портале разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token).
 
 
 ### <a name="v1-vs-v2-examples"></a>Примеры для сравнения версии 1 и версии 2
