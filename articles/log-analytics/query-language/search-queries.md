@@ -15,17 +15,19 @@ ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 6a375da3c97790bd6a7a6fa505de82b2fc298385
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 250eddb043ccf9fa0b1bb92a298900f8ad820140
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146828"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46992275"
 ---
 # <a name="search-queries-in-log-analytics"></a>Поисковые запросы в Log Analytics
 
 > [!NOTE]
-> Прежде чем приступать к этому руководству, необходимо ознакомиться со статьей [Переход на новый язык запросов Azure Log Analytics](get-started-queries.md).
+> Прежде чем приступать к этому уроку, необходимо ознакомиться с руководством по [использованию запросов в Azure Log Analytics](get-started-queries.md).
+
+[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
 Запросы Azure Log Analytics могут начинаться с имени таблицы или команды search. В этом руководстве рассматриваются запросы на основе поиска. У каждого метода есть свои преимущества.
 
@@ -34,7 +36,7 @@ ms.locfileid: "42146828"
 ## <a name="search-a-term"></a>Поиск термина
 Команда **search** обычно используется для поиска конкретного термина. В следующем примере все столбцы во всех таблицах проверяются на наличие термина "error":
 
-```OQL
+```Kusto
 search "error"
 | take 100
 ```
@@ -44,13 +46,13 @@ search "error"
 ### <a name="table-scoping"></a>Определение конкретной таблицы
 Чтобы выполнить поиск термина в отдельной таблице, добавьте `in (table-name)` сразу после оператора **search**:
 
-```OQL
+```Kusto
 search in (Event) "error"
 | take 100
 ```
 
 Для поиска в нескольких таблицах:
-```OQL
+```Kusto
 search in (Event, SecurityEvent) "error"
 | take 100
 ```
@@ -58,7 +60,7 @@ search in (Event, SecurityEvent) "error"
 ### <a name="table-and-column-scoping"></a>Определение конкретной таблицы и столбца
 По умолчанию команда **search** проверит все столбцы в наборе данных. Чтобы выполнить поиск только в определенном столбце, используйте следующий синтаксис:
 
-```OQL
+```Kusto
 search in (Event) Source:"error"
 | take 100
 ```
@@ -69,7 +71,7 @@ search in (Event) Source:"error"
 ## <a name="case-sensitivity"></a>Учет регистра
 По умолчанию в поисковом термине не учитывается регистр, поэтому поиск "dns" может дать такие результаты, как "DNS", "dns" или "Dns". Чтобы при поиске учитывался регистр, используйте параметр `kind`:
 
-```OQL
+```Kusto
 search kind=case_sensitive in (Event) "DNS"
 | take 100
 ```
@@ -78,26 +80,26 @@ search kind=case_sensitive in (Event) "DNS"
 Команда **search** поддерживает подстановочные знаки в начале, в конце или в середине термина.
 
 Чтобы выполнить поиск терминов, которые начинаются с "win":
-```OQL
+```Kusto
 search in (Event) "win*"
 | take 100
 ```
 
 Чтобы выполнить поиск терминов, которые заканчиваются на ".com":
-```OQL
+```Kusto
 search in (Event) "*.com"
 | take 100
 ```
 
 Чтобы выполнить поиск терминов, которые содержат "www":
-```OQL
+```Kusto
 search in (Event) "*www*"
 | take 100
 ```
 
 Чтобы выполнить поиск терминов, которые начинаются с "corp" и заканчиваются на ".com", например "corp.mydomain.com":
 
-```OQL
+```Kusto
 search in (Event) "corp*.com"
 | take 100
 ```
@@ -107,24 +109,24 @@ search in (Event) "corp*.com"
 > [!TIP]
 > Хотя `search *` можно использовать для получения каждого столбца из каждой таблицы, рекомендуется всегда ограничивать свои запросы определенными таблицами. Выполнение неограниченных запросов может занять время и вернуть слишком много результатов.
 
-## <a name="add-and--or-to-search-queries"></a>Добавление операторов *and* и *or* в поисковые запросы
+## <a name="add-and--or-to-search-queries"></a>Добавление операторов *and* и / *or* в поисковые запросы
 Используйте оператор **and** для поиска записей, которые содержат несколько терминов:
 
-```OQL
+```Kusto
 search in (Event) "error" and "register"
 | take 100
 ```
 
 Используйте оператор **or**, чтобы получить записи, которые содержат хотя бы один из терминов:
 
-```OQL
+```Kusto
 search in (Event) "error" or "register"
 | take 100
 ```
 
 Если у вас есть несколько условий поиска, их можно объединить в один запрос с помощью скобок:
 
-```OQL
+```Kusto
 search in (Event) "error" and ("register" or "marshal*")
 | take 100
 ```
@@ -134,7 +136,7 @@ search in (Event) "error" and ("register" or "marshal*")
 ## <a name="pipe-search-queries"></a>Действия с поисковыми запросами
 Как и с любыми другими командами, с командой **search** можно задать параметр, чтобы фильтровать, сортировать и вычислять результаты поиска. Например, чтобы получить число записей *Event*, которые содержат "win":
 
-```OQL
+```Kusto
 search in (Event) "win"
 | count
 ```
@@ -144,4 +146,4 @@ search in (Event) "win"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные руководства см. на [сайте языка запросов Log Analytics](https://docs.loganalytics.io)
+- Дополнительные руководства см. на [сайте языка запросов Log Analytics](https://aka.ms/LogAnalyticsLanguage)
