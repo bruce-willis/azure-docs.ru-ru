@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 07/10/2017
 ms.author: dobett
-ms.openlocfilehash: 3161715ac2ff212e2de8a27ff8f8eb53fb858b92
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 7d41732103bd76e281c2a669a649645c8ff5bc73
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186811"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46957988"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Планирование и трансляция заданий (Java)
 
@@ -61,7 +61,7 @@ ms.locfileid: "39186811"
 
 [!INCLUDE [iot-hub-get-started-create-device-identity-portal](../../includes/iot-hub-get-started-create-device-identity-portal.md)]
 
-Для добавления устройства в Центр Интернета вещей можно также использовать [расширение Интернета вещей для Azure CLI 2.0](https://github.com/Azure/azure-iot-cli-extension).
+Для добавления устройства в центр Интернета вещей можно также использовать [расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="create-the-service-app"></a>Создание приложения службы
 

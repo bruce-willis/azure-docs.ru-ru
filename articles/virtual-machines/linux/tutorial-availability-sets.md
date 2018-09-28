@@ -1,6 +1,6 @@
 ---
 title: Руководство. Виртуальные машины Linux высокого уровня доступности в Azure | Документация Майкрософт
-description: Из этого руководства вы узнаете, как с помощью Azure CLI 2.0 развертывать виртуальные машины высокого уровня доступности в группах доступности
+description: Из этого руководства вы узнаете, как с помощью Azure CLI развертывать виртуальные машины высокого уровня доступности в группах доступности
 documentationcenter: ''
 services: virtual-machines-linux
 author: cynthn
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 08/24/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: a31ca4dc326eb6ada37813cacd8bb1dc337c7fdc
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: ee1c3cb079d77fe8e510695514e77c8ae9795c30
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43044248"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950511"
 ---
-# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli-20"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure CLI 2.0
+# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure CLI
 
 В этом руководстве показано, как повысить доступность и надежность решений виртуальных машин в Azure с помощью групп доступности. При развертывании виртуальных машин в Azure группа доступности распределяет их между несколькими изолированными аппаратными кластерами. Таким образом, в случае сбоя оборудования или программного обеспечения в Azure затрагивается только группа виртуальных машин, а общее решение остается доступным для использования.
 
@@ -36,7 +36,7 @@ ms.locfileid: "43044248"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="availability-set-overview"></a>Обзор групп доступности
 

@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: jasonh
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 737cc120877a9d0f06a1f6d209bcf9a233aa7d19
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 39404ff74552b11e982cf5968c0eb131ea642e27
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43091315"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46979460"
 ---
-# <a name="delete-an-hdinsight-cluster-using-your-browser-powershell-or-the-azure-cli"></a>Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI
+# <a name="delete-an-hdinsight-cluster-using-your-browser-powershell-or-the-azure-classic-cli"></a>Удаление кластера HDInsight с помощью браузера, PowerShell или классического интерфейса Azure CLI
 
-Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. В этом документе вы узнаете, как удалить кластер с помощью портала Azure, Azure PowerShell и Azure CLI 1.0.
+Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. В этом документе вы узнаете, как удалить кластер с помощью портала Azure, Azure PowerShell и классического интерфейса Azure CLI.
 
 > [!IMPORTANT]
 > При удалении кластера HDInsight не происходит удаление связанных с ним учетных записей хранения Azure или Data Lake Store. Данные, хранящиеся в этих службах, можно повторно использовать в будущем.
@@ -41,13 +41,12 @@ ms.locfileid: "43091315"
 
 Замените **CLUSTERNAME** именем кластера HDInsight.
 
-## <a name="azure-cli-10"></a>Azure CLI 1.0
+## <a name="azure-classic-cli"></a>Классический Azure CLI
+
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
 
 Введите следующую команду в командной строке, чтобы удалить кластер.
 
     azure hdinsight cluster delete CLUSTERNAME
 
 Замените **CLUSTERNAME** именем кластера HDInsight.
-
-> [!NOTE]
-> Сейчас Azure CLI 2.0 не поддерживает удаление кластеров HDInsight (23 октября 2017 г.).

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: c2c1ef83ade7040e16f54b87f63f6eb27714bf2a
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 4cd7f2284f3449fe8abdf1a6f8e85b9b0b712d7a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42023510"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998565"
 ---
 # <a name="deploy-a-dcos-cluster"></a>Развертывание кластера DC/OS
 
@@ -22,7 +22,7 @@ DC/OS предоставляет распределенную платформу
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure 
 

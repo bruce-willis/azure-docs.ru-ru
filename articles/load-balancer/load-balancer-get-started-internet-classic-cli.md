@@ -1,6 +1,6 @@
 ---
-title: Создание доступной в Интернете внутренней подсистемы балансировки нагрузки с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как создать балансировщик нагрузки для Интернета в классической модели развертывания с помощью интерфейса командной строки Azure.
+title: Создание доступной в Интернете подсистемы балансировки нагрузки с помощью классического Azure CLI | Документы Майкрософт
+description: Узнайте, как создать балансировщика нагрузки для Интернета в классической модели развертывания с помощью классического Azure CLI.
 services: load-balancer
 documentationcenter: na
 author: genlin
@@ -12,26 +12,28 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 06/18/2018
 ms.author: genli
-ms.openlocfilehash: bacf135da25a5315e61922179db9a29fa8a152f1
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: a91a53070985a24ccd87f16254f652fe48c42c5a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38540014"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46988161"
 ---
-# <a name="get-started-creating-an-internet-facing-load-balancer-classic-in-the-azure-cli"></a>Приступая к созданию балансировщика нагрузки (классический режим) для Интернета в Azure CLI
+# <a name="get-started-creating-an-internet-facing-load-balancer-classic-in-the-azure-classic-cli"></a>Приступая к созданию балансировщика нагрузки (классический режим) для Интернета в классическом Azure CLI
 
 > [!div class="op_single_selector"]
 > * [PowerShell](../load-balancer/load-balancer-get-started-internet-classic-ps.md)
-> * [Интерфейс командной строки Azure](../load-balancer/load-balancer-get-started-internet-classic-cli.md)
-> * [облачных служб Azure](../load-balancer/load-balancer-get-started-internet-classic-cloud.md)
+> * [Классический Azure CLI](../load-balancer/load-balancer-get-started-internet-classic-cli.md)
+> * [Облачные службы Azure](../load-balancer/load-balancer-get-started-internet-classic-cloud.md)
 
 [!INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
 > [!IMPORTANT]
 > Прежде чем приступить к работе с ресурсами Azure, обратите внимание на то, что в настоящее время в Azure существует две модели развертывания: классическая модель развертывания и модель развертывания с помощью Azure Resource Manager. Обязательно изучите [модели и инструменты развертывания](../azure-classic-rm.md) , прежде чем приступить к работе с какими бы то ни было ресурсами Azure. Для просмотра документации о средствах развертывания выбирайте соответствующие вкладки в верхней части данной статьи. В этой статье рассматривается классическая модель развертывания. Вы также можете [узнать, как создать балансировщик нагрузки для Интернета с помощью диспетчера ресурсов Azure](load-balancer-get-started-internet-arm-ps.md).
+
+[!INCLUDE [requires-classic-cli](../../includes/contains-classic-cli-content.md)]
 
 [!INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -39,7 +41,7 @@ ms.locfileid: "38540014"
 
 Это руководство описывает создание балансировщика нагрузки для Интернета на основе приведенного выше сценария.
 
-1. Если вы еще не пользовались Azure CLI, ознакомьтесь со статьей [Установка и настройка CLI Azure](../cli-install-nodejs.md) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
+1. Если вы еще не пользовались классическим Azure CLI, ознакомьтесь со статьей [Установка и настройка классическим Azure CLI](../cli-install-nodejs.md) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
 2. Выполните команду **azure config mode** , чтобы переключиться в классический режим, как показано ниже.
 
     ```azurecli
