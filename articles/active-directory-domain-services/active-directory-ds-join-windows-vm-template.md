@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: 2b94496895c0ab06127b6c556b1240e3279e572f
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 40eb0e8133626e77a1f61ddfc5df69ecf1b958f2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39504419"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950800"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain-using-a-resource-manager-template"></a>Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблона Resource Manager
 В этой статье показано, как с помощью шаблонов Azure Resource Manager присоединить виртуальную машину Windows Server к управляемому домену доменных служб Azure AD.
@@ -39,7 +39,7 @@ ms.locfileid: "39504419"
 ## <a name="install-and-configure-required-tools"></a>Установка и настройка необходимых инструментов
 Для выполнения действий, описанных в этом документе, можно использовать любой из следующих вариантов.
 * **Azure PowerShell**: [Установка и настройка](https://azure.microsoft.com/documentation/articles/powershell-install-configure/)
-* **Кроссплатформенный интерфейс командной строки Azure**: [Установка и настройка](https://azure.microsoft.com/documentation/articles/xplat-cli-install/)
+* **Azure CLI**. [Установка и настройка](https://azure.microsoft.com/documentation/articles/xplat-cli-install/)
 
 
 ## <a name="option-1-provision-a-new-windows-server-vm-and-join-it-to-a-managed-domain"></a>Вариант 1. Подготовка новой виртуальной машины Windows Server и ее присоединение к управляемому домену

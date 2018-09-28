@@ -11,17 +11,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/22/2018
+ms.date: 09/24/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: a57afb4a90da5877879afddc35545e0bfef622a7
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: bed67c0213ed5715b8b3d8fd393d8d856e0ea15b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808168"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964996"
 ---
-# <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Руководство по настройке идентификатора гибридного облака для приложений Azure и Azure Stack
+# <a name="tutorial-configure-hybrid-cloud-identity-for-azure-and-azure-stack-applications"></a>Руководство. Настройка идентификатора гибридного облака для приложений Azure и Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -37,10 +37,17 @@ ms.locfileid: "34808168"
 В рамках этого руководства вы создадите пример среды и выполните в ней следующие действия:
 
 > [!div class="checklist"]
-> * создадите гибридное удостоверение для глобальной платформы Azure и Azure Stack;
-> * Получите маркер для доступа к API Azure Stack.
+> - создадите гибридное удостоверение для глобальной платформы Azure и Azure Stack;
+> - Получите маркер для доступа к API Azure Stack.
 
 Для выполнения указанных в этом руководстве действий необходимо иметь разрешения оператора Azure Stack.
+
+> [!Tip]  
+> ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
+> Microsoft Azure Stack — это расширение Azure.re. Azure Stack позволяет использовать гибкие и инновационные функции облачных вычислений в локальной среде, а также предоставляет единое гибридное облако для создания и развертывания гибридных приложений в любом расположении.  
+> 
+> В [рекомендациях по проектированию гибридных приложений](https://aka.ms/hybrid-cloud-applications-pillars) описаны характеристики качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которых следует придерживаться при разработке, развертывании и использовании гибридных приложений. Рекомендации по разработке позволяют оптимизировать создание гибридных приложений, сводя к минимуму проблемы, возникающие в рабочих средах.
+
 
 ## <a name="create-a-service-principal-for-azure-ad-in-the-portal"></a>Создание субъекта-службы с доступом для Azure AD с помощью портала
 
@@ -58,7 +65,7 @@ ms.locfileid: "34808168"
 
 Краткое руководство [Начало работы с PowerShell в Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-configure-quickstart) поможет выполнить действия, необходимые для установки Azure PowerShell, и подключиться к среде Azure Stack.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Установка Azure Stack с подключением к Azure Active Directory и использованием доступной подписки. Если вы не установили Azure Stack, воспользуйтесь инструкциями по установке [Пакета средств разработки Azure Stack](https://docs.microsoft.com/azure/azure-stack/asdk/asdk-deploy).
 

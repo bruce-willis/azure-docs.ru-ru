@@ -1,29 +1,24 @@
 ---
-title: Руководство. Журналы мониторинга брандмауэра Azure
-description: В этом руководстве содержится информация о том, как включить журналы брандмауэра Azure и управлять ими.
+title: Руководство. Мониторинг журналов и метрик Брандмауэра Azure
+description: В этом руководстве описано, как включить и администрировать журналы и метрики Брандмауэра Azure.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 7/11/2018
+ms.date: 9/24/2018
 ms.author: victorh
-ms.openlocfilehash: a4922fda80b957138a9929090f9d3c349348185d
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 1940fb210481dc75fe48d110776185e90cb3e42f
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38991965"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991051"
 ---
-# <a name="tutorial-monitor-azure-firewall-logs"></a>Руководство. Журналы мониторинга брандмауэра Azure
+# <a name="tutorial-monitor-azure-firewall-logs-and-metrics"></a>Руководство. Мониторинг журналов и метрик Брандмауэра Azure
 
-[!INCLUDE [firewall-preview-notice](../../includes/firewall-preview-notice.md)]
+Работу брандмауэра Azure можно отслеживать с помощью журналов брандмауэра. Также журналы действий можно использовать для аудита операций на ресурсах брандмауэра Azure. С помощью метрик можно просматривать счетчики производительности на портале. 
 
-Примеры в статьях о брандмауэре Azure предполагают, что общедоступная предварительная версия брандмауэра Azure уже активирована. Дополнительные сведения см. в статье [Enable the Azure Firewall public preview](public-preview.md) (Включение общедоступной предварительной версии брандмауэра Azure).
-
-Работу брандмауэра Azure можно отслеживать с помощью журналов брандмауэра. Также журналы действий можно использовать для аудита операций на ресурсах брандмауэра Azure.
-
-Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md), службу хранилища, концентраторы событий, а затем анализировать в Log Analytics или при помощи различных инструментов, таких как Excel и Power BI.
+Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Log Analytics или при помощи различных инструментов, таких как Excel и Power BI.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -32,69 +27,12 @@ ms.locfileid: "38991965"
 > * Включение ведения журнала с помощью PowerShell
 > * Просмотр и анализ журнала действий
 > * Просмотр и анализ журналов правил сети и приложений
+> * Просмотр метрик
 
-## <a name="diagnostic-logs"></a>Журналы диагностики
+## <a name="prerequisites"></a>Предварительные требования
 
- Для брандмауэра Azure доступны следующие журналы диагностики.
+Перед работой с этим руководством необходимо ознакомиться с доступными для использования [журналами диагностики и метриками Брандмауэра Azure ](logs-and-metrics.md).
 
-* **Журнал правил приложений**
-
-   Журнал правил приложений сохраняется в учетную запись хранения, передается в концентраторы событий или отправляется в Log Analytics только в том случае, если он включен для каждого брандмауэра Azure. Результаты каждого нового подключения, которое соответствует одному из настроенных правил приложения, находятся в журнале принятого или отклоненного подключения. Данные регистрируются в журнале в формате JSON, как показано в примере ниже.
-
-   ```
-   Category: access logs are either application or network rule logs.
-   Time: log timestamp.
-   Properties: currently contains the full message. 
-   note: this field will be parsed to specific fields in the future, while maintaining backward compatibility with the existing properties field.
-   ```
-
-   ```json
-   {
-    "category": "AzureFirewallApplicationRule",
-    "time": "2018-04-16T23:45:04.8295030Z",
-    "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/AZUREFIREWALLS/{resourceName}",
-    "operationName": "AzureFirewallApplicationRuleLog",
-    "properties": {
-        "msg": "HTTPS request from 10.1.0.5:55640 to mydestination.com:443. Action: Allow. Rule Collection: collection1000. Rule: rule1002"
-    }
-   }
-   ```
-
-* **Журнал правил сети**
-
-   Журнал правил сети сохраняется в учетную запись хранения, передается в концентраторы событий или отправляется Log Analytics только в том случае, если он включен для каждого брандмауэра Azure. Каждое новое подключение, которое соответствует одному из настроенных правил сети, регистрируется в журнале как принятое или отклоненное подключение. Данные регистрируются в журнале в формате JSON, как показано в примере ниже.
-
-   ```
-   Category: access logs are either application or network rule logs.
-   Time: log timestamp.
-   Properties: currently contains the full message. 
-   note: this field will be parsed to specific fields in the future, while maintaining backward compatibility with the existing properties field.
-   ```
-
-   ```json
-  {
-    "category": "AzureFirewallNetworkRule",
-    "time": "2018-06-14T23:44:11.0590400Z",
-    "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/AZUREFIREWALLS/{resourceName}",
-    "operationName": "AzureFirewallNetworkRuleLog",
-    "properties": {
-        "msg": "TCP request from 111.35.136.173:12518 to 13.78.143.217:2323. Action: Deny"
-    }
-   }
-
-   ```
-
-Существует три способа хранения журналов:
-
-* **Учетная запись хранения** лучше всего подходит для длительного хранения журналов и их просмотра по мере необходимости.
-* **Концентраторы событий** — это отличный вариант для интеграции с другими инструментами управления событиями и сведениями о безопасности (SEIM), позволяющий получать оповещения о ваших ресурсах.
-* **Log Analytics** лучше всего подходит для общего мониторинга приложения в реальном времени и изучения тенденций.
-
-## <a name="activity-logs"></a>Журналы действий
-
-   Записи этого журнала собираются по умолчанию, и их можно просмотреть на портале Azure.
-
-   В [журналах действий Azure](../azure-resource-manager/resource-group-audit.md) (прежнее название — операционные журналы и журналы аудита) можно просматривать все операции, отправляемые в подписку Azure.
 
 ## <a name="enable-diagnostic-logging-through-the-azure-portal"></a>Включение журнала ведения диагностики на портале Azure
 
@@ -105,8 +43,8 @@ ms.locfileid: "38991965"
 
    Для брандмауэра Azure доступны два журнала обслуживания.
 
-   * Журнал правил приложений
-   * Журнал правил сети
+   * AzureFirewallApplicationRule
+   * AzureFirewallNetworkRule
 
 3. Щелкните **Включить диагностику**, чтобы начать сбор данных.
 4. На странице **Параметры диагностики** представлены параметры журналов диагностики. 
@@ -163,10 +101,12 @@ Azure [Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.
 > [!TIP]
 > Если вы знакомы с Visual Studio и основными понятиями изменения значений констант и переменных в C#, можно использовать [инструменты преобразования журналов](https://github.com/Azure-Samples/networking-dotnet-log-converter), доступные на сайте GitHub.
 
+## <a name="view-metrics"></a>Просмотр метрик
+Перейдите к Брандмауэру Azure и щелкните **Метрики** в разделе **Мониторинг**. Чтобы просмотреть доступные значения, выберите раскрывающийся список **Метрика**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда брандмауэр для сбора журналов настроен, можно открыть Log Anaytics, чтобы просмотреть данные.
+Теперь, когда брандмауэр для сбора журналов настроен, можно открыть Log Analytics, чтобы просмотреть данные.
 
 > [!div class="nextstepaction"]
 > [Решения для мониторинга сетей в Log Analytics](../log-analytics/log-analytics-azure-networking-analytics.md)

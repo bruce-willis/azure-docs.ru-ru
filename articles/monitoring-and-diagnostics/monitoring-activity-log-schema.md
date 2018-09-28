@@ -8,15 +8,15 @@ ms.topic: reference
 ms.date: 4/12/2018
 ms.author: dukek
 ms.component: activitylog
-ms.openlocfilehash: 9c1f4699f067ece3108813d28ff834c68f44316d
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: d267ffd5085c27c60e9eb229e2d9026fa83ef848
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40003837"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998246"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
-**Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или концентраторы событий с помощью профиля журнала](./monitoring-overview-activity-logs.md#export-the-activity-log-with-a-log-profile). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](./monitoring-diagnostic-logs-schema.md) приведено в конце статьи.
+**Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или Центры событий с помощью профиля журнала](./monitoring-overview-activity-logs.md#export-the-activity-log-with-a-log-profile). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](./monitoring-diagnostic-logs-schema.md) приведено в конце статьи.
 
 ## <a name="administrative"></a>Administrative
 Эта категория содержит записи всех операций создания, обновления, удаления и других действий, которые выполняются через Resource Manager. В качестве примеров типов событий, которые относятся к этой категории, можно назвать "создание виртуальной машины" или "удаление группы безопасности сети". Каждое действие, выполняемое пользователем или приложением с помощью Resource Manager, моделируется как операция с определенным типом ресурсов. Если тип операции — "запись", "удаление" или "действие", то любые сведения об этой операции (о ее запуске, успешном выполнении или сбое) записываются в категорию "Административная". Категория "Административная" также включает в себя любые изменения в управлении доступом на основе ролей, которые происходят в подписке.
@@ -192,6 +192,95 @@ ms.locfileid: "40003837"
 }
 ```
 Дополнительные сведения о значениях в свойствах см. в статье об [уведомлениях о работоспособности службы](./monitoring-service-notifications.md).
+
+## <a name="resource-health"></a>Работоспособность ресурса
+Эта категория содержит записи всех событий, связанных с работоспособностью службы, которые произошли с ресурсами Azure. Пример события такого типа из этой категории: Virtual Machine health status changed to unavailable (Состояние работоспособности виртуальной машины изменилось на "Недоступно"). События работоспособности ресурсов соответствуют одному из четырех состояний: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). Кроме того, события работоспособности ресурсов можно классифицировать по свойствам PlatformInitiated (Инициировано платформой) и UserInitiated (Инициировано пользователем).
+
+### <a name="sample-event"></a>Пример события
+
+```json
+{
+    "channels": "Admin, Operation",
+    "correlationId": "28f1bfae-56d3-7urb-bff4-194d261248e9",
+    "description": "",
+    "eventDataId": "a80024e1-883d-37ur-8b01-7591a1befccb",
+    "eventName": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "category": {
+        "value": "ResourceHealth",
+        "localizedValue": "Resource Health"
+    },
+    "eventTimestamp": "2018-09-04T15:33:43.65Z",
+    "id": "/subscriptions/<subscription Id>/resourceGroups/<resource group>/providers/Microsoft.Compute/virtualMachines/<resource name>/events/a80024e1-883d-42a5-8b01-7591a1befccb/ticks/636716720236500000",
+    "level": "Critical",
+    "operationId": "",
+    "operationName": {
+        "value": "Microsoft.Resourcehealth/healthevent/Activated/action",
+        "localizedValue": "Health Event Activated"
+    },
+    "resourceGroupName": "<resource group>",
+    "resourceProviderName": {
+        "value": "Microsoft.Resourcehealth/healthevent/action",
+        "localizedValue": "Microsoft.Resourcehealth/healthevent/action"
+    },
+    "resourceType": {
+        "value": "Microsoft.Compute/virtualMachines",
+        "localizedValue": "Microsoft.Compute/virtualMachines"
+    },
+    "resourceId": "/subscriptions/<subscription Id>/resourceGroups/<resource group>/providers/Microsoft.Compute/virtualMachines/<resource name>",
+    "status": {
+        "value": "Active",
+        "localizedValue": "Active"
+    },
+    "subStatus": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "submissionTimestamp": "2018-09-04T15:36:24.2240867Z",
+    "subscriptionId": "<subscription Id>",
+    "properties": {
+        "stage": "Active",
+        "title": "Virtual Machine health status changed to unavailable",
+        "details": "Virtual machine has experienced an unexpected event",
+        "healthStatus": "Unavailable",
+        "healthEventType": "Downtime",
+        "healthEventCause": "PlatformInitiated",
+        "healthEventCategory": "Unplanned"
+    },
+    "relatedEvents": []
+}
+```
+
+### <a name="property-descriptions"></a>Описания свойств
+| Имя элемента | ОПИСАНИЕ |
+| --- | --- |
+| каналов | Всегда имеет значение "Admin, Operation". |
+| correlationId | Глобальный уникальный идентификатор (GUID) в строковом формате. |
+| description |Статическое текстовое описание события оповещения. |
+| eventDataId |Уникальный идентификатор события оповещения. |
+| category | Всегда ResourceHealth. |
+| eventTimestamp |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
+| level |Уровень события. Принимает одно из следующих значений: Critical (Критическое), Error (Ошибка), Warning (Предупреждение), Informational (Информационное) или Verbose (Подробные сведения). |
+| operationId |События, относящиеся к одной операции, совместно используют один GUID. |
+| operationName |Имя операции. |
+| имя_группы_ресурсов |Имя группы ресурсов, к которой относится ресурс. |
+| resourceProviderName |Всегда Microsoft.Resourcehealth/healthevent/action. |
+| тип_ресурса | Тип ресурса, на который повлияло событие работоспособности ресурса. |
+| ResourceId | Имя идентификатора затронутого ресурса. |
+| status |Строка, описывающая состояние события работоспособности. Возможные значения: Active (Активно), Resolved (Разрешено), InProgress (Выполняется), Updated (Обновлено). |
+| subStatus | Обычно для оповещений имеет значение null. |
+| submissionTimestamp |Метка времени, когда событие стало доступно для запросов. |
+| subscriptionId |Идентификатор подписки Azure. |
+| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события.|
+| properties.title | Понятная для пользователя строка с описанием состояния работоспособности ресурса. |
+| properties.details | Понятная для пользователя строка с описанием подробностей события. |
+| properties.currentHealthStatus | Текущее состояние работоспособности ресурса. Возможные значения: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). |
+| properties.previousHealthStatus | Предыдущее состояние работоспособности ресурса. Возможные значения: Available (Доступно), Unavailable (Недоступно), Degraded (Понижено) и Unknown (Неизвестно). |
+| properties.type | Описание типа события работоспособности ресурса. |
+| properties.cause | Описание причины события работоспособности ресурса: UserInitiated либо PlatformInitiated. |
+
 
 ## <a name="alert"></a>Предупреждение
 Эта категория содержит записи всех активаций оповещений Azure. В качестве примера типа события из этой категории можно назвать следующее: "Процент использования ЦП на виртуальной машине myVM за последние 5 минут превышал 80 %". Различные системы Azure работают по принципу оповещений, то есть вы можете определить какое-то правило, и система будет направлять вам уведомление, когда условия этого правила выполняются. Каждый раз, когда "активируется" поддерживаемый тип оповещения Azure или выполняются условия для создания уведомления, в эту категорию журнала активности также передается запись об активации.
@@ -562,7 +651,7 @@ ms.locfileid: "40003837"
 
 ## <a name="mapping-to-diagnostic-logs-schema"></a>Сопоставление со схемой журналов диагностики
 
-При потоковой передаче журнала действий Azure в учетную запись хранения или пространство имен концентраторов событий данные соответствуют [схеме журналов системы диагностики Azure](./monitoring-diagnostic-logs-schema.md). Ниже приведено сопоставление свойств приведенной выше схемы и схемы журналов диагностики:
+При потоковой передаче журнала действий Azure в учетную запись хранения или пространство имен Центров событий данные соответствуют [схеме журналов системы диагностики Azure](./monitoring-diagnostic-logs-schema.md). Ниже приведено сопоставление свойств приведенной выше схемы и схемы журналов диагностики:
 
 | Свойство схемы журналов диагностики | Свойство схемы журнала действий REST API | Примечания |
 | --- | --- | --- |
@@ -588,4 +677,4 @@ ms.locfileid: "40003837"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Дополнительные сведения о журнале действий (прежнее название — журналы аудита)](monitoring-overview-activity-logs.md)
-* [Потоковая передача журнала действий Azure в концентраторы событий](monitoring-stream-activity-logs-event-hubs.md)
+* [Потоковая передача журнала действий Azure в Центры событий](monitoring-stream-activity-logs-event-hubs.md)

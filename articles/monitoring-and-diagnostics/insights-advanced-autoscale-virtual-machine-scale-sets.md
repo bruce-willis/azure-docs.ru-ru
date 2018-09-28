@@ -8,19 +8,18 @@ ms.topic: conceptual
 ms.date: 02/22/2016
 ms.author: ancav
 ms.component: autoscale
-ms.openlocfilehash: 9ff8c28a139d9a16d31a61b560ef7f5759d0a3f5
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 78e3bec0d00336ce7cedc1434bf6ad7c65435969
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267736"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978188"
 ---
 # <a name="advanced-autoscale-configuration-using-resource-manager-templates-for-vm-scale-sets"></a>Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин
 Масштабируемые наборы виртуальных машин можно свертывать и развертывать на основе пороговых значений метрик производительности по расписанию или на определенную дату. Можно также настроить уведомления с помощью электронной почты и webhook для действий масштабирования. В этом пошаговом руководстве показан пример настройки всех этих объектов для масштабируемого набора виртуальных машин с помощью шаблона Resource Manager.
 
 > [!NOTE]
-> Хотя в этом пошаговом руководстве приведены сведения для масштабируемых наборов виртуальных машин, их можно применить и для автомасштабирования [облачных служб](https://azure.microsoft.com/services/cloud-services/) и [веб-приложений службы приложений](https://azure.microsoft.com/services/app-service/web/).
-> Простые параметры масштабирования набора масштабирования виртуальных машин, основанные на простой метрике производительности, например метрике ЦП, описаны в документации по [Linux](../virtual-machine-scale-sets/virtual-machine-scale-sets-linux-autoscale.md) и [Windows](../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md).
+> В этом пошаговом руководстве приведены инструкции для Масштабируемых наборов виртуальных машин. Эти же инструкции можно использовать и для автоматического масштабирования [облачных служб](https://azure.microsoft.com/services/cloud-services/), [Службы приложений (веб-приложений)](https://azure.microsoft.com/services/app-service/web/), и [службы управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts). Простые параметры масштабирования для Масштабируемого набора виртуальных машин на основе простых метрик (например, показателя загрузки ЦП), см. в докуентаци для [Linux](../virtual-machine-scale-sets/virtual-machine-scale-sets-linux-autoscale.md) и [Windows](../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md).
 >
 >
 

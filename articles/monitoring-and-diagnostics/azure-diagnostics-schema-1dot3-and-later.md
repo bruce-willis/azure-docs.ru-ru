@@ -6,25 +6,25 @@ author: rboucher
 ms.service: azure-monitor
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 06/20/2018
+ms.date: 09/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: d9d61762a2e7956c95356cb4e884675e38deeb1b
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: a1f6aae69580f2afe5aceabd70cfe8e6fd3151b8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145389"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46977950"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.3 и более поздней
 > [!NOTE]
 > Расширение системы диагностики Azure — это компонент, который используется для сбора данных счетчиков производительности и других статистических данных из:
-> - Виртуальные машины Azure 
+> - Виртуальные машины Azure
 > - Масштабируемые наборы виртуальных машин Microsoft Azure
-> - Service Fabric 
-> - Облачные службы 
+> - Service Fabric
+> - Облачные службы
 > - группы сетевой безопасности;
-> 
+>
 > Данная страница применяется только в том случае, если вы используете одну из этих служб.
 
 Эта страница предназначена для версий 1.3 и более поздних (пакет Azure SDK 2.4 и более поздней версии). Новые разделы конфигурации снабжены комментариями, указывающими, в какой версии они были добавлены.  
@@ -53,7 +53,7 @@ ms.locfileid: "39145389"
     <WadCfg>  
       <DiagnosticMonitorConfiguration overallQuotaInMB="10000">  
 
-        <PerformanceCounters scheduledTransferPeriod="PT1M">  
+        <PerformanceCounters scheduledTransferPeriod="PT1M", sinks="AzureMonitorSink">  
           <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />  
         </PerformanceCounters>  
 
@@ -105,13 +105,19 @@ ms.locfileid: "39145389"
           <CrashDumpConfiguration processName="badapp.exe"/>  
         </CrashDumps>  
 
-        <DockerSources> <!-- Added in 1.9 --> 
+        <DockerSources> <!-- Added in 1.9 -->
           <Stats enabled="true" sampleRate="PT1M" scheduledTransferPeriod="PT1M" />
         </DockerSources>
 
       </DiagnosticMonitorConfiguration>  
 
       <SinksConfig>   <!-- Added in 1.5 -->  
+        <Sink name="AzureMonitorSink">
+            <AzureMonitor> <!-- Added in 1.11 -->
+                <resourceId>{insert resourceId}</ResourceId> <!-- Parameter only needed for classic VMs and Classic Cloud Services, exclude VMSS and Resource Manager VMs-->
+                <Region>{insert Azure region of resource}</Region> <!-- Parameter only needed for classic VMs and Classic Cloud Services, exclude VMSS and Resource Manager VMs -->
+            </AzureMonitor>
+        </Sink>
         <Sink name="ApplicationInsights">   
           <ApplicationInsights>{Insert InstrumentationKey}</ApplicationInsights>   
           <Channels>   
@@ -139,11 +145,18 @@ ms.locfileid: "39145389"
   <PrivateConfig>  <!-- Added in 1.3 -->  
     <StorageAccount name="" key="" endpoint="" sasToken="{sas token}"  />  <!-- sasToken in Private config added in 1.8.1 -->  
     <EventHub Url="https://myeventhub-ns.servicebus.windows.net/diageventhub" SharedAccessKeyName="SendRule" SharedAccessKey="{base64 encoded key}" />
-   
+
+    <AzureMonitorAccount>
+        <ServicePrincipalMeta> <!-- Added in 1.11; only needed for classic VMs and Classic cloud services -->
+            <PrincipalId>{Insert service principal clientId}</PrincipalId>
+            <Secret>{Insert service principal client secret}</Secret>
+        </ServicePrincipalMeta>
+    </AzureMonitorAccount>
+
     <SecondaryStorageAccounts>
        <StorageAccount name="secondarydiagstorageaccount" key="{base64 encoded key}" endpoint="https://core.windows.net" sasToken="{sas token}" />
     </SecondaryStorageAccounts>
-   
+
     <SecondaryEventHubs>
        <EventHub Url="https://myeventhub-ns.servicebus.windows.net/secondarydiageventhub" SharedAccessKeyName="SendRule" SharedAccessKey="{base64 encoded key}" />
     </SecondaryEventHubs>
@@ -153,10 +166,14 @@ ms.locfileid: "39145389"
 </DiagnosticsConfiguration>  
 
 ```  
+> [!NOTE]
+> Определение общедоступной конфигурации приемника Azure Monitor включает два свойства: resourceId и region. Для работы классических Виртуальных машин и классических облачных служб требуются только они. Эти свойства не следует использовать для Виртуальных машин Resource Manager или масштабируемых наборов виртуальных машин.
+> Также доступен дополнительный элемент закрытой конфигурации приемника Azure Monitor, который передает секрет и идентификатор субъекта. Для работы классических виртуальных машин и классических облачных служб требуются только они. Для работы виртуальных машин Resource Manager и масштабируемого набора виртуальных машин определение Azure Monitor в элементе закрытой конфигурации можно исключить.
+>
 
-Ниже приведен эквивалент предыдущего XML-файла конфигурации в формате JSON. 
+Ниже приведен эквивалент предыдущего XML-файла конфигурации в формате JSON.
 
-Элементы PublicConfig и PrivateConfig разделяются, так как в большинстве примеров использования JSON они передаются как различные переменные. К таким примерам относятся шаблоны Resource Manager, масштабируемый набор виртуальных машин PowerShell и Visual Studio. 
+Элементы PublicConfig и PrivateConfig разделяются, так как в большинстве примеров использования JSON они передаются как различные переменные. К таким примерам относятся шаблоны Resource Manager, масштабируемый набор виртуальных машин PowerShell и Visual Studio.
 
 ```json
 "PublicConfig" {
@@ -168,6 +185,7 @@ ms.locfileid: "39145389"
             },
             "PerformanceCounters": {
                 "scheduledTransferPeriod": "PT1M",
+                "sinks": "AzureMonitorSink",
                 "PerformanceCounterConfiguration": [
                     {
                         "counterSpecifier": "\\Processor(_Total)\\% Processor Time",
@@ -278,6 +296,14 @@ ms.locfileid: "39145389"
         "SinksConfig": {
             "Sink": [
                 {
+                    "name": "AzureMonitorSink",
+                    "AzureMonitor":
+                    {
+                        "ResourceId": "{insert resourceId if a classic VM or cloud service, else property not needed}",
+                        "Region": "{insert Azure region of resource if a classic VM or cloud service, else property not needed}"
+                    }
+                },
+                {
                     "name": "ApplicationInsights",
                     "ApplicationInsights": "{Insert InstrumentationKey}",
                     "Channels": {
@@ -324,6 +350,11 @@ ms.locfileid: "39145389"
 }
 ```
 
+> [!NOTE]
+> Определение общедоступной конфигурации приемника Azure Monitor включает два свойства: resourceId и region. Для работы классических Виртуальных машин и классических облачных служб требуются только они.
+> Эти свойства не следует использовать для Виртуальных машин Resource Manager или масштабируемых наборов виртуальных машин.
+>
+
 ```json
 "PrivateConfig" {
     "storageAccountName": "diagstorageaccount",
@@ -334,6 +365,12 @@ ms.locfileid: "39145389"
         "Url": "https://myeventhub-ns.servicebus.windows.net/diageventhub",
         "SharedAccessKeyName": "SendRule",
         "SharedAccessKey": "{base64 encoded key}"
+    },
+    "AzureMonitorAccount": {
+        "ServicePrincipalMeta": {
+            "PrincipalId": "{Insert service principal client Id}",
+            "Secret": "{Insert service principal client secret}"
+        }
     },
     "SecondaryStorageAccounts": {
         "StorageAccount": [
@@ -357,6 +394,11 @@ ms.locfileid: "39145389"
 }
 
 ```
+
+> [!NOTE]
+> Также доступен дополнительный элемент закрытой конфигурации приемника Azure Monitor, который передает секрет и идентификатор субъекта. Для работы классических виртуальных машин и классических облачных служб требуются только они. Для работы виртуальных машин Resource Manager и масштабируемого набора виртуальных машин определение Azure Monitor в элементе закрытой конфигурации можно исключить.
+>
+
 
 ## <a name="reading-this-page"></a>Чтение этой страницы  
  Приведенные ниже теги указаны примерно в том же порядке, что и в предыдущем примере.  Если вы не видите полное описание там, где оно предполагается, найдите соответствующий элемент или атрибут на странице.  
@@ -396,14 +438,14 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 ## <a name="wadcfg-element"></a>Элемент WadCFG  
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig, WadCFG*
- 
+
  Позволяет определить и настроить сбор данных телеметрии.  
 
 
-## <a name="diagnosticmonitorconfiguration-element"></a>Элемент DiagnosticMonitorConfiguration 
+## <a name="diagnosticmonitorconfiguration-element"></a>Элемент DiagnosticMonitorConfiguration
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig, WadCFG, DiagnosticMonitorConfiguration*
 
- Обязательно 
+ Обязательно
 
 |Атрибуты|ОПИСАНИЕ|  
 |----------------|-----------------|  
@@ -422,14 +464,14 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |**EtwProviders**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**Метрики**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**PerformanceCounters**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
-|**WindowsEventLog**|Ознакомьтесь с описанием в другом разделе на этой странице.| 
-|**DockerSources**|Ознакомьтесь с описанием в другом разделе на этой странице. | 
+|**WindowsEventLog**|Ознакомьтесь с описанием в другом разделе на этой странице.|
+|**DockerSources**|Ознакомьтесь с описанием в другом разделе на этой странице. |
 
 
 
 ## <a name="crashdumps-element"></a>Элемент CrashDumps  
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — CrashDumps*
- 
+
  Включает сбор аварийных дампов.  
 
 |Атрибуты|ОПИСАНИЕ|  
@@ -442,7 +484,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |--------------------|-----------------|  
 |**CrashDumpConfiguration**|Обязательный элемент. Определяет значения конфигурации для каждого процесса.<br /><br /> Следующий атрибут также является обязательным:<br /><br /> **processName**: имя процесса, для которого системе диагностики Azure нужно собирать аварийные дампы.|  
 
-## <a name="directories-element"></a>Элемент Directories 
+## <a name="directories-element"></a>Элемент Directories
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories*
 
  Включает сбор содержимого каталога, журналов невыполненных запросов на вход IIS и (или) журналов IIS.  
@@ -453,7 +495,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |--------------------|-----------------|  
 |**IISLogs**|Если добавить этот элемент в конфигурацию, то будет включен сбор журналов IIS.<br /><br /> **containerName**: имя контейнера больших двоичных объектов в вашей учетной записи хранения Azure, используемого для хранения журналов IIS.|   
 |**FailedRequestLogs**|Если добавить этот элемент в конфигурацию, то будет включен сбор журналов о невыполненных запросах к сайту или приложению IIS. Вам также необходимо включить параметры трассировки в разделе **system.WebServer** файла **Web.config**.|  
-|**DataSources**|Задает список отслеживаемых каталогов.| 
+|**DataSources**|Задает список отслеживаемых каталогов.|
 
 
 
@@ -541,14 +583,15 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Дочерний элемент|ОПИСАНИЕ|  
 |-------------------|-----------------|  
-|**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Например, `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика.|  
+|**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Например, `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика.|
+|**Приемники** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Azure Monitor или Центры событий.|    
 
 
 
 
 ## <a name="windowseventlog-element"></a>Элемент WindowsEventLog
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — WindowsEventLog*
- 
+
  Включает сбор журналов событий Windows.  
 
  Необязательный атрибут **scheduledTransferPeriod**. Ознакомьтесь с описанием выше.  
@@ -632,7 +675,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |**name**|**string**|Уникальное имя для использования ссылки на канал.|  
 
 
-## <a name="privateconfig-element"></a>Элемент PrivateConfig 
+## <a name="privateconfig-element"></a>Элемент PrivateConfig
  *Дерево: корневой элемент — DiagnosticsConfiguration — PrivateConfig*
 
  Добавлен в версии 1.3.  

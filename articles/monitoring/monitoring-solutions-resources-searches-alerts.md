@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 06/18/2018
 ms.author: bwren, vinagara
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c29d6cb0da2e394912a2584b0d3c3cedf13f054c
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: f03e124aab27292ee86fcd8c28ecebb0ba9cbdcf
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36304075"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46999517"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "36304075"
 > [!NOTE]
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)](monitoring-solutions-creating.md).  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы уже знаете, как [создать решение по управлению](monitoring-solutions-creating.md), а также знакомы со структурой [шаблона ARM](../resource-group-authoring-templates.md) и файла решения.
 
 
@@ -90,7 +90,7 @@ ms.locfileid: "36304075"
 [Оповещения журналов Azure](../monitoring-and-diagnostics/monitor-alerts-unified-log.md) создаются правилами оповещений Azure, выполняющими указанные запросы журналов с регулярными интервалами.  Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий с помощью [групп действий](../monitoring-and-diagnostics/monitoring-action-groups.md).  
 
 > [!NOTE]
-> Начиная с 14 мая 2018 года все оповещения в рабочей области будут автоматически распространяться в Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
+> Начиная с 14 мая 2018 г., все оповещения в экземпляре публичного облака Azure рабочей области Log Analytics будут автоматически расширены до оповещений Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
 
 Правила генерации оповещений в решении для управления состоят из трех различных ресурсов.
 
@@ -146,7 +146,7 @@ ms.locfileid: "36304075"
 Действия можно определить при помощи ресурса [группы действий] или ресурса действия.
 
 > [!NOTE]
-> Начиная с 14 мая 2018 года все оповещения в рабочей области будут автоматически распространяться в Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
+> Начиная с 14 мая 2018 г., все оповещения в экземпляре публичного облака Azure рабочей области Log Analytics будут автоматически расширены до оповещений Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
 
 
 Существуют два типа ресурса действия, которые задает свойство **Type**.  Для расписания требуется одно действие **Alert**, которое определяет сведения о правиле генерации оповещений и действия, предпринимаемые при создании оповещения. Ресурсы действия имеют тип `Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions`.  
@@ -242,7 +242,7 @@ ms.locfileid: "36304075"
 У каждого расписания есть одно действие **Alert**.  Оно определяет данные оповещения и, при необходимости, уведомление и действия для исправления  Уведомление позволяет отправить электронное сообщение на один или несколько адресов.  Исправление позволяет запустить Runbook в службе автоматизации Azure, чтобы попытаться устранить обнаруженную проблему.
 
 > [!NOTE]
-> Начиная с 14 мая 2018 года все оповещения в рабочей области будут автоматически распространяться в Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
+> Начиная с 14 мая 2018 г., все оповещения в экземпляре публичного облака Azure рабочей области Log Analytics будут автоматически расширены до оповещений Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
 
 ##### <a name="emailnotification"></a>EmailNotification
  Этот раздел является необязательным. Добавьте его, если требуется, чтобы оповещение отправляло электронное сообщение одному или нескольким получателям.

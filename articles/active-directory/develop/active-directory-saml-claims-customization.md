@@ -13,18 +13,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/11/2017
+ms.date: 09/11/2018
 ms.author: celested
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 2405f1a8ab5ef03e5ed2992b7a089571077ce59b
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 80842f7e99ee0c58f1615892f3c3c4adf03119b6
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348520"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46956978"
 ---
-# <a name="customizing-claims-issued-in-the-saml-token-for-enterprise-applications-in-azure-active-directory"></a>Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory
+# <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications-in-azure-ad"></a>Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в AAD
+
 Сегодня Azure Active Directory поддерживает единый вход в большинстве корпоративных приложений, включая предварительно интегрированные приложения в коллекции приложений Azure AD, а также пользовательских приложениях. Когда пользователь проходит аутентификацию для приложения в Azure AD с помощью протокола SAML 2.0, Azure AD отправляет токен в приложение (через запрос HTTP POST). Затем приложение проверяет и использует маркер для входа пользователя вместо запроса имени пользователя и пароля. Эти маркеры SAML содержат элементы информации о пользователе, которые называются "утверждениями".
 
 С точки зрения удостоверений "утверждение" представляет собой информацию, предложенную поставщиком удостоверений о пользователе в составе маркера, выпущенного для этого пользователя. В [токене SAML](http://en.wikipedia.org/wiki/SAML_2.0)эти данные обычно содержит оператор атрибута SAML. А уникальный идентификатор пользователя, как правило, представлен в субъекте SAML, который также называют идентификатором имени.
@@ -73,7 +74,7 @@ ms.locfileid: "44348520"
 > Если для заданного пользователя нет сохраненного значения выбранного атрибута, это утверждение не будет выпущено в маркере.
 
 > [!TIP]
-> Значения **user.onpremisesecurityidentifier** и **user.onpremisesamaccountname** поддерживаются только при синхронизации данных пользователя из локального каталога Active Directory с помощью [инструмента Azure AD Connect](../active-directory-aadconnect.md).
+> Значения **user.onpremisesecurityidentifier** и **user.onpremisesamaccountname** поддерживаются только при синхронизации данных пользователя из локального каталога Active Directory с помощью [инструмента Azure AD Connect](../hybrid/whatis-hybrid-identity.md).
 
 ## <a name="restricted-claims"></a>Утверждения с ограниченным доступом
 
@@ -129,7 +130,7 @@ ms.locfileid: "44348520"
     | http://schemas.microsoft.com/identity/claims/scope |
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
+* [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
 * [Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
 * [Отладка единого входа на основе SAML в приложения в Azure Active Directory](howto-v1-debug-saml-sso-issues.md)
 

@@ -1,6 +1,6 @@
 ---
-title: Начало работы со страницей Log Analytics на портале Azure | Документация Майкрософт
-description: В этой статье содержатся сведения об использовании страницы Log Analytics для записи запросов.
+title: Начало работы с Log Analytics на портале Azure | Документация Майкрософт
+description: В этой статье описано, как использовать портал аналитики для написания запросов в Log Analytics.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -15,14 +15,16 @@ ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 493497476fdfe7d96d6f2dde735bab0147e547a7
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 3bcc5368a99dc7c7c32381ca0226119d81fc2c0a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42143206"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978205"
 ---
-# <a name="get-started-with-the-log-analytics-page-in-the-azure-portal"></a>Начало работы со страницей Log Analytics на портале Azure
+# <a name="get-started-with-log-analytics-in-the-azure-portal"></a>Начало работы с Log Analytics на портале Azure
+
+[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
 В этом руководстве рассматривается использование страницы Log Analytics на портале Azure (в настоящее время на стадии предварительной версии) для записи запросов Log Analytics. Вы научитесь:
 
@@ -45,7 +47,7 @@ ms.locfileid: "42143206"
 ## <a name="basic-queries"></a>Базовые запросы
 Запросы могут использоваться для поиска терминов, определения тенденций, анализа шаблонов и предоставления многих других сведений на основе ваших данных. Начните с базового запроса:
 
-```OQL
+```Kusto
 Event | search "error"
 ```
 
@@ -55,7 +57,7 @@ Event | search "error"
 
 Другой способ написать тот же запрос:
 
-```OQL
+```Kusto
 search in (Event) "error"
 ```
 
@@ -79,7 +81,7 @@ search in (Event) "error"
 ## <a name="filter-the-results"></a>Фильтрация результатов
 Начните с получения всех сведений в таблице _Event_.
 
-```OQL
+```Kusto
 Event
 ```
 
@@ -133,7 +135,7 @@ Event
 ## <a name="charts"></a>Диаграммы
 Кроме возврата результатов в таблице, результаты запроса могут быть представлены в визуальных форматах. В качестве примера используйте следующий запрос:
 
-```OQL
+```Kusto
 Event 
 | where EventLevelName == "Error" 
 | where TimeGenerated > ago(1d) 

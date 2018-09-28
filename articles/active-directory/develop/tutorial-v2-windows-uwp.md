@@ -16,14 +16,18 @@ ms.workload: identity
 ms.date: 04/20/2018
 ms.author: andret
 ms.custom: aaddev
-ms.openlocfilehash: 48d03b590d718cf82d692dc177a69f6d54de43d1
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 4afd4ce5b8a0ab4c076ebc3c587605dfe1204b8a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495918"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966390"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
+
+
+> [!div renderon="docs"]
+> [!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
 В этом руководстве объясняется, как собственное приложение универсальной платформы Windows (UWP) может запросить маркер доступа и затем вызвать API Microsoft Graph. Руководство также применяется к другим API, которым требуются маркеры доступа от конечной точки Azure Active Directory версии 2.
 
@@ -71,11 +75,14 @@ ms.locfileid: "39495918"
 2. Скопируйте и вставьте следующую команду в окно **консоли диспетчера пакетов**:
 
     ```powershell
-    Install-Package Microsoft.Identity.Client -Pre
+    Install-Package Microsoft.Identity.Client -Pre -Version 1.1.4-preview0002
     ```
 
 > [!NOTE]
 > Эта команда устанавливает [библиотеку проверки подлинности Майкрософт](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet). MSAL получает, кэширует и обновляет маркеры пользователей для доступа к API-интерфейсам, защищенным с помощью Azure Active Directory версии 2.
+
+> [!NOTE]
+> В этом руководстве не предполагается использование последней версии MSAL.NET, но мы работаем над его обновлением.
 
 ## <a name="initialize-msal"></a>Инициализация MSAL
 Этот шаг помогает создать класс для обработки взаимодействия с MSAL, например для обработки маркеров.

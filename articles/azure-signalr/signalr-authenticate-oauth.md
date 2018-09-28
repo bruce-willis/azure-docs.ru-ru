@@ -14,16 +14,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: 4856f4cdba7618884a42341f16d4828cb062e75c
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 696139a3e37f7bd1e32b4e7cec836b3c66df16a6
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43667656"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974329"
 ---
 # <a name="tutorial-azure-signalr-service-authentication"></a>Учебник по аутентификации службы Azure SignalR
-
-Служба Microsoft Azure SignalR сейчас предоставляется в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Это руководство основано на приложении комнаты чата, представленном в кратком руководстве. Если вы еще не закончили работу с [Quickstart: Create a chat room with SignalR Service](signalr-quickstart-dotnet-core.md) (Краткое руководство по созданию чата с помощью службы SignalR), сначала выполните эти упражнения. 
 
@@ -396,7 +394,7 @@ ms.locfileid: "43667656"
 
 Из этого раздела вы узнаете как использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell для создания [веб-приложения Azure](https://docs.microsoft.com/azure/app-service/) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
 
-В этом разделе используется расширение *signalr* для Azure CLI. Выполните следующую команду, чтобы установить расширение *signalr* для Azure CLI 2.0.
+В этом разделе используется расширение *signalr* для Azure CLI. Выполните следующую команду, чтобы установить расширение *signalr* для Azure:
 
 ```azurecli-interactive
 az extension add -n signalr

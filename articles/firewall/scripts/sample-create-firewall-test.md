@@ -8,18 +8,14 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 8/13/2018
 ms.author: victorh
-ms.openlocfilehash: b65a5dec63bdc625dda64e101620f56cd6dd7308
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: 23f10280cd34927e2e74cb7c5001850bedc6dd35
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41917958"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46967546"
 ---
 # <a name="create-an-azure-firewall-test-environment"></a>Создание тестовой среды брандмауэра Azure
-
-[!INCLUDE [firewall-preview-notice](../../../includes/firewall-preview-notice.md)]
-
-Примеры в статьях о брандмауэре Azure предполагают, что общедоступная предварительная версия брандмауэра Azure уже активирована. Дополнительные сведения см. в статье [Enable the Azure Firewall public preview](../public-preview.md) (Включение общедоступной предварительной версии брандмауэра Azure).
 
 Этот сценарий создает брандмауэр и тестовую сетевую среду. Сеть содержит одну виртуальную сеть с тремя подсетями: *AzureFirewallSubnet*, *ServersSubnet* и *JumpboxSubnet*. ServersSubnet и JumpboxSubnet содержат по одному 2-ядерному серверу Windows Server.
 
@@ -29,7 +25,7 @@ ms.locfileid: "41917958"
 
 Скрипт можно выполнить из Azure [Cloud Shell](https://shell.azure.com/powershell) или из локальной установки PowerShell. 
 
-При локальном запуске PowerShell для выполнения этого скрипта понадобится модуль AzureRM PowerShell 6.4.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. 
+При локальном запуске PowerShell для выполнения этого скрипта понадобится модуль AzureRM PowerShell последней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. 
 
 Если необходимо выполнить обновление, можно использовать модуль `PowerShellGet`, встроенный в Windows 10 и Windows Server 2016.
 
@@ -39,12 +35,6 @@ ms.locfileid: "41917958"
 Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.4.0)
 
 Любая имеющаяся среда Azure PowerShell, установленная с помощью установщика веб-платформы, будет конфликтовать с установкой PowerShellGet, и ее нужно удалить.
-
-Кроме того, необходимо установить предварительную версию AzureRM.Network (версии 6.4.0). Если модуль старше, выполните `Uninstall-Module AzureRM.Network -Force` для его удаления. Далее выполните:
-
- `Install-Module -Name AzureRM.Network -Repository PSGallery -RequiredVersion 6.4.0-preview -AllowPrerelease -Force`
-
-и начнется установка версии 6.4.0.
 
 Помните, что при локальном запуске PowerShell необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
