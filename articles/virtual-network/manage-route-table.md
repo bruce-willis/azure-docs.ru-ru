@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: jdial
-ms.openlocfilehash: 00a15d42084b660ee2ec4db2b012a5e47fc02b41
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 790d327be27dae0c963c37e6e55f1721bf571c80
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46988452"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222120"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Создание, изменение и удаление таблицы маршрутов
 
@@ -64,7 +64,7 @@ Azure автоматически направляет трафик между п
 1. В поле поиска в верхней части портала введите *таблицы маршрутов*. Когда пункт **Таблицы маршрутов** появится в результатах поиска, выберите его.
 2. Выберите в списке таблицу маршрутов, о которой нужно просмотреть сведения. В разделе **Параметры** можно просмотреть **маршруты** в таблице маршрутов и **подсети**, с которыми связана таблица маршрутов.
 3. Дополнительные сведения об общих параметрах Azure см. ниже:
-    *   [Журнал действий](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#activity-logs)
+    *   [Журнал действий](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)
     *   [Управление доступом (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control)
     *   [Теги](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
     *   [Блокировки](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

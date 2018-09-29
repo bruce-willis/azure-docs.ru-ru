@@ -1,21 +1,22 @@
 ---
-title: Обзор Пользовательской службы распознавания речи в Azure | Документация Майкрософт
+title: Что такое Пользовательская служба распознавания речи?
+titlesuffix: Azure Cognitive Services
 description: Пользовательская служба распознавания речи представляет собой облачную службу, которая предоставляет пользователям возможность настраивать модели речи для преобразования речи в текст.
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: article
+ms.topic: overview
 ms.date: 02/07/2017
 ms.author: panosper
 ROBOTS: NOINDEX
-ms.openlocfilehash: da88989753069f7ba8ca2c2e2806a648f3df4e3c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f90fc40a42806cfb002da2d9943eaa41736df4d7
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948372"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222749"
 ---
 # <a name="what-is-custom-speech-service"></a>Что такое Пользовательская служба распознавания речи?
 

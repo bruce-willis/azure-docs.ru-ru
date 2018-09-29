@@ -2,18 +2,18 @@
 title: Работа с источниками данных для профилирования в Каталоге данных Azure
 description: В статье приведены инструкции по добавлению профилей данных уровня таблиц и столбцов при регистрации источников данных в каталоге данных Azure. В статье также объясняется, как профили данных помогают анализировать имеющиеся источники.
 services: data-catalog
-author: spelluru
-ms.author: spelluru
+author: markingmyname
+ms.author: maghan
 ms.assetid: 94a8274b-5c9c-4962-a4b1-2fed38a3d919
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 2f628367e2e5b0e6a4481a6212ff201b11a7105a
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: b40bbe7d1eb89f934d6ae07688e698f1949f8e76
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43053129"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47410244"
 ---
 # <a name="data-profile-data-sources"></a>Источники данных профиля данных
 ## <a name="introduction"></a>Введение

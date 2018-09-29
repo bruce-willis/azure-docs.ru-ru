@@ -2,17 +2,17 @@
 title: Как обеспечить безопасный доступ к Каталогу данных Azure
 description: В этой статье объясняется, как обеспечить безопасность каталога и ресурсов данных.
 services: data-catalog
-author: steelanddata
-ms.author: maroche
+author: markingmyname
+ms.author: maghan
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 6b82c71154edfe5fedab3b92e25c11007820c15c
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 9d80eddffaf376b6f6f0090dce74a4884b291531
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43052893"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47405535"
 ---
 # <a name="how-to-secure-access-to-data-catalog-and-data-assets"></a>Как обеспечить безопасный доступ к каталогу данных и ресурсам данных
 > [!IMPORTANT]

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/24/2017
 ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: 161207b96deb2f7bd605d845a9207393f9f59c23
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 517926a3c78e9c95a9ecef9ae058c33e47566adb
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444748"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432614"
 ---
 # <a name="use-a-custom-docker-image-for-web-app-for-containers"></a>Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров".
 
@@ -559,4 +559,4 @@ az webapp config container set --name <app_name> --resource-group myResourceGrou
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание в Azure веб-приложения Docker Python с подключением к базе данных PostgreSQL](tutorial-docker-python-postgresql-app.md)
+> [Создание в Azure веб-приложения Docker Python с подключением к базе данных PostgreSQL](tutorial-python-postgresql-app.md)

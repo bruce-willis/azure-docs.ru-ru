@@ -1,21 +1,23 @@
 ---
 title: Руководство по мультитенантному приложению SaaS, использующему базу данных SQL Azure | Документация Майкрософт
 description: Подготовка новых клиентов и их каталогизация при помощи шаблона изолированного приложения
-keywords: руководство по базе данных sql
 services: sql-database
-author: stevestein
-manager: craigg
 ms.service: sql-database
-ms.custom: SaaS
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
+author: stevestein
+ms.author: sstein
+ms.reviewer: billgib
+manager: craigg
 ms.date: 01/31/2018
-ms.author: billgib
-ms.openlocfilehash: 0f2495ddc5d5053582d67bd44cdf80d018f79e42
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 92a1745f8da9783a22c7cbf417acb0709759f41c
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646159"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47054322"
 ---
 # <a name="provision-and-catalog-new-tenants-using-the--application-per-tenant-saas-pattern"></a>Подготовка новых клиентов и их каталогизация при помощи шаблона однотенантного приложения SaaS
 
@@ -52,7 +54,7 @@ ms.locfileid: "34646159"
 
 ## <a name="tutorial"></a>Учебник
 
-Из этого руководства вы узнали, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 * Подготовка каталога
 * Регистрация примеров баз данных клиента, развернутых ранее в каталоге.
 * Подготовка дополнительных клиентов и их регистрация в каталоге
@@ -61,7 +63,7 @@ ms.locfileid: "34646159"
 
 В конце работы с этим руководством у вас будет набор изолированных однотенантных приложений, базы данных которых будут зарегистрированы в каталоге.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством выполните следующие предварительные требования: 
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Разверните три примера приложений для клиента. Вы можете развернуть их менее чем за пять минут, используя инструкцию из статьи [Развертывание и изучение отдельного однотенантного приложения, в котором используется база данных SQL Azure](https://docs.microsoft.com/azure/sql-database/saas-standaloneapp-get-started-deploy).

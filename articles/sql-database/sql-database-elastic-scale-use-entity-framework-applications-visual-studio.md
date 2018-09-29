@@ -2,19 +2,22 @@
 title: Использование клиентской библиотеки эластичной базы данных с Entity Framework | Документация Майкрософт
 description: Использование клиентской библиотеки эластичной базы данных и Entity Framework для создания баз данных
 services: sql-database
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 2eafd4b23da8f21f1a4b3ffcf29e50b65882d6c0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 695da176d2bc86fd67608cc28d14cf15a7728980
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646768"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161494"
 ---
 # <a name="elastic-database-client-library-with-entity-framework"></a>Использование клиентской библиотеки эластичных баз данных с Entity Framework
 В этом документе показаны изменения, которые следует внести в приложение Entity Framework для интеграции со [средствами эластичных баз данных](sql-database-elastic-scale-introduction.md). Основное внимание уделяется совмещению методов [управления картой сегментов](sql-database-elastic-scale-shard-map-management.md) и [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), с помощью подхода Entity Framework **Code First**. Руководство [Code First — создание базы данных](http://msdn.microsoft.com/data/jj193542.aspx) для Entity Framework используется в этом документе как пример. Примером кода для этого документа является часть набора примеров для эластичной базы данных в Visual Studio.
@@ -173,7 +176,7 @@ ms.locfileid: "34646768"
 #### <a name="constructor-rewrites"></a>Переделка конструктора
 Вышеприведенные примеры кода показывают переделку конструктора по умолчанию, необходимую для приложения, использующего маршрутизацию, зависящую от данных, с платформой Entity Framework. Следующая таблица обобщает этот подход для других конструкторов. 
 
-| Текущий конструктор | Переделанный конструктор для данных | Базовый конструктор | Заметки |
+| Текущий конструктор | Переделанный конструктор для данных | Базовый конструктор | Примечания |
 | --- | --- | --- | --- |
 | MyContext() |ElasticScaleContext(ShardMap, TKey) |DbContext(DbConnection, bool) |Подключение должно быть функцией сопоставления карты сегментов и ключа маршрутизации на основе данных. Нужно обойти автоматическое создание подключения в EF и вместо этого использовать сопоставление сегментов в качестве посредника подключения. |
 | MyContext(string) |ElasticScaleContext(ShardMap, TKey) |DbContext(DbConnection, bool) |Подключение является функцией сопоставления карты сегментов и ключа маршрутизации на основе данных. Фиксированное имя базы данных или строка подключения не сработает, так как они обходят проверку в сопоставлении сегментов. |

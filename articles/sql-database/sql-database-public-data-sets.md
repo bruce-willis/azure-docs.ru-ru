@@ -2,19 +2,22 @@
 title: Общедоступные наборы данных для службы аналитики Azure | Документация Майкрософт
 description: Сведения об общедоступных наборах данных, которые можно использовать для тестирования или создания прототипов служб аналитики и аналитических решений Azure.
 services: sql-database
-author: douglaslMS
-manager: craigg
-ms.custom: reference
 ms.service: sql-database
-ms.topic: conceptual
-ms.date: 04/01/2018
+ms.subservice: development
+ms.custom: ''
+ms.devlang: ''
+ms.topic: reference
+author: douglaslMS
 ms.author: douglasl
-ms.openlocfilehash: be93dbff39c47ed1d8834efa3ef6c033525b4bea
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 6977995fb33d221b48a633076f61d3ee39d6ba40
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34648920"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47160423"
 ---
 # <a name="public-data-sets-for-testing-and-prototyping"></a>Общедоступные наборы данных для тестирования и создания прототипов
 

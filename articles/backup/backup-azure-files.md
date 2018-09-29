@@ -8,12 +8,12 @@ ms.date: 3/23/2018
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: d21a235602c425cef77b26d8c60f1e3562411095
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: 09bddd1c1d9589dbba0acf319ba43ea54c0c737b
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961678"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221463"
 ---
 # <a name="back-up-azure-file-shares"></a>Резервное копирование файловых ресурсов Azure
 В этой статье описывается, как с помощью портала Azure создавать резервные копии и восстанавливать [файловые ресурсы Azure](../storage/files/storage-files-introduction.md).
@@ -27,7 +27,7 @@ ms.locfileid: "36961678"
 > * Остановка защиты файлов Azure.
 > * Удаление данных резервных копий.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем создавать резервную копию файлового ресурса Azure, убедитесь, что он находится в [учетной записи хранения одного из поддерживаемых типов](backup-azure-files.md#limitations-for-azure-file-share-backup-during-preview). После этого можно защитить файловые ресурсы.
 
 ## <a name="limitations-for-azure-file-share-backup-during-preview"></a>Ограничения резервного копирования файловых ресурсов Azure в предварительной версии
@@ -195,3 +195,5 @@ ms.locfileid: "36961678"
 Дополнительные сведения о файловых ресурсах Azure см. в следующих статьях:
 - [Вопросы о резервном копировании файлов Azure](backup-azure-files-faq.md).
 - [Устранение неполадок с резервным копированием файлов Azure](troubleshoot-azure-files.md).
+ 
+

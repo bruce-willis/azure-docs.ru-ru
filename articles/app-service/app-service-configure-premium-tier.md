@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/25/2018
 ms.author: cephalin
-ms.openlocfilehash: 04996e772c2989be89ce551bfa45c57154de7b2d
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: 59e5825554843ef7265cbccdd9a63db0426891fa
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39307795"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226315"
 ---
 # <a name="configure-premiumv2-tier-for-azure-app-service"></a>Настройка ценовой категории Премиум V2 для службы приложений Azure
 

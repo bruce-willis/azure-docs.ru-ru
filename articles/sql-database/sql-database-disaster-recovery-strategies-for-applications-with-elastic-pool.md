@@ -2,20 +2,22 @@
 title: Разработка решений для аварийного восстановления с помощью баз данных SQL Azure | Документация Майкрософт
 description: Узнайте, как разработать облачное решение для аварийного восстановления, выбрав правильную модель отработки отказа.
 services: sql-database
-author: anosov1960
-manager: craigg
 ms.service: sql-database
-ms.custom: business continuity
+ms.subservice: elastic-pools
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/27/2018
+author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
-ms.openlocfilehash: 8f365d123a234f367a1415232a714d2c18663b63
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+manager: craigg
+ms.date: 08/27/2018
+ms.openlocfilehash: 9ed01103a83073d1bbb22f476a9115af816571aa
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43124076"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166560"
 ---
 # <a name="disaster-recovery-strategies-for-applications-using-sql-database-elastic-pools"></a>Стратегии аварийного восстановления для приложений с использованием пула эластичных баз данных SQL
 За последние годы мы увидели, что в облачных службах также могут возникать серьезные инциденты с работоспособностью. Базы данных SQL предоставляют несколько возможностей для обеспечения непрерывности бизнес-процессов приложения при возникновении таких инцидентов. [Пулы эластичных баз данных](sql-database-elastic-pool.md) и отдельные базы данных поддерживают одинаковые возможности аварийного восстановления. В этой статье представлены несколько стратегий аварийного восстановления для пулов эластичных БД, в которых используются функции обеспечения непрерывности бизнес-процессов базы данных SQL.

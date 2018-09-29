@@ -16,12 +16,12 @@ ms.date: 11/13/2017
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 7999dc15fbe1af9d23b47971db03cf6b197f110f
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: a3cbbf887c4b7df57f2df89dfb8649967d6d9b1b
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46306113"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434761"
 ---
 # <a name="define-data-protection-strategy-for-your-hybrid-identity-solution"></a>Определение стратегии защиты данных для гибридного решения идентификации
 В этой статье вы определите стратегию защиты данных для гибридных решений идентификации, которая соответствует требованиям, выработанным с помощью таких статей:
@@ -58,8 +58,6 @@ ms.locfileid: "46306113"
 
 ## <a name="define-content-management-options"></a>Определение параметров управления содержимым
 
-<a name="one-advantage-of-using-azure-ad-to-manage-a-hybrid-identity-infrastructure-is-that-the-process-is-fully-transparent-from-the-end-users-perspective-the-user-tries-to-access-a-shared-resource-the-resource-requires-authentication-the-user-has-to-send-an-authentication-request-to-azure-ad-in-order-to-obtain-the-token-and-access-the-resource-this-entire-process-happens-in-the-background-without-user-interaction"></a>Использование Azure AD для управления гибридной инфраструктурой идентификации имеет важное преимущество: полностью прозрачный для конечного пользователя процесс. Пользователь обращается к общему ресурсу, ресурс подает запрос на аутентификацию, пользователь отправляет в Azure AD запрос на аутентификацию и получает маркер, предоставляющий доступ к ресурсу. Весь процесс происходит в фоновом режиме, без прямого участия пользователя. 
-=======
 Использование Azure AD для управления гибридной инфраструктурой идентификации имеет важное преимущество: полностью прозрачный для конечного пользователя процесс. Пользователь обращается к общему ресурсу, ресурс подает запрос на аутентификацию, пользователь отправляет в Azure AD запрос на аутентификацию и получает маркер, предоставляющий доступ к ресурсу. Весь процесс происходит в фоновом режиме, без прямого участия пользователя. 
 
 Организации, которые уделяют внимание конфиденциальности данных, обычно выбирают решения, которые позволяют классифицировать данные. Если в локальной инфраструктуре уже применяется классификация данных, вы можете использовать Azure AD как основной репозиторий учетных данных пользователей. Для классификации данных в локальных службах широко используется [набор средств классификации данных](https://msdn.microsoft.com/library/Hh204743.aspx) , который входит в состав Windows Server 2012 R2. Этот набор помогает идентифицировать, классифицировать и защищать данные на файловых серверах частного облака. Кроме того, для этих целей можно применять [автоматическую классификацию файлов](https://technet.microsoft.com/library/hh831672.aspx) Windows Server 2012.

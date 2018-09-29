@@ -4,18 +4,18 @@ titleSuffix: Azure Cognitive Services
 description: В этой статье содержатся списки готовых сущностей, включенных в службу "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 8645cff25ee2d874120cd88f0dc2fa278e68f070
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6e38718f14fa5c7cb8455d6c6e7bd5421d70b553
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46976400"
+ms.locfileid: "47034491"
 ---
 # <a name="entities-per-culture"></a>Сущности по языкам и региональным параметрам
 

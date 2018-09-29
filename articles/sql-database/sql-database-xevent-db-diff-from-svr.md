@@ -2,20 +2,22 @@
 title: Расширенные события в базе данных SQL | Документация Майкрософт
 description: В статье описываются расширенные события (XEvents) в Базе данных SQL Azure и отличия соответствующих сеансов событий от сеансов событий в Microsoft SQL Server.
 services: sql-database
-author: MightyPen
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
-ms.workload: On Demand
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 9c0115254fc3368868584e76ead8da812656e4d1
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 8852fc75658298a2c6887d8fef154d5a0b59affd
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028852"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47159914"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -33,7 +35,7 @@ ms.locfileid: "37028852"
 - [Quick Start: Extended events in SQL Server](http://msdn.microsoft.com/library/mt733217.aspx)
 - [Расширенные события](http://msdn.microsoft.com/library/bb630282.aspx)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 

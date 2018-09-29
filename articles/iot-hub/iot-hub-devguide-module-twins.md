@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: menchi
-ms.openlocfilehash: 8f567ba43c1657783f9898863aef980627800481
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 0df1170079e66bda95e38bcf17dcce738269eeb0
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37436325"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47039386"
 ---
 # <a name="understand-and-use-module-twins-in-iot-hub"></a>Общие сведения о двойниках модулей и их использование в Центре Интернета вещей
 
@@ -250,7 +250,7 @@ ms.locfileid: "37436325"
     }
     ```
 
-* Все строковые значения могут быть длиной не более 4 КБ.
+* Все строковые значения могут быть длиной не более 512 байт.
 
 ## <a name="module-twin-size"></a>Размер двойника модуля
 Центр Интернета вещей ограничивает размер каждого из соответствующих итоговых значений `tags`, `properties/desired` и `properties/reported` до 8 КБ. Это ограничение не относится к элементам только для чтения.

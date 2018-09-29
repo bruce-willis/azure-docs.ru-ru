@@ -2,26 +2,22 @@
 title: Пример для PowerShell. Активная георепликация отдельной базы данных SQL Azure | Документация Майкрософт
 description: Пример скрипта Azure PowerShell для настройки активной георепликации базы данных SQL Azure и отработки ее отказа.
 services: sql-database
-documentationcenter: sql-database
-author: CarlRabeler
-manager: craigg
-editor: carlrab
-tags: azure-service-management
-ms.assetid: ''
 ms.service: sql-database
-ms.custom: business continuity, mvc
+ms.subservice: operations
+ms.custom: ''
 ms.devlang: PowerShell
 ms.topic: sample
-ms.tgt_pltfrm: sql-database
-ms.workload: database
+author: CarlRabeler
 ms.date: 09/07/2018
 ms.author: carlrab
-ms.openlocfilehash: 4c3ef7d94c5615259dd7d7b1404dbaf62c24df81
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.reviewer: ''
+manager: craigg
+ms.openlocfilehash: 428bcde30b87d1e81d0eeb43bd865bfe0827e0b8
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44052523"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47054937"
 ---
 # <a name="use-powershell-to-configure-active-geo-replication-for-a-single-azure-sql-database"></a>Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell
 

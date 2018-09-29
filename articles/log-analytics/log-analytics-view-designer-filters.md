@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 0ad22562bd1f36bba7c0ab99fe504e82645033d3
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: dcdc84f100ce534ea517f0201b0c090c3059a318
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131416"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47160935"
 ---
 # <a name="filters-in-log-analytics-views"></a>Фильтры в представлениях Log Analytics
 **Фильтр** в [представлении Log Analytics](log-analytics-view-designer.md) позволяет пользователям фильтровать данные по значению конкретного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
@@ -49,7 +49,7 @@ ms.locfileid: "37131416"
 | Параметр | ОПИСАНИЕ |
 |:---|:---|
 | Имя поля | Имя поля, используемого для фильтрации.  Оно должно соответствовать полю summarize в **запросе значений**. |
-| Запрос значений | Запрос, выполняемый для заполнения раскрывающегося списка фильтров для пользователя.  Он должен содержать оператор [summarize](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/summarize-operator) или [distinct](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/distinct-operator), чтобы предоставлять уникальные значения для определенного поля, и он должен соответствовать **имени поля**.  Можно использовать оператор [sort](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/sort-operator) для сортировки значений, отображаемых для пользователя. |
+| Запрос значений | Запрос, выполняемый для заполнения раскрывающегося списка фильтров для пользователя.  Он должен содержать оператор [summarize](/azure/kusto/query/summarizeoperator) или [distinct](/azure/kusto/query/distinctoperator), чтобы предоставлять уникальные значения для определенного поля, и он должен соответствовать **имени поля**.  Можно использовать оператор [sort](/azure/kusto/query/sortoperator) для сортировки значений, отображаемых для пользователя. |
 | Тег | Имя поля, которое используется в запросах с поддержкой фильтра, а также отображается для пользователя. |
 
 ### <a name="examples"></a>Примеры

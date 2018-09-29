@@ -2,20 +2,22 @@
 title: Обзор защиты базы данных SQL Azure | Документация Майкрософт
 description: Дополнительные сведения о безопасности баз данных SQL Azure и SQL Server, в том числе описание различий между облачной и локальной базой данных SQL Server.
 services: sql-database
-author: giladm
-manager: craigg
-ms.reviewer: vanto
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/20/2018
+author: giladm
 ms.author: giladm
-ms.openlocfilehash: b4a2894c92b85d777d2be3b1f5ffd53e2c92b88e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.reviewer: vanto, carlrab
+manager: craigg
+ms.date: 04/20/2018
+ms.openlocfilehash: 01399544dc4817060ca797383743e673182e3653
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46951633"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47163075"
 ---
 # <a name="securing-your-sql-database"></a>Защита Базы данных SQL
 

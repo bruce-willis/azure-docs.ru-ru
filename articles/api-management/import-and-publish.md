@@ -15,11 +15,11 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
 ms.openlocfilehash: 538977b9057a5699d61d6c2cc44209367e3550e2
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38722853"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47093408"
 ---
 # <a name="import-and-publish-your-first-api"></a>Импорт и публикация первого API 
 
@@ -27,7 +27,7 @@ ms.locfileid: "38722853"
 
 Когда API серверной части будет импортирован в службу управления API, этот API будет использоваться как фасад для API серверной части. Когда вы импортируете API серверной части, исходный API и API службы управления API являются идентичными. Служба управления API позволяет настраивать фасад согласно вашим потребностям, не используя API серверной части. Дополнительные сведения см. в статье [Transform and protect your API](transform-api.md) (Преобразование и защита API). 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * импорт API;
@@ -36,7 +36,7 @@ ms.locfileid: "38722853"
 
 ![Новый API](./media/api-management-get-started/created-api.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 

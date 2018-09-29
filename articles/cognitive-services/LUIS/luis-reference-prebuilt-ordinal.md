@@ -1,21 +1,21 @@
 ---
 title: Справочник по предварительно созданным сущностям ordinal в службе LUIS в Azure | Документация Microsoft
 titleSuffix: Azure
-description: В этой статье содержатся сведения о предварительно созданных сущностях ordinal в Интеллектуальной службе распознавания речи (LUIS).
+description: В этой статье описана готовая сущность ordinal в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: diberry
-ms.openlocfilehash: 216114ec521e2065cb13cd39b4086f50ec81ba56
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: cdbe6a04e579c9290c61b36102a66f6a2d8c317d
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39236760"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47041886"
 ---
 # <a name="ordinal-entity"></a>Сущность ordinal
 Порядковый номер — это числовое представление объекта внутри набора: `first`, `second`, `third`. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности ordinal, не нужно. Сущность ordinal поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 

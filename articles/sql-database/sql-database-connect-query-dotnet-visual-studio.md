@@ -2,21 +2,22 @@
 title: Использование Visual Studio и .NET для создания запросов к базе данных SQL Azure | Документация Майкрософт
 description: В этой статье показано, как использовать Visual Studio для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
-ms.workload: azure-vs
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: devcenter, vs-azure
+ms.subservice: development
+ms.custom: ''
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 04/01/2018
+author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: da2bd556567882d2620e9bc8b1f58923010eeaa4
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: e6eaaa67914579edd5c3b53362835aa1ad168eca
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44050023"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064039"
 ---
 # <a name="use-net-c-with-visual-studio-to-connect-and-query-an-azure-sql-database"></a>Использование .NET (C#) с Visual Studio для подключения и создания запросов к базе данных SQL Azure
 

@@ -2,20 +2,22 @@
 title: Использование Ruby для создания запросов к базе данных SQL Azure | Документация Майкрософт
 description: В этой статье показано, как использовать Ruby для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: mvc,develop apps
+ms.subservice: development
+ms.custom: ''
 ms.devlang: ruby
 ms.topic: quickstart
-ms.date: 04/01/2018
+author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: 4d9a918ad76e6aed603021abfd348f67d7208d3c
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 7b2652c1e25c2815518ac533bde5bced5b3ee635
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44052162"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063410"
 ---
 # <a name="use-ruby-to-query-an-azure-sql-database"></a>Использование Ruby для создания запросов к базе данных SQL Azure
 

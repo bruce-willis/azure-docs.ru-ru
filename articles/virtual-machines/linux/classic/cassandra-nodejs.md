@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: cshoe
-ms.openlocfilehash: b1945c68f0e320c834ae93a590f420403263a0fd
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: d99c9732bb1bf494b87d2073ba002264c7a51634
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37098946"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221253"
 ---
 # <a name="run-a-cassandra-cluster-on-linux-in-azure-with-nodejs"></a>Запуск кластера Cassandra под управлением Linux в Azure из приложения Node.js
 
@@ -396,7 +396,7 @@ Azure требует открытый ключ X509, который во вре�
         #Create internal load balancer
         Add-AzureInternalLoadBalancer -ServiceName $serviceName -InternalLoadBalancerName $ilbName -SubnetName "data" -StaticVNetIPAddress "$ilbIP"
         Write-Host "Created $ilbName"
-        #Add add the thrift endpoint to the internal load balancer for all the VMs
+        #Add the thrift endpoint to the internal load balancer for all the VMs
         foreach($vmName in $vmNames)
         {
             Get-AzureVM -ServiceName $serviceName -Name $vmName |
@@ -468,7 +468,7 @@ Azure требует открытый ключ X509, который во вре�
 <table>
 <tr><th>Имя атрибута    </th><th>Значение    </th><th>Примечания</th></tr>
 <tr><td>ИМЯ    </td><td>vnet-cass-east-us</td><td></td></tr>
-<tr><td>Регион    </td><td>Восток США</td><td></td></tr>
+<tr><td>Регион    </td><td>Восточная часть США</td><td></td></tr>
 <tr><td>DNS-серверы        </td><td></td><td>Пропустите этот атрибут, поскольку мы не используем DNS-сервер</td></tr>
 <tr><td>Настройка VPN-подключения типа "точка-сеть"</td><td></td><td>        Пропустите этот атрибут</td></tr>
 <tr><td>"Настроить VPN типа "сеть-сеть"</td><td></td><td>        Пропустите этот атрибут</td></tr>

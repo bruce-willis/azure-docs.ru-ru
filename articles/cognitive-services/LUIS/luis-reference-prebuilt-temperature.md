@@ -1,21 +1,21 @@
 ---
 title: Справочник по предварительно созданным сущностям temperature в службе LUIS в Azure | Документация Microsoft
 titleSuffix: Azure
-description: В этой статье содержатся сведения о предварительно созданных сущностях temperature в Интеллектуальной службе распознавания речи (LUIS).
+description: В этой статье описана готовая сущность temperature в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: diberry
-ms.openlocfilehash: 6436a7ee8d7b796595813fa613c442824aeae8f3
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 39d33a3132a400ce0f1853062968cfdaf81c693f
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237467"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47041478"
 ---
 # <a name="temperature-entity"></a>Сущность temperature
 Сущность temperature извлекает различные типы температурных данных. Так как эта сущность уже обучена, добавлять в приложение примеры фраз, содержащие сущности temperature, не нужно. Сущность temperature поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 

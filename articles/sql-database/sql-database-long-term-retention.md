@@ -2,20 +2,22 @@
 title: Хранение резервных копий базы данных SQL Azure до 10 лет | Документы Майкрософт
 description: Узнайте, как база данных SQL Azure поддерживает хранение полных резервных копий базы данных в течение 10 лет.
 services: sql-database
-author: anosov1960
-manager: craigg
 ms.service: sql-database
-ms.custom: business continuity
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 07/16/2018
+author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
-ms.openlocfilehash: 8edf66d8ee61b2d0896ed8249ea286b0f3de7de5
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+manager: craigg
+ms.date: 07/16/2018
+ms.openlocfilehash: b2d4166c25014416efbb7392acda3f3f028b4fa9
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39092849"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162053"
 ---
 # <a name="store-azure-sql-database-backups-for-up-to-10-years"></a>Хранение резервных копий базы данных SQL Azure до 10 лет
 

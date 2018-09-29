@@ -2,28 +2,22 @@
 title: PowerShell и интерфейс командной строки. Включение прозрачного шифрования данных SQL с собственным ключом (База данных SQL Azure) | Документация Майкрософт
 description: Сведения о настройке прозрачного шифрования данных в Базе данных SQL Azure и хранилище данных с помощью PowerShell или интерфейса командной строки для шифрования данных при хранении.
 services: sql-database
-keywords: ''
-documentationcenter: ''
-author: aliceku
-manager: craigg
-editor: ''
-ms.prod: ''
-ms.reviewer: vanto
-ms.suite: sql
-ms.prod_service: sql-database, sql-data-warehouse
 ms.service: sql-database
-ms.tgt_pltfrm: ''
-ms.devlang: azurecli, powershell
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 06/28/2018
+author: aliceku
 ms.author: aliceku
-monikerRange: = azuresqldb-current || = azure-sqldw-latest || = sqlallproducts-allversions
-ms.openlocfilehash: 11e190e1a4d0309bdbdcb7a578fccaf84fabb8e3
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.reviewer: vanto
+manager: craigg
+ms.date: 09/20/2018
+ms.openlocfilehash: 0fad0cd32e8df38c5a9c06ecf01a14340f1bc9ef
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45543783"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47165081"
 ---
 # <a name="powershell-and-cli-enable-transparent-data-encryption-using-your-own-key-from-azure-key-vault"></a>PowerShell и интерфейс командной строки. Включение прозрачного шифрования данных с собственным ключом из Azure Key Vault
 
@@ -35,11 +29,11 @@ ms.locfileid: "45543783"
 - [Рекомендуется, но необязательно.] Аппаратный модуль безопасности (HSM) или локальное хранилище ключей для создания локальной копии материала ключа для предохранителя TDE.
 - Установленная и запущенная среда Azure PowerShell 4.2.0 или более поздней версии. 
 - Создайте Azure Key Vault и ключи для TDE.
-   - [Инструкции для PowerShell и ключа из Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started).
-   - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started#a-idhsmaif-you-want-to-use-a-hardware-security-module-hsm).
+   - [Инструкции для PowerShell и ключа из Key Vault](../key-vault/key-vault-get-started.md).
+   - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-get-started.md#HSM).
  - Чтобы использовать хранилище ключей для TDE, обязательно настройте для него следующее свойство:
-   - [soft-delete](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete) (обратимое удаление).
-   - [Как использовать обратимое удаление в Key Vault с помощью PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell) 
+   - [soft-delete](../key-vault/key-vault-ovw-soft-delete.md) (обратимое удаление).
+   - [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../key-vault/key-vault-soft-delete-powershell.md) 
 - Чтобы использовать ключ для TDE, обязательно настройте для него следующие атрибуты:
    - без даты окончания срока действия;
    - не отключено;
@@ -201,11 +195,11 @@ ms.locfileid: "45543783"
 - [Рекомендуется, но необязательно.] Аппаратный модуль безопасности (HSM) или локальное хранилище ключей для создания локальной копии материала ключа для предохранителя TDE.
 - Интерфейс командной строки версии 2.0 или более поздней версии. Сведения об установке последней версии и связывании ее с подпиской Azure можно найти в разделе [Установка Azure CLI 1.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). 
 - Создайте Azure Key Vault и ключи для TDE.
-   - [Управление Key Vault с помощью интерфейса командной строки 2.0](https://docs.microsoft.com/azure/key-vault/key-vault-manage-with-cli2)
-   - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started#a-idhsmaif-you-want-to-use-a-hardware-security-module-hsm)
+   - [Управление Key Vault с помощью интерфейса командной строки 2.0](../key-vault/key-vault-manage-with-cli2.md)
+   - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-get-started.md#HSM)
  - Чтобы использовать хранилище ключей для TDE, обязательно настройте для него следующее свойство:
-   - [soft-delete](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete) (обратимое удаление).
-   - [Как использовать обратимое удаление в Key Vault с помощью CLI](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-cli) 
+   - [soft-delete](../key-vault/key-vault-ovw-soft-delete.md) (обратимое удаление).
+   - [Как использовать обратимое удаление в Key Vault с помощью CLI](../key-vault/key-vault-soft-delete-cli.md) 
 - Чтобы использовать ключ для TDE, обязательно настройте для него следующие атрибуты:
    - без даты окончания срока действия;
    - не отключено;

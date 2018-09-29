@@ -1,22 +1,23 @@
 ---
 title: Управление схемой базы данных SQL Azure в примере мультитенантного приложения | Документация Майкрософт
 description: Управление схемой для нескольких клиентов в мультитенантном приложении, использующем базу данных SQL Azure
-keywords: руководство по базе данных sql
 services: sql-database
-author: MightyPen
-manager: craigg
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/19/2018
-ms.reviewers: billgib
+author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 2f22ed862f9b45334a961f80e47ee2b4634e46fb
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.reviewer: billgib
+manager: craigg
+ms.date: 09/19/2018
+ms.openlocfilehash: e7aeb273d4ae276d3460c3de1f404230276cffb7
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498340"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47056647"
 ---
 # <a name="manage-schema-in-a-saas-application-that-uses-sharded-multi-tenant-sql-databases"></a>Управление схемой в приложении SaaS, использующем сегментированные мультитенантные базы данных SQL
  

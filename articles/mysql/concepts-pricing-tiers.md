@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
-ms.date: 07/11/2018
-ms.openlocfilehash: 614ea0dd69c9bb07df20634298c1192e6ffee789
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.date: 09/27/2018
+ms.openlocfilehash: c390f6cbc9f7ced8113b4e6053dec1adcaf761a1
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44380341"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47422611"
 ---
 # <a name="azure-database-for-mysql-pricing-tiers"></a>Ценовые категории службы "База данных Azure для MySQL"
 
@@ -73,8 +73,13 @@ ms.locfileid: "44380341"
 | Западная часть Японии | X | X |
 | Центральная Корея |  | X |
 | Южная Корея |  | X |
+| Центральная Германия |  | X |
+| Центральная часть US DoD  | X |  |
+| Восточная часть US DoD  | X |  |
+| Аризона (для обслуживания государственных организаций США) |  | X |
+| Техас (для обслуживания государственных организаций США) |  | X |
 
-## <a name="storage"></a>служба хранилища.
+## <a name="storage"></a>Хранилище
 
 Хранилище, которое вы подготавливаете, определяет объем доступной емкости хранилища для сервера службы "База данных Azure для MySQL". Хранилище используется для файлов базы данных, временных файлов, журналов транзакций и журналов сервера MySQL. Общий объем хранилища, который вы подготовили, также определяет доступную производительность операций ввода-вывода для сервера.
 

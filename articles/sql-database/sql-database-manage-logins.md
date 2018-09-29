@@ -3,20 +3,22 @@ title: Пользователи и имена для входа в базы да
 description: Сведения об управлении безопасностью баз данных SQL и хранилища данных SQL, в частности о том, как управлять защитой входа в систему и доступа к базе данных с помощью учетной записи субъекта серверного уровня.
 keywords: безопасность баз данных SQL, управление безопасностью баз данных, защита входа в систему, безопасность баз данных, доступ к базе данных
 services: sql-database
-author: VanMSFT
-manager: craigg
 ms.service: sql-database
-ms.prod_service: sql-database, sql-data-warehouse
-ms.custom: security
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/07/2018
+author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: d3f2e190dd2f3f29dc70e0d635fd1f8ef5b0bbf9
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 09/07/2018
+ms.openlocfilehash: f2627aab2598a706e717e8e1d18fd2f8c944835c
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44717629"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161477"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 

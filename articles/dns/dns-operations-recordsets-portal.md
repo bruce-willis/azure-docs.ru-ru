@@ -15,20 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/16/2016
 ms.author: victorh
-ms.openlocfilehash: b95ec9b4b5077b236c5f3a7183820552b7ccac49
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: e24aa8d0fb72147b0ac30e7c495b598d6e9ea96f
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39174315"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47451398"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
-
-> [!div class="op_single_selector"]
-> * [портал Azure](dns-operations-recordsets-portal.md)
-> * [Azure CLI 1.0](dns-operations-recordsets-cli-nodejs.md)
-> * [Azure CLI 2.0](dns-operations-recordsets-cli.md)
-> * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье описывается, как управлять наборами записей и записями для зоны DNS с помощью портала Azure.
 
@@ -95,7 +89,7 @@ ms.locfileid: "39174315"
 
 1. Щелкните **Удалить** в колонке **Record set properties** (Свойства набора записей) для набора записей.
 
-    ![Удаление набора записей](./media/dns-operations-recordsets-portal/deleterecordset500.png)
+    ![Удаление набора записей](./media/dns-operations-recordsets-portal/deleterecordset500.PNG)
 
 2. Появится запрос подтверждения на удаление набора записей.
 3. Убедитесь, что имя соответствует удаляемому набору записей, а затем нажмите кнопку **Да**.

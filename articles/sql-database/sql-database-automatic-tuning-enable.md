@@ -2,20 +2,21 @@
 title: Включение автоматической настройки для базы данных SQL Azure | Документация Майкрософт
 description: Вы можете легко включить автоматическую настройку для базы данных SQL Azure.
 services: sql-database
-author: danimir
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: performance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: d825ddd75bfc829aa82bab4cede0381dda2d36da
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 4f043cfc9c85513abe16bde38c5cac6e16e34af9
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45575304"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063325"
 ---
 # <a name="enable-automatic-tuning"></a>Включение автоматической настройки
 
@@ -86,7 +87,7 @@ ms.locfileid: "45575304"
    
 Если задать для отдельного параметра настройки значение ON, это переопределит наследуемое значение базы данных и включит параметр настройки. Если задать значение OFF, это также переопределит наследуемое значение базы данных и отключит параметр настройки. Параметр автоматической настройки, для которого задано значение DEFAULT, будет наследовать конфигурацию от параметра автоматической настройки уровня базы данных.  
 
-Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=sql-server-2017&tabs=sqldbls#arguments-1).
+Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
 
 ## <a name="disabled-by-the-system"></a>Отключено системой
 Автоматическая настройка контролирует все действия, которые она выполняет в базе данных, и в некоторых случаях может определить, что автоматическая настройка в базе данных работает не должным образом. В этом случае параметр настройки будет отключен системой. В большинстве случаев это происходит потому, что хранилище запросов отключено или доступно только для чтения в определенной базе данных.

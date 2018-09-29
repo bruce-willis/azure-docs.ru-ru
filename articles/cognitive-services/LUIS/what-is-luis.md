@@ -3,18 +3,18 @@ title: Что такое служба "Распознавание речи" (LUI
 description: Распознавание речи (LUIS) — это облачная служба API, которая применяет пользовательскую аналитику машинного обучения к тексту пользователя в разговорном стиле и на естественном языке, чтобы предсказать общий смысл и извлечь соответствующую подробную информацию. Клиентское приложение для LUIS — это любое диалоговое приложение, которое взаимодействует с пользователем на естественном языке для выполнения задачи. Примеры клиентских приложений включают в себя приложения для социальных сетей, чат-боты и классические приложения с поддержкой речи.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: overview
 ms.date: 08/15/2018
 ms.author: diberry
-ms.openlocfilehash: aadf80df388a25e07051f6dd0a83cd4da7c2ef83
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: a8e9deb7c677d04634b223045adc2d31fa74ba6e
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45629803"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47033045"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 

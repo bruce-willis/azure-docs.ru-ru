@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 11/28/2017
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: d467bc88e1ed3b8dbe42a17095e4f0d14f14fe9a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2191ffabee31d12fb5b581280f924546b0078255
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950239"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47405470"
 ---
 # <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство. Обновление среды выполнения кластера Service Fabric в Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "46950239"
 > * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * обновление среды выполнения кластера;
-> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
+> * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -204,6 +204,3 @@ sfctl cluster upgrade-status
 > * Обновление среды выполнения кластера.
 > * Отслеживание обновления.
 
-Теперь перейдите к следующему руководству, из которого вы узнаете, как развернуть службу управления API с кластером Service Fabric.
-> [!div class="nextstepaction"]
-> [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)

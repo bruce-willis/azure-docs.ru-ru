@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/18/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: a734eb7b4efecf14a4d47a660c00d561a5fa6677
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c23646bca6109d27e57b2f928363e65c83c634eb
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971813"
+ms.locfileid: "47031158"
 ---
 # <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Руководство. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
 
@@ -46,7 +46,7 @@ ms.locfileid: "46971813"
 
 * Если вы еще не развернули приложение списка дел, следуйте инструкциям в разделе [Публикация веб-приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
 
-# <a name="upgrade-a-service-fabric-mesh-service-by-using-visual-studio"></a>Обновление службы сетки Service Fabric с помощью Visual Studio
+## <a name="upgrade-a-service-fabric-mesh-service-by-using-visual-studio"></a>Обновление службы сетки Service Fabric с помощью Visual Studio
 
 В этой статье показано, как независимо обновить микрослужбу в приложении.  В этом примере мы будем изменять службу `WebFrontEnd`, чтобы отобразить категорию задач. Затем мы выполним обновление развернутой службы.
 

@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/06/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 26930ccb80545b80ab047ef9bc51b7122009ec1f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: da9e1ce17e21f4d87286c0be5d425419f6ed0300
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967342"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47408516"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство. Масштабирование кластера Service Fabric в Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "46967342"
 > * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
 > * увеличение или уменьшение масштаба кластера;
 > * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
-> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
+> * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

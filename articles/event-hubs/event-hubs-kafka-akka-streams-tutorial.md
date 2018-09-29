@@ -13,12 +13,12 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 08/06/2018
 ms.author: bahariri
-ms.openlocfilehash: 7c09656f62f3a8a2efd889cf28f12bd5a42e309a
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 063f8bc050064d191dd502b74156be85df4f0031
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42745502"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182226"
 ---
 # <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
 В этом руководстве показано, как выполнять подключение Akka Streams к концентраторам событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Центры событий Azure для платформы Kafka поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
@@ -27,8 +27,8 @@ ms.locfileid: "42745502"
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
-> * Запуск производителя Flink 
-> * Запуск потребителя Flink
+> * Запуск производителя Akka Streams 
+> * Запуск потребителя Akka Streams
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -142,8 +142,8 @@ mvn exec:java -Dexec.mainClass="AkkaTestConsumer"
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
-> * Запуск производителя Flink 
-> * Запуск потребителя Flink
+> * Запуск производителя Akka Streams 
+> * Запуск потребителя Akka Streams
 
 Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в статьях:  
 

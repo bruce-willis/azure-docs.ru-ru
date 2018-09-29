@@ -2,18 +2,18 @@
 title: Сохранение поисков и закрепление ресурсов данных в каталоге данных Azure
 description: Это практическое руководство описывает возможности каталога данных Azure, позволяющие сохранять источники и ресурсы данных для последующего использования.
 services: data-catalog
-author: steelanddata
-ms.author: maroche
+author: markingmyname
+ms.author: maghan
 ms.assetid: 6bd00a81-820d-4b7c-91fa-ab09e575474c
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 786d65eaf667ae8ae9dc2c91d3113f5057a98a27
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: f22dd0911a8e86e6a9e370c7e08add935c31e936
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43053200"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47409938"
 ---
 # <a name="save-searches-and-pin-data-assets-in-azure-data-catalog"></a>Сохранение поисков и закрепление ресурсов данных в каталоге данных Azure
 ## <a name="introduction"></a>Введение

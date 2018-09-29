@@ -12,12 +12,12 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.custom: mvc
-ms.openlocfilehash: f6cfb7bb988b080189da444cb77e0c258417b1ac
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 9a07fa2010eef22c4d1477641d07dee70ab5a9cb
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45574714"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227452"
 ---
 # <a name="how-to-manage-connectivity-and-reliable-messaging-using-azure-iot-hub-device-sdks"></a>Как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK для устройств центра Интернета вещей Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "45574714"
 - ошибки уровня протокола HTTP, AMQP и MQTT на транспортном уровне, такие как отключение каналов или истечение срока действия сеансов;
 - ошибки уровня приложения, которые происходят либо из-за локальных ошибок, например недопустимых учетных данных, либо из-за поведения службы, например превышения квоты или регулирования.
 
-Пакеты SDK для устройств позволяют обнаруживать ошибки на всех трех уровнях.  С помощью пакетов SDK для устройств невозможно обнаружить и обработать ошибки, связанные с ОС и оборудованием.  Они спроектированы на основе [рекомендаций по обработке временных сбоев](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) из центра архитектуры Azure.
+Пакеты SDK для устройств позволяют обнаруживать ошибки на всех трех уровнях.  С помощью пакетов SDK для устройств невозможно обнаружить и обработать ошибки, связанные с ОС и оборудованием.  Они спроектированы на основе [рекомендаций по обработке временных сбоев](/azure/architecture/best-practices/transient-faults#general-guidelines) из центра архитектуры Azure.
 
 ### <a name="retry-patterns"></a>Шаблоны повтора
 

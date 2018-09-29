@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: brjohnst
 ms.openlocfilehash: b08507d7685ce87a4c176385f750a72d6ae51ba3
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35773071"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47091146"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-5"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 5
 Если вы используете версию 4.0-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то сведения в этой статье помогут вам обновить приложение для использования версии 5.

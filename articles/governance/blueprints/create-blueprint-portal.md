@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: ca3f689ef91c0a1bcb751c78d4fa1d799ed3888b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7af0d4819d4044f4cccc43cde1cffe7dff7982a7
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46984639"
+ms.locfileid: "47056443"
 ---
 # <a name="define-and-assign-an-azure-blueprint-in-the-portal"></a>Определение и назначение схемы Azure на портале
 
@@ -119,7 +119,7 @@ ms.locfileid: "46984639"
 
 ## <a name="edit-a-blueprint"></a>Редактирование схемы
 
-В [Создании схемы](#create_a_blueprint) не было указано описание, и назначение ролей не было добавлено в новую группу ресурсов. Это можно исправить следующими действиями.
+В [Создании схемы](#create-a-blueprint) не было указано описание, и назначение ролей не было добавлено в новую группу ресурсов. Это можно исправить следующими действиями.
 
 1. Выберите **Определения схем** на странице слева.
 

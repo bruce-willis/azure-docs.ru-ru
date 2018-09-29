@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.author: dobett
-ms.openlocfilehash: 575326ee3bd2cb64b2cb65168f23f7fe97dad029
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 52aabcfd908afeea3bb9bf36eefad706b74d8ba9
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954404"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227152"
 ---
 # <a name="glossary-of-iot-hub-terms"></a>Глоссарий терминов, связанных с Центром Интернета вещей
 В этой статье перечислены некоторые распространенные термины, используемые в статьях на тему Центра Интернета вещей.
@@ -219,7 +219,7 @@ ms.locfileid: "46954404"
 [Azure Resource Manager](#azure-resource-manager) использует группы ресурсов для объединения связанных ресурсов в группы. Группы ресурсов можно использовать для выполнения операций по отношению ко всем ресурсам в группе одновременно.
 
 ## <a name="retry-policy"></a>Политика повтора
-Политика повтора используется для обработки [временных ошибок](https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx) при подключении к облачной службе.
+Политика повтора используется для обработки [временных ошибок](/azure/architecture/best-practices/transient-faults) при подключении к облачной службе.
 
 ## <a name="routing-rules"></a>Правила маршрутизации
 [Правила маршрутизации](iot-hub-devguide-messages-read-custom.md) настраиваются в Центре Интернета вещей для передачи сообщений из устройства в облако на [встроенную конечную точку](#built-in-endpoints) или [пользовательские конечные точки](#custom-endpoints) для обработки серверной частью вашего решения.
