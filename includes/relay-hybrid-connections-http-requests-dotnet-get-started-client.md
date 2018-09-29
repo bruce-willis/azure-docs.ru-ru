@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/16/2018
 ms.author: clemensv
 ms.custom: include file
-ms.openlocfilehash: e07d82b8a3aea4f0db0f5a071d78ea360cd611ab
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: 8d73a22473ffff358c7424249c7581f6af740718
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40177259"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452818"
 ---
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
@@ -24,8 +24,10 @@ ms.locfileid: "40177259"
 ### <a name="add-the-relay-nuget-package"></a>Добавление пакета ретранслятора NuGet
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-2. Выберите **Обзор** и выполните поиск по ключевой фразе **Microsoft.Azure.Relay**. В результатах поиска выберите **Ретранслятор Microsoft Azure**. 
-3. Выберите **Установить** для завершения установки. Закройте диалоговое окно.
+2. Выберите параметр **Включить предварительные выпуски**. 
+3. Выберите **Обзор** и выполните поиск по ключевой фразе **Microsoft.Azure.Relay**. В результатах поиска выберите **Ретранслятор Microsoft Azure**.
+4. При выборе версии укажите **2.0.0-preview1-20180523**. 
+5. Выберите **Установить** для завершения установки. Закройте диалоговое окно.
 
 ### <a name="write-code-to-send-requests"></a>Написание кода для отправки запросов
 

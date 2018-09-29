@@ -2,24 +2,18 @@
 title: Планировщик ресурсов Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure | Документация Майкрософт
 description: В этой статье описан режим запуска для планировщика развертывания Azure Site Recovery при развертывании виртуальных машин VMware в Azure.
 services: site-recovery
-documentationcenter: ''
 author: nsoneji
 manager: garavd
-editor: ''
-ms.assetid: ''
 ms.service: site-recovery
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: nisoneji
-ms.openlocfilehash: 8298f4a31db974f75e80aef7589bfd31fd7c7491
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 9408323e58ec4df8ca806aea39fdf40c2ddb8a4f
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37921058"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226767"
 ---
 # <a name="run-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>Запуск планировщика развертывания Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -275,7 +269,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 
 ### <a name="example"></a>Пример
 ```
-ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_ProfiledData -VMListFile E:\vCenter1_ProfiledData\ProfileVMList1.txt  -StorageAccountName  asrspfarm1 -StorageAccountKey by8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
+ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_ProfiledData -Virtualization VMware -VMListFile E:\vCenter1_ProfiledData\ProfileVMList1.txt  -StorageAccountName  asrspfarm1 -StorageAccountKey by8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
 ```
 
 >[!NOTE]

@@ -2,19 +2,22 @@
 title: Использование клиентской библиотеки эластичной базы данных с Dapper | Документация Майкрософт
 description: Использование клиентской библиотеки эластичной базы данных с Dapper.
 services: sql-database
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 6619f2dfe5f58cd23dbd0ffe6e2b545b803f3acc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 1b0200413fe40acac997570fdccc970a78cf6ece
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647934"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162239"
 ---
 # <a name="using-elastic-database-client-library-with-dapper"></a>Использование клиентской библиотеки эластичной базы данных с Dapper
 Документ предназначен для разработчиков, которые используют Dapper для создания приложений, но также хотят применять [инструменты эластичной базы данных](sql-database-elastic-scale-introduction.md), чтобы создавать приложения, реализующие сегментирование для развертывания уровня данных.  В документе показаны изменения, которые следует внести в приложениях на базе Dapper, для интеграции со средствами эластичной базы данных. Внимание уделяется совмещению методов управления сегментами эластичной базы данных и маршрутизации, зависящей от данных, с помощью Dapper. 

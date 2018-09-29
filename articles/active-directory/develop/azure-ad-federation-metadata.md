@@ -18,11 +18,11 @@ ms.author: celested
 ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
 ms.openlocfilehash: cf8de9e6061df59782a6edbccf47341222d256f4
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39581077"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162236"
 ---
 # <a name="federation-metadata"></a>Метаданные федерации
 Azure Active Directory (Azure AD) публикует документ метаданных федерации для служб, который настроен на прием маркеров безопасности, выдаваемых Azure AD. Формат документа метаданных федерации описан в стандарте [Web Services Federation Language (WS-Federation) Version 1.2](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html) (язык федерации веб-служб (WS-Federation) версии 1.2), который является расширением стандарта [Metadata for the OASIS Security Assertion Markup Language (SAML) v2.0](http://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) (метаданные для языка разметки заявлений системы безопасности (SAML) OASIS версии 2.0).

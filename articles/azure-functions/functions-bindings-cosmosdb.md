@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: glenga
-ms.openlocfilehash: 50a8e491998b37a7ffebd5551cf755e8a9ca738a
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 281d74b6836516e03771d82c96fab628eac12f1a
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44093317"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47395837"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -1607,11 +1607,10 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Создание функции, активируемой с помощью Azure Cosmos DB](functions-create-cosmos-db-triggered-function.md)
+* [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](..\cosmos-db\serverless-computing-database.md)
+* [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 
+<!---
 > [!div class="nextstepaction"]
-> [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](..\cosmos-db\serverless-computing-database.md)
-
-> [!div class="nextstepaction"]
-> [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
+> [Go to a quickstart that uses a Cosmos DB trigger](functions-create-cosmos-db-triggered-function.md)
+--->

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: kumud
-ms.openlocfilehash: 424782be2d814df6d598591198b5005fb494d3da
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: fe4cc3c06af6868396f5db6fd88804022f5f9793
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35303238"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432483"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Метрики и оповещения диспетчера трафика
 
@@ -46,7 +46,7 @@ ms.locfileid: "35303238"
 *Рис. 2. Разделенное представление всех запросов для возвращенной конечной точки*
 
 ## <a name="endpoint-status-by-endpoint"></a>Проверка состояния конечных точек
-[Эта метрика](../monitoring-and-diagnostics/monitoring-supported-metrics.md) позволяет проверить состояние работоспособности конечных точек в профиле. Эта метрика имеет два значения:
+[Эта метрика](../monitoring-and-diagnostics/monitoring-supported-metrics.md#microsoftnetworktrafficmanagerprofiles) позволяет проверить состояние работоспособности конечных точек в профиле. Эта метрика имеет два значения:
  - используйте **1**, если конечная точка работает;
  - используйте **0**, если конечная точка не работает.
 

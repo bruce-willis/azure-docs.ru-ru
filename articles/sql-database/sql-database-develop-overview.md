@@ -2,20 +2,22 @@
 title: Обзор разработки приложений базы данных SQL | Документация Майкрософт
 description: Сведения о доступных библиотеках подключения и рекомендации для приложений, подключающихся к базе данных SQL.
 services: sql-database
-author: stevestein
-manager: craigg
-ms.reviewer: genemi
 ms.service: sql-database
-ms.custom: develop apps
+ms.subservice: development
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 06/20/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 1986c19e6625df7c281f7de9b322124da6a12c45
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.reviewer: genemi
+manager: craigg
+ms.date: 06/20/2018
+ms.openlocfilehash: 58f902edcd417809d1bb47a231cb1c2ac2f579d1
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973850"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063597"
 ---
 # <a name="sql-database-application-development-overview"></a>Обзор разработки приложений базы данных SQL
 В этой статье рассматриваются основные вопросы, которые разработчик должен учитывать при программировании подключения к базе данных SQL Azure.

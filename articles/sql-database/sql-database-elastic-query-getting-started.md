@@ -2,19 +2,22 @@
 title: Отчеты по масштабируемым облачным базам данных (горизонтальное секционирование) | Документация Майкрософт
 description: Используйте межбазовые запросы к базе данных для отчетов по нескольким базам данных.
 services: sql-database
-manager: craigg
-author: MladjoA
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MladjoA
 ms.author: mlandzic
-ms.openlocfilehash: e2393980d966d5a476a2fedf0e70b0614e803e06
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: f6e9c36634435c759004e6102148a072bbdba94a
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646445"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166696"
 ---
 # <a name="report-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 С помощью [эластичных запросов](sql-database-elastic-query-overview.md)можно создавать отчеты из нескольких баз данных SQL Azure из одной точки подключения. Базы данных должны быть горизонтально секционированными (сегментированными).
@@ -23,7 +26,7 @@ ms.locfileid: "34646445"
 
 Чтобы узнать, какие объекты SQL требуются для выполнения запросов, см. статью [Отчеты по масштабируемым облачным базам данных (предварительная версия)](sql-database-elastic-query-horizontal-partitioning.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Загрузите и запустите пример [Приступая к работе с инструментами эластичной базы данных](sql-database-elastic-scale-get-started.md).
 
 ## <a name="create-a-shard-map-manager-using-the-sample-app"></a>Создание диспетчера сопоставления сегментов с помощью примера приложения 

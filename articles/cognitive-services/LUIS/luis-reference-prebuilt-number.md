@@ -1,21 +1,21 @@
 ---
 title: Справочник по предварительно созданным сущностям number в LUIS Azure | Документация Майкрософт
 titleSuffix: Azure
-description: В этой статье содержатся сведения о предварительно созданных сущностях number в Интеллектуальной службе распознавания речи (LUIS).
+description: В этой статье описана готовая сущность number в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: diberry
-ms.openlocfilehash: c1a263f21ae249ea80c0798ac81818c9e9cf1319
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 4d14a3490d87693a4785111035b62e7ae59ee669
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39236811"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47041852"
 ---
 # <a name="number-entity"></a>Сущность number
 Существует множество способов использования числовых значений для подсчета, выражения и описания фрагментов информации. В этой статье рассматриваются только некоторые возможные примеры. Служба LUIS интерпретирует вариации в фразах пользователя и возвращает согласованные числовые значения. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие сущность number, не нужно. 

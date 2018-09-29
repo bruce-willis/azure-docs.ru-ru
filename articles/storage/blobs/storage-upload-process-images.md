@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: aefc9ae15918a1269614fed41d76d75396684e64
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 237599a5dbd39147b02e9a85cbe34502d0d91923
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987294"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227050"
 ---
 # <a name="upload-image-data-in-the-cloud-with-azure-storage"></a>Передача данных изображений в облако с помощью службы хранилища Azure
 
@@ -46,75 +46,75 @@ ms.locfileid: "46987294"
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов 
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
- 
+
 В следующем примере создается группа ресурсов `myResourceGroup`.
- 
-```azurecli-interactive 
+
+```azurecli-interactive
 az group create --name myResourceGroup --location westcentralus 
-``` 
+```
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
- 
-В примере изображения отправляются в контейнер больших двоичных объектов в учетной записи хранения Azure. Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших объектов данных в службе хранилища Azure и доступа к ним. Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create). 
 
-> [!IMPORTANT] 
-> Во второй части этого руководства используются подписки на события для хранилища BLOB-объектов. Подписки на события в настоящий момент поддерживается только для учетных записей хранения BLOB-объектов в следующих расположениях: Юго-Восточная Азия, Восточная Азия, Восточная Австралия, Юго-Восточная Австралия, центральная часть США, восточная часть США, восточная часть США 2, Западная Европа, Северная Европа, Восточная Япония, Западная Япония, центрально-западная часть США, западная часть США и западная часть США 2. Из-за этого ограничения необходимо создать учетную запись хранения больших двоичных объектов, используемую в примере приложения для хранения изображений и эскизов.   
+В примере изображения отправляются в контейнер больших двоичных объектов в учетной записи хранения Azure. Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших объектов данных в службе хранилища Azure и доступа к ним. Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create).
+
+> [!IMPORTANT]
+> Во второй части этого руководства используются подписки на события для хранилища BLOB-объектов. Подписки на события в настоящий момент поддерживается только для учетных записей хранения BLOB-объектов в следующих расположениях: Юго-Восточная Азия, Восточная Азия, Восточная Австралия, Юго-Восточная Австралия, центральная часть США, восточная часть США, восточная часть США 2, Западная Европа, Северная Европа, Восточная Япония, Западная Япония, центрально-западная часть США, западная часть США и западная часть США 2. Из-за этого ограничения необходимо создать учетную запись хранения больших двоичных объектов, используемую в примере приложения для хранения изображений и эскизов.
 
 В следующей команде замените `<blob_storage_account>` глобально уникальным именем учетной записи хранения больших двоичных объектов везде, где встречается этот заполнитель.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az storage account create --name <blob_storage_account> \
 --location westcentralus --resource-group myResourceGroup \
 --sku Standard_LRS --kind blobstorage --access-tier hot 
-``` 
- 
+```
+
 ## <a name="create-blob-storage-containers"></a>Создание контейнеров хранилища BLOB-объектов
 
-Приложение использует два типа контейнеров в учетной записи хранилища больших двоичных объектов. Контейнеры похожи на папки и используются для хранения больших двоичных объектов. Контейнер _изображений_ — это контейнер, в который отправляются изображения с высоким разрешением. В одной из последующих статей этой серии приложение-функция Azure будет отправлять эскизы изображений измененного размера в контейнер _эскизов_. 
+Приложение использует два типа контейнеров в учетной записи хранилища больших двоичных объектов. Контейнеры похожи на папки и используются для хранения больших двоичных объектов. Контейнер _изображений_ — это контейнер, в который отправляются изображения с высоким разрешением. В одной из последующих статей этой серии приложение-функция Azure будет отправлять эскизы изображений измененного размера в контейнер _эскизов_.
 
 Получите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list). Затем используйте этот ключ для создания двух контейнеров с помощью команды [az storage container create](/cli/azure/storage/container#az_storage_container_create).  
- 
+
 В данном случае `<blob_storage_account>` — это имя созданной учетной записи хранения больших двоичных объектов. Для общего доступа к контейнерам _изображений_ задано значение `off`, а для контейнеров _эскизов_ — `container`. Параметр общего доступа `container` делает эскизы видимыми для пользователей, посещающих веб-страницу.
- 
-```azurecli-interactive 
+
+```azurecli-interactive
 blobStorageAccount=<blob_storage_account>
 
 blobStorageAccountKey=$(az storage account keys list -g myResourceGroup \
--n $blobStorageAccount --query [0].value --output tsv) 
+-n $blobStorageAccount --query [0].value --output tsv)
 
 az storage container create -n images --account-name $blobStorageAccount \
---account-key $blobStorageAccountKey --public-access off 
+--account-key $blobStorageAccountKey --public-access off
 
 az storage container create -n thumbnails --account-name $blobStorageAccount \
 --account-key $blobStorageAccountKey --public-access container
 
-echo "Make a note of your blob storage account key..." 
-echo $blobStorageAccountKey 
-``` 
+echo "Make a note of your blob storage account key..."
+echo $blobStorageAccountKey
+```
 
 Запишите имя и ключ учетной записи хранения больших двоичных объектов. В этом примере приложения эти параметры используются для подключения к учетной записи хранения и отправки изображений. 
 
-## <a name="create-an-app-service-plan"></a>Создание плана службы приложений 
+## <a name="create-an-app-service-plan"></a>Создание плана службы приложений
 
-[План службы приложений](../../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) указывает расположение, размер и функции фермы веб-серверов, в которой размещается приложение. 
+[План службы приложений](../../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) указывает расположение, размер и функции фермы веб-серверов, в которой размещается приложение.
 
-Создайте план службы приложений, выполнив команду [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create). 
+Создайте план службы приложений, выполнив команду [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create).
 
-В следующем примере создается план службы приложений с именем `myAppServicePlan` и ценовой категорией **Бесплатный**. 
+В следующем примере создается план службы приложений с именем `myAppServicePlan` и ценовой категорией **Бесплатный**.
 
-```azurecli-interactive 
-az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku FREE 
-``` 
+```azurecli-interactive
+az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku FREE
+```
 
-## <a name="create-a-web-app"></a>Создание веб-приложения 
+## <a name="create-a-web-app"></a>Создание веб-приложения
 
 Веб-приложение предоставляет пространство для размещения примера кода приложения, развернутого из примера репозитория GitHub. Создайте [веб-приложение](../../app-service/app-service-web-overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp#az_webapp_create).  
- 
+
 В следующей команде замените `<web_app>` уникальным именем (допустимые символы: `a-z`, `0-9` и `-`). Если `<web_app>` не является уникальным, отобразится следующее сообщение об ошибке: _Веб-сайт с указанным именем `<web_app>` уже существует_. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.  
 
-```azurecli-interactive 
-az webapp create --name <web_app> --resource-group myResourceGroup --plan myAppServicePlan 
-``` 
+```azurecli-interactive
+az webapp create --name <web_app> --resource-group myResourceGroup --plan myAppServicePlan
+```
 
 ## <a name="deploy-the-sample-app-from-the-github-repository"></a>Развертывание примера приложения из репозитория GitHub
 
@@ -122,44 +122,45 @@ az webapp create --name <web_app> --resource-group myResourceGroup --plan myAppS
 
 Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config). Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
 
-В примере проекта содержится приложение [ASP.NET MVC](https://www.asp.net/mvc), которое принимает изображения, сохраняет их в учетную запись хранения и показывает изображения из контейнера эскизов. Веб-приложение использует пространства имен [Microsoft.WindowsAzure.Storage](/dotnet/api/microsoft.windowsazure.storage?view=azure-dotnet), [Microsoft.WindowsAzure.Storage.Blob](/dotnet/api/microsoft.windowsazure.storage.blob?view=azure-dotnet) и [Microsoft.WindowsAzure.Storage.Auth](/dotnet/api/microsoft.windowsazure.storage.auth?view=azure-dotnet) из клиентской библиотеки службы хранилища Azure для взаимодействия со службой хранилища Azure. 
+В примере проекта содержится приложение [ASP.NET MVC](https://www.asp.net/mvc), которое принимает изображения, сохраняет их в учетную запись хранения и показывает изображения из контейнера эскизов. Веб-приложение использует пространства имен [Microsoft.WindowsAzure.Storage](/dotnet/api/microsoft.windowsazure.storage?view=azure-dotnet), [Microsoft.WindowsAzure.Storage.Blob](/dotnet/api/microsoft.windowsazure.storage.blob?view=azure-dotnet) и [Microsoft.WindowsAzure.Storage.Auth](/dotnet/api/microsoft.windowsazure.storage.auth?view=azure-dotnet) из клиентской библиотеки службы хранилища Azure для взаимодействия со службой хранилища Azure.
 
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
 Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config). Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
 
 ---
 
-```azurecli-interactive 
+```azurecli-interactive
 az webapp deployment source config --name <web_app> \
 --resource-group myResourceGroup --branch master --manual-integration \
 --repo-url https://github.com/Azure-Samples/storage-blob-upload-from-webapp
-``` 
+```
 
-## <a name="configure-web-app-settings"></a>Настройка параметров веб-приложения 
+## <a name="configure-web-app-settings"></a>Настройка параметров веб-приложения
 
-В примере приложения [клиентская библиотека хранилища Azure](/dotnet/api/overview/azure/storage?view=azure-dotnet) используется для запроса маркеров доступа, которые используются для отправки изображений. Учетные данные записи хранения, используемые пакетом SDK хранилища, задаются в параметрах веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set). 
+В примере приложения [клиентская библиотека хранилища Azure](/dotnet/api/overview/azure/storage?view=azure-dotnet) используется для запроса маркеров доступа, которые используются для отправки изображений. Учетные данные записи хранения, используемые пакетом SDK хранилища, задаются в параметрах веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az_webapp_config_appsettings_set).
 
-В следующей команде `<blob_storage_account>` является именем учетной записи хранения больших двоичных объектов, а `<blob_storage_key>` — связанным ключом. Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.     
+В следующей команде `<blob_storage_account>` является именем учетной записи хранения больших двоичных объектов, а `<blob_storage_key>` — связанным ключом. Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
 
-```azurecli-interactive 
+```azurecli-interactive
 az webapp config appsettings set --name <web_app> --resource-group myResourceGroup \
 --settings AzureStorageConfig__AccountName=<blob_storage_account> \
 AzureStorageConfig__ImageContainer=images  \
 AzureStorageConfig__ThumbnailContainer=thumbnails \
 AzureStorageConfig__AccountKey=<blob_storage_key>  
-``` 
+```
 
-После развертывания и настройки веб-приложения можно проверить возможность отправки изображений в приложении.   
+После развертывания и настройки веб-приложения можно проверить возможность отправки изображений в приложении.
 
-## <a name="upload-an-image"></a>Передача образа 
+## <a name="upload-an-image"></a>Передача образа
 
-Чтобы проверить веб-приложение, перейдите по URL-адресу опубликованного приложения. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`. Выберите область **Upload photos** (Отправка фотографии), чтобы выбрать файл для отправки, или перетащите файлы в нее. При успешной отправке изображение исчезнет.
+Чтобы проверить веб-приложение, перейдите по URL-адресу опубликованного приложения. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.
+Выберите область **Upload photos** (Отправка фотографии), чтобы выбрать файл для отправки, или перетащите файлы в нее. При успешной отправке изображение исчезнет.
 
 # <a name="nettabnet"></a>[\.NET](#tab/net)
 
 ![Приложение ImageResizer](media/storage-upload-process-images/figure1.png)
 
-В примере кода задача `UploadFiletoStorage` в файле `Storagehelper.cs` используется для отправки изображений в контейнер `images` в учетной записи хранения с помощью метода [UploadFromStreamAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromstreamasync?view=azure-dotnet). В следующем примере кода содержится задача `UploadFiletoStorage`. 
+В примере кода задача `UploadFiletoStorage` в файле `Storagehelper.cs` используется для отправки изображений в контейнер `images` в учетной записи хранения с помощью метода [UploadFromStreamAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromstreamasync?view=azure-dotnet). В следующем примере кода содержится задача `UploadFiletoStorage`.
 
 ```csharp
 public static async Task<bool> UploadFileToStorage(Stream fileStream, string fileName, AzureStorageConfig _storageConfig)

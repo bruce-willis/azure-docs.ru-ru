@@ -2,20 +2,22 @@
 title: 'Портал Azure: динамическое маскирование данных базы данных SQL | Документация Майкрософт'
 description: Как приступить к работе с динамическим маскированием данных в базе данных SQL на портале Azure.
 services: sql-database
-author: ronitr
-manager: craigg
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: ronitr
 ms.author: ronitr
 ms.reviewer: vanto
-ms.openlocfilehash: 8aaaa9f2b8821be18b321c202e62333858d7d266
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 1ec0634c89148cee59f399e437b92a7d2c6b283b
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45543834"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47165727"
 ---
 # <a name="get-started-with-sql-database-dynamic-data-masking-with-the-azure-portal"></a>Приступая к работе с динамическим маскированием данных в базе данных SQL на портале Azure
 

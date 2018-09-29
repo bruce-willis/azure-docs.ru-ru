@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: anavin
-ms.openlocfilehash: 1426bddb6e9e3e110fe5a86ed451ec40c2677e78
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 71dee9f36a3e8e11cc23f966c9157f6409a3b5e0
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957512"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47405739"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
 
@@ -78,7 +78,6 @@ ms.locfileid: "46957512"
     |ИМЯ|Yes|Имя общедоступного IP-адреса должно быть уникальным в пределах выбранной группы ресурсов.|
    |Время ожидания простоя (в минутах)|Нет |Время (в минутах), в течение которого подключение TCP или HTTP остается открытым без привязки к клиентам при отправке запросов для проверки активности. |
    |Метка имени DNS|Нет |Должна быть уникальной в пределах региона Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение), к имени, которое вы предоставили, для создания полного имени DNS. Дополнительные сведения см. в разделе [Использование Azure DNS с общедоступным IP-адресом Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
-   |Зона доступности|  Нет  | Этот параметр отображается только в том случае, если выбран поддерживаемый регион. Список поддерживаемых расположений см. в разделе [Обзор зон доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Избыточность в пределах зоны выбирается автоматически, благодаря чему путь к данным становится устойчивым к сбоям зоны. Если нужно обеспечить определенную зону, неустойчивую к сбоям зоны, можно выбрать ее.
 
 ## <a name="view-or-delete-a-prefix"></a>Просмотр или удаление префикса
 

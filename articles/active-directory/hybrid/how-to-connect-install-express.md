@@ -11,15 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/27/2018
+ms.date: 09/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 0e31f311c123fa8ace523cfde21ebdf2f707fce5
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 1af54e3b0237d1d62ae7fb47939e7786fa1219b8
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46303882"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434676"
 ---
 # <a name="getting-started-with-azure-ad-connect-using-express-settings"></a>Приступая к работе с Azure AD Connect с использованием стандартных параметров
 **Стандартные параметры** Azure AD Connect применяются, если вы используете для проверки подлинности топологию с одним лесом и [синхронизацию хэша паролей](how-to-connect-password-hash-synchronization.md). **Стандартные параметры** заданы по умолчанию и используются в большинстве часто развертываемых сценариев. Выполнив всего несколько простых действий, можно расширить локальный каталог в облако.
@@ -46,7 +46,7 @@ ms.locfileid: "46303882"
    Если отобразилась эта страница, просмотрите все домены с пометкой **Не добавлено** и **Не проверено**. Убедитесь, что используемые домены прошли проверку в Azure AD. Проверив домены, щелкните значок обновления.
 8. На экране "Все готово к настройке" нажмите кнопку **Установить**.
    * При необходимости на странице "Готово к настройке" можно снять флажок **Start the synchronization process as soon as configuration completes** (Запустить синхронизацию сразу после завершения настройки). Снимите этот флажок, если нужно настроить дополнительные параметры, например [фильтрацию](how-to-connect-sync-configure-filtering.md). Если отменить выбор этого параметра, мастер настроит синхронизацию, но оставит планировщик отключенным. Он не запустится, пока вы не включите его вручную, [повторно запустив мастер установки](how-to-connect-installation-wizard.md).
-   * Если установить флажок **Start the synchronization process as soon as configuration completes** (Начать синхронизацию сразу по завершении настройки), немедленно запустится полная синхронизация всех пользователей, групп и контактов в Azure AD. 
+   * Если установить флажок **Start the synchronization process as soon as configuration completes** (Начать синхронизацию сразу по завершении настройки), немедленно запустится полная синхронизация всех пользователей, групп и контактов в Azure AD.
    * Если Exchange находится в локальной службе Active Directory, вы также можете включить [**гибридное развертывание Exchange**](https://technet.microsoft.com/library/jj200581.aspx). Этот флажок нужно установить, если почтовые ящики Exchange будут одновременно использоваться в облаке и локальной среде.
      ![Все готово к настройке Azure AD Connect](./media/how-to-connect-install-express/readytoconfigure.png)
 9. По завершении установки щелкните **Выход**.

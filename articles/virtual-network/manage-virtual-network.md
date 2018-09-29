@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: jdial
-ms.openlocfilehash: f8d92c5d01e977fc64e823a0229b5f2ede944743
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d72faa99c15fdbebb299e416fd902bae261f31f9
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46985657"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221185"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Создание, изменение или удаление виртуальной сети
 
@@ -89,7 +89,7 @@ ms.locfileid: "46985657"
     - **Свойства.** Здесь отображаются параметры виртуальной сети, включая ИД ресурса и подписку Azure, к которой относится виртуальная сеть.
     - **Схема**. Схема дает наглядное представление всех устройств, подключенных к виртуальной сети. В схеме содержатся некоторые важные сведения об устройствах. Чтобы управлять устройствами в этом представлении, выберите устройство на схеме.
     - **Common Azure settings** (Общие параметры Azure). Дополнительные сведения об общих параметрах Azure см. по следующим ссылкам:
-        *   [Журнал действий](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#activity-logs)
+        *   [Журнал действий](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)
         *   [Управление доступом (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control)
         *   [Теги](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
         *   [Блокировки](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

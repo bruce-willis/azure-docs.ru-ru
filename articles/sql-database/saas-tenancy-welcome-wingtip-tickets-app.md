@@ -3,19 +3,22 @@ title: Знакомство с приложением Wingtips для служб
 description: Узнайте о моделях аренды базы данных на примере SaaS-приложения Wingtips для службы "База данных SQL Azure" в облачной среде.
 keywords: руководство по базе данных sql
 services: sql-database
-author: billgib
-manager: craigg
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
+author: stevestein
+ms.author: sstein
+ms.reviewer: billgib
+manager: craigg
 ms.date: 04/01/2018
-ms.author: billgib
-ms.openlocfilehash: 3c7d1d40af3a0b8f70302171eb13ac0a180b0bfe
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a05a8ad495e33734a531405902ce34e3591bfe15
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34644398"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47056324"
 ---
 # <a name="the-wingtip-tickets-saas-application"></a>SaaS-приложение Wingtip Tickets
 

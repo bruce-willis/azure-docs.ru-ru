@@ -1,21 +1,23 @@
 ---
 title: Рекомендации по использованию примера мультитенантного приложения базы данных SQL | Документация Майкрософт
 description: В этой статье приводятся шаги и рекомендации по установке и запуску примера мультитенантного приложения SaaS, использующего базу данных SQL Azure — Wingtip Tickets.
-keywords: руководство по базе данных sql
 services: sql-database
-author: MightyPen
-manager: craigg
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 6c352298c701c827cd01c0ed7f427b7ed6015e29
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: da8814cfd8fca8da061c27d9c5b69af15bff5007
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646683"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47054410"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 

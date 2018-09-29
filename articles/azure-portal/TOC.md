@@ -1,7 +1,5 @@
 # Обзор
 ## [О портале Azure](../azure-portal-overview.md)
-# Учебники
-## [Разработка и операции на портале Azure](tutorial-azureportal-devops.md)
 # Основные понятия
 ## [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
 ## [Сочетания клавиш](azure-portal-keyboard-shortcuts.md)

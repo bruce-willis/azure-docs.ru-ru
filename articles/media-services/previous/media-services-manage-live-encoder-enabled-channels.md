@@ -4,7 +4,7 @@ description: 'В этой статье описывается, как настр
 services: media-services
 documentationcenter: ''
 author: anilmur
-manager: cfowler
+manager: femila
 editor: ''
 ms.assetid: 30ce6556-b0ff-46d8-a15d-5f10e4c360e2
 ms.service: media-services
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/20/2018
 ms.author: juliako;anilmur
-ms.openlocfilehash: 008fac84eedfd58cbcfe563504a50bc19d519382
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: ada5f55cf356ca79efb7cb45c76a4812804400c5
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246791"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222069"
 ---
 # <a name="live-streaming-using-azure-media-services-to-create-multi-bitrate-streams"></a>Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с разными скоростями
 
@@ -166,7 +166,7 @@ ms.locfileid: "40246791"
 
 Получить URL-адреса приема можно сразу после создания канала. Для этого каналу не обязательно находиться в состоянии **Выполняется** . Чтобы начать передавать данные в канал, его нужно перевести в состояние **Выполняется** . Когда канал начнет принимать данные, вы можете просмотреть поток с помощью URL-адреса предварительного просмотра.
 
-У вас есть возможность приема потока в реальном времени в формате фрагментированного MP4 (Smooth Streaming) через SSL-подключение. Для приема по протоколу SSL измените URL-адрес приема на HTTPS. Обратите внимание, что в настоящее время AMS не поддерживает SSL для личных доменов.  
+У вас есть возможность приема потока в реальном времени в формате фрагментированного MP4 (Smooth Streaming) через SSL-подключение. Для приема по протоколу SSL измените URL-адрес приема на HTTPS. Сейчас AMS не поддерживает SSL для личных доменов.  
 
 ### <a name="allowed-ip-addresses"></a>Разрешенные IP-адреса
 Вы можете определить IP-адреса, с которых разрешено публиковать видео в этом канале. Допустимые IP-адреса можно указать как отдельный IP-адрес (например, 10.0.0.1), как диапазон IP-адресов с использованием IP-адреса и маски подсети CIDR (например, 10.0.0.1/22) либо как диапазон IP-адресов с использованием IP-адреса и маски подсети в десятичной записи (например, 10.0.0.1(255.255.252.0)).

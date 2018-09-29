@@ -3,19 +3,22 @@ title: 'Always Encrypted: База данных SQL Azure и хранилище 
 description: В этой статье показано, как защитить конфиденциальные данные в базе данных SQL с помощью шифрования базы данных, используя мастер настройки Always Encrypted в SQL Server Management Studio (SSMS). В ней также показано, как сохранить ключи в хранилище сертификатов Windows.
 keywords: шифрование данных, шифрование SQL, шифрование базы данных, конфиденциальные данные, постоянное шифрование
 services: sql-database
-author: VanMSFT
-manager: craigg
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: c6656a1ef5e52782461d9b9e7106ff81eb3983ee
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.reviwer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 4c9b2099308bc6a239a72fe2ebe559cdfa2fd3a1
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45544053"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064226"
 ---
 # <a name="always-encrypted-protect-sensitive-data-in-sql-database-and-store-your-encryption-keys-in-the-windows-certificate-store"></a>Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows
 

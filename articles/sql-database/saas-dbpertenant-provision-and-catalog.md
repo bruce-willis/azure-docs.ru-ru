@@ -1,27 +1,29 @@
 ---
 title: Подготовка новых клиентов в мультитенантном приложении, использующем базу данных SQL Azure | Документация Майкрософт
 description: Узнайте, как подготовить и каталогизировать новые клиенты в мультитенантном приложении SaaS базы данных SQL Azure.
-keywords: руководство по базе данных sql
 services: sql-database
-author: stevestein
-manager: craigg
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 7c526f65be5e4a3ea50de4603441e6184abf8edd
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 1f2539ed7ea407e2a1931ab2eb5951e61e4c7b03
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34643623"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47056273"
 ---
 # <a name="learn-how-to-provision-new-tenants-and-register-them-in-the-catalog"></a>Сведения о подготовке новых клиентов и их регистрации в каталоге
 
 В этом руководстве вы узнаете, как для подготовить и каталогизировать шаблоны SaaS. Вы также узнаете, как они реализуются в приложении SaaS Wingtip Tickets, использующем одну базу данных. Мы создадим и инициализируем базы данных клиента, а также зарегистрируем их в каталоге клиента приложения. Каталог — это база данных, поддерживающая сопоставление между разными клиентами приложений SaaS и их данными. Каталог играет важную роль, направляя запросы приложений и управляющие запросы к надлежащим базам данных.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 

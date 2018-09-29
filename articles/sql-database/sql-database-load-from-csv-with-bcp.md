@@ -2,25 +2,28 @@
 title: Загрузка данных из CSV-файла в базу данных SQL Azure (с использованием bcp) | Документация Майкрософт
 description: Для импорта небольших объемов данных в базу данных SQL Azure используйте программу bcp.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: load & move data
+ms.subservice: data-movement
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: de25b3318a91a5dbf99a5a9c26af209224177f0f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: b5039fc7cb6b9751bea9a88400c8a64308d447d6
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34649855"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162905"
 ---
 # <a name="load-data-from-csv-into-azure-sql-database-flat-files"></a>Загрузка данных из CSV-файла в базу данных SQL Azure (неструктурированные файлы)
 Для импорта данных из CSV-файла в базу данных SQL Azure можно использовать программу командной строки bcp.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Для выполнения задач из этой статьи необходимо следующее:
 
 * Логический сервер и база данных SQL Azure

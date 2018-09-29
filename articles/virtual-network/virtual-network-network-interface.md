@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: jdial
-ms.openlocfilehash: 78578197c5f764c8e197d3426506cb1eb13b838f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 110b97cdb4de6e866ac8ce17a1f05d0231ff5071
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956802"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221605"
 ---
 # <a name="create-change-or-delete-a-network-interface"></a>Создание, изменение или удаление сетевых интерфейсов
 
@@ -88,7 +88,7 @@ ms.locfileid: "46956802"
     - **Свойства.** Здесь отображаются основные параметры сетевого интерфейса, включая MAC-адрес (остается пустым, если сетевой интерфейс не подключен к виртуальной машине), а также подписка, в которой он находится.
     - **Effective security rules** (Действующие правила безопасности). Правила безопасности указываются, если сетевой интерфейс подключен к работающей виртуальной машине, а NSG связана с сетевым интерфейсом, подсетью, которой он назначен, или и с тем, и с другим. Чтобы узнать больше о том, что отображено, изучите раздел [Создание, изменение или удаление сетевых интерфейсов](#view-effective-security-rules). Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](security-overview.md).
     - **Effective routes** (Действующие маршруты). Маршруты указываются, если сетевой интерфейс подключен к работающей виртуальной машине. Маршруты представляют собой сочетание маршрутов Azure по умолчанию, любых определяемых пользователем маршрутов и всех маршрутов BGP, которые могут существовать для подсети, к которой подключен сетевой интерфейс. Чтобы узнать больше о том, что отображено, изучите раздел [Создание, изменение или удаление сетевых интерфейсов](#view-effective-routes). Чтобы узнать больше о маршрутах по умолчанию Azure и определяемых пользователем маршрутах, изучите раздел [Маршрутизация трафика в виртуальной сети](virtual-networks-udr-overview.md).
-    - **Общие параметры диспетчера ресурсов Azure**. Дополнительные сведения об общих параметрах диспетчера ресурсов Azure см. в документах о [журнале действий](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#activity-logs), [контроле доступа (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control), [тегах](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [блокировках](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [скрипте службы автоматизации](../azure-resource-manager/resource-manager-export-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json#export-the-template-from-resource-group).
+    - **Общие параметры диспетчера ресурсов Azure**. Дополнительные сведения об общих параметрах диспетчера ресурсов Azure см. в документах о [журнале действий](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md), [контроле доступа (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control), [тегах](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [блокировках](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [скрипте службы автоматизации](../azure-resource-manager/resource-manager-export-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json#export-the-template-from-resource-group).
 
 <a name="view-settings-commands"></a>**Команды**
 

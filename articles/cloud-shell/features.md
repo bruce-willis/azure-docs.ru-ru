@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: juluk
-ms.openlocfilehash: 5087b8a1d675fb6fb2bbfb2b46a09c215bf5e9ae
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2184d006bb99d57f50e71c0096d68b7a0b69a219
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998769"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162293"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -44,7 +44,7 @@ Cloud Shell безопасно и автоматически выполняет 
 
 ### <a name="azure-drive-azure"></a>Диск Azure (Azure:)
 
-PowerShell в Cloud Shell (предварительная версия) запускается на диске Azure (`Azure:`).
+PowerShell в Cloud Shell запускается на диске Azure (`Azure:`).
 Диск Azure упрощает обнаружение ресурсов Azure и перемещение по ним, включая вычислительные ресурсы, сетевые ресурсы, ресурсы хранилища и т. д., предоставляя возможности навигации как у файловой системы.
 Для управления этими ресурсами можно воспользоваться привычными [командлетами Azure PowerShell](https://docs.microsoft.com/powershell/azure), независимо от используемого диска.
 Любые изменения, внесенные в ресурсы Azure непосредственно на портале Azure или с помощью командлетов Azure PowerShell, отражаются на диске Azure.  Для обновления ресурсов можно запустить `dir -Force`.
@@ -81,6 +81,6 @@ PowerShell в Cloud Shell (предварительная версия) запу
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
-[Краткое руководство по использованию PowerShell в Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
-[Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
+[Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
+[Справочник команд Azure CLI 2.0](https://docs.microsoft.com/cli/azure/) <br>
 [Дополнительные сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/) <br>

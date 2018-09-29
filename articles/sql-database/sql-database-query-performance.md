@@ -2,20 +2,22 @@
 title: Анализ производительности запросов для Базы данных SQL Azure | Документация Майкрософт
 description: Мониторинг производительности запросов определяет запросы, максимально использующие ресурсы процессора, в базе данных SQL Azure.
 services: sql-database
-author: danimir
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: performance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: danimir
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: 5069b4e69c53ed93e9018cef2517f6125b838d12
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: f46d5a31667f52f553bcfdbd20ff56439d526144
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39524171"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47163313"
 ---
 # <a name="azure-sql-database-query-performance-insight"></a>Анализ производительности запросов базы данных Azure SQL
 Управление производительностью реляционных баз данных и ее настройка являются сложной задачей, требующей значительного опыта и времени. Анализ производительности запросов позволяет тратить меньше времени на устранение неполадок с производительностью базы данных, предоставляя следующие возможности:

@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 07/21/2018
-ms.openlocfilehash: 18f6647a8412477384a48aa777461f99b2fbcb0a
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.date: 09/27/2018
+ms.openlocfilehash: 696932135cdd3850e04d25370867c0273b99b3bf
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44379548"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423550"
 ---
 # <a name="azure-database-for-postgresql-pricing-tiers"></a>Ценовые категории службы "База данных Azure для PostgreSQL"
 
@@ -74,8 +74,13 @@ ms.locfileid: "44379548"
 | Западная часть Японии | X | X |
 | Центральная Корея |  | X |
 | Южная Корея |  | X |
+| Центральная Германия |  | X |
+| Центральная часть US DoD  | X |  |
+| Восточная часть US DoD  | X |  |
+| Аризона (для обслуживания государственных организаций США) |  | X |
+| Техас (для обслуживания государственных организаций США) |  | X |
 
-## <a name="storage"></a>служба хранилища.
+## <a name="storage"></a>Хранилище
 
 Хранилище, которое вы подготавливаете, определяет объем доступной емкости хранилища для сервера службы "База данных Azure для PostgreSQL". Хранилище используется для файлов базы данных, временных файлов, журналов транзакций и журналов сервера PostgreSQL. Общий объем хранилища, который вы подготовили, также определяет доступную производительность операций ввода-вывода для сервера.
 
@@ -120,4 +125,4 @@ ms.locfileid: "44379548"
 
 - [Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью портала Azure](tutorial-design-database-using-azure-portal.md).
 - [Мониторинг и масштабирование отдельного сервера PostgreSQL с помощью Azure CLI](scripts/sample-scale-server-up-or-down.md).
-- [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md).
+- [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md). 

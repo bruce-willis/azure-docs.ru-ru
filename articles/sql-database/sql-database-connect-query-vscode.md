@@ -3,25 +3,28 @@ title: 'VS Code: подключение и запрос данных в базе
 description: Сведения о подключении к базе данных SQL в Azure с помощью Visual Studio Code и выполнении инструкций Transact-SQL (T-SQL) для запроса и изменения данных.
 keywords: подключение к базе данных SQL
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: mvc,DBs & servers
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: quickstart
-ms.date: 04/01/2018
+author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: e1294b8f83da2ad6748f051925219cdc7683d032
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 2976a136bd04ac531bc54a0e9a6bed93d40fe06f
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38701881"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063954"
 ---
 # <a name="azure-sql-database-use-visual-studio-code-to-connect-and-query-data"></a>База данных SQL Azure: подключение и запрос данных с помощью Visual Studio Code
 
 [Visual Studio Code](https://code.visualstudio.com/docs) — это графический редактор кода для Linux, macOS и Windows, поддерживающий различные расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace), для выполнения запросов к Microsoft SQL Server, базе данных SQL Azure и хранилищу данных SQL. В этом кратком руководстве показано, как, используя Visual Studio Code, подключиться к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Начальной точкой в руководстве являются ресурсы, созданные в одном из этих кратких руководств:
 

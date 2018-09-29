@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 600625f143041eaf983b7ec7e945c5a968b522f5
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 0e58fb23aded66a44deb0d520151c98903cffe18
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42023157"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433333"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-visual-studio"></a>Краткое руководство по созданию пространства разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и Visual Studio)
 
@@ -39,7 +39,7 @@ ms.locfileid: "42023157"
 
 ## <a name="set-up-azure-dev-spaces"></a>Настройка Azure Dev Spaces
 
-Установка [Средств Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio).
+Установка [Средств Visual Studio для Kubernetes](https://aka.ms/get-vsk8stools).
 
 ## <a name="connect-to-a-cluster"></a>Подключение к кластеру
 

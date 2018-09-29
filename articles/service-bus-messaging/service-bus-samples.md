@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/21/2017
+ms.date: 09/21/2018
 ms.author: spelluru
-ms.openlocfilehash: a20cf83dec62c0ea2882c2beda784b34ee15c602
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 651d58d4cfb654ecef780ef12effbfbf71f7050b
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43696563"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47410040"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
 

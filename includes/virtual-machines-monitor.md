@@ -1,4 +1,4 @@
-Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/monitoring-and-diagnostics/monitoring-overview-azure-monitor.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/application-insights/app-insights-overview.md) и [Log Analytics](../articles/log-analytics/log-analytics-overview.md).
+Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/application-insights/app-insights-overview.md) и [Log Analytics](../articles/log-analytics/log-analytics-queries.md).
 
 ## <a name="diagnostics-and-metrics"></a>Диагностика и метрики 
 
@@ -46,7 +46,7 @@
 Ниже описано несколько доступных операций с журналами диагностики:
 
 - Сохранение журналов в [учетную запись хранения](../articles/monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
-- [Потоковая передача журналов в концентраторы событий](../articles/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
+- [Потоковая передача журналов в Центры событий](../articles/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
 - Анализ журналов с помощью [OMS Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
 ## <a name="advanced-monitoring"></a>Расширенный мониторинг

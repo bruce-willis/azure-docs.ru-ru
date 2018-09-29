@@ -2,20 +2,22 @@
 title: Аудит управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
 description: Узнайте, как приступить к аудиту управляемого экземпляра Базы данных SQL Azure с помощью T-SQL
 services: sql-database
-author: giladm
-manager: craigg
-ms.reviewer: vanto
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/28/2018
+author: giladm
 ms.author: giladm
-ms.openlocfilehash: 7671b49921799e63b01d0eb85e90a8b75b2d5a48
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.reviewer: vanto
+manager: craigg
+ms.date: 09/20/2018
+ms.openlocfilehash: 38dee577ff57e6ba440fb4062315b57e4eb7957b
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45544300"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162259"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Приступая к аудиту управляемого экземпляра Базы данных SQL Azure
 
@@ -104,7 +106,7 @@ ms.locfileid: "45544300"
     Если значение `RETENTION_DAYS` не указано, по умолчанию используется значение 0 (неограниченный период хранения).
 
     Дополнительные сведения см. в следующих статьях:
-    - [Get started with Azure SQL Database Managed Instance Auditing](#subheading-3) (Приступая к аудиту управляемых экземпляров Базы данных SQL Azure)
+    - [Get started with Azure SQL Database Managed Instance Auditing](#auditing-differences-between-managed-instance-azure-sql-database-and-sql-server) (Приступая к аудиту управляемых экземпляров Базы данных SQL Azure)
     - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
     - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 

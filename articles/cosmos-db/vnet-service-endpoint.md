@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: govindk
-ms.openlocfilehash: e6b263c1eb9fe3b151f0a51b5da9a92b8ced4549
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: a4758e5597876112fa7a85850786491e22af8c83
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37109748"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47037146"
 ---
 # <a name="secure-access-to-an-azure-cosmos-db-account-by-using-azure-virtual-network-service-endpoint"></a>Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure
 
@@ -25,9 +25,6 @@ Azure Cosmos DB — это многомодельная глобально ра
 ![Архитектура конечной точки службы виртуальной сети](./media/vnet-service-endpoint/vnet-service-endpoint-architecture.png)
 
 После того как учетная запись Azure Cosmos DB настроена с конечной точкой службы виртуальной сети, к ней можно получить доступ только из указанной подсети. Удаляются все общедоступные подключения и Интернет. Подробные сведения о конечных точках службы см. в статье [Обзор конечных точек службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md).
-
-> [!NOTE]
-> В настоящее время конечные точки службы виртуальной сети могут быть настроены для учетных записей API Mongo или SQL API для Azure Cosmos DB. В скором времени будет доступна возможность настройки конечных точек службы для других API и национальных облаков, таких как Azure для Германии или Azure для государственных организаций. Если имеется существующий брандмауэр IP, настроенный для вашей учетной записи Azure Cosmos DB, обратите внимание на его конфигурацию, удалите брандмауэр IP и затем настройте список управления доступом (ACL) конечной точки службы. После настройки конечной точки службы можно повторно включить брандмауэр IP, если это необходимо.
 
 ## <a name="configure-service-endpoint-by-using-azure-portal"></a>Настройка конечной точки службы с помощью портала Azure
 ### <a name="configure-service-endpoint-for-an-existing-azure-virtual-network-and-subnet"></a>Настройка конечной точки службы для существующей виртуальной сети Azure и подсети

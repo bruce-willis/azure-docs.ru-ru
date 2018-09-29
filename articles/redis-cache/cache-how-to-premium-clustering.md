@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: wesmc
 ms.openlocfilehash: b61c5860cb18f5a5b4ffa96212d66b7becad9928
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38723276"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47092362"
 ---
 # <a name="how-to-configure-redis-clustering-for-a-premium-azure-redis-cache"></a>Настройка кластеризации для кэша Redis для Azure уровня Премиум
 Кэш Redis для Azure предлагает разные варианты кэша, которые обеспечивают гибкость в выборе размера и функций кэша, включая функции уровня "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. В этой статье описывается настройка кластеризации в экземпляре кэша Redis для Azure уровня Премиум.

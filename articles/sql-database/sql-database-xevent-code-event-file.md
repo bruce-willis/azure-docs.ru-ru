@@ -2,19 +2,22 @@
 title: Код файла событий XEvent для базы данных SQL | Документация Майкрософт
 description: Содержит сценарии PowerShell и Transact-SQL для примера двухэтапного кода, демонстрирующего целевой файл событий в расширенном событии в Базе данных SQL Azure. Обязательной частью данного сценария является хранилище Azure.
 services: sql-database
-author: MightyPen
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: b905c921ae967d7f755f084bd6b9b30de34f76b4
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 302607df2292fe7a67a8b6860dab19eef7f391a9
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34649641"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47160372"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -32,7 +35,7 @@ ms.locfileid: "34649641"
   * назначение контейнера хранилища Azure для целевого файла событий;
   * создание и запуск сеанса событий и т. д.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 * Любая база данных, позволяющая создать таблицу.

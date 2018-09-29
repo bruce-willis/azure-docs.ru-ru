@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.date: 04/01/2018
 ms.workload: data-services
 ms.author: rodrigoa
-ms.openlocfilehash: a50b96f128fb32b8ac7b7b9971beeb3b12397b5f
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 56ac08593d29a9003f5509f2be52f50fa250bd75
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39184984"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47431601"
 ---
 # <a name="tutorial-azure-stream-analytics-javascript-user-defined-functions"></a>Руководство. Определяемые пользователем функции JavaScript в Azure Stream Analytics
  
@@ -60,7 +60,7 @@ Azure Stream Analytics поддерживает определяемые пол�
 
     ```
     // Convert Hex value to integer.
-    function main(hexValue) {
+    function hex2Int(hexValue) {
         return parseInt(hexValue, 16);
     }
     ```

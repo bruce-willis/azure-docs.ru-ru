@@ -2,19 +2,22 @@
 title: Логические серверы SQL Azure | Документация Майкрософт
 description: Статья содержит сведения о логических серверах Базы данных SQL Azure и управлении ими.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: DBs & servers
+ms.subservice: ''
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/07/2018
+author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: f30d15c70b33200565f1933a4d8ebe8ed654638c
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.reviewer: ''
+manager: craigg
+ms.date: 09/20/2018
+ms.openlocfilehash: effaa9b0b3fec36974a2bc850eeb1f36181ca0c7
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44055239"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166441"
 ---
 # <a name="azure-sql-database-logical-servers-and-their-management"></a>Логические серверы Базы данных SQL Azure и управление ими
 
@@ -111,25 +114,25 @@ ms.locfileid: "44055239"
 
 | Командлет | ОПИСАНИЕ |
 | --- | --- |
-|[az sql db create](/cli/azure/sql/db#az_sql_db_create) |Создает базу данных.|
-|[az sql db list](/cli/azure/sql/db#az_sql_db_list)|Выводит список всех баз данных и хранилищ данных на сервере или всех баз данных в эластичном пуле.|
-|[az sql db list-editions](/cli/azure/sql/db#az_sql_db_list_editions)|Выводит список доступных целевых служб и ограничений хранилища.|
-|[az sql db list-usages](/cli/azure/sql/db#az_sql_db_list_usages)|Возвращает данные об использовании баз данных.|
-|[az sql db show](/cli/azure/sql/db#az_sql_db_show)|Возвращает сведения о базе данных или хранилище данных.|
-|[az sql db update](/cli/azure/sql/db#az_sql_db_update)|Обновляет базу данных.|
-|[az sql db delete](/cli/azure/sql/db#az_sql_db_delete)|Удаляет базу данных.|
-|[az group create](/cli/azure/group#az_group_create)|Создает группу ресурсов.|
-|[az sql server create](/cli/azure/sql/server#az_sql_server_create)|Создает сервер.|
-|[az sql server list](/cli/azure/sql/server#az_sql_server_list)|Выводит список серверов.|
-|[az sql server list-usages](/cli/azure/sql/server#az_sql_server_list_usages)|Возвращает данные об использовании серверов.|
-|[az sql server show](/cli/azure/sql/server#az_sql_server_show)|Возвращает сервер.|
-|[az sql server update](/cli/azure/sql/server#az_sql_server_update)|Обновляет сервер.|
-|[az sql server delete](/cli/azure/sql/server#az_sql_server_delete)|Удаляет сервер.|
-|[az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule#az_sql_server_firewall_rule_create)|Создает правило брандмауэра для сервера.|
-|[az sql server firewall-rule list](/cli/azure/sql/server/firewall-rule#az_sql_server_firewall_rule_list)|Выводит список правил брандмауэра на сервере.|
-|[az sql server firewall-rule show](/cli/azure/sql/server/firewall-rule#az_sql_server_firewall_rule_show)|Отображает сведения о правиле брандмауэра.|
-|[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az_sql_server_firewall_rule_update)|Обновляет правило брандмауэра.|
-|[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az_sql_server_firewall_rule_delete)|Удаляет правило брандмауэра.|
+|[az sql db create](/cli/azure/sql/db#az-sql-db-create) |Создает базу данных.|
+|[az sql db list](/cli/azure/sql/db#az-sql-db-list)|Выводит список всех баз данных и хранилищ данных на сервере или всех баз данных в эластичном пуле.|
+|[az sql db list-editions](/cli/azure/sql/db#az-sql-db-list-editions)|Выводит список доступных целевых служб и ограничений хранилища.|
+|[az sql db list-usages](/cli/azure/sql/db#az-sql-db-list-usages)|Возвращает данные об использовании баз данных.|
+|[az sql db show](/cli/azure/sql/db#az-sql-db-show)|Возвращает сведения о базе данных или хранилище данных.|
+|[az sql db update](/cli/azure/sql/db#az-sql-db-update)|Обновляет базу данных.|
+|[az sql db delete](/cli/azure/sql/db#az-sql-db-delete)|Удаляет базу данных.|
+|[az group create](/cli/azure/group#az-group-create)|Создает группу ресурсов.|
+|[az sql server create](/cli/azure/sql/server#az-sql-server-create)|Создает сервер.|
+|[az sql server list](/cli/azure/sql/server#az-sql-server-list)|Выводит список серверов.|
+|[az sql server list-usages](/cli/azure/sql/server#az-sql-server-list-usages)|Возвращает данные об использовании серверов.|
+|[az sql server show](/cli/azure/sql/server#az-sql-server-show)|Возвращает сервер.|
+|[az sql server update](/cli/azure/sql/server#az-sql-server-update)|Обновляет сервер.|
+|[az sql server delete](/cli/azure/sql/server#az-sql-server-delete)|Удаляет сервер.|
+|[az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-create)|Создает правило брандмауэра для сервера.|
+|[az sql server firewall-rule list](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-list)|Выводит список правил брандмауэра на сервере.|
+|[az sql server firewall-rule show](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-show)|Отображает сведения о правиле брандмауэра.|
+|[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-update)|Обновляет правило брандмауэра.|
+|[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az-sql-server-firewall-rule-delete)|Удаляет правило брандмауэра.|
 
 > [!TIP]
 > Краткое руководство по Azure CLI приведено в статье [Создание отдельной базы данных SQL Azure с помощью Azure CLI](sql-database-cli-samples.md). Образцы скриптов Azure CLI, см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью интерфейса командной строки](scripts/sql-database-create-and-configure-database-cli.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью интерфейса командной строки](scripts/sql-database-monitor-and-scale-database-cli.md).

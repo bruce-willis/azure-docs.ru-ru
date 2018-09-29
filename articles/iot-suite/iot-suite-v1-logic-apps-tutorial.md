@@ -1,12 +1,12 @@
 ---
-title: "Azure IoT Suite и приложения логики | Документация Майкрософт"
-description: "Руководство по подключению приложений логики к Azure IoT Suite для бизнес-процесса."
-services: 
+title: Azure IoT Suite и приложения логики | Документация Майкрософт
+description: Руководство по подключению приложений логики к Azure IoT Suite для бизнес-процесса.
+services: ''
 suite: iot-suite
-documentationcenter: 
+documentationcenter: ''
 author: dominicbetts
 manager: timlt
-editor: 
+editor: ''
 ms.assetid: 4629a7af-56ca-4b21-a769-5fa18bc3ab07
 ms.service: iot-suite
 ms.devlang: na
@@ -16,10 +16,11 @@ ms.workload: na
 ms.date: 11/02/2017
 ms.author: corywink
 ms.openlocfilehash: 4a1db86f4b715533dfea545365eaf66de0574c5e
-ms.sourcegitcommit: f67f0bda9a7bb0b67e9706c0eb78c71ed745ed1d
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47106560"
 ---
 # <a name="tutorial-connect-logic-app-to-your-azure-iot-suite-remote-monitoring-preconfigured-solution"></a>Руководство. Подключение приложения логики к предварительно настроенному решению для удаленного мониторинга Azure IoT Suite
 Предварительно настроенное решение для удаленного мониторинга [Microsoft Azure IoT Suite][lnk-internetofthings] позволяет быстро начать работу с полным набором возможностей, которыми обладает решение Интернета вещей. В этом учебнике описаны действия по добавлению приложения логики к предварительно настроенному решению для удаленного мониторинга Microsoft Azure IoT Suite. Эти шаги показывают, как продвинуть свое решение IoT еще дальше, подключив его к бизнес-процессу.

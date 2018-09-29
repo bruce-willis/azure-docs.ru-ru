@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 08/01/2016
 ms.author: tomfitz
 ms.openlocfilehash: c07a9d92cac13d6325e66f44426f1a64e8ac53cb
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35774063"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47096206"
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей
 После настройки панели мониторинга ее можно опубликовать и использовать совместно с другими пользователями в организации. Вы можете предоставить другим пользователям доступ к панели мониторинга Azure с помощью [управления доступом на основе ролей](../role-based-access-control/role-assignments-portal.md). Роль назначается пользователю или группе пользователей. Она определяет, можно ли пользователям просматривать или изменять опубликованную панель мониторинга. 

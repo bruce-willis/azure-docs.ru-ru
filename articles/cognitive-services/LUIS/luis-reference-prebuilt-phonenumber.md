@@ -1,21 +1,21 @@
 ---
 title: Справочник по предварительно созданным сущностям phonenumber в LUIS Azure | Документация Майкрософт
 titleSuffix: Azure
-description: В этой статье содержатся сведения о предварительно созданных сущностях phonenumber в Интеллектуальной службе распознавания речи (LUIS).
+description: В этой статье описана готовая сущность phonenumber в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: diberry
-ms.openlocfilehash: 1ae14f72f0dc610b9399e675f49ef5fff51a6965
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: bacb09b50c4b1d82daa6be1ef4fc79c88269cf7a
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238997"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47035459"
 ---
 # <a name="phonenumber-entity"></a>Сущность phonenumber
 Сущность `phonenumber` извлекает различные номера телефонов, в том числе код страны. Так как эта сущность уже обучена, добавлять в приложение примеры фраз не нужно. Сущность `phonenumber` поддерживается только в языке `en-us`. 

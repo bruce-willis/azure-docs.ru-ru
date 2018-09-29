@@ -13,12 +13,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 97b052833946b373e2333491c4b516b3a088130b
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 2a04b80e728ecf0af39cb46041a005a86ea1abec
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44158472"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47406113"
 ---
 # <a name="team-development-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces
 
@@ -163,6 +163,23 @@ ms.locfileid: "44158472"
 
 Теперь добавьте часть "scott.s" в URL-адрес, чтобы получилось http://scott.s.webfrontend.123456abcdef.eastus.aksapp.io, и обновите браузер. Должна сработать точка останова, заданная в проекте `mywebapi`. Нажмите клавишу F5, чтобы продолжить. В браузере вы должны увидеть новое сообщение "Hello from webfrontend and mywebapi now says something new". Это происходит, так как путь к обновленному коду в `mywebapi` используется в пространстве `default/scott`.
 
-[!INCLUDE [](includes/well-done.md)]
+### <a name="well-done"></a>Все готово!
+Вы выполнили руководство по началу работы. Вы научились выполнять следующие задачи:
 
-[!INCLUDE [](includes/clean-up.md)]
+> [!div class="checklist"]
+> * Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
+> * итеративная разработка кода в контейнерах;
+> * независимая разработка двух отдельных служб и вызов другой службы с помощью обнаружения службы DNS Kubernetes;
+> * эффективная разработка и тестирование кода в среде командной работы.
+
+Теперь, после ознакомления с Azure Dev Spaces, [предоставьте доступ к пространству разработки своему сотруднику](how-to/share-dev-spaces.md) и покажите ему, как просто работать вместе.
+
+## <a name="clean-up"></a>Очистка
+Чтобы полностью удалить экземпляр Azure Dev Spaces из кластера, включая все среды разработки и работающие службы, используйте команду `az aks remove-dev-spaces`. Не забывайте, что это действие необратимо. Позднее вы сможете снова добавить в кластер поддержку Azure Dev Spaces, но в этом случае вам придется начать работу с нуля. Прежние службы и среды не будут восстановлены.
+
+С помощью приведенного ниже примера кода можно вывести список контроллеров Azure Dev Spaces в активной подписке, а затем удалить контроллер Azure Dev Spaces, связанный с кластером AKS myaks в группе ресурсов myaks-rg.
+
+```cmd
+    azds controller list
+    az aks remove-dev-spaces --name myaks --resource-group myaks-rg
+```

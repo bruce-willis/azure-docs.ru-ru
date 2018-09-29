@@ -1,21 +1,21 @@
 ---
 title: Справочник по предварительно созданным доменам | Документация Майкрософт
 titleSuffix: Azure
-description: Справочник по предварительно созданным доменам, которые представляют собой предварительно собранные коллекции намерений и сущностей из службы Language Understanding Intelligent Services (LUIS).
+description: Справочник по предварительно созданным доменам, которые представляют собой предварительно собранные коллекции намерений и сущностей из Интеллектуальных служб распознавания речи (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: diberry
-ms.openlocfilehash: 36e527f9afdce58475ca4c3c6e54ce393c48c983
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: f424abd339bda6c29079e3d286cbe96593f16f52
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238902"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47040046"
 ---
 # <a name="prebuilt-domain-reference"></a>Справочник по предварительно созданным доменам
 В этом справочнике представлены сведения о [предварительно созданных доменах](luis-how-to-use-prebuilt-domains.md), которые представляют собой предварительно созданные коллекции намерений и сущностей, предлагаемые приложением LUIS.

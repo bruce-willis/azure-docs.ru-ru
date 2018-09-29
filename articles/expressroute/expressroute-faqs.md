@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: cherylmc
-ms.openlocfilehash: 2a7842a50690049507e00b85c8736e63da002503
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 101dec93713983e5f2082a59103288fcda346740
+ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950171"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47419310"
 ---
 # <a name="expressroute-faq"></a>Вопросы и ответы по ExpressRoute
 
@@ -348,9 +348,9 @@ ExpressRoute Premium — это коллекция следующих возм�
 
 * Пиринг Майкрософт для каналов ExpressRoute, настроенных 1 августа 2017 г. или позднее, не будет объявлять префиксы, пока к каналу не будет присоединен фильтр маршрутов. По умолчанию вы не увидите никаких префиксов.
 
-## <a name="globalreach"></a>ExpressRoute Direct (предварительная версия)
+## <a name="expressRouteDirect"></a>ExpressRoute Direct (предварительная версия)
 
-[!INCLUDE [Global Reach](../../includes/expressroute-direct-faq-include.md)]
+[!INCLUDE [ExpressRoute Direct](../../includes/expressroute-direct-faq-include.md)]
 
 ## <a name="globalreach"></a>Global Reach (предварительная версия)
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/08/2018
 ms.author: mbullwin
-ms.openlocfilehash: 170cd76c72e8aeb5de48c711ae4637a0244742fb
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 6db98332fc7d896613a3318421e9a96bbb50cd15
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294206"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47159148"
 ---
 # <a name="analytics-in-application-insights"></a>Аналитика в Application Insights
 Analytics — это мощный инструмент [Application Insights](app-insights-overview.md) для поиска и создания запросов. Analytics — это веб-инструмент, поэтому дополнительная настройка не требуется. Если вы уже настроили Application Insights для одного из приложений, вы можете проанализировать данные приложения, открыв Analytics в [колонке обзора](app-insights-dashboards.md) своего приложения.
@@ -48,9 +48,9 @@ requests
 
 Язык имеет много привлекательных функций.
 
-* [Фильтрация](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/where-operator) необработанных данных телеметрии приложения по любым полям, включая пользовательские свойства и метрики.
-* [Соединение](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/join-operator) нескольких таблиц — соотношение запросов с просмотрами страниц, вызовами зависимостей, исключениями и трассировками журнала.
-* Сложные статистические [агрегаты](https://docs.loganalytics.io/docs/Language-Reference/Aggregation-functions).
+* [Фильтрация](/azure/kusto/query/whereoperator) необработанных данных телеметрии приложения по любым полям, включая пользовательские свойства и метрики.
+* [Соединение](/azure/kusto/query/joinoperator) нескольких таблиц — соотношение запросов с просмотрами страниц, вызовами зависимостей, исключениями и трассировками журнала.
+* Сложные статистические [агрегаты](/azure/kusto/query/summarizeoperator).
 * Мгновенные яркие визуализации.
 * [REST API](https://dev.applicationinsights.io/), который можно использовать для программного выполнения запросов, например из PowerShell.
 

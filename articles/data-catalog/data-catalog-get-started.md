@@ -2,18 +2,18 @@
 title: Начало работы с каталогом данных Azure
 description: Комплексное руководство, в котором описываются сценарии использования и возможности каталога данных Azure.
 services: data-catalog
-author: steelanddata
-ms.author: spelluru
+author: markingmyname
+ms.author: maghan
 ms.assetid: 03332872-8d84-44a0-8a78-04fd30e14b18
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: c65f5c2ca3f162c17d036198c4285f9c965bbd53
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 4386f87b6986e6ab1742a8d3c14a100fea112182
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43052896"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47406317"
 ---
 # <a name="get-started-with-azure-data-catalog"></a>Начало работы с каталогом данных Azure
 Каталог данных Azure — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных ресурсов данных. Подробный обзор см. в статье [Что такое каталог данных Azure?](data-catalog-what-is-data-catalog.md)

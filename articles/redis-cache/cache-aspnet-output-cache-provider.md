@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
 ms.date: 02/14/2017
 ms.author: wesmc
-ms.openlocfilehash: 3cf906830965959709a8c7e8dc7d2acc3f3a6f32
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.openlocfilehash: a6c3314a981b46aa6f1cbca1f34392d1e1ae6c9a
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35778547"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47431650"
 ---
 # <a name="aspnet-output-cache-provider-for-azure-redis-cache"></a>Поставщик кэша вывода ASP.NET для кэша Redis для Azure
 Поставщик кэша вывода Redis представляет собой механизм внепроцессного хранения для выходных данных кэширования. Эти данные предназначены специально для полных HTTP-ответов (кэширование вывода страниц). Поставщик подключается к новой точке расширения поставщика вывода кэша, которая появилась в ASP.NET 4.
@@ -46,7 +46,7 @@ Install-Package Microsoft.Web.RedisOutputCacheProvider
 
 ```xml
 <caching>
-  <outputCachedefault Provider="MyRedisOutputCache">
+  <outputCache defaultProvider="MyRedisOutputCache">
     <providers>
       <!-- For more details check https://github.com/Azure/aspnet-redis-providers/wiki -->
       <!-- Either use 'connectionString' OR 'settingsClassName' and 'settingsMethodName' OR use 'host','port','accessKey','ssl','connectionTimeoutInMilliseconds' and 'operationTimeoutInMilliseconds'. -->
@@ -73,6 +73,7 @@ Install-Package Microsoft.Web.RedisOutputCacheProvider
            host=""
            accessKey=""
            ssl="true" />
+    </providers>
   </outputCache>
 </caching>
 ```

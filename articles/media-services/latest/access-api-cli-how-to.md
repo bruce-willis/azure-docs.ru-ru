@@ -13,11 +13,11 @@ ms.custom: mvc
 ms.date: 03/19/2018
 ms.author: juliako
 ms.openlocfilehash: e20cac5f1063589bdbfee0f384ac6af5a39811ed
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38723696"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47096797"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Доступ к API Служб мультимедиа Azure с помощью Azure CLI
  
@@ -30,7 +30,7 @@ ms.locfileid: "38723696"
 
 В этой статье показано, как с помощью Azure CLI создать приложение Azure AD и субъект-службу, а также получить значения, необходимые при доступе к ресурсам Служб мультимедиа Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](create-account-cli-quickstart.md).
 

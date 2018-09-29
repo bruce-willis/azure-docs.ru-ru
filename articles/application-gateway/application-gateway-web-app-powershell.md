@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 07/25/2017
 ms.author: victorh
 ms.openlocfilehash: 1b9e0f4f5614cf1c4b7655ac26877efdaad43144
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35628653"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47095384"
 ---
 # <a name="configure-app-service-web-apps-with-application-gateway"></a>Настройка веб-приложений службы приложений с помощью шлюза приложений 
 

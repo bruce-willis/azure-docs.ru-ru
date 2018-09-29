@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
-ms.author: genli
+ms.author: cwatson
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bce9e7de13ff95024685ccf916541357f5362727
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 622a8777f5ed329636c7023bb52790756f8d7206
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34070657"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47422632"
 ---
 # <a name="change-your-azure-account-profile-information-such-as-contact-email-address-and-phone-number"></a>Изменение сведений в профиле учетной записи Azure, например контактного адреса электронной почты, адреса и номера телефона
 
@@ -55,10 +55,6 @@ ms.locfileid: "34070657"
 ### <a name="why-cant-i-update-the-country"></a>Почему не удается изменить страну?
 
 В связи с техническими ограничениями нельзя изменить страну существующей учетной записи. Однако вы можете создать учетную запись в нужной стране, а затем обратиться в службу поддержки Azure с просьбой о переносе служб в эту учетную запись.
-
-### <a name="what-email-address-does-the-azure-billing-alerts-preview-feature-use"></a>Какой адрес электронной почты используется для функции предварительного просмотра предупреждений о выставлении счетов Azure?
-
-Оповещения высылаются на адрес электронной почты, который вы указываете при активации функции отправки оповещений. Адрес электронной почты, используемый для отправки оповещений, отличается от адреса администратора учетной записи. Дополнительные сведения см. в статье [Настройка оповещений о выставлении счетов за подписки Microsoft Azure](billing-set-up-alerts.md).
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
