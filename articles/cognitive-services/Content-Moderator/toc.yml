@@ -1,133 +1,140 @@
+items:
 - name: Документация по Content Moderator
 - name: Обзор
   items:
-    - name: Что такое Content Moderator?
-      href: overview.md
+  - name: Что такое Content Moderator?
+    href: overview.md
 - name: Примеры
   items:
-    - name: Примеры пакета SDK для .NET
-      href: samples-dotnet.md
-    - name: 'Примеры REST API в C#'
-      href: samples-rest.md
+  - name: Примеры пакета SDK для .NET
+    href: samples-dotnet.md
+  - name: Примеры для REST API на C#
+    href: samples-rest.md
 - name: Основные понятия
   items:
-    - name: Модерация изображений
-      href: image-moderation-api.md
-    - name: Модерация текста
-      href: text-moderation-api.md
-    - name: 'Модерация текста: языки'
-      href: Text-Moderation-API-Languages.md
-    - name: Модерация видео
-      href: video-moderation-human-review.md
-    - name: Задания и проверки
-      href: review-api.md
-    - name: Рабочие процессы
-      href: workflow-api.md
+  - name: Модерация изображений
+    href: image-moderation-api.md
+  - name: Модерация текста
+    href: text-moderation-api.md
+  - name: Модерация видео
+    href: video-moderation-human-review.md
+  - name: Задания и проверки
+    href: review-api.md
+  - name: Рабочие процессы
+    href: workflow-api.md
 - name: Практические руководства
   items:
-    - name: Попробовать Content Moderator
+  - name: Попробовать Content Moderator
+    items:
+    - name: Начало работы с Content Moderator
+      href: quick-start.md
+    - name: API модерации
       items:
-        - name: Начало работы с Content Moderator
-          href: quick-start.md
-        - name: API модерации
-          items:
-            - name: Библиотека вспомогательного приложения для .NET
-              href: content-moderator-helper-quickstart-dotnet.md
-            - name: Изображения (консоль API)
-              href: try-image-api.md
-            - name: Изображения (.NET)
-              href: image-moderation-quickstart-dotnet.md
-            - name: Пользовательские изображения (консоль API)
-              href: try-image-list-api.md
-            - name: Пользовательские изображения (.NET)
-              href: image-lists-quickstart-dotnet.md
-            - name: Текст (консоль API)
-              href: try-text-api.md
-            - name: Текст (.NET)
-              href: text-moderation-quickstart-dotnet.md
-            - name: Пользовательские термины (консоль API)
-              href: try-terms-list-api.md
-            - name: Пользовательские термины (.NET)
-              href: term-lists-quickstart-dotnet.md
-            - name: Видео (.NET)
-              href: video-moderation-api.md
-        - name: Просмотр API-интерфейсов
-          items:
-            - name: Задания (консоль API)
-              href: try-review-api-job.md
-            - name: Задания (.NET)
-              href: moderation-jobs-quickstart-dotnet.md
-            - name: Проверки (консоль API)
-              href: try-review-api-review.md
-            - name: Проверки (.NET)
-              href: moderation-reviews-quickstart-dotnet.md
-            - name: Проверки видео (.NET)
-              href: video-reviews-quickstart-dotnet.md
-            - name: Проверки расшифровок видео (.NET)
-              href: video-transcript-reviews-quickstart-dotnet.md
-            - name: Рабочие процессы (консоль API)
-              href: try-review-api-workflow.md
-    - name: Приложение Content Moderator
+      - name: Библиотека вспомогательного приложения для .NET
+        href: content-moderator-helper-quickstart-dotnet.md
+      - name: Изображения (консоль API)
+        href: try-image-api.md
+      - name: Изображения (.NET)
+        href: image-moderation-quickstart-dotnet.md
+      - name: Пользовательские изображения (консоль API)
+        href: try-image-list-api.md
+      - name: Пользовательские изображения (.NET)
+        href: image-lists-quickstart-dotnet.md
+      - name: Текст (консоль API)
+        href: try-text-api.md
+      - name: Текст (.NET)
+        href: text-moderation-quickstart-dotnet.md
+      - name: Пользовательские термины (консоль API)
+        href: try-terms-list-api.md
+      - name: Пользовательские термины (.NET)
+        href: term-lists-quickstart-dotnet.md
+      - name: Видео (.NET)
+        href: video-moderation-api.md
+    - name: Просмотр API-интерфейсов
       items:
-        - name: Модерация контента Facebook
-          href: facebook-post-moderation.md
-        - name: Модерация изображений eCommerce
-          href: ecommerce-retail-catalog-moderation.md
-        - name: Модерация видео и расшифровки
-          href: video-transcript-moderation-review-tutorial-dotnet.md
-    - name: Средство проверки
-      items:
-        - name: Участие человека
-          href: Review-Tool-User-Guide/human-in-the-loop.md
-        - name: Использование параметров
-          href: Review-Tool-User-Guide/Configure.md
-        - name: Управление командой
-          href: Review-Tool-User-Guide/SubTeams.md
-        - name: Использование тегов
-          href: Review-Tool-User-Guide/Tags.md
-        - name: Проверка образов
-          href: Review-Tool-User-Guide/Review-Moderated-Images.md
-        - name: Проверка текста
-          href: Review-Tool-User-Guide/Text-Reviews.md
-        - name: Управление учетными данными
-          href: Review-Tool-User-Guide/Credentials.md
-        - name: Использование соединителей
-          href: Review-Tool-User-Guide/Connectors.md
-        - name: Использование рабочих процессов
-          href: Review-Tool-User-Guide/Workflows.md
-        - name: Просмотр панели мониторинга
-          href: Review-Tool-User-Guide/View-Dashboard.md
+      - name: Задания (консоль API)
+        href: try-review-api-job.md
+      - name: Задания (.NET)
+        href: moderation-jobs-quickstart-dotnet.md
+      - name: Проверки (консоль API)
+        href: try-review-api-review.md
+      - name: Проверки (.NET)
+        href: moderation-reviews-quickstart-dotnet.md
+      - name: Проверки видео (.NET)
+        href: video-reviews-quickstart-dotnet.md
+      - name: Проверки расшифровок видео (.NET)
+        href: video-transcript-reviews-quickstart-dotnet.md
+      - name: Рабочие процессы (консоль API)
+        href: try-review-api-workflow.md
+  - name: Приложение Content Moderator
+    items:
+    - name: Модерация контента Facebook
+      href: facebook-post-moderation.md
+    - name: Модерация изображений eCommerce
+      href: ecommerce-retail-catalog-moderation.md
+    - name: Модерация видео и расшифровки
+      href: video-transcript-moderation-review-tutorial-dotnet.md
+  - name: Средство проверки
+    items:
+    - name: Участие человека
+      href: Review-Tool-User-Guide/human-in-the-loop.md
+    - name: Использование параметров
+      href: Review-Tool-User-Guide/Configure.md
+    - name: Управление командой
+      href: Review-Tool-User-Guide/SubTeams.md
+    - name: Использование тегов
+      href: Review-Tool-User-Guide/Tags.md
+    - name: Проверка образов
+      href: Review-Tool-User-Guide/Review-Moderated-Images.md
+    - name: Проверка текста
+      href: Review-Tool-User-Guide/Text-Reviews.md
+    - name: Управление учетными данными
+      href: Review-Tool-User-Guide/Credentials.md
+    - name: Использование соединителей
+      href: Review-Tool-User-Guide/Connectors.md
+    - name: Использование рабочих процессов
+      href: Review-Tool-User-Guide/Workflows.md
+    - name: Просмотр панели мониторинга
+      href: Review-Tool-User-Guide/View-Dashboard.md
 - name: Справочные материалы
   items:
-    - name: API Content Moderator
-      href: api-reference.md
-    - name: Пакеты SDK
-      items:
-        - name: Java
-          href: 'https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-cognitiveservices-contentmoderator%22'
-        - name: Node.js
-          href: 'https://docs.microsoft.com/javascript/api/azure-cognitiveservices-contentmoderator/?view=azure-node-latest'
-        - name: Python
-          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/contentmoderator?view=azure-python'
-        - name: .NET
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator'
+  - name: API Content Moderator
+    href: api-reference.md
+  - name: Пакеты SDK
+    items:
+    - name: Java
+      href: https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-cognitiveservices-contentmoderator%22
+    - name: Node.js
+      href: https://docs.microsoft.com/javascript/api/azure-cognitiveservices-contentmoderator/?view=azure-node-latest
+    - name: Python
+      href: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/contentmoderator?view=azure-python
+    - name: .NET
+      href: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
-      href: FAQs.md
-    - name: Доступ по регионам
-      href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/content-moderator'
-    - name: Экспорт или удаление данных учетной записи
-      href: ./export-delete-data.md
-    - name: UserVoice
-      href: 'https://cognitive.uservoice.com/forums/559960-content-moderator'
-    - name: Переполнение стека
-      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
-    - name: База знаний
-      href: 'https://cognitive.uservoice.com/knowledgebase/topics/132073-content-moderator'
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
-    - name: Вебинар по запросу
-      href: 'https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html'
+  - name: Часто задаваемые вопросы
+    href: FAQs.md
+  - name: Поддержка языков и региональных параметров
+    href: language-support.md
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/global-infrastructure/services/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/cognitive-services/content-moderator
+  - name: Экспорт или удаление данных учетной записи
+    href: ./export-delete-data.md
+  - name: UserVoice
+    href: https://cognitive.uservoice.com/forums/559960-content-moderator
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/microsoft-cognitive
+  - name: База знаний
+    href: https://cognitive.uservoice.com/knowledgebase/topics/132073-content-moderator
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
+  - name: Вебинар по запросу
+    href: https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html
+ms.openlocfilehash: 32f0c64253836d3080cc815753e361d810e1f2e8
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433811"

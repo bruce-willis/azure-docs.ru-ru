@@ -1,175 +1,182 @@
+items:
 - name: Документация по API перевода текстов
   href: index.yml
 - name: Обзор
   items:
-    - name: Что собой представляет API перевода текстов
-      href: translator-info-overview.md
+  - name: Что собой представляет API перевода текстов
+    href: translator-info-overview.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: 'C#'
-      items:
-        - name: Перевод текста
-          href: quickstart-csharp-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-csharp-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-csharp-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-csharp-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-csharp-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-csharp-sentences.md
-    - name: Go
-      items:
-        - name: Перевод текста
-          href: quickstart-go-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-go-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-go-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-go-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-go-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-go-sentences.md
-    - name: Java
-      items:
-        - name: Перевод текста
-          href: quickstart-java-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-java-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-java-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-java-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-java-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-java-sentences.md
-    - name: Node.js
-      items:
-        - name: Перевод текста
-          href: quickstart-nodejs-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-nodejs-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-nodejs-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-nodejs-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-nodejs-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-nodejs-sentences.md
-    - name: PHP
-      items:
-        - name: Перевод текста
-          href: quickstart-php-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-php-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-php-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-php-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-php-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-php-sentences.md
-    - name: Python
-      items:
-        - name: Перевод текста
-          href: quickstart-python-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-python-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-python-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-python-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-python-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-python-sentences.md
-    - name: Ruby
-      items:
-        - name: Перевод текста
-          href: quickstart-ruby-translate.md
-        - name: Скрипт для преобразования текста
-          href: quickstart-ruby-transliterate.md
-        - name: Определение языка текста
-          href: quickstart-ruby-detect.md
-        - name: Получение вариантов перевода
-          href: quickstart-ruby-dictionary.md
-        - name: Получение сведений о поддерживаемых языках
-          href: quickstart-ruby-languages.md
-        - name: Получение сведений о длине предложений в тексте
-          href: quickstart-ruby-sentences.md
+  - name: C#
+    items:
+    - name: Перевод текста
+      href: quickstart-csharp-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-csharp-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-csharp-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-csharp-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-csharp-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-csharp-sentences.md
+  - name: Go
+    items:
+    - name: Перевод текста
+      href: quickstart-go-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-go-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-go-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-go-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-go-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-go-sentences.md
+  - name: Java
+    items:
+    - name: Перевод текста
+      href: quickstart-java-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-java-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-java-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-java-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-java-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-java-sentences.md
+  - name: Node.js
+    items:
+    - name: Перевод текста
+      href: quickstart-nodejs-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-nodejs-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-nodejs-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-nodejs-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-nodejs-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-nodejs-sentences.md
+  - name: PHP
+    items:
+    - name: Перевод текста
+      href: quickstart-php-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-php-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-php-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-php-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-php-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-php-sentences.md
+  - name: Python
+    items:
+    - name: Перевод текста
+      href: quickstart-python-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-python-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-python-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-python-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-python-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-python-sentences.md
+  - name: Ruby
+    items:
+    - name: Перевод текста
+      href: quickstart-ruby-translate.md
+    - name: Скрипт для преобразования текста
+      href: quickstart-ruby-transliterate.md
+    - name: Определение языка текста
+      href: quickstart-ruby-detect.md
+    - name: Получение вариантов перевода
+      href: quickstart-ruby-dictionary.md
+    - name: Получение сведений о поддерживаемых языках
+      href: quickstart-ruby-languages.md
+    - name: Получение сведений о длине предложений в тексте
+      href: quickstart-ruby-sentences.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Создание приложения WPF для API перевода текстов
-      href: tutorial-wpf-translation-csharp.md
+  - name: Создание приложения WPF для API перевода текстов
+    href: tutorial-wpf-translation-csharp.md
 - name: Основные понятия
   items:
-    - name: Поддерживаемые языки
-      href: languages.md
-    - name: Настройка и улучшение перевод текста
-      href: customization.md
-    - name: Как в API подсчитывается количество знаков
-      href: character-counts.md
+  - name: Настройка и улучшение перевод текста
+    href: customization.md
+  - name: Как в API подсчитывается количество знаков
+    href: character-counts.md
 - name: Практические руководства
   items:
-    - name: Регистрация для использования API перевода текстов
-      href: translator-text-how-to-signup.md
-    - name: "Миграция в API перевода текстов версии\_3"
-      href: migrate-to-v3.md
-    - name: Добавление фильтра ненормативной лексики
-      href: profanity-filtering.md
-    - name: Получение сведений о выравнивании слов
-      href: word-alignment.md
-    - name: Использование функции динамического словаря
-      href: dynamic-dictionary.md
+  - name: Регистрация для использования API перевода текстов
+    href: translator-text-how-to-signup.md
+  - name: Миграция в API перевода текстов версии 3
+    href: migrate-to-v3.md
+  - name: Добавление фильтра ненормативной лексики
+    href: profanity-filtering.md
+  - name: Получение сведений о выравнивании слов
+    href: word-alignment.md
+  - name: Использование функции динамического словаря
+    href: dynamic-dictionary.md
 - name: Справочные материалы
   items:
-    - name: "Справочник по API перевода текстов версии\_3"
-      href: reference/v3-0-reference.md
-      items:
-        - name: Языки
-          href: reference/v3-0-languages.md
-        - name: Translate
-          href: reference/v3-0-translate.md
-        - name: Transliterate
-          href: reference/v3-0-transliterate.md
-        - name: Обнаружение
-          href: reference/v3-0-detect.md
-        - name: BreakSentence
-          href: reference/v3-0-break-sentence.md
-        - name: Поиск по словарю
-          href: reference/v3-0-dictionary-lookup.md
-        - name: Примеры словарей
-          href: reference/v3-0-dictionary-examples.md
-    - name: "Справочник по API перевода текстов версии\_2 (нерекомендуемая версия)"
-      href: reference/v2-0-reference.md
-      items:
-        - name: Преобразование текста
-          href: transform-text.md
-        - name: Как использовать отчеты на платформе для совместного перевода CTF
-          href: ctf-reporting.md
-        - name: Возврат определенного количества (N) лучших переводов
-          href: return-n-best-translations.md
+  - name: Справочник по API перевода текстов версии 3
+    href: reference/v3-0-reference.md
+    items:
+    - name: Языки
+      href: reference/v3-0-languages.md
+    - name: Translate
+      href: reference/v3-0-translate.md
+    - name: Transliterate
+      href: reference/v3-0-transliterate.md
+    - name: Обнаружение
+      href: reference/v3-0-detect.md
+    - name: BreakSentence
+      href: reference/v3-0-break-sentence.md
+    - name: Поиск по словарю
+      href: reference/v3-0-dictionary-lookup.md
+    - name: Примеры словарей
+      href: reference/v3-0-dictionary-examples.md
+  - name: Справочник по API перевода текстов версии 2 (нерекомендуемая версия)
+    href: reference/v2-0-reference.md
+    items:
+    - name: Преобразование текста
+      href: transform-text.md
+    - name: Как использовать отчеты на платформе для совместного перевода CTF
+      href: ctf-reporting.md
+    - name: Возврат определенного количества (N) лучших переводов
+      href: return-n-best-translations.md
 - name: Ресурсы
   items:
-    - name: Примеры кода в GitHub
-      href: 'https://aka.ms/TranslatorGitHub'
-    - name: Часто задаваемые вопросы
-      href: 'https://www.microsoft.com/translator/faq.aspx'
-    - name: База знаний
-      href: 'https://cognitive.uservoice.com/knowledgebase/topics/132647-translator'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
-    - name: Доступ по регионам
-      href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Переполнение стека
-      href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
-    - name: UserVoice
-      href: 'https://cognitive.uservoice.com/forums/558796-translator'
+  - name: Примеры кода в GitHub
+    href: https://aka.ms/TranslatorGitHub
+  - name: Часто задаваемые вопросы
+    href: https://www.microsoft.com/translator/faq.aspx
+  - name: База знаний
+    href: https://cognitive.uservoice.com/knowledgebase/topics/132647-translator
+  - name: Поддержка языков и региональных параметров
+    href: language-support.md
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/global-infrastructure/services/
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/microsoft-translator
+  - name: UserVoice
+    href: https://cognitive.uservoice.com/forums/558796-translator
+ms.openlocfilehash: adea86473e69a1ea346dbf63b6976642d201dcb9
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434455"
