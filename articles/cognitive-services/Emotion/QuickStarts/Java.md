@@ -23,7 +23,7 @@ ms.locfileid: "37018032"
 
 Эта статья содержит информацию и пример кода, которые помогут быстро приступить к работе с [методом распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa) в клиентской библиотеке API распознавания эмоций для Android. В этом примере показано, как с помощью Java распознавать эмоции людей. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Скачайте пакет SDK API распознавания эмоций на Java для Android [здесь](https://github.com/Microsoft/Cognitive-emotion-android).
 * Получите бесплатный ключ подписки [здесь](https://azure.microsoft.com/try/cognitive-services/).
 
