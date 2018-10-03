@@ -22,6 +22,8 @@
 ## [Проверка работоспособности управляемого домена](active-directory-ds-check-health.md)
 ## [Использование доменных служб Azure AD в подписках Azure CSP](active-directory-ds-csp.md)
 ## [Включение доменных служб Azure AD с помощью PowerShell](active-directory-ds-enable-using-powershell.md)
+## [Настройка синхронизации определенных учетных записей Azure AD с управляемым доменом](active-directory-ds-scoped-synchronization.md)
+## [Защита управляемого домена](active-directory-ds-secure-your-domain.md)
 ## Присоединение к управляемому домену
 ### [Присоединение виртуальной машины Windows Server к управляемому домену с помощью портала](active-directory-ds-admin-guide-join-windows-vm-portal.md)
 ### [Виртуальная машина Windows Server на основе шаблона](active-directory-ds-join-windows-vm-template.md)
@@ -44,7 +46,6 @@
 ### [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)
 ### [Администрирование групповой политики в управляемом домене](active-directory-ds-admin-guide-administer-group-policy.md)
 ### [Настройка политик паролей в управляемом домене](active-directory-ds-password-policy.md)
-### [Настройка синхронизации определенных учетных записей Azure AD с управляемым доменом](active-directory-ds-scoped-synchronization.md)
 ## [Выбор виртуальной сети](active-directory-ds-networking.md)
 ## Развертывание приложений
 ### [Настройка поддержки синхронизации профилей для сервера SharePoint](active-directory-ds-enable-sharepoint-profile-sync.md)

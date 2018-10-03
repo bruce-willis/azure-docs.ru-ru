@@ -21,12 +21,6 @@ items:
       href: ../application-insights/app-insights-java-quick-start.md?toc=/azure/azure-monitor/toc.json
     - name: Мобильное приложение
       href: ../application-insights/app-insights-mobile-center-quickstart.md?toc=/azure/azure-monitor/toc.json
-  - name: Оповещения
-    items:
-    - name: Оповещение на основе метрики (классическое)
-      href: ../monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal.md?toc=/azure/azure-monitor/toc.json
-    - name: Оповещение о действии подписки
-      href: ../monitoring-and-diagnostics/monitor-quick-audit-notify-action-in-subscription.md?toc=/azure/azure-monitor/toc.json
   - name: Виртуальные машины
     items:
     - name: Сбор данных виртуальных машин Azure
@@ -38,25 +32,25 @@ items:
   expanded: true
 - name: Учебники
   items:
-  - name: 1. Анализ данных
+  - name: Анализ данных в Log Analytics
     href: ../log-analytics/log-analytics-tutorial-viewdata.md?toc=/azure/azure-monitor/toc.json
-  - name: 2. Визуализация данных
+  - name: Визуализация данных в Log Analytics
     href: ../log-analytics/log-analytics-tutorial-dashboards.md?toc=/azure/azure-monitor/toc.json
-  - name: 3. Архивация данных
+  - name: Архивация данных журнала и метрики платформы
     href: ../monitoring-and-diagnostics/monitor-tutorial-archive-monitoring-data.md?toc=/azure/azure-monitor/toc.json
-  - name: 4. Создание оповещений о данных журналов
+  - name: Создание оповещений о данных журналов
     href: ../log-analytics/log-analytics-tutorial-response.md?toc=/azure/azure-monitor/toc.json
-  - name: 5. Автомасштабирование в соответствии с производительностью и расписанием
+  - name: Автомасштабирование в соответствии с производительностью и расписанием
     href: ../monitoring-and-diagnostics/monitor-tutorial-autoscale-performance-schedule.md?toc=/azure/azure-monitor/toc.json
-  - name: 6. Поиск исключений во время выполнения
+  - name: Поиск исключений во время выполнения приложения
     href: ../application-insights/app-insights-tutorial-runtime-exceptions.md?toc=/azure/azure-monitor/toc.json
-  - name: 7. Поиск проблем с производительностью
+  - name: Поиск проблем c производительностью приложения
     href: ../application-insights/app-insights-tutorial-performance.md?toc=/azure/azure-monitor/toc.json
-  - name: 8. Оповещение о работоспособности приложения
+  - name: Оповещение о работоспособности приложения
     href: ../application-insights/app-insights-tutorial-alert.md?toc=/azure/azure-monitor/toc.json
-  - name: 9. Общие сведения о пользователях
+  - name: Общие сведения о пользователях приложения
     href: ../application-insights/app-insights-tutorial-users.md?toc=/azure/azure-monitor/toc.json
-  - name: 10. Создание настраиваемых панелей мониторинга
+  - name: Создание настраиваемых панелей мониторинга
     href: ../application-insights/app-insights-tutorial-dashboards.md?toc=/azure/azure-monitor/toc.json
 - name: Примеры
   items:
@@ -84,7 +78,7 @@ items:
       href: ../monitoring-and-diagnostics/metrics-custom-overview.md?toc=/azure/azure-monitor/toc.json
     - name: Защита данных
       items:
-      - name: Сбор, обработка и защита данных
+      - name: Данные журнала
         href: ../log-analytics/log-analytics-data-security.md?toc=/azure/azure-monitor/toc.json
       - name: Обработка персональных данных
         href: ../log-analytics/log-analytics-personal-data-mgmt.md?toc=/azure/azure-monitor/toc.json
@@ -189,27 +183,32 @@ items:
         href: ../log-analytics/log-analytics-manage-del-workspace.md?toc=/azure/azure-monitor/toc.json
       - name: Архитектура для поставщиков служб
         href: ../log-analytics/log-analytics-service-providers.md?toc=/azure/azure-monitor/toc.json
+  - name: Сбор данных
+    items:
     - name: Установка и настройка агентов
       items:
       - name: Сравнение агентов
         href: ../monitoring/monitoring-overview-azure-agents.md?toc=/azure/azure-monitor/toc.json
-      - name: Агенты Windows
-        href: ../log-analytics/log-analytics-agent-windows.md?toc=/azure/azure-monitor/toc.json
-      - name: Расширение виртуальной машины для Windows
-        href: ../virtual-machines/windows/extensions-oms.md?toc=/azure/azure-monitor/toc.json
-      - name: Расширение виртуальной машины для Linux
-        href: ../virtual-machines/linux/extensions-oms.md?toc=/azure/azure-monitor/toc.json
-      - name: Мониторинг гибридных сред
-        href: ../log-analytics/log-analytics-concept-hybrid.md?toc=/azure/azure-monitor/toc.json
-      - name: Operations Manager
-        href: ../log-analytics/log-analytics-om-agents.md?toc=/azure/azure-monitor/toc.json
-      - name: Шлюз OMS
-        href: ../log-analytics/log-analytics-oms-gateway.md?toc=/azure/azure-monitor/toc.json
-      - name: Управление агентами
-        href: ../log-analytics/log-analytics-agent-manage.md?toc=/azure/azure-monitor/toc.json
-      - name: Расширение системы диагностики Azure
-        href: ../monitoring-and-diagnostics/azure-diagnostics.md?toc=/azure/azure-monitor/toc.json
+      - name: Агенты для хранения журналов
         items:
+        - name: Агенты Windows
+          href: ../log-analytics/log-analytics-agent-windows.md?toc=/azure/azure-monitor/toc.json
+        - name: Расширение виртуальной машины для Windows
+          href: ../virtual-machines/windows/extensions-oms.md?toc=/azure/azure-monitor/toc.json
+        - name: Расширение виртуальной машины для Linux
+          href: ../virtual-machines/linux/extensions-oms.md?toc=/azure/azure-monitor/toc.json
+        - name: Мониторинг гибридных сред
+          href: ../log-analytics/log-analytics-concept-hybrid.md?toc=/azure/azure-monitor/toc.json
+        - name: Operations Manager
+          href: ../log-analytics/log-analytics-om-agents.md?toc=/azure/azure-monitor/toc.json
+        - name: Шлюз OMS
+          href: ../log-analytics/log-analytics-oms-gateway.md?toc=/azure/azure-monitor/toc.json
+        - name: Управление агентами
+          href: ../log-analytics/log-analytics-agent-manage.md?toc=/azure/azure-monitor/toc.json
+      - name: Расширение системы диагностики Azure
+        items:
+        - name: Обзор
+          href: ../monitoring-and-diagnostics/azure-diagnostics.md?toc=/azure/azure-monitor/toc.json
         - name: Отправка в службу хранилища Azure
           href: ../monitoring-and-diagnostics/azure-diagnostics-storage.md?toc=/azure/azure-monitor/toc.json
         - name: Отправка в Application Insights
@@ -222,17 +221,13 @@ items:
           href: ../monitoring-and-diagnostics/monitoring-enable-diagnostic-logs-using-template.md?toc=/azure/azure-monitor/toc.json
         - name: Подготовка к использованию формата журналов диагностики JSON Lines
           href: ../monitoring-and-diagnostics/monitor-diagnostic-logs-append-blobs.md?toc=/azure/azure-monitor/toc.json
-        - name: Отправка пользовательских метрик в хранилище метрик с помощью REST API
-          href: ../monitoring-and-diagnostics/metrics-store-custom-rest-api.md?toc=/azure/azure-monitor/toc.json
-        - name: Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf
-          href: ../monitoring-and-diagnostics/metrics-store-custom-linux-telegraf.md?toc=/azure/azure-monitor/toc.json
-        - name: Сбор пользовательских метрик для виртуальной машины
+        - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины
           href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-resource-manager-vm.md?toc=/azure/azure-monitor/toc.json
-        - name: Сбор пользовательских метрик для масштабируемого набора виртуальных машин
+        - name: Отправка в хранилище метрик гостевой ОС для масштабируемого набора виртуальных машин
           href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-resource-manager-vmss.md?toc=/azure/azure-monitor/toc.json
-        - name: Сбор пользовательских метрик для классической виртуальной машины
+        - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины (классическая)
           href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-classic-vm.md?toc=/azure/azure-monitor/toc.json
-        - name: Сбор пользовательских метрик для облачной службы
+        - name: Отправка в хранилище метрик гостевой ОС для облачной службы
           href: ../monitoring-and-diagnostics/metrics-store-custom-guestos-classic-cloud-service.md?toc=/azure/azure-monitor/toc.json
       - name: Устранение неполадок
         items:
@@ -240,8 +235,29 @@ items:
           href: ../log-analytics/log-analytics-azure-vmext-troubleshoot.md?toc=/azure/azure-monitor/toc.json
         - name: Устранение неполадок с агентом Linux
           href: ../log-analytics/log-analytics-agent-linux-support.md?toc=/azure/azure-monitor/toc.json
-  - name: Сбор данных
-    items:
+    - name: Источники данных в Log Analytics
+      href: ../log-analytics/log-analytics-data-sources.md?toc=/azure/azure-monitor/toc.json
+      items:
+      - name: События Windows
+        href: ../log-analytics/log-analytics-data-sources-windows-events.md?toc=/azure/azure-monitor/toc.json
+      - name: Настраиваемые данные JSON
+        href: ../log-analytics/log-analytics-data-sources-json.md?toc=/azure/azure-monitor/toc.json
+      - name: Сбор данных о производительности из CollectD
+        href: ../log-analytics/log-analytics-data-sources-collectd.md?toc=/azure/azure-monitor/toc.json
+      - name: Оповещения Nagios и Zabbix
+        href: ../log-analytics/log-analytics-data-sources-alerts-nagios-zabbix.md?toc=/azure/azure-monitor/toc.json
+      - name: syslog
+        href: ../log-analytics/log-analytics-data-sources-syslog.md?toc=/azure/azure-monitor/toc.json
+      - name: Счетчики производительности
+        href: ../log-analytics/log-analytics-data-sources-performance-counters.md?toc=/azure/azure-monitor/toc.json
+      - name: Производительность приложений Linux
+        href: ../log-analytics/log-analytics-data-sources-linux-applications.md?toc=/azure/azure-monitor/toc.json
+      - name: Журналы IIS
+        href: ../log-analytics/log-analytics-data-sources-iis-logs.md?toc=/azure/azure-monitor/toc.json
+      - name: Пользовательские журналы
+        href: ../log-analytics/log-analytics-data-sources-custom-logs.md?toc=/azure/azure-monitor/toc.json
+      - name: Настраиваемые поля
+        href: ../log-analytics/log-analytics-custom-fields.md?toc=/azure/azure-monitor/toc.json
     - name: Настройка приложений
       items:
       - name: Приложения Azure
@@ -372,29 +388,6 @@ items:
           href: ../application-insights/app-insights-java-troubleshoot.md?toc=/azure/azure-monitor/toc.json
         - name: Аналитика использования
           href: ../application-insights/app-insights-usage-troubleshoot.md?toc=/azure/azure-monitor/toc.json
-    - name: Источники данных в Log Analytics
-      href: ../log-analytics/log-analytics-data-sources.md?toc=/azure/azure-monitor/toc.json
-      items:
-      - name: События Windows
-        href: ../log-analytics/log-analytics-data-sources-windows-events.md?toc=/azure/azure-monitor/toc.json
-      - name: Настраиваемые данные JSON
-        href: ../log-analytics/log-analytics-data-sources-json.md?toc=/azure/azure-monitor/toc.json
-      - name: Сбор данных о производительности из CollectD
-        href: ../log-analytics/log-analytics-data-sources-collectd.md?toc=/azure/azure-monitor/toc.json
-      - name: Оповещения Nagios и Zabbix
-        href: ../log-analytics/log-analytics-data-sources-alerts-nagios-zabbix.md?toc=/azure/azure-monitor/toc.json
-      - name: syslog
-        href: ../log-analytics/log-analytics-data-sources-syslog.md?toc=/azure/azure-monitor/toc.json
-      - name: Счетчики производительности
-        href: ../log-analytics/log-analytics-data-sources-performance-counters.md?toc=/azure/azure-monitor/toc.json
-      - name: Производительность приложений Linux
-        href: ../log-analytics/log-analytics-data-sources-linux-applications.md?toc=/azure/azure-monitor/toc.json
-      - name: Журналы IIS
-        href: ../log-analytics/log-analytics-data-sources-iis-logs.md?toc=/azure/azure-monitor/toc.json
-      - name: Пользовательские журналы
-        href: ../log-analytics/log-analytics-data-sources-custom-logs.md?toc=/azure/azure-monitor/toc.json
-      - name: Настраиваемые поля
-        href: ../log-analytics/log-analytics-custom-fields.md?toc=/azure/azure-monitor/toc.json
     - name: Ресурсы Azure
       items:
       - name: Журналы действий Azure
@@ -411,14 +404,18 @@ items:
         href: ../log-analytics/log-analytics-collect-azurepass-posh.md?toc=/azure/azure-monitor/toc.json
       - name: Корреляция пользовательских источников данных
         href: ../application-insights/app-insights-custom-data-correlation.md?toc=/azure/azure-monitor/toc.json
-    - name: Сбор пользовательских данных в Log Analytics
+    - name: Сбор пользовательских данных
       items:
-      - name: API сборщика данных
+      - name: API сборщика данных для хранения журналов
         href: ../log-analytics/log-analytics-data-collector-api.md?toc=/azure/azure-monitor/toc.json
-      - name: Пример конвейера API сборщика данных
+      - name: Пример конвейера, созданного с помощью API сборщика данных, для хранения журналов
         href: ../log-analytics/log-analytics-create-pipeline-datacollector-api.md?toc=/azure/azure-monitor/toc.json
       - name: Данные приложения
         href: ../application-insights/app-insights-analytics-import.md?toc=/azure/azure-monitor/toc.json
+      - name: REST API хранилища метрик
+        href: ../monitoring-and-diagnostics/metrics-store-custom-rest-api.md?toc=/azure/azure-monitor/toc.json
+      - name: Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf
+        href: ../monitoring-and-diagnostics/metrics-store-custom-linux-telegraf.md?toc=/azure/azure-monitor/toc.json
     - name: System Center
       items:
       - name: Менеджер конфигураций
@@ -506,6 +503,8 @@ items:
       items:
       - name: Azure Monitor для контейнеров
         items:
+        - name: Обзор
+          href: ../monitoring/monitoring-container-insights-overview.md?toc=%2fazure%2fmonitoring%2ftoc.json
         - name: Подключение
           href: ../monitoring/monitoring-container-insights-onboard.md?toc=%2fazure%2fmonitoring%2ftoc.json
         - name: Анализ
@@ -546,6 +545,8 @@ items:
       items:
       - name: Azure Monitor для виртуальных машин
         items:
+        - name: Обзор
+          href: ../monitoring/monitoring-vminsights-overview.md?toc=/azure/azure-monitor/toc.json
         - name: Известные проблемы
           href: ../monitoring/monitoring-vminsights-known-issues.md?toc=/azure/azure-monitor/toc.json
         - name: Часто задаваемые вопросы
@@ -620,13 +621,13 @@ items:
       - name: ПРИЛОЖЕНИЯ
         href: ../application-insights/app-insights-dashboards.md?toc=/azure/azure-monitor/toc.json
     - name: Power BI
-      href: ../monitoring-and-diagnostics/monitor-send-to-grafana.md?toc=/azure/azure-monitor/toc.json
       items:
       - name: Экспорт данных журналов
         href: ../log-analytics/log-analytics-powerbi.md?toc=/azure/azure-monitor/toc.json
       - name: Экспорт данных приложения
         href: ../application-insights/app-insights-export-power-bi.md?toc=/azure/azure-monitor/toc.json
-      - name: Отправка метрик в Grafana
+    - name: Отправка метрик в Grafana
+      href: ../monitoring-and-diagnostics/monitor-send-to-grafana.md?toc=/azure/azure-monitor/toc.json
   - name: Анализ данных
     items:
     - name: Создание диаграмм метрик в обозревателе метрик
@@ -976,9 +977,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 01539d32b6fb4fc0dd750dd970a4f502684c34fa
-ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
+ms.openlocfilehash: ecb930a1dc50b1a613533068846be2d7cfaeb748
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47419344"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018899"
