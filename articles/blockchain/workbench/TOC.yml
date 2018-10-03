@@ -1,0 +1,77 @@
+items:
+- name: Azure Blockchain Workbench (общедоступная предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Сведения об Azure Blockchain Workbench
+    href: overview.md
+  expanded: true
+- name: Основные понятия
+  items:
+  - name: Архитектура
+    href: architecture.md
+  - name: Шаблоны интеграции
+    href: integration-patterns.md
+- name: Практические руководства
+  items:
+  - name: Развертывание Workbench
+    href: deploy.md
+  - name: Создание приложения блокчейна
+    href: create-app.md
+  - name: Управление пользователями Workbench
+    href: manage-users.md
+  - name: Использование приложения блокчейна
+    href: use.md
+  - name: Использование API Workbench
+    href: use-api.md
+  - name: Устранение неполадок в приложениях
+    href: troubleshooting.md
+  - name: Использование данных Workbench
+    items:
+    - name: Настройка брандмауэра базы данных
+      href: database-firewall.md
+    - name: Получение сведений о базе данных
+      href: getdb-details.md
+    - name: Использование данных в Excel
+      href: data-excel.md
+    - name: Использование данных в Power BI
+      href: data-powerbi.md
+    - name: Использование данных в SQL Management Studio
+      href: data-sql-management-studio.md
+  expanded: true
+- name: Справочные материалы
+  items:
+  - name: Параметр Configuration
+    href: configuration.md
+  - name: Представления баз данных
+    href: database-views.md
+  - name: API обмена сообщениями
+    href: messages-overview.md
+  - name: REST API
+    href: https://docs.microsoft.com/rest/api/azure-blockchain-workbench
+- name: Ресурсы
+  items:
+  - name: Блог
+    href: https://azure.microsoft.com/blog/topics/blockchain/
+  - name: Примеры кода
+    href: https://github.com/Azure-Samples/blockchain
+  - name: Сообщество
+    href: https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain
+  - name: Форум
+    href: https://aka.ms/workbenchforum
+  - name: Отзыв о продукте
+    href: https://aka.ms/blockchainuservoice
+- name: Шаблоны решений
+  items:
+  - name: Алгоритма консенсуса POA в Ethereum
+    href: ../templates/ethereum-poa-deployment.md
+  - name: Алгоритма консенсуса POW в Ethereum
+    href: ../templates/ethereum-deployment.md
+  - name: Консорциум Hyperledger Fabric
+    href: ../templates/hyperledger-fabric-single-member-blockchain.md
+ms.openlocfilehash: de9b0906450f3ba26ebfac6699c07d93039db6a7
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239784"
