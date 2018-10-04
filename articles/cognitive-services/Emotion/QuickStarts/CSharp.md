@@ -23,7 +23,7 @@ ms.locfileid: "37016571"
 
 В этой статье представлены сведения и примеры кода, которые помогут быстро приступить к работе с [методом Recognize из API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa) для C#. Он позволяет распознавать эмоции одного или нескольких человек на изображении. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Получите [пакет Windows SDK для API распознавания эмоций](https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/) из Cognitive Services.
 * Получите бесплатный [ключ подписки](https://azure.microsoft.com/try/cognitive-services/).
 
