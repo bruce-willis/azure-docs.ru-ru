@@ -35,6 +35,7 @@ items:
   - name: 9. Резервное копирование виртуальных машин
     href: tutorial-backup-vms.md
   - name: 10. Управление виртуальными машинами
+    displayName: scope policy RBAC lock tag
     href: tutorial-govern-resources.md
   - name: 11. Мониторинг и обновление виртуальных машин
     href: tutorial-monitoring.md
@@ -62,27 +63,34 @@ items:
     href: sizes.md
     items:
     - name: Универсальные
+      displayName: Dsv3 Dv3 DSv2 Dv2 Av2
       href: sizes-general.md
       items:
       - name: Серия B с накапливаемыми ресурсами
         href: b-series-burstable.md
     - name: Оптимизированные для вычислений
+      displayName: Fsv2 Fs F-series
       href: sizes-compute.md
     - name: Оптимизированные для памяти
+      displayName: Esv3 Ev3 M-series GS G-series DSv2 Dv2
       href: sizes-memory.md
       items:
       - name: Ограниченное число виртуальных ЦП
         href: constrained-vcpu.md
     - name: Оптимизированные для хранилища
+      displayName: ls
       href: sizes-storage.md
     - name: Оптимизированные для GPU
+      displayName: NV NVv2 NC NCv2 NCv3 ND
       href: sizes-gpu.md
       items:
       - name: Настройка драйверов GPU
         href: n-series-driver-setup.md
     - name: Для высокопроизводительных вычислений
+      displayName: H-series
       href: sizes-hpc.md
     - name: Предыдущие поколения
+      displayName: D-series Ds-series A-series Basic
       href: sizes-previous-gen.md
     - name: Единицы вычислений Azure (ACU)
       href: acu.md
@@ -162,6 +170,7 @@ items:
   - name: Защита виртуальных машин
     items:
     - name: шифрование;
+      displayName: encryption
       href: encrypt-disks.md
     - name: Использование WinRM
       href: winrm.md
@@ -442,9 +451,9 @@ items:
     href: https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines
   - name: Часто задаваемые вопросы
     href: faq.md
-ms.openlocfilehash: a991b7edc35256823a45b8ad65f9aa99eb7477c9
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 69cc971935efa05201591adb81b3b7aeb49c020d
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47408476"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268112"
