@@ -1,6 +1,6 @@
 ---
-title: Анализ безопасности сети с помощью представления группы безопасности в Наблюдателе за сетями (Azure CLI 2.0) | Документация Майкрософт
-description: Из этой статьи вы узнаете, как с помощью Azure CLI 2.0 анализировать безопасность виртуальных машин, используя представление группы безопасности.
+title: Анализ безопасности сети с помощью представления группы безопасности Наблюдателя за сетями (Azure CLI) | Документация Майкрософт
+description: В этой статье вы узнаете, как проанализировать безопасность виртуальных машин, используя представление группы безопасности, с помощью Azure CLI.
 services: network-watcher
 documentationcenter: na
 author: jimdial
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 82cd0d97a64819ae8528850ba9a44800bf960afc
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 2b96c82f92ea49fa5bcb35d180240eb939d29d04
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090570"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46962901"
 ---
-# <a name="analyze-your-virtual-machine-security-with-security-group-view-using-azure-cli-20"></a>Анализ безопасности виртуальных машин с помощью Azure CLI 2.0 и представления группы безопасности
+# <a name="analyze-your-virtual-machine-security-with-security-group-view-using-azure-cli"></a>Анализ безопасности виртуальной машины с использованием представления группы безопасности в Azure CLI
 
 > [!div class="op_single_selector"]
 > - [PowerShell](network-watcher-security-group-view-powershell.md)
@@ -30,10 +30,7 @@ ms.locfileid: "39090570"
 
 Представление группы безопасности возвращает настроенные и действующие правила сетевой безопасности, применяемые к виртуальной машине. Эта возможность полезна для аудита и диагностики групп безопасности сети и настроенных на виртуальной машине правил, позволяющих обеспечить разрешение или отклонение трафика соответствующим образом. В этой статье мы покажем, как получить настроенные и действующие правила безопасности, применяемые к виртуальной машине, с помощью Azure CLI.
 
-
-В этой статье мы используем наш новейший интерфейс командной строки для модели развертывания с помощью Resource Manager, а именно Azure CLI 2.0. Этот инструмент доступен для Windows, Mac и Linux.
-
-Для выполнения действий, описанных в этой статье, требуется [установить интерфейс командной строки Azure для Mac, Linux и Windows (Azure CLI)](https://docs.microsoft.com/cli/azure/install-az-cli2).
+Для выполнения действий, описанных в этой статье, требуется [установить Azure CLI для Mac, Linux и Windows](/cli/azure/install-azure-cli).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

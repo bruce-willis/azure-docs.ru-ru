@@ -13,12 +13,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
-ms.openlocfilehash: bf91b1cb1e764c1350cead0c5dfb109b73e9dad3
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: fe2b509b62884c1cea554bc8dc5df25489205264
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052721"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966965"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
 В этой статье описывается, как вызвать пакет SSIS из конвейера фабрики данных Azure, используя действие хранимой процедуры. 
@@ -26,10 +26,10 @@ ms.locfileid: "37052721"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [вызову пакетов SSIS с помощью действия хранимой процедуры в службе "Фабрика данных" версии 2](../how-to-invoke-ssis-package-stored-procedure-activity.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="azure-sql-database"></a>Базы данных SQL Azure 
-В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр Базы данных SQL (предварительная версия).
+В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр базы данных SQL.
 
 ### <a name="create-an-azure-ssis-integration-runtime"></a>Создание среды выполнения интеграции Azure SSIS.
 Создайте среду выполнения интеграции Azure SSIS, если у вас ее нет. Для этого выполните пошаговую инструкцию в статье [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](../tutorial-create-azure-ssis-runtime-portal.md). Для создания среды выполнения интеграции Azure SSIS нельзя использовать службу "Фабрика данных" версии 1. 
@@ -150,7 +150,7 @@ ms.locfileid: "37052721"
     ```
 3. На панели инструментов щелкните **Развернуть** . Это действие развертывает конвейер в службе фабрики данных Azure. 
 
-### <a name="monitor-the-pipeline-run"></a>Выполнили мониторинг конвейера.
+### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
 Для выходного набора данных определено расписание ежечасного выполнения. Время окончания конвейера отстоит от времени запуска на пять часов. Таким образом, отображается пять запусков конвейера. 
 
 1. Закройте окно редактора, чтобы увидеть домашнюю страницу фабрики данных. Щелкните плитку **Мониторинг и управление**. 
@@ -300,7 +300,7 @@ ms.locfileid: "37052721"
     $DFPipeLine = New-AzureRmDataFactoryPipeline -DataFactoryName $DataFactory.DataFactoryName -ResourceGroupName $ResGrp.ResourceGroupName -Name "RunSSISPackagePipeline" -DefinitionFile ".\RunSSISPackagePipeline.json"
     ```
 
-### <a name="monitor-the-pipeline-run"></a>Выполнили мониторинг конвейера.
+### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
 
 2. Выполните командлет **Get-AzureRmDataFactorySlice**, чтобы получить сведения обо всех срезах выходного набора данных\*\*, то есть созданной конвейером выходной таблицы.
 

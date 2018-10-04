@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 10/23/2017
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: ed5da0afe67deaa7000c1bf3b8d75bdea14f2ecd
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 7fcf0b924868d755bc76f7d1e695e73afc4eae6a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42616332"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993397"
 ---
 # <a name="quickstart-deploy-a-java-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб Java в Service Fabric
 
@@ -101,7 +101,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 Service Fabric предоставляет ряд средств, которые можно использовать для управления кластером и его приложениями:
 
 * средство Service Fabric Explorer на основе браузера;
-* интерфейс командной строки (CLI) Service Fabric, который работает на базе Azure CLI 2.0;
+* интерфейс командной строки (CLI) Service Fabric, который работает поверх Azure CLI;
 * команды PowerShell.
 
 При работе с этим кратким руководством используется интерфейс командной строки Service Fabric и Service Fabric Explorer.

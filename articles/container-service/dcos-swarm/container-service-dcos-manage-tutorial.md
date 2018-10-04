@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 7ae235ea52c5c505e535cc3fad2306167d349ee9
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 8f4b1c1c66243c06d46ef3fddec8ea495163fa07
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43782266"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46999619"
 ---
 # <a name="azure-container-service-tutorial---manage-dcos"></a>Учебник по службе контейнеров Azure — управление DC/OS
 
@@ -30,7 +30,7 @@ DC/OS предоставляет распределенную платформу
 > * Базовое управление DC/OS
 > * Удаление кластера DC/OS
 
-Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
 
 ## <a name="create-dcos-cluster"></a>Создание кластера DC/OS
 

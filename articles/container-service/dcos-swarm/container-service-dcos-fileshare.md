@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 06/07/2017
 ms.author: juliens
 ms.custom: mvc
-ms.openlocfilehash: c1c318f4204efd24a2d9d3d83bb1cb71f5775bdb
-ms.sourcegitcommit: 5d3e99478a5f26e92d1e7f3cec6b0ff5fbd7cedf
+ms.openlocfilehash: 4e03a0b450c9806edfb81a867fba97052659ec44
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
-ms.locfileid: "26331208"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46973513"
 ---
 # <a name="create-and-mount-a-file-share-to-a-dcos-cluster"></a>Создание и подключение файлового ресурса к кластеру DC/OS
 
@@ -22,12 +22,12 @@ ms.locfileid: "26331208"
 
 > [!div class="checklist"]
 > * Создание учетной записи хранения Azure
-> * Создайте общую папку
+> * Создание общей папки
 > * Подключение ресурса к кластеру DC/OS
 
 Для выполнения действий, описанных в этом руководстве, потребуется кластер ACS DC/OS. При необходимости его можно создать с помощью следующего [примера сценария](./../kubernetes/scripts/container-service-cli-deploy-dcos.md).
 
-Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -146,7 +146,7 @@ sh ./getNodesRunScript.sh
 
 > [!div class="checklist"]
 > * Создание учетной записи хранения Azure
-> * Создайте общую папку
+> * Создание общей папки
 > * Подключение ресурса к кластеру DC/OS
 
 Переходите к следующему руководству, чтобы узнать об интеграции реестра контейнеров Azure с DC/OS в Azure.  

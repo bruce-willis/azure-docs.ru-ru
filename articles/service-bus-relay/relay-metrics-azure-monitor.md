@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2018
 ms.author: spelluru
-ms.openlocfilehash: 6d9c154e4942e39d68c30ac52dee0f743e428b9e
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: cffc84cdb86c01f5ca892b987a23dc3ded611dd9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43696893"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46986960"
 ---
 # <a name="azure-relay-metrics-in-azure-monitor-preview"></a>Метрики ретранслятора Azure в Azure Monitor (предварительная версия)
 
@@ -29,7 +29,7 @@ Azure Monitor предоставляет унифицированный поль
 
 ## <a name="access-metrics"></a>Доступ к метрикам
 
-Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете использовать [портал Azure](https://portal.azure.com), интерфейсы API Azure Monitor (REST и .NET), а также решения для анализа, например Operation Management Suite и Центры событий. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md#access-metrics-via-the-rest-api).
+Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете использовать [портал Azure](https://portal.azure.com), интерфейсы API Azure Monitor (REST и .NET), а также решения для анализа, например Operation Management Suite и Центры событий. Дополнительные сведения см. в разделе [Мониторинг данных, собранных Azure Monitor](../monitoring/monitoring-data-collection.md).
 
 Метрики включены по умолчанию, и вы можете получить доступ к данным за последние 30 дней. Если необходимо хранить данные метрик в течение длительного периода времени, вы можете архивировать их в учетную запись хранения Azure. Для настройки используйте [параметры диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md#diagnostic-settings) в Azure Monitor.
 
