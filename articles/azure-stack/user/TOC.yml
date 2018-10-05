@@ -22,28 +22,32 @@ items:
   expanded: true
 - name: Учебники
   items:
-  - name: Создание высокодоступных баз данных SQL
-    href: azure-stack-tutorial-sql.md
-  - name: Создание высокодоступных баз данных MySQL
-    href: azure-stack-tutorial-mysql.md
-  - name: Развертывание приложений в Azure и Azure Stack
-    href: azure-stack-solution-pipeline.md
-  - name: Настройка удостоверения гибридного облака
-    href: azure-stack-solution-hybrid-identity.md
-  - name: Настройка подключения гибридного облака
-    href: azure-stack-solution-hybrid-connectivity.md
-  - name: Подписка на предложение
-    href: azure-stack-subscribe-services.md
-  - name: Создание виртуальной машины на основе шаблона
-    href: azure-stack-create-vm-template.md
-  - name: Создание решения с поддержкой новейших технологий машинного обучения
-    href: azure-stack-solution-machine-learning.md
-  - name: Создание решения для аналитики промежуточных данных
-    href: azure-stack-solution-staged-data-analytics.md
-  - name: Создание решений для масштабирования в нескольких облаках в Azure
-    href: azure-stack-solution-cloud-burst.md
-  - name: Создание решения для географически распределенного приложения
-    href: azure-stack-solution-geo-distributed.md
+  - name: Стандартные задачи
+    items:
+    - name: Подписка на предложение
+      href: azure-stack-subscribe-services.md
+    - name: Создание виртуальной машины на основе шаблона
+      href: azure-stack-create-vm-template.md
+    - name: Создание высокодоступных баз данных SQL
+      href: azure-stack-tutorial-sql.md
+    - name: Создание высокодоступных баз данных MySQL
+      href: azure-stack-tutorial-mysql.md
+  - name: Шаблоны для гибридного облака
+    items:
+    - name: Развертывание приложений в Azure и Azure Stack
+      href: azure-stack-solution-pipeline.md
+    - name: Настройка удостоверения гибридного облака
+      href: azure-stack-solution-hybrid-identity.md
+    - name: Настройка подключения гибридного облака
+      href: azure-stack-solution-hybrid-connectivity.md
+    - name: Создание решения с поддержкой новейших технологий машинного обучения
+      href: azure-stack-solution-machine-learning.md
+    - name: Создание решения для аналитики промежуточных данных
+      href: azure-stack-solution-staged-data-analytics.md
+    - name: Создание решений для масштабирования в нескольких облаках в Azure
+      href: azure-stack-solution-cloud-burst.md
+    - name: Создание решения для географически распределенного приложения
+      href: azure-stack-solution-geo-distributed.md
 - name: Практические руководства
   items:
   - name: Использование портала Azure Stack
@@ -78,7 +82,7 @@ items:
         href: azure-stack-manage-vm-protect.md
       - name: Рекомендации по работе с виртуальными машинами SQL Server
         href: azure-stack-sql-server-vm-considerations.md
-    - name: служба хранилища.
+    - name: Хранилище
       items:
       - name: Обзор
         href: azure-stack-storage-overview.md
@@ -208,9 +212,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-stack
   - name: Обучение и сертификация
     href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert
-ms.openlocfilehash: a67adb5f0b641f5f4eadfeb08c9802214d9f217b
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 52dbfaf7b7ea7b6f264dcb9ac3d75aec782c8bff
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405416"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48239410"
