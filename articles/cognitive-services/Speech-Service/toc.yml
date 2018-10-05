@@ -104,6 +104,14 @@ items:
     href: prepare-transcription.md
   - name: Использование пользовательских аудиопотоков
     href: how-to-use-audio-input-streams.md
+  - name: Миграция
+    items:
+    - name: Из API распознавания речи Bing
+      href: how-to-migrate-from-bing-speech.md
+    - name: Из Пользовательской службы распознавания речи
+      href: how-to-migrate-from-custom-speech-service.md
+    - name: Из API перевода речи
+      href: how-to-migrate-from-translator-speech-api.md
 - name: Основные понятия
   items:
   - name: Преобразование речи в текст
@@ -127,6 +135,8 @@ items:
     href: regions.md
   - name: Интерфейсы API REST
     href: rest-apis.md
+  - name: Справочник по Swagger
+    href: https://westus.cris.ai/swagger/ui/index
   - name: API пакета SDK для распознавания речи
     displayName: C#, C++, Java, .NET, .NET Core, UWP, Android, Linux, Windows
     href: speech-sdk-reference.md
@@ -188,9 +198,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=ai-machine-learning
   - name: Конфиденциальность и файлы cookie
     href: https://privacy.microsoft.com/privacystatement
-ms.openlocfilehash: 4398c418d42bb2585d9f7e12a2e9e0685fe6dd0b
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: 11faf3ac6bbe7578e0bd642aef87421cbb53ff08
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48018010"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248216"
