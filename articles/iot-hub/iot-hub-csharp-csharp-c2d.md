@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/24/2017
 ms.author: elioda
-ms.openlocfilehash: e744ffe9eb6e58c9226802f0196cb5acf1427bdf
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 2dca04cadd4c5b904c752ac8a01af8bcb7c6ae33
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047725"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220114"
 ---
 # <a name="send-messages-from-the-cloud-to-your-device-with-iot-hub-net"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (.NET)
 
@@ -200,7 +200,7 @@ ms.locfileid: "43047725"
    ![Приложение получает сообщение](./media/iot-hub-csharp-csharp-c2d/sendc2d2.png)
 
 > [!NOTE]
-> Для упрощения в этом руководстве не реализуются какие-либо политики повтора. В рабочем коде следует реализовать политики повтора (например, экспоненциальную задержку), как указано в статье MSDN [Обработка временного сбоя](https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx).
+> Для упрощения в этом руководстве не реализуются какие-либо политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 > 
 
 ## <a name="next-steps"></a>Дополнительная информация

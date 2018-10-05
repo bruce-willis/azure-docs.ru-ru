@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 4/03/2018
+ms.date: 9/11/2018
 ms.author: srrengar
-ms.openlocfilehash: 90a28162fb1f455c154ad4d2da7beac6bc785bc7
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: a73a288852eea713623b65324853761e10fad282
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36301042"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220472"
 ---
 # <a name="set-up-log-analytics-for-a-cluster"></a>Настройка Log Analytics для кластера
 
@@ -76,117 +76,22 @@ ms.locfileid: "36301042"
 
 При развертывании кластера с помощью шаблона Resource Manager этот шаблон создает рабочую область Log Analytics, добавляет в нее решение Service Fabric и настраивает в ней чтение данных из соответствующих таблиц службы хранилища.
 
-Вы можете использовать [этот пример шаблона](https://github.com/krnese/azure-quickstart-templates/tree/master/service-fabric-oms), а также изменить его в соответствии со своими потребностями.
+Вы можете использовать [этот пример шаблона](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-OMS-UnSecure), а также изменить его в соответствии со своими потребностями. Этот шаблон делает следующее:
 
-Внесите следующие изменения:
-1. Добавьте значения `omsWorkspaceName` и `omsRegion` в свои параметры, добавив следующий фрагмент кода в параметры, определенные в файле *template.json*. При необходимости вы можете изменить значения по умолчанию. Также добавьте два новых параметра в файл *parameters.json* для определения их значений при развертывании ресурсов:
-    
-    ```json
-    "omsWorkspacename": {
-        "type": "string",
-        "defaultValue": "sfomsworkspace",
-        "metadata": {
-            "description": "Name of your Log Analytics Workspace"
-        }
-    },
-    "omsRegion": {
-        "type": "string",
-        "defaultValue": "East US",
-        "allowedValues": [
-            "West Europe",
-            "East US",
-            "Southeast Asia"
-        ],
-        "metadata": {
-            "description": "Specify the Azure Region for your Log Analytics workspace"
-        }
-    }
-    ```
+* создает кластер Service Fabric с 5 узлами;
+* создает рабочую область Log Analytics и решение Service Fabric;
+* настраивает агент OMS для сбора и отправки данных с 2 счетчиков производительности в рабочую область;
+* настраивает WAD для сбора данных Service Fabric и отправляет их в таблицы хранилища Azure (WADServiceFabric*EventTable);
+* настраивает рабочую область Log Analytics для считывания событий из этих таблиц.
 
-    Значения `omsRegion` должны соответствовать определенному набору значений. Выберите значение, ближайшее к развертыванию кластера.
 
-2. При отправке любых журналов приложений в Log Analytics убедитесь, что `applicationDiagnosticsStorageAccountType` и `applicationDiagnosticsStorageAccountName` добавлены в шаблон в качестве параметров. В противном случае добавьте их в раздел переменных и при необходимости измените их значения. Их можно также включить как параметры, используя формат выше.
+Шаблон можно развернуть как обновление Resource Manager для кластера с помощью API `New-AzureRmResourceGroupDeployment` в модуле AzureRM PowerShell. Пример команды будет выглядеть так:
 
-    ```json
-    "applicationDiagnosticsStorageAccountType": "Standard_LRS",
-    "applicationDiagnosticsStorageAccountName": "[toLower(concat('oms', uniqueString(resourceGroup().id), '3' ))]"
-    ```
+```powershell
+New-AzureRmResourceGroupDeployment -ResourceGroupName "<resourceGroupName>" -TemplateFile "<templatefile>.json" 
+``` 
 
-3. Добавьте решение Service Fabric в переменные шаблона:
-
-    ```json
-    "solution": "[Concat('ServiceFabric', '(', parameters('omsWorkspacename'), ')')]",
-    "solutionName": "ServiceFabric"
-    ```
-
-4. Добавьте следующий код в конец раздела ресурсов после объявления кластерного ресурса Service Fabric.
-
-    ```json
-    {
-        "apiVersion": "2015-11-01-preview",
-        "location": "[parameters('omsRegion')]",
-        "name": "[parameters('omsWorkspacename')]",
-        "type": "Microsoft.OperationalInsights/workspaces",
-        "properties": {
-            "sku": {
-                "name": "Free"
-            }
-        },
-        "resources": [
-            {
-                "apiVersion": "2015-11-01-preview",
-                "name": "[concat(parameters('applicationDiagnosticsStorageAccountName'),parameters('omsWorkspacename'))]",
-                "type": "storageinsightconfigs",
-                "dependsOn": [
-                    "[concat('Microsoft.OperationalInsights/workspaces/', parameters('omsWorkspacename'))]",
-                    "[concat('Microsoft.Storage/storageAccounts/', parameters('applicationDiagnosticsStorageAccountName'))]"
-                ],
-                "properties": {
-                    "containers": [ ],
-                    "tables": [
-                        "WADServiceFabric*EventTable",
-                        "WADWindowsEventLogsTable",
-                        "WADETWEventTable"
-                    ],
-                    "storageAccount": {
-                        "id": "[resourceId('Microsoft.Storage/storageaccounts/', parameters('applicationDiagnosticsStorageAccountName'))]",
-                        "key": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('applicationDiagnosticsStorageAccountName')),'2015-06-15').key1]"
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "apiVersion": "2015-11-01-preview",
-        "location": "[parameters('omsRegion')]",
-        "name": "[variables('solution')]",
-        "type": "Microsoft.OperationsManagement/solutions",
-        "id": "[resourceId('Microsoft.OperationsManagement/solutions/', variables('solution'))]",
-        "dependsOn": [
-            "[concat('Microsoft.OperationalInsights/workspaces/', parameters('OMSWorkspacename'))]"
-        ],
-        "properties": {
-            "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces/', parameters('omsWorkspacename'))]"
-        },
-        "plan": {
-            "name": "[variables('solution')]",
-            "publisher": "Microsoft",
-            "product": "[Concat('OMSGallery/', variables('solutionName'))]",
-            "promotionCode": ""
-        }
-    }
-    ```
-    
-    > [!NOTE]
-    > Если вы добавили `applicationDiagnosticsStorageAccountName` в качестве переменной, замените каждую ссылку на этот объект на `variables('applicationDiagnosticsStorageAccountName')` вместо `parameters('applicationDiagnosticsStorageAccountName')`.
-
-5. Разверните шаблон как обновление Resource Manager для кластера с помощью API `New-AzureRmResourceGroupDeployment` в модуле AzureRM PowerShell. Пример команды будет выглядеть так:
-
-    ```powershell
-    New-AzureRmResourceGroupDeployment -ResourceGroupName "sfcluster1" -TemplateFile "<path>\template.json" -TemplateParameterFile "<path>\parameters.json"
-    ``` 
-
-    Azure Resource Manager определит, что эта команда — это обновление имеющегося ресурса. Он обработает только изменения между шаблоном, управляющим имеющимся развертыванием, и новым предоставленным шаблоном.
+Azure Resource Manager определит, что эта команда — это обновление имеющегося ресурса. Он обработает только изменения между шаблоном, управляющим имеющимся развертыванием, и новым предоставленным шаблоном.
 
 ## <a name="deploy-log-analytics-by-using-azure-powershell"></a>Развертывание Log Analytics с помощью Azure PowerShell
 

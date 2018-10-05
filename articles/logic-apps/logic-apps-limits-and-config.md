@@ -3,19 +3,18 @@ title: Ограничения и настройка в Azure Logic Apps | Док
 description: Ограничения службы и значений конфигурации для Azure Logic Apps
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
-ms.topic: article
-ms.date: 08/10/2018
 ms.reviewer: klam, LADocs
-ms.suite: integration
-ms.openlocfilehash: 49b8efe6b5d56c3edaf8b311ff3c6667a8952536
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.topic: article
+ms.date: 09/26/2018
+ms.openlocfilehash: c557c3e34fc4588b8bf13d69159a144d059b039e
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42143877"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452464"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -305,8 +304,13 @@ ms.locfileid: "42143877"
 Для поддержки вызовов [соединителей](../connectors/apis-list.md) настройте конфигурацию брандмауэра так, чтобы она включала исходящие IP-адреса на основе регионов, где размещены приложения логики.
 
 > [!IMPORTANT]
->
 > При наличии существующих конфигураций обновите их **как можно быстрее — до 1 сентября 2018 г.**, чтобы они включали и сопоставляли IP-адреса в этом списке для регионов, где размещены ваши приложения логики. 
+> 
+> Logic Apps не поддерживает непосредственное подключения к учетным записям хранения Azure через брандмауэры. Чтобы получить доступ к этим учетным записям хранения, используйте любой из этих вариантов: 
+>
+> * Создайте [среду службы интеграции](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), которая может подключаться к ресурсам в виртуальной сети Azure. 
+> 
+> * Если вы уже используете службы управления API, ее можно применить в этом сценарии. Дополнительные сведения см. в статье [Простая архитектура корпоративной интеграции](http://aka.ms/aisarch).
 
 | Регион Logic Apps | Исходящий IP-адрес | 
 |-------------------|-------------|  

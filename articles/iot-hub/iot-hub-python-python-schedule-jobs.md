@@ -9,12 +9,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 02/16/2018
 ms.author: kgremban
-ms.openlocfilehash: 588ee4b7d728aa16201cbe9c325d25a9cc5c9884
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 831b1c12514e57d378e22d007c75d8a3715f7276
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185464"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47219929"
 ---
 # <a name="schedule-and-broadcast-jobs-python"></a>Планирование и трансляция заданий (Python)
 
@@ -149,7 +149,7 @@ ms.locfileid: "39185464"
 1. Сохраните и закройте файл **simDevice.py**.
 
 > [!NOTE]
-> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временного сбоя][lnk-transient-faults] на сайте MSDN.
+> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 > 
 > 
 
@@ -334,7 +334,6 @@ ms.locfileid: "39185464"
 [lnk-python-download]: https://www.python.org/downloads/
 [lnk-visual-c-redist]: http://www.microsoft.com/download/confirmation.aspx?id=48145
 [lnk-install-pip]: https://pip.pypa.io/en/stable/installing/
-[lnk-transient-faults]: https://docs.microsoft.com/azure/architecture/best-practices/transient-faults
 
 [1]: ./media/iot-hub-python-python-schedule-jobs/1.png
 [2]: ./media/iot-hub-python-python-schedule-jobs/2.png

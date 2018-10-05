@@ -5,16 +5,16 @@ services: iot-edge
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 08/30/2018
+ms.date: 09/21/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 370fe646ca23ad5f364536ef9d9e05d042d2ed15
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 9c4ad2275339b3aeb21258041a96840c76732687
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43337369"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423467"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом Java и его развертывание на имитированном устройстве
 
@@ -36,11 +36,12 @@ ms.locfileid: "43337369"
 
 Устройство Azure IoT Edge.
 
-* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
+* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройства [Linux](quickstart-linux.md).
+* Модули Java для IoT Edge не поддерживают устройства Windows.
 
 Облачные ресурсы.
 
-* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure. 
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) (цен. категории "Бесплатный") в Azure. 
 
 Ресурсы разработки.
 

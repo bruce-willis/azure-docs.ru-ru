@@ -2,20 +2,22 @@
 title: Пользовательская служба DNS для Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
 description: В этой статье описаны параметры конфигурации пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure.
 services: sql-database
-author: srdan-bozovic-msft
-manager: craigg
 ms.service: sql-database
-ms.custom: managed instance
+ms.subservice: managed-instance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/23/2018
+author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: bonova, carlrab
-ms.openlocfilehash: 2d1bb7e8522da32dd33933261ea41b578f8afac1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+manager: craigg
+ms.date: 09/23/2018
+ms.openlocfilehash: f26ea763d48d03fe7e981b7abbbe64e573ec0b3a
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949491"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224279"
 ---
 # <a name="configuring-a-custom-dns-for-azure-sql-database-managed-instance"></a>Настройка пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure
 
@@ -36,7 +38,7 @@ ms.locfileid: "46949491"
    ![Параметр "Пользовательская служба DNS"](./media/sql-database-managed-instance-custom-dns/custom-dns-server-ip-address.png) 
 
    > [!IMPORTANT]
-   > Если не указать в списке DNS рекурсивный сопоставитель Azure, Управляемый экземпляр перейдет в состояние сбоя. Чтобы восстановить решение из этого состояния, возможно, в виртуальной сети потребуется создать новый экземпляр с соответствующими политиками сети и данные уровня экземпляра, а также восстановить базы данных. См. статью о [конфигурации виртуальной сети](sql-database-managed-instance-vnet-configuration.md).
+   > Если не указать рекурсивный сопоставитель в списке DNS-серверов, Управляемый экземпляр может перейти в состояние сбоя после отказа по некоторым причинам пользовательских DNS-серверов. Чтобы восстановить решение из этого состояния, возможно, в виртуальной сети потребуется создать новый экземпляр с соответствующими политиками сети и данные уровня экземпляра, а также восстановить базы данных. Если указать рекурсивный сопоставитель последним в списке DNS-серверов, общедоступные имена продолжат резервироваться даже после отказа всех пользовательских DNS-серверов. См. статью о [конфигурации виртуальной сети](sql-database-managed-instance-vnet-configuration.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

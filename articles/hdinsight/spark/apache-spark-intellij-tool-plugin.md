@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/25/2017
 ms.author: maxluk
-ms.openlocfilehash: ed0118584d51f08d64a88dc1e7e6e2ba5f95cb0a
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 07c2b506007daccd53a8b06a43064e6e274ac43b
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43042597"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433364"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ
 
@@ -181,8 +181,12 @@ ms.locfileid: "43042597"
 
         ![Диалоговое окно выбора основного класса](./media/apache-spark-intellij-tool-plugin/hdi-submit-spark-app-3.png)
 
-      * Так как для кода приложения в этом примере не требуются аргументы командной строки, справочные JAR или файлы, остальные текстовые поля можно не заполнять. После ввода необходимой информации диалоговое окно должно выглядеть как на следующем изображении.
+      * Вы можете предоставить нужные сведения. Для параметра **Job configurations** (Конфигурация заданий) задано значение по умолчанию. Дополнительные сведения об этих ключах см. на странице, посвященной [REST API Apache Livy](http://livy.incubator.apache.org./docs/latest/rest-api.html). Параметры **Аргументы командной строки**, **Referenced JARs** (JAR-файлы, на которые указывает ссылка) и **Referenced Files** (Файлы, на которые указывает ссылка) должны иметь значения, как на изображении ниже. Дополнительные сведения о параметрах **Referenced JARs** (JAR-файлы, на которые указывает ссылка) и **Referenced Files** (Файлы, на которые указывает ссылка) см. в [разделе конфигурации Spark](https://spark.apache.org/docs/latest/configuration.html#runtime-environment). Чтобы правильно задать параметры **Referenced JARs** (JAR-файлы, на которые указывает ссылка) и **Referenced Files** (Файлы, на которые указывает ссылка), ресурсы необходимо загрузить в кластер, который вы отправили первым. Дополнительные сведения см. в [кратком руководстве по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Обозревателя службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer). Диалоговое окно отправки должно выглядеть, как на изображении ниже.
         
+        ![Диалоговое окно отправки в Spark, конфигурация задания](./media/apache-spark-intellij-tool-plugin/submit-job-configurations.png)
+
+        ![Диалоговое окно отправки в Spark, JAR-файлы](./media/apache-spark-intellij-tool-plugin/jar-files-meaning.png)
+
         ![Диалоговое окно Spark Submission (Отправка в Spark)](./media/apache-spark-intellij-tool-plugin/hdi-submit-spark-app-2.png)
 
    c. На вкладке **Spark Submission** (Отправка в Spark) в нижней части окна начнет отображаться ход выполнения. Приложение также можно остановить, выбрав красную кнопку в окне **Spark Submission** (Отправка в Spark).

@@ -4,16 +4,16 @@ description: Обзор определенных свойств и их знач
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 03/14/2018
+ms.date: 09/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 2858179d42ebf51cbb24d95d2e0093f8577bacef
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 5e358992661f7bcf06121a07c1bafca0850316b2
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37030569"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423143"
 ---
 # <a name="properties-of-the-edge-agent-and-edge-hub-module-twins"></a>Свойства двойников модулей EdgeAgent и EdgeHub
 
@@ -109,9 +109,9 @@ EdgeAgent и EdgeHub — это два модуля, которые состав
 | lastDesiredVersion | Это целое число относится к последней версии требуемых свойств, обрабатываемых модулем EdgeHub. |
 | lastDesiredStatus.code | Это код состояния, ссылающийся на последние требуемые свойства, используемые концентратором Edge. Допустимые значения: `200` — успех, `400` — недопустимая конфигурация, `500` — сбой. |
 | lastDesiredStatus.description | Текстовое описание состояния. |
-| clients.{удостоверение устройства или модуля}.status | Состояние подключения этого устройства или модуля. Возможные значения {"connected" \| "disconnected"}. В отключенном состоянии могут находиться только удостоверения модуля. Подчиненные устройства, подключающиеся к концентратору Edge, отображаются только при подключении. |
-| clients.{удостоверение устройства или модуля}.lastConnectTime | Время последнего подключения модуля или устройства. |
-| clients.{удостоверение устройства или модуля}.lastDisconnectTime | Время последнего отключения модуля или устройства. |
+| clients.{идентификатор устройства или модуля}.status | Состояние подключения этого устройства или модуля. Возможные значения {"connected" \| "disconnected"}. В отключенном состоянии могут находиться только удостоверения модуля. Подчиненные устройства, подключающиеся к концентратору Edge, отображаются только при подключении. |
+| clients.{идентификатор устройства или модуля}.lastConnectTime | Время последнего подключения модуля или устройства. |
+| clients.{идентификатор устройства или модуля}.lastDisconnectTime | Время последнего отключения модуля или устройства. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

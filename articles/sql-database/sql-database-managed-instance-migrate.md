@@ -1,36 +1,37 @@
 ---
 title: Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure | Документация Майкрософт
 description: Сведения о переносе экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure.
-keywords: миграция базы данных, миграция базы данных SQL Server, средства миграции базы данных, миграция базы данных, миграция базы данных SQL
 services: sql-database
+ms.service: sql-database
+ms.subservice: data-movement
+ms.custom: ''
+ms.devlang: ''
+ms.topic: conceptual
 author: bonova
+ms.author: bonova
 ms.reviewer: carlrab
 manager: craigg
-ms.service: sql-database
-ms.custom: managed instance
-ms.topic: conceptual
-ms.date: 07/24/2018
-ms.author: bonova
-ms.openlocfilehash: e152fa4bb439f1881dc9974bfdf1b3e8c77c434a
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.date: 09/26/2018
+ms.openlocfilehash: 7653ce7b0823b4e91685e77701a307370261f7e6
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42143708"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47394071"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure
 
-В этой статье вы узнаете о методах переноса экземпляра SQL Server 2005 или более поздней версии в [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md) (предварительная версия).
+В этой статье вы узнаете о методах переноса экземпляра SQL Server 2005 или более поздней версии в [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md).
 
 В общем процесс переноса базы данных выглядит примерно так:
 
 ![процесс переноса](./media/sql-database-managed-instance-migration/migration-process.png)
 
-- [Оценка совместимости управляемого экземпляра](sql-database-managed-instance-migrate.md#assess-managed-instance-compatibility)
-- [Выбор варианта подключения к приложению](sql-database-managed-instance-migrate.md#choose-app-connectivity-option)
-- [Развертывание в управляемый экземпляр оптимального размера](sql-database-managed-instance-migrate.md#deploy-to-an-optimally-sized-managed-instance)
-- [Выбор метода переноса и выполнение переноса](sql-database-managed-instance-migrate.md#select-migration-method-and-migrate)
-- [Мониторинг приложений](sql-database-managed-instance-migrate.md#monitor-applications)
+- [Оценка совместимости управляемого экземпляра](#assess-managed-instance-compatibility)
+- [Выбор варианта подключения к приложению](sql-database-managed-instance-connect-app.md)
+- [Развертывание в управляемый экземпляр оптимального размера](#deploy-to-an-optimally-sized-managed-instance)
+- [Выбор метода переноса и выполнение переноса](#select-migration-method-and-migrate)
+- [Мониторинг приложений](#monitor-applications)
 
 > [!NOTE]
 > Сведения о переносе отдельной базы данных в базу данных или эластичный пул см. в статье [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-cloud-migrate.md).
@@ -39,9 +40,9 @@ ms.locfileid: "42143708"
 
 Сначала определите, соответствует ли управляемый экземпляр требованиям к базе данных вашего приложения. Управляемый экземпляр предназначен для обеспечения простого переноса методом lift-and-shift для большинства имеющихся приложений, которые используют SQL Server локально или на виртуальных машинах. Однако иногда вам могут потребоваться еще не поддерживаемые функции или возможности, а затраты на реализацию обходного пути слишком высоки. 
 
-Используйте [Data Migration Assistant (DMA)](https://docs.microsoft.com/sql/dma/dma-overview) для выявления потенциальных проблем совместимости, влияющих на функциональность базы данных в службе "База данных SQL Azure". DMA еще не поддерживает управляемый экземпляр в качестве назначения миграции, однако мы рекомендуем выполнить оценку базы данных SQL Azure, внимательно просмотреть список обнаруженных проблем равенства функций и совместимости, сравнимая с документацией по продукту. См. в разделе [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md), чтобы проверить наличие проблем блокировки, которые не являются препятствующими в Управляемом экземпляре, поскольку большинство проблем блокировки, препятствующих миграции в Azure SQL Database, были удалены с помощью Управляемого экземпляра. Например, в управляемых экземплярах доступны такие функции, как запросы и транзакции между базами данных в одном экземпляре, связывание сервера с другими источниками SQL, поддержка общеязыковой среды выполнения (CLR), глобальные временные таблицы, представления уровня экземпляра и Service Broker. 
+Используйте [Data Migration Assistant (DMA)](https://docs.microsoft.com/sql/dma/dma-overview) для выявления потенциальных проблем совместимости, влияющих на функциональность базы данных в службе "База данных SQL Azure". DMA еще не поддерживает управляемый экземпляр в качестве назначения миграции, однако мы рекомендуем выполнить оценку базы данных SQL Azure, внимательно просмотреть список обнаруженных проблем равенства функций и совместимости, сравнимая с документацией по продукту. Большинство блокирующих проблем, препятствующих переносу в базу данных SQL Azure, были устранены с выпуском Управляемого экземпляра. Сведения об этом см. в статье [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md). Например, в управляемых экземплярах доступны такие функции, как запросы и транзакции между базами данных в одном экземпляре, связывание сервера с другими источниками SQL, поддержка общеязыковой среды выполнения (CLR), глобальные временные таблицы, представления уровня экземпляра и Service Broker. 
 
-Если есть отчеты о наличии блокирующих проблем, которые не удаляются в Управляемом экземпляре Azure SQL, может потребоваться рассмотреть альтернативный вариант, например [SQL Server на виртуальных машинах в Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/). Ниже приведены некоторые примеры:
+Если в Управляемом экземпляре Базы данных SQL Azure не устранены некоторые блокирующие проблемы, рекомендуем рассмотреть альтернативный вариант, например [SQL Server на виртуальных машинах в Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/). Ниже приведены некоторые примеры:
 
 - Если вам необходим прямой доступ к ОС или файловой системе, например, для установки сторонних или настраиваемых агентов на одной и той же виртуальной машине с SQL Server.
 - Если у вас есть строгая зависимость от функций, которые все еще не поддерживаются, например FileStream или FileTable, PolyBase и транзакции между несколькими экземплярами.
@@ -81,7 +82,7 @@ ms.locfileid: "42143708"
 
 [Azure Database Migration Service (DMS)](../dms/dms-overview.md) — это полностью управляемая служба, которая выполняет непрерывную миграцию из множества источников баз данных на платформы данных Azure с минимальным временем простоя. Эта служба упрощает выполнение задач, необходимых для перемещения имеющихся сторонних баз данных и баз данных SQL Server в Azure. Варианты развертывания в общедоступной предварительной версии включают базу данных SQL Azure, управляемый экземпляр и SQL Server на виртуальной машине Azure. DMS — это рекомендуемый метод переноса для корпоративных рабочих нагрузок. 
 
-Если вы используете службы SQL Server Integration Services (SSIS) на своем локальном экземпляре SQL Server, учтите, что DMS пока не поддерживает перенос каталога SSIS (SSISDB), в котором хранятся пакеты SSIS. Но вы можете подготовить среду Azure SSIS Integration Runtime (IR) в службе "Фабрика данных Azure" (ADF), чтобы создать SSISDB в Базе данных SQL Azure или Управляемом экземпляре, а затем повторно развернуть свои пакеты там (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)).
+Если вы используете службы SQL Server Integration Services (SSIS) на своем локальном экземпляре SQL Server, учтите, что DMS пока не поддерживает перенос каталога SSIS (SSISDB), в котором хранятся пакеты SSIS. Но вы можете подготовить среду Azure SSIS Integration Runtime (IR) в службе "Фабрика данных Azure" (ADF), чтобы создать SSISDB в Базе данных SQL Azure или Управляемом экземпляре, а затем повторно развернуть свои пакеты там (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)).
 
 Дополнительные сведения об этом сценарии и шагах настройки для DMS см. в статье [Migrate SQL Server to Azure SQL Database Managed Instance](../dms/tutorial-sql-server-to-managed-instance.md) (Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure).  
 
@@ -100,13 +101,15 @@ ms.locfileid: "42143708"
 |Помещение резервной копии в службу хранилища Azure|Версия до SQL 2012 SP1 CU2|Переча BAK-файла непосредственно в службу хранилища Azure|
 ||От 2012 SP1 CU2 до 2016|Прямое резервное копирование с использованием устаревшего синтаксиса [WITH CREDENTIAL](https://docs.microsoft.com/sql/t-sql/statements/restore-statements-transact-sql)|
 ||2016 и более поздние версии|Прямое резервное копирование с использованием синтаксиса [WITH SAS CREDENTIAL](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url)|
-|Восстановление из службы хранилища Azure в управляемый экземпляр|[Восстановление на основе URL-адреса с помощью учетных данных SAS](sql-database-managed-instance-restore-from-backup-tutorial.md)|
+|Восстановление из службы хранилища Azure в управляемый экземпляр|[Восстановление на основе URL-адреса с помощью учетных данных SAS](sql-database-managed-instance-get-started-restore.md)|
 
 > [!IMPORTANT]
-> - При миграции базы данных, защищенной с помощью [прозрачного шифрования данных (TDE)](transparent-data-encryption-azure-sql.md), в Управляемый экземпляр базы данных SQL Azure с использованием параметра "Собственное восстановление" необходимо перед восстановлением базы данных перенести соответствующий сертификат из локального или IaaS SQL Server. Пошаговая процедура приведена в разделе [Перенос сертификата TDE в управляемый экземпляр](sql-database-managed-instance-migrate-tde-certificate.md).
+> - При миграции базы данных, защищенной с помощью [прозрачного шифрования данных (TDE)](transparent-data-encryption-azure-sql.md), в Управляемый экземпляр Базы данных SQL Azure с использованием параметра "Собственное восстановление" необходимо перед восстановлением базы данных перенести соответствующий сертификат из локального или IaaS SQL Server. Пошаговая процедура приведена в разделе [Перенос сертификата TDE в управляемый экземпляр](sql-database-managed-instance-migrate-tde-certificate.md).
 > - Восстановление системных баз данных не поддерживается. Чтобы перенести объекты уровня экземпляра (хранящиеся в базах данных master или msdb), рекомендуем создать для них скрипт и запустить скрипты T-SQL в экземпляре среды назначения.
 
-Полное руководство со сведениями о восстановлении резервной копии базы данных в управляемый экземпляр с использованием учетных данных SAS см. в статье [Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-restore-from-backup-tutorial.md).
+Сведения о восстановлении резервной копии базы данных в Управляемый экземпляр с использованием учетных данных SAS см. в [этой статье](sql-database-managed-instance-get-started-restore.md).
+
+> [!VIDEO https://www.youtube.com/embed/RxWYojo_Y3Q]
 
 ## <a name="monitor-applications"></a>Мониторинг приложений
 

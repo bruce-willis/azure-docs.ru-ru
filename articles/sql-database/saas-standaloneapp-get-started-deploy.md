@@ -1,21 +1,23 @@
 ---
-title: Руководство по мультитенантному приложению SaaS, использующему базу данных SQL Azure | Документация Майкрософт
+title: Руководство по однотенантному приложению SaaS, использующему службу "База данных SQL Azure" | Документация Майкрософт
 description: Развертывание и изучение отдельного однотенантного SaaS-приложения, в котором используется база данных SQL Azure.
-keywords: руководство по базе данных sql
 services: sql-database
-author: stevestein
-manager: craigg
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 32cfa2e9bd48dd4e27da5c4010391c032d67d96b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: sstein
+manager: craigg
+ms.date: 09/19/2018
+ms.openlocfilehash: 1e74a0c915471fecb3b8e0662559eb5bfe189b3d
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34644728"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423023"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Развертывание и изучение отдельного однотенантного приложения, в котором используется база данных SQL Azure
 
@@ -25,7 +27,7 @@ ms.locfileid: "34644728"
 
 В этом руководстве вы развернете три отдельных приложения для трех клиентов в своей подписке Azure.  Вы получите полный доступ для изучения отдельных компонентов приложения и экспериментов с ними.
 
-Исходный код приложения и скрипты управления доступны в репозитории GitHub [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp).
+Исходный код приложения и скрипты управления доступны в репозитории GitHub [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp). Приложение создано с помощью Visual Studio 2015. Его нельзя открыть или компилировать с помощью Visual Studio 2017 без обновления.
 
 
 Из этого руководства вы узнаете следующее:

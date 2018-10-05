@@ -5,28 +5,23 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 08/29/2018
+ms.date: 09/20/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: abd4a3b21ede2ddbdede2ec133938d412d5d4c8d
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 6354d89ff5a23ccb51b85737b3a842c08534683e
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43248171"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223616"
 ---
 # <a name="use-an-azure-ad-identity-to-access-azure-storage-with-cli-or-powershell-preview"></a>Использование удостоверения Azure AD для доступа к службе хранилища Azure с помощью интерфейса командной строки или PowerShell (предварительная версия)
 
-Служба хранилища Azure предоставляет предварительные версии расширений для Azure CLI и PowerShell, позволяющие войти в систему и выполнять команды сценариев с удостоверением Azure Active Directory (Azure AD). Можно использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также [удостоверение управляемой службы](../../active-directory/managed-service-identity/overview.md). Назначить удостоверению Azure AD разрешения для доступа к ресурсам хранилища можно с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о ролях RBAC в службе хранилища Azure см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
+Служба хранилища Azure предоставляет предварительные версии расширений для Azure CLI и PowerShell, позволяющие войти в систему и выполнять команды сценариев с удостоверением Azure Active Directory (Azure AD). Можно использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также [удостоверение управляемой службы](../../active-directory/managed-identities-azure-resources/overview.md). Назначить удостоверению Azure AD разрешения для доступа к ресурсам хранилища можно с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о ролях RBAC в службе хранилища Azure см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
 
 При входе в Azure CLI или PowerShell с использованием удостоверения Azure AD возвращается маркер доступа, необходимый для получения доступа к службе хранилища Azure с этим удостоверением. Этот маркер затем автоматически используется интерфейсом командной строки или PowerShell для авторизации операций в службе хранилища Azure. Для поддерживаемых операций больше не требуется передавать ключ учетной записи или маркер SAS с помощью команды.
 
-> [!IMPORTANT]
-> Эта предварительная версия не предназначена для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред не будут доступны до выпуска общедоступной версии интеграции с Azure AD для службы хранилища Azure. Если интеграция с Azure AD пока не поддерживается для вашего сценария, продолжайте использовать в приложениях авторизацию по общему ключу или маркеры SAS. Дополнительные сведения о предварительной версии см. в статье об [аутентификации доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)](storage-auth-aad.md).
->
-> На этапе предварительной версии распространение назначенных ролей RBAC может занимать до пяти минут.
->
-> Интеграция Azure AD со службой хранилища Azure требует использования протокола HTTPS для операций службы хранилища Azure.
+[!INCLUDE [storage-auth-aad-note-include](../../../includes/storage-auth-aad-note-include.md)]
 
 ## <a name="supported-operations"></a>Поддерживаемые операции
 
@@ -61,40 +56,50 @@ az storage blob download --account-name storagesamples --container sample-contai
 
 ## <a name="call-powershell-commands-with-an-azure-ad-identity"></a>Вызов команд PowerShell с помощью удостоверения Azure AD
 
+Azure PowerShell поддерживает вход с использованием удостоверения Azure AD только с одним из следующих модулей предварительной версии: 
+
+- 4.4.0-preview; 
+- 4.4.1-preview. 
+
 Чтобы использовать Azure PowerShell для входа с удостоверением Azure AD, сделайте следующее.
 
-1. Убедитесь, что у вас установлена последняя версия PowerShellGet. Выполните следующую команду, чтобы установить последнюю версию.
+1. Удалите все ранее установленные версии Azure PowerShell.
+
+    - Удалите все предыдущие установки Azure PowerShell из Windows с помощью параметра **Apps & features** (Приложения и компоненты) в разделе **Параметры**.
+    - Удалите все модули **Azure*** из `%Program Files%\WindowsPowerShell\Modules`.
+
+1. Убедитесь, что у вас установлена последняя версия PowerShellGet. Откройте окно Windows PowerShell и выполните следующую команду, чтобы установить последнюю версию:
  
     ```powershell
-    Install-Module -Name Azure.Storage -AllowPrerelease –AllowClobber -RequiredVersion "4.4.1-preview"
+    Install-Module PowerShellGet –Repository PSGallery –Force
     ```
+1. После установки PowerShellGet закройте и снова откройте окно PowerShell. 
 
-2. Удалите все предыдущие установленные версии Azure PowerShell.
-3. Установите AzureRM.
+1. Установите Azure PowerShell последней версии:
 
     ```powershell
     Install-Module AzureRM –Repository PSGallery –AllowClobber
     ```
 
-4. Установите предварительную версию модуля.
+1. Установите один из модулей службы хранилища Azure, используемых в режиме предварительной версии, которые поддерживают Azure AD:
 
     ```powershell
-    Install-Module -Name Azure.Storage -AllowPrerelease –AllowClobber 
+    Install-Module Azure.Storage –Repository PSGallery -RequiredVersion 4.4.1-preview  –AllowPrerelease –AllowClobber –Force 
     ```
+1. Закройте и снова откройте окно PowerShell.
+1. Вызовите командлет [New-AzureStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontext) для создания контекста, добавив параметр `-UseConnectedAccount`. 
+1. Чтобы вызвать командлет с помощью удостоверения Azure AD, передайте созданный контекст в этот командлет.
 
-5. Вызовите командлет [New-AzureStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontext) для создания контекста, добавив параметр `-UseConnectedAccount`. 
-6. Чтобы вызвать командлет с использованием удостоверения Azure AD, передайте созданный контекст в этот командлет.
-
-В приведенном ниже примере показано, как перечислить большие двоичные объекты в контейнере из Azure PowerShell с помощью удостоверения Azure AD. 
+В приведенном ниже примере показано, как перечислить большие двоичные объекты в контейнер из Azure PowerShell с помощью удостоверения Azure AD. Обязательно замените заполнители имен учетной записи и контейнера собственными значениями: 
 
 ```powershell
-$ctx = New-AzureStorageContext -StorageAccountName $storageAccountName -UseConnectedAccount 
-Get-AzureStorageBlob -Container $sample-container -Context $ctx 
+$ctx = New-AzureStorageContext -StorageAccountName storagesamples -UseConnectedAccount 
+Get-AzureStorageBlob -Container sample-container -Context $ctx 
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте больше о ролях RBAC для службы хранилища Azure, ознакомившись с разделом [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
-- Чтобы узнать об использовании функции "Управляемое удостоверение службы" в службе хранилища Azure, ознакомьтесь с разделом [Аутентификация в Azure AD с помощью функции "Управляемое удостоверение службы Azure" (предварительная версия)](storage-auth-aad-msi.md).
+- Дополнительные сведения об использовании управляемых удостоверений для ресурсов Azure со службой хранилища Azure см. в статье [Аутентификация в Azure AD с помощью функции "Управляемое удостоверение службы Azure" (предварительная версия)](storage-auth-aad-msi.md).
 - Чтобы узнать об авторизации доступа к контейнерам и очередям из приложений службы хранилища, ознакомьтесь с разделом [Authenticate with Azure Active Directory from an Azure Storage application (Preview)](storage-auth-aad-app.md) (Аутентификация с помощью Azure Active Directory из приложения службы хранилища Azure (предварительная версия)).
 - Дополнительные сведения об интеграции Azure AD для очередей и больших двоичных объектов Azure доступны в записи блога команды разработчиков службы хранилища Azure [Announcing the Preview of Azure AD Authentication for Azure Storage](https://azure.microsoft.com/blog/announcing-the-preview-of-aad-authentication-for-storage/) (Объявление о выпуске предварительной версии аутентификации Azure AD для службы хранилища Azure).

@@ -4,16 +4,16 @@ description: Узнайте о том, что такое модули Azure IoT 
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 02/15/2018
+ms.date: 09/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 76b0bab0f2eb34d7283d38eb0442f4f2f2083db3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5d80b6438569e74ee254d27e0061443a87efc6ce
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46995392"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423397"
 ---
 # <a name="understand-azure-iot-edge-modules"></a>Общие сведения о модулях IoT Edge Azure
 
@@ -79,6 +79,7 @@ Azure IoT Edge поддерживает автономные операции с
 Дополнительные возможности автономной работы сейчас представлены в общедоступной предварительной версии. Дополнительные сведения см. в разделе [Сведения о расширенных возможностях автономной работы устройств, модулей и дочерних устройств IoT Edge](offline-capabilities.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
+ - [Сведения о требованиях и средствах разработки модулей IoT Edge][lnk-mod-dev]
  - [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре][lnk-runtime]
 
 <!-- Images -->
@@ -89,3 +90,4 @@ Azure IoT Edge поддерживает автономные операции с
 [lnk-device-identity]: ../iot-hub/iot-hub-devguide-identity-registry.md
 [lnk-device-twin]: ../iot-hub/iot-hub-devguide-device-twins.md
 [lnk-runtime]: iot-edge-runtime.md
+[lnk-mod-dev]: module-development.md

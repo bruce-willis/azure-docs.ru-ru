@@ -1,5 +1,5 @@
 ---
-title: Сброс TCP-подключений для Load Balancer при истечении времени ожидания простоя | Документы Майкрософт
+title: Сброс TCP-подключений для Load Balancer при простое | Документация Майкрософт
 description: Load Balancer с двунаправленными TCP-пакетами RST при истечении времени ожидания простоя
 services: load-balancer
 documentationcenter: na
@@ -13,18 +13,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/16/2018
+ms.date: 09/26/2018
 ms.author: kumud
-ms.openlocfilehash: 6ec8754e9a6e1afb9dcb400215570d08ebd4342b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0b533a48e94db880f23d42decc5c3fb39a27e5ac
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973734"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47395650"
 ---
-# <a name="load-balancer-with-tcp-reset-on-idle-timeout-public-preview"></a>Load Balancer со сбросом TCP-подключений при истечении времени ожидания простоя (общедоступная предварительная версия)
+# <a name="load-balancer-with-tcp-reset-on-idle-public-preview"></a>Load Balancer со сбросом TCP-подключений при простое (общедоступная предварительная версия)
 
 С помощью [Load Balancer ценовой категории "Стандартный"](load-balancer-standard-overview.md) можно сделать работу приложения более предсказуемой в сценариях с двунаправленным сбросом TCP-подключений (TCP-пакетами RST) для каждого настраиваемого времени ожидания простоя.  По умолчанию, когда истекает время ожидания простоя последовательности, Load Balancer автоматически прерывает ее.
+
+![Сброс TCP-подключений в Load Balancer](media/load-balancer-tcp-reset/load-balancer-tcp-reset.png)
 
 >[!NOTE] 
 >Функция Load Balancer со сбросом TCP-подключений при истечении времени ожидания простоя находится в стадии общедоступной предварительной версии и доступна не во всех [регионах](#regions). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -73,6 +75,8 @@ ms.locfileid: "46973734"
 
 | Регион |
 |---|
+| Юго-восточная Азия |
+| Западная Европа |
 | Восточная часть США 2 |
 | Север США |
 | Западная часть США |
@@ -87,4 +91,4 @@ ms.locfileid: "46973734"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения о [Load Balancer ценовой категории "Стандартный"](load-balancer-standard-overview.md).
-- Сведения о [правилах для исходящих подключений](https://aka.ms/lboutboundrules).
+- Сведения о [правилах для исходящих подключений](load-balancer-outbound-rules-overview.md).

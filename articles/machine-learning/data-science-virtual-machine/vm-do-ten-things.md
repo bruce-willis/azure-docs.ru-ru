@@ -13,14 +13,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/04/2017
+ms.date: 09/24/2018
 ms.author: gokuma
-ms.openlocfilehash: ce73d1ef5425ee2fe66655571a6d6bbbff372af5
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: faabdb4c2d2e434863a6bed0b2cd85a05c94eab1
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39502817"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47395735"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -47,7 +47,7 @@ ms.locfileid: "39502817"
 **Предварительные требования**
 
 * Вам понадобится подписка Azure. Вы можете зарегистрироваться [здесь](https://azure.microsoft.com/free/), чтобы получить бесплатную пробную версию.
-* Инструкции по подготовке виртуальной машины для обработки и анализа данных на портале Azure доступны в статье [Создание виртуальной машины](https://portal.azure.com/#create/microsoft-ads.standard-data-science-vmstandard-data-science-vm).
+* Инструкции по подготовке виртуальной машины для обработки и анализа данных на портале Azure доступны в статье [Создание виртуальной машины](https://portal.azure.com/#create/microsoft-dsvm.dsvm-windowsserver-2016).
 
 ## <a name="1-explore-data-and-develop-models-using-microsoft-ml-server-or-python"></a>1. Просмотр данных и разработка моделей с помощью Microsoft ML Server или Python
 Используя такие языки, как R и Python, анализ данных можно выполнять непосредственно в DSVM.
@@ -56,7 +56,7 @@ ms.locfileid: "39502817"
 
 Для Python можно использовать такую интегрированную среду разработки, как Visual Studio Community Edition, в которой предустановлено расширение Python Tools for Visual Studio (PTVS). По умолчанию в PTVS настроена только корневая среда Anaconda Python 3.6. Чтобы включить Anaconda Python 2.7, необходимо выполнить следующие действия.
 
-* Создайте настраиваемые среды для каждой версии, последовательно выбрав **Инструменты** -> **Python Tools** (Инструменты Python) -> **Python Environments** (Среды Python), а затем щелкнув **+ Custom** (+ Настраиваемые) в Visual Studio 2015 Community Edition.
+* Создайте настраиваемые среды для каждой версии, выбрав **Инструменты** -> **Инструменты Python** -> **Окружения Python**, а затем щелкнув **+ Настраиваемые** в Visual Studio Community Edition.
 * Введите описание и задайте путь префиксов сред для Anaconda Python 2.7 — *c:\anaconda\envs\python2*.
 * Щелкните **Автообнаружение**, а затем — **Применить**, чтобы сохранить среду.
 
@@ -66,7 +66,7 @@ ms.locfileid: "39502817"
 
 Дополнительные сведения о создании сред Python см. в [документации по PTVS](http://aka.ms/ptvsdocs).
 
-Теперь вы можете создать новый проект Python. Щелкните **Файл** -> **Создать** -> **Проект** -> **Python** и выберите тип создаваемого приложения Python. Вы можете указать нужную версию среды Python для текущего проекта (Anaconda 2.7 или 3.6). Для этого щелкните правой кнопкой мыши **Python environment** (Среда Python), выберите **Add/Remove Python Environments** (Добавление или удаление сред Python), а затем выберите требуемую среду. Дополнительные сведения о работе с PTVS можно найти в [документации](http://aka.ms/ptvsdocs) по продукту.
+Теперь вы можете создать новый проект Python. Щелкните **Файл** -> **Создать** -> **Проект** -> **Python** и выберите тип создаваемого приложения Python. Вы можете указать нужную версию среды Python для текущего проекта (Python 2.7 или 3.6). Для этого щелкните правой кнопкой мыши параметр **Окружения Python**, выберите **Добавить или удалить окружения Python**, а затем выберите требуемую среду. Дополнительные сведения о работе с PTVS можно найти в [документации](http://aka.ms/ptvsdocs) по продукту.
 
 ## <a name="2-using-a-jupyter-notebook-to-explore-and-model-your-data-with-python-or-r"></a>2. Использование записной книжки Jupyter для изучения и моделирования данных с помощью Python или R
 Записная книжка Jupyter представляет собой мощную среду IDE с поддержкой браузера для изучения и моделирования данных. В записной книжке Jupyter можно использовать Python 2, Python 3 или R (с открытым исходным кодом и Microsoft R Server).

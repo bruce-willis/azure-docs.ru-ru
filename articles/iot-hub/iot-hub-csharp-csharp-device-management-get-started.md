@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 09/15/2017
 ms.author: dobett
-ms.openlocfilehash: ed591007e6ad83dfbafe13db0bd3d8b53fc216f3
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: bca25f5e7a6fd7685d20236033a5a225c5183a2d
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106375"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225351"
 ---
 # <a name="get-started-with-device-management-netnet"></a>Приступая к работе с управлением устройствами (.NET и .NET)
 
@@ -213,7 +213,7 @@ ms.locfileid: "43106375"
 8. В обозревателе решений Visual Studio щелкните правой кнопкой мыши решение и выберите пункт **Назначить запускаемые проекты**. Щелкните **Один запускаемый проект**, а затем в раскрывающемся меню выберите проект **SimulateManagedDevice**. Выполните сборку решения.       
 
 > [!NOTE]
-> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временного сбоя](https://msdn.microsoft.com/library/hh680901.aspx) на сайте MSDN.
+> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 
 ## <a name="run-the-apps"></a>Запуск приложений
 

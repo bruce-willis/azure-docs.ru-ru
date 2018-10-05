@@ -9,14 +9,14 @@ ms.reviewer: larryfr
 manager: cgronlun
 ms.topic: conceptual
 ms.date: 8/6/2018
-ms.openlocfilehash: 7796accffb7041e567c5e18857d09e105b5268ce
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 675dae022376fc62292f3b079bd735939b9199c2
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46961575"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220301"
 ---
-# <a name="how-to-configure-a-development-environment-for-the-azure-machine-learning-service"></a>Как настроить среду разработки для службы машинного обучения Azure
+# <a name="configure-a-development-environment-for-the-azure-machine-learning-service"></a>Настройка среды разработки для службы "Машинное обучение Azure"
 
 Узнайте, как настроить среду разработки для работы со службой машинного обучения Azure. Вы узнаете, как создать файл конфигурации, который связывает вашу среду с рабочей областью машинного обучения Azure. Кроме того, вы узнаете, как настраивать следующие среды разработки:
 
@@ -39,17 +39,31 @@ ms.locfileid: "46961575"
 
 Файл конфигурации рабочей области используется SDK для связи с рабочей областью службы машинного обучения Azure.  Существует два способа получения этого файла:
 
-* При выполнении [быстрого запуска](quickstart-get-started.md) файл `config.json` создается автоматически в записных книжках Azure.  Файл содержит сведения о конфигурации вашей рабочей области.  Скачайте его в тот же каталог, где находятся скрипты или записные книжки, ссылающиеся на него.
+* Чтобы создать рабочую область и файл конфигурации, выполните действия в [этом руководстве](quickstart-get-started.md). Файл `config.json` создается в записных книжках Azure.  Файл содержит сведения о конфигурации вашей рабочей области.  Скачайте или скопируйте его в тот же каталог, где находятся сценарии или записные книжки, ссылающиеся на него.
+
 
 * Выполните следующие действия для создания файла конфигурации.
 
     1. Откройте рабочую область на [портале Azure](https://portal.azure.com). Копируйте __имя рабочей области__, __группу ресурсов__ и __ИД подписки__. Эти значения используются для создания файла конфигурации.
 
-       Панель мониторинга для рабочей области портала поддерживается только в браузерах Edge, Chrome и Firefox.
-    
         ![Портал Azure](./media/how-to-configure-environment/configure.png) 
     
-    3. В текстовом редакторе создайте файл с именем **config.json**.  Добавьте в этот файл следующее содержимое, вставив значения с портала.
+    1. Создайте файл с этим кодом Python. Выполните код в том же каталоге, где находятся сценарии или записные книжки, ссылающиеся на рабочую область:
+        ```
+        from azureml.core import Workspace
+
+        subscription_id ='<subscription-id>'
+        resource_group ='<resource-group>'
+        workspace_name = '<workspace-name>'
+        
+        try:
+           ws = Workspace(subscription_id = subscription_id, resource_group = resource_group, workspace_name = workspace_name)
+           ws.write_config()
+           print('Library configuration succeeded')
+        except:
+           print('Workspace not found')
+        ```
+        В файл `aml_config/config.json` записывается следующие данные: 
     
         ```json
         {
@@ -58,12 +72,11 @@ ms.locfileid: "46961575"
         "workspace_name": "<workspace-name>"
         }
         ```
-    
-        >[!NOTE] 
-        >Впоследствии в коде прочитайте этот файл с помощью `ws = Workspace.from_config()`.
-    
-    4. Не забудьте сохранить файл **config.json** в тот же каталог, что и скрипты и записные книжки, ссылающиеся на него.
-    
+        Вы можете скопировать каталог `aml_config` либо только файл `config.json` в другой каталог, который ссылается на рабочую область.
+
+>[!NOTE] 
+>Другие сценарии или записные книжки в том же каталоге загружают рабочую область с помощью команды `ws=Workspace.from_config()`.
+
 ## <a name="azure-notebooks-and-data-science-virtual-machine"></a>Записные книжки Azure и виртуальная машина для обработки и анализа данных Azure
 
 Записные книжки Azure и виртуальные машины для обработки и анализа данных Azure предварительно настроены для работы со службой машинного обучения Azure. Необходимые компоненты, такие как SDK машинного обучения Azure, устанавливаются автоматически в этих средах.
@@ -98,7 +111,7 @@ ms.locfileid: "46961575"
 3. Чтобы установить пакет SDK машинного обучения Azure с дополнительными компонентами для работы с записными книжками, выполните следующую команду:
 
      ```shell
-    pip install --upgrade azureml-sdk[notebooks,automl,contrib]
+    pip install --upgrade azureml-sdk[notebooks,automl]
     ```
 
     Установка пакета SDK может занять несколько минут.
@@ -155,7 +168,7 @@ ms.locfileid: "46961575"
 2. Чтобы установить пакет SDK машинного обучения Azure, выполните следующую команду:
  
     ```shell
-    pip install --upgrade azureml-sdk[automl,contrib]
+    pip install --upgrade azureml-sdk[automl]
     ```
 
 4. Чтобы установить средства Visual Studio Code для искусственного интеллекта, см. запись о Visual Studio на Marketplace: [Инструменты для искусственного интеллекта](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai). 

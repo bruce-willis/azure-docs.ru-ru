@@ -5,15 +5,15 @@ services: storage
 author: roygara
 ms.service: storage
 ms.topic: article
-ms.date: 06/13/2018
+ms.date: 08/16/2018
 ms.author: rogarana
 ms.component: common
-ms.openlocfilehash: f0f20a4ceac2f0b79d4ae3bbf3cf82eb761bceb8
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 35813573be9b069cc920f5ede813503ab1b99b4a
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43782677"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227220"
 ---
 # <a name="using-azure-powershell-with-azure-storage"></a>Использование Azure PowerShell со службой хранилища Azure
 
@@ -159,7 +159,7 @@ New-AzureRmStorageAccountKey -ResourceGroupName $resourceGroup `
 Повторно создайте один из ключей, а затем извлеките его снова, чтобы увидеть новое значение.
 
 > [!NOTE] 
-> Необходимо тщательно спланировать повторное создание ключа для рабочей учетной записи хранения. Повторное создание одного или обоих ключей приведет к тому, что с помощью повторно созданного ключа невозможно будет получить доступ к любому приложению. Дополнительные сведения см. в разделе [Повторное создание ключей доступа к хранилищу](storage-create-storage-account.md#regenerate-storage-access-keys).
+> Необходимо тщательно спланировать повторное создание ключа для рабочей учетной записи хранения. Повторное создание одного или обоих ключей приведет к тому, что с помощью повторно созданного ключа невозможно будет получить доступ к любому приложению. Дополнительные сведения см. в разделе о [ключах доступа](storage-account-manage.md#access-keys).
 
 
 ### <a name="delete-a-storage-account"></a>Удаление учетной записи хранения 

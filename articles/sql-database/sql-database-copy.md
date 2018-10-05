@@ -2,19 +2,22 @@
 title: Копирование базы данных SQL Azure | Документация Майкрософт
 description: Создание транзакционно согласованной копии существующей базы данных SQL Azure на том же или на другом сервере.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: load & move data
-ms.date: 04/01/2018
-ms.author: carlrab
+ms.subservice: data-movement
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.openlocfilehash: 2217df046cf95ddcd12f6dcaa41b2c3f8b0090f6
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+author: CarlRabeler
+ms.author: carlrab
+ms.reviewer: ''
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: 2ce86bee96f22b4079afee3eacbeee7ea15a6ffa
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646207"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226013"
 ---
 # <a name="copy-an-azure-sql-database"></a>Копирование Базы данных SQL Azure
 
@@ -22,7 +25,7 @@ ms.locfileid: "34646207"
 
 ## <a name="overview"></a>Обзор
 
-Копия базы данных представляет собой моментальный снимок исходной базы данных на момент запроса копирования. Вы можете выбрать тот же или другой сервер, его уровень служб и производительности, а также другой уровень производительности в рамках установленного уровня служб (выпуска). После завершения копирования копия становится полностью работоспособной и независимой базой данных. На этом этапе можно перейти на использование любой более поздней или более ранней версии. Именами входа, пользователями и разрешениями можно управлять независимо.  
+Копия базы данных представляет собой моментальный снимок исходной базы данных на момент запроса копирования. Вы можете выбрать тот же или другой сервер, его уровень служб и объем вычислительных ресурсов, а также другой объем вычислительных ресурсов в рамках установленного уровня служб (выпуска). После завершения копирования копия становится полностью работоспособной и независимой базой данных. На этом этапе можно перейти на использование любой более поздней или более ранней версии. Именами входа, пользователями и разрешениями можно управлять независимо.  
 
 ## <a name="logins-in-the-database-copy"></a>Имена входа в копии базы данных
 
@@ -30,7 +33,7 @@ ms.locfileid: "34646207"
 
 При копировании базы данных на другой логический сервер субъект безопасности на новом сервере становится владельцем новой базы данных. Если вы используете [пользователей автономной базы данных](sql-database-manage-logins.md) для доступа к данным, это гарантирует, что база данных-источник и база данных-получатель всегда имеют одинаковые учетные данные пользователей, поэтому после завершения копирования к копии можно будет немедленно обратиться, используя прежние учетные данные. 
 
-Если вы используете [Azure Active Directory](../active-directory/active-directory-whatis.md), то можно полностью исключить потребность в управлении учетными данными в копии. Тем не менее при копировании базы данных на новый сервер доступ по имени для входа может перестать работать, так на новом сервере отсутствуют имена для входа. В разделе [Как управлять безопасностью базы данных SQL после аварийного восстановления](sql-database-geo-replication-security-config.md) описывается управление именами для входа при копировании базы данных на другой логический сервер. 
+Если вы используете [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md), то можно полностью исключить потребность в управлении учетными данными в копии. Тем не менее при копировании базы данных на новый сервер доступ по имени для входа может перестать работать, так на новом сервере отсутствуют имена для входа. В разделе [Как управлять безопасностью базы данных SQL после аварийного восстановления](sql-database-geo-replication-security-config.md) описывается управление именами для входа при копировании базы данных на другой логический сервер. 
 
 С момента успешного завершения копирования и вплоть до сопоставления остальных пользователей войти в новую базу данных может только ее владелец, т. е. пользователь, инициировавший копирование. Сведения о разрешении имен для входа после завершения операции копирования см. в разделе [Копирование базы данных SQL Azure с помощью Transact-SQL](#resolve-logins).
 
@@ -68,7 +71,7 @@ New-AzureRmSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
     -- Execute on the master database.
     -- Start copying.
-    CREATE DATABASE Database1_copy AS COPY OF Database1;
+    CREATE DATABASE Database2 AS COPY OF Database1;
 
 ### <a name="copy-a-sql-database-to-a-different-server"></a>Копирование Базы данных SQL на другой сервер
 
@@ -78,7 +81,7 @@ New-AzureRmSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
     -- Execute on the master database of the target server (server2)
     -- Start copying from Server1 to Server2
-    CREATE DATABASE Database1_copy AS COPY OF server1.Database1;
+    CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 
 ### <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования

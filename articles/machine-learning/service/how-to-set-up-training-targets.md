@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.component: core
 ms.topic: article
 ms.date: 09/24/2018
-ms.openlocfilehash: 4af2e570b498e496e80b6aeee2b8aeae23c582cc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e5b44ed2435986ffd500cade1f7c8ff8047d353d
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952415"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452312"
 ---
 # <a name="select-and-use-a-compute-target-to-train-your-model"></a>Выбор и использование целевого объекта вычислений для обучения вашей модели
 
@@ -90,6 +90,8 @@ run_config_user_managed.environment.python.user_managed_dependencies = True
 # You can choose a specific Python environment by pointing to a Python path 
 #run_config.environment.python.interpreter_path = '/home/ninghai/miniconda3/envs/sdk2/bin/python'
 ```
+
+Записную книжку Jupyter с примером обучения в управляемой пользователем среде см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/02.train-on-local/02.train-on-local.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/02.train-on-local/02.train-on-local.ipynb).
   
 ### <a name="system-managed-environment"></a>Среда, управляемая системой
 
@@ -110,6 +112,9 @@ run_config_system_managed.prepare_environment = True
 
 run_config_system_managed.environment.python.conda_dependencies = CondaDependencies.create(conda_packages=['scikit-learn'])
 ```
+
+Записную книжку Jupyter с примером обучения в управляемой системой среде см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/02.train-on-local/02.train-on-local.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/02.train-on-local/02.train-on-local.ipynb).
+
 ## <a id="dsvm"></a>Виртуальная машина для обработки и анализа данных
 
 На локальном компьютере может не оказаться вычислительных ресурсов или ресурсов GPU, необходимых для обучения модели. В этом случае вы можете масштабировать процесс обучения, добавив дополнительные целевые объекты вычислений, такие как виртуальные машины обработки и анализа данных (DSVM).
@@ -138,7 +143,7 @@ run_config_system_managed.environment.python.conda_dependencies = CondaDependenc
             dsvm_compute = DsvmCompute.create(ws, name = compute_target_name, provisioning_configuration = dsvm_config)
             dsvm_compute.wait_for_completion(show_output = True)
         ```
-    * Чтобы присоединить существующую виртуальную машину как целевой объект вычислений, необходимо указать полное доменное имя, имя входа и пароль для виртуальной машины.  В приведенном примере замените ```<fqdn>``` на общедоступное полное доменное имя виртуальной машины или общедоступный IP-адрес. Замените ```<username>``` и ```<password>``` на имя пользователя SSH и пароль для виртуальной машины:
+    * Чтобы присоединить имеющуюся виртуальную машину как целевой объект вычислений, необходимо указать ее полное доменное имя, имя входа и пароль.  В приведенном примере замените ```<fqdn>``` на общедоступное полное доменное имя виртуальной машины или общедоступный IP-адрес. Замените ```<username>``` и ```<password>``` на имя пользователя SSH и пароль для виртуальной машины:
 
         ```python
         from azureml.core.compute import RemoteCompute
@@ -190,6 +195,8 @@ run_config_system_managed.environment.python.conda_dependencies = CondaDependenc
     dsvm_compute.delete()
     ```
 
+Записную книжку Jupyter с примером обучения в среде "Виртуальная машина для обработки и анализа данных" см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/04.train-on-remote-vm/04.train-on-remote-vm.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/04.train-on-remote-vm/04.train-on-remote-vm.ipynb).
+
 ## <a id="batch"></a>Azure Batch AI
 
 Если обучение модели занимает много времени, можно распространить обучение по кластеру вычислительных ресурсов в облаке с помощью Azure Batch AI. Batch AI можно также настроить на включение ресурса GPU.
@@ -232,14 +239,14 @@ if not found:
     print(compute_target.status.serialize())
 ```
 
-Чтобы подключить существующий кластер Batch AI как целевой объект вычислений, необходимо указать идентификатор ресурса Azure. Чтобы получить идентификатор ресурса с портала Azure, необходимо выполнить следующие действия:
+Чтобы подключить имеющийся кластер Batch AI как целевой объект вычислений, необходимо указать идентификатор ресурса Azure. Чтобы получить идентификатор ресурса, на портале Azure сделайте следующее:
 1. Найдите службу `Batch AI` в разделе **Все службы**.
 1. Щелкните имя рабочей области, к которой относится кластер.
 1. Выберите кластер.
 1. Нажмите **Свойства**.
 1. Скопируйте **идентификатор**.
 
-В следующем примере пакет SDK используется для присоединения кластера к рабочей области. Замените `<name>` в приведенном примере на любое имя для вычислений. Оно не должно совпадать с именем кластера. Замените `<resource-id>` на идентификатор ресурса Azure, описанный выше:
+В следующем примере пакет SDK используется для присоединения кластера к рабочей области. Замените `<name>` в приведенном примере на любое имя для вычислений. Это имя не должно совпадать с именем кластера. Замените `<resource-id>` на идентификатор ресурса Azure, описанный выше:
 
 ```python
 from azureml.core.compute import BatchAiCompute
@@ -253,7 +260,9 @@ BatchAiCompute.attach(workspace=ws,
 - Проверка состояния кластера: узнать количество запущенных узлов позволяет команда `az batchai cluster list`.
 - Проверка состояния заданий: узнать количество выполняемых заданий позволяет команда `az batchai job list`.
 
-Процесс создания кластера Batch AI занимает около 5 минут.
+Процесс создания кластера Batch AI занимает около 5 минут.
+
+Записную книжку Jupyter Notebook с примером обучения в кластере Batch AI см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/training/03.train-hyperparameter-tune-deploy-with-tensorflow/03.train-hyperparameter-tune-deploy-with-tensorflow.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/training/03.train-hyperparameter-tune-deploy-with-tensorflow/03.train-hyperparameter-tune-deploy-with-tensorflow.ipynb).
 
 ## <a name='aci'></a>Экземпляр контейнера Azure (ACI)
 
@@ -296,6 +305,8 @@ run_config.environment.python.conda_dependencies = CondaDependencies.create(cond
 ```
 
 Создание целевого объекта вычислений ACI может занять от нескольких секунд до нескольких минут.
+
+Записную книжку Jupyter с примером обучения в экземпляре контейнера Azure см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/03.train-on-aci/03.train-on-aci.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/03.train-on-aci/03.train-on-aci.ipynb).
 
 ## <a id="hdinsight"></a>Присоединение кластера HDInsight 
 
@@ -352,6 +363,8 @@ run = exp.submit(src)
 run.wait_for_completion(show_output = True)
 ```
 
+Записную книжку Jupyter с примером обучения с помощью Spark в HDInsight см. здесь: [https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/05.train-in-spark/05.train-in-spark.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/05.train-in-spark/05.train-in-spark.ipynb).
+
 ## <a name="view-and-set-up-compute-using-the-azure-portal"></a>Просмотр и настройка вычислений с помощью портала Azure
 
 Вы можете узнать, какие целевые объекты вычислений связаны с вашей рабочей областью, на портале Azure. Чтобы получить список этих объектов, выполните следующие действия:
@@ -403,6 +416,7 @@ run.wait_for_completion(show_output = True)
 Основные понятия, описанные в этой статье, демонстрируют следующие записные книжки:
 * `01.getting-started/02.train-on-local/02.train-on-local.ipynb`
 * `01.getting-started/04.train-on-remote-vm/04.train-on-remote-vm.ipynb`
+* `01.getting-started/03.train-on-aci/03.train-on-aci.ipynb`
 * `01.getting-started/05.train-in-spark/05.train-in-spark.ipynb`
 * `01.getting-started/07.hyperdrive-with-sklearn/07.hyperdrive-with-sklearn.ipynb`
 

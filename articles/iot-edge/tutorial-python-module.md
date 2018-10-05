@@ -5,16 +5,16 @@ services: iot-edge
 author: shizn
 manager: timlt
 ms.author: xshi
-ms.date: 06/26/2018
+ms.date: 09/21/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 6cf3a721dfd601fc4d4beb122f56b4a4de5fe426
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 0a32f925aa1ff4066a893fb107f4d785bd1fd8f8
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41920894"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423567"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом Python и его развертывание на имитированном устройстве
 
@@ -41,7 +41,7 @@ ms.locfileid: "41920894"
 
 Облачные ресурсы.
 
-* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure. 
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) (цен. категории "Бесплатный") в Azure. 
 
 Ресурсы разработки.
 
@@ -98,7 +98,7 @@ ms.locfileid: "41920894"
  
    ![Выбор репозитория образа Docker](./media/tutorial-python-module/repository.png)
 
-Окно VS Code загружает рабочую область решения IoT Edge. Рабочая область решения содержит пять компонентов верхнего уровня. Работая с руководством, вы не будете изменять файл **\.gitignore**. Папка **modules** содержит код Python для модуля, а также файлы Dockerfile для создания модуля в образе контейнера. Файл **\.env** хранит учетные данные реестра контейнеров. Файл **Deployment.template.json** содержит сведения, которые среда выполнения IoT Edge использует для развертывания модулей на устройстве. 
+Окно VS Code загружает рабочую область решения IoT Edge. Рабочая область решения содержит пять компонентов верхнего уровня. Работая с руководством, вы не будете изменять файл **\.gitignore**. Папка **modules** содержит код Python для модуля, а также файлы Dockerfile для создания модуля в образе контейнера. Файл **\.env** хранит учетные данные реестра контейнеров. Файл **deployment.template.json** содержит сведения, которые среда выполнения IoT Edge использует для развертывания модулей на устройстве. 
 
 Если вы не указывали реестр контейнеров при создании решения, но приняли значение по умолчанию localhost:5000, у вас не будет файла \.env. 
 

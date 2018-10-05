@@ -9,12 +9,12 @@ ms.devlang: spark-scala
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ankhanol
-ms.openlocfilehash: 3f1bdb63253506aee211f3733df2a339824de7a0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e1d8f41c55ffd453507804b005d10620665b512c
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994655"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222040"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-data-from-azure-databricks"></a>Доступ к данным API Cassandra для Azure Cosmos DB из Azure Databricks
 
@@ -32,9 +32,9 @@ ms.locfileid: "46994655"
 
 * [Использование при необходимости cqlsh для проверки](cassandra-spark-generic.md#connecting-to-azure-cosmos-db-cassandra-api-from-spark)
 
-* **Конфигурация экземпляра API Cassandra для соединителя Datastax Cassandra:**
+* **Конфигурация экземпляра API Cassandra для соединителя Cassandra:**
 
-  Для инициализации соединителя Datastax для Cassandra как части контекста Spark необходимы сведения о подключении Cassandra. При запуске записной книжки Databricks контекст Spark уже инициализирован, не рекомендуется останавливать и повторно инициализировать его. Одним из решений является добавление конфигурации экземпляра API Cassandra на уровне кластера в конфигурацию кластера Spark. Это разовое действие для каждого кластера. Добавьте в конфигурацию Spark следующий код как пару значений ключа, разделенных пробелами:
+  Для инициализации соединителя для API Cassandra как части контекста Spark необходимы сведения о подключении соединителя Cassandra. При запуске записной книжки Databricks контекст Spark уже инициализирован, не рекомендуется останавливать и повторно инициализировать его. Одним из решений является добавление конфигурации экземпляра API Cassandra на уровне кластера в конфигурацию кластера Spark. Это разовое действие для каждого кластера. Добавьте в конфигурацию Spark следующий код как пару значений ключа, разделенных пробелами:
  
   ```scala
   spark.cassandra.connection.host YOUR_COSMOSDB_ACCOUNT_NAME.cassandra.cosmosdb.azure.com
@@ -46,11 +46,11 @@ ms.locfileid: "46994655"
 
 ## <a name="add-the-required-dependencies"></a>Добавление необходимых зависимостей
 
-* **Соединитель Datastax Cassandra Spark:** с целью интеграции с API Cassandra для Azure Cosmos DB с помощью Spark соединитель Datastax Cassandra должен быть подключен к кластеру Azure Databricks. Чтобы подключить кластер:
+* **Соединитель Cassandra Spark:** с целью интеграции с API Cassandra для Azure Cosmos DB с помощью Spark соединитель Cassandra должен быть подключен к кластеру Azure Databricks. Чтобы подключить кластер:
 
-  * Узнайте версию среды выполнения Databricks и версию Spark. Затем найдите [координаты Maven](https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector), совместимые с соединителем Datastax Cassandra Spark, и подключите его к кластеру. См. статью ["Отправка пакета Maven или пакета Spark"](https://docs.databricks.com/user-guide/libraries.html), чтобы подключить библиотеку соединителя к кластеру. Например, координата Maven для объектов "Среда выполнения Azure Databricks Runtime версии 4.3", "Spark 2.3.1" и "Scala 2.11" равна `spark-cassandra-connector_2.11-2.3.1`
+  * Узнайте версию среды выполнения Databricks и версию Spark. Затем найдите [координаты Maven](https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector), совместимые с соединителем Cassandra Spark, и подключите его к кластеру. См. статью ["Отправка пакета Maven или пакета Spark"](https://docs.databricks.com/user-guide/libraries.html), чтобы подключить библиотеку соединителя к кластеру. Например, координата Maven для объектов "Среда выполнения Azure Databricks Runtime версии 4.3", "Spark 2.3.1" и "Scala 2.11" равна `spark-cassandra-connector_2.11-2.3.1`
 
-* **Библиотека API Cassandra для Azure Cosmos DB:** для настройки политики повтора из соединителя Datastax Spark к API Cassandra для Azure Cosmos DB необходима фабрика настраиваемого подключения. Добавьте `com.microsoft.azure.cosmosdb:azure-cosmos-cassandra-spark-helper:1.0.0`[координаты Maven](https://search.maven.org/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper/1.0.0/jar) для подключения библиотеки к кластеру.
+* **Библиотека API Cassandra для Azure Cosmos DB:** для настройки политики повтора из соединителя Cassandra Spark к API Cassandra для Azure Cosmos DB необходима фабрика настраиваемого подключения. Добавьте `com.microsoft.azure.cosmosdb:azure-cosmos-cassandra-spark-helper:1.0.0`[координаты Maven](https://search.maven.org/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper/1.0.0/jar) для подключения библиотеки к кластеру.
 
 ## <a name="sample-notebooks"></a>Примеры записных книжек
 

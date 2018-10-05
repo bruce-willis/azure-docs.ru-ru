@@ -1,5 +1,5 @@
 ---
-title: Создание кластера Service Fabric на платформе Linux в Azure | Документы Майкрософт
+title: Создание кластера Service Fabric на платформе Linux в Azure | Документация Майкрософт
 description: Из этого руководства вы узнаете, как развернуть кластер Service Fabric на платформе Linux в имеющейся виртуальной сети с помощью Azure CLI.
 services: service-fabric
 documentationcenter: .net
@@ -12,19 +12,19 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/22/2018
+ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 161687ec2275558adb235dc63b5244a0a8ff7e47
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 27600cd4656f70b4cd01745667c0e0fd2a2f4997
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37110799"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47405825"
 ---
 # <a name="tutorial-deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
-Это руководство представляет первую часть цикла. Вы узнаете, как развернуть кластер Service Fabric Linux в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети (NSG)](../virtual-network/virtual-networks-nsg.md) с помощью шаблона и интерфейса командной строки Azure. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
+Это руководство представляет первую часть цикла. Вы узнаете, как развернуть кластер Service Fabric на платформе Linux в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) с помощью Azure CLI и шаблона. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -39,8 +39,8 @@ ms.locfileid: "37110799"
 > [!div class="checklist"]
 > * создание защищенного кластера в Azure;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
-> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
-> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
+> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
+> * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ ms.locfileid: "37110799"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
-* Установите [Azure CLI 2.0](/cli/azure/install-azure-cli).
+* Установите [Azure CLI](/cli/azure/install-azure-cli).
 
 Ниже приведены процедуры для создания кластера Service Fabric с пятью узлами. Чтобы рассчитать затраты, связанные с запуском кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
 
@@ -78,10 +78,10 @@ ms.locfileid: "37110799"
 
 Скачайте следующие файлы шаблона Resource Manager:
 
-* [vnet-linuxcluster.json][template];
-* [vnet-linuxcluster.parameters.json][parameters].
+* [AzureDeploy.json][template]
+* [AzureDeploy.Parameters.json][parameters]
 
-Файл [vnet-linuxcluster.json][template] развертывает ряд ресурсов, включая следующие.
+Этот шаблон развертывает в виртуальной сети защищенный кластер с пятью виртуальными машинами и одним типом узла.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). Файл [AzureDeploy.json][template] развертывает ряд ресурсов, включая следующие.
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
@@ -106,29 +106,18 @@ ms.locfileid: "37110799"
 * порт приложения: 80;
 * порт приложения: 443;
 
-### <a name="virtual-network-subnet-and-network-security-group"></a>Виртуальная сеть, подсеть и группа безопасности сети
+### <a name="virtual-network-and-subnet"></a>Виртуальная сеть и подсеть
 
-Названия виртуальной сети, подсети и группы безопасности сети указаны в параметрах шаблона.  В параметрах шаблона также объявляются адресные пространства виртуальной сети и подсети:
+В параметрах шаблона объявляются имена виртуальной сети и подсети.  В параметрах шаблона также объявляются адресные пространства виртуальной сети и подсети:
 
 * адресное пространство виртуальной сети: 10.0.0.0/16;
 * адресное пространство подсети Service Fabric: 10.0.2.0/24.
 
-Следующие правила входящего трафика включены в группе безопасности сети. Значения порта можно изменить, изменив переменные шаблона.
-
-* ClientConnectionEndpoint (протокол TCP): 19000.
-* HttpGatewayEndpoint (HTTP или TCP): 19080.
-* SMB : 445.
-* Межузловая передача сообщений — 1025, 1026, 1027.
-* Диапазон временных портов — от 49152 до 65 534 (требуется минимум 256 портов).
-* Порты для использования в приложениях: 80 и 443.
-* Диапазон портов приложений — от 49152 до 65 534 (используются для взаимодействия служб и не открыты в подсистеме балансировки нагрузки).
-* Блокировка остальных портов.
-
-Если нужны другие порты приложений, нужно настроить ресурсы Microsoft.Network/loadBalancers и Microsoft.Network/networkSecurityGroups, чтобы разрешить входящий трафик.
+Если нужны другие порты приложений, нужно настроить ресурс Microsoft.Network/loadBalancers, чтобы разрешить входящий трафик.
 
 ## <a name="set-template-parameters"></a>Установка параметров шаблона
 
-В файле параметров [vnet-cluster.parameters.json][parameters] содержатся многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
+В файле параметров [AzureDeploy.Parameters][parameters] объявляются многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
 
 |Параметр|Пример значения|Примечания|
 |---|---||
@@ -136,7 +125,7 @@ ms.locfileid: "37110799"
 |adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин.|
 |clusterName|mysfcluster123| Имя кластера. |
 |location|southcentralus| Расположение кластера. |
-|certificateThumbprint|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, заполните значение отпечатка сертификата. Например, 6190390162C988701DB5676EB81083EA608DCCF3. </p>|
+|certificateThumbprint|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, заполните значение отпечатка SHA1 сертификата. Например, 6190390162C988701DB5676EB81083EA608DCCF3. </p>|
 |certificateUrlValue|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите URL-адрес сертификата. Например, https://mykeyvault.vault.azure.net:443/secrets/mycertificate/02bea722c9ef4009a76c5052bcbf8346.</p>|
 |sourceVaultValue||<p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите сведения об исходном хранилище. Например, /subscriptions/333cc2c84-12fa-5778-bd71-c71c07bf873f/resourceGroups/MyTestRG/providers/Microsoft.KeyVault/vaults/MYKEYVAULT.</p>|
 
@@ -144,7 +133,9 @@ ms.locfileid: "37110799"
 
 ## <a name="deploy-the-virtual-network-and-cluster"></a>Развертывание кластера и виртуальной сети
 
-Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager [vnet-linuxcluster.json][template] создает виртуальную сеть, а также подсеть и группу безопасности сети (NSG) для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
+Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager [AzureDeploy.json][template] создает виртуальную сеть и подсеть для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
+
+### <a name="create-a-cluster-using-an-existing-certificate"></a>Создание кластера с помощью имеющегося сертификата
 
 В приведенном ниже сценарии используется команда [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest#az_sf_cluster_create) и шаблон, которые позволяют развернуть новый кластер с помощью имеющегося сертификата. Эта команда также создает хранилище ключей в Azure и отправляет сертификат.
 
@@ -167,7 +158,23 @@ az group create --name $ResourceGroupName --location $Location
 az sf cluster create --resource-group $ResourceGroupName --location $Location \
    --certificate-password $Password --certificate-file $CertPath \
    --vault-name $VaultName --vault-resource-group $ResourceGroupName  \
-   --template-file vnet-linuxcluster.json --parameter-file vnet-linuxcluster.parameters.json
+   --template-file AzureDeploy.json --parameter-file AzureDeploy.Parameters.json
+```
+
+### <a name="create-a-cluster-using-a-new-self-signed-certificate"></a>Создание кластера с помощью нового самозаверяющего сертификата
+
+В приведенном ниже сценарии используется команда [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest#az_sf_cluster_create) и шаблон, которые позволяют развернуть в Azure новый кластер. Кроме того, при помощи этой команды создается хранилище ключей в Azure, в него добавляется новый самозаверяющий сертификат и локально скачивается файл сертификата.
+
+```azurecli
+ResourceGroupName="sflinuxclustergroup"
+ClusterName="sflinuxcluster"
+Location="southcentralus"
+Password="q6D7nN%6ck@6"
+VaultName="linuxclusterkeyvault"
+VaultGroupName="linuxclusterkeyvaultgroup"
+CertPath="C:\MyCertificates"
+
+az sf cluster create --resource-group $ResourceGroupName --location $Location --cluster-name $ClusterName --template-file C:\temp\cluster\AzureDeploy.json --parameter-file C:\temp\cluster\AzureDeploy.Parameters.json --certificate-password $Password --certificate-output-folder $CertPath --certificate-subject-name $ClusterName.$Location.cloudapp.azure.com --vault-name $VaultName --vault-resource-group $ResourceGroupName
 ```
 
 ## <a name="connect-to-the-secure-cluster"></a>Подключение к безопасному кластеру
@@ -187,15 +194,9 @@ sfctl cluster health
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Кластер, который вы только что создали, используется в других статьях этого цикла руководств. Если вы не собираетесь немедленно приступить к следующей статье, то можете удалить кластер, чтобы за него не взималась плата. Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
+Кластер, который вы только что создали, используется в других статьях этого цикла руководств. Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](service-fabric-cluster-delete.md), чтобы за него не взималась плата.
 
-Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](http://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью команды [az group delete](/cli/azure/group?view=azure-cli-latest#az_group_delete).
-
-```azurecli
-az group delete --name $ResourceGroupName
-```
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
@@ -210,5 +211,5 @@ az group delete --name $ResourceGroupName
 > [!div class="nextstepaction"]
 > [Scale a Service Fabric cluster](service-fabric-tutorial-scale-cluster.md) (Масштабирование кластера Service Fabric)
 
-[template]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/cluster-tutorial/vnet-linuxcluster.json
-[parameters]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/cluster-tutorial/vnet-linuxcluster.parameters.json
+[template]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/5-VM-Ubuntu-1-NodeTypes-Secure/AzureDeploy.json
+[parameters]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/5-VM-Ubuntu-1-NodeTypes-Secure/AzureDeploy.Parameters.json

@@ -1,6 +1,6 @@
 ---
-title: Встроенные роли в Azure | Документация Майкрософт
-description: В этой статье описаны встроенные роли для управления доступом на основе ролей (RBAC) в Azure. Выводит список элементов Actions, NotActions, DataActions и NotDataActions.
+title: Встроенные роли для ресурсов Azure | Документация Майкрософт
+description: В этой статье описаны встроенные роли для управления доступом на основе ролей (RBAC) и ресурсов Azure. Выводит список элементов Actions, NotActions, DataActions и NotDataActions.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,18 +11,18 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 08/19/2018
+ms.date: 09/27/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: e03b2ab45edd57a124dcc960ff518ece4902d2fa
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 6fe9a106975a03fabc9d674ede694e683dc3cd94
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048374"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47410278"
 ---
-# <a name="built-in-roles-in-azure"></a>Встроенные роли в Azure
+# <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
 
 Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).
@@ -43,7 +43,7 @@ ms.locfileid: "43048374"
 | [Роль оператора службы управления API](#api-management-service-operator-role) | Может управлять службой, но не интерфейсами API. |
 | [Роль читателя данных службы управления API](#api-management-service-reader-role) | Доступ к службе и интерфейсам API в режиме "только для чтения". |
 | [Участник компонента Application Insights](#application-insights-component-contributor) | Может управлять компонентами Application Insights |
-| [Отладчик моментальных снимков Application Insights](#application-insights-snapshot-debugger) | Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание на то, что эта роль не включает в себя ни роль [Владелец](#owner), ни роль [Участник](#contributor). |
+| [Отладчик моментальных снимков Application Insights](#application-insights-snapshot-debugger) | Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor). |
 | [Оператор задания автоматизации](#automation-job-operator) | Создание заданий и управление ими с помощью модулей Runbook службы автоматизации. |
 | [Оператор службы автоматизации](#automation-operator) | Операторы автоматизации могут запускать, останавливать, приостанавливать и возобновлять задания. |
 | [Оператор Runbook автоматизации](#automation-runbook-operator) | Чтение свойств Runbook, позволяющее создавать задания Runbook. |
@@ -62,16 +62,21 @@ ms.locfileid: "43048374"
 | [Участник классической сети](#classic-network-contributor) | Позволяет управлять классическими сетями, но не доступом к ним. |
 | [Участник классической учетной записи хранения](#classic-storage-account-contributor) | Позволяет управлять классическими учетными записями хранения, но не предоставлять доступ к ним. |
 | [Роль службы оператора ключей классических учетных записей хранения](#classic-storage-account-key-operator-service-role) | Операторы ключей классических учетных записей хранения могут перечислять и повторно создавать ключи в классических учетных записях хранения. |
-| [Участник классической виртуальной машины](#classic-virtual-machine-contributor) | Позволяет управлять классическими виртуальными машинами, но не доступом к ним и не учетной записью виртуальной сети или хранения, к которой они подключены.|
+| [Участник классической виртуальной машины](#classic-virtual-machine-contributor) | Позволяет управлять классическими виртуальными машинами, но не доступом к ним и не учетной записью виртуальной сети или хранения, к которой они подключены. |
+| [Участник служб Cognitive Services](#cognitive-services-contributor) | Позволяет создавать, читать, обновлять, удалять ключи служб Cognitive Services и управлять ими. |
+| [Пользователь служб Cognitive Services](#cognitive-services-user) | Позволяет создавать и читать список ключей служб Cognitive Services. |
 | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). |
+| [Участник службы "Управление затратами"](#cost-management-contributor) | Позволяет просматривать расходы и управлять конфигурацией затрат (например, бюджеты, экспорты) |
+| [Читатель службы "Управление затратами"](#cost-management-reader) | Позволяет просматривать данные о расходах и конфигурации (например, бюджеты, экспорты) |
 | [Участник Data Box](#data-box-contributor) | Позволяет управлять всеми данными службы Data Box, кроме предоставления доступа другим пользователям. |
-| [Оператор Data Box](#data-box-operator) | Позволяет управлять службой Data Box, но не позволяет создавать заказы и менять их порядок, а также предоставлять доступ другим пользователям. |
+| [Читатель Data Box](#data-box-reader) | Позволяет управлять службой Data Box, но не позволяет создавать заказы и менять их порядок, а также предоставлять доступ другим пользователям. |
 | [Участник фабрики данных](#data-factory-contributor) | Позволяет управлять фабриками данных, но не доступом к ним. |
 | [Разработчик Data Lake Analytics](#data-lake-analytics-developer) | Позволяет отправлять, отслеживать задания и управлять ими, но не позволяет создавать или удалять учетные записи Data Lake Analytics. |
 | [Средство очистки данных](#data-purger) | Может выполнить очистку данных аналитики. |
 | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. |
 | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
+| [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
 | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. |
 | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. |
 | [Создатель лаборатории](#lab-creator) | Позволяет создавать, администрировать и удалять управляемые лаборатории в учетных записях Служб лабораторий Azure. |
@@ -80,6 +85,7 @@ ms.locfileid: "43048374"
 | [Создатель приложений логики](#logic-app-contributor) | Позволяет управлять приложениями логики, но не доступом к ним. |
 | [Оператор приложений логики](#logic-app-operator) | Позволяет читать, включать и отключать приложения логики. |
 | [Роль оператора управляемого приложения](#managed-application-operator-role) | Позволяет читать и выполнять действия с ресурсами управляемого приложения. |
+| [Читатель Управляемых приложений](#managed-applications-reader) | Позволяет считывать ресурсы в управляемом приложении и запрашивать доступ JIT. |
 | [Участник управляемого удостоверения](#managed-identity-contributor) | Создание, чтение, обновление и удаление пользовательских удостоверений. |
 | [Оператор управляемого удостоверения](#managed-identity-operator) | Чтение и назначение пользовательских удостоверений. |
 | [Участник группы управления](#management-group-contributor) | Роль участника группы управления |
@@ -89,6 +95,7 @@ ms.locfileid: "43048374"
 | [Monitoring Reader](#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга (метрики, журналы и т. д.). Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md#built-in-monitoring-roles). |
 | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. |
 | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. |
+| [Тестовый администратор PowerApps](#powerapps-administrator-test) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Модуль чтения и доступ к данным](#reader-and-data-access) | Позволяет просматривать все данные, но не позволит удалить или создать учетную запись хранения или содержащий ресурс. Он также предоставит доступ на чтение и запись для всех данных, содержащихся в учетной записи хранения через доступ к ключам учетной записи хранения. |
 | [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Redis, но не доступом к нему. |
 | [Участник политики ресурсов (предварительная версия)](#resource-policy-contributor-preview) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). |
@@ -259,7 +266,7 @@ ms.locfileid: "43048374"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Предоставляет пользователю разрешение на использование функций отладчика моментальных снимков Application Insights. |
+> | **Описание** | Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor). |
 > | **Id** | 08954f03-6346-4c2e-81c0-ec3a5cfae23b |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
@@ -371,6 +378,7 @@ ms.locfileid: "43048374"
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
+> | Microsoft.RecoveryServices/locations/* |  |
 > | Microsoft.RecoveryServices/locations/allocatedStamp/read | GetAllocatedStamp является внутренней операцией, используемой службой. |
 > | Microsoft.RecoveryServices/Vaults/backupconfig/vaultconfig/* |  |
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/* | Управление результатами операций управления резервным копированием |
@@ -391,14 +399,13 @@ ms.locfileid: "43048374"
 > | Microsoft.RecoveryServices/Vaults/monitoringAlerts/read | Возвращает оповещения для хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/monitoringConfigurations/* |  |
 > | Microsoft.RecoveryServices/Vaults/read | Операция получения хранилища возвращает объект, представляющий ресурс Azure типа "хранилище". |
-> | Microsoft.RecoveryServices/Vaults/refreshContainers/* | Управление операциями обнаружения для получения новых контейнеров |
+> | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/* | Создание зарегистрированных удостоверений и управление ими |
 > | Microsoft.RecoveryServices/Vaults/storageConfig/* |  |
 > | Microsoft.RecoveryServices/Vaults/usages/* | Создание хранилища служб восстановления и управление его использованием |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
-> | Microsoft.RecoveryServices/locations/* |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
 ## <a name="backup-operator"></a>Оператор резервного копирования
@@ -504,9 +511,10 @@ ms.locfileid: "43048374"
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.Billing/*/read | Чтение сведений о выставлении счетов |
-> | Microsoft.Consumption/*/read |  |
 > | Microsoft.Commerce/*/read |  |
+> | Microsoft.Consumption/*/read |  |
 > | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
+> | Microsoft.CostManagement/*/read |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
 ## <a name="biztalk-contributor"></a>Участник BizTalk
@@ -653,6 +661,52 @@ ms.locfileid: "43048374"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
+## <a name="cognitive-services-contributor"></a>Участник служб Cognitive Services
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет создавать, читать, обновлять, удалять ключи служб Cognitive Services и управлять ими. |
+> | **Id** | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.CognitiveServices/* |  |
+> | Microsoft.Features/features/read | Возвращает функции подписки. |
+> | Microsoft.Features/providers/features/read | Возвращает функцию подписки в заданном поставщике ресурсов. |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Insights/diagnosticSettings/* | Создание, обновление или считывание параметра диагностики для сервера анализа данных. |
+> | Microsoft.Insights/logDefinitions/read | Считывает определения журналов. |
+> | Microsoft.Insights/metricdefinitions/read | Считывает определения метрик. |
+> | Microsoft.Insights/metrics/read | Считывает метрики. |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/deployments/operations/read | Возвращает операции развертывания или выводит их список. |
+> | Microsoft.Resources/subscriptions/operationresults/read | Возвращает результаты операции подписки. |
+> | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
+> | Microsoft.Resources/subscriptions/resourcegroups/deployments/* |  |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="cognitive-services-user"></a>Пользователь служб Cognitive Services
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет создавать и читать список ключей служб Cognitive Services. |
+> | **Id** | a97b65f3-24c7-4388-baec-2e87135dc908 |
+> | **Действия** |  |
+> | Microsoft.CognitiveServices/*/read |  |
+> | Microsoft.CognitiveServices/accounts/listkeys/action | Отображает ключи. |
+> | Microsoft.Insights/metricdefinitions/read | Считывает определения метрик. |
+> | Microsoft.Insights/metrics/read | Считывает метрики. |
+> | Microsoft.Insights/alertRules/read | Чтение классического оповещения метрики. |
+> | Microsoft.Insights/diagnosticSettings/read | Чтение параметра диагностики для ресурсов. |
+> | Microsoft.Insights/logDefinitions/read | Считывает определения журналов. |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
+> | Microsoft.Resources/deployments/operations/read | Возвращает операции развертывания или выводит их список. |
+> | Microsoft.Resources/subscriptions/operationresults/read | Возвращает результаты операции подписки. |
+> | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
 ## <a name="cosmos-db-account-reader-role"></a>Роль читателя учетных записей Cosmos DB
 > [!div class="mx-tableFixed"]
 > | | |
@@ -665,6 +719,34 @@ ms.locfileid: "43048374"
 > | Microsoft.DocumentDB/databaseAccounts/readonlykeys/action | Считывает ключи только для чтения учетной записи базы данных. |
 > | Microsoft.Insights/MetricDefinitions/read | Считывает определения метрик. |
 > | Microsoft.Insights/Metrics/read | Считывает метрики. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="cost-management-contributor"></a>Участник службы "Управление затратами"
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет просматривать расходы и управлять конфигурацией затрат (например, бюджеты, экспорты) |
+> | **Id** | 434105ed-43f6-45c7-a02f-909b2ba83430 |
+> | **Действия** |  |
+> | Microsoft.Consumption/* |  |
+> | Microsoft.CostManagement/* |  |
+> | Microsoft.Billing/billingPeriods/read | Вывод списка доступных интервалов выставления счетов. |
+> | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="cost-management-reader"></a>Читатель службы "Управление затратами"
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет просматривать данные о расходах и конфигурации (например, бюджеты, экспорты) |
+> | **Id** | 72fafb9e-0641-4937-9268-a91bfd8191a3 |
+> | **Действия** |  |
+> | Microsoft.Consumption/*/read |  |
+> | Microsoft.CostManagement/*/read |  |
+> | Microsoft.Billing/billingPeriods/read | Вывод списка доступных интервалов выставления счетов. |
+> | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
@@ -682,7 +764,7 @@ ms.locfileid: "43048374"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.Databox/* |  |
 
-## <a name="data-box-operator"></a>Оператор Data Box
+## <a name="data-box-reader"></a>Читатель Data Box
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -690,9 +772,12 @@ ms.locfileid: "43048374"
 > | **Id** | 028f4ed7-e2a9-465e-a8f4-9c0ffdfdc027 |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Databox/*/read |  |
+> | Microsoft.Databox/jobs/listsecrets/action |  |
+> | Microsoft.Databox/jobs/listcredentials/action | Выводит список незашифрованных учетных данных, связанных с заказом. |
+> | Microsoft.Databox/locations/availableSkus/action | Этот метод возвращает список доступных номеров SKU. |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
-> | Microsoft.Databox/jobs/listsecrets/action | Выводит список незашифрованных секретов, связанных с заказом. |
 
 ## <a name="data-factory-contributor"></a>Участник фабрики данных
 > [!div class="mx-tableFixed"]
@@ -822,6 +907,17 @@ ms.locfileid: "43048374"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
+## <a name="hdinsight-domain-services-contributor"></a>Участник доменных служб HDInsight
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
+> | **Id** | 8d8d5a11-05d3-4bda-a417-a08778121c7c |
+> | **Действия** |  |
+> | Microsoft.AAD/*/read |  |
+> | Microsoft.AAD/domainServices/*/read |  |
+> | Microsoft.AAD/domainServices/oucontainer/* |  |
+
 ## <a name="intelligent-systems-account-contributor"></a>Участник учетной записи интеллектуальных систем
 > [!div class="mx-tableFixed"]
 > | | |
@@ -864,7 +960,8 @@ ms.locfileid: "43048374"
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.LabServices/labAccounts/*/read |  |
 > | Microsoft.LabServices/labAccounts/createLab/action | Создание лаборатории в учетной записи лаборатории. |
-> | Microsoft.LabServices/labAccounts/sizes/getRegionalAvailability/action | Позволяет получать сведения о доступности по регионам для каждой категории размеров, настроенной в учетной записи лаборатории. |
+> | Microsoft.LabServices/labAccounts/sizes/getRegionalAvailability/action |  |
+> | Microsoft.LabServices/labAccounts/getRegionalAvailability/action | Позволяет получать сведения о доступности по регионам для каждой категории размеров, настроенной в учетной записи лаборатории. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
@@ -964,6 +1061,17 @@ ms.locfileid: "43048374"
 > | **Действия** |  |
 > | Microsoft.Solutions/applications/read | Извлечение списка приложений. |
 
+## <a name="managed-applications-reader"></a>Читатель Управляемых приложений
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет считывать ресурсы в управляемом приложении и запрашивать доступ JIT. |
+> | **Id** | b9331d33-8a36-4f8c-b097-4f54124fdb44 |
+> | **Действия** |  |
+> | */чтение | Чтение ресурсов всех типов, кроме секретов. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Solutions/jitRequests/* |  |
+
 ## <a name="managed-identity-contributor"></a>Участник управляемого удостоверения
 > [!div class="mx-tableFixed"]
 > | | |
@@ -1045,7 +1153,8 @@ ms.locfileid: "43048374"
 > | Microsoft.OperationalInsights/workspaces/sharedKeys/action | Извлекает открытые ключи для рабочей области. Эти ключи используются для подключения агентов Microsoft Operational Insights к рабочей области. |
 > | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/* | Чтение, запись и удаление конфигураций подробных данных хранилища Log Analytics. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
-> | Microsoft.WorkloadMonitor/workloads/* |  |
+> | Microsoft.WorkloadMonitor/monitors/* |  |
+> | Microsoft.WorkloadMonitor/notificationSettings/* |  |
 > | Microsoft.WorkloadMonitor/workloadInsights/* |  |
 
 ## <a name="monitoring-metrics-publisher"></a>Издатель метрик мониторинга
@@ -1101,6 +1210,21 @@ ms.locfileid: "43048374"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | NewRelic.APM/accounts/* |  |
+
+## <a name="powerapps-administrator-test"></a>Тестовый администратор PowerApps
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
+> | **Id** | befefa01-2a29-4897-83a8-272ff33ce314 |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Network/dnsZones/* |  |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
 ## <a name="reader-and-data-access"></a>Модуль чтения и доступ к данным
 > [!div class="mx-tableFixed"]
@@ -1387,6 +1511,7 @@ ms.locfileid: "43048374"
 > | Microsoft.Sql/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
+> | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Не может изменять политики аудита |
 > | Microsoft.Sql/servers/databases/auditingSettings/* | Не может изменять параметры аудита |
 > | Microsoft.Sql/servers/databases/auditRecords/read | Извлекает записи аудита больших двоичных объектов для базы данных. |
@@ -1414,6 +1539,7 @@ ms.locfileid: "43048374"
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Создание политик аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/auditingSettings/* | Создание параметров аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Создание политик аудита баз данных SQL Server и управление ими |
@@ -1453,6 +1579,7 @@ ms.locfileid: "43048374"
 > | Microsoft.Sql/servers/* | Создание серверов SQL Server и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
+> | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Не может изменять политики аудита SQL Server |
 > | Microsoft.Sql/servers/auditingSettings/* | Не может изменять параметры аудита SQL Server |
 > | Microsoft.Sql/servers/databases/auditingPolicies/* | Не может изменять политики аудита баз данных SQL Server |
@@ -1632,10 +1759,10 @@ ms.locfileid: "43048374"
 > | Microsoft.Network/virtualNetworks/read | Возвращает определение виртуальной сети. |
 > | Microsoft.Network/virtualNetworks/subnets/join/action | Присоединяет виртуальную сеть. |
 > | Microsoft.RecoveryServices/locations/* |  |
+> | Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write | Создание цели защиты для резервной копии. |
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read | Возвращает сведения об объекте для защищенного элемента. |
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write | Создает элемент, защищенный службой архивации. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write | Создание цели защиты для резервной копии. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/read | Возвращает все политики защиты. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/write | Создает политику защиты. |
 > | Microsoft.RecoveryServices/Vaults/read | Операция получения хранилища возвращает объект, представляющий ресурс Azure типа "хранилище". |
@@ -1644,6 +1771,7 @@ ms.locfileid: "43048374"
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.SqlVirtualMachine/* |  |
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |

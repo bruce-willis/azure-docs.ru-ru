@@ -3,7 +3,7 @@ title: Расширение пользовательских сценариев 
 description: Сведения об автоматизации задач настройки виртуальных машин Windows с помощью расширения пользовательских сценариев
 services: virtual-machines-windows
 documentationcenter: ''
-author: zroiy
+author: roiyz-msft
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/24/2018
 ms.author: roiyz
-ms.openlocfilehash: c00d4d481c992e90597276d0ce8655aef2be731f
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 1201e7ec232a5bd45351072949dc0b9c19af434f
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038647"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452179"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -139,7 +139,8 @@ ms.locfileid: "40038647"
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
 
-Выполнив команду `Set-AzureRmVMCustomScriptExtension`, расширение пользовательских сценариев можно добавить на существующую виртуальную машину. Дополнительные сведения см. в статье о [Set-AzureRmVMCustomScriptExtension](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmcustomscriptextension).
+Выполнив команду `Set-AzureRmVMCustomScriptExtension`, расширение пользовательских сценариев можно добавить на существующую виртуальную машину. Дополнительные сведения см. в статье о командлете [Set-AzureRmVMCustomScriptExtension](https://docs.microsoft.com/powershell/module/azurerm.compute/set-azurermvmcustomscriptextension).
+
 ```powershell
 Set-AzureRmVMCustomScriptExtension -ResourceGroupName myResourceGroup `
     -VMName myVM `

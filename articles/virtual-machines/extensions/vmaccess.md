@@ -3,7 +3,7 @@ title: Сброс параметров доступа к виртуальным 
 description: В этой статье показано, как управлять пользователями с правами администратора и сбрасывать параметры доступа на виртуальных машинах Linux, используя расширение VMAccess и Azure CLI.
 services: virtual-machines-linux
 documentationcenter: ''
-author: zroiy
+author: roiyz-msft
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -15,18 +15,21 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: roiyz
-ms.openlocfilehash: e878f5c9f923b55a1eb94cefb1ecf021c81e884e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 638ca5d1b1b68896ff5dcad70fedf27261ae96cb
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998633"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452060"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
 На диске в виртуальной машине Linux имеются ошибки. Вы каким-то образом сбросили пароль пользователя root для виртуальной машины Linux или случайно удалили закрытый ключ SSH. Если бы такое случилось раньше, вам пришлось бы ехать в центр данных и открывать KVM-консоль для доступа к серверу. Расширение Azure VMAccess можно представить как KVM-коммутатор, который позволяет открывать консоль для сброса разрешений на доступ к Linux или обслуживания дисков.
 
 В этой статье показано, как использовать расширение Azure VMAccess для проверки или восстановления диска, сброса прав доступа пользователей, управления учетными записями пользователей с правами администратора или обновления конфигурации SSH в Linux при использовании виртуальных машин Azure Resource Manager. Если необходимо управлять классическими виртуальными машинами, следуйте инструкциям, приведенным в [документации по классическим виртуальным машинам](../linux/classic/reset-access-classic.md). 
+ 
+> [!NOTE]
+> Если вы с помощью VMAccess сбрасываете пароль виртуальной машины после установки расширения входа в AAD, это расширение необходимо повторно запустить, чтобы повторно активировать его на виртуальной машине.
 
 ## <a name="prerequisites"></a>Предварительные требования
 ### <a name="operating-system"></a>Операционная система

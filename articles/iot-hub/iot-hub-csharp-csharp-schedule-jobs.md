@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/06/2018
 ms.author: dobett
-ms.openlocfilehash: eb7b4c4c6228818f78e002f4a06a000e9aa34a3a
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 0e0c398311c5826f8b6c72bf0f39ad2bfde306b2
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43109643"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223055"
 ---
 # <a name="schedule-and-broadcast-jobs-netnet"></a>Планирование и трансляция заданий (.NET и .NET)
 
@@ -140,7 +140,7 @@ ms.locfileid: "43109643"
 9. Сохраните результаты работы и создайте решение.         
 
 > [!NOTE]
-> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повтора (например, повторную попытку подключения), как указано в статье MSDN [Обработка временных сбоев](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults)
+> Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повтора (например, повторную попытку подключения), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 > 
 
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-sending-device-twin-updates"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
@@ -153,7 +153,7 @@ ms.locfileid: "43109643"
 
 2. В обозревателе решений щелкните правой кнопкой мыши проект **ScheduleJob** и выберите **Управление пакетами NuGet…**.
 
-3. В окне **Диспетчер пакетов NuGet** нажмите кнопку **Обзор**, найдите **Microsoft.Azure.Devices**, щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для служб Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
+3. В окне **Диспетчер пакетов NuGet** нажмите кнопку **Обзор**, найдите **microsoft.azure.devices**, щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для служб Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
 
     ![Окно "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-schedule-jobs/servicesdknuget.png)
 

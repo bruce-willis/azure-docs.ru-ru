@@ -1,6 +1,6 @@
 ---
 title: Интеграция управления API с Service Fabric в Azure | Документы Майкрософт
-description: В этом руководстве вы узнаете, как быстро приступить к работе со службой управления API Azure и Service Fabric.
+description: Узнайте, как быстро приступить к работе со службой управления API Azure и перенаправлять трафик во внутреннюю службу в Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: rwike77
@@ -9,54 +9,37 @@ editor: ''
 ms.assetid: ''
 ms.service: service-fabric
 ms.devlang: dotNet
-ms.topic: tutorial
+ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 3/9/2018
+ms.date: 9/26/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 61909c7f6858c7411e01019edda22d7676b44943
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 572a4cd78fe60351babb9e86c604447f6848a866
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46955050"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47408238"
 ---
-# <a name="tutorial-integrate-api-management-with-service-fabric-in-azure"></a>Руководство. Развертывание управления API с помощью Service Fabric в Azure
+# <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
-Это руководство представляет собой четвертую часть цикла.  Расширенный сценарий развертывания для службы управления API Azure в Service Fabric.  Управление API позволяет публиковать API-интерфейсы с широким набором правил маршрутизации для служб серверной части Service Fabric. Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. В Service Fabric шлюзом может быть любая служба без отслеживания состояния, предназначенная для обработки входящего трафика, например приложение ASP.NET Core, Центры событий, Центр Интернета вещей или служба управления API Azure.
+Расширенный сценарий развертывания для службы управления API Azure в Service Fabric.  Управление API позволяет публиковать API-интерфейсы с широким набором правил маршрутизации для служб серверной части Service Fabric. Обычно, облачным приложениям требуется интерфейсный шлюз, который предоставляет единую точку передачи входящего трафика пользователей, устройств или других приложений. В Service Fabric шлюзом может быть любая служба без отслеживания состояния, предназначенная для обработки входящего трафика, например приложение ASP.NET Core, Центры событий, Центр Интернета вещей или служба управления API Azure.
 
-В нем показано, как настроить [службу управления API Azure](../api-management/api-management-key-concepts.md) с помощью Service Fabric для перенаправления трафика во внутреннюю службу в Service Fabric.  Выполнив инструкции из этого руководства, вы развернете службу управления API в виртуальной сети и настроите API для отправки трафика во внутренние службы без отслеживания состояния. Дополнительные сведения о сценариях службы управления API Azure и Service Fabric см. в [обзорной статье](service-fabric-api-management-overview.md).
-
-Из этого руководства вы узнаете, как выполнять следующие задачи:
-
-> [!div class="checklist"]
-> * Развертывание управления API
-> * Настройка управления API
-> * Создание операции API
-> * Настройка внутренней политики
-> * Добавление API в продукт
-
-Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
-> [!div class="checklist"]
-> * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
-> * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
-> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
-> * развертывание службы управления API с помощью Service Fabric.
+В этой статье показано, как настроить [службу управления API Azure](../api-management/api-management-key-concepts.md) с помощью Service Fabric для перенаправления трафика во внутреннюю службу в Service Fabric.  Выполнив инструкции из этого руководства, вы развернете службу управления API в виртуальной сети и настроите API для отправки трафика во внутренние службы без отслеживания состояния. Дополнительные сведения о сценариях службы управления API Azure и Service Fabric см. в [обзорной статье](service-fabric-api-management-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы с этим руководством выполните следующие действия:
+Перед началом работы
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) либо [Azure CLI](/cli/azure/install-azure-cli).
-* Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure.
+* Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в группе безопасности сети.
 * Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2017](http://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
-* Если вы развертываете кластер Linux, настройте среду разработки Java в [Linux](service-fabric-get-started-linux.md) или [MacOS](service-fabric-get-started-mac.md).  Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
 
 ## <a name="network-topology"></a>Топология сети
 
-Теперь, когда в Azure имеется защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md), можно развернуть службу управления API в подсети виртуальной сети и NSG, предназначенных для нее. В рамках этого руководства шаблон Resource Manager для службы управления API предварительно настроен для использования имен виртуальной сети, подсети и группы безопасности сети, настроенных в предыдущем руководстве по кластеру [Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md). В этом руководстве в Azure развертывается представленная ниже топология, в которой служба управления API и Service Fabric находятся в разных подсетях одной виртуальной сети:
+Теперь, когда в Azure имеется защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md), можно развернуть службу управления API в подсети виртуальной сети и NSG, предназначенных для нее. Для этой статьи шаблон Resource Manager управления API предварительно настроен для использования имен виртуальной сети, подсети и группы безопасности сети, указанных в [руководстве по созданию кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md). В этой статье мы развернем в Azure следующую топологию, в которой управление API и Service Fabric находятся в подсетях одной и той же виртуальной сети:
 
  ![Рисунок][sf-apim-topology-overview]
 
@@ -77,11 +60,9 @@ az account set --subscription <guid>
 
 ## <a name="deploy-a-service-fabric-back-end-service"></a>Развертывание внутренней службы Service Fabric
 
-Прежде чем настроить в управлении API маршрутизацию трафика к серверной службе Service Fabric, необходимо создать и запустить эту службу для приема запросов.  Если вы ранее создали [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md), разверните службу .NET Service Fabric.  Если вы ранее создали [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md), разверните службу Java Service Fabric.
+Прежде чем настроить в управлении API маршрутизацию трафика к серверной службе Service Fabric, необходимо создать и запустить эту службу для приема запросов.  
 
-### <a name="deploy-a-net-service-fabric-service"></a>Развертывание службы .NET Service Fabric
-
-Для целей этого руководства нужна базовая надежная служба ASP.NET Core без отслеживания состояния, которую вы можете создать с помощью стандартного шаблона проекта веб-API. Так мы получим конечную точку HTTP для службы, которую вы позднее предоставите через службу управления API Azure.
+Создайте базовую надежную службу ASP.NET Core без отслеживания состояния с помощью стандартного шаблона проекта веб-API. Так мы получим конечную точку HTTP для службы, которую вы позднее предоставите через службу управления API Azure.
 
 Запустите Visual Studio от имени администратора и создайте службу ASP.NET Core:
 
@@ -115,42 +96,6 @@ az account set --subscription <guid>
 
 В кластере Service Fabric в Azure должна запуститься служба ASP.NET Core без отслеживания состояния с именем `fabric:/ApiApplication/WebApiService`.
 
-### <a name="create-a-java-service-fabric-service"></a>Создание службы Java Service Fabric
-
-Для этого руководства разверните базовый веб-сервер, который возвращает пользователю сообщения. Приложение сервера, возвращающего сообщения, содержит конечную точку HTTP для службы, которую вы позднее предоставите через службу управления API Azure.
-
-1. Клонируйте примеры Java для начала работы.
-
-   ```bash
-   git clone https://github.com/Azure-Samples/service-fabric-java-getting-started.git
-   cd service-fabric-java-getting-started/reliable-services-actor-sample
-   ```
-
-2. Измените файл *Services/EchoServer/EchoServer1.0/EchoServerApplication/EchoServerPkg/ServiceManifest.xml*. Измените параметры конечной точки, чтобы служба прослушивала порт 8081.
-
-   ```xml
-   <Endpoint Name="WebEndpoint" Protocol="http" Port="8081" />
-   ```
-
-3. Сохраните *ServiceManifest.xml*, затем выполните сборку приложения EchoServer1.0.
-
-   ```bash
-   cd Services/EchoServer/EchoServer1.0/
-   gradle
-   ```
-
-4. Разверните приложение в кластере.
-
-   ```bash
-   cd Scripts
-   sfctl cluster select --endpoint https://mycluster.southcentralus.cloudapp.azure.com:19080 --pem <full_path_to_pem_on_dev_machine> --no-verify
-   ./install.sh
-   ```
-
-   В кластере Service Fabric в Azure должна запуститься служба Java без отслеживания состояния с именем `fabric:/EchoServerApplication/EchoServerService`.
-
-5. Откройте браузер и введите http://mycluster.southcentralus.cloudapp.azure.com:8081/getMessage. Должен отобразиться текст "[версия 1.0] Hello World!!!". .
-
 ## <a name="download-and-understand-the-resource-manager-templates"></a>Загрузка и изучение шаблонов Resource Manager
 
 Загрузите и сохраните следующие шаблоны Resource Manager и файл параметров:
@@ -170,9 +115,9 @@ az account set --subscription <guid>
 
 ### <a name="microsoftapimanagementservicecertificates"></a>Microsoft.ApiManagement/service/certificates
 
-При помощи [Microsoft.ApiManagement/service/certificates](/azure/templates/microsoft.apimanagement/service/certificates) настраивается защита для управления API. Управление API должно пройти аутентификацию с помощью кластера Service Fabric для обнаружения службы с помощью сертификата клиента, у которого есть доступ к кластеру. В этом руководстве используется сертификат, указанный при создании кластера [Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md#createvaultandcert_anchor) или [Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md#createvaultandcert_anchor), который по умолчанию предоставляет доступ к кластеру.
+При помощи [Microsoft.ApiManagement/service/certificates](/azure/templates/microsoft.apimanagement/service/certificates) настраивается защита для управления API. Управление API должно пройти аутентификацию с помощью кластера Service Fabric для обнаружения службы с помощью сертификата клиента, у которого есть доступ к кластеру. В этой статье используется сертификат, указанный при создании [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md#createvaultandcert_anchor), который по умолчанию предоставляет доступ к кластеру.
 
-В этом руководстве используется один сертификат для аутентификации клиента и безопасности обмена данными между узлами кластера. Вы можете использовать отдельный сертификат клиента, если у вас есть сертификат, настроенный для доступа к кластеру Service Fabric. Укажите **имя**, **пароль** и **строку данных** (в формате base-64) закрытого ключа (PFX-файл) сертификата кластера, который вы указали при создании кластера Service Fabric.
+В этой статье используется один сертификат для аутентификации клиента и безопасности обмена данными между узлами кластера. Вы можете использовать отдельный сертификат клиента, если у вас есть сертификат, настроенный для доступа к кластеру Service Fabric. Укажите **имя**, **пароль** и **строку данных** (в формате base-64) закрытого ключа (PFX-файл) сертификата кластера, который вы указали при создании кластера Service Fabric.
 
 ### <a name="microsoftapimanagementservicebackends"></a>Microsoft.ApiManagement/service/backends
 
@@ -184,18 +129,18 @@ az account set --subscription <guid>
 
 При помощи [Microsoft.ApiManagement/service/products](/azure/templates/microsoft.apimanagement/service/products) создается продукт. В службе управления API Azure продукт содержит один или несколько API вместе с квотой и условиями использования. Как только продукт будет опубликован, разработчики могут подписаться на него и начать использовать его интерфейсы API.
 
-Введите для продукта описательное имя **displayName** и описание **description**. Для целей этого руководства вам нужна подписка, но ее не обязательно подтверждать у администратора.  Для этого продукта **состояние** имеет значение "опубликовано". Это значит, что он доступен для подписчиков.
+Введите для продукта описательное имя **displayName** и описание **description**. Для этой статьи вам нужна подписка, но ее не обязательно подтверждать у администратора.  Для этого продукта **состояние** имеет значение "опубликовано". Это значит, что он доступен для подписчиков.
 
 ### <a name="microsoftapimanagementserviceapis"></a>Microsoft.ApiManagement/service/apis
 
 При помощи [Microsoft.ApiManagement/service/apis](/azure/templates/microsoft.apimanagement/service/apis) создается API-интерфейс. API в API Management представляет набор операций, которые могут быть вызваны клиентскими приложениями. После добавления операций интерфейс API добавляется к продукту и может быть опубликован. После публикации API на него могут подписаться разработчики для дальнейшего использования.
 
-* Для параметра **displayName** можно указать любое имя API-интерфейса. В этом руководстве введите имя Service Fabric App.
+* Для параметра **displayName** можно указать любое имя API-интерфейса. Для этой статьи используйте имя Service Fabric App.
 * Параметр **name** содержит уникальное описательное имя для API-интерфейса, например service-fabric-app. Оно выводится на порталах разработчика и издателя.
-* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для выполнения задач этого руководства используйте, например, http://servicefabric.
+* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи используйте http://servicefabric.
 * Значение **path** добавляется к основному URL-адресу вашей службы управления API. Основной URL-адрес является общим для всех интерфейсов API, размещенных в экземпляре службы API Management. API Management отличает интерфейсы API по их суффиксу. Следовательно, суффикс должен быть уникальным для каждого API для заданного издателя.
-* Параметр **protocols** определяет, какие протоколы можно использовать для доступа к API. Для этого руководства укажите протоколы **http** и **https**.
-* Параметр **path** содержит суффикс для API-интерфейса. Мы будем использовать суффикс myapp.
+* Параметр **protocols** определяет, какие протоколы можно использовать для доступа к API. Для этой статьи укажите протоколы **http** и **https**.
+* Параметр **path** содержит суффикс для API-интерфейса. Для этой статьи используйте суффикс myapp.
 
 ### <a name="microsoftapimanagementserviceapisoperations"></a>Microsoft.ApiManagement/service/apis/operations
 
@@ -203,9 +148,9 @@ az account set --subscription <guid>
 
 Чтобы добавить операцию к внешнему API-интерфейсу, укажите следующие значения:
 
-* **displayName** (отображаемое имя) и **description** (описание) для идентификации операции. В этом руководстве введите Values.
-* **method** (метод) — определяет команду HTTP.  В этом примере укажите **GET**.
-* Шаблон URL-адреса **urlTemplate**, добавляемый к базовому URL-адресу API-интерфейса, идентифицирует конкретную HTTP-операцию.  В этом примере укажите `/api/values`, если вы добавили серверную службу .NET, или `getMessage`, если вы добавили серверную службу Java.  По умолчанию указанный здесь URL-адрес представляет собой URL-адрес, отправленный во внутреннюю службу Service Fabric. Если здесь вы используете тот же URL-адрес, который использует служба (/api/values), операция будет выполняться без дополнительных настроек. Вы также можете указать здесь URL-адрес, отличный от URL-адреса, используемого внутренней службой Service Fabric. В этом случае следует настроить перезапись пути в политике работы.
+* **displayName** (отображаемое имя) и **description** (описание) для идентификации операции. Для этой статьи используйте Values.
+* **method** (метод) — определяет команду HTTP.  В этой статье укажите **GET**.
+* Шаблон URL-адреса **urlTemplate**, добавляемый к базовому URL-адресу API-интерфейса, идентифицирует конкретную HTTP-операцию.  В этой статье укажите `/api/values`, если вы добавили серверную службу .NET, или `getMessage`, если вы добавили серверную службу Java.  По умолчанию указанный здесь URL-адрес представляет собой URL-адрес, отправленный во внутреннюю службу Service Fabric. Если здесь вы используете тот же URL-адрес, который использует служба (/api/values), операция будет выполняться без дополнительных настроек. Вы также можете указать здесь URL-адрес, отличный от URL-адреса, используемого внутренней службой Service Fabric. В этом случае следует настроить перезапись пути в политике работы.
 
 ### <a name="microsoftapimanagementserviceapispolicies"></a>Microsoft.ApiManagement/service/apis/policies
 
@@ -218,7 +163,7 @@ az account set --subscription <guid>
 * Выбор реплики для служб с отслеживанием состояния.
 * Условия, при которых разрешение выполняется повторно, что позволяет указать условия для повторного разрешения расположения службы и повторной отправки запроса.
 
-**policyContent** содержит политику в JSON-сериализованном формате XML.  В рамках этого руководства создайте внутреннюю политику, направляющую запросы напрямую в службу без отслеживания состояния .NET или Java, которую вы развернули ранее. Добавьте политику `set-backend-service` в узел входящих политик.  Замените значение *sf-service-instance-name* значением `fabric:/ApiApplication/WebApiService`, если вы развернули серверную службу .NET, или значением `fabric:/EchoServerApplication/EchoServerService`, если вы используете службу Java.  *backend-id* ссылается на внутренний ресурс, в нашем примере это ресурс `Microsoft.ApiManagement/service/backends`, определенный в шаблоне *apim.json*. *backend-id* может также ссылаться на другой внутренний ресурс, созданный с помощью API-интерфейсов управления API. В этом руководстве для *backend-id* присваивается значение параметра *service_fabric_backend_name*.
+**policyContent** содержит политику в JSON-сериализованном формате XML.  В рамках этой статьи создайте внутреннюю политику, направляющую запросы напрямую в службу .NET или Java без отслеживания состояния, которую вы развернули ранее. Добавьте политику `set-backend-service` в узел входящих политик.  Замените значение *sf-service-instance-name* значением `fabric:/ApiApplication/WebApiService`, если вы развернули серверную службу .NET, или значением `fabric:/EchoServerApplication/EchoServerService`, если вы используете службу Java.  *backend-id* ссылается на внутренний ресурс, в нашем примере это ресурс `Microsoft.ApiManagement/service/backends`, определенный в шаблоне *apim.json*. *backend-id* может также ссылаться на другой внутренний ресурс, созданный с помощью API-интерфейсов управления API. В этой статье для *backend-id* присваивается значение параметра *service_fabric_backend_name*.
 
 ```xml
 <policies>
@@ -227,7 +172,7 @@ az account set --subscription <guid>
     <set-backend-service
         backend-id="servicefabric"
         sf-service-instance-name="service-name"
-        sf-resolve-condition="@((int)context.Response.StatusCode != 200)" />
+        sf-resolve-condition="@(context.LastError?.Reason == 'BackendConnectionFailure')" />
   </inbound>
   <backend>
     <base/>
@@ -267,7 +212,7 @@ $b64 = [System.Convert]::ToBase64String($bytes);
 [System.Io.File]::WriteAllText("C:\mycertificates\sfclustertutorialgroup220171109113527.txt", $b64);
 ```
 
-В узле *inbound_policy* замените значение *sf-service-instance-name* значением `fabric:/ApiApplication/WebApiService`, если вы развернули серверную службу .NET, или значением `fabric:/EchoServerApplication/EchoServerService`, если вы используете службу Java. *backend-id* ссылается на внутренний ресурс, в нашем примере это ресурс `Microsoft.ApiManagement/service/backends`, определенный в шаблоне *apim.json*. *backend-id* может также ссылаться на другой внутренний ресурс, созданный с помощью API-интерфейсов управления API. В этом руководстве для *backend-id* присваивается значение параметра *service_fabric_backend_name*.
+В узле *inbound_policy* замените значение *sf-service-instance-name* значением `fabric:/ApiApplication/WebApiService`, если вы развернули серверную службу .NET, или значением `fabric:/EchoServerApplication/EchoServerService`, если вы используете службу Java. *backend-id* ссылается на внутренний ресурс, в нашем примере это ресурс `Microsoft.ApiManagement/service/backends`, определенный в шаблоне *apim.json*. *backend-id* может также ссылаться на другой внутренний ресурс, созданный с помощью API-интерфейсов управления API. В этой статье для *backend-id* присваивается значение параметра *service_fabric_backend_name*.
 
 ```xml
 <policies>
@@ -276,7 +221,7 @@ $b64 = [System.Convert]::ToBase64String($bytes);
     <set-backend-service
         backend-id="servicefabric"
         sf-service-instance-name="service-name"
-        sf-resolve-condition="@((int)context.Response.StatusCode != 200)" />
+        sf-resolve-condition="@(context.LastError?.Reason == 'BackendConnectionFailure')" />
   </inbound>
   <backend>
     <base/>
@@ -349,14 +294,7 @@ az group delete --name $ResourceGroupName
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Развертывание управления API
-> * Настройка управления API
-> * Создание операции API
-> * Настройка внутренней политики
-> * Добавление API в продукт
+Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
 
 [azure-powershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
 

@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 09/19/2018
 ms.author: tamram
-ms.openlocfilehash: 31bfcd99e23cc7fe0575a293e3dc22507dbd9e13
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: ec8ad5a509b4fd4b6fd59212ac0df17f98f417fd
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973275"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222443"
 ---
 # <a name="enable-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Включение аутентификации Azure Active Directory по протоколу SMB для службы файлов Azure (предварительная версия)
 
@@ -103,8 +103,6 @@ Set-AzureRmStorageAccount -ResourceGroupName "<resource-group-name>" `
 ```
 
 **ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ**
-
-"Сначала добавьте расширение storage-preview, а затем следуйте примеру ниже. Не забудьте заменить значения заполнителей собственными значениями. Дополнительные сведения о добавлении расширений Azure CLI см. в этой статье".
 
 Чтобы включить аутентификацию Azure AD по протоколу SMB из Azure CLI 2.0, сначала установите расширение *storage-preview*:
 
@@ -274,7 +272,7 @@ icacls <mounted-drive-letter> /grant <user-email>:(f)
 net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
 ```
 
-Теперь вы успешно включили аутентификацию Azure AD по протоколу SMB и назначили пользовательскую роль, которая обеспечивает доступ к файловому ресурсу для удостоверения Azure AD. Чтобы предоставить доступ к файловому ресурсу для дополнительных пользователей, следуйте инструкциям, приведенным на шаге 2.
+Теперь вы успешно включили аутентификацию Azure AD по протоколу SMB и назначили пользовательскую роль, которая обеспечивает доступ к файловому ресурсу для удостоверения Azure AD. Чтобы предоставить доступ к файловому ресурсу для дополнительных пользователей, следуйте инструкциям, приведенным на шаге 2 и 3.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: fboylu
-ms.openlocfilehash: 816ba560ccb9b06414dff8ffaea054e88d216b10
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 7802aa8ea9798b18d5424c2342ba63c01406b25a
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972389"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221712"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Руководство по искусственному интеллекту Azure для решений прогнозного обслуживания
 
@@ -426,19 +426,19 @@ ms.locfileid: "38972389"
 
 ## <a name="training-resources-for-predictive-maintenance"></a>Сборник тренировочных заданий для прогнозного обслуживания
 
-[Схема обучения ИИ Azure для прогнозного обслуживания](https://github.com/Azure/AI-PredictiveMaintenance/blob/master/docs/azure-ai-learning-path-for-predictive-maintenance.md) позволяет получить учебный материал для более глубокого понимания концепций и математических моделей, на основе которых созданы алгоритмы и методы, используемые в задачах PdM. 
-
-Microsoft Azure предоставляет бесплатное содержимое и обучающие материалы по общим концепциям и практической работе с ИИ.
+Кроме содержимого и обучающих материалов по общим концепциям и практической работе с ИИ, Microsoft Azure предоставляет схемы обучения основных понятий, связанных с методиками PdM.
 
 | Ресурсы для обучения  | Доступность |
 |:-------------------|--------------|
+| [Схема обучения PdM с помощью деревьев и случайного леса](https://aischool.microsoft.com/learning-paths/1H5vH5wAYcAy88CoQWQcA8) | Общедоступные | 
+| [Схема обучения PdM с помощью глубинного обучения](https://aischool.microsoft.com/learning-paths/FSIXxYkOGcauo0eUO8qAS) | Общедоступные |
 | [Разработка искусственного интеллекта в Azure](http://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Общедоступные |
 | [Курсы по изучению искусственного интеллекта Майкрософт](http://aischool.microsoft.com/learning-paths) | Общедоступные |
 | [Обучение работе с ИИ Azure на GitHub](https://github.com/Azure/connectthedots/blob/master/readme.md) | Общедоступные |
 | [LinkedIn Learning](http://www.linkedin.com/learning) | Общедоступные |
 | [Вебинары по ИИ Майкрософт на YouТube](https://www.youtube.com/watch?v=NvrH7_KKzoM&t=4s) | Общедоступные |
 | [Канал об искусственном интеллекте Майкрософт](http://channel9.msdn.com/Shows/AI-Show) | Общедоступные |
-| [LearnAI@MS](http://learnanalytics.microsoft.com) | Для партнеров Майкрософт |
-| [Microsoft Partner Network](http://learningportal.microsoft.com) | Для партнеров Майкрософт |
+| [LearnAI@MS](http://learnanalytics.microsoft.com) | Партнеры |
+| [Microsoft Partner Network](http://learningportal.microsoft.com) | Партнеры |
 
 Кроме того, доступны бесплатные учебные интернет-программы MOOCS (общедоступные онлайн-курсы) по изучению ИИ, которые проводятся научными учреждениями, такими как Стэнфорд и Массачусетский технологический институт, а также другими образовательными компаниями.

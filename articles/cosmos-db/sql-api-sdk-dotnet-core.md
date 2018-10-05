@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 03/22/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b8004500df2e29ab865a8eb78adf278ef61d5ee8
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 7000fc13a792f4f6def592e78dc759c8cf165881
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43702441"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47451924"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -52,6 +52,24 @@ ms.locfileid: "43702441"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 Пакет SDK .NET Core для Azure Cosmos DB функционально полностью эквивалентен последней версии [пакета SDK .NET для Azure Cosmos DB](sql-api-sdk-dotnet.md).
+
+### <a name="a-name211211"></a><a name="2.1.1"/>2.1.1
+
+* Добавлена дополнительная устойчивость к кратковременным сбоям 	запросов в нескольких регионах.
+
+### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
+
+* Добавлена поддержка для операций записи в нескольких регионах.
+* Повышение производительности запросов перекрестных разделов с помощью TOP и MaxBufferedItemCount.
+
+### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
+
+* Добавлена поддержка отмены запроса.
+* Для ConnectionPolicy добавлено свойство SetCurrentLocation, которое автоматически заполняет предпочтительные расположения в зависимости от региона.
+* В запросах между секциями исправлена ошибка, связанная с минимальным и максимальным значениями и фильтром, который не находил соответствия документов в отдельной секции.
+* Методы DocumentClient теперь соответствуют IDocumentClient.
+* Обновлен прямой транспортный стек TCP для сокращения числа установленных подключений.
+* Добавлена поддержка TCP в режиме прямого подключения для клиентов, отличных от Windows.
 
 ### <a name="a-name200-preview2200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
 
@@ -186,8 +204,9 @@ ms.locfileid: "43702441"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
-| [2.0.0-preview2](#2.0.0-preview2) |26 июля 2018 г. |--- |
-| [2.0.0-preview](#2.0.0-preview) |11 мая 2018 г. |--- |
+| [2.1.1](#2.1.1) |27 сентября 2018 г. |--- |
+| [2.1.0](#2.1.0) |21 сентября 2018 г. |--- |
+| [2.0.0](#2.0.0) |07 сентября 2018 г. |--- |
 | [1.9.1](#1.9.1) |9 марта 2018 г. |--- |
 | [1.8.2](#1.8.2) |21 февраля 2018 г. |--- |
 | [1.8.1](#1.8.1) |5 февраля 2018 г. |--- |

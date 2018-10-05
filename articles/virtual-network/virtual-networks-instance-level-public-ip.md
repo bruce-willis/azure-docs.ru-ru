@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/03/2018
 ms.author: genli
-ms.openlocfilehash: cb8ba5169a6ebfbb11ba0acfa9b9f463b7cdf6a1
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 7d8325ce04a9fa7853fb622062022a6938375f96
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39520813"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47430987"
 ---
 # <a name="instance-level-public-ip-classic-overview"></a>Общие сведения об общедоступных IP-адресах уровня экземпляра (классическая модель развертывания)
 Общедоступный IP-адрес уровня экземпляра (ILPIP) — это общедоступный IP-адрес, который можно назначить непосредственно виртуальной машине или экземпляру роли облачных служб, а не облачной службе, в которой они находятся. Он не заменяет виртуальный IP-адрес (VIP), назначенный облачной службе. а представляет собой дополнительный IP-адрес, с помощью которого можно подключаться непосредственно к виртуальной машине или экземпляру роли.
@@ -31,10 +31,13 @@ ms.locfileid: "39520813"
 
 Как показано на рис. 1, для доступа к облачной службе используется виртуальный IP-адрес, а для обращения к отдельным виртуальным машинам, как правило, применяется формат "виртуальный IP-адрес:&lt;номер_порта&gt;". Назначив определенной виртуальной машине ILPIP-адрес, вы сможете обращаться к ней напрямую.
 
-При создании облачной службы в среде Azure автоматически создаются соответствующие записи A DNS, благодаря которым к службе можно обращаться по полному доменному имени вместо ее фактического виртуального IP-адреса. То же самое выполняется и для ILPIP-адресов, благодаря чему к виртуальным машинам и экземплярам ролей можно обращаться по полному доменному имени, не указывая ILPIP-адрес. Например, если при создании облачной службы *contosoadservice* вы настраиваете веб-роль *contosoweb* с двумя экземплярами, то платформа Azure регистрирует следующие записи A для этих экземпляров:
+При создании облачной службы в среде Azure автоматически создаются соответствующие записи A DNS, благодаря которым к службе можно обращаться по полному доменному имени вместо ее фактического виртуального IP-адреса. То же самое выполняется и для ILPIP-адресов, благодаря чему к виртуальным машинам и экземплярам ролей можно обращаться по полному доменному имени, не указывая ILPIP-адрес. Например, если при создании облачной службы *contosoadservice* вы настраиваете веб-роль *contosoweb* с двумя экземплярами и в файле CSCFG параметр `domainNameLabel` имеет значение *WebPublicIP*, то платформа Azure регистрирует следующие записи A для этих экземпляров:
 
-* contosoweb\_IN_0.contosoadservice.cloudapp.net;
-* contosoweb\_IN_1.contosoadservice.cloudapp.net. 
+
+* WebPublicIP.0.contosoadservice.cloudapp.net
+* WebPublicIP.1.contosoadservice.cloudapp.net
+* ...
+
 
 > [!NOTE]
 > Каждой виртуальной машине или экземпляру роли можно назначить только один ILPIP-адрес. В одной подписке разрешается использовать до 5 ILPIP-адресов. ILPIP-адреса не поддерживаются для виртуальных машин с несколькими сетевыми картами.
@@ -152,7 +155,7 @@ Get-AzureVM -ServiceName FTPService -Name FTPInstance | Set-AzurePublicIP -Publi
         <AddressAssignments>
           <InstanceAddress roleName="WebRole1">
         <PublicIPs>
-          <PublicIP name="MyPublicIP" domainNameLabel="MyPublicIP" />
+          <PublicIP name="MyPublicIP" domainNameLabel="WebPublicIP" />
             </PublicIPs>
           </InstanceAddress>
         </AddressAssignments>
@@ -162,14 +165,22 @@ Get-AzureVM -ServiceName FTPService -Name FTPInstance | Set-AzurePublicIP -Publi
 3. Передайте CSCFG-файл облачной службы, выполнив действия, описанные в статье [Настройка облачных служб](../cloud-services/cloud-services-how-to-configure-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#reconfigure-your-cscfg).
 
 ### <a name="how-to-retrieve-ilpip-information-for-a-cloud-service"></a>Как получить сведения об ILPIP-адресе облачной службы
-Чтобы просмотреть сведения об ILPIP-адресах для экземпляров роли, выполните следующую команду PowerShell и обратите внимание на значения *PublicIPAddress* и *PublicIPName*.
+Чтобы просмотреть сведения об ILPIP-адресах для экземпляров роли, выполните следующую команду PowerShell и обратите внимание на значения *PublicIPAddress*, *PublicIPName*, *PublicIPDomainNameLabel* и *PublicIPFqdns*:
 
 ```powershell
-$roles = Get-AzureRole -ServiceName PaaSFTPService -Slot Production -RoleName WorkerRole1 -InstanceDetails
+Add-AzureAccount
+
+$roles = Get-AzureRole -ServiceName <Cloud Service Name> -Slot Production -RoleName WebRole1 -InstanceDetails
 
 $roles[0].PublicIPAddress
 $roles[1].PublicIPAddress
 ```
+
+Запись A поддомена можно также запросить с помощью команды `nslookup`:
+
+```batch
+nslookup WebPublicIP.0.<Cloud Service Name>.cloudapp.net
+``` 
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Общие сведения об IP-адресах в классической модели развертывания см. в статье [IP-адреса в Azure (классическая модель развертывания)](virtual-network-ip-addresses-overview-classic.md).

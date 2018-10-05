@@ -15,16 +15,32 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
-ms.openlocfilehash: 11d9f5efb452d46e5ca30169861582f6f2bbbd1b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3eeaee9bc6320231f10aa85227e2f43756181806
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46969399"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433486"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
 
-Для определения виртуальной машины (VM) в Azure используется несколько параметров (расположение, размер оборудования, образ операционной системы и учетные данные для входа). В этой статье показано, как использовать REST API для создания виртуальной машины Linux, использующей проверку подлинности SSH.
+Виртуальная машина Linux в Azure состоит из различных ресурсов, таких как диски и сетевые интерфейсы, и определяет параметры, например расположение, размер, образы операционной системы и параметры аутентификации.
+
+Вы можете создать виртуальную машину Linux с помощью портала Azure, Azure CLI 2.0, множества пакетов SDK для Azure, шаблонов Azure Resource Manager и других сторонних инструментов, таких как Ansible или Terraform. В конечном счете все эти инструменты создают виртуальную машину Linux с помощью REST API.
+
+В этой статье показано, как с помощью REST API создать виртуальную машину Linux под управлением Ubuntu 18.04-LTS с управляемыми дисками и аутентификацией SSH.
+
+## <a name="before-you-start"></a>Перед началом работы
+
+Перед созданием и отправкой запроса вам потребуется:
+
+* `{subscription-id}` для вашей подписки.
+  * Если у вас несколько подписок, см. [эту статью](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#working-with-multiple-subscriptions).
+* Объект `{resourceGroupName}`, который вы создали заранее.
+* [Виртуальный сетевой интерфейс](../../virtual-network/virtual-network-network-interface.md) в той же группе ресурсов.
+* Пара ключей SSH (вы можете [создать ее](mac-create-ssh-keys.md), если у вас ее нет).
+
+## <a name="request-basics"></a>Основные сведения о запросе
 
 Для создания или обновления виртуальной машины используйте следующую операцию *PUT*.
 
@@ -32,9 +48,7 @@ ms.locfileid: "46969399"
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}?api-version=2017-12-01
 ```
 
-## <a name="create-a-request"></a>Создание запроса
-
-Для создания запроса *PUT* требуется параметр `{subscription-id}`. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#working-with-multiple-subscriptions). Для ваших ресурсов параметры `{resourceGroupName}` и `{vmName}` определяются вместе с параметром `api-version`. Для этой статьи используется `api-version=2017-12-01`.
+Кроме параметров `{subscription-id}` и `{resourceGroupName}`, необходимо указать параметр `{vmName}` (параметр `api-version` указывать необязательно, но эта статья протестирована с параметром `api-version=2017-12-01`)
 
 Ниже приведены обязательные заголовки.
 
@@ -43,7 +57,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 | *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
 | *Authorization:* | Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
-Дополнительные сведения по созданию запросов см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
+Общие сведения о работе с запросами REST API см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
 ## <a name="create-the-request-body"></a>Создание текста запроса
 
@@ -58,15 +72,12 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 | properties.osProfile       |          | [OSProfile](/rest/api/compute/virtualmachines/createorupdate#osprofile)             | Указывает параметры операционной системы виртуальной машины. |
 | properties.networkProfile  |          | [NetworkProfile](/rest/api/compute/virtualmachines/createorupdate#networkprofile)   | Указывает сетевые интерфейсы виртуальной машины. |
 
-Полный список доступных определений для текста запроса см. в статье [Virtual Machines - Create Or Update](/rest/api/compute/virtualmachines/createorupdate#definitions) (Виртуальные машины — создание или обновление).
-
-### <a name="example-request-body"></a>Примеры текста запроса
-
-В следующем примере текста запроса определяется образ ОС Ubuntu 18.04-LTS, в котором используются управляемые диски уровня "Премиум". После использования проверки подлинности по открытому ключу SSH, виртуальная машина использует существующую виртуальную сетевую карту, которая была [создана ранее](../../virtual-network/virtual-network-network-interface.md). Укажите открытый ключ SSH в поле *osProfile.linuxConfiguration.ssh.publicKeys.keyData*. При необходимости можно [создать пары ключей SSH](mac-create-ssh-keys.md).
+Ознакомьтесь с примером текста запроса ниже. Убедитесь, что вы указали имя виртуальной машины в параметрах `{computerName}` и `{name}`, имя сетевого интерфейса, созданное в разделе `networkInterfaces`, имя пользователя в параметрах `adminUsername` и `path`, и *открытую* часть пары ключей SSH (расположенная, например, в `~/.ssh/id_rsa.pub`) в `keyData`. Может потребоваться изменить другие параметры, которые включают `location` и `vmSize`.  
 
 ```json
 {
   "location": "eastus",
+  "name": "{vmName}",
   "properties": {
     "hardwareProfile": {
       "vmSize": "Standard_DS1_v2"
@@ -89,7 +100,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
     },
     "osProfile": {
       "adminUsername": "{your-username}",
-      "computerName": "myVM",
+      "computerName": "{vmName}",
       "linuxConfiguration": {
         "ssh": {
           "publicKeys": [
@@ -105,19 +116,24 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
     "networkProfile": {
       "networkInterfaces": [
         {
-          "id": "/subscriptions/{subscription-id}/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/{existing-nic-name}",
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{existing-nic-name}",
           "properties": {
             "primary": true
           }
         }
       ]
     }
-  },
-  "name": "myVM"
+  }
 }
 ```
 
-## <a name="responses"></a>Ответы
+Полный список доступных определений для текста запроса см. в статье [Virtual Machines - Create Or Update](/rest/api/compute/virtualmachines/createorupdate#definitions) (Виртуальные машины — создание или обновление).
+
+## <a name="sending-the-request"></a>Отправка запроса
+
+Вы можете отправить HTTP-запроса с помощью предпочитаемого клиента. Кроме того, вы можете также использовать [инструмент в браузере](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate), нажав кнопку **Попробовать**.
+
+### <a name="responses"></a>Ответы
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
@@ -125,10 +141,6 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 |-------------|-----------------------------------------------------------------------------------|-------------|
 | 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | ОК          |
 | 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создано     |
-
-Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).
-
-### <a name="example-response"></a>Пример ответа
 
 Сокращенный ответ *201 Создано*, полученный из предыдущего примера текста запроса, который создает виртуальную машину, показывает, что *vmId* был назначен, и что *ProvisionState* находится в состоянии *Создание*.
 
@@ -138,6 +150,8 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
     "provisioningState": "Creating"
 }
 ```
+
+Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

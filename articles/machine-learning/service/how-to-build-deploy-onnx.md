@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: prasantp
 author: prasanthpul
 ms.date: 09/24/2018
-ms.openlocfilehash: f453fff59abc1441b2fb16049f130d2c19460083
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d4ce2dc67b0d9229ac2605ab317594ea345c19b2
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46970813"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434081"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и машинное обучение Azure: создание и развертывание совместимых моделей AI
 
@@ -48,17 +48,15 @@ ONNX дает совместимость, которая позволяет бы
 ## <a name="exportconvert-your-models-to-onnx"></a>Экспорт/преобразование моделей в ONNX
 
 Существующие модели можно преобразовывать в ONNX.
-+ Для моделей **PyTorch** попробуйте [эту записную книжку Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb).
 
-+ Для моделей **Microsoft Cognitive Toolkit (CNTK)** попробуйте [эту записную книжку Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/CntkOnnxExport.ipynb).
-
-+ Для моделей **Chainer** попробуйте [эту записную книжку Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/ChainerOnnxExport.ipynb).
-
-+ Для моделей **MXNet** попробуйте [эту записную книжку Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/MXNetONNXExport.ipynb).
-
-+ Для моделей **TensorFlow** используйте [tensorflow-onnx converter](https://github.com/onnx/tensorflow-onnx).
-
-+ Для моделей **Keras**, **ScitKit-Learn**, **CoreML**, **XGBoost** и **libSVM** используйте для преобразования в ONNX пакет [WinMLTools](https://docs.microsoft.com/windows/ai/convert-model-winmltools).
+|Платформа модели|Пример или средство преобразования|
+|-----|-------|
+|PyTorch|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb)|
+|Microsoft&nbsp;Cognitive&nbsp;Toolkit&nbsp;(CNTK)|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/CntkOnnxExport.ipynb)|
+|TensorFlow|[Преобразователь tensorflow-onnx](https://github.com/onnx/tensorflow-onnx)|
+|Chainer|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/ChainerOnnxExport.ipynb)|
+|MXNet|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/MXNetONNXExport.ipynb)|
+|Keras, ScitKit-Learn, CoreML<br/>XGBoost и libSVM|[WinMLTools](https://docs.microsoft.com/windows/ai/convert-model-winmltools)|
 
 Актуальный список поддерживаемых платформ и преобразователей см. на [сайте с руководствами ONNX](https://github.com/onnx/tutorials).
 
@@ -70,7 +68,7 @@ ONNX дает совместимость, которая позволяет бы
 
 ### <a name="install-and-configure-the-onnx-runtime"></a>Установка и настройка среды выполнения ONNX
 
-Среда выполнения ONNX — это высокоэффективный механизм логической обработки для моделей ONNX. Она включает API Python и обеспечивает аппаратное ускорение ЦП и GPU. Сейчас она поддерживает модели ONNX 1.2 и выполняется в системе Ubuntu 16.04 Linux.
+Среда выполнения ONNX — это высокоэффективный механизм логической обработки для моделей ONNX. Она включает API Python и обеспечивает аппаратное ускорение ЦП и GPU. Сейчас она поддерживает модели ONNX 1.2 и выполняется в системе Ubuntu 16.04 Linux. Пакеты [ЦП](https://pypi.org/project/onnxruntime) и [GPU](https://pypi.org/project/onnxruntime-gpu) доступны на сайте [PyPi.org](https://pypi.org).
 
 Для установки среды выполнения ONNX используйте следующую команду:
 ```python
@@ -97,7 +95,7 @@ results = session.run(["output1", "output2"], {"input1": indata1, "input2": inda
 results = session.run([], {"input1": indata1, "input2": indata2})
 ```
 
-Полный справочник по API см. в [документации](https://docs.microsoft.com/en-us/python/api/overview/azure/main?view=azure-onnx-py).
+Полный справочник по API см. в [документации по среде выполнения ONNX](https://aka.ms/onnxruntime-python).
 
 ### <a name="example-deployment-steps"></a>Пример этапов развертывания
 
@@ -175,13 +173,14 @@ results = session.run([], {"input1": indata1, "input2": indata2})
    Файл `myenv.yml` описывает необходимые для образа зависимости. Инструкции по созданию файла среды, такого как в следующем примере, см. в [этом руководстве](tutorial-deploy-models-with-aml.md#create-environment-file).
 
    ```
-   name: myenv
-   channels:
-     - defaults
-   dependencies:
-     - pip:
-       - onnxruntime
-       - azureml-core
+   from azureml.core.conda_dependencies import CondaDependencies 
+
+   myenv = CondaDependencies()
+   myenv.add_pip_package("azureml-core")
+   myenv.add_pip_package("onnxruntime")
+
+   with open("myenv.yml","w") as f:
+    f.write(myenv.serialize_to_string())
    ```
 
 4. С помощью машинного обучения Azure разверните модель ONNX в:

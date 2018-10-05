@@ -2,23 +2,26 @@
 title: Сравнение функций Базы данных SQL Azure | Документация Майкрософт
 description: В этой статье сравниваются функции SQL Server, которые доступны в разных вариантах баз данных SQL Azure.
 services: sql-database
-author: jovanpop-msft
-ms.reviewer: bonova, carlrab
 ms.service: sql-database
+ms.subservice: ''
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/14/2018
+author: jovanpop-msft
 ms.author: jovanpop
+ms.reviewer: bonova, carlrab
 manager: craigg
-ms.openlocfilehash: b45daafc732a497f9b2daf4e9e7c1a2c54aac501
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.date: 09/25/2018
+ms.openlocfilehash: ce4b87735f16b4167605f2897ba96f10155f7c01
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42144546"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222307"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение функций Базы данных SQL Azure и SQL Server 
 
-В Базе данных SQL Azure и SQL Server используется общая база кода. Компоненты SQL Server, поддерживаемые базой данных SQL Azure, зависят от типа создаваемой базы данных SQL Azure. С помощью базы данных SQL Azure можно создать базу данных в составе [управляемого экземпляра](sql-database-managed-instance.md) (в настоящее время эта функция находится на этапе общедоступной предварительной версии), а также можно создать базу данных в составе логического сервера и (если нужно) поместить в эластичный пул. 
+В Базе данных SQL Azure и SQL Server используется общая база кода. Компоненты SQL Server, поддерживаемые базой данных SQL Azure, зависят от типа создаваемой базы данных SQL Azure. С помощью службы "База данных SQL Azure" можно создать базу данных в составе [управляемого экземпляра](sql-database-managed-instance.md), а также в составе логического сервера и (если нужно) поместить в эластичный пул. 
 
 Корпорация Майкрософт продолжает расширять возможности Базы данных SQL Azure. Посетите веб-страницу обновлений служб для Azure, чтобы получить последние обновления с помощью приведенных ниже фильтров.
 
@@ -29,7 +32,7 @@ ms.locfileid: "42144546"
 
 В следующей таблице перечислены основные функции SQL Server, а также приведены сведения о поддержке каждой конкретной функции и ссылки на дополнительные сведения о ней. 
 
-| **Функция SQL** | **В базе данных SQL Azure/логическом сервере поддерживается** | **В базе данных SQL Azure/управляемом экземпляре (предварительная версия) поддерживается** |
+| **Функция SQL** | **В базе данных SQL Azure/логическом сервере поддерживается** | **Поддерживается в службе "База данных SQL Azure" или в Управляемом экземпляре (уровень "Критически важный для бизнеса" предоставляется в режиме предварительной версии)** |
 | --- | --- | --- |
 | [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). |
 | [Группы доступности Always On](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
@@ -39,6 +42,7 @@ ms.locfileid: "42144546"
 | [Автоматическое резервное копирование](sql-database-automated-backups.md) | Yes | Yes |
 | [Автоматическая настройка (принудительное применение плана)](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning)| [Да](sql-database-automatic-tuning.md)| [Да](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning) |
 | [Автоматическая настройка (индексы)](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning)| [Да](sql-database-automatic-tuning.md)| Нет  |
+| [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is) | Yes | Yes |
 | [BACPAC-файл (экспорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Да. Дополнительные сведения см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](sql-database-export.md). | Нет  |
 | [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Да. Дополнительные сведения см. в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md). | Нет  |
 | [Команда BACKUP](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql) | Нет, только инициируемое системой автоматическое резервное копирование. См. раздел [Подробнее об автоматически создаваемых резервных копиях в Базе данных SQL](sql-database-automated-backups.md). | Инициируемое системой автоматическое резервное копирование и инициируемое пользователем резервное копирование (только копирование). См. раздел [Backup](sql-database-managed-instance-transact-sql-information.md#backup) (Резервное копирование). |
@@ -80,10 +84,10 @@ ms.locfileid: "42144546"
 | [Filestream](https://docs.microsoft.com/sql/relational-databases/blob/filestream-sql-server) | Нет  | Нет  |
 | [полнотекстовый поиск.](https://docs.microsoft.com/sql/relational-databases/search/full-text-search) |  Не поддерживаются сторонние средства разбиения текста на слова. |Не поддерживаются сторонние средства разбиения текста на слова. |
 | [Функции](https://docs.microsoft.com/sql/t-sql/functions/functions) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |
-| [Геовосстановление](sql-database-recovery-using-backups.md#geo-restore) | Yes | Нет. Вы можете восстанавливать периодические полные резервные копии COPY_ONLY. См. разделы [Backup](sql-database-managed-instance-transact-sql-information.md#backup) (Резервное копирование) и [RESTORE statement](sql-database-managed-instance-transact-sql-information.md#restore-statement) (Инструкция RESTORE). |
-| [Георепликация](sql-database-geo-replication-overview.md) | Yes | Нет  |
+| [Геовосстановление](sql-database-recovery-using-backups.md#geo-restore) | Да, только уровни служб общего назначения и "Критически важный для бизнеса" | Нет. Вы можете восстанавливать периодические полные резервные копии COPY_ONLY. См. разделы [Backup](sql-database-managed-instance-transact-sql-information.md#backup) (Резервное копирование) и [RESTORE statement](sql-database-managed-instance-transact-sql-information.md#restore-statement) (Инструкция RESTORE). |
+| [Георепликация](sql-database-geo-replication-overview.md) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| Нет  |
 | [Обработка Graph](https://docs.microsoft.com/sql/relational-databases/graphs/sql-graph-overview) | Yes | Yes |
-| [Оптимизация в памяти](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization) | Да, [только для уровней "Премиум" и "Критически важный для бизнеса"](sql-database-in-memory.md). | Нет  |
+| [Оптимизация в памяти](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization) | Да, [только для уровней "Премиум" и "Критически важный для бизнеса"](sql-database-in-memory.md). | Да, [только уровень "Критически важный для бизнеса" (в настоящее время доступен в предварительной версии)](sql-database-managed-instance.md) |
 | [Поддержка данных JSON](https://docs.microsoft.com/sql/relational-databases/json/json-data-sql-server) | [Да](https://docs.microsoft.com/azure/sql-database/sql-database-json-features) | [Да](https://docs.microsoft.com/azure/sql-database/sql-database-json-features) |
 | [Элементы языка](https://docs.microsoft.com/sql/t-sql/language-elements/language-elements-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным элементам. |  Да. См. раздел [T-SQL differences from SQL Server](sql-database-managed-instance-transact-sql-information.md) (Отличия T-SQL от SQL Server). |
 | [Связанные серверы](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) | Нет. Дополнительные сведения см. в статье [Отчеты по масштабируемым облачным базам данных (предварительная версия)](sql-database-elastic-query-horizontal-partitioning.md). | Только в SQL Server и Базе данных SQL |
@@ -99,7 +103,7 @@ ms.locfileid: "42144546"
 | [OPENXML](https://docs.microsoft.com/sql/t-sql/functions/openxml-transact-sql)|Yes|Yes|
 | [Операторы](https://docs.microsoft.com/sql/t-sql/language-elements/operators-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным операторам. |Да. См. раздел [T-SQL differences from SQL Server](sql-database-managed-instance-transact-sql-information.md) (Отличия T-SQL от SQL Server). |
 | [Секционирование](https://docs.microsoft.com/sql/relational-databases/partitions/partitioned-tables-and-indexes) | Yes | Yes |
-| [Восстановление базы данных до точки во времени](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-sql-server-database-to-a-point-in-time-full-recovery-model) | Да. Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore). | Да. Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore). |
+| [Восстановление базы данных до точки во времени](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-sql-server-database-to-a-point-in-time-full-recovery-model) | Да, только уровни служб общего назначения и "Критически важный для бизнеса". Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore) | Да. Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore). |
 | [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) | Нет  | Нет  |
 | [Управление на основе политик](https://docs.microsoft.com/sql/relational-databases/policy-based-management/administer-servers-by-using-policy-based-management) | Нет  | Нет  |
 | [Предикаты](https://docs.microsoft.com/sql/t-sql/queries/predicates) | Yes | Yes |
@@ -116,16 +120,15 @@ ms.locfileid: "42144546"
 | [SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | Yes | Yes |
 | [Spatial](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server) | Yes | Yes |
 | [Синхронизация данных SQL](sql-database-get-started-sql-data-sync.md) | Yes | Нет  |
-| [SQL Operations Studio](https://docs.microsoft.com/sql/sql-operations-studio/what-is) | Yes | Yes |
 | [Агент SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent) | Нет. Дополнительные сведения см. в статье [Начало работы с заданиями обработки эластичных баз данных](sql-database-elastic-jobs-getting-started.md) | Да. См. раздел [SQL Server Agent](sql-database-managed-instance-transact-sql-information.md#sql-server-agent) (Агент SQL Server). |
 | [SQL Server Analysis Services (SSAS)](https://docs.microsoft.com/sql/analysis-services/analysis-services) | Нет. Ознакомьтесь со страницей [служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/). | Нет. Дополнительные сведения см. на странице [служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/). |
 | [Аудит SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine) | Нет. Дополнительные сведения см. в статье [Приступая к работе с аудитом базы данных SQL](sql-database-auditing.md). | Да. См. раздел [Auditing](sql-database-managed-instance-transact-sql-information.md#auditing) (Аудит). |
-| [SQL Server Data Tools (SSDT)] (https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes |
-| [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Базе данных SQL Azure, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS в Базе данных SQL и Управляемом экземпляре см. в разделе [Сравнение базы данных SQL и управляемого экземпляра (предварительная версия)](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-and-managed-instance-preview). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Управляемом экземпляре, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS в Базе данных SQL и Управляемом экземпляре см. в разделе [Сравнение базы данных SQL и управляемого экземпляра (предварительная версия)](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-and-managed-instance-preview). |
+| [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes |
+| [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Базе данных SQL Azure, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS на логическом сервере службы "База данных SQL" и в Управляемом экземпляре см. в [этом разделе](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Управляемом экземпляре, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS в Базе данных SQL и Управляемом экземпляре см. в [этом разделе](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). |
 | [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Нет. Дополнительные сведения см. в статье о [расширенных событиях](sql-database-xevent-db-diff-from-svr.md). | Yes |
-| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | Да — [репликации с помощью Управляемого экземпляра базы данных SQL (Общедоступная предварительная версия)](http://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance) |
+| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | Да — [репликации с помощью Управляемого экземпляра Базы данных SQL (общедоступная предварительная версия)](http://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance) |
 | [SQL Server Reporting Services (SSRS)](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports) | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). |
 | [Хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) | Yes | Yes |
 | [Системные хранимые функции](https://docs.microsoft.com/sql/relational-databases/system-functions/system-functions-for-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |
@@ -137,7 +140,7 @@ ms.locfileid: "42144546"
 |Обнаружение угроз|  [Да](sql-database-threat-detection.md)|[Да](sql-database-managed-instance-threat-detection.md)|
 | [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | Нет  | Нет  |
 | [Переменные](https://docs.microsoft.com/sql/t-sql/language-elements/variables-transact-sql) | Yes | Yes |
-| [Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | Yes | Частично, только с использованием управляемого службой шифрования |
+| [Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| Частично, только с использованием управляемого службой шифрования |
 [Виртуальная сеть](../virtual-network/virtual-networks-overview.md) | Частично. См. раздел [Использование конечных точек службы и правил виртуальной сети для базы данных SQL Azure](sql-database-vnet-service-endpoint-rule-overview.md). | Да, только для модели Azure Resource Manager. |
 | [Отказоустойчивая кластеризация Windows Server](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
 | [XML-индексы](https://docs.microsoft.com/sql/t-sql/statements/create-xml-index-transact-sql) | Yes | Yes |

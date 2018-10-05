@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: d659004e94c51f173bc1e9ae42fd9c62ae45912f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 662d4b8812ca4b92c1130b9c2c38771e7ec30a06
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46972544"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47394004"
 ---
 # <a name="load-sample-data-into-an-azure-cosmos-db-cassandra-api-table"></a>Загрузка примера данных в таблицу Azure Cosmos DB Cassandra API
 
-Данное руководство описывает, как загружать пример данных пользователя в таблицу в учетной записи Azure Cosmos DB Cassandra API с помощью приложения java. Приложение java использует [драйвер Datastax Java](https://github.com/datastax/java-driver) и загружает данные пользователя, например идентификатор пользователя, имя пользователя, город пользователя. 
+Данное руководство описывает, как загрузить пример данных пользователя в таблицу в учетной записи API Cassandra Azure для Cosmos DB с помощью приложения Java. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver) и загружает данные пользователя, например идентификатор пользователя, имя пользователя, город пользователя. 
 
 В рамках этого руководства рассматриваются следующие задачи:
 

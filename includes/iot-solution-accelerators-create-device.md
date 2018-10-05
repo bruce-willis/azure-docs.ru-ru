@@ -5,15 +5,15 @@ services: iot-accelerators
 author: dominicbetts
 ms.service: iot-accelerators
 ms.topic: include
-ms.date: 08/16/2018
+ms.date: 09/28/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: c6e57d5094f455983b8b474b6930f628d654e457
-ms.sourcegitcommit: e45b2aa85063d33853560ec4bc867f230c1c18ce
+ms.openlocfilehash: 5eb3c08792b760bf66e443f79762d91210706c92
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43371015"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47435118"
 ---
 В первом сценарии вы добавляете новый тип телеметрии к существующему типу устройства **охладителя** компании Contoso.
 
@@ -69,10 +69,11 @@ ms.locfileid: "43371015"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы следовать инструкции по этому руководству, вам необходимы следующие компоненты.
+Чтобы следовать этому пошаговому руководству, вам необходимы следующие компоненты.
 
 * Visual Studio Code. Вы можете [скачать Visual Studio Code для Mac, Linux и Windows](https://code.visualstudio.com/download).
 * .NET Core. Вы можете скачать [.NET Core для Mac, Linux и Windows](https://www.microsoft.com/net/download).
+* [C# для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp);
 * Postman. Вы можете скачать [Postman для Mac, Windows или Linux](https://www.getpostman.com/apps).
 * [Центр Интернета вещей для вашей подписки Azure](../articles/iot-hub/iot-hub-create-through-portal.md). Для выполнения шагов этого руководства вам понадобится строка подключения Центра Интернета вещей. Вы можете получить строку подключения с портала Azure.
 * База данных Cosmos DB, которая использует SQL API и которая настроена на [строгую согласованность](../articles/cosmos-db/manage-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
@@ -89,13 +90,13 @@ ms.locfileid: "43371015"
 
 ### <a name="download-the-microservices"></a>Загрузка микрослужб
 
-Скачайте и распакуйте [микрослужбу адаптера хранилища](https://github.com/Azure/pcs-storage-adapter-dotnet/archive/master.zip) из GitHub в подходящее место на вашем локальном компьютере.
+Скачайте и распакуйте [микрослужбы мониторинга Azure](https://github.com/Azure/remote-monitoring-services-dotnet/archive/master.zip) из GitHub в подходящее место на локальном компьютере. В этой статье предполагается, что эта папка называется **remote-monitoring-services-dotnet-master**.
 
-Скачайте и распакуйте [микрослужбу моделирования устройств](https://github.com/Azure/device-simulation-dotnet/archive/master.zip) из GitHub в подходящее место на вашем локальном компьютере.
+Скачайте и распакуйте [микрослужбу моделирования устройств](https://github.com/Azure/device-simulation-dotnet/archive/master.zip) из GitHub в подходящее место на вашем локальном компьютере. В этой статье предполагается, что эта папка называется **device-simulation-dotnet-master**.
 
 ### <a name="run-the-storage-adapter-microservice"></a>Запуск микрослужбы адаптера хранилища
 
-Откройте папку **pcs-storage-adapter-dotnet-master** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
+Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
 Откройте файл **.vscode/launch.json** и назначьте строку подключения Cosmos DB для переменной среды **PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING**.
 
@@ -117,20 +118,14 @@ ms.locfileid: "43371015"
 
     | Источник | Место назначения |
     | ------ | ----------- |
-    | Services\Data\devicemodels\chiller-01.json | C:\temp\devicemodels\chiller-01.json |
-    | Services\Data\devicemodels\chiller-01.json | C:\temp\devicemodels\scripts\chiller-01-state.js |
-    | Services\Data\devicemodels\scripts\Reboot-method.js | C:\temp\devicemodels\scripts\Reboot-method.js |
-    | Services\Data\devicemodels\scripts\FirmwareUpdate-method.js | C:\temp\devicemodels\scripts\FirmwareUpdate-method.js |
-    | Services\Data\devicemodels\scripts\EmergencyValveRelease-method.js | C:\temp\devicemodels\scripts\EmergencyValveRelease-method.js |
-    | Services\Data\devicemodels\scripts\IncreasePressure-method.js | C:\temp\devicemodels\scripts\IncreasePressure-method.js |
+    | Services\data\devicemodels\chiller-01.json | C:\temp\devicemodels\chiller-01.json |
+    | Services\data\devicemodels\scripts\chiller-01-state.js | C:\temp\devicemodels\scripts\chiller-01-state.js |
+    | Services\data\devicemodels\scripts\Reboot-method.js | C:\temp\devicemodels\scripts\Reboot-method.js |
+    | Services\data\devicemodels\scripts\FirmwareUpdate-method.js | C:\temp\devicemodels\scripts\FirmwareUpdate-method.js |
+    | Services\data\devicemodels\scripts\EmergencyValveRelease-method.js | C:\temp\devicemodels\scripts\EmergencyValveRelease-method.js |
+    | Services\data\devicemodels\scripts\IncreasePressure-method.js | C:\temp\devicemodels\scripts\IncreasePressure-method.js |
 
 1. Откройте файл **C:\temp\devicemodels\chiller-01.json**.
-
-1. Измените значение **SchemaVersion** следующим образом:
-
-    ```json
-    "SchemaVersion": "1.0.0",
-    ```
 
 1. В разделе **InitialState** добавьте два следующих определения:
 
@@ -422,7 +417,7 @@ ms.locfileid: "43371015"
 
 Откройте папку **​​device-simulation-dotnet-master**, загруженную с GitHub, в новом экземпляре Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **.vscode/launch.json** и назначьте строку подключения Центра Интернета вещей для переменной среды **PCS_IOTHUB_CONNSTRING**.
+Откройте файл **.vscode/launch.json** и назначьте строку подключения Центра Интернета вещей для переменной среды **PCS_IOTHUB_CONNSTRING**. В том же файле назначьте строку подключения к базе данных Cosmos DB и добавьте переменную среды **PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING**.
 
 Откройте файл **WebService/Properties/launchSettings.json** и назначьте строку подключения Центра Интернета вещей для переменной среды **PCS_IOTHUB_CONNSTRING**.
 
@@ -466,7 +461,7 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 1. Нажмите **Файл> Импорт**. Затем нажмите **Выбор файлов**.
 
-1. Перейдите в папку **device-simulation-dotnet/docs/postman**. Выберите **Решение имитации устройств Azure IoT accelerator.postman_collection** и **Решение имитации устройств Azure IoT accelerator.postman_environment** и нажмите **Открыть**.
+1. Перейдите в папку **device-simulation-dotnet-master/docs/postman**. Выберите **Решение имитации устройств Azure IoT accelerator.postman_collection** и **Решение имитации устройств Azure IoT accelerator.postman_environment** и нажмите **Открыть**.
 
 1. Разверните **Акселератор решений имитации устройств Azure loT** для запросов, которые вы можете отправить.
 

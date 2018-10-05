@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: sngun
-ms.openlocfilehash: 47896b681c2ba43d4ca41682ec51e0dfd167c9d5
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: a805294ecb416d18f3ce13981d26a7d25cd5a204
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43700962"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432857"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 
@@ -42,7 +42,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
    * режим прямого подключения.
 
-     В режиме прямого подключения поддерживается обмен данными через протоколы TCP и HTTPS. Сейчас режим прямого подключения поддерживается только платформой .NET Standard 2.0 для Windows. Если вы используете режим прямого подключения, вам доступны два варианта протоколов:
+     В режиме прямого подключения поддерживается обмен данными через протоколы TCP и HTTPS. Сейчас режим прямого подключения поддерживается только .NET Standard 2.0. Если вы используете режим прямого подключения, вам доступны два варианта протоколов:
 
     * TCP
     * HTTPS

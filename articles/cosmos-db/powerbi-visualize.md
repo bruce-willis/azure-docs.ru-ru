@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/17/2018
 ms.author: sngun
-ms.openlocfilehash: 63ea7e384f9bc5713a41f6c5537ec5548810e5d9
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: b5b3a96991a2150e553af01e3fda73e04116d7fb
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42143183"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452417"
 ---
 # <a name="power-bi-tutorial-for-azure-cosmos-db-visualize-data-using-the-power-bi-connector"></a>Руководство по Power BI для Azure Cosmos DB: визуализация данных с помощью соединителя Power BI
 [PowerBI.com](https://powerbi.microsoft.com/) — это веб-служба, с помощью которой можно создавать и совместно использовать панели мониторинга и отчеты с важными данными.  Power BI Desktop — это специальное средство создания отчетов, позволяющее получать данные из различных источников, объединять и преобразовывать их, создавая подробные отчеты и визуализации, и публиковать их в Power BI.  Последняя версия Power BI Desktop теперь позволяет подключаться к вашей учетной записи Azure Cosmos DB через соединитель Azure Cosmos DB для Power BI.   
@@ -34,7 +34,7 @@ ms.locfileid: "42143183"
 > Соединитель Power BI для Azure Cosmos DB подключается к Power BI Desktop для извлечения и преобразования данных. Затем отчеты, созданные в Power BI Desktop, можно опубликовать на сайте PowerBI.com. Невозможно напрямую извлекать и преобразовывать данные Azure Cosmos DB на сайте PowerBI.com. 
 
 > [!NOTE]
-> Подключение к Azure Cosmos DB с помощью соединителя Power BI в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и MongoDB. Чтобы подключить Azure Cosmos DB к Power BI с помощью API MongoDB, используйте [драйвер ODBC MongoDB Simba](http://www.simba.com/drivers/mongodb-odbc-jdbc/).
+> Подключение к Azure Cosmos DB с помощью соединителя Power BI в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и Gremlin API.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Перед выполнением инструкций в этом руководстве по Power BI убедитесь в наличии доступа к следующим ресурсам:

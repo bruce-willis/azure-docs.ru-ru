@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/10/2017
 ms.author: harijayms
-ms.openlocfilehash: ccaa6e79d9a24409b8c905561b265c70ea781dc2
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: d7917ad65b3e3fd1abacdb624a03b3f62c7fc07f
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44022581"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221560"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -384,7 +384,7 @@ curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute?api-vers
 
 ### <a name="getting-azure-environment-where-the-vm-is-running"></a>Начало работы среды Azure, где запущена виртуальная машина 
 
-Azure имеет различные суверенные облака, такие как [Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/), чтобы иногда среда Azure принимала некоторые решения во время исполнения. В следующем примере показано, как можно это сделать.
+Azure имеет различные национальные облака, например [Azure для государственных организаций](https://azure.microsoft.com/overview/clouds/government/). Иногда требуется, чтобы решения касательно среды выполнения принимала среда Azure. В следующем примере показано, как можно это сделать.
 
 **Запрос**
 

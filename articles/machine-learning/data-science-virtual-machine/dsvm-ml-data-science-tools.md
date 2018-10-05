@@ -15,17 +15,28 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: cf73f792bcce906a673da0c6fb2eec099239c1c2
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 9a9dc868c4f22f95ca5027e3c95513d176c69eac
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31409556"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47392409"
 ---
 # <a name="machine-learning-and-data-science-tools"></a>Средства машинного обучения и обработки и анализа данных
 Виртуальные машины для обработки и анализа данных (DSVM) содержат большой набор средств и библиотек для машинного обучения, доступных в распространенных языках, таких как Python, R, Julia. 
 
 Ниже приведено несколько средств машинного обучения и библиотек, предоставляемых на виртуальных машинах для обработки и анализа данных. 
+
+## <a name="azure-machine-learning-servicehttpsdocsmicrosoftcomazuremachine-learningserviceoverview-what-is-azure-ml-sdk"></a>Пакет SDK для [службы "Машинное обучение Azure"](https://docs.microsoft.com/azure/machine-learning/service/overview-what-is-azure-ml)
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   |   Машинное обучения Azure — это облачная служба, с помощью которой можно разрабатывать и развертывать модели машинного обучения.  Модели можно отслеживать в процессе их создания, обучения, масштабирования, а также управления ими с помощью пакета SDK для Python. Развертывайте модели как контейнеры и запускайте их в облаке, локальной среде или в службе IoT Edge.   |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)     | Windows (среда Conda: AzureML), Linux (среда Conda: py36)    |
+| Распространенные способы применения      | Общая платформа Машинного обучения      |
+| Настройка и установка на DSVM      |  Установлена с поддержкой GPU.   |
+| Запуск и использование      | Как пакет SDK для Python и интерфейс командной строки Azure (Azure CLI). Активировать в среде Conda `AzureML` для Windows или `py36` для Linux.      |
+| Ссылки на примеры      | Примеры записных книжек Jupyter приведены в каталоге `AzureML`  |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Visual Studio Code, Jupyter   |
 
 ## <a name="xgboost"></a>XGBoost; 
 |    |           |

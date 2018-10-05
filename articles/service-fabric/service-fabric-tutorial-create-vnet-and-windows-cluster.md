@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/22/2018
+ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: f795333e8af2f09800dedc0b65030c42165d6bbb
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 1ee3000ab26dbb0eea33de828812959fe709aaa2
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39068909"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47410023"
 ---
 # <a name="tutorial-deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -42,8 +42,8 @@ ms.locfileid: "39068909"
 > [!div class="checklist"]
 > * создание защищенного кластера в Azure;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
-> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
-> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
+> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
+> * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -81,10 +81,10 @@ ms.locfileid: "39068909"
 
 Скачайте следующие файлы шаблона Resource Manager:
 
-* [vnet-cluster.json][template];
-* [vnet-cluster.parameters.json][parameters].
+* [azuredeploy.json][template]
+* [azuredeploy.parameters.json][parameters]
 
-Файл [vnet-cluster.json][template] развертывает ряд ресурсов, включая следующие.
+Этот шаблон развертывает в виртуальной сети и группе безопасности сети защищенный кластер с пятью виртуальными машинами и одним типом узла.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates).  Файл [azuredeploy.json][template] развертывает ряд ресурсов, включая следующие.
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
@@ -97,7 +97,7 @@ ms.locfileid: "39068909"
 * включенный [обратный прокси-сервер](service-fabric-reverseproxy.md);
 * [служба DNS](service-fabric-dnsservice.md) включена;
 * [уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
- * [уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
+* [уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона).
 
@@ -135,15 +135,15 @@ ms.locfileid: "39068909"
 
 ## <a name="set-template-parameters"></a>Установка параметров шаблона
 
-В файле параметров [vnet-cluster.parameters.json][parameters] содержатся многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
+В файле параметров [azuredeploy.parameters.json][parameters] объявляются многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
 
 |Параметр|Пример значения|Примечания|
 |---|---||
-|adminUserName|vmadmin| Имя пользователя для администратора виртуальных машин в кластере. [Требования к имени пользователя при создании виртуальной машины](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm) |
-|adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин. [Требования к паролю при создании виртуальных машин](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm)|
+|adminUserName|vmadmin| Имя пользователя для администратора виртуальных машин в кластере. [Требования к имени пользователя при создании виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm) |
+|adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин. [Требования к паролю при создании виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm)|
 |clusterName|mysfcluster123| Имя кластера. Может содержать только буквы и цифры. Длина имени должна составлять от 3 до 23 знаков.|
 |location|southcentralus| Расположение кластера. |
-|certificateThumbprint|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, заполните значение отпечатка сертификата. Например, 6190390162C988701DB5676EB81083EA608DCCF3.</p>. |
+|certificateThumbprint|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, заполните значение отпечатка SHA1 сертификата. Например, 6190390162C988701DB5676EB81083EA608DCCF3.</p>. |
 |certificateUrlValue|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым. </p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите URL-адрес сертификата. Например, https://mykeyvault.vault.azure.net:443/secrets/mycertificate/02bea722c9ef4009a76c5052bcbf8346.</p>|
 |sourceVaultValue||<p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите сведения об исходном хранилище. Например, /subscriptions/333cc2c84-12fa-5778-bd71-c71c07bf873f/resourceGroups/MyTestRG/providers/Microsoft.KeyVault/vaults/MYKEYVAULT.</p>|
 
@@ -151,7 +151,7 @@ ms.locfileid: "39068909"
 
 ## <a name="deploy-the-virtual-network-and-cluster"></a>Развертывание кластера и виртуальной сети
 
-Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager [vnet-cluster.json][template] создает виртуальную сеть, а также подсеть и группу безопасности сети (NSG) для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
+Настройте топологию сети и разверните кластер Service Fabric. Шаблон Resource Manager [azuredeploy.json][template] создает виртуальную сеть, а также подсеть и группу безопасности сети (NSG) для Service Fabric. Шаблон также развертывает кластер с включенным сертификатом безопасности.  Для рабочих кластеров в качестве сертификата нужно использовать сертификат из центра сертификации (ЦС). Самозаверяющий сертификат можно использовать для защиты тестовых кластеров.
 
 ### <a name="create-a-cluster-using-an-existing-certificate"></a>Создание кластера с помощью имеющегося сертификата
 
@@ -178,8 +178,8 @@ Set-AzureRmContext -SubscriptionId <guid>
 New-AzureRmResourceGroup -Name $groupname -Location $clusterloc
 
 # Create the Service Fabric cluster.
-New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\vnet-cluster.json" `
--ParameterFile "$templatepath\vnet-cluster.parameters.json" -CertificatePassword $certpwd `
+New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\azuredeploy.json" `
+-ParameterFile "$templatepath\azuredeploy.parameters.json" -CertificatePassword $certpwd `
 -KeyVaultName $vaultname -KeyVaultResouceGroupName $vaultgroupname -CertificateFile $certpath
 ```
 
@@ -209,8 +209,8 @@ Set-AzureRmContext -SubscriptionId <guid>
 New-AzureRmResourceGroup -Name $groupname -Location $clusterloc
 
 # Create the Service Fabric cluster.
-New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\vnet-cluster.json" `
--ParameterFile "$templatepath\vnet-cluster.parameters.json" -CertificatePassword $certpwd `
+New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\azuredeploy.json" `
+-ParameterFile "$templatepath\azuredeploy.parameters.json" -CertificatePassword $certpwd `
 -CertificateOutputFolder $certfolder -KeyVaultName $vaultname -KeyVaultResouceGroupName $vaultgroupname -CertificateSubjectName $subname
 
 ```
@@ -228,7 +228,7 @@ Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
 
 Теперь все готово для подключения к защищенному кластеру.
 
-Модуль PowerShell **Service Fabric** предоставляет многие командлеты для управления кластерами, приложениями и службами Service Fabric.  Для подключения к безопасному кластеру используйте командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster). Сведения об отпечатке сертификата и конечной точке подключения можно найти в выходных данных из предыдущего шага.
+Модуль PowerShell **Service Fabric** предоставляет многие командлеты для управления кластерами, приложениями и службами Service Fabric.  Для подключения к безопасному кластеру используйте командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster). Сведения об отпечатке SHA1 сертификата и конечной точке подключения можно найти в выходных данных из предыдущего шага.
 
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint mysfcluster123.southcentralus.cloudapp.azure.com:19000 `
@@ -246,14 +246,7 @@ Get-ServiceFabricClusterHealth
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Кластер, который вы только что создали, используется в других статьях этого цикла руководств. Если вы не планируете сразу же переходить к следующей статье, можете удалить кластер и хранилище ключей, чтобы не платить за их использование. Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
-
-Удалите группу ресурсов и все ресурсы кластера с помощью командлета [Remove-AzureRMResourceGroup](/en-us/powershell/module/azurerm.resources/remove-azurermresourcegroup).  Также удалите группу ресурсов, которая содержит хранилище ключей.
-
-```powershell
-Remove-AzureRmResourceGroup -Name $groupname -Force
-Remove-AzureRmResourceGroup -Name $vaultgroupname -Force
-```
+Кластер, который вы только что создали, используется в других статьях этого цикла руководств. Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](service-fabric-cluster-delete.md), чтобы за него не взималась плата.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -271,5 +264,5 @@ Remove-AzureRmResourceGroup -Name $vaultgroupname -Force
 > [!div class="nextstepaction"]
 > [Scale a Service Fabric cluster](service-fabric-tutorial-scale-cluster.md) (Масштабирование кластера Service Fabric)
 
-[template]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/cluster-tutorial/vnet-cluster.json
-[parameters]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/cluster-tutorial/vnet-cluster.parameters.json
+[template]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/5-VM-Windows-1-NodeTypes-Secure-NSG/azuredeploy.json
+[parameters]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/5-VM-Windows-1-NodeTypes-Secure-NSG/azuredeploy.parameters.json

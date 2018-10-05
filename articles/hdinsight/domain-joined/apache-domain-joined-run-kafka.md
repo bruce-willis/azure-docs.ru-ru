@@ -8,14 +8,14 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: 5b262204fafa84d72f571e4551ecfd793d865040
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1a8f04f39568816252175fc9e0893f1ab3e2cdc6
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993890"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224823"
 ---
-# <a name="tutorial-configure-kafka-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство. Настройка политик Kafka в HDInsight с корпоративным пакетом безопасности
+# <a name="tutorial-configure-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Kafka в HDInsight с использованием Корпоративного пакета безопасности (предварительная версия)
 
 Сведения о настройке политик Apache Ranger для кластеров Kafka с корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales*` и `marketingspend`.
 

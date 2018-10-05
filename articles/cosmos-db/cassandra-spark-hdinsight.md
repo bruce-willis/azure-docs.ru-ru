@@ -9,12 +9,12 @@ ms.devlang: spark-scala
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ankhanol
-ms.openlocfilehash: f71f5fa71d685af103bd82b3ccd2a910ab81d90f
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 34293ffc70ebbc2a8639913aefe3b62ed8e618d4
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46962919"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222783"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-from-spark-on-yarn-with-hdinsight"></a>Доступ к API Cassandra для Azure Cosmos DB из Spark в YARN с HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "46962919"
 
 * [Использование при необходимости cqlsh для проверки](cassandra-spark-generic.md##connecting-to-azure-cosmos-db-cassandra-api-from-spark)
 
-* **Настройка API Cassandra в Spark2**. Для инициализации соединителя Datastax для Cassandra как части контекста Spark необходимы сведения о подключении Cassandra. При запуске Jupyter Notebook сеанс и контекст Spark уже инициализированы. Не рекомендуется останавливать запуск и повторно инициализировать контекст Spark, если только он не выполнен с использованием наборов конфигурации, заданных для запуска Jupyter Notebook по умолчанию для HDInsight. Одним из способов обхода является добавление сведений об экземпляре Cassandra непосредственно в конфигурацию службы Ambari, Spark2. Это требуется выполнить один раз для каждого кластера, на котором нужно перезапустить службу Spark2.
+* **Настройка API Cassandra в Spark2**. Для инициализации соединителя Spark для Cassandra как части контекста Spark необходимы сведения о подключении Cassandra. При запуске Jupyter Notebook сеанс и контекст Spark уже инициализированы. Не рекомендуется останавливать запуск и повторно инициализировать контекст Spark, если только он не выполнен с использованием наборов конфигурации, заданных для запуска Jupyter Notebook по умолчанию для HDInsight. Одним из способов обхода является добавление сведений об экземпляре Cassandra непосредственно в конфигурацию службы Ambari, Spark2. Это требуется выполнить один раз для каждого кластера, на котором нужно перезапустить службу Spark2.
  
   1. Перейдите к службе Ambari, Spark2 и щелкните конфигурации.
 
@@ -68,7 +68,7 @@ ms.locfileid: "46962919"
   import org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType,LongType,FloatType,DoubleType, TimestampType}
   import org.apache.spark.sql.cassandra._
 
-  //datastax Spark connector
+  //Spark connector
   import com.datastax.spark.connector._
   import com.datastax.spark.connector.cql.CassandraConnector
 
