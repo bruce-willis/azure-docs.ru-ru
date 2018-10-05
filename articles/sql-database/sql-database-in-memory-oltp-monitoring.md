@@ -2,34 +2,37 @@
 title: Мониторинг выполняющегося в памяти хранилища XTP | Документация Майкрософт
 description: Сведения об оценке и мониторинге использования и емкости хранилища XTP в памяти и об устранении нехватки памяти 41823
 services: sql-database
-author: jodebrui
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 06/20/2018
+author: jodebrui
 ms.author: jodebrui
-ms.openlocfilehash: f74c9bf06cad8b84d08baf7a0a0504b9cb729bf4
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.reviewer: genemi
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: 2a9c01eb2c237a7c79464b930c9258f791d8f3ce
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308685"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161630"
 ---
 # <a name="monitor-in-memory-oltp-storage"></a>Мониторинг хранилища выполняющейся в памяти OLTP
-При использовании [выполняющейся в памяти OLTP](sql-database-in-memory.md) данные в оптимизированных для памяти таблицах и переменные таблиц находятся в выполняющемся в памяти хранилище OLTP. В каждом уровне обслуживания "Премиум" и "Критически важный для бизнеса" используется максимальный объем хранилища OLTP в памяти. Ознакомьтесь с разделами [Resource limits for single databases using the DTU-based purchasing model](sql-database-dtu-resource-limits-single-databases.md) (Ограничения ресурсов для отдельных баз данных, использующих модель приобретения на основе DTU), [Resources limits for elastic pools using the DTU-based purchasing model](sql-database-dtu-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов, использующих модель приобретения на основе DTU), [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md) и [Azure SQL Database vCore-based purchasing model limits for elastic pools (preview)](sql-database-vcore-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)).
+При использовании [выполняющейся в памяти OLTP](sql-database-in-memory.md) данные в оптимизированных для памяти таблицах и переменные таблиц находятся в выполняющемся в памяти хранилище OLTP. В каждом уровне обслуживания "Премиум" и "Критически важный для бизнеса" используется максимальный объем хранилища OLTP в памяти. Ознакомьтесь с разделами [Ограничения ресурсов на основе DTU — отдельная база данных](sql-database-dtu-resource-limits-single-databases.md), [Ограничения ресурсов на основе DTU — эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md),[Ограничения ресурсов на основе виртуальных ядер — отдельные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 
-При превышении этого ограничения операции вставки и обновления могут завершаться сбоем (ошибка 41823 для отдельных баз данных и ошибка 41840 для эластичных пулов). В таком случае потребуется либо удалить данные, чтобы освободить память, либо повысить уровень производительности базы данных.
+При превышении этого ограничения операции вставки и обновления могут завершаться сбоем (ошибка 41823 для отдельных баз данных и ошибка 41840 для эластичных пулов). В таком случае потребуется либо удалить данные, чтобы освободить память, либо повысить объем вычислительных ресурсов базы данных.
 
 ## <a name="determine-whether-data-fits-within-the-in-memory-oltp-storage-cap"></a>Как определить, соответствует ли объем данных ограничениям хранилища выполняющейся в памяти OLTP
-Определите возможности хранения для различных уровней служб. Ознакомьтесь с разделами [Resource limits for single databases using the DTU-based purchasing model](sql-database-dtu-resource-limits-single-databases.md) (Ограничения ресурсов для отдельных баз данных, использующих модель приобретения на основе DTU), [Resources limits for elastic pools using the DTU-based purchasing model](sql-database-dtu-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов, использующих модель приобретения на основе DTU), [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md) и [Azure SQL Database vCore-based purchasing model limits for elastic pools (preview)](sql-database-vcore-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)).
+Определите возможности хранения для различных уровней служб. Ознакомьтесь с разделами [Ограничения ресурсов на основе DTU — отдельная база данных](sql-database-dtu-resource-limits-single-databases.md), [Ограничения ресурсов на основе DTU — эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md),[Ограничения ресурсов на основе виртуальных ядер — отдельные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 
 Оценка требований к памяти для таблицы, оптимизированной для памяти, выполняется одинаково как на сервере SQL Server, так и в базе данных SQL Azure. Потратьте несколько минут, чтобы прочесть эту статью в библиотеке [MSDN](https://msdn.microsoft.com/library/dn282389.aspx).
 
 Когда определяется максимальный размер данных пользователя, учитываются строки таблиц, табличных переменных и индексы. Кроме того, инструкции ALTER TABLE нужно достаточно места для создания новой версии всей таблицы и ее индексов.
 
 ## <a name="monitoring-and-alerting"></a>Мониторинг и оповещения
-На [портале Azure](https://portal.azure.com/) вы можете отслеживать использование выполняющегося в памяти хранилища, выраженное в процентах от емкости хранилища для своего уровня производительности: 
+На [портале Azure](https://portal.azure.com/) вы можете отслеживать использование выполняющегося в памяти хранилища, выраженное в процентах от емкости хранилища для своего объема вычислительных ресурсов: 
 
 1. В колонке «База данных» найдите поле «Использование ресурсов» и щелкните «Изменить».
 2. Выберите метрику `In-Memory OLTP Storage percentage`.
@@ -41,7 +44,7 @@ ms.locfileid: "36308685"
 
 
 ## <a name="correct-out-of-in-memory-oltp-storage-situations---errors-41823-and-41840"></a>Исправление нехватки памяти для хранилища выполняющейся в памяти OLTP: ошибки 41823 и 41840
-Достижение ограничения хранилища выполняющейся в памяти OLTP в базе данных приводит к сбою операций INSERT, UPDATE, ALTER, CREATE и отображению сообщения об ошибке 41823 (для автономных баз данных) или ошибки 41840 (для эластичных пулов). Обе ошибки приводят к прерыванию активной транзакции.
+Достижение ограничения хранилища выполняющейся в памяти OLTP в базе данных приводит к сбою операций INSERT, UPDATE, ALTER, CREATE и отображению сообщения об ошибке 41823 (для отдельных баз данных) или ошибки 41840 (для эластичных пулов). Обе ошибки приводят к прерыванию активной транзакции.
 
 Сообщения об ошибках 41823 и 41840 указывают, что таблицы, оптимизированные для памяти, и табличные переменные в базе данных или пуле достигли максимального размера хранилища выполняющейся в памяти OLTP.
 

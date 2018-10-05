@@ -1,5 +1,5 @@
 ---
-title: Установка драйвера серии N для Windows | Документация Майкрософт
+title: Установка драйвера GPU на виртуальные машины Azure серии N для Windows | Документация Майкрософт
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Windows Server или Windows в Azure
 services: virtual-machines-windows
 documentationcenter: ''
@@ -13,17 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 06/19/2018
+ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 50d9ea88afc0e7d96d71b2ab26c8a8489ae41fee
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: a4d259c7f9a139b3c31d96e75d588c7be162189c
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38719661"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47033266"
 ---
-# <a name="set-up-gpu-drivers-for-n-series-vms-running-windows"></a>Установка драйверов GPU для виртуальных машин серии N под управлением Windows 
+# <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Windows 
+
 Чтобы воспользоваться преимуществами GPU виртуальных машин Azure серии N под управлением Windows, необходимо установить графические драйверы GPU NVIDIA. [Расширение драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md).
 
 Если вы решили установить драйверы GPU вручную, то в этой статье вы найдете сведения о поддерживаемых операционных системах, ссылки на драйвера и инструкции по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Linux](../linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -38,7 +39,7 @@ ms.locfileid: "38719661"
 
 2. Скачайте, извлеките и установите поддерживаемый драйвер для своей операционной системы Windows.
 
-После установки драйвера на виртуальных машинах Azure серии NV их требуется перезагрузить. На виртуальных машинах NC перезагрузка не требуется.
+После установки драйвера GRID на виртуальной машине ее требуется перезагрузить. После установки драйвера CUDA перезапуск не требуется.
 
 ## <a name="verify-driver-installation"></a>Проверка установки драйверов
 
@@ -64,7 +65,7 @@ ms.locfileid: "38719661"
   ```
   Дополнительные сведения см. в разделе [Обзор расширений и компонентов виртуальной машины под управлением Windows](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
-Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](https://msdn.microsoft.com/library/bb524831(v=vs.85).aspx) или Intel MPI 5.x. 
+Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](https://docs.microsoft.com/message-passing-interface/microsoft-mpi) или Intel MPI 5.x. 
 
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -5,15 +5,15 @@ services: virtual-machines-linux
 author: dlepow
 ms.service: virtual-machines-linux
 ms.topic: include
-ms.date: 05/29/2018
+ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 1813367a2d143f75fb51a3160dd00219c709c57b
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: dc03f49a684bfeb43ffd8bac9f551a67f034a04f
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935744"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47042883"
 ---
 ## <a name="supported-distributions-and-drivers"></a>Поддерживаемые дистрибутивы и драйверы
 
@@ -26,11 +26,11 @@ ms.locfileid: "37935744"
 
 | Дистрибутив | Драйвер |
 | --- | -- | 
-| Ubuntu 16.04 LTS<br/><br/> Red Hat Enterprise Linux 7.3 или 7.4<br/><br/> Версия 7.3 или 7.4 на платформе CentOS, HPC на платформе CentOS 7.4 | NVIDIA CUDA 9.1, драйвер серии R390 |
+| Ubuntu 16.04 LTS<br/><br/> Red Hat Enterprise Linux 7.3 или 7.4<br/><br/> Версия 7.3 или 7.4 на платформе CentOS, HPC на платформе CentOS 7.4 | NVIDIA CUDA 10.0, драйвер серии R410 |
 
 ### <a name="nvidia-grid-drivers"></a>Драйверы NVIDIA GRID
 
-Корпорация Майкрософт распространяет установщики драйверов NVIDIA GRID для виртуальных машин серии NV, используемых в качестве виртуальных рабочих станциях или виртуальных приложений. Эти драйверы GRID следует устанавливать только на виртуальные машины Azure серии NV под управлением дистрибутивов, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure.
+Корпорация Майкрософт распространяет установщики драйверов NVIDIA GRID для виртуальных машин серии NV и NVv2, используемых в качестве виртуальных рабочих станций или виртуальных приложений. Эти драйверы GRID следует устанавливать только на виртуальные машины Azure серии NV под управлением дистрибутивов, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure.
 
 | Дистрибутив | Драйвер |
 | --- | -- |

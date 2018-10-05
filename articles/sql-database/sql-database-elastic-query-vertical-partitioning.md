@@ -2,26 +2,29 @@
 title: Запрос к нескольким облачным базам данных с разными схемами | Документация Майкрософт
 description: настройка межбазовых запросов для вертикального секционирования
 services: sql-database
-manager: craigg
-author: MladjoA
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MladjoA
 ms.author: mlandzic
-ms.openlocfilehash: 6b4dd9017c336c2034bac81ba92d219b511a38a4
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 3d94a52aaafca91d45d7f1a6406d3f998fbffe9f
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645761"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161766"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)
 ![Запросы между таблицами в разных базах данных][1]
 
 Базы данных с вертикальным секционированием используют разные наборы таблиц в разных базах данных. Это означает, что схемы разных баз данных различаются. Например, все таблицы, связанные с данными инвентаризации, хранятся в одной базе данных, а таблицы, связанные с учетом, — в другой. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Пользователь должен иметь разрешение ALTER ANY EXTERNAL DATA SOURCE. Это разрешение включено в разрешение ALTER DATABASE.
 * Для обращения к базовому источнику данных необходимы разрешения ALTER ANY EXTERNAL DATA SOURCE.
 
@@ -45,7 +48,7 @@ ms.locfileid: "34645761"
     [;]
 
 > [!NOTE]
-> Убедитесь, что значение `<username>` не содержит суффикс **@servername**. 
+> Убедитесь, что значение `<username>` не содержит суффикс **"\@servername"**. 
 >
 
 ## <a name="create-external-data-sources"></a>Создание внешних источников данных

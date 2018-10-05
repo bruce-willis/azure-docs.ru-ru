@@ -2,24 +2,26 @@
 title: Различия T-SQL Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
 description: В этой статье обсуждаются различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server.
 services: sql-database
-author: jovanpop-msft
-ms.reviewer: carlrab, bonova
 ms.service: sql-database
-ms.custom: managed instance
+ms.subservice: managed-instance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 0813/2018
+author: jovanpop-msft
 ms.author: jovanpop
+ms.reviewer: carlrab, bonova
 manager: craigg
-ms.openlocfilehash: 57c6b52df3e8f6c47eb794cda4b47bfa2d7de374
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.date: 08/13/2018
+ms.openlocfilehash: 2f512c666555ca8bee58305b76573459f6e631e2
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44051244"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166509"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server 
 
-Управляемый экземпляр Базы данных SQL Azure (Предварительная версия) обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В Управляемом экземпляре поддерживается большинство функций SQL Server. Так как в синтаксисе и поведении все еще есть некоторые различия, они перечислены и описаны в этой статье.
+Управляемый экземпляр Базы данных SQL Azure обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В Управляемом экземпляре поддерживается большинство функций SQL Server. Так как в синтаксисе и поведении все еще есть некоторые различия, они перечислены и описаны в этой статье.
  - [Различия T-SQL и неподдерживаемые функции](#Differences)
  - [Функции с другим поведением в Управляемом экземпляре](#Changes)
  - [Временные ограничения и известные проблемы](#Issues)
@@ -267,7 +269,7 @@ WITH PRIVATE KEY ( <private_key_options> )
 
 ### <a name="replication"></a>Репликация 
  
-Репликация поддерживается в Управляемом экземпляре. Дополнительные сведения о репликации см. в статье [Репликация SQL Server](http://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
+Репликация доступна в общедоступной предварительной версии Управляемого экземпляра. Дополнительные сведения о репликации см. в статье [Репликация SQL Server](http://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
  
 ### <a name="restore-statement"></a>Инструкция RESTORE 
  
@@ -335,23 +337,24 @@ WITH PRIVATE KEY ( <private_key_options> )
 - Параметры `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
 - `sp_renamedb` не поддерживается. См. статью [sp_renamedb (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-renamedb-transact-sql).
 
-### <a name="sql-server-agent"></a>Агент SQL Server 
- 
+### <a name="sql-server-agent"></a>Агент SQL Server
+
 - Параметры агента SQL Server доступны только для чтения. Процедура `sp_set_agent_properties` не поддерживается в Управляемом экземпляре.  
-- Задания. Сейчас поддерживаются только шаги задания T-SQL (дополнительные действия будут добавлены в предварительную версию).
- - Integration Services пока не поддерживаются. 
- - Репликация пока не поддерживается.  
-  - Читатель журнала транзакций пока не поддерживается.  
-  - Моментальный снимок пока не поддерживается.  
-  - Распространитель пока не поддерживается.  
-  - Объединение пока не поддерживается.  
+- Задания. Сейчас поддерживаются шаги задания T-SQL
+- Другие типы шагов задания в настоящее время не поддерживаются (дополнительные действия будут добавлены в предварительную версию).
+  - Неподдерживаемые задания репликации включают:
+    - Читатель журнала транзакций.  
+    - Моментальный снимок.
+    - Распространитель.  
+    - Слияние.  
+  - Integration Services пока не поддерживаются. 
   - Читатель очереди пока не поддерживается.  
- - Командная оболочка пока не поддерживается. 
+  - Командная оболочка пока не поддерживается. 
   - У Управляемого экземпляра нет доступа к внешним ресурсам (например, к сетевым папкам через robocopy).  
- - PowerShell пока не поддерживается.
- - Analysis Services не поддерживаются.  
+  - PowerShell пока не поддерживается.
+  - Analysis Services не поддерживаются.  
 - Уведомления поддерживаются частично.
- - Поддерживается уведомление по электронной почте. Необходимо настроить профиль компонента Database Mail. Допускается только один профиль компонента Database Mail, и ему должно быть присвоено имя `AzureManagedInstance_dbmail_profile` в общедоступной предварительной версии (временное ограничение).  
+- Поддерживается уведомление по электронной почте. Необходимо настроить профиль компонента Database Mail. Допускается только один профиль компонента Database Mail, и ему должно быть присвоено имя `AzureManagedInstance_dbmail_profile` в общедоступной предварительной версии (временное ограничение).  
  - Пейджер не поддерживается.  
  - NetSend не поддерживается. 
  - Оповещения еще не поддерживаются.
@@ -414,15 +417,58 @@ WITH PRIVATE KEY ( <private_key_options> )
 
 В SQL Server Management Studio и SQL Server Data Tools могут возникнуть некоторые проблемы во время доступа к Управляемому экземпляру. Все проблемы инструментов будут учтены до выхода общедоступной версии.
 
-### <a name="incorrect-database-names"></a>Неправильные имена базы данных
+### <a name="incorrect-database-names-in-some-views-logs-and-messages"></a>Неправильные имена базы данных в некоторых представлениях, журналах и сообщениях
 
-Во время восстановления или в некоторых сообщениях об ошибке Управляемый экземпляр может показывать значение идентификатора GUID вместо имени базы данных. Эти проблемы будут устранены до выхода общедоступной версии.
+Несколько системных представлений, счетчиков производительности, сообщений об ошибках, XEvents и записей в журнале ошибок отображают идентификаторы базы данных GUID вместо фактических имен базы данных. Не следует полагаться на эти идентификаторы GUID, так как в будущем они будут заменены на фактические имена базы данных.
 
 ### <a name="database-mail-profile"></a>Профиль компонента Database Mail
 Допускается только один профиль компонента Database Mail, и ему должно быть присвоено имя `AzureManagedInstance_dbmail_profile`. Это временное ограничение, которое скоро будет устранено.
+
+### <a name="error-logs-are-not-persisted"></a>Журналы ошибок, которые не сохраняются
+Журналы ошибок, которые доступны в управляемом экземпляре, не сохраняются, и их размер не включается в максимальный размер хранилища. Журналы ошибок могут автоматически удаляться в случае отработки отказа.
+
+### <a name="error-logs-are-verbose"></a>Журналы ошибок с подробной информацией
+Управляемый экземпляр помещает подробную информацию в журналы ошибок, и многие из них не являются связанными. В будущем объем информации в журналах ошибок будет уменьшен.
+
+**Возможное решение**: используйте пользовательскую процедуру для чтения журналов ошибок, которая отфильтрует некоторые несущественные записи. Дополнительные сведения см. в статье [Azure SQL DB Managed Instance – sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/) (Управляемый экземпляр Базы данных Azure SQL — sp_readmierrorlog).
+
+### <a name="transaction-scope-on-two-databases-within-the-same-instance-is-not-supported"></a>Не поддерживается разделение области транзакции на две базы данных внутри одного экземпляра
+Класс `TransactionScope` в .Net не работает, если два запроса отправляются двум базам данных из одного экземпляра в той же области транзакции:
+
+```C#
+using (var scope = new TransactionScope())
+{
+    using (var conn1 = new SqlConnection("Server=quickstartbmi.neu15011648751ff.database.windows.net;Database=b;User ID=myuser;Password=mypassword;Encrypt=true"))
+    {
+        conn1.Open();
+        SqlCommand cmd1 = conn1.CreateCommand();
+        cmd1.CommandText = string.Format("insert into T1 values(1)");
+        cmd1.ExecuteNonQuery();
+    }
+
+    using (var conn2 = new SqlConnection("Server=quickstartbmi.neu15011648751ff.database.windows.net;Database=b;User ID=myuser;Password=mypassword;Encrypt=true"))
+    {
+        conn2.Open();
+        var cmd2 = conn2.CreateCommand();
+        cmd2.CommandText = string.Format("insert into b.dbo.T2 values(2)");        cmd2.ExecuteNonQuery();
+    }
+
+    scope.Complete();
+}
+
+```
+
+Несмотря на то что этот код работает с данными в одном экземпляре, для него требуется координатор распределенных транзакций (MSDTC).
+
+**Возможное решение**: используйте [SqlConnection.ChangeDatabase(String)](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase), чтобы воспользоваться другой базой данных вместо двух подключений.
+
+### <a name="clr-modules-and-linked-servers-sometime-cannot-reference-local-ip-address"></a>Модули среды CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес
+Модули среды CLR, помещенные в Управляемый экземпляр, связанные серверы и распределенные запросы, ссылающиеся на текущий экземпляр, иногда не могут разрешить IP-адрес локального экземпляра. Это временная проблема.
+
+**Возможное решение**: если есть возможность, используйте контекстные соединения в модуле среды CLR.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Сведения об Управляемом экземпляре см. в статье [обзора Управляемого экземпляра](sql-database-managed-instance.md).
 - Сведения о функциях и список сравнения см. в статье [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md).
-- См. дополнительные сведения о [создании Управляемого экземпляра](sql-database-managed-instance-get-started.md).
+- Дополнительные сведения см. в инструкции по [созданию Управляемого экземпляра](sql-database-managed-instance-get-started.md).

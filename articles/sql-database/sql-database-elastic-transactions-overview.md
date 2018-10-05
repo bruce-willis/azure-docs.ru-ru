@@ -2,20 +2,22 @@
 title: Распределенные транзакции по облачным базам данных
 description: Общие сведения о транзакциях эластичной базы данных в базе данных SQL Azure
 services: sql-database
-author: stevestein
-manager: craigg
 ms.service: sql-database
+ms.subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.custom: scale out apps
-ms.workload: On Demand
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: c0dfc8e2b71e0d81943ef8306c58421ff1d78c6c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 3147061f527621ba98dee84f4d347a6e883d61c0
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646955"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166475"
 ---
 # <a name="distributed-transactions-across-cloud-databases"></a>Распределенные транзакции по облачным базам данных
 Возможности эластичной базы данных позволяют выполнять транзакции, охватывающие несколько баз данных в базе данных SQL Azure. Транзакции эластичной базы данных в базе данных SQL можно выполнять с помощью ADO.NET и приложений .NET. Кроме того, транзакции можно объединить с уже знакомыми приемами программирования, используя классы [System.Transaction](https://msdn.microsoft.com/library/system.transactions.aspx). Инструкции по подключению библиотеки см. в статье [Microsoft .NET Framework 4.6.1 (веб-установщик) для Windows 7 SP1, Windows 8, Windows 8.1, Windows 10, Windows Server 2008 R2 SP1, Windows Server 2012 и Windows Server 2012 R2](https://www.microsoft.com/download/details.aspx?id=49981).

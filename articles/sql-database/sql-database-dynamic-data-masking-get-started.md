@@ -2,19 +2,22 @@
 title: Динамическое маскирование данных базы данных SQL Azure | Документация Майкрософт
 description: Динамическое маскирование данных базы данных SQL ограничивает возможность раскрытия конфиденциальных данных, маскируя их для обычных пользователей.
 services: sql-database
-author: ronitr
-manager: craigg
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: ronitr
 ms.author: ronitr
-ms.openlocfilehash: 714fe94d295157f0d4d90139da98254f46794731
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.reviewer: vanto
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 872e700842ce69ca955035120d4e09ec9facf7ec
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42143533"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47165557"
 ---
 # <a name="sql-database-dynamic-data-masking"></a>Динамическое маскирование данных базы данных SQL Azure
 
@@ -52,5 +55,5 @@ ms.locfileid: "42143533"
 См. статью с описанием [командлетов базы данных SQL Azure](https://docs.microsoft.com/powershell/module/azurerm.sql).
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-rest-api"></a>Настройка динамической маскировки данных для базы данных с помощью REST API
-См. статью с описанием [операций для баз данных SQL Azure](https://msdn.microsoft.com/library/dn505719.aspx).
+Дополнительные сведения см. в статье с описанием [операций для Базы данных SQL Azure](https://msdn.microsoft.com/library/dn505719.aspx).
 

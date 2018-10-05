@@ -2,19 +2,22 @@
 title: 'Портал Azure: георепликация базы данных SQL | Документация Майкрософт'
 description: Настройка георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: business continuity
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 07/16/2018
-ms.author: carlrab
-ms.openlocfilehash: 27fb8f369ad23592902c05fe5275fc54bc6cf148
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+author: anosov1960
+ms.author: sashan
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: 592e4c2dc375da34b3a6039bef7ea4da0fa3315b
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090475"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47163976"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
@@ -34,7 +37,7 @@ ms.locfileid: "39090475"
 
 Добавить базу данных-получатель может только владелец или совладелец подписки.
 
-Базе данных-получателю присваивается такое же имя, как у базы данных-источника, и по умолчанию тот же уровень обслуживания. База данных-получатель может быть отдельной базой данных или базой данных в эластичном пуле. Чтобы узнать больше, ознакомьтесь разделами [Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища](sql-database-service-tiers-dtu.md) и [Выбор уровня служб для виртуальных ядер, ресурсов вычислений, памяти, хранилища и операций ввода-вывода](sql-database-service-tiers-vcore.md).
+Базе данных-получателю присваивается такое же имя, как у базы данных-источника, и по умолчанию тот же уровень служб и объем вычислительных ресурсов. База данных-получатель может быть отдельной базой данных или базой данных в эластичном пуле. Чтобы узнать больше, ознакомьтесь разделами [Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища](sql-database-service-tiers-dtu.md) и [Выбор уровня служб для виртуальных ядер, ресурсов вычислений, памяти, хранилища и операций ввода-вывода](sql-database-service-tiers-vcore.md).
 После создания и заполнения базы данных-получателя начинается репликация данных из базы данных-источника в новую базу данных-получателя.
 
 > [!NOTE]

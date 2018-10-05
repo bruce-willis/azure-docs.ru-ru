@@ -2,20 +2,22 @@
 title: Глоссарий по средствам работы с эластичными базами данных | Документация Майкрософт
 description: Пояснения к терминам, используемым в средствах работы с эластичными базами данных.
 services: sql-database
-documentationcenter: ''
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 4ab938bc556d5e3dea8b7ec093f590ff1746ea29
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: 354d972e78a7fb7270b1b09f4af5aa95709fcd06
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647550"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162582"
 ---
 # <a name="elastic-database-tools-glossary"></a>Глоссарий по средствам работы с эластичными базами данных
 В связи со [средствами работы с эластичными базами данных SQL Azure](sql-database-elastic-scale-introduction.md)применяются следующие термины. Для управления [картами сегментов](sql-database-elastic-scale-shard-map-management.md) используются такие инструменты, как [клиентская библиотека](sql-database-elastic-database-client-library.md), [средство разбиения и слияния](sql-database-elastic-scale-overview-split-and-merge.md), [пулы эластичных баз данных](sql-database-elastic-pool.md) и [запросы](sql-database-elastic-query-overview.md). 
@@ -79,7 +81,7 @@ ms.locfileid: "34647550"
 
 **Разбиение**: перемещение нескольких шардлетов из одного сегмента в другой (как правило, в новый). Ключ сегментирования задается пользователем в качестве точки разделения.
 
-**Вертикальное масштабирование**: масштабирование уровня производительности отдельного сегмента вверх (или вниз). Например, перевод сегмента Standard в сегмент Premium (в соответствии с необходимым уровнем производительности). 
+**Вертикальное масштабирование**: масштабирование объема вычислительных ресурсов отдельного сегмента. Например, перевод сегмента Standard в сегмент Premium (в соответствии с необходимым уровнем производительности). 
 
 [!INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 

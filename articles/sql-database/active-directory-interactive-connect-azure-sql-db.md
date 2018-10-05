@@ -2,20 +2,22 @@
 title: Подключение ActiveDirectoryInteractive к SQL | Документация Майкрософт
 description: Пример кода C# с пояснениями для подключения к службе "База данных SQL Azure" с использованием режима SqlAuthenticationMethod.ActiveDirectoryInteractive.
 services: sql-database
-author: GithubMirek
-manager: craigg
 ms.service: sql-database
+ms.subservice: security
 ms.custom: active directory
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/06/2018
+author: GithubMirek
 ms.author: MirekS
 ms.reviewer: GeneMi
-ms.openlocfilehash: 3d6eb70b3ce9072dc2c51220af89549022b5dacf
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.date: 04/06/2018
+manager: craigg
+ms.openlocfilehash: 80944e73f21d75943d4fa71c7ac9500e47bab250
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238274"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47055532"
 ---
 # <a name="use-activedirectoryinteractive-mode-to-connect-to-azure-sql-database"></a>Использование режима ActiveDirectoryInteractive для подключения к службе "База данных SQL Azure"
 
@@ -122,13 +124,13 @@ ms.locfileid: "39238274"
 
 Одно из пространств имен, на которых основывается пример C#, — **System.Data.SqlClient**. Особый интерес представляет перечисление **SqlAuthenticationMethod**. Это перечисление имеет следующие значения:
 
-- **SqlAuthenticationMethod.ActiveDirectory\*Interactive**\*:&nbsp; используйте его с именем пользователя Azure AD для обеспечения многофакторной проверки подлинности (MFA).
+- **SqlAuthenticationMethod.ActiveDirectory *Interactive***:&nbsp; используйте его с именем пользователя Azure AD для обеспечения многофакторной идентификации (MFA).
     - Значение подробно описано в этой статье. Оно обеспечивает интерактивное взаимодействие с помощью диалоговых окон для ввода пароля пользователя, а затем аутентификацию MFA, если она принудительно задана для этого пользователя.
     - Это значение доступно начиная с .NET Framework версии 4.7.2.
 
-- **SqlAuthenticationMethod.ActiveDirectory*Integrated***:&nbsp; следует использовать для *федеративной* учетной записи. При использовании федеративной учетной записи имя пользователя известно домену Windows. Этот метод не поддерживает MFA.
+- **SqlAuthenticationMethod.ActiveDirectory *Integrated***:&nbsp; следует использовать для *федеративной* учетной записи. При использовании федеративной учетной записи имя пользователя известно домену Windows. Этот метод не поддерживает MFA.
 
-- **SqlAuthenticationMethod.ActiveDirectory\*Password**\*:&nbsp; следует использовать для аутентификации, при которой требуется указать пользователя Azure AD и его пароль. Аутентификация выполняется в службе "База данных SQL Azure" Этот метод не поддерживает MFA.
+- **SqlAuthenticationMethod.ActiveDirectory *Password***:&nbsp; следует использовать для аутентификации, при которой требуется указать пользователя Azure AD и его пароль. Аутентификация выполняется в службе "База данных SQL Azure" Этот метод не поддерживает MFA.
 
 
 

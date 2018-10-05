@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/07/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 73b7604e3072e76c69383481259e1cd8990f4df4
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: f4729ce996ca918f43df1777a1962d4cd225a38e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44169078"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47060633"
 ---
 ## <a name="extended-iot-scenarios"></a>Расширенные сценарии IoT
 
@@ -22,7 +22,7 @@ ms.locfileid: "44169078"
 | Сценарий                                                   | Служба или средство Azure              |
 |----------------------------------------------------------- |------------------------------------|
 | [Управление сообщениями Центра Интернета вещей][Mg_IoT_Toolkit]                  | Расширение "Набор средств Интернета вещей Azure" для VS Code|
-| [Управление устройством IoT][Mg_IoT_Dv]                        | Azure CLI 2.0 и расширение Интернета вещей|
+| [Управление устройством IoT][Mg_IoT_Dv]                        | Azure CLI и расширение Интернета вещей    |
 | [Управление устройством IoT][Mg_IoT_Dv_Toolkit]                | Расширение "Набор средств Интернета вещей Azure" для VS Code|
 | [Сохранение сообщений Центра Интернета вещей в службе хранилища Azure][Sv_IoT_Msg_Stor]  | Хранилище таблиц Azure                |
 | [Визуализации данных датчика][Vis_Data_PBI]                      | Microsoft Power BI                 |

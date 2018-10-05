@@ -2,20 +2,22 @@
 title: Отчеты по масштабируемым облачным базам данных | Документация Майкрософт
 description: настройка эластичных запросов при горизонтальном секционировании
 services: sql-database
-documentationcenter: ''
-manager: craigg
-author: MladjoA
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: MladjoA
 ms.author: mlandzic
-ms.openlocfilehash: fcb498542a496e4a887c825808642d3f586ef1d9
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 906c6825dbfdf7d4873c765d0b3eba626ef52e1b
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646360"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47159369"
 ---
 # <a name="reporting-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 ![Запрос по сегментам][1]
@@ -26,7 +28,7 @@ ms.locfileid: "34646360"
 
 Сведения для несегментированных баз данных см. в статье [Запрос к нескольким облачным базам данных с разными схемами](sql-database-elastic-query-vertical-partitioning.md). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Создайте карту сегментов с помощью клиентской библиотеки эластичной базы данных. Ознакомьтесь с [управлением картами сегментов](sql-database-elastic-scale-shard-map-management.md). Можно также использовать пример приложения в статье [Приступая к работе с инструментами эластичных баз данных](sql-database-elastic-scale-get-started.md).
 * Кроме того, можно ознакомиться с разделом [Перенос существующих баз данных для масштабирования](sql-database-elastic-convert-to-use-elastic-tools.md).
 * Пользователь должен иметь разрешение ALTER ANY EXTERNAL DATA SOURCE. Это разрешение включено в разрешение ALTER DATABASE.
@@ -49,7 +51,7 @@ ms.locfileid: "34646360"
     [;]
 
 > [!NOTE]
-> Убедитесь, что значение *\<username\>* не содержит суффикс *@servername*. 
+> Убедитесь, что значение *"\<username\>"* не содержит суффикс *"\@servername"*. 
 > 
 > 
 

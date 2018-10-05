@@ -1,20 +1,23 @@
 ---
 title: Создание оповещений для базы данных SQL с помощью портала Azure | Документация Майкрософт
 description: Используйте портал Azure для создания оповещений базы данных SQL, которые могут активировать уведомления или автоматизированные операции при выполнении заданных условий.
-author: aamalvea
-manager: craigg
 services: sql-database
 ms.service: sql-database
-ms.custom: monitor and tune
+ms.subservice: performance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: aamalvea
 ms.author: aamalvea
-ms.openlocfilehash: 349f1bbb0bfcc737d70e32947dd217c2cd51e194
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: 27f807c8f2f6b6a65ef95136047f5eed1b3aab02
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34648029"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47159318"
 ---
 # <a name="use-azure-portal-to-create-alerts-for-azure-sql-database-and-data-warehouse"></a>Создание оповещений для базы данных SQL Azure и хранилища данных с помощью портала Azure
 
@@ -34,7 +37,7 @@ ms.locfileid: "34648029"
 
 Для настройки правил генерации оповещений и получении сведений о них можно использовать:
 
-* [портал Azure](../monitoring-and-diagnostics/insights-alerts-portal.md)
+* [портала Azure](../monitoring-and-diagnostics/insights-alerts-portal.md)
 * [PowerShell](../monitoring-and-diagnostics/insights-alerts-powershell.md)
 * [интерфейс командной строки (CLI)](../monitoring-and-diagnostics/insights-alerts-command-line-interface.md)
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931945.aspx)
@@ -43,7 +46,7 @@ ms.locfileid: "34648029"
 1. На [портале](https://portal.azure.com/)найдите ресурс, который нужно отслеживать, и выберите его.
 2. Этот шаг выполняется по-разному для баз данных SQL Server и эластичных пулов и хранилищ данных SQL. 
 
-   - **Инструкция только для баз данных SQL и эластичных пулов:** в разделе "ОТСЛЕЖИВАНИЕ" выберите пункты **Оповещения** или **Правила генерации оповещений**. Текст и значок для разных ресурсов могут незначительно отличаться.  
+   - **Инструкция только для баз данных SQL и эластичных пулов:** в разделе "Отслеживание" выберите **Оповещения** или **Правила генерации оповещений**. Текст и значок для разных ресурсов могут незначительно отличаться.  
    
      ![Мониторинг](../monitoring-and-diagnostics/media/insights-alerts-portal/AlertRulesButton.png)
   
@@ -108,7 +111,7 @@ ms.locfileid: "34648029"
 | Хранилище данных SQL | connection_successful | Успешные подключения | Всего | 10 минут |
 | Хранилище данных SQL | connection_failed | Неудачные подключения | Всего | 10 минут |
 | Хранилище данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Всего | 10 минут |
-| Хранилище данных SQL | service_level_objective | Целевой уровень служб базы данных. | Всего | 10 минут |
+| Хранилище данных SQL | service_level_objective | Уровень служб базы данных | Всего | 10 минут |
 | Хранилище данных SQL | dwu_limit | Лимит DWU. | Максимальная | 10 минут |
 | Хранилище данных SQL | dwu_consumption_percent | DWU percentage | Средняя | 10 минут |
 | Хранилище данных SQL | dwu_used | DWU used | Средняя | 10 минут |

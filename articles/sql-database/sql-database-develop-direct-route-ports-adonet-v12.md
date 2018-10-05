@@ -2,19 +2,22 @@
 title: Порты для базы данных SQL помимо 1433 | Документация Майкрософт
 description: Взаимодействие с базой данных при клиентских подключениях из ADO.NET к Базе данных SQL Azure может происходить напрямую, без прокси-сервера, если база данных не использует порт 1433.
 services: sql-database
-author: MightyPen
-manager: craigg
 ms.service: sql-database
-ms.custom: develop apps
+ms.subservice: development
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
+author: MightyPen
+ms.author: genemi
+ms.reviewer: sstein
+manager: craigg
 ms.date: 04/01/2018
-ms.author: sstein
-ms.openlocfilehash: a8c9eef968465ecf9c8a29df471955b89f3585a0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 560d96b188a02f8df0d41b040c90db9b813e3c0a
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645095"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063257"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 В этом разделе описывается поведение подключения к Базе данных SQL Azure клиентов, использующих ADO.NET 4.5 или более поздней версии. 
@@ -54,13 +57,25 @@ ms.locfileid: "34645095"
 * ADO.NET 4.0 поддерживает протокол TDS 7.3, но не 7.4.
 * ADO.NET 4.5 и более поздних версий поддерживает протокол TDS 7.4.
 
+#### <a name="odbc"></a>ODBC
+* Microsoft SQL Server ODBC 11 или более поздней версии
+
+#### <a name="jdbc"></a>JDBC
+* Microsoft SQL Server JDBC 4.2 или более поздней версии (JDBC 4.0 поддерживает TDS 7.4, но не выполняет перенаправление)
+
+
 ## <a name="related-links"></a>Связанные ссылки
 * 20 июля 2015 г. был выпущен ADO.NET 4.6. Объявление в блоге группы разработчиков для .NET доступно [здесь](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
-* 15 августа 2012 г. был выпущен ADO.NET 4.5. Объявление в блоге группы разработчиков для .NET доступно [здесь](http://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx).
-  
+* 15 августа 2012 г. был выпущен ADO.NET 4.5. Объявление в блоге группы разработчиков для .NET доступно [здесь](http://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx). 
   * Запись блога об ADO.NET 4.5.1 доступна [здесь](http://blogs.msdn.com/b/dotnet/archive/2013/06/26/announcing-the-net-framework-4-5-1-preview.aspx).
+
+* Microsoft® ODBC Driver 17 for SQL Server® — Windows, Linux и macOS https://www.microsoft.com/en-us/download/details.aspx?id=56567
+
+* Подключение к базе данных SQL Azure версии 12 с помощью перенаправления https://blogs.msdn.microsoft.com/sqlcat/2016/09/08/connect-to-azure-sql-database-v12-via-redirection/
+
 * [Список версий протокола TDS](http://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
 * [Брандмауэр базы данных SQL Azure](sql-database-firewall-configure.md)
 * [Практическое руководство. Настройка параметров брандмауэра для Базы данных SQL](sql-database-configure-firewall-settings.md)
+
 

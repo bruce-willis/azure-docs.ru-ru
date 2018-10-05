@@ -1,19 +1,18 @@
 ---
 title: Изменение и повторное развертывание микрослужбы | Документация Майкрософт
 description: Это руководство содержит сведения об изменении и повторном развертывании микрослужбы в решении удаленного мониторинга.
-author: giyeh
-manager: hegate
-ms.author: giyeh
+author: dominicbetts
+ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 04/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: e15e17a499ad33a270b220fa7483d96c2945f6bb
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 0b206d7b56fc8a65c422a4ce22b2f5585e71c8da
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43338083"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47219431"
 ---
 # <a name="customize-and-redeploy-a-microservice"></a>Настройка и повторное развертывание микрослужбы
 
@@ -47,28 +46,29 @@ ms.locfileid: "43338083"
 2. Откройте Postman из расположения, в которое вы его скачали.
 3. В Postman введите следующее значение в поле GET (Получить): http://localhost:8080/iothubmanager/v1/status.
 4. Просмотрите возвращенное значение. Должен отобразиться следующий результат — "Status": "OK:Alive and Well".
-![Сообщение "Alive and Well" в приложении Postman](./media/iot-accelerators-microservices-example/postman-alive-well.png)
+
+    ![Сообщение Alive and Well (Активно и работоспособно) в приложении Postman](./media/iot-accelerators-microservices-example/postman-alive-well.png)
 
 ## <a name="change-the-status-and-build-the-image"></a>Изменение состояния и создание образа
 
 Теперь измените сообщение о состоянии микрослужбы диспетчера Центра Интернета вещей на "New Edits Made Here!", а затем повторно создайте образ Docker с этим новым состоянием. Если у вас возникнут здесь проблемы, ознакомьтесь с разделом [об устранении неполадок](#Troubleshoot).
 
 1. Убедитесь, что терминал открыт и перейдите в каталог, в который вы клонировали решение удаленного мониторинга. 
-2. Перейдите в каталог …azure-iot-pcs-remote-monitoring-dotnet/iothub-manager/WebService/v1/Controllers.
+2. Перейдите в каталог azure-iot-pcs-remote-monitoring-dotnet/services/iothub-manager/WebService/v1/Controllers.
 3. Откройте файл StatusController.cs в любом текстовом редакторе или в интегрированной среде разработки. 
 4. Найдите следующий код:
 
-    ```javascript
+    ```csharp
     return new StatusApiModel(true, "Alive and well");
     ```
 
     Замените его приведенным ниже кодом и сохраните.
 
-    ```javascript
+    ```csharp
     return new StatusApiModel(true, "New Edits Made Here!");
     ```
 
-5. Вернитесь в терминал, но теперь перейдите в этот каталог: ...azure-iot-pcs-remote-monitoring-dotnet/iothub-manager/scripts/docker.
+5. Вернитесь в окно терминала, но теперь перейдите в этот каталог: azure-iot-pcs-remote-monitoring-dotnet/services/iothub-manager/scripts/docker.
 6. Чтобы создать образ Docker, введите следующее:
 
     ```cmd/sh
@@ -113,24 +113,24 @@ ms.locfileid: "43338083"
 ## <a name="update-your-remote-monitoring-solution"></a>Обновление решения удаленного мониторинга
 Теперь нужно обновить локальный файл docker-compose.yml, чтобы извлечь новый образ Docker из центра Docker. Если у вас возникнут здесь проблемы, ознакомьтесь с разделом [об устранении неполадок](#Troubleshoot).
 
-1. Вернитесь в терминал и перейдите в этот каталог: …azure-iot-pcs-remote-monitoring-dotnet/scripts/local.
+1. Вернитесь в окно терминала и перейдите в этот каталог: azure-iot-pcs-remote-monitoring-dotnet/services/scripts/local.
 2. Откройте файл docker-compose.yml в любом текстовом редакторе или в интегрированной среде разработки.
 3. Найдите следующий код:
 
     ```docker
-    image: azureiotpcs/pcs-auth-dotnet:testing
+    image: azureiotpcs/iothub-manager-dotnet:testing
     ```
 
     Измените его на следующий код и сохраните.
 
     ```cmd/sh
-    image: [docker ID]/pcs-auth-dotnet:testing
+    image: [docker ID]/iothub-manager-dotnet:testing
     ```
 
 ## <a name="view-the-new-response-status"></a>Просмотр нового состояния ответа
 В завершении повторно разверните локальный экземпляр решения для удаленного мониторинга и просмотрите новое состояние ответа в Postman.
 
-1. Вернитесь в терминал и перейдите в этот каталог: …azure-iot-pcs-remote-monitoring-dotnet/scripts/local.
+1. Вернитесь в окно терминала и перейдите в этот каталог: azure-iot-pcs-remote-monitoring-dotnet/scripts/local.
 2. Запустите локальный экземпляр решения удаленного мониторинга. Для этого в терминале введите следующую команду:
 
     ```cmd/sh

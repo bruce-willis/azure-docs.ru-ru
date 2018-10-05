@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/25/2018
 ms.author: dekapur
-ms.openlocfilehash: 529df0147d2563c62c4a9578e47184bd98b01761
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: da4a779bca806fe6aa392db96eafc6c20f8ddcf6
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212965"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182167"
 ---
 # <a name="list-of-service-fabric-events"></a>Список событий Service Fabric 
 
@@ -34,180 +34,177 @@ Service Fabric предоставляет основной набор событ
 
 **События обновления кластера**
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 29627 | ClusterUpgradeStartOperational | CM | Информация | 1 |
-| 29628 | ClusterUpgradeCompleteOperational | CM | Информация | 1 |
-| 29629 | ClusterUpgradeRollbackStartOperational | CM | Информация | 1 |
-| 29630 | ClusterUpgradeRollbackCompleteOperational | CM | Информация | 1 |
-| 29631 | ClusterUpgradeDomainCompleteOperational | CM | Информация | 1 |
-
-**События отчета о работоспособности кластера**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 54428 | ProcessClusterReportOperational | HM | Информация | 1 |
-| 54437 | ExpiredClusterEventOperational | HM | Информация | 1 |
-
-**События службы тестирования в условиях хаоса**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 50021 | ChaosStartedEvent | Тестирование | Информация | 1 |
-| 50023 | ChaosStoppedEvent | Тестирование | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | --- | --- | --- | --- |
+| 29627 | ClusterUpgradeStarted | Начато обновление кластера | CM | Информация | 1 |
+| 29628 | ClusterUpgradeCompleted | Обновление кластера завершено| CM | Информация | 1 |
+| 29629 | ClusterUpgradeRollbackStarted | Начат откат обновления кластера | CM | Информация | 1 |
+| 29630 | ClusterUpgradeRollbackCompleted | Откат обновления кластера завершен | CM | Информация | 1 |
+| 29631 | ClusterUpgradeDomainCompleted | Обновление домена завершено во время обновления кластера | CM | Информация | 1 |
 
 ## <a name="node-events"></a>События узла
 
 **События жизненного цикла узла** 
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 18602 | DeactivateNodeCompletedOperational | FM | Информация | 1 |
-| 18603 | NodeUpOperational | FM | Информация | 1 |
-| 18604 | NodeDownOperational | FM | Информация | 1 |
-| 18605 | NodeAddedOperational | FM | Информация | 1 |
-| 18606 | NodeRemovedOperational | FM | Информация | 1 |
-| 18607 | DeactivateNodeStartOperational | FM | Информация | 1 |
-| 25620 | NodeOpening | FabricNode | Информация | 1 |
-| 25621 | NodeOpenedSuccess | FabricNode | Информация | 1 |
-| 25622 | NodeOpenedFailed | FabricNode | Информация | 1 |
-| 25623 | NodeClosing | FabricNode | Информация | 1 |
-| 25624 | NodeClosed | FabricNode | Информация | 1 |
-| 25625 | NodeAborting | FabricNode | Информация | 1 |
-| 25626 | NodeAborted | FabricNode | Информация | 1 |
-
-**События отчета о работоспособности узла**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 54423 | ProcessNodeReportOperational | HM | Информация | 1 |
-| 54432 | ExpiredNodeEventOperational | HM | Информация | 1 |
-
-**События узла в условиях хаоса**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 50033 | ChaosRestartNodeFaultScheduledEvent | Тестирование | Информация | 1 |
-| 50087 | ChaosRestartNodeFaultCompletedEvent | Тестирование | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 18602 | NodeDeactivateCompleted | Завершена деактивация узла | FM | Информация | 1 |
+| 18603 | NodeUp | Кластер обнаружил, что узел запущен | FM | Информация | 1 |
+| 18604 | NodeDown | Кластер обнаружил, что узел завершил работу |  FM | Информация | 1 |
+| 18605 | NodeAddedToCluster | Новый узел добавлен в кластер | FM | Информация | 1 |
+| 18606 | NodeRemovedFromCluster | Узел удален с кластера | FM | Информация | 1 |
+| 18607 | NodeDeactivateStarted | Начата деактивация узла | FM | Информация | 1 |
+| 25620 | NodeOpening | Узел запускается. Первый этап в жизненном цикле узла | FabricNode | Информация | 1 |
+| 25621 | NodeOpenSucceeded | Узел успешно запущен | FabricNode | Информация | 1 |
+| 25622 | NodeOpenFailed | Узел не запускается | FabricNode | Информация | 1 |
+| 25623 | NodeClosing | Узел завершает работу. Начался последний этап жизненного цикла узла | FabricNode | Информация | 1 |
+| 25624 | NodeClosed | Работа узла успешно завершена | FabricNode | Информация | 1 |
+| 25625 | NodeAborting | Узел некорректно завершает работу | FabricNode | Информация | 1 |
+| 25626 | NodeAborted | Узел некорректно завершил работу | FabricNode | Информация | 1 |
 
 ## <a name="application-events"></a>События приложения
 
 **События жизненного цикла приложения**
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 29620 | ApplicationCreatedOperational | CM | Информация | 1 |
-| 29625 | ApplicationDeletedOperational | CM | Информация | 1 |
-| 23083 | ProcessExitedOperational | Hosting | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 29620 | ApplicationCreated | Создано новое приложение | CM | Информация | 1 |
+| 29625 | ApplicationDeleted | Удалено имеющееся приложение | CM | Информация | 1 |
+| 23083 | ApplicationProcessExited | Прекращен процесс в приложении | Hosting | Информация | 1 |
 
 **События обновления приложения**
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 29621 | ApplicationUpgradeStartOperational | CM | Информация | 1 |
-| 29622 | ApplicationUpgradeCompleteOperational | CM | Информация | 1 |
-| 29623 | ApplicationUpgradeRollbackStartOperational | CM | Информация | 1 |
-| 29624 | ApplicationUpgradeRollbackCompleteOperational | CM | Информация | 1 |
-| 29626 | ApplicationUpgradeDomainCompleteOperational | CM | Информация | 1 |
-
-**События отчета о работоспособности приложения**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 54425 | ProcessApplicationReportOperational | HM | Информация | 1 |
-| 54426 | ProcessDeployedApplicationReportOperational | HM | Информация | 1 |
-| 54427 | ProcessDeployedServicePackageReportOperational | HM | Информация | 1 |
-| 54434 | ExpiredApplicationEventOperational | HM | Информация | 1 |
-| 54435 | ExpiredDeployedApplicationEventOperational | HM | Информация | 1 |
-| 54436 | ExpiredDeployedServicePackageEventOperational | HM | Информация | 1 |
-
-**События приложения в условиях хаоса**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 50053 | ChaosRestartCodePackageFaultScheduledEvent | Тестирование | Информация | 1 |
-| 50101 | ChaosRestartCodePackageFaultCompletedEvent | Тестирование | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 29621 | ApplicationUpgradeStarted | Начато обновление приложения | CM | Информация | 1 |
+| 29622 | ApplicationUpgradeCompleted | Завершено обновление приложения | CM | Информация | 1 |
+| 29623 | ApplicationUpgradeRollbackStarted | Начат откат обновления приложения |CM | Информация | 1 |
+| 29624 | ApplicationUpgradeRollbackCompleted | Завершен откат обновления приложения | CM | Информация | 1 |
+| 29626 | ApplicationUpgradeDomainCompleted | Обновление домена завершено во время обновления приложения | CM | Информация | 1 |
 
 ## <a name="service-events"></a>События службы
 
 **События жизненного цикла службы**
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 18602 | ServiceCreatedOperational | FM | Информация | 1 |
-| 18658 | ServiceDeletedOperational | FM | Информация | 1 |
-
-**События отчета о работоспособности службы**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 54424 | ProcessServiceReportOperational | HM | Информация | 1 |
-| 54433 | ExpiredServiceEventOperational | HM | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 18657 | ServiceCreated | Создана служба | FM | Информация | 1 |
+| 18658 | ServiceDeleted | Удалена имеющаяся служба | FM | Информация | 1 |
 
 ## <a name="partition-events"></a>События секции
 
 **События перемещения секции**
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 18940 | ReconfigurationCompleted | RA | Информация | 1 |
-
-**События отчета о работоспособности секции**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 54422 | ProcessPartitionReportOperational | HM | Информация | 1 |
-| 54431 | ExpiredPartitionEventOperational | HM | Информация | 1 |
-
-**События секции в условиях хаоса**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 50069 | ChaosMovePrimaryFaultScheduledEvent | Тестирование | Информация | 1 |
-| 50077 | ChaosMoveSecondaryFaultScheduledEvent | Тестирование | Информация | 1 |
-
-**События анализа секции**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 65003 | PrimaryMoveAnalysisEvent | Тестирование | Информация | 1 |
-
-## <a name="replica-events"></a>События реплики
-
-**События отчета о работоспособности реплики**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 54429 | ProcessStatefulReplicaReportOperational | HM | Информация | 1 |
-| 54430 | ProcessStatelessInstanceReportOperational | HM | Информация | 1 |
-| 54438 | ExpiredStatefulReplicaEventOperational | HM | Информация | 1 |
-| 54439 | ExpiredStatelessInstanceEventOperational | HM | Информация | 1 |
-
-**События реплики в условиях хаоса**
-
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 50047 | ChaosRestartReplicaFaultScheduledEvent | Тестирование | Информация | 1 |
-| 50051 | ChaosRemoveReplicaFaultScheduledEvent | Тестирование | Информация | 1 |
-| 50093 | ChaosRemoveReplicaFaultCompletedEvent | Тестирование | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 18940 | PartitionReconfigured | Завершена перенастройка разделов | RA | Информация | 1 |
 
 ## <a name="container-events"></a>События контейнера
 
 **События жизненного цикла контейнера** 
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 23074 | ContainerActivatedOperational | Hosting | Информация | 1 |
-| 23075 | ContainerDeactivatedOperational | Hosting | Информация | 1 |
-| 23082 | ContainerExitedOperational | Hosting | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 23074 | ContainerActivated | Контейнер запущен | Hosting | Информация | 1 |
+| 23075 | ContainerDeactivated | Контейнер остановлен | Hosting | Информация | 1 |
+| 23082 | ContainerExited | Работа контейнера завершена. Проверьте на наличие параметра UnexpectedTermination | Hosting | Информация | 1 |
+
+## <a name="health-reports"></a>Отчеты о работоспособности
+
+**События отчета о работоспособности кластера**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | --- | --- | --- | --- |
+| 54428 | ClusterNewHealthReport | Доступен новый отчет о работоспособности кластера | HM | Информация | 1 |
+| 54437 | ClusterHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности кластера | HM | Информация | 1 |
+
+**События отчета о работоспособности узла**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 54423 | NodeNewHealthReport | Доступен новый отчет о работоспособности узла | HM | Информация | 1 |
+| 54432 | NodeHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности узла | HM | Информация | 1 |
+
+**События отчета о работоспособности приложения**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 54425 | ApplicationNewHealthReport | Создан отчет о работоспособности приложения. Он создается для приложений, которые не были развернуты | HM | Информация | 1 |
+| 54426 | DeployedApplicationNewHealthReport | Создан отчет о работоспособности развернутого приложения | HM | Информация | 1 |
+| 54427 | DeployedServicePackageNewHealthReport | Создан отчет о работоспособности развернутой службы | HM | Информация | 1 |
+| 54434 | ApplicationHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности приложения | HM | Информация | 1 |
+| 54435 | DeployedApplicationHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности развернутого приложения | HM | Информация | 1 |
+| 54436 | DeployedServicePackageHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности развернутой службы | HM | Информация | 1 |
+
+**События отчета о работоспособности службы**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 54424 | ServiceNewHealthReport | Создан отчет о работоспособности службы | HM | Информация | 1 |
+| 54433 | ServiceHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности службы | HM | Информация | 1 |
+
+**События отчета о работоспособности секции**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 54422 | PartitionNewHealthReport | Создан отчет о работоспособности раздела | HM | Информация | 1 |
+| 54431 | PartitionHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности раздела | HM | Информация | 1 |
+
+**События отчета о работоспособности реплики**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 54429 | StatefulReplicaNewHealthReport | Создан отчет о работоспособности реплики с отслеживанием состояния | HM | Информация | 1 |
+| 54430 | StatelessInstanceNewHealthReport | Создан отчет о работоспособности экземпляра без отслеживания состояния | HM | Информация | 1 |
+| 54438 | StatefulReplicaHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности реплики с отслеживанием состояния | HM | Информация | 1 |
+| 54439 | StatelessInstanceHealthReportExpired | Истек срок действия имеющегося отчета о работоспособности реплики без учета состояния | HM | Информация | 1 |
+
+## <a name="chaos-testing-events"></a>События тестирования в условиях хаоса 
+
+**События сеанса тестирования в условиях хаоса**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 50021 | ChaosStarted | Начат сеанс тестирования в условиях хаоса | Тестирование | Информация | 1 |
+| 50023 | ChaosStopped | Завершен сеанс тестирования в условиях хаоса | Тестирование | Информация | 1 |
+
+**События узла в условиях хаоса**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 50033 | ChaosNodeRestartScheduled | Перезапуск узла запланирован как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
+| 50087 | ChaosNodeRestartCompleted | Завершен перезапуск узла как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
+
+**События приложения в условиях хаоса**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 50053 | ChaosCodePackageRestartScheduled | Во время сеанса тестирования в условиях хаоса запланирован перезапуск пакета кода | Тестирование | Информация | 1 |
+| 50101 | ChaosCodePackageRestartCompleted | Во время сеанса тестирования в условиях хаоса завершен перезапуск пакета кода | Тестирование | Информация | 1 |
+
+**События секции в условиях хаоса**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 50069 | ChaosPartitionPrimaryMoveScheduled | Перемещение основного раздела запланировано как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
+| 50077 | ChaosPartitionSecondaryMoveScheduled | Перемещение дополнительного раздела запланировано как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
+| 65003 | PartitionPrimaryMoveAnalysis | Доступен более глубокий анализ перемещения основного раздела | Тестирование | Информация | 1 |
+
+**События реплики в условиях хаоса**
+
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 50047 | ChaosReplicaRestartScheduled | Перезапуск реплики запланирован как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
+| 50051 | ChaosReplicaRemovalScheduled | Удаление реплики запланировано как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
+| 50093 | ChaosReplicaRemovalCompleted | Удаление реплики завершено как часть сеанса тестирования в условиях хаоса | Тестирование | Информация | 1 |
 
 ## <a name="other-events"></a>Другие события
 
 **События корреляции**
 
-| EventId | ИМЯ | Источник (задача) | Уровень | Version (версия) |
-| --- | --- | --- | --- | --- |
-| 65011 | CorrelationOperational | Тестирование | Информация | 1 |
+| EventId | ИМЯ | ОПИСАНИЕ |Источник (задача) | Уровень | Version (версия) |
+| --- | --- | ---| --- | --- | --- |
+| 65011 | CorrelationOperational | Обнаружена корреляция | Тестирование | Информация | 1 |
 
 ## <a name="events-prior-to-version-62"></a>События версии ниже 6.2
 

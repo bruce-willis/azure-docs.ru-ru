@@ -1,21 +1,23 @@
 ---
 title: Использование мультитенантных приложений с функцией безопасности на уровне строк и средствами эластичной базы данных | Документация Майкрософт
 description: Средства эластичных баз данных в сочетании с безопасностью на уровне строк позволяют создать приложение с высокой масштабируемостью уровня данных.
-metakeywords: azure sql database elastic tools multi tenant row level security rls
 services: sql-database
-manager: craigg
-author: tmullaney
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: tmullaney
 ms.author: thmullan
-ms.openlocfilehash: 02ad01185a86aa5a975be2a66b54a214029dd73f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 94430d3b72bb5b8e8bde0e9e2e9fb2eb2b0c3632
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645816"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47056290"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Мультитенантные приложения со средствами эластичных баз данных и безопасностью на уровне строк
 
@@ -35,7 +37,7 @@ ms.locfileid: "34645816"
 
 ## <a name="download-the-sample-project"></a>Загрузка примера проекта
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 - Используйте Visual Studio 2012 или более поздней версии. 
 - Создайте три базы данных SQL Azure. 

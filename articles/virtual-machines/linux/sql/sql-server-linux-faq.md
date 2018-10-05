@@ -12,12 +12,12 @@ ms.topic: troubleshooting
 ms.workload: iaas-sql-server
 ms.date: 12/13/2017
 ms.author: jroth
-ms.openlocfilehash: 56a0629249cdb5f0f098d2b7b6d36b3fbb215009
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: e8297892c533f3b0126f925f81d3e9bc429828ef
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30190877"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47039961"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-linux-azure-virtual-machines"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "30190877"
 
 1. **Можно ли управлять виртуальной машиной SQL Server на базе Linux с помощью SQL Server Management Studio (SSMS)?**
 
-   Да. Но сейчас средства SSMS доступны только в ОС Windows. Чтобы использовать SSMS с виртуальными машинами SQL Server на базе Linux, необходимо установить удаленное подключение с компьютера с Windows. На компьютере с Linux большинство задач администрирования можно выполнять с помощью нового средства [mssql-conf](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-mssql-conf). Сведения о кроссплатформенном средстве управления базой данных см. в статье о [SQL Server Operations Studio (предварительная версия)](https://docs.microsoft.com/sql/sql-operations-studio/what-is).
+   Да. Но сейчас средства SSMS доступны только в ОС Windows. Чтобы использовать SSMS с виртуальными машинами SQL Server на базе Linux, необходимо установить удаленное подключение с компьютера с Windows. На компьютере с Linux большинство задач администрирования можно выполнять с помощью нового средства [mssql-conf](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-mssql-conf). Сведения о кроссплатформенном средстве управления базой данных см. в статье об [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is).
 
 1. **Можно ли полностью удалить SQL Server с виртуальной машины SQL?**
 

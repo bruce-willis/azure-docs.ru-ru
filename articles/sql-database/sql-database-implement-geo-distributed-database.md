@@ -2,19 +2,22 @@
 title: Реализация решения географически распределенной базы данных SQL Azure | Документация Майкрософт
 description: Сведения о настройке базы данных SQL Azure и приложения для отработки отказа в реплицированную базу данных и тестовой отработки отказа.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: mvc,business continuity
-ms.topic: tutorial
-ms.date: 04/01/2018
-ms.author: carlrab
-ms.openlocfilehash: fbd239c3c8c11b1907a6d28eb95d2c0ad26cfe61
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.subservice: operations
+ms.custom: ''
+ms.devlang: ''
+ms.topic: conceptual
+author: anosov1960
+ms.author: sashan
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 09/07/2018
+ms.openlocfilehash: 65cf954f5d91176715181620671f620264069bdc
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31416625"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166271"
 ---
 # <a name="implement-a-geo-distributed-database"></a>Реализация географически распределенной базы данных
 
@@ -30,7 +33,7 @@ ms.locfileid: "31416625"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -38,8 +41,8 @@ ms.locfileid: "31416625"
 - Установите базу данных SQL Azure. В этом руководстве используется пример базы данных AdventureWorksLT с именем **mySampleDatabase** из одного из этих кратких руководств:
 
    - [Создание базы данных с помощью портала](sql-database-get-started-portal.md)
-   - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-get-started-cli.md)
-   - [Создание базы данных с помощью PowerShell](sql-database-get-started-powershell.md)
+   - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-cli-samples.md)
+   - [Создание базы данных с помощью PowerShell](sql-database-powershell-samples.md)
 
 - После определения метода для выполнения сценариев SQL для базы данных можно использовать одно из следующих средств запроса:
    - Редактор запросов на [портале Azure](https://portal.azure.com). Дополнительные сведения об использовании редактора запросов на портале Azure см. в разделе [Отправка запросов к базе данных SQL](sql-database-get-started-portal.md#query-the-sql-database).
@@ -54,7 +57,7 @@ ms.locfileid: "31416625"
 - SQL Server Management Studio
 - Visual Studio Code.
 
-Эти учетные записи пользователей автоматически реплицируются на сервер-получатель (синхронизация обязательна). Чтобы использовать SQL Server Management Studio или Visual Studio Code, вам может потребоваться настроить правило брандмауэра при подключении из клиента по IP-адресу, для которого еще не настроен брандмауэр. Подробные инструкции см. в разделе [Создание правила брандмауэра на уровне сервера](sql-database-get-started-portal.md#create-a-server-level-firewall-rule).
+Эти учетные записи пользователей автоматически реплицируются на сервер-получатель (синхронизация обязательна). Чтобы использовать SQL Server Management Studio или Visual Studio Code, вам может потребоваться настроить правило брандмауэра при подключении из клиента по IP-адресу, для которого еще не настроен брандмауэр. Подробные инструкции см. в разделе [Создание правила брандмауэра на уровне сервера](sql-database-get-started-portal-firewall.md).
 
 - Чтобы создать в базе данных две учетные записи пользователя, в окне запроса выполните следующий запрос: Этот скрипт предоставляет разрешения **db_owner** для учетной записи **app_admin**, а также разрешения **SELECT** и **UPDATE** для учетной записи **app_user**. 
 
@@ -70,7 +73,7 @@ ms.locfileid: "31416625"
 
 ## <a name="create-database-level-firewall"></a>Создание брандмауэра на уровне базы данных
 
-Создайте [правило брандмауэра уровня базы данных](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) для базы данных SQL. Оно автоматически реплицируется на сервер-получатель, созданный в рамках этого руководства. Для удобства (в рамках этого руководства) используйте общедоступный IP-адрес компьютера, на котором выполняются действия из этого руководства. Ознакомьтесь с разделом [Создание правила брандмауэра на уровне сервера](sql-database-get-started-portal.md#create-a-server-level-firewall-rule), чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для текущего компьютера.  
+Создайте [правило брандмауэра уровня базы данных](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) для базы данных SQL. Оно автоматически реплицируется на сервер-получатель, созданный в рамках этого руководства. Для удобства (в рамках этого руководства) используйте общедоступный IP-адрес компьютера, на котором выполняются действия из этого руководства. Ознакомьтесь с разделом [Создание правила брандмауэра на уровне сервера](sql-database-get-started-portal-firewall.md), чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для текущего компьютера.  
 
 - В открытом окне запроса замените предыдущий запрос следующим запросом, указав соответствующие IP-адреса для вашей среды.  
 
@@ -390,8 +393,8 @@ sudo apt-get install maven
 > * создавать и компилировать приложения Java для запроса базы данных SQL Azure;
 > * выполнять отработку аварийного восстановления.
 
-Перейдите к следующему руководству, чтобы узнать, как создать Управляемый экземпляр.
+Переходите к следующему руководству, чтобы узнать, как перенести SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS.
 
 > [!div class="nextstepaction"]
->[Создание Управляемого экземпляра](sql-database-managed-instance-create-tutorial-portal.md)
+>[Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS](../dms/tutorial-sql-server-to-managed-instance.md)
 

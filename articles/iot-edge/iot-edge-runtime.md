@@ -8,12 +8,12 @@ ms.date: 08/13/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f832b05969c028880f6e375ff4a2ee8dc7a7eaf4
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: 9c9c04a8310a46605cf5733131db1418b7cb7f7a
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42146816"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47218790"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре
 
@@ -31,9 +31,9 @@ ms.locfileid: "42146816"
 
 ![Среда выполнения IoT Edge передает аналитические сведения и информацию о работоспособности модуля в Центр Интернета вещей][1]
 
-Обязанности среды выполнения IoT Edge делятся на две категории: управление модулями и обмен данными. Эти две роли выполняются двумя компонентами, которые составляют среду выполнения IoT Edge. Концентратор IoT Edge отвечает за обмен данными, а агент IoT Edge управляет развертыванием и мониторингом модулей. 
+Обязанности среды выполнения IoT Edge делятся на две категории: обмен данными и управление модулями. Эти две роли выполняются двумя компонентами, которые составляют среду выполнения IoT Edge. Концентратор IoT Edge отвечает за обмен данными, а агент IoT Edge управляет развертыванием и мониторингом модулей. 
 
-И агент Edge, и концентратор Edge являются модулями и, как любые другие модули, выполняются на устройстве IoT Edge. 
+Агент Edge и концентратор Edge — это модули и, как любые другие модули, выполняются на устройстве IoT Edge. 
 
 ## <a name="iot-edge-hub"></a>Концентратор IoT Edge
 
@@ -117,7 +117,7 @@ ms.locfileid: "42146816"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Общие сведения о модулях IoT Edge Azure][lnk-modules]
+[Azure IoT Edge certificate usage detail][lnk-certs] (Сведения об использовании сертификатов Azure IoT Edge)
 
 <!-- Images -->
 [1]: ./media/iot-edge-runtime/Pipeline.png
@@ -126,4 +126,4 @@ ms.locfileid: "42146816"
 [4]: ./media/iot-edge-runtime/ModuleEndpointsWithRoutes.png
 
 <!-- Links -->
-[lnk-modules]: iot-edge-modules.md
+[lnk-certs]: iot-edge-certs.md

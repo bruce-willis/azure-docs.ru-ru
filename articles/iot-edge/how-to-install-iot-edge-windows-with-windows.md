@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: kgremban
-ms.openlocfilehash: 3d450bf16acd2b64702694ae961a65e31062d9d1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2eebc96b14ee0f06b3bd88ea565dfe9372aba1ff
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46961592"
+ms.locfileid: "47037820"
 ---
 # <a name="install-azure-iot-edge-runtime-on-windows-to-use-with-windows-containers"></a>Установка среды выполнения Azure IoT Edge в Windows для использования с контейнерами Windows
 
@@ -112,7 +112,7 @@ iotedge list
 
 ## <a name="tips-and-suggestions"></a>Советы и рекомендации
 
-Если в вашей сети используется прокси-сервер, выполните действия, описанные в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
+Если в сети используется прокси-сервер, сведения об установке и запуске среды выполнения IoT Edge см. в [этой статье](how-to-configure-proxy-support.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

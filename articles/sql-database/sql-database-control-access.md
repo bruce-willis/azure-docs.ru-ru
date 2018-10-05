@@ -1,26 +1,29 @@
 ---
-title: Предоставление доступа к базе данных SQL Azure | Документация Майкрософт
-description: Предоставление доступа к базе данных SQL Microsoft Azure.
+title: Предоставление доступа к службам "База данных SQL Azure" и "Хранилище данных SQL" | Документация Майкрософт
+description: Предоставление доступа к службам "База данных SQL Azure" и "Хранилище данных SQL".
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: sql-data-warehouse
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
-ms.author: carlrab
-ms.openlocfilehash: 2ab2f047839763239358e61f61f0fc962c17d729
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+author: VanMSFT
+ms.author: vanto
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 06/13/2018
+ms.openlocfilehash: a39e65d5a3aff6158c189f392e2db8bd8273ad1b
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647441"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063793"
 ---
-# <a name="azure-sql-database-access-control"></a>Контроль доступа к базе данных SQL Azure
-Чтобы обеспечить безопасность, база данных SQL управляет доступом с помощью правил брандмауэра, ограничивающих подключение по IP-адресу, механизмов проверки подлинности, требующих удостоверений пользователей, и методов авторизации, ограничивающих действия и данные для пользователей. 
+# <a name="azure-sql-database-and-sql-data-warehouse-access-control"></a>Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"
+Чтобы обеспечить безопасность, службы [База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) управляют доступом с помощью правил брандмауэра, ограничивающих подключение по IP-адресу, механизмов проверки подлинности, требующих удостоверений пользователей, и методов авторизации, ограничивающих действия и данные для пользователей. 
 
 > [!IMPORTANT]
-> Обзор функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md). Ознакомьтесь с руководством [Защита базы данных SQL Azure](sql-database-security-tutorial.md).
+> Обзор функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md). Ознакомьтесь с руководством [Защита базы данных SQL Azure](sql-database-security-tutorial.md). Обзор всех функций защиты в службе "Хранилище данных SQL" см. в [этой статье](../sql-data-warehouse/sql-data-warehouse-overview-manage-security.md).
 
 ## <a name="firewall-and-firewall-rules"></a>Брандмауэр и правила брандмауэра
 База данных SQL Microsoft Azure предоставляет службу реляционных баз данных для Azure и других интернет-приложений. Чтобы защитить ваши данные, брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к базам данным на основе исходного IP-адреса каждого запроса. Дополнительные сведения см. в статье [Обзор правил брандмауэра базы данных SQL Azure](sql-database-firewall-configure.md).

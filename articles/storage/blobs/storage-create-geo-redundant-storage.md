@@ -9,14 +9,14 @@ ms.date: 03/26/2018
 ms.author: tamram
 ms.custom: mvc
 ms.component: blobs
-ms.openlocfilehash: b3916fb0de48f30bd4809d1fc42dde6ac78c07b6
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
+ms.openlocfilehash: d50291a33a9456fad20382d8e646bf6a19d6179e
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44023272"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47180887"
 ---
-# <a name="make-your-application-data-highly-available-with-azure-storage"></a>Обеспечение высокой доступности данных приложений в хранилище Azure
+# <a name="tutorial-make-your-application-data-highly-available-with-azure-storage"></a>Руководство. Обеспечение высокой доступности данных приложения в службе хранилище Azure
 
 Эта статья входит в серию руководств, в которой показано, как обеспечить высокую доступность данных приложений в Azure. В итоге у вас будет консольное приложение, которое передает и извлекает большие двоичные объекты в учетной записи хранения [геоизбыточного хранилища с доступом на чтение](../common/storage-redundancy-grs.md#read-access-geo-redundant-storage) (RA-GRS). RA-GRS функционирует, реплицируя транзакции из основного в дополнительный регион. Репликация гарантирует, что данные в дополнительном регионе согласованы в конечном счете. Приложение использует шаблон [размыкателя цепи](/azure/architecture/patterns/circuit-breaker), чтобы определить, к какой конечной точке подключаться. При моделировании сбоя приложение переключается на использование вторичной конечной точки.
 

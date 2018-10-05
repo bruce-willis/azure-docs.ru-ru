@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/28/2017
-ms.openlocfilehash: d6d40b1918422dc7e435c020a368f256c859ae27
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 4e1444f385859044b2dadd83c8e9841d8fc78bb0
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835055"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47096417"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб машинного обучения Azure
 С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
@@ -45,7 +45,7 @@ ms.locfileid: "34835055"
 
 Дополнительные сведения о создании рабочей области см. в статье [Создание рабочей области машинного обучения Azure и предоставление к ней общего доступа](create-workspace.md).
 
-Дополнительные сведения о настройке прав доступа см. в статье [Просмотр назначенных прав доступа для пользователей и групп на портале Azure (общедоступная предварительная версия)](../../role-based-access-control/role-assignments-users.md).
+Дополнительные сведения о настройке разрешений на доступ см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
 
 ## <a name="manage-new-web-services"></a>Управление новыми веб-службами

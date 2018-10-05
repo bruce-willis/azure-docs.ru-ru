@@ -10,22 +10,26 @@ author: cforbe
 manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 09/24/2018
-ms.openlocfilehash: c357026e20ff402dd7236bd8db7fe2abe488bc39
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 673b8ddf3ed07507cbce4b54e9b8a488cb3ac689
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954251"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166611"
 ---
-# <a name="prepare-data-with-the-azure-machine-learning-data-prep-sdk-for-python"></a>Подготовка данных с помощью пакета SDK для подготовки данных машинного обучения Azure для Python
+# <a name="prepare-data-for-modeling-with-azure-machine-learning"></a>Подготовка данных для моделирования с помощью службы "Машинное обучение Azure"
  
-Подготовка данных является важной частью рабочего процесса машинного обучения. Ваши модели будут более точными и эффективными, если им будут предоставлены достоверные данные в удобном для использования формате. [Пакет SDK для подготовки данных машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/dataprep?view=azure-dataprep-py) можно использовать для загрузки данных в различных форматах, преобразования их для удобства использования и записи этих данных в расположения, где они будут доступны вашим моделям. 
+Подготовка данных является важной частью рабочего процесса машинного обучения. Ваши модели будут более точными и эффективными, если им будут предоставлены достоверные данные в удобном для использования формате. 
 
+Вы можете подготовить данные в Python, используя [пакет SDK для подготовки данных службы "Машинное обучение Azure"](https://docs.microsoft.com/python/api/overview/azure/dataprep?view=azure-dataprep-py). 
 
-## <a name="steps-for-data-preparation-with-azure-machine-learning"></a>Подготовка данных с помощью машинного обучения Azure 
-1. [Загрузка данных](how-to-load-data.md )
-2. [Преобразование данных](how-to-transform-data.md )
-3. [Запись данных](how-to-write-data.md )
+## <a name="data-preparation-pipeline"></a>Конвейер подготовки данных
+
+Ниже приведены основные этапы подготовки данных.
+
+1. [Загрузка данных](how-to-load-data.md), которые могут иметь различные форматы.
+2. [Преобразование](how-to-transform-data.md) данных в более удобную структуру.
+3. [Запись](how-to-write-data.md) данных в доступное для моделей расположение.
 
 ![Процесс подготовки данных](./media/concept-data-preparation/data-prep-process.png)
 

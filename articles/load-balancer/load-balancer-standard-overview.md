@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/08/2018
+ms.date: 09/24/2018
 ms.author: kumud
-ms.openlocfilehash: dad76ab9f2a1a621fb513a4d411792fe2f88a557
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 17b4bc68b2dc996134626b1822cfd17f0a9a7572
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40005881"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161647"
 ---
 # <a name="azure-load-balancer-standard-overview"></a>Обзор Azure Load Balancer уровня "Стандартный"
 
@@ -232,6 +232,8 @@ Load Balancer уровня "Стандартный" доступен с согл
 - [Metrics and health diagnostics for Standard Load Balancer](load-balancer-standard-diagnostics.md) (Метрики и проверки работоспособности Load Balancer уровня "Стандартный")
 - [Поддерживаемые многомерные метрики](../monitoring-and-diagnostics/monitoring-supported-metrics.md#microsoftnetworkloadbalancers) для диагностики в [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview.md)
 - Дополнительные сведения о [Load Balancer для исходящих подключений](load-balancer-outbound-connections.md).
+- Сведения о [правилах для исходящего трафика](load-balancer-outbound-rules-overview.md).
+- Сведения о [сбросе TCP-подключений при простое](load-balancer-tcp-reset.md).
 - Дополнительные сведения об [использовании Load Balancer (цен. категория "Стандартный") с правилами балансировки нагрузки портов высокого уровня доступности](load-balancer-ha-ports-overview.md).
 - Дополнительные сведения об [использовании Load Balancer с несколькими внешними интерфейсами](load-balancer-multivip-overview.md).
 - [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md)

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/13/2018
+ms.date: 09/21/2018
 ms.topic: tutorial
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: b1c7323dc108f5ee7a8bf6075abfe2a3e2fb9810
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0765e79b90eed49742f5eead33063907eb1db1f4
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953146"
+ms.locfileid: "47030852"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание экспортированных данных и управление ими
 
@@ -31,8 +31,15 @@ ms.locfileid: "46953146"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись Azure EA
-- Учетная запись хранилища Azure, настроенная для хранилища BLOB или файлового хранилища
+Экспорт данных доступен для всех клиентов с [Соглашением Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/). Для экспорта данных пользователем или группой поддерживаются следующие разрешения Azure на подписку.
+
+- Владелец: может создавать, изменять или удалять операции экспорта для подписки.
+- Участник: может создавать, изменять или удалять свои запланированные операции экспорта. Может изменять имена запланированных операций экспорта, созданных другими пользователями.
+- Читатель: может просматривать операции экспорта, для которых имеет разрешение.
+
+Для учетных записей хранения Azure:
+- Чтобы изменить настроенную учетную запись хранения, требуются разрешения на запись, вне зависимости от разрешений на экспорт.
+- Ваша учетная запись хранения Azure должна быть настроена для использования хранилища BLOB-объектов или хранилища файлов.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com/).

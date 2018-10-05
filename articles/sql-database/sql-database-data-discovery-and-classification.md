@@ -2,20 +2,22 @@
 title: Обнаружение и классификация данных в службе "База данных SQL Azure" | Документация Майкрософт
 description: Обнаружение и классификация данных в службе "База данных SQL Azure".
 services: sql-database
-author: giladmit
-manager: craigg
-ms.reviewer: carlrab
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 07/10/2018
+author: giladmit
 ms.author: giladm
-ms.openlocfilehash: 6ef9a701f3a228e4c40da94f83310ef2884a3f59
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.reviewer: vanto
+manager: craigg
+ms.date: 09/10/2018
+ms.openlocfilehash: d34bb54729fe0adc4b26d213bfaa4ad4fb210ab7
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42142714"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064192"
 ---
 # <a name="azure-sql-database-data-discovery-and-classification"></a>Обнаружение и классификация данных в службе "База данных SQL Azure"
 Служба обнаружения и классификации данных (в настоящее время находится на этапе предварительной версии) предоставляет расширенные возможности, встроенные в службу "База данных SQL Azure", для **обнаружения**, **классификации**, **добавления меток**  & и **защиты** конфиденциальных данных в базах данных.
@@ -42,6 +44,17 @@ ms.locfileid: "42142714"
 Для классификации используются два атрибута метаданных.
 * Метки — это основные атрибуты классификации, которые используется для определения уровня конфиденциальности данных, хранящихся в столбце.  
 * Типы информации обеспечивают дополнительную степень детализации для типа данных, хранящихся в столбце.
+
+## <a name="define-and-customize-your-classification-taxonomy"></a>Определение и настройка таксономии классификации
+
+Обнаружение и классификация данных SQL поставляется со встроенным набором меток конфиденциальности, встроенным набором типов сведений и логикой обнаружения. Теперь вы можете настраивать таксономию и задавать набор и ранжирование конструкций классификации для своей среды.
+
+Определение и настройка таксономии классификации выполняется в одном центральном расположении для всего клиента Azure. Это расположение находится в [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro), что является частью политики безопасности. Только пользователь с правами администратора в корневой группе управления клиента может выполнить эту задачу.
+
+В процессе управления политикой Information Protection можно определить пользовательские метки, ранжировать их и связать их с выбранным набором типов сведений. Вы также можете добавить собственные настраиваемые типы сведений и настроить их с использованием шаблонов строки, которые добавляются в логику обнаружения для идентификации этого типа данных в базах данных.
+Дополнительные сведения о настройке политики и управлении ею см. в статье [Customize the SQL information protection policy in Azure Security Center (Preview)](https://go.microsoft.com/fwlink/?linkid=2009845&clcid=0x409) (Настройка политики защиты информации SQL в центре безопасности Azure (предварительная версия)).
+
+После определения политики на уровне клиента можно приступить к классификации отдельных баз данных с помощью настроенной политики.
 
 ## <a name="classify-your-sql-database"></a>Классификация базы данных SQL
 
@@ -104,9 +117,9 @@ ms.locfileid: "42142714"
 > [!NOTE]
 > При использовании T-SQL для управления метками добавляемые в столбец метки не проверяются на предмет присутствия в политике защиты информации организации (набор меток, которые отображаются в рекомендациях портала). Эту проверку вы должны выполнить самостоятельно.
 
-* Добавление и обновление классификации одного или нескольких столбцов: [ADD SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/en-us/sql/t-sql/statements/add-sensitivity-classification-transact-sql)
-* Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
-* Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
+* Добавление и обновление классификации одного или нескольких столбцов: [ADD SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/add-sensitivity-classification-transact-sql)
+* Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
+* Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
 
 Также интерфейсы REST API можно использовать для программного управления классификациями. Опубликованные интерфейсы REST API поддерживают следующие операции:
 * [Create или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate). Создание или обновление метки конфиденциальности данного столбца.

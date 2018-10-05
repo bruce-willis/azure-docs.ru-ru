@@ -1,5 +1,5 @@
 ---
-title: Установка драйвера серии N для Linux | Документация Майкрософт
+title: Установка драйвера GPU серии N для Linux | Документация Майкрософт
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Linux в Azure
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 07/30/2018
+ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3d85bc79ddd08cb051b2e4d978a931f460020c10
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 822261e74f7da941ac89090e5d493c4be18bc307
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39364506"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038890"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -55,7 +55,7 @@ lspci | grep -i NVIDIA
 
 1. Скачайте и установите драйверы CUDA.
   ```bash
-  CUDA_REPO_PKG=cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+  CUDA_REPO_PKG=cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
 
   wget -O /tmp/${CUDA_REPO_PKG} http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/${CUDA_REPO_PKG} 
 
@@ -99,7 +99,7 @@ sudo reboot
 
 ### <a name="centos-or-red-hat-enterprise-linux-73-or-74"></a>CentOS или Red Hat Enterprise Linux 7.3 или 7.4
 
-1. Обновите ядро.
+1. Обновите ядро (рекомендуется). Если вы решите не делать это, убедитесь, что версии `kernel-devel` и `dkms` соответствуют ядру.
 
   ```
   sudo yum install kernel kernel-tools kernel-headers kernel-devel
@@ -127,7 +127,7 @@ sudo reboot
 
   sudo yum install dkms
 
-  CUDA_REPO_PKG=cuda-repo-rhel7-9.1.85-1.x86_64.rpm
+  CUDA_REPO_PKG=cuda-repo-rhel7-10.0.130-1.x86_64.rpm
 
   wget http://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
 
@@ -170,9 +170,9 @@ sudo reboot
 
 * **HPC версии 7.4 на основе CentOS.** Драйверы RDMA и Intel MPI 5.1 будут установлены на виртуальной машине.
 
-## <a name="install-grid-drivers-on-nv-series-vms"></a>Установка драйверов CUDA на виртуальные машины серии NV
+## <a name="install-grid-drivers-on-nv-or-nvv2-series-vms"></a>Установка драйверов GRID на виртуальные машины серии NV или NVv2
 
-Чтобы установить драйверы NVIDIA GRID на виртуальных машинах серии NV, подключитесь по протоколу SSH к каждой виртуальной машине и выполните действия, необходимые для дистрибутива Linux. 
+Чтобы установить драйверы NVIDIA GRID на виртуальных машинах серии NV или NVv2, подключитесь по протоколу SSH к каждой виртуальной машине и выполните действия, необходимые для дистрибутива Linux. 
 
 ### <a name="ubuntu-1604-lts"></a>Ubuntu 16.04 LTS
 
@@ -189,7 +189,7 @@ sudo reboot
 
   sudo apt-get install build-essential ubuntu-desktop -y
   ```
-3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d ` файл с именем `nouveau.conf` со следующим содержимым:
+3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NVv2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d ` файл с именем `nouveau.conf` со следующим содержимым:
 
   ```
   blacklist nouveau
@@ -232,7 +232,7 @@ sudo reboot
 
 ### <a name="centos-or-red-hat-enterprise-linux"></a>CentOS или Red Hat Enterprise Linux 
 
-1. Обновите ядро и DKMS.
+1. Обновите ядро и DKMS (рекомендуется). Если вы решите не делать это, убедитесь, что версии `kernel-devel` и `dkms` соответствуют ядру.
  
   ```bash  
   sudo yum update
@@ -244,7 +244,7 @@ sudo reboot
   sudo yum install dkms
   ```
 
-2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d ` файл с именем `nouveau.conf` со следующим содержимым:
+2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NV2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте в `/etc/modprobe.d ` файл с именем `nouveau.conf` со следующим содержимым:
 
   ```
   blacklist nouveau
@@ -304,7 +304,7 @@ sudo reboot
  
 
 ### <a name="x11-server"></a>Сервер X11
-Если вам требуется сервер X11 для удаленных подключений к виртуальной машине NV, рекомендуется использовать [x11vnc](http://www.karlrunge.com/x11vnc/), так как он поддерживает аппаратное ускорение графики. BusID устройства M60 необходимо вручную добавить в конфигурационный файл X11 (обычно `etc/X11/xorg.conf`). Добавьте раздел `"Device"`, аналогичный приведенному ниже.
+Если вам требуется сервер X11 для удаленных подключений к виртуальной машине NV или NVv2, рекомендуем использовать [x11vnc](http://www.karlrunge.com/x11vnc/), так как он поддерживает аппаратное ускорение графики. BusID устройства M60 необходимо вручную добавить в конфигурационный файл X11 (обычно `etc/X11/xorg.conf`). Добавьте раздел `"Device"`, аналогичный приведенному ниже.
  
 ```
 Section "Device"

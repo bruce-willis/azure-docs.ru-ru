@@ -2,19 +2,22 @@
 title: Архитектура подключений к базе данных SQL Azure | Документация Майкрософт
 description: В этом документе описывается архитектура подключений к базе данных SQL Azure из Azure или извне Azure.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: DBs & servers
+ms.subservice: development
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
+author: DhruvMsft
+ms.author: dhruv
+ms.reviewer: carlrab
+manager: craigg
 ms.date: 01/24/2018
-ms.author: carlrab
-ms.openlocfilehash: afc82ea666fdbef89348e7453df92b8d8e1adc86
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 66f558db713ab951864fe694f27f2e60d52e875a
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39493678"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064152"
 ---
 # <a name="azure-sql-database-connectivity-architecture"></a>Архитектура подключений к базе данных SQL Azure 
 
@@ -51,13 +54,16 @@ ms.locfileid: "39493678"
 ![Общий вид архитектуры](./media/sql-database-connectivity-architecture/connectivity-from-outside-azure.png)
 
 > [!IMPORTANT]
-> При использовании конечных точек служб с Базой данных SQL Azure по умолчанию действует политика **Прокси-сервер**. Чтобы обеспечить возможность подключения из виртуальной сети, разрешите исходящие подключения к IP-адресам шлюза Базы данных SQL Azure, указанным в списке ниже. При использовании конечных точек служб мы настоятельно рекомендуем установить политику подключения **Перенаправление**, чтобы повысить производительность. При изменении политики подключения на **Перенаправление** будет недостаточно разрешить вашей группе безопасности сети исходящие подключения к перечисленным ниже IP-адресам шлюза базы данных SQL Azure. Необходимо разрешить исходящие подключения ко всем IP-адресам Базы данных SQL Azure. Это можно сделать с помощью тегов служб в группах безопасности сети. Дополнительные сведения см. в разделе [Теги служб](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview#service-tags).
+> При использовании конечных точек служб с Базой данных SQL Azure по умолчанию действует политика **Прокси-сервер**. Чтобы обеспечить возможность подключения из виртуальной сети, разрешите исходящие подключения к IP-адресам шлюза службы "База данных SQL Azure", указанным в списке ниже. При использовании конечных точек служб мы настоятельно рекомендуем установить политику подключения **Перенаправление**, чтобы повысить производительность. При изменении политики подключения на **Перенаправление** будет недостаточно разрешить вашей группе безопасности сети исходящие подключения к перечисленным ниже IP-адресам шлюза базы данных SQL Azure. Необходимо разрешить исходящие подключения ко всем IP-адресам Базы данных SQL Azure. Это можно сделать с помощью тегов служб в группах безопасности сети. Дополнительные сведения см. в разделе [Теги служб](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags).
 
 ## <a name="azure-sql-database-gateway-ip-addresses"></a>IP-адреса шлюза базы данных SQL Azure
 
 Чтобы иметь возможность подключения к базе данных SQL Azure из локальных ресурсов, необходимо разрешить исходящий сетевой трафик к шлюзу базы данных SQL Azure для своего региона Azure. При подключении в режиме прокси-сервера, который используется по умолчанию при подключении из локальных ресурсов, подключения проходят только через шлюз.
 
 В следующей таблице перечислены основные и дополнительные IP-адреса шлюза базы данных SQL Azure для всех областей данных. В некоторых регионах существует два IP-адреса. В этих регионах основным IP-адресом является текущий IP-адрес шлюза, а второй IP-адрес — это IP-адрес отработки отказа. Адрес отработки отказа — это адрес, на который можно переместить сервер, чтобы сохранить высокий уровень доступности службы. Для этих регионов рекомендуется разрешить исходящий трафик для обоих IP-адресов. Второй IP-адрес принадлежит корпорации Майкрософт и не ожидает передачи данных от каких-либо служб, пока не будет активирован базой данных SQL Azure для приема подключений.
+
+> [!IMPORTANT]
+> Если вы подключаетесь из Azure, по умолчанию действует политика подключения **Перенаправление** (если не используются конечные точки службы). В таблице ниже приведены IP-адреса, которые блокирует эта политика. Вы должны разрешить все IP-адреса службы "База данных SQL Azure". При подключении из виртуальной сети это можно сделать с помощью тегов служб в группах безопасности сети (NSG). Дополнительные сведения см. в разделе [Теги служб](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags).
 
 | Имя региона | Основной IP-адрес | Дополнительный IP-адрес |
 | --- | --- |--- |
@@ -160,10 +166,10 @@ $body = @{properties=@{connectionType=$connectionType}} | ConvertTo-Json
 Invoke-RestMethod -Uri "https://management.azure.com/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Sql/servers/$serverName/connectionPolicies/Default?api-version=2014-04-01-preview" -Method PUT -Headers $authHeader -Body $body -ContentType "application/json"
 ```
 
-## <a name="script-to-change-connection-settings-via-azure-cli-20"></a>Сценарий для изменения параметров подключения через Azure CLI 2.0
+## <a name="script-to-change-connection-settings-via-azure-cli"></a>Сценарий изменения параметров подключения через Azure CLI
 
 > [!IMPORTANT]
-> Для работы этого сценария требуется [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+> Для работы этого сценария требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 >
 
 В приведенном ниже сценарии CLI показано, как изменить политику подключения.

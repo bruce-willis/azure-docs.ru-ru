@@ -2,19 +2,22 @@
 title: Масштабирование ресурсов эластичного пула — база данных SQL Azure | Документы Майкрософт
 description: На этой странице описано масштабирование ресурсов для эластичных пулов в базе данных SQL Azure.
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: DBs & servers
+subservice: elastic-pool
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/01/2018
-ms.author: carlrab
-ms.openlocfilehash: 0f63739c8718ed7d6625bd18de4fdfff4df60276
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+author: oslake
+ms.author: moslake
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 09/20/2018
+ms.openlocfilehash: 2b304ac26f9a18b0e98cb4c42de3ca386637d864
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412344"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47164725"
 ---
 # <a name="scale-elastic-pool-resources-in-azure-sql-database"></a>Масштабирование ресурсов эластичного пула в базе данных SQL Azure
 
@@ -33,7 +36,7 @@ ms.locfileid: "39412344"
 
 ## <a name="vcore-based-purchasing-model-change-elastic-pool-compute-resources-vcores"></a>Модель приобретения на основе виртуальных ядер: изменение вычислительных ресурсов эластичного пула (виртуальных ядер)
 
-Можно увеличить или уменьшить уровень производительности, доступный для эластичного пула, исходя из потребностей в ресурсах, с помощью[портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_update) или [REST API](/rest/api/sql/elasticpools/update).
+Вы можете увеличить или уменьшить объем вычислительных ресурсов, доступный для эластичного пула, с помощью[портала Azure](sql-database-elastic-pool-scale.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](/rest/api/sql/elasticpools/update).
 
 - При изменении числа виртуальных ядер в пуле подключение к базе данных на короткое время прерывается. То же самое происходит при масштабировании DTU для отдельной базы данных (не в пуле). Дополнительные сведения о длительности и влиянии разрыва подключений к базе данных во время операций масштабирования см. в разделе [Ограничения ресурсов базы данных SQL Azure](#single-database-change-storage-size). 
 - Время, необходимое для изменения числа виртуальных ядер в пуле, зависит от общего объема пространства, используемого всеми базами данных в пуле. Как правило, задержка при изменении масштаба в среднем составляет не более 90 минут на 100 ГБ. Например, если общее пространство, используемое всеми базами данных в пуле, равно 200 ГБ, то ожидаемая задержка при изменении масштаба пула составит до 3 часов. В некоторых случаях в рамках уровней "Стандартный" и "Базовый" задержка при изменении масштаба может составлять меньше пяти минут, вне зависимости от объема используемого пространства.
@@ -42,8 +45,8 @@ ms.locfileid: "39412344"
 
 ## <a name="dtu-based-purchasing-model-change-elastic-pool-storage-size"></a>Модель приобретения на основе единиц DTU: изменение размера хранилища эластичного пула
 
-- Цена DTU для эластичного пула включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Эластичный пул: размеры хранилища и уровни производительности](#elastic-pool-storage-sizes-and-performance-levels).
-- Дополнительное хранилище для эластичного пула можно подготовить, увеличив его максимальный размер с помощью [портала Azure](sql-database-elastic-pool-scale.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_update) или [REST API](/rest/api/sql/elasticpools/update).
+- Цена DTU для эластичного пула включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Отдельная база данных: размеры хранилища и уровни производительности](sql-database-dtu-resource-limits-elastic-pools.md#elastic-pool-storage-sizes-and-compute-sizes).
+- Дополнительное хранилище для эластичного пула можно подготовить, увеличив его максимальный размер с помощью [портала Azure](sql-database-elastic-pool-scale.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](/rest/api/sql/elasticpools/update).
 - Стоимость дополнительного хранилища для эластичного пула равна его объему, умноженному на цену единицы хранения этого хранилища для уровня служб. Сведения о цене на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 > [!IMPORTANT]
@@ -51,7 +54,7 @@ ms.locfileid: "39412344"
 
 ## <a name="dtu-based-purchasing-model-change-elastic-pool-compute-resources-edtus"></a>Модель приобретения на основе единиц DTU: изменение вычислительных ресурсов эластичного пула (единиц DTU)
 
-Можно увеличить или сократить ресурсы, доступные для эластичного пула, на основе потребностей в ресурсах, с помощью[портала Azure](sql-database-elastic-pool-scale.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az_sql_elastic_pool_update) или [REST API](/rest/api/sql/elasticpools/update).
+Можно увеличить или сократить ресурсы, доступные для эластичного пула, на основе потребностей в ресурсах, с помощью[портала Azure](sql-database-elastic-pool-scale.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](/rest/api/sql/elasticpools/update).
 
 - При масштабировании eDTU пула подключения к базе данных на короткое время разрываются. То же самое происходит при масштабировании DTU для отдельной базы данных (не в пуле). Дополнительные сведения о длительности и влиянии разрыва подключений к базе данных во время операций масштабирования см. в разделе [Ограничения ресурсов базы данных SQL Azure](#single-database-change-storage-size). 
 - Время, необходимое для масштабирования eDTU пула, может зависеть от общего объема пространства, используемого всеми базами данных в пуле. Как правило, задержка при изменении масштаба в среднем составляет не более 90 минут на 100 ГБ. Например, если общее пространство, используемое всеми базами данных в пуле, равно 200 ГБ, то ожидаемая задержка при изменении масштаба пула составит до 3 часов. В некоторых случаях в рамках уровней "Стандартный" и "Базовый" задержка при изменении масштаба может составлять меньше пяти минут, вне зависимости от объема используемого пространства.

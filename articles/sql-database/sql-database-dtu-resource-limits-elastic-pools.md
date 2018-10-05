@@ -2,19 +2,22 @@
 title: Ограничения ресурсов службы "База данных SQL Azure" в модели приобретения на основе DTU — эластичные пулы | Документы Майкрософт
 description: На этой странице описаны некоторые общие ограничения ресурсов для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе DTU.
 services: sql-database
-author: sachinpMSFT
-manager: craigg
 ms.service: sql-database
-ms.custom: DBs & servers
+ms.subservice: elastic-pools
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/01/2018
-ms.author: carlrab
-ms.openlocfilehash: 0920489daf99445a9d715d0858cf68ae45e6a178
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+author: sachinpMSFT
+ms.author: sachinp
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 09/20/2018
+ms.openlocfilehash: b2efdf0b1a8abe91589f56ecbb6dc01f7606f305
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42146020"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47158993"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU 
 
@@ -25,9 +28,9 @@ ms.locfileid: "42146020"
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
-## <a name="elastic-pool-storage-sizes-and-performance-levels"></a>Эластичный пул: размеры хранилища и уровни производительности
+## <a name="elastic-pool-storage-sizes-and-compute-sizes"></a>Эластичный пул: размеры хранилища и объемы вычислительных ресурсов
 
-В следующих таблицах приведены доступные ресурсы для эластичных пулов баз данных SQL на каждом уровне служб и уровне производительности. Уровень служб, уровень производительности и объем хранилища можно задать с помощью [портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](sql-database-elastic-pool-manage.md#powershell-manage-elastic-pools-and-pooled-databases), [Azure CLI](sql-database-elastic-pool-manage.md#azure-cli-manage-elastic-pools-and-pooled-databases) или [REST API](sql-database-elastic-pool-manage.md#rest-api-manage-elastic-pools-and-pooled-databases).
+В следующих таблицах приведены доступные ресурсы эластичных пулов Баз данных SQL на каждом уровне служб и с каждым объемом вычислительных ресурсов. Уровень служб, объем вычислительных ресурсов и объем хранилища можно задать с помощью [портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](sql-database-elastic-pool-manage.md#powershell-manage-elastic-pools-and-pooled-databases), [Azure CLI](sql-database-elastic-pool-manage.md#azure-cli-manage-elastic-pools-and-pooled-databases) или [REST API](sql-database-elastic-pool-manage.md#rest-api-manage-elastic-pools-and-pooled-databases).
 
 > [!NOTE]
 > Ограничения ресурсов отдельных баз данных в эластичных пулах обычно такие же, как и у отдельных баз данных за их пределами, и основаны на DTU и уровне служб. Например, максимальное количество одновременных рабочих экземпляров для базы данных S2 — 120. Таким образом, максимальное количество одновременных рабочих экземпляров в базе данных в стандартном пуле также составляет 120, если максимальное значение DTU для одной базы данных в пуле равно 50 (что эквивалентно уровню S2).
@@ -108,7 +111,7 @@ ms.locfileid: "42146020"
 ||||||||
 
 > [!IMPORTANT]
-> Хранилище категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион USGov, Северо-Восточная Германия, USGov — Айова, Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+> Хранилище категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион USGov, Северо-Восточная Германия, USGov — Айова, Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
 
 Если использованы все DTU пула эластичных БД, то каждая база данных в пуле получает равное количество ресурсов для обработки запросов. Служба базы данных SQL обеспечивает равное разделение ресурсов между базами данных за счет равных срезов времени вычислений. Если задано минимальное значение DTU на базу данных, отличное от нуля, то такое равное разделение ресурсов в пуле эластичных БД также позволяет гарантировать любое дополнительное количество ресурсов каждой базе данных.
 

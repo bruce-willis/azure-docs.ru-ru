@@ -1,21 +1,26 @@
 ---
 title: Пакет FPGA для аппаратного ускорения службы "Машинное обучение Azure"
 description: Сведения о пакетах Python, доступных для пользователей службы "Машинное обучение Azure".
+services: machine-learning
 ms.service: machine-learning
 ms.component: core
-ms.topic: conceptual
+ms.topic: reference
 ms.reviewer: jmartens
 ms.author: tedway
 author: tedway
 ms.date: 05/07/2018
-ms.openlocfilehash: a81f5f811058f3c7940da79419b9801225716e6b
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ROBOTS: NOINDEX
+ms.openlocfilehash: cb1abdce3bbd7349695ece70ff336c7e513c0918
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42143779"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162191"
 ---
 # <a name="azure-machine-learning-hardware-acceleration-package"></a>Пакет аппаратного ускорения для службы "Машинное обучение Azure"
+
+>[!Note]
+>**Эта статья считается устаревшей.** Этот пакет FPGA объявлен устаревшим. Поддержка этой функции добавлена в пакет SDK для службы "Машинное обучение Azure". Поддержка этого пакета прекращается постепенно. [Просмотрите сроки поддержки](overview-what-happened-to-workbench.md#timeline). Дополнительные сведения об обновлении поддержки FPGA см. [здесь](concept-accelerate-with-fpgas.md).
 
 Пакет для аппаратного ускорения службы "Машинное обучение Azure" — это расширение Python, установленное с помощью PIP, для службы "Машинное обучение Azure", которое позволяет специалистам по обработке и анализу данных и разработчикам систем искусственного интеллекта быстро выполнять следующие действия:
 
@@ -29,7 +34,7 @@ ms.locfileid: "42143779"
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-1. Вы должны создать учетную запись Управления моделями Машинного обучения Azure. Дополнительные сведения о создании учетной записи см. в документе [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../service/quickstart-installation.md). 
+1. Учетная запись службы "Управление моделями Машинного обучения". Дополнительные сведения о создании учетной записи см. в документе [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../desktop-workbench/quickstart-installation.md). 
 
 1. Необходимо установить пакет. 
 

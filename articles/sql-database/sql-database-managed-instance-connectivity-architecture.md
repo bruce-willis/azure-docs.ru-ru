@@ -1,23 +1,23 @@
 ---
 title: Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure | Документация Майкрософт
 description: В этой статье представлены общие сведения об обмене данными с Управляемым экземпляром Базы данных SQL Azure и объясняется архитектура подключения, а также как функционируют различные компоненты при передаче трафика к Управляемому экземпляру.
-keywords: ''
 services: sql-database
-author: srdan-bozovic-msft
-manager: craigg
 ms.service: sql-database
-ms.subservice: managed instance
+ms.subservice: managed-instance
 ms.custom: ''
-ms.date: 08/16/2018
+ms.devlang: ''
+ms.topic: conceptual
+author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: bonova, carlrab
-ms.topic: conceptual
-ms.openlocfilehash: 54917c6548c7f0bfacad6408732c5619e6346683
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+manager: craigg
+ms.date: 08/16/2018
+ms.openlocfilehash: 312425d3ea02d15a992b9a694f09cb2be73b6221
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "40177560"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161596"
 ---
 # <a name="azure-sql-database-managed-instance-connectivity-architecture"></a>Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure 
 
@@ -73,8 +73,8 @@ ms.locfileid: "40177560"
 - Дополнительные сведения см. в статье  [Общие сведения об Управляемом экземпляре Базы данных SQL Azure (предварительная версия)](sql-database-managed-instance.md). 
 - Дополнительные сведения о настройке виртуальной сети для Управляемого экземпляра Базы данных SQL Azure см. в  [этой статье](sql-database-managed-instance-vnet-configuration.md). 
 - Перейдите к краткому руководству по созданию Управляемого экземпляра: 
-  - на [портале Azure](sql-database-managed-instance-create-tutorial-portal.md); 
-  - с помощью [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/); 
+  - на [портале Azure](sql-database-managed-instance-get-started.md); 
+  - с помощью [PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/). 
   - с помощью [шаблона Azure Resource Manager](https://azure.microsoft.com/resources/templates/101-sqlmi-new-vnet/); 
   - с помощью [шаблона Azure Resource Manager (jumpbox со включенным SSMS)](https://portal.azure.com/). 
 

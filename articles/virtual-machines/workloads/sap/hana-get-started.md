@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/15/2016
+ms.date: 09/06/2018
 ms.author: hermannd
-ms.openlocfilehash: 1948fb927c00e928a46c347bc6f1a01a43e155df
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 6355a7ce203f2bf75b5c93d225502f961deeee43
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43112145"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47032090"
 ---
 # <a name="quickstart-manual-installation-of-single-instance-sap-hana-on-azure-vms"></a>Краткое руководство по установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure
 ## <a name="introduction"></a>Введение
@@ -45,7 +45,9 @@ ms.locfileid: "43112145"
    * Повышение эффективности с помощью установки нескольких SID ASCS/SCS в Azure. См. статью [Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-multi-sid). 
    * Принципы работы SAP NetWeaver на виртуальных машинах Linux в Azure. См. статью [Запуск SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/suse-quickstart). В этом руководстве описываются важные настройки Linux на виртуальных машинах Azure, а также приведены сведения о том, как правильно присоединять диски хранилища Azure к виртуальным машинам Linux.
 
-Сейчас виртуальные машины Azure сертифицированы SAP только для конфигураций вертикального масштабирования SAP HANA. Конфигурации горизонтального масштабирования при использовании рабочих нагрузок SAP HANA пока не поддерживаются. Сведения об обеспечении высокого уровня доступности SAP HANA для конфигураций вертикального масштабирования см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability).
+Типы виртуальных машин Azure, которые можно использовать для производственных сценариев, можно найти [в документации SAP для IAAS](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html). Для нерабочих сценариев доступен более широкий спектр собственных типов виртуальных машин Azure.
+Дополнительные сведения о настройке и эксплуатации виртуальной машины см. в статье [Краткое руководство по установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations).
+Дополнительные сведения об обеспечении высокого уровня доступности для SAP HANA на виртуальных машинах Azure см. в [этой статье](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-overview).
 
 Если вы хотите очень быстро развернуть экземпляр системы SAP HANA S/4HANA или BW/4HANA, попробуйте использовать [библиотеку SAP Cloud Appliance Library](http://cal.sap.com). Документацию по развертыванию системы S/4HANA с использованием клиентской лицензии SAP в Azure см. в статье [Развертывание SAP S/4HANA или BW/4HANA в Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h). Вам понадобится только подписка Azure и пользователь SAP, которого можно зарегистрировать в библиотеке SAP Cloud Appliance Library.
 
@@ -91,6 +93,11 @@ ms.locfileid: "43112145"
 >Интеграция SAP, Linux и Azure поддерживается только в модели развертывания с помощью Azure Resource Manager и не поддерживается в классической модели развертывания. 
 
 ## <a name="manual-installation-of-sap-hana"></a>Установка SAP HANA вручную
+
+> [!IMPORTANT]
+> Убедитесь, что выбранная операционная система сертифицирована для использования SAP HANA на определенных типах виртуальных машин. Список сертифицированных для SAP HANA типов виртуальных машин и выпусков ОС см. [здесь](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). Чтобы просмотреть подробные сведения о поддерживаемых SAP HANA на определенных типах виртуальных машин выпусках ОС, щелкните необходимый тип виртуальной машины. Учтите, что в примере в этой статье используется ОС SLES, а этот выпуск не поддерживает SAP HANA на виртуальных машинах серии M.
+>
+
 В этом руководстве описываются два разных способа установки SAP HANA на виртуальных машинах Azure вручную:
 
 * использование диспетчера подготовки программного обеспечения SAP (SWPM) в рамках распределенной установки NetWeaver на шаге "Установка экземпляра базы данных";

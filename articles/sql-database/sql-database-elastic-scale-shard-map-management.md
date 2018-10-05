@@ -2,19 +2,22 @@
 title: Развертывание базы данных SQL Azure | Документация Майкрософт
 description: Использование ShardMapManager, клиентской библиотеки гибких базы данных
 services: sql-database
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 03/16/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 7e156142a68b30471646ea3a9181ce7d0097e626
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 03/16/2018
+ms.openlocfilehash: 71496a11deff5236161931d572e75d4a84b75c5f
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646999"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162072"
 ---
 # <a name="scale-out-databases-with-the-shard-map-manager"></a>Развертывание баз данных с использованием диспетчера карты сегментов
 Используйте диспетчер карты сегментов, чтобы легко развертывать базы данных в SQL Azure. Диспетчер карты сегментов — это специальная база данных, которая хранит глобальную информацию о сопоставлении всех сегментов (баз данных), входящих в набор сегментов. Метаданные позволяют приложению подключаться к нужной базе данных, которая определяется по значению **ключа сегментирования**. Кроме того, каждый сегмент в наборе содержит карты, отслеживающие локальные сегменты данных ( **шардлеты**). 
@@ -31,7 +34,7 @@ ms.locfileid: "34646999"
    1. Сопоставление по спискам
    2. Сопоставление по диапазонам
 
-Для модели с одним клиентом создайте карту сегментов с **сопоставлением по списку** . В модели с одним клиентом каждому клиенту назначается по одной базе данных. Эта модель подходит для разработчиков SaaS, так как она упрощает управление.
+Для модели с одним клиентом создайте карту сегментов с **сопоставлением по списку**. В модели с одним клиентом каждому клиенту назначается по одной базе данных. Эта модель подходит для разработчиков SaaS, так как она упрощает управление.
 
 ![Сопоставление по спискам][1]
 
@@ -60,7 +63,7 @@ ms.locfileid: "34646999"
 Карты сегментов могут быть созданы с использованием **списков индивидуальных величин сегментных ключей** или с использованием **диапазонов величин сегментных ключей**. 
 
 ### <a name="list-shard-maps"></a>Списочные карты сегментов
-**Сегменты** содержат **шардлеты**, и сопоставление шардлетов сегментам производится с помощью карты сегментов. **Списочная карта сегментов** представляет ассоциацию между отдельными значениями ключа, определяющими шардлеты, и базами данных, обслуживающими сегменты.  **Сопоставления по списку** — это явные и разные значения ключей, которые могут сопоставляться с одной базой данных. Например, ключ 1 соответствует базе данных A, а значения ключей 3 и 6 ссылаются на базу данных B.
+**Сегменты** содержат **шардлеты**, и сопоставление шардлетов сегментам производится с помощью карты сегментов. **Списочная карта сегментов** представляет ассоциацию между отдельными значениями ключа, определяющими шардлеты, и базами данных, обслуживающими сегменты.  **Сопоставления по списку** — это явные и разные значения ключей, которые могут сопоставляться с одной базой данных. Например, значение ключа 1 соответствует базе данных A, а значения ключей 3 и 6 — базе данных B.
 
 | Ключ | Расположение сегмента |
 | --- | --- |
@@ -97,7 +100,7 @@ ms.locfileid: "34646999"
 
 **Обратите внимание:** экземпляр **ShardMapManager** должен создаваться только один раз для каждого домена приложения в коде инициализации приложения. Создание дополнительных экземпляров ShardMapManager в том же домене приложения приводит к повышенному потреблению ресурсов памяти и ЦП приложением. **ShardMapManager** может содержать любое число карт сегментов. Многим приложениям достаточно одной карты сегментов, но в некоторых случаях применяются разные наборы баз данных, которые используются в разных схемах или имеют уникальное назначение. В таком случае желательно использовать несколько карт сегментов. 
 
-В этом коде приложение пытается открыть существующий экземпляр **ShardMapManager** с помощью метода TryGetSqlShardMapManager ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager_factory.trygetsqlshardmapmanager), [.NET](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager)). Если объекты, представляющие экземпляр **ShardMapManager** (GSM), еще не существуют в базе данных, клиентская библиотека создаст их с помощью метода CreateSqlShardMapManager ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager_factory.createsqlshardmapmanager), [.NET](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.createsqlshardmapmanager)).
+В этом коде приложение пытается открыть существующий экземпляр **ShardMapManager** с помощью метода TryGetSqlShardMapManager ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager_factory.trygetsqlshardmapmanager), [.NET](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager)). Если объекты, представляющие экземпляр **ShardMapManager** (GSM), отсутствуют в базе данных, клиентская библиотека создаст их с помощью метода CreateSqlShardMapManager ([Java](/java/api/com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager_factory.createsqlshardmapmanager), [.NET](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.createsqlshardmapmanager)).
 
 ```Java
 // Try to get a reference to the Shard Map Manager in the shardMapManager database.

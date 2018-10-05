@@ -2,24 +2,26 @@
 title: Журнал диагностики производительности Intelligent Insights для базы данных SQL Azure | Документация Майкрософт
 description: Intelligent Insights предоставляет журнал диагностики проблем производительности базы данных SQL Azure.
 services: sql-database
-author: danimir
-manager: craigg
-ms.reviewer: carlrab
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: performance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/04/2018
+author: danimir
 ms.author: v-daljep
-ms.openlocfilehash: 3d1a9045ed89bd3e5714762add7cb9568c46e44f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 04/04/2018
+ms.openlocfilehash: 70096c8f3a5c07fa757b68494c04519b63435dcd
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34648247"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166900"
 ---
 # <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для базы данных SQL Azure
 
-Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Этот журнал диагностики можно отправить в [Azure Log Analytics](../log-analytics/log-analytics-azure-sql.md), [концентраторы событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и отчетности в соответствии с процедурами DevOps.
+Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Этот журнал диагностики можно отправить в [Azure Log Analytics](../log-analytics/log-analytics-azure-sql.md), [Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и отчетности в соответствии с процедурами DevOps.
 
 ## <a name="log-header"></a>Заголовок журнала
 

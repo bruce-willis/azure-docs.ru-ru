@@ -2,20 +2,22 @@
 title: Автоматическая настройка базы данных SQL Azure | Документация Майкрософт
 description: База данных SQL анализирует SQL-запрос и автоматически подстраивается под рабочую нагрузку пользователей.
 services: sql-database
-author: danimir
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: performance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: danimir
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: 38b59c28096b23a22b216158d9e945a2881a4f41
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 931e0f2c6be51c78187413d638259237f98bd9b0
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43189264"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063359"
 ---
 # <a name="automatic-tuning-in-azure-sql-database"></a>Автоматическая настройка в базе данных SQL Azure
 
@@ -27,7 +29,7 @@ ms.locfileid: "43189264"
 
 ## <a name="what-can-automatic-tuning-do-for-you"></a>Возможности автоматической настройки
 
-- Автоматическая оптимизация производительности базы данных SQL Azure.
+- Автоматическая оптимизация производительности баз данных SQL Azure.
 - Автоматическая проверка прироста производительности.
 - Автоматический откат и самостоятельное восстановление.
 - Журнал настройки

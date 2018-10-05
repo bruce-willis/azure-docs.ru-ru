@@ -1,20 +1,20 @@
 ---
-title: Руководство. Развертывание модели классификации изображений в экземпляре контейнера Azure (ACI) с помощью службы машинного обучения Azure
-description: Сведения о развертывании модели классификации изображений scikit-learn с помощью Jupyter Notebook для Python.  Это руководство представляет собой вторую часть серии, состоящей из двух частей.
-author: hning86
-ms.author: haining
+title: Руководство. Развертывание модели классификации изображений в экземпляре контейнера Azure (ACI) с помощью службы "Машинное обучение Azure"
+description: В этом руководстве показано, как использовать службу "Машинное обучение Azure" для развертывания модели классификации изображений с помощью scikit-learn в Jupyter Notebook для Python.  Это руководство представляет собой вторую часть серии, состоящей из двух частей.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
 ms.topic: tutorial
+author: hning86
+ms.author: haining
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: e79df258701fa1d269e45e00a92b0961306ffbe3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: eda4a1dabd20eee73cfbfa4dc0dd2b0eaa56788e
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968634"
+ms.locfileid: "47031243"
 ---
 # <a name="tutorial-2--deploy-an-image-classification-model-in-azure-container-instance-aci"></a>Руководство 2. Развертывание модели классификации изображений в экземпляре контейнера Azure (ACI)
 
@@ -374,7 +374,7 @@ service.delete()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве по машинному обучению Azure вы использовали Python для выполнения следующих задач:
+В этом руководстве по Машинному обучению Azure вы использовали Python для выполнения следующих задач.
 
 > [!div class="checklist"]
 > * Настройка тестовой среды

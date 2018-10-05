@@ -1,30 +1,31 @@
 ---
-title: Управление схемой базы данных SQL Azure в примере мультитенантного приложения | Документация Майкрософт
-description: Управление схемой для нескольких клиентов в мультитенантном приложении, использующем базу данных SQL Azure
-keywords: руководство по базе данных sql
+title: Управление схемой Базы данных SQL Azure в однотенантном приложении | Документация Майкрософт
+description: Сведения об управлении схемой для нескольких клиентов в однотенантном приложении, использующем службу "База данных SQL Azure".
 services: sql-database
-author: stevestein
-manager: craigg
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: scenario
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
 ms.reviewer: billgib
-ms.openlocfilehash: 2e4af3e3e1ef1d9da7c66b929885e3ec749b462f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+manager: craigg
+ms.date: 09/19/2018
+ms.openlocfilehash: 2f747eb09fd13647c4b6764ce3cc4fe72c00bcf0
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646278"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47054852"
 ---
 # <a name="manage-schema-in-a-saas-application-using-the-database-per-tenant-pattern-with-azure-sql-database"></a>Управление схемой в приложении SaaS с помощью шаблона с однотенантной базой данных с использованием базы данных SQL Azure
-
+ 
 По мере развития приложения базы данных в схему базы данных или эталонные данные обязательно придется вносить изменения.  Кроме того, иногда нужно выполнять задачи обслуживания базы данных. Для управления приложением, использующим шаблон с однотенантной базой данных, требуется, чтобы эти изменения и задачи обслуживания применялись ко всем базам данных клиентов.
 
 В этом руководстве рассматривается два сценария: развертывание обновлений эталонных данных на всех клиентах и перестройка индекса для таблицы, содержащей эталонные данные. Функция [Задания обработки эластичных баз данных](sql-database-elastic-jobs-overview.md) позволяет выполнять эти действия на всех клиентских базах данных, а также в шаблоне базы данных, используемом для создания новых баз данных клиентов.
 
-Из этого руководства вы узнали, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 

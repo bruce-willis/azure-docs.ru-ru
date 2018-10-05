@@ -2,19 +2,22 @@
 title: Устранение проблем сопоставления сегментов с помощью диспетчера восстановления | Документация Майкрософт
 description: Устранение проблем сопоставления сегментов с помощью класса RecoveryManager
 services: sql-database
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: scale-out
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 6257edbb567be3ebb3151724e7e50ca81905ad40
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 09eb2312ef2268169535b644470a754e46b51b18
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646241"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166866"
 ---
 # <a name="using-the-recoverymanager-class-to-fix-shard-map-problems"></a>Устранение проблем сопоставления сегментов с помощью класса RecoveryManager
 Класс [RecoveryManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager.aspx) предоставляет приложениям ADO.Net возможность легко обнаружить и исправить все несоответствия между глобальным сопоставлением сегментов (GSM) и локальным сопоставлением сегментов (LSM) в сегментированной среде базы данных. 

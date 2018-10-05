@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: haining
 author: haining
 ms.date: 09/24/2018
-ms.openlocfilehash: 2182a39836f02596d22168722e6ece7a2872dccc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0c5cfcee65b176147125dd2edbff2497b1eee70b
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46969491"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47158570"
 ---
 # <a name="migrate-to-the-latest-version-of-azure-machine-learning-service"></a>Переход на последнюю версию службы "Машинное обучение Azure" 
 
@@ -54,13 +54,13 @@ ms.locfileid: "46969491"
 
 Начните работу с последней версией, создав рабочую область машинного обучения Azure на [портале Azure](quickstart-get-started.md). Панель мониторинга для рабочей области портала поддерживается только в браузерах Edge, Chrome и Firefox.
 
-Эта новая рабочая область представляет собой ресурс службы верхнего уровня и позволяет использовать все новые возможности службы "Машинное обучение Azure". [Дополнительные сведения об этой рабочей области и архитектуре](concept-azure-machine-learning-architecture.md).
+Эта новая рабочая область представляет собой ресурс службы верхнего уровня и позволяет использовать все новые возможности службы "Машинное обучение Azure". Дополнительные сведения об этой рабочей области и архитектуре см. [здесь](concept-azure-machine-learning-architecture.md).
 
 <a name="projects"></a>
 
 ## <a name="projects"></a>Проекты
 
-Вместо помещения в рабочую область в облаке проекты в последней версии теперь являются каталогами на локальном компьютере. [См. схему последней архитектуры](concept-azure-machine-learning-architecture.md). 
+Вместо помещения в рабочую область в облаке проекты в последней версии теперь являются каталогами на локальном компьютере. Ознакомьтесь со [схемой последней архитектуры](concept-azure-machine-learning-architecture.md). 
 
 Чтобы продолжить использовать локальный каталог, содержащий файлы и скрипты, укажите имя каталога в команде Python ["experiment.submit"](http://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) или с помощью команды интерфейса командной строки "az ml project attach".
 

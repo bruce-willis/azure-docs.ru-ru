@@ -2,22 +2,30 @@
 title: Обзор аутентификации Azure Active Directory для SQL Azure | Документация Майкрософт
 description: Узнайте, как использовать Azure Active Directory для аутентификации с помощью базы данных SQL, управляемого экземпляра и хранилища данных SQL.
 services: sql-database
-author: GithubMirek
-manager: craigg
 ms.service: sql-database
-ms.custom: security
+ms.subservice: security
+ms.custom: data warehouse
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 03/07/2018
+author: GithubMirek
 ms.author: mireks
-ms.openlocfilehash: c016d593f62e2f0616b426a87baf8d9390645b4a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: vanto, carlrab
+manager: craigg
+ms.date: 06/13/2018
+ms.openlocfilehash: c11ba5fd88beeeb9b895abb1ee258c3109c40807
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645071"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064073"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql-database-managed-instance-or-sql-data-warehouse"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью базы данных SQL, управляемого экземпляра или хранилища данных SQL
-Проверка подлинности Azure Active Directory — это механизм подключения к Базе данных SQL Microsoft Azure и [хранилищу данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure Active Directory (Azure AD). С помощью проверки подлинности Azure AD можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление удостоверениями позволяет использовать единое расположение для управления пользователями и упрощает управление разрешениями. Это дает такие преимущества:
+Аутентификация Azure Active Directory — это механизм подключения к службам [База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure Active Directory (Azure AD). 
+
+> [!NOTE]
+> Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+
+С помощью проверки подлинности Azure AD можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление удостоверениями позволяет использовать единое расположение для управления пользователями и упрощает управление разрешениями. Это дает такие преимущества:
 
 * наличие альтернативного варианта проверки подлинности SQL Server;
 * возможность остановить увеличение количества пользователей на серверах баз данных;

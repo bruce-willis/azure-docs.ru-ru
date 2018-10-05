@@ -1,23 +1,30 @@
 ---
 title: Управление масштабируемыми облачными базами данных | Документация Майкрософт
 description: Использование службы заданий эластичной базы данных для выполнения скрипта в группе баз данных.
-metakeywords: azure sql database elastic databases
 services: sql-database
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 5e2c233ec631f6a3e57d2203a9678b42f909a885
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 06/14/2018
+ms.openlocfilehash: 649a76fad8f54339a6b1e429b3966945410573f7
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646091"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166798"
 ---
 # <a name="managing-scaled-out-cloud-databases"></a>Управление масштабируемыми облачными базами данных
+
+[!INCLUDE [elastic-database-jobs-deprecation](../../includes/sql-database-elastic-jobs-deprecate.md)]
+
+**Задания обработки эластичных баз данных** — это размещаемая на стороне клиента облачная служба Azure, которая дает возможность выполнять ситуативные и запланированные административные задачи, именуемые **заданиями**. С помощью заданий вы можете легко и уверенно управлять большими группами баз данных SQL Azure, выполняя административные операции с помощью сценариев Transact-SQL. 
+
 Для управления масштабируемыми сегментированными базами данных можно воспользоваться функцией **заданий обработки для эластичных баз данных** (предварительная версия). Она позволяет надежно выполнить скрипт Transact-SQL (T-SQL) для группы баз данных, включая:
 
 * пользовательское семейство баз данных (см. ниже);
@@ -28,9 +35,9 @@ ms.locfileid: "34646091"
 * [Установка компонентов заданий для обработки эластичных баз данных](sql-database-elastic-jobs-service-installation.md). 
 * [Приступая к работе с инструментами эластичных баз данных](sql-database-elastic-jobs-getting-started.md).
 * [Создание и управление заданиями с помощью PowerShell](sql-database-elastic-jobs-powershell.md).
-* [Создание развернутых баз данных SQL Azure и управление ими](sql-database-elastic-jobs-getting-started.md)
+* [Начало работы с заданиями обработки эластичных баз данных](sql-database-elastic-jobs-getting-started.md)
 
-Сейчас служба **заданий обработки эластичных баз данных** — это размещаемая на стороне клиента облачная служба Azure, которая дает возможность выполнять ситуативные и запланированные административные задачи, именуемые **заданиями**. С помощью заданий вы можете легко и уверенно управлять большими группами баз данных SQL Azure, выполняя административные операции с помощью сценариев Transact-SQL. 
+
 
 ![Служба заданий обработки эластичных баз данных][1]
 

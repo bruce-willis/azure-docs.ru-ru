@@ -1,21 +1,22 @@
 ---
 title: Мониторинг и повышение производительности базы данных SQL Azure | Документация Майкрософт
 description: База данных SQL Azure предоставляет средства оценки производительности для выявления областей, которые могут улучшить производительность текущих запросов.
-services: sql-database
-author: danimir
-manager: craigg
 ms.service: sql-database
-ms.custom: monitor & tune
+ms.subservice: performance
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: danimir
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: 8a458af27bd517be7c3ce0b5ad30c6d575d494c0
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 35af3a926ab3c3a3046eab921e86b6610edc309c
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39522447"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162964"
 ---
 # <a name="monitor-and-improve-performance"></a>Мониторинг и повышение производительности
 База данных SQL Azure выявляет потенциальные проблемы в базе данных и рекомендует действия, которые могут увеличить производительность рабочей нагрузки, предлагая интеллектуальные действия по настройке и рекомендации.
@@ -56,7 +57,7 @@ ms.locfileid: "39522447"
 Узнать, как найти и применить рекомендации по производительности, можно в статье [Поиск и применение рекомендаций по производительности](sql-database-advisor-portal.md).
 
 ## <a name="automatic-tuning"></a>Автоматическая настройка
-База данных SQL Azure может автоматически настраивать производительность базы данных, применяя [рекомендации по производительности](sql-database-advisor.md). Чтобы узнать больше, прочитайте статью [Автоматическая настройка](sql-database-automatic-tuning.md). Кроме того, вы можете узнать, [как включить автоматическую настройку](sql-database-automatic-tuning-enable.md).
+Базы данных SQL Azure могут автоматически настраивать производительность, применяя [рекомендации по производительности](sql-database-advisor.md). Чтобы узнать больше, прочитайте статью [Автоматическая настройка](sql-database-automatic-tuning.md). Кроме того, вы можете узнать, [как включить автоматическую настройку](sql-database-automatic-tuning-enable.md).
 
 ## <a name="query-performance-insight"></a>анализ производительности запросов
 [Анализ производительности запросов](sql-database-query-performance.md) позволяет тратить меньше времени на устранение неполадок с производительностью базы данных, предоставляя следующие возможности.

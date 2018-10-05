@@ -2,19 +2,22 @@
 title: Отличия Transact-SQL базы данных SQL Azure | Документы Майкрософт
 description: Инструкции Transact-SQL, которые не полностью поддерживаются в базе данных SQL Azure
 services: sql-database
-author: CarlRabeler
-manager: craigg
 ms.service: sql-database
-ms.custom: migrate
+ms.subservice: ''
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: e89c863ac50a8b906b388c505f444cd60fdbaad3
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: dfff51d7541ffdc2d279b238a6d993d5e29515f0
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34649080"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47160713"
 ---
 # <a name="resolving-transact-sql-differences-during-migration-to-sql-database"></a>Отличия Transact-SQL базы данных SQL Azure   
 При [миграции базы данных](sql-database-cloud-migrate.md) из SQL Server на Azure SQL Server может оказаться, что базу данных необходимо переработать до переноса. В этой статье содержатся рекомендации, которые помогут выполнить переработку и понять основные причины ее необходимости. Чтобы обнаружить проблемы с совместимостью, используйте [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
@@ -49,7 +52,7 @@ ms.locfileid: "34649080"
 - Высокая доступность: синтаксис, связанный с обеспечением высокой доступности, для управления которым используется учетная запись Microsoft Azure. Например, синтаксис, используемый для резервного копирования, восстановления, AlwaysOn, зеркального отображения базы данных, доставки журналов и режимов восстановления.
 - Средство чтения журнала: синтаксис, который зависит от средства чтения журнала, недоступного в базе данных SQL — принудительная репликация, запись измененных данных. База данных SQL может выступать подписчиком принудительной репликации.
 - Функции: `fn_get_sql`, `fn_virtualfilestats`, `fn_virtualservernodes`.
-- Оборудование: синтаксис, относящийся к параметрам сервера, связанного с оборудованием — память, рабочие потоки, фиксирование потоков на ЦП, флаги трассировки и т. д. Вместо них используйте уровни обслуживания.
+- Оборудование: синтаксис, относящийся к параметрам сервера, связанного с оборудованием — память, рабочие потоки, фиксирование потоков на ЦП, флаги трассировки и т. д. Вместо этого укажите уровни служб и объемы вычислительных ресурсов.
 - `KILL STATS JOB`
 - `OPENQUERY`, `OPENROWSET`, `OPENDATASOURCE` и четырехкомпонентные имена.
 - .NET Framework: интеграция SQL Server со средой CLR.

@@ -2,26 +2,34 @@
 title: Установка заданий обработки эластичных баз данных | Документация Майкрософт
 description: Пошаговые инструкции по установке компонента заданий обработки эластичных баз данных.
 services: sql-database
-manager: craigg
-author: ddove
 ms.service: sql-database
-ms.custom: scale out apps
+subservice: operations
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 5760ca693f347068e03770b348d88b3b2adbf678
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 09/14/2018
+ms.openlocfilehash: 37052c86736a05012b9bb996f07bbf2568d7c879
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645618"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47163180"
 ---
 # <a name="installing-elastic-database-jobs-overview"></a>Обзор установки заданий обработки эластичных баз данных
+
+[!INCLUDE [elastic-database-jobs-deprecation](../../includes/sql-database-elastic-jobs-deprecate.md)]
+
+
+
 [**Задания обработки эластичных баз данных**](sql-database-elastic-jobs-overview.md) можно установить с помощью PowerShell или портала Azure. Чтобы создавать задания и управлять ими только с помощью API PowerShell, необходимо установить пакет PowerShell. Кроме того, в настоящий момент API-интерфейсы PowerShell предоставляют намного больше возможностей, чем портал.
 
 Если вы уже установили **задания эластичных баз данных** с помощью портала из существующего **эластичного пула**, последняя предварительная версия Powershell будет включать в себя сценарии для обновления существующей установки. Настоятельно рекомендуется обновить установку до последней версии компонентов **заданий обработки эластичных баз данных** , чтобы воспользоваться новыми возможностями, доступными через API-интерфейсы PowerShell.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure. Бесплатная пробная версия доступна [здесь](https://azure.microsoft.com/pricing/free-trial/).
 * Установите Azure PowerShell. Установите последнюю версию с помощью [установщика веб-платформы](http://go.microsoft.com/fwlink/p/?linkid=320376). Дополнительные сведения можно узнать в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 * [Служебная программа командной строки NuGet](https://nuget.org/nuget.exe) используется для установки пакета заданий эластичных баз данных. Дополнительные сведения можно найти по адресу: http://docs.nuget.org/docs/start-here/installing-nuget.
@@ -59,7 +67,7 @@ ms.locfileid: "34645618"
 <table style="width:100%">
   <tr>
     <th>Параметр</th>
-    <th>ОПИСАНИЕ</th>
+    <th>Описание</th>
   </tr>
 
 <tr>
@@ -88,7 +96,7 @@ ms.locfileid: "34645618"
 </tr>
     <tr>
     <td>SqlServerDatabaseSlo</td>
-    <td>Указывает цель уровня обслуживания для стандартного выпуска. Значение по умолчанию: S0. Допускаются значения S0/S1/S2/S3/S4/S6/S9/S12, которые указывают базе данных SQL Azure использовать соответствующую цель уровня обслуживания (SLO). Чтобы узнать больше о размерах рабочей роли, ознакомьтесь с [компонентами службы заданий эластичных баз данных и ценами](sql-database-elastic-jobs-overview.md#components-and-pricing).</td>
+    <td>Предоставляет объем вычислительных ресурсов для выпуска категории "Стандартный". Значение по умолчанию: S0. Допускаются значения S0/S1/S2/S3/S4/S6/S9/S12, которые указывают Базе данных SQL Azure использовать соответствующий объем вычислительных ресурсов. Чтобы узнать больше об объемах вычислительных ресурсов службы "База данных SQL", ознакомьтесь с [компонентами службы заданий эластичных баз данных и ценами](sql-database-elastic-jobs-overview.md#components-and-pricing).</td>
 </tr>
 
 </tr>
@@ -120,7 +128,7 @@ ms.locfileid: "34645618"
 <table style="width:100%">
   <tr>
   <th>Параметр</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
 </tr>
 
   <tr>

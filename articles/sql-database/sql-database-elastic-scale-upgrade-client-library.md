@@ -2,26 +2,29 @@
 title: Обновление до последней версии клиентской библиотеки эластичной базы данных | Документация Майкрософт
 description: Используйте Nuget для обновления клиентской библиотеки эластичной базы данных.
 services: sql-database
-manager: craigg
-author: stevestein
 ms.service: sql-database
-ms.custom: scale out apps
+ms.subservice: elastic-scale
+ms.custom: ''
+ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/01/2018
+author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 56500a21822f7c7122a20cb676b9ad307de49c87
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.reviewer: ''
+manager: craigg
+ms.date: 04/01/2018
+ms.openlocfilehash: 9fb29b18397be83f5dc56464b3366d91c47f43b3
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647016"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47160797"
 ---
 # <a name="upgrade-an-app-to-use-the-latest-elastic-database-client-library"></a>Обновление приложения для использования новой версии клиентской библиотеки эластичной базы данных
 Новые версии [клиентской библиотеки эластичной базы данных](sql-database-elastic-database-client-library.md) доступны через интерфейс диспетчера пакетов NuGet в Visual Studio. В обновленных версиях исправлены ошибки и добавлена поддержка новых возможностей клиентской библиотеки.
 
 **Новая версия** : [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/).
 
-Выполните повторную сборку приложения с использованием новой библиотеки, а также измените существующие метаданные диспетчера сопоставления сегментов, сохраненные в базах данных SQL Azure, чтобы обеспечить поддержку новых функций.
+Выполните повторную сборку приложения с использованием новой библиотеки, а также измените имеющиеся метаданные диспетчера сопоставления сегментов, сохраненные в базах данных SQL Azure, чтобы обеспечить поддержку новых функций.
 
 В результате выполнения этих действий в указанном порядке предыдущие версии клиентской библиотеки будут удалены из текущей среды, а объекты метаданных обновлены. Это гарантирует, что данные объекты предыдущей версии не будут повторно созданы после обновления.   
 

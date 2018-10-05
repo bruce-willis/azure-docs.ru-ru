@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 03/20/2018
 ms.author: marsma
 ms.custom: include file
-ms.openlocfilehash: 95a8cf4eca7969631d069a31c9d08ba52c8b02b4
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: be61695cc57eca3ddf2c03aeb4912348e9535741
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30193488"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47060459"
 ---
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
-**Azure CLI**. Интерфейс командной строки Azure версии 2.0.29 или более поздней, установленный на локальном компьютере. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+**Azure CLI**. Интерфейс командной строки Azure версии 2.0.29 или более поздней, установленный на локальном компьютере. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, обратитесь к статье [Установка Azure CLI][azure-cli-install].
 
 **Docker**. Для выполнения действий, описанных в этом руководстве, требуется базовое понимание таких основных понятий Docker, как контейнеры и образы контейнеров, а также знание основных команд `docker`. См. [общие сведения о Docker и контейнерах][docker-get-started].
 
