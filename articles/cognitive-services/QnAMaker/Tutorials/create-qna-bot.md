@@ -1,22 +1,23 @@
 ---
-title: Создание бота QnA с помощью службы Azure Bot — Azure Cognitive Services | Документы Майкрософт
+title: Создание бота QnA с помощью службы Azure Bot — QnA Maker
+titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 05/07/2018
-ms.author: saneppal
-ms.openlocfilehash: fc430bf3aa7cad279d7a93bb6892aa19abee3378
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: 74c7bc5c601cd36a8dd2454506745406bc00dac0
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37109275"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47031294"
 ---
-# <a name="create-a-qna-bot-with-azure-bot-service"></a>Создание бота QnA с помощью службы Azure Bot
-В этом учебнике приводится пошаговое руководство по созданию бота QnA с помощью службы Azure Bot на портале Azure.
+# <a name="create-a-qna-bot-with-azure-bot-service-v3"></a>Создание бота QnA с помощью службы Azure Bot версии 3
+В этом руководстве приводятся пошаговые инструкции по созданию бота QnA с помощью службы Azure Bot версии 3 на портале Azure.
 
 ## <a name="prerequisite"></a>Предварительные требования
 Перед началом работы выполните инструкции в разделе [Создание базы знаний](../How-To/create-knowledge-base.md), чтобы создать службу QnA Maker с вопросами и ответами.
@@ -32,16 +33,24 @@ ms.locfileid: "37109275"
 
     ![выбор службы бота](../media/qnamaker-tutorials-create-bot/bot-service-selection.png)
 
-3. В колонке **Служба программ-роботов** введите необходимые сведения и нажмите кнопку **Создать**. В Azure будет создана и развернута служба бота с QnAMakerDialog.
+3. В колонке **службы Bot** введите необходимые сведения.
 
     - В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net).
     - Укажите подписку, группу ресурсов, план службы приложений и расположение.
-    - Выберите шаблон **Вопрос и ответ** (Node.js или C#) в поля "Шаблон бота".
-    - Установите флажок подтверждения для юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
-        ![выбор службы бота](../media/qnamaker-tutorials-create-bot/bot-service-qna-template.PNG)
+4. Инструкции по созданию бота QnA с помощью пакета SDK версии 4 см. в статье [Использование QnA Maker для ответов на вопросы](https://aka.ms/qna-bot-v4). Чтобы использовать шаблоны версии 3, выберите для пакета SDK версию **SDK v3** (SDK версии 3) и язык **C#** или **Node.js**.
 
-4. Убедитесь, что служба бота развернута.
+    ![Параметры пакета SDK для бота](../media/qnamaker-tutorials-create-bot/bot-v3.png)
+
+5. Выберите в поле шаблона бота **Question and Answer** (Вопрос и ответ), а затем сохраните параметры шаблона, нажав кнопку **Выбрать**.
+
+    ![выбор службы бота](../media/qnamaker-tutorials-create-bot/bot-v3-template.png)
+
+6. Просмотрите параметры, а затем нажмите кнопку **Создать**. В Azure будет создана и развернута служба бота с QnAMakerDialog.
+
+    ![выбор службы бота](../media/qnamaker-tutorials-create-bot/bot-blade-settings-v3.png)
+
+7. Убедитесь, что служба бота развернута.
 
     - Щелкните **Уведомления** (значок колокольчика, расположенный в верхней части портала Azure). Уведомление изменится с **Развертывание начато** на **Развертывание прошло успешно**.
     - После того как уведомление изменится на **Развертывание прошло успешно**, в этом уведомлении выберите **Go to resource** (Перейти к ресурсу).

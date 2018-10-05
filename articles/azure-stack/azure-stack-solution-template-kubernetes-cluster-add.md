@@ -11,26 +11,26 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2018
+ms.date: 09/26/2018
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: 69bf788ef30a18bbe70e251fdd6a814d0f528f55
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 978cce4642dc61143bd829fcae03357fd8c969c2
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994570"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47405518"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!note]  
-> Система Kubernetes доступна в Azure Stack в предварительной версии. Чтобы выполнить инструкции, содержащиеся в этой статье, необходимо получить доступ к Kubernetes Cluster в Azure Stack Marketplace. Поэтому вам нужно [отправить запрос на получение доступа](https://aka.ms/azsk8).
+> Система Kubernetes доступна в Azure Stack в предварительной версии.
 
 Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Развертывание Kubernetes выполняется за одну согласованную операцию.
 
-В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Успешное добавление Kubernetes в Azure Stack Marketplace зависит от правильного выбора сервера Ubuntu, настраиваемого скрипта и элементов Kubernetes.
+В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Для элемента 0.3.0 кластера Kubernetes из Marketplace требуется Azure Stack версии 1808. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Успешное добавление Kubernetes в Azure Stack Marketplace зависит от правильного выбора сервера Ubuntu, настраиваемого скрипта и элементов Kubernetes.
 
 ## <a name="create-a-plan-an-offer-and-a-subscription"></a>Создание плана, предложения и подписки
 
@@ -127,14 +127,20 @@ ms.locfileid: "46994570"
 
 Чтобы удалить Kubernetes, выполните такие действия:
 
-1. Запомните имя текущего элемента, например `Microsoft.AzureStackKubernetesCluster.0.2.0`.
+1. Подключитесь к Azure Stack с помощью PowerShell в роли оператора. Инструкции см. в статье [Настройка среды PowerShell в Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-configure-admin).
 
-1. Подключитесь к Azure Stack с помощью PowerShell.
-
-1. Удалите элемент, выполнив следующий командлет PowerShell:
+2. Найдите текущий элемент кластера Kubernetes в коллекции.
 
     ```PowerShell  
-    $Itemname="Microsoft.AzureStackKubernetesCluster.0.2.0"
+    Get-AzsGalleryItem | Select Name
+    ```
+    
+3. Запомните имя текущего элемента, например `Microsoft.AzureStackKubernetesCluster.0.2.0`.
+
+4. Удалите элемент, выполнив следующий командлет PowerShell:
+
+    ```PowerShell  
+    $Itemname="Microsoft.AzureStackKubernetesCluster.0.3.0"
 
     Remove-AzsGalleryItem -Name $Itemname
     ```

@@ -16,14 +16,14 @@ ms.topic: overview
 ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 456b28c50bd5e7d69c3f16dd3e76a9ced20112f9
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 3baa48113022bed1bdc7caa5854a231334c975af
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048868"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224636"
 ---
-# <a name="what-is-device-management-in-azure-active-directory"></a>Что такое управление устройствами в Azure Active Directory?
+# <a name="what-is-device-management-in-azure-active-directory"></a>Что такое управление устройствами в Azure Active Directory
 
 В эпоху мобильных и облачных технологий Azure Active Directory (Azure AD) обеспечивает единый вход для устройств, приложений и служб из любого расположения. В связи с увеличением количества устройств (включая BYOD) ИТ-специалисты все чаще сталкиваются с двумя противоположными задачами:
 
@@ -121,7 +121,7 @@ ms.locfileid: "43048868"
 
 Как правило, организации с локальной службой создают для подготовки устройств системные образы, а для управления устройствами часто применяют **System Center Configuration Manager (SCCM)** или **групповые политики**.
 
-Если в вашей среде действует локальная служба AD и вы также хотите получить выгоду от возможностей, предоставляемых Azure Active Directory, можно использовать гибридные устройства, присоединенные к Azure AD. Это устройства, которые присоединены и к локальной среде Active Directory, и к Azure Active Directory.
+Если в вашей среде действует локальная служба AD и вы также хотите получить выгоду от возможностей, предоставляемых Azure Active Directory, можно использовать гибридные устройства, присоединенные к Azure AD. Эти устройства присоединены к локальной службе Active Directory и зарегистрированы в Azure Active Directory.
 
 ![Устройства, зарегистрированные в Azure AD](./media/overview/01.png)
 

@@ -1,27 +1,28 @@
 ---
-title: Ограничения QnA Maker в Azure Cognitive Services | Документы Майкрософт
-description: Ограничения QnA Maker
+title: Лимиты и границы —QnA Maker
+titleSuffix: Azure Cognitive Services
+description: Полный список ограничений в QnA Maker.
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 05/07/2018
-ms.author: saneppal
-ms.openlocfilehash: 93471faab9aac94616c770cbee21fb0364f73639
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: efdcf57fb0f175be51e6b9f8e72e4a02fcbeb5f3
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39501893"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162327"
 ---
 # <a name="qna-maker-limits"></a>Ограничения QnA Maker
 Полный список ограничений в QnA Maker.
 
 ## <a name="knowledge-bases"></a>Базы знаний
 
-* Максимальное число баз знаний основано на [ограничениях категорий службы поиска Azure](https://docs.microsoft.com/en-us/azure/search/search-limits-quotas-capacity)
+* Максимальное число баз знаний основано на [ограничениях категорий службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)
 
 |**Категория службы поиска Azure** | **Бесплатный** | **базовая;** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
@@ -32,7 +33,7 @@ ms.locfileid: "39501893"
 * Максимальное число прямых ссылок, обход которых можно выполнить для извлечения вопросов и ответов из HTML-страниц часто задаваемых вопросов: 20
 
 ## <a name="metadata-limits"></a>Ограничения на метаданные
-* Максимальное число полей метаданных на одну базу знаний основано на [ограничениях категорий службы поиска Azure](https://docs.microsoft.com/en-us/azure/search/search-limits-quotas-capacity)
+* Максимальное число полей метаданных на одну базу знаний основано на [ограничениях категорий службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)
 
 |**Категория службы поиска Azure** | **Бесплатный** | **базовая;** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|

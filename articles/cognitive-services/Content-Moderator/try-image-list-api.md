@@ -1,20 +1,21 @@
 ---
-title: Модерация изображений с помощью настраиваемых списков в Azure Content Moderator | Документация Майкрософт
+title: Модерация изображений с помощью настраиваемых списков в консоли API — Content Moderator
+titlesuffix: Azure Content Moderator
 description: Опробуйте настраиваемые списки изображений в консоли API Content Moderator.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/05/2017
 ms.author: sajagtap
-ms.openlocfilehash: 2d714f017be16d978ffbb877a2b7e78e1caf9169
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 5e573262879b6a16e3cd530757900b86228ae299
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380308"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47219963"
 ---
 # <a name="moderate-with-custom-image-lists-in-the-api-console"></a>Модерация с помощью настраиваемых списков изображений в консоли API
 

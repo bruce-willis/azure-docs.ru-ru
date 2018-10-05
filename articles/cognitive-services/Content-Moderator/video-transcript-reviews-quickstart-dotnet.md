@@ -1,42 +1,54 @@
 ---
-title: Azure Content Moderator — создание проверок для расшифровки видео с помощью .NET | Документация Майкрософт
-description: Создание проверок для расшифровки видео с помощью пакета SDK Azure Content Moderator для .NET
+title: Создание проверок для расшифровки видео с помощью .NET в Content Moderator
+titlesuffix: Azure Cognitive Services
+description: Как создать проверки для расшифровки видео с помощью пакета SDK Content Moderator для .NET
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: sajagtap
-ms.openlocfilehash: 3286da6e38f0fba02386d877a835fb694ed0fdec
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 4e862a8b74339bc8dd1de6c0b231ddb15425974c
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "35380724"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220948"
 ---
 # <a name="create-video-transcript-reviews-using-net"></a>Создание проверок для расшифровки видео .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут быстро приступить к работе с пакетом SDK Content Moderator для C# и выполнить следующее:
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с [пакетом SDK Content Moderator для C#](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 
-- создать проверку видео для оценки человеком;
+- создание проверки видео для модераторов-пользователей;
 - добавить в эту проверку расшифровку видео, для которой выполнена модерация;
-- опубликовать проверку.
+- публикация проверки.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже [выполнили модерацию видео](video-moderation-api.md) и [создали проверку видео](video-reviews-quickstart-dotnet.md) в средстве проверки для принятия решений человеком. Теперь вы хотите добавить расшифровку видео, прошедшую модерацию, в это средство проверки.
 
 В этой статье также предполагается, что вы уже работали с Visual Studio и C#.
 
-### <a name="sign-up-for-content-moderator-services"></a>Регистрация в службах Content Moderator
+## <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator
 
 Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
+Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
 
-На информационной панели Content Moderator вы можете узнать свой ключ подписки, последовательно выбрав **Settings (Параметры)** > **Credentials (Учетные данные)** > **API** > **Trial Ocp-Apim-Subscription-Key (Тестовый ключ подписки)**. Дополнительные сведения см. в статье [обзорных сведений](overview.md).
+## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Создайте учетную запись средства проверки (если она не была создана на предыдущем этапе)
 
-### <a name="prepare-your-video-for-review"></a>Подготовка видео к проверке
+Если вы получили Content Moderator на портале Azure, [зарегистрируйте учетную запись средства проверки](https://contentmoderator.cognitive.microsoft.com/) и создайте команду проверки. Чтобы вызывать API проверки для запуска заданий и просматривать результаты в средстве проверки, вам понадобится идентификатор команды и средство проверки.
+
+## <a name="ensure-your-api-key-can-call-the-review-api-job-creation"></a>Убедитесь, что ваш ключ API может вызвать API проверки (создание заданий)
+
+Если вы начали с портала Azure, после выполнения предыдущих шагов у вас может получиться два ключа Content Moderator. 
+
+Если в своем примере пакета SDK вы планируете использовать ключ API, предоставленный платформой Azure, выполните [эти действия](review-tool-user-guide/credentials.md#use-the-azure-account-with-the-review-tool-and-review-api), чтобы разрешить приложению вызывать API проверки и создавать соответствующие задания.
+
+Если вы используете бесплатный пробный ключ, сгенерированный средством проверки, ваша учетная запись средства проверки уже знает об этом ключе, поэтому никакие дополнительные действия не требуются.
+
+## <a name="prepare-your-video-for-review"></a>Подготовка видео к проверке
 
 Добавьте расшифровку в проверку видео. Это видео должно быть опубликовано в Интернете. Вам нужно знать его конечную точку потоковой передачи. Наличие конечной точки потоковой передачи позволяет средству проверки воспроизвести видео.
 
@@ -50,20 +62,20 @@ ms.locfileid: "35380724"
 
 1. Присвойте проекту имя **VideoTranscriptReviews**.
 
-1. Выберите этот проект единственным запускаемым проектом для решения.
+1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
 Установите следующие пакеты NuGet для проекта TermLists.
 
-- Microsoft.Azure.CognitiveServices.ContentModerator
+- Microsoft.Azure.CognitiveServices.ContentModerator;
 - Microsoft.Rest.ClientRuntime
 - Microsoft.Rest.ClientRuntime.Azure
-- Newtonsoft.Json
+- Newtonsoft.Json.
 
 ### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
 
-Измените инструкции using в вашей программе следующим образом.
+Измените инструкции using в программе следующим образом.
 
     using System;
     using System.Collections.Generic;
@@ -105,9 +117,9 @@ ms.locfileid: "35380724"
             /// </summary>
             /// <remarks>This must be the team name you used to create your 
             /// Content Moderator account. You can retrieve your team name from
-            /// the Conent Moderator web site. Your team name is the Id associated 
+            /// the Content Moderator web site. Your team name is the Id associated 
             /// with your subscription.</remarks>
-            public static readonly string TeamName = "YOUR CONTENT MODERATOR TEAM ID";
+            private const string TeamName = "YOUR CONTENT MODERATOR TEAM ID";
 
             /// <summary>
             /// The base URL fragment for Content Moderator calls.
@@ -137,23 +149,23 @@ ms.locfileid: "35380724"
     {
         return new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey))
         {
-            BaseUrl = AzureBaseURL
+            Endpoint = AzureBaseURL
         };
     }
 
 ## <a name="create-a-video-review"></a>Создание проверки видео
 
-Создайте проверку видео с помощью **ContentModeratorClient.Reviews.CreateVideoReviews**. Дополнительные сведения см. в[ документации по API](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4).
+Создайте проверку видео с помощью **ContentModeratorClient.Reviews.CreateVideoReviews**. Дополнительные сведения см. в [справочнике по API](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4).
 
 **CreateVideoReviews** принимает следующие обязательные параметры.
-1. Строка, обозначающая тип MIME, который должен иметь значение "application/json". 
-1. Имя команды Content Moderator
+1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json". 
+1. Имя команды Content Moderator.
 1. Объект **IList<CreateVideoReviewsBodyItem>**. Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
 
 **CreateVideoReviewsBodyItem** имеет несколько свойств. Необходимо задать по меньшей мере следующие свойства.
 - **Content**. URL-адрес видео для проверки.
 - **ContentId**. Идентификатор, который будет присвоен проверке видео.
-- **Status**. Укажите здесь значение "Unpublished" (Неопубликованное). Если значение не задано, по умолчанию используется Pending (Ожидание), что означает, что проверка видео уже опубликована и ожидает подтверждения человеком. После публикации проверки видео вы не сможете добавлять в нее кадры, расшифровки или результаты модерации расшифровки.
+- **Status**. Укажите здесь значение "Unpublished" (Неопубликованное). Если значение не задано, по умолчанию используется значение "Pending" (Ожидание), что означает, что проверка видео уже опубликована и ожидает пользовательской проверки. После публикации проверки видео вы не сможете добавить в нее видеокадры, расшифровку или результат модерации расшифровки.
 
 > [!NOTE]
 > **CreateVideoReviews** возвращает IList<string>. Каждая из этих строк содержит идентификатор проверки видео. Эти идентификаторы являются глобально уникальными и их значения не совпадают со значениями свойства **ContentId**. 
@@ -192,7 +204,7 @@ ms.locfileid: "35380724"
     }
 
 > [!NOTE]
-> Ключ службы Content Moderator предусматривает ограничение частоты на количество запросов в секунду (RPS). Если превысить ограничение, пакет SDK создает исключение с кодом ошибки 429. 
+> Ключ службы Content Moderator предусматривает ограничение частоты на количество запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429. 
 >
 > Ключ уровня "Бесплатный" предусматривает ограничение в один RPS.
 
@@ -232,7 +244,7 @@ ms.locfileid: "35380724"
 
 **AddVideoTranscriptModerationResult** принимает следующие обязательные параметры.
 1. Строка, обозначающая тип MIME, который должен иметь значение "application/json". 
-1. Имя команды Content Moderator
+1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
 1. Список IList<TranscriptModerationBodyItem>. Объект **TranscriptModerationBodyItem** имеет следующие свойства.
 - **Terms**. Список IList<TranscriptModerationBodyItemTermsItem>. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
@@ -290,11 +302,11 @@ ms.locfileid: "35380724"
 
 ## <a name="publish-video-review"></a>Публикация проверки видео
 
-Для публикации проверки видео применяется **ContentModeratorClient.Reviews.CreateVideoReviews**. **PublishVideoReview** принимает следующие обязательные параметры.
-1. Имя команды Content Moderator
+Для публикации проверки видео используется метод **ContentModeratorClient.Reviews.CreateVideoReviews**. **PublishVideoReview** принимает следующие обязательные параметры.
+1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
 
-Добавьте следующие определения методов в пространство имен VideoReviews, в класс Program.
+Добавьте следующее определение метода в пространство имен VideoReviews в классе Program.
 
     /// <summary>
     /// Publish the indicated video review. For more information, see the reference API:
@@ -342,7 +354,7 @@ ms.locfileid: "35380724"
 
             Console.WriteLine("Open your Content Moderator Dashboard and select Review > Video to see the review.");
             Console.WriteLine("Press any key to close the application.");
-            Console.Read();
+            Console.ReadKey();
         }
     }
 
@@ -370,8 +382,8 @@ ms.locfileid: "35380724"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET.
+
 Узнайте, как создать [проверку видео](video-reviews-quickstart-dotnet.md) в средстве проверки.
 
 Ознакомьтесь с подробным руководством по разработке [полного решения для модерации видео](video-transcript-moderation-review-tutorial-dotnet.md).
-
-[Скачайте решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для работы с этим и другими краткими руководствами по Content Moderator для .NET .

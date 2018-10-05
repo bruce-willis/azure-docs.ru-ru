@@ -1,25 +1,25 @@
 ---
-title: Совместная работа с базой знаний. Microsoft Cognitive Services | Документация Майкрософт
-titleSuffix: Azure
-description: Руководство по совместной работе с базой знаний QnA Maker
+title: Совместная работа с базой знаний — Qna Maker
+titleSuffix: Azure Cognitive Services
+description: QnA Maker позволяет нескольким пользователям совместно работать с базой знаний. Эта возможность предоставляется в рамках управления доступом на основе ролей в Azure.
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 05/07/2018
-ms.author: saneppal
-ms.openlocfilehash: e18d656236276595fc5186a6656349bf28974ead
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: bb074b1f256275c26889a30435dff28c86060a7b
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381725"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47035238"
 ---
 # <a name="collaborate-on-your-knowledge-base"></a>Совместная работа с базой знаний
 
-QnA Maker позволяет нескольким пользователям совместно работать с базой знаний. Эта возможность предоставляется в рамках [управления доступом на основе ролей](https://docs.microsoft.com/en-us/azure/active-directory/role-based-access-control-configure) в Azure. 
+QnA Maker позволяет нескольким пользователям совместно работать с базой знаний. Эта возможность предоставляется в рамках [управления доступом на основе ролей](https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure) в Azure. 
 
 Чтобы предоставить другому пользователю доступ к службе QnA Maker, сделайте следующее.
 

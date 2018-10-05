@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 300565509b2f0903b6c730be7e0693ba0e298e07
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 274005d7cea5833f9653038b710a7dbc248f0c04
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44163147"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221525"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Linux для доступа к Azure Key Vault 
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
-В этом руководстве описано, как получить доступ к Azure Key Vault с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux. При применении в качестве начальной загрузки хранилище Key Vault разрешает клиентскому приложению использовать секрет для доступа к ресурсам, которые не защищены с помощью Azure Active Directory (AD). Управляемыми удостоверениями для ресурсов Azure автоматически управляет Azure. Они позволяют проходить проверку подлинности в службах, поддерживающих аутентификацию Azure AD, без указания учетных данных в коде. 
+В этом руководстве описано, как получить доступ к Azure Key Vault с помощью назначаемого системой управляемого удостоверения для виртуальной машины Linux. При применении в качестве начальной загрузки хранилище Key Vault разрешает клиентскому приложению использовать секрет для доступа к ресурсам, которые не защищены с помощью Azure Active Directory (AD). Управляемыми удостоверениями для ресурсов Azure автоматически управляет Azure. Они позволяют проходить проверку подлинности в службах, поддерживающих аутентификацию Azure AD, без указания учетных данных в коде. 
 
 Вы узнаете, как выполнять следующие задачи:
 

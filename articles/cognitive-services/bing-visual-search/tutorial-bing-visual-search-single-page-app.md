@@ -1,23 +1,23 @@
 ---
-title: Одностраничное веб-приложение для службы "Поиск изображений Bing" | Документация Майкрософт
-titleSuffix: Bing Web Search APIs - Cognitive Services
-description: В этой статье показано, как использовать API Bing для поиска изображений в одностраничном веб-приложении.
+title: 'Руководство: создание одностраничного веб-приложения — Визуальный поиск Bing'
+titleSuffix: Azure Cognitive Services
+description: В этой статье показано, как использовать API визуального поиска Bing в одностраничном веб-приложении.
 services: cognitive-services
 author: brapel
-manager: ehansen
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-image-search
-ms.topic: article
+ms.component: bing-visual-search
+ms.topic: tutorial
 ms.date: 10/04/2017
 ms.author: v-brapel
-ms.openlocfilehash: 303d7745167d2ea25fda083ed99881ac4e0a7ec7
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e3cd36d799256406b3ae12f35303bd2406468b3c
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381849"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227186"
 ---
-# <a name="tutorial-visual-search-single-page-web-app"></a>Руководство: одностраничное веб-приложение для наглядного поиска
+# <a name="tutorial-visual-search-single-page-web-app"></a>Руководство по одностраничным веб-приложениям для наглядного поиска
 
 API Bing для наглядного поиска предоставляет примерно такие же возможности, как просмотр сведений об изображении на Bing.com/images. Функция визуального поиска позволяет указать изображение и получить о нем аналитические сведения, например визуально подобные изображения, ресурсы покупок, веб-страницы, которые содержат это изображения, и многое другое. 
 

@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/18/2018
+ms.date: 09/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1a343e238662393995404b8e4c705cf799866855
-ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
+ms.openlocfilehash: 1bf716d4e5a37739de2e820725449be2576054ea
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39136919"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038781"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 Поиск — это функция [Application Insights](app-insights-overview.md), которая позволяет искать и изучать отдельные элементы телеметрии, например просмотры страниц, исключения и веб-запросы. Также можно просматривать журнал трассировки и события, которые были закодированы.
@@ -123,8 +123,8 @@ ms.locfileid: "39136919"
 | Пример запроса | Результат |
 | --- | --- |
 | `apple` |Поиск всех событий в диапазоне времени, поля которых включают слово "apple". |
-| `apple AND banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". |
-| `apple OR banana`<br/>`apple banana` |Поиск событий, содержащих любое из этих слов. Используйте «OR» заглавными буквами, а не «or».<br/>Короткая форма. |
+| `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Короткая форма. |
+| `apple OR banana` |Поиск событий, содержащих любое из этих слов. Используйте «OR» заглавными буквами, а не «or». |
 | `apple NOT banana` |Поиск событий, содержащих только одно из этих слов, но не содержащих другое. |
 
 ## <a name="sampling"></a>Выборка
@@ -133,13 +133,13 @@ ms.locfileid: "39136919"
 [Дополнительная информация о выборке](app-insights-sampling.md).
 
 ## <a name="create-work-item"></a>Создание рабочего элемента
-Можно зарегистрировать ошибку на сайте GitHub или в Visual Studio Team Services, указав сведения из любого элемента телеметрии. 
+В GitHub или Azure DevOps можно создать ошибку и указать в ней сведения из любого элемента телеметрии. 
 
 ![Щелкните "Создать рабочий элемент", отредактируйте поля и нажмите кнопку "ОК".](./media/app-insights-diagnostic-search/42.png)
 
-Когда вы это делаете в первый раз, предлагается настроить ссылку на учетную запись Team Services и проект.
+Если вы делаете это в первый раз, вам будет предложено настроить ссылку на вашу организацию и проект в Azure DevOps.
 
-![Введите URL-адрес сервера Team Services и имя проекта, затем нажмите кнопку "Авторизовать".](./media/app-insights-diagnostic-search/41.png)
+![Укажите URL-адрес Azure DevOps Services и имя проекта, после чего щелкните "Авторизовать".](./media/app-insights-diagnostic-search/41.png)
 
 (Можно также настроить ссылку в колонке "Рабочие элементы".)
 

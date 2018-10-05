@@ -1,21 +1,9 @@
+<!-- Linguist question: Please confirm that the following are API names and should be left as is: "Person Management, LargePersonGroup/PersonGroup Management, LargeFaceList/FaceList Management, and Face Algorithms" -->
 ---
-title: Справочник по API для службы API распознавания лиц | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: Этот справочник по API содержит сведения об API управления данными о людях, API управления группами людей и большими группами людей, API управления списками лиц и большими списками лиц, а также API алгоритмов распознавания лиц.
-services: cognitive-services
-author: SteveMSFT
-manager: corncar
-ms.service: cognitive-services
-ms.component: face-api
-ms.topic: article
-ms.date: 03/01/2018
-ms.author: sbowles
-ms.openlocfilehash: 94c03d4f07a18c0c63d76965b1b31dce66388843
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382681"
+title: Справочник по API. API распознавания лиц titleSuffix: Microsoft Cognitive Services description: Этот справочник по API содержит сведения об API управления данными о людях, API управления данными о группах людей и больших групп людей, API управления списками лиц и большими списками лиц, а также API алгоритмов распознавания лиц.
+services: cognitive-services author: SteveMSFT manager: cgronlun
+
+ms.service: cognitive-services ms.component: face-api ms.topic: reference ms.date: 01.03.2018 ms.author: sbowles
 ---
 # <a name="api-reference"></a>Справочник по API
 

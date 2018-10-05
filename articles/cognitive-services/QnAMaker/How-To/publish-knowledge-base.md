@@ -1,21 +1,21 @@
 ---
-title: Как опубликовать базу знаний с использованием Microsoft Cognitive Services | Документация Майкрософт
-titleSuffix: Azure
-description: Как опубликовать базу знаний
+title: Публикация базы знаний — QnA Maker
+titleSuffix: Azure Cognitive Services
+description: Публикация базы знаний — это последний шаг в предоставлении базы знаний в качестве конечной точки ответа на вопрос. При публикации базы знаний содержимое раздела вопросов и ответов базы знаний переносится из тестового указателя в производственный указатель в службе поиска Azure.
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 04/21/2018
-ms.author: saneppal
-ms.openlocfilehash: e9dbeacfb0df98c6b8f084c263690c05fe966cdc
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: eceb0554d35935f1aee77c4c054cb7e65b327845
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381728"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47033421"
 ---
 # <a name="publish-a-knowledge-base"></a>Публикация базы знаний
 

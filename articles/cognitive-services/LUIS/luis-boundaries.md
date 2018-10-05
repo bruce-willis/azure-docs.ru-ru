@@ -1,21 +1,21 @@
 ---
-title: Границы службы "Распознавание речи" (LUIS) | Документация Майкрософт
-titleSuffix: Azure
-description: В этой статье приводятся известные ограничения LUIS.
+title: Границы и ограничения Интеллектуальной службы распознавания речи (LUIS)
+titleSuffix: Azure Cognitive Services
+description: Это статья об известных ограничениях Интеллектуальной службы распознавания речи Azure (LUIS). У LUIS есть несколько областей границ. Граница модели управляет намерениями, сущностями и возможностями в LUIS. Предел квот основывается на типе ключа. Сочетание клавиш управляет веб-сайтом LUIS.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 07/31/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 0a75c113f619aa70ba6c504f07afc8dc8a35b694
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: b7a2d1554d668b4000b87b210a69b290def9b19e
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39399837"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47035442"
 ---
 # <a name="luis-boundaries"></a>Границы LUIS
 У LUIS есть несколько областей границ. Первая — [граница модели](#model-boundaries), которая управляет намерениями, сущностями и возможностями в LUIS. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область границ — [сочетания клавиш](#keyboard-controls) для управления веб-сайтом LUIS. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS. 
@@ -30,7 +30,7 @@ ms.locfileid: "39399837"
 | **[Составная сущность](./luis-concept-entity-types.md)|100 с максимум десятью дочерними сущностями |
 | Явный список | 50 для каждого приложения|
 | **[Иерархическая сущность](./luis-concept-entity-types.md) |100 с максимум десятью дочерними сущностями |
-| [Намерения][intents]|500 для каждого приложения<br>Приложение [на основе диспетчеризации](https://github.com/Microsoft/botbuilder-tools/tree/master/Dispatch) имеет 500 соответствующих источников диспетчеризации|
+| [Намерения][intents]|500 для каждого приложения<br>Приложение [на основе диспетчеризации](https://aka.ms/dispatch-tool) имеет 500 соответствующих источников диспетчеризации|
 | [Сущности списка](./luis-concept-entity-types.md) | Родитель: 50, потомок: 20 000 элементов. Каноническое имя — *макс. кол-во символов по умолчанию. Значения синонимов не имеют ограничений по длине. |
 | [Шаблоны](luis-concept-patterns.md)|500 шаблонов для каждого приложения.<br>Максимальная длина шаблона — 400 символов.<br>3 сущности Pattern.any для каждого шаблона<br>Максимум 2 вложенных необязательных текста в шаблоне|
 | [Pattern.Any](./luis-concept-entity-types.md)|100 для каждого приложения, 3 сущности pattern.any для каждого шаблона |

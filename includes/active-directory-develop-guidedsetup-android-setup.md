@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/19/2018
+ms.date: 09/13/2018
 ms.author: andret
 ms.custom: include file
-ms.openlocfilehash: 45e8668ce0a7eb2edd79271096f58b56ca1af5f0
-ms.sourcegitcommit: c851842d113a7078c378d78d94fea8ff5948c337
+ms.openlocfilehash: 02b36d8f8c8c9be2532b440bd9858766e8b524ca
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "36205575"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47061016"
 ---
 ## <a name="set-up-your-project"></a>Настройка проекта
 
@@ -37,7 +37,7 @@ ms.locfileid: "36205575"
 1.  В Android Studio выберите **Gradle Scripts** (Скрипты Gradle) > **build.gradle (Module: app)**.
 2.  В разделе **Dependencies** (Зависимости) вставьте следующий код:
 
-    ```ruby  
+    ```gradle  
     compile ('com.microsoft.identity.client:msal:0.1.+') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
@@ -47,10 +47,10 @@ ms.locfileid: "36205575"
 <!--start-collapse-->
 ### <a name="about-this-package"></a>Об этом пакете
 
-Пакет в приведенном выше коде устанавливает библиотеку проверки подлинности Майкрософт (MSAL). MSAL обрабатывает получение, кэширование и обновление маркеров пользователей, которые используются для доступа к программным интерфейсам, защищенным конечной точкой Azure Active Directory версии 2.
+Пакет в приведенном выше коде устанавливает библиотеку проверки подлинности Майкрософт (MSAL). MSAL обрабатывает все операции с маркерами, включая их получение, кэширование, обновление и удаление.  Маркеры необходимы для доступа к API, защищенным Платформой удостоверений Майкрософт.
 <!--end-collapse-->
 
-## <a name="create-the-application-ui"></a>Создание пользовательского интерфейса приложения
+## <a name="create-the-apps-ui"></a>Создание пользовательского интерфейса приложения
 
 1. Перейдите в раздел **res** > **layout**, а затем откройте файл **activity_main.xml**. 
 2. Замените макет действия `android.support.constraint.ConstraintLayout` или другой на `LinearLayout`.

@@ -1,24 +1,27 @@
 ---
-title: Краткое руководство по публикации базы знаний на Node.js — Azure Cognitive Services | Документация Майкрософт
+title: 'Краткое руководство: публикация базы знаний с использованием Node.js — QnA Maker'
+titleSuffix: Azure Cognitive Services
 description: Сведения о том, как опубликовать базу знаний на Node.js для QnA Maker.
 services: cognitive-services
-author: noellelacharite
-manager: nolachar
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: qna-maker
 ms.topic: quickstart
-ms.date: 06/18/2018
-ms.author: nolachar
-ms.openlocfilehash: fad3857774f2726e3db595ee6bc72d52a8ac46d9
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.date: 09/12/2018
+ms.author: diberry
+ms.openlocfilehash: 00642661995e16bda9ad995e69545b28468779c5
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "43771609"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47040944"
 ---
 # <a name="publish-a-knowledge-base-in-nodejs"></a>Публикация базы знаний на Node.js
 
 Следующий код публикует существующую базу знаний с помощью метода [Publish](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) (Публикация).
+
+[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
 
 Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-nodejs.md).
 

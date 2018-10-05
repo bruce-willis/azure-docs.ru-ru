@@ -1,20 +1,21 @@
 ---
-title: Экспорт и удаление данных клиентов. LUIS в Azure Cognitive Services | Документация Майкрософт
-description: Справочник по экспорту и удалению данных клиентов в Интеллектуальной службе распознавания речи (LUIS).
+title: Экспорт и удаление клиентских данных — Интеллектуальная служба распознавания речи — LUIS
+titleSuffix: Azure Cognitive Services
+description: Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. При этом пользователи LUIS могут полностью управлять просмотром, экспортом и удалением своих данных. Это можно сделать с помощью веб-портала LUIS или программных API LUIS.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: luis
+ms.technology: language-understanding
 ms.topic: article
-ms.date: 05/23/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: c6fba28ea3a4b24f02b62b6c3f124569378e5bc8
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 103307e9657f183ed6876ef6ff499666c928690f
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43130512"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47037496"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 

@@ -1,22 +1,23 @@
 ---
-title: Анализ текста на естественном языке в службе распознавания речи (LUIS) с помощью JavaScript — Azure Cognitive Services | Документация Майкрософт
+title: Краткое руководство для JavaScript — прогнозирование намерения — LUIS
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. С помощью JavaScript отправьте намерение пользователя в виде текста в конечную точку прогнозирования HTTP общедоступного приложения. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
-ms.date: 08/23/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: d787f744ff0fe7315553e9dd6f4465122f7e06b2
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: cbbf0d2388f83f4e38f0a63b6bc181d4a24e0aa0
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44159713"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47039486"
 ---
-# <a name="quickstart-analyze-text-using-javascript"></a>Краткое руководство по анализу текста с использованием JavaScript
+# <a name="quickstart-get-intent-using-javascript"></a>Краткое руководство: получение намерения с использованием JavaScript
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
@@ -34,11 +35,11 @@ ms.locfileid: "44159713"
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
 
-## <a name="analyze-text-with-browser"></a>Анализ текста с помощью браузера
+## <a name="get-intent-with-browser"></a>Получение намерения с помощью браузера
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
 
-## <a name="analyze-text-with-javascript"></a>Анализ текста с помощью JavaScript 
+## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
 С помощью JavaScript можно получить доступ к тем же результатам, которые вы уже видели в окне браузера на предыдущем шаге. 
 

@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 78f9ba817008a28e63ec167c4e2ccc7f3859be16
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.openlocfilehash: b02f1b04756f1e3f01426e58c5f8c625cb746f05
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42146727"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47163908"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -93,11 +93,18 @@ The subscription named <subscription name> cannot be found.
 
 Чтобы определить, что проверка подлинности в Azure пройдена и доступ к требуемой подписке получен, сделайте следующее.  
 
-1. Убедитесь, что вы выполняете командлет **Add-AzureAccount** перед командлетом **Select-AzureSubscription**.  
-2. Если это сообщение об ошибке не исчезло, измените код, добавив командлет **Get-AzureSubscription** после командлета **Add-AzureAccount**, а затем выполните код. Теперь проверьте, содержат ли выходные данные командлета Get-AzureSubscription сведения о подписке.  
+1. Обязательно выполните командлет **Add-AzureAccount** перед командлетом **Select-AzureSubscription**.  
+2. Если это сообщение об ошибке не исчезло, измените код, добавив параметр **-AzureRmContext** после командлета **Add-AzureAccount**, а затем выполните код.
 
-   * Если вы не видите сведения о подписке в выходных данных, это означает, что подписка еще не инициализирована.  
-   * Если сведения о подписке отображаются в выходных данных, убедитесь, что с командлетом **Select-AzureSubscription** используется правильное имя или идентификатор подписки.
+   ```powershell
+   $Conn = Get-AutomationConnection -Name AzureRunAsConnection
+   Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID `
+-ApplicationID $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+
+   $context = Get-AzureRmContext
+
+   Get-AzureRmVM -ResourceGroupName myResourceGroup -AzureRmContext $context
+   ```
 
 ### <a name="auth-failed-mfa"></a>Сценарий: не удается выполнить проверку подлинности в Azure из-за включенной многофакторной проверки подлинности
 
@@ -151,7 +158,7 @@ Exception: A task was canceled.
 
 #### <a name="resolution"></a>Способы устранения:
 
-При работе с несколькими подписками контекст подписки может быть потерян при вызове дочерних модулей runbook. Чтобы убедиться, что контекст подписки передан дочерним модулям runbook, добавьте параметр `DefaultProfile` в командлет и передайте ему контекст.
+При работе с несколькими подписками контекст подписки может быть потерян при вызове дочерних модулей runbook. Чтобы убедиться, что контекст подписки передан дочерним модулям runbook, добавьте параметр `AzureRmContext` в командлет и передайте ему контекст.
 
 ```azurepowershell-interactive
 # Connect to Azure with RunAs account
@@ -171,7 +178,7 @@ Start-AzureRmAutomationRunbook `
     –AutomationAccountName 'MyAutomationAccount' `
     –Name 'Test-ChildRunbook' `
     -ResourceGroupName 'LabRG' `
-    -DefaultProfile $AzureContext `
+    -AzureRmContext $AzureContext `
     –Parameters $params –wait
 ```
 
@@ -216,17 +223,19 @@ The job was tried three times but it failed
 
 1. Предельный объем памяти. Есть [ограничения](../../azure-subscription-service-limits.md#automation-limits) на объемы памяти, выделяемые для песочницы службы автоматизации, поэтому задание может завершиться ошибкой, если оно использует более 400 МБ памяти.
 
-2. Модуль несовместим. Такая ситуация может возникать, если зависимости модуля заданы неправильно. В этом случае модуль Runbook обычно возвращает сообщение об ошибке "Команда не найдена" или "Не удается привязать параметр".
+1. Сетевые сокеты. В песочницах Azure разрешено одновременно использовать не более 1000 сетевых сокетов, как описано в разделе об [ограничениях службы автоматизации](../../azure-subscription-service-limits.md#automation-limits).
+
+1. Модуль несовместим. Такая ситуация может возникать, если зависимости модуля заданы неправильно. В этом случае модуль Runbook обычно возвращает сообщение об ошибке "Команда не найдена" или "Не удается привязать параметр".
 
 #### <a name="resolution"></a>Способы устранения:
 
 Эту проблему можно устранить одним из следующих способов.
 
-* Чтобы работа выполнялась в заданных пределах объема памяти, рекомендуется разделить рабочую нагрузку между несколькими модулями Runbook, не обрабатывать слишком большой объем данных в памяти, не записывать ненужные выходные данные из модулей Runbook или учитывать, сколько контрольных точек записывается в модули Runbook рабочих процессов PowerShell.  
+* Чтобы работа выполнялась в заданных пределах объема памяти, рекомендуется разделить рабочую нагрузку между несколькими модулями runbook, не обрабатывать слишком большой объем данных в памяти, не записывать ненужные выходные данные из модулей runbook и учитывать, сколько контрольных точек записывается в модули runbook рабочих процессов PowerShell. Для очистки переменной можно использовать метод clear, например `$myVar.clear()`, а для немедленного сбора мусора — `[GC]::Collect()`. Это позволит снизить объем занимаемой памяти во время выполнения модуля runbook.
 
 * Обновите модули Azure с помощью действий, описанных в статье [How to update Azure PowerShell modules in Azure Automation](../automation-update-azure-modules.md) (Как обновить модули Azure PowerShell в службе автоматизации Azure).  
 
-* Другим решением является запуск модуля Runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). Гибридные рабочие роли не ограничены [справедливым распределением ресурсов](../automation-runbook-execution.md#fair-share), как в песочницах Azure.
+* Другим решением является запуск модуля Runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). В гибридных рабочих ролях нет таких ограничений памяти и сетевых ресурсов, как в песочницах Azure.
 
 ### <a name="fails-deserialized-object"></a>Сценарий: сбой модуля Runbook из-за десериализованного объекта
 

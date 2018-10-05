@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 01/08/2018
 ms.author: lbosq
-ms.openlocfilehash: 905873a695635ba80de258cbf458c8dd3e18d443
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: e73b0e88a98c1b06216378078626b4338c598816
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43700344"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47422972"
 ---
 # <a name="azure-cosmos-db-create-query-and-traverse-a-graph-in-the-gremlin-console"></a>Azure Cosmos DB. Создание, запрос и просмотр в консоли Gremlin
 
@@ -90,21 +90,16 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 
 5. Затем выполните команду `:remote console`, чтобы перенаправить все консольные команды на удаленный сервер.
 
+   > [!NOTE]
+   > Чтобы перенаправить все консольные команды на удаленный сервер без использования команды `:remote console`, укажите префикс `:>` перед командой. Например выполняемая команда должна иметь такой вид: `:> g.V().count()`. Этот префикс является частью команды, и его важно указать при использовании консоли Gremlin с Azure Cosmos DB. Если пропустить префикс, консоль будет выполнять команду локально — часто в отношении выполняющегося в памяти графа. При наличии префикса `:>` консоль будет выполнять команду удаленно — на этот раз в отношении Azure Cosmos DB (эмулятора localhost или экземпляра Azure).
+
 Отлично! Теперь, когда мы завершили настройку, начнем выполнять команды консоли.
 
 Выполним простую команду count(). Введите следующее в командную строку консоли:
-```
-:> g.V().count()
-```
 
-> [!TIP]
-> Обратите внимание на символы `:>`, предшествующие тексту `g.V().count()`. 
->
-> Это — часть выполняемой команды, необходимая при использовании консоли Gremlin с Azure Cosmos DB.  
->
-> Пропуск префикса `:>` указывает консоли выполнять команду локально — часто в отношении выполняющегося в памяти графа.
-> Наличие префикса `:>` указывает консоли выполнять команду удаленно — на этот раз в отношении Cosmos DB (либо эмулятора localhost, либо > экземпляра Azure).
-
+```
+g.V().count()
+```
 
 ## <a name="create-vertices-and-edges"></a>Создание вершин и границ
 
@@ -113,7 +108,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Thomas):
 
 ```
-:> g.addV('person').property('firstName', 'Thomas').property('lastName', 'Andersen').property('age', 44).property('userid', 1)
+g.addV('person').property('firstName', 'Thomas').property('lastName', 'Andersen').property('age', 44).property('userid', 1)
 ```
 
 Выходные данные:
@@ -124,7 +119,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Mary Kay):
 
 ```
-:> g.addV('person').property('firstName', 'Mary Kay').property('lastName', 'Andersen').property('age', 39).property('userid', 2)
+g.addV('person').property('firstName', 'Mary Kay').property('lastName', 'Andersen').property('age', 39).property('userid', 2)
 
 ```
 
@@ -138,7 +133,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Robin):
 
 ```
-:> g.addV('person').property('firstName', 'Robin').property('lastName', 'Wakefield').property('userid', 3)
+g.addV('person').property('firstName', 'Robin').property('lastName', 'Wakefield').property('userid', 3)
 ```
 
 Выходные данные:
@@ -150,7 +145,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Ben):
 
 ```
-:> g.addV('person').property('firstName', 'Ben').property('lastName', 'Miller').property('userid', 4)
+g.addV('person').property('firstName', 'Ben').property('lastName', 'Miller').property('userid', 4)
 
 ```
 
@@ -163,7 +158,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Jack):
 
 ```
-:> g.addV('person').property('firstName', 'Jack').property('lastName', 'Connor').property('userid', 5)
+g.addV('person').property('firstName', 'Jack').property('lastName', 'Connor').property('userid', 5)
 ```
 
 Выходные данные:
@@ -178,7 +173,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Thomas -> Mary Kay):
 
 ```
-:> g.V().hasLabel('person').has('firstName', 'Thomas').addE('knows').to(g.V().hasLabel('person').has('firstName', 'Mary Kay'))
+g.V().hasLabel('person').has('firstName', 'Thomas').addE('knows').to(g.V().hasLabel('person').has('firstName', 'Mary Kay'))
 ```
 
 Выходные данные:
@@ -190,7 +185,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Thomas -> Robin):
 
 ```
-:> g.V().hasLabel('person').has('firstName', 'Thomas').addE('knows').to(g.V().hasLabel('person').has('firstName', 'Robin'))
+g.V().hasLabel('person').has('firstName', 'Thomas').addE('knows').to(g.V().hasLabel('person').has('firstName', 'Robin'))
 ```
 
 Выходные данные:
@@ -202,7 +197,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (Robin -> Ben):
 
 ```
-:> g.V().hasLabel('person').has('firstName', 'Robin').addE('knows').to(g.V().hasLabel('person').has('firstName', 'Ben'))
+g.V().hasLabel('person').has('firstName', 'Robin').addE('knows').to(g.V().hasLabel('person').has('firstName', 'Ben'))
 ```
 
 Выходные данные:
@@ -217,7 +212,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 
 Входные данные:
 ```
-:> g.V().hasLabel('person').has('firstName', 'Thomas').property('age', 45)
+g.V().hasLabel('person').has('firstName', 'Thomas').property('age', 45)
 ```
 Выходные данные:
 
@@ -234,7 +229,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (запрос с фильтрацией):
 
 ```
-:> g.V().hasLabel('person').has('age', gt(40))
+g.V().hasLabel('person').has('age', gt(40))
 ```
 
 Выходные данные:
@@ -248,7 +243,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (запрос с фильтрацией и проекцией):
 
 ```
-:> g.V().hasLabel('person').has('age', gt(40)).values('firstName')
+g.V().hasLabel('person').has('age', gt(40)).values('firstName')
 ```
 
 Выходные данные:
@@ -264,7 +259,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (друзья пользователя Thomas):
 
 ```
-:> g.V().hasLabel('person').has('firstName', 'Thomas').outE('knows').inV().hasLabel('person')
+g.V().hasLabel('person').has('firstName', 'Thomas').outE('knows').inV().hasLabel('person')
 ```
 
 Выходные данные: 
@@ -279,7 +274,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (знакомые пользователя Thomas):
 
 ```
-:> g.V().hasLabel('person').has('firstName', 'Thomas').outE('knows').inV().hasLabel('person').outE('knows').inV().hasLabel('person')
+g.V().hasLabel('person').has('firstName', 'Thomas').outE('knows').inV().hasLabel('person').outE('knows').inV().hasLabel('person')
 ```
 Выходные данные:
 
@@ -294,7 +289,7 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные (удаление вершины Jack):
 
 ```
-:> g.V().hasLabel('person').has('firstName', 'Jack').drop()
+g.V().hasLabel('person').has('firstName', 'Jack').drop()
 ```
 
 ## <a name="clear-your-graph"></a>Очистка графа
@@ -304,8 +299,8 @@ serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessage
 Входные данные:
 
 ```
-:> g.E().drop()
-:> g.V().drop()
+g.E().drop()
+g.V().drop()
 ```
 
 Поздравляем! Вы завершили работу с этим руководством по использованию API Gremlin в Azure Cosmos DB.

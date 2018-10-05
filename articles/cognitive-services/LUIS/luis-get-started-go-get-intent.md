@@ -1,22 +1,23 @@
 ---
-title: Анализ текста на естественном языке в службе распознавания речи с помощью GO — Azure Cognitive Services | Документация Майкрософт
+title: Краткое руководство для языка Go — прогнозирование намерения — LUIS
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. Отправляйте намерение пользователя в виде текста в конечную точку прогноза HTTP общедоступного приложения, используя GO. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
-ms.date: 08/23/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: b00d815b712d98136b474d1e73afe7e35d1c7ef4
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: f19c46fcc7dcff2e02786bb3a03082f831e880a2
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44160172"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47032739"
 ---
-# <a name="quickstart-call-a-luis-endpoint-using-go"></a>Краткое руководство по вызову конечной точки LUIS с помощью GO
+# <a name="quickstart-get-intent-using-go"></a>Краткое руководство: получение намерения с использованием Go
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
@@ -32,11 +33,11 @@ ms.locfileid: "44160172"
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
 
-## <a name="analyze-text-with-browser"></a>Анализ текста с помощью браузера
+## <a name="get-intent-with-browser"></a>Получение намерения с помощью браузера
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
 
-## <a name="analyze-text-with-go"></a>Анализ текста с помощью GO
+## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
 С помощью GO можно получить доступ к тем же результатам, которые вы видели в окне браузера на предыдущем шаге. 
 

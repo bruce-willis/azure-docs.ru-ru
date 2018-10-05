@@ -1,21 +1,21 @@
 ---
-title: Регионы и конечные точки службы "Распознавание речи" (LUIS). Azure Cognitive Services | Документация Майкрософт
-titleSuffix: Azure
+title: Регионы и конечные точки публикации — LUIS
+titleSuffix: Azure Cognitive Services
 description: Регион, в который публикуется приложение LUIS, соответствует региону или расположению, указываемому на портале Azure при создании ключа конечной точки LUIS Azure. Когда вы публикуете приложение, LUIS автоматически создает URL-адрес конечной точки для региона, связанного с ключом. Чтобы опубликовать приложение LUIS в несколько регионов, требуется по меньшей мере один ключ для каждого региона.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 08/23/2018
+ms.date: 09/11/2018
 ms.author: diberry
-ms.openlocfilehash: 7812ce37cb22c8774c785f5f645b8fef90b02a3e
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 205a17a985986aab8039afe824e7e872a9885169
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42815509"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47039417"
 ---
 # <a name="regions-and-keys"></a>Регионы и ключи
 
@@ -30,6 +30,11 @@ ms.locfileid: "42815509"
 |[au.luis.ai][au.luis.ai]|Австралия|
 |[eu.luis.ai][eu.luis.ai]|Европа|
 
+## <a name="regions-and-azure-resources"></a>Регионы и ресурсы Azure
+Приложения можно публиковать во всех регионах, которые связаны с ресурсами LUIS, добавленными на портале LUIS. Например, если создать ресурс LUIS в регионе **westus** и добавить его в приложение, созданное по адресу [www.luis.ai][www.luis.ai], то приложение опубликуется в этом регионе. 
+
+## <a name="public-apps"></a>Общедоступные приложения
+Общедоступное приложение можно публиковать во всех регионах, чтобы пользователь с ключом ресурса LUIS для определенного региона смог получить доступ к приложению в том регионе, который связан с ключом ресурса.
 
 ## <a name="publishing-regions"></a>Регионы публикации
 
@@ -37,20 +42,20 @@ ms.locfileid: "42815509"
 
 Приложение региона разработки можно публиковать только в соответствующий регион публикации. Если приложение находится в неправильном регионе разработки, экспортируйте его, а затем импортируйте в правильный регион разработки для региона публикации. 
 
- Глобальный регион | Регион разработки | Регион публикации и запроса   |   Веб-сайт LUIS | Формат URL-адреса конечной точки   |
+ Глобальный регион | Регион разработки<br>`API region name` | Регион публикации и запроса<br>`API region name`   |   Веб-сайт LUIS | Формат URL-адреса конечной точки   |
 |-----|------|------|------|------|
-| Азия | Запад США| Восточная Азия     | [www.luis.ai][www.luis.ai] |  https://eastasia.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| Азия | Запад США| Юго-Восточная Азия     | [www.luis.ai][www.luis.ai] |   https://southeastasia.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| *[Австралия](#publishing-to-australia) | Восточная часть Австралии| Восточная часть Австралии     |   [au.luis.ai][au.luis.ai] | https://australiaeast.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| *[Европа](#publishing-to-europe)| Западная Европа| Северная Европа     | [eu.luis.ai][eu.luis.ai]|  https://northeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
-| *[Европа](#publishing-to-europe) | Западная Европа| Западная Европа     | [eu.luis.ai][eu.luis.ai]|  https://westeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
-| Северная Америка | Запад США | Восточная часть США      |[www.luis.ai][www.luis.ai] |   https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| Северная Америка | Запад США | Восток США 2     | [www.luis.ai][www.luis.ai] |  https://eastus2.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| Северная Америка | Запад США | Центрально-южная часть США     | [www.luis.ai][www.luis.ai] |  https://southcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
-| Северная Америка | Запад США | Западно-центральная часть США     |[www.luis.ai][www.luis.ai] |  https://westcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| Северная Америка | Запад США | Запад США |  [www.luis.ai][www.luis.ai] | https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY  |
-| Северная Америка | Запад США | Западный регион США 2    | [www.luis.ai][www.luis.ai] |  https://westus2.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY  |
-| Северная Америка | Запад США | Южная часть Бразилии     | [www.luis.ai][www.luis.ai] |  https://brazilsouth.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Азия | Запад США<br>`westus`| Восточная Азия<br>`eastasia`     | [www.luis.ai][www.luis.ai] |  https://eastasia.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Азия | Запад США<br>`westus`| Юго-Восточная Азия<br>`souteastasia`     | [www.luis.ai][www.luis.ai] |   https://southeastasia.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| *[Австралия](#publishing-to-australia) | Восточная часть Австралии<br>`australiaeast`| Восточная часть Австралии<br>`australiaeast`     |   [au.luis.ai][au.luis.ai] | https://australiaeast.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| *[Европа](#publishing-to-europe)| Западная Европа<br>`westeurope`| Северная Европа<br>`northeurope`     | [eu.luis.ai][eu.luis.ai]|  https://northeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
+| *[Европа](#publishing-to-europe) | Западная Европа<br>`westeurope`| Западная Европа<br>`westeurope`     | [eu.luis.ai][eu.luis.ai]|  https://westeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
+| Северная Америка | Запад США<br>`westus` | Восточная часть США<br>`eastus`      |[www.luis.ai][www.luis.ai] |   https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Северная Америка | Запад США<br>`westus` | Восток США 2<br>`eastus2`     | [www.luis.ai][www.luis.ai] |  https://eastus2.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Северная Америка | Запад США<br>`westus` | Центрально-южная часть США<br>`southcentralus`     | [www.luis.ai][www.luis.ai] |  https://southcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
+| Северная Америка | Запад США<br>`westus` | Западно-центральная часть США<br>`westcentralus`     |[www.luis.ai][www.luis.ai] |  https://westcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Северная Америка | Запад США<br>`westus` | Запад США<br>`westus`  |  [www.luis.ai][www.luis.ai] | https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY  |
+| Северная Америка | Запад США<br>`westus` | Западный регион США 2<br>`westus2`    | [www.luis.ai][www.luis.ai] |  https://westus2.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY  |
+| Северная Америка | Запад США<br>`westus` | Южная часть Бразилии<br>`brazilsouth`     | [www.luis.ai][www.luis.ai] |  https://brazilsouth.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 
 ## <a name="publishing-to-europe"></a>Публикация в Европе
 

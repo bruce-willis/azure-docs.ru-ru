@@ -1,27 +1,28 @@
 ---
-title: Начало работы с Azure Content Moderator | Документация Майкрософт
-description: Начало работы с Azure Content Moderator
+title: Начало работы с Content Moderator
+titlesuffix: Azure Cognitive Services
+description: Приступая к работе с Content Moderator.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: sajagtap
-ms.openlocfilehash: ae4333047ebd95733c7baaed0323a0c2c477d323
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c2ac0ccd89b5f1436a151e3d69c5d7423090f244
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380801"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225300"
 ---
 # <a name="get-started-with-content-moderator"></a>Начало работы с Content Moderator
 
-У вас есть несколько возможных путей для начала работы с API-интерфейсами Content Moderator и средством проверки.
+У вас есть несколько возможных путей для начала работы с Content Moderator:
 
-- [Используйте средство проверки](#start-with-the-review-tool) для создания ключей API и команды проверки. Изучите возможности средства проверки и методы его интеграции с помощью API Content Moderator.
-- [Подпишитесь на Content Moderator](#start-with-the-apis) на портале Azure. При этом для создания команды проверки по-прежнему потребуется онлайн-регистрация.
+- [Используйте средство проверки](#start-with-the-review-tool), чтобы получить ключ API и создать команду проверки. Преимущество заключается в том, что ключ API можно использовать, чтобы вызывать API-интерфейсы модерации для сканирования содержимого и API проверки для создания проверок без дополнительных действий.
+- [Подпишитесь на Content Moderator](#start-with-the-apis) в Azure, чтобы получить ключ API. Ознакомьтесь со [справочником по API](api-reference.md) и [пакетами SDK](sdk-and-samples.md#sdks-for-python-java-nodejs-and-net). При этом для создания команды проверки по-прежнему потребуется онлайн-регистрация.
 - [Примените соединитель и шаблоны для Microsoft Flow](https://flow.microsoft.com/connectors/shared_cognitiveservicescontentmoderator/content-moderator/), чтобы изучить широкий диапазон средств интеграции с помощью удобного конструктора.
 
 Независимо от выбранного варианта, ознакомьтесь со статьей [об управлении учетными данными](review-tool-user-guide/credentials.md), чтобы узнать учетные данные для API.
@@ -55,9 +56,9 @@ ms.locfileid: "35380801"
 
 ### <a name="use-the-apis"></a>Использование API-интерфейсов
 
-Теперь, когда вы ознакомились с модерацией содержимого и интерфейсом средства проверки, переходите к интеграции Content Moderator с бизнес-приложениями. Следующий раздел позволит получить новые сведения и быстро проверить свое понимание на примерах и пакетах SDK.
+Узнайте, как интегрировать Content Moderator с бизнес-приложениями. Ознакомьтесь со [справочником по API](api-reference.md) и [пакетами SDK](sdk-and-samples.md#sdks-for-python-java-nodejs-and-net).
 
-## <a name="start-with-the-apis"></a>Начало работы с API-интерфейсами
+## <a name="subscribe-in-the-azure-portal"></a>Оформление подписки на портале Azure
 
 [Подпишитесь на Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator) на портале Azure. Начните работу с любого из следующих API-интерфейсов.
 
@@ -85,4 +86,4 @@ ms.locfileid: "35380801"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о модерации содержимого см. в статье [об API модерации изображений](image-moderation-api.md).
+Ознакомьтесь со [справочником по API](api-reference.md) и [пакетами SDK](sdk-and-samples.md#sdks-for-python-java-nodejs-and-net). Ускорьте процесс интеграции, используя [примеры пакета SDK для .NET](sdk-and-samples.md#net-sdk-samples), [примеры REST API на C#](https://github.com/sanjeev3/azure-docs-pr/blob/master/articles/cognitive-services/Content-Moderator/sdk-and-samples.md#rest-api-samples-in-c) и [руководства](sdk-and-samples.md#tutorials).

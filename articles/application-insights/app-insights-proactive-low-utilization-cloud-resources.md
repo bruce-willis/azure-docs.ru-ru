@@ -1,8 +1,8 @@
 ---
-title: "Интеллектуальное обнаружение. Снижение нагрузки облачных ресурсов, обнаруживаемое Azure Application Insights | Документация Майкрософт"
-description: "Мониторинг низкой нагрузки облачных ресурсов в приложениях с помощью Azure Application Insights."
+title: Интеллектуальное обнаружение. Снижение нагрузки облачных ресурсов, обнаруживаемое Azure Application Insights | Документация Майкрософт
+description: Мониторинг низкой нагрузки облачных ресурсов в приложениях с помощью Azure Application Insights.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: ea2a28ed-4cd9-4006-bd5a-d4c76f4ec20b
@@ -10,18 +10,19 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: mbullwin
-ms.openlocfilehash: 8382f6047ae222a01cc0e8d6ca9dcf5593d0dff6
-ms.sourcegitcommit: 48fce90a4ec357d2fb89183141610789003993d2
+ms.openlocfilehash: ca4f944f605db96a2cedf2682f3ff4c811007ffb
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47094918"
 ---
-# <a name="low-utilization-of-cloud-resources-preview"></a>Снижение нагрузки облачных ресурсов (предварительная версия)
+# <a name="low-cpu-utilization-in-cloud-resources-preview"></a>Малая загрузка ЦП в облачных ресурсах (предварительная версия)
 
-Application Insights автоматически анализирует потребление ресурсов ЦП каждым экземпляром роли в приложении и обнаруживает экземпляры с низкой загрузкой ЦП. Такое обнаружение позволяет уменьшить объем ресурсов Azure и снизить затраты за счет уменьшения количества экземпляров ролей, задействованных в каждой роли, или количества ролей.
+Application Insight автоматически анализирует потребление ресурсов ЦП каждым экземпляром роли в приложении и обнаруживает экземпляры с малой загрузкой ЦП. Такое обнаружение позволяет уменьшить объем ресурсов Azure и снизить затраты за счет уменьшения количества экземпляров ролей, задействованных в каждой роли, или количества ролей.
 
 Для этого компонента не требуется особая настройка — только [настройка счетчиков производительности](https://docs.microsoft.com/azure/application-insights/app-insights-performance-counters) для приложения. Этот компонент остается активным, если приложение генерирует достаточно телеметрии счетчиков производительности ЦП (% загруженности процессора).
 

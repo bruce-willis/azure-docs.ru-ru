@@ -1,21 +1,22 @@
 ---
-title: Единицы измерения и квоты Пользовательской службы распознавания речи в Azure | Документация Майкрософт
+title: Единицы измерения и квоты службы — Пользовательская служба распознавания речи
+titlesuffix: Azure Cognitive Services
 description: Информация о единицах измерения и квотах Пользовательской службы распознавания речи в Azure.
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/08/2017
 ms.author: panosper
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0ddd6274051fed5de86a88270a0dcc2e8288d885
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 68fba1d6038a044336ba6aecd3ff163d29131b1d
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46974533"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224704"
 ---
 # <a name="custom-speech-service-meters-and-quotas"></a>Единицы измерения и квоты Пользовательской службы распознавания речи
 

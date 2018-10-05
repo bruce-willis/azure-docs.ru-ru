@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Использование API для поиска видео | Документация Майкрософт
+title: 'Краткое руководство: API Bing для поиска видео'
+titlesuffix: Azure Cognitive Services
 description: В этой статье показано, как начать работу с API Bing для поиска видео.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
-ms.assetid: 7E59692A-83A8-4F4C-B122-1F0EDC8E5C86
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 0bd0f067d64cac3ebac342ebadcfcc010a47af7b
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: abeeec95755a566216ac65b2edf5c831a8ab93b6
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382121"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225520"
 ---
-# <a name="your-first-video-search-query"></a>Ваш первый запрос к API для поиска видео
+# <a name="quickstart-your-first-video-search-query"></a>Краткое руководство: ваш первый запрос для поиска видео
 
 Прежде чем выполнить первый вызов, необходимо получить ключ подписки Cognitive Services для Поиска Bing. Сведения о получении ключа см. в на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-video-search-api).
 
@@ -32,7 +32,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/videos/search
 Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Осуществление вызовов с сервера также предоставляет единую точку обновления для будущих версий API.
 
   
-В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#query), который содержит поисковый запрос пользователя. В запросе также можно указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `pricing`, можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#query-parameters). Все значения параметров запроса должны быть закодированы в формат URL-адреса.  
+В запросе необходимо указать параметр [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#query), который содержит условие поиска пользователя. В запросе также можно указать необязательный параметр [mkt](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#mkt), определяющий рынок, для которого будут отображаться результаты. Список необязательных параметров запроса, таких как `pricing`, можно найти в разделе [Параметры запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#query-parameters). Все значения параметров запроса должны быть указаны в формате URL-адреса.  
   
 Запрос должен содержать заголовок [Ocp-Apim-Subscription-Key](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#subscriptionkey). Приведенные ниже заголовки являются необязательными, но их также рекомендуется указать:  
   
@@ -43,12 +43,12 @@ https://api.cognitive.microsoft.com/bing/v7.0/videos/search
 
 Заголовки IP-адреса и расположения клиента важны для отображения содержимого с учетом расположения.  
 
-Список всех заголовков в запросах и ответах см. в разделе [Заголовки](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#headers).
+Список всех заголовков в запросах и ответах приведен в разделе [Заголовки](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#headers).
 
 
 ## <a name="the-request"></a>Запрос
 
-Ниже показан запрос поиска, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Идентификатор клиента следует включать, только если вы ранее вызывали API Bing, а Bing вернул идентификатор клиента для определенной комбинации пользователей и устройств. 
+Ниже показан поисковый запрос, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Идентификатор клиента следует включать, только если вы ранее вызывали API Bing, а Bing вернул идентификатор клиента для определенной комбинации пользователей и устройств. 
   
 ```  
 GET https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghies&mkt=en-us HTTP/1.1  

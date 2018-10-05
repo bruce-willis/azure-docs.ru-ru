@@ -1,20 +1,21 @@
 ---
-title: Краткое руководство. Обновление базы знаний с помощью Go в Azure Cognitive Services | Документация Майкрософт
+title: 'Краткое руководство: обновление базы знаний с использованием Go — QnA Maker'
+titleSuffix: Azure Cognitive Services
 description: Обновление базы знаний на Go для QnA Maker.
 services: cognitive-services
-author: noellelacharite
-manager: nolachar
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: qna-maker
+ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 06/18/2018
-ms.author: nolachar
-ms.openlocfilehash: 613bcd67f766497c9dca49f2ac2dd7a9f7b1cacf
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.date: 09/12/2018
+ms.author: diberry
+ms.openlocfilehash: 03287a2c7a79f0a19d12d7246b2aba679f4ae1a9
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "43770774"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47040165"
 ---
 # <a name="update-a-knowledge-base"></a>Обновление базы знаний
 

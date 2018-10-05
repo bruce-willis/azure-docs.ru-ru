@@ -1,46 +1,68 @@
 ---
-title: Краткое руководство. Использование API компьютерного зрения для Java | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: В этом кратком руководстве описано, как создать эскиз изображения с помощью API компьютерного зрения Cognitive Services и Java.
+title: Краткое руководство по созданию эскиза с помощью API компьютерного зрения для REST, Java
+titleSuffix: Azure Cognitive Services
+description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в Java.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: v-deken
-ms.openlocfilehash: 8907b104cacfbcce53f6e490e348f108580d84a3
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 8627a3b2e5f0a1e250401bdddc1870381979dca8
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43772426"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225920"
 ---
-# <a name="quickstart-generate-a-thumbnail---rest-java"></a>Краткое руководство. Создание эскиза (REST, Java)
+# <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-java-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и Java API компьютерного зрения
 
-В этом кратком руководстве описано, как создать эскиз изображения с помощью API компьютерного зрения.
+Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (JDK 7 или 8).
+- У вас должен быть ключ подписки для API компьютерного зрения. Получение ключа подписки описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
-## <a name="get-thumbnail-request"></a>Запрос Get Thumbnail
+## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
-Метод [Get Thumbnail](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
+Чтобы создать и запустить пример, сделайте следующее.
 
-Чтобы выполнить наш пример, сделайте следующее:
+1. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе. Если этот параметр доступен, создайте проект Java из шаблона приложения командной строки.
+1. Импортируйте следующие библиотеки в свой проект Java. Если вы используете Maven — его координаты предоставляются для каждой библиотеки.
+   - [HTTP-клиент Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpclient:4.5.5)
+   - [HTTP-ядро Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpcore:4.4.9)
+   - [Библиотека JSON](https://github.com/stleary/JSON-java) (org.json:json:20180130)
+1. Добавьте следующие операторы `import` в файл, содержащий общий класс `Main` для вашего проекта.  
 
-1. Создайте приложение командной строки.
-1. Замените класс Main следующим кодом (сохранив все инструкции `package`).
-1. Замените `<Subscription Key>` действительным ключом подписки.
-1. При необходимости замените `uriBase` расположением, в котором вы получили ключи подписки.
-1. При необходимости укажите в значении параметра `imageToAnalyze` другое изображение.
-1. Скачайте эти библиотеки из репозитория Maven в каталог `lib` в своем проекте:
-   * `org.apache.httpcomponents:httpclient:4.5.5`
-   * `org.apache.httpcomponents:httpcore:4.4.9`
-   * `org.json:json:20180130`
-1. Выполните класс Main.
+   ```java
+   import java.awt.*;
+   import javax.swing.*;
+   import java.net.URI;
+   import java.io.InputStream;
+   import javax.imageio.ImageIO;
+   import java.awt.image.BufferedImage;
+   import org.apache.http.HttpEntity;
+   import org.apache.http.HttpResponse;
+   import org.apache.http.client.methods.HttpPost;
+   import org.apache.http.entity.StringEntity;
+   import org.apache.http.client.utils.URIBuilder;
+   import org.apache.http.impl.client.CloseableHttpClient;
+   import org.apache.http.impl.client.HttpClientBuilder;
+   import org.apache.http.util.EntityUtils;
+   import org.json.JSONObject;
+   ```
+
+1. Замените общий класс `Main` следующим кодом, а затем внесите в него следующие изменения (там, где это необходимо):
+   1. замените значение `subscriptionKey` своим ключом подписки;
+   1. замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо;
+   1. при необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, для которого вы хотите создать эскиз.
+1. Сохраните, а затем создайте проект Java.
+1. Если вы используете интегрированную среду разработки, запустите `Main`. В противном случае откройте окно командной строки и затем используйте команду `java` для выполнения скомпилированного класса. Например, `java Main`.
 
 ```java
 // This sample uses the following libraries:
@@ -48,22 +70,6 @@ ms.locfileid: "43772426"
 //  - Apache HTTP core (org.apache.httpcomponents:httpccore:4.4.9)
 //  - JSON library (org.json:json:20180130).
 
-import java.awt.*;
-import javax.swing.*;
-import java.net.URI;
-import java.io.InputStream;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
 
 public class Main {
     // **********************************************
@@ -73,12 +79,14 @@ public class Main {
     // Replace <Subscription Key> with your valid subscription key.
     private static final String subscriptionKey = "<Subscription Key>";
 
-    // You must use the same region in your REST call as you used to get your
-    // subscription keys. For example, if you got your subscription keys from
-    // westus, replace "westcentralus" in the URI below with "westus".
+    // You must use the same Azure region in your REST API method as you used to
+    // get your subscription keys. For example, if you got your subscription keys
+    // from the West US region, replace "westcentralus" in the URL
+    // below with "westus".
     //
-    // Free trial subscription keys are generated in the westcentralus region. If you
-    // use a free trial subscription key, you shouldn't need to change this region.
+    // Free trial subscription keys are generated in the West Central US region.
+    // If you use a free trial subscription key, you shouldn't need to change
+    // this region.
     private static final String uriBase =
         "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail";
 
@@ -96,7 +104,7 @@ public class Main {
             uriBuilder.setParameter("height", "150");
             uriBuilder.setParameter("smartCropping", "true");
 
-            // Prepare the URI for the REST API call.
+            // Prepare the URI for the REST API method.
             URI uri = uriBuilder.build();
             HttpPost request = new HttpPost(uri);
 
@@ -109,7 +117,7 @@ public class Main {
                     new StringEntity("{\"url\":\"" + imageToAnalyze + "\"}");
             request.setEntity(requestEntity);
 
-            // Make the REST API call and get the response entity.
+            // Call the REST API method and get the response entity.
             HttpResponse response = httpClient.execute(request);
             HttpEntity entity = response.getEntity();
 
@@ -154,32 +162,17 @@ public class Main {
 }
 ```
 
-## <a name="get-thumbnail-response"></a>Ответ Get Thumbnail
+## <a name="examine-the-response"></a>Изучите ответ
 
-В случае успешного выполнения ответ будет содержать двоичный файл эскиза изображения. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы. Ниже приведен пример ответа при успешном выполнении.
+Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается успешно, эскиз создается из двоичных данных в ответе и отображается в отдельном окне, созданном примером приложения. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
 
-```text
-Response:
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
-{
-  Pragma: no-cache
-  apim-request-id: 131eb5b4-5807-466d-9656-4c1ef0a64c9b
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  x-content-type-options: nosniff
-  Cache-Control: no-cache
-  Date: Tue, 06 Jun 2017 20:54:07 GMT
-  X-AspNet-Version: 4.0.30319
-  X-Powered-By: ASP.NET
-  Content-Length: 5800
-  Content-Type: image/jpeg
-  Expires: -1
-}
-```
+Если проект Java больше не нужен — удалите его вместе со скомпилированным классом и импортированными библиотеками.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Изучите приложение Java Swing, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. Для быстрых экспериментов с API-интерфейсами компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+Изучите приложение Java Swing, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных компонентов изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API компьютерного зрения для Java](../Tutorials/java-tutorial.md)

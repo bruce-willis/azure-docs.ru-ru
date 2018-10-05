@@ -1,20 +1,21 @@
 ---
-title: Корпоративные принципы разработки приложений LUIS в Azure | Документы Майкрософт
+title: Корпоративные принципы разработки приложений LUIS — Интеллектуальная служба распознавания речи
+titleSuffix: Azure Cognitive Services
 description: Общие сведения о принципах разработки крупных приложений LUIS.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: fda4a089866950688d88f9f47988c1540abe1cc0
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 3782874ac69b299e24cf1555b290a9d2d86b6285
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224866"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038346"
 ---
 # <a name="enterprise-strategies-for-a-luis-app"></a>Корпоративные стратегии для разработки приложения LUIS
 Ознакомьтесь с этими стратегиями разработки корпоративных приложений.
@@ -50,9 +51,7 @@ ms.locfileid: "39224866"
 
 ![Схематическое изображение архитектуры подготовки к отправке](./media/luis-concept-enterprise/dispatch-architecture.png)
 
-Родительская предметная область указывается в LUIS как приложение **V Dispatch**. 
-
-![Снимок экрана списка приложений LUIS с приложением LUIS, созданным с помощью средства подготовки к отправке](./media/luis-concept-enterprise/dispatch.png)
+Родительский домен указывается в LUIS с версией под именем `Dispatch` в списке приложений. 
 
 Чат-бот получает высказывание, а затем отправляет его в родительское приложение LUIS для прогнозирования. Основное прогнозируемое намерение из родительского приложения определяет, какое дочернее приложение LUIS будет вызвано следующим. Чат-бот отправляет высказывание в дочернее приложение для более конкретного прогнозирования.
 
@@ -66,4 +65,4 @@ ms.locfileid: "39224866"
 * Узнайте, как [выполнить пакетное тестирование](luis-how-to-batch-test.md)
 
 [dispatcher-application-tutorial]: https://aka.ms/bot-dispatch
-[dispatch-tool]: https://github.com/Microsoft/botbuilder-tools/tree/master/Dispatch
+[dispatch-tool]: https://aka.ms/dispatch-tool

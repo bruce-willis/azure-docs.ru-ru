@@ -1,20 +1,21 @@
 ---
-title: Конечные точки для поиска видео | Документация Майкрософт
-description: Сводные сведения о конечной точке API для поиска видео.
+title: Конечные точки поиска видео — Поиск видео Bing
+titlesuffix: Azure Cognitive Services
+description: Сводная информация о конечной точке API Bing для поиска видео.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/04/2017
-ms.author: v-gedod
-ms.openlocfilehash: 9836d9928362ab37b0a81ff5043d99f9bf353f22
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: c153f577f76944d22f9a1b0fb4b24d332d2a02c8
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380089"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220777"
 ---
 # <a name="video-search-endpoints"></a>Конечные точки для поиска видео
 **API для поиска видео** включает три конечные точки.  Конечная точка 1 возвращает видео из Интернета на основе запроса. Конечная точка 2 возвращает аналитические сведения о видео на основе параметра `modules` URL-адреса.  Конечная точка 3 возвращает популярные видео.

@@ -9,15 +9,16 @@ ms.author: gwallace
 ms.date: 06/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 12628b5a552b864784d780e5f2adc00aac579911
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 13ba4d774cbc347830c32385ba4927a0df687159
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39215039"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47035476"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-log-analytics"></a>Пересылка состояния задания и потоков заданий из службы автоматизации в Log Analytics
-Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. На портале Azure или с помощью PowerShell можно просмотреть журналы заданий и потоки заданий для отдельных заданий. Это дает возможность выполнять простые исследования. С помощью Log Analytics теперь можно:
+
+Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. Этот процесс не предполагает связывания с рабочей областью и является полностью независимым. На портале Azure или с помощью PowerShell можно просмотреть журналы заданий и потоки заданий для отдельных заданий. Это дает возможность выполнять простые исследования. С помощью Log Analytics теперь можно:
 
 * получить информацию о заданиях службы автоматизации;
 * активировать отправку электронного сообщения или оповещения в соответствии с состоянием задания runbook (например, сбой или приостановка);
@@ -26,12 +27,12 @@ ms.locfileid: "39215039"
 * визуализировать журнал заданий по прошествии времени.
 
 ## <a name="prerequisites-and-deployment-considerations"></a>Предварительные требования и рекомендации по развертыванию
+
 Чтобы начать отправку журналов службы автоматизации в Log Analytics, необходимо следующее.
 
 * Выпуск за ноябрь 2016 года или более поздний выпуск [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/) (вер. 2.3.0).
 * Рабочая область Log Analytics. Дополнительные сведения см. в статье [Начало работы с Log Analytics](../log-analytics/log-analytics-get-started.md). 
 * ResourceId для учетной записи службы автоматизации Azure.
-
 
 Вот как можно найти ResourceId для учетной записи службы автоматизации Azure.
 
@@ -159,7 +160,18 @@ Get-AzureRmDiagnosticSetting -ResourceId $automationAccountId
 `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and ResultType != "started" | summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h)`  
 <br> ![Диаграмма хронологии состояния задания в Log Analytics](media/automation-manage-send-joblogs-log-analytics/historical-job-status-chart.png)<br>
 
+## <a name="remove-diagnostic-settings"></a>Удаление параметров диагностики
+
+Чтобы удалить параметр диагностики из учетной записи службы автоматизации, выполните следующие команды:
+
+```powershell-interactive
+$automationAccountId = "[resource id of your automation account]"
+
+Remove-AzureRmDiagnosticSetting -ResourceId $automationAccountId
+```
+
 ## <a name="summary"></a>Сводка
+
 Отправляя состояние задания службы автоматизации и поток данных в Log Analytics, можно лучше понять, в каком состоянии находятся ваши задания службы автоматизации. Для этого вы можете:
 + настроить оповещения, уведомляющие вас о проблемах;
 + с помощью пользовательских представлений и поисковых запросов визуализировать результаты модуля Runbook, состояние задания Runbook и другие связанные ключевые индикаторы или метрики.  

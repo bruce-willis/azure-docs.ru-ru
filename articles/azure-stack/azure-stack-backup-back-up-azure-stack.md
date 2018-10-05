@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/01/2018
+ms.date: 09/05/2018
 ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: 578bb864f56b788db77d1201533e73d3b9616669
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 08335f676437a32aa2240298be4680633eff16ba
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41947756"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432976"
 ---
 # <a name="back-up-azure-stack"></a>Резервное копирование для Azure Stack
 
@@ -38,15 +38,48 @@ ms.locfileid: "41947756"
 ```
 
 ### <a name="start-azure-stack-backup-with-job-progress-tracking"></a>Запуск резервного копирования Azure Stack с отслеживанием хода выполнения задания
-Запустите новое резервное копирование с помощью команды Start-AzSBackup с переменной -AsJob для отслеживания хода выполнения создания резервной копии.
+Запустите новое резервное копирование с помощью команды Start-AzSBackup с параметром **-AsJob** и сохраните его в качестве переменной, позволяющей отслеживать ход выполнения создания резервной копии.
+
+> [!NOTE]
+> После успешного завершения задание резервного копирования появится на портале. Для выполнения задания потребуется 10–15 минут.
+>
+> Таким образом, фактическое состояние лучше узнать с помощью приведенного ниже кода.
+
+> [!IMPORTANT]
+> Вводится начальная задержка в 1 миллисекунду, так как код слишком быстро правильно регистрирует задание, из-за чего не возвращает результат для **PSBeginTime** и **состояние** задания.
 
 ```powershell
-    $backupjob = Start-AzsBackup -Force -AsJob 
-    "Start time: " + $backupjob.PSBeginTime;While($backupjob.State -eq "Running"){("Job is currently: " `
-    + $backupjob.State+" ;Duration: " + (New-TimeSpan -Start ($backupjob.PSBeginTime) `
-    -End (Get-Date)).Minutes);Start-Sleep -Seconds 30};$backupjob.Output
+    $BackupJob = Start-AzsBackup -Force -AsJob
+    While (!$BackupJob.PSBeginTime) {
+        Start-Sleep -Milliseconds 1
+    }
+    Write-Host "Start time: $($BackupJob.PSBeginTime)"
+    While ($BackupJob.State -eq "Running") {
+        Write-Host "Job is currently: $($BackupJob.State) - Duration: $((New-TimeSpan -Start ($BackupJob.PSBeginTime) -End (Get-Date)).ToString().Split(".")[0])"
+        Start-Sleep -Seconds 30
+    }
 
-    if($backupjob.State -eq "Completed"){Get-AzsBackup | where {$_.BackupId -eq $backupjob.Output.BackupId}}
+    If ($BackupJob.State -eq "Completed") {
+        Get-AzsBackup | Where-Object {$_.BackupId -eq $BackupJob.Output.BackupId}
+        $Duration = $BackupJob.Output.TimeTakenToCreate
+        $Pattern = '^P?T?((?<Years>\d+)Y)?((?<Months>\d+)M)?((?<Weeks>\d+)W)?((?<Days>\d+)D)?(T((?<Hours>\d+)H)?((?<Minutes>\d+)M)?((?<Seconds>\d*(\.)?\d*)S)?)$'
+        If ($Duration -match $Pattern) {
+            If (!$Matches.ContainsKey("Hours")) {
+                $Hours = ""
+            } 
+            Else {
+                $Hours = ($Matches.Hours).ToString + 'h '
+            }
+            $Minutes = ($Matches.Minutes)
+            $Seconds = [math]::round(($Matches.Seconds))
+            $Runtime = '{0}{1:00}m {2:00}s' -f $Hours, $Minutes, $Seconds
+        }
+        Write-Host "BackupJob: $($BackupJob.Output.BackupId) - Completed with Status: $($BackupJob.Output.Status) - It took: $($Runtime) to run" -ForegroundColor Green
+    }
+    ElseIf ($BackupJob.State -ne "Completed") {
+        $BackupJob
+        $BackupJob.Output
+    }
 ```
 
 ## <a name="confirm-backup-has-completed"></a>Подтверждение завершения резервного копирования
@@ -81,7 +114,7 @@ ms.locfileid: "41947756"
 Используйте портал администрирования Azure Stack для проверки успешного завершения резервного копирования, выполнив следующие шаги:
 
 1. Откройте [портал администрирования Azure Stack](azure-stack-manage-portals.md).
-2. Выберите **Дополнительные службы** > **Резервное копирование инфраструктуры**. Выберите **Конфигурация** в колонке **Резервное копирование инфраструктуры**.
+2. Выберите **Все службы**, а затем в категории **Администрирование** выберите пункт **Инфраструктура резервного копирования**. Выберите **Конфигурация** в колонке **Резервное копирование инфраструктуры**.
 3. Найти **имя** и **дату завершения** резервного копирования в списке **доступных резервных копий**.
 4. Убедитесь, что для **состояния** отображается значение **Выполнено**.
 

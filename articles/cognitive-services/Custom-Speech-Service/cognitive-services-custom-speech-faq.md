@@ -1,21 +1,22 @@
 ---
-title: Часто задаваемые вопросы о Пользовательской службе распознавания речи в Azure | Документация Майкрософт
+title: Часто задаваемые вопросы — Пользовательская служба распознавания речи
+titlesuffix: Azure Cognitive Services
 description: В статье приведены ответы на самые распространенные вопросы о Пользовательской службе распознавания речи.
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: article
+ms.topic: faq
 ms.date: 11/21/2016
 ms.author: panosper
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5ab4adefbfbfa1a295f980fd31bffaeaa957ce0c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2de2efe3287cbb0b915434c2c9ad982fe162d741
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46955288"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223732"
 ---
 # <a name="custom-speech-service-frequently-asked-questions"></a>Часто задаваемые вопросы о Пользовательской службе распознавания речи
 

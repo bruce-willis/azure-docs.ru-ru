@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/27/2018
+ms.date: 09/26/2018
 ms.author: sethm
 ms.reviewer: justini
-ms.openlocfilehash: 60b4658d18d39797d30055e86cb21689cfb661fa
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: 5224829b59e7ad425fb01a242a702e0d4cad8657
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45631670"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47392386"
 ---
 # <a name="azure-stack-1805-update"></a>Обновление 1805 для Azure Stack
 
@@ -91,6 +91,9 @@ ms.locfileid: "45631670"
 Ниже перечислены известные проблемы после установки этой версии сборки.
 
 ### <a name="portal"></a>Microsoft Azure  
+
+- Техническая документация Azure Stack посвящена последнему выпуску. Из-за изменений на портале между выпусками содержимое, отображаемое на порталах Azure Stack, может отличаться от содержимого в документации. 
+
 - <!-- 2931230 – IS  ASDK --> Планы, добавленные в подписку пользователя как дополнительные, невозможно удалить даже при удалении основного плана из подписки. Дополнительный план будет оставаться в подписке, пока подписки, которые ссылаются на него, не будут удалены. 
 
 - <!-- TBD - IS ASDK --> С этой версией Azure Stack невозможно установить обновления драйверов с помощью пакета расширения OEM.  Для этой проблемы нет решения.

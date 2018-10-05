@@ -1,21 +1,21 @@
 ---
-title: Руководство по использованию API распознавания лиц для C# | Документация Майкрософт
-titleSuffix: Microsoft Cognitive Services
-description: С помощью этого руководства вы создадите простое приложение Windows, которое использует службу распознавания лиц Cognitive Services для обнаружения и выделения лиц на изображении.
+title: Руководство. Обнаружение и выделение лиц на изображении с помощью API распознавания лиц и C#
+titleSuffix: Azure Cognitive Services
+description: С помощью этого руководства вы создадите простое приложение Windows, которое использует API распознавания лиц для обнаружения и выделения лиц на изображении.
 services: cognitive-services
 author: noellelacharite
-manager: nolachar
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: face-api
 ms.topic: tutorial
-ms.date: 06/29/2018
+ms.date: 09/24/2018
 ms.author: nolachar
-ms.openlocfilehash: e4f2192c40f0b650b31ed59642dee89e42eca703
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 657c471761c36de5095763623210909308f55c2a
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39125952"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162617"
 ---
 # <a name="tutorial-create-a-wpf-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения WPF для обнаружения и выделения лиц на изображении
 
@@ -23,7 +23,7 @@ ms.locfileid: "39125952"
 
 ![Снимок экрана, на котором обнаруженные лица выделены прямоугольниками](../Images/getting-started-cs-detected.png)
 
-В этом руководстве описаны следующие процедуры:
+В этом учебнике описаны следующие процедуры.
 
 > [!div class="checklist"]
 > - создание приложения WPF;
@@ -36,7 +36,7 @@ ms.locfileid: "39125952"
 
 - Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/). Для Visual Studio 2017 рабочая нагрузка по разработке классического приложения .NET является обязательной. В этом руководстве используется выпуск Visual Studio Community 2017.
-- Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.Face 2.0.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.0.0-preview). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
+- Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.Face 2.2.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
 
 ## <a name="create-the-visual-studio-solution"></a>Создание решения Visual Studio
 
@@ -47,14 +47,14 @@ ms.locfileid: "39125952"
    - В Visual Studio 2015 разверните раздел **Установленные**, а затем — **Шаблоны**. Выберите **Visual C#**, а затем — **Приложение WPF**.
 1. Присвойте приложению имя **FaceTutorial** и нажмите кнопку **ОК**.
 
-## <a name="install-the-face-service-client-library"></a>Установка клиентской библиотеки службы распознавания лиц
+## <a name="install-the-face-service-client-library"></a>установка клиентской библиотеки службы распознавания лиц;
 
 Чтобы установить клиентскую библиотеку, выполните следующие инструкции.
 
 1. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**.
 1. В **консоли диспетчера пакетов** вставьте следующую команду, а затем нажмите клавишу **ВВОД**.
 
-    `Install-Package Microsoft.Azure.CognitiveServices.Vision.Face -Version 2.0.0-preview`
+    `Install-Package Microsoft.Azure.CognitiveServices.Vision.Face -Version 2.2.0-preview`
 
 ## <a name="add-the-initial-code"></a>Добавление исходного кода
 
@@ -122,8 +122,8 @@ namespace FaceTutorial
         // NOTE: Free trial subscription keys are generated in the westcentralus
         // region, so if you are using a free trial subscription key, you should
         // not need to change this region.
-        private const string baseUri =
-            "https://westcentralus.api.cognitive.microsoft.com/face/v1.0";
+        private const string faceEndpoint =
+            "https://westcentralus.api.cognitive.microsoft.com";
 
         private readonly IFaceClient faceClient = new FaceClient(
             new ApiKeyServiceClientCredentials(subscriptionKey),
@@ -137,13 +137,13 @@ namespace FaceTutorial
         {
             InitializeComponent();
 
-            if (Uri.IsWellFormedUriString(baseUri, UriKind.Absolute))
+            if (Uri.IsWellFormedUriString(faceEndpoint, UriKind.Absolute))
             {
-                faceClient.BaseUri = new Uri(baseUri);
+                faceClient.Endpoint = faceEndpoint;
             }
             else
             {
-                MessageBox.Show(baseUri,
+                MessageBox.Show(faceEndpoint,
                     "Invalid URI", MessageBoxButton.OK, MessageBoxImage.Error);
                 Environment.Exit(0);
             }
@@ -197,8 +197,8 @@ namespace FaceTutorial
 - Найдите следующую строку в файле *MainWindow.xaml.cs* и измените или подтвердите регион Azure, связанный с ключом подписки:
 
     ```csharp
-    private const string baseUri =
-        "https://westcentralus.api.cognitive.microsoft.com/face/v1.0";
+    private const string Endpoint =
+        "https://westcentralus.api.cognitive.microsoft.com";
     ```
 
     Убедитесь, что расположение соответствует региону, в котором вы получили ключи подписки. Например, если вы получили ключи подписки в регионе **westus**, вместо `Westcentralus` укажите `Westus`.

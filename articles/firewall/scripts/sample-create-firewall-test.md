@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 8/13/2018
 ms.author: victorh
-ms.openlocfilehash: 23f10280cd34927e2e74cb7c5001850bedc6dd35
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 63b34b6ddc1809031dc66fb3e41fa4a22d9f4a03
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46967546"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182796"
 ---
 # <a name="create-an-azure-firewall-test-environment"></a>Создание тестовой среды брандмауэра Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "46967546"
 
 Скрипт можно выполнить из Azure [Cloud Shell](https://shell.azure.com/powershell) или из локальной установки PowerShell. 
 
-При локальном запуске PowerShell для выполнения этого скрипта понадобится модуль AzureRM PowerShell последней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. 
+При локальном запуске PowerShell для выполнения этого скрипта понадобится модуль PowerShell AzureRM последней версии (6.9.0 или более поздней). Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. 
 
 Если необходимо выполнить обновление, можно использовать модуль `PowerShellGet`, встроенный в Windows 10 и Windows Server 2016.
 
@@ -70,10 +70,10 @@ Remove-AzureRmResourceGroup -Name AzfwSampleScriptEastUS -Force
 | [New-AzureRmVMConfig](/powershell/module/azurerm.compute/new-azurermvmconfig) | Создает конфигурацию виртуальной машины. Эта конфигурация включает в себя такие сведения, как имя виртуальной машины, операционную систему и учетные данные администратора. Данная конфигурации используется при создании виртуальной машины. |
 | [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm) | Создайте виртуальную машину. |
 |[Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
-|[New-AzureRmFirewall](https://github.com/Azure/azure-powershell/blob/Networking-AzureFirewall/src/ResourceManager/Network/Commands.Network/help/New-AzureRmFirewall.md)| Создает экземпляр службы "Брандмауэр Azure".|
-|[Get-AzureRmFirewall](https://github.com/Azure/azure-powershell/blob/Networking-AzureFirewall/src/ResourceManager/Network/Commands.Network/help/Get-AzureRmFirewall.md)|Получает объект "Брандмауэр Azure".|
-|[New-AzureRmFirewallApplicationRule](https://github.com/Azure/azure-powershell/blob/Networking-AzureFirewall/src/ResourceManager/Network/Commands.Network/help/New-AzureRmFirewallApplicationRule.md)|Создает правило приложения службы "Брандмауэр Azure".|
-|[Set-AzureRmFirewall](https://github.com/Azure/azure-powershell/blob/Networking-AzureFirewall/src/ResourceManager/Network/Commands.Network/help/Set-AzureRmFirewall.md)|Фиксирует изменения в объекте "Брандмауэр Azure".|
+|[New-AzureRmFirewall](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermfirewall?view=azurermps-6.9.0)| Создает экземпляр службы "Брандмауэр Azure".|
+|[Get-AzureRmFirewall](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermfirewall?view=azurermps-6.9.0)|Получает объект "Брандмауэр Azure".|
+|[New-AzureRmFirewallApplicationRule](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermfirewallapplicationrule?view=azurermps-6.9.0)|Создает правило приложения службы "Брандмауэр Azure".|
+|[Set-AzureRmFirewall](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermfirewall?view=azurermps-6.9.0)|Фиксирует изменения в объекте "Брандмауэр Azure".|
 
 
 ## <a name="next-steps"></a>Дополнительная информация

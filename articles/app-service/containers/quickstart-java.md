@@ -15,147 +15,107 @@ ms.topic: quickstart
 ms.date: 03/07/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 49702349b1c2476f5743122b33cb3375e54df191
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: b9e8d2b9eacfa5c427ffe3f27ea99bbd35651d57
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930102"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47165982"
 ---
 # <a name="quickstart-create-a-java-web-app-in-app-service-on-linux"></a>Краткое руководство по созданию веб-приложения Java в службе приложений Azure в Linux
 
-Служба приложений в Linux в настоящее время предоставляет предварительную версию функции, позволяющую создавать веб-приложения Java. Сведения о предварительных версиях функций см. на странице [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
-
-[Служба приложений на Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как использовать [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) (Azure CLI) с [подключаемым модулем Maven для веб-приложений Azure (предварительная версия)](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть веб-приложение Java с использованием встроенного образа Linux.
+[Служба приложений на Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как использовать [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) (Azure CLI) с [подключаемым модулем Maven для веб-приложений Azure (предварительная версия)](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл веб-архива (WAR) веб-приложения Java.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-java/java-hello-world-in-browser.png)
 
-Можно также [развернуть веб-приложения Java в собственный контейнер Linux в облаке с помощью набора средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij-hello-world-web-app-linux).
-
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-
-## <a name="prerequisites"></a>предварительным требованиям
-
-Для работы с этим кратким руководством сделайте следующее: 
-
-* Установленный локально [Azure CLI 2.0 или более поздней версии](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-* [Apache Maven](http://maven.apache.org/).
-
-
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-java-app"></a>Создание приложения Java
 
-Выполните следующую команду с помощью Maven, чтобы создать веб-приложение *helloworld*.  
+В приглашении Cloud Shell выполните следующую команду Maven, чтобы создать новое веб-приложение с именем `helloworld`:
 
-    mvn archetype:generate -DgroupId=example.demo -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp
+```bash
+mvn archetype:generate -DgroupId=example.demo -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp
+```
 
-Перейдите в каталог нового проекта *helloworld* и выполните сборку всех модулей, используя следующую команду:
+## <a name="configure-the-maven-plugin"></a>Настройка подключаемого модуля Maven
 
-    mvn verify
+Для развертывания из Maven используйте редактор кода в Cloud Shell, чтобы открыть проект файла `pom.xml` в каталоге `helloworld`. 
 
-Эта команда проверит и создаст все модули, в том числе файл *helloworld.war*, в подкаталоге *helloworld/target*.
+```bash
+code pom.xml
+```
 
-
-## <a name="deploying-the-java-app-to-app-service-on-linux"></a>Развертывание приложения Java в службе приложений на платформе Linux
-
-Существует несколько вариантов развертывания веб-приложений Java в службе приложений на платформе Linux. Вот какие параметры доступны:
-
-* [развертывание с помощью подключаемого модуля Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin);
-* [развертывание с использованием ZIP- или WAR-файла](https://docs.microsoft.com/azure/app-service/app-service-deploy-zip);
-* [развертывание через FTP](https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp).
-
-В этом кратком руководстве описывается использование подключаемого модуля Maven для веб-приложений Azure. Его легко использовать из Maven, и он создает для вас необходимые ресурсы Azure (группу ресурсов, план службы приложений и веб-приложение).
-
-### <a name="deploy-with-maven"></a>Развертывание с помощью Maven
-
-Чтобы выполнить развертывание из Maven, добавьте следующее определение подключаемого модуля в элемент `<build>` файла *pom.xml*.
+Затем добавьте следующее определение подключаемого модуля в элемент `<build>` файла `pom.xml`.
 
 ```xml
-    <plugins>
-      <plugin>
-        <groupId>com.microsoft.azure</groupId> 
-        <artifactId>azure-webapp-maven-plugin</artifactId> 
-        <version>1.2.0</version>
-        <configuration> 
-          <resourceGroup>YOUR_RESOURCE_GROUP</resourceGroup> 
-          <appName>YOUR_WEB_APP</appName> 
-          <linuxRuntime>tomcat 9.0-jre8</linuxRuntime>
-          <deploymentType>ftp</deploymentType> 
-          <resources> 
-              <resource> 
-                  <directory>${project.basedir}/target</directory> 
-                  <targetPath>webapps</targetPath> 
-                  <includes> 
-                      <include>*.war</include> 
-                  </includes> 
-                  <excludes> 
-                      <exclude>*.xml</exclude> 
-                  </excludes> 
-              </resource> 
-          </resources> 
+<plugins>
+    <!--*************************************************-->
+    <!-- Deploy to Tomcat in App Service Linux           -->
+    <!--*************************************************-->
+      
+    <plugin>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-webapp-maven-plugin</artifactId>
+        <version>1.4.0</version>
+        <configuration>
+   
+            <!-- Web App information -->
+            <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+            <appName>${WEBAPP_NAME}</appName>
+            <region>${REGION}</region>
+   
+            <!-- Java Runtime Stack for Web App on Linux-->
+            <linuxRuntime>tomcat 8.5-jre8</linuxRuntime>
+   
         </configuration>
-      </plugin>
-    </plugins>
+    </plugin>
+</plugins>
 ```    
+
+
+> [!NOTE] 
+> В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. Используйте такое альтернативное определение подключаемого модуля для этих приложений. Эта конфигурация развернет JAR, построенное Maven, в `${project.build.directory}/${project.build.finalName}.jar` на вашей локальной файловой системе.
+>
+>```xml
+><plugin>
+>            <groupId>com.microsoft.azure</groupId>
+>            <artifactId>azure-webapp-maven-plugin</artifactId>
+>            <version>1.4.0</version>
+>            <configuration>
+>                <deploymentType>jar</deploymentType>
+>
+>           <!-- Web App information -->
+>            <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+>            <appName>${WEBAPP_NAME}</appName>
+>            <region>${REGION}</region>  
+>
+>                <!-- Java Runtime Stack for Web App on Linux-->
+>                <linuxRuntime>jre8</linuxRuntime>
+>            </configuration>
+>         </plugin>
+>```    
+
 
 Укажите нужные значения вместо следующих заполнителей в конфигурации подключаемого модуля:
 
 | Placeholder | ОПИСАНИЕ |
 | ----------- | ----------- |
-| `YOUR_RESOURCE_GROUP` | Имя новой группы ресурсов, в которой создается веб-приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *TestResources*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
-| `YOUR_WEB_APP` | Имя приложения будет частью имени узла для веб-приложения, которое будет развернуто в Azure (ВАШЕ_ВЕБ-ПРИЛОЖЕНИЕ.azurewebsites.net). Измените значение этого параметра на уникальное имя нового веб-приложения Azure, в котором будет размещено ваше приложение Java, например *contoso*. |
+| `RESOURCEGROUP_NAME` | Имя новой группы ресурсов, в которой создается веб-приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *TestResources*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
+| `WEBAPP_NAME` | Имя приложения будет частью имени узла для веб-приложения, которое будет развернуто в Azure (WEBAPP_NAME.azurewebsites.net). Измените значение этого параметра на уникальное имя нового веб-приложения Azure, в котором будет размещено ваше приложение Java, например *contoso*. |
+| `REGION` | Регион Azure, в котором размещено веб-приложение, например `westus2`. Список регионов можно получить из Cloud Shell или CLI с помощью команды `az account list-locations`. |
 
-Элемент конфигурации `linuxRuntime` определяет, какой встроенный образ Linux используется для вашего приложения. Все поддерживаемые стеки среды выполнения можно найти [здесь](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin#runtime-stacks). 
+## <a name="deploy-the-app"></a>Развертывание приложения
 
-
-> [!NOTE] 
-> В этой статье мы работаем только с файлами WAR. При этом подключаемый модуль поддерживает веб-приложения JAR, используя следующее определение подключаемого модуля в элементе `<build>` файла *pom.xml*:
->
->```xml
->    <plugins>
->      <plugin>
->        <groupId>com.microsoft.azure</groupId> 
->        <artifactId>azure-webapp-maven-plugin</artifactId> 
->        <version>1.2.0</version>
->        <configuration> 
->          <resourceGroup>YOUR_RESOURCE_GROUP</resourceGroup> 
->          <appName>YOUR_WEB_APP</appName> 
->          <linuxRuntime>jre8</linuxRuntime>   
->          <!-- This is to make sure the jar file will not be occupied during the deployment -->
->          <stopAppDuringDeployment>true</stopAppDuringDeployment>
->          <deploymentType>ftp</deploymentType> 
->          <resources> 
->              <resource> 
->                  <directory>${project.basedir}/target</directory> 
->                  <targetPath>webapps</targetPath> 
->                  <includes> 
->                      <!-- Currently it is required to set as app.jar -->
->                      <include>app.jar</include> 
->                  </includes>  
->              </resource> 
->          </resources> 
->        </configuration>
->      </plugin>
->    </plugins>
->```    
-
-Выполните следующую команду и следуйте всем инструкциям, чтобы выполнить проверку подлинности в Azure CLI.
-
-    az login
-
-Разверните приложение Java для веб-приложения, используя следующую команду:
-
-    mvn clean package azure-webapp:deploy
-
-
-По завершению развертывания перейдите к развернутому приложению, используя следующий URL-адрес в своем веб-браузере.
+Разверните приложение Java в Azure, используя команду приведенную ниже.
 
 ```bash
-http://<app_name>.azurewebsites.net/helloworld
+mvn package azure-webapp:deploy
 ```
 
-Пример кода Java выполняется в веб-приложении со встроенным образом.
+По завершению развертывания перейдите к развернутому приложению, используя следующий URL-адрес в своем веб-браузере, например `http://<webapp>.azurewebsites.net/helloworld`. 
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-java/java-hello-world-in-browser-curl.png)
 
@@ -167,7 +127,7 @@ http://<app_name>.azurewebsites.net/helloworld
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы использовали модуль Maven для создания веб-приложения Java, которое вы затем развернули в службе приложений на Linux. Чтобы узнать больше об использовании Java с Azure, перейдите по ссылке ниже.
+В этом кратком руководстве вы использовали Maven для создания веб-приложения Java, настроили [подключаемый модуль Maven для веб-приложений Azure (предварительная версия)](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), затем развернули веб-архив упакованного веб-приложения Java в службу приложений на платформе Linux. Чтобы узнать больше об использовании Java с Azure, перейдите по ссылке ниже.
 
 > [!div class="nextstepaction"]
 > [Azure для разработчиков Java](https://docs.microsoft.com/java/azure/)

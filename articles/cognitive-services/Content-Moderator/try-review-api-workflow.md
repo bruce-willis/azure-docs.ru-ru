@@ -1,26 +1,27 @@
 ---
-title: 'Azure Content Moderator: использование рабочих процессов модерации контента из консоли API | Документация Майкрософт'
+title: Рабочие процессы для модерации контента из консоли API — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Узнайте, как использовать рабочие процессы модерации контента с помощью консоли API.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/05/2018
 ms.author: sajagtap
-ms.openlocfilehash: 700b2bea5e902141659266a94d61ceb810c1b802
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 4ef8951b30fa7aede08a1af3c834192b5ed18649
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380273"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223856"
 ---
 # <a name="workflows-from-the-api-console"></a>Использование рабочих процессов из консоли API
 
 Используйте [операции рабочего процесса](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59) в Azure Content Moderator, чтобы создать, обновить рабочий процесс или получить сведения о рабочем процессе с помощью API проверки. С помощью этого API можно определить простые, сложные и даже вложенные выражения для рабочих процессов. Рабочие процессы отображаются в инструменте проверки и могут использоваться вашей командой. Рабочие процессы также используются в операциях заданий API проверки.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Перейдите к [инструменту проверки](https://contentmoderator.cognitive.microsoft.com/). Зарегистрируйтесь, если вы этого еще не сделали. 
 2. В инструменте проверки в разделе **Settings** (Параметры) выберите вкладку **Workflows** (Рабочие процессы), как показано в [руководстве по рабочим процессам](Review-Tool-User-Guide/Workflows.md) инструмента проверки.

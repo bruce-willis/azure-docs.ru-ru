@@ -1,24 +1,25 @@
 ---
-title: API распознавания говорящего | Документация Майкрософт
-description: Используйте эффективные алгоритмы для проверки и идентификации говорящего с помощью API распознавания говорящего в Cognitive Services.
+title: Что такое распознавание говорящего?
+titlesuffix: Azure Cognitive Services
+description: Используйте эффективные алгоритмы для проверки и идентификации говорящего с помощью API распознавания говорящего.
 services: cognitive-services
 author: dwlin
-manager: zhang
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: speaker-recognition
-ms.topic: article
+ms.topic: overview
 ms.date: 03/20/2016
 ms.author: dwlin
-ms.openlocfilehash: 6d5e4e4bbe0cb5e57d2556f680ffcf8d16ee1818
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 13a95aff8b2b0d5dad0574e6107958a20576702a
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380536"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227339"
 ---
 # <a name="speaker-recognition-api"></a>API распознавания говорящего
 
-Добро пожаловать в API распознавания говорящего Microsoft. API распознавания говорящего — это облачные API, которые обеспечивают наиболее эффективные алгоритмы идентификации и проверки говорящего. Распознавание говорящего можно разделить на две категории: распознавание говорящего и идентификация говорящего.
+Добро пожаловать в API распознавания говорящего. API распознавания говорящего — это облачные API, которые обеспечивают наиболее эффективные алгоритмы идентификации и проверки говорящего. Распознавание говорящего можно разделить на две категории: распознавание говорящего и идентификация говорящего.
 
 
 ## <a name="speaker-verification"></a>Проверка говорящего

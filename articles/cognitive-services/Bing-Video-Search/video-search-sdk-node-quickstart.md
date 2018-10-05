@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для поиска видео для Node | Документация Майкрософт
-description: Установка компонентов консольного приложения пакета SDK для поиска видео.
-titleSuffix: Azure cognitive services
+title: 'Краткое руководство: пакет SDK для поиска видео Bing, Node'
+titleSuffix: Azure Cognitive Services
+description: Настройка консольного приложения, использующего пакет SDK для поиска видео Bing.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/12/2018
-ms.author: v-gedod
-ms.openlocfilehash: 5718c750288e0a5605db3296d2911cca5e03375c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: rosh
+ms.openlocfilehash: 4dcc9220d4d38bfe34514edd6a3ad47c7a7d4ba8
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35382972"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225622"
 ---
-# <a name="video-search-sdk-node-quickstart"></a>Краткое руководство по пакету SDK для поиска видео для Node
+# <a name="quickstart-bing-video-search-sdk-with-node"></a>Краткое руководство: пакет SDK для поиска видео Bing с использованием Node
 
 Пакет SDK Bing для поиска видео содержит функции REST API для обработки запросов видео и анализа результатов. 
 
@@ -28,7 +28,7 @@ ms.locfileid: "35382972"
 Чтобы установить консольное приложение, использующее пакет SDK Bing для поиска видео, выполните команду `npm install azure-cognitiveservices-videosearch` в среде разработки.
 
 ## <a name="video-search-client"></a>Клиент для поиска видео
-Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) в разделе *Поиск*. Создайте экземпляр `CognitiveServicesCredentials`.
+Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) в разделе *Поиск*. Создайте экземпляр `CognitiveServicesCredentials`:
 ```
 const CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
 let credentials = new CognitiveServicesCredentials('YOUR-ACCESS-KEY');

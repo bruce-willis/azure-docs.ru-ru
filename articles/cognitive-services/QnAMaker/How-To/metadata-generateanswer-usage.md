@@ -1,20 +1,21 @@
 ---
-title: Использование метаданных в базе знаний с помощью API GenerateAnswer | Документация Майкрософт
-description: Использование метаданных с помощью API GenerateAnswer
+title: Метаданные с использованием API GenerateAnswer — QnA Maker
+titleSuffix: Azure Cognitive Services
+description: QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в наборы вопросов и ответов. Эти сведения можно использовать, чтобы отфильтровать результаты запросов пользователей и сохранить дополнительную информацию, которая может использоваться в дальнейших диалогах.
 services: cognitive-services
-author: pchoudhari
-manager: rsrikan
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 05/18/2018
-ms.author: pchoudh
-ms.openlocfilehash: e1b7c82e6998705bdc7e1c1a5d279bda7793667a
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.date: 09/12/2018
+ms.author: tulasim88
+ms.openlocfilehash: eef26cf1f5a11d7dcd1fdc41747aac675e0bc528
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43305205"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47031090"
 ---
 # <a name="using-metadata-and-the-generateanswer-api"></a>Использование метаданных и API GenerateAnswer.
 

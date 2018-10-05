@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/18/2018
+ms.date: 09/19/2018
 ms.author: magoedte
-ms.openlocfilehash: e8723bd8e26eb66d9333c2093b5ada8bc78ca14b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 308a447ff99cd11ad6a28df0bdb515764b0f546b
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989607"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063461"
 ---
 # <a name="azure-monitor-for-vms-frequently-asked-questions"></a>Azure Monitor для виртуальных машин: вопросы и ответы
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы об Azure Monitor для виртуальных машин в Microsoft Azure. Если у вас есть другие вопросы об этом решении, вы можете задать их на [форуме для обсуждений](https://feedback.azure.com/forums/34192--general-feedback). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
@@ -93,3 +93,6 @@ ms.locfileid: "46989607"
 ## <a name="why-does-the-network-chart-on-the-performance-tab-look-different-than-the-network-chart-on-the-azure-vm-overview-page"></a>Почему внешний вид диаграммы сети на вкладке "Производительность" отличается от внешнего вида диаграммы сети на странице общих сведений о виртуальной машине Azure?
 
 На странице общих сведений о виртуальной машине Azure отображаются диаграммы, основанные на измерениях активности гостевой виртуальной машины, выполняемых узлом.  На диаграмме сети на странице общих сведений о виртуальной машине Azure отображается только сетевой трафик, за который будет выставлен счет.  Здесь не учитывается трафик между виртуальными сетями.  Данные и диаграммы, отображаемые в Azure Monitor для виртуальных машин, основаны на данных, получаемых из гостевой виртуальной машины, а на диаграмме сети отображается весь входящий и исходящий трафик TCP/IP виртуальной машины, включая трафик между виртуальными сетями.
+
+## <a name="next-steps"></a>Дополнительная информация
+Сведения о методах активации мониторинга для виртуальных машин и соответствующих требованиях см. в статье [Как подключить Azure Monitor для виртуальных машин](monitoring-vminsights-onboard.md).

@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/07/2018
+ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: jlu, annaba, hirsin
-ms.openlocfilehash: 2c7dc650109ecc3844ee2ae90e50b2267f5716c4
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 59856418adde1ea29a0513a1ca7c0c60531768d8
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996525"
+ms.locfileid: "47036547"
 ---
 # <a name="how-to-migrate-from-the-azure-access-control-service"></a>Руководство. Перенос из службы контроля доступа Azure
 
@@ -61,6 +61,51 @@ https://<mynamespace>.accesscontrol.windows.net
 Исключением является весь трафик к `https://accounts.accesscontrol.windows.net`. Трафик к этому URL-адресу уже обрабатывается другой службой. Прекращение поддержки службы контроля доступа **не** влияет на него. 
 
 Дополнительные сведения о службе ACS см. в статье [Служба Access Control Service 2.0](https://msdn.microsoft.com/library/hh147631.aspx).
+
+## <a name="find-out-which-of-your-apps-will-be-impacted"></a>Определение затронутых приложений
+
+Выполните описанные ниже действия, чтобы узнать, на какие приложения повлияет прекращение поддержки ACS.
+
+### <a name="download-and-install-acs-powershell"></a>Загрузка и установка ACS PowerShell
+
+1. Перейдите в коллекцию PowerShell и загрузите [Acs.Namespaces](https://www.powershellgallery.com/packages/Acs.Namespaces/1.0.2).
+1. Установите модуль, выполнив следующую команду:
+
+    ```powershell
+    Install-Module -Name Acs.Namespaces
+    ```
+
+1. Получите список всех возможных команд, выполнив следующую команду:
+
+    ```powershell
+    Get-Command -Module Acs.Namespaces
+    ```
+
+    Чтобы получить справку по конкретной команде, выполните следующую команду:
+
+    ```
+     Get-Help [Command-Name] -Full
+    ```
+    
+    где `[Command-Name]` — это имя команды ACS.
+
+### <a name="list-your-acs-namespaces"></a>Получение списка пространств имен ACS
+
+1. Подключитесь к ACS с помощью командлета **Connect-AcsAccount**.
+  
+    Возможно, перед выполнением команд нужно будет выполнить `Set-ExecutionPolicy -ExecutionPolicy Bypass`, а также потребуются права администратора подписок.
+
+1. Получите список доступных подписок Azure с помощью командлета **Get-AcsSubscription**.
+1. Получите список пространств имен ACS с помощью командлета **Get-AcsNamespace**.
+
+### <a name="check-which-applications-will-be-impacted"></a>Проверка влияния на приложения
+
+1. Используйте пространство имен из предыдущего этапа и перейдите к `https://<namespace>.accesscontrol.windows.net`.
+
+    Например, если одним из пространств имен является contoso-test, перейдите к `https://contoso-test.accesscontrol.windows.net`.
+
+1. В разделе **Отношения доверия** выберите **Приложения проверяющей стороны**, чтобы просмотреть список приложений, которые затронет прекращение поддержки ACS.
+1. Повторите шаги 1 и 2 для других пространств имен ACS.
 
 ## <a name="retirement-schedule"></a>График прекращения использования
 

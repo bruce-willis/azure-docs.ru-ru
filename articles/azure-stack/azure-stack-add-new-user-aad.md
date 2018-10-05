@@ -12,40 +12,51 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/21/2018
+ms.date: 09/17/2018
 ms.author: jeffgilb
 ms.reviewer: unknown
-ms.openlocfilehash: 590426563936c66b1353f769be138759bb53f58c
-ms.sourcegitcommit: fbba5027fa76674b64294f47baef85b669de04b7
+ms.openlocfilehash: 9a4d7200a2bc2445fcdfefc0332d67a045b5a2e1
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "29553211"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038023"
 ---
 # <a name="add-a-new-azure-stack-tenant-account-in-azure-active-directory"></a>Добавление новой учетной записи клиента Azure Stack в Azure Active Directory
+
 [Развернув Пакет средств разработки Azure Stack](azure-stack-run-powershell-script.md), создайте учетную запись клиента, чтобы вы могли просматривать портал клиента и тестировать предложения и планы. Учетную запись можно создать с помощью [портала Azure](#create-an-azure-stack-tenant-account-using-the-azure-portal) или [PowerShell](#create-an-azure-stack-tenant-account-using-powershell).
 
 ## <a name="create-an-azure-stack-tenant-account-using-the-azure-portal"></a>Создание учетной записи клиента Azure Stack с помощью портала Azure
+
 Для использования портала Azure необходима подписка Azure.
 
 1. Войдите в [Azure](https://portal.azure.com).
-2. На левой навигационной панели Microsoft Azure щелкните **Active Directory**.
-3. В списке каталогов щелкните каталог, который хотите использовать для Azure Stack, или создайте новый каталог.
-4. На странице каталога щелкните **Пользователи**.
-5. Нажмите кнопку **Добавить пользователя**.
-6. В мастере **Добавление пользователя** в списке **Тип пользователя** выберите **Новый пользователь в вашей организации**.
-7. В поле **Имя пользователя** введите имя пользователя.
-8. В мастере **@** выберите соответствующую запись.
-9. Щелкните стрелку «Далее».
-10. В мастере на странице **Профиль пользователя** введите **имя**, **фамилию** и **отображаемое имя**.
-11. В списке **Роль** выберите **Пользователь**.
-12. Щелкните стрелку «Далее».
-13. На странице **Получить временный пароль** нажмите кнопку **Создать**.
-14. Скопируйте **новый пароль**.
-15. Войдите в Microsoft Azure с помощью новой учетной записи. В ответ на запрос измените пароль.
-16. Войдите в `https://portal.local.azurestack.external` с помощью новой учетной записи для просмотра портала клиента.
+2. На левой панели навигации выберите **Active Directory** и переключитесь на каталог, который вы хотите использовать для Azure Stack, или создайте новый.
+3. Выберите **Azure Active Directory** > **Пользователи** > **Новый пользователь**.
+
+    !["Пользователи" — страница всех пользователей с выделенным новым пользователем](media/azure-stack-add-new-user-aad/new-user-all-users.png)
+
+4. На странице **Пользователь** укажите требуемые данные.
+
+    ![Добавьте пользователя, страницу пользователя с информацией о нем](media/azure-stack-add-new-user-aad/new-user-user.png)
+
+    - **Имя (обязательно).** Имя и фамилия нового пользователя. Например, Мэри Паркер.
+    - **Имя пользователя (обязательно).** Имя нового пользователя. Например, mary@contoso.com.
+        В доменной части имени пользователя должно использоваться либо начальное доменное имя по умолчанию, <_yourdomainname_>.onmicrosoft.com, либо имя личного домена, например contoso.com. Дополнительные сведения о создании имени личного домена см. в статье [How to add a custom domain name to Azure Active Directory](../active-directory/fundamentals/add-custom-domain.md) (Как добавить имя личного домена в Azure Active Directory).
+    - **Профиль.** При желании вы можете добавить дополнительную информацию о пользователе. Вы также можете добавить информацию о пользователе позже. Дополнительные сведения о добавлении информации о пользователе см. в разделе [How to add or change user profile information](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md) (Как добавлять и изменять сведения в профиле пользователя).
+    - **Роль каталога.**  выберите **Пользователь**.
+
+5. Проверьте **Показать пароль** и скопируйте автоматически созданный пароль, указанный в поле **Пароль**. Этот пароль понадобится для начального процесса входа в систему.
+
+6. Нажмите кнопку **Создать**.
+
+    Пользователь создан и добавлен к вашему клиенту Azure AD.
+
+7. Войдите на портал Microsoft Azure с помощью новой учетной записи. В ответ на запрос измените пароль.
+8. Войдите в `https://portal.local.azurestack.external` с помощью новой учетной записи для просмотра портала клиента.
 
 ## <a name="create-an-azure-stack-tenant-account-using-powershell"></a>Создание учетной записи клиента Azure Stack с помощью PowerShell
+
 Если у вас нет подписки Azure, вы не сможете использовать портал Azure для добавления учетной записи клиента. В таком случае вы можете использовать модуль Azure Active Directory для Windows PowerShell.
 
 > [!NOTE]

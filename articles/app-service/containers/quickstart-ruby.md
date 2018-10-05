@@ -1,7 +1,7 @@
 ---
-title: Создание приложения Ruby и его развертывание в службе приложений Azure на платформе Linux | Документация Майкрософт
-description: Узнайте, как создать приложения Ruby с помощью службы приложений на платформе Linux.
-keywords: служба приложений azure, linux, oss, ruby
+title: Создание приложения Ruby on Rails и его развертывание в Службе приложений Azure на платформе Linux | Документация Майкрософт
+description: Узнайте, как создать приложения Ruby on Rails с помощью Службы приложений на платформе Linux.
+keywords: azure app service, linux, oss, ruby, rails
 services: app-service
 documentationcenter: ''
 author: SyntaxC4
@@ -16,16 +16,19 @@ ms.topic: quickstart
 ms.date: 08/24/2018
 ms.author: cfowler
 ms.custom: mvc
-ms.openlocfilehash: 729ed8ac4568f5f39fd62fadbc8d4d0e4595f7b8
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: 04025998f78843b1cc69acd663681b9563a531bc
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42885295"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47431234"
 ---
-# <a name="create-a-ruby-app-in-app-service-on-linux"></a>Создание приложения Ruby в службе приложений на платформе Linux
+# <a name="create-a-ruby-on-rails-app-in-app-service-on-linux"></a>Создание приложения Ruby on Rails в Службе приложений на платформе Linux
 
 [Служба приложений Azure на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве показано, как создать базовое приложение [Ruby on Rails](https://rubyonrails.org/) и развернуть его в Azure в качестве веб-приложения на платформе Linux.
+
+> [!NOTE]
+> Сейчас стек разработки на Ruby поддерживает только Ruby on Rails. Если требуется использовать другую платформу, например Sinatra, ознакомьтесь с кратким руководство по платформе [Веб-приложения для контейнеров](https://docs.microsoft.com/azure/app-service/containers/).
 
 ![Приложение Hello World](./media/quickstart-ruby/hello-world-updated.png)
 
@@ -48,9 +51,16 @@ git clone https://github.com/Azure-Samples/ruby-docs-hello-world
 
 Запустите приложение локально, чтобы увидеть, как оно будет выглядеть после развертывания в Azure. Откройте окно терминала, измените каталог `hello-world` и выполните команду `rails server` для запуска сервера.
 
+Первый этап — установка необходимых пакетов. Пример содержит `Gemfile`, поэтому вам не нужно указывать все пакеты для установки. Для этого мы будем использовать средство увязки в пакеты.
+
+```
+bundle install
+```
+
+После установки пакетов мы воспользуемся средством увязки в пакеты, чтобы запустить приложение:
+
 ```bash
-cd hello-world\bin
-rails server
+bundle exec rails server
 ```
 
 С помощью веб-браузера перейдите к `http://localhost:3000`, чтобы протестировать приложение локально.

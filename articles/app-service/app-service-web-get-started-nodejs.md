@@ -3,8 +3,8 @@ title: Создание веб-приложений Node.js в Azure | Доку
 description: Быстрое развертывание первого приложения Hello World на Node.js в веб-приложении службы приложений Azure.
 services: app-service\web
 documentationcenter: ''
-author: cephalin
-manager: cfowler
+author: msangapu
+manager: jeconnoc
 editor: ''
 ms.assetid: 582bb3c2-164b-42f5-b081-95bfcb7a502a
 ms.service: app-service-web
@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/24/2018
-ms.author: cephalin;cfowler
+ms.date: 09/27/2018
+ms.author: cephalin;msangapu
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 63e65ffc17ba71a5d2cf00cb5f04e3e0f87c1bfe
-ms.sourcegitcommit: 63613e4c7edf1b1875a2974a29ab2a8ce5d90e3b
+ms.openlocfilehash: 05dd53fdfda5446cf848a7b8503a09bc5e5c2d20
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43184386"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433469"
 ---
 # <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "43184386"
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения Node.js в службе приложений Azure на платформе Linux](./containers/quickstart-nodejs.md).
 >
 
-[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развертывать приложения Node.js в веб-приложениях Azure. С помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) вы можете создавать веб-приложения, в которых можно развертывать примеры кода Node.js с использованием Git.
+[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развертывать приложения Node.js в веб-приложениях Azure. С помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) вы можете создавать веб-приложения, в которых можно развертывать примеры кода Node.js с использованием ZipDeploy.
 
 ![Пример приложения, выполняющегося в Azure](media/app-service-web-get-started-nodejs-poc/hello-world-in-browser.png)
 
@@ -47,6 +47,9 @@ ms.locfileid: "43184386"
 Скачайте пример проекта Node.js с [https://github.com/Azure-Samples/nodejs-docs-hello-world/archive/master.zip](https://github.com/Azure-Samples/nodejs-docs-hello-world/archive/master.zip) и извлеките ZIP-архив.
 
 В окне терминала перейдите в корневой каталог примера проекта Node.js (с _index.js_).
+
+> [!NOTE]
+> Не обязательно использовать наш пример приложения. При необходимости вы можете использовать собственный код Node.js. Но имейте в виду, что переменная PORT для вашего приложения устанавливается во время выполнения в Azure и доступна в виде `process.env.PORT`. При использовании модуля Express убедитесь, что во время запуска (`app.listen`) задана переменная `process.env.PORT || 3000`. Если этого не сделать или порт не соответствует указанному во время выполнения в Azure, появится сообщение `Service Unavailable`. 
 
 ## <a name="run-the-app-locally"></a>Локальный запуск приложения
 
@@ -71,21 +74,19 @@ npm start
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-[!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group.md)] 
+[!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group-scus.md)] 
 
-[!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan.md)] 
+[!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan-scus.md)] 
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
 В Cloud Shell создайте веб-приложение в рамках плана службы приложений `myAppServicePlan` с помощью команды [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). 
 
-В следующем примере замените `<app_name>`глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`). Для среды выполнения установлено значение `NODE|6.9`. Список всех поддерживаемых сред выполнения можно получить с помощью команды [`az webapp list-runtimes`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes). 
+В следующем примере замените `<app_name>`глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`).
 
 ```azurecli-interactive
-# Bash
-az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "NODE|6.9"
-# PowerShell
-az --% webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "NODE|6.9"
+# Bash and Powershell
+az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name>
 ```
 
 Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
@@ -104,6 +105,15 @@ az --% webapp create --resource-group myResourceGroup --plan myAppServicePlan --
 }
 ```
 
+### <a name="set-nodejs-runtime"></a>Настройка среды выполнения Node.js
+
+Задайте для среды выполнения Node.js значение 8.11.1. <!-- To see all supported runtimes, run [`az webapp list-runtimes`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes). -->
+
+```azurecli-interactive
+# Bash and Powershell
+az webapp config appsettings set --resource-group myResourceGroup --name <app_name> --settings WEBSITE_NODE_DEFAULT_VERSION=8.11.1
+```
+
 Перейдите к только что созданному веб-приложению. Замените _&lt;app name>_ уникальным именем приложения.
 
 ```bash
@@ -112,7 +122,7 @@ http://<app name>.azurewebsites.net
 
 Новое веб-приложение должно выглядеть так:
 
-![Пустая страница веб-приложения](media/app-service-web-get-started-php/app-service-web-service-created.png)
+![Пустая страница веб-приложения](media/app-service-web-get-started-nodejs-poc/app-service-web-service-created.png)
 
 [!INCLUDE [Deploy ZIP file](../../includes/app-service-web-deploy-zip.md)]
 
@@ -148,7 +158,7 @@ zip -r myUpdatedAppFiles.zip .
 Compress-Archive -Path * -DestinationPath myUpdatedAppFiles.zip
 ``` 
 
-Разверните новый ZIP-файл в службе приложений в соответствии с инструкциями из раздела о [передаче ZIP-файла](#upload-the-zip-file).
+Разверните новый ZIP-файл в Службе приложений в соответствии с инструкциями из раздела о [развертывании ZIP-файла](#deploy-zip-file).
 
 Перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
 

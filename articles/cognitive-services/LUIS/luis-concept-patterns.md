@@ -1,24 +1,24 @@
 ---
-title: Сведения о том, как шаблоны увеличивают точность прогнозирования | Документация Майкрософт
-titleSuffix: Azure
-description: Узнайте, как создавать шаблоны для повышения точности прогнозирования и поиска сущностей.
+title: Сведения о том, как шаблоны увеличивают точность прогнозирования
+titleSuffix: Azure Cognitive Services
+description: Шаблоны предназначены для повышения точности, когда несколько фраз очень похожи. Шаблон обеспечивает более высокую точность при определении намерения без необходимости предоставлять большое число дополнительных фраз.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: luis
+ms.component: language-understanding
 ms.topic: article
-ms.date: 06/08/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: c08419e3fb5b25284121a0eac30c38c8ba7570f1
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 5ade15b3f80d725af4ece31a36ea0b670f5f5147
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39225223"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47031549"
 ---
 # <a name="patterns-improve-prediction-accuracy"></a>Шаблоны повышают точность прогнозирования
-Шаблоны предназначены для повышения точности, когда несколько фраз очень похожи. Если предоставить шаблон для фразы, LUIS может обеспечивать высокую точность прогнозирования. 
+Шаблоны предназначены для повышения точности, когда несколько фраз очень похожи.  Шаблон обеспечивает более высокую точность при определении намерения без необходимости предоставлять большое число дополнительных фраз. 
 
 ## <a name="patterns-solve-low-intent-confidence"></a>Шаблоны устраняют низкую точность намерения
 Рассмотрите приложение Human Resources, в котором сообщается об организационной структуре в отношении сотрудника. LUIS возвращает задействованных сотрудников на основе имени и связей сотрудника. Рассмотрим сотрудника Том с менеджером по имени Алиса и группой подчиненных с именами: Майкл, Ребекка и Карл.
@@ -60,25 +60,25 @@ ms.locfileid: "39225223"
 ### <a name="syntax-to-add-an-entity-to-a-pattern-template"></a>Синтаксис, предназначенный для добавления сущности в шаблон
 Чтобы добавить сущность в шаблон, заключите имя сущности в фигурные скобки, например `Who does {Employee} manage?`. 
 
-```
-Who does {Employee} manage?
-```
+|Шаблон с сущностью|
+|--|
+|`Who does {Employee} manage?`|
 
 ### <a name="syntax-to-add-an-entity-and-role-to-a-pattern-template"></a>Синтаксис, предназначенный для добавления сущности и роли в шаблон
 Роль сущности обозначается как `{entity:role}`: имя сущности, за которым следует двоеточие, а затем имя роли. Чтобы добавить сущность с ролью в шаблон, заключите имя сущности и имя роли в фигурные скобки, например `Book a ticket from {Location:Origin} to {Location:Destination}`. 
 
-```
-Book a ticket from {Location:Origin} to {Location:Destination}
-```
+|Шаблон с ролями сущности|
+|--|
+|`Book a ticket from {Location:Origin} to {Location:Destination}`|
 
 ### <a name="syntax-to-add-a-patternany-to-pattern-template"></a>Синтаксис, предназначенный для добавления сущности Pattern.any в шаблон
 Сущность Pattern.any позволяет добавлять сущность переменной длины в шаблон. Если формат шаблона соблюдается, Pattern.any может быть любой длины. 
 
 Чтобы добавить сущность **Pattern.any** в шаблон, заключите сущность Pattern.any в фигурные скобки, например `How much does {Booktitle} cost and what format is it available in?`.  
 
-```
-How much does {Booktitle} cost and what format is it available in?
-```
+|Шаблон с сущностью Pattern.any|
+|--|
+|`How much does {Booktitle} cost and what format is it available in?`|
 
 |Наименования книг в шаблоне|
 |--|
@@ -107,9 +107,9 @@ How much does {Booktitle} cost and what format is it available in?
 ### <a name="syntax-to-mark-optional-text-in-a-template-utterance"></a>Синтаксис, предназначенный для отметки дополнительного текста в шаблоне фразы
 Отметьте необязательный текст во фразе, используя синтаксис регулярного выражения с квадратными скобками `[]`. В необязательном тексте может быть не более двух экземпляров открывающих и закрывающих квадратных скобок.
 
-```
-[find] email about {subject} [from {person}]
-```
+|Шаблон с необязательным текстом|
+|--|
+|`[find] email about {subject} [from {person}]`|
 
 Знаки препинания, такие как `.`, `!` и `?`, можно игнорировать с помощью квадратных скобок. Чтобы пропустить эти знаки, каждый знак должен находиться в отдельном шаблоне. Дополнительный синтаксис в настоящее время не поддерживает игнорирование элемента в списке из нескольких элементов.
 

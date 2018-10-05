@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: lizross
 ms.reviewer: olhaun
-ms.openlocfilehash: 39ec7c979294860967deb3307f5d87112b762257
-ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.openlocfilehash: b019523227bcd45e502ec84055cfb09025918331
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42143912"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47406130"
 ---
 # <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
 
@@ -78,12 +78,12 @@ ms.locfileid: "42143912"
 
     ![Приложение Microsoft Authenticator со списком доступных учетных записей, рядом с которыми отображаются стрелки раскрывающихся списков](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-additonal-accts.png)
 
-2.  Выберите **Сканировать QR-код для восстановления** и отсканируйте QR-код, предоставленный администратором.
+2.  Выберите **Сканируйте QR-код для восстановления** и отсканируйте QR-код.
 
     ![Приложение Microsoft Authenticator на странице сканирования QR-кода](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-scan-qr-code.png)
 
     >[!NOTE]
-    >Дополнительные сведения о том, как получить QR-код, см. в [разделе "Добавление учетной записи в приложение" статьи "Начало работы с приложением Microsoft Authenticator"](https://docs.microsoft.com/azure/active-directory/user-help/microsoft-authenticator-app-how-to#add-accounts-to-the-app).
+    >Дополнительные сведения о получении QR-кода см. в разделе [Добавление учетной записи в приложение](https://docs.microsoft.com/azure/active-directory/user-help/microsoft-authenticator-app-how-to#add-accounts-to-the-app) или [Использование приложения Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-auth-app#to-use-the-microsoft-authenticator-app) (в зависимости от того, включил ли администратор сведения о безопасности).
 
 ## <a name="troubleshooting-backup-and-recovery-problems"></a>Устранение неполадок с резервным копированием и восстановлением
 Есть несколько причин, по которым резервные копии могут оказаться недоступны.

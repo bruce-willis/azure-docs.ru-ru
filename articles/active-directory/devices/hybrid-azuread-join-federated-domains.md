@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: f4659d2dc8dfd52ae6f7ec19dc29ec31c9b3ca6b
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: bc2b391457d7652b62558c9a752376b07b50a8c1
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43047348"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47391816"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -122,7 +122,7 @@ ms.locfileid: "43047348"
 
     a. Выберите лес.
 
-    b. Выберите службу аутентификации.
+    b. Выберите службу аутентификации. Необходимо выбрать сервер AD FS, если только ваша организация не использует исключительно клиенты Windows 10.
 
     c. Щелкните **Добавить**, чтобы ввести учетные данные администратора предприятия.
 
@@ -170,7 +170,7 @@ ms.locfileid: "43047348"
 
 ### <a name="configure-the-local-intranet-settings-for-device-registration"></a>Настройка параметров локальной интрасети для регистрации устройств.
 
-Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов сертификатов при аутентификации этих устройств в Azure AD, можно отправить политику на присоединенные к домену устройства, добавив следующие URL-адреса в зону локальной интрасети в Internet Explorer.
+Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов на предоставление сертификатов при аутентификации этих устройств в Azure AD, можно отправить на присоединенные к домену устройства политику для добавления следующих URL-адресов в зону локальной интрасети в Internet Explorer:
 
 - `https://device.login.microsoftonline.com`
 

@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: overview
-ms.date: 09/21/2018
+ms.date: 09/25/2018
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: a21b97f603fc28cdbba8983547ce958a34df0774
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 54d177d7542d7501a91a955be20af776b16657a2
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968600"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182371"
 ---
 # <a name="what-is-azure-virtual-wan"></a>Что такое Виртуальная глобальная сеть Azure?
 
@@ -43,6 +43,8 @@ ms.locfileid: "46968600"
 Если вы не собираетесь использовать устройство предпочитаемого партнера, можно настроить подключение вручную. Это описано в руководстве по [созданию подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure](virtual-wan-site-to-site-portal.md).
 
 ## <a name="p2s"></a>Подключение "точка — сеть" (предварительная версия)
+
+Подключение типа "точка — сеть" позволяет создать безопасное подключение к виртуальной сети с отдельного клиентского компьютера. Подключение типа "точка — сеть" сначала устанавливается на клиентском компьютере. Это эффективное решение для сотрудников, которым нужно подключаться из удаленного расположения, например, если они находятся дома или на конференции. Такую конфигурацию также удобно использовать вместо VPN-подключения типа "сеть — сеть" при наличии небольшого числа клиентов, которым требуется подключение.
 
 Сведения о том, создать подключение вручную, см. в руководстве по [созданию подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure (предварительная версия)](https://go.microsoft.com/fwlink/p/?linkid=2020051&clcid).
 

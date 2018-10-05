@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/17/2018
+ms.date: 09/25/2018
 ms.author: bwren
-ms.component: na
-ms.openlocfilehash: 503d5913efe67bd0de738f68921b9631c63acfa8
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.component: ''
+ms.openlocfilehash: d1ad629ff5c6909256baa94573d045a8c2c09fb5
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39116050"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223837"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
@@ -83,7 +83,7 @@ ms.locfileid: "39116050"
 | Хранилище Azure     | Меню **Дополнительные параметры** для рабочей области. |
 | System Center     | Меню **Дополнительные параметры** для рабочей области. |
 | Office 365        | Сведения о настройке собраны в [документации решения по управлению Office 365](../operations-management-suite/oms-solution-office-365.md). |
-| Телеметрия Windows | Пока недоступно на портале Azure. |
+| Телеметрия Windows | Меню параметров решения. Сведения о настройке см. в статье [Windows Analytics на портале Azure](/windows/deployment/update/windows-analytics-azure-portal). |
 | Соединитель управления ИТ-услугами    | В статье [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами](../log-analytics/log-analytics-itsmc-connections.md) приводятся инструкции по подключению службы ITSM к Log Analytics. |
 
 ### <a name="data"></a>Данные

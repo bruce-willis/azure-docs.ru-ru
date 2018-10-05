@@ -1,45 +1,133 @@
 ---
-title: Просмотр всех существующих групп в Azure Active Directory | Документация Майкрософт
-description: Сведения о том, как просматривать или искать группы в Azure Active Directory.
+title: Краткое руководство по просмотру групп и членов вашей организации в Azure Active Directory | Документация Майкрософт
+description: Краткое руководство содержит процедуры, позволяющие найти и просмотреть на портале Azure настроенные в организации группы и назначенные в них члены.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
-editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
 ms.topic: quickstart
-ms.date: 08/28/2017
+ms.date: 09/24/2018
 ms.author: lizross
-ms.custom: H1Hack27Feb2017;it-pro
+ms.custom: it-pro
 ms.reviewer: krbain
-ms.openlocfilehash: 4022bfc465f87fe086de5d7198dac1d748ddbca6
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 9da9f055163f5df4ea064bd46caa811e39fba20c
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37860454"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47056409"
 ---
-# <a name="view-or-search-for-your-user-groups-in-azure-active-directory"></a>Просмотр или поиск групп пользователей в Azure Active Directory
-В этой статье объясняется, как просмотреть группы в Azure Active Directory (Azure AD). Одной из возможностей управления пользователями Azure AD является использование групп пользователей для выполнения задач управления, например назначение лицензий или разрешений нескольким пользователям одновременно.
+<!--As a brand-new Azure AD administrator, I need to view my organization’s groups along with the assigned members, so I can manage permissions to apps and services for people in my organization-->
 
-## <a name="how-do-i-see-all-the-groups"></a>Как можно просмотреть все группы?
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
-2. Выберите **Все службы**, введите **Пользователи и группы** в текстовое поле, а затем нажмите клавишу **ВВОД**.
+# <a name="quickstart-view-your-organizations-groups-and-members-in-azure-active-directory"></a>Краткое руководство. Просмотр групп и членов вашей организации в Azure Active Directory
+Вы можете просмотреть существующие в вашей организации группы и членов этих групп с помощью портала Azure. Группы используются для управления пользователями (членами), которым нужны одинаковые уровни доступа и разрешения в приложениях и службах с ограниченным доступом.
 
-   ![Открытие пользователей и групп](./media/active-directory-groups-view-azure-portal/search-user-management.png)
-3. В колонке **Пользователи и группы** выберите **Все группы**.
+В этом кратком руководстве вы просмотрите все существующие в организации группы и назначенных членов.
 
-   ![Открытие колонки группы](./media/active-directory-groups-view-azure-portal/view-groups-blade.png)
-4. В колонке **Пользователи и группы — Все группы** можно добавить или удалить отображаемые столбцы, отфильтровать список для поиска группы или внести изменения в группы, для которых имеются необходимые разрешения на изменение.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+
+## <a name="prerequisites"></a>Предварительные требования
+Для этого потребуются следующие компоненты.
+
+- Создайте клиента Azure Active Directory. Дополнительные сведения см. в статье [Quickstart: Access Azure Active Directory to create a new tenant](active-directory-access-create-new-tenant.md) (Краткое руководство. Использование Azure Active Directory для создания нового клиента).
+
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+Для входа на [портал Azure](https://portal.azure.com/) используйте учетную запись глобального администратора вашего каталога.
+
+## <a name="create-a-new-group"></a>Создание группы 
+Создайте новую группу с именем _MDM policy - West_. Дополнительные сведения о создании группы см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](active-directory-groups-create-azure-portal.md).
+
+1. Выберите **Azure Active Directory**, затем **Группы** и щелкните **Новая группа**.
+
+2. Заполните страницу **Группа**:
+    
+    - **Тип группы**: выберите **Безопасность**.
+    
+    - **Имя группы:** введите _MDM policy - West_.
+    
+    - **Тип членства:** выберите **Назначенные**.
+
+3. Нажмите кнопку **Создать**.
+
+## <a name="create-a-new-user"></a>Создание пользователя
+Создайте нового пользователя с именем _Alain Charon_. В качестве члена группы можно добавить только существующих пользователей. Дополнительные сведения о создании пользователей см. в [этой статье](add-users-azure-active-directory.md).
+
+1. Выберите **Azure Active Directory**, затем **Пользователи** и щелкните **Новый пользователь**.
+
+2. Заполните данные на странице **Пользователь**.
+
+    - **Имя:** введите _Alain Charon_.
+
+    - **Имя пользователя:** введите *alain@contoso.com*.
+
+3. Скопируйте автоматически созданный пароль, который подставляется в поле **Пароль**, а затем щелкните **Создать**.
+
+## <a name="add-a-group-member"></a>Добавление члена группы
+Теперь у вас есть группа и пользователь для нее. Добавьте _Alain Charon_ в число членов группы _MDM policy - West_. Дополнительные сведения о добавлении членов группы, см. в статье [Управление участниками групп в клиенте Azure Active Directory](active-directory-groups-members-azure-portal.md).
+
+1. Выберите **Azure Active Directory** > **Группы**.
+
+2. На странице **Группы — Все группы** найдите и выберите группу **MDM policy - West**.
+
+3. На странице **Обзор MDM policy - West** выберите **Члены** из области **Управление**.
+
+4. Выберите **Добавление членов**, а затем найдите и выберите **Alain Charon**.
+
+5. Щелкните **Выбрать**.
+
+## <a name="view-all-groups"></a>Просмотр всех групп
+Все группы своей организации можно просмотреть на странице **Группы — Все группы** портала Azure.
+
+- Выберите **Azure Active Directory** > **Группы**.
+
+    Откроется страница **Группы — Все группы** со списком активных групп.
+
+    ![Страница "Группы — Все группы", где отображаются все существующие группы](media/active-directory-groups-view-azure-portal/groups-all-groups-blade-with-all-groups.png)
+
+## <a name="search-for-the-group"></a>Поиск группы
+На странице **Группы — Все группы** найдите группу **MDM policy - West**.
+
+1. На странице **Группы — Все группы** введите строку _MDM_ в поле **Поиск**.
+
+    Под полем **Поиск** отобразятся найденные результаты, включая группу _MDM policy - West_.
+
+    ![Страница "Группы — Все группы" с заполненным полем поиска](media/active-directory-groups-view-azure-portal/search-for-specific-group.png)
+
+3. Выберите группу **MDM policy - West**.
+
+4. Просмотрите сведения о группе на странице **Обзор MDM policy - West**, в том числе проверьте число членов этой группы.
+
+    ![Страница "Обзор MDM policy - West" с информацией о членах](media/active-directory-groups-view-azure-portal/group-overview-blade.png)
+
+## <a name="view-group-members"></a>Просмотр членов группы
+Итак, вы нашли нужную группу и можете просмотреть назначенных в нее членов.
+
+- Выберите **Члены** в области **Управление** и просмотрите полный список членов, назначенных этой группе, включая _Alain Charon_.
+
+    ![Список членов, назначенных в группу MDM policy - West](media/active-directory-groups-view-azure-portal/groups-all-members.png)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Эта группа используется в нескольких руководствах, которые собраны в разделе документации **Практические руководства**. Но если вы не намерены ее использовать, удалите ее вместе с назначенными членами с помощью следующей процедуры.
+
+1. На странице **Группы — Все группы** найдите группу **MDM policy - West**.
+
+2.  Выберите группу **MDM policy - West**.
+
+    Откроется страница **Обзор MDM policy - West**.
+
+3. Нажмите кнопку **Удалить**.
+
+    Это действие удаляет группы и всех связанных с ней членов.
+
+    ![Страница "Обзор MDM policy - West" с выделенной ссылкой "Удалить"](media/active-directory-groups-view-azure-portal/group-overview-blade-delete.png)
+
+    >[!Important]
+    >Но удаляется не сам пользователь Ален Charon, а его членство в удаленной группе.
 
 ## <a name="next-steps"></a>Дополнительная информация
-В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
+Перейдите к следующей статье, которая описывает процесс привязки подписки к каталогу Azure AD.
 
-* [Просмотр существующих групп](active-directory-groups-view-azure-portal.md)
-* [Создание группы и добавление участников](active-directory-groups-create-azure-portal.md)
-* [Управление параметрами группы](active-directory-groups-settings-azure-portal.md)
-* [Управление участниками группы](active-directory-groups-members-azure-portal.md)
-* [Управление членством в группе](active-directory-groups-membership-azure-portal.md)
-* [Управление динамическими правилами для пользователей в группе](../users-groups-roles/groups-dynamic-membership.md)
+> [!div class="nextstepaction"]
+> [Привязка подписки Azure](active-directory-how-subscriptions-associated-directory.md)

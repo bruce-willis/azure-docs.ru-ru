@@ -1,26 +1,27 @@
 ---
-title: 'Azure Content Moderator: модерация видео | Документация Майкрософт'
+title: Модерация видео — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Модерация видео позволяет выполнять поиск содержимого только для взрослых и (или) содержимого непристойного характера.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/02/2018
 ms.author: sajagtap
-ms.openlocfilehash: ef58f5990d4a0a19ab2b8c61b42ab2a0754dc6fa
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 9b6240ef0883e1a523c50c9b641065deb2669d53
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382489"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226541"
 ---
 # <a name="video-moderation"></a>Модерация видео
 
 Сегодня число ежедневных просмотров видеороликов на популярных веб-сайтах и в социальных сетях измеряется миллиардами. И этот показатель продолжает расти. Применив службы на основе машинного обучения для поиска содержимого только для взрослых и (или) содержимого непристойного характера, вы сможете сократить затраты на модерацию.
 
-## <a name="sign-up-for-the-content-moderator-media-processor-public-preview"></a>Регистрация для использования обработчика мультимедиа Content Moderator (предварительная версия)
+## <a name="sign-up-for-the-content-moderator-media-processor-preview"></a>Регистрация для использования обработчика мультимедиа Content Moderator (предварительная версия)
 
 ### <a name="create-a-free-azure-account"></a>Создание бесплатной учетной записи Azure
 
@@ -54,7 +55,7 @@ ms.locfileid: "35382489"
 
    В примере кода назовите проект **VideoModeration**.
 
-1. Выберите этот проект единственным запускаемым проектом для решения.
+1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 

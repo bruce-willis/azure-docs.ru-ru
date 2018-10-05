@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/16/2018
+ms.date: 09/26/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e98012a012c8569a40fe454a777e5f108bfe0e2e
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 72503c9f073a046b81001322cdbb4fb8a1af76cf
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46304593"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224126"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
@@ -39,7 +39,7 @@ ms.locfileid: "46304593"
 | Состояние | Комментарий |
 | --- | --- |
 | Включено |Автоматическое обновление включено. |
-| Приостановлено |Устанавливается только системой. Система больше не может получать автоматические обновления. |
+| Приостановлено |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
 | Отключено |Автоматическое обновление отключено. |
 
 Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.

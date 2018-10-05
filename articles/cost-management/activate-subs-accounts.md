@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 08/29/2018
+ms.date: 09/27/2018
 ms.topic: quickstart
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 1726cf947ad027eabd79aa35da92df37e1681003
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 304a52f5571790ea49587a5aeda433f003f0e0bd
+ms.sourcegitcommit: 42405ab963df3101ee2a9b26e54240ffa689f140
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959620"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47423074"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 
@@ -40,7 +40,7 @@ ms.locfileid: "46959620"
 2. На портале Azure выберите **Azure Active Directory**.
 3. В Azure Active Directory выберите **Параметры пользователя**.
 4. Проверьте параметр **Регистрация приложений**.
-    - Если задано значение **Да**, тогда пользователи без прав администратора могут регистрировать приложения AD. Это означает, что приложение в клиенте Azure AD может зарегистрировать любой пользователь. В таком случае требуется выполнить проверку прав доступа к подпискам Azure.  
+    - Если задано значение **Да**, тогда пользователи без прав администратора могут регистрировать приложения AD. Это означает, что приложение в клиенте Azure AD может зарегистрировать любой пользователь.  
     ![Регистрация приложений](./media/activate-subs-accounts/app-register.png)
     - Если для параметра **Регистрация приложений** задано значение **Нет**, тогда только пользователи с правами администратора в клиенте могут регистрировать приложения Azure Active Directory. Администратор клиента должен зарегистрировать приложение CloudynCollector.
 
@@ -103,10 +103,8 @@ ms.locfileid: "46959620"
 
 Необходимо предоставить администраторам отдела, владельцам учетных записей и администраторам предприятия разрешения на _просмотр затрат_ с помощью API выставления счетов.
 
-<<<<<<< HEAD Только администратор служб Azure может включить службу "Управление затратами". Разрешений соадминистратора недостаточно. Но вы можете обойти требование, касающееся разрешений администратора. Можно запросить у администратора Azure Active Directory разрешение на авторизацию **CloudynAzureCollector** с помощью скрипта PowerShell. Приведенный ниже скрипт предоставляет разрешение на регистрацию субъекта-службы Azure Active Directory **CloudynAzureCollector**. Когда операция будет успешно выполнена, в браузере откроется страница с URL-адресом http://localhost:8080/CloudynJava.
-======= Только администратор служб Azure может включить службу Cloudyn. Разрешений соадминистратора недостаточно. Но вы можете обойти требование, касающееся разрешений администратора. Можно запросить у администратора Azure Active Directory разрешение на авторизацию **CloudynAzureCollector** с помощью скрипта PowerShell. Приведенный ниже скрипт предоставляет разрешение на регистрацию субъекта-службы Azure Active Directory **CloudynAzureCollector**.
+Только администратор служб Azure может включить службу Cloudyn. Разрешений соадминистратора недостаточно. Но вы можете обойти требование, касающееся разрешений администратора. Можно запросить у администратора Azure Active Directory разрешение на авторизацию **CloudynAzureCollector** с помощью скрипта PowerShell. Приведенный ниже скрипт предоставляет разрешение на регистрацию субъекта-службы Azure Active Directory **CloudynAzureCollector**.
 
->>>>>>> 9f3b4a46614ba7306c044dce8be6ee7cc3bf101d
 
 ```
 #THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

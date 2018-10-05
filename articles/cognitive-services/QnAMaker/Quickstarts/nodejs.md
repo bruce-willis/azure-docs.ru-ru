@@ -1,20 +1,21 @@
 ---
-title: Краткое руководство по Node.js. Использование API службы QnA Maker (V4) Майкрософт в Azure Cognitive Services | Документация Майкрософт
-description: Сведения и примеры кода для работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
+title: 'Краткое руководство: Node.js для API службы QnA Maker (версия 4)'
+titleSuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
 services: cognitive-services
-documentationcenter: ''
-author: v-jaswel
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: qna-maker
 ms.topic: article
-ms.date: 05/07/2018
-ms.author: v-jaswel
-ms.openlocfilehash: 6da1ec00e04ea993923a97c4641880a5f31d18fa
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.date: 09/12/2018
+ms.author: diberry
+ms.openlocfilehash: 05a15ddf8d7668896052c38afc549bc7b3cb056a
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37868180"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434336"
 ---
 # <a name="quickstart-for-microsoft-qna-maker-api-with-nodejs"></a>Краткое руководство. Использование API службы QnA Maker Microsoft с помощью Node.js 
 <a name="HOLTop"></a>
@@ -22,25 +23,27 @@ ms.locfileid: "37868180"
 В этой статье показано, как использовать [API службы QnA Maker Майкрософт](../Overview/overview.md) с помощью Node.js для выполнения следующих задач:
 
 - [Создание базы знаний.](#Create)
-- [обновление существующей базы знаний](#Update);
-- [получение сведений о состоянии запроса для создания или обновления базы знаний](#Status);
-- [публикация существующей базы знаний](#Publish);
-- [замена содержимого существующей базы знаний](#Replace);
-- [скачивание содержимого базы знаний](#GetQnA);
-- [получение ответов на вопросы с помощью базы знаний](#GetAnswers);
-- [получение сведений о базе знаний](#GetKB);
-- [получение сведений обо всех базах знаний, принадлежащих указанному пользователю](#GetKBsByUser);
-- [удаление базы знаний](#Delete);
-- [получение текущих ключей конечной точки](#GetKeys);
-- [повторное создание текущих ключей конечной точки](#PutKeys);
-- [получение текущего набора изменений машинного слова](#GetAlterations);
-- [замена текущего набора изменений машинных слов](#PutAlterations).
+- [Обновлять существующую базу знаний.](#Update)
+- [Получать состояние запроса для создания или обновления базы знаний.](#Status)
+- [Публиковать существующую базу знаний.](#Publish)
+- [Заменять содержимое существующей базы знаний.](#Replace)
+- [Загружать содержимое базы знаний.](#GetQnA)
+- [Получать ответы на вопрос с помощью базы знаний.](#GetAnswers)
+- [Получать сведения о базе знаний.](#GetKB)
+- [Получать сведения о всех базах знаний, принадлежащих указанному пользователю.](#GetKBsByUser)
+- [Удалять базу знаний.](#Delete)
+- [Получать текущие ключи конечной точки.](#GetKeys)
+- [Повторно создавать ключи текущей конечной точки.](#PutKeys)
+- [Получать текущий набор вариантов слов.](#GetAlterations)
+- [Заменять текущий набор вариантов слов.](#PutAlterations)
 
-## <a name="prerequisites"></a>предварительным требованиям
+[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого кода потребуется [Node.js 6](https://nodejs.org/en/download/).
 
-Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API службы QnA Maker Microsoft**. Вам понадобится платный ключ подписки из вашей [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServices).
+Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API службы QnA Maker Microsoft**. Вам понадобится платный ключ подписки, доступный из [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServices).
 
 <a name="Create"></a>
 
@@ -50,7 +53,7 @@ ms.locfileid: "37868180"
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -106,7 +109,7 @@ let post = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -205,7 +208,7 @@ create_kb (path, content, function (result) {
 });
 ```
 
-**Результат создания базы знаний**
+**Ответ "Создание базы знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -246,7 +249,7 @@ create_kb (path, content, function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -305,7 +308,7 @@ let patch = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -405,7 +408,7 @@ update_kb (path, content, function (result) {
 });
 ```
 
-**Результат обновления базы знаний**
+**Ответ "Обновление базы знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -433,9 +436,9 @@ Press any key to continue.
 
 <a name="Status"></a>
 
-## <a name="get-request-status"></a>Получение сведений о состоянии запроса
+## <a name="get-request-status"></a>Получение состояния запроса
 
-Можно вызвать метод [Operation](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails) (Операция), чтобы проверить состояние запроса для создания или обновления базы знаний. Чтобы узнать, как используется этот метод, см. пример кода для методов [Create](#Create) (Создание) или [Update](#Update) (Обновление).
+Чтобы проверить состояние запроса для создания или обновления базы знаний, можно вызвать метод [Operation](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails) (Операция). Чтобы увидеть, как используется этот метод, см. пример кода для методов [Create](#Create) (Создание) или [Update](#Update) (Обновление).
 
 [Вверх](#HOLTop)
 
@@ -447,7 +450,7 @@ Press any key to continue.
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -506,7 +509,7 @@ let post = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -539,7 +542,7 @@ publish_kb (path, '', function (result) {
 });
 ```
 
-**Результат публикации базы знаний**
+**Ответ "Публикация базы знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -559,7 +562,7 @@ publish_kb (path, '', function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -618,7 +621,7 @@ let put = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -672,7 +675,7 @@ replace_kb (path, content, function (result) {
 });
 ```
 
-**Результат замены содержимого базы знаний**
+**Ответ "Замена базы знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -692,7 +695,7 @@ replace_kb (path, content, function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -778,7 +781,7 @@ get_qna (path, function (result) {
 });
 ```
 
-**Результат скачивания базы знаний**
+**Ответ "Загрузка базы знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -823,9 +826,9 @@ get_qna (path, function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 1. Добавьте указанный ниже код.
-1. Замените значение `host` именем веб-сайта для вашей подписки QnA Maker. Дополнительные сведения см. в разделе о [создании службы QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
-1. Замените значение `endpoint_key` действующим ключом конечной точки для вашей подписки. Обратите внимание, что он не совпадает с ключом подписки. Вы можете получить ключи конечной точки с помощью метода [Get endpoint keys](#GetKeys) (Получение ключей конечной точки).
-1. Замените значение `kb` идентификатором базы знаний, у которой необходимо запрашивать ответы. Обратите внимание, что это должна быть база знаний, уже опубликованная с помощью метода [Publish](#Publish) (Публикация).
+1. Замените значение `host` именем веб-сайта в подписке QnA Maker. Дополнительные сведения см. в разделе [Create a QnA Maker service](../How-To/set-up-qnamaker-service-azure.md) (Создание службы QnA Maker).
+1. Замените значение `endpoint_key` действующим ключом конечной точки для подписки. Обратите внимание, что это не то же самое, что ключ подписки. Вы можете получить ключи конечной точки с помощью метода [Get endpoint keys](#GetKeys) (Получение ключей конечной точки).
+1. Замените значение `kb` идентификатором базы знаний, у которой необходимо запрашивать ответы. Обратите внимание, что эта база знаний должна быть уже опубликована с помощью метода [Publish](#Publish) (Публикация).
 1. Запустите программу.
 
 ```nodejs
@@ -894,7 +897,7 @@ let post = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Authorization' : 'EndpointKey ' + endpoint_key,
         }
     };
@@ -922,7 +925,7 @@ get_answers (method, content, function (result) {
 });
 ```
 
-**Результат получения ответов**
+**Ответ "Получение ответов"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -954,7 +957,7 @@ get_answers (method, content, function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1037,7 +1040,7 @@ get_kb (path, function (result) {
 });
 ```
 
-**Результат получения сведений о базе знаний**
+**Ответ "Получение сведений о базе знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1069,7 +1072,7 @@ get_kb (path, function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1149,7 +1152,7 @@ get_kbs (path, function (result) {
 });
 ```
 
-**Результат получения баз знаний для пользователя**
+**Ответ "Получение баз знаний для пользователя"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1197,7 +1200,7 @@ Press any key to continue.
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1256,7 +1259,7 @@ let http_delete = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -1289,7 +1292,7 @@ delete_kb (path, '', function (result) {
 });
 ```
 
-**Результат удаления базы знаний**
+**Ответ "Удаление базы знаний"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1309,7 +1312,7 @@ delete_kb (path, '', function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1389,7 +1392,7 @@ get_keys (path, function (result) {
 });
 ```
 
-**Результат получения ключей конечной точки**
+**Ответ "Получение ключей конечной точки"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1410,7 +1413,7 @@ get_keys (path, function (result) {
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1469,7 +1472,7 @@ let patch = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -1515,7 +1518,7 @@ refresh_keys (path, content, function (result) {
 });
 ```
 
-**Результат обновления ключей конечной точки**
+**Ответ "Обновление ключей конечной точки"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1530,13 +1533,13 @@ refresh_keys (path, content, function (result) {
 
 <a name="GetAlterations"></a>
 
-## <a name="get-word-alterations"></a>Получение изменений машинных слов
+## <a name="get-word-alterations"></a>Получение вариантов слов
 
 Следующий код получает текущие варианты слов с помощью метода [Download alterations](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fc) (Скачивание вариантов).
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1616,7 +1619,7 @@ get_alterations (path, function (result) {
 });
 ```
 
-**Результат получения изменений машинных слов**
+**Ответ "Получение вариантов слов"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1637,13 +1640,13 @@ get_alterations (path, function (result) {
 
 <a name="PutAlterations"></a>
 
-## <a name="replace-word-alterations"></a>Замена изменений машинных слов
+## <a name="replace-word-alterations"></a>Замена вариантов слов
 
 Следующий код заменяет текущие варианты слов с помощью метода [Replace alterations](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd) (Замена вариантов).
 
 1. Создайте Node.js в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `key` ключом доступа, допустимым для вашей подписки.
+3. Замените значение `key` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```nodejs
@@ -1699,7 +1702,7 @@ let put = function (path, content, callback) {
         path : path,
         headers : {
             'Content-Type' : 'application/json',
-            'Content-Length' : content.length,
+            'Content-Length' : Buffer.byteLength(content),
             'Ocp-Apim-Subscription-Key' : subscriptionKey,
         }
     };
@@ -1745,7 +1748,7 @@ put_alterations (path, content, function (result) {
 });
 ```
 
-**Результат замены изменений машинных слов**
+**Ответ "Замена вариантов слов"**
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
@@ -1760,7 +1763,7 @@ put_alterations (path, content, function (result) {
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Справочник по API REST QnA Maker (V4)](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff)
+> [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))
 
 ## <a name="see-also"></a>См. также 
 

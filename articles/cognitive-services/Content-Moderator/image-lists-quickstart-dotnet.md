@@ -1,24 +1,25 @@
 ---
-title: Модерация с помощью настраиваемых списков изображений в Azure Content Moderator | Документация Майкрософт
-description: Описывается, как модерировать содержимое с помощью настраиваемых списков изображений посредством пакета SDK Azure Content Moderator для .NET.
+title: Краткое руководство. Модерация с помощью настраиваемых списков изображений в Content Moderator
+titlesuffix: Azure Cognitive Services
+description: Как модерировать содержимое с помощью настраиваемых списков изображений посредством пакета SDK Content Moderator для .NET.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
-ms.date: 01/04/2018
+ms.topic: quickstart
+ms.date: 09/14/2018
 ms.author: sajagtap
-ms.openlocfilehash: c953df88f878b4f05c9a9f3099aea77f3ff48a92
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 094542bad7ea8e9283d9a07fe620e363be1d0c2e
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380328"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226465"
 ---
-# <a name="moderate-with-custom-image-lists-in-net"></a>Модерация с помощью настраиваемых списков изображений посредством .NET
+# <a name="quickstart-moderate-with-custom-image-lists-in-net"></a>Краткое руководство. Модерация с помощью настраиваемых списков изображений посредством .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с пакетом SDK Content Moderator для .NET в следующих целях:
+В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) в следующих целях:
 - создание настраиваемого списка изображений;
 - добавление и удаление изображений в списке;
 - получение идентификаторов всех изображений в списке;
@@ -47,30 +48,78 @@ ms.locfileid: "35380328"
 
    В примере кода назовите проект **ImageLists**.
 
-1. Выберите этот проект единственным запускаемым проектом для решения.
-
-1. Добавьте ссылку на сборку проекта **ModeratorHelper**, созданную вами в [кратком руководстве по вспомогательному клиенту Content Moderator](content-moderator-helper-quickstart-dotnet.md).
+1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
 Установите следующие пакеты NuGet:
 
-- Microsoft.Azure.CognitiveServices.ContentModerator
+- Microsoft.Azure.CognitiveServices.ContentModerator;
 - Microsoft.Rest.ClientRuntime
-- Newtonsoft.Json
+- Newtonsoft.Json.
 
 ### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
-Измените инструкции using программы.
+Измените инструкции using в вашей программе.
 
+    using Microsoft.Azure.CognitiveServices.ContentModerator;
     using Microsoft.CognitiveServices.ContentModerator;
     using Microsoft.CognitiveServices.ContentModerator.Models;
-    using ModeratorHelper;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Threading;
+
+### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
+
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
+
+> [!IMPORTANT]
+> Укажите в полях **AzureRegion** и **CMSubscriptionKey** значения идентификатора региона и ключа подписки соответственно.
+
+
+    /// <summary>
+    /// Wraps the creation and configuration of a Content Moderator client.
+    /// </summary>
+    /// <remarks>This class library contains insecure code. If you adapt this 
+    /// code for use in production, use a secure method of storing and using
+    /// your Content Moderator subscription key.</remarks>
+    public static class Clients
+    {
+        /// <summary>
+        /// The region/location for your Content Moderator account, 
+        /// for example, westus.
+        /// </summary>
+        private static readonly string AzureRegion = "YOUR API REGION";
+
+        /// <summary>
+        /// The base URL fragment for Content Moderator calls.
+        /// </summary>
+        private static readonly string AzureBaseURL =
+            $"https://{AzureRegion}.api.cognitive.microsoft.com";
+
+        /// <summary>
+        /// Your Content Moderator subscription key.
+        /// </summary>
+        private static readonly string CMSubscriptionKey = "YOUR API KEY";
+
+        /// <summary>
+        /// Returns a new Content Moderator client for your subscription.
+        /// </summary>
+        /// <returns>The new client.</returns>
+        /// <remarks>The <see cref="ContentModeratorClient"/> is disposable.
+        /// When you have finished using the client,
+        /// you should dispose of it either directly or indirectly. </remarks>
+        public static ContentModeratorClient NewClient()
+        {
+            // Create and initialize an instance of the Content Moderator API wrapper.
+            ContentModeratorClient client = new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey));
+
+            client.Endpoint = AzureBaseURL;
+            return client;
+        }
+    }
 
 
 ### <a name="initialize-application-specific-settings"></a>Инициализация параметров приложения
@@ -85,7 +134,7 @@ ms.locfileid: "35380328"
 
     /// <summary>
     /// The number of minutes to delay after updating the search index before
-    /// performing image match operations against a the list.
+    /// performing image match operations against the list.
     /// </summary>
     private const double latencyDelay = 0.5;
 
@@ -180,7 +229,7 @@ ms.locfileid: "35380328"
     /// <summary>
     /// The name of the file to contain the output from the list management operations.
     /// </summary>
-    /// <remarks>Relative paths are ralative the execution directory.</remarks>
+    /// <remarks>Relative paths are relative to the execution directory.</remarks>
     private static string OutputFile = "ListOutput.log";
 
     /// <summary>
@@ -1021,4 +1070,4 @@ ms.locfileid: "35380328"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Скачайте решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) с этим и другими краткими руководствами по Content Moderator для .NET и приступите к интеграции.
+Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

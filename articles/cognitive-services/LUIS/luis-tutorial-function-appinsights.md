@@ -1,24 +1,26 @@
 ---
-title: Добавление данных LUIS в Application Insights с помощью Node.js | Документация Майкрософт
-titleSuffix: Azure
+title: Получение данных Application Insights из LUIS с использованием C#
+titleSuffix: Azure Cognitive Services
 description: Создание бота, интегрированного с приложением LUIS и Application Insights, с помощью Node.js.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 01/18/2018
+ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 5b65747bea7d2496558c5b3b533bb8420eee6254
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 342c4f98d854d94426c3e4a1eb79bb2a6adffaad
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39236845"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038006"
 ---
-# <a name="add-luis-results-to-application-insights-from-a-web-app-bot"></a>Добавление результатов LUIS в Application Insights из бота веб-приложения
+# <a name="add-luis-results-to-application-insights"></a>Добавление результатов распознавание речи с помощью LUIS в Application Insights
 В этом руководстве приведена процедура добавления данных запроса и ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
+
+Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -151,7 +153,7 @@ Application Insights позволяет выполнять запросы дан
     ![Намерение Analytics top](./media/luis-tutorial-appinsights/app-insights-top-intent.png)
 
 
-Дополнительные сведения о [языке запросов Kusto](https://docs.loganalytics.io/docs/Learn/Getting-Started/Getting-started-with-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
+Дополнительные сведения о [языке запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

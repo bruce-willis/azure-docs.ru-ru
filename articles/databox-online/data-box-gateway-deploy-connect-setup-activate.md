@@ -12,15 +12,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/24/2018
+ms.date: 09/27/2018
 ms.author: alkohli
 ms.custom: ''
-ms.openlocfilehash: e2fe7c375525389da865a3c85b52fad4dd11e333
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 77ccc6ebbb48ab3d7ce22d6c593bd62aa8dec3ac
+ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957492"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47419486"
 ---
 # <a name="tutorial-connect-set-up-activate-azure-data-box-gateway-preview"></a>Руководство. Подключение, настройка, активация шлюза Azure Data Box (предварительная версия) 
 
@@ -33,8 +33,8 @@ ms.locfileid: "46957492"
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Подключение к виртуальному устройству
-> * Настройка и активация виртуального устройства
+> * подключение к виртуальному устройству;
+> * настройка и активация виртуального устройства.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -122,7 +122,7 @@ ms.locfileid: "46957492"
        
          ![](./media/data-box-gateway-deploy-connect-setup-activate/image10.png)
     
-    3. Устройство перезапустится. Подождите 2–3 минуты, прежде чем устройство будет активировано. После перезапуска устройства откроется страница входа.
+    3. Возможно, придется минуту подождать, пока устройство успешно активируется. После активации страница обновится, сообщив, что устройство успешно активировано.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

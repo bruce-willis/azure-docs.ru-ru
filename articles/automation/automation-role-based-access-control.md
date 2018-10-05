@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fd96a6cfebe44bd02e3f44a44d91119ad1c2c5a9
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: fe35f26fe73661901fa85da65e353fe66adf5d47
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598758"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47094223"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
@@ -78,12 +78,21 @@ ms.locfileid: "34598758"
 |**Действия**  |**Описание**  |
 |---------|---------|
 |Microsoft.Authorization/*/read|Авторизация на чтение.|
+|Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/read|Считывает ресурсы гибридной рабочей роли Runbook.|
 |Microsoft.Automation/automationAccounts/jobs/read|Вывод списка заданий Runbook.|
 |Microsoft.Automation/automationAccounts/jobs/resume/action|Возобновление приостановленного задания.|
 |Microsoft.Automation/automationAccounts/jobs/stop/action|Отмена выполняющегося задания.|
 |Microsoft.Automation/automationAccounts/jobs/streams/read|Чтение потоков и выходных данных задания.|
+|Microsoft.Automation/automationAccounts/jobs/output/read|Возвращает выходные данные задания.|
 |Microsoft.Automation/automationAccounts/jobs/suspend/action|Остановка выполняющегося задания.|
 |Microsoft.Automation/automationAccounts/jobs/write|Создание заданий.|
+|Microsoft.Automation/automationAccounts/jobSchedules/read|Возвращает расписание заданий службы автоматизации Azure.|
+|Microsoft.Automation/automationAccounts/jobSchedules/write|Создает расписание заданий службы автоматизации Azure.|
+|Microsoft.Automation/automationAccounts/linkedWorkspace/read|Возвращает рабочую область, связанную с учетной записью службы автоматизации.|
+|Microsoft.Automation/automationAccounts/read|Возвращает учетную запись службы автоматизации Azure.|
+|Microsoft.Automation/automationAccounts/runbooks/read|Возвращает runbook службы автоматизации Azure.|
+|Microsoft.Automation/automationAccounts/schedules/read|Возвращает ресурс расписания службы автоматизации Azure.|
+|Microsoft.Automation/automationAccounts/schedules/write|Создает или обновляет ресурс расписания службы автоматизации Azure.|
 |Microsoft.Resources/subscriptions/resourceGroups/read      |Чтение ролей и их назначений.         |
 |Microsoft.Resources/deployments/*      |Создание развертываний группы ресурсов и управление ими.         |
 |Microsoft.Insights/alertRules/*      | Создание правил оповещения и управление ими.        |

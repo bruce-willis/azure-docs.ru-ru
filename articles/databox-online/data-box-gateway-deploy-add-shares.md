@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/24/2018
 ms.author: alkohli
 ms.custom: ''
-ms.openlocfilehash: 44fa19191f08f0e35c06f0b7ea5a3e5e41611de3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9560166f9733e1370f99f5f76a6ca3a58567865e
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46979123"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220250"
 ---
 # <a name="tutorial-transfer-data-with-azure-data-box-gateway-preview"></a>Руководство по передаче данных с помощью службы "Шлюз Azure Data Box"
 
@@ -35,10 +35,10 @@ ms.locfileid: "46979123"
 
 > [!div class="checklist"]
 > * Добавление общей папки
-> * Подключение к общей папке
+> * Подключение к общей папке.
 
 > [!IMPORTANT]
-> - Шлюз Data Box находится в предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение. 
+> - Шлюз Data Box доступен в качестве предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение. 
  
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -96,7 +96,7 @@ ms.locfileid: "46979123"
 
     `net use \\<IP address of the device>\<share name>  /u:<user name for the share>`
 
-    При появлении запроса введите пароль для общей папки. Здесь приведен пример выходных данных этой команды.
+    При отображении соответствующего запроса введите пароль для общей папки. Здесь приведен пример выходных данных этой команды.
 
     ```powershell
     Microsoft Windows [Version 18.8.16299.192) 

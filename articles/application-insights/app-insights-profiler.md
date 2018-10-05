@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 6048a17bf50ecac691c7cf687f87e454c54ee9d9
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 839e462522be4f492010ca1c22631cb4dd6affe4
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521889"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47064441"
 ---
 # <a name="profile-live-azure-web-apps-with-application-insights"></a>Профилирование динамических веб-приложений Azure с помощью Application Insights
 
-Эта функция Azure Application Insights общедоступна для компонента "Веб-приложения" службы приложений Azure и предоставляется в предварительной версии для вычислительных ресурсов Azure. Сведения об использовании [профилировщика в локальной среде](https://docs.microsoft.com/azure/application-insights/enable-profiler-compute#enable-profiler-on-on-premises-servers).
+Эта функция Azure Application Insights общедоступна для компонента "Веб-приложение" Службы приложений Azure и вычислительных ресурсов Azure. Сведения об использовании [профилировщика в локальной среде](https://docs.microsoft.com/azure/application-insights/enable-profiler-compute#enable-profiler-on-on-premises-servers).
 
 Из этой статьи вы узнаете, сколько времени выполняется каждый метод в динамическом веб-приложении с помощью [Application Insights](app-insights-overview.md). Средство Application Insights Profiler отображает подробные данные профилей динамических запросов, обработанные приложением, а также выделяет *критический путь*, на использование которого уходит большая часть времени. Запросы с разным временем отклика профилируются на основе выборки. С помощью различных методов можно минимизировать затраты на приложение.
 
@@ -45,7 +45,7 @@ ms.locfileid: "39521889"
 
     ![Параметр приложения для профилировщика][profiler-app-setting]
 
-### <a name="enable-profiler-for-azure-compute-resources-preview"></a>Включение профилировщика для вычислительных ресурсов Azure (предварительная версия)
+### <a name="enable-profiler-for-azure-compute-resources"></a>Включение Application Insights Profiler для вычислительных ресурсов Azure
 
 Дополнительные сведения см. в статье [Включение Application Insights Profiler на виртуальных машинах Azure, в Service Fabric и облачных службах](https://go.microsoft.com/fwlink/?linkid=848155).
 
@@ -204,7 +204,7 @@ ms.locfileid: "39521889"
 
 *Каталог не пустой "D:\\домашний\\сайт\\wwwroot\\App_Data\\jobs"*.
 
-Эта ошибка происходит при запуске веб-развертывания с помощью сценариев или в конвейере развертывания Visual Studio Team Services. Чтобы устранить эту проблему, необходимо добавить приведенные ниже параметры развертывания в задачу веб-развертывания.
+Эта ошибка происходит при запуске веб-развертывания с помощью сценариев или в конвейере развертывания Azure DevOps. Чтобы устранить эту проблему, необходимо добавить приведенные ниже параметры развертывания в задачу веб-развертывания.
 
 ```
 -skip:Directory='.*\\App_Data\\jobs\\continuous\\ApplicationInsightsProfiler.*' -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data\\jobs\\continuous$' -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data\\jobs$'  -skip:skipAction=Delete,objectname='dirPath',absolutepath='.*\\App_Data$'

@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/16/2018
+ms.date: 09/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 90aa19d690b1b4ab28c3a65a287a10aaf6a03ac6
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: fbb57753117f3c60010fe910616b8d0af5178360
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929038"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434829"
 ---
 # <a name="how-to-update-azure-powershell-modules-in-azure-automation"></a>Как обновить модули Azure PowerShell в службе автоматизации Azure
 
@@ -28,6 +28,12 @@ ms.locfileid: "37929038"
 ## <a name="updating-azure-modules"></a>Обновление модулей Azure
 
 1. На странице "Модули" вашей учетной записи службы автоматизации есть параметр **Обновить модули Azure**. Он всегда включен.<br><br> ![Параметр "Обновить модули Azure" на странице "Модули"](media/automation-update-azure-modules/automation-update-azure-modules-option.png)
+
+  > [!NOTE]
+  > Перед обновлением модулей Azure рекомендуется обновить их в тестовой учетной записи автоматизации. Это позволит до обновления убедиться в том, что существующие скрипты работают ожидаемым образом.
+  >
+  > Кнопка **Обновить модули Azure** доступна только в общедоступном облаке. Она недоступна в [независимых регионах](https://azure.microsoft.com/global-infrastructure/). Дополнительные сведения см. в разделе [Альтернативные способы обновления модулей](#alternative-ways-to-update-your-modules).
+
 
 2. Щелкните **Обновить модули Azure**, после чего появится уведомление с запросом о продолжении.<br><br> ![Уведомление об обновлении модулей Azure](media/automation-update-azure-modules/automation-update-azure-modules-popup.png)
 
@@ -44,13 +50,25 @@ ms.locfileid: "37929038"
 
     Если модули уже обновлены, процесс будет завершен через несколько секунд. После завершения процесса обновления вы получите уведомление.<br><br> ![Состояние обновления Update Azure Modules (Обновление модулей Azure)](media/automation-update-azure-modules/automation-update-azure-modules-updatestatus.png)
 
+    Модули .NET Core AzureRm (AzureRm.*.Core) не поддерживаются в службе автоматизации Azure и не могут быть импортированы.
+
 > [!NOTE]
-> При запуске нового запланированного задания служба автоматизации Azure использует модули последней версии в вашей учетной записи службы автоматизации.    
+> При запуске нового запланированного задания служба автоматизации Azure использует модули последней версии в вашей учетной записи службы автоматизации.  
 
 При использовании командлетов из этих модулей Azure PowerShell в модулях runbook этот процесс обновления необходимо выполнять примерно каждый месяц, чтобы гарантировать наличие последних модулей. Служба автоматизации Azure использует подключение AzureRunAsConnection для проверки подлинности при обновлении модулей. Если срок действия субъекта-службы истек или он больше не существует на уровне подписки, обновление модуля завершится сбоем.
+
+## <a name="alternative-ways-to-update-your-modules"></a>Альтернативные способы обновления модулей
+
+Как уже упоминалось, кнопка **Обновить модули Azure** недоступна в независимых облаках. Она доступна только в глобальном облаке Azure. Это связано с тем фактом, что последняя версия модулей Azure PowerShell из коллекции PowerShell может не работать со службами Resource Manager, развернутыми в настоящее время в этих облаках.
+
+Обновление модулей по-прежнему возможно путем импорта модуля Runbook [Update-AzureModule.ps1](https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Update-AzureModule.ps1) в учетную запись службы автоматизации и его запуска.
+
+Для передачи нужной среды в модуль Runbook используйте параметр `AzureRmEnvironment`.  Приемлемые значения: **AzureCloud**, **AzureChinaCloud**, **AzureGermanCloud** и **AzureUSGovernmentCloud**. Если не передать значение этому параметру, модуль Runbook по умолчанию будет использовать общедоступное облако Azure **AzureCloud**.
+
+Если нужно использовать конкретную версию модуля Azure PowerShell вместо последней доступной в коллекции PowerShell, передайте эти версии в необязательном параметре `ModuleVersionOverrides` модуля Runbook **Update-AzureModule**. Примеры см. в модуле Runbook [Update-AzureModule.ps1](https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Update-AzureModule.ps1). Модули Azure PowerShell, которые не упомянуты в параметре `ModuleVersionOverrides`, обновляются до последних версий из коллекции PowerShell. Если в параметре `ModuleVersionOverrides` не передано ничего, все модули обновляются последними версиями из коллекции PowerShell, как при нажатии кнопки **Обновить модули Azure**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения о модулях интеграции и создании настраиваемых модулей для дальнейшей интеграции службы автоматизации с другими системами, службами и решениями см. в статье [Модули интеграции службы автоматизации Azure](automation-integration-modules.md).
 
-* Рассмотрите возможность интеграции системы управления версиями с помощью [GitHub Enterprise](automation-scenario-source-control-integration-with-github-ent.md) или [Visual Studio Team Services](automation-scenario-source-control-integration-with-vsts.md), чтобы централизованно управлять выпусками своих модулей Runbook службы автоматизации и набором конфигураций.  
+* Попробуйте интегрировать систему управления версиями с помощью [GitHub Enterprise](automation-scenario-source-control-integration-with-github-ent.md) или [Azure DevOps](automation-scenario-source-control-integration-with-vsts.md), чтобы централизованно управлять выпусками своих модулей Runbook службы автоматизации и набором конфигураций.  

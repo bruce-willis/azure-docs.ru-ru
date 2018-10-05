@@ -1,22 +1,23 @@
 ---
-title: Просмотр сведений об использовании LUIS в Azure Cloud Shell | Документация Майкрософт
+title: Сведения об использовании LUIS в Azure Cloud Shell
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как получить сведения об использовании LUIS в Azure Cloud Shell.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 05/08/2017
+ms.date: 09/06/2017
 ms.author: diberry
-ms.openlocfilehash: f9d3a489328263bd300d60935bfde2f0dfc0245c
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: b0a02d2e5e0a1f1765098e1b1e258424b6443878
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224047"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47039585"
 ---
-# <a name="manage-luis-service-from-azure-cloud-shell"></a>Управление службой LUIS из Azure Cloud Shell
+# <a name="usage-data-for-luis-service-from-azure-cloud-shell"></a>Получение сведений об использовании LUIS из Azure Cloud Shell
 С помощью портала Azure можно использовать командлеты PowerShell для работы с ресурсами LUIS. 
 
 Эти командлеты позволяют [создать](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/new-azurermcognitiveservicesaccount?view=azurermps-6.0.0) подписку LUIS, получить сведения о подписке, в том числе об [использовании](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/get-azurermcognitiveservicesaccountusage?view=azurermps-6.0.0), а также [удалить](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/remove-azurermcognitiveservicesaccount?view=azurermps-6.0.0) подписку. 

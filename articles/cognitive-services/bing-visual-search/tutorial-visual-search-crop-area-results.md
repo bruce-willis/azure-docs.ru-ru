@@ -1,20 +1,20 @@
 ---
-title: Руководство по выбору области обрезки в пакете SDK для визуального поиска Bing и результаты применения | Документы Майкрософт
+title: 'Руководство: область и результаты обрезки изображения — Визуальный поиск Bing'
 description: Сведения об использовании пакета SDK для визуального поиска Bing с целью получения URL-адресов изображений, аналогичных области обрезки отправленного изображения.
 services: cognitive-services
 author: mikedodaro
-manager: ronakshah
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-visual-search
-ms.topic: article
+ms.topic: tutorial
 ms.date: 06/20/2018
 ms.author: rosh
-ms.openlocfilehash: dd51ed7c710cc51a9fe0e63e55aa0d2c4ea24bee
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 66e17c00da898e575bb858dbe16a35d1c44a2780
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45574495"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226916"
 ---
 # <a name="tutorial-bing-visual-search-sdk-image-crop-area-and-results"></a>Руководство по выбору области обрезки для изображения в пакете SDK для визуального поиска Bing и результаты применения
 В пакет SDK для визуального поиска входит возможность выбора области изображения и поиска изображений в Интернете, аналогичных области обрезки более крупного изображения.  В этом примере указывается область обрезки, на которой показан один человек с изображения, содержащего несколько человек.  Код отправляет область обрезки и URL-адрес более крупного изображения и возвращает результаты, содержащие URL-адреса поиска Bing и URL-адреса схожих изображений, найденных в Интернете.

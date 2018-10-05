@@ -1,30 +1,31 @@
 ---
-title: Краткое руководство по Azure Cognitive Services и API "Поиск видео Bing" для C# | Документация Майкрософт
-description: Получите информацию и примеры кода, которые помогут вам быстро приступить к работе с API "Поиск видео Bing", входящим в состав Microsoft Cognitive Services в Azure.
+title: 'Краткое руководство: API Bing для поиска видео с использованием C#'
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска видео.
 services: cognitive-services
-documentationcenter: ''
 author: v-jerkin
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 9/21/2017
 ms.author: v-jerkin
-ms.openlocfilehash: 0686d99b5f6f7b0546fc4e8c24369957667a7da6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 00522ac87a74226c9af1920bd884792ff2956a95
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382129"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225775"
 ---
-# <a name="quickstart-for-bing-video-search-api-with-c"></a>Краткое руководство по API "Поиск видео Bing" с использованием C#
+# <a name="quickstart-bing-video-search-api-with-c"></a>Краткое руководство: API Bing для поиска видео с использованием C#
 
-В этой статье показано, как использовать API "Поиск видео Bing", входящий в состав Microsoft Cognitive Services в Azure. Хотя эта статья посвящена языку C#, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
+В этой статье показано, как использовать API Bing для поиска видео, входящий в состав Cognitive Services в Azure. Хотя в статье представлены сведения для языка C#, этот API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
 
 Пример кода написан на языке C# как приложение .NET Core с минимальными внешними зависимостями, поэтому его также можно запустить в Linux или Mac OS X с помощью Mono.
 
-Технические сведения об интерфейсах API приведены в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
+Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
@@ -34,7 +35,7 @@ ms.locfileid: "35382129"
 
 1. В Visual Studio (подойдет выпуск Community Edition) создайте консольное приложение.
 1. Замените файл Program.cs кодом, указанным ниже.
-1. Замените значение `accessKey` действительным ключом доступа для своей подписки.
+1. Замените значение `accessKey` ключом доступа, допустимым для подписки.
 1. Запустите программу.
 
 ```csharp

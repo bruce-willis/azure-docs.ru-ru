@@ -7,17 +7,17 @@ manager: carmonm
 editor: tysonn
 ms.service: monitoring
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/11/2018
+ms.date: 09/27/2018
 ms.author: bwren
-ms.openlocfilehash: d71dc77eac89fef3ae7f8aeb69a05197456ac865
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 19a611ca88310f06503bea2b8606699fe3e1c709
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46962936"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47406046"
 ---
 # <a name="monitoring-data-collected-by-azure-monitor"></a>Данные мониторинга, собираемые службой Azure Monitor
 [Azure Monitor](../azure-monitor/overview.md) — это служба, которая позволяет отслеживать приложения и ресурсы, используемые этими приложениями. Основное назначение этой функции — хранение данных телеметрии и других данных, получаемых из отслеживаемых ресурсов. В этой статье подробно описано, как служба Azure Monitor хранит и использует эти данные.
@@ -155,7 +155,7 @@ ms.locfileid: "46962936"
 Ниже перечислены задачи, которые можно выполнить над журналами.
 
 - На [странице Log Analytics](../log-analytics/query-language/get-started-analytics-portal.md) на портале Azure можно создавать запросы для анализа данных журнала.  Закреплять результаты, отображаемые в виде таблиц или диаграмм, на [панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
-- Настраивать [правила оповещения журнала](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md), которые отправляют уведомления или выполняют [автоматические действия](../monitoring-and-diagnostics/monitoring-action-groups.md), когда результаты запроса соответствуют определенному результату.
+- Настраивать [правила оповещения журнала](../monitoring-and-diagnostics/alert-log.md), которые отправляют уведомления или выполняют [автоматические действия](../monitoring-and-diagnostics/monitoring-action-groups.md), когда результаты запроса соответствуют определенному результату.
 - С помощью [Logic Apps]() можно создать рабочий процесс на основании данных в службе Log Analytics.
 - Экспортировать результаты запроса в [Power BI](../log-analytics/log-analytics-powerbi.md), чтобы можно было использовать разные типы визуализации и делиться этими результатами с пользователями за пределами Azure.
 - Получать доступ к значениям метрик из командной строки или пользовательского приложения с помощью [командлетов PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/?view=azurermps-6.8.1) или [REST API](https://dev.loganalytics.io/).
@@ -175,7 +175,7 @@ ms.locfileid: "46962936"
 ### <a name="logs-to-metrics"></a>Передача журналов в метрики
 Как было сказано выше, метрики реагируют быстрее, чем журналы, позволяя создавать оповещения с меньшими задержками и затратами. Служба Log Analytics собирает значительное количество числовых данных, которые подходят для метрик, но не хранятся в хранилище метрик Azure.  Распространенным примером являются данные о производительности, полученные от агентов и решений по управлению. Некоторые из этих значений можно скопировать в хранилище метрик, где они будут доступны для оповещений и анализа с помощью обозревателя метрик.
 
-Описание этой функции приведено в записи блога [Faster Metric Alerts for Logs now in public preview](https://azure.microsoft.com/blog/faster-metric-alerts-for-logs-now-in-limited-public-preview/) (Быстро создаваемые оповещения на основе метрик для журналов находятся в режиме ограниченной общедоступной версии). Список поддерживаемых значений см. в статье [Введение](../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md).
+Описание этой возможности приведено в статье [Создание оповещений о метриках для журналов в Azure Monitor](../monitoring-and-diagnostics/monitoring-metric-alerts-logs.md). Со списком поддерживаемых значений можно ознакомиться в статье [Метрики, поддерживаемые Azure Monitor](../monitoring-and-diagnostics/monitoring-supported-metrics.md#microsoftoperationalinsightsworkspaces).
 
 ## <a name="stream-data-to-external-systems"></a>Потоковая передача данных во внешние системы
 Помимо анализа данных мониторинга с помощью средств Azure вам может потребоваться перенаправлять их во внешнее средство, например продукт для управления информационной безопасностью и событиями безопасности (SIEM). Такое перенаправление обычно выполняют непосредственно из отслеживаемых ресурсов через [Центры событий Azure](https://docs.microsoft.com/azure/event-hubs/). 

@@ -1,22 +1,23 @@
 ---
-title: Пакетное тестирование приложения LUIS в Azure | Документы Майкрософт
-description: Используйте пакетное тестирование службы "Распознавание речи" LUIS для поиска фрагментов речи с неправильными намерениями и сущностями.
+title: Пакетное тестирование с 1000 примерами высказываний
+titleSuffix: Azure Cognitive Services
+description: Использование наборов высказываний для пакетного тестирования Интеллектуальной службы распознавание речи (LUIS) для поиска фрагментов речи с неправильными намерениями и сущностями.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/14/2018
+ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: 07c38aa5f66fc8c38392c5407449ec6911e80d47
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: b4c58a13c8b66add8ebd7e535ecac9d7b0f1075b
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42888632"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47032127"
 ---
-# <a name="batch-testing"></a>Пакетное тестирование
+# <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
  Пакетное тестирование представляет собой комплексный тест текущей обученной модели для оценки ее производительности в LUIS. 
 
 <a name="batch-testing"></a>
@@ -27,8 +28,6 @@ ms.locfileid: "42888632"
     ![Ссылка на пакетное тестирование](./media/luis-how-to-batch-test/batch-testing-link.png)
 
 2. Нажмите кнопку **Import dataset** (Импортировать набор данных). Откроется диалоговое окно **Import new dataset** (Импорт нового набора данных). Нажмите кнопку **Выбрать файл** и расположите JSON-файл с правильным [форматом JSON](luis-concept-batch-test.md#batch-file-format) содержащий *не более 1000* высказываний для тестирования.
-
-    ![Импорт файла набора данных](./media/luis-how-to-batch-test/batchtest-importset.png)
 
     Ошибки импорта выводятся в красной строке уведомлений в верхней части браузера. Если при импорте возникают ошибки, набор данных не создается. Дополнительные сведения см. в разделе об [общих ошибках](luis-concept-batch-test.md#common-errors-importing-a-batch).
 

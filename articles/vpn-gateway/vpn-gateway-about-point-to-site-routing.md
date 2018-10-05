@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/16/2018
 ms.author: anzaman
-ms.openlocfilehash: a0576e00d22b731f7ee9de3a9b021c0f52fc8ef9
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 620a2bf9221bdb7c46dc36a2b3ed23d853faff35
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34702182"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47031726"
 ---
 # <a name="about-point-to-site-vpn-routing"></a>Сведения о маршрутизации VPN-подключений типа "точка — сеть"
 
@@ -148,7 +148,7 @@ ms.locfileid: "34702182"
 
 В этом примере подключение VPN-шлюза типа "точка — сеть" предназначено для VNet1. Сеть VNet1 не подключена к какой-либо другой виртуальной сети и не участвует в пиринге виртуальных сетей, но подключена к локальному сайту посредством VPN-подключения типа "сеть — сеть" без использования протокола BGP.
 
-Клиенты Windows имеют доступ к сети VNet1 и филиалу (Site1), но маршруты к сайту Site1 необходимо добавить в клиент вручную. Клиенты не под управлением Windows имеют доступ к сети VNet1, а также к локальному сайту Site1.
+Клиенты под управлением Windows и других ОС могут осуществлять доступ только к VNet1.
 
 ![Маршрутизация для виртуальной сети и филиала](./media/vpn-gateway-about-point-to-site-routing/5.jpg "routing with a VNet and a branch office")
 
@@ -162,7 +162,7 @@ ms.locfileid: "34702182"
 
 * Маршруты, добавленные в клиенты Windows: 10.1.0.0/16, 192.168.0.0/24.
 
-* Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.101.0.0/16, 192.168.0.0/24.
+* Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 192.168.0.0/24.
 
 ### <a name="access"></a>Access
 

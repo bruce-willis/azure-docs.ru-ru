@@ -12,15 +12,15 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 06/08/2018
 ms.author: brenduns
 ms.reviewer: anwestg
-ms.openlocfilehash: 4ee333fcc50937679c4bc25b83c2d6aa389ba194
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 4945ab0b8da961fc5739388d83f7c645f40e510d
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359600"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47093067"
 ---
 # <a name="configure-deployment-sources"></a>Настройка источников развертывания
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*

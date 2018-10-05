@@ -11,19 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/02/2018
+ms.date: 09/27/2018
 ms.author: jeffgilb
-ms.reviewer: jeffgo
-ms.openlocfilehash: bccc2dcad8e326cd29cfe031a95a7c2d0cf5ec7f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.reviewer: quying
+ms.openlocfilehash: b11ce8bbbf4b270f7a3b9689f95b0cbfca3b14c9
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38302319"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47408884"
 ---
 # <a name="add-hosting-servers-for-the-mysql-resource-provider"></a>Добавление серверов размещения для поставщика ресурсов MySQL
 
 Вы можете разместить экземпляр MySQL на виртуальной машине в [Azure Stack](azure-stack-poc.md) или на виртуальной машине за пределами среды Azure Stack при условии, что поставщик ресурсов MySQL может подключаться к этому экземпляру.
+
+> [!NOTE]
+> Базы данных MySQL следует создавать на сервере поставщика ресурсов MySQL. Поставщик ресурсов MySQL необходимо создать в подписке поставщика по умолчанию, а серверы размещения MySQL — в оплачиваемой пользовательской подписке. Сервер поставщика ресурсов не следует использовать для размещения баз данных пользователя.
 
 Для серверов размещения можно использовать версии MySQL 5.6, 5.7 и 8.0. Поставщик ресурсов MySQL не поддерживает проверку подлинности caching_sha2_password. Она будет добавлена в следующем выпуске. Серверы MySQL 8.0 должны быть настроены для использования mysql_native_password. Также поддерживается MariaDB.
 
@@ -32,8 +35,8 @@ ms.locfileid: "38302319"
 Убедитесь, что у вас есть учетные данные для учетной записи с правами системного администратора. Чтобы добавить сервер размещения, выполните следующие действия.
 
 1. Войдите на портал оператора Azure Stack в качестве администратора служб.
-2. Выберите **Больше служб**.
-3. Щелкните **Ресурсы администрирования** > **MySQL Hosting Servers (Серверы размещения MySQL)** > **+Добавить**. Откроется диалоговое окно **Add a MySQL Hosting Server** (Добавить сервер размещения MySQL), показанное на следующем снимке экрана.
+2. Выбор пункта **Все службы**.
+3. В категории **ADMINISTRATIVE RESOURCES** (Административные ресурсы) выберите **MySQL Hosting Servers** > **+Add** (Серверы размещения MySQL > +Добавить). Откроется диалоговое окно **Add a MySQL Hosting Server** (Добавить сервер размещения MySQL), показанное на следующем снимке экрана.
 
    ![Настройка сервера размещения](./media/azure-stack-mysql-rp-deploy/mysql-add-hosting-server-2.png)
 

@@ -1,22 +1,23 @@
 ---
-title: Общие сведения о хранении данных в службе LUIS в Azure | Документы Майкрософт
-description: Узнайте, как хранятся данные в службе LUIS.
+title: Хранение данных в LUIS — Интеллектуальная служба распознавания речи
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как хранятся данные в службе "Распознавание речи" (LUIS). LUIS хранит данные в зашифрованном виде в хранилище данных Azure, соответствующем региону, который указан ключом.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 05/08/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: e4e289db0803a127bdbff5122095ae2125cdbb38
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 6d42246b3078e0f4684dfe29bca720e8f8d779cd
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226198"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47034711"
 ---
-# <a name="data-storage-and-removal"></a>Хранение и удаление данных
+# <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Хранение и удаление данных в службе "Распознавание речи" (LUIS) Cognitive Services
 LUIS хранит данные в зашифрованном виде в хранилище данных Azure, соответствующем региону, который указан ключом. Эти данные хранятся в течение 30 дней. 
 
 ## <a name="export-and-delete-app"></a>Экспорт и удаление приложения

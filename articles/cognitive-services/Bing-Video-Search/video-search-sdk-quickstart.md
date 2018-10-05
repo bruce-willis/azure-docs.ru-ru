@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для API "Поиск видео" для C# | Документация Майкрософт
-description: Установка компонентов консольного приложения пакета SDK для API "Поиск видео".
-titleSuffix: Azure cognitive services setup News search SDK C# console application
+title: 'Краткое руководство: пакет SDK для поиска видео Bing, C#'
+titleSuffix: Azure Cognitive Services
+description: Настройка консольного приложения, использующего пакет SDK для поиска видео Bing.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 01/29/2018
-ms.author: v-gedod
-ms.openlocfilehash: f53e2d0f0052ccfabb6d750556cb532f069c9121
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 6cf7a16fa28602e5e3733741db8bfb7296882487
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382620"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47219946"
 ---
-# <a name="video-search-sdk-c-quickstart"></a>Краткое руководство по пакету SDK для API "Поиск видео" для C#
+# <a name="quickstart-bing-video-search-sdk-with-c"></a>Краткое руководство: пакет SDK для поиска видео Bing с использованием C# 
 
 Пакет SDK для API "Поиск видео Bing" содержит функции REST API для обработки веб-запросов и анализа результатов.
 

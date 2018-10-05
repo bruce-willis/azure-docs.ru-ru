@@ -1,20 +1,21 @@
 ---
-title: Управление подпиской конечной точки Azure | Документы Майкрософт
+title: Конечная точка управления подписками в LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье рассматривается создание ключа конечной точки с тарифным планом для учетной записи LUIS для обеспечения неограниченного трафика на конечную точку, а затем плана оплаты.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/21/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 0b735499ae589e44c2ce5076fce38ec47ddd69c7
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: c7c6009d9fec14e8633a37e5384dd203f2f5fa60
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39223285"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47040386"
 ---
 # <a name="manage-azure-endpoint-subscription-keys"></a>Управление ключами подписки конечной точки Azure
 
@@ -27,7 +28,7 @@ ms.locfileid: "39223285"
 ## <a name="create-luis-endpoint-key"></a>Создание ключа конечной точки LUIS
 
 1. Войдите в **[Microsoft Azure](https://ms.portal.azure.com/)**. 
-2. Щелкните зеленый знак **+** в верхней левой панели и выполните поиск LUIS на сайте Marketplace, затем щелкните **Language Understanding** и выполните шаги **мастера создания**, чтобы создать учетную запись подписки LUIS. 
+2. Щелкните зеленый знак **+** вверху слева и найдите LUIS на сайте Marketplace. Затем щелкните **Распознавание речи** и выполните инструкции **мастера создания**, чтобы создать учетную запись подписки LUIS. 
 
     ![Поиск Azure](./media/luis-azure-subscription/azure-search.png) 
 
@@ -40,8 +41,7 @@ ms.locfileid: "39223285"
     ![Ключи Azure](./media/luis-azure-subscription/azure-keys.png)
 
     > [!Note] 
-    > * Войдите на веб-сайт [LUIS](luis-reference-regions.md) в вашем регионе и [добавьте новый ключ конечной точки LUIS](luis-how-to-manage-keys.md#assign-endpoint-key). 
-    > * Вам потребуется запомнить имя созданной службы Azure, чтобы выбрать его на странице публикации [LUIS](luis-reference-regions.md) в регионе.  
+    > Войдите на веб-сайт [LUIS](luis-reference-regions.md) в вашем регионе и [назначьте новый ключ конечной точки LUIS](luis-how-to-manage-keys.md#assign-endpoint-key). Вам понадобится имя подписки LUIS из шага 3.
 
 ## <a name="change-luis-pricing-tier"></a>Изменение ценовой категории LUIS
 

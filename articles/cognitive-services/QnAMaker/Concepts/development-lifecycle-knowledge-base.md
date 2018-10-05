@@ -1,21 +1,21 @@
 ---
-title: Жизненный цикл разработки базы знаний с использованием Microsoft Cognitive Services | Документация Майкрософт
-titleSuffix: Azure
-description: Жизненный цикл разработки базы знаний
+title: Жизненный цикл разработки базы знаний — QnA Maker
+titleSuffix: Azure Cognitive Services
+description: QnA Maker лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам.
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 04/21/2018
-ms.author: saneppal
-ms.openlocfilehash: 9ecdd2c7823eed145621b214690eff7681065507
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: 5af829b3355c6d68bace959b66f9511877d08b83
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35383230"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47040920"
 ---
 # <a name="knowledge-base-lifecycle"></a>Жизненный цикл базы знаний
 QnA Maker лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам. 

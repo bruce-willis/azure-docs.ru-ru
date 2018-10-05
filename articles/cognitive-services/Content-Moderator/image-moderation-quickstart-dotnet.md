@@ -1,24 +1,26 @@
 ---
-title: 'Azure Content Moderator: модерация изображений с использованием .NET | Документация Майкрософт'
-description: Описывается, как модерировать изображения с использованием пакета SDK Azure Content Moderator для .NET.
+title: Краткое руководство по модерации изображений в Content Moderator с помощью .NET
+titlesuffix: Azure Cognitive Services
+description: Как модерировать изображения с использованием пакета SDK Content Moderator для .NET.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
-ms.date: 01/04/2018
+ms.topic: quickstart
+ms.date: 09/10/2018
 ms.author: sajagtap
-ms.openlocfilehash: cc2329c233029a1ff6bd82da3d090c4e98a8bac8
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: d89d9b8a2e3b00155e82cc28105007ab39fc549c
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380229"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47226170"
 ---
-# <a name="moderate-images-using-net"></a>Модерация изображений с помощью .NET
+# <a name="quickstart-moderate-images-using-net"></a>Краткое руководство по модерации изображений с помощью .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с пакетом SDK Content Moderator для .NET в следующих целях: 
+В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи: 
+
 - проверка изображения на наличие содержимого для взрослых или неприличного содержимого;
 - обнаружение и извлечение текста из изображения;
 - определение лиц на изображении.
@@ -27,8 +29,8 @@ ms.locfileid: "35380229"
 
 ## <a name="sign-up-for-content-moderator-services"></a>Регистрация в службах Content Moderator
 
-Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
-Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
+Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ API и узнать регион учетной записи API.
+Чтобы зарегистрироваться в Content Moderator и получить эти сведения, ознакомьтесь с [этим кратким руководством](quick-start.md).
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -36,30 +38,78 @@ ms.locfileid: "35380229"
 
    В примере кода назовите проект **ImageModeration**.
 
-1. Выберите этот проект единственным запускаемым проектом для решения.
+1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
 
-1. Добавьте ссылку на сборку проекта **ModeratorHelper**, созданную вами в [кратком руководстве по вспомогательному клиенту Content Moderator](content-moderator-helper-quickstart-dotnet.md).
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
 Установите следующие пакеты NuGet:
 
-- Microsoft.Azure.CognitiveServices.ContentModerator
+- Microsoft.Azure.CognitiveServices.ContentModerator;
 - Microsoft.Rest.ClientRuntime
-- Newtonsoft.Json
+- Newtonsoft.Json.
 
 ### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
-Измените инструкции using программы.
+Измените инструкции using в вашей программе.
 
+    using Microsoft.Azure.CognitiveServices.ContentModerator;
     using Microsoft.CognitiveServices.ContentModerator;
     using Microsoft.CognitiveServices.ContentModerator.Models;
-    using ModeratorHelper;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Threading;
+
+### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
+
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
+
+> [!IMPORTANT]
+> Укажите в полях **AzureRegion** и **CMSubscriptionKey** значения идентификатора региона и ключа подписки соответственно.
+
+    /// <summary>
+    /// Wraps the creation and configuration of a Content Moderator client.
+    /// </summary>
+    /// <remarks>This class library contains insecure code. If you adapt this 
+    /// code for use in production, use a secure method of storing and using
+    /// your Content Moderator subscription key.</remarks>
+    public static class Clients
+    {
+        /// <summary>
+        /// The region/location for your Content Moderator account, 
+        /// for example, westus.
+        /// </summary>
+        private static readonly string AzureRegion = "YOUR API REGION";
+
+        /// <summary>
+        /// The base URL fragment for Content Moderator calls.
+        /// </summary>
+        private static readonly string AzureBaseURL =
+            $"https://{AzureRegion}.api.cognitive.microsoft.com";
+
+        /// <summary>
+        /// Your Content Moderator subscription key.
+        /// </summary>
+        private static readonly string CMSubscriptionKey = "YOUR API KEY";
+
+        /// <summary>
+        /// Returns a new Content Moderator client for your subscription.
+        /// </summary>
+        /// <returns>The new client.</returns>
+        /// <remarks>The <see cref="ContentModeratorClient"/> is disposable.
+        /// When you have finished using the client,
+        /// you should dispose of it either directly or indirectly. </remarks>
+        public static ContentModeratorClient NewClient()
+        {
+            // Create and initialize an instance of the Content Moderator API wrapper.
+            ContentModeratorClient client = new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey));
+
+            client.Endpoint = AzureBaseURL;
+            return client;
+        }
+    }
 
 ### <a name="initialize-application-specific-settings"></a>Инициализация параметров приложения
 
@@ -403,4 +453,4 @@ ms.locfileid: "35380229"
 
 ## <a name="next-steps---get-the-source-code"></a>Дальнейшие действия: получение исходного кода
 
-[Скачайте решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) с этим и другими краткими руководствами по Content Moderator для .NET и приступите к интеграции.
+Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

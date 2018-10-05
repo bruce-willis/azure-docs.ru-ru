@@ -1,21 +1,22 @@
 ---
-title: Рекомендации по транскрибированию для Пользовательской службы распознавания речи в Azure | Документация Майкрософт
-description: Узнайте, как подготовить данные для Пользовательской службы распознавания речи в Cognitive Services.
+title: Рекомендации по транскрибированию — Пользовательская служба распознавания речи
+titlesuffix: Azure Cognitive Services
+description: Сведения о подготовке данных для Пользовательской службы распознавания речи.
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/08/2017
 ms.author: panosper
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2772665107f94a273731d2147154e546225b22dd
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a5daca2dbb3fc792850264bca7d8b0c59e7c8faa
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46999738"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220624"
 ---
 # <a name="transcription-guidelines"></a>Рекомендации по транскрибированию
 Чтобы обеспечить максимальную эффективность использования текстовых данных для настройки акустической и языковой моделей, следует придерживаться рекомендаций по транскрибированию. Эти рекомендации зависят от языка.

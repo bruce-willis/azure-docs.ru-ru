@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 9/14/2018
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: 4c6aaea836302732b1af3d22923c965575cfc9d2
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1242cf80ffd283471eb507612949a81d4b3fd594
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47020478"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47401584"
 ---
 ### <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
 
@@ -27,7 +27,7 @@ ms.locfileid: "47020478"
 * теги FQDN;
 * правила фильтрации трафика;
 * поддержку исходящих данных SNAT;
-* поддержка DNAT;
+* Поддержка DNAT для входящего трафика
 * Централизованное создание, применение и регистрация политик приложений и сетевых подключений в подписках Azure и виртуальных сетях.
 * Полная интеграция с Azure Monitor для ведения журналов и аналитики. 
 
@@ -101,6 +101,9 @@ $publicip = Get-AzureRmPublicIpAddress -Name "Public IP Name" -ResourceGroupName
 $azfw.Allocate($vnet,$publicip)
 Set-AzureRmFirewall -AzureFirewall $azfw
 ```
+
+> [!NOTE]
+> Необходимо переместить брандмауэр или общедоступный IP-адрес в исходную группу ресурсов или подписку.
 
 ### <a name="what-are-the-known-service-limits"></a>Каковы известные ограничения службы?
 

@@ -12,15 +12,15 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/28/2018
+ms.date: 09/24/2018
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 6fcc7823a7e2f2f1e280622a1fa05d4417a71546
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: e4a913aaeb6eeb3c58b70dbcd714f1360875594f
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43143488"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161542"
 ---
 # <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство. Распаковка, подключение и разблокировка диска Azure Data Box
 
@@ -30,7 +30,9 @@ ms.locfileid: "43143488"
 
 > [!div class="checklist"]
 > * Распаковка диска Data Box.
-> * Подключение и разблокировка диска Data Box.
+> * Подключение к дискам и получение ключа доступа
+> * Разблокировка дисков на клиенте Windows
+> * Разблокировка дисков на клиенте Linux
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,12 +40,9 @@ ms.locfileid: "43143488"
 
 1. Вы изучили [Tutorial: Order an Azure Data Box Disk (Preview)](data-box-disk-deploy-ordered.md) (Руководство. Заказ диска Azure Data Box (предварительная версия)).
 2. Состояние ваших дисков и заданий на портале обновилось до **Доставлено**.
-3. У вас имеется главный компьютер, на котором можно установить средство разблокировки диска Data Box. На главном компьютере должно быть следующее ПО:
-    - [поддерживаемая операционная система](data-box-disk-system-requirements.md);
-    - [установлен Windows PowerShell 4](https://www.microsoft.com/download/details.aspx?id=40855);
-    - [установлена платформа .NET Framework 4.5.1](https://www.microsoft.com/download/details.aspx?id=30653);
-    - [включено шифрование диска BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-how-to-deploy-on-windows-server);
-    - [установлен пакет Windows Management Framework 4](https://www.microsoft.com/en-us/download/details.aspx?id=40855). 
+3. У вас есть клиентский компьютер, на котором можно установить средство разблокировки диска Data Box. На клиентском компьютере должны быть установлены:
+    - [поддерживаемая операционная система](data-box-disk-system-requirements.md#supported-operating-systems-for-clients);
+    - другое [необходимое программное обеспечение](data-box-disk-system-requirements.md#other-required-software-for-windows-clients), если это клиент Windows.  
 
 ## <a name="unpack-your-disks"></a>Распаковка дисков
 
@@ -60,22 +59,31 @@ ms.locfileid: "43143488"
 
 4. Сохраните коробку и упаковочный пеноматериал на случай обратной отправки дисков.
 
-## <a name="connect-and-unlock-your-disks"></a>Подключение и разблокировка дисков
+## <a name="connect-to-disks-and-get-the-passkey"></a>Подключение к дискам и получение ключа доступа 
 
-Выполните следующие действия для подключения и разблокировки дисков.
-
-1. Используйте прилагаемый кабель для подключения диска к компьютеру Windows с поддерживаемой ОС, как указано в предварительных требованиях. 
+1. Используйте прилагаемый кабель для подключения диска к клиентскому компьютеру с поддерживаемой ОС, как указано в предварительных требованиях. 
 
     ![Подключение диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-connect-unlock.png)    
     
-2. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. 
-3. Нажмите кнопку **Download Data Box Disk unlock tool** (Установить средство разблокировки диска Data Box). 
+2. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. Используйте значок копирования, чтобы скопировать ключ доступа. Этот ключ доступа будет использоваться для разблокировки дисков.
 
-    ![Загрузка средства разблокировки для диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-unload1.png)     
+    ![Ключ доступа для разблокировки диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-get-passkey.png) 
 
-4. Извлеките средство на тот же компьютер, который будет использоваться для копирования данных.
-5. Откройте окно командной строки или запустите Windows PowerShell от имени администратора на том же компьютере.
-6. (Необязательно). Чтобы убедиться, что компьютер, используемый для разблокировки диска, соответствует требованиям операционной системы, выполните команду проверки системы. Результат выполнения команды показан ниже. 
+В зависимости от того, подключены ли вы к клиенту Windows или Linux, действия по разблокировке дисков будут отличаться.
+
+## <a name="unlock-disks-on-windows-client"></a>Разблокировка дисков на клиенте Windows
+
+Выполните следующие действия для подключения и разблокировки дисков.
+     
+1. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. 
+2. Скачайте набор средств для диска Data Box, соответствующий клиенту Windows. 
+
+    > [!div class="nextstepaction"]
+    > [Скачать набор средств для диска Data Box для Windows](http://aka.ms/databoxdisktoolswin)         
+
+3. Извлеките средство на тот же компьютер, который будет использоваться для копирования данных.
+4. Откройте окно командной строки или запустите Windows PowerShell от имени администратора на том же компьютере.
+5. (Необязательно). Чтобы убедиться, что компьютер, используемый для разблокировки диска, соответствует требованиям операционной системы, выполните команду проверки системы. Результат выполнения команды показан ниже. 
 
     ```powershell
     Windows PowerShell
@@ -86,13 +94,12 @@ ms.locfileid: "43143488"
     PS C:\DataBoxDiskUnlockTool\DiskUnlock>
     ``` 
 
-7. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. Используйте значок копирования, чтобы скопировать ключ доступа.
-8. Кликните `DataBoxDiskUnlock.exe` и укажите ключ доступа. Отобразится буква диска, присвоенная диску. Результат выполнения команды показан ниже.
+6. Запустите `DataBoxDiskUnlock.exe` и укажите ключ доступа, полученный в разделе [Подключение к дискам и получение ключа доступа](#Connect-to-disks-and-get-the-passkey). Отобразится буква диска, присвоенная диску. Результат выполнения команды показан ниже.
 
     ```powershell
     PS C:\WINDOWS\system32> cd C:\DataBoxDiskUnlockTool\DiskUnlock
     PS C:\DataBoxDiskUnlockTool\DiskUnlock> .\DataBoxDiskUnlock.exe
-    Enter the passkeys (format: passkey1;passkey2;passkey3):
+    Enter the passkey :
     testpasskey1
     
     Following volumes are unlocked and verified.
@@ -101,26 +108,155 @@ ms.locfileid: "43143488"
     PS C:\DataBoxDiskUnlockTool\DiskUnlock>
     ```
 
-9. Повторите шаги 6–8 для любых будущих подключений дисков. Используйте команду справки, если требуется помощь со средством разблокировки диска Data Box.   
+7. Повторяйте шаги по разблокировке при любых будущих повторных вставках диска. Воспользуйтесь командой `help`, если требуется помощь со средством разблокировки диска Data Box.   
 
     ```powershell
     PS C:\DataBoxDiskUnlockTool\DiskUnlock> .\DataBoxDiskUnlock.exe /help
     USAGE:
-    DataBoxUnlock /PassKeys:<passkey_list_separated_by_semicolon>
+    DataBoxUnlock /PassKey:<passkey_from_Azure_portal>
     
-    Example: DataBoxUnlock /PassKeys:<your passkey>
+    Example: DataBoxUnlock /PassKey:<your passkey>
     Example: DataBoxUnlock /SystemCheck
     Example: DataBoxUnlock /Help
     
-    /PassKeys:       Get this passkey from Azure DataBox Disk order. The passkey unlocks your disks.
+    /PassKey:        Get this passkey from Azure DataBox Disk order. The passkey unlocks your disks.
     /SystemCheck:    This option checks if your system meets the requirements to run the tool.
     /Help:           This option provides help on cmdlet usage and examples.
     
     PS C:\DataBoxDiskUnlockTool\DiskUnlock>
     ```  
-10. Когда диск будет разблокирован, можно просмотреть содержимое диска.    
+8. Когда диск будет разблокирован, можно просмотреть содержимое диска.    
 
     ![Содержимое диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-content.png) 
+
+## <a name="unlock-disks-on-linux-client"></a>Разблокировка дисков на клиенте Linux
+
+1. На портале Azure перейдите в раздел **Общие > Сведения об устройстве**. 
+2. Скачайте набор средств для диска Data Box, соответствующий клиенту Linux.  
+
+    > [!div class="nextstepaction"]
+    > [Скачать набор средств для диска Data Box для Linux](http://aka.ms/databoxdisktoolslinux) 
+
+3. На клиенте Linux откройте терминал. Перейдите в папку со скачанным программным обеспечением. Измените разрешения для файлов, чтобы можно было их выполнить. Введите следующую команду: 
+
+    `chmod +x DataBoxDiskUnlock_x86_64` 
+    
+    `chmod +x DataBoxDiskUnlock_Prep.sh` 
+ 
+    Результат выполнения команды показан ниже. Запустив команду chmod, убедитесь, что разрешения файлов изменены, выполнив команду `ls`. 
+ 
+    ```
+        [user@localhost Downloads]$ chmod +x DataBoxDiskUnlock_x86_64  
+        [user@localhost Downloads]$ chmod +x DataBoxDiskUnlock_Prep.sh   
+        [user@localhost Downloads]$ ls -l  
+        -rwxrwxr-x. 1 user user 1152664 Aug 10 17:26 DataBoxDiskUnlock_x86_64  
+        -rwxrwxr-x. 1 user user 795 Aug 5 23:26 DataBoxDiskUnlock_Prep.sh
+    ```
+4. Выполните скрипт, чтобы он установил все двоичные файлы, необходимые программному обеспечению для разблокировки диска Data Box. Используйте `sudo` для выполнения команды в качестве привилегированного пользователя (root). После успешной установки двоичных файлов вы увидите примечание об этом в окне терминала.
+
+    `sudo ./DataBoxDiskUnlock_Prep.sh`
+
+    Скрипт сначала проверит, работает ли на клиентском компьютере поддерживаемая операционная система. Результат выполнения команды показан ниже. 
+ 
+    ```
+    [user@localhost Documents]$ sudo ./DataBoxDiskUnlock_Prep.sh 
+        OS = CentOS Version = 6.9 
+        Release = CentOS release 6.9 (Final) 
+        Architecture = x64 
+    
+        The script will install the following packages and dependencies. 
+        epel-release 
+        dislocker 
+        ntfs-3g 
+        fuse-dislocker 
+        Do you wish to continue? y|n :|
+    ```
+    
+ 
+5. Введите `y`, чтобы продолжить установку. Скрипт устанавливает следующие пакеты: 
+    - **epel-release** — репозиторий, содержащий следующие три пакета. 
+    - **dislocker и fuse-dislocker** — эта служебная программа помогает расшифровать зашифрованные диски BitLocker. 
+    - **ntfs-3g** — пакет, который помогает подключать тома с файловой системой NTFS. 
+ 
+    После успешной установки пакетов в терминале отобразится соответствующее уведомление.     
+    ```
+    Dependency Installed: compat-readline5.x86 64 0:5.2-17.I.el6 dislocker-libs.x86 64 0:0.7.1-8.el6 mbedtls.x86 64 0:2.7.4-l.el6        ruby.x86 64 0:1.8.7.374-5.el6 
+    ruby-libs.x86 64 0:1.8.7.374-5.el6 
+    Complete! 
+    Loaded plugins: fastestmirror, refresh-packagekit, security 
+    Setting up Remove Process 
+    Resolving Dependencies 
+    --> Running transaction check 
+    ---> Package epel-release.noarch 0:6-8 will be erased --> Finished Dependency Resolution 
+    Dependencies Resolved 
+    Package        Architecture        Version        Repository        Size 
+    Removing:  epel-release        noarch         6-8        @extras        22 k 
+    Transaction Summary                                 
+    Remove        1 Package(s) 
+    Installed size: 22 k 
+    Downloading Packages: 
+    Running rpmcheckdebug 
+    Running Transaction Test 
+    Transaction Test Succeeded 
+    Running Transaction 
+    Erasing : epel-release-6-8.noarch 
+    Verifying : epel-release-6-8.noarch 
+    Removed: 
+    epel-release.noarch 0:6-8 
+    Complete! 
+    Dislocker is installed by the script. 
+    OpenSSL is already installed.
+    ```
+
+6. Запустите средство разблокировки диска Data Box. Укажите ключ доступа с портала Azure, полученный в разделе [Подключение к дискам и получение ключа доступа](#Connect-to-disks-and-get-the-passkey). При необходимости укажите список томов, зашифрованных BitLocker, чтобы разблокировать их. Ключ доступа и список томов следует указать в одинарных кавычках. 
+
+    Введите следующую команду.
+ 
+    `sudo ./DataBoxDiskUnlock_x86_64 /PassKey:’<Your passkey from Azure portal>’ /Volumes:’<list of volumes>’`         
+
+    Пример выходных данных показан ниже. 
+ 
+    ```
+    [user@localhost Downloads]$ sudo ./DataBoxDiskUnlock_x86_64 /Passkey:’qwerqwerqwer’ /Volumes:’/dev/sdbl’ 
+    
+    START: Mon Aug 13 14:25:49 2018 
+    Volumes: /dev/sdbl 
+    Passkey: qwerqwerqwer 
+    
+    Volumes for data copy : 
+    /dev/sdbl: /mnt/DataBoxDisk/mountVoll/ 
+    END: Mon Aug 13 14:26:02 2018
+    ```
+    Отображается точка подключения тома, на который можно скопировать данные.
+
+7. Повторяйте шаги по разблокировке диска при его будущих подключениях. Воспользуйтесь командой `help`, если требуется помощь со средством разблокировки диска Data Box. 
+    
+    `sudo ./DataBoxDiskUnlock_x86_64 /Help` 
+
+    Пример выходных данных показан ниже. 
+ 
+    ```
+    [user@localhost Downloads]$ sudo ./DataBoxDiskUnlock_x86_64 /Help  
+    START: Mon Aug 13 14:29:20 2018 
+    USAGE: 
+    sudo DataBoxDiskUnlock /PassKey:’<passkey from Azure_portal>’ 
+    
+    Example: sudo DataBoxDiskUnlock /PassKey:’passkey’ 
+    Example: sudo DataBoxDiskUnlock /PassKey:’passkey’ /Volumes:’/dev/sdbl’ 
+    Example: sudo DataBoxDiskUnlock /Help Example: sudo DataBoxDiskUnlock /Clean 
+    
+    /PassKey: This option takes a passkey as input and unlocks all of your disks. 
+    Get the passkey from your Data Box Disk order in Azure portal. 
+    /Volumes: This option is used to input a list of BitLocker encrypted volumes. 
+    /Help: This option provides help on the tool usage and examples. 
+    /Unmount: This option unmounts all the volumes mounted by this tool. 
+   
+    END: Mon Aug 13 14:29:20 2018 [user@localhost Downloads]$
+    ```
+    
+8. Когда диск будет разблокирован, можно перейти к точке подключения и просмотреть содержимое диска. Теперь все готово для копирования данных в папки *BlockBlob* или *PageBlob*. 
+
+    ![Содержимое диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-content-linux.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -128,7 +264,9 @@ ms.locfileid: "43143488"
 
 > [!div class="checklist"]
 > * Распаковка диска Data Box.
-> * Подключение и разблокировка диска Data Box
+> * Подключение к дискам и получение ключа доступа
+> * Разблокировка дисков на клиенте Windows
+> * Разблокировка дисков на клиенте Linux
 
 
 Перейдите к следующему руководству, чтобы узнать, как копировать данные на диск Data Box.

@@ -1,23 +1,23 @@
 ---
-title: Обучение приложения LUIS
+title: Обучение версии приложения LUIS
 titleSuffix: Azure Cognitive Services
-description: Обучение приложения службы "Распознавание речи" (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз.
+description: Обучение версии приложения Интеллектуальной службы распознавания речи (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/06/2018
+ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 42cff3dd8237598da5aa71ed1a4d6462c5b4c25d
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: f27716cc416b162a5b2df5542d709058f3b3e903
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44049137"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47182045"
 ---
-# <a name="train-your-luis-app"></a>Обучение приложения LUIS
+# <a name="train-your-luis-app-version"></a>Обучение версии приложения LUIS
 
 Обучение приложения службы "Распознавание речи" (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз. 
 
@@ -26,7 +26,7 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 
 Обучение и [тестирование](luis-concept-test.md) приложения — это итеративный процесс. Обученное приложение LUIS следует протестировать с использованием примеров фраз, чтобы проверить правильность распознавания намерений и сущностей. Если распознавание выполняется неправильно, внесите изменения в приложение, а затем обучите его и протестируйте еще раз. 
 
-## <a name="train-your-app"></a>Обучение приложения
+## <a name="how-to-train"></a>Обучение
 Чтобы начать итеративный процесс, необходимо сначала хотя бы один раз обучить приложение LUIS. Перед обучением убедитесь, что для каждого намерения имеется минимум одно высказывание.
 
 1. Откройте приложение, выбрав его имя на странице **Мои приложения**. 
@@ -39,6 +39,9 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 
 >[!NOTE]
 >Если в приложении есть одно или несколько намерений, которые не содержат примеров фраз, такое приложение обучить нельзя. Добавьте фразы для всех намерений. Дополнительные сведения см. в статье о [добавлении примеров фраз](luis-how-to-add-example-utterances.md).
+
+## <a name="train-with-all-data"></a>Обучение на основе всех данных
+При обучении используется небольшой процент отрицательных выборок. Если нужно использовать все данные вместо небольшой отрицательной выборки, используйте [API настройки версий](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с заданным для `UseAllTrainingData` значением true, чтобы отключить эту функцию. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

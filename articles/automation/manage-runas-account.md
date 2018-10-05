@@ -9,18 +9,18 @@ ms.author: gwallace
 ms.date: 09/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 32a7b7026df1522abe2ca3dc7b212b06e08ff905
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: a8821b2e1be10cddafba04109041e76ef65f6a6a
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45544283"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47433707"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
 Учетные записи запуска от имени в службе автоматизации Azure позволяют выполнять проверку подлинности для управления ресурсами в Azure с помощью командлетов Azure.
 
-При создании учетной записи запуска от имени в Azure Active Directory создается пользователь субъекта-службы и ему назначается роль участника на уровне подписки.
+При создании учетной записи запуска от имени в Azure Active Directory создается пользователь субъекта-службы и ему назначается роль участника на уровне подписки. Для модулей runbook, использующих гибридные рабочие роли Runbook на виртуальных машинах Azure, можно использовать [управляемые удостоверения для ресурсов Azure](automation-hrw-run-runbooks.md#managed-identities-for-azure-resources) вместо учетной записи запуска от имени для аутентификации при получении доступа к ресурсам Azure.
 
 Есть два типа учетных записей запуска от имени:
 

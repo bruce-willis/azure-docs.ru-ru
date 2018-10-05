@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/30/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 7cd19945e316ebc5462642006255103b4631ce29
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: 3a4e45aa2c1aca461ef32ebec2cfb50a470037ed
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39361407"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47060724"
 ---
 ### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Сколько конечных точек VPN-клиента можно настроить в конфигурации "точка — сеть"?
 
@@ -30,8 +30,7 @@ ms.locfileid: "39361407"
 * Windows Server 2012 R2 (только 64-разрядная версия)
 * Windows Server 2016 (только 64-разрядная версия)
 * Windows 10
-* Mac OS X версии 10.11 (El Capitan);
-* Mac OS X версии 10.12 (Sierra).
+* Mac OS X версии 10.11 или более поздней
 * Linux (StrongSwan)
 * iOS
 

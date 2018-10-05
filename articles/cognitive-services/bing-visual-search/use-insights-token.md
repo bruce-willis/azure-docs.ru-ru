@@ -1,21 +1,21 @@
 ---
-title: Использование токена аналитики с API Bing для визуального поиска | Документация Майкрософт
-titleSuffix: Bing Web Search APIs - Cognitive Services
-description: В этой статье показано, как использовать токен аналитики изображения с API Bing для визуального поиска для получения полезных сведений об изображении.
+title: Использование токена аналитических сведений — Визуальный поиск Bing
+titleSuffix: Azure Cognitive Services
+description: В этой статье показано, как использовать токен аналитических сведений об изображении с помощью API визуального поиска Bing для получения полезных сведений об изображении.
 services: cognitive-services
 author: swhite-msft
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: bing-visual-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: 569ae89a712d14fb36989e756f99725dce398c0a
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: e853545e07709d82fa1e3b1143392e6d6012f6f6
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126564"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227594"
 ---
 # <a name="using-an-insights-token-to-get-insights-about-an-image"></a>Получение полезных сведений об изображении с помощью токена аналитики
 

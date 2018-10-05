@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для визуального поиска для Python | Документы Майкрософт
-description: Установка компонентов консольного приложения пакета SDK для визуального поиска для Python.
+title: 'Краткое руководство: пакет SDK визуального поиска Bing, Python'
 titleSuffix: Azure Cognitive Services
+description: Установка компонентов консольного приложения пакета SDK для визуального поиска для Python.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: bing-web-search
-ms.topic: article
+ms.component: bing-visual-search
+ms.topic: quickstart
 ms.date: 06/11/2018
 ms.author: v-gedod
-ms.openlocfilehash: f7a1f275f9059abdceaef577fb5ca722c9951366
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 269eaccbf834646b540123dfeeeec7c569b8ced4
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36939418"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222647"
 ---
-# <a name="visual-search-sdk-python-quickstart"></a>Краткое руководство по пакету SDK для визуального поиска для Python
+# <a name="quickstart-bing-visual-search-sdk-python"></a>Краткое руководство: пакет SDK визуального поиска Bing для Python
 
 Пакет SDK для визуального поиска Bing содержит функции REST API для обработки веб-запросов и анализа результатов.
 [Исходный код примеров для пакета SDK для визуального поиска Bing для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/search/visual_search_samples.py) доступен на сайте GitHub.
@@ -32,7 +32,7 @@ ms.locfileid: "36939418"
 ## <a name="application-dependencies"></a>Зависимости приложения
 * Для проверки подлинности вызовов пакета SDК требуется ключ API Cognitive Services. Зарегистрируйтесь для получения [ключа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=search-api-v7). Ключ бесплатной пробной версии действует в течение семи дней с одним вызовом в секунду. Для производственной эксплуатации следует [приобрести ключ доступа](https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7). Ознакомьтесь также со [сведениями о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/visual/).
 * Если у вас не установлен язык Python, установите его. Пакет SDK совместим с Python 2.7, 3.3, 3.4, 3.5 и 3.6.
-* Общей рекомендацией для разработки на Python является использование [виртуальной среды](https://docs.python.org/3/tutorial/venv.html). Установите и инициализируйте виртуальную среду с помощью [модуля venv](https://pypi.python.org/pypi/virtualenv). Установите virtualenv для Python 2.7.
+* Общей рекомендацией для разработки на Python является использование [виртуального окружения](https://docs.python.org/3/tutorial/venv.html). Установите и инициализируйте виртуальное окружение с помощью [модуля venv](https://pypi.python.org/pypi/virtualenv). Установите virtualenv для Python 2.7.
 ```
 python -m venv mytestenv
 ```
@@ -108,7 +108,7 @@ with open(image_path, "rb") as image_fd:
 <a name="complete-console"></a> 
 ## <a name="complete-console-application"></a>Готовое консольное приложение
 
-Следующее консольное приложение выполняет ранее определенный запрос и анализирует результаты:
+Следующее консольное приложение выполняет ранее определенный запрос и анализирует результаты.
 ```
 import http.client, urllib.parse
 import json
@@ -178,7 +178,7 @@ with open(image_path, "rb") as image_fd:
 <a name="binary-crop"></a>
 ## <a name="image-binary-post-with-croparea"></a>Запрос POST с двоичным файлом изображения и объектом cropArea
 
-Следующий код отправляет двоичный файл изображения в тексте запроса POST, а также объект cropArea.  Затем он выводит токен imageInsightsToken, количество тегов, количество действий и первый тип действия.
+Ниже приведенный код отправляет двоичный файл изображения в тексте запроса POST, вместе с объектом cropArea.  Затем он выводит токен imageInsightsToken, количество тегов, количество действий и первый actionType.
 
 ```
 def search_image_binary_with_crop_area(client, sub_key, file_path):
@@ -227,7 +227,7 @@ def search_image_binary_with_crop_area(client, sub_key, file_path):
 <a name="knowledge-req"></a>
 ## <a name="knowledgerequest-parameter"></a>Параметр KnowledgeRequest
 
-Следующий код отправляет URL-адрес изображения в параметре `knowledgeRequest`, а также фильтр \"site:www.bing.com\". Затем он выводит `imageInsightsToken`, количество тегов, количество действий и первый тип действия.
+Приведенный ниже код отправляет URL-адрес изображения вместе с параметром `knowledgeRequest` и фильтром \"site:www.bing.com\". Затем с помощью кода будет выведено `imageInsightsToken`, количество тегов, количество действий и первый actionType.
 ```
 def search_url_with_filters(client_in, sub_key):
 
@@ -274,9 +274,9 @@ def search_url_with_filters(client_in, sub_key):
 
 ```
 <a name="tags-actions"></a>
-## <a name="tags-actions-and-actiontype"></a>Теги, действия и тип действия
+## <a name="tags-actions-and-actiontype"></a>Теги, действия и actionType
 
-Следующий код отправляет токен аналитики изображения в параметре knowledgeRequest, а также объект cropArea. Затем он выводит токен imageInsightsToken, количество тегов, количество действий и первый тип действия.
+Приведенный ниже код отправляет токен аналитики изображения параметру knowledgeRequest, вместе с объектом cropArea. Затем он выводит токен imageInsightsToken, количество тегов, количество действий и первый actionType.
 
 ```
     client = client_in
@@ -325,4 +325,4 @@ def search_url_with_filters(client_in, sub_key):
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Примеры для пакета SDK для .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7)
+[Примеры для пакета SDK для .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7).

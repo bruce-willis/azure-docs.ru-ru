@@ -32,13 +32,13 @@
 
 Чтобы создать для кластера пару ключей SSH RSA (открытый и закрытый), используемых для проверки подлинности виртуальных машин, можно воспользоваться стандартными средствами операционной системы. Пошаговые инструкции см. в руководстве для [OS X, Linux](../articles/virtual-machines/linux/mac-create-ssh-keys.md) или [Windows](../articles/virtual-machines/linux/ssh-from-windows.md). 
 
-Если для развертывания кластера службы контейнеров используются [команды Azure CLI 2.0](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md), то ключи SSH создаются автоматически.
+Если для развертывания кластера службы контейнеров используются [команды Azure CLI](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md), то ключи SSH создаются автоматически.
 
 ### <a name="how-do-i-create-a-service-principal-for-my-kubernetes-cluster"></a>Как создать субъект-службу для кластера Kubernetes?
 
 Чтобы создать кластер Kubernetes в Службе контейнеров Azure, требуется идентификатор и пароль субъекта-службы Azure Active Directory. Дополнительные сведения см. в статье [о субъекте-службе для кластера Kubernetes](../articles/container-service/kubernetes/container-service-kubernetes-service-principal.md).
 
-Если для развертывания кластера Kubernetes используются [команды Azure CLI 2.0](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md), то учетные данные субъекта-службы создаются автоматически.
+Если для развертывания кластера Kubernetes используются [команды Azure CLI](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md), то учетные данные субъекта-службы создаются автоматически.
 
 ### <a name="how-large-a-cluster-can-i-create"></a>Кластер какого размера можно создать?
 Можно создать кластер с 1, 3 или 5 основными узлами. Можно выбрать до 100 узлов агентов.
@@ -105,4 +105,4 @@ ssh userName@masterFQDN –A –p 22
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Узнайте больше о [Службе контейнеров Azure](../articles/container-service/kubernetes/container-service-intro-kubernetes.md).
-* Разверните кластер службы контейнеров с помощью [портала](../articles/container-service/dcos-swarm/container-service-deployment.md) или [Azure CLI 2.0](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md).
+* Разверните кластер службы контейнеров с помощью [портала](../articles/container-service/dcos-swarm/container-service-deployment.md) или [Azure CLI](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md).

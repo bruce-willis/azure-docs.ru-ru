@@ -1,47 +1,56 @@
 ---
-title: Добавление готовых намерений и сущностей для извлечения общих данных в службе "Распознавание речи" в Azure | Документация Майкрософт
-description: Узнайте, как использовать предварительно созданные намерения и сущности для извлечения различных типов данных сущностей.
+title: 'Руководство 2: Предварительно созданные намерения и сущности. Использование предварительно построенных общих высказывании. Извлечение общих данных в LUIS'
+titleSuffix: Azure Cognitive Services
+description: Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. Не нужно помечать высказывания с использованием предварительно созданных сущностей. Сущность определяется автоматически.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: luis
+ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 08/03/2018
+ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 0e45b659508c71a9f1220ef5e76b9a95438fa1e6
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: d42aed76ecdbc2bd840e17517db2ca0b6ba11aa0
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44162246"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47034439"
 ---
-# <a name="tutorial-2-add-prebuilt-intents-and-entities"></a>Учебник: 2. Добавление предварительно созданных намерений и сущностей
-Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. 
+# <a name="tutorial-2-identify-common-intents-and-entities"></a>Руководство 2: Определение общих намерений и сущностей
+В этом руководстве измените приложение "Управление персоналом". Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. Вам не нужно указывать какие-либо высказывания с заранее созданными сущностями, потому что они обнаруживаются автоматически.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+Предварительно созданные модели общих предметных доменов и типов данных дают возможность быстрого создания модели, а также привести пример того, как она выглядит. 
+
+**Из этого руководства вы узнали, как выполнять такие задачи:**
 
 > [!div class="checklist"]
-* Добавление предварительно созданных намерений 
-* Добавление предварительно созданных сущностей datetimeV2 и number
-* Обучение и публикация
-* Запрос LUIS и получение ответа прогнозирования
+> * Использовать существующее приложение из руководства
+> * Добавление предварительно созданных намерений 
+> * Добавление предварительно созданных сущностей 
+> * Train 
+> * Опубликовать 
+> * Получение намерений и сущностей из конечной точки
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения [Human Resources](luis-quickstart-intents-only.md), созданного в предыдущем руководстве, [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON из [репозитория GitHub с примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-intent-only-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
+## <a name="use-existing-app"></a>Использование существующего приложения
+Продолжите работу с приложением **Управление персоналом**, созданным в соответствии с инструкциями из предыдущего руководства. 
 
-Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `prebuilts`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
+Если у вас нет этого приложения сделайте следующее:
+
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-intent-only-HumanResources.json).
+
+2. Импортируйте JSON-файл в новое приложение.
+
+3. Из раздела **Управление** на вкладке **Версии**, скопируйте версию и назовите ее `prebuilts`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в составе URL-адреса, оно не должно содержать символы, недопустимые для URL-адресов. 
 
 ## <a name="add-prebuilt-intents"></a>Добавление предварительно созданных намерений
 В службе LUIS доступно несколько предварительно созданных намерений, что упрощает процедуру выбора.  
 
-1. Убедитесь, что приложение находится в разделе **Build** (Создание) службы LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
+1. [!include[Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
-2. Щелкните **Add prebuilt domain intent** (Добавить предварительно созданное намерение предметной области). 
-
-    [ ![Снимок экрана страницы намерений с выделенной кнопкой добавления предварительно созданного намерения предметной области](./media/luis-tutorial-prebuilt-intents-and-entities/add-prebuilt-domain-button.png) ](./media/luis-tutorial-prebuilt-intents-and-entities/add-prebuilt-domain-button.png#lightbox)
+2. Выберите **Добавление предварительно созданных намерений**. 
 
 3. Выполните поиск `Utilities`. 
 
@@ -61,33 +70,27 @@ LUIS предоставляет несколько предварительно 
 
 1. Выберите **Сущности** в меню навигации слева.
 
-    [ ![Снимок экрана со списком намерений, где кнопка "Сущности" выделена в меню навигации слева](./media/luis-tutorial-prebuilt-intents-and-entities/entities-navigation.png)](./media/luis-tutorial-prebuilt-intents-and-entities/entities-navigation.png#lightbox)
-
 2. Нажмите кнопку **Manage prebuilt entities** (Управление предварительно созданными сущностями).
-
-    [ ![Снимок экрана со списком списка "Сущности" с выделенной кнопкой "Manage prebuilt entities" (Управление предварительно созданными сущностями)](./media/luis-tutorial-prebuilt-intents-and-entities/manage-prebuilt-entities-button.png)](./media/luis-tutorial-prebuilt-intents-and-entities/manage-prebuilt-entities-button.png#lightbox)
 
 3. В списке предварительно созданных сущностей выберите **number** и **datetimeV2**, а затем нажмите кнопку **Done** (Готово).
 
     ![Снимок экрана выбора сущности number в диалоговом окне предварительно созданных сущностей](./media/luis-tutorial-prebuilt-intents-and-entities/select-prebuilt-entities.png)
 
-## <a name="train-and-publish-the-app"></a>Обучение и публикация приложения
+## <a name="train"></a>Train
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish-app-to-endpoint"></a>Публикация приложения в конечной точке
+## <a name="publish"></a>Опубликовать
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="query-endpoint-with-an-utterance"></a>Запрос конечной точки с высказыванием
+## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-2. Перейдите в конец URL-адреса и введите `I want to cancel on March 3`. Последний параметр строки запроса — `q`. Это **запрос** высказывания. 
+2. Перейдите в конец URL-адреса в адресной строке браузера и введите `I want to cancel on March 3`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
-    Результат прогнозируется в намерении Utilities.Cancel и извлекается дата "3 марта" и число 3. 
-
-    ```
+    ```JSON
     {
       "query": "I want to cancel on March 3",
       "topScoringIntent": {
@@ -162,15 +165,17 @@ LUIS предоставляет несколько предварительно 
     }
     ```
 
-    Для даты "3 марта" существует два значения, так как из высказывания неясно, находится ли 3 марта в прошлом или в будущем. Приложение, вызывающее LUIS, должно самостоятельно предположить, в прошлом или в будущем находится эта дата, а в случае необходимости — уточнить это. 
+    Результат прогнозируется в намерении Utilities.Cancel и извлекается дата "3 марта" и число 3. 
 
-    Легко и быстро добавляя предварительно созданные намерения и сущности, клиентское приложение может добавлять управление беседами и извлекать общие типы данных. 
+    Для даты "3 марта" существует два значения, так как из высказывания неясно, находится ли 3 марта в прошлом или в будущем. Клиентское приложение должно самостоятельно предположить, в прошлом или в будущем находится эта дата, а в случае необходимости — уточнить это. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
+
+Добавляя предварительно созданные намерения и сущности, клиентское приложение может определить общие намерения пользователя и извлекать общие типы данных. 
 
 > [!div class="nextstepaction"]
 > [Добавление сущности регулярного выражения в приложение](luis-quickstart-intents-regex-entity.md)

@@ -1,24 +1,26 @@
 ---
-title: Добавление данных LUIS в Application Insights с помощью C# | Документы Майкрософт
-titleSuffix: Azure
+title: Получение данных Application Insights из LUIS с использованием C#
+titleSuffix: Azure Cognitive Services
 description: Создание бота, интегрированного с приложением LUIS и Application Insights, с помощью C#.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/07/2018
+ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: f1efe305f5659bfab50cee13ac30d56531cc6093
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 83ad70e1242af1e01af06206a3a141f455072a44
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237797"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038958"
 ---
-# <a name="add-luis-results-to-application-insights-from-a-web-app-bot"></a>Добавление результатов LUIS в Application Insights из бота веб-приложения
-В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
+# <a name="add-luis-results-to-application-insights"></a>Добавление результатов распознавание речи с помощью LUIS в Application Insights
+В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS. 
+
+Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -231,7 +233,7 @@ Application Insights позволяет выполнять запросы дан
     ![Пользовательский отчет аналитики](./media/luis-tutorial-bot-csharp-appinsights/analytics-query-2.png)
 
 
-Дополнительные сведения о [языке запросов Kusto](https://docs.loganalytics.io/docs/Learn/Getting-Started/Getting-started-with-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
+Дополнительные сведения о [языке запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
 
 
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/25/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: b1f1c85cea9aa7c48478ef6ee1c9a4609a3df8e0
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: ff2a161cbc39cdb4cf35cad2b8bd403ef2d3260c
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43045132"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222173"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -156,7 +156,7 @@ ms.locfileid: "43045132"
 
 ### <a name="configure-the-local-intranet-settings-for-device-registration"></a>Настройка параметров локальной интрасети для регистрации устройств.
 
-Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов сертификатов при аутентификации этих устройств в Azure AD, можно отправить политику на присоединенные к домену устройства, добавив следующие URL-адреса в зону локальной интрасети в Internet Explorer.
+Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов сертификатов при аутентификации этих устройств в Azure AD, можно отправить на присоединенные к домену устройства политику для добавления следующих URL-адресов в зону локальной интрасети в Internet Explorer:
 
 - `https://device.login.microsoftonline.com`
 

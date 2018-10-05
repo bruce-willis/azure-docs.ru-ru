@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: 06b30d1381d8fba1d6f053576f6556e6d02f2ae9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: d873d28ec772735b8f21551cde1c7d0eab79a18c
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949168"
+ms.locfileid: "47035145"
 ---
 # <a name="log-analytics-faq"></a>Часто задаваемые вопросы по Log Analytics
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы о Log Analytics в Microsoft Azure. Если у вас возникли дополнительные вопросы о Log Analytics, задайте их на [форуме](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
@@ -69,6 +69,10 @@ ms.locfileid: "46949168"
 
 ### <a name="q-why-cant-i-cant-see-view-designer-entry-in-logs"></a>В. Почему я не вижу запись "Конструктор представлений" в журналах? 
 О. Конструктор представлений доступен только в журналах для пользователей, которым назначены разрешения участника или роли с большими правами.
+
+### <a name="q-can-i-still-use-the-analytics-portal-outside-of-azure"></a>В. Я по-прежнему могу использовать портал аналитики, который не относится к Azure?
+О. Да, страница Журналы в Azure и портал [Advanced Analytics](https://portal.loganalytics.io) основаны на одном и том же коде. Log Analytics интегрируется в качестве компонента в Azure Monitor, чтобы сделать мониторинг более унифицированным. Вы по-прежнему можете использовать портал Advanced Analytics, расположенный по адресу https://portal.loganalytics.io/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/workspaces/{workspaceName}.
+
 
 
 ## <a name="general"></a>Общие сведения

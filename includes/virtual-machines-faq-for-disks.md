@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/03/2018
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: c0c215c4c599bbd5551891cdf6f999719983d31e
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 7208eb112b5f4a5b458c0374541dff113906aa0c
+ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47060481"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47185775"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -144,6 +144,9 @@ ms.locfileid: "47060481"
 
 <a id="standard-ssds-azure-regions"></a>**В каких регионах в настоящее время поддерживаются диски SSD уровня "Стандартный"?**
 Все регионы Azure поддерживают диски SSD уровня "Стандартный".
+
+**Доступна ли служба Azure Backup при использовании дисков SSD (ценовая категория "Стандартный")?**
+Нет, служба Azure Backup пока недоступна.
 
 **Как можно создать диски SSD уровня "Стандартный"?**
 Диски SSD уровня "Стандартный" можно создавать, используя шаблоны Azure Resource Manager, пакет SDK, PowerShell или CLI. Ниже приведены параметры, которые необходимо указать в шаблоне Resource Manager для создания дисков SSD категории "Стандартный".

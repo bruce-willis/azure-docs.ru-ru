@@ -1,24 +1,25 @@
 ---
-title: 'Azure Content Moderator: создание проверок видео с помощью .NET | Документация Майкрософт'
-description: Описывается, как создавать проверки видео с помощью пакета SDK Azure Content Moderator для .NET.
+title: Создание проверок видео с помощью .NET в Content Moderator
+titlesuffix: Azure Cognitive Services
+description: Как создавать проверки видео с помощью пакета SDK Azure Content Moderator для .NET.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/18/2018
 ms.author: sajagtap
-ms.openlocfilehash: fe321d08a44e7f843228668908c8b2c4ff3a3c32
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 284ee24bbb0a15d107acf85e2d58072a0ecbbc6e
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "41929856"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47219046"
 ---
 # <a name="create-video-reviews-using-net"></a>Создание проверок видео с помощью .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут быстро приступить к работе с пакетом SDK Content Moderator для C# и выполнить следующие задачи:
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 
 - создание проверки видео для модераторов-пользователей;
 - добавление кадров в проверку;
@@ -32,11 +33,22 @@ ms.locfileid: "41929856"
 
 В этой статье также предполагается, что вы уже работали с Visual Studio и C#.
 
-### <a name="sign-up-for-content-moderator-services"></a>Регистрация в службах Content Moderator
+## <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator
 
 Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
+Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
 
-На панели мониторинга Content Moderator вы можете узнать свой ключ подписки, последовательно выбрав **Settings** (Параметры)  >  **Credentials** (Учетные данные)  >  **API**  >  **Trial Ocp-Apim-Subscription-Key** (Ключ подписки для пробной версии). Дополнительные сведения см. в этом [обзоре](overview.md).
+## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Регистрация учетной записи средства проверки (если не сделано на предыдущем этапе)
+
+Если вы получили Content Moderator на портале Azure, [зарегистрируйте учетную запись средства проверки](https://contentmoderator.cognitive.microsoft.com/) и создайте команду проверки. Чтобы вызывать API проверки для запуска заданий и просматривать результаты в средстве проверки, вам понадобится идентификатор команды и средство проверки.
+
+## <a name="ensure-your-api-key-can-call-the-review-api-for-review-creation"></a>Проверка, может ли ключ API вызвать API проверки для создания соответствующих заданий
+
+Если вы начали с портала Azure, после выполнения предыдущих шагов у вас может получиться два ключа Content Moderator. 
+
+Если в своем примере пакета SDK вы планируете использовать ключ API, предоставленный платформой Azure, выполните [эти действия](review-tool-user-guide/credentials.md#use-the-azure-account-with-the-review-tool-and-review-api), чтобы разрешить приложению вызывать API проверки и создавать соответствующие задания.
+
+Если вы используете бесплатный пробный ключ, сгенерированный средством проверки, ваша учетная запись средства проверки уже знает об этом ключе, поэтому никакие дополнительные действия не требуются.
 
 ### <a name="prepare-your-video-and-the-video-frames-for-review"></a>Подготовка видео и кадров видео к проверке
 
@@ -118,9 +130,9 @@ ms.locfileid: "41929856"
             /// </summary>
             /// <remarks>This must be the team name you used to create your 
             /// Content Moderator account. You can retrieve your team name from
-            /// the Conent Moderator web site. Your team name is the Id associated 
+            /// the Content Moderator web site. Your team name is the Id associated 
             /// with your subscription.</remarks>
-            public static readonly string TeamName = "YOUR CONTENT MODERATOR TEAM ID";
+            private const string TeamName = "YOUR CONTENT MODERATOR TEAM ID";
 
             /// <summary>
             /// The base URL fragment for Content Moderator calls.
@@ -150,7 +162,7 @@ ms.locfileid: "41929856"
     {
         return new ContentModeratorClient(new ApiKeyServiceClientCredentials(CMSubscriptionKey))
         {
-            BaseUrl = AzureBaseURL
+            Endpoint = AzureBaseURL
         };
     }
 
@@ -391,7 +403,7 @@ ms.locfileid: "41929856"
 
             Console.WriteLine("Open your Content Moderator Dashboard and select Review > Video to see the review.");
             Console.WriteLine("Press any key to close the application.");
-            Console.Read();
+            Console.ReadKey();
         }
     }
 
@@ -536,8 +548,8 @@ ms.locfileid: "41929856"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET.
+
 Узнайте, как добавить [модерацию расшифровки](video-transcript-moderation-review-tutorial-dotnet.md) в проверку видео. 
 
 Ознакомьтесь с подробным руководством по разработке [полного решения для модерации видео](video-transcript-moderation-review-tutorial-dotnet.md).
-
-[Скачайте решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для работы с этим и другими краткими руководствами по Content Moderator для .NET .

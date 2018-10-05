@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/05/2018
+ms.date: 09/28/2018
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.openlocfilehash: 5a6dcddce3337989a7a34515570ac3277aa1edd5
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 09f5dbdb173e1613ed942391da7baaeb045654e4
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841936"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47452536"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -45,18 +45,20 @@ ms.locfileid: "43841936"
 
 Для регистрации Azure Stack в Azure необходимо следующее:
 
-- Идентификатор подписки Azure. Чтобы узнать этот идентификатор, войдите в Azure, щелкните **Больше служб** > **Подписки**, а затем выберите нужную подписку и найдите идентификатор подписки в разделе **Основные компоненты**.
+- Идентификатор подписки Azure. При регистрации поддерживаются только подписки на такие общие службы, как EA, CSP или CSPSS. Поставщикам служб шифрования необходимо решить [какую подписку использовать: CSP или CSPSS](azure-stack-add-manage-billing-as-a-csp.md#create-a-csp-or-cspss-subscription).<br><br>Чтобы получить идентификатор, войдите в Azure и щелкните **Все службы**. Затем в категории **Общие** выберите **Подписки**, щелкните нужную подписку и найдите идентификатор подписки в разделе **Основные компоненты**.
 
   > [!Note]  
   > Облачные подписки для Германии в настоящее время не поддерживаются.
 
-- Имя пользователя и пароль учетной записи владельца подписки (поддерживаются учетные записи MSA/2FA).
+- Имя пользователя и пароль учетной записи владельца подписки.
 
-- Учетная запись пользователя должна иметь права администратора в клиенте Azure AD, в котором зарегистрирован экземпляр Azure Stack, например, `yourazurestacktenant.onmicrosoft.com`.
+- Учетная запись пользователя должна обладать правами доступа к подписке Azure и разрешением на создание приложений удостоверений и субъектов-служб в каталоге, который с ней связан.
 
 - Зарегистрированный поставщик ресурсов Azure Stack. Дополнительные сведения см. в приведенном ниже разделе о регистрации поставщика ресурсов Azure Stack.
 
-  Если у вас нет подписки Azure, соответствующей всем этим требованиям, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?b=17.06). За регистрацию Azure Stack в подписке Azure дополнительная плата не взимается.
+После регистрации разрешение глобального администратора Azure Active Directory не требуется. Тем не менее для некоторых операций могут потребоваться учетные данные глобального администратора. Например, поставщик ресурсов устанавливает сценарий или новую функцию, для которой требуется получить разрешение. Можно временно восстановить разрешения глобального администратора или использовать отдельную глобальную учетную запись администратора, который является владельцем *подписки поставщика по умолчанию* .
+
+Если у вас нет подписки Azure, соответствующей всем этим требованиям, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?b=17.06). За регистрацию Azure Stack в подписке Azure дополнительная плата не взимается.
 
 ### <a name="powershell-language-mode"></a>Языковой режим PowerShell
 
@@ -93,6 +95,19 @@ $ExecutionContext.SessionState.LanguageMode
  С помощью развертывания Azure без подключения можно развернуть и использовать Azure Stack без подключения к Интернету. Но при этом вы будете ограничены хранилищем удостоверений службы федерации Active Directory (AD FS) и моделью выставления счетов на основе емкости.
     - [Регистрация подключенного Azure Stack с использованием модели выставления счетов **с оплатой на основе емкости**](#register-disconnected-with-capacity-billing)
 
+### <a name="determine-a-unique-registration-name-to-use"></a>Определение необходимого уникального регистрационного имени 
+При регистрации Azure Stack в Azure необходимо указать уникальное регистрационное имя. Подписку Azure Stack можно легко связать с регистрацией Azure с помощью **ИД облака** Azure Stack. 
+
+> [!NOTE]
+> Если для регистрации Azure Stack используется модель выставления счетов на основе емкости, при повторной регистрации по истечении срока действия годовой подписки потребуется изменить уникальное имя.
+
+Чтобы определить идентификатор облака при развертывании Azure Stack, откройте сеанс PowerShell от имени администратора на компьютере, с которого можно получить доступ к привилегированной конечной точке, выполните следующие команды и запишите значение **CloudID**. 
+
+```powershell
+Run: Enter-PSSession -ComputerName <privileged endpoint computer name> -ConfigurationName PrivilegedEndpoint
+Run: get-azurestackstampinformation 
+```
+
 ## <a name="register-connected-with-pay-as-you-go-billing"></a>Регистрация подключенного развертывания с оплатой по мере использования
 
 Следуйте инструкциям ниже, чтобы зарегистрировать Azure Stack в Azure с помощью модели выставления счетов с оплатой по мере использования.
@@ -104,7 +119,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 1. Чтобы зарегистрировать поставщик ресурсов Azure Stack в Azure, запустите интегрированную среду сценариев PowerShell и используйте следующие командлеты PowerShell с параметром **EnvironmentName**, заданным для соответствующего типа подписки Azure (см. параметры ниже).
 
-2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести данные учетной записи глобального администратора Azure. Возможно, потребуется выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
+2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести учетные данные учетной записи Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
 
    ```PowerShell  
       Add-AzureRmAccount -EnvironmentName "<AzureCloud, AzureChinaCloud, or AzureUSGovernment>"
@@ -164,7 +179,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 1. Чтобы зарегистрировать поставщик ресурсов Azure Stack в Azure, запустите интегрированную среду сценариев PowerShell и используйте следующие командлеты PowerShell с параметром **EnvironmentName**, заданным для соответствующего типа подписки Azure (см. параметры ниже).
 
-2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести данные учетной записи глобального администратора Azure. Возможно, потребуется выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
+2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести учетные данные учетной записи Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
 
    ```PowerShell  
       Add-AzureRmAccount -EnvironmentName "<AzureCloud, AzureChinaCloud, or AzureUSGovernment>"
@@ -255,7 +270,7 @@ $ExecutionContext.SessionState.LanguageMode
 Чтобы получить ключ активации, выполните следующие командлеты PowerShell:  
 
   ```Powershell
-  $RegistrationResourceName = "AzureStack-<Cloud Id for the Environment to register>"
+  $RegistrationResourceName = "AzureStack-<unique-registration-name>"
   $KeyOutputFilePath = "$env:SystemDrive\ActivationKey.txt"
   $ActivationKey = Get-AzsActivationKey -RegistrationName $RegistrationResourceName -KeyOutputFilePath $KeyOutputFilePath
   ```
@@ -284,7 +299,7 @@ $ExecutionContext.SessionState.LanguageMode
 Чтобы убедиться, что инфраструктура Azure Stack успешно зарегистрирована в Azure, следуйте инструкциям ниже.
 
 1. Войдите на [портал администратора](https://docs.microsoft.com/azure/azure-stack/azure-stack-manage-portals#access-the-administrator-portal) Azure Stack: https&#58;//adminportal.*&lt;регион>.&lt;полное доменное имя>*.
-2. Щелкните **Больше служб** > **Marketplace Management** (Управление Marketplace) > **Add from Azure** (Добавить из Azure).
+2. Выберите **Все службы**, а затем в категории **Администрирование** выберите пункт **Marketplace management** >  (Управление Marketplace) **Add from Azure** (Добавление из Azure).
 
 Если отобразится список элементов, доступных в Azure (например, WordPress), значит, активация прошла успешно. Тем не менее в отключенных средах элементы Azure Marketplace не отображаются в Azure Stack Marketplace.
 
@@ -349,7 +364,7 @@ $ExecutionContext.SessionState.LanguageMode
 Или можно использовать имя регистрации:
 
   ```Powershell
-  $registrationName = "AzureStack-<Cloud ID of Azure Stack Environment>"
+  $registrationName = "AzureStack-<unique-registration-name>"
   Unregister-AzsEnvironment -RegistrationName $registrationName
   ```
 

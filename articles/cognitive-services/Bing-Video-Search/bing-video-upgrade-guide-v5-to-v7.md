@@ -1,21 +1,21 @@
 ---
-title: Обновление API Bing для поиска видео версии 5 до версии 7 | Документация Майкрософт
+title: Обновление API Bing для поиска видео с версии 5 до версии 7
+titlesuffix: Azure Cognitive Services
 description: Идентифицирует части приложения, которые необходимо обновить для использования версии 7.
 services: cognitive-services
 author: swhite-msft
-manager: ehansen
-ms.assetid: FA7DDF07-97AC-4EBE-8C50-A9737D43B38E
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: db1bc07c06f3d073b6cc0f206620e50a5f048e2a
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 967355d213f226711914e298a2fbf5676ebefe4f
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "41929942"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47224466"
 ---
 # <a name="video-search-api-upgrade-guide"></a>Руководство по обновлению API Bing для поиска видео
 

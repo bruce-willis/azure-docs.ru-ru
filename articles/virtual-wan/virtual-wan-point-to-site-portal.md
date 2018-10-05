@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 09/21/2018
+ms.date: 09/26/2018
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect remote users to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: bf0e766f082b2e137c90b5ea66bb7570bea2e1e6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 8a4c0c1426200e6c2d5041131fd0dd9cde4761cf
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46963378"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47409292"
 ---
 # <a name="tutorial-create-a-point-to-site-connection-using-azure-virtual-wan-preview"></a>Руководство. Создание подключения типа "точка — сеть" с помощью Виртуальной глобальной сети Azure (предварительная версия)
 
@@ -40,6 +40,38 @@ ms.locfileid: "46963378"
 
 [!INCLUDE [Before you begin](../../includes/virtual-wan-tutorial-vwan-before-include.md)]
 
+## <a name="register"></a>Регистрация этой возможности
+
+Нажмите кнопку **Попробовать**, чтобы зарегистрировать эту возможность с помощью Azure Cloud Shell.
+
+>[!NOTE]
+>Если не зарегистрировать эту возможность, вы не сможете ею пользоваться и не увидите ее на портале.
+>
+>
+
+После нажатия кнопки **Попробовать**, чтобы открыть Azure Cloud Shell, скопируйте и вставьте следующие команды:
+
+```azurepowershell-interactive
+Register-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowP2SCortexAccess
+```
+ 
+```azurepowershell-interactive
+Register-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowVnetGatewayOpenVpnProtocol
+```
+
+```azurepowershell-interactive
+Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowP2SCortexAccess
+```
+
+```azurepowershell-interactive
+Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowVnetGatewayOpenVpnProtocol
+```
+
+Когда возможность отобразится как зарегистрированная, зарегистрируйте подписку на пространство имен Microsoft.Network.
+
+```azurepowershell-interactive
+Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
+```
 
 ## <a name="vnet"></a>1. Создать виртуальную сеть
 
@@ -47,7 +79,7 @@ ms.locfileid: "46963378"
 
 ## <a name="openvwan"></a>2. Создание виртуальной глобальной сети
 
-В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
+В браузере откройте [портал Azure (предварительная версия)](http://aka.ms/azurevirtualwanpreviewfeatures) и выполните вход с помощью учетной записи Azure.
 
 [!INCLUDE [Create a virtual WAN](../../includes/virtual-wan-tutorial-vwan-include.md)]
 

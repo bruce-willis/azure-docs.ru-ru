@@ -1,20 +1,21 @@
 ---
-title: Выполнение заданий модерации контента в Azure Content Moderator | Документация Майкрософт
+title: Запуск заданий по модерации контента с помощью консоли API — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Узнайте, как выполнять задания модерации контента в консоли API.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/03/2017
 ms.author: sajagtap
-ms.openlocfilehash: 6f741be1001ae70d5fdbf6f374204aaad1601abe
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 240b26cd86a6985825e3145c5bc43ef31524d7b7
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380152"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47227116"
 ---
 # <a name="start-a-moderation-job-from-the-api-console"></a>Запуск задания модерации из консоли API
 
@@ -24,7 +25,7 @@ ms.locfileid: "35380152"
 
 После того, как модератор-пользователь проверит автоматически назначенные теги и данные прогноза и отправит окончательное решение по модерации, API проверки отправляет все сведения на конечную точку API.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перейдите к [инструменту проверки](https://contentmoderator.cognitive.microsoft.com/). Зарегистрируйтесь, если вы этого не сделали. В инструменте проверки [определите пользовательский рабочий процесс](Review-Tool-User-Guide/Workflows.md) для использования в этой операции `Job`.
 

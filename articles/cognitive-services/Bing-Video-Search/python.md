@@ -1,33 +1,35 @@
 ---
-title: Краткое руководство по Azure Cognitive Services и API Bing для поиска видео для Python | Документация Майкрософт
-description: Получение информации и примеров кода, которые помогут вам приступить к работе с API Bing для поиска видео с использованием Cognitive Services в Azure.
+title: 'Краткое руководство: поиск видео Bing, Python'
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска видео.
 services: cognitive-services
 author: v-jerkin
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 9/21/2017
 ms.author: v-jerkin
-ms.openlocfilehash: ce4356f05e69540bc3bc3241e2ec1751ff7a7276
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 797eb476aa3386949b08efb957edf48a97e40d6b
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380652"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47220022"
 ---
-# <a name="quickstart-for-bing-video-search-api-with-python"></a>Краткое руководство по API Bing для поиска видео с использованием Python
+# <a name="quickstart-bing-video-search-api-with-python"></a>Краткое руководство: API Bing для поиска видео с использованием Python
 
 В этом пошаговом руководстве показано, как использовать API Bing для поиска видео, входящий в состав служб Microsoft Cognitive Services в Azure. Технические сведения об интерфейсах API см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference).
 
-Этот пример можно запустить как объект Jupyter Notebook в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder: 
+Этот пример можно запустить как объект Jupyter Notebook в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder. 
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=BingVideoSearchAPI.ipynb)
 
 
-## <a name="prerequisites"></a>предварительным требованиям
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для этого краткого руководства достаточно иметь [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Требуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
+## <a name="prerequisites"></a>Предварительные требования
+Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
-## <a name="running-the-walkthrough"></a>Выполнение пошагового руководства
+## <a name="running-the-walkthrough"></a>Работа с пошаговым руководством
 
 Сначала задайте для `subscription_key` значение своего ключа API для службы API Bing.
 
@@ -80,4 +82,4 @@ HTML(search_results["value"][0]["embedHtml"].replace("autoplay=1","autoplay=0"))
 
 ## <a name="see-also"></a>См. также 
 
- [Поиск видео в сети](search-the-web.md) [Попробовать](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/)
+ [Поиск видео в сети](search-the-web.md) [Пробная версия](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/)

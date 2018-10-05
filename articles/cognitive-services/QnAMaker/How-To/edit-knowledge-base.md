@@ -1,21 +1,21 @@
 ---
-title: Редактирование базы знаний в Microsoft Cognitive Services | Документация Майкрософт
-titleSuffix: Azure
-description: Редактирование базы знаний
+title: Изменение базы знаний — QnA Maker
+titleSuffix: Azure Cognitive Services
+description: QnA Maker позволяет управлять содержимым базы знаний, предоставляя возможности удобного редактирования.
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 04/21/2018
-ms.author: saneppal
-ms.openlocfilehash: eaa65bf3d257399fceadaa42f0d9ddbbf8afe234
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: f927e5b7ff65b82aef9d4224d22296e0fa48ad59
+ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381820"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47451890"
 ---
 # <a name="edit-a-knowledge-base"></a>Редактирование базы знаний
 
@@ -30,8 +30,24 @@ QnA Maker позволяет управлять содержимым базы з
     ![Раздел My Knowledge Bases (Мои базы знаний)](../media/qnamaker-how-to-edit-kb/my-kbs.png)
 
 2. Выберите определенную базу знаний, чтобы внести в нее изменения.
+ 
+3. Щелкните **Параметры**.
 
-3. Внеся изменения, щелкните **Save and train** (Сохранить и обучить) в правом верхнем углу страницы, чтобы сохранить изменения.    
+   Здесь вы можете изменить значение в обязательном поле имени службы.
+  
+   Можно добавить новые URL-адреса, чтобы добавить в базу знаний новое содержимое с вопросами и ответами. Для этого последовательно выберите **Manage knowledgebase -> + Add URL** (Управление базой знаний -> + Добавить URL-адрес).
+   
+   Существующие URL-адреса можно удалить, щелкнув **значок удаления**.
+   
+   Чтобы заполнить базу знаний последней версией содержимого из существующих URL-адресов, установите флажок **Обновить**.
+   
+Можно добавить документ поддерживаемого формата файла в базу знаний, последовательно выбрав **Manage knowledgebase -> + Add File** (Управление базой знаний -> + Добавить файл).
+
+Вы также можете импортировать любую существующую базу знаний, нажав кнопку **Import Knowledgebase** (Импортировать базу знаний). 
+   
+Обновление базы знаний зависит от **ценовой категории управления**, используемой при создании службы QnA Maker, которая связана с базой знаний. При необходимости можно также обновить ценовую категорию управления на портале Azure.
+
+4. Внеся изменения, щелкните **Save and train** (Сохранить и обучить) в правом верхнем углу страницы, чтобы сохранить изменения.    
 
     ![Сохранение и обучение](../media/qnamaker-how-to-edit-kb/save-and-train.png)
 

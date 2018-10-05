@@ -1,20 +1,21 @@
 ---
-title: Краткое руководство по Go для API службы QnA Maker (V4) Майкрософт — Azure Cognitive Services | Документация Майкрософт
+title: 'Краткое руководство: Go для API службы QnA Maker (версия 4)'
+titleSuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API перевода текстов Microsoft в Microsoft Cognitive Services в Azure.
 services: cognitive-services
-documentationcenter: ''
-author: v-jaswel
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: qna-maker
 ms.topic: article
-ms.date: 05/07/2018
-ms.author: v-jaswel
-ms.openlocfilehash: d68ff91d74a6c43c6d492aa07e916a842b50e96f
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.date: 09/12/2018
+ms.author: diberry
+ms.openlocfilehash: 320eb7b643d785899482a00bfc0bda1d89e61b3b
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37867595"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47042386"
 ---
 # <a name="quickstart-for-microsoft-qna-maker-api-with-go"></a>Краткое руководство для API службы QnA Maker Microsoft с помощью Go 
 <a name="HOLTop"></a>
@@ -36,7 +37,7 @@ ms.locfileid: "37867595"
 - [Получать текущий набор вариантов слов.](#GetAlterations)
 - [Заменять текущий набор вариантов слов.](#PutAlterations)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для запуска этого кода понадобится [Go 1.10.1](https://golang.org/dl/).
 

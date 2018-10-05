@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 479fd902ef68bf24306bcd699da0be08415592a0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6ac31818a68aa2b4624410b423b7559b84275777
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956995"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47409377"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -20,7 +20,7 @@ ms.locfileid: "46956995"
 
 Подробнее о том, как работают оповещения метрик, см. в [этом обзоре](alert-metric-overview.md).
 
-## <a name="create-a-metric-alert-rule-using-azure-portal"></a>Создание правила генерации оповещений метрики с помощью портала Azure
+## <a name="create-with-azure-portal"></a>Создание с помощью портала Azure
 
 Следующая процедура описывает, как создать правило генерации оповещений метрики на портале Azure:
 
@@ -58,7 +58,7 @@ ms.locfileid: "46956995"
 > [!NOTE]
 > Правила генерации оповещений метрики, созданные на портале, создаются в той же группе ресурсов, что и целевой ресурс.
 
-## <a name="view-and-manage-metric-alert-rules-using-azure-portal"></a>Просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure
+## <a name="view-and-manage-with-azure-portal"></a>Просмотр и управление с помощью портала Azure
 
 Вы можете просматривать правила генерации оповещений метрики и управлять ими, используя колонку "Управление правилами" в разделе "Оповещения". В приведенной ниже процедуре показано, как просмотреть свои правила генерации оповещений метрики и изменить одно из них.
 
@@ -80,7 +80,7 @@ ms.locfileid: "46956995"
 
 6. Нажмите кнопку **Готово**, чтобы сохранить изменения.
 
-## <a name="create-view-and-manage-metric-alert-rules-using-azure-cli"></a>Создание, просмотр правил генерации оповещений метрики и управление ими с помощью Azure CLI
+## <a name="with-azure-cli"></a>С помощью Azure CLI
 
 В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использование Azure CLI — это [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest). В этой статье мы будем использовать Cloud Shell.
 

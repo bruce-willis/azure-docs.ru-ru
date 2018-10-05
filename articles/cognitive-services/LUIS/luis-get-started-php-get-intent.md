@@ -1,22 +1,23 @@
 ---
-title: Краткое руководство по анализу текста на естественном языке в службе распознавания речи (LUIS) с помощью PHP — Azure Cognitive Services | Документация Майкрософт
+title: Краткое руководство для PHP — прогнозирование намерения — LUIS
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. Отправляйте намерение пользователя в виде текста в конечную точку прогноза HTTP общедоступного приложения, используя PHP. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
-ms.date: 08/23/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 80d9371cc36ca9ab6b25e79a78e15b7445f0084d
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 87c37de611056c5672ed0910afdd344325a0c6f7
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44160274"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47036901"
 ---
-# <a name="quickstart-analyze-text-using-php"></a>Краткое руководство по анализу текста с использованием PHP
+# <a name="quickstart-get-intent-using-php"></a>Краткое руководство: получение намерения с использованием PHP
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
@@ -35,11 +36,11 @@ ms.locfileid: "44160274"
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-get-key-para.md)]
 
-## <a name="analyze-text-with-browser"></a>Анализ текста с помощью браузера
+## <a name="get-intent-with-browser"></a>Получение намерения с помощью браузера
 
 [!INCLUDE [Use authoring key for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-browser-para.md)]
 
-## <a name="analyze-text-with-php"></a>Анализ текста с помощью PHP 
+## <a name="get-intent-programmatically"></a>Получение намерения программным способом 
 
 С помощью PHP можно получить доступ к тем же результатам, которые вы уже видели в окне браузера на предыдущем шаге. 
 

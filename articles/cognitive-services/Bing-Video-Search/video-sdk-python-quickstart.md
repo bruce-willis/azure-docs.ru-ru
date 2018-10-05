@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по пакету SDK для API "Поиск видео" для Python | Документация Майкрософт
+title: 'Краткое руководство: пакет SDK для поиска видео Bing, Python'
+titleSuffix: Azure Cognitive Services
 description: Установка компонентов консольного приложения пакета SDK для API "Поиск видео".
-titleSuffix: Azure Video Search SDK Python quickstart
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/15/2018
-ms.author: v-gedod
-ms.openlocfilehash: 1c4769a6ca3391fa595cc078651beff330bbfd60
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 9784894ea9a9deb350171e0d19042eb65644093b
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382612"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47225656"
 ---
-# <a name="video-search-sdk-python-quickstart"></a>Краткое руководство по пакету SDK для API "Поиск видео"
+# <a name="quickstart-bing-video-search-sdk-with-python"></a>Краткое руководство: пакет SDK для поиска видео Bing с использованием Python
 
 Пакет SDK для API "Поиск изображений" содержит функции REST API для обработки веб-запросов и анализа результатов.
 

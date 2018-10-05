@@ -9,18 +9,18 @@ ms.component: acoustics
 ms.topic: article
 ms.date: 08/17/2018
 ms.author: kegodin
-ms.openlocfilehash: 7e27b5117f5f0ea98916ecfefcbb0dac9323e1d9
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: a71e867bd23cf64b2ac7fc8cd1c54c55d92ce924
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "40181385"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47431794"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 ## <a name="what-is-project-acoustics"></a>Что такое Project Acoustics?
 
-Подключаемый модуль Project Acoustics Unity — это акустическая система, которая вычисляет поведение звуковой волны перед выполнением, аналогично статическому освещению. Физика волн моделируется в облаке во время разработки, поэтому затраты на ресурсы ЦП во время выполнения низкие.  
+Подключаемый модуль Project Acoustics Unity — это акустическая система, которая вычисляет поведение звуковой волны перед выполнением, аналогично статическому освещению. Вся тяжела работа по вычислениям физики волн выполняется в облаке, поэтому затраты на ресурсы ЦП во время выполнения низкие.  
 
 ## <a name="where-can-i-download-the-plugin"></a>Где можно загрузить подключаемый модуль?
 
@@ -28,7 +28,7 @@ ms.locfileid: "40181385"
 
 ## <a name="is-azure-used-at-runtime"></a>Используется ли Azure во время выполнения?
 
-Нет, интеграция с облаком используется только на этапе предварительного вычисления во время разработки.
+Нет, интеграция с облаком используется только на этапе предварительного вычисления в ходе настройки сцены.
  
 ## <a name="what-is-simulation-input"></a>Что такое входной объект моделирования? 
 

@@ -1,20 +1,21 @@
 ---
-title: Высказывания в приложениях LUIS в Azure | Документация Майкрософт
-description: Добавьте поддержку высказываний в приложения Интеллектуальной службы распознавания речи (LUIS).
+title: Фразы в приложениях LUIS
+titleSuffix: Azure Cognitive Services
+description: Фразы — это входные данные, поступившие от пользователя, которые расшифровываются приложением. Соберите фразы, которые вы ожидаете от ваших пользователей. Включите высказывания с одинаковым смыслом, но разным составом, количеством и расположением слов.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 02/13/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 6f962d0aaf631051c841be29d2854a89bf58ac25
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 39c99cc35f4c2549efc9c20af0680b77483325c5
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224421"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47038941"
 ---
 # <a name="utterances-in-luis"></a>Высказывания в LUIS
 
@@ -35,12 +36,14 @@ ms.locfileid: "39224421"
 Часто можно заметить, что даже при осознанных усилиях разнообразить виды и формы предложений многие слова будут повторяться.
 
 Давайте рассмотрим такие примеры высказываний:
-```
-how do I get a computer?
-Where do I get a computer?
-I want to get a computer, how do I go about it?
-When can I have a computer? 
-```
+
+|Примеры высказываний|
+|--|
+|Как мне получить компьютер?|
+|Где мне получить компьютер?|
+|Я хочу получить компьютер, что мне нужно сделать?|
+|Когда я могу получить компьютер?| 
+
 Здесь есть основной термин computer, который совершенно не имеет альтернатив. Но пользователь может использовать другие слова: настольный компьютер, ноутбук, рабочая станция или ЭВМ. LUIS применяет интеллектуальное контекстное обнаружение синонимов, но гораздо лучше предоставить их еще на этапе обучения.
 
 ## <a name="example-utterances-in-each-intent"></a>Примеры высказываний по каждому намерению

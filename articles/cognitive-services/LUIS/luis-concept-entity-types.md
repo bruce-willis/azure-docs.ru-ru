@@ -1,20 +1,21 @@
 ---
-title: Общие сведения о типах сущностей в приложениях LUIS в Azure | Документы Майкрософт
+title: Типы сущностей в приложениях LUIS — Интеллектуальная служба распознавания речи
+titleSuffix: Azure Cognitive Services
 description: Добавляйте сущности (ключевые данные в предметной области приложения) в приложения Интеллектуальной службы распознавания речи (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 06/28/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: b0b5852a223a77e33a288bb8061c1ce374018ec1
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 3ed10ac428b7ce2e528ccf46e34c1d394523bdec
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39282285"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47042454"
 ---
 # <a name="entities-in-luis"></a>Сущности в LUIS
 
@@ -45,10 +46,10 @@ ms.locfileid: "39282285"
 
 В следующих высказываниях слово `fair` является омографом. Оно пишется одинаково, но имеет другое значение:
 
-```
-What kind of county fairs are happening in the Seattle area this summer?
-Is the current rating for the Seattle review fair?
-```
+|Фраза|
+|--|
+|Какие ярмарки проходят неподалеку от Сиэтла этим летом?|
+|Справедлива ли эта оценка за обзор Сиэтла?|
 
 Если требуется, чтобы сущность события находила все данные события, пометьте слово `fair` в первом высказывании, а не во втором.
 

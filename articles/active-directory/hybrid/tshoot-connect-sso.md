@@ -9,15 +9,15 @@ ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
-ms.date: 09/04/2018
+ms.date: 09/24/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: c2b6bd3b04dfbc7446e92dfcb16db64cc3c693c5
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: a020f0f22f16d8aaa959c41a912ca5839be05312
+ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310623"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47055906"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -36,7 +36,7 @@ ms.locfileid: "46310623"
 - Если пользователь входит в состав слишком большого количества групп в Active Directory, скорее всего, билет Kerberos этого пользователя будет слишком большим для обработки, что приведет к сбою простого единого входа. HTTPS-запросы Azure AD могут включать в себя заголовки, максимальный размер которых составляет 50 КБ. Размер билетов Kerberos должен быть меньше, чтобы вместить другие артефакты Azure AD (как правило, он равен 2–5 КБ), такие как файлы cookie. Рекомендуем сократить количество членов в группах и повторить попытку.
 - При синхронизации 30 лесов Active Directory или больше простой единый вход через Azure AD Connect включить невозможно. Чтобы избежать этого, можно [вручную включить](#manual-reset-of-the-feature) эту функцию на своем клиенте.
 - Добавление URL-адреса службы Azure AD (https://autologon.microsoftazuread-sso.com) в зону "Надежные сайты" вместо зоны "Местная интрасеть" *блокирует вход пользователей*.
-- Отключение типа шифрования **RC4_HMAC_MD5** для протокола Kerberos в параметрах Active Directory нарушит работу простого единого входа. В редакторе "Управление групповыми политиками" убедитесь, что для параметра политики **RC4_HMAC_MD5** (щелкните **"Конфигурация компьютера" > "Параметры Windows" > "Параметры безопасности" > "Локальные политики" > "Параметры безопасности" > "Network Security: Configure encryption types allowed for Kerberos" (Сетевая безопасность: настройка типов шифрования, разрешенных для Kerberos)**) задано значению "Включено".
+- Простой единый вход использует для Kerberos тип шифрования **RC4_HMAC_MD5**. Отключение типа шифрования **RC4_HMAC_MD5** в настройках Active Directory нарушит работу простого единого входа. В редакторе "Управление групповыми политиками" убедитесь, что для параметра политики **RC4_HMAC_MD5** задано значению **Включено** (щелкните **Конфигурация компьютера > Параметры Windows > Параметры безопасности > Локальные политики > Параметры безопасности > "Network Security: Configure encryption types allowed for Kerberos" (Сетевая безопасность: настройка типов шифрования, разрешенных для Kerberos)**). Кроме того, простой единый вход не может использовать другие типы шифрования, поэтому убедитесь, что они **отключены**.
 
 ## <a name="check-status-of-feature"></a>Проверка состояния функции
 

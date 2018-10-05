@@ -1,22 +1,24 @@
 ---
-title: "Влияние на использование Azure Application Insights | Документация Майкрософт"
-description: "Анализ потенциального влияния различных свойств на коэффициенты конверсии для элементов приложения."
+title: Влияние на использование Azure Application Insights | Документация Майкрософт
+description: Анализ потенциального влияния различных свойств на коэффициенты конверсии для элементов приложения.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: multiple
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/25/2018
-ms.author: mbullwin ; daviste
-ms.openlocfilehash: d76db02647ce878343f60fc84cf063c5b7833438
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.reviewer: daviste
+ms.author: mbullwin
+ms.openlocfilehash: 9188776fdd213f01523069b08bd898f48bee57a4
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47091487"
 ---
 # <a name="impact-analysis-with-application-insights"></a>Анализ влияния с помощью Application Insights
 
@@ -66,7 +68,7 @@ Impact можно рассматривать как абсолютный инс�
 
 ## <a name="how-does-the-impact-tool-calculate-these-conversion-rates"></a>Как инструмент Impact рассчитывает коэффициенты конверсии?
 
-В инструменте Impact используется [коэффициент корреляции Пирсона] (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). Результаты вычисляются от –1 до 1, при этом –1 представляет нулевую корреляцию, а 1 — положительную корреляцию.
+Внутренняя реализация инструмента Impact использует [коэффициент корреляции Пирсона] (https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). Результаты вычисляются от –1 до 1, при этом –1 представляет нулевую корреляцию, а 1 — положительную корреляцию.
 
 Ниже в общих чертах приведен принцип анализа влияния.
 

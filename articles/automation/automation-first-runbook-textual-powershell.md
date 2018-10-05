@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2f5d2f3634545001dc6dc1419530223b5a1a85a3
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 8f3185a2c7633ba0cb5a9b266bcddf023d3c36e1
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37435797"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166458"
 ---
 # <a name="my-first-powershell-runbook"></a>Мой первый модуль Runbook PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "37435797"
 
 В этом руководстве описана процедура создания [модуля Runbook PowerShell](automation-runbook-types.md#powershell-runbooks) в службе автоматизации Azure. Сначала вы протестируете и опубликуете простой модуль runbook и узнаете, как отслеживать состояние его заданий. Затем мы изменим модуль runbook, настроив его для фактического управления ресурсами Azure (в нашем примере это запуск виртуальной машины Azure). Затем вы сделаете этот модуль runbook еще надежнее, добавив параметры runbook.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется:
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -83,7 +83,17 @@ ms.locfileid: "37435797"
 12. Если щелкнуть это задание, откроется та же область заданий, что и при запуске модуля runbook. С ее помощью можно вернуться назад и просмотреть сведения о любом задании, созданном для конкретного модуля Runbook.
 
 ## <a name="step-5---add-authentication-to-manage-azure-resources"></a>Шаг 5. Добавление проверки подлинности для управления ресурсами Azure
-Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Это станет возможным, только когда модуль runbook пройдет проверку подлинности с использованием учетных данных, указанных в [предварительных требованиях](#prerequisites). Для этого используйте командлет **Connect-AzureRmAccount**.
+Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Это станет возможным, только когда модуль runbook пройдет проверку подлинности с использованием учетных данных, указанных в [предварительных требованиях](#prerequisites). Для этого используйте командлет **Connect-AzureRmAccount**. Если вы управляете ресурсами в нескольких подписках, вам нужно использовать команду [Get-AzureRmContext](/powershell/module/azurerm.profile/get-azurermcontext) с параметром **-AzureRmContext**.
+
+   ```powershell
+   $Conn = Get-AutomationConnection -Name AzureRunAsConnection
+   Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID `
+-ApplicationID $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+
+   $AzureContext = Select-AzureRmSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID
+
+   Get-AzureRmVM -ResourceGroupName myResourceGroup -AzureRmContext $AzureContext
+   ```
 
 1. Откройте текстовый редактор, щелкнув **Изменить** на странице MyFirstRunbook-PowerShell.
 2. Вам больше не потребуется использовать строку **Write-Output**, поэтому удалите ее.

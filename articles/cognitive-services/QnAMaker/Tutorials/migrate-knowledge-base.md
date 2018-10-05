@@ -1,28 +1,28 @@
 ---
-title: Импорт базы знаний с использованием Microsoft Cognitive Services | Документы Майкрософт
-titleSuffix: Azure
+title: Перенос баз знаний, созданных в предварительной версии, — QnA Maker
+titleSuffix: Azure Cognitive Services
 description: Импорт базы знаний
 services: cognitive-services
-author: nstulasi
-manager: sangitap
+author: tulasim88
+manager: cgronlun
 ms.service: cognitive-services
-ms.component: QnAMaker
+ms.component: qna-maker
 ms.topic: article
-ms.date: 04/21/2018
-ms.author: saneppal
-ms.openlocfilehash: ce8f98f9bdb37d5f326e942fe5b5e815e5272c56
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.date: 09/12/2018
+ms.author: tulasim
+ms.openlocfilehash: 0cb8a185407c7b180a170f1f9b9d76aa28a24de5
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35383161"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47031634"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 О выпуске общедоступной версии QnA Maker было объявлено 7 мая 2018 г. на конференции \\\build\. Общедоступная версия QnA Maker имеет новую архитектуру, основанную на Azure. Базы знаний, созданные с помощью бесплатной предварительной версии QnA Maker, будет необходимо перенести в общедоступную версию QnA Maker. Предварительная версия QnA Maker будет признана устаревшей в ноябре 2018 г. Дополнительные сведения об изменениях в общедоступной версии QnA Maker см. в объявлении о выпуске общедоступной версии QnA Maker в этой [публикации блога](https://aka.ms/qnamakerga-blog).
 
 Теперь QnA Maker присвоена [модель ценообразования](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/).
 
-предварительным требованиям
+Предварительные требования
 > [!div class="checklist"]
 > * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 > * Настройте новую [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md)

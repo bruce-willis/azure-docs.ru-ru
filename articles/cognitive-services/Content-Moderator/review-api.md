@@ -1,20 +1,21 @@
 ---
-title: 'Azure Content Moderator: задания модерации и проверки с участием человека | Документация Майкрософт'
+title: Задания модерации и привлечение пользователей к проверке — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Применение человеческого контроля к машинной модерации для получения наилучших результатов.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 1/21/2018
 ms.author: sajagtap
-ms.openlocfilehash: 35b3cdaa410712c3fd08d3df4ebe4c83e3955d50
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: b4a2f62b1c9cefb716cb217baf7389c3e7c790b8
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380269"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223261"
 ---
 # <a name="moderation-jobs-and-reviews"></a>Задания модерации и проверки
 

@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/24/2018
+ms.date: 09/25/2018
 ms.author: alkohli
-ms.openlocfilehash: 0204445464a9d61b4e25be1d71373ce8394b32f0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9bc84a9b08c4cfbdf7f24416c923e0dbd7076556
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46957677"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47161936"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box"></a>Руководство: копирование данных в Azure Data Box 
 
@@ -233,7 +233,7 @@ ms.locfileid: "46957677"
 
 Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые программы, доступные в ОС Linux: [rsync](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/), [Ultracopier](https://ultracopier.first-world.info/).  
 
-Команда cp — один из лучших способов копировать каталоги. Дополнительные сведения об использовании команды см. на [страницах руководства команды cp](http://man7.org/linux/man-pages/man1/cp.1.html).
+Команда `cp` — один из лучших способов копировать каталоги. Дополнительные сведения об использовании команды см. на [страницах руководства команды cp](http://man7.org/linux/man-pages/man1/cp.1.html).
 
 При копировании при помощи rsync с использованием нескольких потоков следуйте указанным ниже рекомендациям.
 
@@ -273,7 +273,7 @@ ms.locfileid: "46957677"
    
     ![Подготовка к отправке 1](media/data-box-deploy-copy-data/prepare-to-ship1.png)
 
-2. Если функция вычисления контрольных сумм не включена, вам будет предложено включить эту функцию. Для обеспечения целостности данных рекомендуется включить проверку контрольных сумм. Щелкните **Включить контрольные суммы**. В результате будет включена функция подсчета контрольных сумм, причем выполнение этой функции занимает некоторое время, зависящее от объема ваших данных. Щелкните **Начать подготовку**.
+2. По умолчанию контрольные суммы вычисляются в непосредственно во время подготовки к отправке. Вычисление контрольных сумм может занять некоторое время в зависимости от размера данных. Щелкните **Начать подготовку**.
     1. Когда начнется подготовка к отправке устройства, его общие папки станут недоступными, и оно будет заблокировано.
         
         ![Подготовка к отправке 1](media/data-box-deploy-copy-data/prepare-to-ship2.png) 
@@ -306,7 +306,7 @@ This section describes the robocopy parameters used when copying the data to opt
 В этом руководстве были освещены следующие темы относительно Azure Data Box.
 
 > [!div class="checklist"]
-> * Подключение к Data Box
+> * подключение к Data Box;
 > * Копирование данных в Data Box
 > * Подготовка Data Box к отправке
 

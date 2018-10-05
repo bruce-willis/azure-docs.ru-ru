@@ -1,41 +1,42 @@
 ---
-title: Краткое руководство по Azure Cognitive Services и API "Поиск видео Bing" для Java | Документация Майкрософт
-description: Получите информацию и примеры кода, которые помогут вам быстро приступить к работе с API "Поиск видео Bing", входящим в состав Microsoft Cognitive Services в Azure.
+title: 'Краткое руководство: API Bing для поиска видео, Java'
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска видео.
 services: cognitive-services
-documentationcenter: ''
 author: v-jerkin
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-video-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 9/21/2017
 ms.author: v-jerkin
-ms.openlocfilehash: db9bc353c86565956881c90ce3a3b6275e1b8771
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 8ec5aa9e832a24fcd3b029727217bffb3b4d94e0
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382117"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223242"
 ---
-# <a name="quickstart-for-bing-video-search-api-with-java"></a>Краткое руководство по API "Поиск видео Bing" с использованием Java
+# <a name="quickstart-bing-video-search-api-with-java"></a>Краткое руководство: API Bing для поиска видео с использованием Java
 
 В этой статье показано, как использовать API-интерфейсы поиска Bing, входящие в состав Microsoft Cognitive Services в Azure. Хотя в статье представлены сведения для языка Java, этот API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
 
 Указанный ниже пример кода выполняется на Java 7 как консольное приложение.
 
-Технические сведения об интерфейсах API приведены в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
+Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API-интерфейсами поиска Bing**. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Потребуется ключ доступа, предоставляемый при активации бесплатной пробной версии. Можно также использовать ключ платной подписки, указанный на панели мониторинга Azure.
 
-## <a name="bing-video-search"></a>Поиск видео Bing
+## <a name="bing-video-search"></a>API Bing для поиска видео
 
 [API Bing для поиска видео](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference) возвращает результаты поиска видео из поисковой системы Bing.
 
 1. Скачайте или установите [библиотеку gson](https://github.com/google/gson).
 2. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный ниже код.
-4. Замените значение `subscriptionKey` ключом доступа, допустимым для своей подписки.
+4. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 5. Запустите программу.
 
 ```java
@@ -148,7 +149,7 @@ class SearchResults{
 
 **Ответ**
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже:
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {
@@ -264,4 +265,4 @@ class SearchResults{
 
 ## <a name="see-also"></a>См. также 
 
- [Поиск видео в сети](search-the-web.md) [Попробовать](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/)
+ [Поиск видео в сети](search-the-web.md) [Пробная версия](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/)

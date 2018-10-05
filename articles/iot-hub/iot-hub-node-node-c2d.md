@@ -9,12 +9,12 @@ ms.devlang: javascript
 ms.topic: conceptual
 ms.date: 06/16/2017
 ms.author: dobett
-ms.openlocfilehash: 61b1dd31039df0db777e7e35d849889047a6588d
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: c2b8df708a568fa995cf3af783c112127726811b
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186688"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47221814"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-node"></a>Отправка сообщений из облака на устройства с помощью Центра Интернета вещей (Node)
 [!INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
@@ -83,7 +83,7 @@ ms.locfileid: "39186688"
    > 
 
 ## <a name="send-a-cloud-to-device-message"></a>Отправка сообщения из облака на устройство
-В этом разделе создается консольное приложение Node.js, которое отправляет сообщения, передаваемые из облака на устройство, в приложение имитации устройства. Необходим идентификатор устройства, добавленного при изучении руководства [Начало работы с Центром Интернета вещей]. Кроме того, нужна строка подключения для вашего экземпляра Центра Интернета вещей, которую можно найти на [портал Azure].
+В этом разделе создается консольное приложение Node.js, которое отправляет сообщения, передаваемые из облака на устройство, в приложение имитации устройства. Необходим идентификатор устройства, добавленного при изучении руководства [Начало работы с Центром Интернета вещей]. Кроме того, нужна строка подключения для вашего экземпляра Центра Интернета вещей, которую можно найти на [портала Azure].
 
 1. Создайте пустую папку **sendcloudtodevicemessage**. В папке **sendcloudtodevicemessage** создайте файл package.json, введя в командной строке следующую команду. Примите значения по умолчанию:
    
@@ -170,7 +170,7 @@ ms.locfileid: "39186688"
     ![Запуск приложения для отправки команды из облака на устройство][img-send-command]
    
    > [!NOTE]
-   > Для упрощения в этом руководстве не реализуются какие-либо политики повтора. В рабочем коде следует реализовать политики повтора (например, экспоненциальную задержку), как указано в статье MSDN [Обработка временного сбоя].
+   > Для упрощения в этом руководстве не реализуются какие-либо политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
    > 
    > 
 
@@ -193,6 +193,5 @@ ms.locfileid: "39186688"
 [Центре разработчика для Центра Интернета вещей Azure]: http://azure.microsoft.com/develop/iot
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md
-[Обработка временного сбоя]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
-[портал Azure]: https://portal.azure.com
+[портала Azure]: https://portal.azure.com
 [Акселераторы решений для удаленного мониторинга Интернета вещей Azure]: https://azure.microsoft.com/documentation/suites/iot-suite/

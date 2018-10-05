@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/08/2018
 ms.author: wolfma
-ms.openlocfilehash: dcb65e365fdd51a56afc65814a153593e2f7d0f3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6a77303bc1810d72001f119223b7490299ed497a
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/24/2018
-ms.locfileid: "47019747"
+ms.locfileid: "47060349"
 ---
 Регион| Конечная точка преобразования текста в речь
 -|-
@@ -23,4 +23,4 @@ ms.locfileid: "47019747"
 Западная Европа|    `https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1`
 
 > [!NOTE]
-> При создании настраиваемых голосов следует использовать специально созданную конечную точку вместо примера выше.
+> Если вы создали пользовательский голос, используйте созданную для него конечную точку вместо конечных точек, указанных здесь.

@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: e325335d43ef31c44ac812aca66309132f5372a3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e0c9cc342bb4b06053f53abc891ee1c415327998
+ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46951616"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47410006"
 ---
-# <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрики, а также управление ими с помощью Azure Monitor
+# <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
 Классические оповещения метрик в Azure Monitor позволяют получать уведомления, когда одна из метрик достигает порогового значения. Классические оповещения метрик — это более старая функциональность, которая позволяет оповещать только метрики без измерений. Существует более новая функциональность, называемая "оповещения метрик", которая имеет улучшенные функциональные возможности по сравнению с классическими оповещениями метрики. Подробнее о новой функциональности оповещений метрик можно узнать в [обзоре оповещений метрик](alert-metric-overview.md). В этой статье мы расскажем, как создавать, просматривать классические правила генерации оповещений метрик и управлять ими через портал Azure, Azure CLI и PowerShell.
 
-## <a name="create-a-classic-metric-alert-rule-using-azure-portal"></a>Создание классического правила генерации оповещений метрики с помощью портала Azure
+## <a name="with-azure-portal"></a>С помощью портала Azure
 
 1. На [портале](https://portal.azure.com/) найдите и выберите ресурс, который требуется отслеживать.
 
@@ -46,15 +46,13 @@ ms.locfileid: "46951616"
 
 Через несколько минут оповещение включится и будет активироваться, как было описано выше.
 
-## <a name="manage-your-classic-metric-alert-rules-using-azure-portal"></a>Управляйте классическими правилами генерации оповещений метрик с помощью портала Azure
-
 Вы можете выбрать созданное оповещение и выполнить одну из следующих задач:
 
 * просмотреть диаграмму, отображающую пороговые и фактические значения метрик за предыдущий день;
 * изменить или удалить его;
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений для данного оповещения.
 
-## <a name="creating-and-managing-classic-metric-alert-rule-using-azure-cli"></a>Создание классического правила генерации оповещений метрик и управлением им с помощью Azure CLI
+## <a name="with-azure-cli"></a>С помощью Azure CLI
 
 В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview?view=azure-cli-latest).
 
@@ -86,7 +84,7 @@ az monitor alert create --name <alert name> --resource-group <group name> \
 az monitor alert delete --name <alert name> --resource-group <group name>
 ```
 
-### <a name="create-view-and-manage-classic-metric-alerts-using-powershell"></a>Создание, просмотр и управление классическими оповещениями метрики с помощью PowerShell
+## <a name="with-powershell"></a>С помощью PowerShell
 
 В этих разделах показано, как использовать команды PowerShell для создания, просмотра и управления классическими оповещениями метрик. На примерах в этой статье проиллюстрировано, как можно использовать командлеты Azure Monitor для классических оповещений метрик.
 

@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/11/2017
+ms.date: 09/20/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 2c2dd2208cf910456fa8f94ca739b7ef8875d475
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: df32ed7a6d3bc0c9e349f576f5f48832bf9906dd
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355806"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47041928"
 ---
 # <a name="wrong-set-of-users-are-being-provisioned-to-an-azure-ad-gallery-application"></a>Подготовка неправильного набора пользователей для приложения в коллекции Azure AD
 
@@ -109,7 +109,7 @@ ms.locfileid: "44355806"
 >
 >
 
-Если подготовка групп включена, обязательно ознакомьтесь с атрибутами сопоставления, чтобы убедиться, что для соответствующего идентификатора используется соответствующее поле. Это может быть отображающееся имя или псевдоним электронной почты, так как группа и ее участники не будут подготовлены, если соответствующее свойство пустое или не заполнено для группы в Azure AD.
+Если подготовка групп включена, обязательно ознакомьтесь с атрибутами сопоставления, чтобы убедиться, что в качестве соответствующего идентификатора используется подходящее поле. Соответствующим идентификатором может быть отображаемое имя или псевдоним электронной почты. Если соответствующее свойство для группы в Azure AD отсутствует или не указано, группа и ее участники не будут подготовлены.
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)

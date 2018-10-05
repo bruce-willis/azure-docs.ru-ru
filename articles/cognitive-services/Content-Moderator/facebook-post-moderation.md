@@ -1,22 +1,23 @@
 ---
-title: Модерация контента Facebook с помощью Azure Content Moderator | Документация Майкрософт
-description: Модерация страниц Facebook с помощью машинного обучения и Content Moderator.
+title: 'Руководство: модерация контента Facebook — Azure Content Moderator'
+titlesuffix: Azure Cognitive Services
+description: Модерация страниц Facebook с помощью Content Moderator.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: tutorial
 ms.date: 09/18/2017
 ms.author: sajagtap
-ms.openlocfilehash: 66caea65c21bb1f8bb6efa9b50c917599bb71e2f
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: ead8c1d445bf32ecaaf236b4e73c2a583c755049
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43093983"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223944"
 ---
-# <a name="facebook-content-moderation-with-content-moderator"></a>Модерация контента Facebook с помощью Azure Content Moderator
+# <a name="tutorial-facebook-content-moderation-with-content-moderator"></a>Руководство: модерация контента Facebook с помощью Content Moderator
 
 В этом руководстве вы узнаете, как использовать машинное обучение и Content Moderator для модерации комментариев и записей на Facebook.
 

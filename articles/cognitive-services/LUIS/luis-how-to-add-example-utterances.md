@@ -1,25 +1,25 @@
 ---
-title: Добавление примеров высказываний в приложения LUIS | Документация Майкрософт
-titleSuffix: Azure
-description: Дополнительные сведения о добавлении высказываний в приложения Интеллектуальной службы распознавания речи (LUIS).
+title: Добавление примеров высказываний в приложения LUIS
+titleSuffix: Azure Cognitive Services
+description: Сведения о добавлении фрагментов речи в приложения службы "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 05/07/2018
+ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: cf6fc131a1ae2ba0a77bdbeda942c9f85aadd189
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 387668263a6bab6e12a21adf04aebfbbf108a006
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226293"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47036496"
 ---
 # <a name="add-example-utterances-and-label-with-entities"></a>Добавление примеров высказываний и меток с сущностями
 
-Примеры высказываний являются примерами текста пользовательских вопросов или команд. Для изучения Интеллектуальной службы распознавания речи (LUIS) необходимо добавить [примеры высказываний](luis-concept-utterance.md) в [намерение](luis-concept-intent.md).
+Примеры высказываний являются примерами текста пользовательских вопросов или команд. Для обучения службы "Распознавание речи"(LUIS) необходимо добавить [примеры фрагментов речи](luis-concept-utterance.md) в [намерение](luis-concept-intent.md).
 
 Как правило, сначала следует добавить пример высказывания в намерение, а затем создать сущности и высказывания на странице намерений. Если вам нужно сначала создать сущности, см. [этот](luis-how-to-add-entities.md) раздел.
 

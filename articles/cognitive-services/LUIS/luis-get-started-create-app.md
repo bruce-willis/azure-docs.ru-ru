@@ -1,20 +1,21 @@
 ---
-title: Создайте первое приложение LUIS всего за 10 минут в Cognitive Services | Документация Майкрософт
-description: В этом кратком руководстве описано, как создать приложение LUIS, которое использует предварительно созданную предметную область `HomeAutomation` для включения и отключения освещения и устройств. Эта предварительно созданная предметная область предоставляет для использования намерения, сущности и фразы. Когда все будет готово, вы получите работающую в облаке конечную точку LUIS.
+title: Создание приложения LUIS за 10 минут
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как создать приложение LUIS, которое использует предварительно созданную предметную область `HomeAutomation` для включения и отключения освещения и устройств. Эта предварительно созданная предметная область предоставляет для использования намерения, сущности и фразы. Когда все будет готово, вы получите работающую в облаке конечную точку LUIS.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
-ms.date: 08/22/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 457f23936dec0cf85e9aebbf3e54bba37c2f3ca3
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 12a660b49d1a81865c34ceda38f041de9be31eb1
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "43771644"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47037479"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
 
@@ -54,11 +55,7 @@ ms.locfileid: "43771644"
 
 ## <a name="intents-and-entities"></a>Намерения и сущности
 
-Выберите **Intents** (Намерения) в области навигации слева, чтобы просмотреть намерения из предметной области HomeAutomation. 
-
-[![](media/luis-quickstart-new-app/home-automation-intents.png "Снимок экрана с таблицей намерений, где выделены имена намерений")](media/luis-quickstart-new-app/home-automation-intents.png)
-
-По каждому намерению представлены примеры высказываний.
+Выберите **Intents** (Намерения) в области навигации слева, чтобы просмотреть намерения из предметной области HomeAutomation. По каждому намерению представлены примеры высказываний.
 
 > [!NOTE]
 > Намерение **None** (Нет) стандартно предоставляется всеми приложениями LUIS. Оно используется для обработки фраз, которые не соответствуют функциям приложения. 
@@ -67,11 +64,9 @@ ms.locfileid: "43771644"
 
 [![](media/luis-quickstart-new-app/home-automation-turnon.png "Снимок экрана с намерением HomeAutomation.TurnOff")](media/luis-quickstart-new-app/home-automation-turnon.png)
 
-## <a name="train-your-app"></a>Обучение приложения
+## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 
-Выберите **Train** (Обучить) в меню навигации сверху.
-
-[![](media/luis-quickstart-new-app/trained.png "Снимок экрана с намерением HomeAutomation.TurnOff и зеленым уведомлением об успешном выполнении")](media/luis-quickstart-new-app/trained.png)
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="test-your-app"></a>Тестирование приложения
 После обучения можно выполнить тестирование приложения. Щелкните **Test** (Тестировать) в меню навигации сверху. Введите тестовое высказывание, например Turn off the lights (Выключить свет) в области интерактивного тестирования и нажмите клавишу ВВОД. 
@@ -89,29 +84,23 @@ Turn off the lights
 
 Снова щелкните **Test** (Тестировать), чтобы свернуть панель тестирования. 
 
-## <a name="publish-your-app"></a>Публикация приложения
-Щелкните **Publish** (Опубликовать) в меню навигации сверху. 
+<a name="publish-your-app"></a>
 
-[![](media/luis-quickstart-new-app/publish.png "Снимок экрана приложения, где выделена кнопка публикации")](media/luis-quickstart-new-app/publish.png)
+## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
 
-Выберите слот Production (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-Зеленая панель уведомлений в верхней части указывает на успешную публикацию приложения.
+## <a name="query-the-endpoint-with-a-different-utterance"></a>Запрос конечной точки с другой фразой
 
-[![](media/luis-quickstart-new-app/published.png "Снимок экрана приложения после успешной публикации")](media/luis-quickstart-new-app/published.png)
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)] 
 
-Когда публикация успешно завершится, можно использовать конечную точку, URL-адрес которой отображается на странице **Publish app** (Публикация приложения).
+2. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. Браузер отображает ответ JSON для конечной точки HTTP.
 
-[![](media/luis-quickstart-new-app/endpoint.png "Снимок экрана страницы публикации, где выделен URL-адрес конечной точки")](media/luis-quickstart-new-app/endpoint.png)
-
-## <a name="use-your-app"></a>Использование приложения
-Вы можете проверить работу опубликованной конечной точки с помощью браузера, используя созданный URL-адрес. Откройте этот URL-адрес и добавьте к тестовому запросу параметр URL-адреса &q. Например, добавьте `turn off the living room light` в конец URL-адреса и нажмите клавишу ВВОД. Браузер отображает ответ JSON для конечной точки HTTP.
-
-
-[![](media/luis-quickstart-new-app/turn-off-living-room.png "Снимок экрана браузера с результатом в формате JSON, где обнаружено намерение TurnOff")](media/luis-quickstart-new-app/turn-off-living-room.png)
-
+    [![](media/luis-quickstart-new-app/turn-off-living-room.png "Снимок экрана браузера с результатом в формате JSON, где обнаружено намерение TurnOff")](media/luis-quickstart-new-app/turn-off-living-room.png)
+    
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Для этого нажмите кнопку многоточия (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

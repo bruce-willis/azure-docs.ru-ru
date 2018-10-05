@@ -1,20 +1,21 @@
 ---
-title: Основные сведения об использовании ролей в сущностях на основе шаблонов — Azure | Документы Майкрософт
-description: Сведения об использовании роли в сущности на основе шаблона для присвоения имени контекстно-зависимому подтипу сущности.
+title: Использование ролей в сущностях на основе шаблонов
+titleSuffix: Azure Cognitive Services
+description: Роли — это именованные, контекстно-зависимые подтипы сущности, которые используются только в шаблонах. Например, во фразе "купить билет из Нью-Йорка в Лондон" Нью-Йорк и Лондон являются городами, но имеют разное значение в предложении. New York — это город отправления, а London — город назначения.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: luis
+ms.component: language-understanding
 ms.topic: article
-ms.date: 06/08/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: d2692cdce9da7428bd7b30c4feaf7347792618f5
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 033e5e5e054b0a29961ad60e72b1466b51d1df0c
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39222709"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47035204"
 ---
 # <a name="entity-roles-in-patterns-are-contextual-subtypes"></a>Роли сущностей в шаблонах — это контекстно-зависимые подтипы
 Роли — это именованные, контекстно-зависимые подтипы сущности, которые используется только в [шаблонах](luis-concept-patterns.md).
@@ -31,9 +32,10 @@ ms.locfileid: "39222709"
 ## <a name="how-are-roles-used-in-patterns"></a>Использование ролей в шаблонах
 Во фрагменте речи шаблона роли используются внутри фрагмента речи: 
 
-```
-buy a ticket from {Location:origin} to {Location:destination}
-```
+|Шаблон с ролями сущности|
+|--|
+|`buy a ticket from {Location:origin} to {Location:destination}`|
+
 
 ## <a name="role-syntax-in-patterns"></a>Синтаксис роли в шаблонах
 Сущность и роль заключаются в круглые скобки, `{}`. Сущность и роль разделяются точкой с запятой. 

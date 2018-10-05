@@ -1,21 +1,22 @@
 ---
-title: Создание пользовательского произношения с помощью Пользовательской службы распознавания речи в Azure | Документация Майкрософт
-description: Узнайте, как создать языковую модель с помощью Пользовательской службы распознавания речи в Cognitive Services.
+title: Использование пользовательского произношения — Пользовательская служба распознавания речи
+titlesuffix: Azure Cognitive Services
+description: Узнайте, как создать языковую модель с помощью Пользовательской службы распознавания речи.
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: custom-speech
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/23/2017
 ms.author: panosper
 ROBOTS: NOINDEX
-ms.openlocfilehash: c51ef6b25b454d0b8bf450b791f5c0fa9c6dfdee
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6442eec3e622282ecf6a3bf884110cd435fc18be
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46999381"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47223480"
 ---
 # <a name="enable-custom-pronunciation"></a>Создание пользовательского произношения
 Используя пользовательское произношение, пользователи могут определить фонетическую форму и отображение слова или термина. Это удобно для обработки настраиваемых терминов, например имен продуктов или сокращений. Все, что требуется — это файл произношений (простой TXT-файл).

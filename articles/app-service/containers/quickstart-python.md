@@ -1,26 +1,32 @@
 ---
-title: Развертывание приложения Python в Веб-приложении Azure для контейнеров
-description: Как развернуть пользовательский образ Docker с запущенным приложением Python в Веб-приложении для контейнеров.
-keywords: служба приложений Azure, веб-приложение, Python, Docker, контейнер
-services: app-service
+title: Создание веб-приложения Python в Службе приложений Azure на платформе Linux | Документация Майкрософт
+description: Быстрое развертывание первого приложения Hello World на Python в Службе приложений Azure на платформе Linux.
+services: app-service\web
+documentationcenter: ''
 author: cephalin
 manager: jeconnoc
-ms.service: app-service
-ms.devlang: python
+editor: ''
+ms.assetid: ''
+ms.service: app-service-web
+ms.workload: web
+ms.tgt_pltfrm: na
+ms.devlang: na
 ms.topic: quickstart
-ms.date: 07/13/2018
+ms.date: 09/13/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 6d328d8a3556f565e7eac8ee079bd191b7dcadef
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: c3089ad11dc951d3105b25b6857b7697f8c38d1a
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433448"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432075"
 ---
-# <a name="deploy-a-python-web-app-in-web-app-for-containers"></a>Развертывание веб-приложения Python в Веб-приложении для контейнеров
+# <a name="create-a-python-web-app-in-azure-app-service-on-linux-preview"></a>Создание веб-приложения Python в Службе приложений Azure на платформе Linux (предварительная версия)
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как создать веб-приложение и развернуть простое приложение Flask с помощью пользовательского образа из центра Docker. Создайте веб-приложение с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Python на основе встроенного образа Python (предварительная версия) в службе приложений в Linux с помощью [Azure CLI](/cli/azure/install-azure-cli).
+
+Выполните инструкции, приведенные в этом руководстве, с помощью компьютера Mac, Windows или Linux.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
 
@@ -28,67 +34,50 @@ ms.locfileid: "39433448"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим кратким руководством сделайте следующее:
 
+* <a href="https://www.python.org/downloads/" target="_blank">установите Python 3.7</a>;
 * <a href="https://git-scm.com/" target="_blank">установите Git</a>;
-* <a href="https://www.docker.com/community-edition" target="_blank">установите Docker Community Edition</a>.
-* <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
-В окне терминала выполните команды ниже. Так вы клонируете пример приложения на локальный компьютер и перейдете в каталог, содержащий пример кода.
+В окне терминала выполните нижеприведенные команды, чтобы клонировать пример приложения на локальный компьютер и перейти в каталог, содержащий пример кода.
 
 ```bash
 git clone https://github.com/Azure-Samples/python-docs-hello-world
 cd python-docs-hello-world
 ```
 
-Этот репозиторий содержит простое приложение Flask в папке _/app_ и файл _Dockerfile_, который определяет три вещи.
-
-- Использование базового образа [tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7](https://hub.docker.com/r/tiangolo/uwsgi-nginx-flask/).
-- Контейнер должен ожидать передачи данных через порт 8000.
-- Копирование каталога `/app` в контейнер каталога `/app`.
-
-Конфигурация соответствует [инструкциям для базового образа](https://hub.docker.com/r/tiangolo/uwsgi-nginx-flask/).
-
 ## <a name="run-the-app-locally"></a>Локальный запуск приложения
 
-Запустите приложение в контейнере Docker.
+Запустите приложение локально, чтобы увидеть, как оно будет выглядеть после развертывания в Azure. Откройте окно терминала и используйте нижеприведенные команды для установки необходимых зависимостей и запуска встроенного сервера разработки. 
 
 ```bash
-docker build --rm -t flask-quickstart .
-docker run --rm -it -p 8000:8000 flask-quickstart
+# In Bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+FLASK_APP=application.py flask run
+
+# In PowerShell
+py -3 -m venv env
+env\scripts\activate
+pip install -r requirements.txt
+Set-Item Env:FLASK_APP ".\application.py"
+flask run
 ```
 
-Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:8000`.
+Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:5000/`.
 
-На странице отобразится сообщение **Hello World** из примера приложения.
+На странице отобразится сообщение **Hello World!** из примера приложения.
 
-![Пример приложения, выполняющегося локально](media/quickstart-python/localhost-hello-world-in-browser.png)
+![Пример приложения, выполняющегося локально](media/quickstart-python/hello-world-in-browser.png)
 
-Для остановки контейнера в окне терминала нажмите клавиши **CTRL+C**.
-
-## <a name="deploy-image-to-docker-hub"></a>Развертывание образа из центра Docker
-
-Войдите в учетную запись центра Docker. Следуйте указаниям для ввода учетных данных центра Docker.
-
-```bash
-docker login
-```
-
-Отметьте свой образ и перетащите его в новый _общедоступный_ репозиторий учетной записи центра Docker с именем `flask-quickstart`. Замените *\<dockerhub_id>* идентификатором центра Docker.
-
-```bash
-docker tag flask-quickstart <dockerhub_id>/flask-quickstart
-docker push <dockerhub_id>/flask-quickstart
-```
-
-> [!NOTE]
-> Если указанный репозиторий не найден, то команда `docker push` создаст общедоступный репозиторий. Это краткое руководство предполагает общедоступный репозиторий в центре Docker. Если вы предпочитаете отправлять в частный репозиторий, необходимо настроить учетные данные центра Docker в Службе приложений Azure позже. См. [Create a web app](#create-a-web-app) (Создание веб-приложения).
-
-После завершения отправки образа его можно использовать в своем веб-приложении Azure.
+В окне терминала нажмите клавиши **CTRL+C**, чтобы выйти из веб-сервера.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+
+[!INCLUDE [Configure deployment user](../../../includes/configure-deployment-user.md)]
 
 [!INCLUDE [Create resource group](../../../includes/app-service-web-create-resource-group-linux.md)]
 
@@ -96,99 +85,100 @@ docker push <dockerhub_id>/flask-quickstart
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
-Создайте [веб-приложение](../app-service-web-overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Замените *\<app name>* на глобально уникальное имя приложения и *\<dockerhub_id>* на идентификатор центра Docker.
+[!INCLUDE [Create app service plan](../../../includes/app-service-web-create-web-app-python-linux-no-h.md)]
 
-```azurecli-interactive
-az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app name> --deployment-container-image-name <dockerhub_id>/flask-quickstart
+Перейдите на сайт, чтобы просмотреть созданное веб-приложение со встроенным образом. Замените _&lt;имя_приложения>_ уникальным именем веб-приложения.
+
+```bash
+http://<app_name>.azurewebsites.net
 ```
 
-Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
+Новое веб-приложение должно выглядеть так:
 
-```json
-{
-  "availabilityState": "Normal",
-  "clientAffinityEnabled": true,
-  "clientCertEnabled": false,
-  "cloningInfo": null,
-  "containerSize": 0,
-  "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "<app name>.azurewebsites.net",
-  "deploymentLocalGitUrl": "https://<username>@<app name>.scm.azurewebsites.net/<app name>.git",
-  "enabled": true,
-  < JSON data removed for brevity. >
-}
-```
+![Пустая страница веб-приложения](media/quickstart-php/app-service-web-service-created.png)
 
-Если вы ранее отправляли в закрытый репозиторий, необходимо также настроить учетные данные центра Docker в службе приложений. Дополнительные сведения см. в разделе [Использование частного образа из центра Docker Hub](tutorial-custom-docker-image.md#use-a-private-image-from-docker-hub-optional).
+[!INCLUDE [Push to Azure](../../../includes/app-service-web-git-push-to-azure.md)] 
 
-### <a name="specify-container-port"></a>Выбор порта контейнера
-
-Как указано в _Dockerfile_, контейнер ожидает передачи данных через порт 8000. Чтобы служба приложений перенаправляла запрос на правильный порт, необходимо установить параметр приложения *WEBSITES_PORT*.
-
-В Cloud Shell выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set).
-
-
-```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings WEBSITES_PORT=8000
-```
+```bash
+Counting objects: 42, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (39/39), done.
+Writing objects: 100% (42/42), 9.43 KiB | 0 bytes/s, done.
+Total 42 (delta 15), reused 0 (delta 0)
+remote: Updating branch 'master'.
+remote: Updating submodules.
+remote: Preparing deployment for commit id 'c40efbb40e'.
+remote: Generating deployment script.
+remote: Generating deployment script for python Web Site
+.
+.
+.
+remote: Finished successfully.
+remote: Running post deployment command(s)...
+remote: Deployment successful.
+remote: App container will begin restart within 10 seconds.
+To https://user2234@cephalin-python.scm.azurewebsites.net/cephalin-python.git
+ * [new branch]      master -> master
+ ```
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
+Перейдите в развертываемое приложение с помощью веб-браузера.
+
 ```bash
-http://<app_name>.azurewebsites.net/
+http://<app_name>.azurewebsites.net
 ```
+
+Пример кода Python выполняется в веб-приложении со встроенным образом.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
 
-> [!NOTE]
-> Запуск веб-приложения займет некоторое время, так как образ центра Docker должен загрузиться и запуститься при запросе приложения в первый раз. Если сначала появится сообщение об ошибке после долгого перерыва, просто обновите страницу.
+**Поздравляем!** Вы развернули свое первое приложение Python в службе приложений в Linux.
 
-**Поздравляем!** Вы развернули пользовательский образ Docker, запускающий приложение Python в Веб-приложении Azure для контейнеров.
+## <a name="update-locally-and-redeploy-the-code"></a>Обновление на локальном компьютере и повторное развертывание кода
 
-## <a name="update-locally-and-redeploy"></a>Обновление на локальном компьютере и повторное развертывание
-
-В локальном текстовом редакторе в приложении Python откройте файл `app/main.py` и внесите небольшое изменение в текст рядом с оператором `return`:
+В локальном репозитории откройте файл `application.py` и внесите небольшое изменение в последней строке:
 
 ```python
-return 'Hello, Azure!'
+return "Hello Azure!"
 ```
 
-Перестройте образ и повторно перетащите его в центр Docker.
+Зафиксируйте изменения в Git, а затем отправьте изменения кода в Azure.
 
 ```bash
-docker build --rm -t flask-quickstart .
-docker tag flask-quickstart <dockerhub_id>/flask-quickstart
-docker push <dockerhub_id>/flask-quickstart
+git commit -am "updated output"
+git push azure master
 ```
 
-Перезапустите приложение в Cloud Shell. Перезапуск приложения позволяет применить все параметры и извлечь из реестра последний контейнер.
-
-```azurecli-interactive
-az webapp restart --resource-group myResourceGroup --name <app_name>
-```
-
-Подождите около 15 секунд, чтобы служба приложений получила обновленный образ. Перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
+После завершения развертывания перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-python/hello-azure-in-browser.png)
 
-## <a name="manage-your-azure-web-app"></a>Управление веб-приложением Azure
+## <a name="manage-your-new-azure-web-app"></a>Управление новым веб-приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное веб-приложение.
+Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
 
 В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
 
 ![Переход к веб-приложению Azure на портале](./media/quickstart-python/app-service-list.png)
 
-По умолчанию на портале отображается страница **Обзор** веб-приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
+Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 
-![Страница службы приложений на портале Azure](./media/quickstart-python/app-service-detail.png)
+![Страница службы приложений на портале Azure](media/quickstart-python/app-service-detail.png)
 
-[!INCLUDE [Clean-up section](../../../includes/cli-script-clean-up.md)]
+В меню слева доступно несколько страниц для настройки приложения. 
+
+[!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Встроенный образ Python в службе приложений на платформе Linux доступен в предварительной версии. Рабочие приложения Python можно создавать с помощью настраиваемого контейнера.
+
 > [!div class="nextstepaction"]
-> [Использование Python и PostgreSQL](tutorial-docker-python-postgresql-app.md)
+> [Использование Python и PostgreSQL](tutorial-python-postgresql-app.md)
+
+> [!div class="nextstepaction"]
+> [Configure built-in Python image in Azure App Service](how-to-configure-python.md) (Настройка встроенного образа Python в Службе приложений Azure)
 
 > [!div class="nextstepaction"]
 > [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](tutorial-custom-docker-image.md)

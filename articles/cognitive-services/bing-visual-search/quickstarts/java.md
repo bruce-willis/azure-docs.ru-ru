@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство по API Bing для наглядного поиска для Java | Документация Майкрософт
-titleSuffix: Bing Web Search APIs - Cognitive Services
-description: В этой статье показано, как передать изображение в API Bing для наглядного поиска и получить о нем аналитические сведения.
+title: Краткое руководство. Создание запроса для визуального поиска на Java — Визуальный поиск Bing
+titleSuffix: Azure Cognitive Services
+description: В этой статье показано, как отправить изображение в API визуального поиска Bing и получить аналитические сведения об этом изображении.
 services: cognitive-services
 author: swhite-msft
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: bing-visual-search
-ms.topic: article
+ms.topic: quickstart
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: 41e0855b126ca6e54d0a487a88fe59a0be6f72f6
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 56e1b943f03128fa6703a7b15bd0d6ade09089d6
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072001"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222630"
 ---
-# <a name="your-first-bing-visual-search-query-in-java"></a>Ваш первый запрос к API Bing для наглядного поиска на Java
+# <a name="quickstart-your-first-bing-visual-search-query-in-java"></a>Краткое руководство: первый запрос для API визуального поиска Bing на Java
 
 API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в статье [What is Bing Visual Search API?](../overview.md) (Что такое API Bing для наглядного поиска?) В этой статье показано, как отправлять изображения. Отправка изображения может быть полезна в сценариях с использованием мобильных устройств, когда вы фотографируете какую-то достопримечательность и получаете сведения о ней. Например, аналитические сведения могут содержать любопытные факты об этой достопримечательности. 
 

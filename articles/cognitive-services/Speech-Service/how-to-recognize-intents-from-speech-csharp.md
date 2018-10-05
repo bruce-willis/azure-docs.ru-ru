@@ -1,48 +1,189 @@
 ---
-title: Распознавание намерений из речи с помощью пакета SDK службы "Речь" для C#
+title: Руководство. Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
 titleSuffix: Microsoft Cognitive Services
 description: >
-  Сведения о различных способах распознавания намерений из речи (из файла или с микрофона) с помощью пакета SDK службы "Речь" для C#.
+  В данном руководстве приведены сведения о различных способах распознавания намерений в речи с помощью пакета SDK службы "Речь" для C#.
 services: cognitive-services
 author: wolfma61
 ms.service: cognitive-services
 ms.technology: Speech
-ms.topic: article
-ms.date: 07/16/2018
+ms.topic: tutorial
+ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: 7de53ec33e678b5532cd6980f7efbee228459082
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: 16424c44003be14e3ba04f6b5cce0ce518a0d7e8
+ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43144756"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47063036"
 ---
-# <a name="recognize-intents-from-speech-by-using-the-speech-sdk-for-c"></a>Распознавание намерений из речи с помощью пакета SDK службы "Речь" для C#
+# <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
 
 [!INCLUDE [Article selector](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-selector.md)]
 
-[!INCLUDE [Introduction](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-intro.md)]
+[Пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) в Cognitive Services интегрируется с [Интеллектуальной службой распознавания речи (LUIS)](https://www.luis.ai/home) для предоставления возможности **распознавания намерений**. Намерение — это действие, которое хочет выполнить пользователь, например забронировать билет на самолет, проверить прогноз погоды или совершить звонок. Пользователь может использовать любые термины, которые кажутся естественными. С помощью машинного обучения LUIS сопоставит пользовательские запросы с определенными намерениями.
 
-[!INCLUDE [Introduction for top-level declarations](../../../includes/cognitive-services-speech-service-how-to-toplevel-declarations.md)]
+> [!NOTE]
+> Приложение LUIS используется для определения намерений и сущностей, которые требуется распознать. Оно работает отдельно от приложения C#, в котором используется служба "Речь". В этой статье под словом "приложение" подразумевается приложение LUIS, а под "программа" — код C#.
+
+В данном руководстве для разработки консольной программы C#, которая извлекает намерения пользователя из высказываний, полученных через микрофон устройства, будет использован пакет SDK для службы "Речь". Вы узнаете, как:
+
+> [!div class="checklist"]
+> * создать проект в Visual Studio, ссылающийся на пакет SDK для службы "Речь" для NuGet;
+> * выполнить настройки речи и получить распознаватель намерений;
+> * создать модель для приложения LUIS и добавить необходимые намерения;
+> * указать язык распознавания речи;
+> * распознать речь из файла;
+> * использовать асинхронное непрерывное распознавание при определенном событии.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Перед началом работы с этим руководством необходимо убедиться в наличии следующих ресурсов.
+
+* Учетная запись LUIS. На [портале LUIS](https://www.luis.ai/home) ее можно получить бесплатно.
+* Visual Studio 2017 (любой выпуск).
+
+## <a name="luis-and-speech"></a>LUIS и речь
+
+Чтобы распознать намерения в речи LUIS интегрируется в службу "Речь". Подписка на службу "Речь" не требуется.
+
+В LUIS используются два типа ключей. 
+
+|Тип ключа|Назначение|
+|--------|-------|
+|Разработка|позволяет программно создавать и изменять приложения LUIS|
+|endpoint |разрешает доступ к определенному приложению LUIS|
+
+Ключ конечной точки — это ключ LUIS, который используется в текущем руководстве. В этом руководстве используется пример приложения LUIS Home Automation. Создать его можно, выполнив инструкции в статье [Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app). Также вместо него можно использовать собственное приложение.
+
+Начальный ключ автоматически создается при создании приложения LUIS. Это позволяет проверять приложения с помощью текстовых запросов. С помощью этого ключа невозможно запустить интеграцию со службой "Речь", и поэтому он не используется в данном руководстве. На панели мониторинга Azure необходимо создать ресурс LUIS и назначить его приложению LUIS. Для данного руководства можно использовать бесплатную подписку. 
+
+После создания ресурса LUIS на панели мониторинга Azure необходимо войти на [портал LUIS](https://www.luis.ai/home) и выбрать свою программу на странице "Мои приложения", а затем перейти на страницу "Управление". И наконец, на боковой панели щелкните **Keys and Endpoints** (Ключи и конечные точки).
+
+![Параметры конечной точки и ключей на портале LUIS](media/sdk/luis-keys-endpoints-page.png)
+
+Выполните следующие действия на странице параметров Keys and Endpoints (Ключи и конечные точки).
+
+1. Прокрутите вниз к разделу Resources and Keys (Ресурсы и ключи) и щелкните **Назначить ресурс**.
+1. Выберите следующие параметры в диалоговом окне **Assign a key to your app** (Назначение ключа приложению).
+
+    * В качестве клиента необходимо выбрать Microsoft.
+    * В разделе "Имя подписки" выберите подписку Azure, содержащую ресурс LUIS, который будет использован.
+    * В разделе Key (Ключ) выберите тот ресурс LUIS, который необходимо использовать в приложении.
+
+Через мгновение новая подписка появится в таблице в нижней части страницы. Чтобы скопировать ее в буфер обмена, щелкните значок рядом с ключом. (Можно использовать любой ключ.)
+
+![Ключи подписки приложения LUIS](media/sdk/luis-keys-assigned.png)
+
+## <a name="create-a-speech-project-in-visual-studio"></a>Создание проекта "Речь" в Visual Studio
+
+[!INCLUDE [Create project ](../../../includes/cognitive-services-speech-service-create-speech-project-vs-csharp.md)]
+
+## <a name="add-the-code"></a>Добавление кода
+
+В проекте Visual Studio откройте файл `Program.cs` и замените блок операторов `using`, который находится в начале файла, следующими объявлениями.
 
 [!code-csharp[Top-level declarations](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#toplevel)]
 
-[!INCLUDE [Introduction to using a microphone](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-microphone.md)]
+Добавьте следующий код в метод `Main()`.
+
+```csharp
+RecognizeIntentAsync().Wait();
+Console.WriteLine("Please press Enter to continue.");
+Console.ReadLine();
+```
+
+Создайте пустой асинхронный метод `RecognizeIntentAsync()`, как показано ниже.
+
+```csharp
+static async Task RecognizeIntentAsync()
+{
+}
+```
+
+Добавьте следующий код в тело метода.
 
 [!code-csharp[Intent recognition by using a microphone](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#intentRecognitionWithMicrophone)]
 
-[!INCLUDE [Introduction - using microphone and language](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-microphone-language.md)]
+В методе необходимо заменить заполнители на ключ подписки LUIS, регион и идентификатор приложения следующим образом.
 
-[!code-csharp[Intent recognition by using a microphone in a specified language](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#intentRecognitionWithLanguage)]
+|Placeholder|Заменить на|
+|-----------|------------|
+|`YourLanguageUnderstandingSubscriptionKey`|Ключ конечной точки LUIS. Как было указано ранее, данный ключ должен быть получен из панели мониторинга Azure, а не в качестве ключа для начала разработки. Его можно найти на странице приложения "Keys and Endpoints" (Ключи и конечные точки) в разделе Manage (Управление) на [портале LUIS](https://www.luis.ai/home).|
+|`YourLanguageUnderstandingServiceRegion`|Короткий идентификатор региона, в котором находится подписка LUIS, например `westus` для западной части США. См. статью [Регионы и конечные точки службы "Речь"](regions.md).|
+|`YourLanguageUnderstandingAppId`|Идентификатор приложения LUIS. Его можно найти на странице параметров приложения на [портале LUIS](https://www.luis.ai/home).|
 
-[!INCLUDE [Introduction to using a continuous file](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-continuous.md)]
+После выполнения этих изменений можно создать (CTRL+SHIFT+B) и запустить (F5) программу, приведенную в руководстве. При появлении запроса в микрофон компьютера следует произнести фразу "выключить свет". Результат появится в окне консоли.
+
+В следующих разделах приводится описание кода.
+
+
+## <a name="create-an-intent-recognizer"></a>Создание распознавателя намерений
+
+Первым шагом распознавания намерений в речи является создание конфигурации речи с помощью ключа конечной точки LUIS и региона. Конфигурации речи могут использоваться для создания распознавателей, обладающих различными возможностями, используемыми в пакете SDK службы "Речь". При использовании конфигурации речи вы можете указать подписку несколькими способами. В данном руководстве будет использован способ `FromSubscription`, для которого требуется ключ подписки и регион.
+
+> [!NOTE]
+> Используйте ключ и регион подписки LUIS вместо подписки "Речь".
+
+Затем с помощью `new IntentRecognizer(config)` создайте распознаватель намерений. Поскольку в конфигурации уже было указано, какую из подписок использовать, повторное указание ключа подписки и конечной точки при создании распознавателя не требуется.
+
+## <a name="import-a-luis-model-and-add-intents"></a>Добавление намерений и импорт модели
+
+Теперь импортируйте модель из приложения LUIS с помощью идентификатора `LanguageUnderstandingModel.FromAppId()` и добавьте те намерения LUIS, которые требуется распознать, с помощью метода `AddIntent()`. С помощью двух приведенных шагов улучшается точность распознавания речи путем указания слов, которые пользователь может использовать в запросах. Если в программе не планируется распознавать все намерения приложений, их добавление не требуется.
+
+Для добавления намерений требуется три аргумента. Модель LUIS (которая была создана с именем `model`), имя намерения и его идентификатор. Разница между идентификатором и именем приведена в следующей таблице.
+
+|Аргумент `AddIntent()`|Назначение|
+|--------|-------|
+|intentName |Имя намерения, определенного в приложении LUIS. Оно должно совпадать с именем намерения LUIS.|
+|intentID    |Идентификатор, присвоенный намерению, распознанному пакетом SDK для службы "Речь". Он может быть любым. Он не обязательно должен соответствовать имени намерения, определенному в приложении LUIS. Для обработки нескольких намерений может использоваться один код, как и один идентификатор используется для всех намерений.|
+
+Приложение LUIS Home Automation содержит два намерения. Первое — включение устройства и второе — выключения устройства. С помощью приведенных ниже строк намерения будут добавлены в распознаватель. Замените приведенным ниже кодом три строки `AddIntent` в методе `RecognizeIntentAsync()`.
+
+```csharp
+recognizer.AddIntent(model, "HomeAutomation.TurnOff", "off");
+recognizer.AddIntent(model, "HomeAutomation.TurnOn", "on");
+```
+
+## <a name="start-recognition"></a>Начало распознавания
+
+После создания распознавателя и добавления намерений можно начать процесс распознавания. В пакете SDK для службы "Речь" поддерживается краткое и непрерывное распознавание.
+
+|Режим распознавания|Вызываемые методы|Результат|
+|----------------|-----------------|---------|
+|Одиночный|`RecognizeOnceAsync()`|Возвращает распознанное намерение, извлеченное из одного высказывания.|
+|Непрерывные|`StartContinuousRecognitionAsync()`<br>`StopContinuousRecognitionAsync()`|Распознает несколько высказываний. Когда результаты становятся доступными, выдает события (например, `IntermediateResultReceived`).|
+
+В программе, приведенной в руководстве, используется "одиночный" режим и поэтому для начала распознавание используется `RecognizeOnceAsync()`. Результат — объект `IntentRecognitionResult`, который содержит информацию о распознанном намерении. Ответ LUIS в формате JSON извлекается с помощью следующего выражения.
+
+```csharp
+result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_JsonResult)
+```
+
+Программа, приведенная в руководстве, не анализирует результат JSON. Она используется для его отображения в окне консоли.
+
+![Результаты распознавания LUIS](media/sdk/luis-results.png)
+
+## <a name="specify-recognition-language"></a>Указание языка распознавания
+
+По умолчанию язык распознавания намерений — английский (США) (`en-us`). Чтобы распознавать намерения на других языках, свойству `SpeechRecognitionLanguage` необходимо присвоить код языкового стандарта. Например, перед созданием распознавателя добавьте параметр `config.SpeechRecognitionLanguage = "de-de";` в программу, приведенную в руководстве. Это позволит распознавать намерения на немецком языке. См. сведения о [поддерживаемых языках](supported-languages.md#speech-to-text).
+
+## <a name="continuous-recognition-from-a-file"></a>Непрерывное распознавание из файла
+
+В следующем коде иллюстрируются две дополнительные возможности распознавания намерений с использованием пакета SDK для службы "Речь". Первая из возможностей, которая была упомянута ранее, — непрерывное распознавание, используя которое распознаватель извлекает события при получении результата. Затем эти события могут обрабатываться предоставленными обработчиками событий. При непрерывном распознавании вызывается распознаватель `StartContinuousRecognitionAsync()`, который начнет работать вместо распознавателя `RecognizeOnceAsync()`.
+
+К другим возможностям можно отнести считывание звукового файла в формате WAV, содержащего речь, подлежащую обработке. Сюда можно отнести создание конфигурации звука, которую можно использовать при создании распознавателя намерений. Файл должен состоять из одного канала (моно) с уровнем дискретизации 16 000 Гц.
+
+Воспользуйтесь новыми функциями, заменив тело метода `RecognizeIntentAsync()` следующим кодом. 
 
 [!code-csharp[Intent recognition by using events from a file](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#intentContinuousRecognitionWithFile)]
 
+Пересмотрите код на наличие ключа конечной точки LUIS, региона и идентификатора приложения и, как и в предыдущем примере, добавьте намерения Home Automation. Измените имя `whatstheweatherlike.wav` на имя вашего звукового файла. Затем выполните сборку и запуск.
+
 [!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
-Найдите код, используемый в этой статье, в папке samples/csharp/sharedcontent/console.
+Код, используемый в данной статье, можно найти в папке samples/csharp/sharedcontent/console.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Как распознавать речь](how-to-recognize-speech-csharp.md).
-- [Как переводить речь](how-to-translate-speech-csharp.md)
+> [!div class="nextstepaction"]
+> [Как распознавать речь](how-to-recognize-speech-csharp.md).

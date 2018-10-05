@@ -1,24 +1,27 @@
 ---
-title: Краткое руководство по созданию базы знаний на C# с помощью API службы Microsoft QnA Maker (версии 4) — Azure Cognitive Services | Документация Майкрософт
-description: Создайте базу знаний на C# для часто задаваемых вопросов и руководств по продуктам, чтобы начать работу с QnA Maker.
+title: 'Краткое руководство: C# API — создание базы знаний — QnA Maker'
+titlesuffix: Azure Cognitive Services
+description: Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
 services: cognitive-services
-author: noellelacharite
-manager: nolachar
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: qna-maker
 ms.topic: quickstart
-ms.date: 06/15/2018
-ms.author: nolachar
-ms.openlocfilehash: 16d17a335bb84212497010b3eeb930582fa86dc4
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.date: 09/12/2018
+ms.author: diberry
+ms.openlocfilehash: 8a0840a96f21f76f3a742d973c86dd02929b8e30
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "43771273"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47039452"
 ---
 # <a name="create-a-new-knowledge-base-in-c"></a>Создание базы знаний на C#
 
 Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
+
+[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-csharp-repo-note.md)]
 
 Ниже приведены два примера URL-адресов часто задаваемых вопросов (массив "urls" в строковой переменной kb). Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого (например, из страниц с вопросами и ответами), как описано в этом документе об [источниках данных](../Concepts/data-sources-supported.md). При работе с этим кратким руководством вы можете использовать собственные URL-адреса страниц с часто задаваемыми вопросами.
 

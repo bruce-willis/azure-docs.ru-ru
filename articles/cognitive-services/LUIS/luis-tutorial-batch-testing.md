@@ -1,51 +1,27 @@
 ---
-title: Улучшение прогнозирований LUIS с помощью пакетного тестирования | Документы Майкрософт
-titleSuffix: Azure
-description: Выполняйте пакетное тестирование, просматривайте результаты и улучшайте прогнозирования LUIS с помощью изменений.
+title: 'Руководство 2. Пакетное тестирование с набором из 1000 высказываний '
+titleSuffix: Azure Cognitive Services
+description: В этом руководстве показано, как использовать пакетное тестирование для поиска и устранения проблем с прогнозированием высказываний в приложении.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 08/02/2018
+ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 5abaeaee87d54e82df29e75b89c83522b8746730
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: e5155caa26669cd98b679eec611334ee5c048fca
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44158251"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47162547"
 ---
-# <a name="improve-app-with-batch-test"></a>Улучшение приложения с помощью пакетного тестирования
+# <a name="tutorial-2-batch-test-data-sets"></a>Руководство 2. Наборы данных для пакетного тестирования
 
-В этом руководстве содержатся сведения по использованию пакетного тестирования для поиска проблем прогнозирования.  
-
-Из этого руководства вы узнаете, как выполнять следующие задачи:
-
-<!-- green checkmark -->
-> [!div class="checklist"]
-* Создание файла пакетного теста 
-* Выполнение пакетного теста
-* Просмотр результатов теста
-* Исправление ошибок 
-* Повторное тестирование пакета
-
-[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
-
-## <a name="before-you-begin"></a>Перед началом работы
-
-Если у вас нет приложения по управлению персоналом из раздела [Руководство. Проверка фрагментов речи конечной точки](luis-tutorial-review-endpoint-utterances.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл в формате JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-review-HumanResources.json).
-
-Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `batchtest`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
-
-Обучите приложение.
-
-## <a name="purpose-of-batch-testing"></a>Цель пакетного тестирования
+В этом руководстве показано, как использовать пакетное тестирование для поиска и устранения проблем с прогнозированием высказываний в приложении.  
 
 Пакетное тестирование позволяет проверить состояние активной, обученной модели с известным набором помеченных высказываний и сущностей. В пакетном файле в формате JSON добавьте высказывания и установите метки сущностей, которые нужно спрогнозировать внутри высказывания. 
-
-<!--The recommended test strategy for LUIS uses three separate sets of data: example utterances provided to the model, batch test utterances, and endpoint utterances. --> При использовании приложения, которое отличается от этого руководства, убедитесь, что вы *не* используете примеры высказываний, уже добавленных в намерение. Чтобы проверить высказывания пакетного тестирования по сравнению с примерами высказываний, [экспортируйте](luis-how-to-start-new-app.md#export-app) приложение. Сравните пример высказывания приложения с высказываниями пакетного тестирования. 
 
 Требования к пакетному тестированию.
 
@@ -53,13 +29,42 @@ ms.locfileid: "44158251"
 * Без дубликатов. 
 * Разрешенные типы сущностей: только машинно-обученные сущности простых, иерархических (только родительских) и составных сущностей. Пакетное тестирование полезно только для машинно-обученных намерений и сущностей.
 
-## <a name="create-a-batch-file-with-utterances"></a>Создание пакетного файла с высказываниями
+При использовании приложения, которое отличается от описанного в этом руководстве, *не* используйте примеры высказываний, которые уже добавлены в намерение. 
 
-1. Создайте `HumanResources-jobs-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/). 
+**Из этого руководства вы узнаете, как выполнить следующие задачи:**
+
+<!-- green checkmark -->
+> [!div class="checklist"]
+> * Использование существующего приложения из руководства.
+> * Создание файла пакетного теста 
+> * Выполнение пакетного теста
+> * Просмотр результатов теста
+> * Исправление ошибок 
+> * Повторное тестирование пакета
+
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+
+## <a name="use-existing-app"></a>Использование существующего приложения
+
+Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
+
+Если у вас нет приложения HumanResources из предыдущего руководства, сделайте следующее:
+
+1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-review-HumanResources.json).
+
+2. Импортируйте JSON-файл в новое приложение.
+
+3. В разделе **Управление** на вкладке **Версии** клонируйте версию и присвойте ей имя `batchtest`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
+
+4. Обучите приложение.
+
+## <a name="batch-file"></a>Пакетный файл
+
+1. Создайте файл `HumanResources-jobs-batch.json` в текстовом редакторе или [скачайте](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/HumanResources-jobs-batch.json) его. 
 
 2. В пакетный файл в формате JSON добавьте высказывания с **намерением**, которое должно быть спрогнозировано в тесте. 
 
-   [!code-json[Add the intents to the batch test file](~/samples-luis/documentation-samples/tutorial-batch-testing/HumanResources-jobs-batch.json "Add the intents to the batch test file")]
+   [!code-json[Add the intents to the batch test file](~/samples-luis/documentation-samples/tutorials/HumanResources-jobs-batch.json "Add the intents to the batch test file")]
 
 ## <a name="run-the-batch"></a>Запуск пакетного теста
 
@@ -73,13 +78,13 @@ ms.locfileid: "44158251"
 
     [![Снимок экрана приложения LUIS с выделенной кнопкой "Import dataset" (Импортировать набор данных)](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png)](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png#lightbox)
 
-4. Выберите расположение файловой системы для файла `HumanResources-jobs-batch.json`.
+4. Выберите расположение для файла `HumanResources-jobs-batch.json`.
 
 5. Назовите набор данных `intents only` и выберите **Готово**.
 
     ![Выбор файла](./media/luis-tutorial-batch-testing/hr-import-new-dataset-ddl.png)
 
-6. Нажмите кнопку **Запустить**. Дождитесь завершения теста.
+6. Нажмите кнопку **Запустить**. 
 
 7. Щелкните **See results** (Просмотреть результаты).
 
@@ -109,7 +114,7 @@ ms.locfileid: "44158251"
 
 Высказывания, соответствующие верхней точке в разделе **Ложное срабатывание**, являются `Can I apply for any database jobs with this resume?` и `Can I apply for any database jobs with this resume?`. Для первого высказывания слово `resume` использовалось только в **ApplyForJob**. Для второго высказывания слово `apply` использовалось только в намерении **ApplyForJob**.
 
-## <a name="fix-the-app-based-on-batch-results"></a>Исправление приложения на основе результатов пакетного тестирования
+## <a name="fix-the-app"></a>Исправление приложения
 
 Цель этого раздела — правильно спрогнозировать все высказывания для **GetJobInformation**, исправляя приложение. 
 
@@ -119,7 +124,7 @@ ms.locfileid: "44158251"
 
 Первый способ исправления заключается в добавлении дополнительных высказываний в **GetJobInformation**. Второй способ заключается в уменьшении веса слов типа `resume` и `apply` по отношению к намерению **ApplyForJob**. 
 
-### <a name="add-more-utterances-to-getjobinformation"></a>Добавление дополнительных высказываний в **GetJobInformation**
+### <a name="add-more-utterances"></a>Добавление высказываний
 
 1. Закройте панель пакетного тестирования, нажав кнопку **Test** (Тестирование) на верхней панели навигации. 
 
@@ -149,7 +154,7 @@ ms.locfileid: "44158251"
 
 4. Обучите приложение, выбрав **Train** (Обучать) в правом верхнем углу.
 
-## <a name="verify-the-fix-worked"></a>Проверка применения исправления
+## <a name="verify-the-new-model"></a>Проверка новой модели
 
 Чтобы проверить правильность прогнозирования высказываний пакетного тестирования, запустите пакетный тест еще раз.
 
@@ -171,12 +176,12 @@ ms.locfileid: "44158251"
 
 Значение сущности **задания**, представленное в тестовых высказываниях, обычно является одним или двумя словами, в нескольких примерах больше слов. Если _ваше собственное_ приложение по управлению персоналом обычно имеет имена заданий, составленные с нескольких слов, примеры высказываний с меткой **Job**  в этом приложении не будут работать хорошо.
 
-1. Создайте `HumanResources-entities-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/). Или загрузите [файл](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorial-batch-testing/HumanResources-entities-batch.json) из репозитория LUIS-Samples Github.
+1. Создайте файл `HumanResources-entities-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/), или [скачайте](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/HumanResources-entities-batch.json) этот файл.
 
 
 2. В пакетном файле в формате JSON добавьте массив объектов, которые включают высказывания с **намерением**, которое необходимо спрогнозировать во время тестирования, а также местоположения любых сущностей в высказывании. Поскольку сущность основана на токенах, обязательно запускайте и останавливайте каждую сущность на символе. Не начинайте или заканчивайте высказывание пробелом. Это приводит к ошибке во время импорта пакетного файла.  
 
-   [!code-json[Add the intents and entities to the batch test file](~/samples-luis/documentation-samples/tutorial-batch-testing/HumanResources-entities-batch.json "Add the intents and entities to the batch test file")]
+   [!code-json[Add the intents and entities to the batch test file](~/samples-luis/documentation-samples/tutorials/HumanResources-entities-batch.json "Add the intents and entities to the batch test file")]
 
 
 ## <a name="run-the-batch-with-entities"></a>Запустите пакетный тест с сущностями
@@ -222,15 +227,13 @@ ms.locfileid: "44158251"
 
 Добавление [шаблона](luis-concept-patterns.md) до того, как сущность будет правильно спрогнозирована, не решит проблему. Это связано с тем, что шаблон не будет соответствовать, пока не будут обнаружены все сущности в шаблоне. 
 
-## <a name="what-has-this-tutorial-accomplished"></a>Какие результаты работы с этим руководством?
-
-Точность прогнозирования приложения увеличилась путем поиска ошибок в пакете и исправления модели. 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
+
+В этом руководстве вы использовали пакетное тестирование для поиска проблем с текущей моделью. Вы исправили модель и провели повторное тестирование с использованием пакетного файла, чтобы убедиться в правильности изменения.
 
 > [!div class="nextstepaction"]
 > [Tutorial: Improve app with pattern roles](luis-tutorial-pattern.md) (Руководство. Улучшение приложения с ролями шаблонов)

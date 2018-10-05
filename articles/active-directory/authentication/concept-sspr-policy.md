@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 8ec0947d041dc0d4f5423a48a443ab2dd86949e2
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: ee30ee4fa89ce47e8441845b088919b26ce32b31
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43782541"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47434285"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -90,7 +90,7 @@ ms.locfileid: "43782541"
 
 | Свойство | Требования |
 | --- | --- |
-| Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / ` ~ “ ( ) ;</li></ul> |
+| Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / ` ~ " ( ) ;</li></ul> |
 | Недопустимые символы |<ul><li>Знаки Юникода.</li><li>Пробелы.</li><li> Используйте только надежные пароли</li></ul> |
 | Ограничения для пароля |<ul><li>От 8 до 16 знаков.</li><li>Только надежные пароли: необходимо выполнить 3 из 4 следующих условий:<ul><li>строчные буквы;</li><li>прописные буквы;</li><li>числа (0–9);</li><li>символы (см. ограничения для пароля выше).</li></ul></li></ul> |
 | Длительность срока действия пароля |<ul><li>Значение по умолчанию: **90** дней.</li><li>Значение можно изменить с помощью командлета `Set-MsolPasswordPolicy` из модуля Azure Active Directory для Windows PowerShell.</li></ul> |

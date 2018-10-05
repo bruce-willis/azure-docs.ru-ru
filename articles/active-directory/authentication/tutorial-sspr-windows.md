@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 27f271a20af2bb9910f1cf7d63e6033d78e67b83
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: f2f2208f325728275706eeed9ff16e8afc3b11cf
+ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "41918122"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47166883"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD в окне входа
 
@@ -45,8 +45,6 @@ ms.locfileid: "41918122"
    * При необходимости введите содержательное описание профиля.
    * Выберите платформу **Windows 10 и более поздних версий**.
    * Для типа профиля укажите **Пользовательский**.
-
-   ![CreateProfile][CreateProfile]
 
 3. Настройте **параметры**.
    * В разделе "Параметры OMA-URI" **добавьте** следующий параметр, чтобы включить отображение ссылки сброса пароля.
@@ -100,7 +98,6 @@ ms.locfileid: "41918122"
 ![LoginScreen][LoginScreen]
 
 Теперь, когда пользователи попытаются войти в систему, они увидят ссылку сброса пароля, которая позволяет открыть интерфейс для самостоятельного сброса пароля на экране входа в систему. С помощью этой функции пользователи могут сбросить пароль, не используя другое устройство для получения доступа к браузеру.
-Теперь, когда пользователи попытаются войти в систему, они увидят ссылку сброса пароля, которая позволяет открыть интерфейс для самостоятельного сброса пароля на экране входа в систему. С помощью этой функции пользователи могут сбросить пароль, не используя другое устройство для получения доступа к браузеру.
 
 Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md#reset-password-at-sign-in).
 
@@ -116,6 +113,10 @@ ms.locfileid: "41918122"
 
 Если экран блокировки Windows отключен с использованием раздела реестра или групповой политики, функция **Сброс пароля** будет недоступна.
 
+Журнал аудита Azure AD включают в себя сведения об IP-адресе и типе клиента (ClientType), на котором произошел сброс пароля.
+
+![Пример сброса пароля на экране входа в журнале аудита Azure AD](media/tutorial-sspr-windows/windows-sspr-azure-ad-audit-log.png)
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы больше не хотите использовать функциональные возможности, которые были настроены в ходе этого руководства, удалите созданный профиль конфигурации устройства Intune или раздел реестра.
@@ -127,6 +128,5 @@ ms.locfileid: "41918122"
 > [!div class="nextstepaction"]
 > [Tutorial: Use risk events to trigger Multi-Factor Authentication and password changes](tutorial-risk-based-sspr-mfa.md) (Руководство. Использование событий риска для запуска Многофакторной идентификации и изменений пароля)
 
-[CreateProfile]: ./media/tutorial-sspr-windows/create-profile.png "Создание профиля конфигурации устройства Intune для активирования ссылки сброса пароля на экране входа Windows 10"
 [Assignment]: ./media/tutorial-sspr-windows/profile-assignment.png "Назначение политики конфигурации устройства Intune группе устройств с Windows 10"
 [LoginScreen]: ./media/tutorial-sspr-windows/logon-reset-password.png "Ссылка "Сброс пароля" в окне входа в Windows 10"

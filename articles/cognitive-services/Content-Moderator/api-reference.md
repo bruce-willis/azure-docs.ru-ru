@@ -1,20 +1,21 @@
 ---
-title: Справочник по API Azure Content Moderator | Документация Майкрософт
+title: Справочник по API — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Узнайте о модерации контента и интерфейсах API проверки для Content Moderator.
 services: cognitive-services
 author: sanjeev3
-manager: mikemcca
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
-ms.topic: article
+ms.topic: reference
 ms.date: 06/25/2017
 ms.author: sajagtap
-ms.openlocfilehash: 94de9b91cc242e8b7e5479cacab8380adac551f6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f065310e3afeaf95af602e513421da6770c9583f
+ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380133"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47222410"
 ---
 # <a name="content-moderator-api-reference"></a>Справочник по API Content Moderator
 

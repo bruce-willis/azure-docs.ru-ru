@@ -1,23 +1,24 @@
 ---
-title: Использование диспетчера трафика Microsoft Azure для увеличения квоты конечной точки в Language Understanding (LUIS) — Azure | Документы Майкрософт
-description: Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько подписок в Language Understanding (LUIS) для увеличения квоты конечной точки
+title: Использование диспетчера трафика Microsoft Azure для увеличения квоты конечной точки в Интеллектуальной службе распознавания речи (LUIS)
+titleSuffix: Azure Cognitive Services
+description: Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**.
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 909c32452db216f79633b94c31f39350b7a6ee20
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: 28fc0d0061d1826f0e17c26325ea227e001dccda
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39248634"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47042182"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
-Language Understanding (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
+Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
 
 Клиентское приложение должно управлять трафиком между ключами. LUIS не делает этого. 
 
@@ -40,13 +41,11 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 ```
 
 ## <a name="create-luis-keys-to-increase-total-endpoint-quota"></a>Создание ключей LUIS для увеличения общей квоты конечной точки
-1. На портале Azure создайте два ключа **Language Understanding**, один в `West US` и один в `East US`. Используйте существующую группу ресурсов `luis-traffic-manager`, созданную в предыдущем разделе. 
+1. На портале Azure создайте два ключа службы **Распознавание речи**: в `West US` и `East US`. Используйте существующую группу ресурсов `luis-traffic-manager`, созданную в предыдущем разделе. 
 
     ![Снимок экрана портала Azure с двумя ключами LUIS в группе ресурсов luis-traffic-manager](./media/traffic-manager/luis-keys.png)
 
-2. На веб-сайте [LUIS][LUIS] на странице **Публикация** добавьте ключи в приложение и повторно опубликуйте приложение. 
-
-    ![Снимок экрана портала LUIS с двумя ключами LUIS на странице "Публикация"](./media/traffic-manager/luis-keys-in-luis.png)
+2. На веб-сайте [LUIS][LUIS] в разделе **Manage** (Управление) на странице **Keys and endpoints** (Ключи и конечные точки) назначьте ключи для приложения и опубликуйте приложение повторно, щелкнув кнопку **Publish** (Опубликовать) в правом верхнем меню. 
 
     В примере URL-адреса в столбце **Конечная точка** используется запрос GET с ключом конечной точки в качестве параметра запроса. Скопируйте URL-адреса конечной точки для двух новых ключей. Они используются для настройки диспетчера трафика далее в этой статье.
 
@@ -350,7 +349,7 @@ dns.resolveAny('luis-dns-parent.trafficmanager.net', (err, ret) => {
 
 Успешный ответ для конечной точки LUIS:
 
-```cmd
+```json
 [
     {
         value: 'westus.api.cognitive.microsoft.com', 

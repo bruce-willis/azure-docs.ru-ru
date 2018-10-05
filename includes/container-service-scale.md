@@ -1,6 +1,6 @@
 После того как вы [развернете кластер службы контейнера Azure](../articles/container-service/dcos-swarm/container-service-deployment.md), может потребоваться изменить число узлов агента. Например, будут нужны дополнительные узлы агентов для запуска большего количества контейнеров или экземпляров приложения. 
 
-Количество узлов агентов в кластере DC/OS, Docker Swarm или Kubernetes можно изменить с помощью портала Azure или Azure CLI 2.0. 
+Количество узлов агентов в кластере DC/OS, Docker Swarm или Kubernetes можно изменить с помощью портала Azure или Azure CLI. 
 
 ## <a name="scale-with-the-azure-portal"></a>Масштабирование с помощью портала Azure
 
@@ -12,9 +12,9 @@
 
 4. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**.
 
-## <a name="scale-with-the-azure-cli-20"></a>Масштабирование с помощью Azure CLI 2.0
+## <a name="scale-with-the-azure-cli"></a>Масштабирование с помощью Azure CLI
 
-Убедитесь, что у вас [установлена](/cli/azure/install-az-cli2) последняя версия Azure CLI 2.0, и войдите в учетную запись Azure с помощью команды `az login`.
+Убедитесь, что у вас [установлена](/cli/azure/install-az-cli2) последняя версия Azure CLI, и войдите в учетную запись Azure с помощью команды `az login`.
 
 ### <a name="see-the-current-agent-count"></a>Просмотр текущего числа агентов
 Чтобы просмотреть количество агентов, входящих в кластер на текущий момент, запустите команду `az acs show`. Эта команда показывает конфигурацию кластера. Например, следующая команда отображает конфигурацию службы контейнеров с именем `containerservice-myACSName` в группе ресурсов `myResourceGroup`:
@@ -34,7 +34,7 @@ az acs show -g myResourceGroup -n containerservice-myACSName
 az acs scale -g myResourceGroup -n containerservice-myACSName --new-agent-count 10
 ```
 
-Azure CLI 2.0 возвращает строку JSON, представляющую новую конфигурацию службы контейнеров, включая измененное количество агентов.
+Azure CLI возвращает строку JSON, представляющую новую конфигурацию службы контейнеров, включая измененное количество агентов.
 
 Чтобы увидеть дополнительные параметры команды, запустите `az acs scale --help`.
 
@@ -50,6 +50,6 @@ Azure CLI 2.0 возвращает строку JSON, представляющу
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Изучите [дополнительные примеры](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md) использования команд Azure CLI 2.0 для работы со службой контейнеров Azure.
+* Изучите [дополнительные примеры](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md) использования команд Azure CLI для работы со Службой контейнеров Azure.
 * См. дополнительные сведения о [пулах агентов DC/OS](../articles/container-service/dcos-swarm/container-service-dcos-agents.md) в службе контейнеров Azure.
 

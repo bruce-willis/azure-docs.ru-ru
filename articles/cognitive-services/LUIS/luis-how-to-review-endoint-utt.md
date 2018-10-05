@@ -1,20 +1,21 @@
 ---
-title: Создание меток для предлагаемых фрагментов речи в LUIS | Документы Майкрософт
-description: Службу Language Understanding (LUIS) можно использовать для создания меток для предлагаемых фрагментов речи и повышения эффективности активного машинного обучения.
+title: Просмотр фраз конечной точки в Интеллектуальной службе распознавания речи (LUIS)
+titleSuffix: Azure Cognitive Services
+description: Уникальность службы LUIS состоит в использовании концепции активного обучения. Как только в конечную точку поступают запросы, служба LUIS выбирает фразы, в правильности которых не уверена, используя таким образом активное обучения для улучшения качества результатов. Если пометить эти фрагменты речи, выполнить обучение и публикацию, LUIS будет идентифицировать их более точно.
 services: cognitive-services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 06/08/2017
+ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: 5e195b8ef5aeb35b73c22438980fe2b2e3856977
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: a5e0dabe251d14389923df3efe41f6ba80f41bdd
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224557"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47030801"
 ---
 # <a name="review-endpoint-utterances"></a>Просмотр фрагментов речи конечной точки
 
@@ -24,8 +25,6 @@ ms.locfileid: "39224557"
 1. Откройте приложение (например, TravelAgent), выбрав его имя на странице **Мои приложения**, а затем выберите **Сборка** на верхней панели.
 
 2. В разделе **Improve app performance** (Повышение производительности приложения) выберите **Review endpoint utterances** (Просмотр фрагментов речи конечной точки).
-
-    ![Просмотр фрагментов речи](./media/label-suggested-utterances/review.png)
 
 3. На странице **просмотра фрагментов речи конечной точки** выберите нужный вариант в текстовом поле **Filter list by intent or entity** (Фильтровать по намерению или сущности). Этот раскрывающийся список включает все намерения в разделе **INTENTS** и все сущности в разделе **ENTITIES**.
 

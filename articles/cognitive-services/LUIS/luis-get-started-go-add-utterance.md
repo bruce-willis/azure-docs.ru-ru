@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство. Изменение модели и обучение приложения LUIS с помощью Go — Azure Cognitive Services | Документация Майкрософт
-description: Из этого краткого руководства по Go вы узнаете, как добавить примеры высказываний в приложение Home Automation и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
+title: Краткое руководство для языка Go — изменение модели и обучение приложения LUIS
+description: Из этого краткого руководства для языка Go вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
 titleSuffix: Microsoft Cognitive Services
 author: diberry
-manager: cjgronlund
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
-ms.date: 08/24/2018
+ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: da57a7e46cccbf0a9b34b3961a831e7982160e6b
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: 2cd8c1aa2deb2af97d4f720efa0e40146b15b888
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44157673"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47031872"
 ---
 # <a name="quickstart-change-model-using-go"></a>Краткое руководство. Изменение модели с помощью Go
 

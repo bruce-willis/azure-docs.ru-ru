@@ -1,24 +1,26 @@
 ---
-title: Краткое руководство по созданию базы знаний в Node.js с помощью API службы Microsoft QnA Maker (версии 4) — Azure Cognitive Services | Документация Майкрософт
-description: Создайте базу знаний в Node.js для часто задаваемых вопросов и руководств по продуктам, чтобы начать работу с QnA Maker.
+title: 'Краткое руководство: Node.js API — создание базы знаний — QnA Maker'
+description: Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
 services: cognitive-services
-author: noellelacharite
-manager: nolachar
+author: diberry
+manager: cgronlun
 ms.service: cognitive-services
 ms.technology: qna-maker
 ms.topic: quickstart
-ms.date: 06/15/2018
-ms.author: nolachar
-ms.openlocfilehash: cbf89aa3a10012ea2d99972c6a83dd351739c5a6
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.date: 09/12/2018
+ms.author: diberry
+ms.openlocfilehash: 435c937e64d0befc5a3bf30f9d58ccd303247b9e
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "43771399"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47037309"
 ---
 # <a name="create-a-new-knowledge-base-in-nodejs"></a>Создание базы знаний в Node.js
 
 Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
+
+[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
 
 Ниже приведены два примера URL-адресов страниц с часто задаваемыми вопросами (массив urls в объекте **req={}**), по которым отобразится содержимое. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, как описано в этом документе об [источниках данных](../Concepts/data-sources-supported.md). При работе с этим кратким руководством вы можете использовать собственные URL-адреса страниц с часто задаваемыми вопросами.
 
