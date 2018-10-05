@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 4/22/2018
 ms.author: xujing-ms
-ms.openlocfilehash: a4b0baefc8c3c839a06d6540e57b34657138c8ff
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: fef057b5d1e1ba8b03b04852376b1e5a49926008
+ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34071962"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47432411"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Преимущество гибридного использования Azure для Windows Server
 Благодаря преимуществам гибридного использования Azure для Windows Server, клиенты, участвующие в программе Software Assurance, могут использовать локальные лицензии Windows Server для запуска виртуальных машин Windows в Azure с меньшими затратами. С помощью Преимущества гибридного использования Azure также можно развертывать новые виртуальные машины с ОС Windows. В этой статье описывается, как выполнить развертывание новых виртуальных машин с помощью преимуществ гибридного использования Azure для Windows Server, а также как обновить существующие запущенные виртуальные машины. Дополнительные сведения о лицензировании преимуществ гибридного использования Azure для Windows Server и экономии денежных средств см. [на этой странице](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
@@ -40,7 +40,7 @@ ms.locfileid: "34071962"
 ## <a name="ways-to-use-azure-hybrid-benefit-for-windows-server"></a>Способы использования преимуществ гибридного использования Azure для Windows Server
 Существует несколько способов использования виртуальных машин Windows с программой преимуществ гибридного использования Azure.
 
-1. Вы можете развернуть виртуальные машины из одного из указанных [образов Windows Server в Azure Marketplace](#https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
+1. Вы можете развернуть виртуальные машины из одного из указанных [образов Windows Server в Azure Marketplace](# https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
 2. Вы можете передать настраиваемую виртуальную машину и развернуть ее с помощью шаблона Resource Manager или Azure PowerShell.
 3. Вы можете переключать и преобразовывать существующую виртуальную машину для Windows Server так, чтобы использовать ее с программой "Преимущество гибридного использования Azure" или с моделью оплаты по требованию .
 4. Вы также можете применить Преимущество гибридного использования Azure для Windows Server к масштабируемому набору виртуальных машин.
@@ -82,7 +82,11 @@ az vm create \
 ```
 
 ## <a name="convert-an-existing-vm-using-azure-hybrid-benefit-for-windows-server"></a>Преобразование существующей виртуальной машины с поддержкой программы "Преимущество гибридного использования Azure" для Windows Server
-Если у вас есть виртуальная машина, которую требуется преобразовать для использования с программой "Преимущество гибридного использования Azure" для Windows Server, вы можете обновить тип лицензии виртуальной машины следующим образом:
+Если у вас есть виртуальная машина, которую требуется преобразовать для использования с программой "Преимущество гибридного использования Azure" для Windows Server, вы можете обновить тип лицензии виртуальной машины, следуя инструкциям ниже.
+
+> [!NOTE]
+> После изменения типа лицензии виртуальная машина не перезагружается и не происходит прерывание работы службы.  Происходит простое обновление флага метаданных.
+> 
 
 ### <a name="portal"></a>Microsoft Azure
 В колонке виртуальной машины на портале можно обновить виртуальную машину для использования с программой "Преимущество гибридного использования Azure", выбрав параметр "Конфигурация" и переключив параметр "Преимущество гибридного использования Azure".
@@ -110,7 +114,7 @@ az vm create \
     ```azurecli
     az vm update --resource-group myResourceGroup --name myVM --set licenseType=Windows_Server
     ```
-    
+
 ### <a name="how-to-verify-your-vm-is-utilizing-the-licensing-benefit"></a>Проверка наличия льготы на лицензирование у виртуальной машины
 После развертывания виртуальной машины с помощью шаблона Resource Manager, PowerShell или портала можно проверить наличие преимущества одним из описанных ниже методов.
 
@@ -141,6 +145,10 @@ LicenseType              :
 ```azurecli
 az vm get-instance-view -g MyResourceGroup -n MyVM --query '[?licenseType==Windows_Server]' -o table
 ```
+
+> [!NOTE]
+> После изменения типа лицензии виртуальная машина не перезагружается и не происходит прерывание работы службы. Происходит простое обновление флага метаданных лицензии.
+>
 
 ## <a name="list-all-vms-with-azure-hybrid-benefit-for-windows-server-in-a-subscription"></a>Вывод списка всех виртуальных машин с Преимуществом гибридного использования Azure для Windows Server в подписке
 Чтобы просмотреть и подсчитать все виртуальные машины, развернутые с помощью преимуществ гибридного использования Azure для Windows Server, выполните следующую команду из своей подписки:

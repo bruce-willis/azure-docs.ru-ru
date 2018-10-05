@@ -1,6 +1,6 @@
 ---
-title: Настройка системной репликации SAP HANA на виртуальных машинах Azure | Документация Майкрософт
-description: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure.
+title: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server | Документация Майкрософт
+description: Сведения об обеспечении высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server.
 services: virtual-machines-linux
 documentationcenter: ''
 author: MSSedusch
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 7a0797d79da95db77174a3e067a1e84276f286a5
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: e2e76e3cd058e5798b0159923118b050f38d077e
+ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143298"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47034643"
 ---
-# <a name="high-availability-of-sap-hana-on-azure-virtual-machines"></a>Высокий уровень доступности SAP HANA на виртуальных машинах Azure
+# <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
 [dbms-guide]:dbms-guide.md
 [deployment-guide]:deployment-guide.md
@@ -68,6 +68,7 @@ ms.locfileid: "42143298"
 * примечание к SAP [1984787], содержащее общие сведения о SUSE Linux Enterprise Server 12;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes) со всеми необходимыми примечаниями к SAP для Linux;
+* [Платформы IaaS, сертифицированные для SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide];
 * статья [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure][deployment-guide];
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide];
@@ -110,9 +111,13 @@ ms.locfileid: "42143298"
     - **System Availability** (Доступность системы). Выберите значение **HA**.
     - **Admin Username and Admin Password** (Имя пользователя и пароль администратора). Создается новый пользователь, учетные данные которого можно использовать для входа на этот компьютер.
     - **New Or Existing Subnet** (Новая или существующая подсеть). Определяет, следует ли создать виртуальную сеть и подсеть или использовать имеющуюся подсеть. Если у вас уже есть виртуальная сеть, подключенная к локальной сети, выберите вариант **Existing** (Существующая).
-    - **Subnet Id** (Идентификатор подсети). Идентификатор подсети, к которой нужно подключить виртуальные машины. Чтобы подключить виртуальную машину к локальной сети, выберите подсеть виртуальной частной сети или виртуальной сети Azure ExpressRoute. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>**.
+    - **Subnet ID** (Идентификатор подсети).Чтобы развернуть виртуальную машину в имеющуюся виртуальную сеть с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>**.
 
 ### <a name="manual-deployment"></a>Развертывание вручную
+
+> [!IMPORTANT]
+> Убедитесь, что выбранная операционная система сертифицирована для использования SAP HANA на определенных типах виртуальных машин. Список сертифицированных для SAP HANA типов виртуальных машин и выпусков ОС см. [здесь](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). Чтобы просмотреть подробные сведения о поддерживаемых SAP HANA на определенных типах виртуальных машин выпусках ОС, щелкните необходимый тип виртуальной машины.
+>  
 
 1. Создайте группу ресурсов.
 1. Создайте виртуальную сеть.
@@ -121,12 +126,10 @@ ms.locfileid: "42143298"
 1. Создайте подсистему балансировки нагрузки (внутреннюю).
    - Выберите виртуальную сеть, созданную на шаге 2.
 1. Создайте виртуальную машину 1.
-   - Используйте SLES for SAP Applications версии не ниже 12 с пакетом обновления 1 (SP1). В этом примере используется образ SLES for SAP Applications версии 12 с пакетом обновления 2 (SP2)https://ms.portal.azure.com/#create/SUSE.SUSELinuxEnterpriseServerforSAPApplications12SP2PremiumImage-ARM.
-   - Используйте SLES для SAP версии 12 с пакетом обновления 2 (SP2) (цен.категория "Премиум").
+   - Используйте образ SLES4SAP из коллекции Azure, который поддерживается для SAP HANA на выбранном типе виртуальной машины.
    - Выберите группу доступности, созданную на шаге 3.
 1. Создайте виртуальную машину 2.
-   - Используйте SLES for SAP Applications версии не ниже 12 с пакетом обновления 1 (SP1). В этом примере используется образ SLES for SAP Applications версии 12 с пакетом обновления 1 (SP1) BYOS https://ms.portal.azure.com/#create/SUSE.SUSELinuxEnterpriseServerforSAPApplications12SP2PremiumImage-ARM.
-   - Используйте SLES для SAP версии 12 с пакетом обновления 2 (SP2) (цен.категория "Премиум").
+   - Используйте образ SLES4SAP из коллекции Azure, который поддерживается для SAP HANA на выбранном типе виртуальной машины.
    - Выберите группу доступности, созданную на шаге 3. 
 1. Добавьте диски данных.
 1. Настройте подсистему балансировки нагрузки. Сначала создайте пула IP-адресов для интерфейсной части.
@@ -677,6 +680,9 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
 
 ### <a name="suse-tests"></a>Тесты SUSE
 
+> [!IMPORTANT]
+> Убедитесь, что выбранная операционная система сертифицирована для использования SAP HANA на определенных типах виртуальных машин. Список сертифицированных для SAP HANA типов виртуальных машин и выпусков ОС см. [здесь](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). Чтобы просмотреть подробные сведения о поддерживаемых SAP HANA на определенных типах виртуальных машин выпусках ОС, щелкните необходимый тип виртуальной машины.
+
 Выполните все тестовые случаи, которые перечислены в руководствах по системной репликации SAP HANA, оптимизированной для высокой производительности или с оптимизированной стоимостью, в зависимости от параметров вашей среды. Эти руководства вы найдете на [странице рекомендаций SLES для SAP][sles-for-sap-bp].
 
 Описания следующих тестов взяты из руководства по системной репликации SAP HANA, оптимизированной для высокой производительности, на сервере SUSE Linux Enterprise Server for SAP Applications версии 12 с пакетом обновлений 1 (SP1). Чтобы получить самую свежую версию этих описаний, используйте оригинал руководства. Прежде чем начинать тест, обязательно проверьте состояние синхронизации HANA и конфигурацию Pacemaker.
@@ -969,7 +975,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
    <pre><code>hn1adm@hn1-db-1:/usr/sap/HN1/HDB03> HDB stop
    </code></pre>
 
-   Pacemaker обнаружит, что экземпляр HANA остановлен, и пометит этот ресурс как сбойный на узле hn1-db-1. Выполните следующую команду, чтобы очистить состояние сбоя. Pacemaker должен автоматически перезапустить экземпляр HANA.
+   Pacemaker обнаружит, что экземпляр HANA остановлен, и пометит этот ресурс как сбойный на узле hn1-db-1. Pacemaker должен автоматически перезапустить экземпляр HANA. Выполните следующую команду, чтобы очистить состояние сбоя.
 
    <pre><code># run as root
    hn1-db-1:~ # crm resource cleanup msl_SAPHana_HN1_HDB03 hn1-db-1
