@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/23/2018
 ms.author: kumud
-ms.openlocfilehash: 89518d30b862e18fb7c989c95144ffa7f1c294fc
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 087dcda5826d96ad064c472fc897be7e61133387
+ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40024857"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47392525"
 ---
 # <a name="tutorial-improve-website-response-using-traffic-manager"></a>Руководство. Улучшение отклика веб-сайта с помощью диспетчера трафика 
 
@@ -171,7 +171,7 @@ ms.locfileid: "40024857"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | ИМЯ                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
-    | Метод маршрутизации          | Выберите метод маршрутизации по **приоритету**.                                       |
+    | Метод маршрутизации          | Выберите маршрутизацию по **производительности**.                                       |
     | Подписка            | Выберите свою подписку.                          |
     | Группа ресурсов          | Выберите **Создать новую**, а затем введите *myResourceGroupTM1*. |
     | Расположение                | Выберите **Восточная часть США**.  Этот параметр задает расположение группы ресурсов и не влияет на профиль диспетчера трафика, который будет развернут глобально.                              |

@@ -7,14 +7,16 @@ items:
     href: overview.md
 - name: Быстрое начало работы
   items:
-  - name: Создание управляемого приложения
-    href: managed-apps-quickstart-cli.md
+  - name: Публикация определения приложения
+    href: publish-managed-app-definition-quickstart.md
+  - name: Развертывание приложения из каталога служб
+    href: deploy-service-catalog-quickstart.md
   expanded: true
 - name: Учебники
   items:
-  - name: Создание файлов управляемого приложения
+  - name: Создание файлов определений
     href: publish-service-catalog-app.md
-  - name: Создание приложения для Marketplace
+  - name: Публикация приложения из Marketplace
     href: publish-marketplace-app.md
 - name: Примеры
   items:
@@ -26,16 +28,22 @@ items:
     href: sample-projects.md
 - name: Практические руководства
   items:
-  - name: Создание интерфейса портала
-    href: create-uidefinition-overview.md
-  - name: Тестирование интерфейса портала
-    href: test-createuidefinition.md
-  - name: Обновление управляемых ресурсов
-    href: update-managed-resources.md
-  - name: Публикация с помощью портала
-    href: publish-portal.md
-  - name: Использование секрета из Key Vault
-    href: key-vault-access.md
+  - name: Издатели
+    items:
+    - name: Создание интерфейса портала
+      href: create-uidefinition-overview.md
+    - name: Тестирование интерфейса портала
+      href: test-createuidefinition.md
+    - name: Обновление управляемых ресурсов
+      href: update-managed-resources.md
+    - name: Публикация определения приложения с помощью портала
+      href: publish-portal.md
+    - name: Использование секрета из Key Vault
+      href: key-vault-access.md
+  - name: Потребители
+    items:
+    - name: Мониторинг управляемого приложения
+      href: monitor-managed-application-portal.md
 - name: Справочные материалы
   items:
   - name: Инфраструктура CLI Azure
@@ -81,7 +89,7 @@ items:
         href: microsoft-network-publicipaddresscombo.md
       - name: VirtualNetworkCombo
         href: microsoft-network-virtualnetworkcombo.md
-    - name: служба хранилища.
+    - name: Хранилище
       items:
       - name: MultiStorageAccountCombo
         href: microsoft-storage-multistorageaccountcombo.md
@@ -97,9 +105,9 @@ items:
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Переполнение стека
     href: http://stackoverflow.com/questions/tagged/azure-managedapps
-ms.openlocfilehash: 03a385046c0f30932e6ba99fdce46fbdc9849eb6
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: b74cfed4f0208a1b70980d34284fd7f9ff207ca4
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46365304"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48801563"
