@@ -22,6 +22,7 @@
 #### [2. Коллективная разработка](team-development-nodejs.md)
 
 ## Практическое руководство
+### [Создание кластера Kubernetes с помощью Azure Cloud Shell](how-to/create-cluster-cloud-shell.md)
 ### [Общий доступ к рабочим средам Azure для разработчиков](how-to/share-dev-spaces.md)
 ### [Управление секретами](how-to/manage-secrets.md)
 ### [Использование пользовательского веб-канала NuGet](how-to/use-custom-nuget-feed.md)
