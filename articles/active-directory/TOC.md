@@ -25,7 +25,7 @@
 # Практическое руководство
 ## Планирование и проектирование
 ### [Основы архитектуры Azure AD](fundamentals/active-directory-architecture.md)
-### [Сопоставление утверждений в Azure Active Directory](active-directory-claims-mapping.md)
+### [Сопоставление утверждений в Azure Active Directory](develop/active-directory-claims-mapping.md)
 ### [Развертывание решения для гибридной идентификации](hybrid/plan-hybrid-identity-design-considerations-overview.md)
 #### Определение требований
 ##### [Удостоверение](hybrid/plan-hybrid-identity-design-considerations-business-needs.md)
@@ -200,7 +200,7 @@
 #### [Ограничения клиента](manage-apps/tenant-restrictions.md)
 #### [Использование SCIM подготовки пользователей](manage-apps/use-scim-to-provision-users-and-groups.md)
 
-### [Основные сведения о процедуре предоставления согласия для приложений Azure AD](application-consent-experience.md)
+### [Основные сведения о процедуре предоставления согласия для приложений Azure AD](develop/application-consent-experience.md)
 
 ### Устранение неполадок
 
@@ -323,7 +323,7 @@
 
 ### [Интеграция локальных удостоверений с помощью Azure AD Connect](hybrid/whatis-hybrid-identity.md)
 
-### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
+### [Настройка времени существования маркеров](develop/active-directory-configurable-token-lifetimes.md)
 
 ## Защита удостоверений
 
