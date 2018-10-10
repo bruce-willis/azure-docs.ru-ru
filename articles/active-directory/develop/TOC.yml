@@ -93,12 +93,14 @@ items:
           href: single-sign-on-saml-protocol.md
         - name: Протокол выхода SAML
           href: single-sign-out-saml-protocol.md
-        - name: Сертификат
-          items:
-          - name: Метаданные федерации
-            href: azure-ad-federation-metadata.md
-        - name: Смена ключей подписывания
-          href: active-directory-signing-key-rollover.md
+        - name: Как в Azure AD используется протокол SAML
+          href: active-directory-saml-protocol-reference.md
+      - name: Сертификат
+        items:
+        - name: Метаданные федерации
+          href: azure-ad-federation-metadata.md
+      - name: Смена ключей подписывания
+        href: active-directory-signing-key-rollover.md
       - name: Маркеры идентификации
         href: id-tokens.md
       - name: Маркеры доступа
@@ -123,7 +125,7 @@ items:
       - name: Платформа предоставления согласия
         href: consent-framework.md
       - name: Предоставление согласия для приложений
-        href: ../application-consent-experience.md
+        href: application-consent-experience.md
     - name: Условный доступ
       href: conditional-access-dev-guide.md
     - name: Национальные облака
@@ -144,9 +146,15 @@ items:
       - name: Настройка утверждений
         items:
         - name: Настройка утверждений ролей
-          href: ../active-directory-enterprise-app-role-management.md
+          href: active-directory-enterprise-app-role-management.md
         - name: Настройка утверждений
           href: active-directory-saml-claims-customization.md
+        - name: Настройка утверждений (общедоступная предварительная версия)
+          href: active-directory-claims-mapping.md
+        - name: Настройка необязательных утверждений (общедоступная предварительная версия)
+          href: active-directory-optional-claims.md
+        - name: Настройка времени существования маркера (общедоступная предварительная версия)
+          href: active-directory-configurable-token-lifetimes.md
       - name: Рекомендации по обработке ошибок ADAL
         href: active-directory-devhowto-adal-error-handling.md
     - name: Конфигурация приложений
@@ -196,8 +204,6 @@ items:
       href: active-directory-authentication-libraries.md
     - name: API Graph Azure AD
       href: active-directory-graph-api.md
-    - name: Утверждения в маркерах безопасности Azure AD
-      href: active-directory-optional-claims.md
     - name: Манифест приложения
       href: reference-app-manifest.md
     - name: Коды ошибок проверки подлинности и авторизации
@@ -317,7 +323,7 @@ items:
       - name: Платформа предоставления согласия
         href: consent-framework.md
       - name: Предоставление согласия для приложений
-        href: ../application-consent-experience.md
+        href: application-consent-experience.md
     - name: Национальные облака
       href: authentication-national-cloud.md
   - name: Практические руководства
@@ -325,9 +331,17 @@ items:
     - name: Authentication
       items:
       - name: Настройка утверждений ролей
-        href: ../active-directory-enterprise-app-role-management.md
+        href: active-directory-enterprise-app-role-management.md
       - name: Настройка утверждений
         href: active-directory-saml-claims-customization.md
+      - name: Настройка утверждений (общедоступная предварительная версия)
+        href: active-directory-claims-mapping.md
+      - name: Настройка необязательных утверждений (общедоступная предварительная версия)
+        href: active-directory-optional-claims.md
+      - name: Настройка времени существования маркера (общедоступная предварительная версия)
+        href: active-directory-configurable-token-lifetimes.md
+      - name: Аутентификация с помощью Azure AD и получение токена JWT с помощью OAuth 2.0
+        href: active-directory-protocols-oauth-get-jwt-token.md
     - name: Конфигурация приложений
       items:
       - name: Преобразование однотенантного приложения в мультитенантное
@@ -382,9 +396,9 @@ items:
     href: developer-support-help-options.md
   - name: Управляемое удостоверение службы для ресурсов Azure
     href: https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview
-ms.openlocfilehash: 139d80313bb663a45e476e90812ce7772beccc19
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: f7b8ce59f421c2a2c7cdb6269132910bd2b3ab4e
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48785007"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48901844"
