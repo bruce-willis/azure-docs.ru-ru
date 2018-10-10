@@ -1,20 +1,22 @@
 ---
-title: Приступите к работе с API распознавания речи Microsoft в JavaScript | Документация Майкрософт
-description: Используйте API распознавания речи Microsoft в Cognitive Services для разработки приложений, которые непрерывно преобразовывают разговорное аудио в текст.
+title: Приступая к работе с API распознавания речи Bing в JavaScript | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Используйте API распознавания речи Bing в Cognitive Services для разработки приложений, которые непрерывно преобразовывают устную речь в текст.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 12/21/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 04332c453d22122e65a758a65b09e17300e07f02
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ROBOTS: NOINDEX
+ms.openlocfilehash: c4fb331076f88d4f14f56201aa31a00160f395aa
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39040544"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46995352"
 ---
 # <a name="get-started-with-the-speech-recognition-api-in-javascript"></a>Приступите к работе с API распознавания речи в JavaScript
 
@@ -38,7 +40,7 @@ SAPI — элемент Cognitive Services. Вы можете получить �
 
 ### <a name="open-the-sample-directly"></a>Открытие образца напрямую
 
-Получите ключ подписки, как описано выше. Затем откройте [ссылку на образец](https://htmlpreview.github.io/?https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript/blob/preview/samples/browser/Sample.html). Это загрузит страницу в ваш браузер по умолчанию (отображается с помощью [htmlPreview](https://github.com/htmlpreview/htmlpreview.github.com)).
+Получите ключ подписки, как описано выше. Затем откройте [ссылку на образец](https://htmlpreview.github.io/? https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript/blob/preview/samples/browser/Sample.html). Это загрузит страницу в ваш браузер по умолчанию (отображается с помощью [htmlPreview](https://github.com/htmlpreview/htmlpreview.github.com)).
 
 ### <a name="open-the-sample-from-a-local-copy"></a>Открытие образца из локальной копии
 
