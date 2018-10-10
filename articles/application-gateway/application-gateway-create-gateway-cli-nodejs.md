@@ -1,6 +1,6 @@
 ---
-title: Создание шлюза приложений Azure с помощью Azure CLI 1.0 | Документация Майкрософт
-description: Узнайте, как создать шлюз приложений с помощью Azure CLI 1.0 в Resource Manager
+title: Создание Шлюза приложений Azure с помощью классического Azure CLI | Документация Майкрософт
+description: Создание Шлюза приложений с помощью классического Azure CLI в Resource Manager
 services: application-gateway
 documentationcenter: na
 author: vhorne
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: victorh
-ms.openlocfilehash: 29eec4ad1883db9d824b416bdfc7e984a5af4fbe
-ms.sourcegitcommit: e8f443ac09eaa6ef1d56a60cd6ac7d351d9271b9
+ms.openlocfilehash: e834b1633f17ecec74ae17e962de445ad8d6dccd
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "35640273"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974431"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-cli"></a>Создание шлюза приложений с помощью интерфейса командной строки Azure
 
@@ -29,8 +29,8 @@ ms.locfileid: "35640273"
 > * [PowerShell и диспетчер ресурсов Azure](application-gateway-create-gateway-arm.md)
 > * [Классическая модель — Azure PowerShell](application-gateway-create-gateway.md)
 > * [Шаблон Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
-> * [Azure CLI 1.0](application-gateway-create-gateway-cli.md)
-> * [Azure CLI 2.0](application-gateway-create-gateway-cli.md)
+> * [Классический Azure CLI](application-gateway-create-gateway-cli.md)
+> * [Интерфейс командной строки Azure](application-gateway-create-gateway-cli.md)
 > 
 > 
 
@@ -38,7 +38,7 @@ ms.locfileid: "35640273"
 
 ## <a name="prerequisite-install-the-azure-cli"></a>Предварительные требования. Установка Azure CLI
 
-Для выполнения действий, описанных в этой статье, требуется [установить интерфейс командной строки Azure для Mac, Linux и Windows (Azure CLI)](../xplat-cli-install.md), а также [выполнить вход в Azure](/cli/azure/authenticate-azure-cli). 
+Для выполнения действий, описанных в этой статье, требуется [установить Azure CLI](../xplat-cli-install.md) и [войти в учетную запись Azure](/cli/azure/authenticate-azure-cli). 
 
 > [!NOTE]
 > Если у вас нет учетной записи Azure, то вам потребуется получить ее. Зарегистрируйтесь, чтобы получить [бесплатную пробную версию](../active-directory/fundamentals/sign-up-organization.md).

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: jasonh
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: f7e6651e0aa776c4bbcac1fc70017139c21a7512
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 7054bf34fea5b499fdec167667242d918cc01c8e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105026"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981732"
 ---
 # <a name="connect-to-hdinsight-hadoop-using-ssh"></a>Подключение к HDInsight (Hadoop) с помощью SSH
 
@@ -102,7 +102,7 @@ Microsoft Windows не устанавливает клиенты SSH по умо
 | ------- | ------- |
 | **портала Azure** | Снимите флажок __Использовать тот же пароль в учетных данных кластера__, а затем выберите в качестве типа проверки подлинности SSH значение __Открытый ключ__. Наконец, выберите файл открытого ключа или вставьте текстовое содержимое файла в поле __Открытый ключ SSH__.</br>![Диалоговое окно открытого ключа SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-public-key.png) |
 | **Azure PowerShell** | Используя параметр `-SshPublicKey` командлета `New-AzureRmHdinsightCluster`, передайте содержимое открытого ключа в виде строки.|
-| **Azure CLI 1.0** | Используя параметр `--sshPublicKey` команды `azure hdinsight cluster create`, передайте содержимое открытого ключа в виде строки. |
+| **Классический Azure CLI** | Используя параметр `--sshPublicKey` команды `azure hdinsight cluster create`, передайте содержимое открытого ключа в виде строки. |
 | **Шаблон Resource Manager** | Пример использования ключей SSH с помощью шаблона см. на странице [Deploy HDInsight on Linux (w/ Azure Storage, SSH key)](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-publickey/) (Развертывание HDInsight в Linux с использованием службы хранилища Azure и ключа SSH). Элемент `publicKeys` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-publickey/azuredeploy.json) используется для передачи ключей в Azure при создании кластера. |
 
 ## <a id="sshpassword"></a>Проверка подлинности с помощью пароля
@@ -121,7 +121,7 @@ Microsoft Windows не устанавливает клиенты SSH по умо
 | --------------- | ---------------- |
 | **портала Azure** | По умолчанию учетная запись пользователя SSH содержит тот же пароль, что и учетная запись входа кластера. Чтобы использовать другой пароль, снимите флажок __Использовать тот же пароль в учетных данных кластера__, а затем введите пароль в поле __Пароль SSH__.</br>![Диалоговое окно пароля SSH при создании кластера HDInsight](./media/hdinsight-hadoop-linux-use-ssh-unix/create-hdinsight-ssh-password.png)|
 | **Azure PowerShell** | Используя параметр `--SshCredential` командлета `New-AzureRmHdinsightCluster`, передайте объект `PSCredential`, содержащий имя учетной записи пользователя SSH и пароль. |
-| **Azure CLI 1.0** | Используя параметр `--sshPassword` команды `azure hdinsight cluster create`, укажите значение пароля. |
+| **Классический Azure CLI** | Используя параметр `--sshPassword` команды `azure hdinsight cluster create`, укажите значение пароля. |
 | **Шаблон Resource Manager** | Пример использования пароля с помощью шаблона см. на странице [Deploy HDInsight cluster with Storage and SSH password](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/) (Развертывание HDInsight с использованием службы хранилища и пароля SSH). Элемент `linuxOperatingSystemProfile` в файле [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/101-hdinsight-linux-ssh-password/azuredeploy.json) используется для передачи имени учетной записи SSH и пароля в Azure при создании кластера.|
 
 ### <a name="change-the-ssh-password"></a>Изменение пароля SSH

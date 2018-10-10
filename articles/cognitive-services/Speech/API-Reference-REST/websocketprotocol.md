@@ -1,24 +1,26 @@
 ---
-title: Протокол распознавания речи WebSocket Майкрософт | Документация Майкрософт
-description: Документация по протоколу службы распознавания речи на основе WebSockets
+title: Протокол WebSocket для Распознавания речи Bing | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Документация по использованию Распознавания речи Bing на основе протокола WebSocket.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 17954536e8bdb49c09204c2e522586b79cb1bef5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 6ee61a38615ac8cbf4c4fcf6b8d631c5f9a8f7d1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380636"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46962782"
 ---
-# <a name="speech-service-websocket-protocol"></a>Протокол службы распознавания речи WebSocket
+# <a name="bing-speech-websocket-protocol"></a>Использование протокола WebSocket для Распознавания речи Bing
 
-  Служба распознавания речи — это облачная платформа, в которой реализованы самые передовые алгоритмы, доступные для преобразования разговорной речи в текст. Протокол службы распознавания речи определяет [подключение](#connection-establishment) между клиентскими приложениями, службой и сообщениями распознавания речи, которыми обмениваются контрагенты ([сообщения, инициированные клиентом](#client-originated-messages), и [сообщения, инициированные службой](#service-originated-messages)). Кроме того, описаны [сообщения телеметрии](#telemetry-schema) и [обработка ошибок](#error-handling).
+Распознавание речи Bing — это облачная платформа, в которой реализованы самые передовые алгоритмы, доступные для преобразования устной речи в текст. Протокол Распознавания речи Bing определяет [подключение](#connection-establishment) между клиентскими приложениями и службой, а также сообщения распознавания речи, которыми обмениваются участники ([сообщения, инициированные клиентом](#client-originated-messages), и [сообщения, инициированные службой](#service-originated-messages)). Кроме того, описаны [сообщения телеметрии](#telemetry-schema) и [обработка ошибок](#error-handling).
 
 ## <a name="connection-establishment"></a>Установление соединения
 

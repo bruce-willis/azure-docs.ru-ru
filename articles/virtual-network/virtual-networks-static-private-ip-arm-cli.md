@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/16/2017
 ms.author: jdial
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f4f6a40fde23ee70391c5057762f17ce1eb44123
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0ffcf483b2852ec87c263573a97b4508d5b5d39c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38561134"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46997477"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-cli"></a>Настройка частных IP-адресов для виртуальной машины с помощью Azure CLI
 
@@ -42,13 +42,13 @@ ms.locfileid: "38561134"
 
 Чтобы создать виртуальную машину с именем *DNS01* в подсети *FrontEnd* виртуальной сети *TestVNet* со статическим частным IP-адресом *192.168.1.101*, сделайте следующее:
 
-1. Установите и настройте последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) (если вы еще этого не сделали), а затем войдите с использованием учетной записи Azure, выполнив команду [az login](/cli/azure/reference-index#az_login). 
+1. Установите и настройте последнюю версию [Azure CLI](/cli/azure/install-azure-cli) (если вы еще этого не сделали), а затем войдите с использованием учетной записи Azure, выполнив команду [az login](/cli/azure/reference-index#az_login).
 
 2. Создайте общедоступный IP-адрес для виртуальной машины с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az_network_public_ip_create). В списке, который откроется после выполнения команды, будут указаны используемые параметры.
 
     > [!NOTE]
     > Возможно, вам понадобится использовать разные значения для аргументов на этих и последующих шагах в зависимости от среды.
-   
+
     ```azurecli
     az network public-ip create \
     --name TestPIP \
@@ -58,7 +58,7 @@ ms.locfileid: "38561134"
     ```
 
     Ожидаемые выходные данные:
-   
+
    ```json
    {
         "publicIp": {

@@ -12,15 +12,19 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 3/15/2018
-ms.openlocfilehash: 4f9b14762332bd11fd69a855d8fabdb206e34919
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ROBOTS: NOINDEX
+ms.openlocfilehash: 6faabc3003048c93c08451c537496e762352b50b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41918136"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46997331"
 ---
 # <a name="tutorial-2-classify-iris---build-a-model"></a>Руководство 2. Классификация набора данных "Ирисы Фишера". Создание модели
-Служба "Машинное обучение Azure" (предварительная версия) — это полнофункциональное интегрированное аналитическое решение для специалистов по обработке и анализу данных. Оно помогает подготавливать данные, разрабатывать эксперименты и развертывать модели в масштабе облака.
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
+
+Служба "Машинное обучение Azure" (предварительная версия) — это интегрированное аналитическое решение для специалистов по обработке и анализу данных. Оно помогает подготавливать данные, разрабатывать эксперименты и развертывать модели в масштабе облака.
 
 Это руководство представляет собой **вторую часть серии, состоящей из трех частей**. В этой части вы будете использовать службу "Машинное обучение Azure", чтобы научиться выполнять следующие задачи:
 
@@ -39,7 +43,7 @@ ms.locfileid: "41918136"
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
-- Учетная запись службы экспериментирования и установленное решение Azure Machine Learning Workbench, как указано в этом [кратком руководстве](../service/quickstart-installation.md).
+- Учетная запись службы экспериментирования и установленное решение Azure Machine Learning Workbench, как указано в этом [кратком руководстве](quickstart-installation.md).
 - Проект и подготовленные данные "Ирисы Фишера" из [первой части руководства](tutorial-classifying-iris-part-1.md).
 - Установленный и локально запущенный модуль Docker. Достаточно наличия Docker Community Edition. Узнайте, как его установить, здесь: https://docs.docker.com/engine/installation/.
 

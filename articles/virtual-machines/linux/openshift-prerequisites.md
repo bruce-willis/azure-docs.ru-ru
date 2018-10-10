@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: 178f4d6dab5c87c9c53ab87c4a3b1edcfa61c221
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 36271116d697e5ee6c6ed08d5fdc6063a511e820
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29847130"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46984347"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-in-azure"></a>Общие предварительные требования для развертывания OpenShift в Azure
 
@@ -124,7 +124,7 @@ az ad sp create-for-rbac --name openshiftsp \
  > [!WARNING] 
  > Обязательно создайте надежный пароль. Следуйте руководству по [правилам и ограничениям для паролей Azure AD](/azure/active-directory/active-directory-passwords-policy).
 
-Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -10,12 +10,12 @@ ms.service: mysql
 ms.devlang: azure-cli
 ms.topic: article
 ms.date: 02/28/2018
-ms.openlocfilehash: 57b72ded77484dc1c8ca4c62811b62e171365db4
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e3940f07ab97eb2ad03c347c39bf2412a8497f5e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423463"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978460"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Настройка журналов сервера и получение к ним доступа с помощью Azure CLI
 Скачать журналы сервера из службы "База данных Azure для MySQL" можно с помощью портала Azure или Azure CLI, служебной программы командной строки Azure.
@@ -23,7 +23,7 @@ ms.locfileid: "39423463"
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
-- [Azure CLI 2.0](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере.
+- [Azure CLI](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере.
 
 ## <a name="configure-logging-for-azure-database-for-mysql"></a>Настройка ведения журнала для базы данных Azure для MySQL
 Можно настроить на сервере доступ к журналу медленных запросов MySQL, выполнив следующие действия:

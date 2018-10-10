@@ -1,5 +1,5 @@
 ---
-title: Управление веб-приложением для контейнеров с помощью Azure CLI 2.0 | Документация Майкрософт
+title: Управление Веб-приложением для контейнеров с помощью Azure CLI | Документация Майкрософт
 description: Сведения о том, как управлять веб-приложением для контейнеров с помощью Azure CLI.
 keywords: служба приложений azure, веб-приложение, cli, linux, oss
 services: app-service
@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2017
 ms.author: aelnably
-ms.openlocfilehash: 54c979313a6ffa43008aa9870332b92d2b2f182a
-ms.sourcegitcommit: bc8d39fa83b3c4a66457fba007d215bccd8be985
+ms.openlocfilehash: 024ca5bcf9c1f82f07656691d6ef5358ca3d5111
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "24105395"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998497"
 ---
 # <a name="manage-web-app-for-containers-using-azure-cli"></a>Управление веб-приложением для контейнеров с помощью Azure CLI
 
-Используя команды в этой статье, вы сможете создавать и администрировать веб-приложения для контейнеров с помощью Azure CLI 2.0.
+Используя команды в этой статье, вы сможете создавать и администрировать Веб-приложение для контейнеров с помощью Azure CLI.
 Начать использовать новую версию CLI можно двумя способами:
 
-* [установить Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) на компьютер;
+* [установить Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на компьютер;
 * использовать [Azure Cloud Shell (предварительная версия)](../../cloud-shell/overview.md).
 
 ## <a name="create-a-linux-app-service-plan"></a>Создание плана службы приложений Linux
@@ -105,7 +105,7 @@ az webapp deployment source config -n sname -g rgname --repo-url <gitrepo url> -
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Общие сведения о службе приложений на платформе Linux](app-service-linux-intro.md).
-* [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
 * [Обзор Azure Cloud Shell (предварительная версия)](../../cloud-shell/overview.md)
 * [Настройка промежуточных сред в службе приложений Azure](../../app-service/web-sites-staged-publishing.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 * [Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"](app-service-linux-ci-cd.md).

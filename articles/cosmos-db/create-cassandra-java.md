@@ -1,36 +1,40 @@
 ---
-title: Краткое руководство. Использование API Cassandra с Java в Azure Cosmos DB | Документация Майкрософт
+title: Краткое руководство. Использование API Cassandra с Java в Azure Cosmos DB
 description: В этом руководстве показано, как использовать API Cassandra Azure Cosmos DB для создания приложения профиля с помощью портала Azure и Java.
 services: cosmos-db
-author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
+author: SnehaGunda
+ms.author: sngun
 ms.component: cosmosdb-cassandra
 ms.custom: quick start connect, mvc
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 11/15/2017
-ms.author: sngun
-ms.openlocfilehash: e0344aadbbf263fa3c84ee37f2527eb41b19b7d8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.date: 09/24/2018
+ms.openlocfilehash: fcb707f886b960335e69a6af3e485634ebb0a506
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38629093"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974040"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-java-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью Java и Azure Cosmos DB
 
-В этом руководстве показано, как с помощью Java и [API Cassandra](cassandra-introduction.md) Azure Cosmos DB создать приложение профиля в ходе клонирования примера с сайта GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB с помощью веб-портала Azure.
+> [!div class="op_single_selector"]
+> * [.NET](create-cassandra-dotnet.md)
+> * [Java](create-cassandra-java.md)
+> * [Node.js](create-cassandra-nodejs.md)
+> * [Python](create-cassandra-python.md)
+>  
+
+В этом руководстве показано, как с помощью Java и [API Cassandra](cassandra-introduction.md) Azure Cosmos DB создать приложение профиля в ходе клонирования примера с сайта GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB на веб-портале Azure.
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, таблицы, пары "ключ — значение" и базы данных графов, используя возможности глобального распределения и горизонтального масштабирования Azure Cosmos DB. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
 
-Войдите в предварительную версию API Cassandra Azure Cosmos DB. Если вы еще не подали заявку на получение доступа, [зарегистрируйтесь сейчас](cassandra-introduction.md#sign-up-now).
-
-Кроме того, сделайте следующее: 
+Кроме того, вам потребуется:
 
 * [Комплект разработчика Java (JDK 1.7+)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
     * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
@@ -39,8 +43,6 @@ Azure Cosmos DB — это глобально распределенная мн
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
 * [Git](https://www.git-scm.com/)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
-
-
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -52,7 +54,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь перейдем к работе с кодом. Клонируйте приложение API Cassandra с GitHub, укажите строку подключения и запустите это приложение. Вы узнаете, как можно упростить работу с данными программным способом. 
 
-1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
+1. Откройте окно командной строки. Создайте папку с именем `git-samples`. Затем закройте командную строку.
 
     ```bash
     md "C:\git-samples"
@@ -72,7 +74,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). Эти фрагменты кода взяты из файла src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java.  
+Этот шаг не является обязательным. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). Эти фрагменты кода взяты из файла `src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java`.  
 
 * Здесь для Cassandra задаются узел, порт, имя пользователя, пароль и параметры SSL. Строку подключения вы можете получить на странице строки подключения на портале Azure.
 
@@ -86,7 +88,7 @@ Azure Cosmos DB — это глобально распределенная мн
     return cluster.connect();
     ```
 
-Следующие фрагменты кода взяты из файла src/main/java/com/azure/cosmosdb/cassandra/repository/UserRepository.java.
+Приведенные ниже фрагменты кода взяты из файла `src/main/java/com/azure/cosmosdb/cassandra/repository/UserRepository.java`.
 
 * Создайте пространство ключей.
 
@@ -148,15 +150,15 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
-Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных.
+Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Данные строки подключения обеспечивают обмен данными между вашим приложением и размещенной базой данных.
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Строка подключения**. 
+1. На [портале Azure](http://portal.azure.com/) выберите **Строка подключения**. 
 
     ![Просмотрите и скопируйте имя пользователя на странице "Строка подключения" на портале Azure.](./media/create-cassandra-java/keys.png)
 
 2. Вы можете использовать ![кнопку "Копировать"](./media/create-cassandra-java/copy.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
 
-3. Откройте файл `config.properties` из папки C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples\src\main\resources. 
+3. Откройте файл `config.properties` в папке `C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples\src\main\resources`. 
 
 3. Вставьте полученное на портале значение параметра CONTACT POINT вместо элемента `<Cassandra endpoint host>` в строке 2.
 
@@ -180,17 +182,17 @@ Azure Cosmos DB — это глобально распределенная мн
 
 6. Если вы изменили строку 6, чтобы использовать свой сертификат SSL, укажите пароль для этого сертификата в строке 7. 
 
-7. Сохраните файл config.properties.
+7. Сохраните файл `config.properties`.
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-java-app"></a>Запуск приложения Java
 
-1. В окне терминала git перейдите к папке azure-cosmosdb-cassandra-java-getting-started\java-examples при помощи команды `cd`.
+1. В окне терминала git с помощью команды `cd` перейдите к папке `azure-cosmosdb-cassandra-java-getting-started\java-examples`.
 
     ```git
     cd "C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples"
     ```
 
-2. В окне терминала Git используйте следующую команду, чтобы создать файл cosmosdb-cassandra-examples.jar.
+2. В окне терминала Git используйте приведенную ниже команду, чтобы создать файл `cosmosdb-cassandra-examples.jar`.
 
     ```git
     mvn clean install
@@ -202,11 +204,11 @@ Azure Cosmos DB — это глобально распределенная мн
     java -cp target/cosmosdb-cassandra-examples.jar com.azure.cosmosdb.cassandra.examples.UserProfile
     ```
 
-    Окно терминала отображает уведомления о создании пространства ключей и таблицы. Затем отбираются и возвращаются для отображения все пользователи в таблице, а затем отбирается строка по идентификатору для отображения ее значения.  
+    Окно терминала отображает уведомления о создании пространства ключей и таблицы. Затем оно выбирает и отображает список всех пользователей в таблице, а затем выбирает строку по идентификатору и отображает значение.  
 
-    Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
-    
-    Откройте обозреватель данных на портале Azure. Здесь вы можете просматривать, запрашивать, изменять и обрабатывать новые данные. 
+    Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли.
+
+4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
     ![Просмотр данных в обозревателе данных](./media/create-cassandra-java/data-explorer.png)
 

@@ -3,26 +3,25 @@ title: Создание бессерверного API с помощью Фун�
 description: Руководство по созданию бессерверного API с помощью Функций Azure.
 services: functions
 author: mattchenderson
-manager: cfowler
-ms.service: functions
-ms.tgt_pltfrm: na
+manager: jeconnoc
+ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: 7c3933210c01c81077b594abb8c3183d6e3c58a0
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: 9a35c1205c0b564c8d0db1fbd0535d41bb9c84a0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
-ms.locfileid: "24811606"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46989912"
 ---
 # <a name="create-a-serverless-api-using-azure-functions"></a>Создание бессерверного API с помощью Функций Azure
 
 Из этого руководства вы узнаете, как с помощью решения "Функции Azure" создавать высокомасштабируемые API-интерфейсы. Решение "Функции Azure" включает набор встроенных триггеров и привязок HTTP, которые упрощают создание конечных точек на разных языках, включая Node.JS, C# и другие. В этом руководстве вы настроите триггер HTTP, который будет обрабатывать определенные действия в вашем API. Вы также подготовите ваш API к увеличению размеров, интегрировав его с прокси-серверами Функций Azure и установив макет API. Все это будет выполнено в бессерверной вычислительной среде Функций, так что вам не придется беспокоиться о масштабировании ресурсов, вы просто сможете сосредоточиться на логике вашего API.
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Предварительные требования 
 
 [!INCLUDE [Previous quickstart note](../../includes/functions-quickstart-previous-topics.md)]
 
@@ -30,7 +29,7 @@ ms.locfileid: "24811606"
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
-Перейдите на портал Azure. Для этого войдите на портал [https://portal.azure.com](https://portal.azure.com) с помощью вашей учетной записи Azure.
+Перейдите на портал Azure. Для этого войдите на портал [https://portal.azure.com](https://portal.azure.com) с помощью своей учетной записи Azure.
 
 ## <a name="customize-your-http-function"></a>Настройка функции HTTP
 
@@ -54,7 +53,7 @@ ms.locfileid: "24811606"
 
 1. Выберите команду **Сохранить**.
 
-Дополнительные сведения см. в статье [Привязки HTTP и webhook в функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook#customizing-the-http-endpoint).
+Дополнительные сведения см. в статье [Привязки HTTP и webhook в Функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook#customizing-the-http-endpoint).
 
 ### <a name="test-your-api"></a>Тестирование API
 
@@ -187,7 +186,7 @@ ms.locfileid: "24811606"
 
 Следующие ссылки могут оказаться полезными при дальнейшей разработке API:
 
-- [Привязки HTTP и webhook в функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook)
+- [Привязки HTTP и webhook в Функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook)
 - [Работа с функцией "Прокси-серверы Функций Azure"]
 - [Создание метаданных OpenAPI 2.0 (Swagger) для приложения-функции (предварительная версия)](https://docs.microsoft.com/azure/azure-functions/functions-api-definition-getting-started)
 

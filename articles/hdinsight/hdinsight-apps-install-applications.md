@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: jasonh
-ms.openlocfilehash: c355d1c4021d8d0877dea216e0c11002b70595e4
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: c50bd7c314c88c0950478cc3068d9a5873b65263
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43105224"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996970"
 ---
 # <a name="install-third-party-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Hadoop в Azure HDInsight
 
@@ -35,7 +35,7 @@ ms.locfileid: "43105224"
 * **[Trifacta](http://www.trifacta.com/)** повышает эффективность исследования и подготовки разнообразнейших современных данных для инженеров и аналитиков за счет машинного обучения. Оно позволяет разрабатывать передовые пользовательские интерфейсы, рабочие процессы и архитектуру.
 * **WANdisco Fusion HDI App** обеспечивает непрерывное согласованное подключение к данным благодаря адаптации к расположению. Это решение предоставляет вам доступ к данным без простоя и без сбоев, в любое время и в любом месте.
 
-В этой статье используется портал Azure. Вы можете экспортировать шаблон Azure Resource Manager с портала или получить его копию у поставщиков, а затем развернуть его с помощью Azure PowerShell и интерфейса командной строки Azure.  Ознакомьтесь со статьей [Создание кластеров Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
+В этой статье используется портал Azure. Вы можете экспортировать шаблон Azure Resource Manager с портала или получить его копию у поставщиков, а затем развернуть его с помощью Azure PowerShell и классического интерфейса командной строки Azure.  Ознакомьтесь со статьей [Создание кластеров Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Если вы хотите установить приложение HDInsight в существующем кластере HDInsight, вы должны создать кластер HDInsight. Инструкции по созданию кластера см. в [этом разделе](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster). Вы также можете установить приложения HDInsight во время создания кластера HDInsight.

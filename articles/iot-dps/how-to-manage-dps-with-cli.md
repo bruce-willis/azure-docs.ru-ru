@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: briz
-ms.openlocfilehash: 70ce30bdc5a12aec198a2bb1b78c9bdfa8a18882
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: cfbebf8570ee044698b0f4e0abdd58370b04f759
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143881"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46992870"
 ---
 # <a name="how-to-use-azure-cli-and-the-iot-extension-to-manage-the-iot-hub-device-provisioning-service"></a>Как управлять Службой подготовки устройств Центра Интернета вещей с помощью Azure CLI и расширения Интернета вещей
 
@@ -29,7 +29,7 @@ ms.locfileid: "42143881"
 
 Необходимы [Python 2.7x или Python 3.x](https://www.python.org/downloads/).
 
-### <a name="step-2---install-azure-cli"></a>Шаг 2. Установка Azure CLI
+### <a name="step-2---install-the-azure-cli"></a>Шаг 2. Установка Azure CLI
 
 Выполните [инструкции по установке](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), чтобы настроить Azure CLI в своей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. Простой способ установки в Windows — скачать и установить [MSI](https://aka.ms/InstallAzureCliWindows).
 

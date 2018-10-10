@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/28/2017
 ms.author: memccror
-ms.openlocfilehash: c26019bad63a904f8ebd1241d2b58923d786e181
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 297d3bc201b4bc9d9db0b0bed7a364769fa72859
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38696758"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993057"
 ---
 # <a name="how-to-tag-a-linux-virtual-machine-in-azure"></a>Пометка виртуальной машины Linux в Azure
 В этой статье описываются разные способы назначения тегов виртуальной машине Linux в Azure с использованием модели развертывания Resource Manager. Теги — это определяемые пользователем пары "ключ-значение", которые можно помещать непосредственно в ресурс или группу ресурсов. В настоящий момент Azure поддерживает до 15 тегов на ресурс или группу ресурсов. Теги можно добавлять к ресурсу во время его создания или к уже существующему ресурсу. Обратите внимание, что теги поддерживаются только для тех ресурсов, которые созданы с помощью модели развертывания Resource Manager.
@@ -28,7 +28,8 @@ ms.locfileid: "38696758"
 [!INCLUDE [virtual-machines-common-tag](../../../includes/virtual-machines-common-tag.md)]
 
 ## <a name="tagging-with-azure-cli"></a>Отметка тегами с помощью интерфейса командной строки Azure
-Для начала вам нужно установить последнюю версию [Azure CLI 2.0](/cli/azure/install-azure-cli) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az-login).
+
+Для начала вам нужно установить последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az-login).
 
 Вы можете просмотреть все свойства определенной виртуальной машины, включая теги, с помощью следующей команды:
 

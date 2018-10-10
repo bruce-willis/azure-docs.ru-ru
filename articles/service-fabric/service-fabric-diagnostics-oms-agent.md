@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/16/2018
 ms.author: srrengar
-ms.openlocfilehash: b97a32e2e859a5bb370873bfbdc5c6b4dffa1ac1
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 3d7cf50bd2c845764aa2c3ac3b3db6891ff5c8d8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237848"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993856"
 ---
 # <a name="performance-monitoring-with-log-analytics"></a>Мониторинг производительности с помощью Log Analytics
 
@@ -30,7 +30,7 @@ ms.locfileid: "39237848"
 
 ## <a name="add-the-agent-extension-via-azure-cli"></a>Добавление расширения агента через Azure CLI
 
-Добавить агент Log Analytics в кластер лучше всего через API масштабируемого набора виртуальных машин, доступные в Azure CLI. Если Azure CLI еще не настроен, перейдите на портал Azure и откройте экземпляр [Cloud Shell](../cloud-shell/overview.md) или [установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Добавить агент Log Analytics в кластер лучше всего через API масштабируемого набора виртуальных машин, доступные в Azure CLI. Если Azure CLI еще не настроен, перейдите на портал Azure и откройте экземпляр [Cloud Shell](../cloud-shell/overview.md) или [установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 1. Как только придет запрос Cloud Shell, убедитесь, что вы работаете в той же подписке, что и ресурс. Проверьте это с помощью `az account show` и убедитесь, что значение "name" соответствует подписке кластера.
 

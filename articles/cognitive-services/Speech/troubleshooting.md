@@ -1,22 +1,24 @@
 ---
-title: Устранение неполадок | Документация Майкрософт
-description: Как устранить проблемы при использовании службы распознавания речи Microsoft.
+title: Устранение неполадок Распознавания речи Bing | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Как устранить проблемы при использовании Распознавания речи Bing.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 04f3da19939d523d201d357b2b0293db1508431d
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 532916106f62e0236b8dd53cf7988a648355aef4
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380548"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46991867"
 ---
-# <a name="troubleshooting"></a>Устранение неполадок
+# <a name="troubleshooting-bing-speech"></a>Устранение неполадок Распознавания речи Bing
 
 ## <a name="error-http-403-forbidden"></a>Ошибка `HTTP 403 Forbidden`
 

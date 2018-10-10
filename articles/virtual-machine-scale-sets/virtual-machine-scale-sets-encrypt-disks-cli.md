@@ -1,6 +1,6 @@
 ---
 title: Шифрование дисков для масштабируемых наборов Azure с помощью Azure CLI | Документы Майкрософт
-description: Сведения об использовании Azure CLI 2.0 для шифрования экземпляров виртуальной машины и присоединенных к ним дисков в масштабируемом наборе виртуальных машин Linux
+description: Узнайте, как использовать Azure CLI для шифрования экземпляров виртуальной машины и подключенные к ним диски в масштабируемом наборе виртуальных машин Linux.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: cynthn
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: cynthn
-ms.openlocfilehash: a01a0ae09b91b550af4617a46f7c0d8647a5f4be
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: fecf7e121b1c0404f1ec67d46cc88008250b9d68
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38704561"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981065"
 ---
-# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli-20-preview"></a>Шифрование диска ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI 2.0 (предварительная версия)
+# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli-preview"></a>Шифрование диска ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI (предварительная версия)
 
 Масштабируемые наборы виртуальных машин поддерживают шифрование дисков Azure, позволяя защитить неактивные данные с помощью стандартной отраслевой технологии шифрования. Шифрование можно включить для масштабируемых наборов виртуальных машин Windows и Linux. Дополнительные сведения см. в статье [Шифрование дисков Azure для Linux и Windows](../security/azure-security-disk-encryption.md).
 
@@ -38,7 +38,7 @@ ms.locfileid: "38704561"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="register-for-disk-encryption-preview"></a>Регистрация для получения предварительной версии службы шифрования дисков
 
@@ -180,6 +180,6 @@ az vmss encryption disable --resource-group myResourceGroup --name myScaleSet
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure CLI 2.0. Для этого можно использовать также [Azure PowerShell](virtual-machine-scale-sets-encrypt-disks-ps.md) и шаблоны для [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox) или [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox).
+В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure CLI. Для этого можно использовать также [Azure PowerShell](virtual-machine-scale-sets-encrypt-disks-ps.md) и шаблоны для [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox) или [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox).
 
 Полный пример пакетного файла для шифрования дисков данных масштабируемого набора Linux можно найти [здесь](https://gist.githubusercontent.com/ejarvi/7766dad1475d5f7078544ffbb449f29b/raw/03e5d990b798f62cf188706221ba6c0c7c2efb3f/enable-linux-vmss.bat). Этот пример создает группу ресурсов и масштабируемый набор Linux, подключает диск данных размером 5 ГБ и шифрует этот масштабируемый набор виртуальных машин.

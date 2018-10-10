@@ -1,5 +1,5 @@
 ---
-title: Руководство. Отладка веб-приложения Сетки Azure Service Fabric" | Документация Майкрософт
+title: Руководство. Отладка веб-приложения Сетки Azure Service Fabric, выполняющегося в локальном кластере разработки | Документация Майкрософт
 description: В этом руководстве описывается отладка приложения Сетки Azure Service Fabric, работающая в локальном кластере.
 services: service-fabric-mesh
 documentationcenter: .net
@@ -12,19 +12,19 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/17/2018
+ms.date: 09/18/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: c519d24a8401823039f3d6598276890ec6498bbc
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: 27e4c8f6ac24d40a6afacf10175413745f5151d9
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41919820"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46997018"
 ---
-# <a name="tutorial-debug-a-service-fabric-mesh-web-application"></a>Руководство. Отладка веб-приложения Сетки Azure Service Fabric
+# <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство по отладке приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки.
 
-Это руководство является вторым из серии руководств и показывает отладку веб-приложения Сетки Azure Service Fabric в локальном кластере разработки.
+Это руководство является вторым из серии руководств. Здесь показано, как создать и отладить приложение Сетки Azure Service Fabric в локальном кластере разработки.
 
 В этом руководстве описано следующее.
 
@@ -34,9 +34,11 @@ ms.locfileid: "41919820"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * [Создавать приложение Сетки Service Fabric](service-fabric-mesh-tutorial-create-dotnetcore.md)
-> * Отладка локального приложения
-> * [Публиковать приложение в Azure](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md)
+> * [Создание приложения Сетки Service Fabric в Visual Studio](service-fabric-mesh-tutorial-create-dotnetcore.md)
+> * Отладка приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки
+> * [Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md)
+> * [Обновление приложения Сетки Service Fabric](service-fabric-mesh-tutorial-upgrade.md)
+> * [Удаление ресурсов Сетки Service Fabric](service-fabric-mesh-tutorial-cleanup-resources.md)
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
@@ -105,4 +107,4 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]
-> [Deploy a Service Fabric Mesh web application](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md) (Публикация веб-приложения Сетки Service Fabric)
+> [Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md)

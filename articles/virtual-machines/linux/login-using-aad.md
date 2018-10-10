@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 614375c95f4af3a5fbeeb4368ff8c577372e6381
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 2ec712dcce1295a91f552176ddcf6572d3f23ecc
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37933956"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993567"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "37933956"
   - Так как учетные записи локального администратора не требуются, вам не придется беспокоиться о потере или краже учетных данных, недостаточной надежности учетных данных пользователей и т. д.
   - Политики сложности паролей и времени их существования, настроенные для вашего каталога Azure AD, также помогают защитить виртуальные машины Linux.
   - Для дальнейшей защиты входа на виртуальные машины Azure можно настроить аутентификацию MFA.
-  - Возможность войти на виртуальные машины Linux с помощью Azure Active Directory также доступна для клиентов, использующих [службы федерации](../../active-directory/connect/active-directory-aadconnectfed-whatis.md).
+  - Возможность войти на виртуальные машины Linux с помощью Azure Active Directory также доступна для клиентов, использующих [службы федерации](../../active-directory/hybrid/how-to-connect-fed-whatis.md).
 
 - **Беспрепятственная совместная работа.** С помощью управления доступом на основе ролей (RBAC) можно указать, кто может выполнить вход на заданную виртуальную машину как обычный пользователь или с правами администратора. По мере присоединения пользователей к вашей группе или ухода из нее можно обновлять политику RBAC для виртуальной машины, предоставляя соответствующий доступ. Это намного проще, чем очистка виртуальных машин вручную для удаления ненужных открытых ключей SSH. Когда сотрудники уходят из вашей организации, а их учетная запись пользователя отключается или удаляется из Azure AD, они теряют доступ к вашим ресурсам.
 
@@ -59,7 +59,7 @@ ms.locfileid: "37933956"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
 
@@ -117,7 +117,7 @@ az role assignment create \
 > [!NOTE]
 > Если домен AAD и домен имени пользователя для входа не совпадают, необходимо указать идентификатор объекта учетной записи пользователя, предоставив *идентификатор объекта уполномоченного*, а не только имя пользователя *уполномоченного*. Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](/cli/azure/ad/user#az-ad-user-list).
 
-Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в статьях об использовании [Azure CLI 2.0](../../role-based-access-control/role-assignments-cli.md), [портала Azure](../../role-based-access-control/role-assignments-portal.md) или [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в статьях об использовании [Azure](../../role-based-access-control/role-assignments-cli.md), [портала Azure](../../role-based-access-control/role-assignments-portal.md) или [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
 Также можно настроить Azure AD, чтобы при входе конкретного пользователя на виртуальную машину Linux требовалось пройти аутентификацию MFA. Дополнительные сведения см. в статье о [начале работы с MFA Azure в облаке](../../multi-factor-authentication/multi-factor-authentication-get-started-cloud.md).
 
@@ -179,4 +179,4 @@ Access denied
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об Azure Active Directory см. в статьях [What is Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md) (Что собой представляет Azure Active Directory) и [Get started with Azure AD](../../active-directory/fundamentals/get-started-azure-ad.md) (Начало работы с Azure AD).
+Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

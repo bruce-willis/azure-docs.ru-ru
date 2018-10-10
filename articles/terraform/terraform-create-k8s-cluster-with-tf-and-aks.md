@@ -8,13 +8,13 @@ author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 09/06/2018
-ms.openlocfilehash: cd1219fda7821fdc99e334de58826317113415d4
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.date: 09/08/2018
+ms.openlocfilehash: f261c59193349d55d407e6079002b75884273e84
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44053647"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46960249"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-and-terraform"></a>Создание кластера Kubernetes с помощью службы Azure Kubernetes и Terraform
 [Служба Azure Kubernetes (AKS)](/azure/aks/) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими, даже если вы никогда не оркестрировали контейнеры. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.
@@ -32,7 +32,7 @@ ms.locfileid: "44053647"
 
 - **Настройка Terraform.** Следуйте указаниям из статьи [Terraform и настройка доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure).
 
-- **Субъект-служба Azure.** Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи [Создание субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-the-service-principal). Запишите значения appId (идентификатор приложения), displayName (отображаемое имя), password (пароль) и tenant (клиент).
+- **Субъект-служба Azure**. Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-the-service-principal). Запишите значения appId (идентификатор приложения), displayName (отображаемое имя), password (пароль) и tenant (клиент).
 
 ## <a name="create-the-directory-structure"></a>Создание структуры каталога
 Первый шаг — создание каталога, содержащего файлы конфигурации Terraform для упражнения.
@@ -295,7 +295,14 @@ Terraform отслеживает состояние локально через 
 
     ![Пример результатов выполнения команды terraform init](./media/terraform-create-k8s-cluster-with-tf-and-aks/terraform-init-complete.png)
 
-1. Выполните команду `terraform plan`, чтобы создать план Terraform, определяющий элементы инфраструктуры. Команда запросит два значения: **var.client_id** и **var.client_secret**. Для переменной **var.client_id** введите значение **appId**, связанное с субъектом-службой. Для переменной **var.client_secret** введите значение **password**, связанное с субъектом-службой.
+1. Экспортируйте учетные данные субъекта-службы. Замените заполнители &lt;your-client-id> и &lt;your-client-secret> значениями **appId** и **password**, связанными с субъектом-службой, соответственно.
+
+    ```bash
+    export TF_VAR_client_id=<your-client-id>
+    export TF_VAR_client_secret=<your-client-secret>
+    ```
+
+1. Выполните команду `terraform plan`, чтобы создать план Terraform, определяющий элементы инфраструктуры. 
 
     ```bash
     terraform plan -out out.plan

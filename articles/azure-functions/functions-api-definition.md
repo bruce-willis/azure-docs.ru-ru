@@ -2,26 +2,26 @@
 title: Метаданные OpenAPI в Функциях Azure | Документация Майкрософт
 description: Обзор поддержки OpenAPI в Функциях Azure
 services: functions
-documentationcenter: ''
 author: alexkarcher-msft
-manager: cfowler
-editor: ''
+manager: jeconnoc
 ms.assetid: ''
-ms.service: functions
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-functions
 ms.devlang: multiple
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
-ms.openlocfilehash: b6aacc536e589a2036aba5a0784a4ba71641a59e
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 93e6b8c606c0a6d7abebeb515b938a45001757c1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950375"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
 Поддержка метаданных OpenAPI 2.0 (прежнее название — Swagger) в Функциях Azure — это предварительная версия функции, которая предназначена для записи определения OpenAPI 2.0 в приложении-функции. Затем можно разместить этот файл с помощью приложения-функции.
+
+> [!IMPORTANT]
+> Предварительная версия OpenAPI доступна сейчас только в среде выполнения версии 1.x. Сведения о том, как создать приложение-функцию 1.x, см. [здесь](./functions-versions.md#creating-1x-apps).
 
 [Метаданные OpenAPI](http://swagger.io/) позволяют использовать функцию, на которой размещен REST API во всевозможном программном обеспечении. Это программное обеспечение включает предложения Майкрософт, такие как PowerApps и [функцию "Приложения API" службы приложений Azure](../app-service/app-service-web-overview.md), средства сторонних разработчиков, например [Postman](https://www.getpostman.com/docs/importing_swagger), и [многие дополнительные пакеты](http://swagger.io/tools/).
 
@@ -32,6 +32,9 @@ ms.lasthandoff: 04/05/2018
 
 ## <a name="enable"></a>Включение поддержки определения OpenAPI
 Все параметры OpenAPI можно настроить на странице **Определение API** в приложении-функции **Функции платформы**.
+
+> [!NOTE]
+> Определение API функций сейчас не поддерживается для бета-версии среды выполнения.
 
 Чтобы включить создание размещенного определения OpenAPI и кратких определений, задайте для параметра **Источник определения API** значение **Функция (предварительная версия)**. **Внешний URL-адрес** позволяет функции применять определение OpenAPI, размещенное в другом месте.
 

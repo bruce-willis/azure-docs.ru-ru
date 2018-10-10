@@ -11,12 +11,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 06/19/2017
 ms.author: sngun
-ms.openlocfilehash: 9fcc03721d410d4d7b8cfed0f8fa5b0ae8cf80ae
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 00824dc7a4fa7589fd01568b82351a68e1d44faa
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43698100"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46983571"
 ---
 # <a name="azure-cosmos-db-migrate-an-existing-nodejs-mongodb-web-app"></a>Azure Cosmos DB. Перемещение имеющегося веб-приложения MongoDB Node.js 
 
@@ -40,7 +40,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 ## <a name="prerequisites"></a>Предварительные требования 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
@@ -95,7 +95,7 @@ az login
 
 Если вы используете установленную версию Azure CLI, проверьте наличие компонента `cosmosdb`, выполнив команду `az`. Если компонент `cosmosdb` включен в список базовых команд, перейдите к следующей команде. Этот шаг можно пропустить, если вы используете Azure Cloud Shell.
 
-Если компонента `cosmosdb` нет в списке базовых команд, переустановите [Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если компонента `cosmosdb` нет в списке базовых команд, переустановите [Azure CLI]( /cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -124,7 +124,7 @@ az cosmosdb create --name <cosmosdb-name> --resource-group myResourceGroup --kin
 После создания учетной записи Azure Cosmos DB в Azure CLI отображаются сведения, схожие с теми, которые приведены ниже. 
 
 > [!NOTE]
-> В этом примере JSON по умолчанию используется как формат выходных данных Azure CLI. Чтобы использовать другой формат выходных данных, см. статью [Форматы выходных данных для команд Azure CLI 2.0](https://docs.microsoft.com/cli/azure/format-output-azure-cli).
+> В этом примере JSON по умолчанию используется как формат выходных данных Azure CLI. Чтобы использовать другой формат выходных данных, ознакомьтесь со статьей [Форматы выходных данных для команд Azure CLI](https://docs.microsoft.com/cli/azure/format-output-azure-cli).
 
 ```json
 {

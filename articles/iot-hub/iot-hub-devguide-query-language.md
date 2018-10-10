@@ -8,19 +8,19 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/26/2018
 ms.author: elioda
-ms.openlocfilehash: 7704e08246798108aa251c19a4ab0c3baaaad570
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: 2e4b356fec642e06e3223700967eeacd19f1c49c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42143874"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46952483"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений
 
 Центр Интернета вещей предоставляет эффективный язык запросов, похожий на SQL, для получения сведений о [двойниках устройств][lnk-twins], [заданиях][lnk-jobs] и [маршрутизации сообщений][lnk-devguide-messaging-routes]. В этой статье представлены:
 
 * общие сведения об основных возможностях языка запросов Центра Интернета вещей;
-* подробное описание языка.
+* подробное описание языка. Дополнительные сведения о языке запросов для маршрутизации сообщений см. в [этой статье](../iot-hub/iot-hub-devguide-routing-query-syntax.md).
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
@@ -305,126 +305,6 @@ WHERE devices.jobs.jobId = 'myJobId'
 * условия, касающиеся двойника устройства, и свойства задания (см. предыдущий раздел);
 * выполняемые агрегаты, например count, avg, group by.
 
-## <a name="device-to-cloud-message-routes-query-expressions"></a>Выражения запросов по маршрутам сообщений, отправляемых с устройства в облако
-
-С помощью [маршрутов с устройства в облако][lnk-devguide-messaging-routes] можно сделать так, чтобы Центр Интернета вещей передавал сообщения, отправляемые с устройства в облако, в разные конечные точки. Распределение основано на выражениях, вычисляемых для отдельных сообщений.
-
-Маршрут [условие][lnk-query-expressions] использует синтаксис языка запросов Центра Интернета вещей как условие в двойных и рабочих запросах, но доступно только подмножество функций. Условия маршрута вычисляются по заголовкам и тексту сообщения. Выражение запроса маршрутизации может включать только заголовки сообщений, только текст сообщения или заголовки и текст сообщения. Центр Интернета вещей предполагает наличие определенной схемы для заголовков и текста сообщения для маршрутизации сообщений. В следующих разделах описываются необходимые условия правильной маршрутизации Центра Интернета вещей.
-
-### <a name="routing-on-message-headers"></a>Маршрутизация по заголовкам сообщений
-
-Центр Интернета вещей предполагает следующее представление JSON заголовков сообщений для маршрутизации:
-
-```json
-{
-  "message": {
-    "systemProperties": {
-      "contentType": "application/json",
-      "contentEncoding": "utf-8",
-      "iothub-message-source": "deviceMessages",
-      "iothub-enqueuedtime": "2017-05-08T18:55:31.8514657Z"
-    },
-    "appProperties": {
-      "processingPath": "<optional>",
-      "verbose": "<optional>",
-      "severity": "<optional>",
-      "testDevice": "<optional>"
-    },
-    "body": "{\"Weather\":{\"Temperature\":50}}"
-  }
-}
-```
-
-Системные свойства сообщений начинаются с символов `'$'`.
-Доступ к пользовательским свойствам всегда осуществляется с использованием их имен. Если имя пользовательского свойства совпадает с системным свойством (например, `$contentType`), такое пользовательское свойство будет извлечено с помощью выражения `$contentType`.
-Вы всегда можете получить доступ к системному свойству с помощью квадратных скобок `{}`: например, можно использовать выражение `{$contentType}` для доступа к системному свойству `contentType`. Имена свойств в квадратных скобках всегда позволяют получить соответствующее системное свойство.
-
-Не забывайте, что в именах свойств не учитывается регистр.
-
-> [!NOTE]
-> Все свойства сообщения являются строками. Системные свойства сейчас нельзя использовать в запросах (см. [руководство разработчика][lnk-devguide-messaging-format]).
->
-
-Например, если вы используете свойство `messageType`, вы можете направлять все данные телеметрии в одну конечную точку, а все оповещения — в другую. Следующее выражение позволяет перенаправить данные телеметрии:
-
-```sql
-messageType = 'telemetry'
-```
-
-А это выражение будет перенаправлять текст оповещения:
-
-```sql
-messageType = 'alert'
-```
-
-Также поддерживаются логические выражения и функции. Например, это позволяет различать сообщения по уровню серьезности:
-
-```sql
-messageType = 'alerts' AND as_number(severity) <= 2
-```
-
-Полный список поддерживаемых операторов и функций вы найдете в разделе [Выражения и условия][lnk-query-expressions].
-
-### <a name="routing-on-message-bodies"></a>Маршрутизация по тексту сообщений
-
-Центр Интернета вещей поддерживает маршрутизацию на основе содержимого текста сообщения, только если текст сообщения соответствует формату JSON в кодировке UTF-8, UTF-16 или UTF-32. Задайте тип содержимого сообщения `application/json`. В качестве кодировки содержимого сообщения необходимо задать одну из поддерживаемых кодировок UTF в заголовках сообщения. Если один из заголовков не указан, Центр Интернета вещей не будет пытаться вычислить любое выражение запроса, включающее текст, по сообщению. Если формат сообщения отличается от JSON или сообщение не указывает тип и кодировку содержимого, маршрутизацию сообщений, тем не менее, можно выполнить на основе заголовков сообщения.
-
-В следующем примере показано, как создать сообщение с правильно форматированным и закодированным текстом JSON.
-
-```csharp
-string messageBody = @"{ 
-                            ""Weather"":{ 
-                                ""Temperature"":50, 
-                                ""Time"":""2017-03-09T00:00:00.000Z"", 
-                                ""PrevTemperatures"":[ 
-                                    20, 
-                                    30, 
-                                    40 
-                                ], 
-                                ""IsEnabled"":true, 
-                                ""Location"":{ 
-                                    ""Street"":""One Microsoft Way"", 
-                                    ""City"":""Redmond"", 
-                                    ""State"":""WA"" 
-                                }, 
-                                ""HistoricalData"":[ 
-                                    { 
-                                    ""Month"":""Feb"", 
-                                    ""Temperature"":40 
-                                    }, 
-                                    { 
-                                    ""Month"":""Jan"", 
-                                    ""Temperature"":30 
-                                    } 
-                                ] 
-                            } 
-                        }"; 
- 
-// Encode message body using UTF-8 
-byte[] messageBytes = Encoding.UTF8.GetBytes(messageBody); 
- 
-using (var message = new Message(messageBytes)) 
-{ 
-    // Set message body type and content encoding. 
-    message.ContentEncoding = "utf-8"; 
-    message.ContentType = "application/json"; 
- 
-    // Add other custom application properties.  
-    message.Properties["Status"] = "Active";    
- 
-    await deviceClient.SendEventAsync(message); 
-}
-```
-
-Для маршрутизации сообщения можно использовать `$body` в выражении запроса. В выражении запроса можно использовать простую ссылку на текст, ссылку на массив текста или несколько ссылок на текст. В выражении запроса можно также указывать сочетание ссылки на текст со ссылкой на заголовок сообщения. Например, все выражения, приведенные ниже, допустимы:
-
-```sql
-$body.Weather.HistoricalData[0].Month = 'Feb'
-$body.Weather.Temperature = 50 AND $body.Weather.IsEnabled
-length($body.Weather.Location.State) = 2
-$body.Weather.Temperature = 50 AND Status = 'Active'
-```
-
 ## <a name="basics-of-an-iot-hub-query"></a>Основные сведения о запросе Центра Интернета вещей
 Каждый запрос Центра Интернета вещей состоит из предложений SELECT и FROM, а также необязательных предложений WHERE и GROUP BY. Каждый запрос выполняется для коллекции документов JSON, например двойников устройств. Предложение FROM указывает коллекцию документов, по которой будет выполняться итерация (**devices** или **devices.jobs**). Затем применяется фильтр в предложении WHERE. С использованием агрегации результаты этого шага сгруппированы, как указано в предложении GROUP BY. Для каждой группы создается строка, как указано в предложении SELECT.
 
@@ -614,8 +494,7 @@ GROUP BY <group_by_element>
 [lnk-devguide-endpoints]: iot-hub-devguide-endpoints.md
 [lnk-devguide-quotas]: iot-hub-devguide-quotas-throttling.md
 [lnk-devguide-mqtt]: iot-hub-mqtt-support.md
-[lnk-devguide-messaging-routes]: iot-hub-devguide-messages-read-custom.md
+[lnk-devguide-messaging-routes]: iot-hub-devguide-messages-d2c.md
 [lnk-devguide-messaging-format]: iot-hub-devguide-messages-construct.md
-[lnk-devguide-messaging-routes]: ./iot-hub-devguide-messages-read-custom.md
 
 [lnk-hub-sdks]: iot-hub-devguide-sdks.md

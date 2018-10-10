@@ -1,22 +1,24 @@
 ---
-title: Начало работы с API распознавания речи с помощью рабочей библиотеки С# Microsoft | Документация Майкрософт
-description: Разрабатывайте базовые приложения для ОС Windows, которые используют API распознавания речи Microsoft для преобразования устной речи в текст.
+title: Приступая к работе с API распознавания речи Bing с помощью библиотеки С# для классических приложений | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Разрабатывайте простые Windows-приложения, которые используют API распознавания речи Bing для преобразования устной речи в текст.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/27/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: e59b0e25401fb5182edd52f82985ffed9052286d
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5b85a548d692b06a6da009432678d9c02242cb50
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380588"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996831"
 ---
-# <a name="get-started-with-the-speech-recognition-api-in-c35-for-net-on-windows"></a>Начните работу с API распознавания речи в C# для .NET в ОС Windows
+# <a name="quickstart-use-the-bing-speech-recognition-api-in-c35-for-net-on-windows"></a>Краткое руководство. Использование API распознавания речи Bing в C&#35; для .NET на платформе Windows
 
 В этой статье показано, как разрабатывать базовые Windows-приложения , которые используют API распознавания речи для преобразования устной речи в текст. Использование клиентской библиотеки позволяет осуществлять потоковую передачу в режиме реального времени, а это означает, что когда клиентское приложение отправляет аудио в службу, оно одновременно и асинхронно получает результаты частичного распознавания.
 
@@ -24,7 +26,7 @@ ms.locfileid: "35380588"
 
 В следующих разделах описывается, как устанавливать, создавать и запускать пример приложения C# с помощью рабочей библиотеки C#.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 
@@ -53,7 +55,7 @@ Speech API — элемент Cognitive Services (ранее Project Oxford). В
 
 ## <a name="step-2-build-the-sample-application"></a>Шаг 2. Создайте пример приложения
 
-1. Если необходимо использовать *распознавание с намерением*, необходимо сначала зарегистрироваться в [Интеллектуальной службе распознавания речи (LUIS)](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/). Используйте URL-адрес конечной точки приложения LUIS, чтобы установить значение ключа `LuisEndpointUrl` в app.config-файле в папке samples/SpeechRecognitionServiceExample. Дополнительные сведения об URL-адресе конечной точки приложения LUIS см. в разделе [Publish your app](../../luis/luis-get-started-create-app.md#publish-your-app) (Публикация приложения).
+1. Чтобы использовать *распознавание с намерением*, необходимо сначала зарегистрироваться для использования [Интеллектуальной службы распознавания речи (LUIS)](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/). Используйте URL-адрес конечной точки приложения LUIS, чтобы установить значение ключа `LuisEndpointUrl` в app.config-файле в папке samples/SpeechRecognitionServiceExample. Дополнительные сведения об URL-адресе конечной точки приложения LUIS см. в разделе [Publish your app](../../luis/luis-get-started-create-app.md#publish-your-app) (Публикация приложения).
 
    > [!TIP]
    > Замените символ `&` в URL-адресе конечной точки LUIS `&amp;`, чтобы убедиться, что URL-адрес правильно интерпретирован синтаксическим анализатором XML.

@@ -1,6 +1,6 @@
 ---
 title: Регистрация нового устройства Azure IoT Edge с помощью CLI | Документация Майкрософт
-description: Использование расширения Интернета вещей для Azure CLI 2.0 для регистрации нового устройства IoT Edge
+description: Использование расширения Интернета вещей для Azure CLI для регистрации нового устройства IoT Edge
 author: kgremban
 manager: timlt
 ms.author: kgremban
@@ -9,26 +9,26 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 451f4df31cd1c520b14227829923f72fe80c38c3
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: ee5e68d45c7d966619238312dabedc1628a4bf61
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325502"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46998038"
 ---
-# <a name="register-a-new-azure-iot-edge-device-with-azure-cli-20"></a>Регистрация нового устройства Azure IoT Edge с помощью Azure CLI 2.0
+# <a name="register-a-new-azure-iot-edge-device-with-azure-cli"></a>Регистрация нового устройства Azure IoT Edge с помощью Azure CLI
 
 Чтобы использовать устройства Интернета вещей в Azure IoT Edge, нужно зарегистрировать их в Центре Интернета вещей. После регистрации устройства вы получите строку подключения, которую можно использовать при настройке устройства для рабочих нагрузок Edge. 
 
-[Azure CLI 2.0](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, IoT Edge). Она позволяет управлять ресурсами Центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными концентраторами без дополнительной настройки. Новое расширение Интернета вещей поставляет в Azure CLI 2.0 компоненты для управления устройствами и всеми возможностями IoT Edge.
+[Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) — это кроссплатформенная программа командной строки с открытым кодом для управления ресурсами Azure (например, IoT Edge). Она позволяет управлять ресурсами Центра Интернета вещей Azure, экземплярами службы подготовки устройств и связанными концентраторами без дополнительной настройки. Новое расширение Интернета вещей расширяет функции интерфейса командной строки Azure (например, функция управления устройствами) и добавляет возможности IoT Edge.
 
-В этой статье объясняется, как зарегистрировать новое устройство IoT Edge с помощью Azure CLI 2.0.
+В этой статье объясняется, как зарегистрировать новое устройство IoT Edge с помощью Azure CLI.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure. 
-* [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) в среде. Вам понадобится как минимум Azure CLI 2.0 версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
-* [Расширение Интернета вещей для Azure CLI 2.0](https://github.com/Azure/azure-iot-cli-extension).
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
+* [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="create-a-device"></a>Создание устройства
 
@@ -67,4 +67,4 @@ ms.locfileid: "39325502"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Подробнее о [развертывании модулей на устройстве с помощью Azure CLI 2.0](how-to-deploy-modules-cli.md)
+Подробнее о [развертывании модулей на устройстве с помощью Azure CLI](how-to-deploy-modules-cli.md)

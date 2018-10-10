@@ -8,12 +8,12 @@ ms.technology: Speech to Text
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: panosper
-ms.openlocfilehash: b6fb39ef5941157cfe0d18324deeb9d836d7ab09
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 860b58a18fbc14532a8591fc753453d60492d3c0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44377627"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981378"
 ---
 # <a name="batch-transcription"></a>Пакетное транскрибирование
 
@@ -59,36 +59,38 @@ WAV |  Stereo  |
 
 ## <a name="authorization-token"></a>Маркер авторизации
 
-Как и для всех функций единой службы обработки речи, вам необходимо создать ключ подписки на[портале Azure](https://portal.azure.com). Кроме того, вы получите ключ API на портале распознавания речи: 
+Как и для всех функций единой службы обработки речи, вам необходимо создать ключ подписки на[портале Azure](https://portal.azure.com), следуя [руководству по началу работы](get-started.md). Если вы планируете получать расшифровки из наших базовых моделей, то больше ничего делать не потребуется. 
+
+Если вы планируете настроить и применить пользовательскую модель, необходимо добавить этот ключ подписки на портал распознавания речи следующим образом.
 
 1. Войдите в службу [Пользовательское распознавание речи](https://customspeech.ai).
 
 2. Выберите **Подписки**.
 
-3. Выберите **Generate API Key** (Создать ключ API).
+3. Выберите **Connect Existing Subscription** (Подключение к имеющейся подписке).
+
+4. В открывшемся представлении добавьте ключ подписки и введите псевдоним.
 
     ![Снимок экрана подписок Пользовательской службы распознавания речи](media/stt/Subscriptions.jpg)
 
-4. Скопируйте и вставьте ключ в клиентском коде, как показано в примере ниже.
+5. Скопируйте и вставьте ключ в клиентском коде, как показано в примере ниже.
 
 > [!NOTE]
-> Если вы планируете использовать пользовательскую модель, вам также потребуется ее идентификатор. Это не идентификатор развертывания или конечной точки, который находится в представлении сведений о конечной точке. Это идентификатор модели, который можно получить, щелкнув пункт сведений об этой модели.
+> Если вы планируете использовать пользовательскую модель, вам также потребуется ее идентификатор. Обратите внимание на то, что это не идентификатор конечной точки, который показан в представлении сведений о конечной точке. Это идентификатор модели, который можно получить, щелкнув пункт сведений об этой модели.
 
 ## <a name="sample-code"></a>Пример кода
 
 В следующем примере кода нужно указать ключ подписки и ключ API. Этот пример позволяет получить токен носителя.
 
 ```cs
-    public static async Task<CrisClient> CreateApiV1ClientAsync(string username, string key, string hostName, int port)
+     public static CrisClient CreateApiV2Client(string key, string hostName, int port)
+
         {
             var client = new HttpClient();
             client.Timeout = TimeSpan.FromMinutes(25);
             client.BaseAddress = new UriBuilder(Uri.UriSchemeHttps, hostName, port).Uri;
-
-            var tokenProviderPath = "/oauth/ctoken";
-            var clientToken = await CreateClientTokenAsync(client, hostName, port, tokenProviderPath, username, key).ConfigureAwait(false);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", clientToken.AccessToken);
-
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
+         
             return new CrisClient(client);
         }
 ```
@@ -98,8 +100,8 @@ WAV |  Stereo  |
 ```cs
    static async Task TranscribeAsync()
         { 
-            private const string SubscriptionKey = "<your Speech[Preview] subscription key>";
-            private const string HostName = "cris.ai";
+            private const string SubscriptionKey = "<your Speech subscription key>";
+            private const string HostName = "westus.cris.ai";
             private const int Port = 443;
     
             // Creating a Batch transcription API Client
@@ -167,7 +169,7 @@ WAV |  Stereo  |
 ```
 
 > [!NOTE]
-> Ключ подписки, указанный в предыдущем фрагменте кода, — это ключ из ресурса службы речи (предварительная версия), который создается на портале Azure. Ключи, полученные из ресурса "Пользовательская служба распознавания речи", не будут работать.
+> Ключ подписки, указанный в предыдущем фрагменте кода, — это ключ из ресурса службы "Речь", который создается на портале Azure. Ключи, полученные из ресурса "Пользовательская служба распознавания речи", не будут работать.
 
 Обратите внимание на асинхронную настройку для отправки аудио и получения состояния транскрибирования. Создан клиент .Net HTTP. Существует метод `PostTranscriptions` для отправки сведений об аудиофайле и метод `GetTranscriptions` для получения результатов. `PostTranscriptions` возвращает дескриптор, который `GetTranscriptions` использует для получения состояния транскрибирования.
 

@@ -1,26 +1,26 @@
 ---
-title: Настройка политик Hive в присоединенном к домену кластере Azure HDInsight
-description: Узнайте, как настроить политики Apache Ranger для Hive в присоединенной к домену службе Azure HDInsight.
+title: Настройка политик Hive в HDInsight с Корпоративным пакетом безопасности в Azure
+description: Сведения о настройке политик Apache Ranger для Hive в службе Azure HDInsight с Корпоративным пакетом безопасности.
 services: hdinsight
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/17/2018
-ms.openlocfilehash: 55abb5331da24c3914075c21579e5082853b3c1f
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.date: 09/24/2018
+ms.openlocfilehash: bdad0bac0d320b641359df4093ae10c9505b7de2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43042086"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993431"
 ---
-# <a name="configure-hive-policies-in-domain-joined-hdinsight"></a>Настройка политик Hive в присоединенном к домену кластере HDInsight
+# <a name="configure-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Hive в HDInsight с Корпоративным пакетом безопасности
 Узнайте, как настроить политики Apache Ranger для Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик подключитесь к таблицам Hive в HDInsight с помощью Excel и драйвера ODBC.
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Присоединенный к домену кластер HDInsight. См. статью [Configure Domain-joined HDInsight clusters](apache-domain-joined-configure.md) (Настройка присоединенных к домену кластеров HDInsight).
+* Кластер HDInsight с Корпоративным пакетом безопасности. Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Рабочая станция с Office 2016, Office 2013 профессиональный плюс, Office 365 профессиональный плюс, Excel 2013 автономный или Office 2010 профессиональный плюс.
 
 ## <a name="connect-to-apache-ranger-admin-ui"></a>Подключение к пользовательскому интерфейсу администратора Apache Ranger
@@ -34,15 +34,15 @@ ms.locfileid: "43042086"
    >
 2. Войдите, используя имя пользователя и пароль домена администратора кластера.
 
-    ![Домашняя страница Ranger для подключенного к домену кластера HDInsight](./media/apache-domain-joined-run-hive/hdinsight-domain-joined-ranger-home-page.png)
+    ![Домашняя страница HDInsight ESP Ranger](./media/apache-domain-joined-run-hive/hdinsight-domain-joined-ranger-home-page.png)
 
     В настоящее время Ranger работает только с Yarn и Hive.
 
 ## <a name="create-domain-users"></a>Создание пользователей домена
-Сведения о создании учетных записей hiveruser1 и hiveuser2 см. в разделе [Создание присоединенного к домену кластера HDInsight](apache-domain-joined-configure-using-azure-adds.md#create-a-domain-joined-hdinsight-cluster). В этом руководстве вы используете эти две учетные записи.
+Сведения о создании учетных записей hiveruser1 и hiveuser2 см. в разделе [Создание кластера HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp). В этом руководстве вы используете эти две учетные записи.
 
 ## <a name="create-ranger-policies"></a>Создание политик Ranger
-В этом разделе вы создадите две политики Ranger для доступа к таблице hivesampletable. Вам нужно будет предоставить разрешение select для разных наборов столбцов. Оба пользователя созданы при работе с разделом [Создание присоединенного к домену кластера HDInsight](apache-domain-joined-configure-using-azure-adds.md#create-a-domain-joined-hdinsight-cluster). В следующем разделе вы протестируете две политики в Excel.
+В этом разделе вы создадите две политики Ranger для доступа к таблице hivesampletable. Вам нужно будет предоставить разрешение select для разных наборов столбцов. Оба пользователя созданы при работе с разделом [Создание кластера HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp). В следующем разделе вы протестируете две политики в Excel.
 
 **Создание политик Ranger**
 
@@ -57,7 +57,7 @@ ms.locfileid: "43042086"
    * Пользователь: hiveuser1.
    * Разрешения: select.
 
-     ![Настойка политики Hive Ranger для присоединенного к домену кластера HDInsight](./media/apache-domain-joined-run-hive/hdinsight-domain-joined-configure-ranger-policy.png).
+     ![Настройка политики Hive Ranger ESP HDInsight](./media/apache-domain-joined-run-hive/hdinsight-domain-joined-configure-ranger-policy.png).
 
      > [!NOTE]
      > Если пользователь домена не указан в поле "Выберите пользователя", подождите несколько минут для синхронизации Ranger с AAD.
@@ -131,9 +131,9 @@ ms.locfileid: "43042086"
     После этого импортируются два столбца с данными.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Сведения о настройке присоединенного к домену кластера HDInsight см. в [этой статье](apache-domain-joined-configure.md).
-* Сведения об управлении присоединенным к домену кластером HDInsight см. в [этой статье](apache-domain-joined-manage.md).
-* Сведения о выполнении запросов Hive с помощью SSH в присоединенных к домену кластерах HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
+* Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
+* Сведения об управлении кластером HDInsight с помощью ESP см. в статье [Управление кластерами HDInsight с помощью Корпоративного пакета безопасности](apache-domain-joined-manage.md).
+* Сведения о выполнении запросов Hive с помощью SSH в кластерах HDInsight с ESP см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
 * Сведения о подключении к Hive с помощью Hive JDBC см. в статье [Подключение к Hive в Azure HDInsight с помощью драйвера Hive JDBC](../hadoop/apache-hadoop-connect-hive-jdbc-driver.md).
 * Сведения о подключении Excel к Hadoop с помощью Hive ODBC см. в статье [Подключение Excel к Hadoop с помощью драйвера Microsoft Hive ODBC](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md).
 * Сведения о подключении Excel к Hadoop с помощью Power Query см. в [этой статье](../hadoop/apache-hadoop-connect-excel-power-query.md).

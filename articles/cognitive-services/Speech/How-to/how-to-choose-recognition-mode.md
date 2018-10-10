@@ -1,24 +1,26 @@
 ---
-title: Как сделать выбор режима распознавания | Документы Microsoft
-description: Выбор оптимального режима распознавания.
+title: Как выбрать режим распознавания в службе "Распознавание речи Bing" | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Выбор оптимального режима распознавания в службе "Распознавание речи Bing".
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 4f02b683dde16b537ae5554e6435c068f0fcb808
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: a39b357a26823e322d4e902f2d99b67488bbf2df
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380540"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46950885"
 ---
-# <a name="speech-recognition-modes"></a>Режимы распознавания речи
+# <a name="bing-speech-recognition-modes"></a>Режимы распознавания речи в службе "Распознавание речи Bing"
 
-API *преобразования речи в текст* Microsoft поддерживает несколько режимов распознавания речи. Выберите для вашего приложения режим, который дает наилучшие результаты распознавания.
+Интерфейсы API Bing для преобразования речи в текст поддерживают несколько режимов распознавания речи. Выберите для вашего приложения режим, который дает наилучшие результаты распознавания.
 
 | Mode | ОПИСАНИЕ |
 |---|---|

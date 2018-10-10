@@ -1,24 +1,26 @@
 ---
-title: Служба поддержки | Документация Майкрософт
-description: Поддержка для службы распознавания речи Microsoft
+title: Поддержка Распознавания речи Bing | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Техническая поддержка Распознавания речи Bing.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 10/15/2017
+ms.date: 09/08/2018
 ms.author: zhouwang
-ms.openlocfilehash: 1cca2008b879e51434f3d3bde839e9ab68f796d1
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: cbeaa8f1c0a950bf3941de775a2d62584e5f5dfa
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380533"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46986410"
 ---
 # <a name="support"></a>Поддержка
 
-Если у вас есть вопросы, отзывы или предложения о службе распознавания речи, вы можете связаться с нами через GitHub. 
+Если у вас есть вопросы, отзывы или предложения о Распознавании речи Bing, вы можете связаться с нами на сайте GitHub. 
  - [Вопросы, связанные с REST API](https://github.com/Azure-Samples/SpeechToText-REST/issues)
  - [Библиотека для JavaScript](https://github.com/Azure-Samples/Cognitive-Speech-STT-JavaScript/issues)
  - [Вопросы, связанные с библиотекой классических приложений C#](https://github.com/Azure-Samples/Cognitive-Speech-STT-Windows/issues)

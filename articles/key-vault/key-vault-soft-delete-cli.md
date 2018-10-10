@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/04/2017
 ms.author: bryanla
-ms.openlocfilehash: 0554e2e184ce3f3140d3b9e90eb33c20774ed789
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 73ece43c26c3957a1b7dba02a673099f7d35e8d6
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44303010"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46951786"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -25,9 +25,9 @@ ms.locfileid: "44303010"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Azure CLI 2.0. Если в вашей среде этот инструмент не установлен, ознакомьтесь с разделом [Управление Key Vault с помощью интерфейса командной строки 2.0](key-vault-manage-with-cli2.md).
+- Azure CLI. Если в вашей среде этот инструмент не установлен, ознакомьтесь со статьей [Управление Key Vault с помощью интерфейса командной строки 2.0](key-vault-manage-with-cli2.md).
 
-Дополнительная информация об использовании интерфейса командной строки с Key Vault приведена в [справочнике по Azure CLI 2.0 для Key Vault](https://docs.microsoft.com/cli/azure/keyvault).
+Дополнительные сведения об использовании интерфейса командной строки с Key Vault приведены в [справочнике по Azure CLI для Key Vault](https://docs.microsoft.com/cli/azure/keyvault).
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 

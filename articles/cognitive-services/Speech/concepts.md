@@ -1,5 +1,6 @@
 ---
-title: Основные понятия | Документация Майкрософт
+title: Основные понятия Распознавания речи Bing | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
 description: Основные понятия, используемые в службе распознавания речи (Майкрософт).
 services: cognitive-services
 author: zhouwangzw
@@ -7,14 +8,15 @@ manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: bc23f4fb7dfc045a0f8cc87155c31875c4de8450
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 08790d73dd4fd182d8129c755a291fd99b6136a2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380629"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46954115"
 ---
 # <a name="basic-concepts"></a>Основные понятия
 

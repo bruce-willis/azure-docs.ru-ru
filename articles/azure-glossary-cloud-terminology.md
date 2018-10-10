@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 84766ba4cf9e844184752bc44d2e0a471b97db27
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: e62910cc760a200abba6d56e4fa1eb87973285ec
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32159134"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46963600"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "32159134"
 
 ## <a name="account"></a>учетная запись
 Учетная запись, используемая для доступа к подписке Azure и управления ей. Зачастую она называется учетной записью Azure, хотя учетной записью может быть любая из следующих: существующая рабочая, учебная или личная учетная запись Майкрософт либо имя пользователя и пароль Office 365. Можно также создать учетную запись для управления подпиской Azure во время регистрации в [бесплатной пробной версии](https://azure.microsoft.com).  
-См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](billing/billing-use-existing-office-365-account-azure-subscription.md) и [Учетные записи для входа](active-directory/active-directory-how-subscriptions-associated-directory.md).
+См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](billing/billing-use-existing-office-365-account-azure-subscription.md) и [Учетные записи для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="api-app"></a>приложение API;
 Другое название [приложения службы приложений](#app-service-app).
@@ -47,7 +47,7 @@ ms.locfileid: "32159134"
 Одна из двух [моделей развертывания](resource-manager-deployment-model.md) , которые используются для развертывания ресурсов в Azure (новой моделью является модель Azure Resource Manager). Некоторые службы Azure поддерживают только модель развертывания с помощью Resource Manager, некоторые — только классическую модель развертывания, а другие — обе модели. Поддерживаемые модели указаны в документации по соответствующей службе Azure.
 
 ## <a name="cli"></a>интерфейс командной строки Azure (CLI)
-Интерфейс командной строки, который можно использовать для управления службами Azure на компьютерах Windows, macOS и Linux.  Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки. См. статью [Azure CLI 2.0](/cli/azure).
+Интерфейс командной строки, который можно использовать для управления службами Azure на компьютерах Windows, macOS и Linux.  Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки. Ознакомьтесь с [Azure CLI](/cli/azure).
 
 ## <a name="powershell"></a>Azure PowerShell
 Интерфейс командной строки для управления службами Azure через командную строку на компьютерах с ОС Windows. Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки.
@@ -66,8 +66,8 @@ ms.locfileid: "32159134"
 
 ## <a name="geo-replication"></a>георепликация
 Процесс автоматической репликации такого содержимого, как BLOB-объекты, таблицы и очереди, в паре регионов.  
-См. статью [Активная георепликация для базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
-<!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->
+Ознакомьтесь с [активной георепликацией для базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md)
+<!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->.
 
 ## <a name="image"></a>изображение
 Файл с конфигурацией операционной системы и приложения, который можно использовать для создания любого количества виртуальных машин. В Azure можно использовать два типа образов — образ виртуальной машины и образ ОС. Образ виртуальной машины включает операционную систему и все диски, присоединенные к виртуальной машине на момент создания образа. Образ ОС содержит только общие сведения об операционной системе и не включает конфигурации дисков данных.  
@@ -127,7 +127,7 @@ JSON-файл, который декларативно определяет од
 
 ## <a name="subscription"></a>Подписка
 Соглашение клиента с корпорацией Майкрософт, которое позволяет им получать доступ к службам Azure. Цены на подписку и связанные условия регулируются предложением, выбранным для подписки.
-См. [Соглашение о подписке Microsoft Online](https://azure.microsoft.com/support/legal/subscription-agreement/) и статью [Связь между подписками Azure и службой Azure Active Directory](active-directory/active-directory-how-subscriptions-associated-directory.md).
+См. [Соглашение о подписке Microsoft Online](https://azure.microsoft.com/support/legal/subscription-agreement/) и статью [Связь между подписками Azure и службой Azure Active Directory](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="tag"></a>tag
 Условие индексирования, которое позволяет классифицировать ресурсы в соответствии с вашими требованиями к управлению или выставлению счетов. Если имеется сложная коллекция ресурсов, вы можете использовать теги, чтобы визуализировать эти активы наиболее оптимальным способом. Например, можно снабдить тегами ресурсы, которые выполняют в организации одну и ту же роль или относятся к одному отделу.  

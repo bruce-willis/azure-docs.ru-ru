@@ -1,6 +1,6 @@
 ---
 title: Управляемые диски Azure. Преобразование виртуальной машины Linux с неуправляемыми дисками в Azure для использования управляемых дисков | Документация Майкрософт
-description: Переключение виртуальной машины Linux, развернутой в рамках модели Resource Manager, с неуправляемых дисков на управляемые диски с помощью Azure CLI 2.0.
+description: Как с помощью Azure CLI преобразовать виртуальную машину Linux, развернутую в рамках модели Resource Manager, чтобы вместо неуправляемых дисков использовать управляемые диски.
 services: virtual-machines-linux
 documentationcenter: ''
 author: roygara
@@ -15,18 +15,18 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: rogarana
-ms.openlocfilehash: a3a2bbc15dd94ef09755d34a20e69c97854416b3
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.openlocfilehash: 62ac70134c1bdf9d178d59723ff73561049a4bbf
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30289266"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46993080"
 ---
 # <a name="convert-a-linux-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Linux с неуправляемых дисков на управляемые диски
 
 При наличии виртуальных машин Linux, использующих неуправляемые диски, их можно преобразовать для использования [Управляемых дисков Azure](../linux/managed-disks-overview.md). При этом преобразуются диск операционной системы и все подключенные диски данных.
 
-В этой статье показано, как преобразовать виртуальные машины с помощью Azure CLI. Если вам установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
+В этой статье показано, как преобразовать виртуальные машины с помощью Azure CLI. Если нужно установить или обновить интерфейс командной строки Azure, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 ## <a name="before-you-begin"></a>Перед началом работы
 * Просмотрите раздел с [часто задаваемыми вопросами о переходе на управляемые диски](faq-for-disks.md#migrate-to-managed-disks).

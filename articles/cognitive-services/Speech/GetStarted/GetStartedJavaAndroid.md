@@ -1,5 +1,6 @@
 ---
 title: Приступите к работе с API распознавания речи Microsoft в Java на Android | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
 description: Используйте API распознавания речи Microsoft для разработки приложений Android, которые преобразовывают устную речь в текст.
 services: cognitive-services
 author: zhouwangzw
@@ -7,22 +8,23 @@ manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/29/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: a10f7be1c36fb431016a9867f606e26be858069e
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3b1e82d65a3eafb9e41277a18569270ef02cd8e5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380589"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46989046"
 ---
-# <a name="get-started-with-speech-recognition-in-java-on-android"></a>Начало работы с API распознавания речи в Java на Android
+# <a name="quickstart-use-the-bing-speech-recognition-api-in-java-on-android"></a>Краткое руководство. Использование API распознавания речи Bing в Java на платформе Android
 
-С помощью API распознавания речи можно разрабатывать приложения Android, которые используют облачную службу "Речь" для преобразования устной речи в текст. API-интерфейс поддерживает передачи в реальном времени, поэтому приложение может одновременно и асинхронно получать результаты частичного распознавания, одновременно отправляя устную речь в службу.
+С помощью API распознавания речи Bing можно разрабатывать приложения Android, которые используют облачную службу "Распознавание речи Bing" для преобразования устной речи в текст. API-интерфейс поддерживает передачи в реальном времени, поэтому приложение может одновременно и асинхронно получать результаты частичного распознавания, одновременно отправляя устную речь в службу.
 
 В этой статье используется образец приложения, чтобы продемонстрировать использование клиентской библиотеки службы "Речь" для Android, чтобы разработать приложения преобразования устной речи в текст на языке Java для устройств Android.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 
@@ -36,7 +38,7 @@ ms.locfileid: "35380589"
 
 Speech API — элемент Cognitive Services (ранее Project Oxford). Вы можете получить ключи бесплатной пробной версии подписки на странице [подписки на Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). Чтобы получить ключ, после выбора SAPI выберите **Получить API-ключ**. Страница возвращает первичный и вторичный ключ. Оба ключа привязаны к одной и той же квоте, поэтому вы можете использовать любой из них.
 
-Если вы хотите использовать *распознавание блокировки с намерением*, необходимо зарегистрироваться в службе [Language Understanding Intelligent Service (LUIS)](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/).
+Чтобы использовать *распознавание блокировки с намерением*, необходимо зарегистрироваться для использования [Интеллектуальной службы распознавания речи (LUIS)](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/).
 
 > [!IMPORTANT]
 >* Получить ключ подписки. Прежде чем использовать клиентские библиотеки службы "Речь", вам необходимо иметь [ключ подписки](https://azure.microsoft.com/try/cognitive-services/).

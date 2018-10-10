@@ -1,6 +1,6 @@
 ---
 title: Добавление диска с данными в виртуальную машину Linux с помощью Azure CLI | Документы Майкрософт
-description: Узнайте, как добавить постоянный диск с данными в виртуальную машину Linux с помощью Azure
+description: Узнайте, как добавить постоянный диск данных в виртуальную машину Linux с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.date: 06/13/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c41090943e4053ddf0ea46e9da1b3b5c7dbbf132
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 578488163482dd0b7b486ca152455ff9686f1a43
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36331229"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46949219"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Добавление диска к виртуальной машине Linux
 Из этой статьи вы узнаете, как добавить в виртуальную машину постоянный диск, на котором можно хранить данные. Эти данные сохранятся даже после повторной подготовки виртуальной машины (например, в ходе обслуживания или изменения размера). 

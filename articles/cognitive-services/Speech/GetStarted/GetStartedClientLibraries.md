@@ -1,20 +1,22 @@
 ---
-title: Начало работы с API распознавания речи Microsoft с помощью клиентских библиотек для Распознавания речи Bing | Документация Майкрософт
-description: Используйте клиентские библиотеки для работы с речью Microsoft в Microsoft Cognitive Services для разработки приложений, которые преобразуют аудиозапись речи в текст.
+title: Приступая к работе с API распознавания речи Bing с помощью клиентских библиотек | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Используйте клиентские библиотеки Распознавания речи Bing в Microsoft Cognitive Services для разработки приложений, которые преобразовывают устную речь в текст.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 6fb490def6807204943a1ce3ba3c53186055102b
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ROBOTS: NOINDEX
+ms.openlocfilehash: e9d1bf1a6a2383a58a890ce9add816f9e9060273
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43048463"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46948151"
 ---
 # <a name="get-started-with-bing-speech-service-client-libraries"></a>Знакомство с клиентскими библиотеками для службы "Распознавание речи Bing"
 
@@ -43,3 +45,4 @@ ms.locfileid: "43048463"
 ## <a name="license"></a>Лицензия
 
 Все пакеты SDK и образцы Cognitive Services лицензированы лицензией MIT. Дополнительные сведения можно найти в разделе [Лицензия](https://github.com/Microsoft/Cognitive-Speech-STT-JavaScript/blob/master/LICENSE.md).
+

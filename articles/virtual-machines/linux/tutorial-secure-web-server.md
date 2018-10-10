@@ -1,6 +1,6 @@
 ---
 title: Руководство. Защита веб-сервера Linux с помощью SSL-сертификатов в Azure | Документация Майкрософт
-description: В этом руководстве описано, как использовать Azure CLI 2.0 для защиты виртуальной машины Linux, запущенной на веб-сервере NGINX, с помощью SSL-сертификатов, хранящихся в Azure Key Vault.
+description: В этом руководстве описано, как использовать Azure CLI для защиты виртуальной машины Linux, запущенной на веб-сервере NGINX, с помощью SSL-сертификатов, хранящихся в Azure Key Vault.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 04/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 11d884d9f1e7f805dd0796696152dda063ed7755
-ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.openlocfilehash: a0156167142e87ffb7935828de1000a302f12e31
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42886137"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981709"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-linux-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство. Защита веб-сервера на виртуальной машине Linux в Azure с помощью SSL-сертификатов, хранимых в Key Vault
 Чтобы защитить веб-серверы, можно использовать SSL-сертификат (Secure Sockets Layer) для шифрования веб-трафика. SSL-сертификаты могут храниться в Azure Key Vault и разрешать безопасное развертывание сертификатов на виртуальных машинах Linux в Azure. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -34,7 +34,7 @@ ms.locfileid: "42886137"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 
 ## <a name="overview"></a>Обзор

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание, отладка и развертывание веб-приложения на базе нескольких служб в Сетке Service Fabric | Документация Майкрософт
+title: Руководство по созданию, отладке, развертыванию и мониторингу приложения на базе нескольких служб в Сетке Service Fabric | Документация Майкрософт
 description: В рамках этого руководства вы создадите приложение Сетки Azure Service Fabric на базе нескольких служб, состоящее из веб-сайта ASP.NET Core, который взаимодействует с серверной веб-службой, выполните отладку приложения локально и опубликуете его в Azure.
 services: service-fabric-mesh
 documentationcenter: .net
@@ -12,26 +12,28 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/17/2018
+ms.date: 09/18/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 59ff3434e7b984f4530ad4f8b03b27991d3a9c1c
-ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
+ms.openlocfilehash: 09112aafdbabf0cda2b3ae13af73a9223533a6e1
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41918133"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46979200"
 ---
-# <a name="tutorial-create-debug-and-deploy-a-multi-service-web-application-to-service-fabric-mesh"></a>Руководство. Создание, отладка и развертывание веб-приложения на базе нескольких служб в Сетке Service Fabric
+# <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>Руководство по созданию, отладке, развертыванию и обновлению приложения на базе нескольких служб в Сетке Service Fabric.
 
-Это руководство представляет первую часть цикла. Здесь описывается, как создать приложение Сетки Azure Service Fabric с веб-интерфейсом ASP.NET и серверной службой веб-API ASP.NET Core. Затем вы выполните отладку приложения в своем локальном кластере разработки и опубликуете приложение в Azure. По окончанию у вас будет простое приложение со списком задач, которое демонстрирует тип вызова "служба — служба" в приложении Сетки Service Fabric, запущенное в Сетке Azure Service Fabric.
+Это руководство представляет первую часть цикла. Здесь описывается, как с помощью Visual Studio создать приложение Сетки Azure Service Fabric с веб-интерфейсом ASP.NET и серверной службой веб-API ASP.NET Core. Затем вы выполните отладку приложения в локальном кластере разработки. Вы опубликуете приложение в Azure, а затем внесете изменения в конфигурацию и код и обновите приложение. Наконец, вы удалите неиспользуемые ресурсы Azure, чтобы за них не взималась плата.
+
+Закончив работу с этим руководством, вы изучите большинство этапов управления жизненным циклом приложения и создадите приложение, демонстрирующее вызовы между службами в приложении Сетки Service Fabric.
 
 Если вы не хотите вручную создавать приложение со списком задач, вы можете [скачать исходный код](https://github.com/azure-samples/service-fabric-mesh) для завершенного приложения и сразу перейти к [отладке приложения локально](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md).
 
 В первой части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Создание приложения Сетки Service Fabric, состоящего из веб-интерфейса ASP.NET.
+> * Создание приложения Сетки Service Fabric, состоящего из веб-интерфейса ASP.NET, с помощью Visual Studio.
 > * Создание модели для представления задач.
 > * Создание серверной службы и извлечение из нее данных.
 > * Добавление контроллера и DataContext как части шаблона контроллера представления модели для серверной службы.
@@ -40,9 +42,11 @@ ms.locfileid: "41918133"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * Создание приложения Сетки Service Fabric.
-> * [Отладка приложения локально](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md).
-> * [Публиковать приложение в Azure](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md)
+> * Создание приложения Сетки Service Fabric в Visual Studio
+> * [Отладка приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md)
+> * [Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md)
+> * [Обновление приложения Сетки Service Fabric](service-fabric-mesh-tutorial-upgrade.md)
+> * [Удаление ресурсов Сетки Service Fabric](service-fabric-mesh-tutorial-cleanup-resources.md)
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
@@ -54,9 +58,7 @@ ms.locfileid: "41918133"
 
 * Убедитесь, что имеется [настроенная среда разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md), которая включает установку среды выполнения Service Fabric, пакет SDK, Docker и Visual Studio 2017.
 
-* Приложение для этого руководства необходимо создавать на английском языке.
-
-## <a name="create-a-service-fabric-mesh-project"></a>Создание проекта службы "Сетка Service Fabric"
+## <a name="create-a-service-fabric-mesh-project-in-visual-studio"></a>Создание проекта Сетки Service Fabric в Visual Studio
 
 Запустите Visual Studio и выберите **Файл** > **Создать** > **Проект...**.
 
@@ -212,10 +214,7 @@ public static class DataContext
 
     static DataContext()
     {
-        ToDoList = new Model.ToDoList("Main List");
-
         // Seed to-do list
-
         ToDoList.Add(Model.ToDoItem.Load("Learn about microservices", 0, true));
         ToDoList.Add(Model.ToDoItem.Load("Learn about Service Fabric", 1, true));
         ToDoList.Add(Model.ToDoItem.Load("Learn about Service Fabric Mesh", 2, false));
@@ -368,6 +367,7 @@ URL-адрес состоит из имени службы и порта. Вся
 
 > [!IMPORTANT]
 > Для отступов переменных в файле service.yaml должны использоваться пробелы, а не символы табуляции. В противном случае они не будут компилироваться. Служба Visual Studio может вставлять символы табуляции при создании переменных среды. Замените все символы табуляции пробелами. Несмотря на то, что вы увидите ошибки в выходных данных отладки **сборки**, приложение все равно будет запущено. Однако оно не будет работать, пока вы не преобразуете символы табуляции в пробелы. Чтобы гарантировать отсутствие символов табуляции в файле service.yaml, вы можете сделать пробелы видимыми в редакторе Visual Studio, выбрав **Правка**  > **Дополнительно**  > **Показать пустое пространство**.
+> Обратите внимание, что файлы service.yaml обрабатываются с использованием английского языкового стандарта.  Например, если требуется использовать десятичный разделитель, используйте точку, а не запятую.
 
 Ваш файл **service.yaml** в проекте **WebFrontEnd** должен выглядеть примерно так (хотя значение `ApiHostPort`, вероятно, будет другим):
 
@@ -389,4 +389,4 @@ URL-адрес состоит из имени службы и порта. Вся
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]
-> [Руководство по отладке веб-приложения Сетки Service Fabric](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md)
+> [Отладка приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md)

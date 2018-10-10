@@ -14,24 +14,23 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: cynthn
-ms.openlocfilehash: 8d250f1289c3757d5ea862a1c195dde6f8efb0eb
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 64b33fcd25582f6b1d3e7efe12aba85bb17c4cca
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938270"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46951208"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
 
-
-В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux, используя Azure CLI 2.0 и модель развертывания с помощью Azure Resource Manager. 
+В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux, используя Azure CLI и модель развертывания с помощью Azure Resource Manager. 
 
 Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 
--   Установка [Azure CLI 2.0](/cli/azure/install-az-cli2)
+-   Установка [интерфейса командной строки Azure](/cli/azure/install-az-cli2)
 
 -   Войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
 

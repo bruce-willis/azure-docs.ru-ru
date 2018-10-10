@@ -1,6 +1,6 @@
 ---
-title: Настройка частных IP-адресов для виртуальных машин (классическая модель) (Azure CLI 1.0) | Документация Майкрософт
-description: Узнайте, как настроить частные IP-адреса для виртуальных машин (классическая модель) с помощью интерфейса командной строки Azure (CLI) версии 1.0.
+title: Настройка частных IP-адресов для классических виртуальных машин с помощью классического Azure CLI | Документация Майкрософт
+description: Узнайте, как настроить частные IP-адреса для классических виртуальных машин с помощью классического интерфейса командной строки Azure.
 services: virtual-network
 documentationcenter: na
 author: genlin
@@ -16,14 +16,14 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a18877167d04fdb039070d5315390a846925fd29
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: f340b9843ed5763a20d2035e3add86123a1298e8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31791813"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46971150"
 ---
-# <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-the-azure-cli-10"></a>Настройка частных IP-адресов для виртуальной машины (классическая модель) с помощью Azure CLI 1.0
+# <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-the-azure-classic-cli"></a>Настройка частных IP-адресов для классической виртуальной машины с помощью классического Azure CLI
 
 [!INCLUDE [virtual-networks-static-private-ip-selectors-classic-include](../../includes/virtual-networks-static-private-ip-selectors-classic-include.md)]
 
@@ -33,12 +33,12 @@ ms.locfileid: "31791813"
 
 В этой статье рассматривается классическая модель развертывания. Кроме того, вы можете [управлять статическим частным IP-адресом в модели развертывания для диспетчера ресурсов](virtual-networks-static-private-ip-arm-cli.md).
 
-Для выполнения приведенных ниже примеров команд Azure CLI требуется созданная простая среда. Для выполнения команд в том виде, в каком они представлены в данном документе, сначала постройте тестовую среду, описанную в разделе [Создание виртуальной сети](virtual-networks-create-vnet-classic-cli.md).
+Для выполнения приведенных ниже примеров команд классического Azure CLI требуется созданная простая среда. Для выполнения команд в том виде, в каком они представлены в данном документе, сначала постройте тестовую среду, описанную в разделе [Создание виртуальной сети](virtual-networks-create-vnet-classic-cli.md).
 
 ## <a name="how-to-specify-a-static-private-ip-address-when-creating-a-vm"></a>Указание статического частного IP-адреса при создании виртуальной машины
 Чтобы создать новую виртуальную машину *DNS01* в новой облачной службе *TestService* согласно приведенному ранее сценарию, выполните следующее:
 
-1. Если вы еще не пользовались Azure CLI, ознакомьтесь со статьей [Установка и настройка CLI Azure](../cli-install-nodejs.md) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
+1. Если вы еще не пользовались Azure CLI, ознакомьтесь со статьей [Установка и настройка CLI Azure](/cli/azure/install-cli-version-1.0) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
 2. Выполните команду **azure service create** для создания облачной службы.
    
         azure service create TestService --location uscentral
@@ -124,4 +124,3 @@ ms.locfileid: "31791813"
 * Ознакомьтесь с информацией о [зарезервированных общедоступных IP-адресах](virtual-networks-reserved-public-ip.md) .
 * Узнайте об [общедоступных IP-адресах уровня экземпляра (ILPIP)](virtual-networks-instance-level-public-ip.md) .
 * Ознакомьтесь с информацией о [REST API зарезервированных IP-адресов](https://msdn.microsoft.com/library/azure/dn722420.aspx).
-

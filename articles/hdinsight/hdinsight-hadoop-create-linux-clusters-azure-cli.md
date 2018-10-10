@@ -1,6 +1,6 @@
 ---
-title: Создание кластеров Hadoop с помощью командной строки в Azure HDInsight
-description: Узнайте, как создавать кластеры HDInsight с кроссплатформенного Azure CLI 1.0.
+title: Создание кластеров Hadoop с помощью классического Azure CLI в Azure HDInsight
+description: Узнайте, как создавать кластеры HDInsight с помощью кроссплатформенного классического Azure CLI.
 services: hdinsight
 author: jasonwhowell
 ms.reviewer: jasonh
@@ -9,23 +9,20 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: jasonh
-ms.openlocfilehash: 523c2a85929d8474c283055a8ae38d489cbd4b12
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 84b352fea0c5b9c98cd3b4e814e448cf8b706402
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43090980"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46992819"
 ---
-# <a name="create-hdinsight-clusters-using-the-azure-cli"></a>Создание кластеров HDInsight с помощью интерфейса командной строки Azure
+# <a name="create-hdinsight-clusters-using-the-azure-classic-cli"></a>Создание кластеров HDInsight с помощью классического интерфейса командной строки Azure
 
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-Это пошаговое руководство содержит инструкции по созданию кластера HDInsight 3.5 с помощью Azure CLI 1.0.
+Это пошаговое руководство содержит инструкции по созданию кластера HDInsight 3.5 с помощью классического интерфейса командной строки Azure.
 
-> [!IMPORTANT]
-> В этой статье объясняется, как использовать Azure CLI 1.0 для создания кластера HDInsight. Эта версия CLI является устаревшей. В версию Azure CLI 2.0 не добавлена возможность создания кластеров HDInsight.
->
-> Для создания кластеров HDInsight и управления ими также можно использовать Azure PowerShell. Инструкции см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md).
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,14 +30,11 @@ ms.locfileid: "43090980"
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-* **Azure CLI**. Действия, описанные в этом документе, проверены с помощью Azure CLI версии 0.10.14.
-
-    > [!IMPORTANT]
-    > Azure CLI 1.0 является устаревшей версией. В версию Azure CLI 2.0 не добавлена возможность создания кластеров HDInsight.
+* **Классический Azure CLI**. Действия, описанные в этом документе, проверены с помощью классического интерфейса командной строки Azure версии 0.10.14.
 
 ## <a name="log-in-to-your-azure-subscription"></a>Вход в подписку Azure
 
-Выполните действия, описанные в статье [Подключение к среде Azure с использованием интерфейса командной строки Azure (Azure CLI)](/cli/azure/authenticate-azure-cli) , и подключитесь к подписке с помощью метода **login** .
+Выполните действия, описанные в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli), и подключитесь к подписке с помощью метода **login**.
 
 ## <a name="create-a-cluster"></a>Создание кластера
 
@@ -50,7 +44,7 @@ ms.locfileid: "43090980"
 
         azure login
 
-    Вам будет предложено указать имя пользователя и пароль. Если подписок Azure несколько, укажите, какую подписку должны использовать команды Azure CLI, с помощью метода `azure account set <subscriptionname>` .
+    Вам будет предложено указать имя пользователя и пароль. Если подписок Azure несколько, укажите, какую подписку должны использовать команды классического Azure CLI, с помощью метода `azure account set <subscriptionname>`.
 
 2. Переключитесь в режим диспетчера ресурсов Azure с помощью следующей команды:
 
@@ -124,7 +118,7 @@ ms.locfileid: "43090980"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы успешно создали кластер HDInsight с помощью интерфейса командной строки Azure, обратитесь к следующим статьям, чтобы научиться работать с кластером:
+Теперь, когда вы успешно создали кластер HDInsight с помощью классического интерфейса командной строки Azure, обратитесь к следующим статьям, чтобы научиться работать с кластером:
 
 ### <a name="hadoop-clusters"></a>Кластеры Hadoop
 

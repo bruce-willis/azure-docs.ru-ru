@@ -1,5 +1,5 @@
 
-1. Войдите в подписку Azure, выполнив действия, перечисленные в статье [Войдите в Azure из командной строки Azure](/cli/azure/authenticate-azure-cli).
+1. Войдите в подписку Azure, выполнив действия, перечисленные в статье [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/cli/azure/authenticate-azure-cli) (Подключение к подписке Azure с помощью интерфейса командной строки Azure (Azure CLI)).
 
 2. Убедитесь, что вы находитесь в режиме классического развертывания, следующим образом:
 
@@ -52,5 +52,5 @@
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения обо всех командах Azure CLI 1.0 для управления виртуальной машиной см. в статье [Get started with Azure CLI 2.0 (Preview)](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2) (Приступая к работе с Azure CLI 2.0 (предварительная версия)).
+Дополнительные сведения о всех командах классического Azure CLI для виртуальных машин см. в статье [Using the Azure classic CLI with the Classic deployment API](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2) (Использование классического Azure CLI с API классического развертывания).
 

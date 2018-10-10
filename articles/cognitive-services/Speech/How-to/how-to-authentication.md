@@ -1,31 +1,33 @@
 ---
-title: Аутентификация в службе "Речь" от Майкрософт | Документация Майкрософт
-description: Запрос аутентификации на использование SAPI корпорации Майкрософт
+title: Аутентификация в API распознавания речи Bing | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Запрос аутентификации для использования API распознавания речи Bing.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: e36168cf3ff938af44f1028c2d26fd475d60b148
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4d4b9f43b6b3a4127d70989414d467f724f6ec28
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380564"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46972799"
 ---
 # <a name="authenticate-to-the-speech-api"></a>Аутентификация в SAPI
 
-Служба "Речь" поддерживает следующие методы аутентификации:
+Служба "Распознавание речи Bing" поддерживает следующие методы аутентификации:
 
 - ключ подписки;
 - маркер авторизации.
 
 ## <a name="use-a-subscription-key"></a>Использование ключа подписки
 
-Чтобы использовать службу "Речь", вам потребуется подписка на интерфейс SAPI, входящий в службу Cognitive Services (прежнее название — Project Oxford). Вы можете получить ключи бесплатной пробной версии подписки на странице [подписки на Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). Чтобы получить ключ, после выбора SAPI выберите **Получить ключ API**. На странице отобразится первичный и вторичный ключ. Оба ключа привязаны к одной и той же квоте, поэтому вы можете использовать любой из них.
+Чтобы использовать службу "Речь", вам потребуется подписка на интерфейс SAPI, входящий в службу Cognitive Services (прежнее название — Project Oxford). Вы можете получить ключи бесплатной пробной версии подписки на странице [подписки на Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). Чтобы получить ключ, после выбора SAPI выберите **Получить API-ключ**. Страница возвращает первичный и вторичный ключ. Оба ключа привязаны к одной и той же квоте, поэтому вы можете использовать любой из них.
 
 Для долгосрочного использования или получения увеличенной квоты, зарегистрируйтесь и получите [учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -87,7 +89,7 @@ $OAuthToken
 
 # <a name="curltabcurl"></a>[curl](#tab/curl)
 
-В этом примере используется curl в Linux с помощью bash. Если на вашей платформе нет служебной программы curl, установите ее. Этот пример будет работать также в Cygwin в Windows, Git Bash, zsh и других оболочках.
+В этом примере используется curl под ОС Linux с помощью Bash. Если на вашей платформе нет служебной программы curl, установите ее. Этот пример будет работать также в Cygwin под ОС Windows, Git Bash, zsh и других оболочках.
 
 ```
 curl -v -X POST "https://api.cognitive.microsoft.com/sts/v1.0/issueToken" -H "Content-type: application/x-www-form-urlencoded" -H "Content-Length: 0" -H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY"

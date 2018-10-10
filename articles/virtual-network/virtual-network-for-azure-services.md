@@ -15,24 +15,24 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: jdial
-ms.openlocfilehash: c92a986d06deb9f7de10f0682fe46804e6ebb6e7
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 06af3351f5669f5cd9aeeb9c4cb2168666476b52
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069882"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46994638"
 ---
 # <a name="virtual-network-integration-for-azure-services"></a>Интеграция виртуальной сети для служб Azure
 
-Интеграция служб Azure в виртуальной сети Azure обеспечивает закрытый доступ из экземпляров службы, развернутой в виртуальной сети.
+Интеграция служб Azure с виртуальной сетью Azure обеспечивает закрытый доступ к службе из виртуальных машин или вычислительных ресурсов в виртуальной сети.
+Вы можете интегрировать службы Azure в виртуальной сети со следующими параметрами: непосредственное развертывание выделенных экземпляров службы в виртуальной сети. В этом случае закрытый доступ к этим службам сможет осуществляться в виртуальной сети и из локальных сетей.
+Расширение виртуальной сети за счет добавления конечной точки службы. Конечные точки позволяют защитить ресурсы отдельной службы в виртуальной сети.
 
-Службы Azure можно интегрировать с виртуальной сетью такими способами:
-- Непосредственное развертывание выделенных экземпляров службы в виртуальной сети. Закрытый доступ к выделенным экземплярам этих служб может осуществляться в виртуальной сети и локальных сетей.
-- Расширение виртуальной сети за счет добавления конечной точки службы. Конечные точки позволяют защитить ресурсы отдельной службы в виртуальной сети.
+Чтобы интегрировать несколько служб Azure с виртуальной сетью, можно использовать одну или объединить несколько указанных выше схем. Например, вы можете развернуть в виртуальной сети службу HDInsight и защитить учетную запись хранения в подсети HDInsight с помощью конечных точек службы.
  
 ## <a name="deploy-azure-services-into-virtual-networks"></a>Развертывание служб Azure в виртуальных сетях
 
-С большинством ресурсов Azure можно взаимодействовать в Интернете через общедоступные IP-адреса. При развертывании служб Azure в [виртуальной сети](virtual-networks-overview.md) вы можете взаимодействовать с ресурсами служб в частном порядке через частные IP-адреса.
+При развертывании выделенных служб Azure в [виртуальной сети](virtual-networks-overview.md) вы можете взаимодействовать с ресурсами служб в частном порядке через частные IP-адреса.
 
 ![Службы, развернутые в виртуальной сети](./media/virtual-network-for-azure-services/deploy-service-into-vnet.png)
 
@@ -42,39 +42,30 @@ ms.locfileid: "39069882"
 - Локальные ресурсы могут обращаться к ресурсам в виртуальной сети с помощью частных IP-адресов через [VPN-подключение типа "сеть —сеть" (VPN-шлюз)](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json#s2smulti) или [канал ExpressRoute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Виртуальные сети могут создавать [пиринговую связь](virtual-network-peering-overview.md), что позволяет ресурсам в виртуальной сети взаимодействовать друг с другом через частные IP-адреса.
 - Служба Azure полностью управляет экземплярами служб в виртуальной сети. Это позволяет отслеживать работоспособность экземпляров и выполнять необходимое масштабирование на основе нагрузки.
-- Экземпляры служб развертываются в выделенной подсети в виртуальной сети. Входящий и исходящий доступ к подсети должен быть открыт посредством [групп безопасности сети](security-overview.md#network-security-groups) для подсети согласно рекомендациям для служб.
+- Экземпляры служб развертываются в подсети в виртуальной сети. Входящий и исходящий доступ к подсети должен быть открыт посредством [групп безопасности сети](security-overview.md#network-security-groups) для подсети согласно рекомендациям для служб.
+- При необходимости для служб можно использовать [делегированную подсеть](virtual-network-manage-subnet.md#add-a-subnet), чтобы явно указать, что в этой подсети может размещаться определенная служба. Делегирование подсети прямо разрешает службе создавать в подсети необходимые для этой службы ресурсы.
 
 ### <a name="services-that-can-be-deployed-into-a-virtual-network"></a>Службы, которые можно развернуть в виртуальной сети
 
-Каждая служба, непосредственно развернутая в виртуальной сети, имеет особые требования к маршрутизации и типам разрешенного входящего и исходящего трафика подсетей. Дополнительные сведения можно найти в разделе  
- 
-- Виртуальные машины: [Windows](../virtual-machines/linux/infrastructure-networking-guidelines.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/windows/infrastructure-networking-guidelines.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Service Fabric](../service-fabric/service-fabric-patterns-networking.md?toc=%2fazure%2fvirtual-network%2ftoc.json#existingvnet)
-- [Масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-existing-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [HDInsight](../hdinsight/hdinsight-extend-hadoop-virtual-network.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Среда службы приложений](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Кэш Redis](../redis-cache/cache-how-to-premium-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Управление API](../api-management/api-management-using-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Шлюз приложений (внешний)](../application-gateway/application-gateway-ilb-arm.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Служба Azure Kubernetes (AKS)](../aks/networking-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Обработчик службы контейнеров Azure](https://github.com/Azure/acs-engine) с [подключаемым модулем](https://github.com/Azure/acs-engine/tree/master/examples/vnet) CNI для виртуальной сети Azure
-- [Доменные службы Azure Active Directory](../active-directory-domain-services/active-directory-ds-getting-started-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Пакетная служба Azure](../batch/batch-api-basics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual-network-vnet-and-firewall-configuration)
-- [Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-vnet-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Облачные службы](https://msdn.microsoft.com/library/azure/jj156091): только виртуальная сеть (классическая).
+Каждая служба, непосредственно развернутая в виртуальной сети, имеет особые требования к маршрутизации и типам разрешенного входящего и исходящего трафика подсетей. Ниже приведена классификация различных служб, которые могут быть развернуты в виртуальной сети. Выберите определенную службу в таблице, чтобы узнать больше о ней и о том, как ее интегрировать с виртуальной сетью. 
 
-Вы можете развернуть [внутренний Azure Load Balancer ](../load-balancer/load-balancer-internal-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), чтобы балансировать нагрузку приведенных выше ресурсов. В некоторых случаях служба автоматически создает и развертывает подсистему балансировки нагрузки при создании ресурса.
+
+|Категория|Service|
+|-|-|
+| Службы вычислений | Виртуальные машины: [Windows](../virtual-machines/linux/infrastructure-networking-guidelines.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/windows/infrastructure-networking-guidelines.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-existing-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Облачная служба](https://msdn.microsoft.com/library/azure/jj156091): только виртуальная сеть (классическая).<br/> [Пакетная служба Azure](../batch/batch-api-basics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual-network-vnet-and-firewall-configuration)  |
+| Сеть | [Шлюз приложений — WAF](../application-gateway/application-gateway-ilb-arm.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Брандмауэр Azure](../firewall/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) <br/>[Виртуальные сетевые модули](/windowsserverdocs/WindowsServerDocs/networking/sdn/manage/Use-Network-Virtual-Appliances-on-a-VN.md) 
+|Данные|[Кэш Redis](../redis-cache/cache-how-to-premium-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-vnet-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
+Analytics | [Azure HDInsight](../hdinsight/hdinsight-extend-hadoop-virtual-network.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Azure Databricks](../azure-databricks/what-is-azure-databricks.md?toc=%2fazure%2fvirtual-network%2ftoc.json) |
+| Удостоверение | [Доменные службы Azure Active Directory](../active-directory-domain-services/active-directory-ds-getting-started-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json) |
+| Контейнеры | [Служба Azure Kubernetes (AKS)](../aks/networking-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Экземпляр контейнера Azure (ACI)](http://www.aka.ms/acivnet)<br/>[Обработчик службы контейнеров Azure](https://github.com/Azure/acs-engine) с [подключаемым модулем](https://github.com/Azure/acs-engine/tree/master/examples/vnet) CNI для виртуальной сети Azure||
+| Web | [Управление API](../api-management/api-management-using-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Среда службы приложений](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[WebApps](http://www.aka.ms/WebAppsVNet)
+| Размещенные*| [Azure NetApp Files (ANF)](../azure-netapp-files/azure-netapp-files-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json)<br/>[Аппаратный модуль безопасности Azure](http://www.aka.ms/azurededicatedhsm)
+| | |
+<br/>
+* Специализированные службы, обычно выполняемые на специализированном оборудовании.
+
+
 
 ## <a name="service-endpoints-for-azure-services"></a>Конечные точки служб Azure
 
-Некоторые службы Azure невозможно развернуть в виртуальной сети. Вы можете предоставить доступ к некоторым ресурсам службы только определенным подсетям виртуальной сети, включив конечные точки виртуальной сети. Дополнительные сведения о конечных точках службы виртуальной сети и службах, для которых можно создать конечные точки, см. [здесь](virtual-network-service-endpoints-overview.md).
-
-## <a name="virtual-network-integration-across-multiple-azure-services"></a>Интеграция виртуальной сети с несколькими службами Azure
-
-Вы можете развернуть службы Azure в подсети в виртуальной сети и защитить в ней важные ресурсы. Например, вы можете развернуть в виртуальной сети службу HDInsight и защитить учетную запись хранения в подсети HDInsight.
-
-
-
-
-
+Некоторые службы Azure невозможно развернуть в виртуальной сети. Вы можете предоставить доступ к некоторым ресурсам службы только определенным подсетям виртуальной сети, включив конечные точки виртуальной сети.  Дополнительные сведения о конечных точках службы виртуальной сети и службах, для которых можно создать конечные точки, см. [здесь](virtual-network-service-endpoints-overview.md).

@@ -15,16 +15,17 @@ ms.workload: big-compute
 ms.date: 04/05/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 85bda9e1a936f19a37be2f2c1c42f948cab727d6
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 98bd088d4995bd1444b059531dc5b19d0283f551
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43122473"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46965540"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
-В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-azure-monitor.md). Azure Monitor собирает [метрики](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../monitoring-and-diagnostics/monitoring-overview-alerts.md#alerts-on-azure-monitor-data), чтобы получать уведомления о достижении определенных значений. 
+ 
+В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../monitoring/monitoring-data-collection.md#metrics) и [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../monitoring-and-diagnostics/monitoring-overview-alerts.md), чтобы получать уведомления о достижении определенных значений. 
 
 ## <a name="batch-metrics"></a>Метрики пакетной службы
 
@@ -64,7 +65,8 @@ ms.locfileid: "43122473"
 2. В разделе **Мониторинг** щелкните **Правила оповещений** > **Добавить оповещение метрики**.
 3. Выберите метрику и условие оповещения (например, если метрика превышает определенное значение за некоторый период), а также одно или несколько уведомлений.
 
-Также с помощью [API-интерфейса REST](https://docs.microsoft.com/rest/api/monitor/) вы можете настроить оповещения практически в реальном времени. Дополнительные сведения см. в статье [Использование новых оповещений метрик для служб Azure на портале Azure](../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md).
+Также с помощью [API-интерфейса REST](https://docs.microsoft.com/rest/api/monitor/) вы можете настроить оповещения практически в реальном времени. Дополнительные сведения см. в статье [Обзор оповещений в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-alerts.md).
+
 ## <a name="batch-diagnostics"></a>Диагностика пакетной службы
 
 Журналы диагностики содержат сведения о работе каждого ресурса Azure, генерируемые этими ресурсами. Для пакетной службы можно собирать следующие журналы:

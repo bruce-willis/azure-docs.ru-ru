@@ -1,6 +1,6 @@
 ---
 title: Изменение масштабируемого набора виртуальных машин Azure | Документация Майкрософт
-description: Узнайте, как изменить и обновить масштабируемый набор виртуальных машин Azure с помощью интерфейсов REST API, Azure PowerShell и Azure CLI 2.0.
+description: Узнайте, как изменить и обновить масштабируемый набор виртуальных машин Azure с помощью интерфейсов REST API, Azure PowerShell и Azure CLI.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: gatneil
@@ -15,15 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/14/2018
 ms.author: negat
-ms.openlocfilehash: 662cea7ac47e411b127540faf5cab8b3c4d8964a
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 628d407869d24f466b5a7c056d51d76217e29798
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32194052"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996661"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
-На протяжении жизненного цикла приложений может потребоваться изменить или обновить масштабируемый набор виртуальных машин. Это может быть обновление конфигурации масштабируемого набора или изменение конфигурации приложения. В этой статье описывается, как можно изменить существующий масштабируемый набор с помощью интерфейсов REST API, Azure PowerShell или Azure CLI 2.0.
+На протяжении жизненного цикла приложений может потребоваться изменить или обновить масштабируемый набор виртуальных машин. Это может быть обновление конфигурации масштабируемого набора или изменение конфигурации приложения. В этой статье описывается, как можно изменить существующий масштабируемый набор с помощью интерфейсов REST API, Azure PowerShell или Azure CLI.
 
 ## <a name="fundamental-concepts"></a>Базовые понятия
 
@@ -42,7 +42,7 @@ ms.locfileid: "32194052"
     Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
     ```
 
-- Можно использовать команду [az vmss show](/cli/azure/vmss#az_vmss_show) в Azure CLI 2.0.
+- Команду [az vmss show](/cli/azure/vmss#az_vmss_show) в Azure CLI.
 
     ```azurecli
     az vmss show --resource-group myResourceGroup --name myScaleSet
@@ -50,7 +50,7 @@ ms.locfileid: "32194052"
 
 - Можно также использовать [resources.azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/) для конкретного языка.
 
-Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI 2.0.
+Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI.
 
 ```azurecli
 az vmss show --resource-group myResourceGroup --name myScaleSet
@@ -86,7 +86,7 @@ az vmss show --resource-group myResourceGroup --name myScaleSet
     Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceView
     ```
 
-- Можно использовать команду [az vmss get-instance-view](/cli/azure/vmss#az_vmss_get_instance_view) в Azure CLI 2.0.
+- Можно использовать команду [az vmss get-instance-view](/cli/azure/vmss#az_vmss_get_instance_view) в Azure CLI.
 
     ```azurecli
     az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet
@@ -94,7 +94,7 @@ az vmss show --resource-group myResourceGroup --name myScaleSet
 
 - Можно также использовать [resources.azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/) для конкретного языка.
 
-Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI 2.0.
+Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI.
 
 ```azurecli
 $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet
@@ -140,7 +140,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet
     Get-AzureRmVmssVm -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId
     ```
 
-- Можно использовать команду [az vmss show](/cli/azure/vmss#az_vmss_show) в Azure CLI 2.0.
+- Команду [az vmss show](/cli/azure/vmss#az_vmss_show) в Azure CLI.
 
     ```azurecli
     az vmss show --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
@@ -148,7 +148,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet
 
 - Можно также использовать [resources.azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/).
 
-Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI 2.0.
+Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI.
 
 ```azurecli
 $ az vmss show --resource-group myResourceGroup --name myScaleSet
@@ -180,7 +180,7 @@ $ az vmss show --resource-group myResourceGroup --name myScaleSet
     Get-AzureRmVmssVm -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId -InstanceView
     ```
 
-- Можно использовать команду [az vmss get-instance-view](/cli/azure/vmss#az_vmss_get_instance_view) в Azure CLI 2.0.
+- Можно использовать команду [az vmss get-instance-view](/cli/azure/vmss#az_vmss_get_instance_view) в Azure CLI.
 
     ```azurecli
     az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
@@ -188,7 +188,7 @@ $ az vmss show --resource-group myResourceGroup --name myScaleSet
 
 - Можно также использовать [resources.azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/).
 
-Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI 2.0.
+Точное представление выходных данных зависит от параметров, введенных в команде. Ниже показан сокращенный пример выходных данных Azure CLI.
 
 ```azurecli
 $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
@@ -259,7 +259,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -VirtualMachineScaleSet {scaleSetConfigPowershellObject}
     ```
 
-- Или можно использовать команду [az vmss update](/cli/azure/vmss#az_vmss_update) в Azure CLI 2.0.
+- Можно использовать команду [az vmss update](/cli/azure/vmss#az_vmss_update) в Azure CLI.
     - Чтобы изменить свойство, выполните следующую команду.
 
         ```azurecli
@@ -306,7 +306,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     Update-AzureRmVmssInstance -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId
     ```
 
-- Или можно использовать команду [az vmss update-instances](/cli/azure/vmss#az_vmss_update_instances) в Azure CLI 2.0.
+- Можно использовать команду [az vmss update-instances](/cli/azure/vmss#az_vmss_update_instances) в Azure CLI.
 
     ```azurecli
     az vmss update-instances --resource-group myResourceGroup --name myScaleSet --instance-ids {instanceIds}
@@ -331,7 +331,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     Set-AzureRmVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId -Reimage
     ```
 
-- Или можно использовать команду [az vmss reimage](https://docs.microsoft.com/cli/azure/vmss#az_vmss_reimage) в Azure CLI 2.0.
+- Можно использовать команду [az vmss reimage](https://docs.microsoft.com/cli/azure/vmss#az_vmss_reimage) в Azure CLI.
 
     ```azurecli
     az vmss reimage --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
@@ -392,7 +392,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -ImageReferenceVersion 16.04.201801090
     ```
 
-- Или можно использовать команду [az vmss update](/cli/azure/vmss#az_vmss_update_instances) в Azure CLI 2.0.
+- Можно использовать команду [az vmss update](/cli/azure/vmss#az_vmss_update_instances) в Azure CLI.
 
     ```azurecli
     az vmss update --resource-group myResourceGroup --name myScaleSet --set virtualMachineProfile.storageProfile.imageReference.version=16.04.201801090
@@ -418,7 +418,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -virtualMachineScaleSet $vmss
     ```
 
-- Azure CLI 2.0:
+- Azure CLI:
 
     ```azurecli
     # Remove the load balancer backend pool from the scale set model
@@ -436,4 +436,4 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Общие задачи управления масштабируемыми наборами можно также выполнять с помощью [Azure CLI 2.0](virtual-machine-scale-sets-manage-cli.md) или [Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md).
+Общие задачи управления масштабируемыми наборами можно также выполнять с помощью [Azure CLI](virtual-machine-scale-sets-manage-cli.md) или [Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md).

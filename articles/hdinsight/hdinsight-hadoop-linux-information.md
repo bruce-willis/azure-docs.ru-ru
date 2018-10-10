@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/09/2018
-ms.openlocfilehash: 0b22e51814f79b00257433a7e601349ad25cd2b7
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: d725bbe31de0f93d1b741ffd008bf39086904b61
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43104306"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46997511"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -29,7 +29,7 @@ ms.locfileid: "43104306"
 
 * [cURL](https://curl.haxx.se/) — используется для взаимодействия с веб-службами;
 * [jq](https://stedolan.github.io/jq/) — используется для анализа документов JSON.
-* [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2) используется для удаленного управления службами Azure.
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-az-cli2) используется для удаленного управления службами Azure.
 
 ## <a name="users"></a>Пользователи
 
@@ -176,7 +176,7 @@ ms.locfileid: "43104306"
 
 Если вы используете __службу хранилища Azure__, для получения данных используйте следующие способы.
 
-* [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2) — это набор команд интерфейса командной строки для работы с Azure. После установки используйте команду `az storage` для получения информации по использованию хранилища, а команду `az storage blob` — для получения информации о больших двоичных объектах.
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-az-cli2) — это набор команд интерфейса командной строки для работы с Azure. После установки используйте команду `az storage` для получения информации по использованию хранилища, а команду `az storage blob` — для получения информации о больших двоичных объектах.
 * [blobxfer.py](https://github.com/Azure/azure-batch-samples/tree/master/Python/Storage)— cценарий Python для работы с большими двоичными объектами в хранилище Azure.
 * Различные пакеты SDK:
 
@@ -192,7 +192,7 @@ ms.locfileid: "43104306"
 
 * [веб-браузер](../data-lake-store/data-lake-store-get-started-portal.md);
 * [PowerShell](../data-lake-store/data-lake-store-get-started-powershell.md)
-* [Azure CLI 2.0](../data-lake-store/data-lake-store-get-started-cli-2.0.md)
+* [интерфейс командной строки Azure](../data-lake-store/data-lake-store-get-started-cli-2.0.md)
 * [REST API WebHDFS](../data-lake-store/data-lake-store-get-started-rest-api.md);
 * [средства Data Lake для Visual Studio](https://www.microsoft.com/download/details.aspx?id=49504);
 * [.NET](../data-lake-store/data-lake-store-get-started-net-sdk.md)

@@ -1,6 +1,6 @@
 ---
 title: Руководство. Развертывание приложения Сетки Service Fabric | Документация Майкрософт
-description: Узнайте, как опубликовать приложение Сетки Azure Service Fabric, состоящее из веб-сайта ASP.NET Core, который обменивается данными с северной веб-службой.
+description: Узнайте, как использовать Visual Studio, чтобы опубликовать приложение Сетки Azure Service Fabric, состоящее из веб-сайта ASP.NET Core, который обменивается данными с северной веб-службой.
 services: service-fabric-mesh
 documentationcenter: .net
 author: TylerMSFT
@@ -12,35 +12,35 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/26/2018
+ms.date: 09/18/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 350749161260768071afbb47b854cb2e9184bd9d
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 467484824ec3a3ceffb6dfa692953406ed6acc1b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39284733"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46963327"
 ---
-# <a name="tutorial-deploy-a-service-fabric-mesh-web-application"></a>Руководство. Развертывание приложения Сетки Service Fabric
+# <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство. Развертывание приложения Сетки Service Fabric
 
 Это руководство является третьей частью цикла, в котором показано, как публиковать веб-приложение Сетки Azure Service Fabric непосредственно из Visual Studio.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 > [!div class="checklist"]
-> * Публикация приложения в Azure.
+> * Опубликуйте приложение в Azure с помощью Visual Studio.
 > * Проверка состояния развертывания приложения
 > * Обзор всех приложений, развернутых сейчас в подписке
-> * Обзор журналов приложений
-> * Очистка ресурсов, используемых в приложении.
 
-Из этой серии руководств вы узнаете, как выполнить следующие задачи:
+Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * [Создание веб-приложения Сетки Service Fabric](service-fabric-mesh-tutorial-create-dotnetcore.md)
-> * [Отладка локального приложения](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md)
-> * Публикация приложения в Azure
+> * [Создание приложения Сетки Service Fabric в Visual Studio](service-fabric-mesh-tutorial-create-dotnetcore.md)
+> * [Отладка приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md)
+> * Развертывание приложения Сетки Service Fabric
+> * [Обновление приложения Сетки Service Fabric](service-fabric-mesh-tutorial-upgrade.md)
+> * [Удаление ресурсов Сетки Service Fabric](service-fabric-mesh-tutorial-cleanup-resources.md)
 
-Здесь описывается, как создать приложение Сетки Azure Service Fabric с веб интерфейсом ASP.NET и серверной службой веб-API ASP.NET Core. Затем выполнение отладки приложения в локальном кластере разработки и публикация приложения в Azure. По окончанию у вас будет простое приложение, которое демонстрирует, как сделать вызов типа "служба — служба" в приложении Сетки Service Fabric.
+[!INCLUDE [preview note](./includes/include-preview-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -62,7 +62,7 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 ## <a name="publish-to-azure"></a>Публикация в Azure
 
-Чтобы опубликовать проект Сетки Service Fabric в Azure, щелкните правой кнопкой мыши **ServiceFabricMeshApp** в Visual Studio и выберите **Опубликовать**
+Чтобы опубликовать проект Сетки Service Fabric в Azure, щелкните правой кнопкой мыши **todolistapp** в Visual Studio и выберите **Опубликовать...**
 
 Дальше появится диалоговое окно **Публикация приложения Service Fabric**.
 
@@ -74,9 +74,9 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 ![Диалоговое окно новой группы ресурсов Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-resource-group-dialog.png)
 
-Вернитесь в диалоговое окно **Опубликовать приложение Service Fabric** в разделе **Реестр контейнеров Azure**, выберите **\<Создать реестр контейнеров Azure...>**. В диалоговом окне **Создать реестр контейнеров** используйте уникальное имя для **Имя реестра контейнеров**. Укажите **Расположение** (в этом руководстве используется **восточная часть США**). Выберите в раскрывающемся списке **Группу ресурсов**, созданную на предыдущем шаге, например **sfmeshTutorial1RG**. Задайте номер **SKU** для **Базовый** и нажмите клавишу **Создать**, чтобы вернуться в диалоговое окно публикации.
+Вернитесь в диалоговое окно **Опубликовать приложение Service Fabric** в разделе **Реестр контейнеров Azure**, выберите **\<Создать реестр контейнеров Azure...>**. В диалоговом окне **Создать реестр контейнеров** используйте уникальное имя для **Имя реестра контейнеров**. Укажите **Расположение** (в этом руководстве используется **восточная часть США**). Выберите в раскрывающемся списке **группу ресурсов**, созданную на предыдущем шаге, например **sfmeshTutorial1RG**. Для **номера SKU** установите значение **Базовый**, а затем щелкните **Создать**, чтобы создать частный реестр контейнеров Azure и вернуться в диалоговое окно публикации.
 
-![Диалоговое окно новой группы ресурсов Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-container-registry-dialog.png)
+![Диалоговое окно нового реестра контейнеров службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-container-registry-dialog.png)
 
 Если возникает ошибка, что поставщик ресурсов не зарегистрирован для вашей подписки, можно его зарегистрировать. Сначала определите, доступен ли поставщик ресурсов для вашей подписки.
 
@@ -109,7 +109,6 @@ The application was deployed successfully and it can be accessed at http://10.00
 ## <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric 
 Чтобы выполнить остальные шаги, можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Установите модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив следующие [инструкции](service-fabric-mesh-howto-setup-cli.md).
 
-
 ## <a name="check-application-deployment-status"></a>Проверка состояния развертывания приложения
 
 На этом этапе приложение развернуто. Можно проверить его состояние с помощью команды `app show`. 
@@ -122,48 +121,22 @@ az mesh app show --resource-group $rg --name ServiceMeshApp
 
 ## <a name="see-all-applications-currently-deployed-to-your-subscription"></a>Обзор всех приложений, развернутых сейчас в подписке
 
-Чтобы получить список приложений, которые развернуты в подписке, можно использовать команду "app list".
+Чтобы получить список приложений, которые развернуты в подписке, можно использовать команду app list.
 
-```cli
+```azurecli-interactive
 az mesh app list --output table
 ```
 
-## <a name="see-the-application-logs"></a>Обзор журналов приложений
-
-Изучите журналы для развернутого приложения.
-
-```azurecli-interactive
-az mesh code-package-log get --resource-group $rg --application-name ServiceMeshApp --service-name todoservice --replica-name 0 --code-package-name ServiceMeshApp
-```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Удалите все созданные ресурсы, если они больше не нужны. Поскольку была создана группа ресурсов для размещения ресурсов службы ACR и Сетки Service Fabric, можно безопасно удалить эту группу ресурсов, что приведет к удалению всех связанных ресурсов.
-
-```azurecli
-az group delete --resource-group sfmeshTutorial1RG
-```
-
-```powershell
-Remove-AzureRmResourceGroup -Name sfmeshTutorial1RG
-```
-
-Кроме того, можно удалить группу ресурсов [из портала](../azure-resource-manager/resource-group-portal.md#delete-resource-group-or-resources). 
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой части руководства было показано следующее.
+В этой части руководства вы узнали, как выполнить следующие действия:
 > [!div class="checklist"]
 > * Публикация приложения в Azure.
 > * Проверка состояния развертывания приложения
 > * Обзор всех приложений, развернутых сейчас в вашей подписке
-> * Обзор журналов приложений
-> * Очистка ресурсов, используемых в приложении.
 
-После завершения публикации приложения Сетки Service Fabric в Azure попробуйте следующее.
-
-* Чтобы увидеть еще один пример связи между службами, изучите [пример приложения Voting](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/votingapp).
-* Прочтите [Introduction to Service Fabric Resource Model](service-fabric-mesh-service-fabric-resources.md) (Введение в модель ресурса Service Fabric)
-* Ознакомьтесь с [Обзором Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)
+Перейдите к следующему руководству:
+> [!div class="nextstepaction"]
+> [Обновление приложения Сетки Service Fabric](service-fabric-mesh-tutorial-upgrade.md)
 
 [azure-cli-install]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest

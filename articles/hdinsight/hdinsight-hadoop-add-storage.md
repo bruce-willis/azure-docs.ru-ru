@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: jasonh
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 7d37a60ad3ae3bea8490006bdd35dc47d728b88e
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: bdf4c7527e2c0056b2de2321fbae280e9008cb1b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43103860"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46990679"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -58,7 +58,7 @@ __Требования__
 
 ## <a name="to-use-the-script"></a>Использование скрипта
 
-Этот сценарий можно использовать с помощью портала Azure, Azure PowerShell или Azure CLI 1.0. Дополнительные сведения см. в документе [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster).
+Этот сценарий можно использовать с помощью портала Azure, Azure PowerShell или классического Azure CLI. Дополнительные сведения см. в документе [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster).
 
 > [!IMPORTANT]
 > Следуя инструкциям из документации по настройке, используйте следующие сведения для применения этого сценария:
@@ -71,7 +71,7 @@ __Требования__
 
 ### <a name="storage-accounts-not-displayed-in-azure-portal-or-tools"></a>Учетные записи хранения не отображаются на портале Azure или в Azure Tools
 
-При просмотре кластера HDInsight на портале Azure (для этого нужно щелкнуть __Учетные записи хранения__ в разделе __Свойства__) не отображаются учетные записи хранения, добавленные с помощью действия сценария. Azure PowerShell и Azure CLI также не отображают дополнительные учетные записи хранения.
+При просмотре кластера HDInsight на портале Azure (для этого нужно щелкнуть __Учетные записи хранения__ в разделе __Свойства__) не отображаются учетные записи хранения, добавленные с помощью действия сценария. Azure PowerShell и классический Azure CLI также не отображают дополнительные учетные записи хранения.
 
 Информация о хранилище не отображается, так как сценарий изменяет только конфигурацию core-site.xml для кластера. Эта информация не используется при получении сведений о кластере с помощью интерфейсов API управления Azure.
 

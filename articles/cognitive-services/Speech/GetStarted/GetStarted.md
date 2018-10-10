@@ -1,5 +1,6 @@
 ---
 title: Начало работы со службой распознавания речи Microsoft | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
 description: Использование службы распознавания речи Microsoft.
 services: cognitive-services
 author: zhouwangzw
@@ -7,16 +8,17 @@ manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 9f9058706e2504b8c9ee8a7509e7380c415074a3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 2752a8f1db82890e738b65a1c4f646d7749bf7dd
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380532"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46961897"
 ---
-# <a name="get-started-with-speech-service"></a>Начало работы со службой распознавания речи
+# <a name="get-started-with-bing-speech"></a>Приступая к работе со службой распознавания речи
 
 Чтобы использовать службу распознавания речи Microsoft для преобразования звука в текст, ознакомьтесь с [REST API](GetStartedREST.md) или [клиентскими библиотеками](GetStartedClientLibraries.md) для распознавания речи.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
-ms.openlocfilehash: efd512395b49d3c274bb5aa409d1cbd527673659
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: 35cd773c2a30549dde10a73b2fbe6db1a0c8b34a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43781893"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46989385"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Linux
 
@@ -87,7 +87,7 @@ ms.locfileid: "43781893"
 
 Вы можете развернуть расширения виртуальной машины Azure с помощью шаблона Azure Resource Manager. Чтобы развернуть расширение агента службы "Наблюдатель за сетями", используйте в шаблоне предыдущую схему JSON.
 
-## <a name="azure-cli-10-deployment"></a>Развертывание с использованием Azure CLI 1.0
+## <a name="azure-classic-cli-deployment"></a>Развертывание классического Azure CLI
 
 Следующий пример развертывает расширение виртуальной машины для агента службы "Наблюдатель за сетями" на существующей виртуальной машине, развернутой с помощью классической модели.
 
@@ -96,7 +96,7 @@ azure config mode asm
 azure vm extension set myVM1 NetworkWatcherAgentLinux Microsoft.Azure.NetworkWatcher 1.4
 ```
 
-## <a name="azure-cli-20-deployment"></a>Развертывание с использованием Azure CLI 2.0
+## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
 Следующий пример развертывает расширение виртуальной машины для агента службы "Наблюдатель за сетями" на существующей виртуальной машине, развернутой с помощью Resource Manager.
 
@@ -110,7 +110,7 @@ az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name Net
 
 Сведения о состоянии развертываний расширения можно получить на портале Azure или при помощи Azure CLI.
 
-В следующем примере показано состояние развертывания расширений для виртуальной машины, развернутой с помощью классической модели и Azure CLI 1.0.
+В следующем примере показано состояние развертывания расширений для виртуальной машины, развернутой с помощью классической модели и классического Azure CLI.
 
 ```azurecli
 azure config mode asm
@@ -122,7 +122,7 @@ azure vm extension get myVM1
 /var/log/azure/Microsoft.Azure.NetworkWatcher.NetworkWatcherAgentLinux/
 `
 
-В следующем примере показано состояние развертывания расширения NetworkWatcherAgentLinux для виртуальной машины, развернутой с помощью Resource Manager и Azure CLI 2.0.
+В следующем примере показано состояние развертывания расширения NetworkWatcherAgentLinux для виртуальной машины, развернутой с помощью Resource Manager и Azure CLI.
 
 ```azurecli
 az vm extension show --name NetworkWatcherAgentLinux --resource-group myResourceGroup1 --vm-name myVM1

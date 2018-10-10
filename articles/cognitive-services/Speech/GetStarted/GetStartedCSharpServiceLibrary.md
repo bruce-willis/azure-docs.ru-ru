@@ -1,22 +1,24 @@
 ---
 title: Начало работы с API распознавания речи Microsoft с помощью библиотек служб С# | Документация Майкрософт
-description: Используйте библиотеку служб распознавания речи Microsoft для преобразования устной речи в текст.
+titlesuffix: Azure Cognitive Services
+description: Используйте библиотеку службы "Распознавание речи Bing" для преобразования устной речи в текст.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/17/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 0320f41658a7ac4d6bf9e88ed998c853b665d485
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5716f7a0af16bd3e40dea4468e2fae884f911718
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380609"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46967563"
 ---
-# <a name="get-started-with-the-speech-recognition-service-library-in-c35-for-net-windows"></a>Начало работы со службой библиотеки распознавания речи с помощью средств C&#35; для .NET Windows
+# <a name="quickstart-use-the-bing-speech-recognition-service-library-in-c35-for-net-windows"></a>Краткое руководство. Приступая к работе с библиотекой службы "Распознавание речи Bing" в C&#35; для .NET на платформе Windows
 
 Библиотека службы предназначена для разработчиков, у которых есть своя облачная служба и которым нужно вызывать из нее службу распознавания речи. Если вам нужно вызывать службу распознавания речи из приложений, связанных с устройством, не используйте этот пакет SDK. (Для этого используйте другие клиентские библиотеки или REST API.)
 
@@ -24,7 +26,7 @@ ms.locfileid: "35380609"
 
 В следующих разделах описывается, как устанавливать, создавать и запускать пример приложения C# с помощью библиотеки службы C#.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 

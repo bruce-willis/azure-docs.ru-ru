@@ -7,19 +7,20 @@ ms.author: kefzhou
 manager: akannava
 ms.reviewer: akannava, haining, mldocs, jmartens, jasonwhowell
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/29/2017
-ms.openlocfilehash: 077af8b5d3367dd2188cbd6e5d76aaf52512a1e8
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ROBOTS: NOINDEX
+ms.openlocfilehash: 094fd6d8c6c6d647533cf5409d1a85283c71c80e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34830805"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46953248"
 ---
 # <a name="find-runs-with-the-best-accuracy-and-lowest-duration"></a>Поиск выполнений с максимальной точностью и наименьшей длительностью
-При множестве запусков один из вариантов использования — нахождение запусков с наибольшей точностью. Один из возможных подходов — использовать интерфейс командной строки с запросом [JMESPath](http://jmespath.org/). Дополнительные сведения об использовании JMESPath в Azure CLI см. в разделе [Использование запросов JMESPath в Azure CLI 2.0](https://docs.microsoft.com/cli/azure/query-azure-cli?view=azure-cli-latest). В следующем примере создаются четыре запуска со значениями точности 0, 0,98, 1 и 1. Запуски фильтруются, если они находятся в диапазоне `[MaxAccuracy-Threshold, MaxAccuracy]`, где `Threshold = .03`.
+При множестве запусков один из вариантов использования — нахождение запусков с наибольшей точностью. Один из возможных подходов — использовать интерфейс командной строки с запросом [JMESPath](http://jmespath.org/). Дополнительные сведения об использовании JMESPath в Azure CLI см. в статье [Использование запросов JMESPath в Azure CLI](https://docs.microsoft.com/cli/azure/query-azure-cli?view=azure-cli-latest). В следующем примере создаются четыре запуска со значениями точности 0, 0,98, 1 и 1. Запуски фильтруются, если они находятся в диапазоне `[MaxAccuracy-Threshold, MaxAccuracy]`, где `Threshold = .03`.
 
 ## <a name="sample-data"></a>Пример данных
 Если выполнения со значением `Accuracy` отсутствуют, указанные ниже действия позволят создать выполнения для запроса.

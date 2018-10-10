@@ -1,6 +1,6 @@
 ---
-title: Примеры для Azure CLI 2.0. Установка приложений | Документация Майкрософт
-description: Примеры для Azure CLI 2.0
+title: Примеры для Azure CLI. Установка приложений | Документация Майкрософт
+description: Примеры Azure CLI
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: cynthn
@@ -16,14 +16,14 @@ ms.workload: na
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 4c55fe94f3bfa6e21a8bc18923012083b37c5f66
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 631ac058549e09209b5a717354bc9b35cc707916
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38697472"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46952827"
 ---
-# <a name="install-applications-into-a-virtual-machine-scale-set-with-the-azure-cli-20"></a>Установка приложений в масштабируемый набор виртуальных машин с помощью Azure CLI 2.0
+# <a name="install-applications-into-a-virtual-machine-scale-set-with-the-azure-cli"></a>Установка приложений в масштабируемый набор виртуальных машин с помощью Azure CLI
 Этот скрипт создает виртуальную машину Azure под управлением Ubuntu и использует расширение пользовательских скриптов для установки базовых веб-приложений. После выполнения скрипта можно получить доступ к веб-приложению с помощью веб-браузера.
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
@@ -43,7 +43,7 @@ az group delete --name myResourceGroup
 ## <a name="script-explanation"></a>Описание скрипта
 Для создания группы ресурсов, масштабируемого набора виртуальных машин и всех связанных ресурсов в этом скрипте используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/ad/group#az_ad_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vmss create](/cli/azure/vmss#az_vmss_create) | Создает масштабируемый набор виртуальных машин и подключает его к виртуальной сети, подсети и группе безопасности сети. Чтобы распределить трафик между несколькими экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
@@ -53,6 +53,6 @@ az group delete --name myResourceGroup
 | [az group delete](/cli/azure/ad/group#delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения см. в [документации по Azure CLI 2.0](https://docs.microsoft.com/cli/azure/overview).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/overview).
 
-См. дополнительные примеры сценариев Azure CLI 2.0 для [масштабируемого набора виртуальных машин Azure](../cli-samples.md).
+Изучите дополнительные примеры сценариев Azure CLI в [документации по масштабируемым наборам виртуальных машин Azure](../cli-samples.md).

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: yzheng
 ms.component: common
-ms.openlocfilehash: af32ea826f8150284c242fb6d1013924945aee97
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 25e6fba6ac8aa34c0c30fd61f5fe297b94720439
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247788"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46983673"
 ---
 # <a name="managing-the-azure-blob-storage-lifecycle-preview"></a>Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "43247788"
 
 ## <a name="storage-account-support"></a>Поддержка учетных записей хранения
 
-Политика управления жизненным циклом поддерживает учетные записи GPv2 (общего назначения, версия 2) и учетные записи хранилища BLOB-объектов. Вы можете преобразовать существующую учетную запись GPv1 в учетную записью GPv2 на портале Azure, запустив простой процесс одним щелчком мыши. Дополнительные сведения см. в статье [Варианты учетной записи хранения Azure](../common/storage-account-options.md).  
+Политика управления жизненным циклом поддерживает учетные записи GPv2 (общего назначения, версия 2) и учетные записи хранилища BLOB-объектов. Вы можете преобразовать существующую учетную запись GPv1 в учетную записью GPv2 на портале Azure, запустив простой процесс одним щелчком мыши. Дополнительные сведения об учетных записях хранения см. в статье [Общие сведения об учетной записи хранения](../common/storage-account-overview.md).  
 
 ## <a name="pricing"></a>Цены 
 
@@ -54,7 +54,7 @@ Get-AzureRmProviderFeature -FeatureName DLM -ProviderNamespace Microsoft.Storage
 ```
 Когда функция будут утверждена и полностью зарегистрирована, в ответе вы получите состояние Registered (Зарегистрировано).
 
-### <a name="cli-20"></a>CLI 2.0
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 Отправка запроса: 
 ```cli
@@ -69,7 +69,7 @@ az feature show --namespace Microsoft.Storage --name DLM
 
 ## <a name="add-or-remove-policies"></a>Добавление или удаление политик 
 
-Вы можете добавлять, изменять и (или) удалять политики с помощью портала Azure, [PowerShell](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.3-preview), [REST API](https://docs.microsoft.com/en-us/rest/api/storagerp/storageaccounts/createorupdatemanagementpolicies) или клиентских средств на следующих языках: [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/8.0.0-preview), [Python](https://pypi.org/project/azure-mgmt-storage/2.0.0rc3/), [Node.js]( https://www.npmjs.com/package/azure-arm-storage/v/5.0.0), [Ruby]( https://rubygems.org/gems/azure_mgmt_storage/versions/0.16.2). 
+Вы можете добавлять, изменять и (или) удалять политики с помощью портала Azure, [PowerShell](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.3-preview), [REST API](https://docs.microsoft.com/rest/api/storagerp/storageaccounts/createorupdatemanagementpolicies) или клиентских средств на следующих языках: [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/8.0.0-preview), [Python](https://pypi.org/project/azure-mgmt-storage/2.0.0rc3/), [Node.js]( https://www.npmjs.com/package/azure-arm-storage/v/5.0.0), [Ruby](   https://rubygems.org/gems/azure_mgmt_storage/versions/0.16.2). 
 
 ### <a name="azure-portal"></a>Портал Azure
 

@@ -11,21 +11,80 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/07/2018
+ms.date: 09/17/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: e8f357347e39c2e8ff071e8f4af8e69dcce3940e
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: e2d058cfe6d6a31f557708277902063e51f54bc5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39640300"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46971375"
 ---
 # <a name="run-a-custom-windows-container-in-azure-preview"></a>Запуск пользовательского контейнера Windows в Azure (предварительная версия)
 
-[Служба приложений Azure](app-service-web-overview.md) предоставляет предопределенные стеки приложений на платформе Windows, например ASP.NET или Node.js, выполняющиеся в IIS. Предварительно настроенная среда Windows блокирует в операционной системе возможность административного доступа, установки программного обеспечения, изменений в глобальном кэше сборок и т. д. (см. раздел [Функциональные возможности операционной системы для службы приложений Azure](web-sites-available-operating-system-functionality.md)). Если приложению требуется более высокий уровень доступа, чем предусмотрено в предварительно настроенной среде, можно развернуть пользовательский контейнер Windows. В этом кратком руководстве показано, как развернуть пользовательский образ IIS в службе приложений Azure из [Docker Hub](https://hub.docker.com/).
+[Служба приложений Azure](app-service-web-overview.md) предоставляет предопределенные стеки приложений на платформе Windows, например ASP.NET или Node.js, выполняющиеся в IIS. Предварительно настроенная среда Windows блокирует в операционной системе возможность административного доступа, установки программного обеспечения, изменений в глобальном кэше сборок и т. д. (см. раздел [Функциональные возможности операционной системы для службы приложений Azure](web-sites-available-operating-system-functionality.md)). Если приложению требуется более высокий уровень доступа, чем предусмотрено в предварительно настроенной среде, можно развернуть пользовательский контейнер Windows. В этом кратком руководстве показано, как развернуть приложение ASP.NET в образе Windows на сайте [Docker Hub](https://hub.docker.com/) из Visual Studio и запустить его в пользовательском контейнере в Службе приложений Azure.
 
-![](media/app-service-web-get-started-windows-container/app-running.png)
+![](media/app-service-web-get-started-windows-container/app-running-vs.png)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим руководством:
+
+- <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
+- <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Установите Docker для ОС Windows</a>.
+- <a href="https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10#2-switch-to-windows-containers" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
+- <a href="https://www.visualstudio.com/downloads/" target="_blank">Установите Visual Studio 2017</a>, а также следующие рабочие нагрузки: **ASP.NET и веб-разработка** и **разработка Azure**. Если у вас уже установлена версия Visual Studio 2017, сделайте следующее.
+    - Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить наличие обновлений**.
+    - Добавьте рабочие нагрузки в Visual Studio, выбрав **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты).
+
+## <a name="create-an-aspnet-web-app"></a>Создание веб-приложения ASP.NET
+
+Создайте проект в Visual Studio, последовательно выбрав пункты **Файл > Создать > Проект**. 
+
+В диалоговом окне **Новый проект** последовательно выберите пункты **Visual C# > Интернет > Веб-приложение ASP.NET (.NET Framework)**.
+
+Присвойте приложению имя _myFirstAzureWebApp_ и нажмите кнопку **ОК**.
+   
+![Диалоговое окно "Новый проект"](./media/app-service-web-get-started-windows-container/new-project.png)
+
+Вы можете развернуть любой тип веб-приложения ASP.NET в Azure. Для примера в этом руководстве выберите шаблон **MVC** и задайте для аутентификации значение **Без аутентификации**.
+
+Выберите **Включить поддержку Docker Compose**.
+
+Нажмите кнопку **ОК**.
+
+![Диалоговое окно "Новый проект ASP.NET"](./media/app-service-web-get-started-windows-container/select-mvc-template.png)
+
+Если файл _Dockerfile_ не открылся автоматически, откройте его в **обозревателе решений**.
+
+Необходимо использовать [поддерживаемый родительский образ](#use-a-different-parent-image). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом. Затем сохраните файл.
+
+```Dockerfile
+FROM microsoft/aspnet:4.7.1
+```
+
+В меню последовательно выберите пункты **Отладка > Запуск без отладки**, чтобы запустить веб-приложение локально.
+
+![Локальный запуск приложения](./media/app-service-web-get-started-windows-container/local-web-app.png)
+
+## <a name="publish-to-docker-hub"></a>Публикация на сайте Docker Hub
+
+Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
+
+![Публикация в обозревателе решений](./media/app-service-web-get-started-windows-container/solution-explorer-publish.png)
+
+Мастер публикации запустится автоматически. Выберите **Реестр контейнеров** > **Docker Hub** > **Опубликовать**.
+
+![Публикация с помощью страницы обзора проекта](./media/app-service-web-get-started-windows-container/publish-to-docker.png)
+
+Укажите данные учетной записи Docker Hub и щелкните **Сохранить**. 
+
+Дождитесь завершения развертывания. Теперь на странице **Публикация** отображается имя репозитория, который будет использован позже в службе приложений.
+
+![Публикация с помощью страницы обзора проекта](./media/app-service-web-get-started-windows-container/published-docker-repository.png)
+
+Скопируйте имя этого репозитория для последующего использования.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -37,7 +96,7 @@ ms.locfileid: "39640300"
 
 2. В поле поиска над списком ресурсов Azure Marketplace найдите и выберите **Веб-приложение для контейнеров**.
 
-3. Укажите имя приложения, например *mywebapp*, примите значения по умолчанию, чтобы создать группу ресурсов, а затем нажмите кнопку **Windows (предварительная версия)** в поле **ОС**.
+3. Укажите имя приложения, например *win-container-demo*, примите значения по умолчанию, чтобы создать группу ресурсов, а затем щелкните **Windows (предварительная версия)** в поле **ОС**.
 
     ![](media/app-service-web-get-started-windows-container/portal-create-page.png)
 
@@ -45,11 +104,11 @@ ms.locfileid: "39640300"
 
     ![](media/app-service-web-get-started-windows-container/portal-create-plan.png)
 
-5. Щелкните **Настроить контейнер**, в поле **Образ и дополнительный тег** введите _microsoft/iis:latest_ и нажмите кнопку **ОК**.
+5. Щелкните **Настроить контейнер**. На странице **Образ и дополнительный тег** укажите имя репозитория, скопированное при [публикации на сайте Docker Hub](#publish-to-docker-hub), затем нажмите кнопку **ОК**.
 
-    ![](media/app-service-web-get-started-windows-container/portal-configure-container.png)
+    ![](media/app-service-web-get-started-windows-container/portal-configure-container-vs.png)
 
-    В этой статье используется общедоступный образ [microsoft/iis:latest](https://hub.docker.com/r/microsoft/iis/) Docker Hub. Если у вас есть пользовательский образ для веб-приложения в другом расположении, например [реестре контейнеров Azure](/azure/container-registry/) или любом другом частном репозитории, его можно настроить здесь.
+    Если у вас есть пользовательский образ для веб-приложения в другом расположении, например [реестре контейнеров Azure](/azure/container-registry/) или любом другом частном репозитории, его можно настроить здесь.
 
 6. Нажмите кнопку **Создать** и подождите, пока Azure создаст необходимые ресурсы.
 
@@ -67,9 +126,9 @@ ms.locfileid: "39640300"
 
 ![](media/app-service-web-get-started-windows-container/app-starting.png)
 
-Подождите несколько минут и повторите попытку, пока не отобразится страница приветствия IIS:
+Подождите несколько минут и повторите попытку, пока не отобразится домашняя страница ASP.NET по умолчанию.
 
-![](media/app-service-web-get-started-windows-container/app-running.png)
+![](media/app-service-web-get-started-windows-container/app-running-vs.png)
 
 **Поздравляем!** Вы запустили свой первый пользовательский контейнер Windows в службе приложений Azure.
 
@@ -90,7 +149,32 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 27/07/2018 12:05:05.020 INFO - Site: win-container-demo - Container started successfully
 ```
 
-## <a name="use-a-different-docker-image"></a>Использование другого образа Docker
+## <a name="update-locally-and-redeploy"></a>Обновление на локальном компьютере и повторное развертывание
+
+В **обозревателе решений** откройте _Views\Home\Index.cshtml_.
+
+Найдите тег HTML `<div class="jumbotron">` в верхней области и замените его следующим кодом:
+
+```HTML
+<div class="jumbotron">
+    <h1>ASP.NET in Azure!</h1>
+    <p class="lead">This is a simple app that we’ve built that demonstrates how to deploy a .NET app to Azure App Service.</p>
+</div>
+```
+
+Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений**, а затем выберите **Опубликовать**.
+
+На странице публикации выберите **Опубликовать** и дождитесь завершения публикации.
+
+Чтобы указать службе приложений извлечь новый образ из Docker Hub, перезапустите приложение. На странице приложения на портале щелкните **Перезапустить** > **Да**.
+
+![Перезапуск веб-приложения в Azure](./media/app-service-web-get-started-windows-container/portal-restart-app.png)
+
+Еще раз [перейдите к контейнерному приложению](#browse-to-the-container-app). После обновления веб-страницы сначала должна появиться страница "Starting up" (Запуск) приложения, а через несколько минут должна отобразиться обновленная веб-страница.
+
+![Обновленное веб-приложение в Azure](./media/app-service-web-get-started-windows-container/azure-web-app-updated.png)
+
+## <a name="use-a-different-parent-image"></a>Использование другого родительского образа
 
 Вы можете использовать другой пользовательский образ Docker, чтобы запустить приложение. При этом необходимо выбрать правильный [родительский образ](https://docs.docker.com/develop/develop-images/baseimages/) для платформы, которую вы хотите использовать: 
 
@@ -104,3 +188,8 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 - [microsoft/aspnet](https://hub.docker.com/r/microsoft/aspnet/):4.7.2-windowsservercore-ltsc2016, 4.7.2, последняя версия
 - [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/):2.1-aspnetcore-runtime
 - [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/):2.1-sdk
+
+## <a name="next-steps"></a>Дополнительная информация
+
+> [!div class="nextstepaction"]
+> [Перенос в контейнер Windows в Azure](app-service-web-tutorial-windows-containers-custom-fonts.md)

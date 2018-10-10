@@ -1,6 +1,6 @@
 ---
 title: Руководство. Управление дисками Azure с помощью Azure CLI | Документация Майкрософт
-description: В этом руководстве описано, как с помощью Azure CLI 2.0 создать и администрировать диски Azure для виртуальных машин
+description: В этом руководстве описано, как с помощью Azure CLI создать и администрировать диски Azure для виртуальных машин
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 05/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 889facbf9612f2462a10c886a428ac052becefd8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 04fad24b17d7f74211deae53c0d044f2049660f2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38704493"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978324"
 ---
-# <a name="tutorial---manage-azure-disks-with-the-azure-cli-20"></a>Руководство. Управление дисками Azure с помощью Azure CLI 2.0
+# <a name="tutorial---manage-azure-disks-with-the-azure-cli"></a>Руководство по управлению дисками Azure с помощью Azure CLI.
 
 Виртуальные машины (ВМ) Azure хранят операционную систему, приложения и данные на дисках. При создании ВМ важно выбрать размер диска и конфигурацию в соответствии с ожидаемой рабочей нагрузкой. В этом руководстве показано, как развернуть диски виртуальной машины и управлять ими. Здесь содержатся сведения о:
 
@@ -38,7 +38,7 @@ ms.locfileid: "38704493"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="default-azure-disks"></a>Диски Azure по умолчанию
 

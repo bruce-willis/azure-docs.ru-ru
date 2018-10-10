@@ -1,25 +1,26 @@
 ---
-title: Метод Languages в API перевода речи Microsoft | Документация Майкрософт
-titleSuffix: Cognitive Services
-description: Использование метода Languages в API перевода речи Microsoft.
+title: Метод Languages в API перевода речи
+titleSuffix: Azure Cognitive Services
+description: Использование метода Languages в API перевода речи.
 services: cognitive-services
 author: Jann-Skotdal
-manager: chriswendt1
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: microsoft translator
-ms.topic: article
+ms.component: translator-speech
+ms.topic: conceptual
 ms.date: 05/18/18
 ms.author: v-jansko
-ms.openlocfilehash: 5396e3be17345c3c36197a9b6cbace86e1f574c1
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9fbbba7ed5e81cae1d30c5a480b9f7f7a13342c5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382924"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46986427"
 ---
-# <a name="speech-api-languages"></a>API службы "Речь": метод Languages
+# <a name="translator-speech-api-languages"></a>API перевода речи: метод Languages
 
-Список языков, поддерживаемых службами Microsoft Translator, постоянно пополняется. Этот API позволяет получить набор языков, которые сейчас доступны для использования в службе перевода речи.
+Список языков, поддерживаемых службой "Перевод речи", постоянно пополняется. Этот API позволяет получить набор языков, которые сейчас доступны для использования в службе "Перевод речи".
 
 Примеры кода, демонстрирующие использование API для получения списка доступных языков, доступны на [сайте Github для Microsoft Translator](https://github.com/MicrosoftTranslator).
 

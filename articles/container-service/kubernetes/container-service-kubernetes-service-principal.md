@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.date: 02/26/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: efedb7cde06ed03ec330027a18b00bcc897919cf
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: e3e3a981daf1273b8b2387cb1c665317f860b1d2
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39576925"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46974873"
 ---
 # <a name="set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров
 
@@ -23,7 +23,7 @@ ms.locfileid: "39576925"
 [Субъект-служба Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer](../../load-balancer/load-balancer-overview.md) уровня 4.
 
 
-В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI 2.0](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs#az-acs-create), чтобы одновременно создать кластер Kubernetes и субъект-службу.
+В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs#az_acs_create), чтобы одновременно создать кластер Kubernetes и субъект-службу.
 
 
 ## <a name="requirements-for-the-service-principal"></a>Требования для субъекта-службы
@@ -44,7 +44,7 @@ ms.locfileid: "39576925"
 
 Создать субъект-службу в Azure AD перед развертыванием кластера Kubernetes можно разными способами.
 
-Следующие примеры команд показывают, как это сделать с помощью [Azure CLI 2.0](../../azure-resource-manager/resource-group-authenticate-service-principal-cli.md). Кроме того, субъект-службу можно создать с помощью [Azure PowerShell](../../azure-resource-manager/resource-group-authenticate-service-principal.md), [портала](../../azure-resource-manager/resource-group-create-service-principal-portal.md) или других методов.
+Следующие примеры команд показывают, как это сделать с помощью [Azure CLI](../../azure-resource-manager/resource-group-authenticate-service-principal-cli.md). Кроме того, субъект-службу можно создать с помощью [Azure PowerShell](../../azure-resource-manager/resource-group-authenticate-service-principal.md), [портала](../../azure-resource-manager/resource-group-create-service-principal-portal.md) или других методов.
 
 ```azurecli
 az login
@@ -67,13 +67,13 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscrip
 
 Создавая кластер Kubernetes, укажите в качестве параметров **идентификатор клиента** (или `appId` для идентификатора приложения) и **секрет клиента** (`password`) существующего субъекта-службы. Убедитесь, что субъект-служба соответствует требованиям, приведенным в начале этой статьи.
 
-Развертывая кластер Kubernetes, вы можете указать эти параметры с помощью [Azure CLI 2.0](container-service-kubernetes-walkthrough.md), [портала Azure](../dcos-swarm/container-service-deployment.md) или других методов.
+Развертывая кластер Kubernetes, вы можете указать эти параметры с помощью [Azure CLI](container-service-kubernetes-walkthrough.md), [портала Azure](../dcos-swarm/container-service-deployment.md) или других методов.
 
 >[!TIP]
 >В качестве **идентификатора клиента** обязательно используйте `appId`, а не `ObjectId` субъекта-службы.
 >
 
-В следующем примере показан один способ передачи параметров с помощью Azure CLI 2.0. В этом примере используется [шаблон быстрого запуска Kubernetes](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-kubernetes).
+В следующем примере показан один способ передачи параметров с помощью Azure CLI. В этом примере используется [шаблон быстрого запуска Kubernetes](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-kubernetes).
 
 1. [Скачайте](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-acs-kubernetes/azuredeploy.parameters.json) файл параметров шаблона `azuredeploy.parameters.json` из репозитория GitHub.
 

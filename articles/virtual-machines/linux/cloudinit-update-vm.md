@@ -1,6 +1,6 @@
 ---
 title: Обновление и установка пакетов с помощью cloud-init на виртуальной машине Linux в Azure | Документация Майкрософт
-description: Как с помощью cloud-init обновить и установить пакеты в создаваемой виртуальной машине Linux, используя Azure CLI 2.0.
+description: Как с помощью cloud-init и Azure CLI обновить и установить пакеты в создаваемой виртуальной машине Linux
 services: virtual-machines-linux
 documentationcenter: ''
 author: rickstercdn
@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: rclaus
-ms.openlocfilehash: 8d5835b5d1b0c2f77bdf5e1a2b808478b8f4de22
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 84fab18d4e1f385f8770db52b18ac85151f48afd
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32186160"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46988059"
 ---
 # <a name="use-cloud-init-to-update-and-install-packages-in-a-linux-vm-in-azure"></a>Обновление и установка пакетов с помощью cloud-init на виртуальной машине Linux в Azure
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) обновлять пакеты на виртуальной машине или в масштабируемом наборе виртуальных машин при подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).

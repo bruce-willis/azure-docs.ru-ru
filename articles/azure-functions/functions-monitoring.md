@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/15/2017
 ms.author: glenga
-ms.openlocfilehash: 9c39d621bfc8df338a4556fd412ae54489982074
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: fb9de98a80d348c3ba1e84ae19551c7ca080628b
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092773"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966849"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -234,7 +234,7 @@ traces
 
 Значение категории в *host.json* управляет ведением журнала для всех категорий, название которых начинается с аналогичного значения. Например, значение Host в *host.json* управляет ведением журнала для Host.General, Host.Executor, Host.Results и т. д.
 
-Если *host.json* содержит несколько категорий с одинаковым началом строки, сопоставление начинается с более длинных строк. Предположим, вы хотите регистрировать все данные среды выполнения, кроме данных категории Host.Aggregator, на уровне `Information`, а данные категории Host.Aggregator — на уровне `Error`.
+Если *host.json* содержит несколько категорий с одинаковым началом строки, сопоставление начинается с более длинных строк. Предположим, вы хотите регистрировать все данные среды выполнения, кроме данных категории Host.Aggregator, на уровне `Error`, а данные категории Host.Aggregator — на уровне `Information`.
 
 ```json
 {
@@ -298,7 +298,7 @@ traces
 
 ## <a name="configure-sampling"></a>Настройка выборки
 
-В Application Insights есть функция [выборки](../application-insights/app-insights-sampling.md), которая позволят избежать создания слишком большого объема данных телеметрии в периоды пиковой нагрузки. Если объем данных телеметрии превышает заданное значение, служба Application Insights будет случайным образом игнорировать часть поступающих элементов. Максимальное количество элементов в секунду по умолчанию — 5. Вы можете настроить выборку в файле *host.json*.  Ниже приведен пример:
+В Application Insights есть функция [выборки](../application-insights/app-insights-sampling.md), которая позволят избежать создания слишком большого объема данных телеметрии в периоды пиковой нагрузки. Если скорость входящей телеметрии превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть поступающих элементов. Максимальное количество элементов в секунду по умолчанию — 5. Вы можете настроить выборку в файле *host.json*.  Ниже приведен пример:
 
 ```json
 {
@@ -457,11 +457,6 @@ namespace functionapp0915
                 };
             UpdateTelemetryContext(dependency.Context, context, name);
             telemetryClient.TrackDependency(dependency);
-            
-            return name == null
-                ? req.CreateResponse(HttpStatusCode.BadRequest, 
-                    "Please pass a name on the query string or in the request body")
-                : req.CreateResponse(HttpStatusCode.OK, "Hello " + name);
         }
         
         // This correllates all telemetry with the current Function invocation
@@ -499,18 +494,6 @@ module.exports = function (context, req) {
     client.trackDependency({target:"http://dbname", name:"select customers proc", data:"SELECT * FROM Customers", duration:231, resultCode:0, success: true, dependencyTypeName: "ZSQL", tagOverrides:{"ai.operation.id": context.invocationId}});
     client.trackRequest({name:"GET /customers", url:"http://myserver/customers", duration:309, resultCode:200, success:true, tagOverrides:{"ai.operation.id": context.invocationId}});
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
     context.done();
 };
 ```
@@ -547,9 +530,9 @@ module.exports = function (context, req) {
 
 ### <a name="real-time-monitoring"></a>Мониторинг в реальном времени
 
-Вы можете настроить потоковую передачу файлов журнала в сеанс командной строки на локальной рабочей станции с помощью [Azure CLI 2.0](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/overview).  
+Вы можете настроить потоковую передачу файлов журнала в сеанс командной строки на локальной рабочей станции с помощью [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/overview).  
 
-Для Azure CLI 2.0 используйте следующие команды, чтобы войти, выбрать подписку и включить потоковую передачу файлов журнала:
+Для Azure CLI используйте следующие команды, чтобы войти, выбрать подписку и включить потоковую передачу файлов журнала:
 
 ```
 az login

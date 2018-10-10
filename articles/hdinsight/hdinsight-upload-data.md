@@ -1,6 +1,6 @@
 ---
 title: Отправка данных для заданий Hadoop в HDInsight
-description: Сведения об отправке данных и получении доступа к ним для заданий Hadoop в HDInsight с помощью интерфейса командной строки Azure, обозревателя хранилищ Azure, Azure PowerShell, командной строки Hadoop или Sqoop.
+description: Сведения об отправке данных и получении доступа к ним для заданий Hadoop в HDInsight с помощью классического Azure CLI, обозревателя службы хранилища Azure, Azure PowerShell, командной строки Hadoop или Sqoop.
 keywords: etl hadoop, вставка данных в hadoop, загрузка данных hadoop
 services: hdinsight
 author: jasonwhowell
@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.openlocfilehash: 838444898500ce7127e1a9e999d0b5ee7b1e3687
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: 44aaccee436011bd7d27bec87515fde0e898732e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43051830"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46985985"
 ---
 # <a name="upload-data-for-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Hadoop в HDInsight
 
@@ -38,22 +38,22 @@ ms.locfileid: "43051830"
 
 | Средство | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
-| [Интерфейс командной строки Azure][azurecli] |✔ |✔ |✔ |
+| [Классический Azure CLI][azurecli] |✔ |✔ |✔ |
 | [Azure PowerShell][azure-powershell] | | |✔ |
 | [AzCopy][azure-azcopy] |✔ | |✔ |
 | [Команда Hadoop](#commandline) |✔ |✔ |✔ |
 
 > [!NOTE]
-> Хотя интерфейс командной строки Azure (CLI), Azure PowerShell и AzCopy можно использовать за пределами Azure, команда Hadoop доступна только в кластере HDInsight. И она допускает загрузку данных только из локальной файловой системы в службу хранилища Azure.
+> Хотя классический Azure CLI, Azure PowerShell и AzCopy можно использовать за пределами Azure, команда Hadoop доступна только в кластере HDInsight. И она допускает загрузку данных только из локальной файловой системы в службу хранилища Azure.
 >
 >
 
-#### <a id="xplatcli"></a>Интерфейс командной строки Azure
-Интерфейс командной строки Azure (CLI) представляет собой кроссплатформенное средство, с помощью которого можно управлять службами Azure. Чтобы отправить данные в службу хранилища Azure, сделайте следующее:
+#### <a id="xplatcli"></a>Классический Azure CLI
+Классический Azure CLI представляет собой кроссплатформенное средство, с помощью которого можно управлять службами Azure. Чтобы отправить данные в службу хранилища Azure, сделайте следующее:
 
-[!INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
 
-1. [Установите и настройте интерфейс командной строки Azure для Mac, Linux и Windows](../cli-install-nodejs.md).
+1. [Установите и настройте классический Azure CLI для Mac, Linux и Windows](../cli-install-nodejs.md).
 2. Откройте командную строку, например bash или другую оболочку, и выполните приведенную далее команду для аутентификации в подписке Azure.
 
     ```cli

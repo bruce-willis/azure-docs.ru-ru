@@ -1,6 +1,6 @@
 ---
 title: Задание имени узла с помощью cloud-init для виртуальной машины Linux в Azure | Документация Майкрософт
-description: Как с помощью cloud-init и Azure CLI 2.0 настроить создаваемую виртуальную машину Linux
+description: Как с помощью cloud-init и Azure CLI настроить создаваемую виртуальную машину Linux
 services: virtual-machines-linux
 documentationcenter: ''
 author: rickstercdn
@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: a858a12ec81db7ae1c0a7b7cfea06fa2abdcdcc6
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.openlocfilehash: e985111a28805f861242240a5c2e3d7b6664be4e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29124030"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46996117"
 ---
 # <a name="use-cloud-init-to-set-hostname-for-a-linux-vm-in-azure"></a>Задание имени узла с помощью cloud-init для виртуальной машины Linux в Azure
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) настроить определенное имя узла на виртуальной машине или в масштабируемом наборе виртуальных машин при подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).

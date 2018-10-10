@@ -1,25 +1,27 @@
 ---
-title: Краткое руководство по C# для Azure Cognitive Services и API перевода речи Microsoft | Документация Майкрософт
-description: Сведения и примеры кода для быстрого начала использования API перевода речи Microsoft в Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию API перевода речи с C#
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-speech
-ms.topic: article
+ms.topic: quickstart
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: c8c1945d8343ad966fe4b09f67099bccdae4be29
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ROBOTS: NOINDEX
+ms.openlocfilehash: 7d1f5968fe6ddffce3194f070b6a17aca4d3d9ab
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128543"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46995046"
 ---
-# <a name="quickstart-for-microsoft-translator-speech-api-with-c"></a>Краткое руководство по API перевода речи Microsoft с использованием C# 
+# <a name="quickstart-translator-speech-api-with-c"></a>Краткое руководство по использованию API перевода речи с C# 
 <a name="HOLTop"></a>
 
-В этой статье показано использование API перевода речи Microsoft для перевода слов, произнесенных в файле WAV.
+В этой статье показано использование API перевода речи для перевода слов, произнесенных в файле WAV.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

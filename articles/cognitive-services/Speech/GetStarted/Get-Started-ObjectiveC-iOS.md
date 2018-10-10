@@ -1,28 +1,30 @@
 ---
-title: Начало работы с API распознавания речи Майкрософт в Objective-C на iOS | Документация Майкрософт
-description: Используйте API распознавания речи Майкрософт для разработки приложений iOS, которые преобразовывают устную речь в текст.
+title: Приступая к работе с API распознавания речи Майкрософт в Objective-C на платформе iOS | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
+description: Используйте API распознавания речи Bing для разработки приложений iOS, которые преобразовывают устную речь в текст.
 services: cognitive-services
 author: zhouwangzw
 manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/29/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: bbb8d3975cdab537135b97ca9bbf6e845aa3fa0e
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ROBOTS: NOINDEX
+ms.openlocfilehash: a12c9b5325898afe508398f67939c39e591eb1cc
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380584"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46954506"
 ---
-# <a name="get-started-with-the-speech-recognition-api-in-objective-c-on-ios"></a>Приступите к работе с API распознавания речи в Objective-C на iOS
+# <a name="quickstart-use-the-bing-speech-recognition-api-in-objective-c-on-ios"></a>Краткое руководство. Использование API распознавания речи Bing в Objective-C на платформе iOS
 
 С помощью API распознавания речи можно разрабатывать приложения iOS, которые используют облачную службу "Речь" для преобразования устной речи в текст. API-интерфейс поддерживает передачи в реальном времени, поэтому приложение может одновременно и асинхронно получать результаты частичного распознавания, одновременно отправляя устную речь в службу.
 
 В этой статье используется образец приложения, чтобы продемонстрировать основные принципы того, как приступить к работе с API распознавания речи для разработки приложений iOS. Полный справочник по API см. на странице [SpeechSDK-1_0-for-iOS Reference](https://cdn.rawgit.com/Microsoft/Cognitive-Speech-STT-iOS/master/com.Microsoft.SpeechSDK-1_0-for-iOS.docset/Contents/Resources/Documents/index.html) (Справка по SpeechSDK-1_0-for-iOS).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 
@@ -36,7 +38,7 @@ ms.locfileid: "35380584"
 
 Speech API — элемент Cognitive Services (ранее Project Oxford). Вы можете получить ключи бесплатной пробной версии подписки на странице [подписки на Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). Чтобы получить ключ, после выбора SAPI выберите **Получить API-ключ**. Страница возвращает первичный и вторичный ключ. Оба ключа привязаны к одной и той же квоте, поэтому вы можете использовать любой из них.
 
-Если вы хотите использовать *распознавание блокировки с намерением*, необходимо зарегистрироваться в службе [Language Understanding Intelligent Service (LUIS)](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/).
+Чтобы использовать *распознавание блокировки с намерением*, необходимо зарегистрироваться для использования [Интеллектуальной службы распознавания речи (LUIS)](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/).
 
 > [!IMPORTANT]
 > * Получить ключ подписки. Прежде чем использовать клиентские библиотеки службы "Речь", вам необходимо иметь [ключ подписки](https://azure.microsoft.com/try/cognitive-services/).

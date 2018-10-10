@@ -10,14 +10,18 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: tutorial
 ms.date: 10/15/2017
-ms.openlocfilehash: 10fe861682da6c1d1ac701a565cef11f9b44cd1e
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ROBOTS: NOINDEX
+ms.openlocfilehash: b9b515a2ccaedc40fc531d6a1cc58cbe98212b4a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "41920623"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46967903"
 ---
 # <a name="tutorial-classifying-iris-using-the-command-line-interface"></a>Руководство по классификации цветков ириса с помощью интерфейса командной строки
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
+
 Служба "Машинное обучение Azure" (предварительная версия) — это полнофункциональное интегрированное аналитическое решение для специалистов по обработке и анализу данных. Оно помогает подготавливать данные, разрабатывать эксперименты и развертывать модели в масштабе облака.
 
 Из этого руководства вы узнаете, как использовать функции предварительной версии служб машинного обучения Azure с помощью интерфейса командной строки для: 
@@ -34,7 +38,7 @@ ms.locfileid: "41920623"
   
   Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-- Установленное приложение Azure Machine Learning Workbench. Инструкции по установке см. в статье [Создание учетной записи для предварительной версии службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench](../service/quickstart-installation.md). 
+- Установленное приложение Azure Machine Learning Workbench. Инструкции по установке см. в статье [Краткое руководство. Установка службы "Машинное обучение Azure" и начало работы](quickstart-installation.md). 
 
   >[!IMPORTANT]
   >Не создавайте учетные записи службы "Машинное обучение Azure", так как вы будете делать это с помощью CLI в этой статье.
@@ -139,16 +143,16 @@ $ az ml project create --name <project name> --workspace <workspace name> --acco
 ```
 
 ### <a name="create-a-new-project-associated-with-a-cloud-git-repository"></a>Создание проекта, связанного с облачным репозиторием Git
-Вы можете создать проект, связанный с репозиторием Git VSTS (Visual Studio Team Service). При каждой отправке эксперимента в удаленный репозиторий Git передается моментальный снимок всей папки проекта. Дополнительные сведения см. в статье [Использование репозитория Git в проекте Azure Machine Learning Workbench](using-git-ml-project.md).
+Вы можете создать проект, связанный с репозиторием Azure DevOps Git. При каждой отправке эксперимента в удаленный репозиторий Git передается моментальный снимок всей папки проекта. Дополнительные сведения см. в статье [Использование репозитория Git в проекте Azure Machine Learning Workbench](using-git-ml-project.md).
 
 > [!NOTE]
-> Сейчас машинное обучение Azure поддерживает только пустые репозитории Git, созданные в VSTS.
+> Сейчас служба "Машинное обучение Azure" поддерживает только пустые репозитории Git, созданные в Azure DevOps.
 
 ```azure-cli
 $ az ml project create --name <project name> --workspace <workspace name> --account <experimentation account name> --resource-group <resource group name> --path <local folder path> --repo <VSTS repo URL>
 ```
 > [!TIP]
-> Если вы увидите сообщение об ошибке, информирующее о том, что URL-адрес репозитория недействителен или у пользователя нет доступа, попробуйте создать в VSTS маркер безопасности с помощью меню _Security_ (Безопасность) > _Add personal access tokens_ (Добавить маркеры доступа) и используйте аргумент `--vststoken` при создании проекта. 
+> Если вы увидите сообщение об ошибке, информирующее о том, что URL-адрес репозитория недействителен или у пользователя нет доступа, попробуйте создать в Azure DevOps маркер безопасности с помощью меню _Security_ (Безопасность) > _Add personal access tokens_ (Добавить маркеры доступа) и используйте аргумент `--vststoken` при создании проекта. 
 
 ### <a name="sample_create"></a>Создание проекта с помощью примера
 В этом разделе вы создадите проект, используя образец проекта в качестве шаблона.

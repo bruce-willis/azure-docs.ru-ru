@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/02/2018
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: 9ea843df4cf437b97f7fe1d62636a51f8201376e
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: b6aaf98ca3b5581691b6c70783be5250b506056c
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39414578"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46990966"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking"></a>Создание виртуальной машины Linux с ускоренной сетью
 
@@ -75,7 +75,7 @@ ms.locfileid: "39414578"
 
 ### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
-Установите последнюю версию [Azure CLI 2.0](/cli/azure/install-az-cli2) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index#az_login). В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVm*.
+Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index#az_login). В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVm*.
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *centralus*.
 

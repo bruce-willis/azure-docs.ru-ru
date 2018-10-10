@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 10/25/2017
 ms.author: cbrooks
 ms.component: common
-ms.openlocfilehash: 9eaaaaa4cc9be661cdc2ffde2b634e062c95a404
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: ff382becb71f187ac38b0ef5d31c1b29c43f3fe7
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523263"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46972561"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 Служба хранилища Azure предоставляет модель многоуровневой безопасности, которая обеспечивает безопасность учетных записей хранения, открывая к ним доступ только по определенным разрешенным сетям.  При настройке правил сети к учетной записи хранения могут получать доступ только приложения из разрешенных сетей.  Однако и из разрешенной сети доступ к учетной записи хранения имеют только приложения с надлежащим уровнем авторизации (допустимый ключ доступа или токен SAS).
 
 > [!IMPORTANT]
-> Включение правил брандмауэра для учетной записи хранения заблокирует доступ для входящих запросов к данным, в том числе из других служб Azure.  Сюда входит использование портала, запись журналов и т. д.  Повторно включить функции для соответствующих служб можно с помощью раздела [Исключения](#Exceptions), представленного ниже.  Для доступа к порталу это необходимо будет сделать на компьютере, размещенном в пределах настроенной доверенной границы (на основе протокола IP или виртуальной сети).
+> Включение правил брандмауэра для учетной записи хранения заблокирует доступ для входящих запросов к данным, в том числе из других служб Azure.  Сюда входит использование портала, запись журналов и т. д.  Повторно включить функции для соответствующих служб можно с помощью раздела [Исключения](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions), представленного ниже.  Для доступа к порталу это необходимо будет сделать на компьютере, размещенном в пределах настроенной доверенной границы (на основе протокола IP или виртуальной сети).
 >
 
 ## <a name="scenarios"></a>Сценарии
@@ -35,7 +35,7 @@ ms.locfileid: "39523263"
 
 Классические учетные записи хранения **не** поддерживают брандмауэры и виртуальные сети.
 
-Резервное копирование и восстановление виртуальных машин с неуправляемыми дисками в учетных записях хранения с действующими сетевыми правилами поддерживается путем создания исключения, как описано в разделе [Исключения](/storage/common/storage-network-security#exceptions) этой статьи.  Исключения брандмауэра не применяются к управляемым дискам, так как ими уже управляет Azure.
+Резервное копирование и восстановление виртуальных машин с неуправляемыми дисками в учетных записях хранения с действующими сетевыми правилами поддерживается путем создания исключения, как описано в разделе [Исключения](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions) этой статьи.  Исключения брандмауэра не применяются к управляемым дискам, так как ими уже управляет Azure.
 
 ## <a name="change-the-default-network-access-rule"></a>Изменение сетевого правила доступа по умолчанию
 По умолчанию учетные записи хранения принимают запросы на подключение от клиентов в сети.  Для ограничения доступа из выбранных сетей необходимо сначала изменить действие по умолчанию.
@@ -70,7 +70,7 @@ Update-AzureRmStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" 
 ```    
 
 #### <a name="cliv2"></a>CLI 2.0
-1. [Установите Azure CLI 2.0](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
+1. [Установка Azure CLI](/cli/azure/install-azure-cli) и [вход в систему](/cli/azure/authenticate-azure-cli).
 2. Отобразите состояние правила по умолчанию для учетной записи хранения.
 ```azurecli
 az storage account show --resource-group "myresourcegroup" --name "mystorageaccount" --query networkRuleSet.defaultAction
@@ -152,7 +152,7 @@ Remove-AzureRmStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -Na
 >
 
 #### <a name="cliv2"></a>CLI 2.0
-1. [Установите Azure CLI 2.0](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
+1. [Установка Azure CLI](/cli/azure/install-azure-cli) и [вход в систему](/cli/azure/authenticate-azure-cli).
 2. Выведите список правил для виртуальной сети.
 ```azurecli
 az storage account network-rule list --resource-group "myresourcegroup" --account-name "mystorageaccount" --query virtualNetworkRules
@@ -208,7 +208,7 @@ az storage account network-rule remove --resource-group "myresourcegroup" --acco
 2. Щелкните меню параметров **Брандмауэры и виртуальные сети**.
 3. Убедитесь, что вы разрешили доступ в разделе "Выбранные сети".
 4. Чтобы предоставить доступ к диапазону IP-адресов в Интернете, введите IP-адрес или диапазон адресов (в формате CIDR) в разделе "Брандмауэр" в поле "Диапазоны адресов".
-5. Для удаления правила IP-сети нажмите кнопку "...", чтобы открыть контекстное меню правила, и щелкните "Удалить".
+5. Чтобы удалить правило IP-сети, щелкните значок корзины рядом с правилом сети.
 6. Щелкните *Сохранить*, чтобы применить изменения.
 
 #### <a name="powershell"></a>PowerShell
@@ -243,7 +243,7 @@ Remove-AzureRMStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -Ac
 >
 
 #### <a name="cliv2"></a>CLI 2.0
-1. [Установите Azure CLI 2.0](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
+1. [Установка Azure CLI](/cli/azure/install-azure-cli) и [вход в систему](/cli/azure/authenticate-azure-cli).
 2. Выведите список правил IP-сети.
 ```azurecli
 az storage account network-rule list --resource-group "myresourcegroup" --account-name "mystorageaccount" --query ipRules
@@ -288,9 +288,11 @@ az storage account network-rule remove --resource-group "myresourcegroup" --acco
 |Служба архивации Azure|Microsoft.Backup|Выполняет резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup).|
 |Azure DevTest Labs|Microsoft.DevTestLab|Создание пользовательских образов и установка артефактов.  [Узнайте больше](https://docs.microsoft.com/azure/devtest-lab/devtest-lab-overview).|
 |Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов.  [Узнайте больше](https://docs.microsoft.com/azure/event-grid/overview).|
-|Концентраторы событий Azure|Microsoft.EventHub|Архивация данных с помощью записи концентраторов событий.  [Подробнее](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview)|
+|Центры событий Azure|Microsoft.EventHub|Архивация данных с помощью функции "Сбор" в Центрах событий.  [Подробнее](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview)|
 |Сеть Azure|Microsoft.Networking|Хранение и анализ журналов сетевого трафика.  [Узнайте больше](https://docs.microsoft.com/azure/network-watcher/network-watcher-packet-capture-overview).|
-||||
+|Azure Monitor|Microsoft.Insights| Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security#monitoring-and-secured-Azure-storage-and-networks).|
+|
+
 
 ### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища
 В некоторых случаях доступ для чтения журналов диагностики и метрик нужно получать за пределами сети.  Вы можете предоставить исключения из правил сети, чтобы разрешить доступ на чтение к файлам журналов учетной записи хранения, таблицам метрик или и к тем, и к другим. Дополнительные сведения о работе с аналитикой хранилища см. в [этой статье](/azure/storage/storage-analytics).
@@ -327,7 +329,7 @@ Update-AzureRmStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" 
 >
 
 #### <a name="cliv2"></a>CLI 2.0
-1. [Установите Azure CLI 2.0](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
+1. [Установка Azure CLI](/cli/azure/install-azure-cli) и [вход в систему](/cli/azure/authenticate-azure-cli).
 2. Отобразите исключения для сетевых правил учетной записи хранения.
 ```azurecli
 az storage account show --resource-group "myresourcegroup" --name "mystorageaccount" --query networkRuleSet.bypass

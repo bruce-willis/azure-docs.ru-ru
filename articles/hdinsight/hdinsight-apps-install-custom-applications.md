@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: jasonh
-ms.openlocfilehash: 9df3b20cd72236d7001aac94bae302b5a6f9eb8d
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 5e3194b856766502e4cc8c68ffa4bb936634adfa
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43110578"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46983146"
 ---
 # <a name="install-custom-hadoop-applications-on-azure-hdinsight"></a>Установка пользовательских приложений Hadoop в Azure HDInsight
 
@@ -66,7 +66,7 @@ ms.locfileid: "43110578"
     Эта кнопка открывает шаблон Resource Manager на портале Azure.  Шаблон Resource Manager доступен по адресу [https://hditutorialdata.blob.core.windows.net/hdinsightapps/create-linux-based-hadoop-cluster-in-hdinsight.json](https://hditutorialdata.blob.core.windows.net/hdinsightapps/create-linux-based-hadoop-cluster-in-hdinsight.json).  Дополнительные сведения о создании шаблона Resource Manager см. в статье [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx) (Установка приложения HDInsight) на сайте MSDN.
 2. Выполните инструкции по созданию кластера и установите приложение Hue. Дополнительные сведения о создании кластеров HDInsight см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
-Вызывать шаблоны Resource Manager можно с помощью портала Azure, а также [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-arm-templates.md#deploy-using-powershell) и [интерфейса командной строки Azure](hdinsight-hadoop-create-linux-clusters-arm-templates.md#deploy-using-cli).
+Вызывать шаблоны Resource Manager можно с помощью портала Azure, а также [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-arm-templates.md#deploy-using-powershell) и [классического Azure CLI](hdinsight-hadoop-create-linux-clusters-arm-templates.md#deploy-using-azure-cli).
 
 ## <a name="validate-the-installation"></a>проверка установки
 Вы можете просмотреть состояние приложения на портале Azure, чтобы проверить установку приложения. Кроме того, вы можете проверить появление правильных конечных точек HTTP и веб-страницу (если она есть).
@@ -117,8 +117,8 @@ ms.locfileid: "43110578"
 ### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 С помощью PowerShell можно удалить кластер или группу ресурсов. Сведения об удалении кластеров с помощью Azure PowerShell см. [здесь](hdinsight-administer-use-powershell.md#delete-clusters).
 
-### <a name="use-azure-cli"></a>Использование интерфейса командной строки Azure
-С помощью интерфейса командной строки можно удалить кластер или группу ресурсов. Сведения об удалении кластеров с помощью интерфейса командной строки Azure см. [здесь](hdinsight-administer-use-command-line.md#delete-clusters).
+### <a name="use-azure-classic-cli"></a>Использование классического Azure CLI
+С помощью классического Azure CLI можно удалить кластер или группу ресурсов. Сведения об удалении кластеров с помощью классического Azure CLI см. [здесь](hdinsight-administer-use-command-line.md#delete-clusters).
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — узнайте, как разрабатывать шаблоны Resource Manager для развертывания приложений HDInsight.

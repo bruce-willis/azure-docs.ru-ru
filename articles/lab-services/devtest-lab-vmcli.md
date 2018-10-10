@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальных машин и управление ими в DevTest Labs с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как использовать Azure DevTest Labs для создания виртуальных машин и управления ими с помощью Azure CLI 2.0
+description: Узнайте, как использовать Azure DevTest Labs для создания виртуальных машин и управления ими с помощью Azure CLI
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 5e50bc3c6804a6f3d3dafd07b2918605c4cbc6ab
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ccf9b08856fcc652e3ad4b2b31587d43d7ef9cca
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434685"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46995961"
 ---
 # <a name="create-and-manage-virtual-machines-with-devtest-labs-using-the-azure-cli"></a>Создание виртуальных машин и управление ими с DevTest Labs с использованием Azure CLI
 В этом кратком руководстве описан процесс создания, запуска, подключения, обновления и очистки виртуальной машины для разработки в лаборатории. 
@@ -27,7 +27,7 @@ ms.locfileid: "39434685"
 
 * Если лаборатория еще не создана, ознакомьтесь с инструкциями в [этой статье](devtest-lab-create-lab.md).
 
-* [Установите CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). Перед началом выполните команду az login, чтобы создать подключение к Azure. 
+* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Перед началом выполните команду az login, чтобы создать подключение к Azure. 
 
 ## <a name="create-and-verify-the-virtual-machine"></a>Создание и проверка виртуальной машины 
 Создайте виртуальную машину с проверкой подлинности по протоколу SSH из образа в Marketplace.

@@ -1,6 +1,6 @@
 ---
 title: Руководство. Создание виртуальных машин Linux и управление ими с помощью Azure CLI | Документация Майкрософт
-description: В этом руководстве описано, как с помощью Azure CLI 2.0 создать и администрировать виртуальные машины в Azure.
+description: В этом руководстве описано, как с помощью Azure CLI создать и администрировать виртуальные машины в Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e7338da637d92520bc5f67de9d3d2bdae3204e35
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 01e8f74f409271810652a9202b634762ad88dcea
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930041"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981252"
 ---
-# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli-20"></a>Руководство по созданию виртуальных машин Linux и управлению ими с помощью Azure CLI 2.0
+# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по созданию виртуальных машин Linux и управлению ими с помощью Azure CLI
 
 Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве рассматриваются основные элементы развертывания виртуальной машины Azure, например выбор ее размера, образа и ее развертывание. Вы узнаете, как выполнять следующие задачи:
 
@@ -36,7 +36,7 @@ ms.locfileid: "37930041"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 

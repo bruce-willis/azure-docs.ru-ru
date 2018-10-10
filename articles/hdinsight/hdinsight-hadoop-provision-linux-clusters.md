@@ -1,6 +1,6 @@
 ---
-title: Установка кластера для Hadoop, Spark, Kafka, HBase или служб машинного обучения в Azure HDInsight
-description: Сведения об установке кластеров Hadoop, Kafka, Spark, HBase, служб машинного обучения или Storm для HDInsight из браузера, с помощью Azure CLI, Azure PowerShell, REST или пакета SDK.
+title: Установка кластера для Hadoop, Spark, Kafka, HBase или R Server — Azure HDInsight | Документация Майкрософт
+description: Сведения об установке кластеров Hadoop, Kafka, Spark, HBase, Microsoft R Server или Storm для HDInsight из браузера с помощью классического Azure CLI, Azure PowerShell, REST или пакета SDK.
 keywords: установка кластера hadoop, установка кластера kafka, установка кластера spark, что такое кластер hadoop
 services: hdinsight
 author: jasonwhowell
@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 08/27/2018
-ms.openlocfilehash: 0df38e1bd9c4db1cf988beab31b1c3189da4f0c2
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 9eb99c26510475a5db51fa30f1634813b2c377f8
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43127913"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46992853"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-hadoop-spark-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий
 
@@ -36,7 +36,7 @@ ms.locfileid: "43127913"
 | --- |:---:|:---:|:---:|:---:|
 | [портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
 | [Фабрика данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md) |✔ |✔ |✔ |✔ |
-| [Azure CLI (версия 1.0)](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
+| [Классический Azure CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 | [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 | [cURL](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
 | [Пакет SDK для .NET](hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md) |&nbsp; |&nbsp; |&nbsp; |✔ |

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: seguler
-ms.openlocfilehash: 90858501cbf20af032c98ca8703f9e74b475e9c1
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 93dc651767fc2be815fb706f71386ce72b382a37
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39398582"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46981731"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Go
 
@@ -23,11 +23,14 @@ ms.locfileid: "39398582"
 
 Для работы с этим кратким руководством сделайте следующее: 
 * Установите [Go 1.8 или более поздней версии](https://golang.org/dl/).
-* Скачайте и установите [пакет SDK Azure Storage Blob для Go](https://github.com/azure/azure-storage-blob-go/), используя команду `go get -u github.com/azure/azure-storage-blob-go/2016-05-31/azblob`. 
+* Скачайте и установите [пакет SDK Azure Storage Blob для Go](https://github.com/azure/azure-storage-blob-go/), используя команду `go get -u github.com/Azure/azure-storage-blob-go/2016-05-31/azblob`. 
+
+> [!WARNING]
+> Убедитесь, что в URL-адресе слово "Azure" написано с прописной буквы. В противном случае при работе с пакетом SDK могут возникнуть проблемы импорта, связанные с регистром. "Azure" также нужно указывать с прописной буквы в операторах импорта.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [storage-quickstart-tutorial-create-account-portal](../../../includes/storage-quickstart-tutorial-create-account-portal.md)]
+[!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
 
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
 В этом кратком руководстве как [пример](https://github.com/Azure-Samples/storage-blobs-go-quickstart.git) используется простое приложение Go.  

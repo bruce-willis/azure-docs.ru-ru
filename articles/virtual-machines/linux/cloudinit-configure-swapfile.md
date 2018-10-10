@@ -1,6 +1,6 @@
 ---
 title: Настройка файла подкачки на виртуальной машине Linux с помощью cloud-init | Документация Майкрософт
-description: Как с помощью cloud-init и Azure CLI 2.0 настроить файл подкачки на виртуальной машине Linux
+description: Как с помощью cloud-init и Azure CLI настроить файл подкачки на виртуальной машине Linux
 services: virtual-machines-linux
 documentationcenter: ''
 author: rickstercdn
@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 88a141922f113caf7ad67c89de48f84a821f7ba3
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.openlocfilehash: 2a5a878b7c8c3b6126d90b978241fbcb237d8db7
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "29952604"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46946312"
 ---
 # <a name="use-cloud-init-to-configure-a-swapfile-on-a-linux-vm"></a>Настройка файла подкачки на виртуальной машине Linux с помощью cloud-init
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) настроить файл подкачки в разных дистрибутивах Linux. Файл подкачки традиционно настраивался агентом Linux (WALA) в зависимости от того, каким дистрибутивам он требовался.  В этом документе описано, как создать файл подкачки по запросу во время подготовки с использованием cloud-init.  Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -27,7 +27,7 @@ ms.locfileid: "29952604"
 ## <a name="create-swapfile-for-ubuntu-based-images"></a>Создание файла подкачки для образов на основе Ubuntu
 По умолчанию в Azure файлы подкачки не создаются образами из коллекции Ubuntu. Инструкции по включению настройки файла подкачки во время подготовки виртуальной машины с помощью cloud-init, см. в [документации по AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions) на вики-сайте Ubuntu.
 
-## <a name="create-swapfile-for-redhat-and-centos-based-images"></a>Создание файла подкачки для образов на основе RedHat и CentOS
+## <a name="create-swapfile-for-red-hat-and-centos-based-images"></a>Создание файла подкачки для образов на основе Red Hat и CentOS
 
 В текущей оболочке создайте файл *cloud_init_swapfile.txt* и вставьте в него следующую конфигурацию. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_swapfile.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 

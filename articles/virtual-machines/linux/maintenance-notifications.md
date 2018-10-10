@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2018
 ms.author: shants
-ms.openlocfilehash: 543c30b4d2c960f3c7453369162a62dc4606d06e
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 1ac965896dc3356f33e6461cf390e4345663c3d3
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39068633"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46982092"
 ---
 # <a name="handling-planned-maintenance-notifications-for-linux-virtual-machines"></a>Обработка уведомлений о плановом обслуживании для виртуальных машин Linux
 
@@ -108,7 +108,7 @@ az vm perform-maintenance -g rgName -n vmName
 
 ## <a name="classic-deployments"></a>Классические развертывания
 
-Если у вас все еще есть устаревшие виртуальные машины, развернутые с использованием классической модели развертывания, вы можете сделать запрос к ним и запустить их обслуживание с помощью CLI 1.0.
+Если у вас все еще есть устаревшие виртуальные машины, развернутые с использованием классической модели развертывания, вы можете отправить к ним запрос и запустить их обслуживание с помощью Azure CLI.
 
 Чтобы убедиться, находитесь ли вы в правильном режиме для работы с классической виртуальной машиной, введите:
 

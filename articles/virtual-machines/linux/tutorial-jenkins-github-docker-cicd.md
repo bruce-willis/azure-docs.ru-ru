@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 05ec147e705da4951735616881ad19ad265b403d
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: d1d760c2642e0c986e50570630d31dda11d17478
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41919198"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46964744"
 ---
 # <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство. Создание инфраструктуры развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
 
@@ -37,7 +37,7 @@ ms.locfileid: "41919198"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-jenkins-instance"></a>Создание экземпляра Jenkins
 В предыдущем руководстве [Как настроить виртуальную машину Linux при первой загрузке](tutorial-automate-vm-deployment.md) вы узнали, как автоматизировать настройку виртуальной машины с помощью cloud-init. В этом учебнике используется файл cloud-init для установки Jenkins и Docker на виртуальной машине. Jenkins — это популярный сервер автоматизации с открытым исходным кодом, который легко интегрируется с Azure для обеспечения непрерывной интеграции и непрерывной поставки (CI/CD). Другие руководства по использованию Jenkins см. в документации [Jenkins® в Azure](https://docs.microsoft.com/azure/jenkins/).
@@ -241,7 +241,7 @@ az vm show --resource-group myResourceGroupJenkins --name myVM -d --query [publi
 > * Создание образа Docker для приложения
 > * Проверка создания фиксацией GitHub образа Docker и изменения выполняющегося приложения
 
-Перейдите к следующему руководству, чтобы узнать, как интегрировать Jenkins в Visual Studio Team Services.
+Перейдите к следующему руководству, чтобы узнать, как интегрировать Jenkins в Azure DevOps Services.
 
 > [!div class="nextstepaction"]
-> [Развертывание приложения на виртуальных машинах Linux с помощью Jenkins и Team Services](tutorial-build-deploy-jenkins.md)
+> [Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Visual Studio Team Services](tutorial-build-deploy-jenkins.md)

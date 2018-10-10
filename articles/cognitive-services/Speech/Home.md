@@ -1,5 +1,6 @@
 ---
 title: Служба "Распознавание речи Bing" Microsoft | Документация Майкрософт
+titlesuffix: Azure Cognitive Services
 description: SAPI Microsoft используется для добавления инициируемых речью действий в приложениях, в том числе взаимодействия с пользователями в режиме реального времени.
 services: cognitive-services
 author: zhouwangzw
@@ -7,16 +8,17 @@ manager: wolfma
 ms.service: cognitive-services
 ms.component: bing-speech
 ms.topic: article
-ms.date: 09/15/2017
+ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: d58642b95a60d4f1c83dfd969d0c76511dca4653
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3b4ab55f4bd8bbd66f2edc8c262524169c79d7f5
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43097401"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46975643"
 ---
-# <a name="microsoft-bing-speech-api-overview"></a>Обзор API распознавания речи Bing компании Microsoft
+# <a name="what-is-bing-speech"></a>Что такое Распознавание речи Bing?
 
 Облачный интерфейс API распознавания речи Bing корпорации Майкрософт предоставляет разработчикам возможность легко создавать в приложениях эффективные функции с поддержкой речи, например управление с помощью голосовых команд, диалоги с пользователем с применением естественной речи, транскрибирование речи и средства диктовки. Microsoft SAPI поддерживает как преобразование *речи в текст*, так и *текста в речь*.
 

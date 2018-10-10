@@ -1,25 +1,27 @@
 ---
-title: Краткое руководство по Python для Azure Cognitive Services и API перевода речи Microsoft | Документация Майкрософт
-description: Сведения и примеры кода для быстрого начала использования API перевода речи Microsoft в Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию API перевода речи с Python
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-speech
-ms.topic: article
+ms.topic: quickstart
 ms.date: 07/17/2018
 ms.author: v-jaswel
-ms.openlocfilehash: a24ccd456df533542e7cbd2315fc1050cd82afbf
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ROBOTS: NOINDEX
+ms.openlocfilehash: 601e8473482cf6d90151b221309aef4d48d368d0
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "41929715"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46979021"
 ---
-# <a name="quickstart-for-microsoft-translator-speech-api-with-python"></a>Краткое руководство по API перевода речи Microsoft с помощью Python 
+# <a name="quickstart-translator-speech-api-with-python"></a>Краткое руководство по использованию API перевода речи с Python
 <a name="HOLTop"></a>
 
-В этой статье показано использование API перевода речи Microsoft для перевода слов, произнесенных в файле WAV.
+В этой статье показано использование API перевода речи для перевода слов, произнесенных в файле WAV.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

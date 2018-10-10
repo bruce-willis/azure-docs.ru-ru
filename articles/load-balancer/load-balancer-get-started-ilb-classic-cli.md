@@ -1,6 +1,6 @@
 ---
-title: Создание внутренней подсистемы балансировки нагрузки с помощью классической версии Azure CLI | Документация Майкрософт
-description: Узнайте, как создать внутренний балансировщик нагрузки в классической модели развертывания с помощью интерфейса командной строки Azure.
+title: Создание внутреннего балансировщика нагрузки с помощью классического Azure CLI | Документация Майкрософт
+description: Узнайте, как создать внутренний балансировщик нагрузки в классической модели развертывания с помощью классического Azure CLI.
 services: load-balancer
 documentationcenter: na
 author: genlin
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 06/18/2018
 ms.author: genli
-ms.openlocfilehash: 8f0ac03ff7b749e47692d03d65502df0a19bb758
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: fb8929b31fa4325b996ddf4c5ec48e4acb0b930a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38539523"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46966925"
 ---
-# <a name="get-started-creating-an-internal-load-balancer-classic-using-the-azure-cli"></a>Приступая к созданию внутреннего балансировщика нагрузки (классический режим) с помощью Azure CLI
+# <a name="get-started-creating-an-internal-load-balancer-using-the-azure-classic-cli"></a>Приступая к созданию внутреннего балансировщика нагрузки с помощью классического Azure CLI
 
 > [!div class="op_single_selector"]
 > * [PowerShell](../load-balancer/load-balancer-get-started-ilb-classic-ps.md)
@@ -44,11 +44,11 @@ ms.locfileid: "38539523"
 2. Добавьте конечные точки, соответствующие виртуальным машинам, которые будут принимать входящий трафик.
 3. Настройте серверы, чтобы они передавали трафик на виртуальный IP-адрес экземпляра внутренней подсистемы балансировки нагрузки.
 
-## <a name="step-by-step-creating-an-internal-load-balancer-using-cli"></a>Пошаговая процедура создания внутреннего балансировщика нагрузки с помощью интерфейса командной строки
+## <a name="step-by-step-creating-an-internal-load-balancer-using-classic-cli"></a>Пошаговая процедура создания внутреннего балансировщика нагрузки с помощью классического Azure CLI
 
 Это руководство описывает создание внутреннего балансировщика нагрузки на основе приведенного выше сценария.
 
-1. Если вы еще не пользовались Azure CLI, ознакомьтесь со статьей [Установка и настройка CLI Azure](../cli-install-nodejs.md) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
+1. Если вы еще не пользовались классическим Azure CLI, ознакомьтесь со статьей [Установка классического интерфейса командной строки Azure (Azure Classic CLI)](../cli-install-nodejs.md) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
 2. Выполните команду **azure config mode** , чтобы переключиться в классический режим, как показано ниже.
 
     ```azurecli

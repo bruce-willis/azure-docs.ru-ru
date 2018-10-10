@@ -8,17 +8,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: tutorial
-ms.date: 06/27/2018
+ms.date: 09/23/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 9ffb6e593ebec4c1a657333eb87179465c0a2d1d
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: d57e350bc63a8acf7c4719572d43b4e703de019e
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579740"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46990932"
 ---
 # <a name="provision-the-azure-ssis-integration-runtime-in-azure-data-factory-with-powershell"></a>Подготовка среды выполнения интеграции Azure SSIS в фабрике данных Azure с помощью PowerShell
 В этом руководстве представлены шаги по подготовке среды выполнения интеграции (IR) Azure SSIS в фабрике данных. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения в Azure. Вот какие шаги выполняются в этом руководстве:
@@ -36,8 +36,8 @@ ms.locfileid: "45579740"
 ## <a name="prerequisites"></a>Предварительные требования
 - **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу. См. дополнительные сведения о [среде выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). 
 - **Сервер базы данных SQL Azure**. Если у вас еще нет сервера базы данных, создайте его на портале Azure перед началом работы. На этом сервере размещается база данных каталога служб SSIS (SSISDB). Мы рекомендуем создать сервер базы данных в одном регионе Azure со средой интеграции. Эта конфигурация позволяет среде выполнения интеграции записывать журналы выполнения в SSISDB, не пересекая регионы Azure. 
-    - В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или управляемого экземпляра (предварительная версия). Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Compare SQL Database and Managed Instance (Preview)](create-azure-ssis-integration-runtime.md#compare-sql-database-and-managed-instance-preview) (Сравнение Базы данных SQL и управляемого экземпляра (предварительная версия)). Если База данных SQL Azure используется с конечными точками службы виртуальной сети или управляемого экземпляра (предварительная версия) для размещения SSISDB или требования доступа к локальным данным, необходимо присоединить к виртуальной сети вашу среду выполнения интеграции Azure–SSIS. Сведения об этом см. в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
-    - Убедитесь, что для сервера базы данных **включена** настройка **Разрешить доступ к службам Azure**. Этот параметр не применяется, когда База данных SQL Azure используется с конечными точками службы виртуальной сети или управляемого экземпляра (предварительная версия) для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](../sql-database/sql-database-security-tutorial.md#create-a-server-level-firewall-rule-in-the-azure-portal). Сведения о включении этого параметра с помощью PowerShell см. в статье о [New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule?view=azurermps-4.4.1). 
+    - В зависимости от выбранного сервера базы данных SSISDB может быть создана от вашего имени как отдельная база данных, а также как часть эластичного пула или Управляемого экземпляра. Доступ к ней можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение логического сервера Базы данных SQL и Управляемого экземпляра Базы данных SQL](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-logical-server-and-sql-database-managed-instance). Если База данных SQL Azure используется с конечными точками службы виртуальной сети или Управляемого экземпляра для размещения SSISDB или требования доступа к локальным данным, необходимо присоединить к виртуальной сети вашу среду выполнения интеграции Azure SSIS. Сведения об этом см. в статье [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime). 
+    - Убедитесь, что для сервера базы данных **включена** настройка **Разрешить доступ к службам Azure**. Этот параметр не применяется, когда База данных SQL Azure используется с конечными точками службы виртуальной сети или Управляемого экземпляра для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](../sql-database/sql-database-security-tutorial.md#create-a-server-level-firewall-rule-in-the-azure-portal). Сведения о включении этого параметра с помощью PowerShell см. в статье о [New-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/new-azurermsqlserverfirewallrule?view=azurermps-4.4.1). 
     - Добавьте IP-адрес клиентского компьютера или диапазон IP-адресов, который включает IP-адрес клиентского компьютера, в список IP-адресов клиента в параметрах брандмауэра для сервера базы данных. Дополнительные сведения см. в разделе [Правила брандмауэра уровня сервера и уровня базы данных SQL Azure](../sql-database/sql-database-firewall-configure.md). 
     - Можно подключиться к серверу базы данных, выполнив аутентификацию SQL с использованием учетных данных администратора сервера, или аутентификацию Azure Active Directory (AAD) с помощью Управляемого удостоверения службы Фабрики данных Azure (MSI).  Для последнего варианта необходимо добавить в группу AAD Управляемое удостоверение службы Фабрики данных Azure с разрешениями на доступ к серверу базы данных. Эта процедура описана в разделе [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime). 
     - Убедитесь, что на сервере базы данных SQL Azure нет каталога SSIS (базы данных SSISDB). При подготовке среды Azure SSIS IR не поддерживается использование существующего каталога SSIS. 
@@ -83,7 +83,7 @@ $SetupScriptContainerSasUri = "" # OPTIONAL to provide SAS URI of blob container
 $SSISDBServerEndpoint = "[your Azure SQL Database server name].database.windows.net" # WARNING: Please ensure that there is no existing SSISDB, so we can prepare and manage one on your behalf    
 $SSISDBServerAdminUserName = "[your server admin username for SQL authentication]"
 $SSISDBServerAdminPassword = "[your server admin password for SQL authentication]"
-# For the basic pricing tier, specify "Basic", not "B". For standard/premium/Elastic Pool tiers, specify "S0", "S1", "S2", "S3", etc.
+# For the basic pricing tier, specify "Basic", not "B". For standard/premium/elastic pool tiers, specify "S0", "S1", "S2", "S3", etc.
 $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>)]"
 ```
 
@@ -252,7 +252,7 @@ $SetupScriptContainerSasUri = "" # OPTIONAL to provide SAS URI of blob container
 $SSISDBServerEndpoint = "[your Azure SQL Database server name].database.windows.net" # WARNING: Please ensure that there is no existing SSISDB, so we can prepare and manage one on your behalf    
 $SSISDBServerAdminUserName = "[your server admin username for SQL authentication]"
 $SSISDBServerAdminPassword = "[your server admin password for SQL authentication]"
-# For the basic pricing tier, specify "Basic", not "B". For standard/premium/Elastic Pool tiers, specify "S0", "S1", "S2", "S3", etc.
+# For the basic pricing tier, specify "Basic", not "B". For standard/premium/elastic pool tiers, specify "S0", "S1", "S2", "S3", etc.
 $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>)]"
 
 $SSISDBConnectionString = "Data Source=" + $SSISDBServerEndpoint + ";User ID=" + $SSISDBServerAdminUserName + ";Password=" + $SSISDBServerAdminPassword    
@@ -309,7 +309,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 ```
 
 ## <a name="join-azure-ssis-ir-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
-Если вы используете Базу данных SQL Azure с конечными точками службы виртуальной сети или управляемым экземпляром (предварительная версия), который присоединяется к виртуальной сети для размещения SSISDB, необходимо присоединить среду выполнения интеграции Azure SSIS к той же виртуальной сети. В службе "Фабрика данных Azure" среду выполнения интеграции Azure SSIS можно присоединить к виртуальной среде. Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md).
+Если вы используете Базу данных SQL Azure с конечными точками службы виртуальной сети или Управляемым экземпляром, который присоединяется к виртуальной сети для размещения SSISDB, необходимо присоединить среду выполнения интеграции Azure SSIS к той же виртуальной сети. В службе "Фабрика данных Azure" среду выполнения интеграции Azure SSIS можно присоединить к виртуальной среде. Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md).
 
 Полный сценарий создания среды выполнения интеграции Azure SSIS, которая присоединяется к виртуальной сети, см. в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/12/2017
 ms.author: negat
 ms.custom: na
-ms.openlocfilehash: b61b6b730d645e2ffd518628abe2a121f119fd09
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 9ec049ebbfaa8e6ee5dbf585488d5c2e8ff25802
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715069"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46949712"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "39715069"
 
 **Вопрос.** Как создать масштабируемый набор с помощью пользовательского образа?
 
-**Ответ.** Создайте и запишите образ виртуальной машины, а затем используйте его как источник для масштабируемого набора. В качестве руководства по созданию и использованию пользовательского образа виртуальной машины возьмите [Azure CLI 2.0](tutorial-use-custom-image-cli.md) или [Azure PowerShell](tutorial-use-custom-image-powershell.md)
+**Ответ.** Создайте и запишите образ виртуальной машины, а затем используйте его как источник для масштабируемого набора. Для обучения созданию и использованию пользовательского образа виртуальной машины можно воспользоваться [Azure CLI](tutorial-use-custom-image-cli.md) или [Azure PowerShell](tutorial-use-custom-image-powershell.md)
 
 **Вопрос.** Если уменьшить емкость масштабируемого набора с 20 до 15, какие виртуальные машины будут удалены?
 
@@ -129,7 +129,7 @@ ms.locfileid: "39715069"
 
 ### <a name="how-do-i-set-up-autoscale-on-a-virtual-machine-scale-set-by-using-powershell"></a>Как можно задать параметры автомасштабирования в масштабируемом наборе виртуальных машин с помощью PowerShell?
 
-Дополнительные сведения о настройке параметров автомасштабирования в масштабируемом наборе виртуальных машин с помощью PowerShell см. в разделе [Автоматическое масштабирование в масштабируемом наборе виртуальных машин](tutorial-autoscale-powershell.md). Вы также можете настроить автомасштабирование с [Azure CLI 2.0](tutorial-autoscale-cli.md) и [шаблонами Azure](tutorial-autoscale-template.md)
+Дополнительные сведения о настройке параметров автомасштабирования в масштабируемом наборе виртуальных машин с помощью PowerShell см. в разделе [Автоматическое масштабирование в масштабируемом наборе виртуальных машин](tutorial-autoscale-powershell.md). Вы можете также настроить автомасштабирование с помощью [Azure CLI](tutorial-autoscale-cli.md) и [шаблонов Azure](tutorial-autoscale-template.md).
 
 
 ### <a name="if-i-have-stopped-deallocated-a-vm-is-that-vm-started-as-part-of-an-autoscale-operation"></a>Если я остановил (освободил) виртуальную машину, она будет запущена при операции автоматического масштабирования?

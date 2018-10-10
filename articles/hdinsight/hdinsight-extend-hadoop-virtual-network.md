@@ -8,14 +8,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/26/2018
-ms.openlocfilehash: 659c33ec0e989003e68b5165fab70f50c607868c
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 98c62f54e2413bd67600db182c452d0d5965f239
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39591887"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46972187"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Расширение возможностей HDInsight с помощью виртуальной сети Azure
+
+[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
 
 Узнайте, как использовать [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) для расширения возможностей HDInsight. Виртуальная сеть Azure обеспечивает реализацию следующих сценариев:
 
@@ -70,7 +72,7 @@ ms.locfileid: "39591887"
 
     В состав HDInsight входит несколько служб, которые используют различные порты. Не блокируйте трафик на этих портах. Список портов, трафик через которые следует разрешить на межсетевых экранах виртуального устройства, см. в разделе [Безопасность](#security).
 
-    Чтобы найти существующую конфигурацию безопасности, используйте следующие команды Azure PowerShell или Azure CLI:
+    Чтобы найти существующую конфигурацию безопасности, используйте следующие команды Azure PowerShell или классического Azure CLI:
 
     * Группы безопасности сети
 
@@ -441,7 +443,7 @@ $vnet | Set-AzureRmVirtualNetwork
 > Add-AzureRmNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "22" -SourceAddressPrefix "*" -DestinationAddressPrefix "VirtualNetwork" -Access Allow -Priority 306 -Direction Inbound
 > ```
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-classic-cli"></a>Классический Azure CLI
 
 Ниже приведен порядок действий по созданию виртуальной сети, которая ограничивает входящий трафик, но разрешает трафик с IP-адресов, требуемых для HDInsight.
 
@@ -510,7 +512,7 @@ $vnet | Set-AzureRmVirtualNetwork
 
 На пользовательском DNS-сервере в виртуальной сети:
 
-1. Воспользуйтесь Azure PowerShell или Azure CLI для поиска DNS-суффикса виртуальной сети:
+1. Воспользуйтесь Azure PowerShell или классическим Azure CLI для поиска DNS-суффикса виртуальной сети:
 
     ```powershell
     $resourceGroupName = Read-Input -Prompt "Enter the resource group that contains the virtual network used with HDInsight"
@@ -592,7 +594,7 @@ $vnet | Set-AzureRmVirtualNetwork
 
 * На пользовательских DNS-серверах установлен [Bind](https://www.isc.org/downloads/bind/).
 
-1. Воспользуйтесь Azure PowerShell или Azure CLI для поиска DNS-суффикса в обеих виртуальных сетях:
+1. Воспользуйтесь Azure PowerShell или классическим Azure CLI для поиска DNS-суффикса в обеих виртуальных сетях:
 
     ```powershell
     $resourceGroupName = Read-Input -Prompt "Enter the resource group that contains the virtual network used with HDInsight"

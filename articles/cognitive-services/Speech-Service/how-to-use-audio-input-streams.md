@@ -1,142 +1,76 @@
 ---
-title: 'AudioInputStream: основные понятия'
-description: Общие сведения о возможностях API AudioInputStream.
+title: Принцип работы входного аудиопотока в пакете SDK для службы "Речь"
+description: Обзор возможностей API входного аудиопотока в пакете SDK для службы "Речь".
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: fmegen
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 09/24/2018
 ms.author: fmegen
-ms.openlocfilehash: b3e12fbc616c8d67b557102c6094467e119a23f1
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 6c2d7c5787305f60b73ab83ea17367b04e03ac12
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39281911"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46985186"
 ---
-# <a name="about-the-audio-input-stream-api"></a>Сведения об API входного аудиопотока
+# <a name="about-the-speech-sdk-audio-input-stream-api"></a>Об API входного аудиопотока в пакете SDK для службы "Речь"
 
-API **входного аудиопотока** обеспечивает способ потоковой передачи звука в распознаватели вместо использования API микрофона или входного файла.
+API **входного аудиопотока** в пакете SDK для службы "Речь" обеспечивает способ потоковой передачи звука в распознаватели вместо использования API микрофона или входного файла.
 
-## <a name="api-overview"></a>Обзор API
+При использовании входных аудиопотоков выполняется следующая процедура.
 
-API использует два компонента `AudioInputStream` (необработанные аудиоданные) и `AudioInputStreamFormat`.
+- Определите формат аудиопотока. Формат должен поддерживаться пакетом SDK для службы "Речь" и службой "Речь". Сейчас поддерживается только приведенная ниже конфигурация.
 
-`AudioInputStreamFormat` определяет формат аудиоданных. Его можно сравнить со стандартной структурой `WAVEFORMAT` для WAVE-файлов в Windows.
+  Образцы звука в формате PCM с одним каналом, 16 000 выборок в секунду, 32 000 байтов в секунду; выравнивание по двум блокам (16 битов, включая заполнение для выборки), на образец используется 16 битов.
 
-  - `FormatTag`
+  Соответствующий код в пакете SDK для создания звукового формата выглядит следующим образом.
 
-    Формат аудио. Пакет SDK для службы "Речь" сейчас поддерживает только `format 1` (PCM, прямой порядок байтов).
+  ```
+  byte channels = 1;
+  byte bitsPerSample = 16;
+  int samplesPerSecond = 16000;
+  var audioFormat = AudioStreamFormat.GetWaveFormatPCM(samplesPerSecond, bitsPerSample, channels);
+  ```
 
-  - `Channels`
+- Убедитесь, что ваш код может предоставлять необработанные аудиоданные, соответствующие указанным выше характеристикам. Если источник аудиоданных не соответствует поддерживаемым форматам, звук необходимо перекодировать в требуемый формат.
 
-    Число каналов. Сейчас служба речи поддерживает только один канал аудио (моно).
+- Создайте собственный класс входного аудиопотока, производный от `PullAudioInputStreamCallback`. Реализуйте члены `Read()` и `Close()`. Точная сигнатура функции зависит от языка, однако код будет выглядеть аналогично этому примеру кода.
 
-  - `SamplesPerSec`
+  ```
+   public class ContosoAudioStream : PullAudioInputStreamCallback {
+      ContosoConfig config;
 
-    Частота дискретизации. Обычная запись с микрофона выполняется с частотой 16 000 выборок в секунду.
+      public ContosoAudioStream(const ContosoConfig& config) {
+          this.config = config;
+      }
 
-  - `AvgBytesPerSec`
+      public size_t Read(byte *buffer, size_t size) {
+          // returns audio data to the caller.
+          // e.g. return read(config.YYY, buffer, size);
+      }
 
-    Среднее число байт в секунду, вычисляется как `SamplesPerSec * Channels * ceil(BitsPerSample, 8)`. Среднее число байт в секунду может отличаться для аудиопотоков, использующих переменные скорости.
+      public void Close() {
+          // close and cleanup resources.
+      }
+   };
+  ```
 
-  - `BlockAlign`
+- Создайте конфигурацию звука, основанную на формате звука и входном аудиопотоке. Передайте конфигурацию для обычной речи и конфигурацию ввода звука при создании распознавателя. Например: 
 
-    Размер одного кадра, вычисляется как `Channels * ceil(wBitsPerSample, 8)`. Из-за заполнения фактическое значение может быть выше, чем это значение.
+  ```
+  var audioConfig = AudioConfig.FromStreamInput(new ContosoAudioStream(config), audioFormat);
 
-  - `BitsPerSample`
+  var speechConfig = SpeechConfig.FromSubscription(...);
+  var recognizer = new SpeechRecognizer(speechConfig, audioConfig);
 
-    Число бит на выборку. Обычно аудиопоток использует 16 бит на выборку (качество компакт-диска).
+  // run stream through recognizer
+  var result = await recognizer.RecognizeOnceAsync();
 
-Базовый класс `AudioInputStream` будут переопределен настраиваемым адаптером потока. Этот адаптер должен реализовать следующие функции:
-
-   - `GetFormat()`
-
-     Эта функция вызывается для получения формата аудиопотока. Она получает указатель на буфер AudioInputStreamFormat.
-
-   - `Read()`
-
-     Эта функция вызывается для получения данных из аудиопотока. Один параметр является указателем на буфер для копирования аудиоданных. Второй параметр — размер буфера. Функция возвращает число байт, копируемых в буфер. Возвращаемое значение `0` обозначает конец потока.
-
-   - `Close()`
-
-     Эта функция вызывается для закрытия аудиопотока.
-
-## <a name="usage-examples"></a>Примеры использования
-
-Как правило, при использовании входных аудиопотоков выполняется следующая процедура.
-
-  - Определите формат аудиопотока. Формат должен поддерживаться пакетом SDK и службой речи. Сейчас поддерживается следующая конфигурация:
-
-    один тег формата аудио (PCM), один канал, 16 000 выборок в секунду, 32 000 байт в секунду, выравнивание по двум блокам (16 бит, включая заполнение для выборки), 16 бит на выборку
-
-  - Убедитесь, что ваш код может предоставлять НЕОБРАБОТАННЫЕ аудиоданные, соответствующие указанным выше характеристикам. Если источник аудиоданных не соответствует поддерживаемым форматам, звук необходимо перекодировать в требуемый формат.
-
-  - Создайте настраиваемый класс входного аудиопотока, производный от `AudioInputStream`. Реализуйте операции `GetFormat()`, `Read()` и `Close()`. Точная сигнатура функции зависит от языка, однако код будет выглядеть аналогично этому примеру кода:
-
-    ```
-     public class ContosoAudioStream : AudioInputStream {
-        ContosoConfig config;
-
-        public ContosoAudioStream(const ContosoConfig& config) {
-            this.config = config;
-        }
-
-        public void GetFormat(AudioInputStreamFormat& format) {
-            // returns format data to the caller.
-            // e.g. format.FormatTag = config.XXX;
-            // ...
-        }
-
-        public size_t Read(byte *buffer, size_t size) {
-            // returns audio data to the caller.
-            // e.g. return read(config.YYY, buffer, size);
-        }
-
-        public void Close() {
-            // close and cleanup resources.
-        }
-     };
-    ```
-
-  - Используйте входной аудиопоток:
-
-    ```
-    var contosoStream = new ContosoAudioStream(contosoConfig);
-
-    var factory = SpeechFactory.FromSubscription(...);
-    var recognizer = CreateSpeechRecognizerWithStream(contosoStream);
-
-    // run stream through recognizer
-    var result = await recognizer.RecognizeAsync();
-
-    var text = result.GetText();
-
-    // In some languages you need to delete the stream explicitly.
-    // delete contosoStream;
-    ```
-
-  - В некоторых языках `contosoStream` необходимо явно удалять после завершения распознавания. Нельзя освободить AudioStream до завершения считывания входных данных. В случае использования `StopContinuousRecognitionAsync` и `StopContinuousRecognitionAsync` требуется концепция, иллюстрируемая в этом примере:
-
-    ```
-    var contosoStream = new ContosoAudioStream(contosoConfig);
-
-    var factory = SpeechFactory.FromSubscription(...);
-    var recognizer = CreateSpeechRecognizerWithStream(contosoStream);
-
-    // run stream through recognizer
-    await recognizer.StartContinuousRecognitionAsync();
-
-    // ERROR: do not delete the contosoStream before ending recognition!
-    // delete contosoStream;
-
-    await recognizer.StopContinuousRecognitionAsync();
-
-    // OK: Safe to delete the contosoStream.
-    // delete contosoStream;
-    ```
+  var text = result.GetText();
+  ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

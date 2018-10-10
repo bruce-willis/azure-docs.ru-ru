@@ -9,12 +9,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 08/25/2017
 ms.author: yizhon
-ms.openlocfilehash: 4f8ad67fafa20fd9adce62e8beb619999203ef62
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: db9c22acfba0f6f1781348b36a1d253a515cc063
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39346667"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46977284"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -71,7 +71,7 @@ ms.locfileid: "39346667"
 
 * Приложение Windows — [обозреватель устройств](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer).
 * Кроссплатформенное расширение Visual Studio Code, которое называется [набором средств Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit).
-* Кроссплатформенный инструмент интерфейса командной строки Python — [расширение Интернета вещей для Azure CLI 2.0](https://github.com/Azure/azure-iot-cli-extension).
+* Кроссплатформенный интерфейс командной строки Python — [расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 В этом руководстве описывается использование графического *обозревателя устройств*. Если вы разрабатываете решения в VS Code, можно воспользоваться *набором средств Интернета вещей Azure для VS Code*. Если вы предпочитаете использовать инструмент интерфейса командной строки, можно воспользоваться *расширением Интернета вещей для Azure CLI 2.0*.
 

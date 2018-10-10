@@ -1,25 +1,27 @@
 ---
-title: Краткое руководство по Java для Azure Cognitive Services и API перевода речи Microsoft Translator | Документация Microsoft
-description: Получите информацию и примеры кода, которые помогут вам приступить к работе с API перевода речи Microsoft Translator, входящим в состав Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию API перевода речи с Java
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-speech
-ms.topic: article
+ms.topic: quickstart
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 0db55f4064d3415cb647519ea9030936012a8446
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ROBOTS: NOINDEX
+ms.openlocfilehash: dde7d3dc7c1a744da9a22c0e4c0a483a186aa327
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41929885"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46969467"
 ---
-# <a name="quickstart-for-microsoft-translator-speech-api-with-java"></a>Краткое руководство по использованию API перевода речи Microsoft Translator с Java 
+# <a name="quickstart-translator-speech-api-with-java"></a>Краткое руководство по использованию API перевода речи с Java 
 <a name="HOLTop"></a>
 
-В этой статье показано использование API перевода речи Microsoft для перевода слов, произнесенных в файле WAV.
+В этой статье показано использование API перевода речи для перевода слов, произнесенных в файле WAV.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

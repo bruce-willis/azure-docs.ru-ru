@@ -1,25 +1,27 @@
 ---
-title: Краткое руководство по Node.js для Azure Cognitive Services и API перевода речи Microsoft | Документация Майкрософт
-description: Сведения и примеры кода для быстрого начала использования API перевода речи Microsoft в Microsoft Cognitive Services в Azure.
+title: Краткое руководство по использованию API перевода речи с Node.js
+titlesuffix: Azure Cognitive Services
+description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
-documentationcenter: ''
 author: v-jaswel
+manager: cgronlun
 ms.service: cognitive-services
 ms.component: translator-speech
-ms.topic: article
+ms.topic: quickstart
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: e652ee1e201e60d0d75f10bb8fceb4fbcd205381
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ROBOTS: NOINDEX
+ms.openlocfilehash: 533faeca37f021beb86148a4f11a0f04c631a30a
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41929835"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46954591"
 ---
-# <a name="quickstart-for-microsoft-translator-speech-api-with-nodejs"></a>Краткое руководство по API перевода речи Microsoft с помощью Node.js 
+# <a name="quickstart-translator-speech-api-with-nodejs"></a>Краткое руководство по использованию API перевода речи с Node.js 
 <a name="HOLTop"></a>
 
-В этой статье показано использование API перевода речи Microsoft для перевода слов, произнесенных в файле WAV.
+В этой статье показано использование API перевода речи для перевода слов, произнесенных в файле WAV.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

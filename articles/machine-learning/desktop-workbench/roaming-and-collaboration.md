@@ -7,27 +7,33 @@ ms.author: haining
 manager: mwinkle
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/16/2017
-ms.openlocfilehash: b587f5dcc9558ec52b85e4b53dae0e31ad475a4e
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ROBOTS: NOINDEX
+ms.openlocfilehash: 07a9d46dff17b43d01a6b411292cf240c32476f3
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46983724"
 ---
 # <a name="roaming-and-collaboration-in-azure-machine-learning-workbench"></a>Роуминг и совместная работа в Azure Machine Learning Workbench
+
+[!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)] 
+
 В этой статье описывается, как можно использовать Azure Machine Learning Workbench, чтобы настроить проекты для перемещения между компьютерами и совместной работы с участниками группы. 
 
 При создании проекта службы "Машинное обучение Azure", в котором имеется удаленная ссылка репозитория Git, метаданные и моментальные снимки проекта хранятся в облаке. Вы можете использовать ссылку облака для получения доступа к проекту с другого компьютера (в роуминге). Вы также можете совместно работать с участниками группы, предоставив им доступ к проекту. 
 
-## <a name="prerequisites"></a>предварительным требованиям
-1. Установите приложение Azure Machine Learning Workbench. Убедитесь, что имеете доступ к учетной записи службы "Экспериментирование в Машинном обучении Azure". Дополнительные сведения см. в статье [Создание учетной записи для предварительной версии службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench](../service/quickstart-installation.md).
+## <a name="prerequisites"></a>Предварительные требования
+1. Установите приложение Azure Machine Learning Workbench. Убедитесь, что имеете доступ к учетной записи службы "Экспериментирование в Машинном обучении Azure". Дополнительные сведения см. в статье [Создание учетной записи для предварительной версии службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench](quickstart-installation.md).
 
-2. Получите доступ к [Visual Studio Team Services](https://www.visualstudio.com) (Team Services) и создайте репозиторий, чтобы подключиться к проекту. Дополнительные сведения см. в статье [Использование репозитория Git в проекте Azure Machine Learning Workbench](using-git-ml-project.md).
+2. Получите доступ к [Azure DevOps](https://www.visualstudio.com), а затем создайте репозиторий, чтобы подключиться к проекту. Дополнительные сведения см. в статье [Использование репозитория Git в проекте Azure Machine Learning Workbench](using-git-ml-project.md).
 
 ## <a name="create-a-new-machine-learning-project"></a>Создание проекта в службе "Машинное обучение"
-Откройте Machine Learning Workbench и создайте проект (например, проект с названием iris). В поле **URL-адреса репозитория GIT Visualstudio.com** введите допустимый URL-адрес для репозитория Git в Team Services. 
+Откройте Machine Learning Workbench и создайте проект (например, проект с названием iris). В поле **URL-адреса репозитория GIT Visualstudio.com** введите допустимый URL-адрес для репозитория Git в Azure DevOps. 
 
 > [!IMPORTANT]
 > При выборе пустого шаблона проекта в выбранном репозитории Git уже может быть главная ветвь. Служба "Машинное обучение" просто клонирует главную ветвь локально. Она добавляет папку aml_config и другие файлы метаданных проекта в папку локального проекта. 
@@ -60,7 +66,7 @@ $ git push origin master
 <a name="roaming"></a>
 
 ### <a name="open-machine-learning-workbench-on-a-second-computer"></a>Открытие Machine Learning Workbench на другом компьютере
-После привязки репозитория Git для Team Services с проектом можно получить доступ к проекту iris с любого компьютера, на котором установлена служба Machine Learning Workbench. 
+После привязки репозитория Git для Azure DevOps с проектом можно получить доступ к проекту iris с любого компьютера, на котором установлена служба Machine Learning Workbench. 
 
 Чтобы получить доступ к проекту iris на другом компьютере, необходимо войти в приложение с теми же учетными данными, которые использовались при создании проекта. Кроме того, нужно использовать ту же учетную запись и рабочую область службы "Экспериментирование в Машинном обучении". Проект iris находится в списке проектов в рабочей области (составленном в алфавитном порядке). 
 
@@ -82,11 +88,11 @@ $ git push origin master
 
 
 ### <a name="work-on-the-downloaded-project"></a>Работа со скачанным проектом 
-В скачанном проекте отображается состояние проекта на момент его последнего запуска. Моментальный снимок состояния проекта автоматически фиксируется в ветви журнала выполнения репозитория Git для Team Services при каждом запуске. Моментальный снимок, связанный с последним запуском, используется при создании экземпляра проекта на другом компьютере. 
+В скачанном проекте отображается состояние проекта на момент его последнего запуска. Моментальный снимок состояния проекта автоматически фиксируется в ветви журнала выполнения репозитория Git для Azure DevOps при каждом запуске. Моментальный снимок, связанный с последним запуском, используется при создании экземпляра проекта на другом компьютере. 
  
 
 ## <a name="collaboration"></a>Совместная работа
-Вы можете совместно работать с участниками группы над проектами, связанными с репозиторием Git в Team Services. Вы можете назначить пользователям разрешения для учетной записи, рабочей области и проекта службы "Экспериментирование в Машинном обучении". Сейчас можно выполнять команды Azure Resource Manager с помощью Azure CLI. Кроме того, можно использовать [портал Azure](https://portal.azure.com). Дополнительные сведения см. в разделе [Использование портала Azure для добавления пользователей](#portal).    
+Вы можете совместно работать с участниками группы над проектами, связанными с репозиторием Git в Azure DevOps. Вы можете назначить пользователям разрешения для учетной записи, рабочей области и проекта службы "Экспериментирование в Машинном обучении". Сейчас можно выполнять команды Azure Resource Manager с помощью Azure CLI. Кроме того, можно использовать [портал Azure](https://portal.azure.com). Дополнительные сведения см. в разделе [Использование портала Azure для добавления пользователей](#portal).    
 
 ### <a name="use-the-command-line-to-add-users"></a>Использование командной строки для добавления пользователей
 Например, Элис имеет роль владельца проекта iris и ей нужно предоставить Бобу доступ к проекту. 
@@ -127,16 +133,16 @@ az role assignment create --assignee bob@contoso.com --role Owner --scope <works
 ## <a name="sample-collaboration-workflow"></a>Пример рабочего процесса совместной работы
 Рассмотрим пример, демонстрирующий рабочий процесс совместной работы. Сотрудники Contoso Элис и Боб хотят совместно работать над проектом обработки и анализа данных, используя Machine Learning Workbench. Их удостоверения принадлежат одному и тому же клиенту Contoso Azure Active Directory (Azure AD). Ниже приведены действия, которые выполнили Элис и Боб.
 
-1. Сначала Элис создает пустой репозиторий Git в проекте Team Services. Проект Team Services должен находиться в подписке Azure, созданной в клиенте Contoso Azure AD. 
+1. Сначала Элис создает пустой репозиторий Git в проекте Azure DevOps. Проект Azure DevOps должен находиться в подписке Azure, созданной в клиенте Contoso Azure AD. 
 
-2. Затем Элис создает на своем компьютере учетную запись и рабочую область службы "Экспериментирование в Машинном обучении", а также проект Machine Learning Workbench. При создании проекта она вводит URL-адрес репозитория Git в Team Services.
+2. Затем Элис создает на своем компьютере учетную запись и рабочую область службы "Экспериментирование в Машинном обучении", а также проект Machine Learning Workbench. При создании проекта она вводит URL-адрес репозитория Git в Azure DevOps.
 
-3. Элис начинает работать над проектом. Она создает несколько скриптов и выполняет несколько запусков. Во время каждого запуска в ветвь журнала выполнения репозитория Git в проекте Team Services, созданного Machine Learning Workbench, автоматически помещается моментальный снимок всей папки проекта репозитория для фиксации изменений.
+3. Элис начинает работать над проектом. Она создает несколько скриптов и выполняет несколько запусков. Во время каждого запуска в ветвь журнала выполнения репозитория Git в проекте Azure DevOps, созданного Machine Learning Workbench, автоматически помещается моментальный снимок всей папки проекта репозитория для фиксации изменений.
 
-4. Элис довольна ходом работы. Она хочет зафиксировать изменения в локальной главной ветви и передать их в главную ветвь репозитория Git в проекте Team Services. Открыв проект в Machine Learning Workbench, она открывает окно командной строки, а затем вводит следующие команды.
+4. Элис довольна ходом работы. Она хочет зафиксировать изменения в локальной главной ветви и передать их в главную ветвь репозитория Git в проекте Azure DevOps. Открыв проект в Machine Learning Workbench, она открывает окно командной строки, а затем вводит следующие команды.
     
     ```sh
-    # Verify that the Git remote is pointing to the Team Services Git repo.
+    # Verify that the Git remote is pointing to the Azure DevOps Git repo.
     $ git remote -v
 
     # Verify that the current branch is master.
@@ -148,11 +154,11 @@ az role assignment create --assignee bob@contoso.com --role Owner --scope <works
     # Commit changes with a comment.
     $ git commit -m "this is a good milestone"
 
-    # Push the commit to the master branch of the remote Git repo in Team Services.
+    # Push the commit to the master branch of the remote Git repo in Azure DevOps.
     $ git push
     ```
 
-5. Элис добавляет в рабочую область Боба в качестве участника. Она может сделать это на портале Azure или с помощью команды `az role assignment`, как было показано ранее. Элис также предоставляет Бобу разрешения на чтение и запись для репозитория Git в Team Services.
+5. Элис добавляет в рабочую область Боба в качестве участника. Она может сделать это на портале Azure или с помощью команды `az role assignment`, как было показано ранее. Элис также предоставляет Бобу разрешения на чтение и запись для репозитория Git в Azure DevOps.
 
 6. Боб входит в Machine Learning Workbench на своем компьютере. Он видит рабочую область, в которой может совместно работать с Элис. В этой рабочей области он видит проект iris. 
 
@@ -165,13 +171,13 @@ az role assignment create --assignee bob@contoso.com --role Owner --scope <works
 9. Бобу нужно получить последние изменения, выполненные Элис, а затем начать работу в другой ветви. Он открывает окно командной строки в Machine Learning Workbench и выполняет следующие команды.
 
     ```sh
-    # Verify that the Git remote is pointing to the Team Services Git repo.
+    # Verify that the Git remote is pointing to the Azure DevOps Git repo.
     $ git remote -v
 
     # Verify that the current branch is master.
     $ git branch
 
-    # Get the latest commit in the Team Services Git master branch and overwrite current files.
+    # Get the latest commit in the Azure DevOps Git master branch and overwrite current files.
     $ git pull --force
 
     # Create a new local branch named "bob" so that Bob's work is done in the "bob" branch
@@ -192,7 +198,7 @@ az role assignment create --assignee bob@contoso.com --role Owner --scope <works
     # Commit the changes with a comment.
     $ git commit -m "I found a cool new trick."
 
-    # Create a new branch on the remote Team Services Git repo, and then push the changes.
+    # Create a new branch on the remote Azure DevOps Git repo, and then push the changes.
     $ git push origin bob
     ```
 

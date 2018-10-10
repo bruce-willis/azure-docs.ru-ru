@@ -1,6 +1,6 @@
 ---
 title: Отключение диска данных от виртуальной машины Linux в Azure | Документация Майкрософт
-description: Узнайте, как отключить диск данных от виртуальной машины в Azure с использованием CLI 2.0 или портала Azure.
+description: Узнайте, как отключить диск данных от виртуальной машины в Azure с использованием Azure CLI или портала Azure.
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 07/18/2018
 ms.author: cynthn
-ms.openlocfilehash: 0225c6605109489c4b9b599918dc09983ae25ac8
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: b087040e5d219941ec0b2ee0f58dfe0058a1ad04
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39144080"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46968359"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-linux-virtual-machine"></a>Отключение диска данных от виртуальной машины Linux
 
@@ -99,7 +99,7 @@ sudo umount /dev/sdc1 /datadrive
 ```
 
 
-## <a name="detach-a-data-disk-using-cli-20"></a>Отключение диска данных с помощью CLI 2.0
+## <a name="detach-a-data-disk-using-azure-cli"></a>Отключение диска данных с помощью Azure CLI 
 
 В этом примере диск *myDataDisk* отключается от виртуальной машины с именем *myVM* в *myResourceGroup*.
 

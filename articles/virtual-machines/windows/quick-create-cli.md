@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Windows с помощью Azure PowerShell | Документация Майкрософт
-description: Из этого краткого руководства вы узнаете, как с помощью Azure CLI 2.0 создать виртуальную машину Windows.
+description: Из этого краткого руководства вы узнаете, как создать виртуальную машину Windows с помощью Azure PowerShell.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,22 +16,22 @@ ms.workload: infrastructure
 ms.date: 04/24/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b09a85686e19ae92c3e437bedff54bff8371784f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 4ca8d42c1b2eece82fa31283b0df0d450e2f5afc
+ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38719045"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46978885"
 ---
-# <a name="quickstart-create-a-windows-virtual-machine-with-the-azure-cli-20"></a>Краткое руководство. Создание виртуальной машины Windows с помощью Azure CLI 2.0
+# <a name="quickstart-create-a-windows-virtual-machine-with-the-azure-cli"></a>Краткое руководство. Создание виртуальной машины Windows с помощью Azure CLI
 
-Azure CLI 2.0 используется для создания ресурсов Azure и управления ими из командной строки или с помощью сценариев. В этом кратком руководстве показано, как с помощью Azure CLI 2.0 развернуть в Azure виртуальную машину Windows под управлением Windows Server 2016. Чтобы проверить работу виртуальной машины, вы подключитесь к ней по протоколу удаленного рабочего стола (RDP) и установите веб-сервер IIS.
+Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве показано, как с помощью Azure CLI развернуть в Azure виртуальную машину под управлением Windows Server 2016. Чтобы проверить работу виртуальной машины, вы подключитесь к ней по протоколу удаленного рабочего стола (RDP) и установите веб-сервер IIS.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
