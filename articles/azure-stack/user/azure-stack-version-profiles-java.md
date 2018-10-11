@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 09/28/2018
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: ffd22f3612d55258737cb9c004b2b0f4e9326f07
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 5a97a683e7f25029199ba68ce3d5cee410c3cf29
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452519"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48886830"
 ---
 # <a name="use-api-version-profiles-with-java-in-azure-stack"></a>Использование профилей версий API с помощью Java в Azure Stack
 
@@ -40,7 +40,7 @@ ms.locfileid: "47452519"
     
       - Это значение нужно указать в качестве зависимости в файле Pom.xml, чтобы модули загружались автоматически при выборе нужного класса из раскрывающегося списка, как в .NET.
         
-          - Верхняя часть каждого модуля выглядит следующим образом:         
+      - Верхняя часть каждого модуля выглядит следующим образом:         
            `Import com.microsoft.azure.management.resources.v2018_03_01.ResourceGroup`
              
 
@@ -93,11 +93,11 @@ ms.locfileid: "47452519"
 
 | Значение                     | Переменные среды | ОПИСАНИЕ                                                                                                                                                                                                          |
 | ------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tenant ID                 | TENANT_ID            | Значение [<span class="underline">идентификатора клиента</span>](../azure-stack-identity-overview.md) Azure Stack.                                                          |
-| Идентификатор клиента                 | CLIENT_ID             | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).                                                                                              |
-| Идентификатор подписки           | SUBSCRIPTION_ID      | [<span class="underline">Идентификатор подписки</span>](../azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack.                |
-| Секрет клиента             | CLIENT_SECRET        | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).                                                                                                                                   |
-| Конечная точка Resource Manager | ENDPOINT              | См. дополнительные сведения о [<span class="underline">конечной точке Resource Manager для Azure Stack</span>](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
+| Tenant ID                 | AZURE_TENANT_ID            | Значение [<span class="underline">идентификатора клиента</span>](../azure-stack-identity-overview.md) Azure Stack.                                                          |
+| Идентификатор клиента                 | AZURE_CLIENT_ID             | Идентификатор приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).                                                                                              |
+| Идентификатор подписки           | AZURE_SUBSCRIPTION_ID      | [<span class="underline">Идентификатор подписки</span>](../azure-stack-plan-offer-quota-overview.md#subscriptions) для доступа к предложениям в Azure Stack.                |
+| Секрет клиента             | AZURE_CLIENT_SECRET        | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы (см. выше).                                                                                                                                   |
+| Конечная точка Resource Manager | ARM_ENDPOINT              | См. дополнительные сведения о [<span class="underline">конечной точке Resource Manager для Azure Stack</span>](../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint). |
 | Расположение                  | RESOURCE_LOCATION    | Локальное значение для Azure Stack                                                                                                                                                                                                |
 
 Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [здесь](../azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, сделайте следующее:
@@ -107,7 +107,7 @@ ms.locfileid: "47452519"
 Используйте следующие команды, чтобы настроить переменные среды в командной строке Windows:
 
 ```shell
-Set Azure_Tenant_ID=<Your_Tenant_ID>
+Set AZURE_TENANT_ID=<Your_Tenant_ID>
 ```
 
 ### <a name="macos-linux-and-unix-based-systems"></a>MacOS, Linux и системы на основе Unix
@@ -115,7 +115,7 @@ Set Azure_Tenant_ID=<Your_Tenant_ID>
 В системах на основе Unix можно использовать такую команду:
 
 ```shell
-Export Azure_Tenant_ID=<Your_Tenant_ID>
+Export AZURE_TENANT_ID=<Your_Tenant_ID>
 ```
 
 ### <a name="the-azure-stack-resource-manager-endpoint"></a>Конечная точка Resource Manager для Azure Stack
@@ -162,7 +162,8 @@ Microsoft Azure Resource Manager — это платформа управлен�
 ```java
 AzureTokenCredentials credentials = new ApplicationTokenCredentials(client, tenant, key, AZURE_STACK)
                     .withDefaultSubscriptionId(subscriptionId);
-            Azure azureStack = Azure.configure().withLogLevel(com.microsoft.rest.LogLevel.BASIC)
+Azure azureStack = Azure.configure()
+                    .withLogLevel(com.microsoft.rest.LogLevel.BASIC)
                     .authenticate(credentials, credentials.defaultSubscriptionId());
 ```
 
@@ -182,7 +183,7 @@ AzureEnvironment AZURE_STACK = new AzureEnvironment(new HashMap<String, String>(
                     put("activeDirectoryResourceId", settings.get("audience"));
                     put("activeDirectoryGraphResourceId", settings.get("graphEndpoint"));
                     put("storageEndpointSuffix", armEndpoint.substring(armEndpoint.indexOf('.')));
-                    put("keyVaultDnsSuffix", ".adminvault" + armEndpoint.substring(armEndpoint.indexOf('.')));
+                    put("keyVaultDnsSuffix", ".vault" + armEndpoint.substring(armEndpoint.indexOf('.')));
                 }
             });
 ```
@@ -205,8 +206,7 @@ HttpGet getRequest = new
 HttpGet(String.format("%s/metadata/endpoints?api-version=1.0",
 armEndpoint));
 
-// Add additional header to getRequest which accepts application/xml
-data
+// Add additional header to getRequest which accepts application/xml data
 getRequest.addHeader("accept", "application/xml");
 
 // Execute request and catch response
@@ -217,37 +217,37 @@ HttpResponse response = httpClient.execute(getRequest);
 
 Вы можете использовать примеры из репозитория GitHub в качестве рекомендаций при создании решений с профилями API Azure Stack и .NET:
 
-  - [Управление группами ресурсов](https://github.com/viananth/resources-java-manage-resource-group/tree/stack/Hybrid)
+  - [Управление группами ресурсов](https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group)
 
-  - [Управление учетными записями хранения](https://github.com/viananth/storage-java-manage-storage-accounts/tree/stack/Hybrid)
+  - [Управление учетными записями хранения](https://github.com/Azure-Samples/hybrid-storage-java-manage-storage-accounts)
 
-  - [Управление виртуальной машиной](https://github.com/viananth/compute-java-manage-vm/tree/stack/Hybrid)
+  - [Управление виртуальной машиной](https://github.com/Azure-Samples/hybrid-compute-java-manage-vm)
 
 ### <a name="sample-unit-test-project"></a>Пример проекта модульного теста 
 
 1.  Клонируйте репозиторий, используя следующую команду:
     
-    `git clone https://github.com/viananth/resources-java-manage-resource-group/tree/stack/Hybrid`
+    `git clone https://github.com/Azure-Samples/Hybrid-resources-java-manage-resource-group.git`
 
 2.  Создайте субъект-службу Azure и назначьте роль для доступа к подписке. См. дополнительные сведения о [создании субъекта-службы с сертификатом с помощью Azure PowerShell](../azure-stack-create-service-principals.md).
 
 3.  Получите следующие обязательные значения переменных среды:
     
-   1.  TENANT_ID
-   2.  CLIENT_ID
-   3.  CLIENT_SECRET
-   4.  SUBSCRIPTION_ID
-   5.  ARM_ENDPOINT
-   6.  RESOURCE_LOCATION
+    -  AZURE_TENANT_ID
+    -  AZURE_CLIENT_ID
+    -  AZURE_CLIENT_SECRET
+    -  AZURE_SUBSCRIPTION_ID
+    -  ARM_ENDPOINT
+    -  RESOURCE_LOCATION
 
 4.  С помощью командной строки настройте следующие переменные среды, используя данные, полученные от созданного субъекта-службы.
     
-   1. export TENANT_ID={идентификатор клиента}
-   2. export CLIENT_ID={идентификатор клиента}
-   3. export CLIENT_SECRET={секрет клиента}
-   4. export SUBSCRIPTION_ID={идентификатор подписки}
-   5. export ARM_ENDPOINT={URL-адрес диспетчера ресурсов Azure Stack}
-   6. export RESOURCE_LOCATION={расположение Azure Stack}
+    - export AZURE_TENANT_ID={your tenant id}
+    - export AZURE_CLIENT_ID={your client id}
+    - export AZURE_CLIENT_SECRET={your client secret}
+    - export AZURE_SUBSCRIPTION_ID={your subscription id}
+    - export ARM_ENDPOINT={URL-адрес диспетчера ресурсов Azure Stack}
+    - export RESOURCE_LOCATION={расположение Azure Stack}
 
    В Windows используйте **set** вместо **export**.
 

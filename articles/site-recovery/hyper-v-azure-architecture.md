@@ -2,16 +2,17 @@
 title: Архитектура репликации из Hyper-V в Azure в Azure Site Recovery | Документация Майкрософт
 description: В этой статье представлен обзор компонентов и архитектуры, используемых при репликации виртуальных машин Hyper-V (без VMM) из локальной среды в Azure с помощью службы Azure Site Recovery.
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
-ms.topic: article
-ms.date: 07/06/2018
+ms.topic: conceptual
+ms.date: 10/10/2018
 ms.author: raynew
-ms.openlocfilehash: c5d31b6217d3afe8ddb3550c145820be5996c96a
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 49059415c5f96eeb4dd871e7d2c8ae4ab9b2c12e
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920609"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49078364"
 ---
 # <a name="hyper-v-to-azure-replication-architecture"></a>Архитектура репликации из Hyper-V в Azure
 
@@ -69,7 +70,7 @@ ms.locfileid: "37920609"
 1. После включения защиты для виртуальных машин Hyper-V на портале Azure или локально запустится рабочий процесс **Включение защиты**.
 2. Это задание проверяет, соответствует ли компьютер необходимым требованиям перед вызовом метода [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), который настраивает репликацию, используя определенные вами параметры.
 3. Задание запускает начальную репликацию, вызывая метод [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), чтобы инициализировать полную репликацию виртуальной машины и отправить ее виртуальные диски в Azure.
-4. На вкладке **Задания** можно отслеживать ход выполнения задания.      ![Список заданий](media/hyper-v-azure-architecture/image1.png)![Подробные сведения о включении защиты](media/hyper-v-azure-architecture/image2.png)
+4. На вкладке **Задания** можно отслеживать ход выполнения задания.      Список заданий![Подробные сведения о включении защиты](media/hyper-v-azure-architecture/image2.png)
 
 
 ### <a name="initial-data-replication"></a>Начальная репликация данных

@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/27/2017
 ms.author: magoedte
-ms.component: na
-ms.openlocfilehash: 5b9bd5bf21f378f92b7dd6e027d1bb0c05620dd6
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.component: ''
+ms.openlocfilehash: c56a0239209f5c71130c9dd8173eed48f60a3b0a
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128849"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042076"
 ---
 # <a name="optimize-your-active-directory-environment-with-the-active-directory-health-check-solution-in-log-analytics"></a>Оптимизация среды Active Directory с помощью решения проверки работоспособности Active Directory в Log Analytics
 
@@ -40,7 +40,7 @@ ms.locfileid: "37128849"
 
 ![Изображение панели мониторинга "Проверка работоспособности AD"](./media/log-analytics-ad-assessment/ad-healthcheck-dashboard-01.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Для решения проверки работоспособности Active Directory на каждом компьютере с агентом Microsoft Monitoring Agent (MMA) должна быть установлена поддерживаемая платформа .NET Framework 4.5.2 или более поздней версии.  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также службами Log Analytics.
 * Решение поддерживает контроллеры домена под управлением Windows Server 2008 и 2008 R2, Windows Server 2012 и 2012 R2, а также Windows Server 2016.

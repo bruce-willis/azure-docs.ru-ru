@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2017
 ms.author: daveba
-ms.openlocfilehash: bb62f892ec3d171958764d10f4b069bbd536d2ea
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: f50714538cdfd1a0bd258a3b78d0885e3c7beed1
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223446"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48018491"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-a-templates"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью шаблонов
 
@@ -188,7 +188,7 @@ ms.locfileid: "47223446"
 
    Если у виртуальной машины есть управляемые удостоверения, назначаемые как системой, так и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните `UserAssigned` вместе со значениями словаря `userAssignedIdentities`.
 
-   **Microsoft.Compute/virtualMachines API версии 2018-06-01 и более ранних версий**
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01**
    
    Если значение `apiVersion` соответствует `2017-12-01` и у виртуальной машины есть управляемые удостоверения, назначаемые как системой, так и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните`UserAssigned` с массивом пользовательских удостоверений `identityIds`.  
    
@@ -235,7 +235,7 @@ ms.locfileid: "47223446"
    }
    ```
    
-   **Microsoft.Compute/virtualMachines API версии 2017-12-01 и более ранних версий**
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01**
     
    Если значение `apiVersion` соответствует `2017-12-01`, управляемые удостоверения, назначаемые пользователем, хранятся в массиве `identityIds`, а значение `<USERASSIGNEDIDENTITYNAME>` должно храниться в переменной, определенной в разделе `variables` шаблона.
     
@@ -316,7 +316,7 @@ ms.locfileid: "47223446"
        }
     ]
    ```
-   **Microsoft.Compute/virtualMachines API версии 2017-12-01 и более ранних версий**
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01**
    
    ```JSON
    "resources": [
@@ -375,7 +375,7 @@ ms.locfileid: "47223446"
     }
    ```
    
-   **Microsoft.Compute/virtualMachines API версии 2018-06-01 и более ранних версий**
+   **Microsoft.Compute/virtualMachines API версии 2018-06-01**
     
    Чтобы удалить отдельное управляемое удостоверение, назначаемое пользователем, из виртуальной машины, удалите его из словаря `useraAssignedIdentities`.
 

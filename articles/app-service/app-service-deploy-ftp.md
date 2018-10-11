@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: cephalin;dariac
-ms.openlocfilehash: 66d375022d200cc916c77c059fa64eb6dbbc17e2
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: f82a01f3a2b88e66988717eb008a65c8f2aecf28
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39308152"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48900331"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -109,4 +109,4 @@ ms.locfileid: "39308152"
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-* [Учетные данные развертывания службы приложений Azure](app-service-deploy-ftp.md)
+* [Учетные данные развертывания службы приложений Azure](app-service-deployment-credentials.md)

@@ -7,19 +7,19 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: ganesr;cherylmc
-ms.openlocfilehash: 407782ff59147f227f5f34bc3318333093b4f57e
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 820caf1ef1b5a92ccea066ef1b5fc8e20737ef21
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39283577"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48870425"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Изменение канала ExpressRoute с помощью PowerShell (классическая модель)
 
 > [!div class="op_single_selector"]
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Интерфейс командной строки Azure](howto-circuit-cli.md)
 > * [Видео — портал Azure](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
@@ -34,7 +34,7 @@ ms.locfileid: "39283577"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute.  Обратите внимание, что номер версии (в этом примере это 5.1.1) будет меняться по мере выпуска новых версий командлетов.
+Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute.  При использовании следующего примера обратите внимание, что номер версии (в нашем случае — 5.1.1) будет меняться по мере выпуска новых версий командлетов.
 
 ```powershell
 Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\Azure\Azure.psd1'
@@ -47,7 +47,7 @@ Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRou
 
 1. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
-  ```powershel
+  ```powershell
   Connect-AzureRmAccount
   ```
 2. Просмотрите подписки учетной записи.

@@ -5,17 +5,16 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 8/9/2018
+ms.date: 08/09/2018
 ms.author: iainfou
-ms.custom: mvc
-ms.openlocfilehash: 5a93cb7b2abbf0eaa25304f61a8a422edf209959
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: bd7f8748dc5260ed6574a1b48632318e9399bca0
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44091175"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042127"
 ---
-# <a name="integrate-azure-active-directory-with-aks"></a>Интеграция службы Azure Active Directory с AKS
+# <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
 Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации можно войти в кластер AKS с помощью маркера безопасности аутентификации Azure Active Directory. Кроме того, администраторы кластера могут настроить управление доступом на основе ролей (RBAC) Kubernetes в зависимости от членства в группе каталогов или удостоверения пользователей.
 
@@ -120,13 +119,16 @@ ms.locfileid: "44091175"
 Чтобы создать группу ресурсов для кластера AKS, используйте команду [az group create][az-group-create].
 
 ```azurecli
-az group create --name myAKSCluster --location eastus
+az group create --name myResourceGroup --location eastus
 ```
 
 Разверните кластер, выполнив команду [az aks create][az-aks-create]. Замените значения в примере команды ниже значениями, собранными при создании приложений Azure AD.
 
 ```azurecli
-az aks create --resource-group myAKSCluster --name myAKSCluster --generate-ssh-keys --enable-rbac \
+az aks create \
+  --resource-group myResourceGroup \
+  --name myAKSCluster \
+  --generate-ssh-keys \
   --aad-server-app-id b1536b67-29ab-4b63-b60f-9444d0c15df1 \
   --aad-server-app-secret wHYomLe2i1mHR2B3/d4sFrooHwADZccKwfoQwK2QHg= \
   --aad-client-app-id 8aaf8bd5-1bdd-4822-99ad-02bfaa63eea7 \
@@ -140,7 +142,7 @@ az aks create --resource-group myAKSCluster --name myAKSCluster --generate-ssh-k
 Сначала выполните команду [az aks get-credentials][az-aks-get-credentials] с аргументом `--admin`, чтобы войти в кластер с доступом администратора.
 
 ```azurecli
-az aks get-credentials --resource-group myAKSCluster --name myAKSCluster --admin
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --admin
 ```
 
 Затем используйте следующий манифест, чтобы создать привязку ClusterRoleBinding для учетной записи Azure AD. Обновите имя пользователя с помощью одного из имен, которое используется в клиенте Azure AD. В этом примере учетной записи предоставляется полный доступ ко всем пространствам имен в кластере.
@@ -184,7 +186,7 @@ subjects:
 Далее извлеките контекст для пользователя, не являющегося администратором, выполнив команду [az aks get-credentials][az-aks-get-credentials].
 
 ```azurecli
-az aks get-credentials --resource-group myAKSCluster --name myAKSCluster
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
 После выполнения команды kubectl появится запрос на проверку подлинности в Azure. Выполните инструкции на экране.
@@ -195,18 +197,18 @@ $ kubectl get nodes
 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code BUJHWDGNL to authenticate.
 
 NAME                       STATUS    ROLES     AGE       VERSION
-aks-nodepool1-42032720-0   Ready     agent     1h        v1.9.6
-aks-nodepool1-42032720-1   Ready     agent     1h        v1.9.6
-aks-nodepool1-42032720-2   Ready     agent     1h        v1.9.6
+aks-nodepool1-79590246-0   Ready     agent     1h        v1.9.9
+aks-nodepool1-79590246-1   Ready     agent     1h        v1.9.9
+aks-nodepool1-79590246-2   Ready     agent     1h        v1.9.9
 ```
 
 После завершения действий маркер проверки подлинности кэшируется. Повторный запрос на вход появится только в случае истечения срока действия маркера или повторного создания файла конфигурации Kubernetes.
 
 Если после успешного входа появится сообщение об ошибке авторизации, убедитесь, что учетная запись, с помощью которой был выполнен вход, не является гостевой в Azure AD (это часто происходит при использовании федеративного входа из другого каталога).
+
 ```console
 error: You must be logged in to the server (Unauthorized)
 ```
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

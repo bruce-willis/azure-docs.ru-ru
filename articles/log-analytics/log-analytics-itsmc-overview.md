@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.component: na
-ms.openlocfilehash: da37e7558f93bc5073cd4ee1726a409c7defe127
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.component: ''
+ms.openlocfilehash: 5f5b03090f374f936e03d487596ca0462feea348
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131724"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042434"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -249,7 +249,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | AssignedTo_s | Кому назначено  |
 | Category_s | Категория |
 | Title_s|  Краткое описание |
-| Description_s|  Заметки |
+| Description_s|  Примечания |
 | CreatedDate_t|  Opened (Открыто) |
 | ClosedDate_t| closed|
 | ResolvedDate_t|"Разрешено"|

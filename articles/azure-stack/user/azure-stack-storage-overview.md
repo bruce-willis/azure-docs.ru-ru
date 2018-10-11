@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/21/2018
+ms.date: 09/28/2018
 ms.author: mabrigg
-ms.openlocfilehash: d97a5f8aff57f4bbfd7d5222a87d258fa5c92da8
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.openlocfilehash: 13fdf3257ed44212f45eeb3d2820a2022f54d777
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34604392"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585244"
 ---
 # <a name="introduction-to-azure-stack-storage"></a>Общие сведения о хранилище Azure Stack
 

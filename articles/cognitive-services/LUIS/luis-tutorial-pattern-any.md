@@ -6,16 +6,16 @@ services: cognitive-services
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
-ms.technology: language-understanding
-ms.topic: article
+ms.component: language-understanding
+ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 4ff4a7085a8caeedebe2a734014afb1cb46d9fbf
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 90dc7b8bc69c86128b65c16920886b7c4af5c5cf
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47164401"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48888311"
 ---
 # <a name="tutorial-5-extract-free-form-data"></a>Руководство 5. Извлечение неструктурированных данных
 
@@ -62,15 +62,15 @@ ms.locfileid: "47164401"
 [!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="use-existing-app"></a>Использование существующего приложения
-Продолжите работу с приложением **Управление персоналом**, созданным в соответствии с инструкциями из предыдущего руководства. 
+Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет этого приложения сделайте следующее:
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-roles-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. Из раздела **Управление** на вкладке **Версии**, скопируйте версию и назовите ее `patt-any`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в составе URL-адреса, оно не должно содержать символы, недопустимые для URL-адресов.
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `patt-any`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
 ## <a name="add-example-utterances"></a>Добавление примеров высказываний 
 Удалите предварительно созданную сущность keyPhrase, если ее трудно создать и пометить меткой сущность FormName. 

@@ -2,17 +2,18 @@
 title: Репликация и отработка отказа виртуальных машин VMware в Azure с помощью Azure Site Recovery и PowerShell | Документация Майкрософт
 description: Сведения о том, как настроить репликацию и отработку отказа в Azure для виртуальных машин VMware с помощью PowerShell и Azure Site Recovery.
 services: site-recovery
-author: bsiva
+author: sujayt
+manager: rochakm
 ms.service: site-recovery
 ms.date: 07/06/2018
 ms.topic: conceptual
-ms.author: bsiva
-ms.openlocfilehash: a826817b8f2b4ebff8442da1fbee79a95990a9e8
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.author: sutalasi
+ms.openlocfilehash: 070e51b132828e4fdf597d28fc2ad602adf76692
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917818"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042808"
 ---
 # <a name="replicate-and-fail-over-vmware-vms-to-azure-with-powershell"></a>Репликация и отработка отказа виртуальных машин VMware в Azure с помощью PowerShell
 
@@ -27,7 +28,7 @@ ms.locfileid: "37917818"
 > - Создание учетных записей для хранения данных репликации и репликация виртуальных машин.
 > - Выполнение отработки отказа. Настройка параметров отработки отказа для репликации виртуальных машин.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы:
 

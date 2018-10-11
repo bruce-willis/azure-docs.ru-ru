@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2018
 ms.author: bwren
-ms.component: na
-ms.openlocfilehash: 4b7b1a9dc25b1bfaf72ab67dd0725a4518263ca5
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.component: ''
+ms.openlocfilehash: b8c3a2cc67c47753957963fc04b52f934b10ddfc
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42142708"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48041719"
 ---
 # <a name="data-sources-in-log-analytics"></a>Источники данных в Log Analytics
 Служба Log Analytics собирает данные из подключенных источников и сохраняет их в рабочей области Log Analytics.  Собираемые данные зависят от заданного вами источника данных.  Данные в Log Analytics хранятся как набор записей.  Каждый источник данных создает записи определенного типа, а каждый тип обладает собственным набором свойств.

@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/25/2018
+ms.date: 09/28/2018
 ms.author: mabrigg
-ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 652d39b4d15569b9365543e02f170664a88715fa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.reviewer: anajod
+ms.openlocfilehash: a219ec1797ff74bd1a9ff458e34650d1545f1172
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46953265"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585787"
 ---
 # <a name="tutorial-configure-hybrid-cloud-connectivity-with-azure-and-azure-stack"></a>Руководство по настройке подключения к гибридному облаку в Azure и Azure Stack
 
@@ -37,7 +37,7 @@ ms.locfileid: "46953265"
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack — это расширение Azure.re. Azure Stack позволяет использовать гибкие и инновационные функции облачных вычислений в локальной среде, а также предоставляет единое гибридное облако для создания и развертывания гибридных приложений в любом расположении.  
 > 
-> В [рекомендациях по проектированию гибридных приложений](https://aka.ms/hybrid-cloud-applications-pillars) описаны характеристики качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которых следует придерживаться при разработке, развертывании и использовании гибридных приложений. Рекомендации по разработке позволяют оптимизировать создание гибридных приложений, сводя к минимуму проблемы, возникающие в рабочих средах.
+> В [рекомендациях по проектированию гибридных приложений](https://aka.ms/hybrid-cloud-applications-pillars) описаны характеристики качественного программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность), которых следует придерживаться при разработке, развертывании и использовании гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
 
 
 ## <a name="prerequisites"></a>Предварительные требования

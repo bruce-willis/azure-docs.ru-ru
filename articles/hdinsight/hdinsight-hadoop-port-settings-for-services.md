@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: jasonh
-ms.openlocfilehash: 3dea97d674c2027307ac7eb7cae34b6664e40b0b
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 29d6aa99b972dacb12ffb016eabb3a46afab7c7a
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43108126"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48804078"
 ---
 # <a name="ports-used-by-hadoop-services-on-hdinsight"></a>Порты, используемые службами Hadoop в HDInsight
 
@@ -37,7 +37,7 @@ ms.locfileid: "43108126"
 Все узлы в кластере HDInsight расположены в виртуальной сети Azure. Получить доступ к ним напрямую из Интернета невозможно. Общедоступный шлюз обеспечивает интернет-доступ к приведенным ниже портам. Они общие для всех типов кластеров HDInsight.
 
 | Service | Порт | Протокол | ОПИСАНИЕ |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | sshd |22 |SSH |Подключает клиенты к sshd на основном головном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |
 | sshd |22 |SSH |Подключает клиенты к SSHD на граничном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |
 | sshd |23 |SSH |Подключает клиенты к sshd на дополнительном головном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |

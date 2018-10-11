@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
 ms.author: daveba
-ms.openlocfilehash: 4bfaed3d908574eff3521cedcef4b117d45e1ca2
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: c6bc77e5ee1fa5e180b41dca50640dc01fee0691
+ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220925"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48017522"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин Azure с помощью шаблона
 
@@ -146,7 +146,7 @@ ms.locfileid: "47220925"
 
    Если apiVersion имеет значение `2018-06-01` и в виртуальной машине есть управляемые удостоверения, назначаемые как системой, так и пользователем, удалите `SystemAssigned` из типа удостоверения и оставьте `UserAssigned` вместе со значениями словаря userAssignedIdentities.
 
-   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01 и более ранних версий**
+   **Microsoft.Compute/virtualMachineScaleSets API версии 2018-06-01**
 
    Если apiVersion имеет значение `2017-12-01` и у масштабируемого набора виртуальных машин есть управляемые удостоверения, назначаемые как системой, так и пользователем, удалите `SystemAssigned` из типов удостоверения и оставьте `UserAssigned` вместе с массивом управляемых удостоверений, назначаемых пользователем, `identityIds`. 
    
@@ -279,7 +279,7 @@ ms.locfileid: "47220925"
     ]
    ```
 
-   **Microsoft.Compute/virtualMachines API версии 2017-12-01 и более ранних версий**
+   **Microsoft.Compute/virtualMachines API версии 2017-12-01**
 
    ```json
    "resources": [

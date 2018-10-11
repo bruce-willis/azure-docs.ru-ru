@@ -2,16 +2,17 @@
 title: 'Архитектура: репликация Hyper-V на дополнительный сайт в Azure Site Recovery | Документация Майкрософт'
 description: В этой статье представлен обзор архитектуры для репликации локальных виртуальных машин Hyper-V на дополнительный сайт System Center VMM с помощью Azure Site Recovery.
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 10/10/2018
 ms.author: raynew
-ms.openlocfilehash: 0319e4d1cdbd20c39772c659a3e5a1580d8b925b
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 8f8b498164cc4a77cace470f7483aa572fefbaed
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37919654"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49078925"
 ---
 # <a name="hyper-v-replication-to-a-secondary-site"></a>Репликация Hyper-V на дополнительный сайт
 

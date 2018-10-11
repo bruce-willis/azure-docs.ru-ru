@@ -11,12 +11,12 @@ ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 01/12/2018
-ms.openlocfilehash: d72f1b986671bfab1d79772ac50935918da7e681
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 8177808fd4d666ea04b1bc097f261c7643931704
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46963276"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48885054"
 ---
 # <a name="azure-machine-learning-workbench---known-issues-and-troubleshooting-guide"></a>Azure Machine Learning Workbench: руководство по устранению неполадок и описание известных проблем 
 С помощью сведений в этой статье можно найти и исправить ошибки или сбои, обнаруженные при использовании приложения Azure Machine Learning Workbench. 
@@ -25,7 +25,7 @@ ms.locfileid: "46963276"
 При обращении в группе поддержки важно указать номер сборки приложения Workbench. В Windows, чтобы узнать номер сборки, щелкните меню **Справка** и выберите **About Azure ML Workbench** (О Azure ML Workbench). В macOS можно щелкнуть меню **Azure ML Workbench** и выбрать **About Azure ML Workbench** (О Azure ML Workbench).
 
 ## <a name="machine-learning-msdn-forum"></a>Форум MSDN по машинному обучению
-Вы можете публиковать вопросы на нашем форуме MSDN. За форумом активно следит команда разработчиков. URL-адрес форума: [https://aka.ms/azureml-forum](https://aka.ms/azureml-forum). 
+Вы можете публиковать вопросы на нашем форуме MSDN. За форумом активно следит команда разработчиков. URL-адрес форума: [https://aka.ms/aml-forum-service](https://aka.ms/aml-forum-service). 
 
 ## <a name="gather-diagnostics-information"></a>Сбор данных диагностики
 Иногда при обращении за помощью полезно предоставить диагностические сведения. Вот где расположены файлы журналов:

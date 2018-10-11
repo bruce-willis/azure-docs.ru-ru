@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: yshoukry, LADocs
 ms.topic: article
 ms.date: 07/20/2018
-ms.openlocfilehash: d4fbbcb81433876e4c57763b8a90b3ff1168a699
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 5fc4ccacaaedfc3fe6c77fa9a0ad693530bdde93
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43842453"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855431"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -101,7 +101,7 @@ ms.locfileid: "43842453"
 
 ## <a name="install-data-gateway"></a>Установка шлюза данных
 
-1. [Скачайте, сохраните и запустите установщик шлюза на локальном компьютере](http://go.microsoft.com/fwlink/?LinkID=820931&clcid=0x409).
+1. [Скачайте, сохраните и запустите установщик шлюза на локальном компьютере](https://aka.ms/on-premises-data-gateway-installer).
 
 2. Примите путь установки по умолчанию или укажите расположение на компьютере, куда необходимо установить шлюз.
 
@@ -182,7 +182,7 @@ ms.locfileid: "43842453"
 
 1. Отройте **Панель управления** компьютера и перейдите к разделу **Программы и компоненты**. Выберите в списке программ **Локальный шлюз данных** и затем нажмите кнопку **Удалить**.
 
-2. [Повторно установите локальный шлюз данных](http://go.microsoft.com/fwlink/?LinkID=820931&clcid=0x409).
+2. [Повторно установите локальный шлюз данных](https://aka.ms/on-premises-data-gateway-installer).
 
 3. После открытия установщика войдите с помощью той же рабочей или учебной учетной записи, которая использовалась при установке шлюза.
 
@@ -211,7 +211,7 @@ ms.locfileid: "43842453"
 > [!NOTE]
 > Эта команда только проверяет возможность подключения к сети и служебной шине Azure. Данная команда ничего не делает со шлюзом или облачной службой шлюза, которая шифрует и хранит учетные данные и сведения о шлюзах. 
 >
-> Кроме того, эта команда используется только в Windows Server 2012 R2 или более поздней версии и Windows 8.1 или более поздней версии. В более ранних версиях ОС для проверки возможности подключения можно использовать Telnet. Узнайте больше о [служебной шине Azure и гибридных решениях](../service-bus-messaging/service-bus-fundamentals-hybrid-solutions.md).
+> Кроме того, эта команда используется только в Windows Server 2012 R2 или более поздней версии и Windows 8.1 или более поздней версии. В более ранних версиях ОС для проверки возможности подключения можно использовать Telnet. Узнайте больше о [служебной шине Azure и гибридных решениях](../service-bus-messaging/service-bus-messaging-overview.md).
 
 Полученные результаты должны напоминать результаты из примера, где значению параметра **TcpTestSucceeded** соответствует значение **True**.
 
@@ -232,7 +232,7 @@ TcpTestSucceeded       : True
 
 ## <a name="configure-ports"></a>Настройка портов
 
-Шлюз создает исходящее подключение к [служебной шине Azure](https://azure.microsoft.com/services/service-bus/) и осуществляет связь через исходящие порты: TCP-порты 443 (по умолчанию), 5671, 5672 и 9350–9354. Шлюзу не требуются входящие порты. Узнайте больше о [служебной шине Azure и гибридных решениях](../service-bus-messaging/service-bus-fundamentals-hybrid-solutions.md).
+Шлюз создает исходящее подключение к [служебной шине Azure](https://azure.microsoft.com/services/service-bus/) и осуществляет связь через исходящие порты: TCP-порты 443 (по умолчанию), 5671, 5672 и 9350–9354. Шлюзу не требуются входящие порты. Узнайте больше о [служебной шине Azure и гибридных решениях](../service-bus-messaging/service-bus-messaging-overview.md).
 
 Шлюзом используются следующие полные доменные имена.
 

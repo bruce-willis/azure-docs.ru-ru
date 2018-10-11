@@ -1,20 +1,21 @@
 ---
-title: Предварительный просмотр URL-адресов в проектах в Microsoft Cognitive Services | Документация Майкрософт
+title: Предварительный просмотр URL-адресов в проектах
+titlesuffix: Azure Cognitive Services
 description: Общие сведения о предварительном просмотре URL-адресов в проектах.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-url-preview
-ms.topic: article
+ms.component: project-url-preview
+ms.topic: overview
 ms.date: 03/16/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 6b486e0ab4092bef4fe829a5f166311a572a2900
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 5d0b8260bf1c58af915c1be18c32cec678f4f09c
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381749"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48869440"
 ---
 # <a name="what-is-project-url-preview"></a>Предварительный просмотр URL-адресов в проектах
 Конечная точка предварительного просмотра URL-адресов принимает параметр запроса URL-адреса и возвращает ответ JSON с именем целевого ресурса, кратким описанием и ссылкой на изображение для отображения в режиме предварительного просмотра. Также в ответ включается флаг [isFamilyFriendly](url-preview-reference.md#query-parameters), который указывает, содержит ли URL-адрес содержимое, предназначенное только для взрослых, а также пиратское или другое незаконное содержимое. 
@@ -60,8 +61,8 @@ API предварительного просмотра URL-адресов по�
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство — C#](csharp.md)
-- [Краткое руководство — Java](java-quickstart.md)
-- [Краткое руководство — JavaScript](javascript.md)
-- [Краткое руководство — Node](node-quickstart.md)
-- [Краткое руководство — Python](python-quickstart.md)
+- [Краткое руководство для C#](csharp.md)
+- [Краткое руководство для Java](java-quickstart.md)
+- [Краткое руководство для JavaScript](javascript.md)
+- [Краткое руководство для Node](node-quickstart.md)
+- [Краткое руководство для Python](python-quickstart.md)

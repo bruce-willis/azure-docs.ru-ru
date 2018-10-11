@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 03/02/2018
 ms.author: barbkess
-ms.openlocfilehash: 8d5f31f09d51794f9ad3c126edf2fd935f379221
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: fa19c932a18102107068303e1474abd992df3161
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46296484"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48903034"
 ---
 # <a name="migrate-ad-fs-on-premises-apps-to-azure"></a>Перемещение локальных приложений AD FS в Azure 
 
@@ -151,7 +151,7 @@ ms.locfileid: "46296484"
 - Заданное имя.
 - Фамилию.
 - Альтернативный атрибут, такой как **NameID** SAML, включая атрибуты электронной почты Azure AD, префикса электронной почты, идентификатор сотрудника и расширения 1–15, или локальный атрибут **SamAccountName**. Дополнительные сведения см. в статье [Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory](../develop/active-directory-saml-claims-customization.md).
-- Пользовательские утверждения. Дополнительные сведения о поддерживаемых сопоставлениях утверждений см. в статье [Сопоставление утверждений в Azure Active Directory (общедоступная предварительная версия)](../active-directory-claims-mapping.md) и [Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory](../develop/active-directory-saml-claims-customization.md).
+- Пользовательские утверждения. Дополнительные сведения о поддерживаемых сопоставлениях утверждений см. в статье [Сопоставление утверждений в Azure Active Directory (общедоступная предварительная версия)](../develop/active-directory-claims-mapping.md) и [Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory](../develop/active-directory-saml-claims-customization.md).
 
 Кроме пользовательских утверждений и элементов **NameID**, конфигурации, требующие дополнительных действий по настройке в Azure AD при перемещении, включают:
 - Пользовательскую авторизацию или правила многофакторной идентификации в AD FS. Их можно настроить с помощью функции [условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md).
@@ -171,7 +171,7 @@ ms.locfileid: "46296484"
 - Утверждения в возможностях токена:
     - Назначение локальных имен группы как утверждений.
     - Утверждения из хранилищ данных, отличных от Azure AD.
-    - Комплексные правила преобразования выдачи утверждений. Дополнительные сведения о поддерживаемых сопоставлениях утверждений см. в статье [Сопоставление утверждений в Azure Active Directory (общедоступная предварительная версия)](../active-directory-claims-mapping.md) и [Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory](../develop/active-directory-saml-claims-customization.md).
+    - Комплексные правила преобразования выдачи утверждений. Дополнительные сведения о поддерживаемых сопоставлениях утверждений см. в статье [Сопоставление утверждений в Azure Active Directory (общедоступная предварительная версия)](../develop/active-directory-claims-mapping.md) и [Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory](../develop/active-directory-saml-claims-customization.md).
     - Назначение расширений каталога как утверждений.
     - Пользовательская спецификация формата **NameID**.
     - Выдача атрибутов с несколькими значениями.

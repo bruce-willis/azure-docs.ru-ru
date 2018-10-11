@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.topic: article
-ms.date: 08/14/2018
+ms.topic: conceptual
+ms.date: 10/10/2018
 ms.author: raynew
-ms.openlocfilehash: e363885afb77a60bfc0229a872fdb4e519d5979d
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.openlocfilehash: 83d2fabbe3a1b0ab44cb97e53baf0aa40349aeed
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42143159"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49079214"
 ---
 # <a name="support-matrix-for-hyper-v-replication-to-azure"></a>Матрица поддержки для репликации Hyper-V в Azure
 
@@ -59,16 +59,16 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Mac
 
 **Компонент** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
-Сеть узла: объединение сетевых карт | Yes
-Сеть узла: виртуальная локальная сеть | Yes
-Сеть узла: IPv4 | Yes
-Сеть узла: IPv6 | Нет 
-Сеть гостевой виртуальной машины: объединение сетевых карт | Нет 
-Сеть гостевой виртуальной машины: IPv4 | Yes
-Сеть гостевой виртуальной машины: IPv6 | Нет 
-Сеть гостевой виртуальной машины: статический IP-адрес (Windows) | Yes
-Сеть гостевой виртуальной машины: статический IP-адрес (Linux) | Нет 
-Сеть гостевой виртуальной машины: несколько сетевых карт | Yes
+Сеть узла: объединение сетевых карт | Yes | Yes
+Сеть узла: виртуальная локальная сеть | Yes | Yes
+Сеть узла: IPv4 | Yes | Yes
+Сеть узла: IPv6 | Нет  | Нет 
+Сеть гостевой виртуальной машины: объединение сетевых карт | Нет  | Нет 
+Сеть гостевой виртуальной машины: IPv4 | Yes | Yes
+Сеть гостевой виртуальной машины: IPv6 | Нет  | Yes
+Сеть гостевой виртуальной машины: статический IP-адрес (Windows) | Yes | Yes
+Сеть гостевой виртуальной машины: статический IP-адрес (Linux) | Нет  | Нет 
+Сеть гостевой виртуальной машины: несколько сетевых карт | Yes | Yes
 
 
 

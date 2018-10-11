@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: conceptal
 ms.date: 08/23/2018
 ms.author: magoedte
-ms.component: na
-ms.openlocfilehash: a52654ab620908b9c8c07edf3fcdfbf70068528d
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.component: ''
+ms.openlocfilehash: edebeec493b025a81a99c0458344aafe59e769e9
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47220796"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48040880"
 ---
 # <a name="create-a-log-analytics-workspace-in-the-azure-portal"></a>Создание рабочей области Log Analytics на портале Azure
 На портале Azure вы можете настроить рабочую область Log Analytics — уникальную среду с собственными репозиторием данных, источниками данных и решениями.  Действия, описанные в этой статье, помогут вам настроить сбор данные из следующих источников:

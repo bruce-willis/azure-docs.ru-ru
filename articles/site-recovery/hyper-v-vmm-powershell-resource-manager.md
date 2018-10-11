@@ -2,24 +2,24 @@
 title: Репликация виртуальных машин Hyper-V из облаков Virtual Machine Manager на вторичный сайт с помощью PowerShell (Azure Resource Manager) | Документация Майкрософт
 description: Здесь описывается репликация виртуальных машин Hyper-V из облаков Virtual Machine Manager на вторичный сайт Virtual Machine Manager с помощью PowerShell (Resource Manager)
 services: site-recovery
-author: sujaytalasila
+author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: sutalasi
-ms.openlocfilehash: 0fecc7ba48daf396c3d25969cdda5891bdf08232
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 896b3cb3c40673dfbc7269cab1d37790f78912b0
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917971"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48041362"
 ---
 # <a name="replicate-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Репликация виртуальных машин Hyper-V на вторичный сайт с помощью PowerShell (Resource Manager)
 
 В этой статье показано, как автоматизировать шаги для репликации виртуальных машин Hyper-V из облаков System Center Virtual Machine Manager в облако Virtual Machine Manager на вторичном локальном сайте с помощью [Azure Site Recovery](site-recovery-overview.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
 - [Ознакомьтесь](site-recovery-support-matrix-to-sec-site.md) с требованиями поддержки для всех компонентов.

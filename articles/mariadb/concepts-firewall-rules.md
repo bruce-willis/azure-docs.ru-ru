@@ -8,12 +8,12 @@ services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 58ccc328281bb70e00294ccef054232108212ccc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 930e561c1777ccfcb8046c824853ebb12367cee5
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46997664"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48248106"
 ---
 # <a name="azure-database-for-mariadb-server-firewall-rules"></a>Правила брандмауэра сервера Базы данных Azure для MariaDB
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -46,7 +46,9 @@ ms.locfileid: "46997664"
 ![Настройка разрешения доступа к службам Azure на портале](./media/concepts-firewall-rules/allow-azure-services.png)
 
 ## <a name="programmatically-managing-firewall-rules"></a>Программное управление правилами брандмауэра
-Помимо портала Azure правилами брандмауэра можно управлять программно с помощью Azure CLI. <!--See also [Create and manage Azure Database for MariaDB firewall rules using Azure CLI](./howto-manage-firewall-using-cli.md)-->
+Помимо портала Azure правилами брандмауэра можно управлять программно с помощью Azure CLI. 
+
+<!--See also [Create and manage Azure Database for MariaDB firewall rules using Azure CLI](./howto-manage-firewall-using-cli.md)-->
 
 ## <a name="troubleshooting-the-database-firewall"></a>Устранение неполадок брандмауэра базы данных
 Если доступ к службе сервера Базы данных Microsoft Azure для MariaDB не работает должным образом, необходимо учитывать следующее:

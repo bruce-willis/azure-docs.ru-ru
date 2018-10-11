@@ -2,21 +2,21 @@
 title: Сетевые топологии для переноса Управляемого экземпляра базы данных SQL Azure с помощью Azure Database Migration Service | Документы Майкрософт
 description: Сведения об исходной и целевой конфигурациях для Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: ''
 ms.reviewer: ''
 ms.service: database-migration
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 06/21/2018
-ms.openlocfilehash: 9fcee103854209016d73e29b598c9f33d35c4b6c
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.date: 10/10/2018
+ms.openlocfilehash: 39bcea36f3599530413aa9fc4dbb308ee2fb1681
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36316873"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49066859"
 ---
 # <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-the-azure-database-migration-service"></a>Сетевые топологии для переноса Управляемого экземпляра Базы данных Azure SQL с помощью Azure Database Migration Service
 Эта статья описывает различные сетевые топологии, поддерживаемые Azure Database Migration Service для комплексного переноса Управляемого экземпляра базы данных SQL Azure из локальных систем SQL Server.

@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 941c29506aa8f17dcb6262495b28dd26e78194d5
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: e0cdda629ddded121a424af61377c04ee8d958d3
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47036068"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867550"
 ---
 # <a name="tutorial-7-extract-names-with-simple-entity-and-phrase-list"></a>Руководство 7. Извлечение имен с простыми списками сущностей и фраз
 
@@ -40,21 +40,21 @@ ms.locfileid: "47036068"
 > * Добавление списка фраз для усиления сигналов по словам, связанным с работой
 > * Train 
 > * Опубликовать 
-> * Получение намерения и сущности из конечной точки
+> * Получать намерения и сущности из конечной точки.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="use-existing-app"></a>Использование существующего приложения
 
-Продолжите работу с приложением, созданным в предыдущем руководстве, с именем **HumanResources**. 
+Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если приложение HumanResources из предыдущего руководства не создано, следуйте инструкциям, приведенным ниже.
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-composite-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. Из раздела **Управление** на вкладке **Версии**, клонируйте версию и назовите ее `simple`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется как часть маршрута URL-адреса, оно не может содержать символы, недопустимые для URL-адреса.
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `simple`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
 ## <a name="simple-entity"></a>Простая сущность
 Простая сущность обнаруживает единую концепцию данных, содержащуюся в слове или фразе.
@@ -151,7 +151,7 @@ ms.locfileid: "47036068"
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущности из конечной точки 
+## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки 
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
@@ -299,7 +299,7 @@ ms.locfileid: "47036068"
 
     [![](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Снимок экрана всплывающего диалогового окна создания списка фраз со словами в окне значений списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
 
-5. [Обучите](#train-the-luis-app) и [опубликуйте](#publish-the-app-to-get-the-endpoint-URL) приложение еще раз, чтобы использовать список фраз.
+5. [Обучите](#train) и [опубликуйте](#publish) приложение еще раз, чтобы использовать список фраз.
 
 6. Сделайте повторный запрос к конечной точке с той же фразой: `This is the lead welder paperwork.`
 

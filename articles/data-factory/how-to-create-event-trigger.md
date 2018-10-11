@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.author: douglasl
-ms.openlocfilehash: 53ea7425f0497eca7c95ddefeaa09aa40259672b
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 38fbb62de60bc5604210c8ad7339368a04967c27
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39216279"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48867058"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-an-event"></a>Создание триггера, запускающего конвейер в ответ на событие
 
@@ -58,11 +58,11 @@ ms.locfileid: "39216279"
 
 ### <a name="map-trigger-properties-to-pipeline-parameters"></a>Сопоставление свойств триггера с параметрами конвейера
 
-При срабатывании триггера событий для конкретного большого двоичного объекта событие записывает путь к папке и имя файла большого двоичного объекта в свойства `@triggerBody().folderPath` и `@triggerBody().fileName`. Чтобы использовать значения этих свойств в конвейере, необходимо сопоставить эти свойства с параметрами конвейера. После сопоставления свойств с параметрами можно получить доступ к значениям, записанным с помощью триггера, через выражение `@pipeline.parameters.parameterName` в конвейере.
+При срабатывании триггера событий для конкретного большого двоичного объекта событие записывает путь к папке и имя файла большого двоичного объекта в свойства `@triggerBody().folderPath` и `@triggerBody().fileName`. Чтобы использовать значения этих свойств в конвейере, необходимо сопоставить эти свойства с параметрами конвейера. После сопоставления свойств с параметрами можно получить доступ к значениям, записанным с помощью триггера, через выражение `@pipeline().parameters.parameterName` в конвейере.
 
 ![Сопоставление свойств с параметрами конвейера](media/how-to-create-event-trigger/event-based-trigger-image4.png)
 
-Например, на предыдущем снимке экрана триггер настроен таким образом, что срабатывает, когда в учетной записи хранения создается путь большого двоичного объекта, оканчивающийся на `.csv`. В результате, когда большой двоичный объект с расширением `.csv` создается в учетной записи хранения, свойства `folderPath` и `fileName` записывают расположение нового большого двоичного объекта. Например, `@triggerBody().folderPath` имеет значение `/containername/foldername/nestedfoldername`, `@triggerBody().fileName` имеет значение `filename.csv`. Эти значения сопоставляются в примере с параметрами конвейера `sourceFolder` и `sourceFile`. Их можно использовать в конвейере как `@pipeline.parameters.sourceFolder` и `@pipeline.parameters.sourceFile` соответственно.
+Например, на предыдущем снимке экрана триггер настроен таким образом, что срабатывает, когда в учетной записи хранения создается путь большого двоичного объекта, оканчивающийся на `.csv`. В результате, когда большой двоичный объект с расширением `.csv` создается в учетной записи хранения, свойства `folderPath` и `fileName` записывают расположение нового большого двоичного объекта. Например, `@triggerBody().folderPath` имеет значение `/containername/foldername/nestedfoldername`, `@triggerBody().fileName` имеет значение `filename.csv`. Эти значения сопоставляются в примере с параметрами конвейера `sourceFolder` и `sourceFile`. Их можно использовать в конвейере как `@pipeline().parameters.sourceFolder` и `@pipeline().parameters.sourceFile` соответственно.
 
 ## <a name="json-schema"></a>Схема JSON
 

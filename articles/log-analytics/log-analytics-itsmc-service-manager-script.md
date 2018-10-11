@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: v-jysur
-ms.component: na
-ms.openlocfilehash: 0fe987b00da669daf3830e903d53793d9d1edab6
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.component: ''
+ms.openlocfilehash: 10eeb7a94bd6b2513dc36d0d8a1829eddb452835
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37950130"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48040056"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
 
@@ -39,7 +39,7 @@ ms.locfileid: "37950130"
 
 Сохраните эти значения. Вы сможете их использовать при создании подключения с помощью Соединителя управления ИТ-услугами.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
  Windows Management Framework версии 5.0 или выше.
 По умолчанию в Windows 10 используется версия 5.1. Скачать нужную версию можно [отсюда](https://www.microsoft.com/download/details.aspx?id=50395):

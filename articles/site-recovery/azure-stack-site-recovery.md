@@ -6,16 +6,16 @@ author: rayne-wiselman
 manager: carmonm
 ms.topic: conceptual
 ms.service: site-recovery
-ms.date: 08/30/2018
+ms.date: 10/09/2018
 ms.author: raynew
-ms.openlocfilehash: c71f683355a09c8ba2381db406eeb1ccabdb7afa
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 802c2223a72a89dbe2a97404aab4b0fc85c391ed
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43697702"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902830"
 ---
-# <a name="replicate-azure-stack-vms-to-azure-preview"></a>Репликация виртуальных машин Azure Stack в Azure (предварительная версия)
+# <a name="replicate-azure-stack-vms-to-azure"></a>Репликация виртуальных машин Azure Stack в Azure
 
 В этой статье показано, как настроить аварийное восстановление в Azure для виртуальных машин Azure Stack с помощью [службы Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview).
 
@@ -25,10 +25,6 @@ ms.locfileid: "43697702"
 - Когда происходит сбой на вашем основном сайте, используйте Site Recovery, чтобы выполнить отработку отказа в Azure.
 - При отработке отказа виртуальные машины Azure создаются на основе сохраненных данных, и пользователи могут и дальше получать доступ к рабочим нагрузкам, запущенным на этих виртуальных машинах Azure.
 - Когда все снова будет настроено и запущено, вы можете восстановить размещение виртуальных машин Azure на основном сайте и снова начать репликацию в хранилище Azure.
-
-
-> [!NOTE]
-> Site Recovery для Azure Stack в настоящее время находится в общедоступной предварительной версии.
 
 
 В этой статье раскрываются следующие темы:

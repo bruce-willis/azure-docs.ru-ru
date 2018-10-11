@@ -8,12 +8,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 09/14/2018
 ms.author: spelluru
-ms.openlocfilehash: 8cf21b283053760077ca2903349f0dc5e4cbb9e2
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 0436248dac2812c447d25de16a4ac6b45bd7248f
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47392496"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855189"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Географическое аварийное восстановление в служебной шине Azure
 
@@ -121,7 +121,6 @@ SKU уровня "Премиум" служебной шины также под�
 
 Дополнительную информацию об обмене сообщениями через служебную шину см. в следующих статьях:
 
-* [Базовая информация о служебной шине](service-bus-fundamentals-hybrid-solutions.md)
 * [Очереди, разделы и подписки служебной шины](service-bus-queues-topics-subscriptions.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Как использовать разделы и подписки служебной шины](service-bus-dotnet-how-to-use-topics-subscriptions.md)

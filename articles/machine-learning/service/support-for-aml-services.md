@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
 ms.date: 09/24/2018
-ms.openlocfilehash: b5834bfd47cf2ab8462462c43394c8f05e43afa3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0c626bd193d883f292bf8d20913ff21d86d0d761
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971405"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48268485"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-service"></a>Служба машинного обучения Azure: поддержка и обучение
 
@@ -35,7 +35,7 @@ ms.locfileid: "46971405"
 
 + **Техническая поддержка**: посетите [веб-сайт технической поддержки Azure](https://azure.microsoft.com/support/options/) и выберите "Машинное обучение". 
 
-+ **Форум пользователей**: задавайте вопросы, отвечайте на вопросы других пользователей и общайтесь на [форуме поддержки службы машинного обучения Azure на MSDN](https://social.msdn.microsoft.com/Forums/windowsdesktop/home?forum=MachineLearning).
++ **Форум пользователей**: задавайте вопросы, отвечайте на вопросы других пользователей и общайтесь на [форуме поддержки службы машинного обучения Azure на MSDN](https://aka.ms/aml-forum-service).
 
 + **Stack Overflow.** Посетите на сайте [StackOverflow](https://stackoverflow.com/questions/tagged/azure-machine-learning) сообщество службы "Машинное обучение Azure", отмеченное тегом Azure-Machine-Learning.
 

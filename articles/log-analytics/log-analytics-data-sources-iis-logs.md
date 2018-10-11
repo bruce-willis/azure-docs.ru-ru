@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: bwren
-ms.comopnent: na
-ms.openlocfilehash: 65320e7d3cc97a3d53fd1a00fbbeab5559c02fce
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.comopnent: ''
+ms.openlocfilehash: 7b44c0712c4d88ec0bbb7a94f574c2a12faf3550
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37133548"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48040682"
 ---
 # <a name="iis-logs-in-log-analytics"></a>Журналы IIS в службе Log Analytics
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Log Analytics.  

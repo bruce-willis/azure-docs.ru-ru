@@ -1,6 +1,6 @@
 ---
 title: Получение журналов действий Azure в службе Log Analytics в разных подписках | Документация Майкрософт
-description: Использование концентраторов событий и Logic Apps для сбора данных из журналов действий Azure и их отправка в рабочее пространство Azure Log Analytics в другом клиенте.
+description: Использование Центров событий и Logic Apps для сбора данных из журналов действий Azure и их отправка в рабочее пространство Azure Log Analytics в другом клиенте.
 services: log-analytics, logic-apps, event-hubs
 documentationcenter: ''
 author: mgoedtel
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
-ms.author: richrund; bwren
-ms.component: na
-ms.openlocfilehash: c2bb802213d903290a0168623d7e6a302ba0e324
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.author: magoedte
+ms.component: ''
+ms.openlocfilehash: c078320ce31e0c51c7aef0bc0a2aa14e68ac2fc3
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37127447"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042867"
 ---
 # <a name="collect-azure-activity-logs-into-log-analytics-across-subscriptions"></a>Получение журналов действий Azure в службе Log Analytics в разных подписках
 
@@ -55,7 +55,7 @@ ms.locfileid: "37127447"
 
 <!-- Follow the steps in [how to create an Event Hubs namespace and Event Hub](../event-hubs/event-hubs-create.md) to create your event hub. -->
 
-1. На портале Azure выберите **Создать ресурс** > **Интернет вещей** > **Концентраторы событий**.
+1. На портале Azure выберите **Создать ресурс** > **Интернет вещей** > **Центры событий**.
 
    ![Новый концентратор событий в Marketplace](media/log-analytics-activity-logs-subscriptions/marketplace-new-event-hub.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "37127447"
 - идентификатор рабочей области Log Analytics;
 - общий ключ Log Analytics.
 
-Чтобы получить имя концентратора событий и строку подключения, выполните действия, описанные в разделе [Проверка разрешений для пространства имен концентраторов событий и определение строки подключения](../connectors/connectors-create-api-azure-event-hubs.md#permissions-connection-string).
+Чтобы получить имя концентратора событий и строку подключения, выполните действия, описанные в разделе [Проверка разрешений для пространства имен Центров событий и определение строки подключения](../connectors/connectors-create-api-azure-event-hubs.md#permissions-connection-string).
 
 
 ### <a name="create-a-new-blank-logic-app"></a>Создание пустого приложения логики
@@ -147,11 +147,11 @@ ms.locfileid: "37127447"
 
 ### <a name="add-event-hub-trigger"></a>Добавление триггера концентратора событий
 
-1. В конструкторе приложений логики введите в поле поиска текст фильтра *концентраторы событий*. Выберите триггер концентраторов событий с именем **При наличии событий в концентраторе событий**.
+1. В конструкторе приложений логики введите в поле поиска текст фильтра *Центры событий*. Выберите триггер Центров событий с именем **При наличии событий в концентраторе событий**.
 
    ![изображение триггера концентратора событий в Logic Apps](media/log-analytics-activity-logs-subscriptions/logic-apps-event-hub-add-trigger.png)
 
-2. Когда появится запрос учетных данных, подключитесь к пространству имен концентраторов событий. Введите имя для своего подключения, а затем скопированную строку подключения.  Нажмите кнопку **Создать**.
+2. Когда появится запрос учетных данных, подключитесь к пространству имен Центров событий. Введите имя для своего подключения, а затем скопированную строку подключения.  Нажмите кнопку **Создать**.
 
    ![изображение добавления триггера концентратора событий в приложениях логики](media/log-analytics-activity-logs-subscriptions/logic-apps-event-hub-add-connection.png)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 8/10/2017
 ms.author: aljo
-ms.openlocfilehash: 3e5ef2cbc9d7bec82cadc0c7663de52636938505
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 2fd62f8709bddfd981f4b1358c97d0acbaf7f12d
+ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34207705"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48269110"
 ---
 # <a name="upgrade-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "34207705"
 Для этого нужно настроить параметр upgradeMode в конфигурации кластера с помощью портала или Resource Manager. Это можно сделать как при создания кластера, так и во время его работы. 
 
 > [!NOTE]
-> Обязательно следите за тем, чтобы кластер работал под управлением поддерживаемой версии Service Fabric. Когда мы объявляем о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней. О доступности новых выпусков сообщается в [блоге группы разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/). после чего вы можете использовать их. 
+> Обязательно следите за тем, чтобы кластер работал под управлением поддерживаемой версии Service Fabric. Когда мы объявляем о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней. О доступности новых выпусков сообщается в [блоге группы разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/), после чего вы можете использовать их. 
 > 
 > 
 

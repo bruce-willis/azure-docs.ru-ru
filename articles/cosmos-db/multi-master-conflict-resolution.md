@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 5feefdb8fe6204bc8ef42a5e65bf1e30354e0cf9
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 39fd393e78a2b66749c6aa34a758b185b38effdf
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393933"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48041193"
 ---
 # <a name="multi-master-conflict-resolution-in-azure-cosmos-db"></a>Разрешение конфликтов с несколькими источниками в Azure Cosmos DB 
 
@@ -157,7 +157,7 @@ function myUdpStoredProcedure(incomingDocument, existingDocument, isDeleteConfli
 
 * **conflictingDocuments:** указывает коллекцию зафиксированных версий всех документов базы данных, которые конфликтуют с incomingDocument в столбце "Идентификатор" или в других полях уникального индекса. У этих документов будет разное значение Rid по сравнению с incomingDocument.
 
-Определяемая пользователем процедура имеет полный доступ к ключу раздела Cosmos DB и может выполнять любые операции хранения для разрешения конфликтов. Если определяемая пользователем процедура не зафиксирует версию конфликта, то система бросит конфликт и existingDocument останутся зафиксированными. Если определяемая пользователем процедура завершается ошибкой либо ее не существует, то Azure Cosmos DB добавит конфликт в веб-канал, где его можно обработать асинхронно, как показано в разделе [Asynchronous conflict resolution mode]() (Пользовательский асинхронный режим разрешения конфликтов). 
+Определяемая пользователем процедура имеет полный доступ к ключу раздела Cosmos DB и может выполнять любые операции хранения для разрешения конфликтов. Если определяемая пользователем процедура не зафиксирует версию конфликта, то система бросит конфликт и existingDocument останутся зафиксированными. Если определяемая пользователем процедура завершается ошибкой либо ее не существует, то Azure Cosmos DB добавит конфликт в веб-канал, где его можно обработать асинхронно, как показано в разделе [Asynchronous conflict resolution mode](#custom--asynchronous) (Пользовательский асинхронный режим разрешения конфликтов). 
 
 ### <a name="custom--asynchronous"></a>Пользовательский – асинхронный  
 

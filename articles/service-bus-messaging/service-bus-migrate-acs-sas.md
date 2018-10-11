@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: spelluru
-ms.openlocfilehash: 784709f29772f10968cabc3f3763cc7be7c8b383
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: 7045172fcd3c64cb0d979f5e3e8381c49579f1d2
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393355"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48855261"
 ---
 # <a name="migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Переход от службы контроля доступа Azure Active Directory к авторизации подписанного URL-адреса
 
@@ -66,5 +66,4 @@ ACS и служебная шина интегрируются за счет из
 
 * [Аутентификация и авторизация в служебной шине](service-bus-authentication-and-authorization.md)
 * [Аутентификация служебной шины с помощью подписанных URL-адресов](service-bus-sas.md)
-* [Базовая информация о служебной шине](service-bus-fundamentals-hybrid-solutions.md)
 

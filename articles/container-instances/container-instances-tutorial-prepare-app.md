@@ -2,19 +2,18 @@
 title: Руководство по службе "Экземпляры контейнеров Azure. Подготовка приложения
 description: Руководство по службе "Экземпляры контейнеров Azure" —часть 1 из 3. Подготовка приложения для развертывания в службе "Экземпляры контейнеров Azure".
 services: container-instances
-author: mmacy
-manager: jeconnoc
+author: dlepow
 ms.service: container-instances
 ms.topic: tutorial
 ms.date: 03/21/2018
-ms.author: marsma
+ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 79041123196559c5759789638228ea0dd21f2762
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: dfe494eba64f546616e4e6cc9898f9d63d81eaa2
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32163288"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48854785"
 ---
 # <a name="tutorial-create-container-for-deployment-to-azure-container-instances"></a>Руководство. Создание контейнера для развертывания в службе "Экземпляры контейнеров Azure"
 

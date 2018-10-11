@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: ee30ee4fa89ce47e8441845b088919b26ce32b31
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: a4ea483104a28e436ac35b50b962d3a153483789
+ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434285"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "48804180"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -119,27 +119,27 @@ ms.locfileid: "47434285"
 1. Подключитесь к Windows PowerShell с помощью учетных данных администратора.
 2. Выполните следующие команды:
 
-   * Чтобы увидеть, задан ли для отдельного пользователя бессрочный пароль, выполните следующий командлет, используя имя участника-пользователя (например, *aprilr@contoso.onmicrosoft.com*) или идентификатор проверяемого пользователя: `Get-MSOLUser -UserPrincipalName <user ID> | Select PasswordNeverExpires`.
-   * Чтобы просмотреть параметр **Пароль не имеет окончания срока действия** для всех пользователей, выполните следующий командлет: `Get-MSOLUser | Select UserPrincipalName, PasswordNeverExpires`.
+   * Чтобы увидеть, задан ли для отдельного пользователя бессрочный пароль, выполните следующий командлет, используя имя участника-пользователя (например, *aprilr@contoso.onmicrosoft.com*) или идентификатор проверяемого пользователя: `Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}`.
+   * Чтобы просмотреть параметр **Пароль не имеет окончания срока действия** для всех пользователей, выполните следующий командлет: `Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}`.
 
 ### <a name="set-a-password-to-expire"></a>Задание срока действия пароля
 
 1. Подключитесь к Windows PowerShell с помощью учетных данных администратора.
 2. Выполните следующие команды:
 
-   * Чтобы установить пароль отдельного пользователя со сроком действия, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires $false`.
-   * Чтобы задать срок действия паролей всех пользователей в организации, используйте следующий командлет: `Get-MSOLUser | Set-MsolUser -PasswordNeverExpires $false`
+   * Чтобы установить пароль отдельного пользователя со сроком действия, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-AzureADUser -ObjectId <user ID> -PasswordPolicies None`.
+   * Чтобы задать срок действия паролей всех пользователей в организации, используйте следующий командлет: `Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies None`
 
 ### <a name="set-a-password-to-never-expire"></a>Установка бессрочного пароля
 
 1. Подключитесь к Windows PowerShell с помощью учетных данных администратора.
 2. Выполните следующие команды:
 
-   * Чтобы установить бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-MsolUser -UserPrincipalName <user ID> -PasswordNeverExpires $true`.
-   * Чтобы установить бессрочные пароли для всех пользователей в организации, выполните следующий командлет: `Get-MSOLUser | Set-MsolUser -PasswordNeverExpires $true`
+   * Чтобы установить бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-AzureADUser -ObjectId <user ID> -PasswordPolicies DisablePasswordExpiration`.
+   * Чтобы установить бессрочные пароли для всех пользователей в организации, выполните следующий командлет: `Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies DisablePasswordExpiration`
 
    > [!WARNING]
-   > Пароль, для которого задано `-PasswordNeverExpires $true`, по-прежнему имеет срок использования, определяемый атрибутом `pwdLastSet`. Если задать для пользователей бессрочные пароли, то по прошествии 90 дней их срок действия истечет. В зависимости от атрибута `pwdLastSet`, если задать срок действия, указав `-PasswordNeverExpires $false`, то всем пользователям, у паролей которых значение `pwdLastSet` превышает 90 дней, будет необходимо сменить пароль при следующем входе. Это изменение может повлиять на большое количество пользователей. 
+   > Пароль, для которого задано `-PasswordPolicies DisablePasswordExpiration`, по-прежнему имеет срок использования, определяемый атрибутом `pwdLastSet`. Если задать для пользователей бессрочные пароли, то по прошествии 90 дней их срок действия истечет. В зависимости от атрибута `pwdLastSet`, если задать срок действия, указав `-PasswordPolicies None`, то всем пользователям, у паролей которых значение `pwdLastSet` превышает 90 дней, будет необходимо сменить пароль при следующем входе. Это изменение может повлиять на большое количество пользователей. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

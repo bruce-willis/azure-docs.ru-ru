@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/24/2018
+ms.date: 10/10/2018
 ms.author: alkohli
-ms.openlocfilehash: 969f8cdf7b8cc406cd98bb5a4f30b5c395b0e8fc
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0d77353b510dbeb18e96e2d8313e9010c04e25a7
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989368"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49077939"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство. Заказ Azure Data Box
 
@@ -41,10 +41,10 @@ Azure Data Box — это гибридное решение, которое по
 
 Перед тем как начать, убедитесь в следующем.
 - Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
-- Убедитесь, что подписка, которую вы используете для службы Data Box, является одним из следующих типов.
-    - Соглашение Microsoft Enterprise (EA). Дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
-    - Поставщик облачных решений (CSP). Дополнительные сведения см. в разделе [Программа поставщика облачных решений Azure](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
-    - Потребление. Оплата по мере использования Дополнительные сведения см. в разделе [Подписка с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/).
+- Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
+    - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
+    - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
+    - Потребление. Оплата по мере использования. Дополнительные сведения см. в статье о [подписках Azure с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/).
 
 - Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
 

@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 16b7fbdfa6df1b8cabf4f5e29a6109d9f9a9200e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 467d4d982d76f4defe8ed887ebcc3f99100af313
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959773"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49069001"
 documentType: LandingData
 title: Документация по Azure Data Box для интерактивной передачи данных
 metadata:
@@ -17,7 +17,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09/24/2018
+  ms.date: 09/26/2018
   ms.author: alkohli
 abstract:
   description: Семейство Azure Data Box позволяет передавать терабайты данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для быстрой передачи больших объемов данных по сети.<p>Выберите Шлюз Data Box<SUP>Предварительная версия</SUP> для отправки данных в облако для архивации, аварийного восстановления или для обработки данных в масштабе облака.  Используйте Data Box Edge<SUP>Предварительная версия</SUP> для фильтрации, анализа и преобразования данных при их перемещении в Azure.</p><p>Узнайте, как использовать Шлюз Data Box и Data Box Edge для передачи по сети, ознакомившись с нашими руководствами.</p>
@@ -30,7 +30,7 @@ sections:
     style: ordered
     items:
     - html: <a href="data-box-gateway-deploy-prep">Подготовка к развертыванию Шлюза Azure Data Box</a>
-    - html: <a href="/azure/databox/data-box-deploy-set-up">Подготовка Шлюза Azure Data Box в Hyper-V</a>
+    - html: <a href="/azure/databox/data-box-deploy-provision-hyperv">Подготовка Шлюза Azure Data Box в Hyper-V</a>
     - html: <a href="data-box-gateway-deploy-provision-vmware">Подготовка Шлюза Azure Data Box в VMware</a>
     - html: <a href="data-box-gateway-deploy-connect-setup-activate">Подключение, настройка, активация Шлюза Azure Data Box</a>
     - html: <a href=data-box-gateway-deploy-add-shares">Перенос данных с помощью Шлюза Azure Data Box</a>

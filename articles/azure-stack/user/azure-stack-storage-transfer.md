@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/03/2018
+ms.date: 10/10/2018
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: 46bc043681bbba37a2dfb6476e1dd0784e1abf10
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 77b25b7a5291786fe81953499c730fdac506e5c8
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46966704"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49078791"
 ---
 # <a name="use-data-transfer-tools-for-azure-stack-storage"></a>Использование средств передачи данных в хранилище Azure Stack
 
@@ -36,7 +36,7 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
     Оболочка командной строки для выполнения задач и язык сценариев, разработанный специально для администрирования системы.
 
-* [интерфейс командной строки Azure](#azure-cli)
+* [Интерфейс командной строки Azure](#azure-cli)
 
     Кроссплатформенное средство с открытым кодом, которое предоставляет набор команд для работы с платформами Azure и Azure Stack.
 

@@ -15,12 +15,12 @@ ms.date: 10/11/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: aae73816b883fe782eff27c56174c71f14c253c4
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 53d613052713e5144cb9d96aeeb937392fd4736a
+ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39577192"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48902932"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -162,10 +162,10 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 >[!NOTE]
 >Чтобы использовать настраиваемое утверждение, также необходимо определить настраиваемую политику и назначить ее приложению.  Эта политика должна включать все обязательные настраиваемые атрибуты.
 >
->Определить и назначить политику можно с помощью PowerShell, песочницы Graph в Azure AD или Microsoft Graph.  Если вы выполняете эти действия в PowerShell, возможно, сначала потребуется использовать `New-AzureADPolicy ` и назначить политику приложению с помощью `Set-AzureADServicePrincipalPolicy`.  Дополнительные сведения см. в [документации о политике Azure AD](../active-directory-claims-mapping.md#claims-mapping-policy-assignment).
+>Определить и назначить политику можно с помощью PowerShell, песочницы Graph в Azure AD или Microsoft Graph.  Если вы выполняете эти действия в PowerShell, возможно, сначала потребуется использовать `New-AzureADPolicy ` и назначить политику приложению с помощью `Set-AzureADServicePrincipalPolicy`.  Дополнительные сведения см. в [документации о политике Azure AD](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
 ### <a name="optional---use-a-custom-claim"></a>Использование настраиваемого утверждения (необязательно)
-Чтобы использовать в приложении настраиваемое утверждение и включить в него дополнительные поля, также необходимо [создать политику сопоставления настраиваемых утверждений и назначить ее приложению](../active-directory-claims-mapping.md#claims-mapping-policy-assignment).
+Чтобы использовать в приложении настраиваемое утверждение и включить в него дополнительные поля, также необходимо [создать политику сопоставления настраиваемых утверждений и назначить ее приложению](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
 ## <a name="download-pingaccess-and-configure-your-app"></a>Скачивание PingAccess и настройка приложения
 

@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: magoedte
-ms.component: na
-ms.openlocfilehash: 0b05dc17fc7ba567bf633c25a080fbf56903935c
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.component: ''
+ms.openlocfilehash: dab2dd2b1d020a7619b18f330640b7f555a1f8c1
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37130332"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48044388"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics"></a>Сбор и анализ журналов действий Azure в Log Analytics
 
@@ -59,7 +59,7 @@ ms.locfileid: "37130332"
 | [Группы управления SCOM](log-analytics-om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
 | [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для доступа к сведениям журнала действий Azure необходимо наличие подписки Azure.
 

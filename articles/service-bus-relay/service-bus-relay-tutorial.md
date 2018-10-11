@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: spelluru
-ms.openlocfilehash: 0833a7ec71a0aea66f8ebfdfff81d88925019309
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 12902fef0a27aa0af5995d2fd6ab87d951413d1d
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43701871"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48857981"
 ---
 # <a name="azure-wcf-relay-tutorial"></a>Руководство по ретранслятору WCF Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "43701871"
 
 3. Установка пакета NuGet для служебной шины. Этот пакет автоматически добавляет ссылки на библиотеки служебной шины, а также элемент WCF **System.ServiceModel**. [System.ServiceModel](https://msdn.microsoft.com/library/system.servicemodel.aspx) — это пространство имен, которое предоставляет программный доступ к основным функциям WCF. Служебная шина использует множество объектов и атрибутов WCF для определения контрактов службы.
 
-    В обозревателе решений щелкните правой кнопкой мыши проект и выберите пункт **Управление пакетами NuGet**. Щелкните вкладку **Обзор**, а затем найдите **WindowsAzure.ServiceBus**. Убедитесь, что имя проекта указано в поле **Версии**. Щелкните **Установить**и примите условия использования.
+    В обозревателе решений щелкните правой кнопкой мыши проект и выберите пункт **Управление пакетами NuGet**. Щелкните вкладку Обзор, а затем найдите **WindowsAzure.ServiceBus**. Убедитесь, что имя проекта указано в поле **Версии**. Щелкните **Установить**и примите условия использования.
 
     ![][3]
 4. В обозревателе решений дважды щелкните файл Program.cs, чтобы открыть его в редакторе.
@@ -719,7 +719,6 @@ namespace Microsoft.ServiceBus.Samples
 
 Дополнительные сведения о ретрансляторе Azure см. в следующих разделах:
 
-* [Обзор архитектуры служебной шины Azure](../service-bus-messaging/service-bus-fundamentals-hybrid-solutions.md#relays)
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)
 * [Как использовать ретранслятор WCF служебной шины с .NET](relay-wcf-dotnet-get-started.md)
 

@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: bwren
-ms.component: na
-ms.openlocfilehash: ac81525c107fcc291a8c3ef0163bf0ef2bbfdc3b
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
+ms.component: ''
+ms.openlocfilehash: 8cc654fca8e645253ffc79ef808075bdbe887530
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "42146861"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48043300"
 ---
 # <a name="reference-guide-to-view-designer-visualization-parts-in-log-analytics"></a>Справочное руководство по элементам визуализации конструктора представлений в Log Analytics
 С помощью конструктора представлений в Azure Log Analytics можно создавать пользовательские представления на портале Azure, содержащие различные визуализации данных из рабочей области Log Analytics. В этой статье содержится справка по параметрам элементов визуализации, доступных в пользовательских представлениях.

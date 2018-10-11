@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2018
 ms.author: bwren
-ms.component: na
-ms.openlocfilehash: 164b071a47c13f7c5586bd287adc41bea54a1198
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.component: ''
+ms.openlocfilehash: e86b79cb57b9d4a590d69a98eca591679ee10334
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129623"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48042943"
 ---
 # <a name="custom-fields-in-log-analytics"></a>Настраиваемые поля в службе Log Analytics
 Функция **Настраиваемые поля**, предоставляемая службой Log Analytics, позволяет расширить существующие записи в Log Analytics путем добавления собственных полей с поддержкой поиска.  Настраиваемые поля автоматически заполняются на основе данных, извлеченных из других свойств в той же записи.

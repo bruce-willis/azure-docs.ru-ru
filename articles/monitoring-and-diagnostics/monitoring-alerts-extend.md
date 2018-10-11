@@ -5,15 +5,15 @@ author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 05/24/2018
+ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 13a84b7254207a9cfcfff4af43283130a0f6c587
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: eb3489c24bd5aa328620c5a6c14ee71882a6a6f2
+ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998480"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48249576"
 ---
 # <a name="extend-log-analytics-alerts-to-azure-alerts"></a>Расширение оповещений Log Analytics в оповещения Azure
 До недавнего времени в Azure Log Analytics были функции, которые позволяли заблаговременно уведомлять о некоторых условиях на основе данных Log Analytics. Ранее правила генерации оповещений задавались на портале Microsoft Operations Management Suite. Новые возможности оповещений теперь интегрированы в различные службы Microsoft Azure. Они доступны в разделе **Оповещения** в Azure Monitor на портале Azure и позволяют реализовать оповещения на основе журнала действий, метрик и журналов Log Analytics и Application Insights. 

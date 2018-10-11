@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 67e3e3d45c26882fda3689a6ae3ab35c204c4f26
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 7a673ba400aae42273e07d0685bd54278e33b5c8
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857947"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068268"
 documentType: LandingData
 title: Документация по функциям Azure
 metadata:
@@ -21,7 +21,7 @@ metadata:
   ms.date: 08/09/2018
   ms.author: carolz
 abstract:
-  description: Функции Azure — это <a href="https://azure.microsoft.com/overview/serverless-computing/">независимая от сервера</a> служба вычислений, которая позволяет выполнять код по требованию без необходимости явно подготавливать или администрировать инфраструктуру. Используйте функции Azure для выполнения скрипта или фрагмента кода в ответ на разные события. Узнайте, как использовать функции Azure, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
+  description: Функции Azure — это <a href="https://azure.microsoft.com/solutions/serverless/">независимая от сервера</a> служба вычислений, которая позволяет выполнять код по требованию без необходимости явно подготавливать или администрировать инфраструктуру. Используйте функции Azure для выполнения скрипта или фрагмента кода в ответ на разные события. Узнайте, как использовать функции Azure, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
   aside:
     image:
       alt: 
@@ -90,7 +90,7 @@ sections:
     style: unordered
     className: spaced noBullet
     items:
-    - html: <a href="/azure/azure-functions/functions-cli-samples">интерфейс командной строки Azure</a>
+    - html: <a href="/azure/azure-functions/functions-cli-samples">Интерфейс командной строки Azure</a>
     - html: <a href="/sandbox/functions-recipes/">Рекомендации по работе с Функциями Azure</a>
 - title: Развитие навыков с помощью Microsoft Learn
   items:
@@ -122,7 +122,7 @@ sections:
     className: cardsD
     items:
     - title: Командная строка
-      html: <p><a href="/cli/azure">интерфейс командной строки Azure</a></p>
+      html: <p><a href="/cli/azure">Интерфейс командной строки Azure</a></p>
     - title: REST
       html: <p><a href="/azure/azure-functions/functions-api-definition">OpenAPI</a></p>
     - title: Привязки

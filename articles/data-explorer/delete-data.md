@@ -8,22 +8,16 @@ ms.service: data-explorer
 services: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 571a005dd3f50690f291a7ffa3c1174ea15cb0ed
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 07ee05128333df963c2d8ff3dd3f6442a3843d07
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47046898"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48866896"
 ---
 # <a name="delete-data-from-azure-data-explorer"></a>Удаление данных из обозревателя данных Azure
 
 Обозреватель данных Azure поддерживает несколько методик массового удаления, которые рассматриваются в этой статье. Он не поддерживает удаление отдельных записей в режиме реального времени, так как оптимизирован для быстрого доступа на чтение.
-
-* Если база данных больше не нужна, удалите ее с помощью команды drop database.
-
-    ```Kusto
-    .drop database <DatabaseName>
-    ```
 
 * Если не нужна одна или несколько таблиц, удалите их с помощью команды drop table или drop tables.
 
@@ -44,12 +38,5 @@ ms.locfileid: "47046898"
     ```
 
     Дополнительные сведения см. в статье [Retention policy](https://docs.microsoft.com/azure/kusto/concepts/retentionpolicy) (Политика хранения).
-
-* Можно удалять отдельные записи с помощью операции *purge* в зависимости от предиката, например `where CustomerName == 'contoso'`. С другой стороны, purge — это операция массового удаления, она не предназначена для удаления в режиме реального времени. Ниже приведен пример использования purge.
-
-    ```Kusto
-    .purge table Customer records
-    | where CustomerName =='contoso'
-    ```
 
 Если вам нужна помощь в устранении проблем с удалением данных, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com).

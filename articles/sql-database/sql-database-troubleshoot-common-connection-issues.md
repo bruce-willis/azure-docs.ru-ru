@@ -12,12 +12,12 @@ ms.author: daleche
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 276a2d6d717497538a6633a9b0926bb89b9e875c
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: a34745c5586fa90d3e167bb3be22e93dfa83b7af
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47161103"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48041736"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-sql-database"></a>Устранение неполадок подключения к базе данных SQL Azure
 При сбоях подключения к базе данных SQL Azure отображаются [сообщения об ошибке](sql-database-develop-error-messages.md). Эта статья представляет собой объединенный раздел, который поможет в устранении неполадок подключения к базе данных SQL Azure. В ней описываются [распространенные причины](#cause) проблем подключения, рекомендуется [инструмент устранения неполадок](#try-the-troubleshooter-for-azure-sql-database-connectivity-issues), который поможет выявить проблему, и приводятся пошаговые инструкции по устранению [временных ошибок](#troubleshoot-transient-errors) и [постоянных или повторяющихся ошибок](#troubleshoot-persistent-errors). 
@@ -62,7 +62,7 @@ Error code 40613: "Database <x> on server <y> is not currently available. Please
 
 1. Проверьте [панель мониторинга служб Microsoft Azure](https://azure.microsoft.com/status) на наличие каких-либо известных сбоев, произошедших в то время, когда приложение сообщало об ошибках.
 2. Приложения, подключающиеся к облачной службе, такой как база данных SQL Azure, должны ожидать периодические события перенастройки и реализовывать логику повторов для обработки этих ошибок, а не отображать их как ошибки приложения для пользователей. Дополнительные сведения и общие стратегии повторов см. в разделе [Временные ошибки (временные сбои)](sql-database-connectivity-issues.md) и в статье [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md). Затем ознакомьтесь с примерами кода в [библиотеке подключений для базы данных SQL и SQL Server](sql-database-libraries.md).
-3. Если база данных близка к исчерпанию доступных ресурсов, может возникать временная проблема подключения. Дополнительные сведения см. в статье [Обзор ограничений ресурсов базы данных SQL Azure](sql-database-resource-limits.md).
+3. Если база данных близка к исчерпанию доступных ресурсов, может возникать временная проблема подключения. Дополнительные сведения см. в статье [Обзор ограничений ресурсов базы данных SQL Azure](sql-database-resource-limits-logical-server.md#what-happens-when-database-resource-limits-are-reached).
 4. Если проблемы подключения остаются или интервал, во время которого приложение обнаруживает ошибку, превышает 60 секунд, а также если в определенный день такая ошибка возникает многократно, зарегистрируйте запрос на поддержку Azure, нажав **Получить поддержку** на сайте [Поддержка Azure](https://azure.microsoft.com/support/options) .
 
 ## <a name="troubleshoot-persistent-errors"></a>Устранение постоянных ошибок

@@ -2,21 +2,21 @@
 title: Перенос баз данных SQL Server в Базу данных SQL Azure с помощью Database Migration Service по сети | Документация Майкрософт
 description: Узнайте, как выполнять перенос баз данных из локального экземпляра SQL Server в базу данных SQL Azure по сети с помощью Azure Database Migration Service по сети.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: ''
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 08/31/2018
-ms.openlocfilehash: b4cbc7fc7e031fcbd25229792488dbb4002ea23e
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.date: 10/10/2018
+ms.openlocfilehash: cbc30d1a70d7a333f56df6f0a796d3a8e6532fe8
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43340217"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49068734"
 ---
 # <a name="migrate-sql-server-to-azure-sql-database-online-using-dms"></a>Перенос баз данных SQL Server в базу данных SQL Azure с помощью DMS по сети
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) с минимальным временем простоя. В этом руководстве выполняется миграция базы данных **Adventureworks2012**, восстановленной в локальном экземпляре SQL Server 2016 (или более поздней версии), в базу данных SQL Azure с помощью Azure Database Migration Service.

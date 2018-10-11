@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/14/2018
+ms.date: 10/03/2018
 ms.author: sethm
-ms.reviewer: jeffgo
-ms.openlocfilehash: 9e579123124615df83483e244ef11810ca590844
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.reviewer: avishwan
+ms.openlocfilehash: 40ecb474b4faa4031cb364dfc1151c6fe6f09dd6
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45633969"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48856458"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Создание и публикация элемента Marketplace
 
@@ -29,12 +29,15 @@ ms.locfileid: "45633969"
 1. [Скачайте](http://www.aka.ms/azurestackmarketplaceitem) средство упаковщика коллекции Azure и пример элемента Azure Stack Marketplace.
 2. Откройте пример элемента Marketplace и переименуйте папку **SimpleVMTemplate**. (Новое имя должно совпадать с именем элемента Marketplace, например **Contoso.TodoList**.) Эта папка содержит следующее:
    
-       /Contoso.TodoList/
-       /Contoso.TodoList/Manifest.json
-       /Contoso.TodoList/UIDefinition.json
-       /Contoso.TodoList/Icons/
-       /Contoso.TodoList/Strings/
-       /Contoso.TodoList/DeploymentTemplates/
+   ```shell
+   /Contoso.TodoList/
+   /Contoso.TodoList/Manifest.json
+   /Contoso.TodoList/UIDefinition.json
+   /Contoso.TodoList/Icons/
+   /Contoso.TodoList/Strings/
+   /Contoso.TodoList/DeploymentTemplates/
+   ```
+
 3. [Создайте шаблон Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) или выберите шаблон на портале GitHub. Элемент Marketplace использует этот шаблон для создания ресурса.
 
     > [!Note]  
@@ -52,22 +55,30 @@ ms.locfileid: "45633969"
 8. В файле **manifest.json** измените значение параметра **name**, указав имя элемента Marketplace. Кроме того, для параметра **publisher** укажите ваше имя или название компании.
 9. В разделе **artefacts** укажите в параметрах **name** и **path** правильные данные для включаемого шаблона Azure Resource Manager.
    
-         "artifacts": [
-            {
-                "name": "Type your template name",
-                "type": "Template",
-                "path": "DeploymentTemplates\\Type your path",
-                "isDefault": true
-            }
+   ```json
+   "artifacts": [
+      {
+          "name": "Type your template name",
+          "type": "Template",
+          "path": "DeploymentTemplates\\Type your path",
+          "isDefault": true
+      }
+   ```
+
 10. Замените **My Marketplace Items** списком категорий, в которых должен отображаться этот элемент Marketplace.
     
-             "categories":[
-                 "My Marketplace Items"
-              ],
+   ```json
+   "categories":[
+   "My Marketplace Items"
+   ],
+   ```
+
 11. Остальные параметры, которые вы можете изменить в файле manifest.json для элемента Marketplace, описаны в [этом разделе](#reference-marketplace-item-manifestjson).
 12. Чтобы упаковать папки в AZPKG-файл, откройте командную строку и выполните следующую команду:
     
-        AzureGalleryPackager.exe package –m <path to manifest.json> -o <output location for the package>
+   ```shell
+   AzureGalleryPackager.exe package –m <path to manifest.json> -o <output location for the package>
+   ```
     
     > [!NOTE]
     > Следует использовать уже существующий путь к пакету выходных данных. Например, если указан выходной путь C:\MarketPlaceItem\yourpackage.azpkg, должна существовать папка C:\MarketPlaceItem.
@@ -79,8 +90,10 @@ ms.locfileid: "45633969"
 2. На клиентской виртуальной машине в среде Microsoft Azure Stack проверьте, настроены ли учетные данные администратора службы для сеанса PowerShell. Инструкции по аутентификации PowerShell в Azure Stack можно найти в статье [Deploy templates in Azure Stack using PowerShell](user/azure-stack-deploy-template-powershell.md) (Развертывание шаблонов в Azure Stack с помощью PowerShell).
 3. При использовании [PowerShell 1.3.0]( azure-stack-powershell-install.md) или более поздней версии вы можете опубликовать элемент Marketplace в Azure Stack с помощью командлета PowerShell **Add-AzsGalleryItem**. В версиях до PowerShell 1.3.0 вместо командлета **Add-AzsGalleryItem** следует использовать **Add-AzureRMGalleryitem**.  Например, при использовании PowerShell 1.3.0 или более поздней версии:
    
-       Add-AzsGalleryItem -GalleryItemUri `
-       https://sample.blob.core.windows.net/gallerypackages/Microsoft.SimpleTemplate.1.0.0.azpkg –Verbose
+   ```powershell
+   Add-AzsGalleryItem -GalleryItemUri `
+   https://sample.blob.core.windows.net/gallerypackages/Microsoft.SimpleTemplate.1.0.0.azpkg –Verbose
+   ```
    
    | Параметр | ОПИСАНИЕ |
    | --- | --- |
@@ -102,7 +115,9 @@ ms.locfileid: "45633969"
 
 6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Пример:
    
-        Remove-AzsGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  –Verbose
+   ```powershell
+   Remove-AzsGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  –Verbose
+   ```
    
    > [!NOTE]
    > После удаления элемента пользовательский интерфейс Marketplace может отобразить ошибку. Чтобы устранить эту ошибку, щелкните **Параметры** на портале. Затем щелкните **Отменить изменения** в разделе **Настройка портала**.

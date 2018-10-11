@@ -15,13 +15,13 @@ ms.topic: quickstart
 ms.date: 08/02/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.component: na
-ms.openlocfilehash: 91a656b055dbe882bdd5e5c208cc5d8955c74041
-ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
+ms.component: ''
+ms.openlocfilehash: 39c30934ddf3b1d90b2dc604af0f0bb29bf79c04
+ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39480445"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48043735"
 ---
 # <a name="configure-log-analytics-agent-for-windows-computers-in-a-hybrid-environment"></a>Настройка агента Log Analytics для компьютеров Windows в гибридной среде
 [Azure Log Analytics](log-analytics-overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows в вашем центре обработки данных или в другой облачной среде в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий.  Сведения о виртуальных машинах Windows в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2018
 ms.author: spelluru
-ms.openlocfilehash: c1c38370ae508dffc6888dd7e94514406b8da327
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: e2efe2bfb26fa7a14a9e80c26fba1322f82cb0eb
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405277"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48856927"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 
@@ -59,7 +59,6 @@ ms.locfileid: "47405277"
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
-* [Базовая информация о служебной шине](service-bus-fundamentals-hybrid-solutions.md)
 * [Очереди, разделы и подписки служебной шины](service-bus-queues-topics-subscriptions.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 * [Как использовать разделы и подписки служебной шины](service-bus-dotnet-how-to-use-topics-subscriptions.md)

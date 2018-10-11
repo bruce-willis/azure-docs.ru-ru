@@ -1,20 +1,21 @@
 ---
-title: Общие сведения о службе поиска ответов в проекте в Microsoft Cognitive Services | Документация Майкрософт
+title: Общие сведения о службе поиска ответов в проекте
+titlesuffix: Azure Cognitive Services
 description: Общие сведения о службе поиска ответов в проекте.
 services: cognitive-services
 author: mikedodaro
-manager: rosh
+manager: cgronlun
 ms.service: cognitive-services
-ms.technology: project-answer-search
-ms.topic: article
+ms.component: project-answer-search
+ms.topic: overview
 ms.date: 04/13/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: d87cf1390970d2c815b94bcaee7e07c19bc03cce
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: rosh
+ms.openlocfilehash: 5658054b3cc77db20edd64f6c560ee5d4a58eb46
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381836"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883726"
 ---
 # <a name="what-is-project-answer-search"></a>Общие сведения о службе поиска ответов в проекте
 API службы поиска ответов в проекте возвращает ответы на вопросительные запросы с помощью конечной точки Bing версии 7. Вопросительный запрос, например "Какова окружность Земли?", возвращает ответ с фактическими данными.  Запрос сведений о человеке, месте или предмете возвращает информацию об определенной сущности. Этот сценарий можно использовать в приложениях, например в чат-ботах, приложениях обмена сообщениями, устройствах чтения и т. д.  
@@ -333,7 +334,7 @@ JSON Response:
 ![Определение принадлежности медиаданных](./media/mediaattribution.png)  
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Project Answer Search query in C#](c-sharp-quickstart.md) (Запрос службы поиска ответов в проекте на языке C#)
-- [Project Answer Search query in Java](java-quickstart.md) (Запрос службы поиска ответов в проекте на языке Java)
-- [Project Answer Search Node quickstart](node-quickstart.md) (Краткое руководство по запросам Node в службе поиска ответов в проекте)
-- [Project Answer Search Python quickstart](python-quickstart.md) (Краткое руководство по запросам Python в службе поиска ответов в проекте)
+- [Краткое руководство для C#](c-sharp-quickstart.md)
+- [Краткое руководство для Java](java-quickstart.md)
+- [Краткое руководство для Node](node-quickstart.md)
+- [Краткое руководство для Python](python-quickstart.md)

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 12/20/2017
 ms.author: spelluru
-ms.openlocfilehash: b9701eae026522238424a21ae3ecf2baa40334fa
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 6c8498a43b127fecc02473177ac955ae51a647d6
+ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43701771"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48854122"
 ---
 # <a name="how-to-use-azure-relay-wcf-relays-with-net"></a>Как использовать ретрансляторы WCF на основе ретранслятора Azure с помощью .NET
 В этой статье описываются методы использования службы ретрансляции Azure. Примеры написаны на языке C# и используют API службы Windows Communication Foundation (WCF) с расширениями, содержащимися в сборке служебной шины. Дополнительные сведения о ретрансляторе Azure см. в статье [Что такое ретранслятор Azure?](relay-what-is-it.md).
@@ -220,7 +220,6 @@ using (var ch = cf.CreateChannel())
 Вы ознакомились с базовыми понятиями о ретрансляторе Azure. Дополнительные сведения см. по следующим ссылкам:
 
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)
-* [Обзор архитектуры служебной шины Azure](../service-bus-messaging/service-bus-fundamentals-hybrid-solutions.md)
 * Скачайте примеры для служебной шины со страницы [Примеры Azure][Azure samples] или прочитайте [обзор примеров служебной шины][overview of Service Bus samples].
 
 [Shared Access Signature Authentication with Service Bus]: ../service-bus-messaging/service-bus-shared-access-signature-authentication.md

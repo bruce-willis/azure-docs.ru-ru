@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/06/2017
 ms.author: diberry
-ms.openlocfilehash: b0a02d2e5e0a1f1765098e1b1e258424b6443878
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 42bd8ef95ac1b55e76fe1cf0702b79de91832741
+ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47039585"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48870185"
 ---
 # <a name="usage-data-for-luis-service-from-azure-cloud-shell"></a>Получение сведений об использовании LUIS из Azure Cloud Shell
 С помощью портала Azure можно использовать командлеты PowerShell для работы с ресурсами LUIS. 
@@ -23,7 +23,7 @@ ms.locfileid: "47039585"
 Эти командлеты позволяют [создать](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/new-azurermcognitiveservicesaccount?view=azurermps-6.0.0) подписку LUIS, получить сведения о подписке, в том числе об [использовании](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/get-azurermcognitiveservicesaccountusage?view=azurermps-6.0.0), а также [удалить](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/remove-azurermcognitiveservicesaccount?view=azurermps-6.0.0) подписку. 
 
 ## <a name="cloud-shell-storage-account-and-authentication"></a>Учетная запись хранения Cloud Shell и аутентификация
-Чтобы использовать PowerShell в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart-powershell) на портале Azure, вам нужна учетная запись хранения Azure. Если у вас нет [учетной записи хранения](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage#set-up-a-clouddrive-file-share), вам будет предложено ее создать. Учетная запись хранения позволяет сохранять скрипты PowerShell в Cloud Shell.  
+Чтобы использовать PowerShell в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart-powershell) на портале Azure, вам нужна учетная запись хранения Azure. Если у вас нет [учетной записи хранения](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage), вам будет предложено ее создать. Учетная запись хранения позволяет сохранять скрипты PowerShell в Cloud Shell.  
 
 Также для доступа к любым ресурсам необходимо выполнить аутентификацию Azure в Cloud Shell. 
 

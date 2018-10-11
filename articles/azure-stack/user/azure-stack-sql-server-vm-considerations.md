@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/31/2018
+ms.date: 09/28/2018
 ms.author: mabrigg
 ms.reviewer: anajod
-ms.openlocfilehash: 5b10ff3574259fcad329dfb5c7a5bc86861258c5
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: e784185cfc7f2c588db354bab1cfb36934b9c417
+ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45575870"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47585872"
 ---
 # <a name="optimize-sql-server-performance"></a>Оптимизация производительности SQL Server
 
@@ -43,7 +43,7 @@ ms.locfileid: "45575870"
 |Область|Оптимизация|
 |-----|-----|
 |размер виртуальной машины; |[DS3](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes) или выше для выпуска SQL Server Enterprise.<br><br>[DS2](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-vm-sizes) или выше для выпусков SQL Server Standard и Web.|
-|служба хранилища. |Используйте семейство виртуальных машин, поддерживающее [хранилище класса Premium](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-acs-differences).|
+|Хранилище |Используйте семейство виртуальных машин, поддерживающее [хранилище класса Premium](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-acs-differences).|
 |диски; |Используйте по крайней мере два диска с данными (один для файлов журнала и один для файла данных и TempDB) и выберите размер диска в соответствии с потребностями в емкости. Задайте стандартные расположения файлов данных для этих дисков во время установки SQL Server.<br><br>Избегайте использования дисков операционной системы или временных дисков для хранения базы данных или журналов.<br>Обеспечьте чередование нескольких дисков данных Azure для увеличения пропускной способности ввода-вывода, используя дисковые пространства.<br><br>Выполняйте форматирование с использованием задокументированных размеров кластеров.|
 |ВВОД-ВЫВОД|Включите быструю инициализацию для файлов данных.<br><br>Ограничьте автоматическое увеличение в базах данных с фиксированным небольшим шагом приращения (64–256 МБ).<br><br>Отключите автосжатие базы данных.<br><br>Настройте расположения по умолчанию для резервного копирования и файлов базы данных на дисках с данными, а не на диске операционной системы.<br><br>Включите заблокированные страницы.<br><br>Применяйте накопительные обновления и пакеты обновления SQL Server.|
 |Характерные особенности|Выполняйте резервное копирование непосредственно в хранилище BLOB-объектов (если поддерживается используемой версией SQL Server).|
