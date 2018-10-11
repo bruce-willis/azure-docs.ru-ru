@@ -5,16 +5,16 @@ description: Узнайте, как распознавать речь в при�
 services: cognitive-services
 author: fmegen
 ms.service: cognitive-services
-ms.technology: Speech
+ms.component: Speech
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.author: fmegen
-ms.openlocfilehash: 0a52889ef879aeb8a5a1ed59b74619dc3337e1e9
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 6428dbaabfe176e8d741818ee338bbc2a6bc70bb
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432802"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48883879"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
@@ -25,7 +25,7 @@ ms.locfileid: "47432802"
 Пакет SDK службы "Речь" на данное время совместим с устройствами Android, в которых установлены 32-разрядные или 64-разрядные процессоры ARM.
 
 > [!NOTE]
-> Ознакомиться с пакетом SDK для речевых устройств и устройством Roobo можно в разделе [Сведения о пакете SDK для речевых устройств (предварительная версия)](speech-devices-sdk.md).
+> Ознакомьтесь с пакетом SDK службы "Речь" и устройством Roobo в разделе [Сведения о пакете SDK для речевых устройств](speech-devices-sdk.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -112,7 +112,7 @@ Android Studio требуется несколько минут, чтобы по
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Откройте исходный файл `MainActivity.java`. Замените весь код после оператора `package` следующим кодом.
+1. Откройте исходный файл `MainActivity.java`. Замените все содержимое этого файла приведенным ниже кодом.
 
    [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java-android/app/src/main/java/com/microsoft/cognitiveservices/speech/samples/quickstart/MainActivity.java#code)]
 

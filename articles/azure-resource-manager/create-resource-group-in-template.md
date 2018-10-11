@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/22/2018
+ms.date: 10/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: 003f5d114a233738783d265a18ee7d2ccbfaba10
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 87f81c6b6568cd63eaf10840043511669d634062
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42617272"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49079337"
 ---
 # <a name="create-resource-groups-in-azure-resource-manager-templates"></a>Создание группы ресурсов в шаблонах Azure Resource Manager
 
@@ -32,7 +32,7 @@ ms.locfileid: "42617272"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
     "parameters": {
         "rgName": {
@@ -83,7 +83,7 @@ New-AzureRmDeployment `
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
     "parameters": {
         "rgNamePrefix": {
@@ -131,7 +131,7 @@ New-AzureRmDeployment `
   -Name demoCopyRG `
   -Location southcentralus `
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/copyRG.json `
-  -rgName demogroup `
+  -rgNamePrefix demogroup `
   -rgLocation northcentralus `
   -instanceCount 3
 ```
@@ -144,7 +144,7 @@ New-AzureRmDeployment `
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
     "parameters": {
         "rgName": {
@@ -171,7 +171,7 @@ New-AzureRmDeployment `
         },
         {
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2017-05-10",
+            "apiVersion": "2018-05-01",
             "name": "storageDeployment",
             "resourceGroup": "[parameters('rgName')]",
             "dependsOn": [
