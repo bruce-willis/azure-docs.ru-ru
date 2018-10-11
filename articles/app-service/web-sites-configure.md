@@ -28,7 +28,7 @@ ms.locfileid: "36293722"
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="application-settings"></a>Параметры приложения
-1. На [портал Azure]откройте колонку для веб-приложения.
+1. На [портал Azure] откройте колонку для веб-приложения.
 3. Щелкните **Параметры приложения**.
 
 ![Параметры приложения][configure01]
