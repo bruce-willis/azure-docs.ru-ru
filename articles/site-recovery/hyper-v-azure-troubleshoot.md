@@ -2,19 +2,18 @@
 title: Устранение неполадок с репликацией из Hyper-V в Azure с помощью Azure Site Recovery | Документация Майкрософт
 description: В этой статье описаны способы устранения неполадок с репликацией из Hyper-V в Azure с помощью Azure Site Recovery.
 services: site-recovery
-documentationcenter: ''
-author: rayne-wiselman
-manager: carmonm
+author: Rajeswari-Mamilla
+manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
-ms.author: rayne
-ms.openlocfilehash: d5282e5954aa50ce67d6341b194177a89bdbe6cc
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.date: 10/10/2018
+ms.author: ramamill
+ms.openlocfilehash: 027107cca1872ddd504567b74c798fc00e9af214
+ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43666407"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49067399"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 

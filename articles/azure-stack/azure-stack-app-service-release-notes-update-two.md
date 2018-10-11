@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2018
 ms.author: anwestg
-ms.reviewer: brenduns
-ms.openlocfilehash: be09773a1ce3e80547d9e5f0e9de2a2d9e093c60
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.reviewer: sethm
+ms.openlocfilehash: 9f320f508fd45b6ad70b1357e873663796825621
+ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970923"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "49078806"
 ---
 # <a name="app-service-on-azure-stack-update-2-release-notes"></a>Служба приложений в заметках о выпуске обновления 2 Azure Stack
 
@@ -37,7 +37,7 @@ ms.locfileid: "38970923"
 
 Номер сборки обновления 2 службы приложений в Azure Stack — **72.0.13698.10**.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 > [!IMPORTANT]
 > Теперь для новых развертываний службы приложений Azure в Azure Stack нужен [трехсубъектный групповой сертификат](azure-stack-app-service-before-you-get-started.md#get-certificates). Это связано с улучшением обработки единого входа для Kudu в службе приложений Azure. Новый субъект — **\*.sso.appservice.\<регион\>.\<доменное_имя\>.\<расширение\>**

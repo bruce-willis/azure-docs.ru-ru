@@ -5,17 +5,17 @@ services: cognitive-services
 author: chliang
 manager: bix
 ms.service: cognitive-services
-ms.technology: anomaly-finder
+ms.component: anomaly-finder
 ms.topic: include
 ms.date: 04/13/2018
 ms.author: chliang
 ms.custom: include file
-ms.openlocfilehash: ff36202b67f6262b7ba67fe48ef37f2b656b91fa
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: a49df0c18ef9db9d0d41ca2e714474e6386ae7d1
+ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381325"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48904625"
 ---
 <a name="definitions"></a>
 ## <a name="definitions"></a>Определения
@@ -26,7 +26,7 @@ ms.locfileid: "35381325"
 |ИМЯ|ОПИСАНИЕ|Схема|
 |---|---|---|
 |**Timestamp**  <br>*необязательный параметр*|Метка времени для точки данных. Убедитесь, что она согласуется со временем полуночи, и используйте строку даты и времени UTC, например 2017-08-01T00:00:00Z.|строка (дата-время)|
-|**Значение**  <br>*необязательный параметр*|Значение меры данных.|число (double)|
+|**Значение**  <br>*необязательный параметр*|Значение меры данных.|число (двойной точности)|
 
 
 <a name="request"></a>

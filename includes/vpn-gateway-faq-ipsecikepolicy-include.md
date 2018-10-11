@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 738ebdcc612d944db3794525085d220b33533245
-ms.sourcegitcommit: baed5a8884cb998138787a6ecfff46de07b8473d
+ms.openlocfilehash: 87d5389abd72875c62ea3484fc3f9ca43c339447
+ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "30198236"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48240225"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Политика IPsec/IKE поддерживается в VPN-шлюзах Azure класса **VpnGw1, VpnGw2, VpnGw3, Standard** и **HighPerformance**. SKU уровня **Базовый** **не** поддерживается.
@@ -76,7 +76,7 @@ ms.locfileid: "30198236"
 | 2                         | DHGroup2                 | PFS2         | MODP (1024 бит)  |
 | 14                        | DHGroup14<br>DHGroup2048 | PFS2048      | MODP (2048 бит)  |
 | 19                        | ECP256                   | ECP256       | ECP (256 бит)    |
-| 20                        | ECP384                   | ECP284       | ECP (384 бит)    |
+| 20                        | ECP384                   | ECP384       | ECP (384 бит)    |
 | 24                        | DHGroup24                | PFS24        | MODP (2048 бит)  |
 |                           |                          |              |                |
 
