@@ -72,7 +72,7 @@ Foreach ($file in $Files) {
 
 ### <a name="delete-authentication-agent-trace-log-files"></a>Удаление файлов журнала трассировки агента проверки подлинности
 
-Следует регулярно проверять содержимое каталога **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\** и очищать его каждые 48 часов. 
+Следует регулярно проверять содержимое каталога **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\** и очищать его каждые 48 часов. 
 
 >[!IMPORTANT]
 >Если запущена служба агента аутентификации, вы не сможете удалить текущий файл журнала в этой папке. Остановите службу и повторите попытку. Чтобы избежать ошибок со входом пользователей, следует заранее настроить [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability) для сквозной аутентификации.
